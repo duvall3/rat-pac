@@ -1,0 +1,6 @@
+# gen_ibd.mac -- isotropic IBD source for experiment "practice"
+
+/generator/add combo ibd:fill:poisson
+/generator/vtx/set -1 0 0
+/generator/pos/set 0 -4400 0
+/generator/rate/set 1.0

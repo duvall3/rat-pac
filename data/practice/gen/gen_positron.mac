@@ -1,0 +1,6 @@
+# gen_n0.mac -- random, isotropic positron source for experiment "practice"
+
+/generator/add combo gun:fill:poisson
+/generator/vtx/set e+ 0 0 0 5
+/generator/pos/set 0 -4400 0
+/generator/rate/set 1.0
