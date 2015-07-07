@@ -3,6 +3,7 @@
 
 /rat/db/set DETECTOR experiment "chooz"
 /rat/db/set DETECTOR geo_file "chooz/chooz.geo"
+/rat/db/load ./IBD.ratdb
 
 /run/numberOfThreads 4
 /run/initialize

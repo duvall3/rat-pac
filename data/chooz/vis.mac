@@ -34,7 +34,8 @@
 # To get nice view
 #/vis/geometry/set/visibility world 0 false
 /vis/viewer/set/background black
-/vis/viewer/zoom 1.2
+/vis/viewer/zoom 8
+/vis/viewer/pan 0 -9 m
 
 # set or correct volume properties for wireframe:
 /vis/geometry/set/colour cave 0 .6 .2 .1 1.
