@@ -1,0 +1,6 @@
+# gen_nugun.mac -- nuebar gun
+
+/generator/add combo gun:point:poisson
+/generator/vtx/set anti_nu_e 1 0 0 4.0
+/generator/pos/set -8000 -4400 0
+/generator/rate/set 1.0
