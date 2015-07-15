@@ -1,0 +1,7 @@
+# mu.mac -- IBD generator for SANTA-style experiment
+#	-- uses altered IBD.ratdb
+
+/generator/add combo gun:fill:poisson
+/generator/vtx/set mu- 0 0 1 500.0
+/generator/pos/set 0 -9000 -1000
+/generator/rate/set 1
