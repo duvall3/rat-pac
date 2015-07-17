@@ -1,19 +1,14 @@
 // extract n0-capture information from ROOT file
 // NOTE: ONLY NEUTRONS PRODUCED BY A GENERATOR WILL BE RECORDED (no muogenics, etc.)
-// recommended usage: root -q -l -b NeutronCaptures.cxx > OUTPUT_FILENAME.n0
+// recommended usage: root -q -l -b 'NeutronCaptures.cxx("INPUT_FILENAME",NUMBER_OF_EVENTS)' > OUTPUT_FILENAME.n0
 
-void NeutronCaptures() {
+void NeutronCaptures(const char* inputfile, int number_of_events) {
 
-// edit following line for INPUT_FILENAME
-TFile *file0 = TFile::Open("water.root");
-
-// edit following line for INPUT_FILENAME
-RAT::DSReader r("water.root");
-
+TFile *file0 = TFile::Open(inputfile);
+RAT::DSReader r(inputfile);
 printf( "# # # # # #\n\n" );
 
-// edit following line for NUMBER_OF_EVENTS
-for (int event=1; event<=1000; event++) {
+for (int event=1; event<=number_of_events; event++) {
 
   printf( "Event: %i\n", event );
 
