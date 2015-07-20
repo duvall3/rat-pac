@@ -2,5 +2,5 @@
 
 /generator/add combo gun:point:poisson
 /generator/vtx/set neutron 0 0 1 0.01  # 10keV neutrons directed along the +z axis
-/generator/pos/set 0 -9000 0
+/generator/pos/set 0 -9450 0
 /generator/rate/set 1

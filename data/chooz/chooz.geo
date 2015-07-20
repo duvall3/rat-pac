@@ -42,7 +42,7 @@ r_max: 550.0, // mm
 size_z: 550.0, // mm
 material: "steel",
 color: [0.5, 0.5, 0.5],
-position: [0.0, -9000.0, 0.0] // mm
+position: [0.0, -9450.0, 0.0] // mm
 rotation: [90.0, 0.0, 0.0] // degrees
 }
 
@@ -57,7 +57,8 @@ mother: "tank",
 type: "tube",
 r_max: 500.0, // mm
 size_z: 500.0, // mm
-material: "scintillator",
+material: "gd_scintillator", // CHOOZ target
+//material: "doped_water", // WATCHMAN target
 color: [0, 0, 1],
 }
 

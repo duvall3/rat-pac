@@ -5,7 +5,7 @@
 # Use these open statements to open selected visualization
 #
 # Use this open statement to create an OpenGL view:
-/vis/open OGLIX 1000x1000-0+0
+/vis/open OGLIQt 1000x1000-0+0
 #
 # Disable auto refresh and quieten vis messages whilst scene and
 # trajectories are established:

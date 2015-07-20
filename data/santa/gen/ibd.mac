@@ -3,5 +3,5 @@
 
 /generator/add combo ibd:fill:poisson
 /generator/vtx/set 0 0 1
-/generator/pos/set 0 -9000 -1000
+/generator/pos/set 0 -9000 -500
 /generator/rate/set 1
