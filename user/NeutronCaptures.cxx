@@ -7,7 +7,7 @@ void NeutronCaptures(const char* inputfile, int number_of_events) {
 TFile *file0 = TFile::Open(inputfile);
 RAT::DSReader r(inputfile);
 printf( "\n# # # # # #\n" );
-printf( "If program fails, try checking the c.GoChild() line in this macro, which is (most likely) located in $ROOTSYS/macros.\n" );
+printf( "If program fails, try checking the c.GoChild() line in this macro, which should be located in $ROOTSYS/macros.\n" );
 printf( "# # # # # #\n\n" );
 
 for (int event=1; event<=number_of_events; event++) {
@@ -31,7 +31,7 @@ for (int event=1; event<=number_of_events; event++) {
   RAT::TrackNode *n = c.Here();
 
   // check volume at track termination
-  if ( n->GetVolume() != "target" ) cout << "Warning: n0 track terminates in volume '" << n->GetVolume() << "'" << endl;
+  if ( n->GetVolume() != "target" ) cerr << "Warning: n0 track for event " << event << "terminates in volume '" << n->GetVolume() << "'" << endl;
 
   // now get capture information
   if ( n->GetProcess() == "nCapture" ) {
@@ -42,7 +42,7 @@ for (int event=1; event<=number_of_events; event++) {
     
   }
   else { // track terminated by some other process
-    cout << "Warning: Track terminated by " << n->GetProcess() << " instead of nCapture." << endl;
+    cerr << "Warning: n0 track for event " << event << " terminated by " << n->GetProcess() << " instead of nCapture." << endl;
     printf( "Endpoint:\t%f %f %f\n", n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
   }
     
