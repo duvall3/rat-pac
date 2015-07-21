@@ -21,4 +21,13 @@ echo "\
 # create conflog & run rat
 conflog.sh > "$FILENAME".conf && rat run.mac
 
+# rename log file -- ASSUMING NO OTHER LOG FILES ARE CREATED IN LOCAL DIRECTORY DURING RUN!!!
+LOGFILE=$(basename $(ls -ltr *.log | tail -1 | awk '{print $NF}') .log)
+rename s/$LOGFILE/$FILENAME/ ./$LOGFILE.log
+
+# make output directory & move all the new output files there
+mkdir $FILENAME
+mv $FILENAME.* $FILENAME
+
+# all pau =)
 exit 0
