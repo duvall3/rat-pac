@@ -39,6 +39,7 @@ for (int event=1; event<=number_of_events; event++) {
     c.GoChild(c.ChildCount()-1); // capturing entity should be the last child
     RAT::TrackNode *n = c.Here();
     printf( "End:\t\t% 5.6f\t% 5.6f\t% 5.6f\n", n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
+    printf( "Time: %f\n", n->GetGlobalTime() );
     cout << "Capture: " << n->GetParticleName() << endl;
     
   }
