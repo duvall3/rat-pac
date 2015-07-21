@@ -8,6 +8,7 @@ hold on
 o = scatter3( 0, 0, 0, 'marker', '*', 'sizedata', 625, 'cdata', [1 0 0], 'LineWidth', 3 );
 
 % labels
+T = title('Neutron-Capture Displacements', 'interpreter', 'none');
 xlabel 'x (cm)'
 ylabel 'y (cm)'
 zlabel 'z (cm)'
