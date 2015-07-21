@@ -19,6 +19,6 @@ echo "\
 " > run.mac
 
 # create conflog & run rat
-#conflog.sh > "$FILENAME".conf && rat run.mac
+conflog.sh > "$FILENAME".conf && rat run.mac
 
 exit 0
