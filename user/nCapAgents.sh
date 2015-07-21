@@ -41,7 +41,7 @@ done
 
 #printf "\n\n### Neutron Capture Information ###\n"
 
-printf "\n\nTOTAL: %i\n" $total_captures
+printf "\n\nTOTAL: %i\n\n" $total_captures
 
 for (( k2=0; k2<k1; k2++ )); do
   if [ $isbc = true ]; then
