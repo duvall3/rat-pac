@@ -14,7 +14,7 @@ fi
 if [ $(which awk) ]; then awkprogram=awk
   elif [ $(which gawk) ]; then awkprogram=gawk
   elif [ $(which mawk) ]; then awkprogram=mawk
-  else echo "ERROR: No awk program found. Go download awk, gawk, or mawk from your repositories. You'll be glad you did."; exit 1
+  else echo "ERROR: No awk program found. Go download awk, gawk, or mawk from your repositories. You'll be glad you did.   )"; exit 1
 fi
 
 
@@ -39,8 +39,6 @@ done
 
 ## print results
 
-#printf "\n\n### Neutron Capture Information ###\n"
-
 printf "\n\nTOTAL: %i\n\n" $total_captures
 
 for (( k2=0; k2<k1; k2++ )); do
@@ -54,5 +52,5 @@ done
 printf "\n\n"
 
 
-## all pau!   )
+# all pau!   )
 exit 0

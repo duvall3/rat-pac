@@ -1,5 +1,5 @@
 #!/bin/bash
-# ratrun -- simple script to configure & execute RAT-PAC run macros
+# ratrun -- master script to configure & execute RAT-PAC run macros
 
 echo
 printf "\n### RAT RUN ###\n\n"
@@ -31,7 +31,7 @@ rename s/$LOGFILE/$FILENAME/ ./$LOGFILE.log
 # process neutron-capture information
 ROOTFILE="$FILENAME".root
 ROOTCOMMAND=$(printf "'NeutronCaptures.cxx(\"$ROOTFILE\",$NUM_EVENTS)'")
-eval "root -q -l -b $ROOTCOMMAND >  \"$FILENAME\".n0"
+eval "root -q -l -b $ROOTCOMMAND > \"$FILENAME\".n0"
 endpoints.sh "$FILENAME".n0 > "$FILENAME".txt
 nCapAgents.sh "$FILENAME".n0 | column -t > "$FILENAME".cap
 
