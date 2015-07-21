@@ -32,6 +32,7 @@ for (int event=1; event<=number_of_events; event++) {
 
   // check volume at track termination
   if ( n->GetVolume() != "target" ) cerr << "Warning: n0 track for event " << event << "terminates in volume '" << n->GetVolume() << "'" << endl;
+  if ( n->GetVolume() != "target" ) cout << "Warning: n0 track for event " << event << "terminates in volume '" << n->GetVolume() << "'" << endl;
 
   // now get capture information
   if ( n->GetProcess() == "nCapture" ) {
@@ -43,6 +44,7 @@ for (int event=1; event<=number_of_events; event++) {
   }
   else { // track terminated by some other process
     cerr << "Warning: n0 track for event " << event << " terminated by " << n->GetProcess() << " instead of nCapture." << endl;
+    cout << "Warning: n0 track for event " << event << " terminated by " << n->GetProcess() << " instead of nCapture." << endl;
     printf( "Endpoint:\t%f %f %f\n", n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
   }
     
