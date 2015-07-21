@@ -7,7 +7,7 @@ void NeutronCaptures(const char* inputfile, int number_of_events) {
 TFile *file0 = TFile::Open(inputfile);
 RAT::DSReader r(inputfile);
 printf( "\n# # # # # #\n" );
-printf( "If program fails, try checking the c.GoChild() line in this macro.\n" );
+printf( "If program fails, try checking the c.GoChild() line in this macro, which is (most likely) located in $ROOTSYS/macros.\n" );
 printf( "# # # # # #\n\n" );
 
 for (int event=1; event<=number_of_events; event++) {
