@@ -29,5 +29,5 @@ rename s/$LOGFILE/$FILENAME/ ./$LOGFILE.log
 mkdir $FILENAME
 mv $FILENAME.* $FILENAME
 
-# all pau =)
+# all pau!  =)
 exit 0
