@@ -9,7 +9,7 @@ read FILENAME
 printf "\nEnter number of events: "
 read NUM_EVENTS
 
-printf "\n\n### Beginning run..."
+printf "\n\n### Beginning run...\n\n"
 
 # create new run.mac
 echo "\
