@@ -6,6 +6,8 @@ void NeutronCaptures(const char* inputfile, int number_of_events) {
 
 TFile *file0 = TFile::Open(inputfile);
 RAT::DSReader r(inputfile);
+printf( "\n# # # # # #\n" );
+printf( "If program fails, try checking the c.GoChild() line in this macro.\n" );
 printf( "# # # # # #\n\n" );
 
 for (int event=1; event<=number_of_events; event++) {
@@ -17,7 +19,7 @@ for (int event=1; event<=number_of_events; event++) {
   RAT::TrackNav nav(ds);
   RAT::TrackCursor c = nav.Cursor(false);  // create cursor
 
-  // edit the following line based on which generator was used
+  // to choose neutrons, edit the following line based on which generator was used:
   c.GoChild(0); // 0 for gun, 1 for IBD
 
   // get starting point
