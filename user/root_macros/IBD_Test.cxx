@@ -1,6 +1,6 @@
 // IBD_Test: extract information about products of RAT-PAC's IBD generator from tracks in ROOT file
 //   -- namely, get initial directions & energy of neutrons & positrons for testing purposes (4-momentum conservation, angular distributions, etc.)
-// NOTE: ONLY NEUTRONS PRODUCED BY A GENERATOR WILL BE RECORDED (no muogenics, etc.)
+// NOTE: ONLY NEUTRONS PRODUCED BY THE GENERATOR WILL BE RECORDED (no muogenics, etc.)
 // recommended usage: root -q -l -b 'IBD_Test.cxx("INPUT_FILENAME",NUMBER_OF_EVENTS)' > OUTPUT_FILENAME.ibd
 
 void IBD_Test(const char* inputfile, int number_of_events) {
