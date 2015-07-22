@@ -5,6 +5,8 @@
 
 void IBD_Test(const char* inputfile, int number_of_events) {
 
+printf( "\n\n### IBD_Test ###\n\n\n" );
+
 TFile *file0 = TFile::Open(inputfile);
 RAT::DSReader r(inputfile);
 
@@ -26,10 +28,12 @@ for (int event=1; event<=number_of_events; event++) {
   // start with the e+
   c.GoChild(0);
   RAT::TrackNode *n = c.Here(); // create node pointer
-  if ( n->GetParticleName() != "e+" ) // make sure particle is e+
-    cout << "ERROR: Particle mismatch in event " << event << "(not e+). Exiting..." << endl;
-    cerr << "ERROR: Particle mismatch in event " << event << "(not e+). Exiting..." << endl;
+  if ( n->GetParticleName() == "e+" ) printf("yes, e+!\n"); // for debugging
+/*  if ( n->GetParticleName() != "e+" ) // make sure particle is e+
+    cout << "ERROR: Particle mismatch in event " << event << " (not e+). Exiting..." << endl;
+    cerr << "ERROR: Particle mismatch in event " << event << " (not e+). Exiting..." << endl;
     return;
+*/
 
   // get e+ starting point & initial KE
   if ( n->IsTrackStart() == false ) printf( "WARNING: Bad track start!" ); // sanity check
@@ -48,19 +52,19 @@ for (int event=1; event<=number_of_events; event++) {
   // now the n0
   RAT::TrackNode *n = c.Here(); // create node pointer
   if ( n->GetParticleName() != "neutron" ) // make sure particle is neutron
-    cout << "ERROR: Particle mismatch in event " << event << "(not neutron). Exiting..." << endl;
-    cerr << "ERROR: Particle mismatch in event " << event << "(not neutron). Exiting..." << endl;
+    cout << "ERROR: Particle mismatch in event " << event << " (not neutron). Exiting..." << endl;
+    cerr << "ERROR: Particle mismatch in event " << event << " (not neutron). Exiting..." << endl;
     return;
 
   // get starting point
   RAT::TrackNode *n = c.Here(); // create node pointer
   if ( n->IsTrackStart() == false ) printf( "WARNING: Bad track start!" ); // sanity check
-  printf( "n0_Begin:\t\t% 5.6f\t% 5.6f\t% 5.6f\n", n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
+  printf( "n0_Begin = \t\t% 5.6f\t% 5.6f\t% 5.6f\n", n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
 
   // go to very next step in order to get position for determining initial direction
   c.GoNext();
   RAT::TrackNode *n = c.Here();
-  printf( "n0_First_Position:\t% 5.6f\t% 5.6f\t% 5.6f\n", n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
+  printf( "n0_First_Position = \t% 5.6f\t% 5.6f\t% 5.6f\n", n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
 
   // done with the n0
 
