@@ -1,4 +1,5 @@
-% plot_cap_locs -- make 3D plot of endpoints from {x,y,z} (!assuming output from 'endpoints.m'!)
+% plot_cap_locs -- make 3D plot of endpoints from {x,y,z}
+%  -- assuming duvall3/rat-pac/user/m_files/n0_endpoints.m has just been run
 % ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ July 2015 ~ #
 
 
@@ -25,5 +26,5 @@ xlim(L); ylim(L); zlim(L);
 set(ax, 'DataAspectRatio', [1 1 1])
 set(ax, 'xgrid', 'on', 'ygrid', 'on', 'zgrid', 'on')
 
-% make nice interactive
+% set camera to nice rotational mode
 cameratoolbar('SetMode', 'orbit')

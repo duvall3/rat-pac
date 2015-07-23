@@ -1,4 +1,5 @@
-% r_distrib -- histogram neutron-capture displacement distances, !!assuming endpoints.sh has just been run!!
+% r_distrib -- histogram neutron-capture displacement distances
+%  -- assuming duvall3/rat-pac/user/m_files/n0_endpoints.m has just been run
 % ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ July 2015 ~ #
 
 
