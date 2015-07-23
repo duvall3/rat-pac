@@ -1,4 +1,4 @@
-% n0_endpoints -- read in positions & generate vectors for delta_{x,y,z,r} from neutron-capture table
+% n0_data -- read in positions & generate vectors for delta_{x,y,z,r} from neutron-capture table
 %  -- intended for use with the output from duvall3/rat-pac/user/shell_scripts/n0_dat_to_txt.sh,
 %        in which case you should read in the data with this command:  data = dlmread( 'FILENAME.dat.txt', '', 1, 0 );
 % ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ July 2015 ~ #
