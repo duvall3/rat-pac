@@ -1,6 +1,7 @@
 // extract n0-capture information from ROOT file
-// NOTE: ONLY NEUTRONS PRODUCED BY A GENERATOR WILL BE RECORDED (no muogenics, etc.)
-// recommended usage: root -q -l -b 'NeutronCaptures.cxx("INPUT_FILENAME",NUMBER_OF_EVENTS)' > OUTPUT_FILENAME.n0
+//   -- NOTE: ONLY NEUTRONS PRODUCED BY A GENERATOR WILL BE RECORDED (no muogenics, etc.)
+//   -- recommended usage: root -q -l -b 'NeutronCaptures.cxx("INPUT_FILENAME",NUMBER_OF_EVENTS)' > OUTPUT_FILENAME.n0
+// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ July 2015 ~
 
 void NeutronCaptures(const char* inputfile, int number_of_events) {
 
@@ -54,6 +55,7 @@ for (int event=1; event<=number_of_events; event++) {
 
 }
 
+// all pau!   )
 return;
 
 }
