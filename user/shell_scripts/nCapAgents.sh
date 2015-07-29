@@ -1,5 +1,5 @@
 #!/bin/bash
-# nCapAgents -- process a DATARUN.n0 file* for capturing-agent info
+# nCapAgents -- process a FILENAME.n0.dat file* for capturing-agent statistics
 #	*i.e., output from $ROOTSYS/macros/NeutronCaptures.cxx
 # ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ July 2015 ~ #
 

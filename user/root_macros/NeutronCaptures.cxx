@@ -1,20 +1,22 @@
 // extract n0-capture information from ROOT file
 //   -- NOTE: ONLY NEUTRONS PRODUCED BY A GENERATOR WILL BE RECORDED (no muogenics, etc.)
-//   -- recommended usage: root -q -l -b 'NeutronCaptures.cxx("INPUT_FILENAME",NUMBER_OF_EVENTS)' > OUTPUT_FILENAME.n0
+//   -- recommended usage: root -q -l -b 'NeutronCaptures.cxx("INPUT_FILENAME",NUMBER_OF_EVENTS)' > OUTPUT_FILENAME.n0.dat
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ July 2015 ~ //
 
 void NeutronCaptures(const char* inputfile, int number_of_events) {
 
 TFile *file0 = TFile::Open(inputfile);
 RAT::DSReader r(inputfile);
+
 printf( "\n# # # # # #\n" );
 printf( "If program fails, try checking the c.GoChild() line in this macro, which should be located (or linked) in $ROOTSYS/macros.\n" );
-printf( "# # # # # #\n\n\n" );
+printf( "position: mm\ntime: ns\nenergy: MeV\n" );
+printf( "# # # # # #\n" );
+printf( "\n\n\n" );
 
 for (int event=1; event<=number_of_events; event++) {
 
   printf( "Event: %i\n", event );
-//printf( "#\n" );
 
   RAT::DS::Root *ds = r.NextEvent(); // load event
   
@@ -29,7 +31,7 @@ for (int event=1; event<=number_of_events; event++) {
   // get starting point
   RAT::TrackNode *n = c.Here(); // create node pointer
   if ( n->IsTrackStart() == false ) printf( "WARNING: Bad track start!" ); // sanity check
-  printf( "Begin (mm):\t\t% 5.6f\t% 5.6f\t% 5.6f\n", n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
+  printf( "Begin:\t\t% 5.6f\t% 5.6f\t% 5.6f\n", n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
 
   c.GoTrackEnd(); // move cursor to end of track
   RAT::TrackNode *n = c.Here(); // node pointer to last step of n0 track
@@ -43,8 +45,8 @@ for (int event=1; event<=number_of_events; event++) {
   // now get capture info
   if ( n->GetProcess() == "nCapture" ) {
     RAT::TrackNode *n = c.Here();
-    printf( "End (mm):\t\t% 5.6f\t% 5.6f\t% 5.6f\n", n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
-    printf( "Time (ns): %f\n", n->GetGlobalTime() );
+    printf( "End:\t\t% 5.6f\t% 5.6f\t% 5.6f\n", n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
+    printf( "Time: %f\n", n->GetGlobalTime() );
 
     // gamma information:
     int gammas(0);
@@ -64,7 +66,7 @@ for (int event=1; event<=number_of_events; event++) {
       } // end if
       c.GoParent();
       } // end for
-    printf( "Gammas: %i\nTotal Gamma Energy (MeV): % 5.6f\n", gammas, gamma_KE_total );
+    printf( "Gammas: %i\nTotal Gamma Energy: % 5.6f\n", gammas, gamma_KE_total );
     
     // capture-agent information:
     c.GoChild(num_of_children-1);
