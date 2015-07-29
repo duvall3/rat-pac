@@ -4,7 +4,7 @@
 % ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ July 2015 ~ #
 
 
-data = data/10;  % convert mm to cm
+data(:,1:6) = data(:,1:6)/10;  % convert mm to cm
 % positions
 x0 = data(:,1); y0 = data(:,2); z0 = data(:,3);
 xf = data(:,4); yf = data(:,5); zf = data(:,6);
