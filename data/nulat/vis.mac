@@ -16,7 +16,7 @@
 /vis/drawVolume
 #
 # Specify view angle:
-/vis/viewer/set/viewpointVector .5 .1 -.3
+/vis/viewer/set/viewpointVector .5 .1 .3
 /vis/viewer/set/lightsVector .4 .9 .6
 #
 # Specify style (surface, wireframe, auxiliary edges,...)
@@ -26,31 +26,34 @@
 #
 
 # Axes, scale, etc.
-/vis/set/textSize 20.0
-#/vis/scene/add/axes/g 0 -9 -3.5 1 m white   # Simple axes: x=red, y=green, z=blue.
+/vis/set/textSize 18.0
+#/vis/scene/add/axes/g 0 -9.45 -2 1 m grey false # Simple axes: x=red, y=green, z=blue.
 /vis/scene/add/date    # Date stamp
 
 
 # To get nice view
 #/vis/geometry/set/visibility world 0 false
-#/vis/viewer/set/background .8 .8 .8 .1
-/vis/viewer/set/background black .1
-/vis/viewer/zoom 3.5
-/vis/viewer/pan 0.5 -8 m
+/vis/viewer/set/background black
+/vis/viewer/zoom 8
+/vis/viewer/pan 0 -9 m
 
-# set volume properties for wireframe:
-/vis/geometry/set/lineWidth world -1 3
-/vis/geometry/set/colour cave 0 .6 .2 .1 .1
-/vis/geometry/set/colour target_plane 0 0 .7 1 .5
-/vis/geometry/set/colour ibd_vertex 0 0 1 1 .5
-/vis/geometry/set/colour capture_plane 0 0 .5 1 .5
-/vis/viewer/set/style w
+# set or correct volume properties:
+/vis/geometry/set/colour world 0 .6 .2 .1 .1
+/vis/geometry/set/visibility world 0 1
+#/vis/geometry/set/colour cave 0 0 0 0 .2
+/vis/geometry/set/colour cave_floor 0 .6 .2 .1 .3
+/vis/geometry/set/colour cave_ceiling 0 .6 .2 .1 .3
+/vis/geometry/set/colour cave_back 0 .6 .2 .1 .3
+/vis/geometry/set/colour cave_lwall 0 .6 .2 .1 .3
+/vis/geometry/set/colour cave_rwall 0 .6 .2 .1 .3
+/vis/geometry/
+/vis/viewer/set/style s
 # or surface:
-#/vis/geometry/set/colour cave 0 .6 .2 .1 .5
 #/vis/geometry/set/colour
 #/vis/geometry/set/colour
 
 /vis/viewer/set/hiddenMarker true
+/vis/viewer/set/targetPoint 0 -9 0 m
 
 # Draw smooth trajectories at end of event, showing trajectory points
 # as markers 2 pixels wide:
