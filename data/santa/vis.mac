@@ -71,3 +71,9 @@
 
 # accumulate event:
 /vis/scene/endOfEventAction accumulate
+
+
+# for geo setup:
+/vis/viewer/set/autoRefresh 1
+/vis/viewer/set/targetPoint 0 -9200 500 mm
+
