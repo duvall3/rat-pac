@@ -42,7 +42,7 @@ mother: "cave",
 type: "box",
 size: [1000.0, 1000.0, 2.5] // mm
 position: [0.0, -9000.0, -500.0] // mm
-material: "scintillator",
+material: "air",   // this volume will contain scintillator strips
 color: [0, 0, 1],
 }
 
