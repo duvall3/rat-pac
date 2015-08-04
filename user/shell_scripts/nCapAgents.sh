@@ -31,7 +31,7 @@ if [ -e ./$OUTPUTFILE.cap -o -e ./gam ]; then
 # fi
 fi
 
-# prepare folder for $agent.gam files
+# make folder for $agent.gam files
 mkdir gam
 
 # check for 'awk' & 'bc' programs

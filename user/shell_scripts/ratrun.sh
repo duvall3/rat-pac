@@ -53,7 +53,12 @@ nCapAgents.sh "$FILENAME".n0.dat
 
 # make output directory & move all the new output files there
 mkdir $FILENAME
-mv $FILENAME.* $FILENAME
+mv -t $FILENAME $FILENAME.* gam/
 
-# all pau!  )
+
+## specific to my (the author's) system
+mv $FILENAME /home/mark/llnl/data && ln -s /home/mark/llnl/data/$FILENAME/ .
+
+
+## all pau!  )
 exit 0
