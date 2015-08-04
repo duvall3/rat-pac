@@ -48,7 +48,8 @@ ROOTFILE="$FILENAME".root
 ROOTCOMMAND=$(printf "'NeutronCaptures.cxx(\"$ROOTFILE\",$NUM_EVENTS)'")
 eval "root -q -l -b $ROOTCOMMAND > \"$FILENAME\".n0.dat"
 n0_dat_to_txt.sh "$FILENAME".n0.dat | column -t > "$FILENAME".txt
-nCapAgents.sh "$FILENAME".n0.dat | column -t > "$FILENAME".cap
+nCapAgents.sh "$FILENAME".n0.dat
+#plot_gammas_mfile $FILENAME # not ready yet
 
 # make output directory & move all the new output files there
 mkdir $FILENAME
