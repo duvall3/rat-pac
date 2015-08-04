@@ -71,19 +71,22 @@ echo "gam done" #debugging
 
 ## print results
 
-echo "beginning ./$OUTPUTFILE.cap" #debugging
+echo "writing ./$OUTPUTFILE.cap" #debugging
 
-printf "TOTAL: %i\n\n" $total_captures >> ./$OUTPUTFILE.cap
+printf "TOTAL:\t%i\n\n" $total_captures > ./$OUTPUTFILE.cap_temp
 
 for (( k2=0; k2<k1; k2++ )); do
   if [ $isbc = true ]; then
-    printf "%s: %i %2.2f%%\n" ${agent_names[$k2]} ${agent_totals[$k2]} ${agent_pcts[$k2]} >> ./$OUTPUTFILE.cap
+    printf "%s:\t\t%i\t\t%2.2f%%\n" ${agent_names[$k2]} ${agent_totals[$k2]} ${agent_pcts[$k2]} >> ./$OUTPUTFILE.cap_temp
   else
-    printf "%s:\t%i / %i\n" ${agent_names[$k2]} ${agent_totals[$k2]} $total_captures >> ./$OUTPUTFILE.cap
+    printf "%s:\t\t%i\t\t/ %i\n" ${agent_names[$k2]} ${agent_totals[$k2]} $total_captures >> ./$OUTPUTFILE.cap_temp
   fi
 done
 
-printf "\n\n" >> ./$OUTPUTFILE.cap
+printf "\n\n" >> ./$OUTPUTFILE.cap_temp
+
+column -t ./$OUTPUTFILE.cap_temp > ./$OUTPUTFILE.cap
+rm ./$OUTPUTFILE.cap_temp
 
 
 # all pau!   )
