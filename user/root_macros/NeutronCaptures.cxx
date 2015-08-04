@@ -14,7 +14,7 @@ printf( "position: mm\ntime: ns\nenergy: MeV\n" );
 printf( "# # # # # #\n" );
 printf( "\n\n\n" );
 
-for (int event=1; event<=number_of_events; event++) {
+for (int event=1; event<=number_of_events; event++) { // event loop
 
   printf( "Event: %i\n", event );
 
@@ -48,11 +48,18 @@ for (int event=1; event<=number_of_events; event++) {
     printf( "End:\t\t% 5.6f\t% 5.6f\t% 5.6f\n", n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
     printf( "Time: %f\n", n->GetGlobalTime() );
 
+    // capture-agent information:
+    int num_of_children = c.ChildCount();
+    c.GoChild(num_of_children-1);
+    RAT::TrackNode *n = c.Here(); // node pointer for final child
+    cout << "Capture: " << n->GetParticleName() << endl;
+    c.GoParent();
+
     // gamma information:
     int gammas(0);
     float gamma_KE_total(0);
-    int num_of_children = c.ChildCount();
-    for ( int child=0; child<(num_of_children-1); child++ ) {
+    for ( int child=0; child<(num_of_children-1); child++ ) { // loop over children
+      bool problem_child_tf = false;
       // all children except last should be gammas
       c.GoChild(child);
       RAT::TrackNode *n = c.Here(); // node pointer for gamma
@@ -60,18 +67,19 @@ for (int event=1; event<=number_of_events; event++) {
       if ( n->GetParticleName()=="gamma" ) {
         gammas++;
         gamma_KE_total = gamma_KE_total + n->GetKE();
-      } else { // child not gamma
-        cerr << "Warning: Unexpected child particle type in event " << event << ": " << n->GetParticleName() << endl;
-        cout << "Warning: Unexpected child particle type in event " << event << ": " << n->GetParticleName() << endl;
+      } else { // child not gamma -- NOTE: current version will only report name of first unexpected child particle
+        problem_child_tf = true;
+        TString problem_child_name = n->GetParticleName();
       } // end if
       c.GoParent();
-      } // end for
+      } // end for -- child loop
     printf( "Gammas: %i\nTotal Gamma Energy: % 5.6f\n", gammas, gamma_KE_total );
-    
-    // capture-agent information:
-    c.GoChild(num_of_children-1);
-    RAT::TrackNode *n = c.Here(); // node pointer for final child
-    cout << "Capture: " << n->GetParticleName() << endl;
+    if ( problem_child_tf == true ) {
+      cerr << "Warning: Unexpected child particle type in event " << event << ": " << problem_child_name << endl;
+      cout << "Warning: Unexpected child particle type in event " << event << ": " << problem_child_name << endl;
+    } else { // no problem children
+    } // end if
+
     
 
   } else { // track terminated by some other process
@@ -79,13 +87,13 @@ for (int event=1; event<=number_of_events; event++) {
     cout << "Warning: n0 track for event " << event << " terminated by " << n->GetProcess() << " instead of nCapture." << endl;
     printf( "Endpoint:\t%f %f %f\n", n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
 
-  }
+  } // end if
     
 
   cout << endl << endl;
 
 
-}
+} // end for -- track loop
 
 // all pau!   )
 return;
