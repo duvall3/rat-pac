@@ -56,9 +56,8 @@ mkdir $FILENAME
 mv -t $FILENAME $FILENAME.* gam/
 
 
-## specific to my (the author's) system
-mv $FILENAME /home/mark/llnl/data && ln -s /home/mark/llnl/data/$FILENAME/ .
-
+## reminder
+echo "Reminder: Move output to storage if desired."
 
 ## all pau!  )
 exit 0

@@ -1,5 +1,6 @@
 #!/bin/bash
 # plot_gammas_mfile -- generate m-file for making total & agent-specific plots of gamma multiplicities & energy totals
+# 	-- usage: simply run in folder which contains ./gam/ subdirectory
 # ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ August 2015 ~ #
 
 
@@ -26,7 +27,7 @@ echo "\
   % multiplicity plot
   f_mult = figure('position', [1000 100 1.5*[560 420]]);
   ax_mult = axes;
-  s_mult = stairs( mult, h_g_mult );
+  s_mult = stairs( mult-0.5, h_g_mult ); % -0.5 to center hist. bars on integers
   xla_mult = xlabel('Multiplicity');
   T_mult = title('Gamma Multiplicities for $DATARUN', 'interpreter', 'none');
   % energy plot
@@ -45,7 +46,18 @@ echo "\
 
 
 ## get data for each capture agent
-echo "%% INDIVIDUAL PLOTS" >> ./plot_gammas.m
+num_agents=$(ls ./gam/*.gam | wc -l)
+
+echo "%% INDIVIDUAL PLOTS\
+
+  num_agents = $num_agents;
+  agent_names = cell(1,$num_agents);
+  colormap(jet);
+  fullcolormap = colormap(jet);
+  cmap = zeros($num_agents,3);
+  for k_col = 1:num_agents; cmap(k_col,:) = fullcolormap( round(k_col/num_agents*64), : ); end
+  
+" >> ./plot_gammas.m
 
 for agent_file in ./gam/*.gam; do
   
@@ -76,7 +88,11 @@ echo "\
     ax_mult_by_agent = axes;
     T_mult_by_agent = title('Gamma Multiplicity', 'interpreter', 'none');
     xl_mult_by_agent = xlabel( 'Number of Gammas' );
+    
+    agent_mult_handles = zeros(1,num_agents);
 
+    k_agent = 1;
+    
     hold on
 
 " >> ./plot_gammas.m
@@ -86,8 +102,12 @@ for agent_file in ./gam/*.gam; do
   agent=$(basename $agent_file .gam | sed s/-/_minus/ | sed s/+/_plus/)
 
   echo "\
+    agent_names{k_agent} = '$agent';
+    
     h_g_mult_$agent = hist( g_mult_$agent, mults );
-    p_mult_$agent = stairs( mults, h_g_mult_$agent );
+    p_mult_$agent = stairs( mults-0.5, h_g_mult_$agent, 'color', cmap(k_agent,:) ); % -0.5 to center hist. bars on integers
+    agent_mult_handles(k_agent) = p_mult_$agent;
+    k_agent = k_agent+1;
     %close f_mult_$agent % can enable once saving is decided
 
 " >> ./plot_gammas.m
@@ -95,7 +115,12 @@ for agent_file in ./gam/*.gam; do
 #    %save (f_mult_$agent, 'f_mult_$agent.fig %.....png also.....syntax.....')
 #    %close %figure
 done
-echo
+
+echo "\
+  % legend for multiplicity plot
+  L_mult = legend( agent_mult_handles, agent_names, 'Location', 'NorthEastOutside');
+
+" >> ./plot_gammas.m
 
 
 
@@ -108,6 +133,10 @@ echo "\
     xl_ke_by_agent = xlabel('Energy (MeV)');
     T_ke_by_agent = title('Total Gamma-Capture Energy for $DATARUN', 'interpreter', 'none');
     
+    agent_ke_handles = zeros(1,num_agents);
+    
+    k_agent = 1;
+    
     hold on
 
 " >> ./plot_gammas.m
@@ -119,16 +148,22 @@ for agent_file in ./gam/*.gam; do
   echo "\
     % GAMMA ENERGIES (per agent)
     h_g_ke_$agent = hist( g_ke_$agent, E );
-    p_ke_$agent = stairs( E, h_g_ke_$agent + .01 ); % +.01 makes every count finite so ML will draw graph properly
+    p_ke_$agent = stairs( E, h_g_ke_$agent + .01, 'color', cmap(k_agent,:) ); % +.01 makes every count finite so ML will draw graph properly
+    agent_ke_handles(k_agent) = p_ke_$agent;    
+    k_agent = k_agent+1;
     
 " >> ./plot_gammas.m
 
 done
 
 echo "\
-set(ax_ke_by_agent, 'yscale', 'log');
-YL = get(ax_ke_by_agent, 'ylim');
-ylim([10^0 YL(2)])
+  % axes, legend, etc.
+  set(ax_ke_by_agent, 'yscale', 'log');
+  YL = get(ax_ke_by_agent, 'ylim');
+  ylim([10^0 YL(2)])
+  
+  L_ke = legend( agent_ke_handles, agent_names, 'Location', 'NorthEastOutside' );
+
 " >> ./plot_gammas.m
 
 
