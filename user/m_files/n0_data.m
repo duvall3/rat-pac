@@ -10,7 +10,7 @@ x0 = data(:,1); y0 = data(:,2); z0 = data(:,3);
 xf = data(:,4); yf = data(:,5); zf = data(:,6);
 % displacements
 x = xf - x0; y = yf - y0; z = zf - z0;
-r = sqrt( x.^2 + y.^2 + z.^2 );
+r = sqrt( x.^2 + y.^2 + z.^2 ); %!!std|rms!!%
 % times
 t = data(:,7)/1000; % convert ns to us
 % gammas: number & total energy

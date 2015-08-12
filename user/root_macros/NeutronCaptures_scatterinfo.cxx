@@ -41,19 +41,18 @@ for (int event=1; event<=number_of_events; event++) { // event loop
   
   while ( n->IsTrackEnd() == false ) { // loop over steps w/in track
     RAT::TrackNode *n = c.GoNext();
-    if ( (scatter_count > 0) && (scatter_count % 5) == 0) {
-      printf( "%i Scatters:\t\t% 5.6f\t% 5.6f\t% 5.6f\n", scatter_count, n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
+//  if ( scatter_count==1 || ((scatter_count > 0) && (scatter_count % 5) == 0)) {
+    // get location at scatters 1,5,10,20 (sloppy, but arrays are a pain):
+    if ( scatter_count==1 || scatter_count==5 || scatter_count==10 || scatter_count==20 ) {
+      printf( "%i Scatter(s):\t% 5.6f\t% 5.6f\t% 5.6f\n", scatter_count, n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
     } // end if (for counting every 5 scatters)
-    if ( n->GetProcess() == "hadElastic" ) scatter_count++; // *after* N scatters, so this happens after getting position
+    if ( n->GetProcess() == "hadElastic" ) scatter_count++;
   } // end step loop
   
   // should be at end of track now
   RAT::TrackNode *n = c.Here();
-  if ( n->IsTrackEnd() != true ) {cout << "Error: not track end" << endl; cerr << "Error: not track end" << endl; } // sanity check
+  if ( n->IsTrackEnd() == false ) {cout << "Error: not track end" << endl; cerr << "Error: not track end" << endl; } // sanity check
     
-  // print total scatters from production to capture
-  printf( "Total Scatters: %i\n", scatter_count );
-
   // check volume at track termination
   if ( n->GetVolume() != "target" ) cerr << "Warning: n0 track for event " << event << "terminates in volume '" << n->GetVolume() << "'" << endl;
   if ( n->GetVolume() != "target" ) cout << "Warning: n0 track for event " << event << "terminates in volume '" << n->GetVolume() << "'" << endl;
@@ -63,6 +62,7 @@ for (int event=1; event<=number_of_events; event++) { // event loop
   if ( n->GetProcess() == "nCapture" ) {
     RAT::TrackNode *n = c.Here();
     printf( "End:\t\t% 5.6f\t% 5.6f\t% 5.6f\n", n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
+    printf( "Total Scatters: %i\n", scatter_count ); // already determined above, but looks nicer for output here
     printf( "Time: %f\n", n->GetGlobalTime() );
 
     // capture-agent information:
