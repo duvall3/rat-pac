@@ -16,5 +16,7 @@ t = data(:,7)/1000; % convert ns to us
 % gammas: number & total energy
 gammas = data(:,8);
 gamma_KE_total = data(:,9);
+% scatters: total number from production to capture
+scat = data(:,10);
 
 % now you are ready to process {x,y,z}, r, t, & gamma data however you wish
