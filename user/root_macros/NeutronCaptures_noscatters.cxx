@@ -3,7 +3,7 @@
 //   -- recommended usage: root -q -l -b 'NeutronCaptures.cxx("INPUT_FILENAME",NUMBER_OF_EVENTS)' > OUTPUT_FILENAME.n0.dat
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ July 2015 ~ //
 
-void NeutronCaptures_scatterinfo(const char* inputfile, int number_of_events) {
+void NeutronCaptures(const char* inputfile, int number_of_events) {
 
 TFile *file0 = TFile::Open(inputfile);
 RAT::DSReader r(inputfile);
@@ -32,27 +32,11 @@ for (int event=1; event<=number_of_events; event++) { // event loop
   RAT::TrackNode *n = c.Here(); // create node pointer
   if ( n->IsTrackStart() == false ) printf( "WARNING: Bad track start!" ); // sanity check
   printf( "Begin:\t\t% 5.6f\t% 5.6f\t% 5.6f\n", n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
-  
-  int scatter_count(0);
 
-//old version w/o scatter info
-//c.GoTrackEnd(); // move cursor to end of track
-//RAT::TrackNode *n = c.Here(); // node pointer to last step of n0 track
-  
-  while ( n->IsTrackEnd() == false ) { // loop over steps w/in track
-    RAT::TrackNode *n = c.GoNext();
-//  if ( scatter_count==1 || ((scatter_count > 0) && (scatter_count % 5) == 0)) {
-    // get location at scatters 1,5,10,20 (sloppy, but arrays are a pain):
-    if ( scatter_count==1 || scatter_count==5 || scatter_count==10 || scatter_count==20 ) {
-      printf( "%i Scatter(s):\t% 5.6f\t% 5.6f\t% 5.6f\n", scatter_count, n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
-    } // end if (for counting every 5 scatters)
-    if ( n->GetProcess() == "hadElastic" ) scatter_count++;
-  } // end step loop
-  
-  // should be at end of track now
-  RAT::TrackNode *n = c.Here();
-  if ( n->IsTrackEnd() == false ) {cout << "Error: not track end" << endl; cerr << "Error: not track end" << endl; } // sanity check
-    
+  c.GoTrackEnd(); // move cursor to end of track
+  RAT::TrackNode *n = c.Here(); // node pointer to last step of n0 track
+
+
   // check volume at track termination
   if ( n->GetVolume() != "target" ) cerr << "Warning: n0 track for event " << event << "terminates in volume '" << n->GetVolume() << "'" << endl;
   if ( n->GetVolume() != "target" ) cout << "Warning: n0 track for event " << event << "terminates in volume '" << n->GetVolume() << "'" << endl;
@@ -62,7 +46,6 @@ for (int event=1; event<=number_of_events; event++) { // event loop
   if ( n->GetProcess() == "nCapture" ) {
     RAT::TrackNode *n = c.Here();
     printf( "End:\t\t% 5.6f\t% 5.6f\t% 5.6f\n", n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
-    printf( "Total Scatters: %i\n", scatter_count ); // already determined above, but looks nicer for output here
     printf( "Time: %f\n", n->GetGlobalTime() );
 
     // capture-agent information:

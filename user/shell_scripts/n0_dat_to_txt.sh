@@ -14,5 +14,5 @@ paste \
 	<(awk '$1 ~ /Time/ {print $2}' $1) \
 	<(awk '$1 ~ /Gammas/ {print $2}' $1) \
 	<(awk '$0 ~ /Total Gamma Energy/ {print $4}' $1) \
-	<(awk '$0 ~ /Total Scatters:/ {print $3}')
+	<(awk '$0 ~ /Total Scatters/ {print $3}' $1)
 exit 0

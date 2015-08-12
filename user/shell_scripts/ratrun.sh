@@ -50,12 +50,11 @@ eval "root -q -l -b $ROOTCOMMAND > \"$FILENAME\".n0.dat"
 n0_dat_to_txt.sh "$FILENAME".n0.dat | column -t > "$FILENAME".txt
 nCapAgents.sh "$FILENAME".n0.dat
 plot_gammas_mfile.sh $FILENAME
-# following line will be adapted once scatter info is out of beta
-if [ -f ./$FILENAME_scatterinfo.n0.dat ]; awk -F : '$0 ~ /Total Scatter/ {print $2}' | column -t > "$FILENAME".sc; fi
+n0_dat_to_sc.sh "$FILENAME".n0.dat
 
 # make output directory & move all the new output files there
 mkdir $FILENAME
-mv -t $FILENAME $FILENAME.* gam/ plot_gammas.m
+mv -t $FILENAME $FILENAME.* gam/ plot_gammas.m scatters
 
 
 ## reminder
