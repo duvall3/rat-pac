@@ -14,33 +14,33 @@ echo "\
   % 	-- DO NOT MOVE OUT OF ORIGINAL DIRECTORY
   
   
-  %% TOTAL PLOTS
-  % read in data & prepare histograms
-  data = dlmread( '$DATARUN.txt', '', 1, 0 );
-  g_mult = data(:,8);
-  g_ke = data(:,9);
-  mult = [0:15]; % multiplicity bins (0--15 by integers)
-  h_g_mult = hist( g_mult, mult );
-  E = [0:.01:10]; % 10-keV energy bins
-  h_g_ke = hist( g_ke, E );
-  
-  % prepare figures:
-  % multiplicity plot
-  f_mult = figure('position', [1000 100 1.5*[560 420]]);
-  ax_mult = axes('xgrid', 'on', 'ygrid', 'on', 'color', .8*[1 1 1]);
-  s_mult = stairs( mult-0.5, h_g_mult, 'linewidth', 2.0 ); % -0.5 to center hist. bars on integers
-  xla_mult = xlabel('Multiplicity');
-  T_mult = title('Gamma Multiplicities for $DATARUN', 'interpreter', 'none');
-  % energy plot
-  f_ke = figure('position', [1000 100 1.5*[560 420]]);
-  ax_ke = axes('yscale', 'log', 'color', .8*[1 1 1], 'xgrid', 'on', 'ygrid', 'on');
-  s_g_ke = stairs( E, h_g_ke + .01 ); % +.01 makes every count finite so ML will draw graph properly
-  set(ax_ke, 'yscale', 'log')
-  YL = get(ax_ke, 'ylim');
-  ylim([10^0 YL(2)])
-  xla_ke = xlabel('Energy (MeV)');
-  T_ke = title('Total Energy of Capture Gammas for $DATARUN', 'interpreter', 'none');
-  
+%  %% TOTAL PLOTS
+%  % read in data & prepare histograms
+%  data = dlmread( '$DATARUN.txt', '', 1, 0 );
+%  g_mult = data(:,8);
+%  g_ke = data(:,9);
+%  mult = [0:15]; % multiplicity bins (0--15 by integers)
+%  h_g_mult = hist( g_mult, mult );
+%  E = [0:.01:10]; % 10-keV energy bins
+%  h_g_ke = hist( g_ke, E );
+%  
+%  % prepare figures:
+%  % multiplicity plot
+%  f_mult = figure('position', [1000 100 1.5*[560 420]]);
+%  ax_mult = axes('xgrid', 'on', 'ygrid', 'on', 'color', .8*[1 1 1]);
+%  s_mult = stairs( mult-0.5, h_g_mult, 'linewidth', 2.0 ); % -0.5 to center hist. bars on integers
+%  xla_mult = xlabel('Multiplicity');
+%  T_mult = title('Gamma Multiplicities for $DATARUN', 'interpreter', 'none');
+%  % energy plot
+%  f_ke = figure('position', [1000 100 1.5*[560 420]]);
+%  ax_ke = axes('yscale', 'log', 'color', .8*[1 1 1], 'xgrid', 'on', 'ygrid', 'on');
+%  s_g_ke = stairs( E, h_g_ke + .01 ); % +.01 makes every count finite so ML will draw graph properly
+%  set(ax_ke, 'yscale', 'log')
+%  YL = get(ax_ke, 'ylim');
+%  ylim([10^0 YL(2)])
+%  xla_ke = xlabel('Energy (MeV)');
+%  T_ke = title('Total Energy of Capture Gammas for $DATARUN', 'interpreter', 'none');
+%  
   
 " > ./plot_gammas.m
 

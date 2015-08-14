@@ -7,7 +7,7 @@
 
 % prepare histogram
 sc_bins = [0:80]; % 1-us bins
-h_sc_dist = hist( scatters, sc_bins );
+h_sc_dist = hist( scat, sc_bins );
 h_adjust = min(h_sc_dist(h_sc_dist~=0)) / 10; % for correctly plotting histogram
 % make plot
 f_sc_dist = figure;
