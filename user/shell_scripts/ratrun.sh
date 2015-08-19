@@ -58,7 +58,7 @@ mv -t $FILENAME $FILENAME.* gam/ plot_gammas.m scatters
 
 
 ## reminder
-echo "Reminder: Move output to storage if desired."
+echo "Reminder: Move output to long-term storage if desired."
 
 ## all pau!  )
 exit 0
