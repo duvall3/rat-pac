@@ -57,13 +57,14 @@ for (int event=1; event<=number_of_events; event++) { // event loop
   if ( n->GetVolume() != "target" ) cerr << "Warning: n0 track for event " << event << "terminates in volume '" << n->GetVolume() << "'" << endl;
   if ( n->GetVolume() != "target" ) cout << "Warning: n0 track for event " << event << "terminates in volume '" << n->GetVolume() << "'" << endl;
 
+  // get endpoint info
+  RAT::TrackNode *n = c.Here();
+  printf( "End:\t\t% 5.6f\t% 5.6f\t% 5.6f\n", n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
+  printf( "Total Scatters: %i\n", scatter_count ); // already determined above, but looks nicer for output here
+  printf( "Time: %f\n", n->GetGlobalTime() );
 
   // now get capture info
   if ( n->GetProcess() == "nCapture" ) {
-    RAT::TrackNode *n = c.Here();
-    printf( "End:\t\t% 5.6f\t% 5.6f\t% 5.6f\n", n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
-    printf( "Total Scatters: %i\n", scatter_count ); // already determined above, but looks nicer for output here
-    printf( "Time: %f\n", n->GetGlobalTime() );
 
     // capture-agent information:
     int num_of_children = c.ChildCount();
@@ -102,7 +103,7 @@ for (int event=1; event<=number_of_events; event++) { // event loop
   } else { // track terminated by some other process
     cerr << "Warning: n0 track for event " << event << " terminated by " << n->GetProcess() << " instead of nCapture." << endl;
     cout << "Warning: n0 track for event " << event << " terminated by " << n->GetProcess() << " instead of nCapture." << endl;
-    printf( "Endpoint:\t%f %f %f\n", n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
+//  printf( "Endpoint:\t%f %f %f\n", n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
 
   } // end if
     

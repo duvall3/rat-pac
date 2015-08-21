@@ -12,9 +12,9 @@ bin_delta = bins(2) - bins(1);
 hg_data = hist( data, bins );
 handles = zeros(3,1);
 
-handles(1) = figure;
-handles(2) = axes;
-handles(3) = stairs( [bins(1)-bin_delta bins bins(end)+bin_delta] - bin_delta/2, [hg_data(1) hg_data hg_data(end)], 'color', 'k', 'linewidth', 2 );
+handles(1) = gcf;
+handles(2) = gca;
+handles(3) = stairs( [bins bins(end)+bin_delta] - bin_delta/2, [hg_data hg_data(end)], 'color', 'k', 'linewidth', 2 );
 
 % some customization:
 set( handles(2), 'xgrid', 'off', 'ygrid', 'off' )

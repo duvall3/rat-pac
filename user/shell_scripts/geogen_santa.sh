@@ -68,7 +68,7 @@ valid_end: [0, 0],
 mother: \"capture_plane\",
 type: \"box\",
 size: [1000.0, 0.25, 30.0], // mm
-material: \"black_acrylic\",
+material: \"acrylic_black\",
 invisible: 0,
 position: [0.0, $y, 0.0] // mm
 color: [1, 1, 1 ],
@@ -123,7 +123,7 @@ valid_end: [0, 0],
 mother: \"target_plane\",
 type: \"box\",
 size: [1000.0, 0.25, 2.5], // mm
-material: \"black_acrylic\",
+material: \"acrylic_black\",
 invisible: 0,
 position: [0.0, $y, 0.0] // mm
 color: [1, 1, 1 ],
