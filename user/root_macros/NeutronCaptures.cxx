@@ -43,7 +43,7 @@ for (int event=1; event<=number_of_events; event++) { // event loop
     RAT::TrackNode *n = c.GoNext();
 //  if ( scatter_count==1 || ((scatter_count > 0) && (scatter_count % 5) == 0)) {
     // get location at scatters 1,5,10,20 (sloppy, but arrays are a pain):
-    if ( scatter_count==1 || scatter_count==5 || scatter_count==10 || scatter_count==20 ) {
+    if ( scatter_count == 1 || scatter_count==5 || scatter_count==10 || scatter_count==20 ) {
       printf( "%i Scatter(s):\t% 5.6f\t% 5.6f\t% 5.6f\n", scatter_count, n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
     } // end if (for counting every 5 scatters)
     if ( n->GetProcess() == "hadElastic" ) scatter_count++;
@@ -64,7 +64,7 @@ for (int event=1; event<=number_of_events; event++) { // event loop
   printf( "Time: %f\n", n->GetGlobalTime() );
 
   // now get capture info
-  if ( n->GetProcess() == "nCapture" ) {
+  if ( n->GetProcess()=="nCapture" || n->GetProcess()=="neutronInelastic" ) {
 
     // capture-agent information:
     int num_of_children = c.ChildCount();
@@ -85,6 +85,8 @@ for (int event=1; event<=number_of_events; event++) { // event loop
       if ( n->GetParticleName()=="gamma" ) {
         gammas++;
         gamma_KE_total = gamma_KE_total + n->GetKE();
+      } else if( n->GetParticleName()=="alpha" ) {
+          // do nothing -- ignoring alphas for the moment
       } else { // child not gamma -- NOTE: current version will only report name of first unexpected child particle
         problem_child_tf = true;
         TString problem_child_name = n->GetParticleName();
