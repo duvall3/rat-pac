@@ -10,8 +10,10 @@
 
 echo
 printf "\n### RAT RUN ###\n\n"
-printf "!REMINDER: Set parameter for c.GoChild() in $ROOTSYS/macros/NeutronCaptures.cxx if needed.\n"
-printf "!Warning: This script will replace the current version of './run.mac'. Type <Ctrl-C> now if you wish to abort.\n"
+printf "!Warning: This script will replace the current version of './run.mac'. Type <Ctrl-C> now if you wish to abort.\n\n"
+
+# run types available
+RUN_TYPE_LIST=("neutron" "ibd" "EXIT")
 
 # argument check / get info:
 if [ $1 ]; then
@@ -26,8 +28,22 @@ if [ $2 ]; then
     printf "\nEnter number of events: "
     read NUM_EVENTS
 fi
+if [ $3 ]; then
+  RUN_TYPE=$3
+  else
+    printf "Choose run type:\n"
+   PS3="> "
+    select RUN_TYPE in ${RUN_TYPE_LIST[*]}; do
+     if [ -z $RUN_TYPE ]; then
+       continue 
+       elif [ $RUN_TYPE == "EXIT" ]; then
+          printf "\nExiting...\n\n"; exit 0
+        else break
+      fi
+    done
+fi
 
-printf "\n\n### Beginning run...\n\n"
+printf "\n\n### Beginning $RUN_TYPE run...\n\n"
 
 # create new run.mac
 echo "\
@@ -43,19 +59,16 @@ conflog.sh > "$FILENAME".conf && rat run.mac
 LOGFILE=$(basename $(ls -ltr *.log | tail -1 | awk '{print $NF}') .log)
 rename s/$LOGFILE/$FILENAME/ ./$LOGFILE.log
 
-# process neutron-capture information
-ROOTFILE="$FILENAME".root
-ROOTCOMMAND=$(printf "'NeutronCaptures.cxx(\"$ROOTFILE\",$NUM_EVENTS)'")
-eval "root -q -l -b $ROOTCOMMAND > \"$FILENAME\".n0.dat"
-n0_dat_to_txt.sh "$FILENAME".n0.dat | column -t > "$FILENAME".txt
-nCapAgents.sh "$FILENAME".n0.dat
-plot_gammas_mfile.sh $FILENAME
-n0_dat_to_sc.sh "$FILENAME".n0.dat
-
-# make output directory & move all the new output files there
-mkdir $FILENAME
-mv -t $FILENAME $FILENAME.* gam/ plot_gammas.m scatters
-
+# process information according to type of run
+case $RUN_TYPE in
+  "neutron")
+    process_n0_run.sh $FILENAME $NUM_EVENTS;;
+  "ibd")
+#   process_ibd_run.sh $FILENAME $NUM_EVENTS;;
+    echo "[feature not ready yet]"
+  *)
+    echo "Error: invalid run type (somehow) specified." && exit 3
+esac
 
 ## reminder
 echo "Reminder: Move output to long-term storage if desired."
