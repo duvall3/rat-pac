@@ -23,6 +23,7 @@ datasize = size(data);
 if datasize(2) > 10
   alpha_KE_padded = data(:,11);
   alpha_KE = alpha_KE_padded(alpha_KE_padded~=0);
+else
 end %if
 
 % now you are ready to process {x,y,z}, r, t, & gamma data however you wish
