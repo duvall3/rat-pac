@@ -1,5 +1,5 @@
 #!/bin/bash
-# geogen -- generate .geo entries from a template
+# geogen_nulat -- generate .geo entries for NuLat from a template
 
 
 #### TEMPLATE:

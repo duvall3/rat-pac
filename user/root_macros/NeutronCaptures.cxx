@@ -76,9 +76,10 @@ for (int event=1; event<=number_of_events; event++) { // event loop
     // gamma information:
     int gammas(0);
     float gamma_KE_total(0);
+    float alpha_KE(0);
     for ( int child=0; child<(num_of_children-1); child++ ) { // loop over children
       bool problem_child_tf = false;
-      // all children except last should be gammas
+      // for Gd capture, all children except last should be gammas
       c.GoChild(child);
       RAT::TrackNode *n = c.Here(); // node pointer for gamma
       // make sure child is actually gamma, then add it & its energy to the totals for this capture
@@ -86,8 +87,9 @@ for (int event=1; event<=number_of_events; event++) { // event loop
         gammas++;
         gamma_KE_total = gamma_KE_total + n->GetKE();
       } else if( n->GetParticleName()=="alpha" ) {
-          // do nothing -- ignoring alphas for the moment
-      } else { // child not gamma -- NOTE: current version will only report name of first unexpected child particle
+          alpha_KE = n->GetKE();
+          printf( "Alpha: %5.6f\n", alpha_KE );
+      } else { // child not gamma or alpha -- NOTE: current version will only report name of first unexpected child particle
         problem_child_tf = true;
         TString problem_child_name = n->GetParticleName();
       } // end if

@@ -18,5 +18,11 @@ gammas = data(:,8);
 gamma_KE_total = data(:,9);
 % scatters: total number from production to capture
 scat = data(:,10);
+% alpha energies, if applicable
+datasize = size(data);
+if datasize(2) > 10
+  alpha_KE_padded = data(:,11);
+  alpha_KE = alpha_KE_padded(alpha_KE_padded~=0);
+end %if
 
 % now you are ready to process {x,y,z}, r, t, & gamma data however you wish

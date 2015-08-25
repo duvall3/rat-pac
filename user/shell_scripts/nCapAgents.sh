@@ -44,7 +44,7 @@ if [ $(which awk) ]; then awkprogram=awk
   else echo "ERROR: No awk program found. Go download awk, gawk, or mawk from your repositories. You'll be glad you did.   )"; exit 1
 fi
 
-echo "init complete" #debugging 
+#echo "init complete" #debugging 
 
 ## get capture info
 
@@ -54,7 +54,7 @@ echo "Total Captures: $total_captures" #debugging
 
 # process full capture list into BASH array of unique capture-agent names
 agent_names=( $( $awkprogram '$1 ~ /Capture:/ {print $2}' $1 | sort | uniq ) )
-echo "Capture Agents: ${agent_names[*]}" #debugging
+#echo "Capture Agents: ${agent_names[*]}" #debugging
 
 # get totals (and percentages, if bc is available) for each agent
 k1=0

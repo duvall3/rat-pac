@@ -4,6 +4,8 @@
 
 cat ./run.mac
 echo -e "\n\n# # # # #\n\n"
+cat ./gen/*.mac
+echo -e "\n\n# # # # #\n\n"
 cat ./*.geo
 echo -e "\n\n# # # # #\n\n"
 cat ./*.ratdb

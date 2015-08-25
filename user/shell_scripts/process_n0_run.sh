@@ -2,6 +2,9 @@
 # process_n0_run -- this script duplicates the post-run processing of ratrun.sh
 # ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ August 2015 ~ #
 
+FILENAME=$1
+NUM_EVENTS=$2
+
 # process neutron-capture information
 ROOTFILE="$FILENAME".root
 ROOTCOMMAND=$(printf "'NeutronCaptures.cxx(\"$ROOTFILE\",$NUM_EVENTS)'")

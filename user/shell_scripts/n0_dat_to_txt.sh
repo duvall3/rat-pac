@@ -5,7 +5,7 @@
 #  -- read into octave/MATLAB:  data = dlmread( 'FILENAME.n0.txt', '', 1, 0 );
 # ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ July 2015 ~ #
 
-echo "begin_x begin_y begin_z end_x end_y end_z end_t gammas gamma_KE_total num_scatters_total"
+echo "begin_x begin_y begin_z end_x end_y end_z end_t gammas gamma_KE_total num_scatters_total alpha_KE"
 # NeutronCaptures.cxx currently uses the ROOT GlobalTime for 't', so 'begin_t' is zero by definition
 
 paste \
@@ -14,5 +14,6 @@ paste \
 	<(awk '$1 ~ /Time/ {print $2}' $1) \
 	<(awk '$1 ~ /Gammas/ {print $2}' $1) \
 	<(awk '$0 ~ /Total Gamma Energy/ {print $4}' $1) \
-	<(awk '$0 ~ /Total Scatters/ {print $3}' $1)
+	<(awk '$0 ~ /Total Scatters/ {print $3}' $1) \
+	<(awk '$0 ~ /Alpha/ {print $2}' $1)
 exit 0
