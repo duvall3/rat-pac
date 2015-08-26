@@ -1,5 +1,6 @@
 #!/bin/bash
 # geogen_santa -- generate .geo entries for SANTA from a template
+# Mark J. Duvall ~ mjduvall@hawaii.edu ~ August 2015 ~ #
 
 
 #### TEMPLATE:
