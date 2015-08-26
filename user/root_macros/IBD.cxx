@@ -77,6 +77,7 @@ for (int event=1; event<=number_of_events; event++) { // event loop
       // gamma & alpha information upon capture/annihil:
       int gammas(0);
       float gamma_KE_total(0);
+      int alphas(0);
       float alpha_KE(0);
       int final_child(0);
       for ( int child=0; child<num_of_children; child++ ) { // loop over children
@@ -86,12 +87,13 @@ for (int event=1; event<=number_of_events; event++) { // event loop
         RAT::TrackNode *n = c.Here(); // node pointer for alpha|gamma
         // make sure child is actually alpha|gamma, then add it & its energy to the totals for this capture
         TString child_name = n->GetParticleName();
-        if ( child_name == "gamma" ) {
+        if ( child_name == "alpha" ) {
+            alphas++;
+            alpha_KE = n->GetKE();
+//          printf( "%s Alpha: %5.6f\n", particle_name.Data(), alpha_KE );
+        } else if (child_name == "gamma" ) {
           gammas++;
           gamma_KE_total = gamma_KE_total + n->GetKE();
-        } else if ( child_name == "alpha" ) {
-            alpha_KE = n->GetKE();
-            printf( "%s Alpha: %5.6f\n", particle_name.Data(), alpha_KE );
         } else if ( child_name.Contains("deuteron") || child_name.Contains("Li7") || child_name.Contains("Gd") ) {
             // do nothing -- normal products
         } else { // child not expected capture product -- NOTE: current version will only report name of first unexpected child particle
@@ -103,6 +105,11 @@ for (int event=1; event<=number_of_events; event++) { // event loop
 
       printf( "%s Gammas: %i\n", particle_name.Data(), gammas );
       printf( "%s Total Gamma Energy: % 5.6f\n", particle_name.Data(), gamma_KE_total );
+      if( alphas > 0 ) { // multiple alphas unlikely, by it's just as easy to check:
+        printf( "%s Alphas: %i\n", particle_name.Data(), alphas );
+        printf( "%s Total Alpha Energy: % 5.6f\n", particle_name.Data(), alpha_KE );
+      } else { // do nothing (no alphas)
+      } // end if -- any alphas
 
       if ( problem_child_tf == true ) {
         cerr << "Warning: Unexpected child particle type in event " << event << ": " << problem_child_name << endl;
