@@ -73,26 +73,22 @@ for (int event=1; event<=number_of_events; event++) { // event loop
       float gamma_KE_total(0);
       float alpha_KE(0);
       int final_child(0);
-      if ( n->GetParticleName == "e+" ) { // check particle type
-        final_child = num_of_children;
-      } else if ( n->GetParticleName == "neutron" ) {
-        final_child = num_of_children - 1;
-      } else {
-        cout << "Warning: unexpected particle type in event " << event << ": " << n->GetParticleName() << endl;
-      } // end if -- e+, neutron, or other
-      for ( int child=0; child<final_child; child++ ) { // loop over children
+      for ( int child=0; child<num_of_children; child++ ) { // loop over children
         bool problem_child_tf = false;
         // for Gd capture, all children except last should be gammas
         c.GoChild(child);
         RAT::TrackNode *n = c.Here(); // node pointer for alpha|gamma
         // make sure child is actually alpha|gamma, then add it & its energy to the totals for this capture
-        if ( n->GetParticleName()=="gamma" ) {
+        TString particle_name = n->GetParticleName();
+        if ( particle_name == "gamma" ) {
           gammas++;
           gamma_KE_total = gamma_KE_total + n->GetKE();
-        } else if( n->GetParticleName()=="alpha" ) {
+        } else if ( particle_name == "alpha" ) {
             alpha_KE = n->GetKE();
             printf( "Alpha: %5.6f\n", alpha_KE );
-        } else { // child not gamma or alpha -- NOTE: current version will only report name of first unexpected child particle
+        } else if ( particle_name.Contains("deuteron") || particle_name.Contains("Li7") || particle_name.Contains("Gd") ) {
+            // do nothing -- normal products
+        } else { // child not expected capture product -- NOTE: current version will only report name of first unexpected child particle
           problem_child_tf = true;
           TString problem_child_name = n->GetParticleName();
         } // end if
