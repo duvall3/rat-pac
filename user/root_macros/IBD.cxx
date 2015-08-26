@@ -26,20 +26,22 @@ for (int event=1; event<=number_of_events; event++) { // event loop
   // each IBD event has two children: an e+ (0) and a neutron(1);
   for (int positron_or_neutron=0; positron_or_neutron<=1; positron_or_neutron++) { // top track loop
     c.GoChild(positron_or_neutron);
+    RAT::TrackNode *n = c.Here(); // create node pointer
+    TString particle_name = n->GetParticleName(); // particle_name should be either "e+" or "neutron"
   
     // get starting point
-    RAT::TrackNode *n = c.Here(); // create node pointer
-    cout << "Particle: " << n->GetParticleName() << endl; // mostly for debugging
+//  cout << "Particle: " << particle_name << endl; // mostly for debugging
     if ( n->IsTrackStart() == false ) printf( "WARNING: Bad track start!" ); // sanity check
-    printf( "Begin:\t\t% 5.6f\t% 5.6f\t% 5.6f\n", n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
+    printf( "%s Begin:\t% 5.6f\t% 5.6f\t% 5.6f\n", particle_name.Data(), n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
     
+    // prepare for step loop
     int scatter_count(0);
     
-    // step loop
+    // step loop (mainly needed for the number of scatters)
     while ( n->IsTrackEnd() == false ) {
       RAT::TrackNode *n = c.GoNext();
       // get location at first step --> initial direction:
-      if ( n->GetStepID()==1 ) printf( "Step %i: \t% 5.6f\t% 5.6f\t% 5.6f\n", n->GetStepID(), n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
+      if ( n->GetStepID()==1 ) printf( "%s Step %i: \t% 5.6f\t% 5.6f\t% 5.6f\n", particle_name.Data(), n->GetStepID(), n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
       if ( n->GetProcess() == "hadElastic" ) scatter_count++;
     } // end step loop
     
@@ -50,21 +52,25 @@ for (int event=1; event<=number_of_events; event++) { // event loop
 //  if ( n->GetVolume() != "target" ) cerr << "Warning: n0 track for event " << event << "terminates in volume '" << n->GetVolume() << "'" << endl;
 //  if ( n->GetVolume() != "target" ) cout << "Warning: n0 track for event " << event << "terminates in volume '" << n->GetVolume() << "'" << endl;
     // get endpoint info
-//  RAT::TrackNode *n = c.Here();
-    printf( "End:\t\t% 5.6f\t% 5.6f\t% 5.6f\n", n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
-    if (n->GetParticleName()=="neutron") printf( "Total Scatters: %i\n", scatter_count ); // already determined above, but looks nicer for output here
-    printf( "Time: %f\n", n->GetGlobalTime() );
+    printf( "%s End:\t\t% 5.6f\t% 5.6f\t% 5.6f\n", particle_name.Data(), n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
+    if ( particle_name == "neutron" ) printf( "%s Total Scatters: %i\n", particle_name.Data(), scatter_count ); // already determined above, but looks nicer for output here
+    printf( "%s Time: %f\n", particle_name.Data(), n->GetGlobalTime() );
   
+
+
     // now get termination info
     if ( n->GetProcess()=="annihil" || n->GetProcess()=="nCapture" || n->GetProcess()=="neutronInelastic" ) {
-  
+ 
+
+ 
       // capture-agent information for neutrons:
       int num_of_children = c.ChildCount();
-      if ( n->GetParticleName()=="neutron" ) {
+      if ( particle_name == "neutron" ) {
         c.GoChild(num_of_children-1);
         RAT::TrackNode *n = c.Here(); // node pointer for final child
-        cout << "Capture: " << n->GetParticleName() << endl;
+        cout << particle_name << " Capture: " << n->GetParticleName() << endl;
         c.GoParent();
+        RAT::TrackNode *n = c.Here();
       } // end if -- isneutron
   
   
@@ -79,22 +85,25 @@ for (int event=1; event<=number_of_events; event++) { // event loop
         c.GoChild(child);
         RAT::TrackNode *n = c.Here(); // node pointer for alpha|gamma
         // make sure child is actually alpha|gamma, then add it & its energy to the totals for this capture
-        TString particle_name = n->GetParticleName();
-        if ( particle_name == "gamma" ) {
+        TString child_name = n->GetParticleName();
+        if ( child_name == "gamma" ) {
           gammas++;
           gamma_KE_total = gamma_KE_total + n->GetKE();
-        } else if ( particle_name == "alpha" ) {
+        } else if ( child_name == "alpha" ) {
             alpha_KE = n->GetKE();
-            printf( "Alpha: %5.6f\n", alpha_KE );
-        } else if ( particle_name.Contains("deuteron") || particle_name.Contains("Li7") || particle_name.Contains("Gd") ) {
+            printf( "%s Alpha: %5.6f\n", particle_name.Data(), alpha_KE );
+        } else if ( child_name.Contains("deuteron") || child_name.Contains("Li7") || child_name.Contains("Gd") ) {
             // do nothing -- normal products
         } else { // child not expected capture product -- NOTE: current version will only report name of first unexpected child particle
           problem_child_tf = true;
           TString problem_child_name = n->GetParticleName();
         } // end if
         c.GoParent();
-        } // end for -- child loop
-      printf( "Gammas: %i\nTotal Gamma Energy: % 5.6f\n", gammas, gamma_KE_total );
+      } // end for -- child loop
+
+      printf( "%s Gammas: %i\n", particle_name.Data(), gammas );
+      printf( "%s Total Gamma Energy: % 5.6f\n", particle_name.Data(), gamma_KE_total );
+
       if ( problem_child_tf == true ) {
         cerr << "Warning: Unexpected child particle type in event " << event << ": " << problem_child_name << endl;
         cout << "Warning: Unexpected child particle type in event " << event << ": " << problem_child_name << endl;

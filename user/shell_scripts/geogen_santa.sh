@@ -95,7 +95,7 @@ valid_end: [0, 0],
 mother: \"target_plane\",
 type: \"box\",
 size: [1000.0, 25.0, 2.5], // mm
-material: \"ej_254_undoped\",
+material: \"ej254_undoped\",
 invisible: 0,
 position: [0.0, $y.0, 0.0] // mm
 }\n\n"
