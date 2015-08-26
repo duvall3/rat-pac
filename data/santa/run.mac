@@ -1,0 +1,3 @@
+/control/execute setup.mac
+/rat/procset file "n0_test_1.root"
+/run/beamOn 100

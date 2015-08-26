@@ -65,7 +65,7 @@ case $RUN_TYPE in
     process_n0_run.sh $FILENAME $NUM_EVENTS;;
   "ibd")
 #   process_ibd_run.sh $FILENAME $NUM_EVENTS;;
-    echo "[feature not ready yet]"
+    echo "[process_ibd_run.sh: feature not ready yet]";;
   *)
     echo "Error: invalid run type (somehow) specified." && exit 3
 esac
