@@ -18,7 +18,7 @@ handles(3) = stairs( [bins bins(end)+bin_delta] - bin_delta/2, [hg_data hg_data(
 
 % some customization:
 set( handles(2), 'xgrid', 'off', 'ygrid', 'off' )
-%xlim( [min(bins) max(bins)] )
+xlim( [min(bins) max(bins)] )
 set( handles(2), 'ticklength', [.03 .075] )
 
 % on the author's system:

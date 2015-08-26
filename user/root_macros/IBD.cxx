@@ -105,11 +105,8 @@ for (int event=1; event<=number_of_events; event++) { // event loop
 
       printf( "%s Gammas: %i\n", particle_name.Data(), gammas );
       printf( "%s Total Gamma Energy: % 5.6f\n", particle_name.Data(), gamma_KE_total );
-      if( alphas > 0 ) { // multiple alphas unlikely, by it's just as easy to check:
-        printf( "%s Alphas: %i\n", particle_name.Data(), alphas );
-        printf( "%s Total Alpha Energy: % 5.6f\n", particle_name.Data(), alpha_KE );
-      } else { // do nothing (no alphas)
-      } // end if -- any alphas
+      printf( "%s Alphas: %i\n", particle_name.Data(), alphas );
+      printf( "%s Total Alpha Energy: % 5.6f\n", particle_name.Data(), alpha_KE );
 
       if ( problem_child_tf == true ) {
         cerr << "Warning: Unexpected child particle type in event " << event << ": " << problem_child_name << endl;
