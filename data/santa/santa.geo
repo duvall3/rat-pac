@@ -1,6 +1,6 @@
 // RATDB file describing simple detector geometry
 
-// !!! B-DOPED SCINTILLATOR NOT YET IMPLEMENTED !!!
+// !!! B-DOPED SCINTILLATOR -- NO OPTICS YET !!!
 
 // -------- GEO[world]
 {
@@ -40,8 +40,8 @@ valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "cave",
 type: "box",
-size: [1000.0, 1000.0, 2.5] // mm
-position: [0.0, -9000.0, -500.0] // mm
+size: [1000.0, 1020.0, 2.5] // mm
+position: [0.0, -8980.0, -500.0] // mm
 material: "air",   // this volume will contain scintillator strips
 color: [0, 0, 1],
 }
@@ -53,10 +53,9 @@ name: "GEO",
 index: "ibd_vertex",
 valid_begin: [0, 0],
 valid_end: [0, 0],
-mother: "target_plane",
+mother: "target_strip_21", // just above center (even number of strips)
 type: "box",
-size: [.125, 5.0, 2.5] // mm
-//position: [0.0, -9000.0, -500.0] // mm -- now in mother "target_plane"
+size: [.125, 25.0, 2.5] // mm
 material: "ej254_undoped",
 color: [0, 0, 1],
 }
@@ -72,9 +71,7 @@ mother: "cave",
 type: "box",
 size: [1000.0, 1020.0, 30.0], // mm
 position: [0.0, -8980.0, 500.0] // mm
-//material: "b_scintillator",
-//material: "gd_scintillator", // PLACEHOLDER!!! -- still implementing B-doped scintillator
-material: "air", // this volume will contain the strip stack
+material: "air", // this volume will contain the capture-strip stack
 color: [0, .1, 0],
 }
 
@@ -1312,7 +1309,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, -995.0, 0.0] // mm
 }
@@ -1327,7 +1324,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, -944.0, 0.0] // mm
 }
@@ -1342,7 +1339,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, -893.0, 0.0] // mm
 }
@@ -1357,7 +1354,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, -842.0, 0.0] // mm
 }
@@ -1372,7 +1369,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, -791.0, 0.0] // mm
 }
@@ -1387,7 +1384,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, -740.0, 0.0] // mm
 }
@@ -1402,7 +1399,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, -689.0, 0.0] // mm
 }
@@ -1417,7 +1414,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, -638.0, 0.0] // mm
 }
@@ -1432,7 +1429,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, -587.0, 0.0] // mm
 }
@@ -1447,7 +1444,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, -536.0, 0.0] // mm
 }
@@ -1462,7 +1459,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, -485.0, 0.0] // mm
 }
@@ -1477,7 +1474,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, -434.0, 0.0] // mm
 }
@@ -1492,7 +1489,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, -383.0, 0.0] // mm
 }
@@ -1507,7 +1504,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, -332.0, 0.0] // mm
 }
@@ -1522,7 +1519,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, -281.0, 0.0] // mm
 }
@@ -1537,7 +1534,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, -230.0, 0.0] // mm
 }
@@ -1552,7 +1549,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, -179.0, 0.0] // mm
 }
@@ -1567,7 +1564,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, -128.0, 0.0] // mm
 }
@@ -1582,7 +1579,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, -77.0, 0.0] // mm
 }
@@ -1597,7 +1594,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, -26.0, 0.0] // mm
 }
@@ -1612,7 +1609,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, 25.0, 0.0] // mm
 }
@@ -1627,7 +1624,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, 76.0, 0.0] // mm
 }
@@ -1642,7 +1639,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, 127.0, 0.0] // mm
 }
@@ -1657,7 +1654,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, 178.0, 0.0] // mm
 }
@@ -1672,7 +1669,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, 229.0, 0.0] // mm
 }
@@ -1687,7 +1684,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, 280.0, 0.0] // mm
 }
@@ -1702,7 +1699,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, 331.0, 0.0] // mm
 }
@@ -1717,7 +1714,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, 382.0, 0.0] // mm
 }
@@ -1732,7 +1729,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, 433.0, 0.0] // mm
 }
@@ -1747,7 +1744,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, 484.0, 0.0] // mm
 }
@@ -1762,7 +1759,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, 535.0, 0.0] // mm
 }
@@ -1777,7 +1774,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, 586.0, 0.0] // mm
 }
@@ -1792,7 +1789,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, 637.0, 0.0] // mm
 }
@@ -1807,7 +1804,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, 688.0, 0.0] // mm
 }
@@ -1822,7 +1819,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, 739.0, 0.0] // mm
 }
@@ -1837,7 +1834,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, 790.0, 0.0] // mm
 }
@@ -1852,7 +1849,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, 841.0, 0.0] // mm
 }
@@ -1867,7 +1864,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, 892.0, 0.0] // mm
 }
@@ -1882,7 +1879,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, 943.0, 0.0] // mm
 }
@@ -1897,7 +1894,7 @@ valid_end: [0, 0],
 mother: "target_plane",
 type: "box",
 size: [1000.0, 25.0, 2.5], // mm
-material: "ej_254_undoped",
+material: "ej254_undoped",
 invisible: 0,
 position: [0.0, 994.0, 0.0] // mm
 }
