@@ -2,6 +2,7 @@
 # process_n0_run -- this script duplicates the post-run processing of ratrun.sh
 # ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ August 2015 ~ #
 
+
 FILENAME=$1
 NUM_EVENTS=$2
 
@@ -18,8 +19,6 @@ n0_dat_to_sc.sh "$FILENAME".n0.dat
 mkdir $FILENAME
 mv -t $FILENAME $FILENAME.* gam/ plot_gammas.m scatters
 
-# reminder
-echo "Reminder: Move output to long-term storage if desired."
 
 # all pau!  )
 exit 0

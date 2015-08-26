@@ -19,8 +19,6 @@ nCapAgents.sh "$FILENAME".ibd.dat
 mkdir $FILENAME
 mv -t $FILENAME $FILENAME.* gam/ plot_gammas.m scatters
 
-# reminder
-echo "Reminder: Move output to long-term storage if desired."
 
 # all pau!  )
 exit 0
