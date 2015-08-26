@@ -1,10 +1,11 @@
-// IBD_Test: extract information about products of RAT-PAC's IBD generator from tracks in ROOT file
+// IBD_old: extract information about products of RAT-PAC's IBD generator from tracks in ROOT file
+//   -- DEPRECATED in favor of current version ("IBD.cxx")
 //   -- namely, get initial directions & energy of neutrons & positrons for testing purposes (4-momentum conservation, angular distributions, etc.)
 //   -- NOTE: ONLY NEUTRONS PRODUCED BY THE GENERATOR WILL BE RECORDED (no muogenics, etc.)
-//   -- recommended usage: root -q -l -b 'IBD_Test.cxx("INPUT_FILENAME",NUMBER_OF_EVENTS)' > OUTPUT_FILENAME.ibd
+//   -- recommended usage: root -q -l -b 'IBD_old.cxx("INPUT_FILENAME",NUMBER_OF_EVENTS)' > OUTPUT_FILENAME.ibd
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ July 2015 ~ //
 
-void IBD_Test(const char* inputfile, int number_of_events) {
+void IBD_old(const char* inputfile, int number_of_events) {
 
 printf( "\n\n# # # IBD_Test # # #\n\n\n" );
 
