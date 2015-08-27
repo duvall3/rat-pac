@@ -180,29 +180,30 @@ classdef NeutronDataset
       ndata_ycut = NeutronDataset( ndata.X(inds), ndata.Y(inds), ndata.Z(inds), ndata.T(inds_T), ndata.Scatters(inds_S), ndata.Gammas(inds_G), ndata.Gamma_Energies(inds_GE), ndata.Alphas(inds_A), ndata.Alpha_Energies(inds_AE) );
     end %function                                                                                                                                                                                                                     
 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    function ndata_zcut = ZCut(ndata, z_min, z_max)                                                                                                                                                                                   
+      inds = find( z_min < ndata.Z  &  ndata.Z < z_max );                                                                                                                                                                              
+      % make cuts to data                                                                                                                                                                                                             
+        if isempty(ndata.T); inds_T = [];                                                                                                                                                                                             
+          else inds_T = inds;                                                                                                                                                                                                         
+            if isempty(ndata.Scatters); inds_S = [];                                                                                                                                                                                  
+              else inds_S = inds;                                                                                                                                                                                                     
+                if isempty(ndata.Gammas); inds_G = [];                                                                                                                                                                                
+                  else inds_G = inds;                                                                                                                                                                                                 
+                    if isempty(ndata.Gamma_Energies); inds_GE = [];                                                                                                                                                                   
+                      else inds_GE = inds;                                                                                                                                                                                            
+                        if isempty(ndata.Alphas); inds_A = [];                                                                                                                                                                        
+                          else inds_A = inds;                                                                                                                                                                                         
+                            if isempty(ndata.Alpha_Energies); inds_AE = [];                                                                                                                                                           
+                              else inds_AE = inds;                                                                                                                                                                                    
+                            end                                                                                                                                                                                                       
+                        end                                                                                                                                                                                                           
+                    end                                                                                                                                                                                                               
+                end                                                                                                                                                                                                                   
+            end                                                                                                                                                                                                                       
+        end                                                                                                                                                                                                                           
+      % make cuts to data                                                                                                                                                                                                             
+      ndata_zcut = NeutronDataset( ndata.X(inds), ndata.Y(inds), ndata.Z(inds), ndata.T(inds_T), ndata.Scatters(inds_S), ndata.Gammas(inds_G), ndata.Gamma_Energies(inds_GE), ndata.Alphas(inds_A), ndata.Alpha_Energies(inds_AE) );
+    end %function                                                                                                                                                                                                                     
 
 
 
