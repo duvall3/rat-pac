@@ -130,6 +130,9 @@ classdef NeutronDataset
     
     %% other methods
     
+    % data cuts:
+    
+    % cut on x
     function ndata_xcut = XCut(ndata, x_min, x_max)
       inds = find( x_min < ndata.X  &  ndata.X < x_max );
       % make cuts to data
@@ -154,7 +157,8 @@ classdef NeutronDataset
       % make cuts to data
       ndata_xcut = NeutronDataset( ndata.X(inds), ndata.Y(inds), ndata.Z(inds), ndata.T(inds_T), ndata.Scatters(inds_S), ndata.Gammas(inds_G), ndata.Gamma_Energies(inds_GE), ndata.Alphas(inds_A), ndata.Alpha_Energies(inds_AE) );
     end %function
-
+    
+    % cut on y
     function ndata_ycut = YCut(ndata, y_min, y_max)                                                                                                                                                                                   
       inds = find( y_min < ndata.Y  &  ndata.Y < y_max );                                                                                                                                                                             
       % make cuts to data                                                                                                                                                                                                             
@@ -179,7 +183,8 @@ classdef NeutronDataset
       % make cuts to data                                                                                                                                                                                                             
       ndata_ycut = NeutronDataset( ndata.X(inds), ndata.Y(inds), ndata.Z(inds), ndata.T(inds_T), ndata.Scatters(inds_S), ndata.Gammas(inds_G), ndata.Gamma_Energies(inds_GE), ndata.Alphas(inds_A), ndata.Alpha_Energies(inds_AE) );
     end %function                                                                                                                                                                                                                     
-
+    
+    % cut on z
     function ndata_zcut = ZCut(ndata, z_min, z_max)                                                                                                                                                                                   
       inds = find( z_min < ndata.Z  &  ndata.Z < z_max );                                                                                                                                                                              
       % make cuts to data                                                                                                                                                                                                             
@@ -204,32 +209,33 @@ classdef NeutronDataset
       % make cuts to data                                                                                                                                                                                                             
       ndata_zcut = NeutronDataset( ndata.X(inds), ndata.Y(inds), ndata.Z(inds), ndata.T(inds_T), ndata.Scatters(inds_S), ndata.Gammas(inds_G), ndata.Gamma_Energies(inds_GE), ndata.Alphas(inds_A), ndata.Alpha_Energies(inds_AE) );
     end %function                                                                                                                                                                                                                     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
+    % cut on t                                                                                                                                                                                                                          
+     function ndata_tcut = TCut(ndata, t_min, t_max)                                                                                                                                                                                     
+       inds = find( t_min < ndata.T  &  ndata.T < t_max );                                                                                                                                                                               
+       % make cuts to data                                                                                                                                                                                                               
+         if isempty(ndata.T); error 'Cannot cut on T: no T vector.'
+           else inds_T = inds;                                                                                                                                                                                                           
+             if isempty(ndata.Scatters); inds_S = [];                                                                                                                                                                                    
+               else inds_S = inds;                                                                                                                                                                                                       
+                 if isempty(ndata.Gammas); inds_G = [];                                                                                                                                                                                  
+                   else inds_G = inds;                                                                                                                                                                                                   
+                     if isempty(ndata.Gamma_Energies); inds_GE = [];                                                                                                                                                                     
+                       else inds_GE = inds;                                                                                                                                                                                              
+                         if isempty(ndata.Alphas); inds_A = [];                                                                                                                                                                          
+                           else inds_A = inds;                                                                                                                                                                                           
+                             if isempty(ndata.Alpha_Energies); inds_AE = [];                                                                                                                                                             
+                               else inds_AE = inds;                                                                                                                                                                                      
+                             end                                                                                                                                                                                                         
+                         end                                                                                                                                                                                                             
+                     end                                                                                                                                                                                                                 
+                 end                                                                                                                                                                                                                     
+             end                                                                                                                                                                                                                         
+         end                                                                                                                                                                                                                             
+       % make cuts to data                                                                                                                                                                                                               
+       ndata_tcut = NeutronDataset( ndata.X(inds), ndata.Y(inds), ndata.Z(inds), ndata.T(inds_T), ndata.Scatters(inds_S), ndata.Gammas(inds_G), ndata.Gamma_Energies(inds_GE), ndata.Alphas(inds_A), ndata.Alpha_Energies(inds_AE) );    
+     end %function                                                                                                                                                                                                                       
+   
 
 
 
