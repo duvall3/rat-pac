@@ -54,8 +54,9 @@ for (int event=1; event<=number_of_events; event++) { // event loop
   if ( n->IsTrackEnd() == false ) {cout << "Error: not track end" << endl; cerr << "Error: not track end" << endl; } // sanity check
     
   // check volume at track termination
-  if ( n->GetVolume() != "target" ) cerr << "Warning: n0 track for event " << event << "terminates in volume '" << n->GetVolume() << "'" << endl;
-  if ( n->GetVolume() != "target" ) cout << "Warning: n0 track for event " << event << "terminates in volume '" << n->GetVolume() << "'" << endl;
+  TString term_vol = n->GetVolume();
+  if ( !term_vol.Contains("target") && !term_vol.Contains("capture") && !term_vol.Contains("world") ) cerr << "Warning: n0 track for event " << event << " terminates in volume " << term_vol << endl;
+  if ( !term_vol.Contains("target") && !term_vol.Contains("capture") ) cout << "Warning: n0 track for event " << event << " terminates in volume " << term_vol << endl;
 
   // get endpoint info
   RAT::TrackNode *n = c.Here();

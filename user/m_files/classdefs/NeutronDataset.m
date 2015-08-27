@@ -21,6 +21,7 @@ classdef NeutronDataset
     Gamma_Energies
     Alphas
     Alpha_Energies
+    Actual_Theta
 
   end %properties -- inputs
   
