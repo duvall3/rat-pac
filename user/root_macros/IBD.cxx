@@ -97,8 +97,8 @@ for (int event=1; event<=number_of_events; event++) { // event loop
         } else if (child_name == "gamma" ) {
           gammas++;
           gamma_KE_total = gamma_KE_total + n->GetKE();
-        } else if ( child_name.Contains("deuteron") || child_name.Contains("triton") || child_name.Contains("Li7") || child_name.Contains("Gd") ) {
-            // do nothing -- normal products
+        } else if ( child_name.Contains("deuteron") || child_name.Contains("triton") || child_name.Contains("Li7") || child_name.Contains("Gd") || child_name.Contains("Si") || child_name.Contains("C") ) {
+            // do nothing -- normal products: H->deuteron, Li->triton+alpha, B->Li7+alpha, Gd->Gd, Si-Si, C->C
         } else { // child not expected capture product -- NOTE: current version will only report name of first unexpected child particle
           problem_child_tf = true;
           TString problem_child_name = n->GetParticleName();
