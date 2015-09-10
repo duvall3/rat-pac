@@ -287,135 +287,50 @@ classdef IBDDataset
     
     % data cuts:
     
-    % cut on x
-    function ibddata_xcut = XCut(ibddata, x_min, x_max)
-      inds = find( x_min < ibddata.X  &  ibddata.X < x_max );
-      % make cuts to data
-        if isempty(ibddata.T); inds_T = [];
-          else inds_T = inds;
-            if isempty(ibddata.Scatters); inds_S = [];
-              else inds_S = inds;
-                if isempty(ibddata.Gammas); inds_G = [];
-                  else inds_G = inds;
-                    if isempty(ibddata.Gamma_Energies); inds_GE = [];
-                      else inds_GE = inds;
-                        if isempty(ibddata.Alphas); inds_A = [];
-                          else inds_A = inds;
-                            if isempty(ibddata.Alpha_Energies); inds_AE = [];
-                              else inds_AE = inds;
-                            end
-                        end
-                    end
-                end
-            end
-        end
-      % make cuts to data
-      ibddata_xcut = NeutronDataset( ibddata.X(inds), ibddata.Y(inds), ibddata.Z(inds), ibddata.T(inds_T), ibddata.Scatters(inds_S), ibddata.Gammas(inds_G), ibddata.Gamma_Energies(inds_GE), ibddata.Alphas(inds_A), ibddata.Alpha_Energies(inds_AE) );
+    % ibddata
+    
+    function ibddata_cut = Cut( ibddata, qty_to_cut, datamin, datamax )
+      evalstr = sprintf( 'ibddata.%s', qty_to_cut );
+      data_to_cut = eval(evalstr);
+      inds = find( datamin < data_to_cut & data_to_cut < datamax );
+      ibddata_cut = IBDDataset( ibddata.Event(inds), ibddata.positron_KE0(inds), ibddata.positron_X0(inds), ibddata.positron_Y0(inds), ibddata.positron_Z0(inds), ibddata.positron_X1(inds), ibddata.positron_Y1(inds), ibddata.positron_Z1(inds), ibddata.positron_Xf(inds), ibddata.positron_Yf(inds), ibddata.positron_Zf(inds), ibddata.positron_T(inds), ibddata.positron_Gammas(inds), ibddata.positron_Gamma_Energies(inds), ibddata.neutron_KE0(inds), ibddata.neutron_X0(inds), ibddata.neutron_Y0(inds), ibddata.neutron_Z0(inds), ibddata.neutron_X1(inds), ibddata.neutron_Y1(inds), ibddata.neutron_Z1(inds), ibddata.neutron_Xf(inds), ibddata.neutron_Yf(inds), ibddata.neutron_Zf(inds), ibddata.neutron_T(inds), ibddata.neutron_Scatters(inds), ibddata.neutron_Gammas(inds), ibddata.neutron_Gamma_Energies(inds), ibddata.neutron_Alphas(inds), ibddata.neutron_Alpha_Energies(inds) );
+%     ibddata_cut = data(inds); %debugging
     end %function
     
-    % cut on y
-    function ibddata_ycut = YCut(ibddata, y_min, y_max)                                                                                                                                                                                   
-      inds = find( y_min < ibddata.Y  &  ibddata.Y < y_max );                                                                                                                                                                             
-      % make cuts to data                                                                                                                                                                                                             
-        if isempty(ibddata.T); inds_T = [];                                                                                                                                                                                             
-          else inds_T = inds;                                                                                                                                                                                                         
-            if isempty(ibddata.Scatters); inds_S = [];                                                                                                                                                                                  
-              else inds_S = inds;                                                                                                                                                                                                     
-                if isempty(ibddata.Gammas); inds_G = [];                                                                                                                                                                                
-                  else inds_G = inds;                                                                                                                                                                                                 
-                    if isempty(ibddata.Gamma_Energies); inds_GE = [];                                                                                                                                                                   
-                      else inds_GE = inds;                                                                                                                                                                                            
-                        if isempty(ibddata.Alphas); inds_A = [];                                                                                                                                                                        
-                          else inds_A = inds;                                                                                                                                                                                         
-                            if isempty(ibddata.Alpha_Energies); inds_AE = [];                                                                                                                                                           
-                              else inds_AE = inds;                                                                                                                                                                                    
-                            end                                                                                                                                                                                                       
-                        end                                                                                                                                                                                                           
-                    end                                                                                                                                                                                                               
-                end                                                                                                                                                                                                                   
-            end                                                                                                                                                                                                                       
-        end                                                                                                                                                                                                                           
-      % make cuts to data                                                                                                                                                                                                             
-      ibddata_ycut = NeutronDataset( ibddata.X(inds), ibddata.Y(inds), ibddata.Z(inds), ibddata.T(inds_T), ibddata.Scatters(inds_S), ibddata.Gammas(inds_G), ibddata.Gamma_Energies(inds_GE), ibddata.Alphas(inds_A), ibddata.Alpha_Energies(inds_AE) );
-    end %function                                                                                                                                                                                                                     
     
-    % cut on z
-    function ibddata_zcut = ZCut(ibddata, z_min, z_max)                                                                                                                                                                                   
-      inds = find( z_min < ibddata.Z  &  ibddata.Z < z_max );                                                                                                                                                                              
-      % make cuts to data                                                                                                                                                                                                             
-        if isempty(ibddata.T); inds_T = [];                                                                                                                                                                                             
-          else inds_T = inds;                                                                                                                                                                                                         
-            if isempty(ibddata.Scatters); inds_S = [];                                                                                                                                                                                  
-              else inds_S = inds;                                                                                                                                                                                                     
-                if isempty(ibddata.Gammas); inds_G = [];                                                                                                                                                                                
-                  else inds_G = inds;                                                                                                                                                                                                 
-                    if isempty(ibddata.Gamma_Energies); inds_GE = [];                                                                                                                                                                   
-                      else inds_GE = inds;                                                                                                                                                                                            
-                        if isempty(ibddata.Alphas); inds_A = [];                                                                                                                                                                        
-                          else inds_A = inds;                                                                                                                                                                                         
-                            if isempty(ibddata.Alpha_Energies); inds_AE = [];                                                                                                                                                           
-                              else inds_AE = inds;                                                                                                                                                                                    
-                            end                                                                                                                                                                                                       
-                        end                                                                                                                                                                                                           
-                    end                                                                                                                                                                                                               
-                end                                                                                                                                                                                                                   
-            end                                                                                                                                                                                                                       
-        end                                                                                                                                                                                                                           
-      % make cuts to data                                                                                                                                                                                                             
-      ibddata_zcut = NeutronDataset( ibddata.X(inds), ibddata.Y(inds), ibddata.Z(inds), ibddata.T(inds_T), ibddata.Scatters(inds_S), ibddata.Gammas(inds_G), ibddata.Gamma_Energies(inds_GE), ibddata.Alphas(inds_A), ibddata.Alpha_Energies(inds_AE) );
-    end %function                                                                                                                                                                                                                     
- 
-    % cut on t                                                                                                                                                                                                                          
-     function ibddata_tcut = TCut(ibddata, t_min, t_max)                                                                                                                                                                                     
-       inds = find( t_min < ibddata.T  &  ibddata.T < t_max );                                                                                                                                                                               
-       % make cuts to data                                                                                                                                                                                                               
-         if isempty(ibddata.T); error 'Cannot cut on T: no T vector.'
-           else inds_T = inds;                                                                                                                                                                                                           
-             if isempty(ibddata.Scatters); inds_S = [];                                                                                                                                                                                    
-               else inds_S = inds;                                                                                                                                                                                                       
-                 if isempty(ibddata.Gammas); inds_G = [];                                                                                                                                                                                  
-                   else inds_G = inds;                                                                                                                                                                                                   
-                     if isempty(ibddata.Gamma_Energies); inds_GE = [];                                                                                                                                                                     
-                       else inds_GE = inds;                                                                                                                                                                                              
-                         if isempty(ibddata.Alphas); inds_A = [];                                                                                                                                                                          
-                           else inds_A = inds;                                                                                                                                                                                           
-                             if isempty(ibddata.Alpha_Energies); inds_AE = [];                                                                                                                                                             
-                               else inds_AE = inds;                                                                                                                                                                                      
-                             end                                                                                                                                                                                                         
-                         end                                                                                                                                                                                                             
-                     end                                                                                                                                                                                                                 
-                 end                                                                                                                                                                                                                     
-             end                                                                                                                                                                                                                         
-         end                                                                                                                                                                                                                             
-       % make cuts to data                                                                                                                                                                                                               
-       ibddata_tcut = NeutronDataset( ibddata.X(inds), ibddata.Y(inds), ibddata.Z(inds), ibddata.T(inds_T), ibddata.Scatters(inds_S), ibddata.Gammas(inds_G), ibddata.Gamma_Energies(inds_GE), ibddata.Alphas(inds_A), ibddata.Alpha_Energies(inds_AE) );    
-     end %function                                                                                                                                                                                                                       
+    
+%   % cut on x
+%   function ibddata_xcut = CutNeutronX(ibddata, x_min, x_max)
+%     inds = find( x_min < ibddata.neutron_Xf  &  ibddata.neutron_Xf < x_max );
+%     ibddata_xcut = NeutronDataset( ibddata.neutron_Xf(inds), ibddata.neutron_Yf(inds), ibddata.neutron_Zf(inds), ibddata.neutron_Tf(inds), ibddata.neutron_Scatters(inds), ibddata.neutron_Gammas(inds), ibddata.neutron_Gamma_Energies(inds), ibddata.neutron_Alphas(inds), ibddata.neutron_Alpha_Energies(inds) );
+%   end %function
+%   
+%   % cut on y
+%   function ibddata_ycut = CutNeutronY(ibddata, y_min, y_max)                                                                                                                                                                                   
+%     inds = find( y_min < ibddata.neutron_Yf  &  ibddata.neutron_Yf < y_max );                                                                                                                                                                             
+%     ibddata_ycut = NeutronDataset( ibddata.neutron_Xf(inds), ibddata.Y(inds), ibddata.Z(inds), ibddata.T(inds_T), ibddata.Scatters(inds_S), ibddata.Gammas(inds_G), ibddata.Gamma_Energies(inds_GE), ibddata.Alphas(inds_A), ibddata.Alpha_Energies(inds_AE) );
+%   end %function                                                                                                                                                                                                                     
+%   
+%   % cut on z
+%   function ibddata_zcut = ZCut(ibddata, z_min, z_max)                                                                                                                                                                                   
+%     inds = find( z_min < ibddata.Z  &  ibddata.Z < z_max );                                                                                                                                                                              
+%     % make cuts to data                                                                                                                                                                                                             
+%     ibddata_zcut = NeutronDataset( ibddata.X(inds), ibddata.Y(inds), ibddata.Z(inds), ibddata.T(inds_T), ibddata.Scatters(inds_S), ibddata.Gammas(inds_G), ibddata.Gamma_Energies(inds_GE), ibddata.Alphas(inds_A), ibddata.Alpha_Energies(inds_AE) );
+%   end %function                                                                                                                                                                                                                     
+%
+%   % cut on t                                                                                                                                                                                                                          
+%    function ibddata_tcut = TCut(ibddata, t_min, t_max)                                                                                                                                                                                     
+%      inds = find( t_min < ibddata.T  &  ibddata.T < t_max );                                                                                                                                                                               
+%      % make cuts to data                                                                                                                                                                                                               
+%      ibddata_tcut = NeutronDataset( ibddata.X(inds), ibddata.Y(inds), ibddata.Z(inds), ibddata.T(inds_T), ibddata.Scatters(inds_S), ibddata.Gammas(inds_G), ibddata.Gamma_Energies(inds_GE), ibddata.Alphas(inds_A), ibddata.Alpha_Energies(inds_AE) );    
+%    end %function                                                                                                                                                                                                                       
 
-     % cut on sc                                                                                                                                                                                                                             
-      function ibddata_scut = ScattersCut(ibddata, sc_min, sc_max)                                                                                                                                                                                     
-        inds = find( sc_min < ibddata.Scatters  &  ibddata.Scatters < sc_max );                                                                                                                                                                               
-        % make cuts to data                                                                                                                                                                                                               
-          if isempty(ibddata.T); error 'T values missing.'
-            else inds_T = inds;                                                                                                                                                                                                           
-              if isempty(ibddata.Scatters); 'Cannot cut on Scatters: no Scatters vector.'                                                                                                                                                                                    
-                else inds_S = inds;                                                                                                                                                                                                       
-                  if isempty(ibddata.Gammas); inds_G = [];                                                                                                                                                                                  
-                    else inds_G = inds;                                                                                                                                                                                                   
-                      if isempty(ibddata.Gamma_Energies); inds_GE = [];                                                                                                                                                                     
-                        else inds_GE = inds;                                                                                                                                                                                              
-                          if isempty(ibddata.Alphas); inds_A = [];                                                                                                                                                                          
-                            else inds_A = inds;                                                                                                                                                                                           
-                              if isempty(ibddata.Alpha_Energies); inds_AE = [];                                                                                                                                                             
-                                else inds_AE = inds;                                                                                                                                                                                      
-                              end                                                                                                                                                                                                         
-                          end                                                                                                                                                                                                             
-                      end                                                                                                                                                                                                                 
-                  end                                                                                                                                                                                                                     
-              end                                                                                                                                                                                                                         
-          end                                                                                                                                                                                                                             
-        % make cuts to data                                                                                                                                                                                                               
-        ibddata_scut = NeutronDataset( ibddata.X(inds), ibddata.Y(inds), ibddata.Z(inds), ibddata.T(inds_T), ibddata.Scatters(inds_S), ibddata.Gammas(inds_G), ibddata.Gamma_Energies(inds_GE), ibddata.Alphas(inds_A), ibddata.Alpha_Energies(inds_AE) );    
-      end %function                                                                                                                                                                                                                       
+%    % cut on sc                                                                                                                                                                                                                             
+%     function ibddata_scut = ScattersCut(ibddata, sc_min, sc_max)                                                                                                                                                                                     
+%       inds = find( sc_min < ibddata.Scatters  &  ibddata.Scatters < sc_max );                                                                                                                                                                               
+%       % make cuts to data                                                                                                                                                                                                               
+%       ibddata_scut = NeutronDataset( ibddata.X(inds), ibddata.Y(inds), ibddata.Z(inds), ibddata.T(inds_T), ibddata.Scatters(inds_S), ibddata.Gammas(inds_G), ibddata.Gamma_Energies(inds_GE), ibddata.Alphas(inds_A), ibddata.Alpha_Energies(inds_AE) );    
+%     end %function                                                                                                                                                                                                                       
     
 
 
