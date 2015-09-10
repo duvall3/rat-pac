@@ -12,7 +12,8 @@ ROOTFILE="$FILENAME".root
 ROOTCOMMAND=$(printf "'IBD.cxx(\"$ROOTFILE\",$NUM_EVENTS)'")
 eval "root -q -l -b $ROOTCOMMAND > \"$FILENAME\".ibd.dat"
 ibd_dat_to_txt.sh "$FILENAME".ibd.dat | column -t > "$FILENAME".txt
-#nCapAgents.sh "$FILENAME".ibd.dat
+nCapAgents_ibd.sh "$FILENAME".ibd.dat
+ibd_term_vols.sh "$FILENAME".ibd.dat
 #plot_gammas_mfile.sh $FILENAME
 
 # make output directory & move all the new output files there
