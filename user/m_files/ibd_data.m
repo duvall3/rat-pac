@@ -1,36 +1,18 @@
-% ibd_data -- read in positions & generate vectors for delta_{x,y,z,r} from IBD text table
+function ibdds = ibd_data( data )
+% ibd_data = read in text data & create object of IBDDataset class
 %  -- intended for use with the output from duvall3/rat-pac/user/shell_scripts/ibd_dat_to_txt.sh,
 %        in which case you should read in the data with this command:  data = dlmread( 'FILENAME.txt', '', 1, 0 );
-% ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ August 2015 ~ #
+% ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ September 2015 ~ #
 
+% basic argcheck
+[~, width ] = size(data);
+if width ~= 30; error('\nBad data size or format.\n'); else end
 
-%% reading in data
-% events
-ibd_event_list = data(:,1);
-% positron -- positions, times, gammas, total gamma energies (positions / 10 so mm->cm)
-e_x0 = data(:,2)/10; e_y0 = data(:,3)/10; e_z0 = data(:,4)/10;
-e_x1 = data(:,5)/10; e_y1 = data(:,6)/10; e_z1 = data(:,7)/10;
-e_xf = data(:,8)/10; e_yf = data(:,9)/10; e_zf = data(:,10)/10;
-e_t = data(:,11)/1000; % ns->us
-e_gam_mult = data(:,12);
-e_gam_ke = data(:,13);
-% neutron -- positions, total scatters, times, alphas, alpha energies, gammas, gamma energies
-n_x0 = data(:,14)/10; n_y0 = data(:,15)/10; n_z0 = data(:,16)/10;
-n_x1 = data(:,17)/10; n_y1 = data(:,18)/10; n_z1 = data(:,19)/10;
-n_xf = data(:,20)/10; n_yf = data(:,21)/10; n_zf = data(:,22)/10;
-n_scat = data(:,23);
-n_t = data(:,24);
-n_alph_mult = data(:,25);
-n_alph_ke = data(:,26);
-n_gam_mult = data(:,27);
-n_gam_ke = data(:,28);
+ibd_data = data;
+%% convert
+ibd_data(:,3:11) = ibd_data(:,3:11)/10; ibd_data(:,16:24) = ibd_data(:,16:24)/10; % mm to cm
+ibd_data(:,12) = ibd_data(:,12)/1000; ibd_data(:,25) = ibd_data(:,25)/1000; % ns to us
 
-
-%% displacements
-n_x = n_xf - n_x0; n_y = n_yf - n_y0; n_z = n_zf - n_z0;
-e_x = e_xf - e_x0; e_y = e_yf - e_y0; e_z = e_zf - e_z0;
-n_r = sqrt( n_x.^2 + n_y.^2 + n_z.^2 );
-e_r = sqrt( e_x.^2 + e_y.^2 + e_z.^2 );
-
-
-% whew! all pau
+%% create IBDDataset object from 'data'
+% see heading IBDDataset class or header in '.txt' file for argument list
+ibdds = IBDDataset( ibd_data(:,1), ibd_data(:,2), ibd_data(:,3), ibd_data(:,4), ibd_data(:,5), ibd_data(:,6), ibd_data(:,7), ibd_data(:,8), ibd_data(:,9), ibd_data(:,10), ibd_data(:,11), ibd_data(:,12), ibd_data(:,13), ibd_data(:,14), ibd_data(:,15), ibd_data(:,16), ibd_data(:,17), ibd_data(:,18), ibd_data(:,19), ibd_data(:,20), ibd_data(:,21), ibd_data(:,22), ibd_data(:,23), ibd_data(:,24), ibd_data(:,25), ibd_data(:,26), ibd_data(:,27), ibd_data(:,28), ibd_data(:,29), ibd_data(:,30) );

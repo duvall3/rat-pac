@@ -32,6 +32,7 @@ for (int event=1; event<=number_of_events; event++) { // event loop
     // get starting point
 //  cout << "Particle: " << particle_name << endl; // mostly for debugging
     if ( n->IsTrackStart() == false ) printf( "WARNING: Bad track start!" ); // sanity check
+    printf( "%s KE_0: % 5.6f\n", particle_name.Data(), n->GetKE() );
     printf( "%s Begin:\t% 5.6f\t% 5.6f\t% 5.6f\n", particle_name.Data(), n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
     
     // prepare for step loop
@@ -47,6 +48,7 @@ for (int event=1; event<=number_of_events; event++) { // event loop
     
     // should be at end of track now
     RAT::TrackNode *n = c.Here();
+    TString term_vol = n->GetVolume();
     if ( n->IsTrackEnd() == false ) {cout << "Error: not track end" << endl; cerr << "Error: not track end" << endl; } // sanity check
     // check volume at track termination -- mod for e+?
 //  if ( n->GetVolume() != "target" ) cerr << "Warning: n0 track for event " << event << "terminates in volume '" << n->GetVolume() << "'" << endl;
@@ -55,6 +57,7 @@ for (int event=1; event<=number_of_events; event++) { // event loop
     printf( "%s End:\t\t% 5.6f\t% 5.6f\t% 5.6f\n", particle_name.Data(), n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
     if ( particle_name == "neutron" ) printf( "%s Total Scatters: %i\n", particle_name.Data(), scatter_count ); // already determined above, but looks nicer for output here
     printf( "%s Time: %f\n", particle_name.Data(), n->GetGlobalTime() );
+    printf( "%s Termination Volume: %s\n", particle_name.Data(), term_vol.Data() );
   
 
 
@@ -94,7 +97,7 @@ for (int event=1; event<=number_of_events; event++) { // event loop
         } else if (child_name == "gamma" ) {
           gammas++;
           gamma_KE_total = gamma_KE_total + n->GetKE();
-        } else if ( child_name.Contains("deuteron") || child_name.Contains("Li7") || child_name.Contains("Gd") ) {
+        } else if ( child_name.Contains("deuteron") || child_name.Contains("triton") || child_name.Contains("Li7") || child_name.Contains("Gd") ) {
             // do nothing -- normal products
         } else { // child not expected capture product -- NOTE: current version will only report name of first unexpected child particle
           problem_child_tf = true;

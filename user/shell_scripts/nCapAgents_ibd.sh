@@ -9,7 +9,7 @@
 ## init 
 
 # bookkeeping
-BASENAME=$(basename $1 .n0.dat)
+BASENAME=$(basename $1 .ibd.dat)
 
 # check four output filename; otherwise default to basename of input file
 if [ $2 ]; then
@@ -53,8 +53,10 @@ fi
 total_captures=$(grep "Capture: " $1 | wc -l)
 echo "Total Captures: $total_captures" #debugging
 
+## capture agents
+
 # process full capture list into BASH array of unique capture-agent names
-agent_names=( $( $awkprogram '$1 ~ /neutron Capture:/ {print $3}' $1 | sort | uniq ) )
+agent_names=( $( $awkprogram '$0 ~ /neutron Capture:/ {print $3}' $1 | sort | uniq ) )
 #echo "Capture Agents: ${agent_names[*]}" #debugging
 
 # get totals (and percentages, if bc is available) for each agent
@@ -76,11 +78,11 @@ echo "writing ./$OUTPUTFILE.cap" #debugging
 
 printf "TOTAL:\t%i\n\n" $total_captures > ./$OUTPUTFILE.cap_temp
 
-for (( k2=0; k2<k1; k2++ )); do
+for (( k3=0; k3<k1; k3++ )); do
   if [ $isbc = true ]; then
-    printf "%s:\t\t%i\t\t%2.2f%%\n" ${agent_names[$k2]} ${agent_totals[$k2]} ${agent_pcts[$k2]} >> ./$OUTPUTFILE.cap_temp
+    printf "%s:\t\t%i\t\t%2.2f%%\n" ${agent_names[$k3]} ${agent_totals[$k3]} ${agent_pcts[$k3]} >> ./$OUTPUTFILE.cap_temp
   else
-    printf "%s:\t\t%i\t\t/ %i\n" ${agent_names[$k2]} ${agent_totals[$k2]} $total_captures >> ./$OUTPUTFILE.cap_temp
+    printf "%s:\t\t%i\t\t/ %i\n" ${agent_names[$k3]} ${agent_totals[$k3]} $total_captures >> ./$OUTPUTFILE.cap_temp
   fi
 done
 

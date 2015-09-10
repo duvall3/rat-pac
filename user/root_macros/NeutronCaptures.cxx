@@ -90,6 +90,8 @@ for (int event=1; event<=number_of_events; event++) { // event loop
       } else if( n->GetParticleName()=="alpha" ) {
           alpha_KE = n->GetKE();
           printf( "Alpha: %5.6f\n", alpha_KE );
+      } else if( n->GetParticleName()=="triton" ) {
+          // do nothing for now; might track these later
       } else { // child not gamma or alpha -- NOTE: current version will only report name of first unexpected child particle
         problem_child_tf = true;
         TString problem_child_name = n->GetParticleName();
