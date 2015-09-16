@@ -133,6 +133,17 @@ classdef NeutronDataset
     
     % data cuts:
     
+    
+    function ndata_cut = Cut( ndata, qty_to_cut, datamin, datamax )
+      evalstr = sprintf( 'ndata.%s', qty_to_cut );
+      data_to_cut = eval(evalstr);
+      inds = find( datamin < data_to_cut & data_to_cut < datamax );
+      ndata_xcut = NeutronDataset( ndata.X(inds), ndata.Y(inds), ndata.Z(inds), ndata.T(inds), ndata.Scatters(inds), ndata.Gammas(inds), ndata.Gamma_Energies(inds), ndata.Alphas(inds), ndata.Alpha_Energies(inds) );
+%     ndata_cut = data(inds); %debugging
+    end %function
+
+
+    
     % cut on x
     function ndata_xcut = XCut(ndata, x_min, x_max)
       inds = find( x_min < ndata.X  &  ndata.X < x_max );

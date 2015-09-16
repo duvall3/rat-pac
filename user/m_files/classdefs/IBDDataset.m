@@ -1,5 +1,5 @@
 % IBDDataset -- class for analyzing data from IBD runs
-%   -- input properties: event, {positron,neutron} * {ke_0, x0, y0, z0, x1, y1, z1, xf, yf, zf, t, scatters(neutron only), gammas, gamma_energies}, alphas (neutron only), alpha_energies (neutron only)
+%   -- input properties: event, {positron,neutron} * {ke_0, x0, y0, z0, x1, y1, z1, xf, yf, zf, scatters(neutron only), t, gammas, gamma_energies}, alphas (neutron only), alpha_energies (neutron only)
 % ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ September 2015 ~ %
 
 
@@ -37,8 +37,8 @@ classdef IBDDataset
     neutron_Xf
     neutron_Yf
     neutron_Zf
-    neutron_T
     neutron_Scatters
+    neutron_T
 %   neutron_Agents
     neutron_Gammas
     neutron_Gamma_Energies
@@ -99,7 +99,7 @@ classdef IBDDataset
     
     %% constructor
     
-    function ibddata = IBDDataset( event, pos_ke0, pos_x0, pos_y0, pos_z0, pos_x1, pos_y1, pos_z1, pos_xf, pos_yf, pos_zf, pos_t, pos_gam, pos_gamke, n0_ke0, n0_x0, n0_y0, n0_z0, n0_x1, n0_y1, n0_z1, n0_xf, n0_yf, n0_zf, n0_t, n0_scat, n0_gam, n0_gamke, n0_alph, n0_alphke )
+    function ibddata = IBDDataset( event, pos_ke0, pos_x0, pos_y0, pos_z0, pos_x1, pos_y1, pos_z1, pos_xf, pos_yf, pos_zf, pos_t, pos_gam, pos_gamke, n0_ke0, n0_x0, n0_y0, n0_z0, n0_x1, n0_y1, n0_z1, n0_xf, n0_yf, n0_zf, n0_scat, n0_t, n0_gam, n0_gamke, n0_alph, n0_alphke )
       
       if nargin > 0 % support calling w/o arguments
         
@@ -129,8 +129,8 @@ classdef IBDDataset
         ibddata.neutron_Xf = n0_xf;
         ibddata.neutron_Yf = n0_yf;
         ibddata.neutron_Zf = n0_zf;
-        ibddata.neutron_T = n0_t;
         ibddata.neutron_Scatters = n0_scat;
+        ibddata.neutron_T = n0_t;
         ibddata.neutron_Gammas = n0_gam;
         ibddata.neutron_Gamma_Energies = n0_gamke;
         ibddata.neutron_Alphas = n0_alph;
@@ -293,47 +293,10 @@ classdef IBDDataset
       evalstr = sprintf( 'ibddata.%s', qty_to_cut );
       data_to_cut = eval(evalstr);
       inds = find( datamin < data_to_cut & data_to_cut < datamax );
-      ibddata_cut = IBDDataset( ibddata.Event(inds), ibddata.positron_KE0(inds), ibddata.positron_X0(inds), ibddata.positron_Y0(inds), ibddata.positron_Z0(inds), ibddata.positron_X1(inds), ibddata.positron_Y1(inds), ibddata.positron_Z1(inds), ibddata.positron_Xf(inds), ibddata.positron_Yf(inds), ibddata.positron_Zf(inds), ibddata.positron_T(inds), ibddata.positron_Gammas(inds), ibddata.positron_Gamma_Energies(inds), ibddata.neutron_KE0(inds), ibddata.neutron_X0(inds), ibddata.neutron_Y0(inds), ibddata.neutron_Z0(inds), ibddata.neutron_X1(inds), ibddata.neutron_Y1(inds), ibddata.neutron_Z1(inds), ibddata.neutron_Xf(inds), ibddata.neutron_Yf(inds), ibddata.neutron_Zf(inds), ibddata.neutron_T(inds), ibddata.neutron_Scatters(inds), ibddata.neutron_Gammas(inds), ibddata.neutron_Gamma_Energies(inds), ibddata.neutron_Alphas(inds), ibddata.neutron_Alpha_Energies(inds) );
+      ibddata_cut = IBDDataset( ibddata.Event(inds), ibddata.positron_KE0(inds), ibddata.positron_X0(inds), ibddata.positron_Y0(inds), ibddata.positron_Z0(inds), ibddata.positron_X1(inds), ibddata.positron_Y1(inds), ibddata.positron_Z1(inds), ibddata.positron_Xf(inds), ibddata.positron_Yf(inds), ibddata.positron_Zf(inds), ibddata.positron_T(inds), ibddata.positron_Gammas(inds), ibddata.positron_Gamma_Energies(inds), ibddata.neutron_KE0(inds), ibddata.neutron_X0(inds), ibddata.neutron_Y0(inds), ibddata.neutron_Z0(inds), ibddata.neutron_X1(inds), ibddata.neutron_Y1(inds), ibddata.neutron_Z1(inds), ibddata.neutron_Xf(inds), ibddata.neutron_Yf(inds), ibddata.neutron_Zf(inds), ibddata.neutron_Scatters(inds), ibddata.neutron_T(inds), ibddata.neutron_Gammas(inds), ibddata.neutron_Gamma_Energies(inds), ibddata.neutron_Alphas(inds), ibddata.neutron_Alpha_Energies(inds) );
 %     ibddata_cut = data(inds); %debugging
     end %function
     
-    
-    
-%   % cut on x
-%   function ibddata_xcut = CutNeutronX(ibddata, x_min, x_max)
-%     inds = find( x_min < ibddata.neutron_Xf  &  ibddata.neutron_Xf < x_max );
-%     ibddata_xcut = NeutronDataset( ibddata.neutron_Xf(inds), ibddata.neutron_Yf(inds), ibddata.neutron_Zf(inds), ibddata.neutron_Tf(inds), ibddata.neutron_Scatters(inds), ibddata.neutron_Gammas(inds), ibddata.neutron_Gamma_Energies(inds), ibddata.neutron_Alphas(inds), ibddata.neutron_Alpha_Energies(inds) );
-%   end %function
-%   
-%   % cut on y
-%   function ibddata_ycut = CutNeutronY(ibddata, y_min, y_max)                                                                                                                                                                                   
-%     inds = find( y_min < ibddata.neutron_Yf  &  ibddata.neutron_Yf < y_max );                                                                                                                                                                             
-%     ibddata_ycut = NeutronDataset( ibddata.neutron_Xf(inds), ibddata.Y(inds), ibddata.Z(inds), ibddata.T(inds_T), ibddata.Scatters(inds_S), ibddata.Gammas(inds_G), ibddata.Gamma_Energies(inds_GE), ibddata.Alphas(inds_A), ibddata.Alpha_Energies(inds_AE) );
-%   end %function                                                                                                                                                                                                                     
-%   
-%   % cut on z
-%   function ibddata_zcut = ZCut(ibddata, z_min, z_max)                                                                                                                                                                                   
-%     inds = find( z_min < ibddata.Z  &  ibddata.Z < z_max );                                                                                                                                                                              
-%     % make cuts to data                                                                                                                                                                                                             
-%     ibddata_zcut = NeutronDataset( ibddata.X(inds), ibddata.Y(inds), ibddata.Z(inds), ibddata.T(inds_T), ibddata.Scatters(inds_S), ibddata.Gammas(inds_G), ibddata.Gamma_Energies(inds_GE), ibddata.Alphas(inds_A), ibddata.Alpha_Energies(inds_AE) );
-%   end %function                                                                                                                                                                                                                     
-%
-%   % cut on t                                                                                                                                                                                                                          
-%    function ibddata_tcut = TCut(ibddata, t_min, t_max)                                                                                                                                                                                     
-%      inds = find( t_min < ibddata.T  &  ibddata.T < t_max );                                                                                                                                                                               
-%      % make cuts to data                                                                                                                                                                                                               
-%      ibddata_tcut = NeutronDataset( ibddata.X(inds), ibddata.Y(inds), ibddata.Z(inds), ibddata.T(inds_T), ibddata.Scatters(inds_S), ibddata.Gammas(inds_G), ibddata.Gamma_Energies(inds_GE), ibddata.Alphas(inds_A), ibddata.Alpha_Energies(inds_AE) );    
-%    end %function                                                                                                                                                                                                                       
-
-%    % cut on sc                                                                                                                                                                                                                             
-%     function ibddata_scut = ScattersCut(ibddata, sc_min, sc_max)                                                                                                                                                                                     
-%       inds = find( sc_min < ibddata.Scatters  &  ibddata.Scatters < sc_max );                                                                                                                                                                               
-%       % make cuts to data                                                                                                                                                                                                               
-%       ibddata_scut = NeutronDataset( ibddata.X(inds), ibddata.Y(inds), ibddata.Z(inds), ibddata.T(inds_T), ibddata.Scatters(inds_S), ibddata.Gammas(inds_G), ibddata.Gamma_Energies(inds_GE), ibddata.Alphas(inds_A), ibddata.Alpha_Energies(inds_AE) );    
-%     end %function                                                                                                                                                                                                                       
-    
-
-
   
   end %methods
 
