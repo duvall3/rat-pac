@@ -54,12 +54,12 @@ classdef IBDDataset
     
     N
     
-    total_KE0
+%   total_KE0
     
-    positron_X
-    positron_Y
-    positron_Z    
-    positron_R
+%   positron_X
+%   positron_Y
+%   positron_Z    
+%   positron_R
     positron_mu_X
     positron_mu_Y
     positron_mu_Z
@@ -67,10 +67,10 @@ classdef IBDDataset
     positron_sigma_Y
     positron_sigma_Z
     
-    neutron_X
-    neutron_Y
-    neutron_Z
-    neutron_R
+%   neutron_X
+%   neutron_Y
+%   neutron_Z
+%   neutron_R
     neutron_mu_X
     neutron_mu_Y
     neutron_mu_Z
@@ -82,8 +82,14 @@ classdef IBDDataset
     
     neutron_P
     
-    Theta_neutron
+%   Theta_neutron
     mu_Theta_neutron
+    
+    % initial momenta & angular distributions
+    positron_P_init
+    neutron_P_init
+    
+    
 %   D_Theta_neutron
     
 %   Theta_both
@@ -141,28 +147,6 @@ classdef IBDDataset
     end %function
 
 
-%   %% constructor -- vararg version
-%   function ibddata = IBDDataset( x, y, z, varargin ) %t, sc, g, gke, alph, alphke )
-%     if nargin > 0 % support calling w/o arguments
-%       ibddata.X = x;
-%       ibddata.Y = y;
-%       ibddata.Z = z;
-%       varargs = length(varargin);
-%       if varargs >= 1; ibddata.T = varargin{1};
-%         if varargs >= 2; ibddata.Scatters = varargin{2};
-%           if varargs >= 3; ibddata.Gammas = varargin{3};
-%             if varargs >= 4; ibddata.Gamma_Energies = varargin{4};
-%               if varargs >= 5; ibddata.Alphas = varargin{5};
-%                 if varargs == 6; ibddata.Alpha_Energies = varargin{6};
-%                 elseif varargs >= 7; error 'Error: Too many input arguments.'
-%                 else end
-%               else end
-%             else end
-%           else end
-%         else end
-%       end %if -- varargs
-%     else end %if -- nargin
-%   end %function
    
     %% dependent properties
      
@@ -176,25 +160,25 @@ classdef IBDDataset
     end %function
     
     % total initial KE
-    function ke0 = get.total_KE0(ibddata)
+    function ke0 = total_KE0(ibddata)
       ke0 = ibddata.positron_KE0 + ibddata.neutron_KE0;
     end
    
     % positrons
     
     % positions
-    function x = get.positron_X(ibddata)
+    function x = positron_X(ibddata)
       x = ibddata.positron_Xf - ibddata.positron_X0;
     end
-    function y = get.positron_Y(ibddata)
+    function y = positron_Y(ibddata)
       y = ibddata.positron_Yf - ibddata.positron_Y0;
     end
-    function z = get.positron_Z(ibddata)
+    function z = positron_Z(ibddata)
       z = ibddata.positron_Zf - ibddata.positron_Z0;
     end
 
     % distance(s) between track endpoints
-    function r = get.positron_R(ibddata)
+    function r = positron_R(ibddata)
       r = sqrt( ibddata.positron_X.^2 + ibddata.positron_Y.^2 + ibddata.positron_Z.^2 );
     end
      
@@ -219,23 +203,38 @@ classdef IBDDataset
     function sigz = get.positron_sigma_Z(ibddata)
       sigz = std(ibddata.positron_Z);
     end
+    
+    % initial momentum: magnitudes, unit vectors, momentum vectors, and angle cosines
+    function p_init = get.positron_P_init(ibddata)
+      p0_mag = zeros(ibddata.N, 1);
+      p0_dirn = zeros(ibddata.N, 3);
+      p0_hat = zeros(ibddata.N, 3);
+      p0 = zeros(ibddata.N, 3);
+      for k = 1:ibddata.N
+        p0_mag(k) = sqrt( ibddata.positron_KE0(k)^2 + 2*ibddata.positron_KE0(k)*0.5109989461 ); % in MeV
+        p0_dirn(k,:) = [ ibddata.positron_X1(k)-ibddata.positron_X0(k) ibddata.positron_Y1(k)-ibddata.positron_Y0(k) ibddata.positron_Z1(k)-ibddata.positron_Z0(k) ];
+        p0_hat(k,:) = p0_dirn(k,:) / sqrt(sum(p0_dirn(k,:).^2));
+        p0(k,:) = p0_mag(k) * p0_hat(k,:);
+      end
+      p_init = {p0_mag; p0_hat; p0};
+    end
 
         
     % neutrons
     
     % positions
-    function x = get.neutron_X(ibddata)
+    function x = neutron_X(ibddata)
       x = ibddata.neutron_Xf - ibddata.neutron_X0;
     end
-    function y = get.neutron_Y(ibddata)
+    function y = neutron_Y(ibddata)
       y = ibddata.neutron_Yf - ibddata.neutron_Y0;
     end
-    function z = get.neutron_Z(ibddata)
+    function z = neutron_Z(ibddata)
       z = ibddata.neutron_Zf - ibddata.neutron_Z0;
     end
 
     % distance(s) between track endpoints
-    function r = get.neutron_R(ibddata)
+    function r = neutron_R(ibddata)
       r = sqrt( ibddata.neutron_X.^2 + ibddata.neutron_Y.^2 + ibddata.neutron_Z.^2 );
     end
 
@@ -261,6 +260,20 @@ classdef IBDDataset
       sigz = std(ibddata.neutron_Z);
     end
 
+    % initial momentum: magnitudes, unit vectors, momentum vectors, and angle cosines
+    function p_init = get.neutron_P_init(ibddata)
+      p0_mag = zeros(ibddata.N, 1);
+      p0_dirn = zeros(ibddata.N, 3);
+      p0_hat = zeros(ibddata.N, 3);
+      p0 = zeros(ibddata.N, 3);
+      for k = 1:ibddata.N
+        p0_mag(k) = sqrt( ibddata.neutron_KE0(k)^2 + 2*ibddata.neutron_KE0(k)*939.5654113 ); % in MeV
+        p0_dirn(k,:) = [ ibddata.neutron_X1(k)-ibddata.neutron_X0(k) ibddata.neutron_Y1(k)-ibddata.neutron_Y0(k) ibddata.neutron_Z1(k)-ibddata.neutron_Z0(k) ];
+        p0_hat(k,:) = p0_dirn(k,:) / sqrt(sum(p0_dirn(k,:).^2));
+        p0(k,:) = p0_mag(k) * p0_hat(k,:);
+      end
+      p_init = {p0_mag; p0_hat; p0};
+    end
 
    % length of mean displacement
     function l = get.neutron_L(ibddata)
@@ -273,7 +286,7 @@ classdef IBDDataset
     end
     
     % angle to/from source
-    function th = get.Theta_neutron(ibddata)
+    function th = Theta_neutron(ibddata)
       th = atan( ibddata.neutron_Z ./ ibddata.neutron_X ) * 180/pi;
     end
     
@@ -285,10 +298,12 @@ classdef IBDDataset
     
     %% other methods
     
-    % data cuts:
+    % initial total momentum
+    function P0 = P0( ibddata )
+      P0 = ibddata.positron_P_init{3} + ibddata.neutron_P_init{3};
+    end
     
-    % ibddata
-    
+    % data cuts:    
     function ibddata_cut = Cut( ibddata, qty_to_cut, datamin, datamax )
       evalstr = sprintf( 'ibddata.%s', qty_to_cut );
       data_to_cut = eval(evalstr);
