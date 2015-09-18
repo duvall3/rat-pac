@@ -18,7 +18,7 @@ ibd_term_vols.sh "$FILENAME".ibd.dat
 
 # make output directory & move all the new output files there
 mkdir $FILENAME
-mv -t $FILENAME $FILENAME.* gam/ plot_gammas.m scatters
+mv -t $FILENAME $FILENAME.* gam/ # plot_gammas.m scatters
 
 
 # all pau!  )

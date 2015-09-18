@@ -10,7 +10,7 @@
 
 echo
 printf "\n### RAT RUN ###\n\n"
-printf "!Warning: This script will replace the current version of './run.mac'. Type <Ctrl-C> now if you wish to abort.\n\n"
+#printf "!Warning: This script will replace the current version of './run.mac'. Type <Ctrl-C> now if you wish to abort.\n\n"
 
 # run types available
 RUN_TYPE_LIST=("neutron" "ibd" "EXIT")
@@ -49,14 +49,20 @@ printf "\n\n### Beginning $RUN_TYPE run...\n\n"
 echo "\
 /control/execute setup.mac
 /rat/procset file \"$FILENAME.root\"
+/rat/proc count
+/rat/procset update 1000
 /run/beamOn $NUM_EVENTS\
 " > run.mac
 
-# create conflog && run rat
-conflog.sh > "$FILENAME".conf && rat run.mac
+# get time && create conflog && run rat
+TIME=$(date +%R) && conflog.sh > "$FILENAME".conf && rat run.mac
 
-# rename log file -- ASSUMING NO OTHER LOG FILES ARE CREATED IN LOCAL DIRECTORY DURING RUN!!!
-LOGFILE=$(basename $(ls -ltr *.log | tail -1 | awk '{print $NF}') .log)
+## # rename log file -- ASSUMING NO OTHER LOG FILES ARE CREATED IN LOCAL DIRECTORY DURING RUN!!!
+## LOGFILE=$(basename $(ls -ltr *.log | tail -1 | awk '{print $NF}') .log)
+## rename s/$LOGFILE/$FILENAME/ ./$LOGFILE.log
+
+# rename log file (runs must start >= 1 min. apart)
+LOGFILE=$( basename $(ll *.log | awk -v time=$TIME '$8 ~ time  {print $NF}') .log )
 rename s/$LOGFILE/$FILENAME/ ./$LOGFILE.log
 
 # process information according to type of run
@@ -64,8 +70,8 @@ case $RUN_TYPE in
   "neutron")
     process_n0_run.sh $FILENAME $NUM_EVENTS;;
   "ibd")
-#   process_ibd_run.sh $FILENAME $NUM_EVENTS;;
-    echo "[process_ibd_run.sh: feature not ready yet]";;
+   process_ibd_run.sh $FILENAME $NUM_EVENTS;;
+#  echo "[process_ibd_run.sh: feature not ready yet]";;
   *)
     echo "Error: invalid run type (somehow) specified." && exit 3
 esac
