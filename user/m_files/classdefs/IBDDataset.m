@@ -303,6 +303,26 @@ classdef IBDDataset
       P0 = ibddata.positron_P_init{3} + ibddata.neutron_P_init{3};
     end
     
+    % initial angle cosines
+    % positron
+    function ct = positron_Cos_Theta( ibddata )
+      p0_e_hat = ibddata.positron_P_init{2};
+      p0_tot = ibddata.P0;
+      p0_tot_hat = zeros(ibddata.N, 3);
+      ct = zeros(ibddata.N, 1);
+      for k = 1:ibddata.N
+        p0_tot_hat(k,:) = hat( p0_tot(k,:) );
+        ct(k) = p0_e_hat(k,:) * p0_tot_hat(k,:)';
+      end
+    end
+    % neutron
+    function ct = neutron_Cos_Theta( ibddata )
+      ct = zeros(ibddata.N);
+      for k = 1:ibddata.N
+        ct(k) = ibddata.neutron_P_init{2}(k,:) * ibddata.P0(k,:)';
+      end
+    end
+    
     % data cuts:    
     function ibddata_cut = Cut( ibddata, qty_to_cut, datamin, datamax )
       evalstr = sprintf( 'ibddata.%s', qty_to_cut );
