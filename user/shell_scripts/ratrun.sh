@@ -50,7 +50,7 @@ echo "\
 /control/execute setup.mac
 /rat/procset file \"$FILENAME.root\"
 /rat/proc count
-/rat/procset update 1000
+/rat/procset update 100000
 /run/beamOn $NUM_EVENTS\
 " > run.mac
 
@@ -62,7 +62,7 @@ TIME=$(date +%R) && conflog.sh > "$FILENAME".conf && rat run.mac
 ## rename s/$LOGFILE/$FILENAME/ ./$LOGFILE.log
 
 # rename log file (runs must start >= 1 min. apart)
-LOGFILE=$( basename $(ll *.log | awk -v time=$TIME '$8 ~ time  {print $NF}') .log )
+LOGFILE=$( basename $(ls -l *.log | awk -v time=$TIME '$8 ~ time  {print $NF}') .log )
 rename s/$LOGFILE/$FILENAME/ ./$LOGFILE.log
 
 # process information according to type of run
@@ -70,8 +70,8 @@ case $RUN_TYPE in
   "neutron")
     process_n0_run.sh $FILENAME $NUM_EVENTS;;
   "ibd")
-   process_ibd_run.sh $FILENAME $NUM_EVENTS;;
-#  echo "[process_ibd_run.sh: feature not ready yet]";;
+    process_ibd_run.sh $FILENAME $NUM_EVENTS;;
+#   echo "[process_ibd_run.sh: feature not ready yet]";;
   *)
     echo "Error: invalid run type (somehow) specified." && exit 3
 esac
