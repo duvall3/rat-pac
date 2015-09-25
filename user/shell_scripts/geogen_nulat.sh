@@ -24,7 +24,7 @@
 LR=(left mid right)
 UD=(bot mid top)
 FB=(back mid front)
-OFFSET=(-50 0 50)
+OFFSET=(-51 0 51) # 1-mm separation for TIR
 
 for k_lr in {0..2}; do
 
@@ -49,7 +49,7 @@ valid_end: [0, 0],
 mother: \"cube_array\",
 type: \"box\",
 size: [25.0, 25.0, 25.0], // mm
-material: \"gd_scintillator\",
+material: \"ej254_015li6\",
 invisible: 0,
 position: [$x.0, $y.0, $z.0] // mm
 }\n\n"
