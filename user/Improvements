@@ -1,0 +1,8 @@
+Improvements & Bugfixes List -- Because "Known Issues" Sounds Sad
+==========================================================================
+
+- Theta is reconstructed incompletely in current classdefs; needs corrections for +/- and 180 shift
+
+- NeutronDataset is only halfway transitioned to new structure and therefore only partially functional
+
+
