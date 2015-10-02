@@ -105,7 +105,7 @@ position: [10002.0, 0.0, 0.0] // mm
 }
 
 
-// CUBES
+// CUBE ARRAY (mother)
 // -------- GEO[cube_array]
 {
 name: "GEO",
@@ -114,10 +114,10 @@ valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "world",
 type: "box",
-size: [75.0, 75.0, 75.0], // mm
+size: [76.0, 76.0, 76.0], // mm
 material: "air",
 invisible: 0,
-position: [0.0, -9925.0, 0.0], // mm
+position: [0.0, -9924.0, 0.0], // mm
 }
 
 
@@ -130,9 +130,9 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "gd_scintillator",
+material: "ej254_015li6",
 invisible: 0,
-position: [-50.0, -50.0, -50.0] // mm
+position: [-51.0, -51.0, -51.0] // mm
 }
 
 
@@ -145,9 +145,9 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "gd_scintillator",
+material: "ej254_015li6",
 invisible: 0,
-position: [-50.0, -50.0, 0.0] // mm
+position: [-51.0, -51.0, 0.0] // mm
 }
 
 
@@ -160,9 +160,9 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "gd_scintillator",
+material: "ej254_015li6",
 invisible: 0,
-position: [-50.0, -50.0, 50.0] // mm
+position: [-51.0, -51.0, 51.0] // mm
 }
 
 
@@ -175,9 +175,9 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "gd_scintillator",
+material: "ej254_015li6",
 invisible: 0,
-position: [-50.0, 0.0, -50.0] // mm
+position: [-51.0, 0.0, -51.0] // mm
 }
 
 
@@ -190,9 +190,9 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "gd_scintillator",
+material: "ej254_015li6",
 invisible: 0,
-position: [-50.0, 0.0, 0.0] // mm
+position: [-51.0, 0.0, 0.0] // mm
 }
 
 
@@ -205,9 +205,9 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "gd_scintillator",
+material: "ej254_015li6",
 invisible: 0,
-position: [-50.0, 0.0, 50.0] // mm
+position: [-51.0, 0.0, 51.0] // mm
 }
 
 
@@ -220,9 +220,9 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "gd_scintillator",
+material: "ej254_015li6",
 invisible: 0,
-position: [-50.0, 50.0, -50.0] // mm
+position: [-51.0, 51.0, -51.0] // mm
 }
 
 
@@ -235,9 +235,9 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "gd_scintillator",
+material: "ej254_015li6",
 invisible: 0,
-position: [-50.0, 50.0, 0.0] // mm
+position: [-51.0, 51.0, 0.0] // mm
 }
 
 
@@ -250,9 +250,9 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "gd_scintillator",
+material: "ej254_015li6",
 invisible: 0,
-position: [-50.0, 50.0, 50.0] // mm
+position: [-51.0, 51.0, 51.0] // mm
 }
 
 
@@ -265,9 +265,9 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "gd_scintillator",
+material: "ej254_015li6",
 invisible: 0,
-position: [0.0, -50.0, -50.0] // mm
+position: [0.0, -51.0, -51.0] // mm
 }
 
 
@@ -280,9 +280,9 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "gd_scintillator",
+material: "ej254_015li6",
 invisible: 0,
-position: [0.0, -50.0, 0.0] // mm
+position: [0.0, -51.0, 0.0] // mm
 }
 
 
@@ -295,9 +295,9 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "gd_scintillator",
+material: "ej254_015li6",
 invisible: 0,
-position: [0.0, -50.0, 50.0] // mm
+position: [0.0, -51.0, 51.0] // mm
 }
 
 
@@ -310,9 +310,9 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "gd_scintillator",
+material: "ej254_015li6",
 invisible: 0,
-position: [0.0, 0.0, -50.0] // mm
+position: [0.0, 0.0, -51.0] // mm
 }
 
 
@@ -325,7 +325,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "gd_scintillator",
+material: "ej254_015li6",
 invisible: 0,
 position: [0.0, 0.0, 0.0] // mm
 }
@@ -340,9 +340,9 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "gd_scintillator",
+material: "ej254_015li6",
 invisible: 0,
-position: [0.0, 0.0, 50.0] // mm
+position: [0.0, 0.0, 51.0] // mm
 }
 
 
@@ -355,9 +355,9 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "gd_scintillator",
+material: "ej254_015li6",
 invisible: 0,
-position: [0.0, 50.0, -50.0] // mm
+position: [0.0, 51.0, -51.0] // mm
 }
 
 
@@ -370,9 +370,9 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "gd_scintillator",
+material: "ej254_015li6",
 invisible: 0,
-position: [0.0, 50.0, 0.0] // mm
+position: [0.0, 51.0, 0.0] // mm
 }
 
 
@@ -385,9 +385,9 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "gd_scintillator",
+material: "ej254_015li6",
 invisible: 0,
-position: [0.0, 50.0, 50.0] // mm
+position: [0.0, 51.0, 51.0] // mm
 }
 
 
@@ -400,9 +400,9 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "gd_scintillator",
+material: "ej254_015li6",
 invisible: 0,
-position: [50.0, -50.0, -50.0] // mm
+position: [51.0, -51.0, -51.0] // mm
 }
 
 
@@ -415,9 +415,9 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "gd_scintillator",
+material: "ej254_015li6",
 invisible: 0,
-position: [50.0, -50.0, 0.0] // mm
+position: [51.0, -51.0, 0.0] // mm
 }
 
 
@@ -430,9 +430,9 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "gd_scintillator",
+material: "ej254_015li6",
 invisible: 0,
-position: [50.0, -50.0, 50.0] // mm
+position: [51.0, -51.0, 51.0] // mm
 }
 
 
@@ -445,9 +445,9 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "gd_scintillator",
+material: "ej254_015li6",
 invisible: 0,
-position: [50.0, 0.0, -50.0] // mm
+position: [51.0, 0.0, -51.0] // mm
 }
 
 
@@ -460,9 +460,9 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "gd_scintillator",
+material: "ej254_015li6",
 invisible: 0,
-position: [50.0, 0.0, 0.0] // mm
+position: [51.0, 0.0, 0.0] // mm
 }
 
 
@@ -475,9 +475,9 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "gd_scintillator",
+material: "ej254_015li6",
 invisible: 0,
-position: [50.0, 0.0, 50.0] // mm
+position: [51.0, 0.0, 51.0] // mm
 }
 
 
@@ -490,9 +490,9 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "gd_scintillator",
+material: "ej254_015li6",
 invisible: 0,
-position: [50.0, 50.0, -50.0] // mm
+position: [51.0, 51.0, -51.0] // mm
 }
 
 
@@ -505,9 +505,9 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "gd_scintillator",
+material: "ej254_015li6",
 invisible: 0,
-position: [50.0, 50.0, 0.0] // mm
+position: [51.0, 51.0, 0.0] // mm
 }
 
 
@@ -520,9 +520,9 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "gd_scintillator",
+material: "ej254_015li6",
 invisible: 0,
-position: [50.0, 50.0, 50.0] // mm
+position: [51.0, 51.0, 51.0] // mm
 }
 
 

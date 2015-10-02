@@ -2,5 +2,5 @@
 
 /generator/add combo gun:point:poisson
 /generator/vtx/set mu- 0 0 1 400.0  # 400MeV muons directed along the +z axis
-/generator/pos/set 0 -9925 -4500
+/generator/pos/set 0 -9924 -4500
 /generator/rate/set 1
