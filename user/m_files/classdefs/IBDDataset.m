@@ -204,7 +204,7 @@ classdef IBDDataset
       sigz = std(ibddata.positron_Z);
     end
     
-    % initial momentum: magnitudes, unit vectors, momentum vectors, and angle cosines
+    % initial momentum: magnitudes, unit vectors, momentum vectors
     function p_init = get.positron_P_init(ibddata)
       p0_mag = zeros(ibddata.N, 1);
       p0_dirn = zeros(ibddata.N, 3);
@@ -260,7 +260,7 @@ classdef IBDDataset
       sigz = std(ibddata.neutron_Z);
     end
 
-    % initial momentum: magnitudes, unit vectors, momentum vectors, and angle cosines
+    % initial momentum: magnitudes, unit vectors, momentum vectors
     function p_init = get.neutron_P_init(ibddata)
       p0_mag = zeros(ibddata.N, 1);
       p0_dirn = zeros(ibddata.N, 3);
@@ -331,7 +331,29 @@ classdef IBDDataset
       ibddata_cut = IBDDataset( ibddata.Event(inds), ibddata.positron_KE0(inds), ibddata.positron_X0(inds), ibddata.positron_Y0(inds), ibddata.positron_Z0(inds), ibddata.positron_X1(inds), ibddata.positron_Y1(inds), ibddata.positron_Z1(inds), ibddata.positron_Xf(inds), ibddata.positron_Yf(inds), ibddata.positron_Zf(inds), ibddata.positron_T(inds), ibddata.positron_Gammas(inds), ibddata.positron_Gamma_Energies(inds), ibddata.neutron_KE0(inds), ibddata.neutron_X0(inds), ibddata.neutron_Y0(inds), ibddata.neutron_Z0(inds), ibddata.neutron_X1(inds), ibddata.neutron_Y1(inds), ibddata.neutron_Z1(inds), ibddata.neutron_Xf(inds), ibddata.neutron_Yf(inds), ibddata.neutron_Zf(inds), ibddata.neutron_Scatters(inds), ibddata.neutron_T(inds), ibddata.neutron_Gammas(inds), ibddata.neutron_Gamma_Energies(inds), ibddata.neutron_Alphas(inds), ibddata.neutron_Alpha_Energies(inds) );
 %     ibddata_cut = data(inds); %debugging
     end %function
+   
+    % position resolution -- apply user-specified realistic spreading to perfect MC input
+    % gaussian spreading for continuous detector elements
+    function realistic_x = GSpread( ibddata, perfect_x, sigma, xmin, xmax )
+      realistic_x = perfect_x + sigma * randn(size(perfect_x));
+      ind_low = find( realistic_x < xmin );
+      realistic_x(ind_low) = xmin;
+      ind_high = find( realistic_x > xmax );
+      realistic_x(ind_high) = xmax;
+    end %function
     
+    % flat spreading for discrete detector elements (i.e., cell-based detectors) -- CELL TABLE REQUIRED
+    function realistic_x = FSpread( ibddata, perfect_x, cell_centers, cell_width )
+      cell_edges = zeros( length(cell_centers), 2 );
+      cell_edges(:,1) = cell_centers - cell_width/2;
+      cell_edges(:,2) = cell_centers + cell_width/2;
+      realistic_x = zeros( 1, length(perfect_x) );
+      for k = 1:length(perfect_x)
+        cell_number = find( cell_edges(:,1)<perfect_x(k) & perfect_x(k)<cell_edges(:,2) );
+          if isempty(cell_number); error( 'Cell not found.' ); else end
+        realistic_x(k) = cell_centers(cell_number);%+ ( cell_width*rand(1) - cell_width/2 ); % centers only for debugging purposes
+      end %for
+    end %function
   
   end %methods
 
