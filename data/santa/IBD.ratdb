@@ -4,12 +4,12 @@ name: "IBD",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 
-emin: 4.00, // Minimum generated neutrino energy (MeV)
-emax: 4.00, // Maximum generated neutrino energy (MeV)
+emin: 3.999999, // Minimum generated neutrino energy (MeV)
+emax: 4.000001, // Maximum generated neutrino energy (MeV)
 
 // Neutrino spectrum
 // from Vogel, Gratta RMP via Jon Link
-spec_e:     [ 4.00, 4.01 ], // (MeV)
+spec_e:     [ 3.999999, 4.000001 ], // (MeV)
 spec_flux:  [ 1.00, 1.00 ], // (units?!)
 
 }

@@ -1,6 +1,20 @@
 # erica.mac -- generator to match Erica's input
 
-/generator/add combo gun:point:poisson
-/generator/vtx/set neutron 0 0 1 0.01  # 10keV neutrons directed along the +z axis
-/generator/pos/set 0 -9000 -500
+/generator/add combo gun:regexfill:poisson
+/generator/vtx/set neutron 0 0 1 0.010  # 10keV neutrons directed along the +z axis
+#/generator/vtx/set neutron 0 0 1 0.004  # 4keV neutrons directed along the +z axis
+
+# angle tests
+#/generator/vtx/set neutron 0.17633 0 1 0.01  # 10keV neutrons directed at +10deg. to the +z axis
+#/generator/vtx/set neutron 0.36397 0 1 0.01  # 10keV neutrons directed at +20deg. to the +z axis
+#/generator/vtx/set neutron 0.57735 0 1 0.01  # 10keV neutrons directed at +30deg. to the +z axis
+#/generator/vtx/set neutron 0.83910 0 1 0.01  # 10keV neutrons directed at +40deg. to the +z axis
+#/generator/vtx/set neutron 1.1918 0 1 0.01  # 10keV neutrons directed at +50deg. to the +z axis
+#/generator/vtx/set neutron 1.7321 0 1 0.01  # 10keV neutrons directed at +60deg. to the +z axis
+#/generator/vtx/set neutron 2.7475 0 1 0.01  # 10keV neutrons directed at +70deg. to the +z axis
+#/generator/vtx/set neutron 5.6713 0 1 0.01  # 10keV neutrons directed at +80deg. to the +z axis
+#/generator/vtx/set neutron 57.289 0 1 0.01  # 10keV neutrons directed at +89deg. to the +z axis
+
+#/generator/pos/set 0 -9000 -500
+/generator/pos/set target_plane
 /generator/rate/set 1

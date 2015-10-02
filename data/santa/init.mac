@@ -11,5 +11,5 @@
 /rat/proc fitcentroid
 #/rat/proc fitpath
 /rat/proc count
-/rat/procset update 100
+/rat/procset update 10000
 /rat/proclast outroot
