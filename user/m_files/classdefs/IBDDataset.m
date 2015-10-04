@@ -351,7 +351,7 @@ classdef IBDDataset
       for k = 1:length(perfect_x)
         cell_number = find( cell_edges(:,1)<perfect_x(k) & perfect_x(k)<cell_edges(:,2) );
           if isempty(cell_number); error( 'Cell not found.' ); else end
-        realistic_x(k) = cell_centers(cell_number);%+ ( cell_width*rand(1) - cell_width/2 ); % centers only for debugging purposes
+        realistic_x(k) = cell_centers(cell_number) + ( cell_width*rand(1) - cell_width/2 );
       end %for
     end %function
   

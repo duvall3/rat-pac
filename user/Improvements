@@ -6,5 +6,8 @@ Improvements & Bugfixes List -- Because "Known Issues" Sounds Sad
 - NeutronDataset is only halfway transitioned to new structure and therefore only partially functional
  
 - capture-strip lookup for y pos. res. is currently very roundabout; should be pulled directly from .ibd.dat file
+  
+- position resolution: gaussian method currently simply places overshoots at the edge
+  - also, flat method currently assumes uniform cell size (very minor issue)
 
 
