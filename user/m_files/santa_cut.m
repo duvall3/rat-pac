@@ -29,9 +29,9 @@
 %     ds_cut = ds_cut.Cut( 'Y', -1000, -796 );
 %     ds_cut = ds_cut.Cut( 'Z', 47, 53 );
 %elseif class(ds_all) == 'IBDDataset'
-    ds_cut = ds_all.Cut( 'neutron_Xf', -100, 100 );
-    ds_cut = ds_cut.Cut( 'neutron_Yf', -1000, -796 );
-    ds_cut = ds_cut.Cut( 'neutron_Zf', 47, 53 );
+    ds_cut = ds_all.CutOutsideRange( 'neutron_Xf', -100, 100 );
+    ds_cut = ds_cut.CutOutsideRange( 'neutron_Yf', -1000, -796 );
+    ds_cut = ds_cut.CutOutsideRange( 'neutron_Zf', 47, 53 );
 %else
 %end %if
 

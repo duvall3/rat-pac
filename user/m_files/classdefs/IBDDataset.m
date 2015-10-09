@@ -287,7 +287,7 @@ classdef IBDDataset
     
     % angle to/from source
     function th = Theta_neutron(ibddata)
-      th = atan( ibddata.neutron_Z ./ ibddata.neutron_X ) * 180/pi;
+      th = atan( ibddata.neutron_X ./ ibddata.neutron_Z ) * 180/pi;
     end
     
 %   % angular resolution
@@ -323,12 +323,23 @@ classdef IBDDataset
       end
     end
     
-    % data cuts:    
-    function ibddata_cut = Cut( ibddata, qty_to_cut, datamin, datamax )
+    % data cuts:
+    % cut the events falling outside a certain range
+    function ibddata_cut = CutOutsideRange( ibddata, qty_to_cut, datamin, datamax )
       evalstr = sprintf( 'ibddata.%s', qty_to_cut );
       data_to_cut = eval(evalstr);
       inds = find( datamin < data_to_cut & data_to_cut < datamax );
       ibddata_cut = IBDDataset( ibddata.Event(inds), ibddata.positron_KE0(inds), ibddata.positron_X0(inds), ibddata.positron_Y0(inds), ibddata.positron_Z0(inds), ibddata.positron_X1(inds), ibddata.positron_Y1(inds), ibddata.positron_Z1(inds), ibddata.positron_Xf(inds), ibddata.positron_Yf(inds), ibddata.positron_Zf(inds), ibddata.positron_T(inds), ibddata.positron_Gammas(inds), ibddata.positron_Gamma_Energies(inds), ibddata.neutron_KE0(inds), ibddata.neutron_X0(inds), ibddata.neutron_Y0(inds), ibddata.neutron_Z0(inds), ibddata.neutron_X1(inds), ibddata.neutron_Y1(inds), ibddata.neutron_Z1(inds), ibddata.neutron_Xf(inds), ibddata.neutron_Yf(inds), ibddata.neutron_Zf(inds), ibddata.neutron_Scatters(inds), ibddata.neutron_T(inds), ibddata.neutron_Gammas(inds), ibddata.neutron_Gamma_Energies(inds), ibddata.neutron_Alphas(inds), ibddata.neutron_Alpha_Energies(inds) );
+%     ibddata_cut = data(inds); %debugging
+    end %function
+   
+    % cut the events falling inside a certain range
+    function ibddata_cut = CutInsideRange( ibddata, qty_to_cut, datamin, datamax )
+      evalstr = sprintf( 'ibddata.%s', qty_to_cut );
+      data_to_cut = eval(evalstr);
+      inds_low = find( data_to_cut < datamin );
+      inds_high = find( data_to_cut > datamax );
+      ibddata_cut = IBDDataset( ibddata.Event([inds_low inds_high]), ibddata.positron_KE0([inds_low inds_high]), ibddata.positron_X0([inds_low inds_high]), ibddata.positron_Y0([inds_low inds_high]), ibddata.positron_Z0([inds_low inds_high]), ibddata.positron_X1([inds_low inds_high]), ibddata.positron_Y1([inds_low inds_high]), ibddata.positron_Z1([inds_low inds_high]), ibddata.positron_Xf([inds_low inds_high]), ibddata.positron_Yf([inds_low inds_high]), ibddata.positron_Zf([inds_low inds_high]), ibddata.positron_T([inds_low inds_high]), ibddata.positron_Gammas([inds_low inds_high]), ibddata.positron_Gamma_Energies([inds_low inds_high]), ibddata.neutron_KE0([inds_low inds_high]), ibddata.neutron_X0([inds_low inds_high]), ibddata.neutron_Y0([inds_low inds_high]), ibddata.neutron_Z0([inds_low inds_high]), ibddata.neutron_X1([inds_low inds_high]), ibddata.neutron_Y1([inds_low inds_high]), ibddata.neutron_Z1([inds_low inds_high]), ibddata.neutron_Xf([inds_low inds_high]), ibddata.neutron_Yf([inds_low inds_high]), ibddata.neutron_Zf([inds_low inds_high]), ibddata.neutron_Scatters([inds_low inds_high]), ibddata.neutron_T([inds_low inds_high]), ibddata.neutron_Gammas([inds_low inds_high]), ibddata.neutron_Gamma_Energies([inds_low inds_high]), ibddata.neutron_Alphas([inds_low inds_high]), ibddata.neutron_Alpha_Energies([inds_low inds_high]) );
 %     ibddata_cut = data(inds); %debugging
     end %function
    
