@@ -15,9 +15,9 @@ xlabel 'x (cm)'
 ylabel 'y (cm)'
 
 th = ds_cut.Theta_neutron;
-ind = find( th < 0 );
-th(ind) = th(ind) + 180;
-th = th - 90;
+%ind = find( th < 0 );
+%th(ind) = th(ind) + 180;
+%th = th - 90;
 
 thbins = -90:90;
 figure;
