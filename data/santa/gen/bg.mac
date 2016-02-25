@@ -1,0 +1,12 @@
+# bg.mac -- generator for backgrounds
+
+# testing rat-pac doc example
+#/generator/add decaychain 222Rn:regexfill
+#/generator/pos/set ^target_strip[0-9]+$
+#/generator/pos/set target_strip
+
+
+# testing "external" generator
+/generator/add external point:poisson:"muon.dat"
+/generator/pos/set 2.1 2.2 2.3
+
