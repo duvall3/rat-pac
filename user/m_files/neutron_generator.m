@@ -1,25 +1,60 @@
-function [ energies ] = neutron_spectrum( n )
-% -- neutron_spectrum -- script to generate a fast-netron background according to JEDEC standard JESD89a
-% -- spectrum is for fast neutrons, at sea level, as recorded in New York
-% ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ February 2016 ~
+% neutron_generator -- script to generate sea-level fast-neutron background
+% -- output to HEPEVT-style format for use with RAT-PAC
+% -- works together with function neutron_spectrum.m
+% -- spectrum as defined in JEDEC standard JESD89a
+% ~ by Mark J. Duvall ~ mjduvall@hawaii.edu ~ February 2016 ~
 
-%% prep / init
-% settings check
 
-% energy vector
-En = 10.^(0:.001:4); % sampling resolution: 4000 exponentially-spaced points
 
-%% define fit as in JESD89a
-% parameters
-A1 = 1.006e-6; b1 = 0.35; c1 = 2.1451;
-A2 = 1.011e-3; b2 = 0.4106; c2 = -0.667;
-% spectrum
-phi1 = A1 * exp( -b1 * (log(En)).^2 + c1 * log(En) );
-phi2 = A2 * exp( -b2 * (log(En)).^2 + c2 * log(En) );
-phi = phi1 + phi2;
+%% init
 
-%% sample from spectrum
-energies = randsample( En, n, true, phi );
+% constants
+neutron_mass = 0.9395654133; % neutron mass in GeV/c^2
+neutron_id = 2112; % PDG particle ID code for neutron
+
+% number of events
+if ~exist('NHEP')
+	n = 10^4; % default is 10k events
+else
+end %if
+
+
+
+%% neutron parameters
+
+% generate energies from spectrum
+neutron_energies = neutron_generator( n ) / 1000; % convert MeV to GeV for HEPEVT format
+
+% generate random directions -- an n-by-3 matrix of random numbers in the range [-1,1]
+neutron_directions = hat(2*rand([NHEP,3])-1);
+% -- would be more computationally efficient to calculate this when needed below (HEPEVT definition line),
+%      but is clearer this way and can be revised if needed
+% -- also, this utilizes hat.m, which simply takes a 3-component vector and scales its components to have a norm of 1
+
+% combine energies & directions to express them as momenta in {x,y,z} for HEPEVT format
+% -- relevant kinematics: p^2 = E^2 - m^2, E = K + m --> p^2 = K^2 + 2Km, or p = sqrt( K*(K+2m) )
+neutron_momenta = sqrt( neutron_energies .* (neutron_energies+2*neutron_mass^2) ) * neutron_directions;
+
+
+
+%% prepare & create HEPEVT block
+% individual quantities:
+% ISTHEP = ones(NHEP,1); % set all particle status codes to 1
+% IDHEP = 2112 * ones(NHEP,1); % set all particle IDs to "neutron"
+% JDAHEP1 = zeros(NHEP,1); % set all "first daughter" entries to 0
+% JDAHEP2 = zeros(NHEP,1); % set all "second daughter" entries to 0
+% PHEP{1,2,3} = neutron_momenta(:,{1,2,3}); % momentum components
+% aggregate block
+% HEPEVT = [ISTHEP IDHEP JDAHEP1 JDAHEP2 PHEP1 PHEP2 PHEP3]; % PHEP5 DT X Y Z PLX PLY PLZ]; % optional components
+HEPEVT = [ones(NHEP,1), 2112*ones(NHEP,1), zeros(NHEP,1), zeros(NHEP,1), neutron_momenta(:,1), neutron_momenta(:,2), neutron_momenta(:,3) ];
+
+
+
+%% save HEPEVT block as text file
+save( 'hepevt.txt', 'HEPEVT', '-ascii' )
+
+
+
 
 %% all pau!   )
-end %function
+%return 0
