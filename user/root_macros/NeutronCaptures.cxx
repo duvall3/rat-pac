@@ -55,14 +55,15 @@ for (int event=1; event<=number_of_events; event++) { // event loop
     
   // check volume at track termination
   TString term_vol = n->GetVolume();
-  if ( !term_vol.Contains("target") && !term_vol.Contains("capture") && !term_vol.Contains("world") ) cerr << "Warning: n0 track for event " << event << " terminates in volume " << term_vol << endl;
-  if ( !term_vol.Contains("target") && !term_vol.Contains("capture") ) cout << "Warning: n0 track for event " << event << " terminates in volume " << term_vol << endl;
+//if ( !term_vol.Contains("target") && !term_vol.Contains("capture") && !term_vol.Contains("world") ) cerr << "Warning: n0 track for event " << event << " terminates in volume " << term_vol << endl;
+//if ( !term_vol.Contains("target") && !term_vol.Contains("capture") ) cout << "Warning: n0 track for event " << event << " terminates in volume " << term_vol << endl;
 
   // get endpoint info
   RAT::TrackNode *n = c.Here();
   printf( "End:\t\t% 5.6f\t% 5.6f\t% 5.6f\n", n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
   printf( "Total Scatters: %i\n", scatter_count ); // already determined above, but looks nicer for output here
   printf( "Time: %f\n", n->GetGlobalTime() );
+  printf( "Termination Volume: %s\n", term_vol.Data() );
 
   // now get capture info
   if ( n->GetProcess()=="nCapture" || n->GetProcess()=="neutronInelastic" ) {
