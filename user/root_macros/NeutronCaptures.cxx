@@ -43,10 +43,12 @@ for (int event=1; event<=number_of_events; event++) { // event loop
     RAT::TrackNode *n = c.GoNext();
 //  if ( scatter_count==1 || ((scatter_count > 0) && (scatter_count % 5) == 0)) {
     // get location at scatters 1,5,10,20 (sloppy, but arrays are a pain):
-    if ( scatter_count == 1 || scatter_count==5 || scatter_count==10 || scatter_count==20 ) {
-      printf( "%i Scatter(s):\t% 5.6f\t% 5.6f\t% 5.6f\n", scatter_count, n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
+    if ( n->GetProcess() == "hadElastic" ) {
+      if ( scatter_count == 1 || scatter_count==5 || scatter_count==10 || scatter_count==20 ) {
+        printf( "%i Scatter(s):\t% 5.6f\t% 5.6f\t% 5.6f\n", scatter_count, n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
+      } // end if (scatter count & position)
+      scatter_count++;
     } // end if (for counting every 5 scatters)
-    if ( n->GetProcess() == "hadElastic" ) scatter_count++;
   } // end step loop
   
   // should be at end of track now
