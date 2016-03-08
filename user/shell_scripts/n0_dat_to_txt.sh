@@ -9,6 +9,7 @@ echo "begin_x begin_y begin_z end_x end_y end_z end_t gammas gamma_KE_total num_
 # NeutronCaptures.cxx currently uses the ROOT GlobalTime for 't', so 'begin_t' is zero by definition
 
 paste \
+	<(awk '$1 ~ /Event/ {print $2}' $1) \
 	<(awk '$1 ~ /Begin/ {print $2"\t"$3"\t"$4}' $1) \
 	<(awk '$1 ~ /End/ {print $2"\t"$3"\t"$4}' $1) \
 	<(awk '$1 ~ /Time/ {print $2}' $1) \
