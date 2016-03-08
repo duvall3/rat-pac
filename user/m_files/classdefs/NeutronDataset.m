@@ -80,28 +80,29 @@ classdef NeutronDataset
     
     %% constructor
     
-    function neutrondata = NeutronDataset( event, n0_ke0, n0_x0, n0_y0, n0_z0, n0_x1, n0_y1, n0_z1, n0_xf, n0_yf, n0_zf, n0_scat, n0_t, n0_gam, n0_gamke, n0_alph, n0_alphke )
+%   function neutrondata = NeutronDataset( event, n0_ke0, n0_x0, n0_y0, n0_z0, n0_x1, n0_y1, n0_z1, n0_xf, n0_yf, n0_zf, n0_scat, n0_t, n0_gam, n0_gamke, n0_alph, n0_alphke )
+    function neutrondata = NeutronDataset( event, n0_x0, n0_y0, n0_z0, n0_xf, n0_yf, n0_zf, n0_t, n0_gam, n0_gamke, n0_scat )
       
       if nargin > 0 % support calling w/o arguments
         
         neutrondata.Event = event;
         
-        neutrondata.neutron_KE0 = n0_ke0;
+%       neutrondata.neutron_KE0 = n0_ke0;
         neutrondata.neutron_X0 = n0_x0;
         neutrondata.neutron_Y0 = n0_y0;
         neutrondata.neutron_Z0 = n0_z0;
-        neutrondata.neutron_X1 = n0_x1;
-        neutrondata.neutron_Y1 = n0_y1;
-        neutrondata.neutron_Z1 = n0_z1;
+%       neutrondata.neutron_X1 = n0_x1;
+%       neutrondata.neutron_Y1 = n0_y1;
+%       neutrondata.neutron_Z1 = n0_z1;
         neutrondata.neutron_Xf = n0_xf;
         neutrondata.neutron_Yf = n0_yf;
         neutrondata.neutron_Zf = n0_zf;
-        neutrondata.neutron_Scatters = n0_scat;
         neutrondata.neutron_T = n0_t;
         neutrondata.neutron_Gammas = n0_gam;
         neutrondata.neutron_Gamma_Energies = n0_gamke;
-        neutrondata.neutron_Alphas = n0_alph;
-        neutrondata.neutron_Alpha_Energies = n0_alphke;
+        neutrondata.neutron_Scatters = n0_scat;
+%       neutrondata.neutron_Alphas = n0_alph;
+%       neutrondata.neutron_Alpha_Energies = n0_alphke;
       
       else end %if nargin
   
