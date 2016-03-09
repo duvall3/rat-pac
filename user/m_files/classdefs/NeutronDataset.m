@@ -13,7 +13,7 @@ classdef NeutronDataset
 
     Event
     
-    neutron_KE0
+%   neutron_KE0
     neutron_X0
     neutron_Y0
     neutron_Z0
@@ -28,8 +28,8 @@ classdef NeutronDataset
 %   neutron_Agents
     neutron_Gammas
     neutron_Gamma_Energies
-    neutron_Alphas
-    neutron_Alpha_Energies
+%   neutron_Alphas
+%   neutron_Alpha_Energies
     
     Actual_Theta
     D_Theta_neutron
@@ -225,7 +225,8 @@ classdef NeutronDataset
       evalstr = sprintf( 'neutrondata.%s', qty_to_cut );
       data_to_cut = eval(evalstr);
       inds = find( datamin < data_to_cut & data_to_cut < datamax );
-      neutrondata_cut = NeutronDataset( neutrondata.Event(inds), neutrondata.positron_KE0(inds), neutrondata.positron_X0(inds), neutrondata.positron_Y0(inds), neutrondata.positron_Z0(inds), neutrondata.positron_X1(inds), neutrondata.positron_Y1(inds), neutrondata.positron_Z1(inds), neutrondata.positron_Xf(inds), neutrondata.positron_Yf(inds), neutrondata.positron_Zf(inds), neutrondata.positron_T(inds), neutrondata.positron_Gammas(inds), neutrondata.positron_Gamma_Energies(inds), neutrondata.neutron_KE0(inds), neutrondata.neutron_X0(inds), neutrondata.neutron_Y0(inds), neutrondata.neutron_Z0(inds), neutrondata.neutron_X1(inds), neutrondata.neutron_Y1(inds), neutrondata.neutron_Z1(inds), neutrondata.neutron_Xf(inds), neutrondata.neutron_Yf(inds), neutrondata.neutron_Zf(inds), neutrondata.neutron_Scatters(inds), neutrondata.neutron_T(inds), neutrondata.neutron_Gammas(inds), neutrondata.neutron_Gamma_Energies(inds), neutrondata.neutron_Alphas(inds), neutrondata.neutron_Alpha_Energies(inds) );
+%     neutrondata_cut = NeutronDataset( neutrondata.Event(inds), neutrondata.neutron_X0(inds), neutrondata.neutron_Y0(inds), neutrondata.neutron_Z0(inds), neutrondata.neutron_X1(inds), neutrondata.neutron_Y1(inds), neutrondata.neutron_Z1(inds), neutrondata.neutron_Xf(inds), neutrondata.neutron_Yf(inds), neutrondata.neutron_Zf(inds), neutrondata.neutron_T(inds), neutrondata.neutron_Gammas(inds), neutrondata.neutron_Gamma_Energies(inds), neutrondata.neutron_Scatters(inds), neutrondata.neutron_Alphas(inds), neutrondata.neutron_Alpha_Energies(inds) );
+      neutrondata_cut = NeutronDataset( neutrondata.Event(inds), neutrondata.neutron_X0(inds), neutrondata.neutron_Y0(inds), neutrondata.neutron_Z0(inds), neutrondata.neutron_Xf(inds), neutrondata.neutron_Yf(inds), neutrondata.neutron_Zf(inds), neutrondata.neutron_T(inds), neutrondata.neutron_Gammas(inds), neutrondata.neutron_Gamma_Energies(inds), neutrondata.neutron_Scatters(inds) );
 %     neutrondata_cut = data(inds); %debugging
     end %function
    
