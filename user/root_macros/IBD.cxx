@@ -1,4 +1,4 @@
-// IBD_Test: extract information about products of RAT-PAC's IBD generator from tracks in ROOT file
+// IBD.cxx: extract information about products of RAT-PAC's IBD generator from tracks in ROOT file
 //   -- NOTE: ONLY POSITRONS & NEUTRONS PRODUCED BY A GENERATOR WILL BE RECORDED (no muogenics, etc.)
 //   -- recommended usage: root -q -l -b 'IBD.cxx("INPUT_FILENAME",NUMBER_OF_EVENTS)' > OUTPUT_FILENAME.ibd.dat
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ August 2015 ~ //

@@ -5,7 +5,6 @@
 % ~ by Mark J. Duvall ~ mjduvall@hawaii.edu ~ February 2016 ~
 
 
-
 %% init
 
 % constants
@@ -14,27 +13,29 @@ neutron_id = 2112; % PDG particle ID code for neutron
 
 % number of events
 if ~exist('NHEP')
-	n = 10^4; % default is 10k events
+	NHEP = 10^4; % default is 10k events
 else
 end %if
-
 
 
 %% neutron parameters
 
 % generate energies from spectrum
-neutron_energies = neutron_generator( n ) / 1000; % convert MeV to GeV for HEPEVT format
+neutron_energies = neutron_spectrum ( NHEP ) / 1000; % convert MeV to GeV for HEPEVT format
+% combine energies & directions to express them as momenta in {x,y,z} for HEPEVT format
+% -- relevant kinematics: p^2 = E^2 - m^2, E = K + m --> p^2 = K^2 + 2Km, or p = sqrt( K*(K+2m) )
+neutron_momenta_magnitudes = sqrt( neutron_energies .* (neutron_energies+2*neutron_mass) );% .* neutron_directions;
 
 % generate random directions -- an n-by-3 matrix of random numbers in the range [-1,1]
-neutron_directions = hat(2*rand([NHEP,3])-1);
+% neutron_directions = hat(2*rand([NHEP,3])-1); % unfortunately doesn't work this way; need to loop
+neutron_directions = zeros(NHEP,3); % initialize
+for k_neutrons = 1:NHEP
+  neutron_directions(k_neutrons,:) = hat( 2 * rand(3,1) - 1 );
+  neutron_momenta(k_neutrons,:) = neutron_momenta_magnitudes(k_neutrons) .* neutron_directions(k_neutrons,:);
+end %for
 % -- would be more computationally efficient to calculate this when needed below (HEPEVT definition line),
 %      but is clearer this way and can be revised if needed
 % -- also, this utilizes hat.m, which simply takes a 3-component vector and scales its components to have a norm of 1
-
-% combine energies & directions to express them as momenta in {x,y,z} for HEPEVT format
-% -- relevant kinematics: p^2 = E^2 - m^2, E = K + m --> p^2 = K^2 + 2Km, or p = sqrt( K*(K+2m) )
-neutron_momenta = sqrt( neutron_energies .* (neutron_energies+2*neutron_mass^2) ) * neutron_directions;
-
 
 
 %% prepare & create HEPEVT block
@@ -49,12 +50,12 @@ neutron_momenta = sqrt( neutron_energies .* (neutron_energies+2*neutron_mass^2) 
 HEPEVT = [ones(NHEP,1), 2112*ones(NHEP,1), zeros(NHEP,1), zeros(NHEP,1), neutron_momenta(:,1), neutron_momenta(:,2), neutron_momenta(:,3) ];
 
 
-
-%% save HEPEVT block as text file
-save( 'hepevt.txt', 'HEPEVT', '-ascii' )
-
-
-
-
+%% write HEPEVT block out to text file
+%save( 'hepevt.txt', 'HEPEVT', '-ascii' )
+if isempty(savefile)
+  dlmwrite( 'hepevt.txt', HEPEVT, ' ' ); % default output filename
+else
+  dlmwrite( savefile, HEPEVT, ' ' );
+  savefile2 = sprintf( '%s_energies', savefile ); dlmwrite( savefile2, neutron_energies*1000, ' ' ); %debugging
+end %if
 %% all pau!   )
-%return 0

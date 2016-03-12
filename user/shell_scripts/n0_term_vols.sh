@@ -53,13 +53,14 @@ echo "Total Captures: $total_captures" #debugging
 ## neutron-capture volumes
 
 # process full capture list into BASH array of unique capture-volume names
-volume_names=( $( $awkprogram '$0 ~ /Termination Volume:/ {print $4}' $1 | sort | uniq ) )
+volume_names=( $( $awkprogram '$0 ~ /Termination Volume:/ {print $3}' $1 | sort | uniq ) )
 #echo "Capture Volumes: ${volume_names[*]}" #debugging
 
 # get totals (and percentages, if bc is available) for each agent
 k1=0
 for volume in ${volume_names[*]}; do
-  volume_totals[$k1]=$(grep -c "neutron.*$volume$" $1)
+# volume_totals[$k1]=$(grep -c "neutron.*$volume$" $1)
+  volume_totals[$k1]=$(grep -c "Termination Volume: $volume" $1)
 # $awkprogram -v volume=$volume '$3 ~ volume {printf $3"\t"; getline; printf $3"\t"; getline; print $5}' $1 > ./gam/$volume.gam
   if [ $isbc = true ]; then volume_pcts[$k1]=$(echo "${volume_totals[$k1]} / $total_captures * 100" | bc -l); fi
   echo "$volume data complete" #debugging

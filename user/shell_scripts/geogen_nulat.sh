@@ -20,17 +20,23 @@
 #
 
 
-# define arrays
-LR=(left mid right)
-UD=(bot mid top)
-FB=(back mid front)
-OFFSET=(-51 0 51) # 1-mm separation for TIR
+# old arrays for nulat_3
+#LR=(left mid right)
+#UD=(bot mid top)
+#FB=(back mid front)
+#OFFSET=(-51 0 51) # 1-mm separation for TIR
 
-for k_lr in {0..2}; do
+# define arrays for nulat_15
+LR=(0    1    2    3    4    5    6    7    8    9   10   11   12   13   14)
+UD=(0    1    2    3    4    5    6    7    8    9   10   11   12   13   14)
+FB=(0    1    2    3    4    5    6    7    8    9   10   11   12   13   14)
+OFFSET=(-357  -306  -255  -204  -153  -102   -51     0    51   102   153   204   255   306   357)
 
-  for k_ud in {0..2}; do
+for k_lr in {0..14}; do
+
+  for k_ud in {0..14}; do
   
-    for k_fb in {0..2}; do
+    for k_fb in {0..14}; do
   
       index_name_lr=target_cube_${LR[$k_lr]}
       index_name_fb="$index_name_lr"_${UD[$k_ud]}
