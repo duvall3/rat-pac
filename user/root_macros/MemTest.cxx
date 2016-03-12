@@ -1,8 +1,8 @@
-// MemTest -- testing memory problem
+// MemTest -- macro for testing memory-leak problem
 // -- recommended usage:   time root -q -l -b 'MemTest.cxx("INPUT_FILENAME", NUM_OF_EVENTS)' > OUTPUT_FILENAME.test
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ March 2016 ~ //
 
-// current functionality: print list of event numbers & endpoints
+// current functionality: print simple list of event numbers & endpoints
 
 void MemTest( const char *inputfile, int number_of_events ) {
   
@@ -15,7 +15,7 @@ void MemTest( const char *inputfile, int number_of_events ) {
     RAT::TrackNav nav(ds);
     RAT::TrackCursor c = nav.Cursor(false);
     int children = c.ChildCount();
-    for ( int child(0); child<=(children-1); child++ ) { // step through each child track
+    for ( int child(0); child<=(children-1); child++ ) { // loop to each child track
       c.GoChild(child);
       RAT::TrackNode *n = c.GoTrackEnd(); // jump to end of track & create TrackNode
       cout << event << endl; // print event number
