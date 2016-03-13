@@ -9,7 +9,6 @@ TFile *file0 = TFile::Open(inputfile);
 RAT::DSReader r(inputfile);
 
 printf( "\n# # # # # #\n" );
-printf( "If program fails, try checking the c.GoChild() line in this macro, which should be located (or linked) in $ROOTSYS/macros.\n" );
 printf( "position: mm\ntime: ns\nenergy: MeV\n" );
 printf( "# # # # # #\n" );
 printf( "\n\n\n" );
