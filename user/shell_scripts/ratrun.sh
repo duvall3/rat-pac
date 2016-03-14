@@ -50,7 +50,7 @@ echo "\
 /control/execute setup.mac
 /rat/procset file \"$FILENAME.root\"
 /rat/proc count
-/rat/procset update 10000
+/rat/procset update 1000
 /run/beamOn $NUM_EVENTS\
 " > run.mac
 
