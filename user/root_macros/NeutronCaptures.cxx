@@ -117,9 +117,10 @@ for (int event=1; event<=number_of_events; event++) { // event loop
     
 
   cout << endl << endl;
+  
+  nav.Clear(); // clear memory for next event
 
-
-} // end for -- track loop
+} // end event loop
 
 // all pau!   )
 return;
