@@ -54,16 +54,10 @@ echo "\
 /run/beamOn $NUM_EVENTS\
 " > run.mac
 
-# get time && create conflog && run rat
-TIME=$(date +%R) && conflog.sh > "$FILENAME".conf && rat -l "$FILENAME".log run.mac
 
-## # rename log file -- ASSUMING NO OTHER LOG FILES ARE CREATED IN LOCAL DIRECTORY DURING RUN!!!
-## LOGFILE=$(basename $(ls -ltr *.log | tail -1 | awk '{print $NF}') .log)
-## rename s/$LOGFILE/$FILENAME/ ./$LOGFILE.log
+## MAIN: create conflog && run rat ##
+conflog.sh > "$FILENAME".conf && rat -l "$FILENAME".log run.mac
 
-## rename log file (runs must start >= 1 min. apart) -- no longer needed!
-#LOGFILE=$( basename $(ls -l *.log | awk -v time=$TIME '$8 ~ time  {print $NF}') .log )
-#rename s/$LOGFILE/$FILENAME/ ./$LOGFILE.log
 
 # process information according to type of run
 case $RUN_TYPE in
