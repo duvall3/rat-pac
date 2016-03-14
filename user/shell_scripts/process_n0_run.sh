@@ -22,9 +22,9 @@ if [ $ROOT_TF = true ]; then
   ROOTFILE="$FILENAME".root
   ROOTCOMMAND=$(printf "'NeutronCaptures.cxx(\"$ROOTFILE\",$NUM_EVENTS)'")
   eval "root -q -l -b $ROOTCOMMAND > \"$FILENAME\".n0.dat"
-elif [ $ROOT_TF = false ]; then
-  # do nothing
-else echo "Invalid parameter; ROOT_TF (3rd argument) should be either \"true\" or \"false\"." && exit 1
+elif [ $ROOT_TF = false ]; then : # do nothing
+else
+  echo "Invalid parameter; ROOT_TF (3rd argument) should be either \"true\" or \"false\"."; exit 1
 fi
 # post-ROOT text processing
 n0_dat_to_txt.sh "$FILENAME".n0.dat | column -t > "$FILENAME".txt
