@@ -23,8 +23,7 @@ for (int event=1; event<=number_of_events; event++) { // event loop
   RAT::TrackCursor c = nav.Cursor(false);  // create cursor
 
 
-  // to choose neutrons, edit the following line based on which generator was used:
-  c.GoChild(0); // 0 for gun, 1 for IBD
+  c.GoChild(0); // enter neutron track
 
 
   // get starting point
