@@ -19,11 +19,20 @@ for (int event=1; event<=number_of_events; event++) { // event loop
 
   RAT::DS::Root *ds = r.NextEvent(); // load event
   
+  // get event start time(s)
+  RAT::DS::MC *mc = ds->GetMC(); // needed for event start time
+  TTimeStamp utc = mc->GetUTC(); // event timestamp object
+  const time_t t_sec = utc.GetSec(); // timestamp fSec
+  const Int_t t_nanosec = utc.GetNanoSec(); // timestamp fNanoSec
+  printf( "Start Time (sec): %i\n", t_sec );
+  printf( "Start Time (nanosec): %i\n", t_nanosec );
+  
+  // create tracking objects
   RAT::TrackNav nav(ds);
   RAT::TrackCursor c = nav.Cursor(false);  // create cursor
 
-
-  c.GoChild(0); // enter neutron track
+  // enter neutron track
+  c.GoChild(0);
 
 
   // get starting point
@@ -118,7 +127,9 @@ for (int event=1; event<=number_of_events; event++) { // event loop
 
   cout << endl << endl;
   
-  nav.Clear(); // clear memory for next event
+  // clear memory for next event
+  mc->Clear();
+  nav.Clear();
 
 } // end event loop
 
