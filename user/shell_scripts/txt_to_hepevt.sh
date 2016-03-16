@@ -29,10 +29,6 @@ fi # end if
 #fi # end if
 echo "Converting \"$INPUTFILE\" to \"$OUTPUTFILE\"..."
 
-# get number of events
-NUM_EVENTS=$(wc -l $INPUTFILE | awk '{print $1}')
-#echo $NUM_EVENTS #debugging
-
 # check for GNU awk programs
 if [ $(which awk) ]; then awkprogram=awk
   elif [ $(which gawk) ]; then awkprogram=gawk
@@ -40,6 +36,10 @@ if [ $(which awk) ]; then awkprogram=awk
   else echo "ERROR: No awk program found. Go download awk, gawk, or mawk from your repositories. You'll be glad you did.   )"; exit
 fi
 #echo $awkprogram #debugging
+
+# get number of events
+NUM_EVENTS=$(wc -l $INPUTFILE | awk '{print $1}')
+#echo $NUM_EVENTS #debugging
 
 
 ## main program
