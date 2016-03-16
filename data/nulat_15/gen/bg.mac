@@ -8,6 +8,6 @@
 
 # using the "external" generator
 /generator/add external paint:poisson:"hepevt.dat"
-/generator/pos/set 0 0 1400 # paint the walls of the cave
-/generator/rate/set 761.0
+/generator/pos/set 0 0 -700 # paint the walls of the cave
+/generator/rate/set 173.35
 
