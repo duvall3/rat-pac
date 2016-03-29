@@ -14,7 +14,8 @@
 %% create NeutronDataset object & read remaining data -- 10 comes early because of 'scatters' order in data
 % for NeutronDataset: x, y, z, t, scatters, gammas, gamma_total_KE, alphas, alpha_total_KE
 %ds_all = NeutronDataset( xf-x0, yf-y0, zf-z0, data(:,7), data(:,10), data(:,8), data(:,9) );
-ds_all = NeutronDataset( data(:,1), data(:,2)/10, data(:,3)/10, data(:,4)/10, data(:,5)/10, data(:,6)/10, data(:,7)/10, data(:,8)/1000, data(:,9), data(:,10), data(:,11) );
+%most recent% ds_all = NeutronDataset( data(:,1), data(:,2)/10, data(:,3)/10, data(:,4)/10, data(:,5)/10, data(:,6)/10, data(:,7)/10, data(:,8)/1000, data(:,9), data(:,10), data(:,11) );
+ds_all = NeutronDataset( data(:,1), data(:,2)/10, data(:,3)/10, data(:,4)/10, data(:,5)/10, data(:,6)/10, data(:,7)/10, data(:,8), data(:,9), data(:,10)/1000, data(:,11), data(:,12), data(:,13) );
 %% alpha energies, if applicable
 %datasize = size(data);
 %if datasize(2) > 10

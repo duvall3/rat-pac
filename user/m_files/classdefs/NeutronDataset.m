@@ -1,5 +1,5 @@
 % NeutronDataset -- class for analyzing data from Neutron runs
-%   -- input properties: event, ke_0, x0, y0, z0, x1, y1, z1, xf, yf, zf, scatters, t, gammas, gamma_energies, alphas, alpha_energies
+%   -- input properties: event, ke_0, x0, y0, z0, x1, y1, z1, xf, yf, zf, scatters, start_t_sec, start_t_nanosec, t, gammas, gamma_energies, alphas, alpha_energies
 % ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ September 2015 ~ %
 
 
@@ -24,6 +24,8 @@ classdef NeutronDataset
     neutron_Yf
     neutron_Zf
     neutron_Scatters
+    neutron_start_T_Sec
+    neutron_start_T_Nanosec
     neutron_T
 %   neutron_Agents
     neutron_Gammas
@@ -52,7 +54,10 @@ classdef NeutronDataset
     neutron_sigma_X
     neutron_sigma_Y
     neutron_sigma_Z
-
+    
+    neutron_start_Experiment_T
+    neutron_end_Experiment_T
+    
     neutron_L
     
     neutron_P
@@ -81,7 +86,8 @@ classdef NeutronDataset
     %% constructor
     
 %   function neutrondata = NeutronDataset( event, n0_ke0, n0_x0, n0_y0, n0_z0, n0_x1, n0_y1, n0_z1, n0_xf, n0_yf, n0_zf, n0_scat, n0_t, n0_gam, n0_gamke, n0_alph, n0_alphke )
-    function neutrondata = NeutronDataset( event, n0_x0, n0_y0, n0_z0, n0_xf, n0_yf, n0_zf, n0_t, n0_gam, n0_gamke, n0_scat )
+%   function neutrondata = NeutronDataset( event, n0_x0, n0_y0, n0_z0, n0_xf, n0_yf, n0_zf, n0_t, n0_gam, n0_gamke, n0_scat )
+    function neutrondata = NeutronDataset( event, n0_x0, n0_y0, n0_z0, n0_xf, n0_yf, n0_zf, n0_start_t_sec, n0_start_t_nanosec, n0_delta_t, n0_gam, n0_gamke, n0_scat )
       
       if nargin > 0 % support calling w/o arguments
         
@@ -97,7 +103,9 @@ classdef NeutronDataset
         neutrondata.neutron_Xf = n0_xf;
         neutrondata.neutron_Yf = n0_yf;
         neutrondata.neutron_Zf = n0_zf;
-        neutrondata.neutron_T = n0_t;
+	neutrondata.neutron_start_T_Sec = n0_start_t_sec;
+	neutrondata.neutron_start_T_Nanosec = n0_start_t_nanosec;
+        neutrondata.neutron_T = n0_delta_t;
         neutrondata.neutron_Gammas = n0_gam;
         neutrondata.neutron_Gamma_Energies = n0_gamke;
         neutrondata.neutron_Scatters = n0_scat;
@@ -165,6 +173,18 @@ classdef NeutronDataset
     end
     function sigz = get.neutron_sigma_Z(neutrondata)
       sigz = std(neutrondata.neutron_Z);
+    end
+    
+    % start time
+    function t_init = get.neutron_start_Experiment_T(neutrondata)
+      t_getSec = neutrondata.neutron_start_T_Sec; %%* 1000000; % convert s to us -- now done in n0_data.m%
+      t_getNanoSec = neutrondata.neutron_start_T_Nanosec * 1e-9; % convert ns to s %-- now done in n0_data.m
+      t_init = (t_getSec + t_getNanoSec) - (t_getSec(1) + t_getNanoSec(1)); % combine & shift to beginning of experiment instead of UTC epoch
+    end
+    
+    % end time
+    function t_end = get.neutron_end_Experiment_T(neutrondata)
+      t_end = neutrondata.neutron_start_Experiment_T + neutrondata.neutron_T;
     end
 
     % initial momentum: magnitudes, unit vectors, momentum vectors
