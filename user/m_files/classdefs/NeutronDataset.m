@@ -57,6 +57,7 @@ classdef NeutronDataset
     
     neutron_start_Experiment_T
     neutron_end_Experiment_T
+    neutron_Experiment_T_separation
     
     neutron_L
     
@@ -184,7 +185,13 @@ classdef NeutronDataset
     
     % end time
     function t_end = get.neutron_end_Experiment_T(neutrondata)
-      t_end = neutrondata.neutron_start_Experiment_T + neutrondata.neutron_T;
+      t_end = neutrondata.neutron_start_Experiment_T + neutrondata.neutron_T*1e-6; % convert us to s
+    end
+
+    % interevent time
+    function t_sep = get.neutron_Experiment_T_separation(neutrondata)
+      t_end = neutrondata.neutron_end_Experiment_T;
+      t_sep = t_end(2:end) - t_end(1:end-1);
     end
 
     % initial momentum: magnitudes, unit vectors, momentum vectors
@@ -246,7 +253,7 @@ classdef NeutronDataset
       data_to_cut = eval(evalstr);
       inds = find( datamin < data_to_cut & data_to_cut < datamax );
 %     neutrondata_cut = NeutronDataset( neutrondata.Event(inds), neutrondata.neutron_X0(inds), neutrondata.neutron_Y0(inds), neutrondata.neutron_Z0(inds), neutrondata.neutron_X1(inds), neutrondata.neutron_Y1(inds), neutrondata.neutron_Z1(inds), neutrondata.neutron_Xf(inds), neutrondata.neutron_Yf(inds), neutrondata.neutron_Zf(inds), neutrondata.neutron_T(inds), neutrondata.neutron_Gammas(inds), neutrondata.neutron_Gamma_Energies(inds), neutrondata.neutron_Scatters(inds), neutrondata.neutron_Alphas(inds), neutrondata.neutron_Alpha_Energies(inds) );
-      neutrondata_cut = NeutronDataset( neutrondata.Event(inds), neutrondata.neutron_X0(inds), neutrondata.neutron_Y0(inds), neutrondata.neutron_Z0(inds), neutrondata.neutron_Xf(inds), neutrondata.neutron_Yf(inds), neutrondata.neutron_Zf(inds), neutrondata.neutron_T(inds), neutrondata.neutron_Gammas(inds), neutrondata.neutron_Gamma_Energies(inds), neutrondata.neutron_Scatters(inds) );
+      neutrondata_cut = NeutronDataset( neutrondata.Event(inds), neutrondata.neutron_X0(inds), neutrondata.neutron_Y0(inds), neutrondata.neutron_Z0(inds), neutrondata.neutron_Xf(inds), neutrondata.neutron_Yf(inds), neutrondata.neutron_Zf(inds), neutrondata.neutron_start_T_Sec(inds), neutrondata.neutron_start_T_Nanosec(inds), neutrondata.neutron_T(inds), neutrondata.neutron_Gammas(inds), neutrondata.neutron_Gamma_Energies(inds), neutrondata.neutron_Scatters(inds) );
 %     neutrondata_cut = data(inds); %debugging
     end %function
    
