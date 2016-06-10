@@ -4,6 +4,9 @@ function [ energies ] = neutron_spectrum( n )
 % -- calculate integral: http://www.wolframalpha.com/input/?i=integrate+[+1.006e-6+*+exp%28-.35*%28log%28x%29%29^2%2B2.1451*log%28x%29%29+%2B+1.011e-3+*+exp%28-.4106*%28log%28x%29%29^2-.667*log%28x%29%29,+x,+0.1,+1000+]
 % ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ February 2016 ~
 
+% NOTE: MATLAB and Octave require different versions of the last line!
+
+
 %% prep / init
 % settings check
 

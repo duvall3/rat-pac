@@ -4,6 +4,14 @@
 % -- spectrum as defined in JEDEC standard JESD89a
 % ~ by Mark J. Duvall ~ mjduvall@hawaii.edu ~ February 2016 ~
 
+%% USAGE
+% 1) If desired, specify a name for the output file:
+%    >> savefile = 'filename';
+% 2) If desired, specify the number of neutrons to generate (default is 10k):
+%    >> NHEP = #;
+% 3) Run the script (modify the path if needed):
+%    >> run ./neutron_generator.m
+
 
 %% init
 
