@@ -11,7 +11,7 @@ if [ $(which awk) ]; then awkprogram=awk
 fi
 
 # run awk script
-$awkprogram -f combine_runs.awk $@ | column -t
+$awkprogram -f $RATROOT/user/shell_scripts/combine_runs.awk $@ | column -t
 
 # all pau!
 exit 0
