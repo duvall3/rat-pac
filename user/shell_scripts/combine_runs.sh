@@ -7,7 +7,7 @@
 if [ $(which awk) ]; then awkprogram=awk
   elif [ $(which gawk) ]; then awkprogram=gawk
   elif [ $(which mawk) ]; then awkprogram=mawk
-  else echo "ERROR: No awk program found. Go download awk, gawk, or mawk from your repositories. You'll be glad you did.   )"; exit
+  else echo "ERROR: No awk program found. Go download awk, gawk, or mawk from your repositories. You'll be glad you did.   )"; exit 1
 fi
 
 # run awk script
