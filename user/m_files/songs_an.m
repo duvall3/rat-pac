@@ -7,12 +7,16 @@
 ds_cut = ds_all.CutOutsideRange( 'neutron_Xf', -38.2, 38.2 );
 ds_cut = ds_cut.CutOutsideRange( 'neutron_Yf', -38.2, 38.2 );
 ds_cut = ds_cut.CutOutsideRange( 'neutron_Zf', -38.2, 38.2 )
+% cut lingering events
+t_start = ds_all.neutron_start_Experiment_T;
+ds_cut = ds_cut.CutOutsideRange( 'neutron_end_Experiment_T', 0, max(t_start) );
+ds_cut = ds_cut.CutOutsideRange( 'neutron_start_Experiment_T', 0, max(t_start) );
 % cut on inter-event time at [10μs, 800μs]
 ds_cut_T = ds_cut.CutOutsideRange( 'neutron_Experiment_T_separation', 10*10^-6, 800*10^-6 )
 
 % calculate results
 nuebar_candidates = ds_cut_T.N;
-experiment_duration = max( ds_cut_T.neutron_end_Experiment_T ) - min( ds_cut_T.neutron_start_Experiment_T );
+experiment_duration = max( ds_all.neutron_start_Experiment_T ) - min( ds_all.neutron_start_Experiment_T );
 nuebar_candidate_rate = nuebar_candidates / experiment_duration;
 
 % display results
