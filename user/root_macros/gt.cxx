@@ -43,7 +43,7 @@ for (int event=1; event<=number_of_events; event++) { // event loop
         gamma_KE_init = n->GetKE();
         printf( "Initial Gamma KE: % 5.6f\n", gamma_KE_init );
      
-        // find Compton scatters while gamma is over Compton threshold (~0.186 MeV for electrons in the Double CHOOZ scintillator)
+        // find Compton scatters while gamma is over Cherenkov threshold (~0.186 MeV for electrons in the Double CHOOZ scintillator)
         float gamma_KE_current = gamma_KE_init;
         while ( gamma_KE_current >= 0.186 ) {
           RAT::TrackNode *n = c.GoNext();
