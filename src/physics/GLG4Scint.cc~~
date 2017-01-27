@@ -21,9 +21,6 @@
 
 // [see detailed class description in GLG4Scint.hh]
 
-// This version modified by Mark Duvall, mjduvall@hawaii.edu, 1/2017
-// -- changes are tagged //mjd
-
 #include "G4UnitsTable.hh"
 #include "GLG4Scint.hh"
 #include "G4ios.hh"
@@ -52,7 +49,7 @@
 #include <G4EventManager.hh>
 #include <sstream>
 
-#include <RAT/DS/MCTrackStep.hh> //mjd
+#include <RAT/DS/MCTrackStep.hh>
 
 ////////////////
 // Static data members
@@ -316,8 +313,33 @@ GLG4Scint::PostPostStepDoIt(const G4Track& aTrack, const G4Step& aStep) {
         QuenchedTotalEnergyDeposit /= (1.0 + birksConstant * dE_dx);
       }
 
-      totEdep_scint = TotalEnergyDeposit; //mjd
-      totEdep_scint_quenched = QuenchedTotalEnergyDeposit; //mjd
+     // Rough hacks here by mjduvall@hawaii.edu, 1/2017
+     totEdep_scint = TotalEnergyDeposit;
+     totEdep_scint_quenched = QuenchedTotalEnergyDeposit;
+
+     // first, ignore photons:
+     G4ParticleDefinition* CurrentParticleDef = aTrack.GetDefinition();
+     const G4String CurrentParticleName = CurrentParticleDef->GetParticleName();
+     if (!CurrentParticleName.contains("opticalphoton")) {
+       // track information, only on first step:
+       if (aTrack.GetCurrentStepNumber() == 1) {
+         printf( "\n\n" );
+         printf( "Parent_ID: %i\n", aTrack.GetParentID() );
+         printf( "Track_ID: %i\n", aTrack.GetTrackID() );
+         printf( "Particle_Name: %s\n", CurrentParticleName.data() );
+	 printf( "TED (MeV)\tTED_Q (MeV)\tStep\tLength\n" );
+       } // endif -- first step in track
+       // get energy deposited in each step:
+       if (TotalEnergyDeposit != 0) { // drop optical photons and other non-scintillating steps
+         // print total energy deposited in scintillation and other relevant information:
+         printf( "%5.6f\t%5.6f\t%i\t%5.6f", TotalEnergyDeposit, QuenchedTotalEnergyDeposit, aTrack.GetCurrentStepNumber(), aStep.GetStepLength() );
+	 printf( "\t%5.6f", aTrack.GetGlobalTime() );
+	   // extra information, partially for debugging
+  	   const G4ThreeVector CurrentPosition = aTrack.GetPosition();
+	   printf( "\t%5.6f\t%5.6f\t%5.6f", CurrentPosition.x(), CurrentPosition.y(), CurrentPosition.z() );
+	 printf( "\n" ); // EOL
+       } // endif -- nonzero energy deposit
+     } // endif -- not opticalphoton
 
       // Track total edep, quenched edep
       totEdep += TotalEnergyDeposit;

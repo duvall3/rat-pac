@@ -21,9 +21,6 @@
 
 // [see detailed class description in GLG4Scint.hh]
 
-// This version modified by Mark Duvall, mjduvall@hawaii.edu, 1/2017
-// -- changes are tagged //mjd
-
 #include "G4UnitsTable.hh"
 #include "GLG4Scint.hh"
 #include "G4ios.hh"
@@ -52,8 +49,6 @@
 #include <G4EventManager.hh>
 #include <sstream>
 
-#include <RAT/DS/MCTrackStep.hh> //mjd
-
 ////////////////
 // Static data members
 ////////////////
@@ -76,9 +71,6 @@ DummyProcess GLG4Scint::scintProcess("Scintillation", fUserDefined);
 DummyProcess GLG4Scint::reemissionProcess("Reemission", fUserDefined);
 G4std::vector<DummyProcess*> GLG4Scint::reemissionProcessVector;
 G4int GLG4Scint::fPhotonCount;
-
-G4double GLG4Scint::totEdep_scint = 0.0;			// mjd
-G4double GLG4Scint::totEdep_scint_quenched = 0.0;		// mjd
 
 /////////////////
 // Constructors
@@ -224,6 +216,25 @@ GLG4Scint::PostPostStepDoIt(const G4Track& aTrack, const G4Step& aStep) {
     }
 
     G4double TotalEnergyDeposit = aStep.GetTotalEnergyDeposit();
+
+    // Rough hacks here by mjduvall@hawaii.edu, 1/2017:
+    // first, ignore photons:
+    G4ParticleDefinition* CurrentParticleDef = aTrack.GetDefinition();
+    const G4String &CurrentParticleName = CurrentParticleDef->GetParticleName();
+    if (!CurrentParticleName.contains("opticalphoton")) {
+      // track information, only on first step:
+      if (aTrack.GetCurrentStepNumber() == 1) {
+        printf( "\n\n" );
+        printf( "Parent_ID: %i\n", aTrack.GetParentID() );
+        printf( "Track_ID: %i\n", aTrack.GetTrackID() );
+        printf( "Particle_Name: %s\n", CurrentParticleName.data() );
+      } // endif -- first step in track
+      // get energy deposited in each step:
+      if (TotalEnergyDeposit != 0) { // drop optical photons and other non-scintillating steps
+        // print total energy deposited in scintillation (and step number in track)
+        printf( "TED: %5.6f (MeV)\tStep: %i\n", TotalEnergyDeposit, aTrack.GetCurrentStepNumber() );
+      } // endif -- nonzero energy deposit
+    } // endif -- not opticalphoton
   
     if (TotalEnergyDeposit <= 0.0 && !flagReemission)
       goto PostStepDoIt_DONE;
@@ -315,9 +326,6 @@ GLG4Scint::PostPostStepDoIt(const G4Track& aTrack, const G4Step& aStep) {
         G4double dE_dx = TotalEnergyDeposit /  aStep.GetStepLength();
         QuenchedTotalEnergyDeposit /= (1.0 + birksConstant * dE_dx);
       }
-
-      totEdep_scint = TotalEnergyDeposit; //mjd
-      totEdep_scint_quenched = QuenchedTotalEnergyDeposit; //mjd
 
       // Track total edep, quenched edep
       totEdep += TotalEnergyDeposit;

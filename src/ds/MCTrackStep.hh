@@ -15,6 +15,9 @@
  * within a particular volume in the detector geometry.
  */
 
+// This version modified by Mark Duvall, mjduvall@hawaii.edu, 1/2017
+// -- changes are tagged //mjd
+
 #ifndef __RAT_DS_MCTrackStep__
 #define __RAT_DS_MCTrackStep__
 
@@ -62,6 +65,14 @@ public:
   virtual Float_t GetKE() const { return ke; }
   virtual void SetKE(Float_t _ke) { ke = _ke; }
 
+  /** Energy deposited via scintillation (MeV) */	//mjd
+  virtual Float_t GetTotEDepScint() const { return totEdepscint; }
+  virtual void SetTotEDepScint(Float_t _totEdepscint) { totEdepscint = _totEdepscint; }
+
+  /** Energy deposited via scintillation after quenching (MeV) */	//mjd
+  virtual Float_t GetTotEDepScintQuenched() const { return totEdepscint_quenched; }
+  virtual void SetTotEDepScintQuenched(Float_t _totEdepscint_quenched) { totEdepscint_quenched = _totEdepscint_quenched; }
+
   /** Name of physics process acting at endpoint. */
   virtual std::string GetProcess() const { return process; }
   virtual void SetProcess(const std::string &_process) { process = _process; }
@@ -77,6 +88,8 @@ protected:
   Float_t globalTime;
   Float_t localTime;
   Float_t properTime;
+  Float_t totEdepscint; //mjd
+  Float_t totEdepscint_quenched; //mjd
   Float_t ke;  
   TVector3 endpoint;
   TVector3 mom;

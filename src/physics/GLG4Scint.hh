@@ -11,6 +11,9 @@
 
 // [see detailed class documentation below]
 
+// This version modified by Mark Duvall, mjduvall@hawaii.edu, 1/2017
+// -- changes are tagged //mjd
+
 /////////////
 // Includes
 /////////////
@@ -210,6 +213,8 @@ public:
   static G4ThreeVector GetScintCentroid() {
     return scintCentroidSum * (1.0 / totEdep_quenched);
   }
+  static G4double GetTotEdep_Scint() { return totEdep_scint; }  // mjd
+  static G4double GetTotEdep_Scint_Quenched() { return totEdep_scint_quenched; }  // mjd
   
 protected:
   int verboseLevel;
@@ -255,6 +260,8 @@ protected:
   static G4double totEdep_quenched;
   static G4double totEdep_time;
   static G4ThreeVector scintCentroidSum;
+  static G4double totEdep_scint; //mjd
+  static G4double totEdep_scint_quenched; //mjd
 
   // Bogus processes used to tag photons created in GLG4Scint
   static DummyProcess scintProcess;
