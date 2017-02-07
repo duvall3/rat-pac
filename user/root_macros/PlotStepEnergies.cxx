@@ -19,7 +19,7 @@ Int_t steps = c.StepCount(); // currently 9789
 
 Float_t t[9789];
 Float_t ens[9789];
-TH1F h("energies", "Step-wise Energies", 100, 0., 0.2);
+TH1F *h = new TH1F("h", "Step-wise Energies", 100, 0., 0.2);
 
 for (Int_t k=0; k<9789; k++) {
 
@@ -36,13 +36,16 @@ g1->SetTitle("Step-wise Energies");
 g1->GetXaxis()->SetTitle("Time (ns)");
 g1->GetYaxis()->SetTitle("Energy (MeV)");
 g1->Draw("AL");
+c1->Update();
 
 TCanvas *c2 = new TCanvas;
 c2->SetLogy(true);
-h.GetXaxis()->SetTitle("Energy (MeV)");
-h.GetYaxis()->SetTitle("Entries");
-h.Draw();
+h->GetXaxis()->SetTitle("Energy (MeV)");
+h->GetYaxis()->SetTitle("Entries");
+h->SetLineColor(kRed);
+h->Draw();
+c2->Update();
 
 // all pau!   )
-//return 0;
+return 0;
 }
