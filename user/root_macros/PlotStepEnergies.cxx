@@ -1,7 +1,9 @@
 // PlotStepEnergies -- simple macro to get stepwise energy deposit info and make basic plots
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 2/17 ~ //
 
+
 int PlotStepEnergies( const char* filename ) {
+
 
 // open file
 TFile *file0 = TFile::Open(filename);
@@ -19,20 +21,18 @@ Int_t steps = c.StepCount(); // currently 9789
 // prepare vectors
 //Float_t t[9789];
 //Float_t ens[9789];
-TVectorT <Float_t> t(9789); // *change to "steps"
-TVectorT <Float_t> ens(9789); // *change to "steps"
+TVectorT <Float_t> t(steps);
+TVectorT <Float_t> ens(steps);
 
 // set up histogram
 TH1F *h = new TH1F("h", "Step-wise Energies", 100, 0., 0.2);
 
 // fill vectors and histogram
-for (Int_t k=0; k<9789; k++) {
-
+for (Int_t k=0; k<steps; k++) {
   RAT::TrackNode *n = c.Step(k);
   t[k] = n->GetGlobalTime();
   ens[k] = n->GetTotEDepScintQuenched();
   h->Fill(ens[k]);
-
 }
 
 // draw time plot
@@ -52,6 +52,7 @@ h->GetYaxis()->SetTitle("Entries");
 h->SetLineColor(kRed);
 h->Draw();
 c2->Update();
+
 
 // all pau!   )
 return 0;
