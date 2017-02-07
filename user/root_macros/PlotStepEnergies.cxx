@@ -37,7 +37,7 @@ for (Int_t k=0; k<9789; k++) {
 
 // draw time plot
 TCanvas *c1 = new TCanvas;
-TGraph *g1 = new TGraph(9789, t, ens);
+TGraph *g1 = new TGraph(9789, &t[0], &ens[0]);
 g1->SetTitle("Step-wise Energies");
 g1->GetXaxis()->SetTitle("Time (ns)");
 g1->GetYaxis()->SetTitle("Energy (MeV)");
