@@ -31,7 +31,7 @@ for (Int_t k=0; k<9789; k++) {
   RAT::TrackNode *n = c.Step(k);
   t[k] = n->GetGlobalTime();
   ens[k] = n->GetTotEDepScintQuenched();
-  h.Fill(ens[k]);
+  h->Fill(ens[k]);
 
 }
 
