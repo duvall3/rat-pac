@@ -24,8 +24,20 @@ time_t sec_run_start = t_run_start.GetSec();
 Float_t nanosec_run_start = (Float_t)t_run_start.GetNanoSec();
 mc->Clear();
 
+// prepare histogram
+TCanvas* c1 = new TCanvas;
+TH2D* h = new TH2D("h", "E - T Distribution", 100, 1.e-9, 60., 100, 1.e-4, 1.e-2);
+TAxis* xa = h->GetXaxis();
+TAxis* ya = h->GetYaxis();
+xa->SetTitle("Time (s)");
+xa->SetTitleOffset(1.5);
+xa->SetLabelSize(.02);
+ya->SetTitle("Energy (MeV)");
+ya->SetTitleOffset(1.5);
+ya->SetLabelSize(.02);
+
 // event loop
-for ( Int_t event=0; event<num_of_events; event++ ) {
+for ( Int_t event=0; event<10000; event++ ) {
 
   // load event and grab start time
   ds = r.GetEvent(event);
@@ -84,25 +96,31 @@ for ( Int_t event=0; event<num_of_events; event++ ) {
     cumulative_en += tot_en;
     track_counter++;
 
-    RAT::TrackNode *n = c.FindNextTrack();
+    n = c.FindNextTrack();
 
   } // track loop
 
   // print summary
-  //printf( "Cumulative Energy: %5.6f\n", cumulative_en );
-  //printf( "Total Tracks: %i\n\n", track_counter );
+//printf( "Cumulative Energy: %5.6f\n", cumulative_en );
+//printf( "Total Tracks: %i\n\n", track_counter );
 
-  // print vectors
+  // print vectors -- IF there was any scintillation
   Int_t len = energy.size();
   for (Int_t k=0; k<len; k++) {
-    printf( "%i\t%5.6f\t%5.6f\n", time_sec[k], time_nanosec[k], energy[k] );
-  }
+    if ( energy[k] > 0 ) {
+      h->Fill(time_sec[k]+time_nanosec[k]*1.e-9, energy[k]); // fill histogram
+//    printf( "%i\t%5.6f\t%5.6f\n", time_sec[k], time_nanosec[k], energy[k] );
+    } // nonzero scintillation
+  } // elements
 
   // cleanup
   nav.Clear();
   mc->Clear();
 
 } // event loop
+
+// draw histogram
+h->Draw("lego2");
 
 // all pau!   )
 return;
