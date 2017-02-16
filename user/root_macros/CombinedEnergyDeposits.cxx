@@ -1,10 +1,6 @@
-// CombinedEnergyDeposits -- output a table of (times, energies) for the scintillation energy deposited along each track step
-// -- currently: creates overall vector for dE/dt
+// CombinedEnergyDeposits -- creates a histogram of (times, energies) for the scintillation energy deposited along each track step
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 2/17 ~ //
 
-
-//(vector <float> energy, vector <float> time) Loop( RAT::DS::Root* ds ) { // takes *ds as input
-//int CombinedEnergyDeposits( RAT::DS::Root* ds ) { // takes *ds as input
 
 //void CombinedEnergyDeposits( const char* filename, int event ) {
 void CombinedEnergyDeposits( const char* filename ) {
@@ -121,6 +117,7 @@ for ( Int_t event=0; event<10000; event++ ) {
 
 // draw histogram
 h->Draw("lego2");
+
 
 // all pau!   )
 return;
