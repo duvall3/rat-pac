@@ -116,7 +116,7 @@ for ( Int_t event=0; event<10000; event++ ) {
 } // event loop
 
 // draw histogram
-h->Draw("lego2");
+h->Draw("lego2z");
 
 
 // all pau!   )
