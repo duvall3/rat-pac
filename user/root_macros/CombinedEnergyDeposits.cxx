@@ -22,7 +22,7 @@ mc->Clear();
 
 // prepare histogram
 TCanvas* c1 = new TCanvas;
-TH2D* h = new TH2D("h", "E - T Distribution", 100, 1.e-9, 60., 100, 1.e-4, 1.e-2);
+TH2D* h = new TH2D("h", "E - T Distribution", 100, 1.e-9, 6., 100, 1.e-4, 1.e-2);
 TAxis* xa = h->GetXaxis();
 TAxis* ya = h->GetYaxis();
 xa->SetTitle("Time (s)");
@@ -45,6 +45,7 @@ for ( Int_t event=0; event<10000; event++ ) {
   // offset time to beginning of run
   Int_t delta_t_sec = sec_event_start - sec_run_start;
   Int_t step_sec = sec_event_start - sec_run_start;
+//  if (step_sec>6) { goto drawHist; } // temp
 
   // create RAT tracking objects
   RAT::TrackNav nav(ds);
@@ -52,10 +53,8 @@ for ( Int_t event=0; event<10000; event++ ) {
   RAT::TrackNode *n = c.Here(); // enter event
 
   // create vectors for main data
-//vector <float> time;
   vector <int> time_sec;
   vector <float> time_nanosec;
-//vector <double> time_as_double;
   vector <float> energy;
   Float_t cumulative_en(0);
 
@@ -70,19 +69,7 @@ for ( Int_t event=0; event<10000; event++ ) {
 
     // loop over steps
     while ( c.IsTrackEnd() == false ) {
-//    TTimeStamp t_step = TTimeStamp::TTimeStamp( t_event_start.GetSec(), t_event_start.GetNanoSec() + n->GetGlobalTime() );
-//    TTimeStamp t_step = TTimeStamp::TTimeStamp( t_event_start.GetSec(), n->GetGlobalTime() );
-//    TTimeStamp t_step = TTimeStamp::TTimeStamp( 0, 0 );
       time_sec.push_back( step_sec );
-//    time_sec.push_back( sec_event_start );
-//    time_sec.push_back( t_step.GetSec() );
-      time_nanosec.push_back( n->GetGlobalTime() + nanosec_event_start - nanosec_run_start );
-//    time_nanosec.push_back( n->GetGlobalTime() ); 
-//    time_nanosec.push_back( t_step.GetNanoSec() );
-//    time_as_double.push_back( ev_starttime + n->GetGlobalTime()*1e-9 - run_starttime );
-//    Float_t step_nanosec = n->GetGlobalTime() - nanosec_event_start - nanosec_run_start;
-//    Float_t step_time = step_sec + step_nanosec*1e-9;
-//    time.push_back( step_time );
       energy.push_back( n->GetTotEDepScintQuenched() );
       tot_en += n->GetTotEDepScintQuenched();
       n = c.GoNext();
@@ -105,7 +92,6 @@ for ( Int_t event=0; event<10000; event++ ) {
   for (Int_t k=0; k<len; k++) {
     if ( energy[k] > 0 ) {
       h->Fill(time_sec[k]+time_nanosec[k]*1.e-9, energy[k]); // fill histogram
-//    printf( "%i\t%5.6f\t%5.6f\n", time_sec[k], time_nanosec[k], energy[k] );
     } // nonzero scintillation
   } // elements
 
@@ -115,8 +101,9 @@ for ( Int_t event=0; event<10000; event++ ) {
 
 } // event loop
 
+//drawHist:
 // draw histogram
-h->Draw("lego2z");
+h->Draw("lego2");
 
 
 // all pau!   )
