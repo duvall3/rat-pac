@@ -45,7 +45,6 @@ for ( Int_t event=0; event<10000; event++ ) {
   // offset time to beginning of run
   Int_t delta_t_sec = sec_event_start - sec_run_start;
   Int_t step_sec = sec_event_start - sec_run_start;
-//  if (step_sec>6) { goto drawHist; } // temp
 
   // create RAT tracking objects
   RAT::TrackNav nav(ds);
@@ -83,11 +82,11 @@ for ( Int_t event=0; event<10000; event++ ) {
 
   } // track loop
 
-  // print summary
+  // print track summary
 //printf( "Cumulative Energy: %5.6f\n", cumulative_en );
 //printf( "Total Tracks: %i\n\n", track_counter );
 
-  // print vectors -- IF there was any scintillation
+  // generate histogram
   Int_t len = energy.size();
   for (Int_t k=0; k<len; k++) {
     if ( energy[k] > 0 ) {
