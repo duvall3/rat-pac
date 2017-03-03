@@ -61,7 +61,7 @@ ya2->SetTitleOffset(1.5);
 
 
 // event loop
-for ( Int_t event=0; event<10000; event++ ) {
+for ( Int_t event=0; event<num_of_events; event++ ) {
 
   // load event and grab start time
   ds = r.GetEvent(event);
