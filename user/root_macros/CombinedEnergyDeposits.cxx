@@ -69,6 +69,7 @@ for ( Int_t event=0; event<10000; event++ ) {
     // loop over steps
     while ( c.IsTrackEnd() == false ) {
       time_sec.push_back( step_sec );
+      time_nanosec.push_back( n->GetGlobalTime() + nanosec_event_start - nanosec_run_start );
       energy.push_back( n->GetTotEDepScintQuenched() );
       tot_en += n->GetTotEDepScintQuenched();
       n = c.GoNext();
