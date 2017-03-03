@@ -20,8 +20,11 @@ time_t sec_run_start = t_run_start.GetSec();
 Float_t nanosec_run_start = (Float_t)t_run_start.GetNanoSec();
 mc->Clear();
 
-// prepare histogram
+// prepare histograms
+//
 TCanvas* c1 = new TCanvas;
+
+// E-T distribution
 TH2D* h = new TH2D("h", "E - T Distribution", 100, 1.e-9, 6., 100, 1.e-4, 1.e-2);
 TAxis* xa = h->GetXaxis();
 TAxis* ya = h->GetYaxis();
@@ -31,6 +34,31 @@ xa->SetLabelSize(.02);
 ya->SetTitle("Energy (MeV)");
 ya->SetTitleOffset(1.5);
 ya->SetLabelSize(.02);
+
+// E-T_since_event_start distribution
+// Marc's section:
+  const Int_t nBinsEBP = 100;
+  Double_t xmin = 1.e-3; //ns
+  Double_t xmax = 1.e9; //ns
+  Double_t logxmin = TMath::Log10(xmin);
+  Double_t logxmax = TMath::Log10(xmax);
+  Double_t binwidth = (logxmax-logxmin)/nBinsEBP;
+  Double_t xbinsEBP[nBinsEBP+1];
+  xbinsEBP[0] = xmin;
+  for (Int_t i=1;i<=nBinsEBP;i++) {
+    xbinsEBP[i] = TMath::Power(10,logxmin+i*binwidth);
+  }
+// applying Marc's cool stuff:
+//TH2D* h2 = new TH2D("h2", "E - T_Event Distribution", 100, 1.e-3, 1.e9, 100, 1.e-4, 1.e-2);
+TH2D* h2 = new TH2D("h2", "E - T_Event Distribution", nBinsEBP, xbinsEBP, 100, 1.e-4, 1.e-2);
+TAxis* xa2 = h2->GetXaxis();
+TAxis* ya2 = h2->GetYaxis();
+xa2->SetTitle("Time (ns)");
+xa2->SetTitleOffset(1.5);
+xa2->SetLabelSize(.02);
+ya2->SetTitle("Energy (MeV)");
+ya2->SetTitleOffset(1.5);
+
 
 // event loop
 for ( Int_t event=0; event<10000; event++ ) {
@@ -55,6 +83,7 @@ for ( Int_t event=0; event<10000; event++ ) {
   vector <int> time_sec;
   vector <float> time_nanosec;
   vector <float> energy;
+  vector <int> time_since_event_start_nanosec;
   Float_t cumulative_en(0);
 
   Int_t track_counter(0); //debug
@@ -70,6 +99,7 @@ for ( Int_t event=0; event<10000; event++ ) {
     while ( c.IsTrackEnd() == false ) {
       time_sec.push_back( step_sec );
       time_nanosec.push_back( n->GetGlobalTime() + nanosec_event_start - nanosec_run_start );
+      time_since_event_start_nanosec.push_back( n->GetGlobalTime() );
       energy.push_back( n->GetTotEDepScintQuenched() );
       tot_en += n->GetTotEDepScintQuenched();
       n = c.GoNext();
@@ -92,6 +122,7 @@ for ( Int_t event=0; event<10000; event++ ) {
   for (Int_t k=0; k<len; k++) {
     if ( energy[k] > 0 ) {
       h->Fill(time_sec[k]+time_nanosec[k]*1.e-9, energy[k]); // fill histogram
+      h2->Fill(time_since_event_start_nanosec[k], energy[k]); // fill histogram2
     } // nonzero scintillation
   } // elements
 
@@ -102,8 +133,12 @@ for ( Int_t event=0; event<10000; event++ ) {
 } // event loop
 
 //drawHist:
-// draw histogram
+// draw histograms
+c1->Divide(2,1);
+c1->cd(1);
 h->Draw("lego2");
+c1->cd(2);
+h2->Draw("lego2");
 
 
 // all pau!   )
