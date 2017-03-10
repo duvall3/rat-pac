@@ -1,9 +1,8 @@
-// CombinedEnergyDeposits -- creates a histogram of (times, energies) for the scintillation energy deposited along each track step
-// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 2/17 ~ //
+// SimpleEnergyDAQ -- simple trigger processer based on scintillation energy deposits (TotEDepScintQuenched)
+// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 3/17 ~ //
 
 
-//void CombinedEnergyDeposits( const char* filename, int event ) {
-void CombinedEnergyDeposits( const char* filename ) {
+void SimpleEnergyDAQ( const char* filename ) {
 
 
 // open file
@@ -24,18 +23,18 @@ mc->Clear();
 //
 TCanvas* c1 = new TCanvas;
 
-// E-T distribution
-TH2D* h = new TH2D("h", "E - T Distribution", 100, 1.e-9, 6., 100, 1.e-4, 1.e-2);
-TAxis* xa = h->GetXaxis();
-TAxis* ya = h->GetYaxis();
-xa->SetTitle("Time (s)");
-xa->SetTitleOffset(1.5);
-xa->SetLabelSize(.02);
-ya->SetTitle("Energy (MeV)");
-ya->SetTitleOffset(1.5);
-ya->SetLabelSize(.02);
+//// E-T distribution
+//TH2D* h = new TH2D("h", "E - T Distribution", 100, 1.e-9, 6., 100, 1.e-4, 1.e-2);
+//TAxis* xa = h->GetXaxis();
+//TAxis* ya = h->GetYaxis();
+//xa->SetTitle("Time (s)");
+//xa->SetTitleOffset(1.5);
+//xa->SetLabelSize(.02);
+//ya->SetTitle("Energy (MeV)");
+//ya->SetTitleOffset(1.5);
+//ya->SetLabelSize(.02);
 
-// E-T_since_event_start distribution
+//// E-T_since_event_start distribution
 // Marc's section:
   const Int_t nBinsEBP = 100;
   Double_t xmin = 1.e-3; //ns
@@ -48,16 +47,16 @@ ya->SetLabelSize(.02);
   for (Int_t i=1;i<=nBinsEBP;i++) {
     xbinsEBP[i] = TMath::Power(10,logxmin+i*binwidth);
   }
-// applying Marc's cool stuff:
-//TH2D* h2 = new TH2D("h2", "E - T_Event Distribution", 100, 1.e-3, 1.e9, 100, 1.e-4, 1.e-2);
-TH2D* h2 = new TH2D("h2", "E - T_Event Distribution", nBinsEBP, xbinsEBP, 100, 1.e-4, 1.e-2);
-TAxis* xa2 = h2->GetXaxis();
-TAxis* ya2 = h2->GetYaxis();
-xa2->SetTitle("Time (ns)");
-xa2->SetTitleOffset(1.5);
-xa2->SetLabelSize(.02);
-ya2->SetTitle("Energy (MeV)");
-ya2->SetTitleOffset(1.5);
+//// applying Marc's cool stuff:
+////TH2D* h2 = new TH2D("h2", "E - T_Event Distribution", 100, 1.e-3, 1.e9, 100, 1.e-4, 1.e-2);
+//TH2D* h2 = new TH2D("h2", "E - T_Event Distribution", nBinsEBP, xbinsEBP, 100, 1.e-4, 1.e-2);
+//TAxis* xa2 = h2->GetXaxis();
+//TAxis* ya2 = h2->GetYaxis();
+//xa2->SetTitle("Time (ns)");
+//xa2->SetTitleOffset(1.5);
+//xa2->SetLabelSize(.02);
+//ya2->SetTitle("Energy (MeV)");
+//ya2->SetTitleOffset(1.5);
 
 
 // event loop
@@ -67,7 +66,6 @@ for ( Int_t event=0; event<num_of_events; event++ ) {
   ds = r.GetEvent(event);
   mc = ds->GetMC();
   TTimeStamp t_event_start = mc->GetUTC();
-//const Double_t ev_starttime = t_event_start.AsDouble();
   time_t sec_event_start = t_event_start.GetSec();
   Float_t nanosec_event_start = t_event_start.GetNanoSec();
   // offset time to beginning of run
@@ -137,11 +135,8 @@ for ( Int_t event=0; event<num_of_events; event++ ) {
 c1->Divide(2,1);
 c1->cd(1);
 h->Draw("lego2");
-c1_1->SetLogz(true);
 c1->cd(2);
 h2->Draw("lego2");
-c1_2->SetLogx(true);
-c1_2->SetLogz(true);
 
 
 // all pau!   )
