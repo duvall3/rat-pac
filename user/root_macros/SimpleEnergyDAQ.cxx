@@ -138,30 +138,95 @@ for ( Int_t event=0; event<1000; event++ ) {
 
 // TRIGGER LOGIC
 Int_t len = energy.size();
-vector <double> time_full; // soon change to double
+vector <double> time_full;
 
 // make single vector for times -- should be relocated to original loop
 for (Int_t k=0; k<len; k++) {
   time_full.push_back(time_sec[k]+time_nanosec[k]*1.e-9);
   h->Fill(time_full[k]); // fill histogram
-} // len
+} // time_full
+cout << "len = " << time_full.size() << endl;
+cout << "final time = " << time_full[len-1] << endl;
+//cout << "final time = " << time_full[165618] << endl;
 
-// look for triggers
-window = 50.e-9; // 50-ns window for now
-//Double_t first_time = time_full[0];
-for (k=0; k<len; k++) {
+// sum energies and mark windows
+Double_t window_duration = 50.e-9; // 50-ns window for now
+Double_t window_start_time = time_full[0];
+//Double_t window_end_time = window_start_time + window_duration;
+Double_t window_end_time;
+Int_t window_start_index(0);
+Int_t window_end_index;
+Int_t triggered_events(0);
+vector <double> event_times;
+vector <double> event_energies;
+Double_t window_energy;
+//vector <vector <double>> events;
+Double_t final_time = time_full[len-1]; // end of run
 
-  // look ahead 50ns
-  if ( time_full[k] < first_time+window ) { 
-    continue; // not there yet
-  } else {
-    
+//debug
+printf( "At start of window loop:\n" );
+printf( "window duration: %e\nwindow start time: %e\nwindow end time: %e\nwindow start index: %i\nwindow end index: %i\ntriggered events: %i\nfinal time: %e\n", window_duration, window_start_time, window_end_time, window_start_index, window_end_index, triggered_events, final_time );
+printf("\n");
 
+//for (   ) { // window loop
+while( window_end_time < final_time ) { // temporary: uses "while" FIXME
+//for ( Int_t k=0; k<3; k++ ) { //DEBUG: first 3 windows
 
-} // look for triggers
+  triggered_events++; //main
+  event_times.push_back(window_start_time); //main
+
+  window_end_time = window_start_time + window_duration;
+
+  printf( "\n###\nAt start of window %i:\n", k );
+  printf( "window duration: %e\nwindow start time: %e\nwindow end time: %e\nwindow start index: %i\nwindow end index: %i\ntriggered events: %i\nfinal time: %e\n", window_duration, window_start_time, window_end_time, window_start_index, window_end_index, triggered_events, final_time );
+
+  // find window_end_index
+  if (window_end_time > final_time) { // check for final window
+    window_end_index = len;
+  } else { // all other windows
+    for (Int_t i=window_start_index; i<len; i++) {
+      if (time_full[i] < window_end_time)  { // next index
+//	continue;
+      } else { // found the end of the window
+	window_end_index = i;
+  	break;
+      } //endif
+    } // index loop
+  } // final window check
+
+  // sum energies inside window
+  window_energy = 0;
+  for (Int_t j=window_start_index; j<window_end_index; j++) {
+    window_energy += energy[j];
+  }
+
+  event_energies.push_back(window_energy); //main
+   
+  printf( "###\nAt end of window %i:\n", k );
+  printf( "window duration: %e\nwindow start time: %e\nwindow end time: %e\nwindow start index: %i\nwindow end index: %i\ntriggered events: %i\nfinal time: %e\n", window_duration, window_start_time, window_end_time, window_start_index, window_end_index, triggered_events, final_time );
   
+  //beginning of next window
+  window_start_index = j+1;
+  window_start_time = time_full[j+1];
+  printf("\n");
+
+} // window loop
 
 
+// now do something with the results
+// TESTING: just print to stdout for now -- later will plot and analyze
+cout << endl;
+cout << "Triggered Events: " << triggered_events << endl;
+cout << "Event Times (s)" << "\t\t" << "Event Energies (MeV)" << endl;
+for (Int_t ev=0; ev<triggered_events; ev++) {
+  cout << event_times[ev] << "\t\t" << event_energies[ev] << endl;
+}
+
+
+
+// determine triggers -- plot interevent times
+
+  
 
 
 //drawHist:
@@ -171,26 +236,35 @@ for (k=0; k<len; k++) {
 //h->Draw("");
 //c1_1->SetLogz(true);
 //c1->cd(2);
-h->Draw("");
+h->Draw(""); //true
 //c1->SetLogx(true);
-c1->SetLogy(true);
+c1->SetLogy(true); //true
 //c1_2->SetLogx(true);
 //c1_2->SetLogz(true);
 
-// Graph energy deposits by clock time
-// -- later will turn into triggers by clock time TODO
-// -- currently, need to create arrays from the vectors -- too many loops! TODO
 //Double_t time_full_arr[len];
 //Double_t energy_arr[len];
-cout << "Num_el: " << len << endl; // stupid workaround for ROOT's prohibition of variable-length arrays FIXME
-Double_t time_full_arr[10120]; //FIXME
-Double_t energy_arr[10120]; //FIXME
-for (k=0; k<len; k++) {
-  time_full_arr[k] = time_full[k];
-  energy_arr[k] = (double)energy[k];
+//Double_t time_full_arr[1000000]; //
+//Double_t energy_arr[1000000]; //
+//for (k=0; k<len; k++) {
+//time_full_arr[k] = time_full[k];
+//energy_arr[k] = (double)energy[k];
+//}
+// Graph energy deposits by clock time
+// -- currently, need to create arrays from the vectors -- too many loops! TODO
+Double_t event_times_arr[10000];
+Double_t event_energies_arr[10000];
+for (k=0; k<triggered_events; k++) {
+  event_times_arr[k] = event_times[k];
+  event_energies_arr[k] = event_energies[k];
 }
-TCanvas* c2 = new TCanvas;
-TGraph* g = new TGraph(len, time_full_arr, energy_arr);
+TCanvas* c2 = new TCanvas("c2");
+//TGraph* g = new TGraph(len, time_full_arr, energy_arr);
+TGraph* g = new TGraph(triggered_events, event_times_arr, event_energies_arr);
+g->SetName("g");
+g->SetTitle("SimpleEnergyDAQ -- Single Triggers");
+g->GetXaxis()->SetTitle("Time (s)");
+g->GetYaxis()->SetTitle("Energy (MeV)");
 g->Draw("A*");
 
 
