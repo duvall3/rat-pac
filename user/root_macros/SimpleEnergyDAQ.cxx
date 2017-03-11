@@ -68,8 +68,8 @@ vector <int> time_since_event_start_nanosec;
 Float_t cumulative_en(0);
 
 // event loop
-//for ( Int_t event=0; event<num_of_events; event++ ) {
-for ( Int_t event=0; event<1000; event++ ) {
+for ( Int_t event=0; event<num_of_events; event++ ) {
+//for ( Int_t event=0; event<1000; event++ ) {
   if ( event % 100 == 0 ) { printf("Processing at Event %i...\n",event); } // mostly debug
 
   // load event and grab start time
@@ -162,9 +162,9 @@ for (k=0; k<len; k++) {
   events.push_back(events_k);
   events_k.resize(0);
 }
-//DEBUG: SORTING
-printf( "\n//DEBUG: SORTING CHECK\nStep Time (s)\tStep Energy (MeV)\n" );
-for (k=0; k<len; k++) { printf("%2.12f\t%e\t%2.12f\t%e\n", time_full[k], energy[k], events[k][0], events[k][1] ); }
+////DEBUG: SORTING
+//printf( "\n//DEBUG: SORTING CHECK\nStep Time (s)\tStep Energy (MeV)\n" );
+//for (k=0; k<len; k++) { printf("%2.12f\t%e\t%2.12f\t%e\n", time_full[k], energy[k], events[k][0], events[k][1] ); }
 
 
 
@@ -174,7 +174,7 @@ cout << "len = " << time_full.size() << endl;
 cout << "final time = " << time_full[len-1] << endl;
 
 // sum energies and mark windows
-Double_t window_duration = 50.e-9; // 50-ns window for now
+Double_t window_duration = 100.e-9; // 100-ns window for now
 Double_t window_start_time = time_full[0];
 //Double_t window_end_time = window_start_time + window_duration;
 Double_t window_end_time;
@@ -243,7 +243,8 @@ cout << endl;
 cout << "Energy Bursts: " << triggered_events << endl; // can change to "Triggered Singles" after thr is applied
 cout << "Event Times (s)" << "\t\t" << "Event Energies (MeV)" << endl;
 for (Int_t ev=0; ev<triggered_events; ev++) {
-  cout << event_times[ev] << "\t\t" << event_energies[ev] << endl;
+//cout << event_times[ev] << "\t\t" << event_energies[ev] << endl;
+  if (event_energies[ev]>0.5) {cout << event_times[ev] << "\t\t" << event_energies[ev] << endl; } // basic threshold test, somewhat arbitrarily chosen at 0.5 MeV
 }
 
 
@@ -281,8 +282,10 @@ c1->SetLogy(true); //true
 Double_t event_times_arr[10000];
 Double_t event_energies_arr[10000];
 for (k=0; k<triggered_events; k++) {
-  event_times_arr[k] = event_times[k];
-  event_energies_arr[k] = event_energies[k];
+  if (event_energies[k]>0.5) { // basic thr test @ 0.5 MeV
+    event_times_arr[k] = event_times[k];
+    event_energies_arr[k] = event_energies[k];
+  } // thr
 }
 TCanvas* c2 = new TCanvas("c2");
 //TGraph* g = new TGraph(len, time_full_arr, energy_arr);
