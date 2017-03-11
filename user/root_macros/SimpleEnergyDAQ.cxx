@@ -1,6 +1,7 @@
 // SimpleEnergyDAQ -- simple trigger processer based on scintillation energy deposits (TotEDepScintQuenched)
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 3/17 ~ //
 
+#include <vector>
 
 void SimpleEnergyDAQ( const char* filename ) {
 
@@ -17,13 +18,6 @@ TTimeStamp t_run_start = mc->GetUTC();
 time_t sec_run_start = t_run_start.GetSec();
 Float_t nanosec_run_start = (Float_t)t_run_start.GetNanoSec();
 mc->Clear();
-
-// create vectors for main data
-vector <int> time_sec;
-vector <float> time_nanosec;
-vector <float> energy;
-vector <int> time_since_event_start_nanosec;
-Float_t cumulative_en(0);
 
 // prepare histograms
 //
@@ -66,9 +60,16 @@ ya2->SetTitle("Entries");
 //Int_t total_gammas(0); //debug
 
 
+// create vectors for main data
+vector <int> time_sec;
+vector <float> time_nanosec;
+vector <float> energy;
+vector <int> time_since_event_start_nanosec;
+Float_t cumulative_en(0);
+
 // event loop
-//for ( Int_t event=0; event<num_of_events; event++ ) {
-for ( Int_t event=0; event<1000; event++ ) {
+for ( Int_t event=0; event<num_of_events; event++ ) {
+//for ( Int_t event=0; event<1000; event++ ) {
   if ( event % 100 == 0 ) { printf("Processing at Event %i...\n",event); } // mostly debug
 
   // load event and grab start time
@@ -132,22 +133,37 @@ for ( Int_t event=0; event<1000; event++ ) {
 
 } // event loop
 
+Int_t len = energy.size();
 
 //printf( "Total Electrons: %i\nTotal Gammas: %i\n", total_electrons, total_gammas ); //debug
 
-
-// TRIGGER LOGIC
-Int_t len = energy.size();
-vector <double> time_full;
-
 // make single vector for times -- should be relocated to original loop
+vector <double> time_full;
 for (Int_t k=0; k<len; k++) {
   time_full.push_back(time_sec[k]+time_nanosec[k]*1.e-9);
   h->Fill(time_full[k]); // fill histogram
 } // time_full
+
+// sorting
+vector <vector <double>> events;
+vector <double> events_k;
+for (k=0; k<len; k++) {
+  events_k.push_back(time_full[k]);
+  events_k.push_back(energy[k]);
+  events.push_back(events_k);
+  events_k.resize(0);
+}
+//std::sort(
+//DEBUG: SORTING
+printf( "\n//DEBUG: SORTING CHECK\nStep Time (s)\tStep Energy (MeV)\n" );
+//for (k=0; k<len; k++) { printf("%e\t%e\t%e\e\t%f\n", time_full[k], energy[k], events[k][0], events[k][1] ); }
+
+
+
+
+// TRIGGER LOGIC
 cout << "len = " << time_full.size() << endl;
 cout << "final time = " << time_full[len-1] << endl;
-//cout << "final time = " << time_full[165618] << endl;
 
 // sum energies and mark windows
 Double_t window_duration = 50.e-9; // 50-ns window for now
@@ -216,7 +232,7 @@ while( window_end_time < final_time ) { // temporary: uses "while" FIXME
 // now do something with the results
 // TESTING: just print to stdout for now -- later will plot and analyze
 cout << endl;
-cout << "Triggered Events: " << triggered_events << endl;
+cout << "Triggered Singles: " << triggered_events << endl;
 cout << "Event Times (s)" << "\t\t" << "Event Energies (MeV)" << endl;
 for (Int_t ev=0; ev<triggered_events; ev++) {
   cout << event_times[ev] << "\t\t" << event_energies[ev] << endl;
@@ -236,6 +252,8 @@ for (Int_t ev=0; ev<triggered_events; ev++) {
 //h->Draw("");
 //c1_1->SetLogz(true);
 //c1->cd(2);
+h->SetLineColor(kBlue); //true
+h->SetLineWidth(2); //true
 h->Draw(""); //true
 //c1->SetLogx(true);
 c1->SetLogy(true); //true
@@ -265,6 +283,8 @@ g->SetName("g");
 g->SetTitle("SimpleEnergyDAQ -- Single Triggers");
 g->GetXaxis()->SetTitle("Time (s)");
 g->GetYaxis()->SetTitle("Energy (MeV)");
+g->SetMarkerColor(kBlue);
+g->SetMarkerSize(2);
 g->Draw("A*");
 
 
