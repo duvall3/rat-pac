@@ -68,8 +68,8 @@ vector <int> time_since_event_start_nanosec;
 Float_t cumulative_en(0);
 
 // event loop
-for ( Int_t event=0; event<num_of_events; event++ ) {
-//for ( Int_t event=0; event<1000; event++ ) {
+//for ( Int_t event=0; event<num_of_events; event++ ) {
+for ( Int_t event=0; event<1000; event++ ) {
   if ( event % 100 == 0 ) { printf("Processing at Event %i...\n",event); } // mostly debug
 
   // load event and grab start time
@@ -133,11 +133,15 @@ for ( Int_t event=0; event<num_of_events; event++ ) {
 
 } // event loop
 
+
+// check for nonzero total scintallation
 Int_t len = energy.size();
+if ( len == 0 ) { cout << "Error: No scintillation energy found." << endl; return; }
+
 
 //printf( "Total Electrons: %i\nTotal Gammas: %i\n", total_electrons, total_gammas ); //debug
 
-// make single vector for times -- should be relocated to original loop
+// make single vector for times -- should be relocated to step loop above
 vector <double> time_full;
 for (Int_t k=0; k<len; k++) {
   time_full.push_back(time_sec[k]+time_nanosec[k]*1.e-9);
@@ -145,18 +149,22 @@ for (Int_t k=0; k<len; k++) {
 } // time_full
 
 // sorting
+// ridiculous sorting solution using TMath::Sort -- surely there's a more efficient way TODO this
+double time_sorting_arr[1000000];
+for (k=0; k<len; k++) { time_sorting_arr[k] = time_full[k]; }
+Int_t ind[1000000];
+TMath::Sort( len, time_sorting_arr, ind, false );
 vector <vector <double>> events;
 vector <double> events_k;
 for (k=0; k<len; k++) {
-  events_k.push_back(time_full[k]);
-  events_k.push_back(energy[k]);
+  events_k.push_back(time_full[ind[k]]);
+  events_k.push_back(energy[ind[k]]);
   events.push_back(events_k);
   events_k.resize(0);
 }
-//std::sort(
 //DEBUG: SORTING
 printf( "\n//DEBUG: SORTING CHECK\nStep Time (s)\tStep Energy (MeV)\n" );
-//for (k=0; k<len; k++) { printf("%e\t%e\t%e\e\t%f\n", time_full[k], energy[k], events[k][0], events[k][1] ); }
+for (k=0; k<len; k++) { printf("%2.12f\t%e\t%2.12f\t%e\n", time_full[k], energy[k], events[k][0], events[k][1] ); }
 
 
 
@@ -232,7 +240,7 @@ while( window_end_time < final_time ) { // temporary: uses "while" FIXME
 // now do something with the results
 // TESTING: just print to stdout for now -- later will plot and analyze
 cout << endl;
-cout << "Triggered Singles: " << triggered_events << endl;
+cout << "Energy Bursts: " << triggered_events << endl; // can change to "Triggered Singles" after thr is applied
 cout << "Event Times (s)" << "\t\t" << "Event Energies (MeV)" << endl;
 for (Int_t ev=0; ev<triggered_events; ev++) {
   cout << event_times[ev] << "\t\t" << event_energies[ev] << endl;
