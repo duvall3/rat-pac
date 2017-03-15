@@ -299,7 +299,7 @@ TCanvas* c2 = new TCanvas("c2");
 //TGraph* g = new TGraph(len, time_full_arr, energy_arr);
 TGraph* g = new TGraph(triggered_events, event_times_arr, event_energies_arr);
 g->SetName("g");
-g->SetTitle("SimpleEnergyDAQ -- Single Triggers");
+g->SetTitle("SimpleEnergyDAQ -- Single Bursts");
 g->GetXaxis()->SetTitle("Time (s)");
 g->GetYaxis()->SetTitle("Energy (MeV)");
 g->SetMarkerColor(kBlue);
