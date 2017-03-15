@@ -89,6 +89,8 @@ for ( Int_t event=0; event<num_of_events; event++ ) {
 
   Int_t track_counter(0); //debug
 
+  Int_t photon_counter(0); //debug
+
   // loop over tracks
   while ( n != 0 ) {
 
@@ -96,6 +98,12 @@ for ( Int_t event=0; event<num_of_events; event++ ) {
 //  printf( "Track: %i\tParticle: %s\t", n->GetTrackID(), particle_name.Data() ); //debug
 //  if ( particle_name.Contains("e-") ) { total_electrons += 1; } //debug
 //  if ( particle_name.Contains("gamma") ) { total_gammas += 1; } //debug
+//  if ( photon_counter % 1000 == 0 ) { cout << "Skipping photon " << photon_counter << "..." << endl; } //debug, mostly
+//  if ( particle_name.Contains("opticalphoton") ) {
+//    photon_counter++;
+//    n = c.FindNextTrack();
+//    continue; // skip optical photons
+//  }
 
     
     Float_t tot_en(0);

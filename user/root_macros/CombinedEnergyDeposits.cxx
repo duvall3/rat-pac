@@ -62,6 +62,7 @@ ya2->SetTitleOffset(1.5);
 
 // event loop
 for ( Int_t event=0; event<num_of_events; event++ ) {
+//for ( Int_t event=0; event<1000; event++ ) {
 
   // load event and grab start time
   ds = r.GetEvent(event);
@@ -77,7 +78,8 @@ for ( Int_t event=0; event<num_of_events; event++ ) {
   // create RAT tracking objects
   RAT::TrackNav nav(ds);
   RAT::TrackCursor c = nav.Cursor(false);
-  RAT::TrackNode *n = c.Here(); // enter event
+//RAT::TrackNode *n = c.Here(); // enter event
+  RAT::TrackNode *n = c.GoChild(0); // enter event (from top level) -- TRACK DUPLICATE TEST
 
   // create vectors for main data
   vector <int> time_sec;
@@ -87,16 +89,26 @@ for ( Int_t event=0; event<num_of_events; event++ ) {
   Float_t cumulative_en(0);
 
   Int_t track_counter(0); //debug
+  Int_t photon_counter(0); //debug
 
   // loop over tracks
   while ( n != 0 ) {
 
     TString particle_name = n->GetParticleName();
+    Int_t track_id = n->GetTrackID();
+//  if ( photon_counter % 1000 == 0 ) { cout << "Skipping photon " << photon_counter << "..." << endl; } //debug, mostly
+//  if ( particle_name.Contains("opticalphoton") ) {
+//    photon_counter++;
+//    n = c.FindNextTrack();
+//    continue; // skip optical photons
+//  }
 //  printf( "Track: %i\tParticle: %s\t", n->GetTrackID(), particle_name.Data() ); //debug
     Float_t tot_en(0);
 
     // loop over steps
-    while ( c.IsTrackEnd() == false ) {
+//  while ( c.IsTrackEnd() == false ) {
+    Int_t num_of_steps = c.StepCount();
+    for ( Int_t step=0; step<(num_of_steps-1); step++ ) {
       time_sec.push_back( step_sec );
       time_nanosec.push_back( n->GetGlobalTime() + nanosec_event_start - nanosec_run_start );
       time_since_event_start_nanosec.push_back( n->GetGlobalTime() );
@@ -113,9 +125,10 @@ for ( Int_t event=0; event<num_of_events; event++ ) {
 
   } // track loop
 
-  // print track summary
-//printf( "Cumulative Energy: %5.6f\n", cumulative_en );
-//printf( "Total Tracks: %i\n\n", track_counter );
+//  // print track summary
+//  printf( "Track ID: %d\n", track_id  );
+//  printf( "Cumulative Energy: %5.6f\n", cumulative_en );
+//  printf( "Total Tracks: %i\n\n", track_counter );
 
   // generate histogram
   Int_t len = energy.size();
