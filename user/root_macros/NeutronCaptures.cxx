@@ -110,17 +110,19 @@ for (int event=1; event<=number_of_events; event++) { // event loop
       } // end for -- child loop
     printf( "Gammas: %i\nTotal Gamma Energy: % 5.6f\n", gammas, gamma_KE_total );
     if ( problem_child_tf == true ) {
-      cerr << "Warning: Unexpected child particle type in event " << event << ": " << problem_child_name << endl;
-      cout << "Warning: Unexpected child particle type in event " << event << ": " << problem_child_name << endl;
+//    cerr << "Warning: Unexpected child particle type in event " << event << ": " << problem_child_name << endl;
+//    cout << "Warning: Unexpected child particle type in event " << event << ": " << problem_child_name << endl;
     } else { // no problem children
     } // end if
 
     
 
   } else { // track terminated by some other process
-    cerr << "Warning: n0 track for event " << event << " terminated by " << n->GetProcess() << " instead of nCapture." << endl;
-    cout << "Warning: n0 track for event " << event << " terminated by " << n->GetProcess() << " instead of nCapture." << endl;
-//  printf( "Endpoint:\t%f %f %f\n", n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
+    if ( !n->GetProcess().contains("Transportation") ) {
+      cerr << "Warning: n0 track for event " << event << " terminated by " << n->GetProcess() << " instead of nCapture." << endl;
+      cout << "Warning: n0 track for event " << event << " terminated by " << n->GetProcess() << " instead of nCapture." << endl;
+  //  printf( "Endpoint:\t%f %f %f\n", n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
+    }
 
   } // end if
     
