@@ -122,13 +122,11 @@ void Trajectory::FillStep(const G4StepPoint *point, const G4Step *step,
 
   // mjd -- temporary workaround for these quantities sticking outside the scintillator since GLG4Scint isn't called
   G4String volume_name = volume->GetName();
+  ratStep->SetTotEDepScint(0);
+  ratStep->SetTotEDepScintQuenched(0);
   if ( volume_name.contains("target") ) {
     ratStep->SetTotEDepScint(GLG4Scint::GetTotEdep_Scint());
     ratStep->SetTotEDepScintQuenched(GLG4Scint::GetTotEdep_Scint_Quenched());
-  }
-  else {
-    ratStep->SetTotEDepScint(0);
-    ratStep->SetTotEDepScintQuenched(0);
   }
 
 }
