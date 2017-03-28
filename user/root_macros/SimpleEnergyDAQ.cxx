@@ -20,8 +20,6 @@ Float_t nanosec_run_start = (Float_t)t_run_start.GetNanoSec();
 mc->Clear();
 
 // prepare histograms
-//
-TCanvas* c1 = new TCanvas;
 
 // E-T distribution
 TH1D* h = new TH1D("h", "T Distribution", 100, 1.e-9, 10.);
@@ -38,7 +36,7 @@ ya->SetTitle("Entries");
 // Marc's section:
   const Int_t nBinsEBP = 100;
   Double_t xmin = 1.e-12; //s
-  Double_t xmax = 1.e1; //s
+  Double_t xmax = 1.e0; //s
   Double_t logxmin = TMath::Log10(xmin);
   Double_t logxmax = TMath::Log10(xmax);
   Double_t binwidth = (logxmax-logxmin)/nBinsEBP;
@@ -49,15 +47,30 @@ ya->SetTitle("Entries");
   }
 // applying Marc's cool stuff:
 //TH2D* h2 = new TH2D("h2", "E - T_Event Distribution", 100, 1.e-3, 1.e9, 100, 1.e-4, 1.e-2);
-TH1D* h2 = new TH1D("h2", "Interevent Time", nBinsEBP, xbinsEBP);
-TAxis* xa2 = h2->GetXaxis();
-TAxis* ya2 = h2->GetYaxis();
-xa2->SetTitle("Time (s)");
-ya2->SetTitle("Entries");
+//TH1D* h2 = new TH1D("h2", "Interevent Time", nBinsEBP, xbinsEBP);
+//TAxis* xa2 = h2->GetXaxis();
+//TAxis* ya2 = h2->GetYaxis();
+//xa2->SetTitle("Time (s)");
+//ya2->SetTitle("Entries");
+
+// energy spectrum
+TH1D* h3 = new TH1D("h3", "Burst Energy Spectrum", 100, 1.e-6, 1.5e1);
+//TH1D* h3 = new TH1D("h3", "Burst Energy Spectrum", 100, 1.e3, 1.e8); // switching from MeV to just eV
+TAxis* xa3 = h3->GetXaxis();
+TAxis* ya3 = h3->GetYaxis();
+xa3->SetTitle("Energy (MeV)");
+ya3->SetTitle("Entries");
+
+// interevent time
+TH1D* h4 = new TH1D("h4", "Interevent Time", nBinsEBP, xbinsEBP); // will plot in s, NOT ns
+TAxis* xa4 = h4->GetXaxis();
+TAxis* ya4 = h4->GetYaxis();
+xa4->SetTitle("Interevent Time (s)");
+ya4->SetTitle("Entries");
 
 
-//Int_t total_electrons(0); //debug
-//Int_t total_gammas(0); //debug
+Int_t total_electrons(0); //debug
+Int_t total_gammas(0); //debug
 
 
 // create vectors for main data
@@ -65,7 +78,9 @@ vector <int> time_sec;
 vector <float> time_nanosec;
 vector <float> energy;
 vector <int> time_since_event_start_nanosec;
-Float_t cumulative_en(0);
+Float_t cumulative_en;
+
+TString vol; //debug
 
 // event loop
 for ( Int_t event=0; event<num_of_events; event++ ) {
@@ -87,6 +102,8 @@ for ( Int_t event=0; event<num_of_events; event++ ) {
   RAT::TrackCursor c = nav.Cursor(false);
   RAT::TrackNode *n = c.Here(); // enter event
 
+  cumulative_en = 0;
+
   Int_t track_counter(0); //debug
 
   Int_t photon_counter(0); //debug
@@ -94,16 +111,16 @@ for ( Int_t event=0; event<num_of_events; event++ ) {
   // loop over tracks
   while ( n != 0 ) {
 
-    TString particle_name = n->GetParticleName();
-//  printf( "Track: %i\tParticle: %s\t", n->GetTrackID(), particle_name.Data() ); //debug
-//  if ( particle_name.Contains("e-") ) { total_electrons += 1; } //debug
-//  if ( particle_name.Contains("gamma") ) { total_gammas += 1; } //debug
-//  if ( photon_counter % 1000 == 0 ) { cout << "Skipping photon " << photon_counter << "..." << endl; } //debug, mostly
-//  if ( particle_name.Contains("opticalphoton") ) {
-//    photon_counter++;
-//    n = c.FindNextTrack();
-//    continue; // skip optical photons
-//  }
+//    TString particle_name = n->GetParticleName();
+//    printf( "Track: %i\tParticle: %s\t", n->GetTrackID(), particle_name.Data() ); //debug
+//    if ( particle_name.Contains("e-") ) { total_electrons += 1; } //debug
+//    if ( particle_name.Contains("gamma") ) { total_gammas += 1; } //debug
+//    if ( photon_counter % 1000 == 0 &&  photon_counter > 0 ) { cout << "Skipping photon " << photon_counter << "..." << endl; } //debug, mostly
+//    if ( particle_name.Contains("opticalphoton") ) {
+//      photon_counter++;
+//      n = c.FindNextTrack();
+//      continue; // skip optical photons
+//    }
 
     
     Float_t tot_en(0);
@@ -111,6 +128,7 @@ for ( Int_t event=0; event<num_of_events; event++ ) {
     // loop over steps
     Int_t num_of_steps = c.StepCount();
     Int_t current_step;
+    vol = n->GetVolume(); //debug
     for ( current_step=0; current_step<(num_of_steps-1); current_step++ ) {
       if ( n->GetTotEDepScintQuenched() > 0 ) {
 	time_sec.push_back( step_sec );
@@ -122,7 +140,7 @@ for ( Int_t event=0; event<num_of_events; event++ ) {
       } // nonzero scintillation
     } // step loop
 
-  //printf( "tot_en: %5.6f\n", tot_en ); //debug
+//  printf( "tot_en: %5.6f\n", tot_en ); //debug
     cumulative_en += tot_en;
     track_counter++;
 
@@ -131,8 +149,8 @@ for ( Int_t event=0; event<num_of_events; event++ ) {
   } // track loop
 
   // print track summary
-//printf( "Cumulative Energy: %5.6f\n", cumulative_en );
-//printf( "Total Tracks: %i\n\n", track_counter );
+  printf( "Cumulative Energy: %5.6f\n", cumulative_en );
+  printf( "Total Tracks: %i\n\n", track_counter );
 
 
   // cleanup
@@ -170,7 +188,7 @@ for (k=0; k<len; k++) {
   events.push_back(events_k);
   events_k.resize(0);
 }
-////DEBUG: SORTING
+//DEBUG: SORTING
 //printf( "\n//DEBUG: SORTING CHECK\nStep Time (s)\tStep Energy (MeV)\n" );
 //for (k=0; k<len; k++) { printf("%2.12f\t%e\t%2.12f\t%e\n", time_full[k], energy[k], events[k][0], events[k][1] ); }
 
@@ -195,10 +213,10 @@ Double_t window_energy;
 //vector <vector <double>> events;
 Double_t final_time = time_full[len-1]; // end of run
 
-//debug
-printf( "At start of window loop:\n" );
-printf( "window duration: %e\nwindow start time: %e\nwindow end time: %e\nwindow start index: %i\nwindow end index: %i\ntriggered events: %i\nfinal time: %e\n", window_duration, window_start_time, window_end_time, window_start_index, window_end_index, triggered_events, final_time );
-printf("\n");
+////debug
+//printf( "At start of window loop:\n" );
+//printf( "window duration: %e\nwindow start time: %e\nwindow end time: %e\nwindow start index: %i\nwindow end index: %i\ntriggered events: %i\nfinal time: %e\n", window_duration, window_start_time, window_end_time, window_start_index, window_end_index, triggered_events, final_time );
+//printf("\n");
 
 //for (   ) { // window loop
 while( window_end_time < final_time ) { // temporary: uses "while" FIXME
@@ -262,8 +280,10 @@ for (Int_t ev=0; ev<triggered_events; ev++) {
   
 
 
-//drawHist:
 // draw histograms
+
+// deposits by clock time (arbitrary binning, no energies)
+TCanvas* c1 = new TCanvas;
 //c1->Divide(2,1);
 //c1->cd(1);
 //h->Draw("");
@@ -277,6 +297,7 @@ c1->SetLogy(true); //true
 //c1_2->SetLogx(true);
 //c1_2->SetLogz(true);
 
+// energy deposits
 //Double_t time_full_arr[len];
 //Double_t energy_arr[len];
 //Double_t time_full_arr[1000000]; //
@@ -290,10 +311,13 @@ c1->SetLogy(true); //true
 Double_t event_times_arr[10000];
 Double_t event_energies_arr[10000];
 for (k=0; k<triggered_events; k++) {
-  if (event_energies[k]>0.5) { // basic thr test @ 0.5 MeV
+//if (event_energies[k]>0.5) { // basic thr test @ 0.5 MeV
     event_times_arr[k] = event_times[k];
     event_energies_arr[k] = event_energies[k];
-  } // thr
+//  h3->Fill(event_energies[k]*1.e-6); // plot in eV rather than MeV
+    h3->Fill(event_energies[k]); 
+    if (k>0) { h4->Fill( (event_times_arr[k]-event_times_arr[k-1])*1.e-9 ); }
+//} // thr
 }
 TCanvas* c2 = new TCanvas("c2");
 //TGraph* g = new TGraph(len, time_full_arr, energy_arr);
@@ -305,6 +329,23 @@ g->GetYaxis()->SetTitle("Energy (MeV)");
 g->SetMarkerColor(kBlue);
 g->SetMarkerSize(2);
 g->Draw("A*");
+
+// energy spectrum
+TCanvas* c3 = new TCanvas("c3");
+c3->Divide(1,2);
+c3->cd(1);
+c3_1->SetLogy(1);
+h3->SetLineWidth(2);
+h3->SetLineColor(kBlue);
+h3->Draw("");
+
+// interevent time
+c3->cd(2);
+c3_2->SetLogy(1);
+c3_2->SetLogx(1);
+h4->SetLineWidth(2);
+h4->SetLineColor(kRed);
+h4->Draw("");
 
 
 // all pau!   )
