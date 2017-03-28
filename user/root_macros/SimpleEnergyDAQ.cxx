@@ -308,8 +308,8 @@ c1->SetLogy(true); //true
 //}
 // Graph energy deposits by clock time
 // -- currently, need to create arrays from the vectors -- too many loops! TODO
-Double_t event_times_arr[10000];
-Double_t event_energies_arr[10000];
+Double_t event_times_arr[1000000];
+Double_t event_energies_arr[1000000];
 for (k=0; k<triggered_events; k++) {
 //if (event_energies[k]>0.5) { // basic thr test @ 0.5 MeV
     event_times_arr[k] = event_times[k];
