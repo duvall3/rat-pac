@@ -1,6 +1,8 @@
 // SimpleEnergyDAQ -- simple trigger processer based on scintillation energy deposits (TotEDepScintQuenched)
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 3/17 ~ //
 
+// vim markers: 'h = histograms, 'e = event number, 'w = window size, 't = threshold
+
 #include <vector>
 
 void SimpleEnergyDAQ( const char* filename ) {
@@ -21,22 +23,22 @@ mc->Clear();
 
 // prepare histograms
 
-// E-T distribution
-TH1D* h = new TH1D("h", "T Distribution", 100, 1.e-9, 10.);
-TAxis* xa = h->GetXaxis();
-TAxis* ya = h->GetYaxis();
-xa->SetTitle("Time (s)");
-//xa->SetTitleOffset(1.5);
-//xa->SetLabelSize(.02);
-ya->SetTitle("Entries");
-//ya->SetTitleOffset(1.5);
-//ya->SetLabelSize(.02);
+//// E-T distribution
+//TH1D* h = new TH1D("h", "T Distribution", 100, 1.e-9, 10.);
+//TAxis* xa = h->GetXaxis();
+//TAxis* ya = h->GetYaxis();
+//xa->SetTitle("Time (s)");
+////xa->SetTitleOffset(1.5);
+////xa->SetLabelSize(.02);
+//ya->SetTitle("Entries");
+////ya->SetTitleOffset(1.5);
+////ya->SetLabelSize(.02);
 
 // for trigger distribution
 // Marc's section:
   const Int_t nBinsEBP = 100;
   Double_t xmin = 1.e-12; //s
-  Double_t xmax = 1.e0; //s
+  Double_t xmax = 1.e3; //s
   Double_t logxmin = TMath::Log10(xmin);
   Double_t logxmax = TMath::Log10(xmax);
   Double_t binwidth = (logxmax-logxmin)/nBinsEBP;
@@ -85,7 +87,7 @@ TString vol; //debug
 // event loop
 for ( Int_t event=0; event<num_of_events; event++ ) {
 //for ( Int_t event=0; event<1000; event++ ) {
-  if ( event % 100 == 0 ) { printf("Processing at Event %i...\n",event); } // mostly debug
+  if ( event % 100 == 0 ) { printf("Processing at Event %i...\n",event); }
 
   // load event and grab start time
   ds = r.GetEvent(event);
@@ -148,9 +150,9 @@ for ( Int_t event=0; event<num_of_events; event++ ) {
 
   } // track loop
 
-  // print track summary
-  printf( "Cumulative Energy: %5.6f\n", cumulative_en );
-  printf( "Total Tracks: %i\n\n", track_counter );
+//  // print track summary
+//  printf( "Cumulative Energy: %5.6f\n", cumulative_en );
+//  printf( "Total Tracks: %i\n\n", track_counter );
 
 
   // cleanup
@@ -171,14 +173,14 @@ if ( len == 0 ) { cout << "Error: No scintillation energy found." << endl; retur
 vector <double> time_full;
 for (Int_t k=0; k<len; k++) {
   time_full.push_back(time_sec[k]+time_nanosec[k]*1.e-9);
-  h->Fill(time_full[k]); // fill histogram
+  //h->Fill(time_full[k]); // fill histogram
 } // time_full
 
 // sorting
 // ridiculous sorting solution using TMath::Sort -- surely there's a more efficient way TODO this
-double time_sorting_arr[1000000];
+double time_sorting_arr[2000000];
 for (k=0; k<len; k++) { time_sorting_arr[k] = time_full[k]; }
-Int_t ind[1000000];
+Int_t ind[2000000];
 TMath::Sort( len, time_sorting_arr, ind, false );
 vector <vector <double>> events;
 vector <double> events_k;
@@ -193,14 +195,16 @@ for (k=0; k<len; k++) {
 //for (k=0; k<len; k++) { printf("%2.12f\t%e\t%2.12f\t%e\n", time_full[k], energy[k], events[k][0], events[k][1] ); }
 
 
-
-
 // TRIGGER LOGIC
-cout << "len = " << time_full.size() << endl;
-cout << "final time = " << time_full[len-1] << endl;
+
+// LOCATE BURSTS
+
+//cout << "len = " << time_full.size() << endl;
+//cout << "final time = " << time_full[len-1] << endl;
 
 // sum energies and mark windows
-Double_t window_duration = 100.e-9; // 100-ns window for now
+Double_t window_duration = 100.e-9;
+//Double_t window_duration = 100.e-6;
 Double_t window_start_time = time_full[0];
 //Double_t window_end_time = window_start_time + window_duration;
 Double_t window_end_time;
@@ -227,8 +231,8 @@ while( window_end_time < final_time ) { // temporary: uses "while" FIXME
 
   window_end_time = window_start_time + window_duration;
 
-  printf( "\n###\nAt start of window %i:\n", k );
-  printf( "window duration: %e\nwindow start time: %e\nwindow end time: %e\nwindow start index: %i\nwindow end index: %i\ntriggered events: %i\nfinal time: %e\n", window_duration, window_start_time, window_end_time, window_start_index, window_end_index, triggered_events, final_time );
+//  printf( "\n###\nAt start of window %i:\n", k );
+//  printf( "window duration: %e\nwindow start time: %e\nwindow end time: %e\nwindow start index: %i\nwindow end index: %i\ntriggered events: %i\nfinal time: %e\n", window_duration, window_start_time, window_end_time, window_start_index, window_end_index, triggered_events, final_time );
 
   // find window_end_index
   if (window_end_time > final_time) { // check for final window
@@ -252,89 +256,109 @@ while( window_end_time < final_time ) { // temporary: uses "while" FIXME
 
   event_energies.push_back(window_energy); //main
    
-  printf( "###\nAt end of window %i:\n", k );
-  printf( "window duration: %e\nwindow start time: %e\nwindow end time: %e\nwindow start index: %i\nwindow end index: %i\ntriggered events: %i\nfinal time: %e\n", window_duration, window_start_time, window_end_time, window_start_index, window_end_index, triggered_events, final_time );
+//  printf( "###\nAt end of window %i:\n", k );
+//  printf( "window duration: %e\nwindow start time: %e\nwindow end time: %e\nwindow start index: %i\nwindow end index: %i\ntriggered events: %i\nfinal time: %e\n", window_duration, window_start_time, window_end_time, window_start_index, window_end_index, triggered_events, final_time );
   
   //beginning of next window
   window_start_index = j+1;
   window_start_time = time_full[j+1];
-  printf("\n");
+  //printf("\n");
 
 } // window loop
 
 
 // now do something with the results
-// TESTING: just print to stdout for now -- later will plot and analyze
-cout << endl;
-cout << "Energy Bursts: " << triggered_events << endl; // can change to "Triggered Singles" after thr is applied
-cout << "Event Times (s)" << "\t\t" << "Event Energies (MeV)" << endl;
-for (Int_t ev=0; ev<triggered_events; ev++) {
-//cout << event_times[ev] << "\t\t" << event_energies[ev] << endl;
-  if (event_energies[ev]>0.5) {cout << event_times[ev] << "\t\t" << event_energies[ev] << endl; } // basic threshold test, somewhat arbitrarily chosen at 0.5 MeV
+Double_t thr = 0.5; // MeV; basic low-energy cut
+//// TESTING: just print to stdout for now -- later will plot and analyze
+//cout << endl;
+//cout << "Energy Bursts: " << triggered_events << endl; // can change to "Triggered Singles" after thr is applied
+//cout << "Event Times (s)" << "\t\t" << "Event Energies (MeV)" << endl;
+//for (Int_t ev=0; ev<triggered_events; ev++) {
+////cout << event_times[ev] << "\t\t" << event_energies[ev] << endl;
+//  if (event_energies[ev]>thr) {cout << event_times[ev] << "\t\t" << event_energies[ev] << endl; } // basic threshold test, somewhat arbitrarily chosen at 0.5 MeV
+//}
+
+
+// Output: fill histograms and print bursts
+// -- currently, need to create arrays from the vectors -- too many loops! TODO
+//Int_t bursts(0);
+//Double_t event_times_arr[2000000];
+//Double_t event_energies_arr[2000000];
+//for (k=0; k<triggered_events; k++) {
+//  if ( event_energies[k]>thr ) {
+//    bursts++;
+//    event_times_arr[k] = event_times[k];
+//    event_energies_arr[k] = event_energies[k];
+//  }
+//}
+//for (k=0; k<bursts; k++) {
+//  h3->Fill(event_energies_arr[k]); 
+//  if (k>0) { h4->Fill( event_times_arr[k]-event_times_arr[k-1] ); } // inter-burst time in s
+//  printf( "%f\t%f\n", event_times_arr[k], event_energies_arr[k] );
+//}
+//cout << "Bursts Found: " << bursts << endl;
+Int_t bursts(0);
+vector <double> burst_times;
+vector <double> burst_energies;
+for (k=0; k<triggered_events; k++) {
+  if ( event_energies[k]>thr ) {
+    bursts++;
+    burst_times.push_back( event_times[k] );
+    burst_energies.push_back( event_energies[k] );
+  } //thr
 }
-
-
-
-// determine triggers -- plot interevent times
-
-  
+for (k=0; k<bursts; k++) {
+  h3->Fill(burst_energies[k]);
+  if (k>0) { h4->Fill( burst_times[k] - burst_times[k-1] ); }
+  printf( "%f\t%f\n", burst_times[k], burst_energies[k] );
+}
+cout << "Bursts Found: " << bursts << endl;
 
 
 // draw histograms
 
 // deposits by clock time (arbitrary binning, no energies)
-TCanvas* c1 = new TCanvas;
-//c1->Divide(2,1);
-//c1->cd(1);
-//h->Draw("");
-//c1_1->SetLogz(true);
-//c1->cd(2);
-h->SetLineColor(kBlue); //true
-h->SetLineWidth(2); //true
-h->Draw(""); //true
-//c1->SetLogx(true);
-c1->SetLogy(true); //true
-//c1_2->SetLogx(true);
-//c1_2->SetLogz(true);
+//TCanvas* c1 = new TCanvas;
+////c1->Divide(2,1);
+////c1->cd(1);
+////h->Draw("");
+////c1_1->SetLogz(true);
+////c1->cd(2);
+//h->SetLineColor(kBlue); //true
+//h->SetLineWidth(2); //true
+//h->Draw(""); //true
+////c1->SetLogx(true);
+//c1->SetLogy(true); //true
+////c1_2->SetLogx(true);
+////c1_2->SetLogz(true);
 
-// energy deposits
-//Double_t time_full_arr[len];
-//Double_t energy_arr[len];
-//Double_t time_full_arr[1000000]; //
-//Double_t energy_arr[1000000]; //
-//for (k=0; k<len; k++) {
-//time_full_arr[k] = time_full[k];
-//energy_arr[k] = (double)energy[k];
-//}
-// Graph energy deposits by clock time
-// -- currently, need to create arrays from the vectors -- too many loops! TODO
-Double_t event_times_arr[1000000];
-Double_t event_energies_arr[1000000];
-for (k=0; k<triggered_events; k++) {
-//if (event_energies[k]>0.5) { // basic thr test @ 0.5 MeV
-    event_times_arr[k] = event_times[k];
-    event_energies_arr[k] = event_energies[k];
-//  h3->Fill(event_energies[k]*1.e-6); // plot in eV rather than MeV
-    h3->Fill(event_energies[k]); 
-    if (k>0) { h4->Fill( (event_times_arr[k]-event_times_arr[k-1])*1.e-9 ); }
-//} // thr
-}
-TCanvas* c2 = new TCanvas("c2");
-//TGraph* g = new TGraph(len, time_full_arr, energy_arr);
-TGraph* g = new TGraph(triggered_events, event_times_arr, event_energies_arr);
-g->SetName("g");
-g->SetTitle("SimpleEnergyDAQ -- Single Bursts");
-g->GetXaxis()->SetTitle("Time (s)");
-g->GetYaxis()->SetTitle("Energy (MeV)");
-g->SetMarkerColor(kBlue);
-g->SetMarkerSize(2);
-g->Draw("A*");
+//// energy deposits
+////Double_t time_full_arr[len];
+////Double_t energy_arr[len];
+////Double_t time_full_arr[1000000]; //
+////Double_t energy_arr[1000000]; //
+////for (k=0; k<len; k++) {
+////time_full_arr[k] = time_full[k];
+////energy_arr[k] = (double)energy[k];
+////}
+//// Graph energy deposits by clock time
+//TCanvas* c2 = new TCanvas("c2");
+////TGraph* g = new TGraph(len, time_full_arr, energy_arr);
+//TGraph* g = new TGraph(triggered_events, event_times_arr, event_energies_arr);
+//g->SetName("g");
+//g->SetTitle("SimpleEnergyDAQ -- Single Bursts");
+//g->GetXaxis()->SetTitle("Time (s)");
+//g->GetYaxis()->SetTitle("Energy (MeV)");
+//g->SetMarkerColor(kBlue);
+//g->SetMarkerSize(2);
+//g->Draw("A*");
 
 // energy spectrum
 TCanvas* c3 = new TCanvas("c3");
+c3->SetTitle(filename);
 c3->Divide(1,2);
 c3->cd(1);
-c3_1->SetLogy(1);
+//c3_1->SetLogy(1);
 h3->SetLineWidth(2);
 h3->SetLineColor(kBlue);
 h3->Draw("");
