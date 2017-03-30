@@ -20,8 +20,6 @@ TFile *f = TFile::Open(filename);
 RAT::DSReader r(filename);
 RAT::DS::Root *ds;
 RAT::DS::MC *mc;
-//RAT::TrackNav nav;  // no default constructor, moved to event loop
-//RAT::TrackCursor c; // same as TrackNav above
 RAT::TrackNode *n;
 long total_events = r.GetTotal();
 Long64_t event;
@@ -86,7 +84,7 @@ h2y->SetTitle("Entries");
 h2y->SetTitleSize(axisTitleSize);
 h2y->SetLabelSize(axisLabelSize);
 
-// experimental: draw and watch live fill
+// draw plots
 c1->cd(1);
 h1->Draw();
 c1->cd(2);
@@ -141,11 +139,9 @@ for ( event = 0; event < events_to_process; event++ ) {
       
       // only record if there was scintillation
       if ( n->GetTotEDepScintQuenched() > 0 ) {
-        step_time = t_event_start + n->GetGlobalTime()*1.e-9;
-	step_edep = n->GetTotEDepScintQuenched();
-        step_single.push_back( step_time );
-	step_single.push_back( step_edep );
-	step_list.push_back( step_single);
+        step_single.push_back( t_event_start + n->GetGlobalTime()*1.e-9 );
+	step_single.push_back( n->GetTotEDepScintQuenched() );
+	step_list.push_back( step_single );
 	step_single.resize(0);
 //	h1->Fill( n->GetTotEDepScintQuenched() ); //debug -- NOT REALLY THIS QUANTITY
       } // nonzero scintillation
@@ -184,6 +180,7 @@ step_list.resize(0);
 
 // LOCATE BURSTS
 
+// threshold
 Double_t thr = 0.5; // MeV -- simple low-energy cut
 
 // initialize
@@ -205,14 +202,14 @@ Double_t burst_energy;
 printf( "\nscint_steps: %i\n", scint_steps );
 printf( "\n%e\t%e\t%e\t%e\n", first_time, window_duration, final_time, first_time + window_duration );
 
-// check window size
-if ( first_time + window_duration > final_time ) { cout << "ERROR: First window exceeds run end time. Check window duration." << endl; return; }
-
 // check for any scintillation
 if ( scint_steps == 0 ) { cout << "WARNING: No scintillation found. Exiting..." << endl; return; }
 
+// check window size
+if ( first_time + window_duration > final_time ) { cout << "ERROR: First window exceeds run end time. Check window duration." << endl; return; }
+
 // find beginning of first burst
-burst_start_index = 2;
+burst_start_index = 2; //FIXME
 //burst_start_time = first_time;
 burst_start_time = step_list_sorted[burst_start_index][0];
 
@@ -227,15 +224,15 @@ while ( burst_end_time < final_time ) { // TODO change to fixed loop
   } else { // all other windows
     j = burst_start_index;
     while ( step_list_sorted[j][0] < burst_end_time ) { j++; } // TODO another one
-  }
+  } //endif
   burst_end_index = j;
 
   // find burst energy
   burst_energy = 0;
   for ( k = burst_start_index; k < burst_end_index; k++ ) {
     burst_energy += step_list_sorted[k][1];
-  }
-  cout << "debug\t" << burst_start_index << "\t" << burst_end_index << "\t" << burst_energy << endl;
+  } // burst loop
+  //cout << "debug\t" << burst_start_index << "\t" << burst_end_index << "\t" << burst_energy << endl;
 
   // record burst data
   if ( burst_energy > thr ) {
@@ -254,7 +251,7 @@ while ( burst_end_time < final_time ) { // TODO change to fixed loop
 } // end run loop
 cout << endl;
 
-// debug
+// report
 cout << "Bursts over threshold: " << number_of_bursts << endl;
 cout << "#BURST LIST:" << endl;
 for ( Int_t b=0; b<number_of_bursts; b++ ) {
