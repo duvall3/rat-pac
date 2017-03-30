@@ -1,11 +1,13 @@
 // SimpleEnergyDAQ -- simple trigger processer based on scintillation energy deposits (TotEDepScintQuenched)
+// SEDAQ_backup -- simple trigger processer based on scintillation energy deposits (TotEDepScintQuenched)
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 3/17 ~ //
 
 // vim markers: 'h = histograms, 'e = event number, 'w = window size, 't = threshold
 
 #include <vector>
 
-void SimpleEnergyDAQ( const char* filename ) {
+//void SimpleEnergyDAQ( const char* filename ) {
+void SEDAQ_backup( const char* filename) {
 
 
 // open file
@@ -37,7 +39,7 @@ mc->Clear();
 // for trigger distribution
 // Marc's section:
   const Int_t nBinsEBP = 100;
-  Double_t xmin = 1.e-12; //s
+  Double_t xmin = 1.e-10; //s
   Double_t xmax = 1.e3; //s
   Double_t logxmin = TMath::Log10(xmin);
   Double_t logxmax = TMath::Log10(xmax);
