@@ -42,7 +42,7 @@ Float_t axisLabelSize = 0.05;
 Style_t axisFont = 42; // helvetica
 TCanvas* c1 = new TCanvas("c1");
 c1->SetTitle(filename);
-c1->Divide(1,2);
+c1->Divide(1,3);
 // burst energies
 TH1D* h1 = new TH1D("h1", "Burst Energies (MeV)", 100, 1.e-9, 1.5e1); // TODO autoscale
 //TH1D* h1 = new TH1D("h1", "Burst Energies (MeV)", 100, 1.e-9, 1.5e0); // TODO autoscale
@@ -93,6 +93,8 @@ c1->cd(2);
 h2->Draw();
 c1_2->SetLogx(1);
 c1_2->SetLogy(1);
+c1->cd(3);
+T->Draw("ds.mc.summary.totalScintEdepQuenched");
 
 
 
