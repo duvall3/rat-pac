@@ -2,13 +2,13 @@
 //     along each Monte Carlo track step
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 3/2017 ~ //
 
-// vim markers: 'i = initialize, 'd = extract data, 's = sort data, 'b = bursts, 'a = analyze; 'e = events_to_process, 'w = window_duration
+// vim markers: 'i = initialize, 'd = extract data, 'b = find bursts, 's = sort data, 'a = analyze;
+// 	'e = events_to_process, 'w = window_duration
 
 
-//void SimpleEnergyDAQ( const char* filename, long events_to_process, double window_duration, double thr ) {
-//void SimpleEnergyDAQ( const char* filename, long events_to_process ) {
+
+//void SimpleEnergyDAQ( const char* filename, double window_duration, double thr ) {
 void SimpleEnergyDAQ( const char* filename ) {
-
 
 
 
@@ -35,29 +35,21 @@ ds->Clear();
 
 // prepare plots
 gStyle->SetStatFontSize(0.08);
-Float_t axisTitleSize = 0.05;
-Float_t axisLabelSize = 0.05;
-Style_t axisFont = 42; // helvetica
+gStyle->SetTitleSize(0.06);
+gStyle->SetLabelSize(0.06);
+gStyle->SetTitleFont(42);
+gStyle->SetLabelFont(42);
 TCanvas* c1 = new TCanvas("c1");
 c1->SetTitle(filename);
 c1->Divide(1,3);
 // burst energies
 TH1D* h1 = new TH1D("h1", "Burst Energies (MeV)", 100, 1.e-9, 1.5e1); // TODO autoscale
-//TH1D* h1 = new TH1D("h1", "Burst Energies (MeV)", 100, 1.e-9, 1.5e0); // TODO autoscale
 h1->SetLineWidth(2);
 h1->SetLineColor(kBlue);
 TAxis* h1x = h1->GetXaxis();
 h1x->SetTitle("Energy (MeV)");
-h1x->SetTitleSize(axisTitleSize);
-h1x->SetLabelSize(axisLabelSize);
-h1x->SetTitleFont(axisFont);
-h1x->SetLabelFont(axisFont);
 TAxis* h1y = h1->GetYaxis();
 h1y->SetTitle("Entries");
-h1y->SetTitleSize(axisTitleSize);
-h1y->SetLabelSize(axisLabelSize);
-h1y->SetTitleFont(axisFont);
-h1y->SetLabelFont(axisFont);
 // inter-burst times
 // first, some great log-binning code courtesy of Marc Bergevin (bergevin1@llnl.gov):
 const Int_t nBinsEBP = 100;
@@ -77,12 +69,8 @@ h2->SetLineWidth(2);
 h2->SetLineColor(kRed);
 TAxis* h2x = h2->GetXaxis();
 h2x->SetTitle("Time Delay (s)");
-h2x->SetTitleSize(axisTitleSize);
-h2x->SetLabelSize(axisLabelSize);
 TAxis* h2y = h2->GetYaxis();
 h2y->SetTitle("Entries");
-h2y->SetTitleSize(axisTitleSize);
-h2y->SetLabelSize(axisLabelSize);
 
 // draw plots
 c1->cd(1);
@@ -252,19 +240,29 @@ while ( burst_end_time < final_time ) { // TODO change to fixed loop
 cout << endl;
 
 // report
+Int_t b;
 cout << "Bursts over threshold: " << number_of_bursts << endl;
 cout << "#BURST LIST:" << endl;
-for ( Int_t b=0; b<number_of_bursts; b++ ) {
+for ( b=0; b<number_of_bursts; b++ ) {
   printf( "%e\t\t%e\n", burst_list[b][0], burst_list[b][1] );
 }
 
 
 
 // ANALYZE
+
+// find time between bursts
 Int_t b;
-for ( b=1; b<number_of_bursts; b++ ) {
-  h2->Fill( burst_list[b][0] - burst_list[b-1][0] );
+vector <double> delta_t;
+delta_t.resize(number_of_bursts-1);
+for ( b=0; b<(number_of_bursts-1); b++ ) {
+//  h2->Fill( burst_list[b][0] - burst_list[b-1][0] );
+  delta_t[b] = burst_list[b+1][0] - burst_list[b][0];
+  h2->Fill( delta_t[b] );
 }
+
+// neutrino trigger
+// TODO
 
 
 
