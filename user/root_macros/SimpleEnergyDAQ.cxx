@@ -152,7 +152,7 @@ cout << endl;
 double sorting_arr[2000000];
 Long64_t scint_steps = step_list.size();
 for ( k=0; k<(scint_steps-1); k++ ) { sorting_arr[k] = step_list[k][0]; }
-Int_t ind[2000000];
+Long64_t ind[2000000];
 TMath::Sort( scint_steps, sorting_arr, ind, false );
 vector <vector <double>> step_list_sorted;
 step_list_sorted.resize( scint_steps, 2 );
@@ -240,7 +240,7 @@ while ( burst_end_time < final_time ) { // TODO change to fixed loop
 cout << endl;
 
 // report
-Int_t b;
+Long64_t b;
 cout << "Bursts over threshold: " << number_of_bursts << endl;
 cout << "#BURST LIST:" << endl;
 for ( b=0; b<number_of_bursts; b++ ) {
@@ -252,7 +252,7 @@ for ( b=0; b<number_of_bursts; b++ ) {
 // ANALYZE
 
 // find time between bursts
-Int_t b;
+Long64_t b;
 vector <double> delta_t;
 delta_t.resize(number_of_bursts-1);
 for ( b=0; b<(number_of_bursts-1); b++ ) {
