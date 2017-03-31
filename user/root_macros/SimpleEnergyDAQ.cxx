@@ -6,6 +6,8 @@
 // 	'e = events_to_process, 'w = window_duration, 't = threshold
 
 
+#include <vector>
+
 
 //void SimpleEnergyDAQ( const char* filename, double window_duration, double thr ) {
 void SimpleEnergyDAQ( const char* filename ) {
@@ -87,8 +89,8 @@ T->Draw("ds.mc.summary.totalScintEdepQuenched");
 // EXTRACT DATA
 
 // initialize
-//long events_to_process = total_events;
-Int_t events_to_process = 10;
+long events_to_process = total_events;
+if ( events_to_process > 500 ) events_to_process = 500; //debug
 TTimeStamp t_event_start_stamp;
 Double_t t_event_start_utc;
 Double_t t_event_start;
@@ -155,15 +157,23 @@ for ( k=0; k<(scint_steps-1); k++ ) { sorting_arr[k] = step_list[k][0]; }
 Long64_t ind[2000000];
 TMath::Sort( scint_steps, sorting_arr, ind, false );
 vector <vector <double>> step_list_sorted;
-step_list_sorted.resize( scint_steps, 2 );
+step_list_sorted.resize( scint_steps+1, 2 );
 for ( k=0; k<(scint_steps-1); k++ ) {
   step_list_sorted[k][0] = step_list[ind[k]][0];
   step_list_sorted[k][1] = step_list[ind[k]][1];
 }
-for (k=0; k<(scint_steps-1); k++ ) { printf( "%f\t%f\t%f\t%f\n", step_list[k][0], step_list[k][1], step_list_sorted[k][0], step_list_sorted[k][1] ); } //debug
+//step_list.resize(0);
+
+// weird workaround for TMath::Sort putting the last entry at the top
+if ( ind[0] == scint_steps-1 ) {
+  swap( step_list_sorted[0], step_list_sorted[scint_steps-1] );
+}
+for (k=0; k<scint_steps; k++ ) { printf( "%f\t%f\t%f\t%f\n", step_list[k][0], step_list[k][1], step_list_sorted[k][0], step_list_sorted[k][1] ); } //debug
 step_list.resize(0);
 
-
+//debug
+cout << endl;
+for (k=0; k<20; k++) { cout << ind[k] << endl; }
 
 
 // LOCATE BURSTS
@@ -172,8 +182,9 @@ step_list.resize(0);
 Double_t thr = 0.0; // MeV -- simple low-energy cut
 
 // initialize
-Double_t final_time = step_list_sorted[scint_steps-2][0]; // last deposition in list FIXME why 2??
-Double_t window_duration = 1000.e-9;
+Double_t final_time = step_list_sorted[scint_steps-1][0]; // last deposition in list
+//Double_t window_duration = 1.e-11;
+Double_t window_duration = 100.e-9;
 Double_t burst_start_time;
 Double_t burst_end_time;
 Long64_t burst_start_index;
@@ -188,7 +199,7 @@ Double_t burst_energy;
 if ( scint_steps == 0 ) { cout << "WARNING: No scintillation found. Exiting..." << endl; return; }
 
 // find beginning of first burst
-burst_start_index = 1; //FIXME
+burst_start_index = 0;
 burst_start_time = step_list_sorted[burst_start_index][0];
 burst_end_time = burst_start_time + window_duration;
 
@@ -240,11 +251,14 @@ cout << endl;
 
 // report
 Long64_t b;
+Double_t burst_sum(0);
 cout << "Bursts over threshold: " << number_of_bursts << endl;
 cout << "#BURST LIST:" << endl;
 for ( b=0; b<number_of_bursts; b++ ) {
   printf( "%e\t\t%e\n", burst_list[b][0], burst_list[b][1] );
+  burst_sum += burst_list[b][1];
 }
+printf( "\nBurst Energy Sum (MeV): %e\n", burst_sum );
 
 
 
@@ -255,7 +269,6 @@ Long64_t b;
 vector <double> delta_t;
 delta_t.resize(number_of_bursts-1);
 for ( b=0; b<(number_of_bursts-1); b++ ) {
-//  h2->Fill( burst_list[b][0] - burst_list[b-1][0] );
   delta_t[b] = burst_list[b+1][0] - burst_list[b][0];
   h2->Fill( delta_t[b] );
 }
