@@ -133,7 +133,6 @@ for ( event = 0; event < events_to_process; event++ ) {
 	step_single.push_back( n->GetTotEDepScintQuenched() );
 	step_list.push_back( step_single );
 	step_single.resize(0);
-//	h1->Fill( n->GetTotEDepScintQuenched() ); //debug -- NOT REALLY THIS QUANTITY
       } // nonzero scintillation
 
     } // step loop
@@ -157,7 +156,7 @@ for ( k=0; k<(scint_steps-1); k++ ) { sorting_arr[k] = step_list[k][0]; }
 Long64_t ind[2000000];
 TMath::Sort( scint_steps, sorting_arr, ind, false );
 vector <vector <double>> step_list_sorted;
-step_list_sorted.resize( scint_steps+1, 2 );
+step_list_sorted.resize( scint_steps, 2 );
 for ( k=0; k<(scint_steps-1); k++ ) {
   step_list_sorted[k][0] = step_list[ind[k]][0];
   step_list_sorted[k][1] = step_list[ind[k]][1];
@@ -174,6 +173,7 @@ step_list.resize(0);
 //debug
 cout << endl;
 for (k=0; k<20; k++) { cout << ind[k] << endl; }
+cout << endl;
 
 
 // LOCATE BURSTS
@@ -204,7 +204,7 @@ burst_start_time = step_list_sorted[burst_start_index][0];
 burst_end_time = burst_start_time + window_duration;
 
 // check window size
-//if ( burst_start_time + window_duration > final_time ) { cout << "ERROR: First window exceeds run end time. Check window duration." << endl; return; }
+if ( burst_start_time + window_duration > final_time ) { cout << "ERROR: First window exceeds run end time. Check window duration." << endl; return; }
 
 //debug
 printf( "\nscint_steps: %i\n", scint_steps );
@@ -258,7 +258,7 @@ for ( b=0; b<number_of_bursts; b++ ) {
   printf( "%e\t\t%e\n", burst_list[b][0], burst_list[b][1] );
   burst_sum += burst_list[b][1];
 }
-printf( "\nBurst Energy Sum (MeV): %e\n", burst_sum );
+printf( "\nBurst Energy Sum (MeV): %e\n\n", burst_sum );
 
 
 
