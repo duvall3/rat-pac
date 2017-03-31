@@ -3,7 +3,7 @@
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 3/2017 ~ //
 
 // vim markers: 'i = initialize, 'd = extract data, 'b = find bursts, 's = sort data, 'a = analyze;
-// 	'e = events_to_process, 'w = window_duration
+// 	'e = events_to_process, 'w = window_duration, 't = threshold
 
 
 
@@ -87,8 +87,8 @@ T->Draw("ds.mc.summary.totalScintEdepQuenched");
 // EXTRACT DATA
 
 // initialize
-long events_to_process = total_events;
-//Int_t events_to_process = 500;
+//long events_to_process = total_events;
+Int_t events_to_process = 10;
 TTimeStamp t_event_start_stamp;
 Double_t t_event_start_utc;
 Double_t t_event_start;
@@ -160,7 +160,7 @@ for ( k=0; k<(scint_steps-1); k++ ) {
   step_list_sorted[k][0] = step_list[ind[k]][0];
   step_list_sorted[k][1] = step_list[ind[k]][1];
 }
-//for (k=0; k<(scint_steps-1); k++ ) { printf( "%f\t%f\t%f\t%f\n", step_list[k][0], step_list[k][1], step_list_sorted[k][0], step_list_sorted[k][1] ); } //debug
+for (k=0; k<(scint_steps-1); k++ ) { printf( "%f\t%f\t%f\t%f\n", step_list[k][0], step_list[k][1], step_list_sorted[k][0], step_list_sorted[k][1] ); } //debug
 step_list.resize(0);
 
 
@@ -169,13 +169,11 @@ step_list.resize(0);
 // LOCATE BURSTS
 
 // threshold
-Double_t thr = 0.5; // MeV -- simple low-energy cut
+Double_t thr = 0.0; // MeV -- simple low-energy cut
 
 // initialize
-//Double_t first_time = step_list_sorted[0][0]; // first deposition in list  FIXME bad first elements
-Double_t first_time = step_list_sorted[1][0]; // workaround FIXME
 Double_t final_time = step_list_sorted[scint_steps-2][0]; // last deposition in list FIXME why 2??
-Double_t window_duration = 100.e-9;
+Double_t window_duration = 1000.e-9;
 Double_t burst_start_time;
 Double_t burst_end_time;
 Long64_t burst_start_index;
@@ -186,20 +184,21 @@ Long64_t j(0);
 Long64_t number_of_bursts(0);
 Double_t burst_energy;
 
-//debug
-printf( "\nscint_steps: %i\n", scint_steps );
-printf( "\n%e\t%e\t%e\t%e\n", first_time, window_duration, final_time, first_time + window_duration );
-
 // check for any scintillation
 if ( scint_steps == 0 ) { cout << "WARNING: No scintillation found. Exiting..." << endl; return; }
 
-// check window size
-if ( first_time + window_duration > final_time ) { cout << "ERROR: First window exceeds run end time. Check window duration." << endl; return; }
-
 // find beginning of first burst
-burst_start_index = 2; //FIXME
-//burst_start_time = first_time;
+burst_start_index = 1; //FIXME
 burst_start_time = step_list_sorted[burst_start_index][0];
+burst_end_time = burst_start_time + window_duration;
+
+// check window size
+//if ( burst_start_time + window_duration > final_time ) { cout << "ERROR: First window exceeds run end time. Check window duration." << endl; return; }
+
+//debug
+printf( "\nscint_steps: %i\n", scint_steps );
+printf( "\n%e\t%e\t%e\t%e\n", burst_start_time, window_duration, final_time, burst_start_time + window_duration );
+
 
 // run loop
 while ( burst_end_time < final_time ) { // TODO change to fixed loop
