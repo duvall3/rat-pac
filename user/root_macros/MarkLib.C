@@ -34,5 +34,54 @@ double Sum( vector <double> v ) {
 }
 
 
+// print vectors
+// entire vector
+void Print( vector <int> v ) {
+  Int_t n = v.size();
+  for (Int_t k=0; k<n; k++) { cout << v[k] << endl; }
+}
+void Print( vector <long> v ) {
+  Int_t n = v.size();
+  for (Int_t k=0; k<n; k++) { cout << v[k] << endl; }
+}
+void Print( vector <float> v ) {
+  Int_t n = v.size();
+  for (Int_t k=0; k<n; k++) { cout << v[k] << endl; }
+}
+void Print( vector <double> v ) {
+  Int_t n = v.size();
+  for (Int_t k=0; k<n; k++) { cout << v[k] << endl; }
+}
+// first n elements
+void Print( vector <int> v, int n ) {
+  for (Int_t k=0; k<n; k++) { cout << v[k] << endl; }
+}
+void Print( vector <long> v, int n ) {
+  for (Int_t k=0; k<n; k++) { cout << v[k] << endl; }
+}
+void Print( vector <float> v, int n ) {
+  for (Int_t k=0; k<n; k++) { cout << v[k] << endl; }
+}
+void Print( vector <double> v, int n ) {
+  for (Int_t k=0; k<n; k++) { cout << v[k] << endl; }
+}
+// elements n through m
+void Print( vector <int> v, int n, int m ) {
+  for (Int_t k=n; k<m; k++) { cout << v[k] << endl; }
+}
+void Print( vector <long> v, int n, int m ) {
+  for (Int_t k=n; k<m; k++) { cout << v[k] << endl; }
+}
+void Print( vector <float> v, int n, int m ) {
+  for (Int_t k=n; k<m; k++) { cout << v[k] << endl; }
+}
+void Print( vector <double> v, int n, int m ) {
+  for (Int_t k=n; k<m; k++) { cout << v[k] << endl; }
+}
 
+
+
+
+
+// all pau!   )
 } //namespace
