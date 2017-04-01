@@ -1,11 +1,14 @@
 // MarkLib.C -- handy functions for ROOT
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 3/17 ~ //
 
+// for usage and other notes, see comments in header file
+
 /// WARNING: DO NOT USE THE ARRAY FUNCTIONS IN THIS VERSION ///
 
 #include "MarkLib.h"
 
 namespace MarkLib {
+
 
 
 // sum vectors & arrays
@@ -152,7 +155,6 @@ double sum( vector <double> v, int n, int m ) {
 
 
 
-
 // print vectors & arrays
 
 // entire vector or array
@@ -219,7 +221,6 @@ void print( vector <double> v, int n ) {
 //  for (Int_t k=0; k<n; k++)  cout << a[k] << endl;
 //}
 
-
 // elements n through m
 // vectors
 void print( vector <int> v, int n, int m ) {
@@ -247,7 +248,6 @@ void print( vector <double> v, int n, int m ) {
 //void print( Double_t[] a, Int_t n, Int_t m ) {
 //  for (Int_t k=(n-1); k<m; k++)  cout << a[k] << endl;
 //}
-
 
 
 
