@@ -15,6 +15,9 @@
 //
 
 
+// WARNING: DO NOT USE THE ARRAY FUNCTIONS IN THIS VERSION
+
+
 
 #include <vector>
 
