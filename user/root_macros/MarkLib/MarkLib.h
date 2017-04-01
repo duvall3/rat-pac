@@ -1,12 +1,6 @@
 // MarkLib.h -- various handy functions for ROOT
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 3/17 ~ //
 
-// NOTES:
-//
-// The functions below are defined for the following types:
-//   vector functions: int, long, float, double
-//   array functions: Int_t, Long64_t, Float_t, Double_t
-//
 // USAGE:
 //
 // Sum vectors & arrays:
@@ -18,6 +12,12 @@
 //   MarkLib::print(x) -- print entire vector or array
 //   MarkLib::print(x,n) -- print first n elements
 //   MarkLib::print(x,n,m) -- print elements n through m
+//
+// NOTES:
+//
+// The functions below are defined for the following types:
+//   vector functions: int, long, float, double
+//   array functions: Int_t, Long64_t, Float_t, Double_t
 //
 
 
