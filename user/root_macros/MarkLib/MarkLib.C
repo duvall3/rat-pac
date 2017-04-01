@@ -1,7 +1,7 @@
 // MarkLib.C -- handy functions for ROOT
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 3/17 ~ //
 
-// WARNING: DO NOT USE THE ARRAY FUNCTIONS IN THIS VERSION
+/// WARNING: DO NOT USE THE ARRAY FUNCTIONS IN THIS VERSION ///
 
 #include "MarkLib.h"
 
