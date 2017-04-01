@@ -89,10 +89,10 @@ void print( vector <int> v, int n );
 void print( vector <long> v, int n );
 void print( vector <float> v, int n );
 void print( vector <double> v, int n );
-void print( Int_t[] a, Int_t n );
-void print( Long64_t[] a, Int_t n );
-void print( Float_t[] a, Int_t n );
-void print( Double_t[] a, Int_t n );
+//void print( Int_t[] a, Int_t n );
+//void print( Long64_t[] a, Int_t n );
+//void print( Float_t[] a, Int_t n );
+//void print( Double_t[] a, Int_t n );
 
 // print elements n through m -- MarkLib::print(x,n,m)
 void print( vector <int> v, int n, int m );
