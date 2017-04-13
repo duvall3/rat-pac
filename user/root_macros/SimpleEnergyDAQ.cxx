@@ -2,15 +2,17 @@
 //     along each Monte Carlo track step
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 3/2017 ~ //
 
+// USAGE: arguments are filename, window duration (ns), low-energy threshold (MeV), and a debug flag (bool)
+
 // vim markers: 'i = initialize, 'd = extract data, 'b = find bursts, 's = sort data, 'a = analyze;
 // 	'e = events_to_process, 'w = window_duration, 't = threshold
 
 
 #include <vector>
 
-
-//void SimpleEnergyDAQ( const char* filename, double window_duration, double thr ) {
-void SimpleEnergyDAQ( const char* filename ) {
+// window_duration in ns, thr in MeV:
+void SimpleEnergyDAQ( const char* filename, double window_duration, double thr, bool debug_tf ) {
+//void SimpleEnergyDAQ( const char* filename, bool debug_tf ) {
 
 
 
@@ -90,7 +92,7 @@ T->Draw("ds.mc.summary.totalScintEdepQuenched");
 
 // initialize
 long events_to_process = total_events;
-if ( events_to_process > 500 ) events_to_process = 500; //debug
+//if ( events_to_process > 500 ) events_to_process = 500; //debug
 TTimeStamp t_event_start_stamp;
 Double_t t_event_start_utc;
 Double_t t_event_start;
@@ -167,24 +169,33 @@ for ( k=0; k<(scint_steps-1); k++ ) {
 if ( ind[0] == scint_steps-1 ) {
   swap( step_list_sorted[0], step_list_sorted[scint_steps-1] );
 }
-for (k=0; k<scint_steps; k++ ) { printf( "%f\t%f\t%f\t%f\n", step_list[k][0], step_list[k][1], step_list_sorted[k][0], step_list_sorted[k][1] ); } //debug
+
+//debug
+if ( debug_tf == true ) {
+  for (k=0; k<scint_steps; k++ ) { printf( "%f\t%f\t%f\t%f\n", step_list[k][0], step_list[k][1], step_list_sorted[k][0], step_list_sorted[k][1] ); } //debug
+}
+
+// clear step_list
 step_list.resize(0);
 
 //debug
-cout << endl;
-for (k=0; k<20; k++) { cout << ind[k] << endl; }
-cout << endl;
+if ( debug_tf == true ) {
+  cout << endl;
+  for (k=0; k<20; k++) { cout << ind[k] << endl; }
+  cout << endl;
+}
 
 
 // LOCATE BURSTS
 
 // threshold
-Double_t thr = 0.0; // MeV -- simple low-energy cut
+//Double_t thr = 0.00; // MeV -- simple low-energy cut
 
 // initialize
-Double_t final_time = step_list_sorted[scint_steps-1][0]; // last deposition in list
+Double_t final_time = step_list_sorted[scint_steps-2][0]; // last deposition in list
 //Double_t window_duration = 1.e-11;
-Double_t window_duration = 100.e-9;
+//Double_t window_duration = 1000.e-9;
+window_duration = window_duration * 1.e-9; // convert to ns
 Double_t burst_start_time;
 Double_t burst_end_time;
 Long64_t burst_start_index;
@@ -203,12 +214,14 @@ burst_start_index = 0;
 burst_start_time = step_list_sorted[burst_start_index][0];
 burst_end_time = burst_start_time + window_duration;
 
+//debug
+if ( debug_tf == true ) {
+  printf( "\nscint_steps: %i\n", scint_steps );
+  printf( "\n%e\t%e\t%e\t%e\n", burst_start_time, window_duration, final_time, burst_start_time + window_duration );
+}
+
 // check window size
 if ( burst_start_time + window_duration > final_time ) { cout << "ERROR: First window exceeds run end time. Check window duration." << endl; return; }
-
-//debug
-printf( "\nscint_steps: %i\n", scint_steps );
-printf( "\n%e\t%e\t%e\t%e\n", burst_start_time, window_duration, final_time, burst_start_time + window_duration );
 
 
 // run loop
@@ -252,12 +265,12 @@ cout << endl;
 // report
 Long64_t b;
 Double_t burst_sum(0);
-cout << "Bursts over threshold: " << number_of_bursts << endl;
 cout << "#BURST LIST:" << endl;
 for ( b=0; b<number_of_bursts; b++ ) {
   printf( "%e\t\t%e\n", burst_list[b][0], burst_list[b][1] );
   burst_sum += burst_list[b][1];
 }
+cout << "Bursts over threshold: " << number_of_bursts << endl;
 printf( "\nBurst Energy Sum (MeV): %e\n\n", burst_sum );
 
 
