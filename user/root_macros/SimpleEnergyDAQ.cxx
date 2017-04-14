@@ -80,8 +80,8 @@ TAxis* h2y = h2->GetYaxis();
 h2y->SetTitle("Entries");
 
 // draw plots
-//long events_to_process = total_events;
-long events_to_process = 500;
+long events_to_process = total_events;
+//long events_to_process = 500; //debug
 c1->cd(1);
 h1->Draw();
 c1->cd(2);
@@ -102,10 +102,6 @@ if ( thr < 0.2 ) {
 // EXTRACT DATA
 
 // initialize
-// had to move events_to_process to the "// draw plots" section above
-////long events_to_process = total_events;
-//long events_to_process = 10;
-////if ( events_to_process > 500 ) events_to_process = 500; //debug
 Long64_t total_tracks(0); //debug
 TTimeStamp t_event_start_stamp;
 Double_t t_event_start_utc;
@@ -120,7 +116,6 @@ Float_t step_time;
 // event loop
 for ( event = 0; event < events_to_process; event++ ) {
   
-  //if ( event % 100 == 0 ) printf( "Processing at event %i...\n", event );
   if ( event % 100 == 0 )  cerr << "Extracting data at event " << event << "...\r";
   // load event 
   ds = r.GetEvent(event);
@@ -159,7 +154,7 @@ for ( event = 0; event < events_to_process; event++ ) {
 
     } // step loop
     
-    total_tracks++; //debug
+    total_tracks++; //debug -- see note at "cout << ... << total_tracks" line below
     n = c.FindNextTrack();
 
   } // track loop
@@ -172,7 +167,7 @@ cerr << endl;
 
 // debug -- check that each track is visited exactly once
 if ( debug_tf == true )  cout << endl << "Total tracks: " << total_tracks << endl;
-/* note: compare this count against the number of entries in T->Draw("ds.mc.track.id")
+/* Note: compare this count against the number of entries in T->Draw("ds.mc.track.id")
      or T->Draw("ds.mc.track.id", "ds.mc.id < EVENTS_TO_PROCESS"), as applicable */
 
 
@@ -218,13 +213,8 @@ if ( debug_tf == true ) {
 
 cerr << endl << "Grouping energy depositions..." << endl << endl;
 
-// threshold
-//Double_t thr = 0.00; // MeV -- simple low-energy cut
-
 // initialize
 Double_t final_time = step_list_sorted[scint_steps-2][0]; // last deposition in list
-//Double_t window_duration = 1.e-11;
-//Double_t window_duration = 1000.e-9;
 window_duration = window_duration * 1.e-9; // convert to ns
 Double_t burst_start_time;
 Double_t burst_end_time;
@@ -294,10 +284,10 @@ while ( burst_end_time < final_time ) { // TODO change to fixed loop
 
 
 
-// report
+// report results
 Long64_t b;
 Double_t burst_sum(0);
-cout << "#BURST LIST:" << endl;
+cout << "BURST LIST:" << endl;
 for ( b=0; b<number_of_bursts; b++ ) {
   printf( "%e\t\t%e\n", burst_list[b][0], burst_list[b][1] );
   burst_sum += burst_list[b][1];
@@ -309,7 +299,7 @@ printf( "\nBurst Energy Sum (MeV): %e\n\n", burst_sum );
 
 // ANALYZE
 
-// cerr << "Analyzing..." << endl << endl;
+cerr << "Analyzing..." << endl << endl;
 
 // find time between bursts
 Long64_t b;
