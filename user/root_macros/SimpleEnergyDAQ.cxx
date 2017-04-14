@@ -120,7 +120,7 @@ cerr << endl << endl << "~~~ SimpleEnergyDAQ ~~~" << endl << endl;
 for ( event = 0; event < events_to_process; event++ ) {
   
   //if ( event % 100 == 0 ) printf( "Processing at event %i...\n", event );
-  if ( event % 100 == 0 )  cerr << "Extracting data at event " << event << "..." << endl;
+  if ( event % 100 == 0 )  cerr << "Extracting data at event " << event << "...\r";
   // load event 
   ds = r.GetEvent(event);
   mc = ds->GetMC();
@@ -167,16 +167,18 @@ for ( event = 0; event < events_to_process; event++ ) {
   
 } //event loop
 
+cerr << endl;
+
 // debug -- check that each track is visited exactly once
 if ( debug_tf == true )  cout << endl << "Total tracks: " << total_tracks << endl;
 /* note: compare this count against the number of entries in T->Draw("ds.mc.track.id")
      or T->Draw("ds.mc.track.id", "ds.mc.id < EVENTS_TO_PROCESS"), as applicable */
 
-cerr << endl << "Processing data..." << endl << endl;
 
 
 
 // SORT DATA
+cerr << endl << "Sorting data..." << endl;
 double sorting_arr[2000000];
 Long64_t scint_steps = step_list.size();
 for ( k=0; k<(scint_steps-1); k++ ) { sorting_arr[k] = step_list[k][0]; }
@@ -212,6 +214,8 @@ if ( debug_tf == true ) {
 
 
 // LOCATE BURSTS
+
+cerr << endl << "Grouping energy depositions..." << endl << endl;
 
 // threshold
 //Double_t thr = 0.00; // MeV -- simple low-energy cut
@@ -304,6 +308,8 @@ printf( "\nBurst Energy Sum (MeV): %e\n\n", burst_sum );
 
 // ANALYZE
 
+// cerr << "Analyzing..." << endl << endl;
+
 // find time between bursts
 Long64_t b;
 vector <double> delta_t;
@@ -322,6 +328,6 @@ for ( b=0; b<(number_of_bursts-1); b++ ) {
 
 // all pau!   )
 cerr << "Processing complete." << endl << endl;
-cerr << "### SimpleEnergyDAQ ###" << endl << endl;
+cerr << "### SimpleEnergyDAQ ###" << endl << endl << endl;
 return;
 }
