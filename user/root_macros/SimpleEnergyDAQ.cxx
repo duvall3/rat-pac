@@ -12,12 +12,15 @@
 
 // window_duration in ns, thr in MeV:
 void SimpleEnergyDAQ( const char* filename, double window_duration=100., double thr=0., bool debug_tf=0 ) {
-//void SimpleEnergyDAQ( const char* filename, bool debug_tf ) {
 
 
+
+cerr << endl << endl << "~~~ SimpleEnergyDAQ ~~~" << endl << endl;
 
 
 // PREPARE TO PROCESS RUN
+
+cerr << "Initializing..." << endl << endl;
 
 // initialize
 TFile *f = TFile::Open(filename);
@@ -113,8 +116,6 @@ Long64_t number_of_steps;
 Long64_t current_step;
 Float_t step_edep;
 Float_t step_time;
-
-cerr << endl << endl << "~~~ SimpleEnergyDAQ ~~~" << endl << endl;
 
 // event loop
 for ( event = 0; event < events_to_process; event++ ) {
