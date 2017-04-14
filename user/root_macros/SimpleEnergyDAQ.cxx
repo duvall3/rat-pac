@@ -11,7 +11,7 @@
 #include <vector>
 
 // window_duration in ns, thr in MeV:
-void SimpleEnergyDAQ( const char* filename, double window_duration, double thr, bool debug_tf ) {
+void SimpleEnergyDAQ( const char* filename, double window_duration=100., double thr=0., bool debug_tf=0 ) {
 //void SimpleEnergyDAQ( const char* filename, bool debug_tf ) {
 
 
@@ -77,6 +77,8 @@ TAxis* h2y = h2->GetYaxis();
 h2y->SetTitle("Entries");
 
 // draw plots
+//long events_to_process = total_events;
+long events_to_process = 500;
 c1->cd(1);
 h1->Draw();
 c1->cd(2);
@@ -84,15 +86,24 @@ h2->Draw();
 c1_2->SetLogx(1);
 c1_2->SetLogy(1);
 c1->cd(3);
-T->Draw("ds.mc.summary.totalScintEdepQuenched");
+TString events_to_draw = "ds.mc.id < ";
+events_to_draw.Append( TString::LLtoa(events_to_process,10) );
+T->Draw( "ds.mc.summary.totalScintEdepQuenched", events_to_draw );
+if ( thr < 0.2 ) {
+  c1_1->SetLogy(1);
+  c1_3->SetLogy(1);
+}
 
 
 
 // EXTRACT DATA
 
 // initialize
-long events_to_process = total_events;
-//if ( events_to_process > 500 ) events_to_process = 500; //debug
+// had to move events_to_process to the "// draw plots" section above
+////long events_to_process = total_events;
+//long events_to_process = 10;
+////if ( events_to_process > 500 ) events_to_process = 500; //debug
+Long64_t total_tracks(0); //debug
 TTimeStamp t_event_start_stamp;
 Double_t t_event_start_utc;
 Double_t t_event_start;
@@ -103,12 +114,13 @@ Long64_t current_step;
 Float_t step_edep;
 Float_t step_time;
 
-cout << endl;
+cerr << endl << endl << "~~~ SimpleEnergyDAQ ~~~" << endl << endl;
 
 // event loop
 for ( event = 0; event < events_to_process; event++ ) {
   
-  if ( event % 100 == 0 ) printf( "Processing at event %i...\n", event );
+  //if ( event % 100 == 0 ) printf( "Processing at event %i...\n", event );
+  if ( event % 100 == 0 )  cerr << "Extracting data at event " << event << "..." << endl;
   // load event 
   ds = r.GetEvent(event);
   mc = ds->GetMC();
@@ -133,7 +145,7 @@ for ( event = 0; event < events_to_process; event++ ) {
 
     // debug
     if ( debug_tf == true ) {
-      printf("%d : current_step: %d/%d track_id: %d   %5.3e %5.3e\n",event,current_step,number_of_steps,n->GetTrackID(),t_event_start + n->GetGlobalTime()*1.e-9,n->GetTotEDepScint());
+      printf("%d : current_step: %d/%d track_id: %d parent_id: %d  %5.3e %5.3e\n",event,current_step,number_of_steps,n->GetTrackID(),c.Parent()->GetTrackID(),t_event_start + n->GetGlobalTime()*1.e-9,n->GetTotEDepScint());
     }
 
       // only record if there was scintillation
@@ -146,6 +158,7 @@ for ( event = 0; event < events_to_process; event++ ) {
 
     } // step loop
     
+    total_tracks++; //debug
     n = c.FindNextTrack();
 
   } // track loop
@@ -153,8 +166,13 @@ for ( event = 0; event < events_to_process; event++ ) {
   nav.Clear(); // prevent memory leak
   
 } //event loop
-cout << endl;
 
+// debug -- check that each track is visited exactly once
+if ( debug_tf == true )  cout << endl << "Total tracks: " << total_tracks << endl;
+/* note: compare this count against the number of entries in T->Draw("ds.mc.track.id")
+     or T->Draw("ds.mc.track.id", "ds.mc.id < EVENTS_TO_PROCESS"), as applicable */
+
+cerr << endl << "Processing data..." << endl << endl;
 
 
 
@@ -241,7 +259,7 @@ while ( burst_end_time < final_time ) { // TODO change to fixed loop
     burst_end_index = scint_steps-2;
   } else { // all other windows
     j = burst_start_index;
-    while ( step_list_sorted[j][0] < burst_end_time ) { j++; } // TODO another one
+    while ( step_list_sorted[j][0] < burst_end_time )  j++; // TODO another one
   } //endif
   burst_end_index = j;
 
@@ -267,7 +285,9 @@ while ( burst_end_time < final_time ) { // TODO change to fixed loop
   burst_start_time = step_list_sorted[j+1][0];
 
 } // end run loop
-cout << endl;
+
+
+
 
 // report
 Long64_t b;
@@ -299,6 +319,9 @@ for ( b=0; b<(number_of_bursts-1); b++ ) {
 
 
 
+
 // all pau!   )
+cerr << "Processing complete." << endl << endl;
+cerr << "### SimpleEnergyDAQ ###" << endl << endl;
 return;
 }
