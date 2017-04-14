@@ -128,7 +128,14 @@ for ( event = 0; event < events_to_process; event++ ) {
 
     // step loop
     for ( current_step=0; current_step<number_of_steps; current_step++ ) {
-      
+
+    n = c.GoStep(current_step);
+
+    // debug
+    if ( debug_tf == true ) {
+      printf("%d : current_step: %d/%d track_id: %d   %5.3e %5.3e\n",event,current_step,number_of_steps,n->GetTrackID(),t_event_start + n->GetGlobalTime()*1.e-9,n->GetTotEDepScint());
+    }
+
       // only record if there was scintillation
       if ( n->GetTotEDepScintQuenched() > 0 ) {
         step_single.push_back( t_event_start + n->GetGlobalTime()*1.e-9 );
@@ -270,7 +277,7 @@ for ( b=0; b<number_of_bursts; b++ ) {
   printf( "%e\t\t%e\n", burst_list[b][0], burst_list[b][1] );
   burst_sum += burst_list[b][1];
 }
-cout << "Bursts over threshold: " << number_of_bursts << endl;
+printf( "\nBursts over threshold: %i\n", number_of_bursts );
 printf( "\nBurst Energy Sum (MeV): %e\n\n", burst_sum );
 
 
