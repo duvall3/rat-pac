@@ -81,7 +81,7 @@ h2y->SetTitle("Entries");
 
 // draw plots
 long events_to_process = total_events;
-//long events_to_process = 500; //debug
+//long events_to_process = 100; //debug
 c1->cd(1);
 h1->Draw();
 c1->cd(2);
@@ -214,7 +214,7 @@ if ( debug_tf == true ) {
 cerr << endl << "Grouping energy depositions..." << endl << endl;
 
 // initialize
-Double_t final_time = step_list_sorted[scint_steps-2][0]; // last deposition in list
+Double_t final_time = step_list_sorted[scint_steps-2][0]; // last deposition in list FIXME Why 2 instead of 1??
 window_duration = window_duration * 1.e-9; // convert to ns
 Double_t burst_start_time;
 Double_t burst_end_time;
@@ -237,7 +237,7 @@ burst_end_time = burst_start_time + window_duration;
 //debug
 if ( debug_tf == true ) {
   printf( "\nscint_steps: %i\n", scint_steps );
-  printf( "\n%e\t%e\t%e\t%e\n", burst_start_time, window_duration, final_time, burst_start_time + window_duration );
+  printf( "%e\t%e\t%e\t%e\n\n", burst_start_time, window_duration, final_time, burst_start_time + window_duration );
 }
 
 // check window size
@@ -251,7 +251,7 @@ while ( burst_end_time < final_time ) { // TODO change to fixed loop
 
   // find burst_end_index
   if ( burst_end_time > final_time ) { // check for final window
-    burst_end_index = scint_steps-2;
+    burst_end_index = scint_steps-2; // FIXME Again, why 2 instead of 1??
   } else { // all other windows
     j = burst_start_index;
     while ( step_list_sorted[j][0] < burst_end_time )  j++; // TODO another one
