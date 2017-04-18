@@ -163,7 +163,7 @@ for ( event = 0; event < events_to_process; event++ ) {
   
 } //event loop
 
-cerr << endl;
+//cerr << endl;
 
 // debug -- check that each track is visited exactly once
 if ( debug_tf == true )  cout << endl << "Total tracks: " << total_tracks << endl;
@@ -218,7 +218,7 @@ if ( debug_tf == true ) {
 cerr << endl << "Grouping energy depositions..." << endl << endl;
 
 // initialize
-Double_t final_time = step_list_sorted[scint_steps-2][0]; // last deposition in list FIXME Why 2 instead of 1??
+Double_t final_time = step_list_sorted[scint_steps-1][0];
 window_duration = window_duration * 1.e-9; // convert to ns
 Double_t burst_start_time;
 Double_t burst_end_time;
@@ -255,7 +255,7 @@ while ( burst_end_time < final_time ) { // TODO change to fixed loop
 
   // find burst_end_index
   if ( burst_end_time > final_time ) { // check for final window
-    burst_end_index = scint_steps-2; // FIXME Again, why 2 instead of 1??
+    burst_end_index = scint_steps-1;
   } else { // all other windows
     j = burst_start_index;
     while ( step_list_sorted[j][0] < burst_end_time )  j++; // TODO another one
