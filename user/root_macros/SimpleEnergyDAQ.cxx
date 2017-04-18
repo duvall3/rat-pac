@@ -116,7 +116,7 @@ Float_t step_time;
 // event loop
 for ( event = 0; event < events_to_process; event++ ) {
   
-  if ( event % 100 == 0 )  cerr << "Extracting data at event " << event << "...\r";
+  if ( event % 100 == 0 )  cerr << "Extracting data at event " << event << "...\n";
   // load event 
   ds = r.GetEvent(event);
   mc = ds->GetMC();
@@ -174,23 +174,27 @@ if ( debug_tf == true )  cout << endl << "Total tracks: " << total_tracks << end
 
 
 // SORT DATA
+
 cerr << endl << "Sorting data..." << endl;
+
+// create arrays for TMath::Sort()
 double sorting_arr[2000000];
-Long64_t scint_steps = step_list.size();
-for ( k=0; k<(scint_steps-1); k++ ) { sorting_arr[k] = step_list[k][0]; }
 Long64_t ind[2000000];
+
+
+// fill time array to be sorted
+Long64_t scint_steps = step_list.size();
+for ( k=0; k<scint_steps; k++ )  sorting_arr[k] = step_list[k][0];
+
+// TMath::Sort will fill the array "ind" with the indices that put "sorting_arr" in ascending order
 TMath::Sort( scint_steps, sorting_arr, ind, false );
+
+// now create and fill a vector (of dimensions scint_steps x 2) containing the sorted (time, energy) pairs
 vector <vector <double>> step_list_sorted;
 step_list_sorted.resize( scint_steps, 2 );
-for ( k=0; k<(scint_steps-1); k++ ) {
+for ( k=0; k<scint_steps; k++ ) {
   step_list_sorted[k][0] = step_list[ind[k]][0];
   step_list_sorted[k][1] = step_list[ind[k]][1];
-}
-//step_list.resize(0);
-
-// weird workaround for TMath::Sort putting the last entry at the top
-if ( ind[0] == scint_steps-1 ) {
-  swap( step_list_sorted[0], step_list_sorted[scint_steps-1] );
 }
 
 //debug
