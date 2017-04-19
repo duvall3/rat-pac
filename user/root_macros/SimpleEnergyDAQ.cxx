@@ -67,8 +67,8 @@ Double_t logxmax = TMath::Log10(xmax);
 Double_t binwidth = (logxmax-logxmin)/nBinsEBP;
 Double_t xbinsEBP[nBinsEBP+1];
 xbinsEBP[0] = xmin;
-for (Int_t i=1;i<=nBinsEBP;i++) {
-  xbinsEBP[i] = TMath::Power(10,logxmin+i*binwidth);
+for (Int_t m=1;m<=nBinsEBP;m++) {
+  xbinsEBP[m] = TMath::Power(10,logxmin+m*binwidth);
 }
 // now ready to create the histogram:
 TH1D* h2 = new TH1D("h2", "Time Between Bursts (Interevent Time)", nBinsEBP, xbinsEBP );
@@ -80,8 +80,8 @@ TAxis* h2y = h2->GetYaxis();
 h2y->SetTitle("Entries");
 
 // draw plots
-long events_to_process = total_events;
-//long events_to_process = 100; //debug
+//long events_to_process = total_events;
+long events_to_process = 1000; //debug
 c1->cd(1);
 h1->Draw();
 c1->cd(2);
@@ -166,7 +166,7 @@ for ( event = 0; event < events_to_process; event++ ) {
 //cerr << endl;
 
 // debug -- check that each track is visited exactly once
-if ( debug_tf == true )  cout << endl << "Total tracks: " << total_tracks << endl;
+if ( debug_tf == true )  cout << endl << "Total tracks: " << total_tracks << endl << endl;
 /* Note: compare this count against the number of entries in T->Draw("ds.mc.track.id")
      or T->Draw("ds.mc.track.id", "ds.mc.id < EVENTS_TO_PROCESS"), as applicable */
 
@@ -207,7 +207,7 @@ step_list.resize(0);
 
 //debug
 if ( debug_tf == true ) {
-  cout << endl;
+  cout << endl << "sorted index order: " << endl;
   for (k=0; k<20; k++) { cout << ind[k] << endl; }
   cout << endl;
 }
@@ -218,7 +218,7 @@ if ( debug_tf == true ) {
 cerr << endl << "Grouping energy depositions..." << endl << endl;
 
 // initialize
-Double_t final_time = step_list_sorted[scint_steps-1][0];
+Double_t final_time = step_list_sorted[scint_steps-1][0]; //debug
 window_duration = window_duration * 1.e-9; // convert to ns
 Double_t burst_start_time;
 Double_t burst_end_time;
@@ -226,8 +226,7 @@ Long64_t burst_start_index;
 Long64_t burst_end_index;
 vector <vector <double>> burst_list;
 vector <double> burst_single;
-Long64_t j(0);
-Long64_t number_of_bursts(0);
+Long64_t i(0);
 Double_t burst_energy;
 
 // check for any scintillation
@@ -235,69 +234,90 @@ if ( scint_steps == 0 ) { cout << "WARNING: No scintillation found. Exiting..." 
 
 // find beginning of first burst
 burst_start_index = 0;
-burst_start_time = step_list_sorted[burst_start_index][0];
-burst_end_time = burst_start_time + window_duration;
-
-//debug
-if ( debug_tf == true ) {
-  printf( "\nscint_steps: %i\n", scint_steps );
-  printf( "%e\t%e\t%e\t%e\n\n", burst_start_time, window_duration, final_time, burst_start_time + window_duration );
-}
+Double_t window_end_time = burst_start_time + window_duration;
 
 // check window size
 if ( burst_start_time + window_duration > final_time ) { cout << "ERROR: First window exceeds run end time. Check window duration." << endl; return; }
 
 
-// run loop
-while ( burst_end_time < final_time ) { // TODO change to fixed loop
+// burst-finding loop
+for ( i = 0; i < scint_steps; i++ ) {
 
-  burst_end_time = burst_start_time + window_duration;
-
-  // find burst_end_index
-  if ( burst_end_time > final_time ) { // check for final window
-    burst_end_index = scint_steps-1;
-  } else { // all other windows
-    j = burst_start_index;
-    while ( step_list_sorted[j][0] < burst_end_time )  j++; // TODO another one
-  } //endif
-  burst_end_index = j;
-
-  // find burst energy
-  burst_energy = 0;
-  for ( k = burst_start_index; k < burst_end_index; k++ ) {
-    burst_energy += step_list_sorted[k][1];
-  } // burst loop
-  //cout << "debug\t" << burst_start_index << "\t" << burst_end_index << "\t" << burst_energy << endl;
-
-  // record burst data
-  if ( burst_energy > thr ) {
-    number_of_bursts++;
-    h1->Fill( burst_energy );
-    burst_single.push_back( burst_start_time );
-    burst_single.push_back( burst_energy );
+  // determine whether end of burst has been reached yet
+  if ( step_list_sorted[i][0] < window_end_time ) {
+    // if not, do nothing and move on
+  } else {
+    // if so:
+    // record beginning of burst
+    burst_single.push_back( burst_start_index );
+    burst_single.push_back( step_list_sorted[burst_start_index][0] );
+    // record end of burst
+    burst_single.push_back( i-1 );
+    burst_single.push_back( step_list_sorted[i-1][0] );
+    // write current burst to burst_list and reset burst_single
     burst_list.push_back( burst_single );
     burst_single.resize(0);
+    // initialize next burst
+    burst_start_index = i;
+    window_end_time = step_list_sorted[i][0] + window_duration;
   }
 
-  // done with this burst
-  burst_start_index = j+1;
-  burst_start_time = step_list_sorted[j+1][0];
+} // burst-finding loop
 
-} // end run loop
+// debug
+if ( debug_tf == true ) {
+  cout << "debug: final i = " << i << endl;
+  cout << "debug: final time = " << step_list_sorted[i-1][0] << endl << endl;
+}
 
 
+// add columns for burst energies and durations
+Long64_t number_of_bursts = burst_list.size();
+burst_list.resize( number_of_bursts, 5 );
+
+
+// burst-summing loop
+Long64_t b;
+vector <double> burst_durations;
+for ( b = 0; b < number_of_bursts; b++ ) {
+
+  // tally burst energy
+  burst_energy = 0;
+  for ( k = burst_list[b][0]; k < burst_list[b][2]; k++ ) {
+    burst_energy += step_list_sorted[k][1];
+  }
+
+  burst_durations.push_back( burst_list[b][3] - burst_list[b][1] );
+
+  // record burst energy and duration
+  burst_list[b][4] = burst_energy;
+
+} // burst-summing loop
+  
 
 
 // report results
-Long64_t b;
 Double_t burst_sum(0);
-cout << "BURST LIST:" << endl;
+vector <long> burst_over_thr_ids;
+cout << "BURSTS OVER THRESHOLD:" << endl;
+printf( "%s\t%s\t\t%s\t%s\t\t%s\t\t%s\n", "start_index", "start_time_ns", "end_index", "end_time_ns", "energy_MeV", "duration" );
 for ( b=0; b<number_of_bursts; b++ ) {
-  printf( "%e\t\t%e\n", burst_list[b][0], burst_list[b][1] );
-  burst_sum += burst_list[b][1];
+  if ( burst_list[b][4] > thr ) {
+    h1->Fill( burst_list[b][4] );
+    printf( "%d\t\t%e\t\t%d\t\t%e\t\t%e\t\t%e\n", burst_list[b][0], burst_list[b][1], burst_list[b][2], burst_list[b][3], burst_list[b][4], burst_durations[b] );
+//  printf( "%d\t\t%e\t\t%d\t\t%e\t\t%e\t\t%e\n", burst_list[b][0], burst_list[b][1], burst_list[b][2], burst_list[b][3], burst_list[b][4] );
+    burst_sum += burst_list[b][4];
+    burst_over_thr_ids.push_back(b);
+  }
 }
-printf( "\nBursts over threshold: %i\n", number_of_bursts );
+Long64_t bursts_over_thr = burst_over_thr_ids.size();
+printf( "\nBursts over threshold: %i\n", bursts_over_thr );
 printf( "\nBurst Energy Sum (MeV): %e\n\n", burst_sum );
+
+printf( "RAT-PAC, *ALL* Quenched Scint. Energy: %e\n\n", htemp->GetEntries() * htemp->GetMean() );
+
+
+// TODO check step counts against each other //debug
 
 
 
@@ -306,12 +326,12 @@ printf( "\nBurst Energy Sum (MeV): %e\n\n", burst_sum );
 cerr << "Analyzing..." << endl << endl;
 
 // find time between bursts
-Long64_t b;
+Long64_t j;
 vector <double> delta_t;
-delta_t.resize(number_of_bursts-1);
-for ( b=0; b<(number_of_bursts-1); b++ ) {
-  delta_t[b] = burst_list[b+1][0] - burst_list[b][0];
-  h2->Fill( delta_t[b] );
+delta_t.resize(bursts_over_thr-1);
+for ( j=0; j<(bursts_over_thr-1); j++ ) {
+  delta_t[j] = burst_list[burst_over_thr_ids[j+1]][1] - burst_list[burst_over_thr_ids[j]][1];
+  h2->Fill( delta_t[j] );
 }
 
 // neutrino trigger
