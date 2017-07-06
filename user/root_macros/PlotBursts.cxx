@@ -12,7 +12,7 @@ c1->SetLogy(1);
 htemp->SetTitle(filename);
 htemp->SetLineColor(kBlue);
 htemp->SetLineWidth(2.);
-htemp->SetXTitle("Energy (MeV)");
+htemp->SetXTitle("Quenched Scintillation Energy (MeV)");
 htemp->SetYTitle("Entries");
 htemp->Draw();
 
