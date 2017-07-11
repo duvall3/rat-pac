@@ -80,6 +80,8 @@ for (int event=1; event<=number_of_events; event++) { // event loop
       // gamma & alpha information upon capture/annihil:
       int gammas(0);
       float gamma_KE_total(0);
+      float gamma_current_KE(0);
+      float gamma_KE_dep(0);
       int alphas(0);
       float alpha_KE(0);
       int final_child(0);
@@ -97,6 +99,16 @@ for (int event=1; event<=number_of_events; event++) { // event loop
         } else if (child_name == "gamma" ) {
           gammas++;
           gamma_KE_total = gamma_KE_total + n->GetKE();
+	  gamma_current_KE = n->GetKE();
+	  RAT::TrackNode *n = c.GoNext();
+//	  while ( n->GetVolume() == "target" ) {
+	  while ( n->IsTrackEnd() == false ) {
+	  TString current_volume = n->GetVolume();
+	  if ( current_volume.Contains("target") ) {
+	    
+	    }
+	  RAT::TrackNode *n = c.GoNext();
+	  }
         } else if ( child_name.Contains("deuteron") || child_name.Contains("triton") || child_name.Contains("Li7") || child_name.Contains("Gd") || child_name.Contains("Si") || child_name.Contains("C") ) {
             // do nothing -- normal products: H->deuteron, Li->triton+alpha, B->Li7+alpha, Gd->Gd, Si-Si, C->C
         } else { // child not expected capture product -- NOTE: current version will only report name of first unexpected child particle
@@ -124,17 +136,21 @@ for (int event=1; event<=number_of_events; event++) { // event loop
       cout << "Warning: particle track for event " << event << " terminated by unexpected process: " << n->GetProcess() << endl;
   //  printf( "Endpoint:\t%f %f %f\n", n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
 
-
-  
-    } // end if -- track termination process
+    } // end if -- problem child  
       
   printf("#\n");
   
   c.GoParent();
   
-  } // end for -- main event loop
+  } // end if -- track termination process
+
+} // end for -- top track loop
 
 printf("\n\n");
+
+// clear memory for next event
+nav.Clear();
+  
 
 } // end for -- event loop
 
