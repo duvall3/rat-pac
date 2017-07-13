@@ -1,11 +1,12 @@
 #!/bin/bash
 # process_n0_run -- this script duplicates the post-run processing of ratrun.sh
+# -- Usage: process_n0_run <FILENAME> <NUMBER_OF_EVENTS>
 # ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ August 2015 ~ #
 
 
 ## init
 
-FILENAME=$1
+FILENAME=$(basename $1 .root)
 NUM_EVENTS=$2
 
 # whether to run the ROOT part
