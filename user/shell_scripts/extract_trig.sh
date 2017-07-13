@@ -9,8 +9,7 @@ BASENAME=$(basename $1 .log)
 OUTPUTFILE=$BASENAME".trg"
 
 ## process
-awk -v RS='###' 'NR==2 {print $0}' $INPUTFILE | awk -F : '$0 ~ ":" {print $2}' | column -t > $OUTPUTFILE
-#echo $INPUTFILE $BASENAME $OUTPUTFILE #debug
+awk -v RS='###' 'NR==2 {print $0}' $INPUTFILE | awk -F : '$0 ~ ":" && $0 !~ /CountProc/ {print $2}' | column -t > $OUTPUTFILE
 
 ## all pau!   )
 exit 0

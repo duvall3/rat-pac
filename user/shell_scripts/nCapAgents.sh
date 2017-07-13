@@ -10,7 +10,7 @@
 # bookkeeping
 BASENAME=$(basename $1 .n0.dat)
 
-# check four output filename; otherwise default to basename of input file
+# check for output filename; otherwise default to basename of input file
 if [ $2 ]; then
   OUTPUTFILE=$2
 else

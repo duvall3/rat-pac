@@ -1,6 +1,6 @@
 #!/bin/bash
 # n0_term_vols -- process a FILENAME.n0.dat file* for n0 termination-volume statistics
-#	*i.e., output from $ROOTSYS/macros/IBD.cxx
+#	*i.e., output from $ROOTSYS/macros/NeutronCaptures.cxx
 #	-- adapted from github.com/duvall3/rat-pac/user/nCapAgents.sh
 # ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ March 2016 ~ #
 
