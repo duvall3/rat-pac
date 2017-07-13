@@ -30,8 +30,8 @@ fi
 # post-ROOT text processing
 n0_dat_to_txt.sh "$FILENAME".n0.dat | column -t > "$FILENAME".txt
 nCapAgents.sh "$FILENAME".n0.dat
-plot_gammas_mfile.sh $FILENAME
-n0_dat_to_sc.sh "$FILENAME".n0.dat
+#plot_gammas_mfile.sh $FILENAME
+#n0_dat_to_sc.sh "$FILENAME".n0.dat
 n0_term_vols.sh "$FILENAME".n0.dat #"$FILENAME"
 
 
