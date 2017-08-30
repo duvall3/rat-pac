@@ -47,15 +47,14 @@ for (( k=0; k<number_of_events; k++ )) {
   wall_time_adj = wall_time - run_start;
   T->GetBranch("event_time_adj")->Fill();
   T->GetBranch("wall_time_adj")->Fill();
-}
-// interevent times
-for (( k=0; k<number_of_events-1; k++ )) {
-  T->GetEntry(k);
-  time_current = wall_time_adj;
-  T->GetEntry(k-1);
-  time_prev = wall_time_adj;
-  interevent_time = time_current - time_prev;
-  T->GetBranch("interevent_time")->Fill();
+  // interevent times
+  if ( k > 0 ) {
+    time_current = wall_time;
+    T->GetEntry(k-1);
+    time_prev = wall_time;
+    interevent_time = time_current - time_prev;
+    T->GetBranch("interevent_time")->Fill();
+  }
 }
 
 
