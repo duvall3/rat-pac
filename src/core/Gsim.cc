@@ -486,6 +486,68 @@ void Gsim::MakeEvent(const G4Event* g4ev, DS::Root* ds) {
     return;
   }
 
+  //mfb
+  std::vector<std::vector <double> > a = GLG4Scint::GetScintMatrix();
+//G4cout << "Size of array " << a.size() << G4endl;
+//G4cout << a[a.size()-1][0] << " " << a[a.size()-1][1] << " " << a[a.size()-1][2] << " " << G4endl;
+
+  //mfb
+  std::sort(a.begin(),a.end());
+//double timeWindow = 400.;
+  double timeWindow = 200.;
+  int triggers = 0;
+  double old_time = -1.e9, start_time = -1.e9;
+  double rollingEnergy = 0., rollingEnergyQ = 0.;
+  //mjd
+//TTimeStamp t_run_start_stamp = mc->GetUTC();
+//double t_run_start, t_event_start, t_event_delta;
+  double t_event_start;
+  int mc_event_id = mc->GetID();
+//if ( mc_event_id == 0 )  t_run_start = t_run_start_stamp.GetSec() + (t_run_start_stamp.GetNanoSec())*1.e-9;
+  t_event_start = mc->GetUTC().GetSec() + (mc->GetUTC().GetNanoSec())*1.e-9;
+//t_event_delta = t_event_start - t_run_start;
+//G4cout << "EVENT " << mc->GetID() << "; event_start_time run_start_time " << t_event_start << " " << t_run_start << G4endl; //debug
+//printf( "\nEVENT %d\nt_event_start\tt_run_start\tdifference\n%.25f\t%.25f\t%.25f\n", mc_event_id, t_event_start, t_run_start, t_event_delta );
+//printf( "\nEVENT %d\tt_event_start\t%.25f\n", mc_event_id, t_event_start );
+//G4cout << setprecision(18);
+//G4cout << endl << "EVENT " << mc_event_id << "\t" << "t_event_start" << "\t" << "t_run_start" << "\t" << "difference" << endl;
+//G4cout << t_event_start << "\t" << t_run_start << "\t" << t_event_delta << endl;
+//G4cout << setprecision(old_precision);
+  double wallTime(0.);
+  //mfb
+  for ( unsigned long aIndex = 0; aIndex < a.size(); aIndex++ ) {
+    if  ( (a[aIndex][0]-old_time) > timeWindow) {
+	triggers += 1;
+	if ( rollingEnergy > 0.001 ) {
+	  G4cout << "Found new trigger " << triggers << "; previous trigger (wall start time, start time, end time, energy, quenched energy): " << wallTime << " " << start_time << " " << old_time << " " << rollingEnergy << " " << rollingEnergyQ << G4endl;
+	}
+	rollingEnergy = 0.0;
+	rollingEnergyQ = 0.0;
+        start_time = a[aIndex][0];
+//	wallTime = t_event_start + start_time - t_run_start;//mjd
+	wallTime = t_event_start + start_time*1.e-9;//mjd
+      }
+    old_time = a[aIndex][0];
+    rollingEnergy += a[aIndex][2];  // for unquenched, use aIndex[2]
+    rollingEnergyQ += a[aIndex][3]; // for quenched, use aIndex[3]
+//  G4cout << a[aIndex][0] << " " << a[aIndex][2] << " " << rollingEnergy << G4endl;
+    }
+  G4cout << "Found end trigger " << triggers << "; previous trigger (start time, end time, energy, quenched energy): " << wallTime << " " << start_time << " " << old_time << " " << rollingEnergy << " " << rollingEnergyQ << G4endl;
+  G4cout << "Found " << triggers << " trigger" << G4endl;
+  G4cout << "Last trigger " << GLG4Scint::GetTotEdep() << " " << rollingEnergy << " " << rollingEnergyQ << G4endl;
+
+//G4cout << "TIME DEBUG: t_event_start wallTime UTC.GetSec UTC.GetNanoSec \t" << t_event_start << " " << wallTime << " " << mc->GetUTC().GetSec() << " " << mc->GetUTC().GetNanoSec() << G4endl; //debug
+//printf( "wallTime: %9.20f\n", wallTime);
+//printf( "t_event_start: %9.20f\n", t_event_start );
+//printf( "EVENT %d\tt_event_start\tt_run_start\tdifference\n%.25f\t%.25f\t%.25f\n", mc_event_id, t_event_start, t_run_start, t_event_delta );
+  printf( "EVENT %d\tt_event_start\t%.25f\t", mc_event_id, t_event_start );
+  printf( "wallTime: %20.25f\tenergy: %e\tenergy_q: %e\n", wallTime, rollingEnergy, rollingEnergyQ );
+//G4cout << setprecision(18);
+//G4cout << endl << "EVENT " << mc_event_id << "\t" << "t_event_start" << "\t" << "t_run_start" << "\t" << "difference" << endl;
+//G4cout << t_event_start << "\t" << t_run_start << "\t" << t_event_delta << endl;
+//G4cout << wallTime << endl;
+//G4cout << setprecision(old_precision);
+
   // MC summary information
   DS::MCSummary* summary = mc->GetMCSummary();
   summary->SetEnergyCentroid(exinfo->energyCentroid.GetMean());
@@ -498,6 +560,8 @@ void Gsim::MakeEvent(const G4Event* g4ev, DS::Root* ds) {
   summary->SetTotalScintCentroid(scintCentroid);
   summary->SetNumScintPhoton(exinfo->numScintPhoton);
   summary->SetNumReemitPhoton(exinfo->numReemitPhoton);
+
+  GLG4Scint::ResetTimeChargeMatrix();//mfb
 
   /** PMT and noise simulation */
   GLG4HitPMTCollection* hitpmts = GLG4VEventAction::GetTheHitPMTCollection();
