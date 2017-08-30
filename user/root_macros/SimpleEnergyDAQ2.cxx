@@ -6,8 +6,7 @@
 #include <cstdlib>
 #include <math.h>
 
-void SimpleEnergyDAQ2( const char* filename, int number_of_events ) {
-//void SimpleEnergyDAQ2( const char* filename, ) {
+void SimpleEnergyDAQ2( const char* filename, ) {
 
 
 // init
@@ -41,7 +40,7 @@ T->Branch("interevent_time", &interevent_time, "interevent_time/D");
 // fill new branches
 Double_t time_current, time_prev;
 // times aligned to run start
-for (( k=0; k<number_of_events; k++ )) {
+for (( k = 0; k < T->GetEntries(); k++ )) {
   T->GetEntry(k);
   event_time_adj = event_time - run_start;
   wall_time_adj = wall_time - run_start;
