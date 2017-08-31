@@ -6,7 +6,7 @@
 #include <cstdlib>
 #include <math.h>
 
-void SimpleEnergyDAQ2( const char* filename, ) {
+void SimpleEnergyDAQ2( const char* filename ) {
 
 
 // init
