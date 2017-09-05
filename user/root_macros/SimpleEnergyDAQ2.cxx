@@ -21,7 +21,7 @@ Int_t k(0);
 // create tree, read ASCII data, set branch addresses
 TTree* T = new TTree("T","T");
 T->ReadFile( filename, "event/I:event_time/D:wall_time/D:energy/D:energy_q/D" );
-Long64_t num_events = T->GetEntries();
+Long64_t num_bursts = T->GetEntries();
 Int_t event;
 Double_t event_time, wall_time, energy, energy_q;
 T->SetBranchAddress( "event", &event );
@@ -42,7 +42,7 @@ T->Branch("interevent_time", &interevent_time, "interevent_time/D");
 // fill new branches
 Double_t time_current, time_prev;
 // times aligned to run start
-for (( k = 0; k < num_events; k++ )) {
+for (( k = 0; k < num_bursts; k++ )) {
   T->GetEntry(k);
   event_time_adj = event_time - run_start;
   wall_time_adj = wall_time - run_start;
@@ -84,7 +84,7 @@ TAxis* h1y = h1->GetYaxis();
 h1y->SetTitle("Entries");
 
 // fill and draw histogram:
-for (( k = 1; k < num_events; k++ ))  { T->GetEntry(k); h1->Fill(interevent_time); }
+for (( k = 1; k < num_bursts; k++ ))  { T->GetEntry(k); h1->Fill(interevent_time); }
 TCanvas* c1 = new TCanvas("c1","c1");
 h1->Draw();
 c1->SetLogx(1);
@@ -112,7 +112,7 @@ TAxis* h2y = h2->GetYaxis();
 h2y->SetTitle("Energy_Q (MeV)");
 
 // fill and draw histogram:
-for (( k=0; k < num_events; k++ )) {
+for (( k=0; k < num_bursts; k++ )) {
   T->GetEntry(k);
   h2->Fill(interevent_time, energy_q); // time in s, energy in MeV
 }
@@ -132,7 +132,7 @@ h3->SetLineColor(kBlue);
 h4->SetLineColor(kRed);
 
 // fill and draw energy histos
-for (( k=0; k < num_events; k++ )) {
+for (( k=0; k < num_bursts; k++ )) {
   T->GetEntry(k);
   h3->Fill(energy);
   h4->Fill(energy_q);
@@ -151,7 +151,7 @@ TAxis* h5y = h5->GetYaxis();
 h5y->SetTitle("Energy_Q (MeV)");
 // fill and draw:
 TCanvas* c4 = new TCanvas("c4","c4");
-for (( k=0; k < num_events; k++ )) {
+for (( k=0; k < num_bursts; k++ )) {
   T->GetEntry(k);
   h5->Fill(interevent_time, energy);
 }
@@ -160,13 +160,69 @@ c4->SetLogx(1);
 c4->SetLogy(1);
 c4->SetLogz(1);
 
-//count IBD candidates
+////count IBD candidates
+//Long64_t ibds;
+//for (( k = 0; k < num_bursts; k++ )) {
+//  T->GetEntry(k);
+//  if ( interevent_time > 1e-7  &  interevent_time < 4e-4 )  ibds++;
+////if ( interevent_time > dt_low  &  interevent_time < dt_high )  ibds++;
+//}
+//cout << endl << "IBD Candidates: " << ibds << endl << endl;
+
+// count IBD candidates by tagging prompt / delayed bursts:
+TTree* T2 = new TTree("T2","T2");
 Long64_t ibds;
-for (( k = 0; k < num_events; k++ )) {
+Bool_t prompt_tf, delayed_tf;
+Double_t deltaT_low, deltaT_high, trigger_reset;
+Double_t prompt_low, prompt_high, delayed_low, delayed_high;
+Double_t prompt_cand_t, prompt_cand_eq, delayed_cand_t, delayed_cand_eq;
+T2->Branch("prompt_cand_t", &prompt_cand_t, "prompt_cand_t/D");
+T2->Branch("prompt_cand_eq", &prompt_cand_eq, "prompt_cand_eq/D");
+T2->Branch("delayed_cand_t", &delayed_cand_t, "delayed_cand_t/D");
+T2->Branch("delayed_cand_eq", &delayed_cand_eq, "delayed_cand_eq/D");
+
+// set cut parameters
+trigger_reset = 800.e-6;
+deltaT_low = 1.e-7;
+deltaT_high = 4.e-4;
+prompt_low = 0.05;
+//prompt_low = 1.00;
+prompt_high = 100.;
+//delayed_low = 0.05;
+delayed_low = 1.00;
+delayed_high = 100.;
+// scan through events for IBD candidates
+//printf( "IBD candidates identified at:\tprompt_time\tprompt_energy\tdelayed_time\tdelayed_energy\n");//debug
+for (( k = 0; k < num_bursts; k++ )) {
+  prompt_tf = false;
+  delayed_tf = false;
   T->GetEntry(k);
-  if ( interevent_time > 1e-7  &  interevent_time < 4e-4 )  ibds++;
-//if ( interevent_time > dt_low  &  interevent_time < dt_high )  ibds++;
-}
+  // look for prompt:
+  if ( interevent_time > trigger_reset & energy_q > prompt_low & energy_q < prompt_high ) {
+    prompt_tf = true;
+    prompt_cand_t = wall_time_adj;
+    prompt_cand_eq = energy_q;
+    // look for delayed:
+    if ( prompt_tf & k < num_bursts-1 ) {
+      T->GetEntry(k+1);
+      if ( interevent_time > deltaT_low & interevent_time < deltaT_high & energy_q > delayed_low & energy_q < delayed_high ) {
+        delayed_tf = true;
+	delayed_cand_t = wall_time_adj;
+	delayed_cand_eq = energy_q;
+      }
+    }
+  }
+  // if candidate burst pair is found, increment IBD candidate counter and add burst times and energies to tree:
+  if ( prompt_tf & delayed_tf ) {
+    ibds++;
+//   cout << prompt_cand_t << "\t" << prompt_cand_eq << "\t" << delayed_cand_t << "\t" << delayed_cand_eq << endl;//debug
+//    T2->GetBranch("prompt_cand_t")->Fill();
+//    T2->GetBranch("prompt_cand_eq")->Fill();
+//    T2->GetBranch("delayed_cand_t")->Fill();
+//    T2->GetBranch("delayed_cand_eq")->Fill();
+    T2->Fill();
+  }
+} //end event loop
 cout << endl << "IBD Candidates: " << ibds << endl << endl;
 
 // all pau!   )
