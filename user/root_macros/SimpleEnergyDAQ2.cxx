@@ -188,8 +188,8 @@ deltaT_high = 4.e-4;
 prompt_low = 0.05;
 //prompt_low = 1.00;
 prompt_high = 100.;
-//delayed_low = 0.05;
-delayed_low = 1.00;
+delayed_low = 0.05;
+//delayed_low = 1.00;
 delayed_high = 100.;
 // scan through events for IBD candidates
 //printf( "IBD candidates identified at:\tprompt_time\tprompt_energy\tdelayed_time\tdelayed_energy\n");//debug
@@ -216,10 +216,6 @@ for (( k = 0; k < num_bursts; k++ )) {
   if ( prompt_tf & delayed_tf ) {
     ibds++;
 //   cout << prompt_cand_t << "\t" << prompt_cand_eq << "\t" << delayed_cand_t << "\t" << delayed_cand_eq << endl;//debug
-//    T2->GetBranch("prompt_cand_t")->Fill();
-//    T2->GetBranch("prompt_cand_eq")->Fill();
-//    T2->GetBranch("delayed_cand_t")->Fill();
-//    T2->GetBranch("delayed_cand_eq")->Fill();
     T2->Fill();
   }
 } //end event loop
