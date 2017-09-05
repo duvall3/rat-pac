@@ -2,6 +2,8 @@
 // -- see header comments in SimpleEnergyDAQ_old for documentation
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 8/17 ~ //
 
+// TODO: combine histogram loops into a single loop for efficiency
+
 #include <vector>
 #include <cstdlib>
 #include <math.h>
@@ -87,7 +89,7 @@ TCanvas* c1 = new TCanvas("c1","c1");
 h1->Draw();
 c1->SetLogx(1);
 
-// try plotting vs. energy: //FIXME later
+// energy vs. deltaT:
 const Int_t nBinsEBP = 100;
 Double_t ymin = 1.e-3; //s
 Double_t ymay = 1.e3; //s
@@ -121,8 +123,8 @@ c2->SetLogy(1);
 c2->SetLogz(1);
 
 // 1D histogram of energies and quenched energies
-TH1D* h3 = new TH1D("h3", "Burst Energy", nBinsEBP, xbinsEBP );
-TH1D* h4 = new TH1D("h4", "Quenched Burst Energy", nBinsEBP, xbinsEBP );
+TH1D* h3 = new TH1D("h3", "Burst Energy", nBinsEBP, ybinsEBP );
+TH1D* h4 = new TH1D("h4", "Quenched Burst Energy", nBinsEBP, ybinsEBP );
 TAxis* h3x = h3->GetXaxis();
 TAxis* h4x = h4->GetXaxis();
 h3x->SetTitle("Burst Energy (MeV), RED=Pure, BLUE=Quenched");
@@ -140,6 +142,23 @@ h3->Draw();
 h4->Draw("same");
 c3->SetLogx(1);
 c3->SetLogy(1);
+
+// 2D histogram of *unquenched* energies and deltaT's:
+TH2D* h5 = new TH2D("h5", "Unquenched Energy vs. Interevent Time", nBinsEBP, xbinsEBP, nBinsEBP, ybinsEBP );
+TAxis* h5x = h5->GetXaxis();
+h5x->SetTitle("Interevent Time (s)");
+TAxis* h5y = h5->GetYaxis();
+h5y->SetTitle("Energy_Q (MeV)");
+// fill and draw:
+TCanvas* c4 = new TCanvas("c4","c4");
+for (( k=0; k < num_events; k++ )) {
+  T->GetEntry(k);
+  h5->Fill(interevent_time, energy);
+}
+h5->Draw("colz");
+c4->SetLogx(1);
+c4->SetLogy(1);
+c4->SetLogz(1);
 
 //count IBD candidates
 Long64_t ibds;

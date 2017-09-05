@@ -16,24 +16,22 @@ RAT::TrackCursor c = nav.Cursor(false);
 
 // enter track and find number of steps
 c.GoChild(0);
-Int_t steps = c.StepCount(); // currently 9789
+Int_t steps = c.StepCount();
 
 // prepare vectors
-//Float_t t[9789];
-//Float_t ens[9789];
 TVectorT <Float_t> t(steps);
 TVectorT <Float_t> ens(steps);
 
-// set up histogram
-TH1F *h = new TH1F("h", "Step-wise Energies", 100, 0., 0.2);
-
-// fill vectors and histogram
+// fill vectors
 for (Int_t k=0; k<steps; k++) {
   RAT::TrackNode *n = c.Step(k);
   t[k] = n->GetGlobalTime();
   ens[k] = n->GetTotEDepScintQuenched();
-  h->Fill(ens[k]);
 }
+
+// set up and fill histogram
+TH1F *h = new TH1F("h", "Step-wise Energies", 100, ens.Min(), ens.Max());
+for (Int_t k=0; k<steps; k++) { h->Fill(ens[k]); }
 
 // draw time plot
 TCanvas *c1 = new TCanvas;

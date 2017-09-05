@@ -5,9 +5,9 @@ void PlotBursts( const char* filename ) {
 
 TTree *T = new TTree("T", "burst-trigger data");
 
-T->ReadFile( filename, "Ti/F:Tf:En" );
+T->ReadFile( filename, "TW/F:Ti:Tf:En:EnQ" );
 
-T->Draw("En");
+T->Draw("EnQ");
 c1->SetLogy(1);
 htemp->SetTitle(filename);
 htemp->SetLineColor(kBlue);

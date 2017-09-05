@@ -42,6 +42,7 @@ float sum( vector <float> v );
 double sum( vector <double> v );
 //// arrays
 //Int_t sum( Int_t[] a );
+Int_t sum( const Int_t* a );
 //Long64_t sum( Long64_t[] a );
 //Float_t sum( Float_t[] a );
 //Double_t sum( Double_t[] a );

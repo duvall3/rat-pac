@@ -148,6 +148,7 @@ printf("\n\n");
 
 // clear memory for next event
 nav.Clear();
+ds->Clear();
   
 
 } // end for -- event loop

@@ -39,13 +39,15 @@ double sum( vector <double> v ) {
   for ( Int_t k=0; k<n; k++ ) _sum += v[k];
   return _sum;
 }
-//// arrays
+// arrays
 //Int_t sum( Int_t[] a ) {
-//  Int_t n = sizeof(a) / sizeof(&a[0]);
-//  Int_t _sum(0);
-//  for (Int_t k=0; k<n; k++) _sum += a[k];
-//  return _sum;
-//}
+Int_t sum( Int_t[] a ) {
+  Int_t n = sizeof(a) / sizeof(&a[0]);
+  //Int_t n = 10;
+  Int_t _sum(0);
+  for (Int_t k=0; k<n; k++) _sum += a[k];
+  return _sum;
+}
 //Long64_t sum( Long64_t[] a ) {
 //  Int_t n = sizeof(a) / sizeof(&a[0]);
 //  Int_t _sum(0);
@@ -88,11 +90,11 @@ double sum( vector <double> v, int n ) {
   return _sum;
 }
 //// arrays
-//Int_t sum( Int_t[] a, Int_t n ) {
-//  Int_t _sum(0);
-//  for (Int_t k=0; k<n; k++ )  _sum += a[k];
-//  return _sum;
-//}
+Int_t sum( Int_t [] a, Int_t n ) {
+  Int_t _sum(0);
+  for (Int_t k=0; k<n; k++ )  _sum += a[k];
+  return _sum;
+}
 //Long64_t sum( Long64_t[] a, Int_t n ) {
 //  Long64_t _sum(0);
 //  for (Int_t k=0; k<n; k++ )  _sum += a[k];
