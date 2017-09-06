@@ -62,6 +62,7 @@ for (( k = 0; k < num_bursts; k++ )) {
 
 //// PREPARE PLOTS
 
+// interevent times
 // first, some great log-binning code courtesy of Marc Bergevin (bergevin1@llnl.gov):
 const Int_t nBinsEBP = 100;
 Double_t xmin = 1.e-10; //s
@@ -84,6 +85,7 @@ TAxis* h1y = h1->GetYaxis();
 h1y->SetTitle("Entries");
 
 // energy vs. deltaT:
+// again, log-binning courtesy mfb:
 const Int_t nBinsEBP = 100;
 Double_t ymin = 1.e-3; //s
 Double_t ymay = 1.e3; //s
