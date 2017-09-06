@@ -2,8 +2,6 @@
 // -- see header comments in SimpleEnergyDAQ_old for documentation
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 8/17 ~ //
 
-#include <vector>
-#include <cstdlib>
 #include <math.h>
 
 void SimpleEnergyDAQ2( const char* filename ) {
