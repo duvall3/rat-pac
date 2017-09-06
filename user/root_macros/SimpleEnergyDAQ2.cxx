@@ -10,12 +10,12 @@ void SimpleEnergyDAQ2( const char* filename ) {
 
 
 //// INIT AND FILL
+
 // init
 gStyle->SetHistLineWidth(2);
 gStyle->SetHistLineColor(kBlue);
 gStyle->SetOptLogy(true);
 Int_t k(0);
-
 
 // create tree, read ASCII data, set branch addresses
 TTree* T = new TTree("T","T");
@@ -175,7 +175,6 @@ delayed_low = 0.00;
 delayed_high = 100.;
 
 // scan through events for IBD candidates
-//printf( "IBD candidates identified at:\tprompt_time\tprompt_energy\tdelayed_time\tdelayed_energy\n");//debug
 for (( k = 0; k < num_bursts; k++ )) {
   prompt_tf = false;
   delayed_tf = false;
@@ -198,7 +197,6 @@ for (( k = 0; k < num_bursts; k++ )) {
   // if candidate burst pair is found, increment IBD candidate counter and add burst times and energies to tree:
   if ( prompt_tf & delayed_tf ) {
     ibds++;
-//   cout << prompt_cand_t << "\t" << prompt_cand_eq << "\t" << delayed_cand_t << "\t" << delayed_cand_eq << endl;//debug
     T2->Fill();
   }
 } //end event loop
