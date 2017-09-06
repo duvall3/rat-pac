@@ -153,7 +153,6 @@ c4->SetLogz(1);
 
 // Prepare new ROOT tree for IBD trigger output:
 TTree* T2 = new TTree("T2","T2");
-Long64_t ibds;
 Bool_t prompt_tf, delayed_tf;
 Double_t deltaT_low, deltaT_high, trigger_reset;
 Double_t prompt_low, prompt_high, delayed_low, delayed_high;
@@ -185,7 +184,7 @@ for (( k = 0; k < num_bursts; k++ )) {
     prompt_cand_t = wall_time_adj;
     prompt_cand_eq = energy_q;
     // look for delayed:
-    if ( prompt_tf & k < num_bursts-1 ) {
+    if ( k < num_bursts-1 ) {
       T->GetEntry(k+1);
       if ( interevent_time > deltaT_low & interevent_time < deltaT_high & energy_q > delayed_low & energy_q < delayed_high ) {
         delayed_tf = true;
@@ -196,11 +195,10 @@ for (( k = 0; k < num_bursts; k++ )) {
   }
   // if candidate burst pair is found, increment IBD candidate counter and add burst times and energies to tree:
   if ( prompt_tf & delayed_tf ) {
-    ibds++;
     T2->Fill();
   }
 } //end event loop
-cout << endl << "IBD Candidates: " << ibds << endl << endl;
+cout << endl << "IBD Candidates: " << T2->GetEntries() << endl << endl;
 
 // all pau!   )
 return;
