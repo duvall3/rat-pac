@@ -1,0 +1,13 @@
+# bg.mac -- generator for backgrounds
+
+# testing rat-pac doc example
+#/generator/add decaychain 222Rn:regexfill
+#/generator/pos/set ^target_strip[0-9]+$
+#/generator/pos/set target_strip
+
+
+# using the "external" generator
+/generator/add external paint:poisson:"hepevt.dat"
+/generator/pos/set 0 0 1400 # paint the walls of the cave
+/generator/rate/set 761.0
+

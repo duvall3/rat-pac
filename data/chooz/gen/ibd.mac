@@ -1,0 +1,7 @@
+# ibd.mac -- IBD generator for CHOOZ-style experiment
+#	-- uses altered IBD.ratdb
+
+/generator/add combo ibd:point:poisson
+/generator/vtx/set 0 0 1
+/generator/pos/set 0 -9450 0
+/generator/rate/set 1

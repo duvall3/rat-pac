@@ -21,6 +21,9 @@
 
 // [see detailed class description in GLG4Scint.hh]
 
+// This version modified by Mark Duvall, mjduvall@hawaii.edu, 1/2017
+// -- changes are tagged //mjd
+
 #include "G4UnitsTable.hh"
 #include "GLG4Scint.hh"
 #include "G4ios.hh"
@@ -38,7 +41,6 @@
 #include "G4hIonEffChargeSquare.hh"
 #include "G4hParametrisedLossModel.hh"
 #include "G4PSTARStopping.hh"
-#include "TF1.h"
 #include "G4AtomicShells.hh"
 #include "G4ParticleTable.hh"
 #include <RAT/TrackInfo.hh>
@@ -49,6 +51,8 @@
 #include <G4Event.hh>
 #include <G4EventManager.hh>
 #include <sstream>
+
+#include <RAT/DS/MCTrackStep.hh> //mjd
 
 ////////////////
 // Static data members
@@ -68,10 +72,13 @@ G4double GLG4Scint::QuenchingFactor = 1.0;
 G4bool GLG4Scint::UserQF = false;
 G4String GLG4Scint::fPrimaryName = G4String();
 G4double GLG4Scint::fPrimaryEnergy = 0;
-GLG4DummyProcess GLG4Scint::scintProcess("Scintillation", fUserDefined);
-GLG4DummyProcess GLG4Scint::reemissionProcess("Reemission", fUserDefined);
-G4std::vector<GLG4DummyProcess*> GLG4Scint::reemissionProcessVector;
+DummyProcess GLG4Scint::scintProcess("Scintillation", fUserDefined);
+DummyProcess GLG4Scint::reemissionProcess("Reemission", fUserDefined);
+G4std::vector<DummyProcess*> GLG4Scint::reemissionProcessVector;
 G4int GLG4Scint::fPhotonCount;
+
+G4double GLG4Scint::totEdep_scint = 0.0;			// mjd
+G4double GLG4Scint::totEdep_scint_quenched = 0.0;		// mjd
 
 /////////////////
 // Constructors
@@ -308,6 +315,9 @@ GLG4Scint::PostPostStepDoIt(const G4Track& aTrack, const G4Step& aStep) {
         G4double dE_dx = TotalEnergyDeposit /  aStep.GetStepLength();
         QuenchedTotalEnergyDeposit /= (1.0 + birksConstant * dE_dx);
       }
+
+      totEdep_scint = TotalEnergyDeposit; //mjd
+      totEdep_scint_quenched = QuenchedTotalEnergyDeposit; //mjd
 
       // Track total edep, quenched edep
       totEdep += TotalEnergyDeposit;
@@ -737,7 +747,7 @@ GLG4Scint::MyPhysicsTable::Entry::~Entry() {
 
 // Build for Entry
 void GLG4Scint::MyPhysicsTable::Entry::Build(
-    const G4String& name,
+    const G4String& _name,
     int i,
     G4MaterialPropertiesTable *aMaterialPropertiesTable) {
   // Delete old data
@@ -768,12 +778,12 @@ void GLG4Scint::MyPhysicsTable::Entry::Build(
   std::stringstream property_string;
 
   property_string.str("");
-  property_string << "SCINTILLATION" << name;
+  property_string << "SCINTILLATION" << _name;
   G4MaterialPropertyVector* theScintillationLightVector = 
     aMaterialPropertiesTable->GetProperty(property_string.str().c_str());
 
   property_string.str("");
-  property_string << "SCINTILLATION_WLS" << name;
+  property_string << "SCINTILLATION_WLS" << _name;
   G4MaterialPropertyVector* theReemissionLightVector = 
     aMaterialPropertiesTable->GetProperty(property_string.str().c_str());
 
@@ -815,7 +825,7 @@ void GLG4Scint::MyPhysicsTable::Entry::Build(
   // for the material from the material's optical
   // properties table ("SCINTWAVEFORM")
   property_string.str("");
-  property_string << "SCINTWAVEFORM" << name;
+  property_string << "SCINTWAVEFORM" << _name;
   G4MaterialPropertyVector* theWaveForm = 
     aMaterialPropertiesTable->GetProperty(property_string.str().c_str());
   
@@ -833,7 +843,7 @@ void GLG4Scint::MyPhysicsTable::Entry::Build(
       // Issue a warning if they are nonsense, but continue
       if (theWaveForm->Energy(theWaveForm->GetVectorLength() - 1) > 0.0) {
         G4cerr << "GLG4Scint::MyPhysicsTable::Entry::Build():  "
-               << "SCINTWAVEFORM" << name
+               << "SCINTWAVEFORM" << _name
                << " has both positive and negative X values.  "
                << " Undefined results will ensue!\n";
       }
@@ -845,9 +855,9 @@ void GLG4Scint::MyPhysicsTable::Entry::Build(
       G4double* tval = new G4double[nbins];
       G4double* ival = new G4double[nbins];
       {
-        for (int i=0; i<nbins; i++) {
-          tval[i] = i * maxtime / nbins;
-          ival[i] = 0.0;
+        for (int ii=0; ii<nbins; ii++) {
+          tval[ii] = ii * maxtime / nbins;
+          ival[ii] = 0.0;
         }
       }
       
@@ -855,15 +865,15 @@ void GLG4Scint::MyPhysicsTable::Entry::Build(
         G4double ampl = (*theWaveForm)[j];
         G4double decy = theWaveForm->Energy(j);
         {
-          for (int i=0; i<nbins; i++) {
-            ival[i] += ampl * (1.0 - exp(tval[i] / decy));
+          for (int ii=0; ii<nbins; ii++) {
+            ival[ii] += ampl * (1.0 - exp(tval[ii] / decy));
           }
         }
       }
 
       {
-        for (int i=0; i<nbins; i++) {
-          ival[i] /= ival[nbins-1];
+        for (int ii=0; ii<nbins; ii++) {
+          ival[ii] /= ival[nbins-1];
         }
       }
 
@@ -887,7 +897,7 @@ void GLG4Scint::MyPhysicsTable::Entry::Build(
   // for the material from the material's optical
   // properties table ("SCINTMOD")    
   property_string.str("");
-  property_string << "SCINTMOD" << name;
+  property_string << "SCINTMOD" << _name;
   G4MaterialPropertyVector* theScintModVector = 
     aMaterialPropertiesTable->GetProperty(property_string.str().c_str());
 
@@ -902,9 +912,9 @@ void GLG4Scint::MyPhysicsTable::Entry::Build(
     // ResolutionScale= ScintMod(0);
     // BirksConstant= ScintMod(1);
     // Ref_dE_dx= ScintMod(2);
-    for (unsigned int i=0; i < theScintModVector->GetVectorLength(); i++) {
-      G4double key = theScintModVector->Energy(i);
-      G4double value = (*theScintModVector)[i];
+    for (unsigned int ii=0; ii < theScintModVector->GetVectorLength(); ii++) {
+      G4double key = theScintModVector->Energy(ii);
+      G4double value = (*theScintModVector)[ii];
 
       if (key == 0) {
         resolutionScale = value;
@@ -918,13 +928,13 @@ void GLG4Scint::MyPhysicsTable::Entry::Build(
       else {
         G4cerr << "GLG4Scint::MyPhysicsTable::Entry::Build"
                << ":  Warning, unknown key " << key
-               << "in SCINTMOD" << name << G4endl;
+               << "in SCINTMOD" << _name << G4endl;
       }
     }
   }
 
   property_string.str("");
-  property_string << "QF" << name;
+  property_string << "QF" << _name;
   QuenchingArray = aMaterialPropertiesTable->GetProperty(property_string.str().c_str());
 }
 

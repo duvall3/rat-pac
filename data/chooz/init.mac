@@ -1,0 +1,18 @@
+# init -- set & initialize experiment
+
+/glg4debug/glg4param omit_muon_processes 0
+/glg4debug/glg4param omit_hadronic_processes 0
+
+/rat/db/set DETECTOR experiment "chooz"
+/rat/db/set DETECTOR geo_file "chooz/chooz.geo"
+/rat/db/load ./IBD.ratdb
+#/rat/db/load ./MATERIALS_Watchman.ratdb
+
+/run/numberOfThreads 4
+/run/initialize
+
+/rat/proc fitcentroid
+#/rat/proc fitpath
+/rat/proc count
+/rat/procset update 100
+/rat/proclast outroot

@@ -1,0 +1,10 @@
+# ibd.mac -- IBD generator for SANTA-style experiment
+#	-- uses altered IBD.ratdb
+
+#/generator/add combo ibd:fill:poisson
+/generator/add combo ibd:regexfill:poisson
+/generator/vtx/set 0 0 1
+#/generator/pos/set 0 -9000 -500
+#/generator/pos/set target_plane
+/generator/pos/set target_strip
+/generator/rate/set 1

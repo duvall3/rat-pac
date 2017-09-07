@@ -1,0 +1,21 @@
+# run.mac -- as in "Basic Use" slide of Benjamin Land's 12/29/14 presentation
+
+/rat/db/set DETECTOR experiment "practice"
+/rat/db/set DETECTOR geo_file "practice/practice.geo"
+
+#/run/numberOfThreads 4
+
+/run/initialize
+
+/rat/proc simpledaq
+/rat/proc fitcentroid
+/rat/proc count
+/rat/proclast outroot
+/rat/procset file "muons_10MeV.root"
+
+/generator/add combo gun:point:poisson
+/generator/vtx/set mu- 0 0 0 10.0
+/generator/pos/set 0 0 0
+/generator/rate/set 1.0
+
+/run/beamOn 100

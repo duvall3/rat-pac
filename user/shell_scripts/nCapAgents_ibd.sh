@@ -1,0 +1,96 @@
+#!/bin/bash
+# nCapAgents_ibd -- process a FILENAME.ibd.dat file* for capturing-agent statistics
+#	*i.e., output from $ROOTSYS/macros/IBD.cxx
+#	-- adapted from github.com/duvall3/rat-pac/user/nCapAgents.sh
+# ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ August 2015 ~ #
+
+
+
+## init 
+
+# bookkeeping
+BASENAME=$(basename $1 .ibd.dat)
+
+# check four output filename; otherwise default to basename of input file
+if [ $2 ]; then
+  OUTPUTFILE=$2
+else
+  echo "No output filename specified; using $BASENAME"
+  OUTPUTFILE=$BASENAME
+fi
+
+# don't overwrite existing files without confirmation
+if [ -e ./$OUTPUTFILE.cap -o -e ./gam ]; then
+# if [ ! $3 ]; then
+    echo "WARNING: Output files will be overwritten. Continue? (y/n)"
+    read CONTINUE
+    if [ $CONTINUE == "y" ]; then echo "OK"; # do nothing
+      else
+      echo "Exiting." && exit 2
+    fi
+# else echo "nCapAgents.sh: 3rd argument given; assuming batch mode." # && do nothing
+# fi
+fi
+
+# make folder for $agent.gam files
+mkdir gam
+
+# check for 'awk' & 'bc' programs
+if [ $(which bc) ]; then isbc=true
+  else isbc=false
+fi
+if [ $(which awk) ]; then awkprogram=awk
+  elif [ $(which gawk) ]; then awkprogram=gawk
+  elif [ $(which mawk) ]; then awkprogram=mawk
+  else echo "ERROR: No awk program found. Go download awk, gawk, or mawk from your repositories. You'll be glad you did.   )"; exit 1
+fi
+
+#echo "init complete" #debugging 
+
+## get capture info
+
+# determine total number of captures
+total_captures=$(grep "Capture: " $1 | wc -l)
+echo "Total Captures: $total_captures" #debugging
+
+## capture agents
+
+# process full capture list into BASH array of unique capture-agent names
+agent_names=( $( $awkprogram '$0 ~ /neutron Capture:/ {print $3}' $1 | sort | uniq ) )
+#echo "Capture Agents: ${agent_names[*]}" #debugging
+
+# get totals (and percentages, if bc is available) for each agent
+k1=0
+for agent in ${agent_names[*]}; do
+  agent_totals[$k1]=$(grep $agent $1 | wc -l)
+  $awkprogram -v agent=$agent '$3 ~ agent {printf $3"\t"; getline; printf $3"\t"; getline; print $5}' $1 > ./gam/$agent.gam
+  if [ $isbc = true ]; then agent_pcts[$k1]=$(echo "${agent_totals[$k1]} / $total_captures * 100" | bc -l); fi
+  echo "$agent data complete" #debugging
+  ((k1++))
+done
+
+
+echo "gam done" #debugging
+
+## print results
+
+echo "writing ./$OUTPUTFILE.cap" #debugging
+
+printf "TOTAL:\t%i\n\n" $total_captures > ./$OUTPUTFILE.cap_temp
+
+for (( k3=0; k3<k1; k3++ )); do
+  if [ $isbc = true ]; then
+    printf "%s:\t\t%i\t\t%2.2f%%\n" ${agent_names[$k3]} ${agent_totals[$k3]} ${agent_pcts[$k3]} >> ./$OUTPUTFILE.cap_temp
+  else
+    printf "%s:\t\t%i\t\t/ %i\n" ${agent_names[$k3]} ${agent_totals[$k3]} $total_captures >> ./$OUTPUTFILE.cap_temp
+  fi
+done
+
+printf "\n\n" >> ./$OUTPUTFILE.cap_temp
+
+column -t ./$OUTPUTFILE.cap_temp > ./$OUTPUTFILE.cap
+rm ./$OUTPUTFILE.cap_temp
+
+
+# all pau!   )
+exit 0

@@ -25,7 +25,7 @@
 
 #include <RAT/GLG4PrimaryGeneratorAction.hh>
 #include <RAT/GLG4Scint.hh>
-#include <RAT/GLG4PhysicsList.hh>
+#include <RAT/PhysicsList.hh>
 #include <RAT/GLG4SteppingAction.hh>
 #include <RAT/GLG4DebugMessenger.hh>
 #include <RAT/GLG4VertexGen.hh>
@@ -39,6 +39,7 @@
 #include <RAT/GeoPMTFactoryBase.hh>
 
 #include <Randomize.hh>
+#include <CLHEP/Units/SystemOfUnits.h>
 #include <vector>
 #include <cstdlib>
 #include <math.h>
@@ -69,7 +70,7 @@ int get_pdgcode(const G4PrimaryParticle* p) {
   if (glg4pdgcode==0 && p->GetG4code()!=0) {
     G4ParticleDefinition* pdef = p->GetG4code();
     if (G4IonTable::IsIon(pdef)) {
-      int atomicNumber = G4int(pdef->GetPDGCharge()/eplus);
+      int atomicNumber = G4int(pdef->GetPDGCharge()/CLHEP::eplus);
       int atomicMass = pdef->GetBaryonNumber();
       glg4pdgcode = \
         GLG4VertexGen_HEPEvt::kIonCodeOffset + 1000*atomicNumber + atomicMass;
@@ -391,11 +392,11 @@ void Gsim::PostUserTrackingAction(const G4Track* aTrack) {
   }
 }
 
-void Gsim::MakeRun(int runID) {
-  DBLinkPtr lrun = DB::Get()->GetLink("RUN", "", runID);
+void Gsim::MakeRun(int _runID) {
+  DBLinkPtr lrun = DB::Get()->GetLink("RUN", "", _runID);
   DS::Run* run = new DS::Run();
 
-  run->SetID(runID);
+  run->SetID(_runID);
   run->SetType((unsigned) lrun->GetI("runtype"));
 
   run->SetPMTInfo(&GeoPMTFactoryBase::GetPMTInfo());
@@ -485,6 +486,68 @@ void Gsim::MakeEvent(const G4Event* g4ev, DS::Root* ds) {
     return;
   }
 
+  //mfb
+  std::vector<std::vector <double> > a = GLG4Scint::GetScintMatrix();
+//G4cout << "Size of array " << a.size() << G4endl;
+//G4cout << a[a.size()-1][0] << " " << a[a.size()-1][1] << " " << a[a.size()-1][2] << " " << G4endl;
+
+  //mfb
+  std::sort(a.begin(),a.end());
+//double timeWindow = 400.;
+  double timeWindow = 200.;
+  int triggers = 0;
+  double old_time = -1.e9, start_time = -1.e9;
+  double rollingEnergy = 0., rollingEnergyQ = 0.;
+  //mjd
+//TTimeStamp t_run_start_stamp = mc->GetUTC();
+//double t_run_start, t_event_start, t_event_delta;
+  double t_event_start;
+  int mc_event_id = mc->GetID();
+//if ( mc_event_id == 0 )  t_run_start = t_run_start_stamp.GetSec() + (t_run_start_stamp.GetNanoSec())*1.e-9;
+  t_event_start = mc->GetUTC().GetSec() + (mc->GetUTC().GetNanoSec())*1.e-9;
+//t_event_delta = t_event_start - t_run_start;
+//G4cout << "EVENT " << mc->GetID() << "; event_start_time run_start_time " << t_event_start << " " << t_run_start << G4endl; //debug
+//printf( "\nEVENT %d\nt_event_start\tt_run_start\tdifference\n%.25f\t%.25f\t%.25f\n", mc_event_id, t_event_start, t_run_start, t_event_delta );
+//printf( "\nEVENT %d\tt_event_start\t%.25f\n", mc_event_id, t_event_start );
+//G4cout << setprecision(18);
+//G4cout << endl << "EVENT " << mc_event_id << "\t" << "t_event_start" << "\t" << "t_run_start" << "\t" << "difference" << endl;
+//G4cout << t_event_start << "\t" << t_run_start << "\t" << t_event_delta << endl;
+//G4cout << setprecision(old_precision);
+  double wallTime(0.);
+  //mfb
+  for ( unsigned long aIndex = 0; aIndex < a.size(); aIndex++ ) {
+    if  ( (a[aIndex][0]-old_time) > timeWindow) {
+	triggers += 1;
+	if ( rollingEnergy > 0.001 ) {
+	  G4cout << "Found new trigger " << triggers << "; previous trigger (wall start time, start time, end time, energy, quenched energy): " << wallTime << " " << start_time << " " << old_time << " " << rollingEnergy << " " << rollingEnergyQ << G4endl;
+	}
+	rollingEnergy = 0.0;
+	rollingEnergyQ = 0.0;
+        start_time = a[aIndex][0];
+//	wallTime = t_event_start + start_time - t_run_start;//mjd
+	wallTime = t_event_start + start_time*1.e-9;//mjd
+      }
+    old_time = a[aIndex][0];
+    rollingEnergy += a[aIndex][2];  // for unquenched, use aIndex[2]
+    rollingEnergyQ += a[aIndex][3]; // for quenched, use aIndex[3]
+//  G4cout << a[aIndex][0] << " " << a[aIndex][2] << " " << rollingEnergy << G4endl;
+    }
+  G4cout << "Found end trigger " << triggers << "; previous trigger (start time, end time, energy, quenched energy): " << wallTime << " " << start_time << " " << old_time << " " << rollingEnergy << " " << rollingEnergyQ << G4endl;
+  G4cout << "Found " << triggers << " trigger" << G4endl;
+  G4cout << "Last trigger " << GLG4Scint::GetTotEdep() << " " << rollingEnergy << " " << rollingEnergyQ << G4endl;
+
+//G4cout << "TIME DEBUG: t_event_start wallTime UTC.GetSec UTC.GetNanoSec \t" << t_event_start << " " << wallTime << " " << mc->GetUTC().GetSec() << " " << mc->GetUTC().GetNanoSec() << G4endl; //debug
+//printf( "wallTime: %9.20f\n", wallTime);
+//printf( "t_event_start: %9.20f\n", t_event_start );
+//printf( "EVENT %d\tt_event_start\tt_run_start\tdifference\n%.25f\t%.25f\t%.25f\n", mc_event_id, t_event_start, t_run_start, t_event_delta );
+  printf( "EVENT %d\tt_event_start\t%.25f\t", mc_event_id, t_event_start );
+  printf( "wallTime: %20.25f\tenergy: %e\tenergy_q: %e\n", wallTime, rollingEnergy, rollingEnergyQ );
+//G4cout << setprecision(18);
+//G4cout << endl << "EVENT " << mc_event_id << "\t" << "t_event_start" << "\t" << "t_run_start" << "\t" << "difference" << endl;
+//G4cout << t_event_start << "\t" << t_run_start << "\t" << t_event_delta << endl;
+//G4cout << wallTime << endl;
+//G4cout << setprecision(old_precision);
+
   // MC summary information
   DS::MCSummary* summary = mc->GetMCSummary();
   summary->SetEnergyCentroid(exinfo->energyCentroid.GetMean());
@@ -497,6 +560,8 @@ void Gsim::MakeEvent(const G4Event* g4ev, DS::Root* ds) {
   summary->SetTotalScintCentroid(scintCentroid);
   summary->SetNumScintPhoton(exinfo->numScintPhoton);
   summary->SetNumReemitPhoton(exinfo->numReemitPhoton);
+
+  GLG4Scint::ResetTimeChargeMatrix();//mfb
 
   /** PMT and noise simulation */
   GLG4HitPMTCollection* hitpmts = GLG4VEventAction::GetTheHitPMTCollection();
@@ -555,15 +620,15 @@ void Gsim::MakeEvent(const G4Event* g4ev, DS::Root* ds) {
    * to last photon hits.
    */
   double noiseWindowWidth = lasthittime - firsthittime;
-  size_t npmts = fPMTInfo->GetPMTCount();
+  size_t pmtcount = fPMTInfo->GetPMTCount();
   double channelRate = noiseRate * noiseWindowWidth;
-  double detectorWideRate = channelRate * npmts / channelEfficiency;
+  double detectorWideRate = channelRate * pmtcount / channelEfficiency;
   int noiseHits = \
     static_cast<int>(floor(CLHEP::RandPoisson::shoot(detectorWideRate)));
 
   for (int ihit=0; ihit<noiseHits; ihit++) {
     GLG4HitPhoton* hit = new GLG4HitPhoton();
-    int pmtid = static_cast<int>(G4UniformRand() * npmts);
+    int pmtid = static_cast<int>(G4UniformRand() * pmtcount);
     hit->SetPMTID(pmtid);
     hit->SetTime(firsthittime + G4UniformRand() * noiseWindowWidth);
     hit->SetCount(1);
@@ -580,7 +645,7 @@ void Gsim::MakeEvent(const G4Event* g4ev, DS::Root* ds) {
 }
 
 void Gsim::AddMCPhoton(DS::MCPMT* rat_mcpmt, const GLG4HitPhoton* photon,
-                       bool isDarkHit, EventInfo* exinfo) {
+                       bool isDarkHit, EventInfo* /*exinfo*/) {
   DS::MCPhoton* rat_mcphoton = rat_mcpmt->AddNewMCPhoton();
   rat_mcphoton->SetDarkHit(isDarkHit);
 

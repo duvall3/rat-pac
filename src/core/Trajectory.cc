@@ -5,6 +5,10 @@
 #include <RAT/Log.hh>
 #include <RAT/Gsim.hh>
 #include <RAT/TrackInfo.hh>
+#include <GLG4Scint.hh> //mjd
+
+// This version modified by Mark Duvall, mjduvall@hawaii.edu, 1/2017
+// -- changes are tagged //mjd
 
 namespace RAT {
 
@@ -96,6 +100,10 @@ void Trajectory::FillStep(const G4StepPoint *point, const G4Step *step,
   G4ThreeVector mom = point->GetMomentum();
   ratStep->SetMomentum( TVector3(mom.x(), mom.y(), mom.z()) );
   ratStep->SetKE(point->GetKineticEnergy());
+  
+  // mjd -- moved a few lines further down to make use of volume
+//ratStep->SetTotEDepScint(GLG4Scint::GetTotEdep_Scint());
+//ratStep->SetTotEDepScintQuenched(GLG4Scint::GetTotEdep_Scint_Quenched());
 
   const G4VProcess *process = point->GetProcessDefinedStep();
   if (process == 0)
@@ -111,6 +119,16 @@ void Trajectory::FillStep(const G4StepPoint *point, const G4Step *step,
   else{
     ratStep->SetVolume(volume->GetName());
   }
+
+  // mjd -- temporary workaround for these quantities sticking outside the scintillator since GLG4Scint isn't called
+  G4String volume_name = volume->GetName();
+  ratStep->SetTotEDepScint(0);
+  ratStep->SetTotEDepScintQuenched(0);
+  if ( volume_name.contains("target") ) {
+    ratStep->SetTotEDepScint(GLG4Scint::GetTotEdep_Scint());
+    ratStep->SetTotEDepScintQuenched(GLG4Scint::GetTotEdep_Scint_Quenched());
+  }
+
 }
 
 

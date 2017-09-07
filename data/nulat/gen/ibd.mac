@@ -1,0 +1,6 @@
+# ibd.mac -- IBD generator macro
+
+/generator/add combo ibd:fill:poisson
+/generator/vtx/set 0 0 1
+/generator/pos/set 0 -9924 0
+/generator/rate/set 1

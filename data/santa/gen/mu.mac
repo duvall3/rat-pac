@@ -1,0 +1,6 @@
+# mu.mac -- muon generator for SANTA-style experiment
+
+/generator/add combo gun:regexfill:poisson
+/generator/vtx/set mu- 0 0 1 500.0
+/generator/pos/set target_plane
+/generator/rate/set 1
