@@ -215,6 +215,10 @@ public:
   }
   static G4double GetTotEdep_Scint() { return totEdep_scint; }  // mjd
   static G4double GetTotEdep_Scint_Quenched() { return totEdep_scint_quenched; }  // mjd
+  static std::vector<std::vector <double> > GetScintMatrix(){return timeChargeMatrix;}//mfb
+  static void ResetTimeChargeMatrix() {//mfb
+    timeChargeMatrix.resize(0);//mfb
+  }//mfb
   
 protected:
   int verboseLevel;
@@ -262,6 +266,8 @@ protected:
   static G4ThreeVector scintCentroidSum;
   static G4double totEdep_scint; //mjd
   static G4double totEdep_scint_quenched; //mjd
+  static std::vector <double> timeChargeElements; //mfb
+  static std::vector<std::vector <double> > timeChargeMatrix; //mfb
 
   // Bogus processes used to tag photons created in GLG4Scint
   static DummyProcess scintProcess;
