@@ -495,6 +495,7 @@ void Gsim::MakeEvent(const G4Event* g4ev, DS::Root* ds) {
   std::sort(a.begin(),a.end());
 //double timeWindow = 400.;
   double timeWindow = 200.;
+//double timeWindow = 2.;//2ns FOR DEBUG ONLY
   int triggers = 0;
   double old_time = -1.e9, start_time = -1.e9;
   double rollingEnergy = 0., rollingEnergyQ = 0.;
@@ -504,7 +505,8 @@ void Gsim::MakeEvent(const G4Event* g4ev, DS::Root* ds) {
   double t_event_start;
   int mc_event_id = mc->GetID();
 //if ( mc_event_id == 0 )  t_run_start = t_run_start_stamp.GetSec() + (t_run_start_stamp.GetNanoSec())*1.e-9;
-  t_event_start = mc->GetUTC().GetSec() + (mc->GetUTC().GetNanoSec())*1.e-9;
+//t_event_start = mc->GetUTC().GetSec() + (mc->GetUTC().GetNanoSec())*1.e-9;
+  t_event_start = mc->GetUTC().AsDouble();
 //t_event_delta = t_event_start - t_run_start;
 //G4cout << "EVENT " << mc->GetID() << "; event_start_time run_start_time " << t_event_start << " " << t_run_start << G4endl; //debug
 //printf( "\nEVENT %d\nt_event_start\tt_run_start\tdifference\n%.25f\t%.25f\t%.25f\n", mc_event_id, t_event_start, t_run_start, t_event_delta );
@@ -520,11 +522,12 @@ void Gsim::MakeEvent(const G4Event* g4ev, DS::Root* ds) {
 	triggers += 1;
 	if ( rollingEnergy > 0.001 ) {
 	  G4cout << "Found new trigger " << triggers << "; previous trigger (wall start time, start time, end time, energy, quenched energy): " << wallTime << " " << start_time << " " << old_time << " " << rollingEnergy << " " << rollingEnergyQ << G4endl;
+	  printf( "EVENT %d\tt_event_start\t%.25f\t", mc_event_id, t_event_start ); //GOOD
+	  printf( "wallTime: %20.25f\tenergy: %e\tenergy_q: %e\n", wallTime, rollingEnergy, rollingEnergyQ ); //GOOD
 	}
 	rollingEnergy = 0.0;
 	rollingEnergyQ = 0.0;
         start_time = a[aIndex][0];
-//	wallTime = t_event_start + start_time - t_run_start;//mjd
 	wallTime = t_event_start + start_time*1.e-9;//mjd
       }
     old_time = a[aIndex][0];
@@ -540,8 +543,8 @@ void Gsim::MakeEvent(const G4Event* g4ev, DS::Root* ds) {
 //printf( "wallTime: %9.20f\n", wallTime);
 //printf( "t_event_start: %9.20f\n", t_event_start );
 //printf( "EVENT %d\tt_event_start\tt_run_start\tdifference\n%.25f\t%.25f\t%.25f\n", mc_event_id, t_event_start, t_run_start, t_event_delta );
-  printf( "EVENT %d\tt_event_start\t%.25f\t", mc_event_id, t_event_start );
-  printf( "wallTime: %20.25f\tenergy: %e\tenergy_q: %e\n", wallTime, rollingEnergy, rollingEnergyQ );
+  printf( "EVENT %d\tt_event_start\t%.25f\t", mc_event_id, t_event_start ); //GOOD
+  printf( "wallTime: %20.25f\tenergy: %e\tenergy_q: %e\n", wallTime, rollingEnergy, rollingEnergyQ ); //GOOD
 //G4cout << setprecision(18);
 //G4cout << endl << "EVENT " << mc_event_id << "\t" << "t_event_start" << "\t" << "t_run_start" << "\t" << "difference" << endl;
 //G4cout << t_event_start << "\t" << t_run_start << "\t" << t_event_delta << endl;

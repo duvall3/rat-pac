@@ -79,6 +79,8 @@ G4int GLG4Scint::fPhotonCount;
 
 G4double GLG4Scint::totEdep_scint = 0.0;			// mjd
 G4double GLG4Scint::totEdep_scint_quenched = 0.0;		// mjd
+std::vector <double> GLG4Scint::timeChargeElements; //mfb
+std::vector<std::vector <double> > GLG4Scint::timeChargeMatrix; //mfb
 
 /////////////////
 // Constructors
@@ -325,6 +327,10 @@ GLG4Scint::PostPostStepDoIt(const G4Track& aTrack, const G4Step& aStep) {
       totEdep_time = t0;
       scintCentroidSum +=
         QuenchedTotalEnergyDeposit * (x0 + p0*(0.5*aStep.GetStepLength()));
+      
+      // for debugging SimpleEnergyDAQ -- mjd and marc
+//    Int_t 
+//    G4cout << totEdep_scint << " " << totEdep_scint_quenched << " " << totEdep << " " << totEdep_quenched << " " << totEdep_time << G4endl;
 
       // Now we are done if we are not actually making photons here
       if (!doScintillation) {
@@ -337,6 +343,18 @@ GLG4Scint::PostPostStepDoIt(const G4Track& aTrack, const G4Step& aStep) {
          GetQuenchingFactor() *
          QuenchedTotalEnergyDeposit *
          (1.0 + birksConstant * (physicsEntry->ref_dE_dx)));
+
+      //mfb
+      timeChargeElements.push_back(totEdep_time);
+      timeChargeElements.push_back(MeanNumPhotons);
+      timeChargeElements.push_back(totEdep_scint);
+      timeChargeElements.push_back(totEdep_scint_quenched);
+      timeChargeElements.push_back(totEdep);
+      timeChargeElements.push_back(totEdep_quenched);
+      timeChargeElements.push_back(1.0);
+      //mfb
+      timeChargeMatrix.push_back(timeChargeElements);
+      timeChargeElements.resize(0);
 
       if (MeanNumPhotons <= 0.0) {
         goto PostStepDoIt_DONE;
