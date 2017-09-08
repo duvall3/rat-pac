@@ -4,7 +4,7 @@
 /glg4debug/glg4param omit_hadronic_processes 0
 
 /rat/db/set DETECTOR experiment "nulat_15"
-/rat/db/set DETECTOR geo_file "nulat_15/nulat.geo"
+/rat/db/set DETECTOR geo_file "nulat_15/nulat_15.geo"
 #/rat/db/load ./IBD.ratdb
 #/rat/db/load ./MATERIALS_Watchman.ratdb
 #/rat/db/load ./MATERIALS_test.ratdb

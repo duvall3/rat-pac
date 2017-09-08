@@ -1,8 +1,8 @@
 /control/execute init.mac
 #/control/execute vis.mac
-#/control/execute gen/ibd.mac
-#/control/execute gen/nugun.mac
-/control/execute gen/erica.mac
+/control/execute gen/ibd.mac
+#/control/execute gen/mugun.mac
+#/control/execute gen/erica.mac
 /control/shell echo "REMINDER: Set output filename before starting run!"
 
 /tracking/storeTrajectory 1
@@ -10,4 +10,4 @@
 #/tracking/storeParticleTrajectory anti_nu_e
 ### USE e+ "LOCATION" OR n0 START LOCATION AS VERTEX?? ###
 #/tracking/storeParticleTrajectory e+
-/tracking/storeParticleTrajectory neutron
+#/tracking/storeParticleTrajectory neutron

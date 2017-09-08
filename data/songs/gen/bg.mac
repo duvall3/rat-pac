@@ -7,7 +7,7 @@
 
 
 # using "external" generator for backgrounds
-/generator/add external paint:poisson:"backgrounds_1.dat"
+/generator/add external paint:poisson:"backgrounds_1_hepevt/backgrounds_1.dat"
 #/generator/pos/set 2.1 2.2 2.3
 /generator/pos/set 0.0 0.0 -700.0
 /generator/rate/set 173.35

@@ -1,6 +1,12 @@
 # erica.mac -- generator to match Erica's input
 
 /generator/add combo gun:point:poisson
-/generator/vtx/set neutron 0 0 1 0.01  # 10keV neutrons directed along the +z axis
-/generator/pos/set 0 -9450 0
-/generator/rate/set 1
+#/generator/vtx/set neutron 0 0 1 0.010  # 10keV neutrons directed along the +z axis
+#/generator/vtx/set neutron 0 0 1 0.004  # 4keV neutrons directed along the +z axis -- FOR MTC TESTING
+#/generator/vtx/set neutron 0 0 0 0.010  # 10keV neutrons directed isotropically
+#/generator/vtx/set neutron 0 0 0 100.  # 100MeV neutrons directed isotropically
+#/generator/vtx/set neutron 0 0 0 0.004  # 4keV neutrons directed isotropically
+/generator/vtx/set neutron 0 0 0 0.5  # 0.5MeV neutrons directed isotropically
+#/generator/pos/set 0 -9450 0
+/generator/pos/set 0 0 0 # moved tank to cave center
+/generator/rate/set 0.6 #Hz
