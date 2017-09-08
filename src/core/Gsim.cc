@@ -522,8 +522,10 @@ void Gsim::MakeEvent(const G4Event* g4ev, DS::Root* ds) {
 	triggers += 1;
 	if ( rollingEnergy > 0.001 ) {
 	  G4cout << "Found new trigger " << triggers << "; previous trigger (wall start time, start time, end time, energy, quenched energy): " << wallTime << " " << start_time << " " << old_time << " " << rollingEnergy << " " << rollingEnergyQ << G4endl;
-	  printf( "EVENT %d\tt_event_start\t%.25f\t", mc_event_id, t_event_start ); //GOOD
-	  printf( "wallTime: %20.25f\tenergy: %e\tenergy_q: %e\n", wallTime, rollingEnergy, rollingEnergyQ ); //GOOD
+// printf( "EVENT %d\tt_event_start\t%.25f\t", mc_event_id, t_event_start ); //GOOD
+// printf( "wallTime: %20.25f\tenergy: %e\tenergy_q: %e\n", wallTime, rollingEnergy, rollingEnergyQ ); //GOOD
+	  info << dformat( "EVENT %d\tt_event_start\t%.25f\t", mc_event_id, t_event_start ); //GOOD
+	  info << dformat( "wallTime: %20.25f\tenergy: %e\tenergy_q: %e\n", wallTime, rollingEnergy, rollingEnergyQ ); //GOOD
 	}
 	rollingEnergy = 0.0;
 	rollingEnergyQ = 0.0;
@@ -543,8 +545,10 @@ void Gsim::MakeEvent(const G4Event* g4ev, DS::Root* ds) {
 //printf( "wallTime: %9.20f\n", wallTime);
 //printf( "t_event_start: %9.20f\n", t_event_start );
 //printf( "EVENT %d\tt_event_start\tt_run_start\tdifference\n%.25f\t%.25f\t%.25f\n", mc_event_id, t_event_start, t_run_start, t_event_delta );
-  printf( "EVENT %d\tt_event_start\t%.25f\t", mc_event_id, t_event_start ); //GOOD
-  printf( "wallTime: %20.25f\tenergy: %e\tenergy_q: %e\n", wallTime, rollingEnergy, rollingEnergyQ ); //GOOD
+//printf( "EVENT %d\tt_event_start\t%.25f\t", mc_event_id, t_event_start ); //GOOD
+//printf( "wallTime: %20.25f\tenergy: %e\tenergy_q: %e\n", wallTime, rollingEnergy, rollingEnergyQ ); //GOOD
+  info << dformat( "EVENT %d\tt_event_start\t%.25f\t", mc_event_id, t_event_start ); //GOOD
+  info << dformat( "wallTime: %20.25f\tenergy: %e\tenergy_q: %e\n", wallTime, rollingEnergy, rollingEnergyQ ); //GOOD
 //G4cout << setprecision(18);
 //G4cout << endl << "EVENT " << mc_event_id << "\t" << "t_event_start" << "\t" << "t_run_start" << "\t" << "difference" << endl;
 //G4cout << t_event_start << "\t" << t_run_start << "\t" << t_event_delta << endl;
@@ -763,4 +767,5 @@ void Gsim::SetOpticalPhotonIDs(std::string particle_type, int trackID,
 }
 
 } // namespace RAT
+
 
