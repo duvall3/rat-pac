@@ -33,6 +33,7 @@ nCapAgents.sh "$FILENAME".n0.dat
 #plot_gammas_mfile.sh $FILENAME
 #n0_dat_to_sc.sh "$FILENAME".n0.dat
 n0_term_vols.sh "$FILENAME".n0.dat #"$FILENAME"
+awk '$1 ~ /EVENT/ {print $2"\t"$4"\t"$6"\t"$8"\t"$10}' "$FILENAME".log > "$FILENAME".rt # for SimpleEnergyDAQ2
 
 
 ## tidying up
