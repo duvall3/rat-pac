@@ -6,7 +6,11 @@
 /rat/db/set DETECTOR experiment "chooz"
 /rat/db/set DETECTOR geo_file "chooz/chooz.geo"
 /rat/db/load ./IBD.ratdb
-#/rat/db/load ./MATERIALS_Watchman.ratdb
+/rat/db/load ./MATERIALS_Watchman.ratdb ## NOTE: If found, .ratdb's will load even if commented out!!!
+
+# for materials testing
+/rat/db/load ../santa/MATERIALS_SANTA.ratdb
+/rat/db/load ../nulat/MATERIALS_NuLat.ratdb
 
 /run/numberOfThreads 4
 /run/initialize

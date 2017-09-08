@@ -1,8 +1,10 @@
 # mugun.mac -- muon gun
 
 /generator/add combo gun:point:poisson
-/generator/vtx/set mu- 0 0 1 10.0  # 10-MeV muons directed along the z-axis
-/generator/vtx/set gamma 0 0 1 2.2  # 2.2-MeV gammas directed along the z-axis
+#/generator/vtx/set mu- 0 0 1 10.0  # 10-MeV muons directed along the z-axis
+/generator/vtx/set e+ 0 0 1 2.0  # 2-MeV positrons directed along the z-axis
+#/generator/vtx/set e- 0 0 1 2.0  # 2-MeV electrons directed along the z-axis
+#/generator/vtx/set gamma 0 0 1 2.2  # 2.2-MeV gammas directed along the z-axis
 #/generator/pos/set 0 -9450 0 # center of tank
 /generator/pos/set 0 0 0 # center of tank
-/generator/rate/set 1
+/generator/rate/set 10
