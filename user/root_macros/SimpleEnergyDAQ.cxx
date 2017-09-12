@@ -106,7 +106,7 @@ TH1D* h3 = new TH1D("h3", "Burst Energy", nBinsEBP, ybinsEBP );
 TH1D* h4 = new TH1D("h4", "Quenched Burst Energy", nBinsEBP, ybinsEBP );
 TAxis* h3x = h3->GetXaxis();
 TAxis* h4x = h4->GetXaxis();
-h3x->SetTitle("Burst Energy (MeV), RED=Pure, BLUE=Quenched");
+h3x->SetTitle("Burst Energy (MeV), BLUE=Pure, RED=Quenched");
 h3->SetLineColor(kBlue);
 h4->SetLineColor(kRed);
 
@@ -256,7 +256,15 @@ h_ibdx->SetTitle("Interevent Times (s)");
 TAxis* h_ibdy = h_ibd->GetYaxis();
 h_ibdy->SetTitle("Energies (MeV)");
 // prompt
-TH2D* h_ibd2 = new TH2D("h_ibd2", "", nBinsEBP, xbinsEBP, nBinsEBP, 0., 10.);
+TH2D* h_ibd2 = new TH2D("h_ibd2", "IBD Trigger Results", nBinsEBP, xbinsEBP, nBinsEBP, 0., 10.);
+TAxis* h_ibd2x = h_ibd2->GetXaxis();
+TAxis* h_ibd2y = h_ibd2->GetYaxis();
+TAxis* h_ibd2z = h_ibd2->GetZaxis();
+h_ibd2x->SetTitle("Interevent Time (s)");
+h_ibd2y->SetTitle("Energy (MeV)");
+h_ibd2z->SetTitle("Entries");
+h_ibd2x->SetTitleOffset(1.5);
+h_ibd2y->SetTitleOffset(1.5);
 
 // fill
 for (( k = 0; k < T2->GetEntries(); k++ )) {
@@ -265,7 +273,7 @@ for (( k = 0; k < T2->GetEntries(); k++ )) {
 //h7->Fill(prompt_cand_eq);
 //h8->Fill(delayed_cand_eq);
   h_ibd->Fill(delayed_cand_t-prompt_cand_t, delayed_cand_eq);
-  h_ibd2->Fill(delayed_cand_t-prompt_cand_t, prompt_cand_eq);
+  h_ibd2->Fill(1e-7, prompt_cand_eq);
 }
 
 // draw
