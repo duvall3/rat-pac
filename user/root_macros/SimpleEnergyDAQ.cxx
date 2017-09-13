@@ -1,10 +1,10 @@
-// SimpleEnergyDAQ2 -- re-formulation & continuation of original SimpleEnergyDAQ
+// SimpleEnergyDAQ -- re-formulation & continuation of original SimpleEnergyDAQ
 // -- see header comments in SimpleEnergyDAQ_old for documentation
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 8/17 ~ //
 
 #include <math.h>
 
-void SimpleEnergyDAQ2( const char* filename ) {
+void SimpleEnergyDAQ( const char* filename ) {
 
 
 //// INIT AND FILL
@@ -75,7 +75,6 @@ for (Int_t m=1;m<=nBinsEBP;m++) {
 }
 // now ready to create the histogram:
 TH1D* h1 = new TH1D("h1", "Time Between Bursts (Interevent Time)", nBinsEBP, xbinsEBP );
-h1->SetLineWidth(2);
 h1->SetLineColor(kRed);
 TAxis* h1x = h1->GetXaxis();
 h1x->SetTitle("Interevent Time(s)");
@@ -86,10 +85,10 @@ h1y->SetTitle("Entries");
 // again, log-binning courtesy mfb:
 const Int_t nBinsEBP = 100;
 Double_t ymin = 1.e-3; //s
-Double_t ymay = 1.e3; //s
+Double_t ymax = 1.e3; //s
 Double_t logymin = TMath::Log10(ymin);
-Double_t logymay = TMath::Log10(ymay);
-Double_t binwidth = (logymay-logymin)/nBinsEBP;
+Double_t logymax = TMath::Log10(ymax);
+Double_t binwidth = (logymax-logymin)/nBinsEBP;
 Double_t ybinsEBP[nBinsEBP+1];
 ybinsEBP[0] = ymin;
 for ((m=1;m<=nBinsEBP;m++)) {
@@ -107,7 +106,7 @@ TH1D* h3 = new TH1D("h3", "Burst Energy", nBinsEBP, ybinsEBP );
 TH1D* h4 = new TH1D("h4", "Quenched Burst Energy", nBinsEBP, ybinsEBP );
 TAxis* h3x = h3->GetXaxis();
 TAxis* h4x = h4->GetXaxis();
-h3x->SetTitle("Burst Energy (MeV), RED=Pure, BLUE=Quenched");
+h3x->SetTitle("Burst Energy (MeV), BLUE=Pure, RED=Quenched");
 h3->SetLineColor(kBlue);
 h4->SetLineColor(kRed);
 
@@ -133,20 +132,25 @@ for (( k=0; k < num_bursts; k++ )) {
 
 // draw all histograms:
 TCanvas* c1 = new TCanvas("c1","c1");
+c1->Divide(2,2);
+c1->cd(1);
 h1->Draw();
-c1->SetLogx(1);
-TCanvas* c2 = new TCanvas("c2","c2");
+c1_1->SetLogx(1);
+c1->cd(4);
 h2->Draw("colz");
-c2->SetLogx(1);
-c2->SetLogz(1);
-TCanvas* c3 = new TCanvas("c3","c3");
+c1_4->SetLogx(1);
+c1_4->SetLogz(1);
+c1->cd(3);
 h3->Draw();
 h4->Draw("same");
-c3->SetLogx(1);
-TCanvas* c4 = new TCanvas("c4","c4");
+c1_3->SetLogx(1);
+c1->cd(2);
 h5->Draw("colz");
-c4->SetLogx(1);
-c4->SetLogz(1);
+//TPaveStats* ps5 = h5->GetListOfFunctions()->FindObject("stats");
+//ps5->SetX1NDC(ps5->GetX1NDC()-.05);
+//ps5->SetX2NDC(ps5->GetX2NDC()-.05);
+c1_2->SetLogx(1);
+c1_2->SetLogz(1);
 
 
 //// NEUTRINO TRIGGER
@@ -199,6 +203,93 @@ for (( k = 0; k < num_bursts; k++ )) {
   }
 } //end event loop
 cout << endl << "IBD Candidates: " << T2->GetEntries() << endl << endl;
+
+
+// PLOT NEUTRINO-CANDIDATE RESULTS
+
+// interevent times
+const Int_t nBinsEBP = 100;
+Double_t xmin = 1.e-7; //s
+Double_t xmax = 5.e-4; //s
+Double_t logxmin = TMath::Log10(xmin);
+Double_t logxmax = TMath::Log10(xmax);
+Double_t binwidth = (logxmax-logxmin)/nBinsEBP;
+Double_t xbinsEBP[nBinsEBP+1];
+xbinsEBP[0] = xmin;
+for (Int_t m=1;m<=nBinsEBP;m++) {
+ xbinsEBP[m] = TMath::Power(10,logxmin+m*binwidth);
+}
+TH1D* h6 = new TH1D("h6", "Interevent Time (s)", nBinsEBP, xbinsEBP);
+h6->SetLineColor(kRed);
+TAxis* h6x = h6->GetXaxis();
+h6x->SetTitle("Interevent Time (s)");
+TAxis* h6y = h6->GetYaxis();
+h6y->SetTitle("Entries");
+
+// energies
+const Int_t nBinsEBP = 100;
+Double_t ymin = 1.e-1; //s
+Double_t ymax = 1.e2; //s
+Double_t logymin = TMath::Log10(ymin);
+Double_t logymax = TMath::Log10(ymax);
+Double_t binwidth = (logymax-logymin)/nBinsEBP;
+Double_t ybinsEBP[nBinsEBP+1];
+ybinsEBP[0] = ymin;
+for ((m=1;m<=nBinsEBP;m++)) {
+ ybinsEBP[m] = TMath::Power(10,logymin+m*binwidth);
+}
+// prompt
+TH1D* h7 = new TH1D("h7", "Prompt & Delayed Energies (MeV)", nBinsEBP, ybinsEBP);
+h7->SetLineColor(kRed);
+TAxis* h7x = h7->GetXaxis();
+h7x->SetTitle("Energy (MeV)");
+TAxis* h7y = h7->GetYaxis();
+h7y->SetTitle("Entries");
+// delayed
+TH1D* h8 = new TH1D("h8", "", nBinsEBP, ybinsEBP);
+
+// or maybe just both?
+// delayed
+TH2D* h_ibd = new TH2D("h_ibd", "IBD Trigger Results", nBinsEBP, xbinsEBP, nBinsEBP, 0., 10.);
+TAxis* h_ibdx = h_ibd->GetXaxis();
+h_ibdx->SetTitle("Interevent Times (s)");
+TAxis* h_ibdy = h_ibd->GetYaxis();
+h_ibdy->SetTitle("Energies (MeV)");
+// prompt
+TH2D* h_ibd2 = new TH2D("h_ibd2", "IBD Trigger Results", nBinsEBP, xbinsEBP, nBinsEBP, 0., 10.);
+TAxis* h_ibd2x = h_ibd2->GetXaxis();
+TAxis* h_ibd2y = h_ibd2->GetYaxis();
+TAxis* h_ibd2z = h_ibd2->GetZaxis();
+h_ibd2x->SetTitle("Interevent Time (s)");
+h_ibd2y->SetTitle("Energy (MeV)");
+h_ibd2z->SetTitle("Entries");
+h_ibd2x->SetTitleOffset(1.5);
+h_ibd2y->SetTitleOffset(1.5);
+
+// fill
+for (( k = 0; k < T2->GetEntries(); k++ )) {
+  T2->GetEntry(k);
+//h6->Fill(delayed_cand_t-prompt_cand_t);
+//h7->Fill(prompt_cand_eq);
+//h8->Fill(delayed_cand_eq);
+  h_ibd->Fill(delayed_cand_t-prompt_cand_t, delayed_cand_eq);
+  h_ibd2->Fill(1e-7, prompt_cand_eq);
+}
+
+// draw
+TCanvas* c2 = new TCanvas("c2","c2");
+h_ibd2->Draw("lego3");
+h_ibd->Draw("samelego");
+c2->SetLogx(1);
+c2->SetLogy(0);
+//c2->Divide(1,2);
+//c2_1->cd();
+//h6->Draw();
+//c2_1->SetLogx(1);
+//c2_2->cd();
+//h7->Draw();
+//h8->Draw("same");
+//c2_2->SetLogx(1);
 
 
 // all pau!   )
