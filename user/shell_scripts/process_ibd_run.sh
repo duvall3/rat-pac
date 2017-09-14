@@ -8,6 +8,7 @@ FILENAME=$1
 NUM_EVENTS=$2
 
 # process IBD information
+awk '$1 ~ /EVENT/ {print $2"\t"$4"\t"$6"\t"$8"\t"$10}' "$FILENAME".log > "$FILENAME".rt
 ROOTFILE="$FILENAME".root
 ROOTCOMMAND=$(printf "'IBD.cxx(\"$ROOTFILE\",$NUM_EVENTS)'")
 eval "root -q -l -b $ROOTCOMMAND > \"$FILENAME\".ibd.dat"
@@ -15,7 +16,6 @@ ibd_dat_to_txt.sh "$FILENAME".ibd.dat | column -t > "$FILENAME".txt
 nCapAgents_ibd.sh "$FILENAME".ibd.dat
 ibd_term_vols.sh "$FILENAME".ibd.dat
 #plot_gammas_mfile.sh $FILENAME
-awk '$1 ~ /EVENT/ {print $2"\t"$4"\t"$6"\t"$8"\t"$10}' "$FILENAME".log > "$FILENAME".rt
 
 # make output directory & move all the new output files there
 mkdir $FILENAME
