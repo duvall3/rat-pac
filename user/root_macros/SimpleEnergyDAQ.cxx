@@ -123,11 +123,13 @@ h5y->SetTitle("Energy_Q (MeV)");
 // fill all histograms:
 for (( k=0; k < num_bursts; k++ )) {
   T->GetEntry(k);
-  h1->Fill(interevent_time);
-  h2->Fill(interevent_time, energy_q); // time in s, energy in MeV
-  h3->Fill(energy);
-  h4->Fill(energy_q);
-  h5->Fill(interevent_time, energy);
+  if ( energy_q > 0 ) {
+    h1->Fill(interevent_time);
+    h2->Fill(interevent_time, energy_q); // time in s, energy in MeV
+    h3->Fill(energy);
+    h4->Fill(energy_q);
+    h5->Fill(interevent_time, energy);
+  }
 }
 
 // draw all histograms:
@@ -166,12 +168,12 @@ T2->Branch("prompt_cand_eq", &prompt_cand_eq, "prompt_cand_eq/D");
 T2->Branch("delayed_cand_t", &delayed_cand_t, "delayed_cand_t/D");
 T2->Branch("delayed_cand_eq", &delayed_cand_eq, "delayed_cand_eq/D");
 
-// set cut parameters
+// set cut parameters //thresholds
 trigger_reset = 800.e-6;
 deltaT_low = 100.e-9;
 deltaT_high = 400.e-6;
-prompt_low = 0.00;
-//prompt_low = 1.00;
+//prompt_low = 0.00;
+prompt_low = 1.00;
 prompt_high = 100.;
 delayed_low = 0.00;
 //delayed_low = 1.00;

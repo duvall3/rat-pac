@@ -18,7 +18,7 @@ fi
 
 
 ## process neutron-capture information
-awk '$1 ~ /EVENT/ {print $2"\t"$4"\t"$6"\t"$8"\t"$10}' "$FILENAME".log > "$FILENAME".rt # for SimpleEnergyDAQ
+awk '$1~/EVENT/ && ($6>0 || $8>0 || $10>0) {print $2"\t"$4"\t"$6"\t"$8"\t"$10}' "$FILENAME".log > "$FILENAME".rt # for SimpleEnergyDAQ
 # ROOT processing
 if [ $ROOT_TF = true ]; then
   ROOTFILE="$FILENAME".root
