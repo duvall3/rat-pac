@@ -115,14 +115,13 @@ for (int event=1; event<=number_of_events; event++) { // event loop
     } else { // no problem children
     } // end if
 
-    
-
   } else { // track terminated by some other process
-    if ( !n->GetProcess().contains("Transportation") ) {
-      cerr << "Warning: n0 track for event " << event << " terminated by " << n->GetProcess() << " instead of nCapture." << endl;
-      cout << "Warning: n0 track for event " << event << " terminated by " << n->GetProcess() << " instead of nCapture." << endl;
-  //  printf( "Endpoint:\t%f %f %f\n", n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
-    }
+      TString other_proc = n->GetProcess();
+      if ( ! other_proc.contains("Transportation") ) {
+	cerr << "Warning: n0 track for event " << event << " terminated by " << n->GetProcess() << " instead of nCapture." << endl;
+	cout << "Warning: n0 track for event " << event << " terminated by " << n->GetProcess() << " instead of nCapture." << endl;
+    //  printf( "Endpoint:\t%f %f %f\n", n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z() );
+      }
 
   } // end if
     
