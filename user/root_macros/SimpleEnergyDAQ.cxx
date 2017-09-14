@@ -131,7 +131,7 @@ for (( k=0; k < num_bursts; k++ )) {
 }
 
 // draw all histograms:
-TCanvas* c1 = new TCanvas("c1","c1");
+TCanvas* c1 = new TCanvas("c1",filename, 70, 60, 1500, 800);
 c1->Divide(2,2);
 c1->cd(1);
 h1->Draw();
@@ -277,9 +277,11 @@ for (( k = 0; k < T2->GetEntries(); k++ )) {
 }
 
 // draw
-TCanvas* c2 = new TCanvas("c2","c2");
+TCanvas* c2 = new TCanvas("c2",filename, 70, 60, 1500, 800);
 h_ibd2->Draw("lego3");
 h_ibd->Draw("samelego");
+c2->SetTheta(35);
+c2->SetPhi(265);
 c2->SetLogx(1);
 c2->SetLogy(0);
 //c2->Divide(1,2);
