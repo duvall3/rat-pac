@@ -97,8 +97,8 @@ for ((m=1;m<=nBinsEBP;m++)) {
 //now ready to create the histogram:
 TH2D* h2 = new TH2D("h2", "Quenched Energy vs. Interevent Time", nBinsEBP, xbinsEBP, nBinsEBP, ybinsEBP );
 TAxis* h2x = h2->GetXaxis();
-h2x->SetTitle("Interevent Time (s)");
 TAxis* h2y = h2->GetYaxis();
+h2x->SetTitle("Interevent Time (s)");
 h2y->SetTitle("Energy_Q (MeV)");
 
 // 1D histogram of energies and quenched energies
@@ -113,8 +113,8 @@ h4->SetLineColor(kRed);
 // 2D histogram of *unquenched* energies and deltaT's:
 TH2D* h5 = new TH2D("h5", "Unquenched Energy vs. Interevent Time", nBinsEBP, xbinsEBP, nBinsEBP, ybinsEBP );
 TAxis* h5x = h5->GetXaxis();
-h5x->SetTitle("Interevent Time (s)");
 TAxis* h5y = h5->GetYaxis();
+h5x->SetTitle("Interevent Time (s)");
 h5y->SetTitle("Energy_Q (MeV)");
 
 
@@ -206,7 +206,7 @@ cout << endl << "IBD Candidates: " << T2->GetEntries() << endl << endl;
 
 // PLOT NEUTRINO-CANDIDATE RESULTS
 
-// interevent times
+// interevent time bins
 const Int_t nBinsEBP = 100;
 Double_t xmin = 1.e-7; //s
 Double_t xmax = 5.e-4; //s
@@ -219,10 +219,10 @@ for (Int_t m=1;m<=nBinsEBP;m++) {
  xbinsEBP[m] = TMath::Power(10,logxmin+m*binwidth);
 }
 
-// energies
+// energy bins
 const Int_t nBinsEBP = 100;
-Double_t ymin = 1.e-1; //s
-Double_t ymax = 1.e2; //s
+Double_t ymin = 1.e-1; //MeV
+Double_t ymax = 1.e2; //MeV
 Double_t logymin = TMath::Log10(ymin);
 Double_t logymax = TMath::Log10(ymax);
 Double_t binwidth = (logymax-logymin)/nBinsEBP;
@@ -232,14 +232,14 @@ for ((m=1;m<=nBinsEBP;m++)) {
  ybinsEBP[m] = TMath::Power(10,logymin+m*binwidth);
 }
 
-// or maybe just both?
-// delayed
+// delayed event histogram
 TH2D* h_ibd = new TH2D("h_ibd", "IBD Trigger Results", nBinsEBP, xbinsEBP, nBinsEBP, 0., 10.);
 TAxis* h_ibdx = h_ibd->GetXaxis();
-h_ibdx->SetTitle("Interevent Times (s)");
 TAxis* h_ibdy = h_ibd->GetYaxis();
+h_ibdx->SetTitle("Interevent Times (s)");
 h_ibdy->SetTitle("Energies (MeV)");
-// prompt
+
+// prompt event histogram
 TH2D* h_ibd2 = new TH2D("h_ibd2", "IBD Trigger Results", nBinsEBP, xbinsEBP, nBinsEBP, 0., 10.);
 TAxis* h_ibd2x = h_ibd2->GetXaxis();
 TAxis* h_ibd2y = h_ibd2->GetYaxis();
@@ -250,14 +250,14 @@ h_ibd2z->SetTitle("Entries");
 h_ibd2x->SetTitleOffset(1.5);
 h_ibd2y->SetTitleOffset(1.5);
 
-// fill
+// fill histograms
 for (( k = 0; k < T2->GetEntries(); k++ )) {
   T2->GetEntry(k);
   h_ibd->Fill(delayed_cand_t-prompt_cand_t, delayed_cand_eq);
   h_ibd2->Fill(xmin, prompt_cand_eq);
 }
 
-// draw
+// draw histograms
 TCanvas* c2 = new TCanvas("c2",filename, 70, 60, 1500, 800);
 h_ibd2->Draw("lego3");
 h_ibd->Draw("samelego");
