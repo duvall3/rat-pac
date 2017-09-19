@@ -97,8 +97,8 @@ for ((m=1;m<=nBinsEBP;m++)) {
 //now ready to create the histogram:
 TH2D* h2 = new TH2D("h2", "Quenched Energy vs. Interevent Time", nBinsEBP, xbinsEBP, nBinsEBP, ybinsEBP );
 TAxis* h2x = h2->GetXaxis();
-h2x->SetTitle("Interevent Time (s)");
 TAxis* h2y = h2->GetYaxis();
+h2x->SetTitle("Interevent Time (s)");
 h2y->SetTitle("Energy_Q (MeV)");
 
 // 1D histogram of energies and quenched energies
@@ -113,8 +113,8 @@ h4->SetLineColor(kRed);
 // 2D histogram of *unquenched* energies and deltaT's:
 TH2D* h5 = new TH2D("h5", "Unquenched Energy vs. Interevent Time", nBinsEBP, xbinsEBP, nBinsEBP, ybinsEBP );
 TAxis* h5x = h5->GetXaxis();
-h5x->SetTitle("Interevent Time (s)");
 TAxis* h5y = h5->GetYaxis();
+h5x->SetTitle("Interevent Time (s)");
 h5y->SetTitle("Energy_Q (MeV)");
 
 
@@ -123,11 +123,13 @@ h5y->SetTitle("Energy_Q (MeV)");
 // fill all histograms:
 for (( k=0; k < num_bursts; k++ )) {
   T->GetEntry(k);
-  h1->Fill(interevent_time);
-  h2->Fill(interevent_time, energy_q); // time in s, energy in MeV
-  h3->Fill(energy);
-  h4->Fill(energy_q);
-  h5->Fill(interevent_time, energy);
+  if ( energy_q > 0 ) {
+    h1->Fill(interevent_time);
+    h2->Fill(interevent_time, energy_q); // time in s, energy in MeV
+    h3->Fill(energy);
+    h4->Fill(energy_q);
+    h5->Fill(interevent_time, energy);
+  }
 }
 
 // draw all histograms:
@@ -146,9 +148,6 @@ h4->Draw("same");
 c1_3->SetLogx(1);
 c1->cd(2);
 h5->Draw("colz");
-//TPaveStats* ps5 = h5->GetListOfFunctions()->FindObject("stats");
-//ps5->SetX1NDC(ps5->GetX1NDC()-.05);
-//ps5->SetX2NDC(ps5->GetX2NDC()-.05);
 c1_2->SetLogx(1);
 c1_2->SetLogz(1);
 
@@ -166,7 +165,7 @@ T2->Branch("prompt_cand_eq", &prompt_cand_eq, "prompt_cand_eq/D");
 T2->Branch("delayed_cand_t", &delayed_cand_t, "delayed_cand_t/D");
 T2->Branch("delayed_cand_eq", &delayed_cand_eq, "delayed_cand_eq/D");
 
-// set cut parameters
+// set cut parameters //thresholds
 trigger_reset = 800.e-6;
 deltaT_low = 100.e-9;
 deltaT_high = 400.e-6;
@@ -197,7 +196,7 @@ for (( k = 0; k < num_bursts; k++ )) {
       }
     }
   }
-  // if candidate burst pair is found, increment IBD candidate counter and add burst times and energies to tree:
+  // if candidate burst pair is found, add burst times and energies to tree:
   if ( prompt_tf & delayed_tf ) {
     T2->Fill();
   }
@@ -207,7 +206,7 @@ cout << endl << "IBD Candidates: " << T2->GetEntries() << endl << endl;
 
 // PLOT NEUTRINO-CANDIDATE RESULTS
 
-// interevent times
+// interevent time bins
 const Int_t nBinsEBP = 100;
 Double_t xmin = 1.e-7; //s
 Double_t xmax = 5.e-4; //s
@@ -219,17 +218,11 @@ xbinsEBP[0] = xmin;
 for (Int_t m=1;m<=nBinsEBP;m++) {
  xbinsEBP[m] = TMath::Power(10,logxmin+m*binwidth);
 }
-TH1D* h6 = new TH1D("h6", "Interevent Time (s)", nBinsEBP, xbinsEBP);
-h6->SetLineColor(kRed);
-TAxis* h6x = h6->GetXaxis();
-h6x->SetTitle("Interevent Time (s)");
-TAxis* h6y = h6->GetYaxis();
-h6y->SetTitle("Entries");
 
-// energies
+// energy bins
 const Int_t nBinsEBP = 100;
-Double_t ymin = 1.e-1; //s
-Double_t ymax = 1.e2; //s
+Double_t ymin = 1.e-1; //MeV
+Double_t ymax = 1.e2; //MeV
 Double_t logymin = TMath::Log10(ymin);
 Double_t logymax = TMath::Log10(ymax);
 Double_t binwidth = (logymax-logymin)/nBinsEBP;
@@ -238,24 +231,15 @@ ybinsEBP[0] = ymin;
 for ((m=1;m<=nBinsEBP;m++)) {
  ybinsEBP[m] = TMath::Power(10,logymin+m*binwidth);
 }
-// prompt
-TH1D* h7 = new TH1D("h7", "Prompt & Delayed Energies (MeV)", nBinsEBP, ybinsEBP);
-h7->SetLineColor(kRed);
-TAxis* h7x = h7->GetXaxis();
-h7x->SetTitle("Energy (MeV)");
-TAxis* h7y = h7->GetYaxis();
-h7y->SetTitle("Entries");
-// delayed
-TH1D* h8 = new TH1D("h8", "", nBinsEBP, ybinsEBP);
 
-// or maybe just both?
-// delayed
+// delayed event histogram
 TH2D* h_ibd = new TH2D("h_ibd", "IBD Trigger Results", nBinsEBP, xbinsEBP, nBinsEBP, 0., 10.);
 TAxis* h_ibdx = h_ibd->GetXaxis();
-h_ibdx->SetTitle("Interevent Times (s)");
 TAxis* h_ibdy = h_ibd->GetYaxis();
+h_ibdx->SetTitle("Interevent Times (s)");
 h_ibdy->SetTitle("Energies (MeV)");
-// prompt
+
+// prompt event histogram
 TH2D* h_ibd2 = new TH2D("h_ibd2", "IBD Trigger Results", nBinsEBP, xbinsEBP, nBinsEBP, 0., 10.);
 TAxis* h_ibd2x = h_ibd2->GetXaxis();
 TAxis* h_ibd2y = h_ibd2->GetYaxis();
@@ -266,17 +250,14 @@ h_ibd2z->SetTitle("Entries");
 h_ibd2x->SetTitleOffset(1.5);
 h_ibd2y->SetTitleOffset(1.5);
 
-// fill
+// fill histograms
 for (( k = 0; k < T2->GetEntries(); k++ )) {
   T2->GetEntry(k);
-//h6->Fill(delayed_cand_t-prompt_cand_t);
-//h7->Fill(prompt_cand_eq);
-//h8->Fill(delayed_cand_eq);
   h_ibd->Fill(delayed_cand_t-prompt_cand_t, delayed_cand_eq);
-  h_ibd2->Fill(1e-7, prompt_cand_eq);
+  h_ibd2->Fill(xmin, prompt_cand_eq);
 }
 
-// draw
+// draw histograms
 TCanvas* c2 = new TCanvas("c2",filename, 70, 60, 1500, 800);
 h_ibd2->Draw("lego3");
 h_ibd->Draw("samelego");
@@ -284,14 +265,6 @@ c2->SetTheta(35);
 c2->SetPhi(265);
 c2->SetLogx(1);
 c2->SetLogy(0);
-//c2->Divide(1,2);
-//c2_1->cd();
-//h6->Draw();
-//c2_1->SetLogx(1);
-//c2_2->cd();
-//h7->Draw();
-//h8->Draw("same");
-//c2_2->SetLogx(1);
 
 
 // all pau!   )
