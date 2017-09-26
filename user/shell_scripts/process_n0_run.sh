@@ -22,7 +22,7 @@ awk '$1~/EVENT/ && ($6>0 || $8>0 || $10>0) {print $2"\t"$4"\t"$6"\t"$8"\t"$10}' 
 # ROOT processing
 if [ $ROOT_TF = true ]; then
   ROOTFILE="$FILENAME".root
-  ROOTCOMMAND=$(printf "'NeutronCaptures.cxx(\"$ROOTFILE\",$NUM_EVENTS)'")
+  ROOTCOMMAND=$(printf "'$RATROOT/user/root_macros/NeutronCaptures.cxx(\"$ROOTFILE\",$NUM_EVENTS)'")
   eval "root -q -l -b $ROOTCOMMAND > \"$FILENAME\".n0.dat"
 elif [ $ROOT_TF = false ]; then : # do nothing
 else
