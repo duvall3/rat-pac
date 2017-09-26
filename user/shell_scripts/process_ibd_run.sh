@@ -10,7 +10,7 @@ NUM_EVENTS=$2
 # process IBD information
 awk '$1 ~ /EVENT/ && ( $6>0 || $8>0 || $10>0 ) {print $2"\t"$4"\t"$6"\t"$8"\t"$10}' "$FILENAME".log > "$FILENAME".rt
 ROOTFILE="$FILENAME".root
-ROOTCOMMAND=$(printf "'IBD.cxx(\"$ROOTFILE\",$NUM_EVENTS)'")
+ROOTCOMMAND=$(printf "'$RATROOT/user/root_macros/IBD.cxx(\"$ROOTFILE\",$NUM_EVENTS)'")
 eval "root -q -l -b $ROOTCOMMAND > \"$FILENAME\".ibd.dat"
 ibd_dat_to_txt.sh "$FILENAME".ibd.dat | column -t > "$FILENAME".txt
 nCapAgents_ibd.sh "$FILENAME".ibd.dat
