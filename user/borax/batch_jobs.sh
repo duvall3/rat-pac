@@ -27,7 +27,7 @@ mkdir $BATCH_NAME
 
 for (( k=0; k<$NUMBER_OF_JOBS; k++ )) {
   
-  JOB_NAME=$BATCH_NAME"_"$k
+  JOB_NAME=$BATCH_NAME"_"$k"-of-"$NUMBER_OF_JOBS
   LOG_NAME=$JOB_NAME".log"
 
   echo -e "\
