@@ -35,8 +35,8 @@ for (( k=0; k<$NUMBER_OF_JOBS; k++ )) {
 #MSUB -N $JOB_NAME					 	# name of job
 #MSUB -A adg							# sets bank account
 #MSUB -l nodes=1:ppn=1,walltime=23:59:59,partition=borax	# uses 1 node
-#MSUB -d $RATROOT/data/$EXPERIMENT/
-#MSUB -o $RATROOT/data/$EXPERIMENT/$LOG_NAME
+#MSUB -d $RATROOT/data/$EXPERIMENT/				# sets working directory
+#MSUB -o $RATROOT/data/$EXPERIMENT/$LOG_NAME			# sets outfile
 #MSUB -q pbatch							# pool
 #MSUB								# no more psub commands
 
