@@ -47,8 +47,7 @@ export G4NEUTRONHP_USE_ONLY_PHOTONEVAPORATION=1
 
 $RATROOT/user/shell_scripts/ratrun.sh $JOB_NAME $EVENTS_PER_JOB neutron
 
-# all pau!   )
-exit 0" > $BATCH_NAME/$JOB_NAME".sh"
+# all pau!   )" > $BATCH_NAME/$JOB_NAME".sh"
 
 }
 
