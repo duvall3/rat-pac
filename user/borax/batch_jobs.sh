@@ -25,7 +25,7 @@ EVENTS_PER_JOB=$4
 
 mkdir $BATCH_NAME
 
-for (( k=0; k< $NUMBER_OF_JOBS; k++ )) {
+for (( k=0; k < $NUMBER_OF_JOBS; k++ )) {
   
   JOB_NAME=$BATCH_NAME"_"$k
   LOG_NAME=$JOB_NAME".log"
