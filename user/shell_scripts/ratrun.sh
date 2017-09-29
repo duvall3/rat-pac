@@ -46,9 +46,10 @@ fi
 printf "\n\n### Beginning $RUN_TYPE run...\n\n"
 
 # create new run.mac
+ROOTFILE="$FILENAME".root
 echo "\
 /control/execute setup.mac
-/rat/procset file \"$FILENAME.root\"
+/rat/procset file \"$ROOTFILE\"
 /rat/proc count
 /rat/procset update 1000
 /run/beamOn $NUM_EVENTS\
