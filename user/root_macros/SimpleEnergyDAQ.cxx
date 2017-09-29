@@ -204,7 +204,7 @@ for (( k = 0; k < num_bursts; k++ )) {
 cout << endl << "IBD Candidates: " << T2->GetEntries() << endl << endl;
 
 
-// PLOT NEUTRINO-CANDIDATE RESULTS
+//// PLOT NEUTRINO-CANDIDATE RESULTS
 
 // interevent time bins
 const Int_t nBinsEBP = 100;
@@ -266,7 +266,15 @@ c2->SetPhi(265);
 c2->SetLogx(1);
 c2->SetLogy(0);
 
+// save plots
+TString basename, savename1, savename2;
+basename = filename(0,filename.Index(".root"));
+savename1 = basename+"_bursts.png";
+savename2 = baename+"_nu-trg.png";
+c1->Save(savename1);
+c2->Save(savename2);
 
-// all pau!   )
+
+//// all pau!   )
 return;
 }
