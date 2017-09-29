@@ -8,7 +8,7 @@ FILENAME=$1
 NUM_EVENTS=$2
 
 # process IBD information
-awk '$1 ~ /EVENT/ && ( $6>0 || $8>0 || $10>0 ) {print $2"\t"$4"\t"$6"\t"$8"\t"$10}' "$FILENAME".log > "$FILENAME".rt
+awk '$1 ~ /EVENT/ && ( $6>0 || $8>0 || $10>0 ) {print $2"\t"$4"\t"$6"\t"$8"\t"$10"\t"$12"\t"$14"\t"$16}' "$FILENAME".log > "$FILENAME".rt
 ROOTFILE="$FILENAME".root
 ROOTCOMMAND=$(printf "'$RATROOT/user/root_macros/IBD.cxx(\"$ROOTFILE\",$NUM_EVENTS)'")
 eval "root -q -l -b $ROOTCOMMAND > \"$FILENAME\".ibd.dat"

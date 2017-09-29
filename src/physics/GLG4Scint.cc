@@ -352,6 +352,10 @@ GLG4Scint::PostPostStepDoIt(const G4Track& aTrack, const G4Step& aStep) {
       timeChargeElements.push_back(totEdep);
       timeChargeElements.push_back(totEdep_quenched);
       timeChargeElements.push_back(1.0);
+      //mjd
+      timeChargeElements.push_back(x0.x());
+      timeChargeElements.push_back(x0.y());
+      timeChargeElements.push_back(x0.z());
       //mfb
       timeChargeMatrix.push_back(timeChargeElements);
       timeChargeElements.resize(0);

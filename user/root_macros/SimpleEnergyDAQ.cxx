@@ -10,6 +10,8 @@ void SimpleEnergyDAQ( const char* filename ) {
 //// INIT AND FILL
 
 // init
+TString FileName;
+FileName = filename;
 gStyle->SetHistLineWidth(2);
 gStyle->SetHistLineColor(kBlue);
 gStyle->SetOptLogy(true);
@@ -17,15 +19,18 @@ Int_t k(0);
 
 // create tree, read ASCII data, set branch addresses
 TTree* T = new TTree("T","T");
-T->ReadFile( filename, "event/I:event_time/D:wall_time/D:energy/D:energy_q/D" );
+T->ReadFile( filename, "event/I:event_time/D:wall_time/D:energy/D:energy_q/D:x/D:y/D:z/D" );
 Long64_t num_bursts = T->GetEntries();
 Int_t event;
-Double_t event_time, wall_time, energy, energy_q;
+Double_t event_time, wall_time, energy, energy_q, x, y, z;
 T->SetBranchAddress( "event", &event );
 T->SetBranchAddress( "event_time", &event_time );
 T->SetBranchAddress( "wall_time", &wall_time );
 T->SetBranchAddress( "energy", &energy );
 T->SetBranchAddress( "energy_q", &energy_q );
+T->SetBranchAddress( "x", &x );
+T->SetBranchAddress( "y", &y );
+T->SetBranchAddress( "z", &z );
 
 // create and address new branches 
 Double_t run_start, interevent_time, event_time_adj, wall_time_adj;
@@ -160,10 +165,18 @@ Bool_t prompt_tf, delayed_tf;
 Double_t deltaT_low, deltaT_high, trigger_reset;
 Double_t prompt_low, prompt_high, delayed_low, delayed_high;
 Double_t prompt_cand_t, prompt_cand_eq, delayed_cand_t, delayed_cand_eq;
+Double_t prompt_cand_x, prompt_cand_y, prompt_cand_z;
+Double_t delayed_cand_x, delayed_cand_y, delayed_cand_z;
 T2->Branch("prompt_cand_t", &prompt_cand_t, "prompt_cand_t/D");
 T2->Branch("prompt_cand_eq", &prompt_cand_eq, "prompt_cand_eq/D");
 T2->Branch("delayed_cand_t", &delayed_cand_t, "delayed_cand_t/D");
 T2->Branch("delayed_cand_eq", &delayed_cand_eq, "delayed_cand_eq/D");
+T2->Branch("prompt_cand_x", &prompt_cand_x, "prompt_cand_x/D");
+T2->Branch("prompt_cand_y", &prompt_cand_y, "prompt_cand_y/D");
+T2->Branch("prompt_cand_z", &prompt_cand_z, "prompt_cand_z/D");
+T2->Branch("delayed_cand_x", &delayed_cand_x, "delayed_cand_x/D");
+T2->Branch("delayed_cand_y", &delayed_cand_y, "delayed_cand_y/D");
+T2->Branch("delayed_cand_z", &delayed_cand_z, "delayed_cand_z/D");
 
 // set cut parameters //thresholds
 trigger_reset = 800.e-6;
@@ -186,6 +199,9 @@ for (( k = 0; k < num_bursts; k++ )) {
     prompt_tf = true;
     prompt_cand_t = wall_time_adj;
     prompt_cand_eq = energy_q;
+    prompt_cand_x = x;
+    prompt_cand_y = y;
+    prompt_cand_z = z;
     // look for delayed:
     if ( k < num_bursts-1 ) {
       T->GetEntry(k+1);
@@ -193,6 +209,9 @@ for (( k = 0; k < num_bursts; k++ )) {
         delayed_tf = true;
 	delayed_cand_t = wall_time_adj;
 	delayed_cand_eq = energy_q;
+	delayed_cand_x = x;
+	delayed_cand_y = y;
+	delayed_cand_z = z;
       }
     }
   }
@@ -266,13 +285,36 @@ c2->SetPhi(265);
 c2->SetLogx(1);
 c2->SetLogy(0);
 
+// position plot
+// prompt
+TCanvas* c3 = new TCanvas("c3",filename, 70, 60, 800, 800);
+c3->SetLogy(false);
+T2->Draw("prompt_cand_x:prompt_cand_y:prompt_cand_z>>hprompt");
+TH3F* h_prompt = (TH3F*)gDirectory->Get("hprompt");
+h_prompt->SetMarkerColor(kRed);
+h_prompt->SetMarkerStyle(4);
+h_prompt->GetXaxis()->SetLimits(-600,600);
+h_prompt->GetYaxis()->SetLimits(-600,600);
+h_prompt->GetZaxis()->SetLimits(-600,600);
+// delayed
+T2->Draw("delayed_cand_x:delayed_cand_y:delayed_cand_z>>hdelayed","","same");
+TH3F* h_delayed = (TH3F*)gDirectory->Get("hdelayed");
+h_delayed->SetMarkerColor(kBlue);
+h_delayed->SetMarkerStyle(5);
+// draw
+h_prompt->Draw();
+h_delayed->Draw("same");
+
+
 // save plots
 TString basename, savename1, savename2;
-basename = filename(0,filename.Index(".root"));
+basename = FileName(0,FileName.Index(".rt"));
 savename1 = basename+"_bursts.png";
-savename2 = baename+"_nu-trg.png";
-c1->Save(savename1);
-c2->Save(savename2);
+savename2 = basename+"_nu-trg.png";
+savename3 = basename+"_pd-xyz.png";
+c1->SaveAs(savename1);
+c2->SaveAs(savename2);
+c3->SaveAs(savename3);
 
 
 //// all pau!   )
