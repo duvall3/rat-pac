@@ -305,7 +305,6 @@ h_delayed->SetMarkerStyle(5);
 h_prompt->Draw();
 h_delayed->Draw("same");
 
-
 // save plots
 TString basename, savename1, savename2, savename3;
 basename = FileName(0,FileName.Index(".rt"));
