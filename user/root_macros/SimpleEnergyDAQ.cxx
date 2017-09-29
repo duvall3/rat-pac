@@ -307,7 +307,7 @@ h_delayed->Draw("same");
 
 
 // save plots
-TString basename, savename1, savename2;
+TString basename, savename1, savename2, savename3;
 basename = FileName(0,FileName.Index(".rt"));
 savename1 = basename+"_bursts.png";
 savename2 = basename+"_nu-trg.png";
