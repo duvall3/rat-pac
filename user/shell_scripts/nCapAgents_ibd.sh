@@ -32,8 +32,8 @@ if [ -e ./$OUTPUTFILE.cap -o -e ./gam ]; then
 # fi
 fi
 
-# make folder for $agent.gam files
-mkdir gam
+## make folder for $agent.gam files
+#mkdir gam
 
 # check for 'awk' & 'bc' programs
 if [ $(which bc) ]; then isbc=true
@@ -63,7 +63,7 @@ agent_names=( $( $awkprogram '$0 ~ /neutron Capture:/ {print $3}' $1 | sort | un
 k1=0
 for agent in ${agent_names[*]}; do
   agent_totals[$k1]=$(grep $agent $1 | wc -l)
-  $awkprogram -v agent=$agent '$3 ~ agent {printf $3"\t"; getline; printf $3"\t"; getline; print $5}' $1 > ./gam/$agent.gam
+  #$awkprogram -v agent=$agent '$3 ~ agent {printf $3"\t"; getline; printf $3"\t"; getline; print $5}' $1 > ./gam/$agent.gam
   if [ $isbc = true ]; then agent_pcts[$k1]=$(echo "${agent_totals[$k1]} / $total_captures * 100" | bc -l); fi
   echo "$agent data complete" #debugging
   ((k1++))
