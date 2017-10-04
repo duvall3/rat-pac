@@ -42,6 +42,12 @@ if [ $3 ]; then
       fi
     done
 fi
+if [ $4 ]; then
+  OUTPUT_DIR=$4
+  else
+    printf "\nEnter output directory: "
+    read OUTPUT_DIR
+fi
 
 printf "\n\n### Beginning $RUN_TYPE run...\n\n"
 
@@ -49,7 +55,7 @@ printf "\n\n### Beginning $RUN_TYPE run...\n\n"
 ROOTFILE="$FILENAME".root
 echo "\
 /control/execute setup.mac
-/rat/procset file \"$ROOTFILE\"
+/rat/procset file \"$OUTPUT_DIR/$ROOTFILE\"
 /rat/proc count
 /rat/procset update 1000
 /run/beamOn $NUM_EVENTS\
@@ -57,7 +63,8 @@ echo "\
 
 
 ## MAIN: create conflog && run rat ##
-conflog.sh > "$FILENAME".conf && rat -l "$FILENAME".log run.mac
+conflog.sh > $OUTPUT_DIR/"$FILENAME".conf && rat -l $OUTPUT_DIR/"$FILENAME".log run.mac
+cd $OUTPUT_DIR
 
 
 # process information according to type of run

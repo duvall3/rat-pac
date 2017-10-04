@@ -32,6 +32,8 @@ for (( k=1; k<=$NUMBER_OF_JOBS; k++ )) {
 
   JOB_NAME=$BATCH_NAME"_"$k"of"$NUMBER_OF_JOBS
   LOG_NAME=$JOB_NAME".log"
+  RT_NAME=$JOB_NAME".rt"
+  OUTPUT_DIR=/p/lscratchd/duvall3/$EXPERIMENT
 
   echo -e "\
 #!/bin/bash
@@ -39,7 +41,7 @@ for (( k=1; k<=$NUMBER_OF_JOBS; k++ )) {
 #MSUB -A adg							# sets bank account
 #MSUB -l nodes=1:ppn=1,walltime=23:59:59,partition=borax	# uses 1 node
 #MSUB -d $RATROOT/data/$EXPERIMENT/				# sets working directory
-#MSUB -o $RATROOT/data/$EXPERIMENT/$LOG_NAME			# sets outfile
+#MSUB -o $OUTPUT_DIR/$LOG_NAME					# sets outfile
 #MSUB -q pbatch							# pool
 #MSUB								# no more psub commands
 
@@ -48,7 +50,9 @@ for (( k=1; k<=$NUMBER_OF_JOBS; k++ )) {
 source /g/g19/duvall3/.bashrc
 export G4NEUTRONHP_USE_ONLY_PHOTONEVAPORATION=1
 
-$RATROOT/user/shell_scripts/ratrun.sh $JOB_NAME $EVENTS_PER_JOB neutron
+$RATROOT/user/shell_scripts/ratrun.sh $JOB_NAME $EVENTS_PER_JOB neutron $OUTPUT_DIR
+cd $OUTPUT_DIR/$JOB_NAME/
+$RATROOT/bin/root -q -l -b '$RATROOT/user/root_macros/SimpleEnergyDAQ.cxx(\"$RT_NAME\")'
 
 # all pau!   )" > $DIR_NAME/$JOB_NAME".sh" && chmod 755 $DIR_NAME/$JOB_NAME".sh"
 

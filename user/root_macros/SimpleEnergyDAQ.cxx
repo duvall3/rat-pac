@@ -221,100 +221,106 @@ for (( k = 0; k < num_bursts; k++ )) {
   }
 } //end event loop
 cout << endl << "IBD Candidates: " << T2->GetEntries() << endl << endl;
+// save plots
+TString basename, savename1;
+basename = FileName(0,FileName.Index(".rt"));
+savename1 = basename+"_bursts.png";
+c1->SaveAs(savename1);
+
 
 
 //// PLOT NEUTRINO-CANDIDATE RESULTS
 
-// interevent time bins
-const Int_t nBinsEBP = 100;
-Double_t xmin = 1.e-7; //s
-Double_t xmax = 5.e-4; //s
-Double_t logxmin = TMath::Log10(xmin);
-Double_t logxmax = TMath::Log10(xmax);
-Double_t binwidth = (logxmax-logxmin)/nBinsEBP;
-Double_t xbinsEBP[nBinsEBP+1];
-xbinsEBP[0] = xmin;
-for (Int_t m=1;m<=nBinsEBP;m++) {
- xbinsEBP[m] = TMath::Power(10,logxmin+m*binwidth);
-}
+if ( T2->GetEntries() > 0 ) { // if any IBD candidates exist
 
-// energy bins
-const Int_t nBinsEBP = 100;
-Double_t ymin = 1.e-1; //MeV
-Double_t ymax = 1.e2; //MeV
-Double_t logymin = TMath::Log10(ymin);
-Double_t logymax = TMath::Log10(ymax);
-Double_t binwidth = (logymax-logymin)/nBinsEBP;
-Double_t ybinsEBP[nBinsEBP+1];
-ybinsEBP[0] = ymin;
-for ((m=1;m<=nBinsEBP;m++)) {
- ybinsEBP[m] = TMath::Power(10,logymin+m*binwidth);
-}
+  // interevent time bins
+  const Int_t nBinsEBP = 100;
+  Double_t xmin = 1.e-7; //s
+  Double_t xmax = 5.e-4; //s
+  Double_t logxmin = TMath::Log10(xmin);
+  Double_t logxmax = TMath::Log10(xmax);
+  Double_t binwidth = (logxmax-logxmin)/nBinsEBP;
+  Double_t xbinsEBP[nBinsEBP+1];
+  xbinsEBP[0] = xmin;
+  for (Int_t m=1;m<=nBinsEBP;m++) {
+   xbinsEBP[m] = TMath::Power(10,logxmin+m*binwidth);
+  }
 
-// delayed event histogram
-TH2D* h_ibd = new TH2D("h_ibd", "IBD Trigger Results", nBinsEBP, xbinsEBP, nBinsEBP, 0., 10.);
-TAxis* h_ibdx = h_ibd->GetXaxis();
-TAxis* h_ibdy = h_ibd->GetYaxis();
-h_ibdx->SetTitle("Interevent Times (s)");
-h_ibdy->SetTitle("Energies (MeV)");
+  // energy bins
+  const Int_t nBinsEBP = 100;
+  Double_t ymin = 1.e-1; //MeV
+  Double_t ymax = 1.e2; //MeV
+  Double_t logymin = TMath::Log10(ymin);
+  Double_t logymax = TMath::Log10(ymax);
+  Double_t binwidth = (logymax-logymin)/nBinsEBP;
+  Double_t ybinsEBP[nBinsEBP+1];
+  ybinsEBP[0] = ymin;
+  for ((m=1;m<=nBinsEBP;m++)) {
+   ybinsEBP[m] = TMath::Power(10,logymin+m*binwidth);
+  }
 
-// prompt event histogram
-TH2D* h_ibd2 = new TH2D("h_ibd2", "IBD Trigger Results", nBinsEBP, xbinsEBP, nBinsEBP, 0., 10.);
-TAxis* h_ibd2x = h_ibd2->GetXaxis();
-TAxis* h_ibd2y = h_ibd2->GetYaxis();
-TAxis* h_ibd2z = h_ibd2->GetZaxis();
-h_ibd2x->SetTitle("Interevent Time (s)");
-h_ibd2y->SetTitle("Energy (MeV)");
-h_ibd2z->SetTitle("Entries");
-h_ibd2x->SetTitleOffset(1.5);
-h_ibd2y->SetTitleOffset(1.5);
+  // delayed event histogram
+  TH2D* h_ibd = new TH2D("h_ibd", "IBD Trigger Results", nBinsEBP, xbinsEBP, nBinsEBP, 0., 10.);
+  TAxis* h_ibdx = h_ibd->GetXaxis();
+  TAxis* h_ibdy = h_ibd->GetYaxis();
+  h_ibdx->SetTitle("Interevent Times (s)");
+  h_ibdy->SetTitle("Energies (MeV)");
 
-// fill histograms
-for (( k = 0; k < T2->GetEntries(); k++ )) {
-  T2->GetEntry(k);
-  h_ibd->Fill(delayed_cand_t-prompt_cand_t, delayed_cand_eq);
-  h_ibd2->Fill(xmin, prompt_cand_eq);
-}
+  // prompt event histogram
+  TH2D* h_ibd2 = new TH2D("h_ibd2", "IBD Trigger Results", nBinsEBP, xbinsEBP, nBinsEBP, 0., 10.);
+  TAxis* h_ibd2x = h_ibd2->GetXaxis();
+  TAxis* h_ibd2y = h_ibd2->GetYaxis();
+  TAxis* h_ibd2z = h_ibd2->GetZaxis();
+  h_ibd2x->SetTitle("Interevent Time (s)");
+  h_ibd2y->SetTitle("Energy (MeV)");
+  h_ibd2z->SetTitle("Entries");
+  h_ibd2x->SetTitleOffset(1.5);
+  h_ibd2y->SetTitleOffset(1.5);
 
-// draw histograms
-TCanvas* c2 = new TCanvas("c2",filename, 70, 60, 1500, 800);
-h_ibd2->Draw("lego3");
-h_ibd->Draw("samelego");
-c2->SetTheta(35);
-c2->SetPhi(265);
-c2->SetLogx(1);
-c2->SetLogy(0);
+  // fill histograms
+  for (( k = 0; k < T2->GetEntries(); k++ )) {
+    T2->GetEntry(k);
+    h_ibd->Fill(delayed_cand_t-prompt_cand_t, delayed_cand_eq);
+    h_ibd2->Fill(xmin, prompt_cand_eq);
+  }
 
-// position plot
-// prompt
-TCanvas* c3 = new TCanvas("c3",filename, 70, 60, 800, 800);
-c3->SetLogy(false);
-T2->Draw("prompt_cand_x:prompt_cand_y:prompt_cand_z>>hprompt");
-TH3F* h_prompt = (TH3F*)gDirectory->Get("hprompt");
-h_prompt->SetMarkerColor(kRed);
-h_prompt->SetMarkerStyle(4);
-h_prompt->GetXaxis()->SetLimits(-600,600);
-h_prompt->GetYaxis()->SetLimits(-600,600);
-h_prompt->GetZaxis()->SetLimits(-600,600);
-// delayed
-T2->Draw("delayed_cand_x:delayed_cand_y:delayed_cand_z>>hdelayed","","same");
-TH3F* h_delayed = (TH3F*)gDirectory->Get("hdelayed");
-h_delayed->SetMarkerColor(kBlue);
-h_delayed->SetMarkerStyle(5);
-// draw
-h_prompt->Draw();
-h_delayed->Draw("same");
+  // draw histograms
+  TCanvas* c2 = new TCanvas("c2",filename, 70, 60, 1500, 800);
+  h_ibd2->Draw("lego3");
+  h_ibd->Draw("samelego");
+  c2->SetTheta(35);
+  c2->SetPhi(265);
+  c2->SetLogx(1);
+  c2->SetLogy(0);
 
-// save plots
-TString basename, savename1, savename2, savename3;
-basename = FileName(0,FileName.Index(".rt"));
-savename1 = basename+"_bursts.png";
-savename2 = basename+"_nu-trg.png";
-savename3 = basename+"_pd-xyz.png";
-c1->SaveAs(savename1);
-c2->SaveAs(savename2);
-c3->SaveAs(savename3);
+  // position plot
+  // prompt
+  TCanvas* c3 = new TCanvas("c3",filename, 70, 60, 800, 800);
+  c3->SetLogy(false);
+  T2->Draw("prompt_cand_x:prompt_cand_y:prompt_cand_z>>h_prompt");
+  //TH3F* h_prompt = (TH3F*)gDirectory->Get("hprompt");
+  h_prompt->SetMarkerColor(kRed);
+  h_prompt->SetMarkerStyle(4);
+  h_prompt->GetXaxis()->SetLimits(-600,600);
+  h_prompt->GetYaxis()->SetLimits(-600,600);
+  h_prompt->GetZaxis()->SetLimits(-600,600);
+  // delayed
+  T2->Draw("delayed_cand_x:delayed_cand_y:delayed_cand_z>>h_delayed","","same");
+  //TH3F* h_delayed = (TH3F*)gDirectory->Get("hdelayed");
+  h_delayed->SetMarkerColor(kBlue);
+  h_delayed->SetMarkerStyle(5);
+  // draw
+  h_prompt->Draw();
+  h_delayed->Draw("same");
 
+  // save plots
+  TString savename2, savename3;
+  savename2 = basename+"_nu-trg.png";
+  savename3 = basename+"_pd-xyz.png";
+  c2->SaveAs(savename2);
+  c3->SaveAs(savename3);
+
+} //endif
 
 //// all pau!   )
 return;
