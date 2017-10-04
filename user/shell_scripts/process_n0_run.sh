@@ -9,7 +9,7 @@
 FILENAME=$(basename $1 .root)
 NUM_EVENTS=$2
 
-# whether to run the ROOT part
+# whether to run the old ROOT part
 if [ $3 ]; then
   ROOT_TF=$3
 else
@@ -17,8 +17,14 @@ else
 fi
 
 
+## IBD trigger processing
+RTFILE="$FILENAME".rt
+awk '$1~/EVENT/ && ($6>0 || $8>0 || $10>0) {print $2"\t"$4"\t"$6"\t"$8"\t"$10"\t"$12"\t"$14"\t"$16}' "$FILENAME".log > $RTFILE # for SimpleEnergyDAQ
+RTCOMMAND=$(printf "'$RATROOT/user/root_macros/SimpleEnergyDAQ.cxx(\"$RTFILE\")'")
+eval "root -q -l -b $RTCOMMAND"
+
+
 ## process neutron-capture information
-awk '$1~/EVENT/ && ($6>0 || $8>0 || $10>0) {print $2"\t"$4"\t"$6"\t"$8"\t"$10"\t"$12"\t"$14"\t"$16}' "$FILENAME".log > "$FILENAME".rt # for SimpleEnergyDAQ
 # ROOT processing
 if [ $ROOT_TF = true ]; then
   ROOTFILE="$FILENAME".root
@@ -39,7 +45,7 @@ n0_term_vols.sh "$FILENAME".n0.dat #"$FILENAME"
 ## tidying up
 # make output directory & move all the new output files there
 mkdir $FILENAME
-mv -t $FILENAME $FILENAME.* #gam/ plot_gammas.m scatters
+mv -t $FILENAME $FILENAME?* #gam/ plot_gammas.m scatters
 
 
 ## all pau!  )

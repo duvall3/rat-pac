@@ -8,8 +8,13 @@ FILENAME=$1
 NUM_EVENTS=$2
 
 # process IBD information
-awk '$1 ~ /EVENT/ && ( $6>0 || $8>0 || $10>0 ) {print $2"\t"$4"\t"$6"\t"$8"\t"$10"\t"$12"\t"$14"\t"$16}' "$FILENAME".log > "$FILENAME".rt
 ROOTFILE="$FILENAME".root
+RTFILE="$FILENAME".rt
+# SimpleEnergyDAQ
+awk '$1 ~ /EVENT/ && ( $6>0 || $8>0 || $10>0 ) {print $2"\t"$4"\t"$6"\t"$8"\t"$10"\t"$12"\t"$14"\t"$16}' "$FILENAME".log > "$FILENAME".rt
+RTCOMMAND=$(printf "'$RATROOT/user/root_macros/SimpleEnergyDAQ.cxx(\"$ROOTFILE\")'")
+# old ROOT processing
+eval "root -q -l -b $RTCOMMAND"
 ROOTCOMMAND=$(printf "'$RATROOT/user/root_macros/IBD.cxx(\"$ROOTFILE\",$NUM_EVENTS)'")
 eval "root -q -l -b $ROOTCOMMAND > \"$FILENAME\".ibd.dat"
 ibd_dat_to_txt.sh "$FILENAME".ibd.dat | column -t > "$FILENAME".txt
@@ -19,7 +24,7 @@ ibd_term_vols.sh "$FILENAME".ibd.dat
 
 # make output directory & move all the new output files there
 mkdir $FILENAME
-mv -t $FILENAME $FILENAME.* gam/ # plot_gammas.m scatters
+mv -t $FILENAME $FILENAME?* # gam/ plot_gammas.m scatters
 
 
 # all pau!  )
