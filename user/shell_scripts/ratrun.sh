@@ -59,11 +59,11 @@ echo "\
 /rat/proc count
 /rat/procset update 1000
 /run/beamOn $NUM_EVENTS\
-" > run.mac
+" > $OUTPUT_DIR/"$FILENAME".run.mac
 
 
 ## MAIN: create conflog && run rat ##
-conflog.sh > $OUTPUT_DIR/"$FILENAME".conf && rat -l $OUTPUT_DIR/"$FILENAME".log run.mac
+conflog.sh > $OUTPUT_DIR/"$FILENAME".conf && rat -l $OUTPUT_DIR/"$FILENAME".log $OUTPUT_DIR/"$FILENAME".run.mac
 cd $OUTPUT_DIR
 
 
@@ -73,7 +73,6 @@ case $RUN_TYPE in
     process_n0_run.sh $FILENAME $NUM_EVENTS;;
   "ibd")
     process_ibd_run.sh $FILENAME $NUM_EVENTS;;
-#   echo "[process_ibd_run.sh: feature not ready yet]";;
   *)
     echo "Error: invalid run type (somehow) specified." && exit 3
 esac
