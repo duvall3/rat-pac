@@ -10,8 +10,11 @@ void SimpleEnergyDAQ( const char* filename ) {
 //// INIT AND FILL
 
 // init
-TString FileName;
+TString FileName, basename, savename;
 FileName = filename;
+basename = FileName(0,FileName.Index(".rt"));
+savename = basename+"_SEDAQ.root";
+TFile f = TFile(savename, "create");
 gStyle->SetHistLineWidth(2);
 gStyle->SetHistLineColor(kBlue);
 gStyle->SetOptLogy(true);
@@ -221,9 +224,8 @@ for (( k = 0; k < num_bursts; k++ )) {
   }
 } //end event loop
 cout << endl << "IBD Candidates: " << T2->GetEntries() << endl << endl;
-// save plots
-TString basename, savename1;
-basename = FileName(0,FileName.Index(".rt"));
+// save plot
+TString savename1;
 savename1 = basename+"_bursts.png";
 c1->SaveAs(savename1);
 
@@ -322,6 +324,9 @@ if ( T2->GetEntries() > 0 ) { // if any IBD candidates exist
 
 } //endif
 
+
 //// all pau!   )
+f.Write();
+f.Close();
 return;
 }
