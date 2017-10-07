@@ -16,7 +16,7 @@
 /rat/proc fitcentroid
 #/rat/proc fitpath
 /rat/proc count
-/rat/procset update 100
+/rat/procset update 1000
 /rat/proclast outroot
 
 #/rat/proc prune
