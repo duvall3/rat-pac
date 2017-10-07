@@ -51,13 +51,10 @@ source /g/g19/duvall3/.bashrc
 export G4NEUTRONHP_USE_ONLY_PHOTONEVAPORATION=1
 
 $RATROOT/user/shell_scripts/ratrun.sh $JOB_NAME $EVENTS_PER_JOB neutron $OUTPUT_DIR
-cd $OUTPUT_DIR/$JOB_NAME/
-$RATROOT/bin/root -q -l -b '$RATROOT/user/root_macros/SimpleEnergyDAQ.cxx(\"$RT_NAME\")'
 
 # all pau!   )" > $JOBS_DIR/$JOB_NAME".sh" && chmod 755 $JOBS_DIR/$JOB_NAME".sh"
 
 }
-
 
 # master script:
 
