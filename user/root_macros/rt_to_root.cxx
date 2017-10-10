@@ -13,7 +13,7 @@ if ( FileName.Contains(".rt") ) {
   cout << endl << "ERROR: Check file type. Exiting..." << endl << endl;
   return 2;
 }
-TFile f = TFile(basename+".root", "new");
+TFile f = TFile(basename+"_T.root", "new");
 
 // create tree, read ASCII data, set branch addresses
 TTree* T = new TTree("T","T");
