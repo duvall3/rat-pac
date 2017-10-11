@@ -43,22 +43,22 @@ Int_t k;
 Double_t time_current, time_prev;
 // times aligned to run start
 for (( k = 0; k < num_bursts; k++ )) {
-T->GetEntry(k);
-event_time_adj = event_time - run_start;
-wall_time_adj = wall_time - run_start;
-T->GetBranch("event_time_adj")->Fill();
-T->GetBranch("wall_time_adj")->Fill();
-// interevent times
-if ( k == 0 ) { 
-interevent_time = 0;
-} else {
-time_current = wall_time;
-T->GetEntry(k-1);
-time_prev = wall_time;
-T->GetEntry(k);
-interevent_time = time_current - time_prev;
-}
-T->GetBranch("interevent_time")->Fill();
+  T->GetEntry(k);
+  event_time_adj = event_time - run_start;
+  wall_time_adj = wall_time - run_start;
+  T->GetBranch("event_time_adj")->Fill();
+  T->GetBranch("wall_time_adj")->Fill();
+  // interevent times
+  if ( k == 0 ) { 
+    interevent_time = 0;
+  } else {
+    time_current = wall_time;
+    T->GetEntry(k-1);
+    time_prev = wall_time;
+    T->GetEntry(k);
+    interevent_time = time_current - time_prev;
+  }
+  T->GetBranch("interevent_time")->Fill();
 }
 
 
