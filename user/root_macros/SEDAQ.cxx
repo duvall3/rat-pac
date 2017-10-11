@@ -6,11 +6,11 @@
 // OUTPUT: ROOT file containing T2 -- SimpleEnergyDAQ results
 // ARGS:
 //   -- prompt_low -- IBD trigger, low threshold on prompt event (MeV)
-//   -- Tplots_tf -- on/off switch for plots in TTree "T", default off
+//   -- graphics_tf -- whether to draw & save plots; defaults to false for batch mode
 
 #include <math.h>
 
-void SEDAQ( const char* filename, Double_t prompt_low=0, bool Tplots_tf=false ) {
+void SEDAQ( const char* filename, Double_t prompt_low=0, bool graphics_tf=false ) {
 
 
 //// INIT
@@ -30,7 +30,7 @@ if (FileName.Contains("_T.root")) {
   return 2;
 }
 savename = basename+"_results.root";
-TFile f = TFile(savename, "create");
+TFile f = TFile(savename, "recreate");
 Int_t k(0);
 
 // TTree T and T2 -- read/create
@@ -71,9 +71,9 @@ T2->Branch("delayed_cand_y", &delayed_cand_y, "delayed_cand_y/D");
 T2->Branch("delayed_cand_z", &delayed_cand_z, "delayed_cand_z/D");
 
 
-//// T PLOTS (optional)
+//// T PLOTS
 
-if ( Tplots_tf ) {
+if ( graphics_tf == true ) { // skip graphics unless in batch mode (default)
 
   //// PREPARE PLOTS
 
@@ -172,8 +172,9 @@ if ( Tplots_tf ) {
   TString savename1;
   savename1 = basename+"_bursts.png";
   c1->SaveAs(savename1);
+  c1->Close();
 
-} //end if -- Tplots_tf
+} //end if -- graphics_tf for T plots
 
 
 //// NEUTRINO TRIGGER
@@ -232,7 +233,7 @@ cout << endl << "IBD Candidates: " << T2->GetEntries() << endl << endl;
 
 //// PLOT NEUTRINO-CANDIDATE RESULTS
 
-if ( T2->GetEntries() > 0 ) { // if any IBD candidates exist
+if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there were no IBD triggers or if batch mode is on
 
   // interevent time bins
   const Int_t nBinsEBP = 100;
@@ -320,12 +321,28 @@ if ( T2->GetEntries() > 0 ) { // if any IBD candidates exist
   savename3 = basename+"_pd-xyz.png";
   c2->SaveAs(savename2);
   c3->SaveAs(savename3);
+  c2->Close();
+  c3->Close();
 
-} //endif
+} //endif -- IBD candidates && no batch mode
 
 
-//// all pau!   )
+//// mostly pau!   )
 f.Write();
 f.Close();
 return;
 }
+
+
+//// OVERLOADING
+
+void SEDAQ ( const char* filename, bool graphics_tf=false ) {
+  SEDAQ( filename, 0., graphics_tf );
+}
+
+void SEDAQ ( const char* filename, Double_t prompt_low=0 ) {
+  SEDAQ( filename, prompt_low, false );
+}
+
+
+//// ALL PAU!   )
