@@ -1,0 +1,6 @@
+/control/execute setup.mac
+#/rat/procset file "/se-test-2.root"
+/rat/procset file "se-test-2.root"
+/rat/proc count
+/rat/procset update 1000
+/run/beamOn 500

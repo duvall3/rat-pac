@@ -16,6 +16,13 @@ else
   ROOT_TF=true # default to true
 fi
 
+# whether to create the SEDAQ graphics
+if [ $4 ]; then
+  SEDAQ_GRAPHICS=$4
+else
+  SEDAQ_GRAPHICS=false # default off (batch mode)
+fi
+
 
 ## IBD trigger processing
 RTFILE="$FILENAME".rt
@@ -24,7 +31,7 @@ awk '$1~/EVENT/ && ($6>0 || $8>0 || $10>0) {print $2"\t"$4"\t"$6"\t"$8"\t"$10"\t
 RTCOMMAND=$(printf "'$RATROOT/user/root_macros/rt_to_root.cxx(\"$RTFILE\")'")
 eval "root -q -l -b $RTCOMMAND"
 #ROOTCOMMAND=$(printf "'$RATROOT/user/root_macros/SimpleEnergyDAQ.cxx(\"$ROOTFILE\")'")
-if [ $SEDAQ_INT_MODE = true ]; then
+if [ $SEDAQ_GRAPHICS = true ]; then
   ROOTCOMMAND=$(printf "'$RATROOT/user/root_macros/SEDAQ.cxx(\"$ROOTFILE\",true)'")
 else
   ROOTCOMMAND=$(printf "'$RATROOT/user/root_macros/SEDAQ.cxx(\"$ROOTFILE\",false)'")

@@ -1,0 +1,12 @@
+# mugun.mac -- mu- gun
+
+/generator/add combo gun:point:poisson
+#/generator/vtx/set mu- 0 0 1 1000.0  # original mugun: 1-GeV muons directed along the +z axis
+#/generator/vtx/set e- 0 0 1 100.0  # 100MeV electrons directed along the +z axis
+/generator/vtx/set e+ 0 0 1 10.0  # 10MeV positrons directed along the +z axis
+#/generator/vtx/set neutron 0 0 1 0.01  # 10keV neutrons directed along the +z axis
+#/generator/vtx/set alpha 0 0 1 10.0  # 10MeV alphas directed along the +z axis
+#/generator/pos/set 0 -9924 -4500
+/generator/pos/set 0 0 0
+#/generator/rate/set 1
+/generator/rate/set 1000
