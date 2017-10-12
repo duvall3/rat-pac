@@ -296,19 +296,23 @@ if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there 
   c2->SetLogy(0);
 
   // position plot
+  Double_t x_abs = 600.;
   // prompt
   TCanvas* c3 = new TCanvas("c3",filename, 70, 60, 800, 800);
   c3->SetLogy(false);
   T2->Draw("prompt_cand_y:prompt_cand_x:prompt_cand_z>>h_prompt"); // recall that RAT-PAC uses "y" for the vertical axis, not "z"
   h_prompt->SetMarkerColor(kRed);
   h_prompt->SetMarkerStyle(4);
-  h_prompt->GetXaxis()->SetLimits(-600,600);
-  h_prompt->GetYaxis()->SetLimits(-600,600);
-  h_prompt->GetZaxis()->SetLimits(-600,600);
+  h_prompt->GetXaxis()->SetLimits(-x_abs,x_abs);
+  h_prompt->GetYaxis()->SetLimits(-x_abs,x_abs);
+  h_prompt->GetZaxis()->SetLimits(-x_abs,x_abs);
   // delayed
-  T2->Draw("delayed_cand_y:delayed_cand_x:delayed_cand_z>>h_delayed","","same"); // recall that RAT-PAC uses "y" for the vertical axis, not "z"
+  T2->Draw("delayed_cand_y:delayed_cand_x:delayed_cand_z>>h_delayed"); // recall that RAT-PAC uses "y" for the vertical axis, not "z"
   h_delayed->SetMarkerColor(kBlue);
   h_delayed->SetMarkerStyle(5);
+  h_delayed->GetXaxis()->SetLimits(-x_abs,x_abs);
+  h_delayed->GetYaxis()->SetLimits(-x_abs,x_abs);
+  h_delayed->GetZaxis()->SetLimits(-x_abs,x_abs);
   // draw
   h_prompt->Draw();
   h_delayed->Draw("same");
