@@ -45,6 +45,22 @@ invisible: 0,
 }
 
 
+// DETECTOR SPACE -- to be shared by all detectors
+// -------- GEO[detector_space]
+{
+name: "GEO",
+index: "detector_space",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "water_shield",
+type: "box",
+size: [430., 490., 430.]
+material: "air"
+invisible: 0,
+position: [0., 0., 0.]
+}
+
+
 // CELL ARRAY
 // -------- GEO[cell_array]
 {
@@ -52,7 +68,7 @@ name: "GEO",
 index: "cell_array",
 valid_begin: [0, 0],
 valid_end: [0, 0],
-mother: "water_shield",
+mother: "detector_space",
 type: "box",
 size: [430., 490., 430.]
 material: "air"
