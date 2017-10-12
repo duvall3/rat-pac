@@ -9,7 +9,7 @@
 
 # check args
 if [ $# -lt 4 ]; then
-  echo -e "\nUsage: batch_jobs.sh <BATCH_NAME> <EXPERIMENT> <NUMBER_OF_JOBS> <EVENTS_PER_JOB>\n"
+  echo -e "\nUsage: batch_jobs.sh <BATCH_NAME> <EXPERIMENT> <NUMBER_OF_JOBS> <EVENTS_PER_JOB> [GRAPHICS_TF]\n"
   exit 100
 fi
 
@@ -18,6 +18,11 @@ BATCH_NAME=$1
 EXPERIMENT=$2
 NUMBER_OF_JOBS=$3
 EVENTS_PER_JOB=$4
+if [ $5 ]; then
+  GRAPHICS_TF=$5
+else
+  GRAPHICS_TF=false # default to batch mode
+fi
 
 
 
@@ -32,7 +37,7 @@ for (( k=1; k<=$NUMBER_OF_JOBS; k++ )) {
 
   JOB_NAME=$BATCH_NAME"_"$k"of"$NUMBER_OF_JOBS
   LOG_NAME=$JOB_NAME".log"
-  RT_NAME=$JOB_NAME".rt"
+  T_NAME=$JOB_NAME"_T.root"
   OUTPUT_DIR=/p/lscratchd/duvall3/$EXPERIMENT
 
   echo -e "\
@@ -50,9 +55,7 @@ for (( k=1; k<=$NUMBER_OF_JOBS; k++ )) {
 source /g/g19/duvall3/.bashrc
 export G4NEUTRONHP_USE_ONLY_PHOTONEVAPORATION=1
 
-$RATROOT/user/shell_scripts/ratrun.sh $JOB_NAME $EVENTS_PER_JOB neutron $OUTPUT_DIR
-cd $OUTPUT_DIR/$JOB_NAME/
-$RATROOT/bin/root -q -l -b '$RATROOT/user/root_macros/SimpleEnergyDAQ.cxx(\"$RT_NAME\")'
+$RATROOT/user/shell_scripts/ratrun.sh $JOB_NAME $EVENTS_PER_JOB neutron $OUTPUT_DIR $GRAPHICS_TF
 
 # all pau!   )" > $JOBS_DIR/$JOB_NAME".sh" && chmod 755 $JOBS_DIR/$JOB_NAME".sh"
 
