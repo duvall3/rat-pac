@@ -120,6 +120,22 @@ invisible: 0,
 }
 
 
+// DETECTOR SPACE -- to be shared by all detectors
+// -------- GEO[detector_space]
+{
+name: "GEO",
+index: "detector_space",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "water_shield",
+type: "box",
+size: [430., 490., 430.]
+material: "air"
+invisible: 0,
+position: [0., 0., 0.]
+}
+
+
 // CUBE ARRAY (mother)
 // -------- GEO[cube_array]
 {
@@ -127,15 +143,11 @@ name: "GEO",
 index: "cube_array",
 valid_begin: [0, 0],
 valid_end: [0, 0],
-//mother: "world",
-mother: "water_shield",
+mother: "detector_space",
 type: "box",
-//size: [76.0, 76.0, 76.0], // mm
 size: [382.0,382.0,382.0]
 material: "air",
 invisible: 0,
-//position: [0.0, -9924.0, 0.0], // mm
-//position: [0.0, -5000.0, 0.0]
 }
 
 
