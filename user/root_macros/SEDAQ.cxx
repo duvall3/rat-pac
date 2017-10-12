@@ -306,7 +306,7 @@ if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there 
   h_prompt->GetYaxis()->SetLimits(-600,600);
   h_prompt->GetZaxis()->SetLimits(-600,600);
   // delayed
-  T2->Draw("delayed_cand_x:delayed_cand_y:delayed_cand_z>>h_delayed","","same");
+  T2->Draw("delayed_cand_y:delayed_cand_x:delayed_cand_z>>h_delayed","","same"); // recall that RAT-PAC uses "y" for the vertical axis, not "z"
   h_delayed->SetMarkerColor(kBlue);
   h_delayed->SetMarkerStyle(5);
   // draw
