@@ -25,7 +25,7 @@ chain() {\n" > chain.cxx
 for DIR in */; do
   FILE_BASE=$(basename $DIR /)
   FILE_PREFIX="$FILE_BASE/$FILE_BASE"
-  FILENAME=$FILE_PREFIX"_SEDAQ.root"
+  FILENAME=$FILE_PREFIX"_T.root"
   echo "ch.Add(\"$FILENAME\");" >> chain.cxx
 done
 
