@@ -19,9 +19,17 @@ fi
 
 ## IBD trigger processing
 RTFILE="$FILENAME".rt
+ROOTFILE="$FILENAME"_T.root
 awk '$1~/EVENT/ && ($6>0 || $8>0 || $10>0) {print $2"\t"$4"\t"$6"\t"$8"\t"$10"\t"$12"\t"$14"\t"$16}' "$FILENAME".log > $RTFILE # for SimpleEnergyDAQ
-RTCOMMAND=$(printf "'$RATROOT/user/root_macros/SimpleEnergyDAQ.cxx(\"$RTFILE\")'")
+RTCOMMAND=$(printf "'$RATROOT/user/root_macros/rt_to_root.cxx(\"$RTFILE\")'")
 eval "root -q -l -b $RTCOMMAND"
+#ROOTCOMMAND=$(printf "'$RATROOT/user/root_macros/SimpleEnergyDAQ.cxx(\"$ROOTFILE\")'")
+if [ $SEDAQ_INT_MODE = true ]; then
+  ROOTCOMMAND=$(printf "'$RATROOT/user/root_macros/SEDAQ.cxx(\"$ROOTFILE\",true)'")
+else
+  ROOTCOMMAND=$(printf "'$RATROOT/user/root_macros/SEDAQ.cxx(\"$ROOTFILE\",false)'")
+fi
+eval "root -q -l -b $ROOTCOMMAND"
 
 
 ## process neutron-capture information

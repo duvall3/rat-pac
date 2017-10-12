@@ -299,7 +299,7 @@ if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there 
   // prompt
   TCanvas* c3 = new TCanvas("c3",filename, 70, 60, 800, 800);
   c3->SetLogy(false);
-  T2->Draw("prompt_cand_x:prompt_cand_y:prompt_cand_z>>h_prompt");
+  T2->Draw("prompt_cand_x:prompt_cand_z:prompt_cand_y>>h_prompt"); // recall that RAT-PAC uses "y" for the vertical axis, not "z"
   h_prompt->SetMarkerColor(kRed);
   h_prompt->SetMarkerStyle(4);
   h_prompt->GetXaxis()->SetLimits(-600,600);
