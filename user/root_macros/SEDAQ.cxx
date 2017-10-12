@@ -10,7 +10,7 @@
 
 #include <math.h>
 
-void SEDAQ( const char* filename, Double_t prompt_low=0, bool graphics_tf=false ) {
+void SEDAQ( const char* filename, Double_t prompt_low=0, Double_t delayed_low, bool graphics_tf=false ) {
 
 
 //// INIT
@@ -192,7 +192,7 @@ deltaT_high = 400.e-6;
 //prompt_low = 0.00;
 //prompt_low = 1.00;
 prompt_high = 100.;
-delayed_low = 0.00;
+//delayed_low = 0.00;
 //delayed_low = 1.00;
 delayed_high = 100.;
 
@@ -336,13 +336,24 @@ return;
 
 //// OVERLOADING
 
+void SEDAQ ( const char* filename ) {
+  SEDAQ( filename, 0., 0., false );
+}
+
 void SEDAQ ( const char* filename, bool graphics_tf=false ) {
-  SEDAQ( filename, 0., graphics_tf );
+  SEDAQ( filename, 0., 0., graphics_tf );
 }
 
-void SEDAQ ( const char* filename, Double_t prompt_low=0 ) {
-  SEDAQ( filename, prompt_low, false );
+void SEDAQ ( const char* filename, Double_t prompt_low ) {
+  SEDAQ( filename, prompt_low, , 0., false );
 }
 
+void SEDAQ( const char* filename, Double_t prompt_low, Bool_t graphics_tf ) {
+  SEDAQ( filename, prompt_low, 0., graphics_tf );
+}
+
+void SEDAQ ( const char* filename, Double_t prompt_low, Double_t delayed_low ) {
+  SEDAQ( filename, prompt_low, delayed_low, false );
+}
 
 //// ALL PAU!   )
