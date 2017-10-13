@@ -9,13 +9,13 @@
 
 # check args
 if [ $# -lt 4 ]; then
-  echo -e "\nUsage: batch_jobs.sh <BATCH_NAME> <EXPERIMENT> <NUMBER_OF_JOBS> <EVENTS_PER_JOB> [GRAPHICS_TF]\n"
+  echo -e "\nUsage: batch_jobs.sh <EXPERIMENT> <BATCH_NAME> <NUMBER_OF_JOBS> <EVENTS_PER_JOB> [GRAPHICS_TF]\n"
   exit 100
 fi
 
 # pass args
-BATCH_NAME=$1
-EXPERIMENT=$2
+EXPERIMENT=$1
+BATCH_NAME=$2
 NUMBER_OF_JOBS=$3
 EVENTS_PER_JOB=$4
 if [ $5 ]; then
