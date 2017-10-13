@@ -19,10 +19,10 @@ k=0
 total=0
 increment=0
 
-if [ DATFILE_TF = false ]; then
+if [ $DATFILE_TF = false ]; then
   for FILE in *.log; do
     k=$((k+1))
-    increment=$(tail -qn 25 $FILE | awk '{print $2}')
+    increment=$(tail -qn 1 $FILE | awk '{print $2}')
     total=$((total + increment))
   done
 else
