@@ -22,7 +22,7 @@ increment=0
 if [ $DATFILE_TF = false ]; then
   for FILE in *.log; do
     k=$((k+1))
-    increment=$(tail -qn 1 $FILE | awk '{print $2}')
+    increment=$(tail -qn 4 $FILE | awk '$1 ~ /EVENT/ {print $2}')
     total=$((total + increment))
   done
 else
