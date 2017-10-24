@@ -16,7 +16,7 @@ if ( FileName.Contains(".rt") ) {
 TFile f = TFile(basename+"_T.root", "new");
 
 // create tree, read ASCII data, set branch addresses
-TTree* T = new TTree("T","T");
+TTree* T = new TTree("T","Scintillation Data");
 T->ReadFile( filename, "event/I:event_time/D:wall_time/D:energy/D:energy_q/D:x/D:y/D:z/D" );
 Long64_t num_bursts = T->GetEntries();
 Int_t event;

@@ -36,7 +36,7 @@ TFile f = TFile(savename, "recreate");
 Int_t k(0);
 
 // TTree T and T2 -- read/create
-TTree* T2 = new TTree("T2","T2");
+TTree* T2 = new TTree("T2","IBD Candidate Data");
 TFriendElement* TF = T2->AddFriend("T",filename);
 TTree* T = TF->GetTree();
 
@@ -337,13 +337,15 @@ if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there 
 } //endif -- IBD candidates && no batch mode
 
 
-//// SAVE IBD TRIGGER PARAMETERS AND RESULT
-TTree* T_Trig = new TTree("T_Trig","IBD Trigger Parameters (MeV) and Result");
+//// SAVE IBD TRIGGER PARAMETERS AND TOTAL
+TString units = "Time (ns) ~ Energy (MeV)"
+TTree* T_Trig = new TTree("T_Trig","IBD Trigger Parameters and Total");
 T_Trig->Branch("prompt_low",&prompt_low,"prompt_low/D");
 T_Trig->Branch("prompt_high",&prompt_high,"prompt_high/D");
 T_Trig->Branch("delayed_low",&delayed_low,"delayed_low/D");
 T_Trig->Branch("delayed_high",&delayed_high,"delayed_high/D");
 T_Trig->Branch("ibd_candidates",&ibd_candidates,"ibd_candidates/L");
+T_Trig->Branch("units",&units);
 T_Trig->Fill();
 
 
