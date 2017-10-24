@@ -5,12 +5,14 @@
 // INPUT: ROOT file containing T -- scintillation energy deposits
 // OUTPUT: ROOT file containing T2 -- SimpleEnergyDAQ results
 // ARGS:
+//   -- filename -- input ROOT file
 //   -- prompt_low -- IBD trigger, low threshold on prompt event (MeV)
+//   -- delayed_low -- IBD trigger, low threshold on delayed event (MeV)
 //   -- graphics_tf -- whether to draw & save plots; defaults to false for batch mode
 
 #include <math.h>
 
-void SEDAQ( const char* filename, Double_t prompt_low=0, Double_t delayed_low, bool graphics_tf=false ) {
+void SEDAQ( const char* filename, Double_t prompt_low, Double_t delayed_low, bool graphics_tf=false ) {
 
 
 //// INIT
@@ -227,7 +229,11 @@ for (( k = 0; k < num_bursts; k++ )) {
     T2->Fill();
   }
 } //end event loop
-cout << endl << "IBD Candidates: " << T2->GetEntries() << endl << endl;
+
+// result
+Long64_t ibd_candidates = T2->GetEntries();
+//cout << endl << "IBD Candidates: " << T2->GetEntries() << endl << endl;
+cout << endl << "IBD Candidates: " << ibd_candidates << endl << endl;
 
 
 
@@ -329,6 +335,16 @@ if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there 
   c3->Close();
 
 } //endif -- IBD candidates && no batch mode
+
+
+//// SAVE IBD TRIGGER PARAMETERS AND RESULT
+TTree* T_Trig = new TTree("T_Trig","IBD Trigger Parameters (MeV) and Result");
+T_Trig->Branch("prompt_low",&prompt_low,"prompt_low/D");
+T_Trig->Branch("prompt_high",&prompt_high,"prompt_high/D");
+T_Trig->Branch("delayed_low",&delayed_low,"delayed_low/D");
+T_Trig->Branch("delayed_high",&delayed_high,"delayed_high/D");
+T_Trig->Branch("ibd_candidates",&ibd_candidates,"ibd_candidates/L");
+T_Trig->Fill();
 
 
 //// mostly pau!   )
