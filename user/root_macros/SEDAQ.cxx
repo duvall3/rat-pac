@@ -367,7 +367,7 @@ void SEDAQ ( const char* filename, bool graphics_tf=false ) {
 }
 
 void SEDAQ ( const char* filename, Double_t prompt_low ) {
-  SEDAQ( filename, prompt_low, , 0., false );
+  SEDAQ( filename, prompt_low, 0., false );
 }
 
 void SEDAQ( const char* filename, Double_t prompt_low, Bool_t graphics_tf ) {
