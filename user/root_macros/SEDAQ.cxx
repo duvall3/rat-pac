@@ -2,9 +2,10 @@
 // -- see documentation in duvall3->comparision->$RATROOT/user/root_macros/SimpleEnergyDAQ.cxx
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2017 ~ //
 
-// INPUT: ROOT file containing T -- scintillation energy deposits
-// OUTPUT: ROOT file containing T2 -- SimpleEnergyDAQ results
-// ARGS:
+// INPUT: ROOT file containing TTree "T" (Scintillation Data)
+// OUTPUT: ROOT file containing TTrees "T2" (IBD Candidate Data) and "T_Trig" (IBD Trigger Parameters and Result)
+// 	*** NOTE: View trigger parameters using T_Trig->Show(0), NOT T_Trig->Scan() ***
+// ARGUMENTS:
 //   -- filename -- input ROOT file
 //   -- prompt_low -- IBD trigger, low threshold on prompt event (MeV)
 //   -- delayed_low -- IBD trigger, low threshold on delayed event (MeV)
@@ -230,11 +231,22 @@ for (( k = 0; k < num_bursts; k++ )) {
   }
 } //end event loop
 
-// result
+// save ibd trigger parameters and result
 Long64_t ibd_candidates = T2->GetEntries();
-//cout << endl << "IBD Candidates: " << T2->GetEntries() << endl << endl;
-cout << endl << "IBD Candidates: " << ibd_candidates << endl << endl;
+TString units = "Time (ns), Energy (MeV)";
+TTree* T_Trig = new TTree("T_Trig","IBD Trigger Parameters and Total");
+T_Trig->Branch("units",&units);
+T_Trig->Branch("prompt_low",&prompt_low);
+T_Trig->Branch("prompt_high",&prompt_high);
+T_Trig->Branch("delayed_low",&delayed_low);
+T_Trig->Branch("delayed_high",&delayed_high);
+T_Trig->Branch("ibd_candidates",&ibd_candidates);
+T_Trig->Fill();
 
+// print summary to stdout
+cout << endl << "SimpleEnergyDAQ IBD Trigger Summary:" << endl;
+T_Trig->Show(0);
+cout << endl;
 
 
 //// PLOT NEUTRINO-CANDIDATE RESULTS
@@ -335,18 +347,6 @@ if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there 
   c3->Close();
 
 } //endif -- IBD candidates && no batch mode
-
-
-//// SAVE IBD TRIGGER PARAMETERS AND TOTAL
-TString units = "Time (ns) ~ Energy (MeV)"
-TTree* T_Trig = new TTree("T_Trig","IBD Trigger Parameters and Total");
-T_Trig->Branch("prompt_low",&prompt_low,"prompt_low/D");
-T_Trig->Branch("prompt_high",&prompt_high,"prompt_high/D");
-T_Trig->Branch("delayed_low",&delayed_low,"delayed_low/D");
-T_Trig->Branch("delayed_high",&delayed_high,"delayed_high/D");
-T_Trig->Branch("ibd_candidates",&ibd_candidates,"ibd_candidates/L");
-T_Trig->Branch("units",&units);
-T_Trig->Fill();
 
 
 //// mostly pau!   )
