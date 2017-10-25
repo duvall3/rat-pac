@@ -13,7 +13,8 @@ NUM_EVENTS=$2
 if [ $3 ]; then
   ROOT_TF=$3
 else
-  ROOT_TF=true # default to true
+# ROOT_TF=true # default to true
+  ROOT_TF=false # default to false
 fi
 
 # whether to create the SEDAQ graphics
@@ -45,16 +46,16 @@ if [ $ROOT_TF = true ]; then
   ROOTFILE="$FILENAME".root
   ROOTCOMMAND=$(printf "'$RATROOT/user/root_macros/NeutronCaptures.cxx(\"$ROOTFILE\",$NUM_EVENTS)'")
   eval "root -q -l -b $ROOTCOMMAND > \"$FILENAME\".n0.dat"
+  # post-ROOT text processing
+  n0_dat_to_txt.sh "$FILENAME".n0.dat | column -t > "$FILENAME".txt
+  nCapAgents.sh "$FILENAME".n0.dat
+  #plot_gammas_mfile.sh $FILENAME
+  #n0_dat_to_sc.sh "$FILENAME".n0.dat
+  n0_term_vols.sh "$FILENAME".n0.dat #"$FILENAME"
 elif [ $ROOT_TF = false ]; then : # do nothing
 else
   echo "Invalid parameter; ROOT_TF (3rd argument) should be either \"true\" or \"false\"."; exit 1
 fi
-# post-ROOT text processing
-n0_dat_to_txt.sh "$FILENAME".n0.dat | column -t > "$FILENAME".txt
-nCapAgents.sh "$FILENAME".n0.dat
-#plot_gammas_mfile.sh $FILENAME
-#n0_dat_to_sc.sh "$FILENAME".n0.dat
-n0_term_vols.sh "$FILENAME".n0.dat #"$FILENAME"
 
 
 ## tidying up
