@@ -113,7 +113,8 @@ valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "cave",
 type: "box",
-size: [538.2, 538.2, 538.2], // mm
+//size: [538.2, 538.2, 538.2], // mm
+size: [680., 740., 680.], // mm
 material: "water",
 invisible: 0,
 //position: [0.0, -4000.0, 0.0] // mm
