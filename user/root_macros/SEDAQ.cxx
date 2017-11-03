@@ -66,6 +66,7 @@ T2->Branch("prompt_cand_t", &prompt_cand_t, "prompt_cand_t/D");
 T2->Branch("prompt_cand_eq", &prompt_cand_eq, "prompt_cand_eq/D");
 T2->Branch("delayed_cand_t", &delayed_cand_t, "delayed_cand_t/D");
 T2->Branch("delayed_cand_eq", &delayed_cand_eq, "delayed_cand_eq/D");
+T2->Branch("interevent_time", &interevent_time, "interevent_time/D");
 T2->Branch("prompt_cand_x", &prompt_cand_x, "prompt_cand_x/D");
 T2->Branch("prompt_cand_y", &prompt_cand_y, "prompt_cand_y/D");
 T2->Branch("prompt_cand_z", &prompt_cand_z, "prompt_cand_z/D");
@@ -190,8 +191,8 @@ Double_t prompt_high, delayed_low, delayed_high;
 
 // set cut parameters //thresholds
 trigger_reset = 800.e-6;
-deltaT_low = 100.e-9;
-deltaT_high = 400.e-6;
+deltaT_low = 10.e-6;
+deltaT_high = 100.e-6;
 //prompt_low = 0.00;
 //prompt_low = 1.00;
 prompt_high = 100.;
