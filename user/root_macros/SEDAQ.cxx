@@ -237,6 +237,8 @@ Long64_t ibd_candidates = T2->GetEntries();
 TString units = "Time (ns), Energy (MeV)";
 TTree* T_Trig = new TTree("T_Trig","IBD Trigger Parameters and Total");
 T_Trig->Branch("units",&units);
+T_Trig->Branch("deltaT_low",&deltaT_low);
+T_Trig->Branch("deltaT_high",&deltaT_high);
 T_Trig->Branch("prompt_low",&prompt_low);
 T_Trig->Branch("prompt_high",&prompt_high);
 T_Trig->Branch("delayed_low",&delayed_low);
