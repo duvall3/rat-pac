@@ -1,6 +1,6 @@
 # ibd.mac -- IBD generator macro
 
-/generator/add combo ibd:fill:poisson
-/generator/vtx/set 0 0 1
-/generator/pos/set 0 0 0
+/generator/add combo ibd:regexfill:poisson
+/generator/vtx/set 0 0 1 # neutrinos directed along +z direction
+/generator/pos/set target_cube
 /generator/rate/set 1
