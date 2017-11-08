@@ -8,20 +8,17 @@
 # ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ July 2015 ~ #
 
 
-echo
-printf "\n### RAT RUN ###\n\n"
-#printf "!Warning: This script will replace the current version of './run.mac'. Type <Ctrl-C> now if you wish to abort.\n\n"
-
 # run types available
 RUN_TYPE_LIST=("neutron" "ibd" "EXIT")
 
 # argument check / get info:
-if [ $1 ]; then
-  FILENAME=$1
-  else
-    printf "\nEnter file basename for this run: "
-    read FILENAME
+if [ $# -lt 1 ]; then
+  echo -e "\nUsage: ratrun.sh <FILENAME> [NUM_EVENTS] [RUN_TYPE] [SEDAQ_GRAPHICS_TF]\n"
+  exit 100
 fi
+echo
+printf "\n### RAT RUN ###\n\n"
+FILENAME=$1
 if [ $2 ]; then
   NUM_EVENTS=$2
   else
@@ -42,11 +39,17 @@ if [ $3 ]; then
       fi
     done
 fi
+#if [ $4 ]; then
+#  OUTPUT_DIR=$4
+#  else
+#    printf "\nEnter output directory: "
+#    read OUTPUT_DIR
+#fi
+
 if [ $4 ]; then
-  OUTPUT_DIR=$4
-  else
-    printf "\nEnter output directory: "
-    read OUTPUT_DIR
+  SEDAQ_GRAPHICS=$4
+else
+  SEDAQ_GRAPHICS=false
 fi
 
 printf "\n\n### Beginning $RUN_TYPE run...\n\n"
@@ -55,22 +58,24 @@ printf "\n\n### Beginning $RUN_TYPE run...\n\n"
 ROOTFILE="$FILENAME".root
 echo "\
 /control/execute setup.mac
-/rat/procset file \"$OUTPUT_DIR/$ROOTFILE\"
+#/rat/procset file \"$OUTPUT_DIR/$ROOTFILE\"
+/rat/procset file \"$ROOTFILE\"
 /rat/proc count
 /rat/procset update 1000
 /run/beamOn $NUM_EVENTS\
-" > $OUTPUT_DIR/"$FILENAME".run.mac
+" > run.mac
 
 
 ## MAIN: create conflog && run rat ##
-conflog.sh > $OUTPUT_DIR/"$FILENAME".conf && rat -l $OUTPUT_DIR/"$FILENAME".log $OUTPUT_DIR/"$FILENAME".run.mac
-cd $OUTPUT_DIR
+#conflog.sh > $OUTPUT_DIR/"$FILENAME".conf && rat -l $OUTPUT_DIR/"$FILENAME".log $OUTPUT_DIR/"$FILENAME".run.mac
+conflog.sh > "$FILENAME".conf && rat -l "$FILENAME".log run.mac
+#cd $OUTPUT_DIR
 
 
 # process information according to type of run
 case $RUN_TYPE in
   "neutron")
-    process_n0_run.sh $FILENAME $NUM_EVENTS;;
+    process_n0_run.sh $FILENAME $NUM_EVENTS true $SEDAQ_GRAPHICS;;
   "ibd")
     process_ibd_run.sh $FILENAME $NUM_EVENTS;;
   *)
