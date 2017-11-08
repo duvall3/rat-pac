@@ -161,7 +161,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -357.0, -357.0] // mm
 }
@@ -176,7 +176,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -357.0, -306.0] // mm
 }
@@ -191,7 +191,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -357.0, -255.0] // mm
 }
@@ -206,7 +206,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -357.0, -204.0] // mm
 }
@@ -221,7 +221,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -357.0, -153.0] // mm
 }
@@ -236,7 +236,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -357.0, -102.0] // mm
 }
@@ -251,7 +251,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -357.0, -51.0] // mm
 }
@@ -266,7 +266,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -357.0, 0.0] // mm
 }
@@ -281,7 +281,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -357.0, 51.0] // mm
 }
@@ -296,7 +296,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -357.0, 102.0] // mm
 }
@@ -311,7 +311,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -357.0, 153.0] // mm
 }
@@ -326,7 +326,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -357.0, 204.0] // mm
 }
@@ -341,7 +341,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -357.0, 255.0] // mm
 }
@@ -356,7 +356,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -357.0, 306.0] // mm
 }
@@ -371,7 +371,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -357.0, 357.0] // mm
 }
@@ -386,7 +386,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -306.0, -357.0] // mm
 }
@@ -401,7 +401,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -306.0, -306.0] // mm
 }
@@ -416,7 +416,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -306.0, -255.0] // mm
 }
@@ -431,7 +431,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -306.0, -204.0] // mm
 }
@@ -446,7 +446,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -306.0, -153.0] // mm
 }
@@ -461,7 +461,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -306.0, -102.0] // mm
 }
@@ -476,7 +476,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -306.0, -51.0] // mm
 }
@@ -491,7 +491,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -306.0, 0.0] // mm
 }
@@ -506,7 +506,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -306.0, 51.0] // mm
 }
@@ -521,7 +521,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -306.0, 102.0] // mm
 }
@@ -536,7 +536,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -306.0, 153.0] // mm
 }
@@ -551,7 +551,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -306.0, 204.0] // mm
 }
@@ -566,7 +566,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -306.0, 255.0] // mm
 }
@@ -581,7 +581,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -306.0, 306.0] // mm
 }
@@ -596,7 +596,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -306.0, 357.0] // mm
 }
@@ -611,7 +611,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -255.0, -357.0] // mm
 }
@@ -626,7 +626,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -255.0, -306.0] // mm
 }
@@ -641,7 +641,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -255.0, -255.0] // mm
 }
@@ -656,7 +656,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -255.0, -204.0] // mm
 }
@@ -671,7 +671,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -255.0, -153.0] // mm
 }
@@ -686,7 +686,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -255.0, -102.0] // mm
 }
@@ -701,7 +701,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -255.0, -51.0] // mm
 }
@@ -716,7 +716,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -255.0, 0.0] // mm
 }
@@ -731,7 +731,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -255.0, 51.0] // mm
 }
@@ -746,7 +746,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -255.0, 102.0] // mm
 }
@@ -761,7 +761,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -255.0, 153.0] // mm
 }
@@ -776,7 +776,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -255.0, 204.0] // mm
 }
@@ -791,7 +791,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -255.0, 255.0] // mm
 }
@@ -806,7 +806,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -255.0, 306.0] // mm
 }
@@ -821,7 +821,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -255.0, 357.0] // mm
 }
@@ -836,7 +836,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -204.0, -357.0] // mm
 }
@@ -851,7 +851,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -204.0, -306.0] // mm
 }
@@ -866,7 +866,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -204.0, -255.0] // mm
 }
@@ -881,7 +881,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -204.0, -204.0] // mm
 }
@@ -896,7 +896,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -204.0, -153.0] // mm
 }
@@ -911,7 +911,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -204.0, -102.0] // mm
 }
@@ -926,7 +926,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -204.0, -51.0] // mm
 }
@@ -941,7 +941,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -204.0, 0.0] // mm
 }
@@ -956,7 +956,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -204.0, 51.0] // mm
 }
@@ -971,7 +971,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -204.0, 102.0] // mm
 }
@@ -986,7 +986,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -204.0, 153.0] // mm
 }
@@ -1001,7 +1001,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -204.0, 204.0] // mm
 }
@@ -1016,7 +1016,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -204.0, 255.0] // mm
 }
@@ -1031,7 +1031,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -204.0, 306.0] // mm
 }
@@ -1046,7 +1046,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -204.0, 357.0] // mm
 }
@@ -1061,7 +1061,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -153.0, -357.0] // mm
 }
@@ -1076,7 +1076,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -153.0, -306.0] // mm
 }
@@ -1091,7 +1091,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -153.0, -255.0] // mm
 }
@@ -1106,7 +1106,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -153.0, -204.0] // mm
 }
@@ -1121,7 +1121,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -153.0, -153.0] // mm
 }
@@ -1136,7 +1136,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -153.0, -102.0] // mm
 }
@@ -1151,7 +1151,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -153.0, -51.0] // mm
 }
@@ -1166,7 +1166,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -153.0, 0.0] // mm
 }
@@ -1181,7 +1181,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -153.0, 51.0] // mm
 }
@@ -1196,7 +1196,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -153.0, 102.0] // mm
 }
@@ -1211,7 +1211,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -153.0, 153.0] // mm
 }
@@ -1226,7 +1226,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -153.0, 204.0] // mm
 }
@@ -1241,7 +1241,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -153.0, 255.0] // mm
 }
@@ -1256,7 +1256,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -153.0, 306.0] // mm
 }
@@ -1271,7 +1271,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -153.0, 357.0] // mm
 }
@@ -1286,7 +1286,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -102.0, -357.0] // mm
 }
@@ -1301,7 +1301,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -102.0, -306.0] // mm
 }
@@ -1316,7 +1316,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -102.0, -255.0] // mm
 }
@@ -1331,7 +1331,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -102.0, -204.0] // mm
 }
@@ -1346,7 +1346,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -102.0, -153.0] // mm
 }
@@ -1361,7 +1361,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -102.0, -102.0] // mm
 }
@@ -1376,7 +1376,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -102.0, -51.0] // mm
 }
@@ -1391,7 +1391,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -102.0, 0.0] // mm
 }
@@ -1406,7 +1406,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -102.0, 51.0] // mm
 }
@@ -1421,7 +1421,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -102.0, 102.0] // mm
 }
@@ -1436,7 +1436,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -102.0, 153.0] // mm
 }
@@ -1451,7 +1451,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -102.0, 204.0] // mm
 }
@@ -1466,7 +1466,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -102.0, 255.0] // mm
 }
@@ -1481,7 +1481,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -102.0, 306.0] // mm
 }
@@ -1496,7 +1496,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -102.0, 357.0] // mm
 }
@@ -1511,7 +1511,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -51.0, -357.0] // mm
 }
@@ -1526,7 +1526,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -51.0, -306.0] // mm
 }
@@ -1541,7 +1541,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -51.0, -255.0] // mm
 }
@@ -1556,7 +1556,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -51.0, -204.0] // mm
 }
@@ -1571,7 +1571,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -51.0, -153.0] // mm
 }
@@ -1586,7 +1586,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -51.0, -102.0] // mm
 }
@@ -1601,7 +1601,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -51.0, -51.0] // mm
 }
@@ -1616,7 +1616,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -51.0, 0.0] // mm
 }
@@ -1631,7 +1631,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -51.0, 51.0] // mm
 }
@@ -1646,7 +1646,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -51.0, 102.0] // mm
 }
@@ -1661,7 +1661,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -51.0, 153.0] // mm
 }
@@ -1676,7 +1676,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -51.0, 204.0] // mm
 }
@@ -1691,7 +1691,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -51.0, 255.0] // mm
 }
@@ -1706,7 +1706,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -51.0, 306.0] // mm
 }
@@ -1721,7 +1721,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, -51.0, 357.0] // mm
 }
@@ -1736,7 +1736,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 0.0, -357.0] // mm
 }
@@ -1751,7 +1751,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 0.0, -306.0] // mm
 }
@@ -1766,7 +1766,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 0.0, -255.0] // mm
 }
@@ -1781,7 +1781,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 0.0, -204.0] // mm
 }
@@ -1796,7 +1796,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 0.0, -153.0] // mm
 }
@@ -1811,7 +1811,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 0.0, -102.0] // mm
 }
@@ -1826,7 +1826,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 0.0, -51.0] // mm
 }
@@ -1841,7 +1841,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 0.0, 0.0] // mm
 }
@@ -1856,7 +1856,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 0.0, 51.0] // mm
 }
@@ -1871,7 +1871,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 0.0, 102.0] // mm
 }
@@ -1886,7 +1886,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 0.0, 153.0] // mm
 }
@@ -1901,7 +1901,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 0.0, 204.0] // mm
 }
@@ -1916,7 +1916,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 0.0, 255.0] // mm
 }
@@ -1931,7 +1931,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 0.0, 306.0] // mm
 }
@@ -1946,7 +1946,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 0.0, 357.0] // mm
 }
@@ -1961,7 +1961,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 51.0, -357.0] // mm
 }
@@ -1976,7 +1976,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 51.0, -306.0] // mm
 }
@@ -1991,7 +1991,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 51.0, -255.0] // mm
 }
@@ -2006,7 +2006,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 51.0, -204.0] // mm
 }
@@ -2021,7 +2021,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 51.0, -153.0] // mm
 }
@@ -2036,7 +2036,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 51.0, -102.0] // mm
 }
@@ -2051,7 +2051,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 51.0, -51.0] // mm
 }
@@ -2066,7 +2066,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 51.0, 0.0] // mm
 }
@@ -2081,7 +2081,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 51.0, 51.0] // mm
 }
@@ -2096,7 +2096,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 51.0, 102.0] // mm
 }
@@ -2111,7 +2111,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 51.0, 153.0] // mm
 }
@@ -2126,7 +2126,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 51.0, 204.0] // mm
 }
@@ -2141,7 +2141,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 51.0, 255.0] // mm
 }
@@ -2156,7 +2156,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 51.0, 306.0] // mm
 }
@@ -2171,7 +2171,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 51.0, 357.0] // mm
 }
@@ -2186,7 +2186,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 102.0, -357.0] // mm
 }
@@ -2201,7 +2201,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 102.0, -306.0] // mm
 }
@@ -2216,7 +2216,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 102.0, -255.0] // mm
 }
@@ -2231,7 +2231,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 102.0, -204.0] // mm
 }
@@ -2246,7 +2246,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 102.0, -153.0] // mm
 }
@@ -2261,7 +2261,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 102.0, -102.0] // mm
 }
@@ -2276,7 +2276,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 102.0, -51.0] // mm
 }
@@ -2291,7 +2291,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 102.0, 0.0] // mm
 }
@@ -2306,7 +2306,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 102.0, 51.0] // mm
 }
@@ -2321,7 +2321,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 102.0, 102.0] // mm
 }
@@ -2336,7 +2336,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 102.0, 153.0] // mm
 }
@@ -2351,7 +2351,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 102.0, 204.0] // mm
 }
@@ -2366,7 +2366,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 102.0, 255.0] // mm
 }
@@ -2381,7 +2381,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 102.0, 306.0] // mm
 }
@@ -2396,7 +2396,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 102.0, 357.0] // mm
 }
@@ -2411,7 +2411,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 153.0, -357.0] // mm
 }
@@ -2426,7 +2426,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 153.0, -306.0] // mm
 }
@@ -2441,7 +2441,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 153.0, -255.0] // mm
 }
@@ -2456,7 +2456,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 153.0, -204.0] // mm
 }
@@ -2471,7 +2471,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 153.0, -153.0] // mm
 }
@@ -2486,7 +2486,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 153.0, -102.0] // mm
 }
@@ -2501,7 +2501,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 153.0, -51.0] // mm
 }
@@ -2516,7 +2516,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 153.0, 0.0] // mm
 }
@@ -2531,7 +2531,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 153.0, 51.0] // mm
 }
@@ -2546,7 +2546,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 153.0, 102.0] // mm
 }
@@ -2561,7 +2561,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 153.0, 153.0] // mm
 }
@@ -2576,7 +2576,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 153.0, 204.0] // mm
 }
@@ -2591,7 +2591,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 153.0, 255.0] // mm
 }
@@ -2606,7 +2606,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 153.0, 306.0] // mm
 }
@@ -2621,7 +2621,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 153.0, 357.0] // mm
 }
@@ -2636,7 +2636,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 204.0, -357.0] // mm
 }
@@ -2651,7 +2651,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 204.0, -306.0] // mm
 }
@@ -2666,7 +2666,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 204.0, -255.0] // mm
 }
@@ -2681,7 +2681,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 204.0, -204.0] // mm
 }
@@ -2696,7 +2696,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 204.0, -153.0] // mm
 }
@@ -2711,7 +2711,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 204.0, -102.0] // mm
 }
@@ -2726,7 +2726,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 204.0, -51.0] // mm
 }
@@ -2741,7 +2741,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 204.0, 0.0] // mm
 }
@@ -2756,7 +2756,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 204.0, 51.0] // mm
 }
@@ -2771,7 +2771,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 204.0, 102.0] // mm
 }
@@ -2786,7 +2786,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 204.0, 153.0] // mm
 }
@@ -2801,7 +2801,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 204.0, 204.0] // mm
 }
@@ -2816,7 +2816,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 204.0, 255.0] // mm
 }
@@ -2831,7 +2831,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 204.0, 306.0] // mm
 }
@@ -2846,7 +2846,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 204.0, 357.0] // mm
 }
@@ -2861,7 +2861,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 255.0, -357.0] // mm
 }
@@ -2876,7 +2876,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 255.0, -306.0] // mm
 }
@@ -2891,7 +2891,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 255.0, -255.0] // mm
 }
@@ -2906,7 +2906,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 255.0, -204.0] // mm
 }
@@ -2921,7 +2921,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 255.0, -153.0] // mm
 }
@@ -2936,7 +2936,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 255.0, -102.0] // mm
 }
@@ -2951,7 +2951,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 255.0, -51.0] // mm
 }
@@ -2966,7 +2966,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 255.0, 0.0] // mm
 }
@@ -2981,7 +2981,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 255.0, 51.0] // mm
 }
@@ -2996,7 +2996,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 255.0, 102.0] // mm
 }
@@ -3011,7 +3011,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 255.0, 153.0] // mm
 }
@@ -3026,7 +3026,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 255.0, 204.0] // mm
 }
@@ -3041,7 +3041,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 255.0, 255.0] // mm
 }
@@ -3056,7 +3056,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 255.0, 306.0] // mm
 }
@@ -3071,7 +3071,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 255.0, 357.0] // mm
 }
@@ -3086,7 +3086,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 306.0, -357.0] // mm
 }
@@ -3101,7 +3101,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 306.0, -306.0] // mm
 }
@@ -3116,7 +3116,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 306.0, -255.0] // mm
 }
@@ -3131,7 +3131,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 306.0, -204.0] // mm
 }
@@ -3146,7 +3146,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 306.0, -153.0] // mm
 }
@@ -3161,7 +3161,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 306.0, -102.0] // mm
 }
@@ -3176,7 +3176,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 306.0, -51.0] // mm
 }
@@ -3191,7 +3191,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 306.0, 0.0] // mm
 }
@@ -3206,7 +3206,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 306.0, 51.0] // mm
 }
@@ -3221,7 +3221,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 306.0, 102.0] // mm
 }
@@ -3236,7 +3236,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 306.0, 153.0] // mm
 }
@@ -3251,7 +3251,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 306.0, 204.0] // mm
 }
@@ -3266,7 +3266,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 306.0, 255.0] // mm
 }
@@ -3281,7 +3281,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 306.0, 306.0] // mm
 }
@@ -3296,7 +3296,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 306.0, 357.0] // mm
 }
@@ -3311,7 +3311,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 357.0, -357.0] // mm
 }
@@ -3326,7 +3326,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 357.0, -306.0] // mm
 }
@@ -3341,7 +3341,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 357.0, -255.0] // mm
 }
@@ -3356,7 +3356,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 357.0, -204.0] // mm
 }
@@ -3371,7 +3371,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 357.0, -153.0] // mm
 }
@@ -3386,7 +3386,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 357.0, -102.0] // mm
 }
@@ -3401,7 +3401,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 357.0, -51.0] // mm
 }
@@ -3416,7 +3416,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 357.0, 0.0] // mm
 }
@@ -3431,7 +3431,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 357.0, 51.0] // mm
 }
@@ -3446,7 +3446,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 357.0, 102.0] // mm
 }
@@ -3461,7 +3461,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 357.0, 153.0] // mm
 }
@@ -3476,7 +3476,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 357.0, 204.0] // mm
 }
@@ -3491,7 +3491,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 357.0, 255.0] // mm
 }
@@ -3506,7 +3506,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 357.0, 306.0] // mm
 }
@@ -3521,7 +3521,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-357.0, 357.0, 357.0] // mm
 }
@@ -3536,7 +3536,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -357.0, -357.0] // mm
 }
@@ -3551,7 +3551,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -357.0, -306.0] // mm
 }
@@ -3566,7 +3566,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -357.0, -255.0] // mm
 }
@@ -3581,7 +3581,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -357.0, -204.0] // mm
 }
@@ -3596,7 +3596,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -357.0, -153.0] // mm
 }
@@ -3611,7 +3611,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -357.0, -102.0] // mm
 }
@@ -3626,7 +3626,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -357.0, -51.0] // mm
 }
@@ -3641,7 +3641,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -357.0, 0.0] // mm
 }
@@ -3656,7 +3656,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -357.0, 51.0] // mm
 }
@@ -3671,7 +3671,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -357.0, 102.0] // mm
 }
@@ -3686,7 +3686,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -357.0, 153.0] // mm
 }
@@ -3701,7 +3701,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -357.0, 204.0] // mm
 }
@@ -3716,7 +3716,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -357.0, 255.0] // mm
 }
@@ -3731,7 +3731,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -357.0, 306.0] // mm
 }
@@ -3746,7 +3746,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -357.0, 357.0] // mm
 }
@@ -3761,7 +3761,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -306.0, -357.0] // mm
 }
@@ -3776,7 +3776,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -306.0, -306.0] // mm
 }
@@ -3791,7 +3791,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -306.0, -255.0] // mm
 }
@@ -3806,7 +3806,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -306.0, -204.0] // mm
 }
@@ -3821,7 +3821,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -306.0, -153.0] // mm
 }
@@ -3836,7 +3836,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -306.0, -102.0] // mm
 }
@@ -3851,7 +3851,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -306.0, -51.0] // mm
 }
@@ -3866,7 +3866,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -306.0, 0.0] // mm
 }
@@ -3881,7 +3881,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -306.0, 51.0] // mm
 }
@@ -3896,7 +3896,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -306.0, 102.0] // mm
 }
@@ -3911,7 +3911,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -306.0, 153.0] // mm
 }
@@ -3926,7 +3926,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -306.0, 204.0] // mm
 }
@@ -3941,7 +3941,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -306.0, 255.0] // mm
 }
@@ -3956,7 +3956,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -306.0, 306.0] // mm
 }
@@ -3971,7 +3971,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -306.0, 357.0] // mm
 }
@@ -3986,7 +3986,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -255.0, -357.0] // mm
 }
@@ -4001,7 +4001,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -255.0, -306.0] // mm
 }
@@ -4016,7 +4016,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -255.0, -255.0] // mm
 }
@@ -4031,7 +4031,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -255.0, -204.0] // mm
 }
@@ -4046,7 +4046,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -255.0, -153.0] // mm
 }
@@ -4061,7 +4061,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -255.0, -102.0] // mm
 }
@@ -4076,7 +4076,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -255.0, -51.0] // mm
 }
@@ -4091,7 +4091,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -255.0, 0.0] // mm
 }
@@ -4106,7 +4106,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -255.0, 51.0] // mm
 }
@@ -4121,7 +4121,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -255.0, 102.0] // mm
 }
@@ -4136,7 +4136,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -255.0, 153.0] // mm
 }
@@ -4151,7 +4151,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -255.0, 204.0] // mm
 }
@@ -4166,7 +4166,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -255.0, 255.0] // mm
 }
@@ -4181,7 +4181,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -255.0, 306.0] // mm
 }
@@ -4196,7 +4196,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -255.0, 357.0] // mm
 }
@@ -4211,7 +4211,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -204.0, -357.0] // mm
 }
@@ -4226,7 +4226,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -204.0, -306.0] // mm
 }
@@ -4241,7 +4241,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -204.0, -255.0] // mm
 }
@@ -4256,7 +4256,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -204.0, -204.0] // mm
 }
@@ -4271,7 +4271,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -204.0, -153.0] // mm
 }
@@ -4286,7 +4286,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -204.0, -102.0] // mm
 }
@@ -4301,7 +4301,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -204.0, -51.0] // mm
 }
@@ -4316,7 +4316,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -204.0, 0.0] // mm
 }
@@ -4331,7 +4331,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -204.0, 51.0] // mm
 }
@@ -4346,7 +4346,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -204.0, 102.0] // mm
 }
@@ -4361,7 +4361,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -204.0, 153.0] // mm
 }
@@ -4376,7 +4376,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -204.0, 204.0] // mm
 }
@@ -4391,7 +4391,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -204.0, 255.0] // mm
 }
@@ -4406,7 +4406,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -204.0, 306.0] // mm
 }
@@ -4421,7 +4421,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -204.0, 357.0] // mm
 }
@@ -4436,7 +4436,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -153.0, -357.0] // mm
 }
@@ -4451,7 +4451,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -153.0, -306.0] // mm
 }
@@ -4466,7 +4466,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -153.0, -255.0] // mm
 }
@@ -4481,7 +4481,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -153.0, -204.0] // mm
 }
@@ -4496,7 +4496,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -153.0, -153.0] // mm
 }
@@ -4511,7 +4511,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -153.0, -102.0] // mm
 }
@@ -4526,7 +4526,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -153.0, -51.0] // mm
 }
@@ -4541,7 +4541,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -153.0, 0.0] // mm
 }
@@ -4556,7 +4556,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -153.0, 51.0] // mm
 }
@@ -4571,7 +4571,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -153.0, 102.0] // mm
 }
@@ -4586,7 +4586,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -153.0, 153.0] // mm
 }
@@ -4601,7 +4601,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -153.0, 204.0] // mm
 }
@@ -4616,7 +4616,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -153.0, 255.0] // mm
 }
@@ -4631,7 +4631,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -153.0, 306.0] // mm
 }
@@ -4646,7 +4646,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -153.0, 357.0] // mm
 }
@@ -4661,7 +4661,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -102.0, -357.0] // mm
 }
@@ -4676,7 +4676,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -102.0, -306.0] // mm
 }
@@ -4691,7 +4691,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -102.0, -255.0] // mm
 }
@@ -4706,7 +4706,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -102.0, -204.0] // mm
 }
@@ -4721,7 +4721,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -102.0, -153.0] // mm
 }
@@ -4736,7 +4736,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -102.0, -102.0] // mm
 }
@@ -4751,7 +4751,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -102.0, -51.0] // mm
 }
@@ -4766,7 +4766,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -102.0, 0.0] // mm
 }
@@ -4781,7 +4781,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -102.0, 51.0] // mm
 }
@@ -4796,7 +4796,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -102.0, 102.0] // mm
 }
@@ -4811,7 +4811,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -102.0, 153.0] // mm
 }
@@ -4826,7 +4826,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -102.0, 204.0] // mm
 }
@@ -4841,7 +4841,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -102.0, 255.0] // mm
 }
@@ -4856,7 +4856,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -102.0, 306.0] // mm
 }
@@ -4871,7 +4871,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -102.0, 357.0] // mm
 }
@@ -4886,7 +4886,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -51.0, -357.0] // mm
 }
@@ -4901,7 +4901,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -51.0, -306.0] // mm
 }
@@ -4916,7 +4916,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -51.0, -255.0] // mm
 }
@@ -4931,7 +4931,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -51.0, -204.0] // mm
 }
@@ -4946,7 +4946,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -51.0, -153.0] // mm
 }
@@ -4961,7 +4961,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -51.0, -102.0] // mm
 }
@@ -4976,7 +4976,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -51.0, -51.0] // mm
 }
@@ -4991,7 +4991,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -51.0, 0.0] // mm
 }
@@ -5006,7 +5006,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -51.0, 51.0] // mm
 }
@@ -5021,7 +5021,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -51.0, 102.0] // mm
 }
@@ -5036,7 +5036,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -51.0, 153.0] // mm
 }
@@ -5051,7 +5051,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -51.0, 204.0] // mm
 }
@@ -5066,7 +5066,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -51.0, 255.0] // mm
 }
@@ -5081,7 +5081,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -51.0, 306.0] // mm
 }
@@ -5096,7 +5096,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, -51.0, 357.0] // mm
 }
@@ -5111,7 +5111,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 0.0, -357.0] // mm
 }
@@ -5126,7 +5126,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 0.0, -306.0] // mm
 }
@@ -5141,7 +5141,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 0.0, -255.0] // mm
 }
@@ -5156,7 +5156,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 0.0, -204.0] // mm
 }
@@ -5171,7 +5171,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 0.0, -153.0] // mm
 }
@@ -5186,7 +5186,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 0.0, -102.0] // mm
 }
@@ -5201,7 +5201,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 0.0, -51.0] // mm
 }
@@ -5216,7 +5216,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 0.0, 0.0] // mm
 }
@@ -5231,7 +5231,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 0.0, 51.0] // mm
 }
@@ -5246,7 +5246,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 0.0, 102.0] // mm
 }
@@ -5261,7 +5261,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 0.0, 153.0] // mm
 }
@@ -5276,7 +5276,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 0.0, 204.0] // mm
 }
@@ -5291,7 +5291,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 0.0, 255.0] // mm
 }
@@ -5306,7 +5306,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 0.0, 306.0] // mm
 }
@@ -5321,7 +5321,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 0.0, 357.0] // mm
 }
@@ -5336,7 +5336,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 51.0, -357.0] // mm
 }
@@ -5351,7 +5351,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 51.0, -306.0] // mm
 }
@@ -5366,7 +5366,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 51.0, -255.0] // mm
 }
@@ -5381,7 +5381,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 51.0, -204.0] // mm
 }
@@ -5396,7 +5396,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 51.0, -153.0] // mm
 }
@@ -5411,7 +5411,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 51.0, -102.0] // mm
 }
@@ -5426,7 +5426,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 51.0, -51.0] // mm
 }
@@ -5441,7 +5441,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 51.0, 0.0] // mm
 }
@@ -5456,7 +5456,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 51.0, 51.0] // mm
 }
@@ -5471,7 +5471,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 51.0, 102.0] // mm
 }
@@ -5486,7 +5486,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 51.0, 153.0] // mm
 }
@@ -5501,7 +5501,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 51.0, 204.0] // mm
 }
@@ -5516,7 +5516,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 51.0, 255.0] // mm
 }
@@ -5531,7 +5531,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 51.0, 306.0] // mm
 }
@@ -5546,7 +5546,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 51.0, 357.0] // mm
 }
@@ -5561,7 +5561,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 102.0, -357.0] // mm
 }
@@ -5576,7 +5576,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 102.0, -306.0] // mm
 }
@@ -5591,7 +5591,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 102.0, -255.0] // mm
 }
@@ -5606,7 +5606,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 102.0, -204.0] // mm
 }
@@ -5621,7 +5621,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 102.0, -153.0] // mm
 }
@@ -5636,7 +5636,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 102.0, -102.0] // mm
 }
@@ -5651,7 +5651,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 102.0, -51.0] // mm
 }
@@ -5666,7 +5666,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 102.0, 0.0] // mm
 }
@@ -5681,7 +5681,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 102.0, 51.0] // mm
 }
@@ -5696,7 +5696,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 102.0, 102.0] // mm
 }
@@ -5711,7 +5711,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 102.0, 153.0] // mm
 }
@@ -5726,7 +5726,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 102.0, 204.0] // mm
 }
@@ -5741,7 +5741,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 102.0, 255.0] // mm
 }
@@ -5756,7 +5756,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 102.0, 306.0] // mm
 }
@@ -5771,7 +5771,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 102.0, 357.0] // mm
 }
@@ -5786,7 +5786,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 153.0, -357.0] // mm
 }
@@ -5801,7 +5801,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 153.0, -306.0] // mm
 }
@@ -5816,7 +5816,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 153.0, -255.0] // mm
 }
@@ -5831,7 +5831,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 153.0, -204.0] // mm
 }
@@ -5846,7 +5846,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 153.0, -153.0] // mm
 }
@@ -5861,7 +5861,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 153.0, -102.0] // mm
 }
@@ -5876,7 +5876,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 153.0, -51.0] // mm
 }
@@ -5891,7 +5891,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 153.0, 0.0] // mm
 }
@@ -5906,7 +5906,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 153.0, 51.0] // mm
 }
@@ -5921,7 +5921,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 153.0, 102.0] // mm
 }
@@ -5936,7 +5936,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 153.0, 153.0] // mm
 }
@@ -5951,7 +5951,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 153.0, 204.0] // mm
 }
@@ -5966,7 +5966,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 153.0, 255.0] // mm
 }
@@ -5981,7 +5981,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 153.0, 306.0] // mm
 }
@@ -5996,7 +5996,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 153.0, 357.0] // mm
 }
@@ -6011,7 +6011,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 204.0, -357.0] // mm
 }
@@ -6026,7 +6026,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 204.0, -306.0] // mm
 }
@@ -6041,7 +6041,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 204.0, -255.0] // mm
 }
@@ -6056,7 +6056,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 204.0, -204.0] // mm
 }
@@ -6071,7 +6071,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 204.0, -153.0] // mm
 }
@@ -6086,7 +6086,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 204.0, -102.0] // mm
 }
@@ -6101,7 +6101,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 204.0, -51.0] // mm
 }
@@ -6116,7 +6116,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 204.0, 0.0] // mm
 }
@@ -6131,7 +6131,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 204.0, 51.0] // mm
 }
@@ -6146,7 +6146,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 204.0, 102.0] // mm
 }
@@ -6161,7 +6161,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 204.0, 153.0] // mm
 }
@@ -6176,7 +6176,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 204.0, 204.0] // mm
 }
@@ -6191,7 +6191,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 204.0, 255.0] // mm
 }
@@ -6206,7 +6206,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 204.0, 306.0] // mm
 }
@@ -6221,7 +6221,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 204.0, 357.0] // mm
 }
@@ -6236,7 +6236,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 255.0, -357.0] // mm
 }
@@ -6251,7 +6251,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 255.0, -306.0] // mm
 }
@@ -6266,7 +6266,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 255.0, -255.0] // mm
 }
@@ -6281,7 +6281,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 255.0, -204.0] // mm
 }
@@ -6296,7 +6296,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 255.0, -153.0] // mm
 }
@@ -6311,7 +6311,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 255.0, -102.0] // mm
 }
@@ -6326,7 +6326,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 255.0, -51.0] // mm
 }
@@ -6341,7 +6341,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 255.0, 0.0] // mm
 }
@@ -6356,7 +6356,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 255.0, 51.0] // mm
 }
@@ -6371,7 +6371,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 255.0, 102.0] // mm
 }
@@ -6386,7 +6386,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 255.0, 153.0] // mm
 }
@@ -6401,7 +6401,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 255.0, 204.0] // mm
 }
@@ -6416,7 +6416,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 255.0, 255.0] // mm
 }
@@ -6431,7 +6431,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 255.0, 306.0] // mm
 }
@@ -6446,7 +6446,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 255.0, 357.0] // mm
 }
@@ -6461,7 +6461,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 306.0, -357.0] // mm
 }
@@ -6476,7 +6476,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 306.0, -306.0] // mm
 }
@@ -6491,7 +6491,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 306.0, -255.0] // mm
 }
@@ -6506,7 +6506,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 306.0, -204.0] // mm
 }
@@ -6521,7 +6521,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 306.0, -153.0] // mm
 }
@@ -6536,7 +6536,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 306.0, -102.0] // mm
 }
@@ -6551,7 +6551,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 306.0, -51.0] // mm
 }
@@ -6566,7 +6566,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 306.0, 0.0] // mm
 }
@@ -6581,7 +6581,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 306.0, 51.0] // mm
 }
@@ -6596,7 +6596,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 306.0, 102.0] // mm
 }
@@ -6611,7 +6611,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 306.0, 153.0] // mm
 }
@@ -6626,7 +6626,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 306.0, 204.0] // mm
 }
@@ -6641,7 +6641,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 306.0, 255.0] // mm
 }
@@ -6656,7 +6656,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 306.0, 306.0] // mm
 }
@@ -6671,7 +6671,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 306.0, 357.0] // mm
 }
@@ -6686,7 +6686,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 357.0, -357.0] // mm
 }
@@ -6701,7 +6701,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 357.0, -306.0] // mm
 }
@@ -6716,7 +6716,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 357.0, -255.0] // mm
 }
@@ -6731,7 +6731,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 357.0, -204.0] // mm
 }
@@ -6746,7 +6746,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 357.0, -153.0] // mm
 }
@@ -6761,7 +6761,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 357.0, -102.0] // mm
 }
@@ -6776,7 +6776,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 357.0, -51.0] // mm
 }
@@ -6791,7 +6791,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 357.0, 0.0] // mm
 }
@@ -6806,7 +6806,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 357.0, 51.0] // mm
 }
@@ -6821,7 +6821,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 357.0, 102.0] // mm
 }
@@ -6836,7 +6836,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 357.0, 153.0] // mm
 }
@@ -6851,7 +6851,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 357.0, 204.0] // mm
 }
@@ -6866,7 +6866,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 357.0, 255.0] // mm
 }
@@ -6881,7 +6881,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 357.0, 306.0] // mm
 }
@@ -6896,7 +6896,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-306.0, 357.0, 357.0] // mm
 }
@@ -6911,7 +6911,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -357.0, -357.0] // mm
 }
@@ -6926,7 +6926,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -357.0, -306.0] // mm
 }
@@ -6941,7 +6941,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -357.0, -255.0] // mm
 }
@@ -6956,7 +6956,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -357.0, -204.0] // mm
 }
@@ -6971,7 +6971,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -357.0, -153.0] // mm
 }
@@ -6986,7 +6986,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -357.0, -102.0] // mm
 }
@@ -7001,7 +7001,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -357.0, -51.0] // mm
 }
@@ -7016,7 +7016,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -357.0, 0.0] // mm
 }
@@ -7031,7 +7031,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -357.0, 51.0] // mm
 }
@@ -7046,7 +7046,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -357.0, 102.0] // mm
 }
@@ -7061,7 +7061,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -357.0, 153.0] // mm
 }
@@ -7076,7 +7076,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -357.0, 204.0] // mm
 }
@@ -7091,7 +7091,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -357.0, 255.0] // mm
 }
@@ -7106,7 +7106,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -357.0, 306.0] // mm
 }
@@ -7121,7 +7121,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -357.0, 357.0] // mm
 }
@@ -7136,7 +7136,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -306.0, -357.0] // mm
 }
@@ -7151,7 +7151,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -306.0, -306.0] // mm
 }
@@ -7166,7 +7166,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -306.0, -255.0] // mm
 }
@@ -7181,7 +7181,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -306.0, -204.0] // mm
 }
@@ -7196,7 +7196,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -306.0, -153.0] // mm
 }
@@ -7211,7 +7211,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -306.0, -102.0] // mm
 }
@@ -7226,7 +7226,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -306.0, -51.0] // mm
 }
@@ -7241,7 +7241,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -306.0, 0.0] // mm
 }
@@ -7256,7 +7256,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -306.0, 51.0] // mm
 }
@@ -7271,7 +7271,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -306.0, 102.0] // mm
 }
@@ -7286,7 +7286,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -306.0, 153.0] // mm
 }
@@ -7301,7 +7301,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -306.0, 204.0] // mm
 }
@@ -7316,7 +7316,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -306.0, 255.0] // mm
 }
@@ -7331,7 +7331,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -306.0, 306.0] // mm
 }
@@ -7346,7 +7346,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -306.0, 357.0] // mm
 }
@@ -7361,7 +7361,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -255.0, -357.0] // mm
 }
@@ -7376,7 +7376,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -255.0, -306.0] // mm
 }
@@ -7391,7 +7391,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -255.0, -255.0] // mm
 }
@@ -7406,7 +7406,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -255.0, -204.0] // mm
 }
@@ -7421,7 +7421,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -255.0, -153.0] // mm
 }
@@ -7436,7 +7436,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -255.0, -102.0] // mm
 }
@@ -7451,7 +7451,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -255.0, -51.0] // mm
 }
@@ -7466,7 +7466,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -255.0, 0.0] // mm
 }
@@ -7481,7 +7481,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -255.0, 51.0] // mm
 }
@@ -7496,7 +7496,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -255.0, 102.0] // mm
 }
@@ -7511,7 +7511,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -255.0, 153.0] // mm
 }
@@ -7526,7 +7526,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -255.0, 204.0] // mm
 }
@@ -7541,7 +7541,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -255.0, 255.0] // mm
 }
@@ -7556,7 +7556,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -255.0, 306.0] // mm
 }
@@ -7571,7 +7571,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -255.0, 357.0] // mm
 }
@@ -7586,7 +7586,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -204.0, -357.0] // mm
 }
@@ -7601,7 +7601,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -204.0, -306.0] // mm
 }
@@ -7616,7 +7616,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -204.0, -255.0] // mm
 }
@@ -7631,7 +7631,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -204.0, -204.0] // mm
 }
@@ -7646,7 +7646,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -204.0, -153.0] // mm
 }
@@ -7661,7 +7661,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -204.0, -102.0] // mm
 }
@@ -7676,7 +7676,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -204.0, -51.0] // mm
 }
@@ -7691,7 +7691,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -204.0, 0.0] // mm
 }
@@ -7706,7 +7706,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -204.0, 51.0] // mm
 }
@@ -7721,7 +7721,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -204.0, 102.0] // mm
 }
@@ -7736,7 +7736,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -204.0, 153.0] // mm
 }
@@ -7751,7 +7751,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -204.0, 204.0] // mm
 }
@@ -7766,7 +7766,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -204.0, 255.0] // mm
 }
@@ -7781,7 +7781,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -204.0, 306.0] // mm
 }
@@ -7796,7 +7796,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -204.0, 357.0] // mm
 }
@@ -7811,7 +7811,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -153.0, -357.0] // mm
 }
@@ -7826,7 +7826,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -153.0, -306.0] // mm
 }
@@ -7841,7 +7841,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -153.0, -255.0] // mm
 }
@@ -7856,7 +7856,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -153.0, -204.0] // mm
 }
@@ -7871,7 +7871,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -153.0, -153.0] // mm
 }
@@ -7886,7 +7886,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -153.0, -102.0] // mm
 }
@@ -7901,7 +7901,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -153.0, -51.0] // mm
 }
@@ -7916,7 +7916,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -153.0, 0.0] // mm
 }
@@ -7931,7 +7931,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -153.0, 51.0] // mm
 }
@@ -7946,7 +7946,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -153.0, 102.0] // mm
 }
@@ -7961,7 +7961,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -153.0, 153.0] // mm
 }
@@ -7976,7 +7976,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -153.0, 204.0] // mm
 }
@@ -7991,7 +7991,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -153.0, 255.0] // mm
 }
@@ -8006,7 +8006,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -153.0, 306.0] // mm
 }
@@ -8021,7 +8021,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -153.0, 357.0] // mm
 }
@@ -8036,7 +8036,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -102.0, -357.0] // mm
 }
@@ -8051,7 +8051,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -102.0, -306.0] // mm
 }
@@ -8066,7 +8066,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -102.0, -255.0] // mm
 }
@@ -8081,7 +8081,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -102.0, -204.0] // mm
 }
@@ -8096,7 +8096,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -102.0, -153.0] // mm
 }
@@ -8111,7 +8111,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -102.0, -102.0] // mm
 }
@@ -8126,7 +8126,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -102.0, -51.0] // mm
 }
@@ -8141,7 +8141,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -102.0, 0.0] // mm
 }
@@ -8156,7 +8156,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -102.0, 51.0] // mm
 }
@@ -8171,7 +8171,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -102.0, 102.0] // mm
 }
@@ -8186,7 +8186,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -102.0, 153.0] // mm
 }
@@ -8201,7 +8201,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -102.0, 204.0] // mm
 }
@@ -8216,7 +8216,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -102.0, 255.0] // mm
 }
@@ -8231,7 +8231,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -102.0, 306.0] // mm
 }
@@ -8246,7 +8246,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -102.0, 357.0] // mm
 }
@@ -8261,7 +8261,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -51.0, -357.0] // mm
 }
@@ -8276,7 +8276,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -51.0, -306.0] // mm
 }
@@ -8291,7 +8291,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -51.0, -255.0] // mm
 }
@@ -8306,7 +8306,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -51.0, -204.0] // mm
 }
@@ -8321,7 +8321,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -51.0, -153.0] // mm
 }
@@ -8336,7 +8336,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -51.0, -102.0] // mm
 }
@@ -8351,7 +8351,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -51.0, -51.0] // mm
 }
@@ -8366,7 +8366,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -51.0, 0.0] // mm
 }
@@ -8381,7 +8381,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -51.0, 51.0] // mm
 }
@@ -8396,7 +8396,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -51.0, 102.0] // mm
 }
@@ -8411,7 +8411,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -51.0, 153.0] // mm
 }
@@ -8426,7 +8426,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -51.0, 204.0] // mm
 }
@@ -8441,7 +8441,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -51.0, 255.0] // mm
 }
@@ -8456,7 +8456,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -51.0, 306.0] // mm
 }
@@ -8471,7 +8471,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, -51.0, 357.0] // mm
 }
@@ -8486,7 +8486,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 0.0, -357.0] // mm
 }
@@ -8501,7 +8501,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 0.0, -306.0] // mm
 }
@@ -8516,7 +8516,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 0.0, -255.0] // mm
 }
@@ -8531,7 +8531,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 0.0, -204.0] // mm
 }
@@ -8546,7 +8546,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 0.0, -153.0] // mm
 }
@@ -8561,7 +8561,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 0.0, -102.0] // mm
 }
@@ -8576,7 +8576,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 0.0, -51.0] // mm
 }
@@ -8591,7 +8591,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 0.0, 0.0] // mm
 }
@@ -8606,7 +8606,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 0.0, 51.0] // mm
 }
@@ -8621,7 +8621,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 0.0, 102.0] // mm
 }
@@ -8636,7 +8636,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 0.0, 153.0] // mm
 }
@@ -8651,7 +8651,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 0.0, 204.0] // mm
 }
@@ -8666,7 +8666,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 0.0, 255.0] // mm
 }
@@ -8681,7 +8681,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 0.0, 306.0] // mm
 }
@@ -8696,7 +8696,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 0.0, 357.0] // mm
 }
@@ -8711,7 +8711,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 51.0, -357.0] // mm
 }
@@ -8726,7 +8726,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 51.0, -306.0] // mm
 }
@@ -8741,7 +8741,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 51.0, -255.0] // mm
 }
@@ -8756,7 +8756,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 51.0, -204.0] // mm
 }
@@ -8771,7 +8771,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 51.0, -153.0] // mm
 }
@@ -8786,7 +8786,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 51.0, -102.0] // mm
 }
@@ -8801,7 +8801,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 51.0, -51.0] // mm
 }
@@ -8816,7 +8816,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 51.0, 0.0] // mm
 }
@@ -8831,7 +8831,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 51.0, 51.0] // mm
 }
@@ -8846,7 +8846,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 51.0, 102.0] // mm
 }
@@ -8861,7 +8861,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 51.0, 153.0] // mm
 }
@@ -8876,7 +8876,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 51.0, 204.0] // mm
 }
@@ -8891,7 +8891,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 51.0, 255.0] // mm
 }
@@ -8906,7 +8906,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 51.0, 306.0] // mm
 }
@@ -8921,7 +8921,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 51.0, 357.0] // mm
 }
@@ -8936,7 +8936,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 102.0, -357.0] // mm
 }
@@ -8951,7 +8951,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 102.0, -306.0] // mm
 }
@@ -8966,7 +8966,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 102.0, -255.0] // mm
 }
@@ -8981,7 +8981,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 102.0, -204.0] // mm
 }
@@ -8996,7 +8996,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 102.0, -153.0] // mm
 }
@@ -9011,7 +9011,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 102.0, -102.0] // mm
 }
@@ -9026,7 +9026,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 102.0, -51.0] // mm
 }
@@ -9041,7 +9041,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 102.0, 0.0] // mm
 }
@@ -9056,7 +9056,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 102.0, 51.0] // mm
 }
@@ -9071,7 +9071,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 102.0, 102.0] // mm
 }
@@ -9086,7 +9086,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 102.0, 153.0] // mm
 }
@@ -9101,7 +9101,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 102.0, 204.0] // mm
 }
@@ -9116,7 +9116,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 102.0, 255.0] // mm
 }
@@ -9131,7 +9131,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 102.0, 306.0] // mm
 }
@@ -9146,7 +9146,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 102.0, 357.0] // mm
 }
@@ -9161,7 +9161,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 153.0, -357.0] // mm
 }
@@ -9176,7 +9176,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 153.0, -306.0] // mm
 }
@@ -9191,7 +9191,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 153.0, -255.0] // mm
 }
@@ -9206,7 +9206,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 153.0, -204.0] // mm
 }
@@ -9221,7 +9221,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 153.0, -153.0] // mm
 }
@@ -9236,7 +9236,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 153.0, -102.0] // mm
 }
@@ -9251,7 +9251,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 153.0, -51.0] // mm
 }
@@ -9266,7 +9266,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 153.0, 0.0] // mm
 }
@@ -9281,7 +9281,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 153.0, 51.0] // mm
 }
@@ -9296,7 +9296,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 153.0, 102.0] // mm
 }
@@ -9311,7 +9311,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 153.0, 153.0] // mm
 }
@@ -9326,7 +9326,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 153.0, 204.0] // mm
 }
@@ -9341,7 +9341,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 153.0, 255.0] // mm
 }
@@ -9356,7 +9356,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 153.0, 306.0] // mm
 }
@@ -9371,7 +9371,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 153.0, 357.0] // mm
 }
@@ -9386,7 +9386,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 204.0, -357.0] // mm
 }
@@ -9401,7 +9401,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 204.0, -306.0] // mm
 }
@@ -9416,7 +9416,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 204.0, -255.0] // mm
 }
@@ -9431,7 +9431,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 204.0, -204.0] // mm
 }
@@ -9446,7 +9446,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 204.0, -153.0] // mm
 }
@@ -9461,7 +9461,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 204.0, -102.0] // mm
 }
@@ -9476,7 +9476,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 204.0, -51.0] // mm
 }
@@ -9491,7 +9491,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 204.0, 0.0] // mm
 }
@@ -9506,7 +9506,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 204.0, 51.0] // mm
 }
@@ -9521,7 +9521,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 204.0, 102.0] // mm
 }
@@ -9536,7 +9536,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 204.0, 153.0] // mm
 }
@@ -9551,7 +9551,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 204.0, 204.0] // mm
 }
@@ -9566,7 +9566,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 204.0, 255.0] // mm
 }
@@ -9581,7 +9581,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 204.0, 306.0] // mm
 }
@@ -9596,7 +9596,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 204.0, 357.0] // mm
 }
@@ -9611,7 +9611,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 255.0, -357.0] // mm
 }
@@ -9626,7 +9626,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 255.0, -306.0] // mm
 }
@@ -9641,7 +9641,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 255.0, -255.0] // mm
 }
@@ -9656,7 +9656,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 255.0, -204.0] // mm
 }
@@ -9671,7 +9671,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 255.0, -153.0] // mm
 }
@@ -9686,7 +9686,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 255.0, -102.0] // mm
 }
@@ -9701,7 +9701,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 255.0, -51.0] // mm
 }
@@ -9716,7 +9716,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 255.0, 0.0] // mm
 }
@@ -9731,7 +9731,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 255.0, 51.0] // mm
 }
@@ -9746,7 +9746,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 255.0, 102.0] // mm
 }
@@ -9761,7 +9761,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 255.0, 153.0] // mm
 }
@@ -9776,7 +9776,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 255.0, 204.0] // mm
 }
@@ -9791,7 +9791,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 255.0, 255.0] // mm
 }
@@ -9806,7 +9806,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 255.0, 306.0] // mm
 }
@@ -9821,7 +9821,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 255.0, 357.0] // mm
 }
@@ -9836,7 +9836,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 306.0, -357.0] // mm
 }
@@ -9851,7 +9851,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 306.0, -306.0] // mm
 }
@@ -9866,7 +9866,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 306.0, -255.0] // mm
 }
@@ -9881,7 +9881,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 306.0, -204.0] // mm
 }
@@ -9896,7 +9896,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 306.0, -153.0] // mm
 }
@@ -9911,7 +9911,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 306.0, -102.0] // mm
 }
@@ -9926,7 +9926,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 306.0, -51.0] // mm
 }
@@ -9941,7 +9941,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 306.0, 0.0] // mm
 }
@@ -9956,7 +9956,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 306.0, 51.0] // mm
 }
@@ -9971,7 +9971,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 306.0, 102.0] // mm
 }
@@ -9986,7 +9986,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 306.0, 153.0] // mm
 }
@@ -10001,7 +10001,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 306.0, 204.0] // mm
 }
@@ -10016,7 +10016,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 306.0, 255.0] // mm
 }
@@ -10031,7 +10031,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 306.0, 306.0] // mm
 }
@@ -10046,7 +10046,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 306.0, 357.0] // mm
 }
@@ -10061,7 +10061,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 357.0, -357.0] // mm
 }
@@ -10076,7 +10076,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 357.0, -306.0] // mm
 }
@@ -10091,7 +10091,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 357.0, -255.0] // mm
 }
@@ -10106,7 +10106,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 357.0, -204.0] // mm
 }
@@ -10121,7 +10121,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 357.0, -153.0] // mm
 }
@@ -10136,7 +10136,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 357.0, -102.0] // mm
 }
@@ -10151,7 +10151,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 357.0, -51.0] // mm
 }
@@ -10166,7 +10166,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 357.0, 0.0] // mm
 }
@@ -10181,7 +10181,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 357.0, 51.0] // mm
 }
@@ -10196,7 +10196,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 357.0, 102.0] // mm
 }
@@ -10211,7 +10211,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 357.0, 153.0] // mm
 }
@@ -10226,7 +10226,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 357.0, 204.0] // mm
 }
@@ -10241,7 +10241,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 357.0, 255.0] // mm
 }
@@ -10256,7 +10256,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 357.0, 306.0] // mm
 }
@@ -10271,7 +10271,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-255.0, 357.0, 357.0] // mm
 }
@@ -10286,7 +10286,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -357.0, -357.0] // mm
 }
@@ -10301,7 +10301,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -357.0, -306.0] // mm
 }
@@ -10316,7 +10316,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -357.0, -255.0] // mm
 }
@@ -10331,7 +10331,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -357.0, -204.0] // mm
 }
@@ -10346,7 +10346,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -357.0, -153.0] // mm
 }
@@ -10361,7 +10361,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -357.0, -102.0] // mm
 }
@@ -10376,7 +10376,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -357.0, -51.0] // mm
 }
@@ -10391,7 +10391,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -357.0, 0.0] // mm
 }
@@ -10406,7 +10406,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -357.0, 51.0] // mm
 }
@@ -10421,7 +10421,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -357.0, 102.0] // mm
 }
@@ -10436,7 +10436,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -357.0, 153.0] // mm
 }
@@ -10451,7 +10451,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -357.0, 204.0] // mm
 }
@@ -10466,7 +10466,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -357.0, 255.0] // mm
 }
@@ -10481,7 +10481,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -357.0, 306.0] // mm
 }
@@ -10496,7 +10496,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -357.0, 357.0] // mm
 }
@@ -10511,7 +10511,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -306.0, -357.0] // mm
 }
@@ -10526,7 +10526,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -306.0, -306.0] // mm
 }
@@ -10541,7 +10541,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -306.0, -255.0] // mm
 }
@@ -10556,7 +10556,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -306.0, -204.0] // mm
 }
@@ -10571,7 +10571,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -306.0, -153.0] // mm
 }
@@ -10586,7 +10586,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -306.0, -102.0] // mm
 }
@@ -10601,7 +10601,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -306.0, -51.0] // mm
 }
@@ -10616,7 +10616,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -306.0, 0.0] // mm
 }
@@ -10631,7 +10631,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -306.0, 51.0] // mm
 }
@@ -10646,7 +10646,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -306.0, 102.0] // mm
 }
@@ -10661,7 +10661,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -306.0, 153.0] // mm
 }
@@ -10676,7 +10676,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -306.0, 204.0] // mm
 }
@@ -10691,7 +10691,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -306.0, 255.0] // mm
 }
@@ -10706,7 +10706,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -306.0, 306.0] // mm
 }
@@ -10721,7 +10721,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -306.0, 357.0] // mm
 }
@@ -10736,7 +10736,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -255.0, -357.0] // mm
 }
@@ -10751,7 +10751,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -255.0, -306.0] // mm
 }
@@ -10766,7 +10766,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -255.0, -255.0] // mm
 }
@@ -10781,7 +10781,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -255.0, -204.0] // mm
 }
@@ -10796,7 +10796,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -255.0, -153.0] // mm
 }
@@ -10811,7 +10811,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -255.0, -102.0] // mm
 }
@@ -10826,7 +10826,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -255.0, -51.0] // mm
 }
@@ -10841,7 +10841,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -255.0, 0.0] // mm
 }
@@ -10856,7 +10856,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -255.0, 51.0] // mm
 }
@@ -10871,7 +10871,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -255.0, 102.0] // mm
 }
@@ -10886,7 +10886,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -255.0, 153.0] // mm
 }
@@ -10901,7 +10901,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -255.0, 204.0] // mm
 }
@@ -10916,7 +10916,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -255.0, 255.0] // mm
 }
@@ -10931,7 +10931,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -255.0, 306.0] // mm
 }
@@ -10946,7 +10946,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -255.0, 357.0] // mm
 }
@@ -10961,7 +10961,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -204.0, -357.0] // mm
 }
@@ -10976,7 +10976,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -204.0, -306.0] // mm
 }
@@ -10991,7 +10991,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -204.0, -255.0] // mm
 }
@@ -11006,7 +11006,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -204.0, -204.0] // mm
 }
@@ -11021,7 +11021,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -204.0, -153.0] // mm
 }
@@ -11036,7 +11036,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -204.0, -102.0] // mm
 }
@@ -11051,7 +11051,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -204.0, -51.0] // mm
 }
@@ -11066,7 +11066,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -204.0, 0.0] // mm
 }
@@ -11081,7 +11081,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -204.0, 51.0] // mm
 }
@@ -11096,7 +11096,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -204.0, 102.0] // mm
 }
@@ -11111,7 +11111,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -204.0, 153.0] // mm
 }
@@ -11126,7 +11126,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -204.0, 204.0] // mm
 }
@@ -11141,7 +11141,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -204.0, 255.0] // mm
 }
@@ -11156,7 +11156,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -204.0, 306.0] // mm
 }
@@ -11171,7 +11171,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -204.0, 357.0] // mm
 }
@@ -11186,7 +11186,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -153.0, -357.0] // mm
 }
@@ -11201,7 +11201,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -153.0, -306.0] // mm
 }
@@ -11216,7 +11216,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -153.0, -255.0] // mm
 }
@@ -11231,7 +11231,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -153.0, -204.0] // mm
 }
@@ -11246,7 +11246,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -153.0, -153.0] // mm
 }
@@ -11261,7 +11261,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -153.0, -102.0] // mm
 }
@@ -11276,7 +11276,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -153.0, -51.0] // mm
 }
@@ -11291,7 +11291,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -153.0, 0.0] // mm
 }
@@ -11306,7 +11306,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -153.0, 51.0] // mm
 }
@@ -11321,7 +11321,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -153.0, 102.0] // mm
 }
@@ -11336,7 +11336,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -153.0, 153.0] // mm
 }
@@ -11351,7 +11351,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -153.0, 204.0] // mm
 }
@@ -11366,7 +11366,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -153.0, 255.0] // mm
 }
@@ -11381,7 +11381,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -153.0, 306.0] // mm
 }
@@ -11396,7 +11396,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -153.0, 357.0] // mm
 }
@@ -11411,7 +11411,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -102.0, -357.0] // mm
 }
@@ -11426,7 +11426,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -102.0, -306.0] // mm
 }
@@ -11441,7 +11441,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -102.0, -255.0] // mm
 }
@@ -11456,7 +11456,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -102.0, -204.0] // mm
 }
@@ -11471,7 +11471,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -102.0, -153.0] // mm
 }
@@ -11486,7 +11486,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -102.0, -102.0] // mm
 }
@@ -11501,7 +11501,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -102.0, -51.0] // mm
 }
@@ -11516,7 +11516,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -102.0, 0.0] // mm
 }
@@ -11531,7 +11531,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -102.0, 51.0] // mm
 }
@@ -11546,7 +11546,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -102.0, 102.0] // mm
 }
@@ -11561,7 +11561,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -102.0, 153.0] // mm
 }
@@ -11576,7 +11576,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -102.0, 204.0] // mm
 }
@@ -11591,7 +11591,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -102.0, 255.0] // mm
 }
@@ -11606,7 +11606,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -102.0, 306.0] // mm
 }
@@ -11621,7 +11621,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -102.0, 357.0] // mm
 }
@@ -11636,7 +11636,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -51.0, -357.0] // mm
 }
@@ -11651,7 +11651,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -51.0, -306.0] // mm
 }
@@ -11666,7 +11666,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -51.0, -255.0] // mm
 }
@@ -11681,7 +11681,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -51.0, -204.0] // mm
 }
@@ -11696,7 +11696,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -51.0, -153.0] // mm
 }
@@ -11711,7 +11711,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -51.0, -102.0] // mm
 }
@@ -11726,7 +11726,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -51.0, -51.0] // mm
 }
@@ -11741,7 +11741,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -51.0, 0.0] // mm
 }
@@ -11756,7 +11756,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -51.0, 51.0] // mm
 }
@@ -11771,7 +11771,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -51.0, 102.0] // mm
 }
@@ -11786,7 +11786,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -51.0, 153.0] // mm
 }
@@ -11801,7 +11801,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -51.0, 204.0] // mm
 }
@@ -11816,7 +11816,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -51.0, 255.0] // mm
 }
@@ -11831,7 +11831,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -51.0, 306.0] // mm
 }
@@ -11846,7 +11846,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, -51.0, 357.0] // mm
 }
@@ -11861,7 +11861,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 0.0, -357.0] // mm
 }
@@ -11876,7 +11876,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 0.0, -306.0] // mm
 }
@@ -11891,7 +11891,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 0.0, -255.0] // mm
 }
@@ -11906,7 +11906,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 0.0, -204.0] // mm
 }
@@ -11921,7 +11921,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 0.0, -153.0] // mm
 }
@@ -11936,7 +11936,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 0.0, -102.0] // mm
 }
@@ -11951,7 +11951,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 0.0, -51.0] // mm
 }
@@ -11966,7 +11966,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 0.0, 0.0] // mm
 }
@@ -11981,7 +11981,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 0.0, 51.0] // mm
 }
@@ -11996,7 +11996,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 0.0, 102.0] // mm
 }
@@ -12011,7 +12011,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 0.0, 153.0] // mm
 }
@@ -12026,7 +12026,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 0.0, 204.0] // mm
 }
@@ -12041,7 +12041,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 0.0, 255.0] // mm
 }
@@ -12056,7 +12056,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 0.0, 306.0] // mm
 }
@@ -12071,7 +12071,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 0.0, 357.0] // mm
 }
@@ -12086,7 +12086,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 51.0, -357.0] // mm
 }
@@ -12101,7 +12101,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 51.0, -306.0] // mm
 }
@@ -12116,7 +12116,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 51.0, -255.0] // mm
 }
@@ -12131,7 +12131,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 51.0, -204.0] // mm
 }
@@ -12146,7 +12146,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 51.0, -153.0] // mm
 }
@@ -12161,7 +12161,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 51.0, -102.0] // mm
 }
@@ -12176,7 +12176,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 51.0, -51.0] // mm
 }
@@ -12191,7 +12191,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 51.0, 0.0] // mm
 }
@@ -12206,7 +12206,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 51.0, 51.0] // mm
 }
@@ -12221,7 +12221,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 51.0, 102.0] // mm
 }
@@ -12236,7 +12236,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 51.0, 153.0] // mm
 }
@@ -12251,7 +12251,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 51.0, 204.0] // mm
 }
@@ -12266,7 +12266,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 51.0, 255.0] // mm
 }
@@ -12281,7 +12281,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 51.0, 306.0] // mm
 }
@@ -12296,7 +12296,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 51.0, 357.0] // mm
 }
@@ -12311,7 +12311,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 102.0, -357.0] // mm
 }
@@ -12326,7 +12326,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 102.0, -306.0] // mm
 }
@@ -12341,7 +12341,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 102.0, -255.0] // mm
 }
@@ -12356,7 +12356,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 102.0, -204.0] // mm
 }
@@ -12371,7 +12371,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 102.0, -153.0] // mm
 }
@@ -12386,7 +12386,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 102.0, -102.0] // mm
 }
@@ -12401,7 +12401,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 102.0, -51.0] // mm
 }
@@ -12416,7 +12416,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 102.0, 0.0] // mm
 }
@@ -12431,7 +12431,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 102.0, 51.0] // mm
 }
@@ -12446,7 +12446,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 102.0, 102.0] // mm
 }
@@ -12461,7 +12461,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 102.0, 153.0] // mm
 }
@@ -12476,7 +12476,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 102.0, 204.0] // mm
 }
@@ -12491,7 +12491,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 102.0, 255.0] // mm
 }
@@ -12506,7 +12506,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 102.0, 306.0] // mm
 }
@@ -12521,7 +12521,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 102.0, 357.0] // mm
 }
@@ -12536,7 +12536,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 153.0, -357.0] // mm
 }
@@ -12551,7 +12551,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 153.0, -306.0] // mm
 }
@@ -12566,7 +12566,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 153.0, -255.0] // mm
 }
@@ -12581,7 +12581,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 153.0, -204.0] // mm
 }
@@ -12596,7 +12596,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 153.0, -153.0] // mm
 }
@@ -12611,7 +12611,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 153.0, -102.0] // mm
 }
@@ -12626,7 +12626,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 153.0, -51.0] // mm
 }
@@ -12641,7 +12641,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 153.0, 0.0] // mm
 }
@@ -12656,7 +12656,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 153.0, 51.0] // mm
 }
@@ -12671,7 +12671,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 153.0, 102.0] // mm
 }
@@ -12686,7 +12686,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 153.0, 153.0] // mm
 }
@@ -12701,7 +12701,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 153.0, 204.0] // mm
 }
@@ -12716,7 +12716,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 153.0, 255.0] // mm
 }
@@ -12731,7 +12731,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 153.0, 306.0] // mm
 }
@@ -12746,7 +12746,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 153.0, 357.0] // mm
 }
@@ -12761,7 +12761,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 204.0, -357.0] // mm
 }
@@ -12776,7 +12776,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 204.0, -306.0] // mm
 }
@@ -12791,7 +12791,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 204.0, -255.0] // mm
 }
@@ -12806,7 +12806,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 204.0, -204.0] // mm
 }
@@ -12821,7 +12821,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 204.0, -153.0] // mm
 }
@@ -12836,7 +12836,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 204.0, -102.0] // mm
 }
@@ -12851,7 +12851,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 204.0, -51.0] // mm
 }
@@ -12866,7 +12866,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 204.0, 0.0] // mm
 }
@@ -12881,7 +12881,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 204.0, 51.0] // mm
 }
@@ -12896,7 +12896,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 204.0, 102.0] // mm
 }
@@ -12911,7 +12911,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 204.0, 153.0] // mm
 }
@@ -12926,7 +12926,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 204.0, 204.0] // mm
 }
@@ -12941,7 +12941,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 204.0, 255.0] // mm
 }
@@ -12956,7 +12956,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 204.0, 306.0] // mm
 }
@@ -12971,7 +12971,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 204.0, 357.0] // mm
 }
@@ -12986,7 +12986,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 255.0, -357.0] // mm
 }
@@ -13001,7 +13001,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 255.0, -306.0] // mm
 }
@@ -13016,7 +13016,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 255.0, -255.0] // mm
 }
@@ -13031,7 +13031,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 255.0, -204.0] // mm
 }
@@ -13046,7 +13046,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 255.0, -153.0] // mm
 }
@@ -13061,7 +13061,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 255.0, -102.0] // mm
 }
@@ -13076,7 +13076,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 255.0, -51.0] // mm
 }
@@ -13091,7 +13091,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 255.0, 0.0] // mm
 }
@@ -13106,7 +13106,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 255.0, 51.0] // mm
 }
@@ -13121,7 +13121,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 255.0, 102.0] // mm
 }
@@ -13136,7 +13136,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 255.0, 153.0] // mm
 }
@@ -13151,7 +13151,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 255.0, 204.0] // mm
 }
@@ -13166,7 +13166,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 255.0, 255.0] // mm
 }
@@ -13181,7 +13181,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 255.0, 306.0] // mm
 }
@@ -13196,7 +13196,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 255.0, 357.0] // mm
 }
@@ -13211,7 +13211,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 306.0, -357.0] // mm
 }
@@ -13226,7 +13226,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 306.0, -306.0] // mm
 }
@@ -13241,7 +13241,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 306.0, -255.0] // mm
 }
@@ -13256,7 +13256,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 306.0, -204.0] // mm
 }
@@ -13271,7 +13271,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 306.0, -153.0] // mm
 }
@@ -13286,7 +13286,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 306.0, -102.0] // mm
 }
@@ -13301,7 +13301,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 306.0, -51.0] // mm
 }
@@ -13316,7 +13316,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 306.0, 0.0] // mm
 }
@@ -13331,7 +13331,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 306.0, 51.0] // mm
 }
@@ -13346,7 +13346,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 306.0, 102.0] // mm
 }
@@ -13361,7 +13361,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 306.0, 153.0] // mm
 }
@@ -13376,7 +13376,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 306.0, 204.0] // mm
 }
@@ -13391,7 +13391,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 306.0, 255.0] // mm
 }
@@ -13406,7 +13406,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 306.0, 306.0] // mm
 }
@@ -13421,7 +13421,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 306.0, 357.0] // mm
 }
@@ -13436,7 +13436,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 357.0, -357.0] // mm
 }
@@ -13451,7 +13451,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 357.0, -306.0] // mm
 }
@@ -13466,7 +13466,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 357.0, -255.0] // mm
 }
@@ -13481,7 +13481,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 357.0, -204.0] // mm
 }
@@ -13496,7 +13496,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 357.0, -153.0] // mm
 }
@@ -13511,7 +13511,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 357.0, -102.0] // mm
 }
@@ -13526,7 +13526,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 357.0, -51.0] // mm
 }
@@ -13541,7 +13541,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 357.0, 0.0] // mm
 }
@@ -13556,7 +13556,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 357.0, 51.0] // mm
 }
@@ -13571,7 +13571,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 357.0, 102.0] // mm
 }
@@ -13586,7 +13586,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 357.0, 153.0] // mm
 }
@@ -13601,7 +13601,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 357.0, 204.0] // mm
 }
@@ -13616,7 +13616,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 357.0, 255.0] // mm
 }
@@ -13631,7 +13631,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 357.0, 306.0] // mm
 }
@@ -13646,7 +13646,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-204.0, 357.0, 357.0] // mm
 }
@@ -13661,7 +13661,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -357.0, -357.0] // mm
 }
@@ -13676,7 +13676,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -357.0, -306.0] // mm
 }
@@ -13691,7 +13691,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -357.0, -255.0] // mm
 }
@@ -13706,7 +13706,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -357.0, -204.0] // mm
 }
@@ -13721,7 +13721,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -357.0, -153.0] // mm
 }
@@ -13736,7 +13736,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -357.0, -102.0] // mm
 }
@@ -13751,7 +13751,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -357.0, -51.0] // mm
 }
@@ -13766,7 +13766,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -357.0, 0.0] // mm
 }
@@ -13781,7 +13781,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -357.0, 51.0] // mm
 }
@@ -13796,7 +13796,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -357.0, 102.0] // mm
 }
@@ -13811,7 +13811,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -357.0, 153.0] // mm
 }
@@ -13826,7 +13826,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -357.0, 204.0] // mm
 }
@@ -13841,7 +13841,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -357.0, 255.0] // mm
 }
@@ -13856,7 +13856,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -357.0, 306.0] // mm
 }
@@ -13871,7 +13871,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -357.0, 357.0] // mm
 }
@@ -13886,7 +13886,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -306.0, -357.0] // mm
 }
@@ -13901,7 +13901,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -306.0, -306.0] // mm
 }
@@ -13916,7 +13916,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -306.0, -255.0] // mm
 }
@@ -13931,7 +13931,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -306.0, -204.0] // mm
 }
@@ -13946,7 +13946,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -306.0, -153.0] // mm
 }
@@ -13961,7 +13961,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -306.0, -102.0] // mm
 }
@@ -13976,7 +13976,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -306.0, -51.0] // mm
 }
@@ -13991,7 +13991,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -306.0, 0.0] // mm
 }
@@ -14006,7 +14006,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -306.0, 51.0] // mm
 }
@@ -14021,7 +14021,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -306.0, 102.0] // mm
 }
@@ -14036,7 +14036,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -306.0, 153.0] // mm
 }
@@ -14051,7 +14051,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -306.0, 204.0] // mm
 }
@@ -14066,7 +14066,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -306.0, 255.0] // mm
 }
@@ -14081,7 +14081,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -306.0, 306.0] // mm
 }
@@ -14096,7 +14096,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -306.0, 357.0] // mm
 }
@@ -14111,7 +14111,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -255.0, -357.0] // mm
 }
@@ -14126,7 +14126,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -255.0, -306.0] // mm
 }
@@ -14141,7 +14141,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -255.0, -255.0] // mm
 }
@@ -14156,7 +14156,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -255.0, -204.0] // mm
 }
@@ -14171,7 +14171,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -255.0, -153.0] // mm
 }
@@ -14186,7 +14186,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -255.0, -102.0] // mm
 }
@@ -14201,7 +14201,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -255.0, -51.0] // mm
 }
@@ -14216,7 +14216,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -255.0, 0.0] // mm
 }
@@ -14231,7 +14231,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -255.0, 51.0] // mm
 }
@@ -14246,7 +14246,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -255.0, 102.0] // mm
 }
@@ -14261,7 +14261,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -255.0, 153.0] // mm
 }
@@ -14276,7 +14276,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -255.0, 204.0] // mm
 }
@@ -14291,7 +14291,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -255.0, 255.0] // mm
 }
@@ -14306,7 +14306,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -255.0, 306.0] // mm
 }
@@ -14321,7 +14321,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -255.0, 357.0] // mm
 }
@@ -14336,7 +14336,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -204.0, -357.0] // mm
 }
@@ -14351,7 +14351,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -204.0, -306.0] // mm
 }
@@ -14366,7 +14366,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -204.0, -255.0] // mm
 }
@@ -14381,7 +14381,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -204.0, -204.0] // mm
 }
@@ -14396,7 +14396,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -204.0, -153.0] // mm
 }
@@ -14411,7 +14411,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -204.0, -102.0] // mm
 }
@@ -14426,7 +14426,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -204.0, -51.0] // mm
 }
@@ -14441,7 +14441,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -204.0, 0.0] // mm
 }
@@ -14456,7 +14456,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -204.0, 51.0] // mm
 }
@@ -14471,7 +14471,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -204.0, 102.0] // mm
 }
@@ -14486,7 +14486,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -204.0, 153.0] // mm
 }
@@ -14501,7 +14501,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -204.0, 204.0] // mm
 }
@@ -14516,7 +14516,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -204.0, 255.0] // mm
 }
@@ -14531,7 +14531,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -204.0, 306.0] // mm
 }
@@ -14546,7 +14546,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -204.0, 357.0] // mm
 }
@@ -14561,7 +14561,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -153.0, -357.0] // mm
 }
@@ -14576,7 +14576,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -153.0, -306.0] // mm
 }
@@ -14591,7 +14591,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -153.0, -255.0] // mm
 }
@@ -14606,7 +14606,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -153.0, -204.0] // mm
 }
@@ -14621,7 +14621,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -153.0, -153.0] // mm
 }
@@ -14636,7 +14636,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -153.0, -102.0] // mm
 }
@@ -14651,7 +14651,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -153.0, -51.0] // mm
 }
@@ -14666,7 +14666,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -153.0, 0.0] // mm
 }
@@ -14681,7 +14681,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -153.0, 51.0] // mm
 }
@@ -14696,7 +14696,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -153.0, 102.0] // mm
 }
@@ -14711,7 +14711,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -153.0, 153.0] // mm
 }
@@ -14726,7 +14726,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -153.0, 204.0] // mm
 }
@@ -14741,7 +14741,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -153.0, 255.0] // mm
 }
@@ -14756,7 +14756,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -153.0, 306.0] // mm
 }
@@ -14771,7 +14771,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -153.0, 357.0] // mm
 }
@@ -14786,7 +14786,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -102.0, -357.0] // mm
 }
@@ -14801,7 +14801,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -102.0, -306.0] // mm
 }
@@ -14816,7 +14816,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -102.0, -255.0] // mm
 }
@@ -14831,7 +14831,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -102.0, -204.0] // mm
 }
@@ -14846,7 +14846,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -102.0, -153.0] // mm
 }
@@ -14861,7 +14861,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -102.0, -102.0] // mm
 }
@@ -14876,7 +14876,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -102.0, -51.0] // mm
 }
@@ -14891,7 +14891,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -102.0, 0.0] // mm
 }
@@ -14906,7 +14906,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -102.0, 51.0] // mm
 }
@@ -14921,7 +14921,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -102.0, 102.0] // mm
 }
@@ -14936,7 +14936,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -102.0, 153.0] // mm
 }
@@ -14951,7 +14951,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -102.0, 204.0] // mm
 }
@@ -14966,7 +14966,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -102.0, 255.0] // mm
 }
@@ -14981,7 +14981,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -102.0, 306.0] // mm
 }
@@ -14996,7 +14996,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -102.0, 357.0] // mm
 }
@@ -15011,7 +15011,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -51.0, -357.0] // mm
 }
@@ -15026,7 +15026,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -51.0, -306.0] // mm
 }
@@ -15041,7 +15041,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -51.0, -255.0] // mm
 }
@@ -15056,7 +15056,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -51.0, -204.0] // mm
 }
@@ -15071,7 +15071,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -51.0, -153.0] // mm
 }
@@ -15086,7 +15086,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -51.0, -102.0] // mm
 }
@@ -15101,7 +15101,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -51.0, -51.0] // mm
 }
@@ -15116,7 +15116,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -51.0, 0.0] // mm
 }
@@ -15131,7 +15131,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -51.0, 51.0] // mm
 }
@@ -15146,7 +15146,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -51.0, 102.0] // mm
 }
@@ -15161,7 +15161,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -51.0, 153.0] // mm
 }
@@ -15176,7 +15176,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -51.0, 204.0] // mm
 }
@@ -15191,7 +15191,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -51.0, 255.0] // mm
 }
@@ -15206,7 +15206,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -51.0, 306.0] // mm
 }
@@ -15221,7 +15221,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, -51.0, 357.0] // mm
 }
@@ -15236,7 +15236,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 0.0, -357.0] // mm
 }
@@ -15251,7 +15251,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 0.0, -306.0] // mm
 }
@@ -15266,7 +15266,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 0.0, -255.0] // mm
 }
@@ -15281,7 +15281,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 0.0, -204.0] // mm
 }
@@ -15296,7 +15296,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 0.0, -153.0] // mm
 }
@@ -15311,7 +15311,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 0.0, -102.0] // mm
 }
@@ -15326,7 +15326,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 0.0, -51.0] // mm
 }
@@ -15341,7 +15341,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 0.0, 0.0] // mm
 }
@@ -15356,7 +15356,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 0.0, 51.0] // mm
 }
@@ -15371,7 +15371,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 0.0, 102.0] // mm
 }
@@ -15386,7 +15386,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 0.0, 153.0] // mm
 }
@@ -15401,7 +15401,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 0.0, 204.0] // mm
 }
@@ -15416,7 +15416,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 0.0, 255.0] // mm
 }
@@ -15431,7 +15431,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 0.0, 306.0] // mm
 }
@@ -15446,7 +15446,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 0.0, 357.0] // mm
 }
@@ -15461,7 +15461,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 51.0, -357.0] // mm
 }
@@ -15476,7 +15476,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 51.0, -306.0] // mm
 }
@@ -15491,7 +15491,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 51.0, -255.0] // mm
 }
@@ -15506,7 +15506,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 51.0, -204.0] // mm
 }
@@ -15521,7 +15521,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 51.0, -153.0] // mm
 }
@@ -15536,7 +15536,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 51.0, -102.0] // mm
 }
@@ -15551,7 +15551,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 51.0, -51.0] // mm
 }
@@ -15566,7 +15566,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 51.0, 0.0] // mm
 }
@@ -15581,7 +15581,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 51.0, 51.0] // mm
 }
@@ -15596,7 +15596,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 51.0, 102.0] // mm
 }
@@ -15611,7 +15611,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 51.0, 153.0] // mm
 }
@@ -15626,7 +15626,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 51.0, 204.0] // mm
 }
@@ -15641,7 +15641,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 51.0, 255.0] // mm
 }
@@ -15656,7 +15656,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 51.0, 306.0] // mm
 }
@@ -15671,7 +15671,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 51.0, 357.0] // mm
 }
@@ -15686,7 +15686,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 102.0, -357.0] // mm
 }
@@ -15701,7 +15701,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 102.0, -306.0] // mm
 }
@@ -15716,7 +15716,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 102.0, -255.0] // mm
 }
@@ -15731,7 +15731,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 102.0, -204.0] // mm
 }
@@ -15746,7 +15746,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 102.0, -153.0] // mm
 }
@@ -15761,7 +15761,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 102.0, -102.0] // mm
 }
@@ -15776,7 +15776,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 102.0, -51.0] // mm
 }
@@ -15791,7 +15791,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 102.0, 0.0] // mm
 }
@@ -15806,7 +15806,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 102.0, 51.0] // mm
 }
@@ -15821,7 +15821,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 102.0, 102.0] // mm
 }
@@ -15836,7 +15836,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 102.0, 153.0] // mm
 }
@@ -15851,7 +15851,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 102.0, 204.0] // mm
 }
@@ -15866,7 +15866,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 102.0, 255.0] // mm
 }
@@ -15881,7 +15881,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 102.0, 306.0] // mm
 }
@@ -15896,7 +15896,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 102.0, 357.0] // mm
 }
@@ -15911,7 +15911,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 153.0, -357.0] // mm
 }
@@ -15926,7 +15926,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 153.0, -306.0] // mm
 }
@@ -15941,7 +15941,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 153.0, -255.0] // mm
 }
@@ -15956,7 +15956,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 153.0, -204.0] // mm
 }
@@ -15971,7 +15971,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 153.0, -153.0] // mm
 }
@@ -15986,7 +15986,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 153.0, -102.0] // mm
 }
@@ -16001,7 +16001,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 153.0, -51.0] // mm
 }
@@ -16016,7 +16016,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 153.0, 0.0] // mm
 }
@@ -16031,7 +16031,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 153.0, 51.0] // mm
 }
@@ -16046,7 +16046,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 153.0, 102.0] // mm
 }
@@ -16061,7 +16061,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 153.0, 153.0] // mm
 }
@@ -16076,7 +16076,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 153.0, 204.0] // mm
 }
@@ -16091,7 +16091,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 153.0, 255.0] // mm
 }
@@ -16106,7 +16106,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 153.0, 306.0] // mm
 }
@@ -16121,7 +16121,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 153.0, 357.0] // mm
 }
@@ -16136,7 +16136,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 204.0, -357.0] // mm
 }
@@ -16151,7 +16151,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 204.0, -306.0] // mm
 }
@@ -16166,7 +16166,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 204.0, -255.0] // mm
 }
@@ -16181,7 +16181,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 204.0, -204.0] // mm
 }
@@ -16196,7 +16196,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 204.0, -153.0] // mm
 }
@@ -16211,7 +16211,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 204.0, -102.0] // mm
 }
@@ -16226,7 +16226,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 204.0, -51.0] // mm
 }
@@ -16241,7 +16241,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 204.0, 0.0] // mm
 }
@@ -16256,7 +16256,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 204.0, 51.0] // mm
 }
@@ -16271,7 +16271,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 204.0, 102.0] // mm
 }
@@ -16286,7 +16286,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 204.0, 153.0] // mm
 }
@@ -16301,7 +16301,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 204.0, 204.0] // mm
 }
@@ -16316,7 +16316,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 204.0, 255.0] // mm
 }
@@ -16331,7 +16331,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 204.0, 306.0] // mm
 }
@@ -16346,7 +16346,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 204.0, 357.0] // mm
 }
@@ -16361,7 +16361,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 255.0, -357.0] // mm
 }
@@ -16376,7 +16376,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 255.0, -306.0] // mm
 }
@@ -16391,7 +16391,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 255.0, -255.0] // mm
 }
@@ -16406,7 +16406,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 255.0, -204.0] // mm
 }
@@ -16421,7 +16421,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 255.0, -153.0] // mm
 }
@@ -16436,7 +16436,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 255.0, -102.0] // mm
 }
@@ -16451,7 +16451,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 255.0, -51.0] // mm
 }
@@ -16466,7 +16466,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 255.0, 0.0] // mm
 }
@@ -16481,7 +16481,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 255.0, 51.0] // mm
 }
@@ -16496,7 +16496,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 255.0, 102.0] // mm
 }
@@ -16511,7 +16511,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 255.0, 153.0] // mm
 }
@@ -16526,7 +16526,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 255.0, 204.0] // mm
 }
@@ -16541,7 +16541,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 255.0, 255.0] // mm
 }
@@ -16556,7 +16556,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 255.0, 306.0] // mm
 }
@@ -16571,7 +16571,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 255.0, 357.0] // mm
 }
@@ -16586,7 +16586,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 306.0, -357.0] // mm
 }
@@ -16601,7 +16601,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 306.0, -306.0] // mm
 }
@@ -16616,7 +16616,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 306.0, -255.0] // mm
 }
@@ -16631,7 +16631,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 306.0, -204.0] // mm
 }
@@ -16646,7 +16646,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 306.0, -153.0] // mm
 }
@@ -16661,7 +16661,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 306.0, -102.0] // mm
 }
@@ -16676,7 +16676,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 306.0, -51.0] // mm
 }
@@ -16691,7 +16691,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 306.0, 0.0] // mm
 }
@@ -16706,7 +16706,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 306.0, 51.0] // mm
 }
@@ -16721,7 +16721,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 306.0, 102.0] // mm
 }
@@ -16736,7 +16736,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 306.0, 153.0] // mm
 }
@@ -16751,7 +16751,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 306.0, 204.0] // mm
 }
@@ -16766,7 +16766,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 306.0, 255.0] // mm
 }
@@ -16781,7 +16781,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 306.0, 306.0] // mm
 }
@@ -16796,7 +16796,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 306.0, 357.0] // mm
 }
@@ -16811,7 +16811,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 357.0, -357.0] // mm
 }
@@ -16826,7 +16826,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 357.0, -306.0] // mm
 }
@@ -16841,7 +16841,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 357.0, -255.0] // mm
 }
@@ -16856,7 +16856,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 357.0, -204.0] // mm
 }
@@ -16871,7 +16871,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 357.0, -153.0] // mm
 }
@@ -16886,7 +16886,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 357.0, -102.0] // mm
 }
@@ -16901,7 +16901,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 357.0, -51.0] // mm
 }
@@ -16916,7 +16916,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 357.0, 0.0] // mm
 }
@@ -16931,7 +16931,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 357.0, 51.0] // mm
 }
@@ -16946,7 +16946,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 357.0, 102.0] // mm
 }
@@ -16961,7 +16961,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 357.0, 153.0] // mm
 }
@@ -16976,7 +16976,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 357.0, 204.0] // mm
 }
@@ -16991,7 +16991,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 357.0, 255.0] // mm
 }
@@ -17006,7 +17006,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 357.0, 306.0] // mm
 }
@@ -17021,7 +17021,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-153.0, 357.0, 357.0] // mm
 }
@@ -17036,7 +17036,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -357.0, -357.0] // mm
 }
@@ -17051,7 +17051,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -357.0, -306.0] // mm
 }
@@ -17066,7 +17066,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -357.0, -255.0] // mm
 }
@@ -17081,7 +17081,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -357.0, -204.0] // mm
 }
@@ -17096,7 +17096,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -357.0, -153.0] // mm
 }
@@ -17111,7 +17111,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -357.0, -102.0] // mm
 }
@@ -17126,7 +17126,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -357.0, -51.0] // mm
 }
@@ -17141,7 +17141,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -357.0, 0.0] // mm
 }
@@ -17156,7 +17156,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -357.0, 51.0] // mm
 }
@@ -17171,7 +17171,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -357.0, 102.0] // mm
 }
@@ -17186,7 +17186,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -357.0, 153.0] // mm
 }
@@ -17201,7 +17201,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -357.0, 204.0] // mm
 }
@@ -17216,7 +17216,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -357.0, 255.0] // mm
 }
@@ -17231,7 +17231,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -357.0, 306.0] // mm
 }
@@ -17246,7 +17246,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -357.0, 357.0] // mm
 }
@@ -17261,7 +17261,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -306.0, -357.0] // mm
 }
@@ -17276,7 +17276,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -306.0, -306.0] // mm
 }
@@ -17291,7 +17291,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -306.0, -255.0] // mm
 }
@@ -17306,7 +17306,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -306.0, -204.0] // mm
 }
@@ -17321,7 +17321,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -306.0, -153.0] // mm
 }
@@ -17336,7 +17336,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -306.0, -102.0] // mm
 }
@@ -17351,7 +17351,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -306.0, -51.0] // mm
 }
@@ -17366,7 +17366,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -306.0, 0.0] // mm
 }
@@ -17381,7 +17381,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -306.0, 51.0] // mm
 }
@@ -17396,7 +17396,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -306.0, 102.0] // mm
 }
@@ -17411,7 +17411,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -306.0, 153.0] // mm
 }
@@ -17426,7 +17426,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -306.0, 204.0] // mm
 }
@@ -17441,7 +17441,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -306.0, 255.0] // mm
 }
@@ -17456,7 +17456,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -306.0, 306.0] // mm
 }
@@ -17471,7 +17471,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -306.0, 357.0] // mm
 }
@@ -17486,7 +17486,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -255.0, -357.0] // mm
 }
@@ -17501,7 +17501,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -255.0, -306.0] // mm
 }
@@ -17516,7 +17516,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -255.0, -255.0] // mm
 }
@@ -17531,7 +17531,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -255.0, -204.0] // mm
 }
@@ -17546,7 +17546,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -255.0, -153.0] // mm
 }
@@ -17561,7 +17561,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -255.0, -102.0] // mm
 }
@@ -17576,7 +17576,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -255.0, -51.0] // mm
 }
@@ -17591,7 +17591,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -255.0, 0.0] // mm
 }
@@ -17606,7 +17606,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -255.0, 51.0] // mm
 }
@@ -17621,7 +17621,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -255.0, 102.0] // mm
 }
@@ -17636,7 +17636,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -255.0, 153.0] // mm
 }
@@ -17651,7 +17651,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -255.0, 204.0] // mm
 }
@@ -17666,7 +17666,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -255.0, 255.0] // mm
 }
@@ -17681,7 +17681,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -255.0, 306.0] // mm
 }
@@ -17696,7 +17696,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -255.0, 357.0] // mm
 }
@@ -17711,7 +17711,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -204.0, -357.0] // mm
 }
@@ -17726,7 +17726,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -204.0, -306.0] // mm
 }
@@ -17741,7 +17741,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -204.0, -255.0] // mm
 }
@@ -17756,7 +17756,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -204.0, -204.0] // mm
 }
@@ -17771,7 +17771,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -204.0, -153.0] // mm
 }
@@ -17786,7 +17786,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -204.0, -102.0] // mm
 }
@@ -17801,7 +17801,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -204.0, -51.0] // mm
 }
@@ -17816,7 +17816,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -204.0, 0.0] // mm
 }
@@ -17831,7 +17831,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -204.0, 51.0] // mm
 }
@@ -17846,7 +17846,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -204.0, 102.0] // mm
 }
@@ -17861,7 +17861,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -204.0, 153.0] // mm
 }
@@ -17876,7 +17876,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -204.0, 204.0] // mm
 }
@@ -17891,7 +17891,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -204.0, 255.0] // mm
 }
@@ -17906,7 +17906,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -204.0, 306.0] // mm
 }
@@ -17921,7 +17921,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -204.0, 357.0] // mm
 }
@@ -17936,7 +17936,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -153.0, -357.0] // mm
 }
@@ -17951,7 +17951,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -153.0, -306.0] // mm
 }
@@ -17966,7 +17966,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -153.0, -255.0] // mm
 }
@@ -17981,7 +17981,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -153.0, -204.0] // mm
 }
@@ -17996,7 +17996,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -153.0, -153.0] // mm
 }
@@ -18011,7 +18011,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -153.0, -102.0] // mm
 }
@@ -18026,7 +18026,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -153.0, -51.0] // mm
 }
@@ -18041,7 +18041,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -153.0, 0.0] // mm
 }
@@ -18056,7 +18056,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -153.0, 51.0] // mm
 }
@@ -18071,7 +18071,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -153.0, 102.0] // mm
 }
@@ -18086,7 +18086,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -153.0, 153.0] // mm
 }
@@ -18101,7 +18101,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -153.0, 204.0] // mm
 }
@@ -18116,7 +18116,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -153.0, 255.0] // mm
 }
@@ -18131,7 +18131,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -153.0, 306.0] // mm
 }
@@ -18146,7 +18146,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -153.0, 357.0] // mm
 }
@@ -18161,7 +18161,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -102.0, -357.0] // mm
 }
@@ -18176,7 +18176,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -102.0, -306.0] // mm
 }
@@ -18191,7 +18191,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -102.0, -255.0] // mm
 }
@@ -18206,7 +18206,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -102.0, -204.0] // mm
 }
@@ -18221,7 +18221,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -102.0, -153.0] // mm
 }
@@ -18236,7 +18236,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -102.0, -102.0] // mm
 }
@@ -18251,7 +18251,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -102.0, -51.0] // mm
 }
@@ -18266,7 +18266,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -102.0, 0.0] // mm
 }
@@ -18281,7 +18281,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -102.0, 51.0] // mm
 }
@@ -18296,7 +18296,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -102.0, 102.0] // mm
 }
@@ -18311,7 +18311,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -102.0, 153.0] // mm
 }
@@ -18326,7 +18326,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -102.0, 204.0] // mm
 }
@@ -18341,7 +18341,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -102.0, 255.0] // mm
 }
@@ -18356,7 +18356,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -102.0, 306.0] // mm
 }
@@ -18371,7 +18371,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -102.0, 357.0] // mm
 }
@@ -18386,7 +18386,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -51.0, -357.0] // mm
 }
@@ -18401,7 +18401,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -51.0, -306.0] // mm
 }
@@ -18416,7 +18416,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -51.0, -255.0] // mm
 }
@@ -18431,7 +18431,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -51.0, -204.0] // mm
 }
@@ -18446,7 +18446,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -51.0, -153.0] // mm
 }
@@ -18461,7 +18461,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -51.0, -102.0] // mm
 }
@@ -18476,7 +18476,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -51.0, -51.0] // mm
 }
@@ -18491,7 +18491,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -51.0, 0.0] // mm
 }
@@ -18506,7 +18506,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -51.0, 51.0] // mm
 }
@@ -18521,7 +18521,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -51.0, 102.0] // mm
 }
@@ -18536,7 +18536,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -51.0, 153.0] // mm
 }
@@ -18551,7 +18551,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -51.0, 204.0] // mm
 }
@@ -18566,7 +18566,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -51.0, 255.0] // mm
 }
@@ -18581,7 +18581,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -51.0, 306.0] // mm
 }
@@ -18596,7 +18596,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, -51.0, 357.0] // mm
 }
@@ -18611,7 +18611,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 0.0, -357.0] // mm
 }
@@ -18626,7 +18626,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 0.0, -306.0] // mm
 }
@@ -18641,7 +18641,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 0.0, -255.0] // mm
 }
@@ -18656,7 +18656,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 0.0, -204.0] // mm
 }
@@ -18671,7 +18671,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 0.0, -153.0] // mm
 }
@@ -18686,7 +18686,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 0.0, -102.0] // mm
 }
@@ -18701,7 +18701,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 0.0, -51.0] // mm
 }
@@ -18716,7 +18716,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 0.0, 0.0] // mm
 }
@@ -18731,7 +18731,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 0.0, 51.0] // mm
 }
@@ -18746,7 +18746,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 0.0, 102.0] // mm
 }
@@ -18761,7 +18761,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 0.0, 153.0] // mm
 }
@@ -18776,7 +18776,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 0.0, 204.0] // mm
 }
@@ -18791,7 +18791,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 0.0, 255.0] // mm
 }
@@ -18806,7 +18806,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 0.0, 306.0] // mm
 }
@@ -18821,7 +18821,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 0.0, 357.0] // mm
 }
@@ -18836,7 +18836,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 51.0, -357.0] // mm
 }
@@ -18851,7 +18851,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 51.0, -306.0] // mm
 }
@@ -18866,7 +18866,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 51.0, -255.0] // mm
 }
@@ -18881,7 +18881,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 51.0, -204.0] // mm
 }
@@ -18896,7 +18896,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 51.0, -153.0] // mm
 }
@@ -18911,7 +18911,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 51.0, -102.0] // mm
 }
@@ -18926,7 +18926,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 51.0, -51.0] // mm
 }
@@ -18941,7 +18941,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 51.0, 0.0] // mm
 }
@@ -18956,7 +18956,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 51.0, 51.0] // mm
 }
@@ -18971,7 +18971,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 51.0, 102.0] // mm
 }
@@ -18986,7 +18986,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 51.0, 153.0] // mm
 }
@@ -19001,7 +19001,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 51.0, 204.0] // mm
 }
@@ -19016,7 +19016,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 51.0, 255.0] // mm
 }
@@ -19031,7 +19031,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 51.0, 306.0] // mm
 }
@@ -19046,7 +19046,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 51.0, 357.0] // mm
 }
@@ -19061,7 +19061,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 102.0, -357.0] // mm
 }
@@ -19076,7 +19076,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 102.0, -306.0] // mm
 }
@@ -19091,7 +19091,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 102.0, -255.0] // mm
 }
@@ -19106,7 +19106,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 102.0, -204.0] // mm
 }
@@ -19121,7 +19121,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 102.0, -153.0] // mm
 }
@@ -19136,7 +19136,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 102.0, -102.0] // mm
 }
@@ -19151,7 +19151,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 102.0, -51.0] // mm
 }
@@ -19166,7 +19166,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 102.0, 0.0] // mm
 }
@@ -19181,7 +19181,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 102.0, 51.0] // mm
 }
@@ -19196,7 +19196,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 102.0, 102.0] // mm
 }
@@ -19211,7 +19211,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 102.0, 153.0] // mm
 }
@@ -19226,7 +19226,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 102.0, 204.0] // mm
 }
@@ -19241,7 +19241,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 102.0, 255.0] // mm
 }
@@ -19256,7 +19256,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 102.0, 306.0] // mm
 }
@@ -19271,7 +19271,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 102.0, 357.0] // mm
 }
@@ -19286,7 +19286,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 153.0, -357.0] // mm
 }
@@ -19301,7 +19301,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 153.0, -306.0] // mm
 }
@@ -19316,7 +19316,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 153.0, -255.0] // mm
 }
@@ -19331,7 +19331,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 153.0, -204.0] // mm
 }
@@ -19346,7 +19346,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 153.0, -153.0] // mm
 }
@@ -19361,7 +19361,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 153.0, -102.0] // mm
 }
@@ -19376,7 +19376,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 153.0, -51.0] // mm
 }
@@ -19391,7 +19391,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 153.0, 0.0] // mm
 }
@@ -19406,7 +19406,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 153.0, 51.0] // mm
 }
@@ -19421,7 +19421,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 153.0, 102.0] // mm
 }
@@ -19436,7 +19436,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 153.0, 153.0] // mm
 }
@@ -19451,7 +19451,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 153.0, 204.0] // mm
 }
@@ -19466,7 +19466,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 153.0, 255.0] // mm
 }
@@ -19481,7 +19481,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 153.0, 306.0] // mm
 }
@@ -19496,7 +19496,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 153.0, 357.0] // mm
 }
@@ -19511,7 +19511,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 204.0, -357.0] // mm
 }
@@ -19526,7 +19526,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 204.0, -306.0] // mm
 }
@@ -19541,7 +19541,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 204.0, -255.0] // mm
 }
@@ -19556,7 +19556,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 204.0, -204.0] // mm
 }
@@ -19571,7 +19571,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 204.0, -153.0] // mm
 }
@@ -19586,7 +19586,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 204.0, -102.0] // mm
 }
@@ -19601,7 +19601,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 204.0, -51.0] // mm
 }
@@ -19616,7 +19616,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 204.0, 0.0] // mm
 }
@@ -19631,7 +19631,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 204.0, 51.0] // mm
 }
@@ -19646,7 +19646,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 204.0, 102.0] // mm
 }
@@ -19661,7 +19661,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 204.0, 153.0] // mm
 }
@@ -19676,7 +19676,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 204.0, 204.0] // mm
 }
@@ -19691,7 +19691,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 204.0, 255.0] // mm
 }
@@ -19706,7 +19706,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 204.0, 306.0] // mm
 }
@@ -19721,7 +19721,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 204.0, 357.0] // mm
 }
@@ -19736,7 +19736,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 255.0, -357.0] // mm
 }
@@ -19751,7 +19751,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 255.0, -306.0] // mm
 }
@@ -19766,7 +19766,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 255.0, -255.0] // mm
 }
@@ -19781,7 +19781,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 255.0, -204.0] // mm
 }
@@ -19796,7 +19796,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 255.0, -153.0] // mm
 }
@@ -19811,7 +19811,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 255.0, -102.0] // mm
 }
@@ -19826,7 +19826,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 255.0, -51.0] // mm
 }
@@ -19841,7 +19841,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 255.0, 0.0] // mm
 }
@@ -19856,7 +19856,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 255.0, 51.0] // mm
 }
@@ -19871,7 +19871,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 255.0, 102.0] // mm
 }
@@ -19886,7 +19886,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 255.0, 153.0] // mm
 }
@@ -19901,7 +19901,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 255.0, 204.0] // mm
 }
@@ -19916,7 +19916,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 255.0, 255.0] // mm
 }
@@ -19931,7 +19931,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 255.0, 306.0] // mm
 }
@@ -19946,7 +19946,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 255.0, 357.0] // mm
 }
@@ -19961,7 +19961,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 306.0, -357.0] // mm
 }
@@ -19976,7 +19976,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 306.0, -306.0] // mm
 }
@@ -19991,7 +19991,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 306.0, -255.0] // mm
 }
@@ -20006,7 +20006,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 306.0, -204.0] // mm
 }
@@ -20021,7 +20021,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 306.0, -153.0] // mm
 }
@@ -20036,7 +20036,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 306.0, -102.0] // mm
 }
@@ -20051,7 +20051,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 306.0, -51.0] // mm
 }
@@ -20066,7 +20066,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 306.0, 0.0] // mm
 }
@@ -20081,7 +20081,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 306.0, 51.0] // mm
 }
@@ -20096,7 +20096,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 306.0, 102.0] // mm
 }
@@ -20111,7 +20111,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 306.0, 153.0] // mm
 }
@@ -20126,7 +20126,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 306.0, 204.0] // mm
 }
@@ -20141,7 +20141,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 306.0, 255.0] // mm
 }
@@ -20156,7 +20156,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 306.0, 306.0] // mm
 }
@@ -20171,7 +20171,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 306.0, 357.0] // mm
 }
@@ -20186,7 +20186,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 357.0, -357.0] // mm
 }
@@ -20201,7 +20201,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 357.0, -306.0] // mm
 }
@@ -20216,7 +20216,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 357.0, -255.0] // mm
 }
@@ -20231,7 +20231,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 357.0, -204.0] // mm
 }
@@ -20246,7 +20246,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 357.0, -153.0] // mm
 }
@@ -20261,7 +20261,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 357.0, -102.0] // mm
 }
@@ -20276,7 +20276,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 357.0, -51.0] // mm
 }
@@ -20291,7 +20291,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 357.0, 0.0] // mm
 }
@@ -20306,7 +20306,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 357.0, 51.0] // mm
 }
@@ -20321,7 +20321,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 357.0, 102.0] // mm
 }
@@ -20336,7 +20336,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 357.0, 153.0] // mm
 }
@@ -20351,7 +20351,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 357.0, 204.0] // mm
 }
@@ -20366,7 +20366,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 357.0, 255.0] // mm
 }
@@ -20381,7 +20381,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 357.0, 306.0] // mm
 }
@@ -20396,7 +20396,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-102.0, 357.0, 357.0] // mm
 }
@@ -20411,7 +20411,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -357.0, -357.0] // mm
 }
@@ -20426,7 +20426,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -357.0, -306.0] // mm
 }
@@ -20441,7 +20441,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -357.0, -255.0] // mm
 }
@@ -20456,7 +20456,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -357.0, -204.0] // mm
 }
@@ -20471,7 +20471,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -357.0, -153.0] // mm
 }
@@ -20486,7 +20486,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -357.0, -102.0] // mm
 }
@@ -20501,7 +20501,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -357.0, -51.0] // mm
 }
@@ -20516,7 +20516,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -357.0, 0.0] // mm
 }
@@ -20531,7 +20531,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -357.0, 51.0] // mm
 }
@@ -20546,7 +20546,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -357.0, 102.0] // mm
 }
@@ -20561,7 +20561,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -357.0, 153.0] // mm
 }
@@ -20576,7 +20576,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -357.0, 204.0] // mm
 }
@@ -20591,7 +20591,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -357.0, 255.0] // mm
 }
@@ -20606,7 +20606,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -357.0, 306.0] // mm
 }
@@ -20621,7 +20621,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -357.0, 357.0] // mm
 }
@@ -20636,7 +20636,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -306.0, -357.0] // mm
 }
@@ -20651,7 +20651,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -306.0, -306.0] // mm
 }
@@ -20666,7 +20666,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -306.0, -255.0] // mm
 }
@@ -20681,7 +20681,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -306.0, -204.0] // mm
 }
@@ -20696,7 +20696,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -306.0, -153.0] // mm
 }
@@ -20711,7 +20711,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -306.0, -102.0] // mm
 }
@@ -20726,7 +20726,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -306.0, -51.0] // mm
 }
@@ -20741,7 +20741,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -306.0, 0.0] // mm
 }
@@ -20756,7 +20756,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -306.0, 51.0] // mm
 }
@@ -20771,7 +20771,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -306.0, 102.0] // mm
 }
@@ -20786,7 +20786,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -306.0, 153.0] // mm
 }
@@ -20801,7 +20801,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -306.0, 204.0] // mm
 }
@@ -20816,7 +20816,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -306.0, 255.0] // mm
 }
@@ -20831,7 +20831,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -306.0, 306.0] // mm
 }
@@ -20846,7 +20846,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -306.0, 357.0] // mm
 }
@@ -20861,7 +20861,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -255.0, -357.0] // mm
 }
@@ -20876,7 +20876,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -255.0, -306.0] // mm
 }
@@ -20891,7 +20891,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -255.0, -255.0] // mm
 }
@@ -20906,7 +20906,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -255.0, -204.0] // mm
 }
@@ -20921,7 +20921,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -255.0, -153.0] // mm
 }
@@ -20936,7 +20936,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -255.0, -102.0] // mm
 }
@@ -20951,7 +20951,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -255.0, -51.0] // mm
 }
@@ -20966,7 +20966,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -255.0, 0.0] // mm
 }
@@ -20981,7 +20981,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -255.0, 51.0] // mm
 }
@@ -20996,7 +20996,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -255.0, 102.0] // mm
 }
@@ -21011,7 +21011,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -255.0, 153.0] // mm
 }
@@ -21026,7 +21026,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -255.0, 204.0] // mm
 }
@@ -21041,7 +21041,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -255.0, 255.0] // mm
 }
@@ -21056,7 +21056,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -255.0, 306.0] // mm
 }
@@ -21071,7 +21071,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -255.0, 357.0] // mm
 }
@@ -21086,7 +21086,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -204.0, -357.0] // mm
 }
@@ -21101,7 +21101,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -204.0, -306.0] // mm
 }
@@ -21116,7 +21116,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -204.0, -255.0] // mm
 }
@@ -21131,7 +21131,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -204.0, -204.0] // mm
 }
@@ -21146,7 +21146,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -204.0, -153.0] // mm
 }
@@ -21161,7 +21161,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -204.0, -102.0] // mm
 }
@@ -21176,7 +21176,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -204.0, -51.0] // mm
 }
@@ -21191,7 +21191,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -204.0, 0.0] // mm
 }
@@ -21206,7 +21206,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -204.0, 51.0] // mm
 }
@@ -21221,7 +21221,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -204.0, 102.0] // mm
 }
@@ -21236,7 +21236,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -204.0, 153.0] // mm
 }
@@ -21251,7 +21251,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -204.0, 204.0] // mm
 }
@@ -21266,7 +21266,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -204.0, 255.0] // mm
 }
@@ -21281,7 +21281,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -204.0, 306.0] // mm
 }
@@ -21296,7 +21296,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -204.0, 357.0] // mm
 }
@@ -21311,7 +21311,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -153.0, -357.0] // mm
 }
@@ -21326,7 +21326,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -153.0, -306.0] // mm
 }
@@ -21341,7 +21341,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -153.0, -255.0] // mm
 }
@@ -21356,7 +21356,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -153.0, -204.0] // mm
 }
@@ -21371,7 +21371,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -153.0, -153.0] // mm
 }
@@ -21386,7 +21386,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -153.0, -102.0] // mm
 }
@@ -21401,7 +21401,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -153.0, -51.0] // mm
 }
@@ -21416,7 +21416,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -153.0, 0.0] // mm
 }
@@ -21431,7 +21431,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -153.0, 51.0] // mm
 }
@@ -21446,7 +21446,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -153.0, 102.0] // mm
 }
@@ -21461,7 +21461,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -153.0, 153.0] // mm
 }
@@ -21476,7 +21476,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -153.0, 204.0] // mm
 }
@@ -21491,7 +21491,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -153.0, 255.0] // mm
 }
@@ -21506,7 +21506,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -153.0, 306.0] // mm
 }
@@ -21521,7 +21521,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -153.0, 357.0] // mm
 }
@@ -21536,7 +21536,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -102.0, -357.0] // mm
 }
@@ -21551,7 +21551,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -102.0, -306.0] // mm
 }
@@ -21566,7 +21566,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -102.0, -255.0] // mm
 }
@@ -21581,7 +21581,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -102.0, -204.0] // mm
 }
@@ -21596,7 +21596,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -102.0, -153.0] // mm
 }
@@ -21611,7 +21611,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -102.0, -102.0] // mm
 }
@@ -21626,7 +21626,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -102.0, -51.0] // mm
 }
@@ -21641,7 +21641,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -102.0, 0.0] // mm
 }
@@ -21656,7 +21656,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -102.0, 51.0] // mm
 }
@@ -21671,7 +21671,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -102.0, 102.0] // mm
 }
@@ -21686,7 +21686,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -102.0, 153.0] // mm
 }
@@ -21701,7 +21701,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -102.0, 204.0] // mm
 }
@@ -21716,7 +21716,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -102.0, 255.0] // mm
 }
@@ -21731,7 +21731,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -102.0, 306.0] // mm
 }
@@ -21746,7 +21746,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -102.0, 357.0] // mm
 }
@@ -21761,7 +21761,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -51.0, -357.0] // mm
 }
@@ -21776,7 +21776,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -51.0, -306.0] // mm
 }
@@ -21791,7 +21791,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -51.0, -255.0] // mm
 }
@@ -21806,7 +21806,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -51.0, -204.0] // mm
 }
@@ -21821,7 +21821,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -51.0, -153.0] // mm
 }
@@ -21836,7 +21836,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -51.0, -102.0] // mm
 }
@@ -21851,7 +21851,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -51.0, -51.0] // mm
 }
@@ -21866,7 +21866,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -51.0, 0.0] // mm
 }
@@ -21881,7 +21881,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -51.0, 51.0] // mm
 }
@@ -21896,7 +21896,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -51.0, 102.0] // mm
 }
@@ -21911,7 +21911,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -51.0, 153.0] // mm
 }
@@ -21926,7 +21926,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -51.0, 204.0] // mm
 }
@@ -21941,7 +21941,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -51.0, 255.0] // mm
 }
@@ -21956,7 +21956,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -51.0, 306.0] // mm
 }
@@ -21971,7 +21971,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, -51.0, 357.0] // mm
 }
@@ -21986,7 +21986,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 0.0, -357.0] // mm
 }
@@ -22001,7 +22001,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 0.0, -306.0] // mm
 }
@@ -22016,7 +22016,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 0.0, -255.0] // mm
 }
@@ -22031,7 +22031,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 0.0, -204.0] // mm
 }
@@ -22046,7 +22046,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 0.0, -153.0] // mm
 }
@@ -22061,7 +22061,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 0.0, -102.0] // mm
 }
@@ -22076,7 +22076,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 0.0, -51.0] // mm
 }
@@ -22091,7 +22091,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 0.0, 0.0] // mm
 }
@@ -22106,7 +22106,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 0.0, 51.0] // mm
 }
@@ -22121,7 +22121,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 0.0, 102.0] // mm
 }
@@ -22136,7 +22136,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 0.0, 153.0] // mm
 }
@@ -22151,7 +22151,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 0.0, 204.0] // mm
 }
@@ -22166,7 +22166,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 0.0, 255.0] // mm
 }
@@ -22181,7 +22181,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 0.0, 306.0] // mm
 }
@@ -22196,7 +22196,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 0.0, 357.0] // mm
 }
@@ -22211,7 +22211,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 51.0, -357.0] // mm
 }
@@ -22226,7 +22226,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 51.0, -306.0] // mm
 }
@@ -22241,7 +22241,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 51.0, -255.0] // mm
 }
@@ -22256,7 +22256,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 51.0, -204.0] // mm
 }
@@ -22271,7 +22271,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 51.0, -153.0] // mm
 }
@@ -22286,7 +22286,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 51.0, -102.0] // mm
 }
@@ -22301,7 +22301,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 51.0, -51.0] // mm
 }
@@ -22316,7 +22316,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 51.0, 0.0] // mm
 }
@@ -22331,7 +22331,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 51.0, 51.0] // mm
 }
@@ -22346,7 +22346,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 51.0, 102.0] // mm
 }
@@ -22361,7 +22361,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 51.0, 153.0] // mm
 }
@@ -22376,7 +22376,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 51.0, 204.0] // mm
 }
@@ -22391,7 +22391,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 51.0, 255.0] // mm
 }
@@ -22406,7 +22406,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 51.0, 306.0] // mm
 }
@@ -22421,7 +22421,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 51.0, 357.0] // mm
 }
@@ -22436,7 +22436,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 102.0, -357.0] // mm
 }
@@ -22451,7 +22451,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 102.0, -306.0] // mm
 }
@@ -22466,7 +22466,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 102.0, -255.0] // mm
 }
@@ -22481,7 +22481,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 102.0, -204.0] // mm
 }
@@ -22496,7 +22496,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 102.0, -153.0] // mm
 }
@@ -22511,7 +22511,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 102.0, -102.0] // mm
 }
@@ -22526,7 +22526,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 102.0, -51.0] // mm
 }
@@ -22541,7 +22541,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 102.0, 0.0] // mm
 }
@@ -22556,7 +22556,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 102.0, 51.0] // mm
 }
@@ -22571,7 +22571,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 102.0, 102.0] // mm
 }
@@ -22586,7 +22586,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 102.0, 153.0] // mm
 }
@@ -22601,7 +22601,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 102.0, 204.0] // mm
 }
@@ -22616,7 +22616,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 102.0, 255.0] // mm
 }
@@ -22631,7 +22631,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 102.0, 306.0] // mm
 }
@@ -22646,7 +22646,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 102.0, 357.0] // mm
 }
@@ -22661,7 +22661,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 153.0, -357.0] // mm
 }
@@ -22676,7 +22676,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 153.0, -306.0] // mm
 }
@@ -22691,7 +22691,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 153.0, -255.0] // mm
 }
@@ -22706,7 +22706,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 153.0, -204.0] // mm
 }
@@ -22721,7 +22721,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 153.0, -153.0] // mm
 }
@@ -22736,7 +22736,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 153.0, -102.0] // mm
 }
@@ -22751,7 +22751,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 153.0, -51.0] // mm
 }
@@ -22766,7 +22766,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 153.0, 0.0] // mm
 }
@@ -22781,7 +22781,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 153.0, 51.0] // mm
 }
@@ -22796,7 +22796,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 153.0, 102.0] // mm
 }
@@ -22811,7 +22811,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 153.0, 153.0] // mm
 }
@@ -22826,7 +22826,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 153.0, 204.0] // mm
 }
@@ -22841,7 +22841,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 153.0, 255.0] // mm
 }
@@ -22856,7 +22856,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 153.0, 306.0] // mm
 }
@@ -22871,7 +22871,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 153.0, 357.0] // mm
 }
@@ -22886,7 +22886,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 204.0, -357.0] // mm
 }
@@ -22901,7 +22901,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 204.0, -306.0] // mm
 }
@@ -22916,7 +22916,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 204.0, -255.0] // mm
 }
@@ -22931,7 +22931,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 204.0, -204.0] // mm
 }
@@ -22946,7 +22946,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 204.0, -153.0] // mm
 }
@@ -22961,7 +22961,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 204.0, -102.0] // mm
 }
@@ -22976,7 +22976,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 204.0, -51.0] // mm
 }
@@ -22991,7 +22991,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 204.0, 0.0] // mm
 }
@@ -23006,7 +23006,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 204.0, 51.0] // mm
 }
@@ -23021,7 +23021,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 204.0, 102.0] // mm
 }
@@ -23036,7 +23036,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 204.0, 153.0] // mm
 }
@@ -23051,7 +23051,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 204.0, 204.0] // mm
 }
@@ -23066,7 +23066,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 204.0, 255.0] // mm
 }
@@ -23081,7 +23081,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 204.0, 306.0] // mm
 }
@@ -23096,7 +23096,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 204.0, 357.0] // mm
 }
@@ -23111,7 +23111,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 255.0, -357.0] // mm
 }
@@ -23126,7 +23126,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 255.0, -306.0] // mm
 }
@@ -23141,7 +23141,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 255.0, -255.0] // mm
 }
@@ -23156,7 +23156,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 255.0, -204.0] // mm
 }
@@ -23171,7 +23171,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 255.0, -153.0] // mm
 }
@@ -23186,7 +23186,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 255.0, -102.0] // mm
 }
@@ -23201,7 +23201,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 255.0, -51.0] // mm
 }
@@ -23216,7 +23216,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 255.0, 0.0] // mm
 }
@@ -23231,7 +23231,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 255.0, 51.0] // mm
 }
@@ -23246,7 +23246,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 255.0, 102.0] // mm
 }
@@ -23261,7 +23261,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 255.0, 153.0] // mm
 }
@@ -23276,7 +23276,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 255.0, 204.0] // mm
 }
@@ -23291,7 +23291,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 255.0, 255.0] // mm
 }
@@ -23306,7 +23306,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 255.0, 306.0] // mm
 }
@@ -23321,7 +23321,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 255.0, 357.0] // mm
 }
@@ -23336,7 +23336,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 306.0, -357.0] // mm
 }
@@ -23351,7 +23351,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 306.0, -306.0] // mm
 }
@@ -23366,7 +23366,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 306.0, -255.0] // mm
 }
@@ -23381,7 +23381,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 306.0, -204.0] // mm
 }
@@ -23396,7 +23396,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 306.0, -153.0] // mm
 }
@@ -23411,7 +23411,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 306.0, -102.0] // mm
 }
@@ -23426,7 +23426,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 306.0, -51.0] // mm
 }
@@ -23441,7 +23441,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 306.0, 0.0] // mm
 }
@@ -23456,7 +23456,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 306.0, 51.0] // mm
 }
@@ -23471,7 +23471,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 306.0, 102.0] // mm
 }
@@ -23486,7 +23486,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 306.0, 153.0] // mm
 }
@@ -23501,7 +23501,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 306.0, 204.0] // mm
 }
@@ -23516,7 +23516,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 306.0, 255.0] // mm
 }
@@ -23531,7 +23531,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 306.0, 306.0] // mm
 }
@@ -23546,7 +23546,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 306.0, 357.0] // mm
 }
@@ -23561,7 +23561,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 357.0, -357.0] // mm
 }
@@ -23576,7 +23576,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 357.0, -306.0] // mm
 }
@@ -23591,7 +23591,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 357.0, -255.0] // mm
 }
@@ -23606,7 +23606,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 357.0, -204.0] // mm
 }
@@ -23621,7 +23621,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 357.0, -153.0] // mm
 }
@@ -23636,7 +23636,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 357.0, -102.0] // mm
 }
@@ -23651,7 +23651,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 357.0, -51.0] // mm
 }
@@ -23666,7 +23666,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 357.0, 0.0] // mm
 }
@@ -23681,7 +23681,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 357.0, 51.0] // mm
 }
@@ -23696,7 +23696,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 357.0, 102.0] // mm
 }
@@ -23711,7 +23711,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 357.0, 153.0] // mm
 }
@@ -23726,7 +23726,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 357.0, 204.0] // mm
 }
@@ -23741,7 +23741,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 357.0, 255.0] // mm
 }
@@ -23756,7 +23756,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 357.0, 306.0] // mm
 }
@@ -23771,7 +23771,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [-51.0, 357.0, 357.0] // mm
 }
@@ -23786,7 +23786,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -357.0, -357.0] // mm
 }
@@ -23801,7 +23801,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -357.0, -306.0] // mm
 }
@@ -23816,7 +23816,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -357.0, -255.0] // mm
 }
@@ -23831,7 +23831,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -357.0, -204.0] // mm
 }
@@ -23846,7 +23846,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -357.0, -153.0] // mm
 }
@@ -23861,7 +23861,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -357.0, -102.0] // mm
 }
@@ -23876,7 +23876,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -357.0, -51.0] // mm
 }
@@ -23891,7 +23891,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -357.0, 0.0] // mm
 }
@@ -23906,7 +23906,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -357.0, 51.0] // mm
 }
@@ -23921,7 +23921,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -357.0, 102.0] // mm
 }
@@ -23936,7 +23936,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -357.0, 153.0] // mm
 }
@@ -23951,7 +23951,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -357.0, 204.0] // mm
 }
@@ -23966,7 +23966,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -357.0, 255.0] // mm
 }
@@ -23981,7 +23981,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -357.0, 306.0] // mm
 }
@@ -23996,7 +23996,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -357.0, 357.0] // mm
 }
@@ -24011,7 +24011,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -306.0, -357.0] // mm
 }
@@ -24026,7 +24026,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -306.0, -306.0] // mm
 }
@@ -24041,7 +24041,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -306.0, -255.0] // mm
 }
@@ -24056,7 +24056,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -306.0, -204.0] // mm
 }
@@ -24071,7 +24071,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -306.0, -153.0] // mm
 }
@@ -24086,7 +24086,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -306.0, -102.0] // mm
 }
@@ -24101,7 +24101,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -306.0, -51.0] // mm
 }
@@ -24116,7 +24116,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -306.0, 0.0] // mm
 }
@@ -24131,7 +24131,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -306.0, 51.0] // mm
 }
@@ -24146,7 +24146,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -306.0, 102.0] // mm
 }
@@ -24161,7 +24161,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -306.0, 153.0] // mm
 }
@@ -24176,7 +24176,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -306.0, 204.0] // mm
 }
@@ -24191,7 +24191,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -306.0, 255.0] // mm
 }
@@ -24206,7 +24206,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -306.0, 306.0] // mm
 }
@@ -24221,7 +24221,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -306.0, 357.0] // mm
 }
@@ -24236,7 +24236,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -255.0, -357.0] // mm
 }
@@ -24251,7 +24251,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -255.0, -306.0] // mm
 }
@@ -24266,7 +24266,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -255.0, -255.0] // mm
 }
@@ -24281,7 +24281,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -255.0, -204.0] // mm
 }
@@ -24296,7 +24296,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -255.0, -153.0] // mm
 }
@@ -24311,7 +24311,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -255.0, -102.0] // mm
 }
@@ -24326,7 +24326,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -255.0, -51.0] // mm
 }
@@ -24341,7 +24341,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -255.0, 0.0] // mm
 }
@@ -24356,7 +24356,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -255.0, 51.0] // mm
 }
@@ -24371,7 +24371,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -255.0, 102.0] // mm
 }
@@ -24386,7 +24386,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -255.0, 153.0] // mm
 }
@@ -24401,7 +24401,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -255.0, 204.0] // mm
 }
@@ -24416,7 +24416,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -255.0, 255.0] // mm
 }
@@ -24431,7 +24431,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -255.0, 306.0] // mm
 }
@@ -24446,7 +24446,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -255.0, 357.0] // mm
 }
@@ -24461,7 +24461,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -204.0, -357.0] // mm
 }
@@ -24476,7 +24476,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -204.0, -306.0] // mm
 }
@@ -24491,7 +24491,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -204.0, -255.0] // mm
 }
@@ -24506,7 +24506,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -204.0, -204.0] // mm
 }
@@ -24521,7 +24521,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -204.0, -153.0] // mm
 }
@@ -24536,7 +24536,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -204.0, -102.0] // mm
 }
@@ -24551,7 +24551,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -204.0, -51.0] // mm
 }
@@ -24566,7 +24566,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -204.0, 0.0] // mm
 }
@@ -24581,7 +24581,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -204.0, 51.0] // mm
 }
@@ -24596,7 +24596,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -204.0, 102.0] // mm
 }
@@ -24611,7 +24611,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -204.0, 153.0] // mm
 }
@@ -24626,7 +24626,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -204.0, 204.0] // mm
 }
@@ -24641,7 +24641,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -204.0, 255.0] // mm
 }
@@ -24656,7 +24656,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -204.0, 306.0] // mm
 }
@@ -24671,7 +24671,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -204.0, 357.0] // mm
 }
@@ -24686,7 +24686,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -153.0, -357.0] // mm
 }
@@ -24701,7 +24701,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -153.0, -306.0] // mm
 }
@@ -24716,7 +24716,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -153.0, -255.0] // mm
 }
@@ -24731,7 +24731,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -153.0, -204.0] // mm
 }
@@ -24746,7 +24746,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -153.0, -153.0] // mm
 }
@@ -24761,7 +24761,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -153.0, -102.0] // mm
 }
@@ -24776,7 +24776,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -153.0, -51.0] // mm
 }
@@ -24791,7 +24791,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -153.0, 0.0] // mm
 }
@@ -24806,7 +24806,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -153.0, 51.0] // mm
 }
@@ -24821,7 +24821,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -153.0, 102.0] // mm
 }
@@ -24836,7 +24836,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -153.0, 153.0] // mm
 }
@@ -24851,7 +24851,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -153.0, 204.0] // mm
 }
@@ -24866,7 +24866,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -153.0, 255.0] // mm
 }
@@ -24881,7 +24881,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -153.0, 306.0] // mm
 }
@@ -24896,7 +24896,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -153.0, 357.0] // mm
 }
@@ -24911,7 +24911,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -102.0, -357.0] // mm
 }
@@ -24926,7 +24926,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -102.0, -306.0] // mm
 }
@@ -24941,7 +24941,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -102.0, -255.0] // mm
 }
@@ -24956,7 +24956,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -102.0, -204.0] // mm
 }
@@ -24971,7 +24971,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -102.0, -153.0] // mm
 }
@@ -24986,7 +24986,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -102.0, -102.0] // mm
 }
@@ -25001,7 +25001,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -102.0, -51.0] // mm
 }
@@ -25016,7 +25016,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -102.0, 0.0] // mm
 }
@@ -25031,7 +25031,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -102.0, 51.0] // mm
 }
@@ -25046,7 +25046,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -102.0, 102.0] // mm
 }
@@ -25061,7 +25061,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -102.0, 153.0] // mm
 }
@@ -25076,7 +25076,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -102.0, 204.0] // mm
 }
@@ -25091,7 +25091,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -102.0, 255.0] // mm
 }
@@ -25106,7 +25106,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -102.0, 306.0] // mm
 }
@@ -25121,7 +25121,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -102.0, 357.0] // mm
 }
@@ -25136,7 +25136,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -51.0, -357.0] // mm
 }
@@ -25151,7 +25151,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -51.0, -306.0] // mm
 }
@@ -25166,7 +25166,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -51.0, -255.0] // mm
 }
@@ -25181,7 +25181,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -51.0, -204.0] // mm
 }
@@ -25196,7 +25196,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -51.0, -153.0] // mm
 }
@@ -25211,7 +25211,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -51.0, -102.0] // mm
 }
@@ -25226,7 +25226,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -51.0, -51.0] // mm
 }
@@ -25241,7 +25241,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -51.0, 0.0] // mm
 }
@@ -25256,7 +25256,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -51.0, 51.0] // mm
 }
@@ -25271,7 +25271,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -51.0, 102.0] // mm
 }
@@ -25286,7 +25286,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -51.0, 153.0] // mm
 }
@@ -25301,7 +25301,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -51.0, 204.0] // mm
 }
@@ -25316,7 +25316,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -51.0, 255.0] // mm
 }
@@ -25331,7 +25331,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -51.0, 306.0] // mm
 }
@@ -25346,7 +25346,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, -51.0, 357.0] // mm
 }
@@ -25361,7 +25361,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 0.0, -357.0] // mm
 }
@@ -25376,7 +25376,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 0.0, -306.0] // mm
 }
@@ -25391,7 +25391,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 0.0, -255.0] // mm
 }
@@ -25406,7 +25406,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 0.0, -204.0] // mm
 }
@@ -25421,7 +25421,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 0.0, -153.0] // mm
 }
@@ -25436,7 +25436,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 0.0, -102.0] // mm
 }
@@ -25451,7 +25451,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 0.0, -51.0] // mm
 }
@@ -25466,7 +25466,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 0.0, 0.0] // mm
 }
@@ -25481,7 +25481,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 0.0, 51.0] // mm
 }
@@ -25496,7 +25496,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 0.0, 102.0] // mm
 }
@@ -25511,7 +25511,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 0.0, 153.0] // mm
 }
@@ -25526,7 +25526,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 0.0, 204.0] // mm
 }
@@ -25541,7 +25541,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 0.0, 255.0] // mm
 }
@@ -25556,7 +25556,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 0.0, 306.0] // mm
 }
@@ -25571,7 +25571,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 0.0, 357.0] // mm
 }
@@ -25586,7 +25586,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 51.0, -357.0] // mm
 }
@@ -25601,7 +25601,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 51.0, -306.0] // mm
 }
@@ -25616,7 +25616,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 51.0, -255.0] // mm
 }
@@ -25631,7 +25631,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 51.0, -204.0] // mm
 }
@@ -25646,7 +25646,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 51.0, -153.0] // mm
 }
@@ -25661,7 +25661,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 51.0, -102.0] // mm
 }
@@ -25676,7 +25676,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 51.0, -51.0] // mm
 }
@@ -25691,7 +25691,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 51.0, 0.0] // mm
 }
@@ -25706,7 +25706,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 51.0, 51.0] // mm
 }
@@ -25721,7 +25721,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 51.0, 102.0] // mm
 }
@@ -25736,7 +25736,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 51.0, 153.0] // mm
 }
@@ -25751,7 +25751,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 51.0, 204.0] // mm
 }
@@ -25766,7 +25766,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 51.0, 255.0] // mm
 }
@@ -25781,7 +25781,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 51.0, 306.0] // mm
 }
@@ -25796,7 +25796,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 51.0, 357.0] // mm
 }
@@ -25811,7 +25811,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 102.0, -357.0] // mm
 }
@@ -25826,7 +25826,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 102.0, -306.0] // mm
 }
@@ -25841,7 +25841,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 102.0, -255.0] // mm
 }
@@ -25856,7 +25856,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 102.0, -204.0] // mm
 }
@@ -25871,7 +25871,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 102.0, -153.0] // mm
 }
@@ -25886,7 +25886,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 102.0, -102.0] // mm
 }
@@ -25901,7 +25901,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 102.0, -51.0] // mm
 }
@@ -25916,7 +25916,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 102.0, 0.0] // mm
 }
@@ -25931,7 +25931,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 102.0, 51.0] // mm
 }
@@ -25946,7 +25946,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 102.0, 102.0] // mm
 }
@@ -25961,7 +25961,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 102.0, 153.0] // mm
 }
@@ -25976,7 +25976,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 102.0, 204.0] // mm
 }
@@ -25991,7 +25991,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 102.0, 255.0] // mm
 }
@@ -26006,7 +26006,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 102.0, 306.0] // mm
 }
@@ -26021,7 +26021,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 102.0, 357.0] // mm
 }
@@ -26036,7 +26036,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 153.0, -357.0] // mm
 }
@@ -26051,7 +26051,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 153.0, -306.0] // mm
 }
@@ -26066,7 +26066,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 153.0, -255.0] // mm
 }
@@ -26081,7 +26081,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 153.0, -204.0] // mm
 }
@@ -26096,7 +26096,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 153.0, -153.0] // mm
 }
@@ -26111,7 +26111,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 153.0, -102.0] // mm
 }
@@ -26126,7 +26126,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 153.0, -51.0] // mm
 }
@@ -26141,7 +26141,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 153.0, 0.0] // mm
 }
@@ -26156,7 +26156,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 153.0, 51.0] // mm
 }
@@ -26171,7 +26171,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 153.0, 102.0] // mm
 }
@@ -26186,7 +26186,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 153.0, 153.0] // mm
 }
@@ -26201,7 +26201,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 153.0, 204.0] // mm
 }
@@ -26216,7 +26216,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 153.0, 255.0] // mm
 }
@@ -26231,7 +26231,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 153.0, 306.0] // mm
 }
@@ -26246,7 +26246,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 153.0, 357.0] // mm
 }
@@ -26261,7 +26261,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 204.0, -357.0] // mm
 }
@@ -26276,7 +26276,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 204.0, -306.0] // mm
 }
@@ -26291,7 +26291,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 204.0, -255.0] // mm
 }
@@ -26306,7 +26306,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 204.0, -204.0] // mm
 }
@@ -26321,7 +26321,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 204.0, -153.0] // mm
 }
@@ -26336,7 +26336,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 204.0, -102.0] // mm
 }
@@ -26351,7 +26351,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 204.0, -51.0] // mm
 }
@@ -26366,7 +26366,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 204.0, 0.0] // mm
 }
@@ -26381,7 +26381,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 204.0, 51.0] // mm
 }
@@ -26396,7 +26396,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 204.0, 102.0] // mm
 }
@@ -26411,7 +26411,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 204.0, 153.0] // mm
 }
@@ -26426,7 +26426,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 204.0, 204.0] // mm
 }
@@ -26441,7 +26441,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 204.0, 255.0] // mm
 }
@@ -26456,7 +26456,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 204.0, 306.0] // mm
 }
@@ -26471,7 +26471,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 204.0, 357.0] // mm
 }
@@ -26486,7 +26486,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 255.0, -357.0] // mm
 }
@@ -26501,7 +26501,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 255.0, -306.0] // mm
 }
@@ -26516,7 +26516,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 255.0, -255.0] // mm
 }
@@ -26531,7 +26531,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 255.0, -204.0] // mm
 }
@@ -26546,7 +26546,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 255.0, -153.0] // mm
 }
@@ -26561,7 +26561,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 255.0, -102.0] // mm
 }
@@ -26576,7 +26576,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 255.0, -51.0] // mm
 }
@@ -26591,7 +26591,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 255.0, 0.0] // mm
 }
@@ -26606,7 +26606,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 255.0, 51.0] // mm
 }
@@ -26621,7 +26621,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 255.0, 102.0] // mm
 }
@@ -26636,7 +26636,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 255.0, 153.0] // mm
 }
@@ -26651,7 +26651,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 255.0, 204.0] // mm
 }
@@ -26666,7 +26666,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 255.0, 255.0] // mm
 }
@@ -26681,7 +26681,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 255.0, 306.0] // mm
 }
@@ -26696,7 +26696,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 255.0, 357.0] // mm
 }
@@ -26711,7 +26711,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 306.0, -357.0] // mm
 }
@@ -26726,7 +26726,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 306.0, -306.0] // mm
 }
@@ -26741,7 +26741,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 306.0, -255.0] // mm
 }
@@ -26756,7 +26756,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 306.0, -204.0] // mm
 }
@@ -26771,7 +26771,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 306.0, -153.0] // mm
 }
@@ -26786,7 +26786,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 306.0, -102.0] // mm
 }
@@ -26801,7 +26801,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 306.0, -51.0] // mm
 }
@@ -26816,7 +26816,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 306.0, 0.0] // mm
 }
@@ -26831,7 +26831,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 306.0, 51.0] // mm
 }
@@ -26846,7 +26846,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 306.0, 102.0] // mm
 }
@@ -26861,7 +26861,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 306.0, 153.0] // mm
 }
@@ -26876,7 +26876,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 306.0, 204.0] // mm
 }
@@ -26891,7 +26891,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 306.0, 255.0] // mm
 }
@@ -26906,7 +26906,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 306.0, 306.0] // mm
 }
@@ -26921,7 +26921,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 306.0, 357.0] // mm
 }
@@ -26936,7 +26936,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 357.0, -357.0] // mm
 }
@@ -26951,7 +26951,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 357.0, -306.0] // mm
 }
@@ -26966,7 +26966,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 357.0, -255.0] // mm
 }
@@ -26981,7 +26981,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 357.0, -204.0] // mm
 }
@@ -26996,7 +26996,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 357.0, -153.0] // mm
 }
@@ -27011,7 +27011,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 357.0, -102.0] // mm
 }
@@ -27026,7 +27026,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 357.0, -51.0] // mm
 }
@@ -27041,7 +27041,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 357.0, 0.0] // mm
 }
@@ -27056,7 +27056,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 357.0, 51.0] // mm
 }
@@ -27071,7 +27071,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 357.0, 102.0] // mm
 }
@@ -27086,7 +27086,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 357.0, 153.0] // mm
 }
@@ -27101,7 +27101,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 357.0, 204.0] // mm
 }
@@ -27116,7 +27116,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 357.0, 255.0] // mm
 }
@@ -27131,7 +27131,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 357.0, 306.0] // mm
 }
@@ -27146,7 +27146,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [0.0, 357.0, 357.0] // mm
 }
@@ -27161,7 +27161,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -357.0, -357.0] // mm
 }
@@ -27176,7 +27176,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -357.0, -306.0] // mm
 }
@@ -27191,7 +27191,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -357.0, -255.0] // mm
 }
@@ -27206,7 +27206,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -357.0, -204.0] // mm
 }
@@ -27221,7 +27221,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -357.0, -153.0] // mm
 }
@@ -27236,7 +27236,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -357.0, -102.0] // mm
 }
@@ -27251,7 +27251,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -357.0, -51.0] // mm
 }
@@ -27266,7 +27266,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -357.0, 0.0] // mm
 }
@@ -27281,7 +27281,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -357.0, 51.0] // mm
 }
@@ -27296,7 +27296,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -357.0, 102.0] // mm
 }
@@ -27311,7 +27311,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -357.0, 153.0] // mm
 }
@@ -27326,7 +27326,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -357.0, 204.0] // mm
 }
@@ -27341,7 +27341,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -357.0, 255.0] // mm
 }
@@ -27356,7 +27356,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -357.0, 306.0] // mm
 }
@@ -27371,7 +27371,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -357.0, 357.0] // mm
 }
@@ -27386,7 +27386,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -306.0, -357.0] // mm
 }
@@ -27401,7 +27401,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -306.0, -306.0] // mm
 }
@@ -27416,7 +27416,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -306.0, -255.0] // mm
 }
@@ -27431,7 +27431,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -306.0, -204.0] // mm
 }
@@ -27446,7 +27446,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -306.0, -153.0] // mm
 }
@@ -27461,7 +27461,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -306.0, -102.0] // mm
 }
@@ -27476,7 +27476,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -306.0, -51.0] // mm
 }
@@ -27491,7 +27491,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -306.0, 0.0] // mm
 }
@@ -27506,7 +27506,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -306.0, 51.0] // mm
 }
@@ -27521,7 +27521,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -306.0, 102.0] // mm
 }
@@ -27536,7 +27536,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -306.0, 153.0] // mm
 }
@@ -27551,7 +27551,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -306.0, 204.0] // mm
 }
@@ -27566,7 +27566,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -306.0, 255.0] // mm
 }
@@ -27581,7 +27581,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -306.0, 306.0] // mm
 }
@@ -27596,7 +27596,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -306.0, 357.0] // mm
 }
@@ -27611,7 +27611,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -255.0, -357.0] // mm
 }
@@ -27626,7 +27626,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -255.0, -306.0] // mm
 }
@@ -27641,7 +27641,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -255.0, -255.0] // mm
 }
@@ -27656,7 +27656,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -255.0, -204.0] // mm
 }
@@ -27671,7 +27671,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -255.0, -153.0] // mm
 }
@@ -27686,7 +27686,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -255.0, -102.0] // mm
 }
@@ -27701,7 +27701,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -255.0, -51.0] // mm
 }
@@ -27716,7 +27716,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -255.0, 0.0] // mm
 }
@@ -27731,7 +27731,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -255.0, 51.0] // mm
 }
@@ -27746,7 +27746,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -255.0, 102.0] // mm
 }
@@ -27761,7 +27761,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -255.0, 153.0] // mm
 }
@@ -27776,7 +27776,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -255.0, 204.0] // mm
 }
@@ -27791,7 +27791,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -255.0, 255.0] // mm
 }
@@ -27806,7 +27806,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -255.0, 306.0] // mm
 }
@@ -27821,7 +27821,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -255.0, 357.0] // mm
 }
@@ -27836,7 +27836,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -204.0, -357.0] // mm
 }
@@ -27851,7 +27851,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -204.0, -306.0] // mm
 }
@@ -27866,7 +27866,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -204.0, -255.0] // mm
 }
@@ -27881,7 +27881,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -204.0, -204.0] // mm
 }
@@ -27896,7 +27896,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -204.0, -153.0] // mm
 }
@@ -27911,7 +27911,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -204.0, -102.0] // mm
 }
@@ -27926,7 +27926,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -204.0, -51.0] // mm
 }
@@ -27941,7 +27941,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -204.0, 0.0] // mm
 }
@@ -27956,7 +27956,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -204.0, 51.0] // mm
 }
@@ -27971,7 +27971,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -204.0, 102.0] // mm
 }
@@ -27986,7 +27986,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -204.0, 153.0] // mm
 }
@@ -28001,7 +28001,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -204.0, 204.0] // mm
 }
@@ -28016,7 +28016,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -204.0, 255.0] // mm
 }
@@ -28031,7 +28031,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -204.0, 306.0] // mm
 }
@@ -28046,7 +28046,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -204.0, 357.0] // mm
 }
@@ -28061,7 +28061,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -153.0, -357.0] // mm
 }
@@ -28076,7 +28076,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -153.0, -306.0] // mm
 }
@@ -28091,7 +28091,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -153.0, -255.0] // mm
 }
@@ -28106,7 +28106,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -153.0, -204.0] // mm
 }
@@ -28121,7 +28121,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -153.0, -153.0] // mm
 }
@@ -28136,7 +28136,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -153.0, -102.0] // mm
 }
@@ -28151,7 +28151,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -153.0, -51.0] // mm
 }
@@ -28166,7 +28166,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -153.0, 0.0] // mm
 }
@@ -28181,7 +28181,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -153.0, 51.0] // mm
 }
@@ -28196,7 +28196,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -153.0, 102.0] // mm
 }
@@ -28211,7 +28211,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -153.0, 153.0] // mm
 }
@@ -28226,7 +28226,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -153.0, 204.0] // mm
 }
@@ -28241,7 +28241,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -153.0, 255.0] // mm
 }
@@ -28256,7 +28256,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -153.0, 306.0] // mm
 }
@@ -28271,7 +28271,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -153.0, 357.0] // mm
 }
@@ -28286,7 +28286,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -102.0, -357.0] // mm
 }
@@ -28301,7 +28301,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -102.0, -306.0] // mm
 }
@@ -28316,7 +28316,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -102.0, -255.0] // mm
 }
@@ -28331,7 +28331,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -102.0, -204.0] // mm
 }
@@ -28346,7 +28346,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -102.0, -153.0] // mm
 }
@@ -28361,7 +28361,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -102.0, -102.0] // mm
 }
@@ -28376,7 +28376,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -102.0, -51.0] // mm
 }
@@ -28391,7 +28391,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -102.0, 0.0] // mm
 }
@@ -28406,7 +28406,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -102.0, 51.0] // mm
 }
@@ -28421,7 +28421,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -102.0, 102.0] // mm
 }
@@ -28436,7 +28436,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -102.0, 153.0] // mm
 }
@@ -28451,7 +28451,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -102.0, 204.0] // mm
 }
@@ -28466,7 +28466,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -102.0, 255.0] // mm
 }
@@ -28481,7 +28481,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -102.0, 306.0] // mm
 }
@@ -28496,7 +28496,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -102.0, 357.0] // mm
 }
@@ -28511,7 +28511,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -51.0, -357.0] // mm
 }
@@ -28526,7 +28526,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -51.0, -306.0] // mm
 }
@@ -28541,7 +28541,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -51.0, -255.0] // mm
 }
@@ -28556,7 +28556,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -51.0, -204.0] // mm
 }
@@ -28571,7 +28571,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -51.0, -153.0] // mm
 }
@@ -28586,7 +28586,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -51.0, -102.0] // mm
 }
@@ -28601,7 +28601,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -51.0, -51.0] // mm
 }
@@ -28616,7 +28616,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -51.0, 0.0] // mm
 }
@@ -28631,7 +28631,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -51.0, 51.0] // mm
 }
@@ -28646,7 +28646,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -51.0, 102.0] // mm
 }
@@ -28661,7 +28661,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -51.0, 153.0] // mm
 }
@@ -28676,7 +28676,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -51.0, 204.0] // mm
 }
@@ -28691,7 +28691,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -51.0, 255.0] // mm
 }
@@ -28706,7 +28706,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -51.0, 306.0] // mm
 }
@@ -28721,7 +28721,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, -51.0, 357.0] // mm
 }
@@ -28736,7 +28736,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 0.0, -357.0] // mm
 }
@@ -28751,7 +28751,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 0.0, -306.0] // mm
 }
@@ -28766,7 +28766,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 0.0, -255.0] // mm
 }
@@ -28781,7 +28781,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 0.0, -204.0] // mm
 }
@@ -28796,7 +28796,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 0.0, -153.0] // mm
 }
@@ -28811,7 +28811,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 0.0, -102.0] // mm
 }
@@ -28826,7 +28826,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 0.0, -51.0] // mm
 }
@@ -28841,7 +28841,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 0.0, 0.0] // mm
 }
@@ -28856,7 +28856,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 0.0, 51.0] // mm
 }
@@ -28871,7 +28871,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 0.0, 102.0] // mm
 }
@@ -28886,7 +28886,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 0.0, 153.0] // mm
 }
@@ -28901,7 +28901,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 0.0, 204.0] // mm
 }
@@ -28916,7 +28916,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 0.0, 255.0] // mm
 }
@@ -28931,7 +28931,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 0.0, 306.0] // mm
 }
@@ -28946,7 +28946,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 0.0, 357.0] // mm
 }
@@ -28961,7 +28961,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 51.0, -357.0] // mm
 }
@@ -28976,7 +28976,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 51.0, -306.0] // mm
 }
@@ -28991,7 +28991,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 51.0, -255.0] // mm
 }
@@ -29006,7 +29006,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 51.0, -204.0] // mm
 }
@@ -29021,7 +29021,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 51.0, -153.0] // mm
 }
@@ -29036,7 +29036,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 51.0, -102.0] // mm
 }
@@ -29051,7 +29051,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 51.0, -51.0] // mm
 }
@@ -29066,7 +29066,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 51.0, 0.0] // mm
 }
@@ -29081,7 +29081,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 51.0, 51.0] // mm
 }
@@ -29096,7 +29096,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 51.0, 102.0] // mm
 }
@@ -29111,7 +29111,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 51.0, 153.0] // mm
 }
@@ -29126,7 +29126,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 51.0, 204.0] // mm
 }
@@ -29141,7 +29141,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 51.0, 255.0] // mm
 }
@@ -29156,7 +29156,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 51.0, 306.0] // mm
 }
@@ -29171,7 +29171,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 51.0, 357.0] // mm
 }
@@ -29186,7 +29186,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 102.0, -357.0] // mm
 }
@@ -29201,7 +29201,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 102.0, -306.0] // mm
 }
@@ -29216,7 +29216,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 102.0, -255.0] // mm
 }
@@ -29231,7 +29231,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 102.0, -204.0] // mm
 }
@@ -29246,7 +29246,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 102.0, -153.0] // mm
 }
@@ -29261,7 +29261,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 102.0, -102.0] // mm
 }
@@ -29276,7 +29276,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 102.0, -51.0] // mm
 }
@@ -29291,7 +29291,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 102.0, 0.0] // mm
 }
@@ -29306,7 +29306,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 102.0, 51.0] // mm
 }
@@ -29321,7 +29321,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 102.0, 102.0] // mm
 }
@@ -29336,7 +29336,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 102.0, 153.0] // mm
 }
@@ -29351,7 +29351,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 102.0, 204.0] // mm
 }
@@ -29366,7 +29366,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 102.0, 255.0] // mm
 }
@@ -29381,7 +29381,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 102.0, 306.0] // mm
 }
@@ -29396,7 +29396,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 102.0, 357.0] // mm
 }
@@ -29411,7 +29411,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 153.0, -357.0] // mm
 }
@@ -29426,7 +29426,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 153.0, -306.0] // mm
 }
@@ -29441,7 +29441,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 153.0, -255.0] // mm
 }
@@ -29456,7 +29456,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 153.0, -204.0] // mm
 }
@@ -29471,7 +29471,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 153.0, -153.0] // mm
 }
@@ -29486,7 +29486,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 153.0, -102.0] // mm
 }
@@ -29501,7 +29501,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 153.0, -51.0] // mm
 }
@@ -29516,7 +29516,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 153.0, 0.0] // mm
 }
@@ -29531,7 +29531,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 153.0, 51.0] // mm
 }
@@ -29546,7 +29546,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 153.0, 102.0] // mm
 }
@@ -29561,7 +29561,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 153.0, 153.0] // mm
 }
@@ -29576,7 +29576,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 153.0, 204.0] // mm
 }
@@ -29591,7 +29591,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 153.0, 255.0] // mm
 }
@@ -29606,7 +29606,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 153.0, 306.0] // mm
 }
@@ -29621,7 +29621,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 153.0, 357.0] // mm
 }
@@ -29636,7 +29636,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 204.0, -357.0] // mm
 }
@@ -29651,7 +29651,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 204.0, -306.0] // mm
 }
@@ -29666,7 +29666,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 204.0, -255.0] // mm
 }
@@ -29681,7 +29681,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 204.0, -204.0] // mm
 }
@@ -29696,7 +29696,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 204.0, -153.0] // mm
 }
@@ -29711,7 +29711,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 204.0, -102.0] // mm
 }
@@ -29726,7 +29726,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 204.0, -51.0] // mm
 }
@@ -29741,7 +29741,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 204.0, 0.0] // mm
 }
@@ -29756,7 +29756,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 204.0, 51.0] // mm
 }
@@ -29771,7 +29771,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 204.0, 102.0] // mm
 }
@@ -29786,7 +29786,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 204.0, 153.0] // mm
 }
@@ -29801,7 +29801,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 204.0, 204.0] // mm
 }
@@ -29816,7 +29816,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 204.0, 255.0] // mm
 }
@@ -29831,7 +29831,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 204.0, 306.0] // mm
 }
@@ -29846,7 +29846,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 204.0, 357.0] // mm
 }
@@ -29861,7 +29861,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 255.0, -357.0] // mm
 }
@@ -29876,7 +29876,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 255.0, -306.0] // mm
 }
@@ -29891,7 +29891,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 255.0, -255.0] // mm
 }
@@ -29906,7 +29906,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 255.0, -204.0] // mm
 }
@@ -29921,7 +29921,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 255.0, -153.0] // mm
 }
@@ -29936,7 +29936,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 255.0, -102.0] // mm
 }
@@ -29951,7 +29951,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 255.0, -51.0] // mm
 }
@@ -29966,7 +29966,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 255.0, 0.0] // mm
 }
@@ -29981,7 +29981,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 255.0, 51.0] // mm
 }
@@ -29996,7 +29996,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 255.0, 102.0] // mm
 }
@@ -30011,7 +30011,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 255.0, 153.0] // mm
 }
@@ -30026,7 +30026,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 255.0, 204.0] // mm
 }
@@ -30041,7 +30041,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 255.0, 255.0] // mm
 }
@@ -30056,7 +30056,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 255.0, 306.0] // mm
 }
@@ -30071,7 +30071,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 255.0, 357.0] // mm
 }
@@ -30086,7 +30086,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 306.0, -357.0] // mm
 }
@@ -30101,7 +30101,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 306.0, -306.0] // mm
 }
@@ -30116,7 +30116,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 306.0, -255.0] // mm
 }
@@ -30131,7 +30131,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 306.0, -204.0] // mm
 }
@@ -30146,7 +30146,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 306.0, -153.0] // mm
 }
@@ -30161,7 +30161,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 306.0, -102.0] // mm
 }
@@ -30176,7 +30176,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 306.0, -51.0] // mm
 }
@@ -30191,7 +30191,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 306.0, 0.0] // mm
 }
@@ -30206,7 +30206,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 306.0, 51.0] // mm
 }
@@ -30221,7 +30221,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 306.0, 102.0] // mm
 }
@@ -30236,7 +30236,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 306.0, 153.0] // mm
 }
@@ -30251,7 +30251,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 306.0, 204.0] // mm
 }
@@ -30266,7 +30266,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 306.0, 255.0] // mm
 }
@@ -30281,7 +30281,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 306.0, 306.0] // mm
 }
@@ -30296,7 +30296,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 306.0, 357.0] // mm
 }
@@ -30311,7 +30311,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 357.0, -357.0] // mm
 }
@@ -30326,7 +30326,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 357.0, -306.0] // mm
 }
@@ -30341,7 +30341,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 357.0, -255.0] // mm
 }
@@ -30356,7 +30356,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 357.0, -204.0] // mm
 }
@@ -30371,7 +30371,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 357.0, -153.0] // mm
 }
@@ -30386,7 +30386,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 357.0, -102.0] // mm
 }
@@ -30401,7 +30401,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 357.0, -51.0] // mm
 }
@@ -30416,7 +30416,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 357.0, 0.0] // mm
 }
@@ -30431,7 +30431,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 357.0, 51.0] // mm
 }
@@ -30446,7 +30446,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 357.0, 102.0] // mm
 }
@@ -30461,7 +30461,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 357.0, 153.0] // mm
 }
@@ -30476,7 +30476,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 357.0, 204.0] // mm
 }
@@ -30491,7 +30491,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 357.0, 255.0] // mm
 }
@@ -30506,7 +30506,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 357.0, 306.0] // mm
 }
@@ -30521,7 +30521,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [51.0, 357.0, 357.0] // mm
 }
@@ -30536,7 +30536,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -357.0, -357.0] // mm
 }
@@ -30551,7 +30551,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -357.0, -306.0] // mm
 }
@@ -30566,7 +30566,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -357.0, -255.0] // mm
 }
@@ -30581,7 +30581,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -357.0, -204.0] // mm
 }
@@ -30596,7 +30596,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -357.0, -153.0] // mm
 }
@@ -30611,7 +30611,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -357.0, -102.0] // mm
 }
@@ -30626,7 +30626,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -357.0, -51.0] // mm
 }
@@ -30641,7 +30641,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -357.0, 0.0] // mm
 }
@@ -30656,7 +30656,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -357.0, 51.0] // mm
 }
@@ -30671,7 +30671,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -357.0, 102.0] // mm
 }
@@ -30686,7 +30686,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -357.0, 153.0] // mm
 }
@@ -30701,7 +30701,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -357.0, 204.0] // mm
 }
@@ -30716,7 +30716,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -357.0, 255.0] // mm
 }
@@ -30731,7 +30731,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -357.0, 306.0] // mm
 }
@@ -30746,7 +30746,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -357.0, 357.0] // mm
 }
@@ -30761,7 +30761,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -306.0, -357.0] // mm
 }
@@ -30776,7 +30776,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -306.0, -306.0] // mm
 }
@@ -30791,7 +30791,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -306.0, -255.0] // mm
 }
@@ -30806,7 +30806,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -306.0, -204.0] // mm
 }
@@ -30821,7 +30821,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -306.0, -153.0] // mm
 }
@@ -30836,7 +30836,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -306.0, -102.0] // mm
 }
@@ -30851,7 +30851,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -306.0, -51.0] // mm
 }
@@ -30866,7 +30866,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -306.0, 0.0] // mm
 }
@@ -30881,7 +30881,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -306.0, 51.0] // mm
 }
@@ -30896,7 +30896,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -306.0, 102.0] // mm
 }
@@ -30911,7 +30911,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -306.0, 153.0] // mm
 }
@@ -30926,7 +30926,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -306.0, 204.0] // mm
 }
@@ -30941,7 +30941,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -306.0, 255.0] // mm
 }
@@ -30956,7 +30956,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -306.0, 306.0] // mm
 }
@@ -30971,7 +30971,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -306.0, 357.0] // mm
 }
@@ -30986,7 +30986,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -255.0, -357.0] // mm
 }
@@ -31001,7 +31001,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -255.0, -306.0] // mm
 }
@@ -31016,7 +31016,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -255.0, -255.0] // mm
 }
@@ -31031,7 +31031,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -255.0, -204.0] // mm
 }
@@ -31046,7 +31046,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -255.0, -153.0] // mm
 }
@@ -31061,7 +31061,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -255.0, -102.0] // mm
 }
@@ -31076,7 +31076,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -255.0, -51.0] // mm
 }
@@ -31091,7 +31091,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -255.0, 0.0] // mm
 }
@@ -31106,7 +31106,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -255.0, 51.0] // mm
 }
@@ -31121,7 +31121,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -255.0, 102.0] // mm
 }
@@ -31136,7 +31136,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -255.0, 153.0] // mm
 }
@@ -31151,7 +31151,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -255.0, 204.0] // mm
 }
@@ -31166,7 +31166,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -255.0, 255.0] // mm
 }
@@ -31181,7 +31181,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -255.0, 306.0] // mm
 }
@@ -31196,7 +31196,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -255.0, 357.0] // mm
 }
@@ -31211,7 +31211,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -204.0, -357.0] // mm
 }
@@ -31226,7 +31226,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -204.0, -306.0] // mm
 }
@@ -31241,7 +31241,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -204.0, -255.0] // mm
 }
@@ -31256,7 +31256,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -204.0, -204.0] // mm
 }
@@ -31271,7 +31271,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -204.0, -153.0] // mm
 }
@@ -31286,7 +31286,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -204.0, -102.0] // mm
 }
@@ -31301,7 +31301,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -204.0, -51.0] // mm
 }
@@ -31316,7 +31316,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -204.0, 0.0] // mm
 }
@@ -31331,7 +31331,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -204.0, 51.0] // mm
 }
@@ -31346,7 +31346,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -204.0, 102.0] // mm
 }
@@ -31361,7 +31361,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -204.0, 153.0] // mm
 }
@@ -31376,7 +31376,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -204.0, 204.0] // mm
 }
@@ -31391,7 +31391,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -204.0, 255.0] // mm
 }
@@ -31406,7 +31406,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -204.0, 306.0] // mm
 }
@@ -31421,7 +31421,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -204.0, 357.0] // mm
 }
@@ -31436,7 +31436,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -153.0, -357.0] // mm
 }
@@ -31451,7 +31451,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -153.0, -306.0] // mm
 }
@@ -31466,7 +31466,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -153.0, -255.0] // mm
 }
@@ -31481,7 +31481,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -153.0, -204.0] // mm
 }
@@ -31496,7 +31496,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -153.0, -153.0] // mm
 }
@@ -31511,7 +31511,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -153.0, -102.0] // mm
 }
@@ -31526,7 +31526,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -153.0, -51.0] // mm
 }
@@ -31541,7 +31541,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -153.0, 0.0] // mm
 }
@@ -31556,7 +31556,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -153.0, 51.0] // mm
 }
@@ -31571,7 +31571,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -153.0, 102.0] // mm
 }
@@ -31586,7 +31586,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -153.0, 153.0] // mm
 }
@@ -31601,7 +31601,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -153.0, 204.0] // mm
 }
@@ -31616,7 +31616,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -153.0, 255.0] // mm
 }
@@ -31631,7 +31631,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -153.0, 306.0] // mm
 }
@@ -31646,7 +31646,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -153.0, 357.0] // mm
 }
@@ -31661,7 +31661,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -102.0, -357.0] // mm
 }
@@ -31676,7 +31676,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -102.0, -306.0] // mm
 }
@@ -31691,7 +31691,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -102.0, -255.0] // mm
 }
@@ -31706,7 +31706,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -102.0, -204.0] // mm
 }
@@ -31721,7 +31721,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -102.0, -153.0] // mm
 }
@@ -31736,7 +31736,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -102.0, -102.0] // mm
 }
@@ -31751,7 +31751,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -102.0, -51.0] // mm
 }
@@ -31766,7 +31766,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -102.0, 0.0] // mm
 }
@@ -31781,7 +31781,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -102.0, 51.0] // mm
 }
@@ -31796,7 +31796,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -102.0, 102.0] // mm
 }
@@ -31811,7 +31811,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -102.0, 153.0] // mm
 }
@@ -31826,7 +31826,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -102.0, 204.0] // mm
 }
@@ -31841,7 +31841,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -102.0, 255.0] // mm
 }
@@ -31856,7 +31856,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -102.0, 306.0] // mm
 }
@@ -31871,7 +31871,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -102.0, 357.0] // mm
 }
@@ -31886,7 +31886,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -51.0, -357.0] // mm
 }
@@ -31901,7 +31901,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -51.0, -306.0] // mm
 }
@@ -31916,7 +31916,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -51.0, -255.0] // mm
 }
@@ -31931,7 +31931,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -51.0, -204.0] // mm
 }
@@ -31946,7 +31946,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -51.0, -153.0] // mm
 }
@@ -31961,7 +31961,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -51.0, -102.0] // mm
 }
@@ -31976,7 +31976,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -51.0, -51.0] // mm
 }
@@ -31991,7 +31991,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -51.0, 0.0] // mm
 }
@@ -32006,7 +32006,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -51.0, 51.0] // mm
 }
@@ -32021,7 +32021,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -51.0, 102.0] // mm
 }
@@ -32036,7 +32036,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -51.0, 153.0] // mm
 }
@@ -32051,7 +32051,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -51.0, 204.0] // mm
 }
@@ -32066,7 +32066,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -51.0, 255.0] // mm
 }
@@ -32081,7 +32081,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -51.0, 306.0] // mm
 }
@@ -32096,7 +32096,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, -51.0, 357.0] // mm
 }
@@ -32111,7 +32111,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 0.0, -357.0] // mm
 }
@@ -32126,7 +32126,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 0.0, -306.0] // mm
 }
@@ -32141,7 +32141,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 0.0, -255.0] // mm
 }
@@ -32156,7 +32156,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 0.0, -204.0] // mm
 }
@@ -32171,7 +32171,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 0.0, -153.0] // mm
 }
@@ -32186,7 +32186,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 0.0, -102.0] // mm
 }
@@ -32201,7 +32201,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 0.0, -51.0] // mm
 }
@@ -32216,7 +32216,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 0.0, 0.0] // mm
 }
@@ -32231,7 +32231,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 0.0, 51.0] // mm
 }
@@ -32246,7 +32246,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 0.0, 102.0] // mm
 }
@@ -32261,7 +32261,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 0.0, 153.0] // mm
 }
@@ -32276,7 +32276,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 0.0, 204.0] // mm
 }
@@ -32291,7 +32291,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 0.0, 255.0] // mm
 }
@@ -32306,7 +32306,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 0.0, 306.0] // mm
 }
@@ -32321,7 +32321,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 0.0, 357.0] // mm
 }
@@ -32336,7 +32336,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 51.0, -357.0] // mm
 }
@@ -32351,7 +32351,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 51.0, -306.0] // mm
 }
@@ -32366,7 +32366,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 51.0, -255.0] // mm
 }
@@ -32381,7 +32381,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 51.0, -204.0] // mm
 }
@@ -32396,7 +32396,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 51.0, -153.0] // mm
 }
@@ -32411,7 +32411,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 51.0, -102.0] // mm
 }
@@ -32426,7 +32426,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 51.0, -51.0] // mm
 }
@@ -32441,7 +32441,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 51.0, 0.0] // mm
 }
@@ -32456,7 +32456,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 51.0, 51.0] // mm
 }
@@ -32471,7 +32471,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 51.0, 102.0] // mm
 }
@@ -32486,7 +32486,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 51.0, 153.0] // mm
 }
@@ -32501,7 +32501,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 51.0, 204.0] // mm
 }
@@ -32516,7 +32516,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 51.0, 255.0] // mm
 }
@@ -32531,7 +32531,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 51.0, 306.0] // mm
 }
@@ -32546,7 +32546,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 51.0, 357.0] // mm
 }
@@ -32561,7 +32561,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 102.0, -357.0] // mm
 }
@@ -32576,7 +32576,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 102.0, -306.0] // mm
 }
@@ -32591,7 +32591,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 102.0, -255.0] // mm
 }
@@ -32606,7 +32606,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 102.0, -204.0] // mm
 }
@@ -32621,7 +32621,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 102.0, -153.0] // mm
 }
@@ -32636,7 +32636,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 102.0, -102.0] // mm
 }
@@ -32651,7 +32651,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 102.0, -51.0] // mm
 }
@@ -32666,7 +32666,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 102.0, 0.0] // mm
 }
@@ -32681,7 +32681,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 102.0, 51.0] // mm
 }
@@ -32696,7 +32696,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 102.0, 102.0] // mm
 }
@@ -32711,7 +32711,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 102.0, 153.0] // mm
 }
@@ -32726,7 +32726,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 102.0, 204.0] // mm
 }
@@ -32741,7 +32741,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 102.0, 255.0] // mm
 }
@@ -32756,7 +32756,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 102.0, 306.0] // mm
 }
@@ -32771,7 +32771,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 102.0, 357.0] // mm
 }
@@ -32786,7 +32786,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 153.0, -357.0] // mm
 }
@@ -32801,7 +32801,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 153.0, -306.0] // mm
 }
@@ -32816,7 +32816,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 153.0, -255.0] // mm
 }
@@ -32831,7 +32831,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 153.0, -204.0] // mm
 }
@@ -32846,7 +32846,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 153.0, -153.0] // mm
 }
@@ -32861,7 +32861,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 153.0, -102.0] // mm
 }
@@ -32876,7 +32876,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 153.0, -51.0] // mm
 }
@@ -32891,7 +32891,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 153.0, 0.0] // mm
 }
@@ -32906,7 +32906,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 153.0, 51.0] // mm
 }
@@ -32921,7 +32921,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 153.0, 102.0] // mm
 }
@@ -32936,7 +32936,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 153.0, 153.0] // mm
 }
@@ -32951,7 +32951,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 153.0, 204.0] // mm
 }
@@ -32966,7 +32966,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 153.0, 255.0] // mm
 }
@@ -32981,7 +32981,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 153.0, 306.0] // mm
 }
@@ -32996,7 +32996,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 153.0, 357.0] // mm
 }
@@ -33011,7 +33011,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 204.0, -357.0] // mm
 }
@@ -33026,7 +33026,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 204.0, -306.0] // mm
 }
@@ -33041,7 +33041,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 204.0, -255.0] // mm
 }
@@ -33056,7 +33056,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 204.0, -204.0] // mm
 }
@@ -33071,7 +33071,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 204.0, -153.0] // mm
 }
@@ -33086,7 +33086,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 204.0, -102.0] // mm
 }
@@ -33101,7 +33101,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 204.0, -51.0] // mm
 }
@@ -33116,7 +33116,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 204.0, 0.0] // mm
 }
@@ -33131,7 +33131,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 204.0, 51.0] // mm
 }
@@ -33146,7 +33146,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 204.0, 102.0] // mm
 }
@@ -33161,7 +33161,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 204.0, 153.0] // mm
 }
@@ -33176,7 +33176,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 204.0, 204.0] // mm
 }
@@ -33191,7 +33191,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 204.0, 255.0] // mm
 }
@@ -33206,7 +33206,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 204.0, 306.0] // mm
 }
@@ -33221,7 +33221,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 204.0, 357.0] // mm
 }
@@ -33236,7 +33236,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 255.0, -357.0] // mm
 }
@@ -33251,7 +33251,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 255.0, -306.0] // mm
 }
@@ -33266,7 +33266,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 255.0, -255.0] // mm
 }
@@ -33281,7 +33281,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 255.0, -204.0] // mm
 }
@@ -33296,7 +33296,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 255.0, -153.0] // mm
 }
@@ -33311,7 +33311,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 255.0, -102.0] // mm
 }
@@ -33326,7 +33326,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 255.0, -51.0] // mm
 }
@@ -33341,7 +33341,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 255.0, 0.0] // mm
 }
@@ -33356,7 +33356,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 255.0, 51.0] // mm
 }
@@ -33371,7 +33371,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 255.0, 102.0] // mm
 }
@@ -33386,7 +33386,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 255.0, 153.0] // mm
 }
@@ -33401,7 +33401,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 255.0, 204.0] // mm
 }
@@ -33416,7 +33416,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 255.0, 255.0] // mm
 }
@@ -33431,7 +33431,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 255.0, 306.0] // mm
 }
@@ -33446,7 +33446,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 255.0, 357.0] // mm
 }
@@ -33461,7 +33461,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 306.0, -357.0] // mm
 }
@@ -33476,7 +33476,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 306.0, -306.0] // mm
 }
@@ -33491,7 +33491,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 306.0, -255.0] // mm
 }
@@ -33506,7 +33506,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 306.0, -204.0] // mm
 }
@@ -33521,7 +33521,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 306.0, -153.0] // mm
 }
@@ -33536,7 +33536,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 306.0, -102.0] // mm
 }
@@ -33551,7 +33551,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 306.0, -51.0] // mm
 }
@@ -33566,7 +33566,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 306.0, 0.0] // mm
 }
@@ -33581,7 +33581,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 306.0, 51.0] // mm
 }
@@ -33596,7 +33596,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 306.0, 102.0] // mm
 }
@@ -33611,7 +33611,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 306.0, 153.0] // mm
 }
@@ -33626,7 +33626,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 306.0, 204.0] // mm
 }
@@ -33641,7 +33641,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 306.0, 255.0] // mm
 }
@@ -33656,7 +33656,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 306.0, 306.0] // mm
 }
@@ -33671,7 +33671,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 306.0, 357.0] // mm
 }
@@ -33686,7 +33686,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 357.0, -357.0] // mm
 }
@@ -33701,7 +33701,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 357.0, -306.0] // mm
 }
@@ -33716,7 +33716,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 357.0, -255.0] // mm
 }
@@ -33731,7 +33731,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 357.0, -204.0] // mm
 }
@@ -33746,7 +33746,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 357.0, -153.0] // mm
 }
@@ -33761,7 +33761,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 357.0, -102.0] // mm
 }
@@ -33776,7 +33776,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 357.0, -51.0] // mm
 }
@@ -33791,7 +33791,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 357.0, 0.0] // mm
 }
@@ -33806,7 +33806,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 357.0, 51.0] // mm
 }
@@ -33821,7 +33821,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 357.0, 102.0] // mm
 }
@@ -33836,7 +33836,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 357.0, 153.0] // mm
 }
@@ -33851,7 +33851,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 357.0, 204.0] // mm
 }
@@ -33866,7 +33866,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 357.0, 255.0] // mm
 }
@@ -33881,7 +33881,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 357.0, 306.0] // mm
 }
@@ -33896,7 +33896,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [102.0, 357.0, 357.0] // mm
 }
@@ -33911,7 +33911,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -357.0, -357.0] // mm
 }
@@ -33926,7 +33926,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -357.0, -306.0] // mm
 }
@@ -33941,7 +33941,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -357.0, -255.0] // mm
 }
@@ -33956,7 +33956,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -357.0, -204.0] // mm
 }
@@ -33971,7 +33971,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -357.0, -153.0] // mm
 }
@@ -33986,7 +33986,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -357.0, -102.0] // mm
 }
@@ -34001,7 +34001,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -357.0, -51.0] // mm
 }
@@ -34016,7 +34016,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -357.0, 0.0] // mm
 }
@@ -34031,7 +34031,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -357.0, 51.0] // mm
 }
@@ -34046,7 +34046,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -357.0, 102.0] // mm
 }
@@ -34061,7 +34061,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -357.0, 153.0] // mm
 }
@@ -34076,7 +34076,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -357.0, 204.0] // mm
 }
@@ -34091,7 +34091,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -357.0, 255.0] // mm
 }
@@ -34106,7 +34106,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -357.0, 306.0] // mm
 }
@@ -34121,7 +34121,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -357.0, 357.0] // mm
 }
@@ -34136,7 +34136,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -306.0, -357.0] // mm
 }
@@ -34151,7 +34151,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -306.0, -306.0] // mm
 }
@@ -34166,7 +34166,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -306.0, -255.0] // mm
 }
@@ -34181,7 +34181,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -306.0, -204.0] // mm
 }
@@ -34196,7 +34196,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -306.0, -153.0] // mm
 }
@@ -34211,7 +34211,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -306.0, -102.0] // mm
 }
@@ -34226,7 +34226,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -306.0, -51.0] // mm
 }
@@ -34241,7 +34241,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -306.0, 0.0] // mm
 }
@@ -34256,7 +34256,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -306.0, 51.0] // mm
 }
@@ -34271,7 +34271,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -306.0, 102.0] // mm
 }
@@ -34286,7 +34286,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -306.0, 153.0] // mm
 }
@@ -34301,7 +34301,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -306.0, 204.0] // mm
 }
@@ -34316,7 +34316,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -306.0, 255.0] // mm
 }
@@ -34331,7 +34331,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -306.0, 306.0] // mm
 }
@@ -34346,7 +34346,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -306.0, 357.0] // mm
 }
@@ -34361,7 +34361,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -255.0, -357.0] // mm
 }
@@ -34376,7 +34376,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -255.0, -306.0] // mm
 }
@@ -34391,7 +34391,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -255.0, -255.0] // mm
 }
@@ -34406,7 +34406,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -255.0, -204.0] // mm
 }
@@ -34421,7 +34421,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -255.0, -153.0] // mm
 }
@@ -34436,7 +34436,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -255.0, -102.0] // mm
 }
@@ -34451,7 +34451,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -255.0, -51.0] // mm
 }
@@ -34466,7 +34466,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -255.0, 0.0] // mm
 }
@@ -34481,7 +34481,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -255.0, 51.0] // mm
 }
@@ -34496,7 +34496,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -255.0, 102.0] // mm
 }
@@ -34511,7 +34511,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -255.0, 153.0] // mm
 }
@@ -34526,7 +34526,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -255.0, 204.0] // mm
 }
@@ -34541,7 +34541,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -255.0, 255.0] // mm
 }
@@ -34556,7 +34556,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -255.0, 306.0] // mm
 }
@@ -34571,7 +34571,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -255.0, 357.0] // mm
 }
@@ -34586,7 +34586,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -204.0, -357.0] // mm
 }
@@ -34601,7 +34601,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -204.0, -306.0] // mm
 }
@@ -34616,7 +34616,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -204.0, -255.0] // mm
 }
@@ -34631,7 +34631,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -204.0, -204.0] // mm
 }
@@ -34646,7 +34646,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -204.0, -153.0] // mm
 }
@@ -34661,7 +34661,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -204.0, -102.0] // mm
 }
@@ -34676,7 +34676,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -204.0, -51.0] // mm
 }
@@ -34691,7 +34691,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -204.0, 0.0] // mm
 }
@@ -34706,7 +34706,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -204.0, 51.0] // mm
 }
@@ -34721,7 +34721,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -204.0, 102.0] // mm
 }
@@ -34736,7 +34736,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -204.0, 153.0] // mm
 }
@@ -34751,7 +34751,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -204.0, 204.0] // mm
 }
@@ -34766,7 +34766,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -204.0, 255.0] // mm
 }
@@ -34781,7 +34781,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -204.0, 306.0] // mm
 }
@@ -34796,7 +34796,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -204.0, 357.0] // mm
 }
@@ -34811,7 +34811,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -153.0, -357.0] // mm
 }
@@ -34826,7 +34826,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -153.0, -306.0] // mm
 }
@@ -34841,7 +34841,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -153.0, -255.0] // mm
 }
@@ -34856,7 +34856,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -153.0, -204.0] // mm
 }
@@ -34871,7 +34871,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -153.0, -153.0] // mm
 }
@@ -34886,7 +34886,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -153.0, -102.0] // mm
 }
@@ -34901,7 +34901,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -153.0, -51.0] // mm
 }
@@ -34916,7 +34916,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -153.0, 0.0] // mm
 }
@@ -34931,7 +34931,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -153.0, 51.0] // mm
 }
@@ -34946,7 +34946,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -153.0, 102.0] // mm
 }
@@ -34961,7 +34961,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -153.0, 153.0] // mm
 }
@@ -34976,7 +34976,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -153.0, 204.0] // mm
 }
@@ -34991,7 +34991,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -153.0, 255.0] // mm
 }
@@ -35006,7 +35006,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -153.0, 306.0] // mm
 }
@@ -35021,7 +35021,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -153.0, 357.0] // mm
 }
@@ -35036,7 +35036,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -102.0, -357.0] // mm
 }
@@ -35051,7 +35051,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -102.0, -306.0] // mm
 }
@@ -35066,7 +35066,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -102.0, -255.0] // mm
 }
@@ -35081,7 +35081,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -102.0, -204.0] // mm
 }
@@ -35096,7 +35096,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -102.0, -153.0] // mm
 }
@@ -35111,7 +35111,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -102.0, -102.0] // mm
 }
@@ -35126,7 +35126,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -102.0, -51.0] // mm
 }
@@ -35141,7 +35141,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -102.0, 0.0] // mm
 }
@@ -35156,7 +35156,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -102.0, 51.0] // mm
 }
@@ -35171,7 +35171,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -102.0, 102.0] // mm
 }
@@ -35186,7 +35186,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -102.0, 153.0] // mm
 }
@@ -35201,7 +35201,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -102.0, 204.0] // mm
 }
@@ -35216,7 +35216,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -102.0, 255.0] // mm
 }
@@ -35231,7 +35231,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -102.0, 306.0] // mm
 }
@@ -35246,7 +35246,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -102.0, 357.0] // mm
 }
@@ -35261,7 +35261,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -51.0, -357.0] // mm
 }
@@ -35276,7 +35276,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -51.0, -306.0] // mm
 }
@@ -35291,7 +35291,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -51.0, -255.0] // mm
 }
@@ -35306,7 +35306,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -51.0, -204.0] // mm
 }
@@ -35321,7 +35321,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -51.0, -153.0] // mm
 }
@@ -35336,7 +35336,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -51.0, -102.0] // mm
 }
@@ -35351,7 +35351,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -51.0, -51.0] // mm
 }
@@ -35366,7 +35366,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -51.0, 0.0] // mm
 }
@@ -35381,7 +35381,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -51.0, 51.0] // mm
 }
@@ -35396,7 +35396,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -51.0, 102.0] // mm
 }
@@ -35411,7 +35411,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -51.0, 153.0] // mm
 }
@@ -35426,7 +35426,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -51.0, 204.0] // mm
 }
@@ -35441,7 +35441,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -51.0, 255.0] // mm
 }
@@ -35456,7 +35456,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -51.0, 306.0] // mm
 }
@@ -35471,7 +35471,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, -51.0, 357.0] // mm
 }
@@ -35486,7 +35486,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 0.0, -357.0] // mm
 }
@@ -35501,7 +35501,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 0.0, -306.0] // mm
 }
@@ -35516,7 +35516,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 0.0, -255.0] // mm
 }
@@ -35531,7 +35531,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 0.0, -204.0] // mm
 }
@@ -35546,7 +35546,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 0.0, -153.0] // mm
 }
@@ -35561,7 +35561,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 0.0, -102.0] // mm
 }
@@ -35576,7 +35576,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 0.0, -51.0] // mm
 }
@@ -35591,7 +35591,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 0.0, 0.0] // mm
 }
@@ -35606,7 +35606,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 0.0, 51.0] // mm
 }
@@ -35621,7 +35621,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 0.0, 102.0] // mm
 }
@@ -35636,7 +35636,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 0.0, 153.0] // mm
 }
@@ -35651,7 +35651,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 0.0, 204.0] // mm
 }
@@ -35666,7 +35666,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 0.0, 255.0] // mm
 }
@@ -35681,7 +35681,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 0.0, 306.0] // mm
 }
@@ -35696,7 +35696,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 0.0, 357.0] // mm
 }
@@ -35711,7 +35711,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 51.0, -357.0] // mm
 }
@@ -35726,7 +35726,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 51.0, -306.0] // mm
 }
@@ -35741,7 +35741,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 51.0, -255.0] // mm
 }
@@ -35756,7 +35756,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 51.0, -204.0] // mm
 }
@@ -35771,7 +35771,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 51.0, -153.0] // mm
 }
@@ -35786,7 +35786,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 51.0, -102.0] // mm
 }
@@ -35801,7 +35801,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 51.0, -51.0] // mm
 }
@@ -35816,7 +35816,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 51.0, 0.0] // mm
 }
@@ -35831,7 +35831,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 51.0, 51.0] // mm
 }
@@ -35846,7 +35846,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 51.0, 102.0] // mm
 }
@@ -35861,7 +35861,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 51.0, 153.0] // mm
 }
@@ -35876,7 +35876,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 51.0, 204.0] // mm
 }
@@ -35891,7 +35891,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 51.0, 255.0] // mm
 }
@@ -35906,7 +35906,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 51.0, 306.0] // mm
 }
@@ -35921,7 +35921,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 51.0, 357.0] // mm
 }
@@ -35936,7 +35936,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 102.0, -357.0] // mm
 }
@@ -35951,7 +35951,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 102.0, -306.0] // mm
 }
@@ -35966,7 +35966,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 102.0, -255.0] // mm
 }
@@ -35981,7 +35981,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 102.0, -204.0] // mm
 }
@@ -35996,7 +35996,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 102.0, -153.0] // mm
 }
@@ -36011,7 +36011,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 102.0, -102.0] // mm
 }
@@ -36026,7 +36026,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 102.0, -51.0] // mm
 }
@@ -36041,7 +36041,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 102.0, 0.0] // mm
 }
@@ -36056,7 +36056,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 102.0, 51.0] // mm
 }
@@ -36071,7 +36071,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 102.0, 102.0] // mm
 }
@@ -36086,7 +36086,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 102.0, 153.0] // mm
 }
@@ -36101,7 +36101,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 102.0, 204.0] // mm
 }
@@ -36116,7 +36116,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 102.0, 255.0] // mm
 }
@@ -36131,7 +36131,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 102.0, 306.0] // mm
 }
@@ -36146,7 +36146,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 102.0, 357.0] // mm
 }
@@ -36161,7 +36161,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 153.0, -357.0] // mm
 }
@@ -36176,7 +36176,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 153.0, -306.0] // mm
 }
@@ -36191,7 +36191,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 153.0, -255.0] // mm
 }
@@ -36206,7 +36206,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 153.0, -204.0] // mm
 }
@@ -36221,7 +36221,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 153.0, -153.0] // mm
 }
@@ -36236,7 +36236,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 153.0, -102.0] // mm
 }
@@ -36251,7 +36251,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 153.0, -51.0] // mm
 }
@@ -36266,7 +36266,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 153.0, 0.0] // mm
 }
@@ -36281,7 +36281,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 153.0, 51.0] // mm
 }
@@ -36296,7 +36296,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 153.0, 102.0] // mm
 }
@@ -36311,7 +36311,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 153.0, 153.0] // mm
 }
@@ -36326,7 +36326,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 153.0, 204.0] // mm
 }
@@ -36341,7 +36341,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 153.0, 255.0] // mm
 }
@@ -36356,7 +36356,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 153.0, 306.0] // mm
 }
@@ -36371,7 +36371,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 153.0, 357.0] // mm
 }
@@ -36386,7 +36386,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 204.0, -357.0] // mm
 }
@@ -36401,7 +36401,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 204.0, -306.0] // mm
 }
@@ -36416,7 +36416,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 204.0, -255.0] // mm
 }
@@ -36431,7 +36431,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 204.0, -204.0] // mm
 }
@@ -36446,7 +36446,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 204.0, -153.0] // mm
 }
@@ -36461,7 +36461,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 204.0, -102.0] // mm
 }
@@ -36476,7 +36476,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 204.0, -51.0] // mm
 }
@@ -36491,7 +36491,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 204.0, 0.0] // mm
 }
@@ -36506,7 +36506,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 204.0, 51.0] // mm
 }
@@ -36521,7 +36521,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 204.0, 102.0] // mm
 }
@@ -36536,7 +36536,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 204.0, 153.0] // mm
 }
@@ -36551,7 +36551,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 204.0, 204.0] // mm
 }
@@ -36566,7 +36566,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 204.0, 255.0] // mm
 }
@@ -36581,7 +36581,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 204.0, 306.0] // mm
 }
@@ -36596,7 +36596,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 204.0, 357.0] // mm
 }
@@ -36611,7 +36611,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 255.0, -357.0] // mm
 }
@@ -36626,7 +36626,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 255.0, -306.0] // mm
 }
@@ -36641,7 +36641,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 255.0, -255.0] // mm
 }
@@ -36656,7 +36656,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 255.0, -204.0] // mm
 }
@@ -36671,7 +36671,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 255.0, -153.0] // mm
 }
@@ -36686,7 +36686,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 255.0, -102.0] // mm
 }
@@ -36701,7 +36701,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 255.0, -51.0] // mm
 }
@@ -36716,7 +36716,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 255.0, 0.0] // mm
 }
@@ -36731,7 +36731,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 255.0, 51.0] // mm
 }
@@ -36746,7 +36746,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 255.0, 102.0] // mm
 }
@@ -36761,7 +36761,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 255.0, 153.0] // mm
 }
@@ -36776,7 +36776,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 255.0, 204.0] // mm
 }
@@ -36791,7 +36791,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 255.0, 255.0] // mm
 }
@@ -36806,7 +36806,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 255.0, 306.0] // mm
 }
@@ -36821,7 +36821,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 255.0, 357.0] // mm
 }
@@ -36836,7 +36836,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 306.0, -357.0] // mm
 }
@@ -36851,7 +36851,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 306.0, -306.0] // mm
 }
@@ -36866,7 +36866,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 306.0, -255.0] // mm
 }
@@ -36881,7 +36881,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 306.0, -204.0] // mm
 }
@@ -36896,7 +36896,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 306.0, -153.0] // mm
 }
@@ -36911,7 +36911,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 306.0, -102.0] // mm
 }
@@ -36926,7 +36926,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 306.0, -51.0] // mm
 }
@@ -36941,7 +36941,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 306.0, 0.0] // mm
 }
@@ -36956,7 +36956,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 306.0, 51.0] // mm
 }
@@ -36971,7 +36971,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 306.0, 102.0] // mm
 }
@@ -36986,7 +36986,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 306.0, 153.0] // mm
 }
@@ -37001,7 +37001,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 306.0, 204.0] // mm
 }
@@ -37016,7 +37016,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 306.0, 255.0] // mm
 }
@@ -37031,7 +37031,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 306.0, 306.0] // mm
 }
@@ -37046,7 +37046,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 306.0, 357.0] // mm
 }
@@ -37061,7 +37061,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 357.0, -357.0] // mm
 }
@@ -37076,7 +37076,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 357.0, -306.0] // mm
 }
@@ -37091,7 +37091,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 357.0, -255.0] // mm
 }
@@ -37106,7 +37106,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 357.0, -204.0] // mm
 }
@@ -37121,7 +37121,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 357.0, -153.0] // mm
 }
@@ -37136,7 +37136,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 357.0, -102.0] // mm
 }
@@ -37151,7 +37151,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 357.0, -51.0] // mm
 }
@@ -37166,7 +37166,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 357.0, 0.0] // mm
 }
@@ -37181,7 +37181,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 357.0, 51.0] // mm
 }
@@ -37196,7 +37196,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 357.0, 102.0] // mm
 }
@@ -37211,7 +37211,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 357.0, 153.0] // mm
 }
@@ -37226,7 +37226,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 357.0, 204.0] // mm
 }
@@ -37241,7 +37241,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 357.0, 255.0] // mm
 }
@@ -37256,7 +37256,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 357.0, 306.0] // mm
 }
@@ -37271,7 +37271,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [153.0, 357.0, 357.0] // mm
 }
@@ -37286,7 +37286,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -357.0, -357.0] // mm
 }
@@ -37301,7 +37301,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -357.0, -306.0] // mm
 }
@@ -37316,7 +37316,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -357.0, -255.0] // mm
 }
@@ -37331,7 +37331,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -357.0, -204.0] // mm
 }
@@ -37346,7 +37346,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -357.0, -153.0] // mm
 }
@@ -37361,7 +37361,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -357.0, -102.0] // mm
 }
@@ -37376,7 +37376,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -357.0, -51.0] // mm
 }
@@ -37391,7 +37391,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -357.0, 0.0] // mm
 }
@@ -37406,7 +37406,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -357.0, 51.0] // mm
 }
@@ -37421,7 +37421,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -357.0, 102.0] // mm
 }
@@ -37436,7 +37436,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -357.0, 153.0] // mm
 }
@@ -37451,7 +37451,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -357.0, 204.0] // mm
 }
@@ -37466,7 +37466,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -357.0, 255.0] // mm
 }
@@ -37481,7 +37481,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -357.0, 306.0] // mm
 }
@@ -37496,7 +37496,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -357.0, 357.0] // mm
 }
@@ -37511,7 +37511,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -306.0, -357.0] // mm
 }
@@ -37526,7 +37526,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -306.0, -306.0] // mm
 }
@@ -37541,7 +37541,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -306.0, -255.0] // mm
 }
@@ -37556,7 +37556,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -306.0, -204.0] // mm
 }
@@ -37571,7 +37571,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -306.0, -153.0] // mm
 }
@@ -37586,7 +37586,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -306.0, -102.0] // mm
 }
@@ -37601,7 +37601,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -306.0, -51.0] // mm
 }
@@ -37616,7 +37616,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -306.0, 0.0] // mm
 }
@@ -37631,7 +37631,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -306.0, 51.0] // mm
 }
@@ -37646,7 +37646,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -306.0, 102.0] // mm
 }
@@ -37661,7 +37661,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -306.0, 153.0] // mm
 }
@@ -37676,7 +37676,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -306.0, 204.0] // mm
 }
@@ -37691,7 +37691,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -306.0, 255.0] // mm
 }
@@ -37706,7 +37706,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -306.0, 306.0] // mm
 }
@@ -37721,7 +37721,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -306.0, 357.0] // mm
 }
@@ -37736,7 +37736,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -255.0, -357.0] // mm
 }
@@ -37751,7 +37751,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -255.0, -306.0] // mm
 }
@@ -37766,7 +37766,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -255.0, -255.0] // mm
 }
@@ -37781,7 +37781,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -255.0, -204.0] // mm
 }
@@ -37796,7 +37796,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -255.0, -153.0] // mm
 }
@@ -37811,7 +37811,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -255.0, -102.0] // mm
 }
@@ -37826,7 +37826,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -255.0, -51.0] // mm
 }
@@ -37841,7 +37841,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -255.0, 0.0] // mm
 }
@@ -37856,7 +37856,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -255.0, 51.0] // mm
 }
@@ -37871,7 +37871,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -255.0, 102.0] // mm
 }
@@ -37886,7 +37886,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -255.0, 153.0] // mm
 }
@@ -37901,7 +37901,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -255.0, 204.0] // mm
 }
@@ -37916,7 +37916,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -255.0, 255.0] // mm
 }
@@ -37931,7 +37931,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -255.0, 306.0] // mm
 }
@@ -37946,7 +37946,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -255.0, 357.0] // mm
 }
@@ -37961,7 +37961,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -204.0, -357.0] // mm
 }
@@ -37976,7 +37976,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -204.0, -306.0] // mm
 }
@@ -37991,7 +37991,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -204.0, -255.0] // mm
 }
@@ -38006,7 +38006,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -204.0, -204.0] // mm
 }
@@ -38021,7 +38021,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -204.0, -153.0] // mm
 }
@@ -38036,7 +38036,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -204.0, -102.0] // mm
 }
@@ -38051,7 +38051,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -204.0, -51.0] // mm
 }
@@ -38066,7 +38066,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -204.0, 0.0] // mm
 }
@@ -38081,7 +38081,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -204.0, 51.0] // mm
 }
@@ -38096,7 +38096,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -204.0, 102.0] // mm
 }
@@ -38111,7 +38111,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -204.0, 153.0] // mm
 }
@@ -38126,7 +38126,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -204.0, 204.0] // mm
 }
@@ -38141,7 +38141,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -204.0, 255.0] // mm
 }
@@ -38156,7 +38156,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -204.0, 306.0] // mm
 }
@@ -38171,7 +38171,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -204.0, 357.0] // mm
 }
@@ -38186,7 +38186,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -153.0, -357.0] // mm
 }
@@ -38201,7 +38201,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -153.0, -306.0] // mm
 }
@@ -38216,7 +38216,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -153.0, -255.0] // mm
 }
@@ -38231,7 +38231,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -153.0, -204.0] // mm
 }
@@ -38246,7 +38246,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -153.0, -153.0] // mm
 }
@@ -38261,7 +38261,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -153.0, -102.0] // mm
 }
@@ -38276,7 +38276,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -153.0, -51.0] // mm
 }
@@ -38291,7 +38291,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -153.0, 0.0] // mm
 }
@@ -38306,7 +38306,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -153.0, 51.0] // mm
 }
@@ -38321,7 +38321,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -153.0, 102.0] // mm
 }
@@ -38336,7 +38336,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -153.0, 153.0] // mm
 }
@@ -38351,7 +38351,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -153.0, 204.0] // mm
 }
@@ -38366,7 +38366,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -153.0, 255.0] // mm
 }
@@ -38381,7 +38381,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -153.0, 306.0] // mm
 }
@@ -38396,7 +38396,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -153.0, 357.0] // mm
 }
@@ -38411,7 +38411,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -102.0, -357.0] // mm
 }
@@ -38426,7 +38426,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -102.0, -306.0] // mm
 }
@@ -38441,7 +38441,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -102.0, -255.0] // mm
 }
@@ -38456,7 +38456,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -102.0, -204.0] // mm
 }
@@ -38471,7 +38471,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -102.0, -153.0] // mm
 }
@@ -38486,7 +38486,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -102.0, -102.0] // mm
 }
@@ -38501,7 +38501,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -102.0, -51.0] // mm
 }
@@ -38516,7 +38516,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -102.0, 0.0] // mm
 }
@@ -38531,7 +38531,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -102.0, 51.0] // mm
 }
@@ -38546,7 +38546,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -102.0, 102.0] // mm
 }
@@ -38561,7 +38561,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -102.0, 153.0] // mm
 }
@@ -38576,7 +38576,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -102.0, 204.0] // mm
 }
@@ -38591,7 +38591,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -102.0, 255.0] // mm
 }
@@ -38606,7 +38606,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -102.0, 306.0] // mm
 }
@@ -38621,7 +38621,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -102.0, 357.0] // mm
 }
@@ -38636,7 +38636,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -51.0, -357.0] // mm
 }
@@ -38651,7 +38651,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -51.0, -306.0] // mm
 }
@@ -38666,7 +38666,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -51.0, -255.0] // mm
 }
@@ -38681,7 +38681,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -51.0, -204.0] // mm
 }
@@ -38696,7 +38696,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -51.0, -153.0] // mm
 }
@@ -38711,7 +38711,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -51.0, -102.0] // mm
 }
@@ -38726,7 +38726,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -51.0, -51.0] // mm
 }
@@ -38741,7 +38741,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -51.0, 0.0] // mm
 }
@@ -38756,7 +38756,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -51.0, 51.0] // mm
 }
@@ -38771,7 +38771,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -51.0, 102.0] // mm
 }
@@ -38786,7 +38786,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -51.0, 153.0] // mm
 }
@@ -38801,7 +38801,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -51.0, 204.0] // mm
 }
@@ -38816,7 +38816,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -51.0, 255.0] // mm
 }
@@ -38831,7 +38831,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -51.0, 306.0] // mm
 }
@@ -38846,7 +38846,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, -51.0, 357.0] // mm
 }
@@ -38861,7 +38861,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 0.0, -357.0] // mm
 }
@@ -38876,7 +38876,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 0.0, -306.0] // mm
 }
@@ -38891,7 +38891,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 0.0, -255.0] // mm
 }
@@ -38906,7 +38906,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 0.0, -204.0] // mm
 }
@@ -38921,7 +38921,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 0.0, -153.0] // mm
 }
@@ -38936,7 +38936,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 0.0, -102.0] // mm
 }
@@ -38951,7 +38951,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 0.0, -51.0] // mm
 }
@@ -38966,7 +38966,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 0.0, 0.0] // mm
 }
@@ -38981,7 +38981,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 0.0, 51.0] // mm
 }
@@ -38996,7 +38996,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 0.0, 102.0] // mm
 }
@@ -39011,7 +39011,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 0.0, 153.0] // mm
 }
@@ -39026,7 +39026,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 0.0, 204.0] // mm
 }
@@ -39041,7 +39041,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 0.0, 255.0] // mm
 }
@@ -39056,7 +39056,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 0.0, 306.0] // mm
 }
@@ -39071,7 +39071,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 0.0, 357.0] // mm
 }
@@ -39086,7 +39086,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 51.0, -357.0] // mm
 }
@@ -39101,7 +39101,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 51.0, -306.0] // mm
 }
@@ -39116,7 +39116,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 51.0, -255.0] // mm
 }
@@ -39131,7 +39131,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 51.0, -204.0] // mm
 }
@@ -39146,7 +39146,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 51.0, -153.0] // mm
 }
@@ -39161,7 +39161,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 51.0, -102.0] // mm
 }
@@ -39176,7 +39176,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 51.0, -51.0] // mm
 }
@@ -39191,7 +39191,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 51.0, 0.0] // mm
 }
@@ -39206,7 +39206,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 51.0, 51.0] // mm
 }
@@ -39221,7 +39221,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 51.0, 102.0] // mm
 }
@@ -39236,7 +39236,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 51.0, 153.0] // mm
 }
@@ -39251,7 +39251,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 51.0, 204.0] // mm
 }
@@ -39266,7 +39266,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 51.0, 255.0] // mm
 }
@@ -39281,7 +39281,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 51.0, 306.0] // mm
 }
@@ -39296,7 +39296,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 51.0, 357.0] // mm
 }
@@ -39311,7 +39311,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 102.0, -357.0] // mm
 }
@@ -39326,7 +39326,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 102.0, -306.0] // mm
 }
@@ -39341,7 +39341,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 102.0, -255.0] // mm
 }
@@ -39356,7 +39356,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 102.0, -204.0] // mm
 }
@@ -39371,7 +39371,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 102.0, -153.0] // mm
 }
@@ -39386,7 +39386,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 102.0, -102.0] // mm
 }
@@ -39401,7 +39401,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 102.0, -51.0] // mm
 }
@@ -39416,7 +39416,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 102.0, 0.0] // mm
 }
@@ -39431,7 +39431,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 102.0, 51.0] // mm
 }
@@ -39446,7 +39446,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 102.0, 102.0] // mm
 }
@@ -39461,7 +39461,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 102.0, 153.0] // mm
 }
@@ -39476,7 +39476,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 102.0, 204.0] // mm
 }
@@ -39491,7 +39491,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 102.0, 255.0] // mm
 }
@@ -39506,7 +39506,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 102.0, 306.0] // mm
 }
@@ -39521,7 +39521,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 102.0, 357.0] // mm
 }
@@ -39536,7 +39536,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 153.0, -357.0] // mm
 }
@@ -39551,7 +39551,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 153.0, -306.0] // mm
 }
@@ -39566,7 +39566,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 153.0, -255.0] // mm
 }
@@ -39581,7 +39581,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 153.0, -204.0] // mm
 }
@@ -39596,7 +39596,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 153.0, -153.0] // mm
 }
@@ -39611,7 +39611,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 153.0, -102.0] // mm
 }
@@ -39626,7 +39626,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 153.0, -51.0] // mm
 }
@@ -39641,7 +39641,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 153.0, 0.0] // mm
 }
@@ -39656,7 +39656,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 153.0, 51.0] // mm
 }
@@ -39671,7 +39671,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 153.0, 102.0] // mm
 }
@@ -39686,7 +39686,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 153.0, 153.0] // mm
 }
@@ -39701,7 +39701,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 153.0, 204.0] // mm
 }
@@ -39716,7 +39716,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 153.0, 255.0] // mm
 }
@@ -39731,7 +39731,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 153.0, 306.0] // mm
 }
@@ -39746,7 +39746,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 153.0, 357.0] // mm
 }
@@ -39761,7 +39761,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 204.0, -357.0] // mm
 }
@@ -39776,7 +39776,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 204.0, -306.0] // mm
 }
@@ -39791,7 +39791,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 204.0, -255.0] // mm
 }
@@ -39806,7 +39806,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 204.0, -204.0] // mm
 }
@@ -39821,7 +39821,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 204.0, -153.0] // mm
 }
@@ -39836,7 +39836,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 204.0, -102.0] // mm
 }
@@ -39851,7 +39851,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 204.0, -51.0] // mm
 }
@@ -39866,7 +39866,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 204.0, 0.0] // mm
 }
@@ -39881,7 +39881,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 204.0, 51.0] // mm
 }
@@ -39896,7 +39896,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 204.0, 102.0] // mm
 }
@@ -39911,7 +39911,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 204.0, 153.0] // mm
 }
@@ -39926,7 +39926,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 204.0, 204.0] // mm
 }
@@ -39941,7 +39941,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 204.0, 255.0] // mm
 }
@@ -39956,7 +39956,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 204.0, 306.0] // mm
 }
@@ -39971,7 +39971,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 204.0, 357.0] // mm
 }
@@ -39986,7 +39986,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 255.0, -357.0] // mm
 }
@@ -40001,7 +40001,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 255.0, -306.0] // mm
 }
@@ -40016,7 +40016,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 255.0, -255.0] // mm
 }
@@ -40031,7 +40031,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 255.0, -204.0] // mm
 }
@@ -40046,7 +40046,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 255.0, -153.0] // mm
 }
@@ -40061,7 +40061,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 255.0, -102.0] // mm
 }
@@ -40076,7 +40076,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 255.0, -51.0] // mm
 }
@@ -40091,7 +40091,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 255.0, 0.0] // mm
 }
@@ -40106,7 +40106,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 255.0, 51.0] // mm
 }
@@ -40121,7 +40121,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 255.0, 102.0] // mm
 }
@@ -40136,7 +40136,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 255.0, 153.0] // mm
 }
@@ -40151,7 +40151,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 255.0, 204.0] // mm
 }
@@ -40166,7 +40166,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 255.0, 255.0] // mm
 }
@@ -40181,7 +40181,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 255.0, 306.0] // mm
 }
@@ -40196,7 +40196,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 255.0, 357.0] // mm
 }
@@ -40211,7 +40211,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 306.0, -357.0] // mm
 }
@@ -40226,7 +40226,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 306.0, -306.0] // mm
 }
@@ -40241,7 +40241,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 306.0, -255.0] // mm
 }
@@ -40256,7 +40256,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 306.0, -204.0] // mm
 }
@@ -40271,7 +40271,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 306.0, -153.0] // mm
 }
@@ -40286,7 +40286,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 306.0, -102.0] // mm
 }
@@ -40301,7 +40301,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 306.0, -51.0] // mm
 }
@@ -40316,7 +40316,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 306.0, 0.0] // mm
 }
@@ -40331,7 +40331,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 306.0, 51.0] // mm
 }
@@ -40346,7 +40346,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 306.0, 102.0] // mm
 }
@@ -40361,7 +40361,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 306.0, 153.0] // mm
 }
@@ -40376,7 +40376,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 306.0, 204.0] // mm
 }
@@ -40391,7 +40391,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 306.0, 255.0] // mm
 }
@@ -40406,7 +40406,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 306.0, 306.0] // mm
 }
@@ -40421,7 +40421,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 306.0, 357.0] // mm
 }
@@ -40436,7 +40436,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 357.0, -357.0] // mm
 }
@@ -40451,7 +40451,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 357.0, -306.0] // mm
 }
@@ -40466,7 +40466,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 357.0, -255.0] // mm
 }
@@ -40481,7 +40481,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 357.0, -204.0] // mm
 }
@@ -40496,7 +40496,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 357.0, -153.0] // mm
 }
@@ -40511,7 +40511,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 357.0, -102.0] // mm
 }
@@ -40526,7 +40526,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 357.0, -51.0] // mm
 }
@@ -40541,7 +40541,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 357.0, 0.0] // mm
 }
@@ -40556,7 +40556,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 357.0, 51.0] // mm
 }
@@ -40571,7 +40571,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 357.0, 102.0] // mm
 }
@@ -40586,7 +40586,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 357.0, 153.0] // mm
 }
@@ -40601,7 +40601,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 357.0, 204.0] // mm
 }
@@ -40616,7 +40616,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 357.0, 255.0] // mm
 }
@@ -40631,7 +40631,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 357.0, 306.0] // mm
 }
@@ -40646,7 +40646,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [204.0, 357.0, 357.0] // mm
 }
@@ -40661,7 +40661,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -357.0, -357.0] // mm
 }
@@ -40676,7 +40676,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -357.0, -306.0] // mm
 }
@@ -40691,7 +40691,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -357.0, -255.0] // mm
 }
@@ -40706,7 +40706,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -357.0, -204.0] // mm
 }
@@ -40721,7 +40721,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -357.0, -153.0] // mm
 }
@@ -40736,7 +40736,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -357.0, -102.0] // mm
 }
@@ -40751,7 +40751,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -357.0, -51.0] // mm
 }
@@ -40766,7 +40766,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -357.0, 0.0] // mm
 }
@@ -40781,7 +40781,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -357.0, 51.0] // mm
 }
@@ -40796,7 +40796,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -357.0, 102.0] // mm
 }
@@ -40811,7 +40811,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -357.0, 153.0] // mm
 }
@@ -40826,7 +40826,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -357.0, 204.0] // mm
 }
@@ -40841,7 +40841,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -357.0, 255.0] // mm
 }
@@ -40856,7 +40856,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -357.0, 306.0] // mm
 }
@@ -40871,7 +40871,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -357.0, 357.0] // mm
 }
@@ -40886,7 +40886,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -306.0, -357.0] // mm
 }
@@ -40901,7 +40901,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -306.0, -306.0] // mm
 }
@@ -40916,7 +40916,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -306.0, -255.0] // mm
 }
@@ -40931,7 +40931,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -306.0, -204.0] // mm
 }
@@ -40946,7 +40946,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -306.0, -153.0] // mm
 }
@@ -40961,7 +40961,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -306.0, -102.0] // mm
 }
@@ -40976,7 +40976,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -306.0, -51.0] // mm
 }
@@ -40991,7 +40991,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -306.0, 0.0] // mm
 }
@@ -41006,7 +41006,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -306.0, 51.0] // mm
 }
@@ -41021,7 +41021,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -306.0, 102.0] // mm
 }
@@ -41036,7 +41036,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -306.0, 153.0] // mm
 }
@@ -41051,7 +41051,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -306.0, 204.0] // mm
 }
@@ -41066,7 +41066,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -306.0, 255.0] // mm
 }
@@ -41081,7 +41081,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -306.0, 306.0] // mm
 }
@@ -41096,7 +41096,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -306.0, 357.0] // mm
 }
@@ -41111,7 +41111,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -255.0, -357.0] // mm
 }
@@ -41126,7 +41126,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -255.0, -306.0] // mm
 }
@@ -41141,7 +41141,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -255.0, -255.0] // mm
 }
@@ -41156,7 +41156,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -255.0, -204.0] // mm
 }
@@ -41171,7 +41171,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -255.0, -153.0] // mm
 }
@@ -41186,7 +41186,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -255.0, -102.0] // mm
 }
@@ -41201,7 +41201,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -255.0, -51.0] // mm
 }
@@ -41216,7 +41216,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -255.0, 0.0] // mm
 }
@@ -41231,7 +41231,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -255.0, 51.0] // mm
 }
@@ -41246,7 +41246,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -255.0, 102.0] // mm
 }
@@ -41261,7 +41261,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -255.0, 153.0] // mm
 }
@@ -41276,7 +41276,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -255.0, 204.0] // mm
 }
@@ -41291,7 +41291,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -255.0, 255.0] // mm
 }
@@ -41306,7 +41306,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -255.0, 306.0] // mm
 }
@@ -41321,7 +41321,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -255.0, 357.0] // mm
 }
@@ -41336,7 +41336,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -204.0, -357.0] // mm
 }
@@ -41351,7 +41351,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -204.0, -306.0] // mm
 }
@@ -41366,7 +41366,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -204.0, -255.0] // mm
 }
@@ -41381,7 +41381,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -204.0, -204.0] // mm
 }
@@ -41396,7 +41396,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -204.0, -153.0] // mm
 }
@@ -41411,7 +41411,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -204.0, -102.0] // mm
 }
@@ -41426,7 +41426,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -204.0, -51.0] // mm
 }
@@ -41441,7 +41441,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -204.0, 0.0] // mm
 }
@@ -41456,7 +41456,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -204.0, 51.0] // mm
 }
@@ -41471,7 +41471,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -204.0, 102.0] // mm
 }
@@ -41486,7 +41486,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -204.0, 153.0] // mm
 }
@@ -41501,7 +41501,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -204.0, 204.0] // mm
 }
@@ -41516,7 +41516,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -204.0, 255.0] // mm
 }
@@ -41531,7 +41531,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -204.0, 306.0] // mm
 }
@@ -41546,7 +41546,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -204.0, 357.0] // mm
 }
@@ -41561,7 +41561,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -153.0, -357.0] // mm
 }
@@ -41576,7 +41576,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -153.0, -306.0] // mm
 }
@@ -41591,7 +41591,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -153.0, -255.0] // mm
 }
@@ -41606,7 +41606,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -153.0, -204.0] // mm
 }
@@ -41621,7 +41621,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -153.0, -153.0] // mm
 }
@@ -41636,7 +41636,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -153.0, -102.0] // mm
 }
@@ -41651,7 +41651,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -153.0, -51.0] // mm
 }
@@ -41666,7 +41666,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -153.0, 0.0] // mm
 }
@@ -41681,7 +41681,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -153.0, 51.0] // mm
 }
@@ -41696,7 +41696,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -153.0, 102.0] // mm
 }
@@ -41711,7 +41711,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -153.0, 153.0] // mm
 }
@@ -41726,7 +41726,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -153.0, 204.0] // mm
 }
@@ -41741,7 +41741,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -153.0, 255.0] // mm
 }
@@ -41756,7 +41756,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -153.0, 306.0] // mm
 }
@@ -41771,7 +41771,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -153.0, 357.0] // mm
 }
@@ -41786,7 +41786,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -102.0, -357.0] // mm
 }
@@ -41801,7 +41801,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -102.0, -306.0] // mm
 }
@@ -41816,7 +41816,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -102.0, -255.0] // mm
 }
@@ -41831,7 +41831,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -102.0, -204.0] // mm
 }
@@ -41846,7 +41846,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -102.0, -153.0] // mm
 }
@@ -41861,7 +41861,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -102.0, -102.0] // mm
 }
@@ -41876,7 +41876,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -102.0, -51.0] // mm
 }
@@ -41891,7 +41891,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -102.0, 0.0] // mm
 }
@@ -41906,7 +41906,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -102.0, 51.0] // mm
 }
@@ -41921,7 +41921,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -102.0, 102.0] // mm
 }
@@ -41936,7 +41936,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -102.0, 153.0] // mm
 }
@@ -41951,7 +41951,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -102.0, 204.0] // mm
 }
@@ -41966,7 +41966,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -102.0, 255.0] // mm
 }
@@ -41981,7 +41981,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -102.0, 306.0] // mm
 }
@@ -41996,7 +41996,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -102.0, 357.0] // mm
 }
@@ -42011,7 +42011,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -51.0, -357.0] // mm
 }
@@ -42026,7 +42026,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -51.0, -306.0] // mm
 }
@@ -42041,7 +42041,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -51.0, -255.0] // mm
 }
@@ -42056,7 +42056,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -51.0, -204.0] // mm
 }
@@ -42071,7 +42071,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -51.0, -153.0] // mm
 }
@@ -42086,7 +42086,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -51.0, -102.0] // mm
 }
@@ -42101,7 +42101,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -51.0, -51.0] // mm
 }
@@ -42116,7 +42116,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -51.0, 0.0] // mm
 }
@@ -42131,7 +42131,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -51.0, 51.0] // mm
 }
@@ -42146,7 +42146,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -51.0, 102.0] // mm
 }
@@ -42161,7 +42161,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -51.0, 153.0] // mm
 }
@@ -42176,7 +42176,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -51.0, 204.0] // mm
 }
@@ -42191,7 +42191,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -51.0, 255.0] // mm
 }
@@ -42206,7 +42206,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -51.0, 306.0] // mm
 }
@@ -42221,7 +42221,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, -51.0, 357.0] // mm
 }
@@ -42236,7 +42236,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 0.0, -357.0] // mm
 }
@@ -42251,7 +42251,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 0.0, -306.0] // mm
 }
@@ -42266,7 +42266,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 0.0, -255.0] // mm
 }
@@ -42281,7 +42281,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 0.0, -204.0] // mm
 }
@@ -42296,7 +42296,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 0.0, -153.0] // mm
 }
@@ -42311,7 +42311,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 0.0, -102.0] // mm
 }
@@ -42326,7 +42326,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 0.0, -51.0] // mm
 }
@@ -42341,7 +42341,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 0.0, 0.0] // mm
 }
@@ -42356,7 +42356,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 0.0, 51.0] // mm
 }
@@ -42371,7 +42371,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 0.0, 102.0] // mm
 }
@@ -42386,7 +42386,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 0.0, 153.0] // mm
 }
@@ -42401,7 +42401,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 0.0, 204.0] // mm
 }
@@ -42416,7 +42416,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 0.0, 255.0] // mm
 }
@@ -42431,7 +42431,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 0.0, 306.0] // mm
 }
@@ -42446,7 +42446,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 0.0, 357.0] // mm
 }
@@ -42461,7 +42461,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 51.0, -357.0] // mm
 }
@@ -42476,7 +42476,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 51.0, -306.0] // mm
 }
@@ -42491,7 +42491,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 51.0, -255.0] // mm
 }
@@ -42506,7 +42506,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 51.0, -204.0] // mm
 }
@@ -42521,7 +42521,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 51.0, -153.0] // mm
 }
@@ -42536,7 +42536,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 51.0, -102.0] // mm
 }
@@ -42551,7 +42551,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 51.0, -51.0] // mm
 }
@@ -42566,7 +42566,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 51.0, 0.0] // mm
 }
@@ -42581,7 +42581,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 51.0, 51.0] // mm
 }
@@ -42596,7 +42596,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 51.0, 102.0] // mm
 }
@@ -42611,7 +42611,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 51.0, 153.0] // mm
 }
@@ -42626,7 +42626,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 51.0, 204.0] // mm
 }
@@ -42641,7 +42641,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 51.0, 255.0] // mm
 }
@@ -42656,7 +42656,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 51.0, 306.0] // mm
 }
@@ -42671,7 +42671,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 51.0, 357.0] // mm
 }
@@ -42686,7 +42686,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 102.0, -357.0] // mm
 }
@@ -42701,7 +42701,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 102.0, -306.0] // mm
 }
@@ -42716,7 +42716,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 102.0, -255.0] // mm
 }
@@ -42731,7 +42731,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 102.0, -204.0] // mm
 }
@@ -42746,7 +42746,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 102.0, -153.0] // mm
 }
@@ -42761,7 +42761,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 102.0, -102.0] // mm
 }
@@ -42776,7 +42776,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 102.0, -51.0] // mm
 }
@@ -42791,7 +42791,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 102.0, 0.0] // mm
 }
@@ -42806,7 +42806,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 102.0, 51.0] // mm
 }
@@ -42821,7 +42821,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 102.0, 102.0] // mm
 }
@@ -42836,7 +42836,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 102.0, 153.0] // mm
 }
@@ -42851,7 +42851,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 102.0, 204.0] // mm
 }
@@ -42866,7 +42866,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 102.0, 255.0] // mm
 }
@@ -42881,7 +42881,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 102.0, 306.0] // mm
 }
@@ -42896,7 +42896,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 102.0, 357.0] // mm
 }
@@ -42911,7 +42911,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 153.0, -357.0] // mm
 }
@@ -42926,7 +42926,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 153.0, -306.0] // mm
 }
@@ -42941,7 +42941,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 153.0, -255.0] // mm
 }
@@ -42956,7 +42956,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 153.0, -204.0] // mm
 }
@@ -42971,7 +42971,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 153.0, -153.0] // mm
 }
@@ -42986,7 +42986,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 153.0, -102.0] // mm
 }
@@ -43001,7 +43001,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 153.0, -51.0] // mm
 }
@@ -43016,7 +43016,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 153.0, 0.0] // mm
 }
@@ -43031,7 +43031,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 153.0, 51.0] // mm
 }
@@ -43046,7 +43046,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 153.0, 102.0] // mm
 }
@@ -43061,7 +43061,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 153.0, 153.0] // mm
 }
@@ -43076,7 +43076,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 153.0, 204.0] // mm
 }
@@ -43091,7 +43091,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 153.0, 255.0] // mm
 }
@@ -43106,7 +43106,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 153.0, 306.0] // mm
 }
@@ -43121,7 +43121,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 153.0, 357.0] // mm
 }
@@ -43136,7 +43136,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 204.0, -357.0] // mm
 }
@@ -43151,7 +43151,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 204.0, -306.0] // mm
 }
@@ -43166,7 +43166,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 204.0, -255.0] // mm
 }
@@ -43181,7 +43181,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 204.0, -204.0] // mm
 }
@@ -43196,7 +43196,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 204.0, -153.0] // mm
 }
@@ -43211,7 +43211,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 204.0, -102.0] // mm
 }
@@ -43226,7 +43226,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 204.0, -51.0] // mm
 }
@@ -43241,7 +43241,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 204.0, 0.0] // mm
 }
@@ -43256,7 +43256,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 204.0, 51.0] // mm
 }
@@ -43271,7 +43271,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 204.0, 102.0] // mm
 }
@@ -43286,7 +43286,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 204.0, 153.0] // mm
 }
@@ -43301,7 +43301,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 204.0, 204.0] // mm
 }
@@ -43316,7 +43316,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 204.0, 255.0] // mm
 }
@@ -43331,7 +43331,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 204.0, 306.0] // mm
 }
@@ -43346,7 +43346,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 204.0, 357.0] // mm
 }
@@ -43361,7 +43361,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 255.0, -357.0] // mm
 }
@@ -43376,7 +43376,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 255.0, -306.0] // mm
 }
@@ -43391,7 +43391,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 255.0, -255.0] // mm
 }
@@ -43406,7 +43406,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 255.0, -204.0] // mm
 }
@@ -43421,7 +43421,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 255.0, -153.0] // mm
 }
@@ -43436,7 +43436,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 255.0, -102.0] // mm
 }
@@ -43451,7 +43451,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 255.0, -51.0] // mm
 }
@@ -43466,7 +43466,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 255.0, 0.0] // mm
 }
@@ -43481,7 +43481,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 255.0, 51.0] // mm
 }
@@ -43496,7 +43496,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 255.0, 102.0] // mm
 }
@@ -43511,7 +43511,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 255.0, 153.0] // mm
 }
@@ -43526,7 +43526,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 255.0, 204.0] // mm
 }
@@ -43541,7 +43541,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 255.0, 255.0] // mm
 }
@@ -43556,7 +43556,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 255.0, 306.0] // mm
 }
@@ -43571,7 +43571,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 255.0, 357.0] // mm
 }
@@ -43586,7 +43586,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 306.0, -357.0] // mm
 }
@@ -43601,7 +43601,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 306.0, -306.0] // mm
 }
@@ -43616,7 +43616,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 306.0, -255.0] // mm
 }
@@ -43631,7 +43631,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 306.0, -204.0] // mm
 }
@@ -43646,7 +43646,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 306.0, -153.0] // mm
 }
@@ -43661,7 +43661,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 306.0, -102.0] // mm
 }
@@ -43676,7 +43676,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 306.0, -51.0] // mm
 }
@@ -43691,7 +43691,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 306.0, 0.0] // mm
 }
@@ -43706,7 +43706,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 306.0, 51.0] // mm
 }
@@ -43721,7 +43721,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 306.0, 102.0] // mm
 }
@@ -43736,7 +43736,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 306.0, 153.0] // mm
 }
@@ -43751,7 +43751,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 306.0, 204.0] // mm
 }
@@ -43766,7 +43766,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 306.0, 255.0] // mm
 }
@@ -43781,7 +43781,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 306.0, 306.0] // mm
 }
@@ -43796,7 +43796,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 306.0, 357.0] // mm
 }
@@ -43811,7 +43811,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 357.0, -357.0] // mm
 }
@@ -43826,7 +43826,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 357.0, -306.0] // mm
 }
@@ -43841,7 +43841,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 357.0, -255.0] // mm
 }
@@ -43856,7 +43856,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 357.0, -204.0] // mm
 }
@@ -43871,7 +43871,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 357.0, -153.0] // mm
 }
@@ -43886,7 +43886,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 357.0, -102.0] // mm
 }
@@ -43901,7 +43901,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 357.0, -51.0] // mm
 }
@@ -43916,7 +43916,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 357.0, 0.0] // mm
 }
@@ -43931,7 +43931,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 357.0, 51.0] // mm
 }
@@ -43946,7 +43946,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 357.0, 102.0] // mm
 }
@@ -43961,7 +43961,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 357.0, 153.0] // mm
 }
@@ -43976,7 +43976,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 357.0, 204.0] // mm
 }
@@ -43991,7 +43991,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 357.0, 255.0] // mm
 }
@@ -44006,7 +44006,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 357.0, 306.0] // mm
 }
@@ -44021,7 +44021,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [255.0, 357.0, 357.0] // mm
 }
@@ -44036,7 +44036,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -357.0, -357.0] // mm
 }
@@ -44051,7 +44051,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -357.0, -306.0] // mm
 }
@@ -44066,7 +44066,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -357.0, -255.0] // mm
 }
@@ -44081,7 +44081,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -357.0, -204.0] // mm
 }
@@ -44096,7 +44096,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -357.0, -153.0] // mm
 }
@@ -44111,7 +44111,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -357.0, -102.0] // mm
 }
@@ -44126,7 +44126,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -357.0, -51.0] // mm
 }
@@ -44141,7 +44141,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -357.0, 0.0] // mm
 }
@@ -44156,7 +44156,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -357.0, 51.0] // mm
 }
@@ -44171,7 +44171,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -357.0, 102.0] // mm
 }
@@ -44186,7 +44186,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -357.0, 153.0] // mm
 }
@@ -44201,7 +44201,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -357.0, 204.0] // mm
 }
@@ -44216,7 +44216,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -357.0, 255.0] // mm
 }
@@ -44231,7 +44231,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -357.0, 306.0] // mm
 }
@@ -44246,7 +44246,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -357.0, 357.0] // mm
 }
@@ -44261,7 +44261,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -306.0, -357.0] // mm
 }
@@ -44276,7 +44276,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -306.0, -306.0] // mm
 }
@@ -44291,7 +44291,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -306.0, -255.0] // mm
 }
@@ -44306,7 +44306,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -306.0, -204.0] // mm
 }
@@ -44321,7 +44321,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -306.0, -153.0] // mm
 }
@@ -44336,7 +44336,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -306.0, -102.0] // mm
 }
@@ -44351,7 +44351,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -306.0, -51.0] // mm
 }
@@ -44366,7 +44366,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -306.0, 0.0] // mm
 }
@@ -44381,7 +44381,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -306.0, 51.0] // mm
 }
@@ -44396,7 +44396,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -306.0, 102.0] // mm
 }
@@ -44411,7 +44411,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -306.0, 153.0] // mm
 }
@@ -44426,7 +44426,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -306.0, 204.0] // mm
 }
@@ -44441,7 +44441,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -306.0, 255.0] // mm
 }
@@ -44456,7 +44456,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -306.0, 306.0] // mm
 }
@@ -44471,7 +44471,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -306.0, 357.0] // mm
 }
@@ -44486,7 +44486,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -255.0, -357.0] // mm
 }
@@ -44501,7 +44501,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -255.0, -306.0] // mm
 }
@@ -44516,7 +44516,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -255.0, -255.0] // mm
 }
@@ -44531,7 +44531,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -255.0, -204.0] // mm
 }
@@ -44546,7 +44546,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -255.0, -153.0] // mm
 }
@@ -44561,7 +44561,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -255.0, -102.0] // mm
 }
@@ -44576,7 +44576,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -255.0, -51.0] // mm
 }
@@ -44591,7 +44591,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -255.0, 0.0] // mm
 }
@@ -44606,7 +44606,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -255.0, 51.0] // mm
 }
@@ -44621,7 +44621,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -255.0, 102.0] // mm
 }
@@ -44636,7 +44636,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -255.0, 153.0] // mm
 }
@@ -44651,7 +44651,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -255.0, 204.0] // mm
 }
@@ -44666,7 +44666,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -255.0, 255.0] // mm
 }
@@ -44681,7 +44681,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -255.0, 306.0] // mm
 }
@@ -44696,7 +44696,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -255.0, 357.0] // mm
 }
@@ -44711,7 +44711,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -204.0, -357.0] // mm
 }
@@ -44726,7 +44726,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -204.0, -306.0] // mm
 }
@@ -44741,7 +44741,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -204.0, -255.0] // mm
 }
@@ -44756,7 +44756,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -204.0, -204.0] // mm
 }
@@ -44771,7 +44771,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -204.0, -153.0] // mm
 }
@@ -44786,7 +44786,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -204.0, -102.0] // mm
 }
@@ -44801,7 +44801,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -204.0, -51.0] // mm
 }
@@ -44816,7 +44816,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -204.0, 0.0] // mm
 }
@@ -44831,7 +44831,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -204.0, 51.0] // mm
 }
@@ -44846,7 +44846,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -204.0, 102.0] // mm
 }
@@ -44861,7 +44861,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -204.0, 153.0] // mm
 }
@@ -44876,7 +44876,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -204.0, 204.0] // mm
 }
@@ -44891,7 +44891,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -204.0, 255.0] // mm
 }
@@ -44906,7 +44906,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -204.0, 306.0] // mm
 }
@@ -44921,7 +44921,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -204.0, 357.0] // mm
 }
@@ -44936,7 +44936,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -153.0, -357.0] // mm
 }
@@ -44951,7 +44951,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -153.0, -306.0] // mm
 }
@@ -44966,7 +44966,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -153.0, -255.0] // mm
 }
@@ -44981,7 +44981,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -153.0, -204.0] // mm
 }
@@ -44996,7 +44996,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -153.0, -153.0] // mm
 }
@@ -45011,7 +45011,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -153.0, -102.0] // mm
 }
@@ -45026,7 +45026,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -153.0, -51.0] // mm
 }
@@ -45041,7 +45041,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -153.0, 0.0] // mm
 }
@@ -45056,7 +45056,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -153.0, 51.0] // mm
 }
@@ -45071,7 +45071,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -153.0, 102.0] // mm
 }
@@ -45086,7 +45086,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -153.0, 153.0] // mm
 }
@@ -45101,7 +45101,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -153.0, 204.0] // mm
 }
@@ -45116,7 +45116,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -153.0, 255.0] // mm
 }
@@ -45131,7 +45131,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -153.0, 306.0] // mm
 }
@@ -45146,7 +45146,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -153.0, 357.0] // mm
 }
@@ -45161,7 +45161,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -102.0, -357.0] // mm
 }
@@ -45176,7 +45176,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -102.0, -306.0] // mm
 }
@@ -45191,7 +45191,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -102.0, -255.0] // mm
 }
@@ -45206,7 +45206,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -102.0, -204.0] // mm
 }
@@ -45221,7 +45221,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -102.0, -153.0] // mm
 }
@@ -45236,7 +45236,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -102.0, -102.0] // mm
 }
@@ -45251,7 +45251,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -102.0, -51.0] // mm
 }
@@ -45266,7 +45266,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -102.0, 0.0] // mm
 }
@@ -45281,7 +45281,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -102.0, 51.0] // mm
 }
@@ -45296,7 +45296,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -102.0, 102.0] // mm
 }
@@ -45311,7 +45311,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -102.0, 153.0] // mm
 }
@@ -45326,7 +45326,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -102.0, 204.0] // mm
 }
@@ -45341,7 +45341,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -102.0, 255.0] // mm
 }
@@ -45356,7 +45356,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -102.0, 306.0] // mm
 }
@@ -45371,7 +45371,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -102.0, 357.0] // mm
 }
@@ -45386,7 +45386,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -51.0, -357.0] // mm
 }
@@ -45401,7 +45401,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -51.0, -306.0] // mm
 }
@@ -45416,7 +45416,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -51.0, -255.0] // mm
 }
@@ -45431,7 +45431,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -51.0, -204.0] // mm
 }
@@ -45446,7 +45446,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -51.0, -153.0] // mm
 }
@@ -45461,7 +45461,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -51.0, -102.0] // mm
 }
@@ -45476,7 +45476,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -51.0, -51.0] // mm
 }
@@ -45491,7 +45491,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -51.0, 0.0] // mm
 }
@@ -45506,7 +45506,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -51.0, 51.0] // mm
 }
@@ -45521,7 +45521,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -51.0, 102.0] // mm
 }
@@ -45536,7 +45536,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -51.0, 153.0] // mm
 }
@@ -45551,7 +45551,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -51.0, 204.0] // mm
 }
@@ -45566,7 +45566,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -51.0, 255.0] // mm
 }
@@ -45581,7 +45581,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -51.0, 306.0] // mm
 }
@@ -45596,7 +45596,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, -51.0, 357.0] // mm
 }
@@ -45611,7 +45611,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 0.0, -357.0] // mm
 }
@@ -45626,7 +45626,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 0.0, -306.0] // mm
 }
@@ -45641,7 +45641,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 0.0, -255.0] // mm
 }
@@ -45656,7 +45656,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 0.0, -204.0] // mm
 }
@@ -45671,7 +45671,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 0.0, -153.0] // mm
 }
@@ -45686,7 +45686,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 0.0, -102.0] // mm
 }
@@ -45701,7 +45701,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 0.0, -51.0] // mm
 }
@@ -45716,7 +45716,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 0.0, 0.0] // mm
 }
@@ -45731,7 +45731,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 0.0, 51.0] // mm
 }
@@ -45746,7 +45746,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 0.0, 102.0] // mm
 }
@@ -45761,7 +45761,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 0.0, 153.0] // mm
 }
@@ -45776,7 +45776,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 0.0, 204.0] // mm
 }
@@ -45791,7 +45791,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 0.0, 255.0] // mm
 }
@@ -45806,7 +45806,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 0.0, 306.0] // mm
 }
@@ -45821,7 +45821,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 0.0, 357.0] // mm
 }
@@ -45836,7 +45836,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 51.0, -357.0] // mm
 }
@@ -45851,7 +45851,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 51.0, -306.0] // mm
 }
@@ -45866,7 +45866,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 51.0, -255.0] // mm
 }
@@ -45881,7 +45881,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 51.0, -204.0] // mm
 }
@@ -45896,7 +45896,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 51.0, -153.0] // mm
 }
@@ -45911,7 +45911,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 51.0, -102.0] // mm
 }
@@ -45926,7 +45926,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 51.0, -51.0] // mm
 }
@@ -45941,7 +45941,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 51.0, 0.0] // mm
 }
@@ -45956,7 +45956,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 51.0, 51.0] // mm
 }
@@ -45971,7 +45971,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 51.0, 102.0] // mm
 }
@@ -45986,7 +45986,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 51.0, 153.0] // mm
 }
@@ -46001,7 +46001,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 51.0, 204.0] // mm
 }
@@ -46016,7 +46016,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 51.0, 255.0] // mm
 }
@@ -46031,7 +46031,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 51.0, 306.0] // mm
 }
@@ -46046,7 +46046,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 51.0, 357.0] // mm
 }
@@ -46061,7 +46061,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 102.0, -357.0] // mm
 }
@@ -46076,7 +46076,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 102.0, -306.0] // mm
 }
@@ -46091,7 +46091,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 102.0, -255.0] // mm
 }
@@ -46106,7 +46106,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 102.0, -204.0] // mm
 }
@@ -46121,7 +46121,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 102.0, -153.0] // mm
 }
@@ -46136,7 +46136,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 102.0, -102.0] // mm
 }
@@ -46151,7 +46151,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 102.0, -51.0] // mm
 }
@@ -46166,7 +46166,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 102.0, 0.0] // mm
 }
@@ -46181,7 +46181,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 102.0, 51.0] // mm
 }
@@ -46196,7 +46196,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 102.0, 102.0] // mm
 }
@@ -46211,7 +46211,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 102.0, 153.0] // mm
 }
@@ -46226,7 +46226,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 102.0, 204.0] // mm
 }
@@ -46241,7 +46241,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 102.0, 255.0] // mm
 }
@@ -46256,7 +46256,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 102.0, 306.0] // mm
 }
@@ -46271,7 +46271,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 102.0, 357.0] // mm
 }
@@ -46286,7 +46286,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 153.0, -357.0] // mm
 }
@@ -46301,7 +46301,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 153.0, -306.0] // mm
 }
@@ -46316,7 +46316,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 153.0, -255.0] // mm
 }
@@ -46331,7 +46331,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 153.0, -204.0] // mm
 }
@@ -46346,7 +46346,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 153.0, -153.0] // mm
 }
@@ -46361,7 +46361,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 153.0, -102.0] // mm
 }
@@ -46376,7 +46376,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 153.0, -51.0] // mm
 }
@@ -46391,7 +46391,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 153.0, 0.0] // mm
 }
@@ -46406,7 +46406,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 153.0, 51.0] // mm
 }
@@ -46421,7 +46421,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 153.0, 102.0] // mm
 }
@@ -46436,7 +46436,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 153.0, 153.0] // mm
 }
@@ -46451,7 +46451,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 153.0, 204.0] // mm
 }
@@ -46466,7 +46466,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 153.0, 255.0] // mm
 }
@@ -46481,7 +46481,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 153.0, 306.0] // mm
 }
@@ -46496,7 +46496,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 153.0, 357.0] // mm
 }
@@ -46511,7 +46511,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 204.0, -357.0] // mm
 }
@@ -46526,7 +46526,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 204.0, -306.0] // mm
 }
@@ -46541,7 +46541,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 204.0, -255.0] // mm
 }
@@ -46556,7 +46556,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 204.0, -204.0] // mm
 }
@@ -46571,7 +46571,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 204.0, -153.0] // mm
 }
@@ -46586,7 +46586,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 204.0, -102.0] // mm
 }
@@ -46601,7 +46601,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 204.0, -51.0] // mm
 }
@@ -46616,7 +46616,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 204.0, 0.0] // mm
 }
@@ -46631,7 +46631,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 204.0, 51.0] // mm
 }
@@ -46646,7 +46646,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 204.0, 102.0] // mm
 }
@@ -46661,7 +46661,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 204.0, 153.0] // mm
 }
@@ -46676,7 +46676,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 204.0, 204.0] // mm
 }
@@ -46691,7 +46691,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 204.0, 255.0] // mm
 }
@@ -46706,7 +46706,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 204.0, 306.0] // mm
 }
@@ -46721,7 +46721,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 204.0, 357.0] // mm
 }
@@ -46736,7 +46736,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 255.0, -357.0] // mm
 }
@@ -46751,7 +46751,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 255.0, -306.0] // mm
 }
@@ -46766,7 +46766,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 255.0, -255.0] // mm
 }
@@ -46781,7 +46781,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 255.0, -204.0] // mm
 }
@@ -46796,7 +46796,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 255.0, -153.0] // mm
 }
@@ -46811,7 +46811,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 255.0, -102.0] // mm
 }
@@ -46826,7 +46826,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 255.0, -51.0] // mm
 }
@@ -46841,7 +46841,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 255.0, 0.0] // mm
 }
@@ -46856,7 +46856,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 255.0, 51.0] // mm
 }
@@ -46871,7 +46871,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 255.0, 102.0] // mm
 }
@@ -46886,7 +46886,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 255.0, 153.0] // mm
 }
@@ -46901,7 +46901,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 255.0, 204.0] // mm
 }
@@ -46916,7 +46916,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 255.0, 255.0] // mm
 }
@@ -46931,7 +46931,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 255.0, 306.0] // mm
 }
@@ -46946,7 +46946,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 255.0, 357.0] // mm
 }
@@ -46961,7 +46961,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 306.0, -357.0] // mm
 }
@@ -46976,7 +46976,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 306.0, -306.0] // mm
 }
@@ -46991,7 +46991,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 306.0, -255.0] // mm
 }
@@ -47006,7 +47006,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 306.0, -204.0] // mm
 }
@@ -47021,7 +47021,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 306.0, -153.0] // mm
 }
@@ -47036,7 +47036,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 306.0, -102.0] // mm
 }
@@ -47051,7 +47051,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 306.0, -51.0] // mm
 }
@@ -47066,7 +47066,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 306.0, 0.0] // mm
 }
@@ -47081,7 +47081,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 306.0, 51.0] // mm
 }
@@ -47096,7 +47096,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 306.0, 102.0] // mm
 }
@@ -47111,7 +47111,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 306.0, 153.0] // mm
 }
@@ -47126,7 +47126,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 306.0, 204.0] // mm
 }
@@ -47141,7 +47141,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 306.0, 255.0] // mm
 }
@@ -47156,7 +47156,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 306.0, 306.0] // mm
 }
@@ -47171,7 +47171,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 306.0, 357.0] // mm
 }
@@ -47186,7 +47186,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 357.0, -357.0] // mm
 }
@@ -47201,7 +47201,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 357.0, -306.0] // mm
 }
@@ -47216,7 +47216,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 357.0, -255.0] // mm
 }
@@ -47231,7 +47231,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 357.0, -204.0] // mm
 }
@@ -47246,7 +47246,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 357.0, -153.0] // mm
 }
@@ -47261,7 +47261,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 357.0, -102.0] // mm
 }
@@ -47276,7 +47276,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 357.0, -51.0] // mm
 }
@@ -47291,7 +47291,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 357.0, 0.0] // mm
 }
@@ -47306,7 +47306,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 357.0, 51.0] // mm
 }
@@ -47321,7 +47321,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 357.0, 102.0] // mm
 }
@@ -47336,7 +47336,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 357.0, 153.0] // mm
 }
@@ -47351,7 +47351,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 357.0, 204.0] // mm
 }
@@ -47366,7 +47366,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 357.0, 255.0] // mm
 }
@@ -47381,7 +47381,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 357.0, 306.0] // mm
 }
@@ -47396,7 +47396,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [306.0, 357.0, 357.0] // mm
 }
@@ -47411,7 +47411,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -357.0, -357.0] // mm
 }
@@ -47426,7 +47426,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -357.0, -306.0] // mm
 }
@@ -47441,7 +47441,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -357.0, -255.0] // mm
 }
@@ -47456,7 +47456,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -357.0, -204.0] // mm
 }
@@ -47471,7 +47471,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -357.0, -153.0] // mm
 }
@@ -47486,7 +47486,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -357.0, -102.0] // mm
 }
@@ -47501,7 +47501,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -357.0, -51.0] // mm
 }
@@ -47516,7 +47516,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -357.0, 0.0] // mm
 }
@@ -47531,7 +47531,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -357.0, 51.0] // mm
 }
@@ -47546,7 +47546,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -357.0, 102.0] // mm
 }
@@ -47561,7 +47561,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -357.0, 153.0] // mm
 }
@@ -47576,7 +47576,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -357.0, 204.0] // mm
 }
@@ -47591,7 +47591,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -357.0, 255.0] // mm
 }
@@ -47606,7 +47606,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -357.0, 306.0] // mm
 }
@@ -47621,7 +47621,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -357.0, 357.0] // mm
 }
@@ -47636,7 +47636,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -306.0, -357.0] // mm
 }
@@ -47651,7 +47651,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -306.0, -306.0] // mm
 }
@@ -47666,7 +47666,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -306.0, -255.0] // mm
 }
@@ -47681,7 +47681,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -306.0, -204.0] // mm
 }
@@ -47696,7 +47696,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -306.0, -153.0] // mm
 }
@@ -47711,7 +47711,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -306.0, -102.0] // mm
 }
@@ -47726,7 +47726,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -306.0, -51.0] // mm
 }
@@ -47741,7 +47741,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -306.0, 0.0] // mm
 }
@@ -47756,7 +47756,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -306.0, 51.0] // mm
 }
@@ -47771,7 +47771,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -306.0, 102.0] // mm
 }
@@ -47786,7 +47786,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -306.0, 153.0] // mm
 }
@@ -47801,7 +47801,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -306.0, 204.0] // mm
 }
@@ -47816,7 +47816,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -306.0, 255.0] // mm
 }
@@ -47831,7 +47831,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -306.0, 306.0] // mm
 }
@@ -47846,7 +47846,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -306.0, 357.0] // mm
 }
@@ -47861,7 +47861,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -255.0, -357.0] // mm
 }
@@ -47876,7 +47876,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -255.0, -306.0] // mm
 }
@@ -47891,7 +47891,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -255.0, -255.0] // mm
 }
@@ -47906,7 +47906,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -255.0, -204.0] // mm
 }
@@ -47921,7 +47921,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -255.0, -153.0] // mm
 }
@@ -47936,7 +47936,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -255.0, -102.0] // mm
 }
@@ -47951,7 +47951,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -255.0, -51.0] // mm
 }
@@ -47966,7 +47966,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -255.0, 0.0] // mm
 }
@@ -47981,7 +47981,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -255.0, 51.0] // mm
 }
@@ -47996,7 +47996,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -255.0, 102.0] // mm
 }
@@ -48011,7 +48011,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -255.0, 153.0] // mm
 }
@@ -48026,7 +48026,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -255.0, 204.0] // mm
 }
@@ -48041,7 +48041,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -255.0, 255.0] // mm
 }
@@ -48056,7 +48056,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -255.0, 306.0] // mm
 }
@@ -48071,7 +48071,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -255.0, 357.0] // mm
 }
@@ -48086,7 +48086,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -204.0, -357.0] // mm
 }
@@ -48101,7 +48101,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -204.0, -306.0] // mm
 }
@@ -48116,7 +48116,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -204.0, -255.0] // mm
 }
@@ -48131,7 +48131,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -204.0, -204.0] // mm
 }
@@ -48146,7 +48146,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -204.0, -153.0] // mm
 }
@@ -48161,7 +48161,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -204.0, -102.0] // mm
 }
@@ -48176,7 +48176,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -204.0, -51.0] // mm
 }
@@ -48191,7 +48191,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -204.0, 0.0] // mm
 }
@@ -48206,7 +48206,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -204.0, 51.0] // mm
 }
@@ -48221,7 +48221,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -204.0, 102.0] // mm
 }
@@ -48236,7 +48236,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -204.0, 153.0] // mm
 }
@@ -48251,7 +48251,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -204.0, 204.0] // mm
 }
@@ -48266,7 +48266,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -204.0, 255.0] // mm
 }
@@ -48281,7 +48281,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -204.0, 306.0] // mm
 }
@@ -48296,7 +48296,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -204.0, 357.0] // mm
 }
@@ -48311,7 +48311,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -153.0, -357.0] // mm
 }
@@ -48326,7 +48326,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -153.0, -306.0] // mm
 }
@@ -48341,7 +48341,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -153.0, -255.0] // mm
 }
@@ -48356,7 +48356,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -153.0, -204.0] // mm
 }
@@ -48371,7 +48371,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -153.0, -153.0] // mm
 }
@@ -48386,7 +48386,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -153.0, -102.0] // mm
 }
@@ -48401,7 +48401,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -153.0, -51.0] // mm
 }
@@ -48416,7 +48416,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -153.0, 0.0] // mm
 }
@@ -48431,7 +48431,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -153.0, 51.0] // mm
 }
@@ -48446,7 +48446,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -153.0, 102.0] // mm
 }
@@ -48461,7 +48461,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -153.0, 153.0] // mm
 }
@@ -48476,7 +48476,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -153.0, 204.0] // mm
 }
@@ -48491,7 +48491,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -153.0, 255.0] // mm
 }
@@ -48506,7 +48506,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -153.0, 306.0] // mm
 }
@@ -48521,7 +48521,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -153.0, 357.0] // mm
 }
@@ -48536,7 +48536,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -102.0, -357.0] // mm
 }
@@ -48551,7 +48551,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -102.0, -306.0] // mm
 }
@@ -48566,7 +48566,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -102.0, -255.0] // mm
 }
@@ -48581,7 +48581,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -102.0, -204.0] // mm
 }
@@ -48596,7 +48596,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -102.0, -153.0] // mm
 }
@@ -48611,7 +48611,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -102.0, -102.0] // mm
 }
@@ -48626,7 +48626,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -102.0, -51.0] // mm
 }
@@ -48641,7 +48641,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -102.0, 0.0] // mm
 }
@@ -48656,7 +48656,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -102.0, 51.0] // mm
 }
@@ -48671,7 +48671,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -102.0, 102.0] // mm
 }
@@ -48686,7 +48686,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -102.0, 153.0] // mm
 }
@@ -48701,7 +48701,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -102.0, 204.0] // mm
 }
@@ -48716,7 +48716,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -102.0, 255.0] // mm
 }
@@ -48731,7 +48731,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -102.0, 306.0] // mm
 }
@@ -48746,7 +48746,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -102.0, 357.0] // mm
 }
@@ -48761,7 +48761,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -51.0, -357.0] // mm
 }
@@ -48776,7 +48776,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -51.0, -306.0] // mm
 }
@@ -48791,7 +48791,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -51.0, -255.0] // mm
 }
@@ -48806,7 +48806,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -51.0, -204.0] // mm
 }
@@ -48821,7 +48821,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -51.0, -153.0] // mm
 }
@@ -48836,7 +48836,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -51.0, -102.0] // mm
 }
@@ -48851,7 +48851,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -51.0, -51.0] // mm
 }
@@ -48866,7 +48866,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -51.0, 0.0] // mm
 }
@@ -48881,7 +48881,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -51.0, 51.0] // mm
 }
@@ -48896,7 +48896,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -51.0, 102.0] // mm
 }
@@ -48911,7 +48911,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -51.0, 153.0] // mm
 }
@@ -48926,7 +48926,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -51.0, 204.0] // mm
 }
@@ -48941,7 +48941,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -51.0, 255.0] // mm
 }
@@ -48956,7 +48956,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -51.0, 306.0] // mm
 }
@@ -48971,7 +48971,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, -51.0, 357.0] // mm
 }
@@ -48986,7 +48986,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 0.0, -357.0] // mm
 }
@@ -49001,7 +49001,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 0.0, -306.0] // mm
 }
@@ -49016,7 +49016,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 0.0, -255.0] // mm
 }
@@ -49031,7 +49031,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 0.0, -204.0] // mm
 }
@@ -49046,7 +49046,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 0.0, -153.0] // mm
 }
@@ -49061,7 +49061,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 0.0, -102.0] // mm
 }
@@ -49076,7 +49076,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 0.0, -51.0] // mm
 }
@@ -49091,7 +49091,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 0.0, 0.0] // mm
 }
@@ -49106,7 +49106,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 0.0, 51.0] // mm
 }
@@ -49121,7 +49121,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 0.0, 102.0] // mm
 }
@@ -49136,7 +49136,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 0.0, 153.0] // mm
 }
@@ -49151,7 +49151,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 0.0, 204.0] // mm
 }
@@ -49166,7 +49166,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 0.0, 255.0] // mm
 }
@@ -49181,7 +49181,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 0.0, 306.0] // mm
 }
@@ -49196,7 +49196,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 0.0, 357.0] // mm
 }
@@ -49211,7 +49211,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 51.0, -357.0] // mm
 }
@@ -49226,7 +49226,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 51.0, -306.0] // mm
 }
@@ -49241,7 +49241,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 51.0, -255.0] // mm
 }
@@ -49256,7 +49256,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 51.0, -204.0] // mm
 }
@@ -49271,7 +49271,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 51.0, -153.0] // mm
 }
@@ -49286,7 +49286,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 51.0, -102.0] // mm
 }
@@ -49301,7 +49301,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 51.0, -51.0] // mm
 }
@@ -49316,7 +49316,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 51.0, 0.0] // mm
 }
@@ -49331,7 +49331,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 51.0, 51.0] // mm
 }
@@ -49346,7 +49346,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 51.0, 102.0] // mm
 }
@@ -49361,7 +49361,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 51.0, 153.0] // mm
 }
@@ -49376,7 +49376,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 51.0, 204.0] // mm
 }
@@ -49391,7 +49391,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 51.0, 255.0] // mm
 }
@@ -49406,7 +49406,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 51.0, 306.0] // mm
 }
@@ -49421,7 +49421,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 51.0, 357.0] // mm
 }
@@ -49436,7 +49436,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 102.0, -357.0] // mm
 }
@@ -49451,7 +49451,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 102.0, -306.0] // mm
 }
@@ -49466,7 +49466,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 102.0, -255.0] // mm
 }
@@ -49481,7 +49481,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 102.0, -204.0] // mm
 }
@@ -49496,7 +49496,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 102.0, -153.0] // mm
 }
@@ -49511,7 +49511,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 102.0, -102.0] // mm
 }
@@ -49526,7 +49526,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 102.0, -51.0] // mm
 }
@@ -49541,7 +49541,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 102.0, 0.0] // mm
 }
@@ -49556,7 +49556,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 102.0, 51.0] // mm
 }
@@ -49571,7 +49571,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 102.0, 102.0] // mm
 }
@@ -49586,7 +49586,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 102.0, 153.0] // mm
 }
@@ -49601,7 +49601,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 102.0, 204.0] // mm
 }
@@ -49616,7 +49616,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 102.0, 255.0] // mm
 }
@@ -49631,7 +49631,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 102.0, 306.0] // mm
 }
@@ -49646,7 +49646,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 102.0, 357.0] // mm
 }
@@ -49661,7 +49661,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 153.0, -357.0] // mm
 }
@@ -49676,7 +49676,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 153.0, -306.0] // mm
 }
@@ -49691,7 +49691,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 153.0, -255.0] // mm
 }
@@ -49706,7 +49706,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 153.0, -204.0] // mm
 }
@@ -49721,7 +49721,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 153.0, -153.0] // mm
 }
@@ -49736,7 +49736,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 153.0, -102.0] // mm
 }
@@ -49751,7 +49751,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 153.0, -51.0] // mm
 }
@@ -49766,7 +49766,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 153.0, 0.0] // mm
 }
@@ -49781,7 +49781,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 153.0, 51.0] // mm
 }
@@ -49796,7 +49796,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 153.0, 102.0] // mm
 }
@@ -49811,7 +49811,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 153.0, 153.0] // mm
 }
@@ -49826,7 +49826,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 153.0, 204.0] // mm
 }
@@ -49841,7 +49841,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 153.0, 255.0] // mm
 }
@@ -49856,7 +49856,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 153.0, 306.0] // mm
 }
@@ -49871,7 +49871,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 153.0, 357.0] // mm
 }
@@ -49886,7 +49886,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 204.0, -357.0] // mm
 }
@@ -49901,7 +49901,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 204.0, -306.0] // mm
 }
@@ -49916,7 +49916,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 204.0, -255.0] // mm
 }
@@ -49931,7 +49931,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 204.0, -204.0] // mm
 }
@@ -49946,7 +49946,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 204.0, -153.0] // mm
 }
@@ -49961,7 +49961,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 204.0, -102.0] // mm
 }
@@ -49976,7 +49976,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 204.0, -51.0] // mm
 }
@@ -49991,7 +49991,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 204.0, 0.0] // mm
 }
@@ -50006,7 +50006,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 204.0, 51.0] // mm
 }
@@ -50021,7 +50021,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 204.0, 102.0] // mm
 }
@@ -50036,7 +50036,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 204.0, 153.0] // mm
 }
@@ -50051,7 +50051,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 204.0, 204.0] // mm
 }
@@ -50066,7 +50066,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 204.0, 255.0] // mm
 }
@@ -50081,7 +50081,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 204.0, 306.0] // mm
 }
@@ -50096,7 +50096,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 204.0, 357.0] // mm
 }
@@ -50111,7 +50111,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 255.0, -357.0] // mm
 }
@@ -50126,7 +50126,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 255.0, -306.0] // mm
 }
@@ -50141,7 +50141,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 255.0, -255.0] // mm
 }
@@ -50156,7 +50156,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 255.0, -204.0] // mm
 }
@@ -50171,7 +50171,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 255.0, -153.0] // mm
 }
@@ -50186,7 +50186,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 255.0, -102.0] // mm
 }
@@ -50201,7 +50201,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 255.0, -51.0] // mm
 }
@@ -50216,7 +50216,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 255.0, 0.0] // mm
 }
@@ -50231,7 +50231,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 255.0, 51.0] // mm
 }
@@ -50246,7 +50246,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 255.0, 102.0] // mm
 }
@@ -50261,7 +50261,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 255.0, 153.0] // mm
 }
@@ -50276,7 +50276,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 255.0, 204.0] // mm
 }
@@ -50291,7 +50291,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 255.0, 255.0] // mm
 }
@@ -50306,7 +50306,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 255.0, 306.0] // mm
 }
@@ -50321,7 +50321,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 255.0, 357.0] // mm
 }
@@ -50336,7 +50336,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 306.0, -357.0] // mm
 }
@@ -50351,7 +50351,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 306.0, -306.0] // mm
 }
@@ -50366,7 +50366,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 306.0, -255.0] // mm
 }
@@ -50381,7 +50381,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 306.0, -204.0] // mm
 }
@@ -50396,7 +50396,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 306.0, -153.0] // mm
 }
@@ -50411,7 +50411,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 306.0, -102.0] // mm
 }
@@ -50426,7 +50426,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 306.0, -51.0] // mm
 }
@@ -50441,7 +50441,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 306.0, 0.0] // mm
 }
@@ -50456,7 +50456,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 306.0, 51.0] // mm
 }
@@ -50471,7 +50471,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 306.0, 102.0] // mm
 }
@@ -50486,7 +50486,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 306.0, 153.0] // mm
 }
@@ -50501,7 +50501,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 306.0, 204.0] // mm
 }
@@ -50516,7 +50516,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 306.0, 255.0] // mm
 }
@@ -50531,7 +50531,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 306.0, 306.0] // mm
 }
@@ -50546,7 +50546,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 306.0, 357.0] // mm
 }
@@ -50561,7 +50561,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 357.0, -357.0] // mm
 }
@@ -50576,7 +50576,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 357.0, -306.0] // mm
 }
@@ -50591,7 +50591,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 357.0, -255.0] // mm
 }
@@ -50606,7 +50606,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 357.0, -204.0] // mm
 }
@@ -50621,7 +50621,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 357.0, -153.0] // mm
 }
@@ -50636,7 +50636,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 357.0, -102.0] // mm
 }
@@ -50651,7 +50651,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 357.0, -51.0] // mm
 }
@@ -50666,7 +50666,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 357.0, 0.0] // mm
 }
@@ -50681,7 +50681,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 357.0, 51.0] // mm
 }
@@ -50696,7 +50696,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 357.0, 102.0] // mm
 }
@@ -50711,7 +50711,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 357.0, 153.0] // mm
 }
@@ -50726,7 +50726,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 357.0, 204.0] // mm
 }
@@ -50741,7 +50741,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 357.0, 255.0] // mm
 }
@@ -50756,7 +50756,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 357.0, 306.0] // mm
 }
@@ -50771,7 +50771,7 @@ valid_end: [0, 0],
 mother: "cube_array",
 type: "box",
 size: [25.0, 25.0, 25.0], // mm
-material: "ej254_015li6",
+material: "ej254_005li6",
 invisible: 0,
 position: [357.0, 357.0, 357.0] // mm
 }
