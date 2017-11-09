@@ -13,7 +13,8 @@
 
 #include <math.h>
 
-void SEDAQ( const char* filename, Double_t prompt_low, Double_t delayed_low, bool graphics_tf=false ) {
+//void SEDAQ( const char* filename, Double_t prompt_low, Double_t delayed_low, bool graphics_tf=false ) {
+void SEDAQ( const char* filename, Double_t prompt_low, Double_t delayed_low, Double_t deltaT_low, Double_t deltaT_high, bool graphics_tf=false ) {
 
 
 //// INIT
@@ -191,8 +192,8 @@ Double_t prompt_high, delayed_low, delayed_high;
 
 // set cut parameters //thresholds
 trigger_reset = 800.e-6;
-deltaT_low = 10.e-6;
-deltaT_high = 100.e-6;
+//deltaT_low = 10.e-6;
+//deltaT_high = 100.e-6;
 //prompt_low = 0.00;
 //prompt_low = 1.00;
 prompt_high = 100.;
@@ -373,12 +374,22 @@ void SEDAQ ( const char* filename, Double_t prompt_low ) {
   SEDAQ( filename, prompt_low, 0., false );
 }
 
-void SEDAQ( const char* filename, Double_t prompt_low, Bool_t graphics_tf ) {
+void SEDAQ ( const char* filename, Double_t prompt_low, Bool_t graphics_tf ) {
   SEDAQ( filename, prompt_low, 0., graphics_tf );
 }
 
 void SEDAQ ( const char* filename, Double_t prompt_low, Double_t delayed_low ) {
   SEDAQ( filename, prompt_low, delayed_low, false );
 }
+
+void SEDAQ ( const char* filename, Double_t prompt_low, Double_t delayed_low, Double_t deltaT_high, Bool_t graphics_tf ) {
+  SEDAQ( filename, prompt_low, delayed_low, deltaT_low, 100.e-6, graphics_tf )
+}
+
+void SEDAQ ( const char* filename, Double_t prompt_low, Double_t delayed_low, Bool_t grapics_tf ) {
+  SEDAQ( filename, prompt_low, delayed_low, 10.e-6, 100.e-6, graphics_tf )
+}
+
+
 
 //// ALL PAU!   )
