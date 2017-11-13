@@ -1,0 +1,1 @@
+/home/mark/Public/rat-pac/user/shell_scripts/cube_pos_table.sh
