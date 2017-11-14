@@ -1,4 +1,5 @@
-// SEDAQ -- modified version of SimpleEnergyDAQ to operate on files that already contain T but not T2
+// SEDAQ -- modified version of SimpleEnergyDAQ to operate on files that
+// already contain T but not T2
 // -- see documentation in duvall3->comparision->$RATROOT/user/root_macros/SimpleEnergyDAQ.cxx
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2017 ~ //
 
@@ -8,6 +9,8 @@
 // ARGUMENTS:
 //   -- filename -- input ROOT file
 //   -- prompt_low -- IBD trigger, low threshold on prompt event (MeV)
+//   -- deltaT_low -- IBD trigger, lower bound on interevent time
+//   -- deltaT_high -- IBD trigger, upper bound on interevent time
 //   -- delayed_low -- IBD trigger, low threshold on delayed event (MeV)
 //   -- graphics_tf -- whether to draw & save plots; defaults to false for batch mode
 
@@ -387,7 +390,7 @@ void SEDAQ ( const char* filename ) {
   SEDAQ( filename, 0., 0., false );
 }
 
-void SEDAQ ( const char* filename, bool graphics_tf=false ) {
+void SEDAQ ( const char* filename, bool graphics_tf ) {
   SEDAQ( filename, 0., 0., graphics_tf );
 }
 
@@ -403,12 +406,12 @@ void SEDAQ ( const char* filename, Double_t prompt_low, Double_t delayed_low ) {
   SEDAQ( filename, prompt_low, delayed_low, false );
 }
 
-void SEDAQ ( const char* filename, Double_t prompt_low, Double_t delayed_low, Double_t deltaT_high, Bool_t graphics_tf ) {
-  SEDAQ( filename, prompt_low, delayed_low, deltaT_low, 100.e-6, graphics_tf )
+void SEDAQ ( const char* filename, Double_t prompt_low, Double_t delayed_low, Bool_t graphics_tf ) {
+  SEDAQ( filename, prompt_low, delayed_low, 10.e-6, 100.e-6, graphics_tf );
 }
 
-void SEDAQ ( const char* filename, Double_t prompt_low, Double_t delayed_low, Bool_t grapics_tf ) {
-  SEDAQ( filename, prompt_low, delayed_low, 10.e-6, 100.e-6, graphics_tf )
+void SEDAQ ( const char* filename, Double_t prompt_low, Double_t delayed_low, Double_t deltaT_high, Bool_t graphics_tf ) {
+  SEDAQ( filename, prompt_low, delayed_low, deltaT_low, 100.e-6, graphics_tf );
 }
 
 

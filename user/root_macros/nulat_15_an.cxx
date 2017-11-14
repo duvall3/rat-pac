@@ -51,21 +51,28 @@ TCubes->SetBranchAddress("cz", &cz);
 Int_t k, m;
 Int_t num_bursts = T->GetEntries();
 Int_t num_cubes = TCubes->GetEntries();
+Bool_t cube_found_tf = false;
 for (( k=0; k<=(num_bursts-1); k++ )) { // burst loop
   T->GetEntry(k); // get SEDAQ entry for this burst -- pulls x, y, z
+  cube_found_tf = false; //DEBUG
   for (( m=0; m<=num_cubes; m++ )) { // cube loop
     TCubes->GetEntry(m); // get cube for comparison
-    if ( abs(cx-x)<=cube_half_side & abs(cy-y)<=cube_half_side & abs(cz-z)<=cube_half_side ) {
+    if ( abs(cx-x)<=cube_half_side && abs(cy-y)<=cube_half_side && abs(cz-z)<=cube_half_side ) {
       // burst happened inside this cube:
+      cube_found_tf = true; //DEBUG
       cubed_x = cx;
       cubed_y = cy;
       cubed_z = cz;
     }  //end if
   } //end cube loop
   // cube should be identified now, so fill the branches
-  br_cubed_x->Fill();
-  br_cubed_y->Fill();
-  br_cubed_z->Fill();
+  if ( cube_found_tf ) {
+    br_cubed_x->Fill();
+    br_cubed_y->Fill();
+    br_cubed_z->Fill();
+  } else {
+    cout << "WARNING: No matching cube found for T entry " << k << "in " << filename << endl;
+  } //endif
 } //end burst loop
 
 
