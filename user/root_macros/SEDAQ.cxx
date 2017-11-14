@@ -189,6 +189,14 @@ Bool_t prompt_tf, delayed_tf;
 Double_t deltaT_low, deltaT_high, trigger_reset;
 //Double_t prompt_low, prompt_high, delayed_low, delayed_high;
 Double_t prompt_high, delayed_low, delayed_high;
+// for NuLat: address cube-centered positions
+Bool_t cubed_tf = ( T->FindBranch("cubed_x") != 0x0 );
+if ( cubed_tf ) {
+  Double_t cubed_x, cubed_y, cubed_z;
+  T->SetBranchAddress("cubed_x", &cubed_x);
+  T->SetBranchAddress("cubed_y", &cubed_y);
+  T->SetBranchAddress("cubed_z", &cubed_z);
+}
 
 // set cut parameters //thresholds
 trigger_reset = 800.e-6;
@@ -211,9 +219,16 @@ for (( k = 0; k < num_bursts; k++ )) {
     prompt_tf = true;
     prompt_cand_t = wall_time_adj;
     prompt_cand_eq = energy_q;
-    prompt_cand_x = x;
-    prompt_cand_y = y;
-    prompt_cand_z = z;
+    // positions: either MC "truth" data (plain x,y,z), or realistic / adjusted values
+    if ( cubed_tf ) { // i.e., if NuLat cube-centered values are available
+      prompt_cand_x = cubed_x;
+      prompt_cand_y = cubed_y;
+      prompt_cand_z = cubed_z;
+    } else {
+      prompt_cand_x = x;
+      prompt_cand_y = y;
+      prompt_cand_z = z;
+    } // end if
     // look for delayed:
     if ( k < num_bursts-1 ) {
       T->GetEntry(k+1);
@@ -221,9 +236,15 @@ for (( k = 0; k < num_bursts; k++ )) {
         delayed_tf = true;
 	delayed_cand_t = wall_time_adj;
 	delayed_cand_eq = energy_q;
-	delayed_cand_x = x;
-	delayed_cand_y = y;
-	delayed_cand_z = z;
+	if ( cubed_tf ) { // i.e., if NuLat cube-centered values are available
+	  delayed_cand_x = cubed_x;
+	  delayed_cand_y = cubed_y;
+	  delayed_cand_z = cubed_z;
+	} else {
+	  delayed_cand_x = x;
+	  delayed_cand_y = y;
+	  delayed_cand_z = z;
+	} //end if
       }
     }
   }
