@@ -18,16 +18,10 @@ Double_t cube_half_side = 25.; //mm
 
 // prepare output tree
 Double_t cubed_x, cubed_y, cubed_z;
-//TTree* T_cubed = new TTree( "T_cubed", "NuLat analysis (cubified) results");
-//T_cubed->Branch("cubed_x", &cubed_x, "cubed_x/D");
-//T_cubed->Branch("cubed_y", &cubed_y, "cubed_y/D");
-//T_cubed->Branch("cubed_z", &cubed_z, "cubed_z/D");
 TBranch* br_cubed_x = T->Branch("cubed_x", &cubed_x, "cubed_x/D");
 TBranch* br_cubed_y = T->Branch("cubed_y", &cubed_y, "cubed_y/D");
 TBranch* br_cubed_z = T->Branch("cubed_z", &cubed_z, "cubed_z/D");
 // read & address burst output
-//TFriendElement* TF = T_cubed->AddFriend("T", filename);
-//TTree* T = TF->GetTree();
 Double_t x, y, z;
 T->SetBranchAddress("x", &x);
 T->SetBranchAddress("y", &y);

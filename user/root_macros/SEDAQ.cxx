@@ -13,11 +13,13 @@
 //   -- deltaT_high -- IBD trigger, upper bound on interevent time
 //   -- delayed_low -- IBD trigger, low threshold on delayed event (MeV)
 //   -- graphics_tf -- whether to draw & save plots; defaults to false for batch mode
+//   -- nulat_tf -- whether to apply cuts specific to NuLat
 
 #include <math.h>
 
 //void SEDAQ( const char* filename, Double_t prompt_low, Double_t delayed_low, bool graphics_tf=false ) {
-void SEDAQ( const char* filename, Double_t prompt_low, Double_t delayed_low, Double_t deltaT_low, Double_t deltaT_high, bool graphics_tf=false ) {
+//void SEDAQ( const char* filename, Double_t prompt_low, Double_t delayed_low, Double_t deltaT_low, Double_t deltaT_high, bool graphics_tf=false ) {
+void SEDAQ( const char* filename, Double_t prompt_low, Double_t delayed_low, Double_t deltaT_low, Double_t deltaT_high, Bool_t graphics_tf, Bool_t nulat_tf ) {
 
 
 //// INIT
@@ -200,6 +202,8 @@ if ( cubed_tf ) {
   T->SetBranchAddress("cubed_y", &cubed_y);
   T->SetBranchAddress("cubed_z", &cubed_z);
 }
+// error checking -- nulat option XOR cubed branch
+if ( nulat_tf ^ cubed_tf )  cout << "WARNING: Partial but incomplete NuLat parameters found." << endl;
 
 // set cut parameters //thresholds
 trigger_reset = 800.e-6;
@@ -253,7 +257,16 @@ for (( k = 0; k < num_bursts; k++ )) {
   }
   // if candidate burst pair is found, add burst times and energies to tree:
   if ( prompt_tf & delayed_tf ) {
+    // NuLat -- additional cuts
+    Double_t cube_half_length = 25.; //mm
+    Double_t cube_separation = 1.; //mm
+    if ( nulat_tf & cubed_tf ) { // apply NuLat position cuts -- cubes must be adjacent
+      if ( abs(delayed_cand_x-prompt_cand_x)<=(2*cube_half_length+cube_separation) & abs(delayed_cand_y-prompt_cand_y)<=(2*cube_half_length+cube_separation) & abs(delayed_cand_z-prompt_cand_z)<=(2*cube_half_length+cube_separation) ) {
+        T2->Fill();
+      }
+    } else { // just fill
     T2->Fill();
+    } //endif
   }
 } //end event loop
 
@@ -398,6 +411,10 @@ void SEDAQ ( const char* filename, Double_t prompt_low ) {
   SEDAQ( filename, prompt_low, 0., false );
 }
 
+void SEDAQ ( const char* filename, Bool_t graphics_tf, Bool_t nulat_tf ) {
+  SEDAQ( filename, prompt_low, 0., 10.e-6, 100.e-6, graphics_tf, nulat_tf );
+}
+
 void SEDAQ ( const char* filename, Double_t prompt_low, Bool_t graphics_tf ) {
   SEDAQ( filename, prompt_low, 0., graphics_tf );
 }
@@ -412,6 +429,10 @@ void SEDAQ ( const char* filename, Double_t prompt_low, Double_t delayed_low, Bo
 
 void SEDAQ ( const char* filename, Double_t prompt_low, Double_t delayed_low, Double_t deltaT_high, Bool_t graphics_tf ) {
   SEDAQ( filename, prompt_low, delayed_low, deltaT_low, 100.e-6, graphics_tf );
+}
+
+void SEDAQ ( const char* filename, Double_t prompt_low, Double_t delayed_low, Double_t deltaT_low, Double_t deltaT_high, Bool_t graphics_tf ) {
+  SEDAQ( filename, prompt_low, delayed_low, deltaT_low, deltaT_high, graphics_tf, false );
 }
 
 
