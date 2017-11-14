@@ -5,7 +5,7 @@
 //   ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 11/2017 ~ //
 
 
-TTree* nulat_15_an( const char* filename, const char* cube_table = "nulat_15-cube_pos_table.txt" ) {
+/TTree* nulat_15_an( const char* filename, const char* cube_table = "nulat_15-cube_pos_table.txt" ) {
 
 
 // init cube (half-)size
@@ -51,16 +51,9 @@ for (( k=0; k<=T->GetEntries(); k++ )) { // burst loop
       cubed_x = cx;
       cubed_y = cy;
       cubed_z = cz;
-//    cubed_x = k; //DEBUG
-//    cubed_y = k+1; //DEBUG
-//    cubed_z = k+2; //DEBUG
-//    cout << m << "\t\t"; //DEBUG
-//    cout << "inside if:\t" << x << "\t" << y << "\t" << z << "\t\t" << k << "\t" << m << endl;  //DEBUG
     }  //end if
-//  cout << "outside if:\t" << x << "\t" << y << "\t" << z << "\t\t" << k << "\t" << m << endl;  //DEBUG
   } //end cube loop
   T_cubed->Fill();
-//cout << "outside cube loop:\t\t" << x << "\t" << y << "\t" << z << "\t\t" << k << "\t" << m << endl;  //DEBUG
 } //end burst loop
 
 cout << endl << endl; //DEBUG
