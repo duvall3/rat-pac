@@ -8,7 +8,7 @@
 void nulat_15_an( const char* filename, const char* cube_table = "nulat_15-cube_pos_table.txt" ) {
 
 
-// open file for updating
+// open file for updating and get tree
 TFile* f = TFile::Open( filename, "update" );
 
 
@@ -22,9 +22,9 @@ Double_t cubed_x, cubed_y, cubed_z;
 //T_cubed->Branch("cubed_x", &cubed_x, "cubed_x/D");
 //T_cubed->Branch("cubed_y", &cubed_y, "cubed_y/D");
 //T_cubed->Branch("cubed_z", &cubed_z, "cubed_z/D");
-T->Branch("cubed_x", &cubed_x, "cubed_x/D");
-T->Branch("cubed_y", &cubed_y, "cubed_y/D");
-T->Branch("cubed_z", &cubed_z, "cubed_z/D");
+TBranch* br_cubed_x = T->Branch("cubed_x", &cubed_x, "cubed_x/D");
+TBranch* br_cubed_y = T->Branch("cubed_y", &cubed_y, "cubed_y/D");
+TBranch* br_cubed_z = T->Branch("cubed_z", &cubed_z, "cubed_z/D");
 // read & address burst output
 //TFriendElement* TF = T_cubed->AddFriend("T", filename);
 //TTree* T = TF->GetTree();
@@ -51,20 +51,21 @@ TCubes->SetBranchAddress("cz", &cz);
 Int_t k, m;
 Int_t num_bursts = T->GetEntries();
 Int_t num_cubes = TCubes->GetEntries();
-for (( k=0; k<=num_bursts; k++ )) { // burst loop
+for (( k=0; k<=(num_bursts-1); k++ )) { // burst loop
   T->GetEntry(k); // get SEDAQ entry for this burst -- pulls x, y, z
   for (( m=0; m<=num_cubes; m++ )) { // cube loop
     TCubes->GetEntry(m); // get cube for comparison
     if ( abs(cx-x)<=cube_half_side & abs(cy-y)<=cube_half_side & abs(cz-z)<=cube_half_side ) {
-      // // burst happened inside this cube:
+      // burst happened inside this cube:
       cubed_x = cx;
       cubed_y = cy;
       cubed_z = cz;
     }  //end if
   } //end cube loop
-//T_cubed->Fill();
-  T->Fill();
-  cout << m << "\t" << k << endl;  //DEBUG
+  // cube should be identified now, so fill the branches
+  br_cubed_x->Fill();
+  br_cubed_y->Fill();
+  br_cubed_z->Fill();
 } //end burst loop
 
 
