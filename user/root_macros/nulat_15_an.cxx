@@ -5,7 +5,11 @@
 //   ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 11/2017 ~ //
 
 
-/TTree* nulat_15_an( const char* filename, const char* cube_table = "nulat_15-cube_pos_table.txt" ) {
+void nulat_15_an( const char* filename, const char* cube_table = "nulat_15-cube_pos_table.txt" ) {
+
+
+// open file for updating
+TFile* f = TFile::Open( filename, "update" );
 
 
 // init cube (half-)size
@@ -14,13 +18,16 @@ Double_t cube_half_side = 25.; //mm
 
 // prepare output tree
 Double_t cubed_x, cubed_y, cubed_z;
-TTree* T_cubed = new TTree( "T_cubed", "NuLat analysis (cubified) results");
-T_cubed->Branch("cubed_x", &cubed_x, "cubed_x/D");
-T_cubed->Branch("cubed_y", &cubed_y, "cubed_y/D");
-T_cubed->Branch("cubed_z", &cubed_z, "cubed_z/D");
+//TTree* T_cubed = new TTree( "T_cubed", "NuLat analysis (cubified) results");
+//T_cubed->Branch("cubed_x", &cubed_x, "cubed_x/D");
+//T_cubed->Branch("cubed_y", &cubed_y, "cubed_y/D");
+//T_cubed->Branch("cubed_z", &cubed_z, "cubed_z/D");
+T->Branch("cubed_x", &cubed_x, "cubed_x/D");
+T->Branch("cubed_y", &cubed_y, "cubed_y/D");
+T->Branch("cubed_z", &cubed_z, "cubed_z/D");
 // read & address burst output
-TFriendElement* TF = T_cubed->AddFriend("T", filename);
-TTree* T = TF->GetTree();
+//TFriendElement* TF = T_cubed->AddFriend("T", filename);
+//TTree* T = TF->GetTree();
 Double_t x, y, z;
 T->SetBranchAddress("x", &x);
 T->SetBranchAddress("y", &y);
@@ -42,9 +49,11 @@ TCubes->SetBranchAddress("cz", &cz);
 
 // fill output tree
 Int_t k, m;
-for (( k=0; k<=T->GetEntries(); k++ )) { // burst loop
+Int_t num_bursts = T->GetEntries();
+Int_t num_cubes = TCubes->GetEntries();
+for (( k=0; k<=num_bursts; k++ )) { // burst loop
   T->GetEntry(k); // get SEDAQ entry for this burst -- pulls x, y, z
-  for (( m=0; m<=TCubes->GetEntries(); m++ )) { // cube loop
+  for (( m=0; m<=num_cubes; m++ )) { // cube loop
     TCubes->GetEntry(m); // get cube for comparison
     if ( abs(cx-x)<=cube_half_side & abs(cy-y)<=cube_half_side & abs(cz-z)<=cube_half_side ) {
       // // burst happened inside this cube:
@@ -53,14 +62,19 @@ for (( k=0; k<=T->GetEntries(); k++ )) { // burst loop
       cubed_z = cz;
     }  //end if
   } //end cube loop
-  T_cubed->Fill();
+//T_cubed->Fill();
+  T->Fill();
+  cout << m << "\t" << k << endl;  //DEBUG
 } //end burst loop
 
-cout << endl << endl; //DEBUG
+
+// write updated ROOT file
+f->Write();
+f->Close();
 
 
 // all pau!   )
-return T_cubed;
+//return T_cubed;
 }
 
 
