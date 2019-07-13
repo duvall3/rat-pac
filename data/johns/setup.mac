@@ -1,0 +1,15 @@
+# setup -- single macro to prepare run
+
+/control/execute init.mac
+#/control/execute vis.mac
+#/control/execute gen/ibd.mac
+#/control/execute gen/nugun.mac
+#/control/execute gen/erica.mac
+#/control/execute gen/mugun.mac
+/control/shell echo "REMINDER: Set output filename before starting run!"
+
+/tracking/storeTrajectory 1
+/tracking/discardParticleTrajectory opticalphoton
+#/tracking/storeParticleTrajectory anti_nu_e
+#/tracking/storeParticleTrajectory e+
+#/tracking/storeParticleTrajectory neutron
