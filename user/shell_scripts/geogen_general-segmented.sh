@@ -7,7 +7,7 @@
 
 
 
-# check / create filenames
+## check / create filenames
 PROJ=$(pwd | sed s_/_\ _g | awk '{print $NF}')
 BASEFILE="$PROJ"_base.geo
 ARRFILE="$PROJ"_cell-array.geo
@@ -60,16 +60,16 @@ echo "Enter number of layers: " && read LYRS
 echo
 
 # determine cell dimensions
-echo "Enter cell length (mm): " && read L
-echo "Enter cell width (mm): " && read W
-echo "Enter cell height (mm): " && read H
-echo "Enter cell spacing (mm): " && read S
+echo "Enter cell half-length (mm): " && read L
+echo "Enter cell half-width (mm): " && read W
+echo "Enter cell half-height (mm): " && read H
+echo "Enter cell half-spacing (mm): " && read S
 
-# force float format for RAT-PAC
-L=$( echo "$L*0.5" | bc -l )
-W=$( echo "$W*0.5" | bc -l )
-H=$( echo "$H*0.5" | bc -l )
-S=$( echo "$S*0.5" | bc -l )
+## force float format for RAT-PAC
+L=$( echo "$L*1.0" | bc -l )
+W=$( echo "$W*1.0" | bc -l )
+H=$( echo "$H*1.0" | bc -l )
+S=$( echo "$S*1.0" | bc -l )
 
 
 # print config
@@ -79,9 +79,9 @@ printf "\nCell Length: \t%f mm\nCell Width: \t%f mm\nCell Height: \t%f mm\nCell 
 
 ## write out cell array
 # calculate total size
-ca_length=$(echo "$ROWS*($L+$S)*0.5" | bc -l)
-ca_width=$(echo "$COLS*($W+$S)*0.5" | bc -l)
-ca_height=$(echo "$LYRS*($H+$S)*0.5" | bc -l)
+ca_length=$(echo "$ROWS*($L+$S)*1.0" | bc -l)
+ca_width=$(echo "$COLS*($W+$S)*1.0" | bc -l)
+ca_height=$(echo "$LYRS*($H+$S)*1.0" | bc -l)
 echo -e "\
 // -------- GEO[cell_array]
 {
@@ -112,9 +112,9 @@ for (( k_lr=0; k_lr<$ROWS; k_lr++ )); do
       index_name="$index_name_fb"_$k_fb
 
       # cell coordinates
-      x=$( echo "1.0*($L+$S)*$k_lr - ($L+$S)*($ROWS-1)" | bc -l )
-      y=$( echo "1.0*($W+$S)*$k_ud - ($W+$S)*($COLS-1)" | bc -l )
-      z=$( echo "1.0*($H+$S)*$k_fb - ($H+$S)*($LYRS-1)" | bc -l )
+      x=$( echo "2.0*($L+$S)*$k_lr - ($L+$S)*($ROWS-1)" | bc -l )
+      y=$( echo "2.0*($W+$S)*$k_ud - ($W+$S)*($COLS-1)" | bc -l )
+      z=$( echo "2.0*($H+$S)*$k_fb - ($H+$S)*($LYRS-1)" | bc -l )
       # fix float format just for zero values
       if [ $x = 0 ]; then x="0.0"; fi
       if [ $y = 0 ]; then y="0.0"; fi
