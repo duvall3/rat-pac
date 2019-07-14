@@ -1,5 +1,8 @@
 #!/bin/bash
 # geogen_johns -- generate .geo entries for John's detector from a template
+# -- this script expects to be run in a directory such as $RATROOT/data/foo-experiment,
+#      which is expected to contain a base geometry file (i.e., without cell array)
+#      called "foo-experiment_base.geo"
 
 
 
