@@ -9,7 +9,7 @@
 #
 # Disable auto refresh and quieten vis messages whilst scene and
 # trajectories are established:
-/vis/viewer/set/autoRefresh false
+/vis/viewer/set/autoRefresh true
 /vis/verbose errors
 #
 # Draw geometry:
@@ -46,14 +46,16 @@
 /vis/geometry/set/colour cave_back 0 .6 .2 .1 .3
 /vis/geometry/set/colour cave_lwall 0 .6 .2 .1 .3
 /vis/geometry/set/colour cave_rwall 0 .6 .2 .1 .3
-#/vis/geometry/
+/vis/geometry/set/colour cell_array 1 0 0 0 1
+/vis/geometry/set/colour cell_array 0 0 0 1 1
 #/vis/viewer/set/style s
 # or surface:
 #/vis/geometry/set/colour
 #/vis/geometry/set/colour
 
 /vis/viewer/set/hiddenMarker true
-/vis/viewer/set/targetPoint 0 -9 0 m
+#/vis/viewer/set/targetPoint 0 -9 0 m
+/vis/viewer/set/targetPoint 0 0 0 m
 
 # Draw smooth trajectories at end of event, showing trajectory points
 # as markers 2 pixels wide:
