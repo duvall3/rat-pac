@@ -1,5 +1,0 @@
-/control/execute setup.mac
-/rat/procset file "main_spectrum.root"
-/rat/proc count
-/rat/procset update 100000
-/run/beamOn 100

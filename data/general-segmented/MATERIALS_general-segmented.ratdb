@@ -1,0 +1,171 @@
+//-------- Boron-doped EJ-254 for SANTA, miniTimeCube, possibly NuLat --------//
+// !!! NO OPTICS YET -- IGNORE OPTICAL PHOTONS !!! // (currently used only for studying positron & neutron behavior in the MC)
+
+// template:
+//{
+//name: "",
+//index: "",
+//valid_begin: [0, 0],
+//valid_end: [0, 0],
+//density: ,
+//nelements: ,
+//nimaterials: ,
+//materials: [""],
+//matprop: [],
+//}
+
+
+// ELEMENTS
+// lithium (element)
+{
+name: "ELEMENT",
+index: "Lithium",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+SYMBOL: "Li",
+z: 3,
+isotopes: [6, 7], // from NIST database in RAT-PAC
+isotopes_frac: [0.0759, 0.9241], // from NIST database in RAT-PAC
+}
+
+
+// boron (element)
+{
+name: "ELEMENT",
+index: "Boron",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+SYMBOL: "B",
+z: 5,
+isotopes: [10, 11],
+isotopes_frac: [0.1990, 0.8010], // from G4 database in RAT-PAC
+}
+
+
+// MATERIALS
+// lithium (material)
+{
+name: "MATERIAL",
+index: "lithium",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+density: 0.534, // from pubchem.ncbi.nih.gov
+nelements: 1,
+nmaterials: 0,
+elements: ["Lithium"],
+elemprop: [1.0],
+}
+
+
+// boron (material)
+{
+name: "MATERIAL",
+index: "boron",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+density: 2.37, // form unknown, so this is the average of the densities given on pubchem.ncbi.nlm.nih.gov
+nelements: 1, 
+nmaterials: 0,
+elements: ["Boron"],
+elemprop: [1.0],
+}
+
+
+// PVT -- polyvinultoluene, C27H30 (polymer base for EJ-254)
+{
+name: "MATERIAL",
+index: "pvt",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+density: 0.890, // @ 25 C (pubchem.ncbi.nlm.nih.gov)
+nelements: 2,
+nmaterials: 0, 
+elements: ["Carbon", "Hydrogen"],
+elemprop: [0.91471, 0.08529], // based on molar masses C=12.011 & H=1.008 --> C27H30
+//formula: "", // shouldn't need this
+//mol: // shouldn't need this
+}
+
+
+// ej254_undoped -- just the base polymer (SANTA target plane)
+{
+name: "MATERIAL",
+index: "ej254_undoped",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+density: 0.890, // @ 25 C (pubchem.ncbi.nlm.nih.gov)
+nelements: 0,
+nmaterials: 1,
+materials: ["pvt"],
+matprop: [1.0],
+}
+
+
+// ej254_1b -- EJ-254 doped at 1% natural B by wt. (mTC, possibly NuLat)
+{
+name: "MATERIAL",
+index: "ej254_1b",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+density: 1.021, // @ 20 C (eljentechnology.com)
+nelements: 0,
+nmaterials: 2,
+materials: ["pvt", "boron"],
+matprop: [0.99,0.01], // by definition
+}
+
+
+// ej254_5b -- EJ-254 doped at 5% natural B by wt. (SANTA capture plane)
+{
+name: "MATERIAL",
+index: "ej254_5b",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+density: 1.026, // @ 20 C (eljentechnology.com)
+nelements: 0,
+nmaterials: 2,
+materials: ["pvt", "boron"],
+matprop: [0.95, 0.05], // by definition
+}
+
+// ej254_015li6 -- EJ-254 doped at 1.5% Li-6 by wt. (NuLat) -- AKA SUPER-EJ-270
+{
+name: "MATERIAL",
+index: "ej254_015li6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+density: 1.026, // copied from ej254_5b: @ 20 C (eljentechnology.com)
+nelements: 0,
+nmaterials: 2,
+materials: ["pvt", "lithium"],
+matprop: [0.80237, 0.19763], // so that (lithium fraction) * (Li-6 abundance) = 0.015
+}
+
+// ej254_005li6 -- EJ-254 doped at 0.5% Li-6 by wt. (NuLat) -- AKA EJ-270
+{
+name: "MATERIAL",
+index: "ej254_005li6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+density: 1.026, // copied from ej254_5b: @ 20 C (eljentechnology.com)
+nelements: 0,
+nmaterials: 2,
+materials: ["pvt", "lithium"],
+matprop: [.93412, .06588], // so that (lithium fraction) * (Li-6 abundance) = 0.005
+}
+
+// ej254_005li6 -- EJ-254 doped at 0.1% Li-6 by wt. (NuLat) -- AKA EJ-270
+{
+name: "MATERIAL",
+index: "ej254_001li6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+density: 1.026, // copied from ej254_5b: @ 20 C (eljentechnology.com)
+nelements: 0,
+nmaterials: 2,
+materials: ["pvt", "lithium"],
+matprop: [.987, .013], // so that (lithium fraction) * (Li-6 abundance) = 0.001
+//materials: ["pvt", "lithium"],
+//matprop: [.93412, .06588], // so that (lithium fraction) * (Li-6 abundance) = 0.001
+}
+

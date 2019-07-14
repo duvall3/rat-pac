@@ -1,0 +1,6 @@
+/control/execute setup.mac
+#/rat/procset file "/n0_test.root"
+/rat/procset file "n0_test.root"
+/rat/proc count
+/rat/procset update 1000
+/run/beamOn 2000
