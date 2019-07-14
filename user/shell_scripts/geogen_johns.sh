@@ -2,6 +2,21 @@
 # geogen_johns -- generate .geo entries for John's detector from a template
 
 
+
+# check / create filenames
+PROJ=$(pwd | sed s_/_\ _g | awk '{print $NF}')
+BASEFILE="$PROJ"_base.geo
+ARRFILE="$PROJ"_cell-array.geo
+OUTFILE="$PROJ".geo
+# don't overwrite
+if [ -e $ARRFILE ]; then
+  echo "ERROR: $ARRFILE already exists; please remove if you are certain you want to define a new experiment geometry." && exit 11
+fi
+if [ -e $OUTFILE ]; then
+  echo "ERROR: $OUTFILE already exists; please remove if you are certain you want to define a new experiment geometry." && exit 12
+fi
+
+
 ## check for bc
 echo -e "\n\nChecking for bc..."
 if [ $(which bc) ]; then
@@ -52,9 +67,6 @@ W=$( echo "$W*1.0" | bc -l )
 H=$( echo "$H*1.0" | bc -l )
 S=$( echo "$S*1.0" | bc -l )
 
-# name output file
-echo; echo "Enter project name: " && read PROJ
-OUTFILE="$PROJ"_cell-array.geo
 
 # print config
 printf "\n\nRows: %i\nColumns: %i\nLayers: %i\n" $ROWS $COLS $LYRS
@@ -79,7 +91,7 @@ size: [$ca_length, $ca_width, $ca_height], // mm
 material: \"air\",
 invisible: 0,
 position: [0.0, 0.0, 0.0] // mm
-}\n\n" >> $OUTFILE
+}\n\n" >> $ARRFILE
 
 
 ## generate cells
@@ -96,9 +108,9 @@ for (( k_lr=0; k_lr<$ROWS; k_lr++ )); do
       index_name="$index_name_fb"_$k_fb
 
       # cell coordinates
-      x=$( echo "2.0*($L+$S)*$k_lr - ($L+$S)*$ROWS" | bc -l )
-      y=$( echo "2.0*($W+$S)*$k_ud - ($W+$S)*$COLS" | bc -l )
-      z=$( echo "2.0*($H+$S)*$k_fb - ($H+$S)*$LYRS" | bc -l )
+      x=$( echo "2.0*($L+$S)*$k_lr - ($L+$S)*($ROWS-1)" | bc -l )
+      y=$( echo "2.0*($W+$S)*$k_ud - ($W+$S)*($COLS-1)" | bc -l )
+      z=$( echo "2.0*($H+$S)*$k_fb - ($H+$S)*($LYRS-1)" | bc -l )
       # fix float format just for zero values
       if [ $x = 0 ]; then x="0.0"; fi
       if [ $y = 0 ]; then y="0.0"; fi
@@ -118,7 +130,7 @@ size: [$L, $W, $H], // mm
 material: \"ej254_015li6\",
 invisible: 0,
 position: [$x, $y, $z] // mm
-}\n\n" >> $OUTFILE
+}\n\n" >> $ARRFILE
       
     done #k_fb
   
@@ -126,8 +138,14 @@ position: [$x, $y, $z] // mm
 
 done #k_lr
 
+printf "\nArray written to %s\n\n" $ARRFILE
 
-printf "\n\nOutput written to %s\n\n" $OUTFILE
+
+## finalize by combining base .geo file with array .geo file
+# now combine
+cat $BASEFILE $ARRFILE > $OUTFILE
+printf "\n\nRESULT WRITTEN TO: %s\n\n\n\n" $OUTFILE
+
 
 # all pau!   )
 exit 0
