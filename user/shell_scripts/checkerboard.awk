@@ -1,8 +1,9 @@
 # checkerboard.awk -- script to convert full rectangular grid
 #   to checkerboard pattern
-# -- usage: mv some-experiment.geo some-experiment.geo~; \
-#      cat some-experiment.geo~ | \
-#      awk -f $RATROOT/user/shell_scripts_checkerboard.awk
+# -- usage: 
+#    mv foo.geo foo.geo~; \
+#      awk -f $RATROOT/user/shell_scripts_checkerboard.awk \
+#      foo.geo~ > foo.geo
 
 # set record and field separators
 BEGIN{
