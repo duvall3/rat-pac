@@ -77,11 +77,12 @@ printf "\n\nRows: %i\nColumns: %i\nLayers: %i\n" $ROWS $COLS $LYRS
 printf "\nCell Length: \t%f mm\nCell Width: \t%f mm\nCell Height: \t%f mm\nCell Spacing: \t%f mm\n" $L $W $H $S
 
 
-## write out cell array
+## create cell array
 # calculate total size
 ca_length=$(echo "$ROWS*($L+$S)*1.0" | bc -l)
 ca_width=$(echo "$COLS*($W+$S)*1.0" | bc -l)
 ca_height=$(echo "$LYRS*($H+$S)*1.0" | bc -l)
+# write result
 echo -e "\
 // -------- GEO[cell_array]
 {
