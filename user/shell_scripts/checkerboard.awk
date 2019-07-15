@@ -1,7 +1,8 @@
 # checkerboard.awk -- script to convert full rectangular grid
 #   to checkerboard pattern
-
-# reminder: print when ROW%2 == COL%2
+# -- usage: mv some-experiment.geo some-experiment.geo~; \
+#      cat some-experiment.geo~ | \
+#      awk -f $RATROOT/user/shell_scripts_checkerboard.awk
 
 # set record and field separators
 BEGIN{
@@ -9,8 +10,10 @@ BEGIN{
   FS="\n"
 }
 
+# print all non-target-cell entries
 $2 !~ /target_cell/ {print $0}
 
+# only print target cells when ROW and COL are both even or both odd
 $2 ~ /target_cell/ {
   match($0, /[[:digit:]]+/, ROW)
   record_copy = $0
@@ -21,3 +24,5 @@ $2 ~ /target_cell/ {
   if ( row_even == col_even )
     print $0
 }
+
+# all pau!   )
