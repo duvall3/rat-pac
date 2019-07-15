@@ -147,10 +147,9 @@ printf "\nArray written to %s\n\n" $ARRFILE
 
 
 ## finalize by combining base .geo file with array .geo file
-# now combine
 cat $BASEFILE $ARRFILE > $OUTFILE
 printf "\n\nRESULT WRITTEN TO: %s\n\n\n\n" $OUTFILE
 
 
-# all pau!   )
+## all pau!   )
 exit 0
