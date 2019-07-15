@@ -5,7 +5,7 @@
 #      awk -f $RATROOT/user/shell_scripts_checkerboard.awk \
 #      foo.geo~ > foo.geo
 
-# set record and field separators
+# set field and field separators
 BEGIN{
   RS="\n\n"
   FS="\n"
@@ -16,12 +16,12 @@ $2 !~ /target_cell/ {print $0}
 
 # only print target cells when ROW, COL, and LYR are either all even or all odd
 $2 ~ /target_cell/ {
-  match($0, /[[:digit:]]+/, ROW)
-  record_copy = $0
-  sub(/[[:digit:]]+/, "", record_copy)
-  match(record_copy, /[[:digit:]]+/, COL)
-  sub(/[[:digit:]]+/, "", record_copy)
-  match(record_copy, /[[:digit:]]+/, LYR)
+  match($2, /[[:digit:]]+/, ROW)
+  field_copy = $2
+  sub(/[[:digit:]]+/, "", field_copy)
+  match(field_copy, /[[:digit:]]+/, COL)
+  sub(/[[:digit:]]+/, "", field_copy)
+  match(field_copy, /[[:digit:]]+/, LYR)
   row_even = strtonum(ROW[0]) % 2
   col_even = strtonum(COL[0]) % 2
   lyr_even = strtonum(LYR[0]) % 2

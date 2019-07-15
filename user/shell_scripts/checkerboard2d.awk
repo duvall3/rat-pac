@@ -8,7 +8,7 @@
 #      a version where either ROW or COL can be static while LYR changes
 #      may be developed in the future
 
-# set record and field separators
+# set field and field separators
 BEGIN{
   RS="\n\n"
   FS="\n"
@@ -19,10 +19,10 @@ $2 !~ /target_cell/ {print $0}
 
 # only print target cells when ROW and COL are both even or both odd
 $2 ~ /target_cell/ {
-  match($0, /[[:digit:]]+/, ROW)
-  record_copy = $0
-  sub(/[[:digit:]]+/, "", record_copy)
-  match(record_copy, /[[:digit:]]+/, COL)
+  match($2, /[[:digit:]]+/, ROW)
+  field_copy = $2
+  sub(/[[:digit:]]+/, "", field_copy)
+  match(field_copy, /[[:digit:]]+/, COL)
   row_even = strtonum(ROW[0]) % 2
   col_even = strtonum(COL[0]) % 2
   if ( row_even == col_even )
