@@ -9,7 +9,7 @@ BEGIN{
   FS="\n"
 }
 
-#$1 !~ /target_cell/ {print $0}
+$2 !~ /target_cell/ {print $0}
 
 $2 ~ /target_cell/ {
   match($0, /[[:digit:]]+/, ROW)
