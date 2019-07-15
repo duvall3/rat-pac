@@ -131,7 +131,7 @@ valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: \"cell_array\",
 type: \"box\",
-size: [$L, $W, $H], // mm
+size: [$L, $W, $H], // mm  // for sphere, change size to single-value r_max
 material: \"ej254_001li6\",
 invisible: 0,
 position: [$x, $y, $z] // mm
