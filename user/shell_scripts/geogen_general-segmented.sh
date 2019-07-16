@@ -3,7 +3,7 @@
 # -- this script expects to be run in a directory such as $RATROOT/data/foo-experiment,
 #      which is expected to contain a base geometry file (i.e., without cell array)
 #      called "foo-experiment_base.geo"
-# -- for an example, see https://github.com/duvall3/rat-pac/blob/comparison/data/general-segmented/general-segmented.geo
+# -- for an example, see https://github.com/duvall3/rat-pac/blob/comparison/data/general-segmented/general-segmented_base.geo
 
 
 
@@ -71,10 +71,16 @@ W=$( echo "$W*1.0" | bc -l )
 H=$( echo "$H*1.0" | bc -l )
 S=$( echo "$S*1.0" | bc -l )
 
+## double cell half-dimensions for summary
+FL=$( echo "$L*2.0" | bc -l )
+FW=$( echo "$W*2.0" | bc -l )
+FH=$( echo "$H*2.0" | bc -l )
+FS=$( echo "$S*2.0" | bc -l )
+
 
 # print config
 printf "\n\nRows: %i\nColumns: %i\nLayers: %i\n" $ROWS $COLS $LYRS
-printf "\nCell Length: \t%f mm\nCell Width: \t%f mm\nCell Height: \t%f mm\nCell Spacing: \t%f mm\n" $L $W $H $S
+printf "\nCell Length: \t%f mm\nCell Width: \t%f mm\nCell Height: \t%f mm\nCell Spacing: \t%f mm\n" $FL $FW $FH $FS
 
 
 ## create cell array
