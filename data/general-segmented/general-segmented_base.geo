@@ -110,10 +110,10 @@ valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "world",
 type: "box",
-size: [1.0, 208.0, 208.0], // mm
+size: [1.0, 27.0, 100.0], // mm
 material: "air",
 invisible: 0,
-position: [-1000.0, 0.0, 0.0] // mm
+position: [-100.0, 0.0, 0.0] // mm
 }
 // DETECTOR ELEMENTS
 
