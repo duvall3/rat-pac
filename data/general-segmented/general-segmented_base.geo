@@ -65,9 +65,7 @@ position: [0.0, 10000.0, 0.0] // mm
 name: "GEO",
 index: "cave_back",
 valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "world",
-type: "box",
+valid_end: [0, 0], mother: "world", type: "box",
 size: [10000.0, 10000.0, 1.0], // mm
 material: "rock",
 invisible: 0,
@@ -103,4 +101,6 @@ material: "rock",
 invisible: 0,
 position: [10000.0, 0.0, 0.0] // mm
 }
+
+// DETECTOR ELEMENTS
 
