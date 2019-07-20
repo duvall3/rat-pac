@@ -1,8 +1,10 @@
 # erica.mac -- generator to match Erica's input
 
-/generator/add combo gun:point:poisson
+#/generator/add combo gun:point:poisson
+/generator/add combo gun:regexfill:poisson
 #/generator/vtx/set neutron 0 0 1 0.01  # 10keV neutrons directed along the +z axis
 #/generator/vtx/set neutron 0 0 0 3.  # 3MeV neutrons directed isotropically
-/generator/vtx/set neutron 0 1 0 3.  # 3MeV neutrons directed along the -axis
-/generator/pos/set 0 -200.0 0
+/generator/vtx/set neutron 1 0 0 3.  # 3MeV neutrons directed along the x-axis
+#/generator/pos/set -1000.0 0 0
+/generator/pos/set generator
 /generator/rate/set 1
