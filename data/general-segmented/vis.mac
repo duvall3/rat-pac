@@ -52,7 +52,7 @@
 # or surface:
 #/vis/geometry/set/colour
 #/vis/geometry/set/colour
-/vis/geometry/set/colour generator 0 1 0 1 1
+/vis/geometry/set/colour source 0 1 0 1 1
 
 /vis/viewer/set/hiddenMarker true
 #/vis/viewer/set/targetPoint 0 -9 0 m

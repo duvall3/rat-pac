@@ -154,7 +154,7 @@ materials: ["pvt", "lithium"],
 matprop: [.93412, .06588], // so that (lithium fraction) * (Li-6 abundance) = 0.005
 }
 
-// ej254_005li6 -- EJ-254 doped at 0.1% Li-6 by wt. (NuLat) -- AKA EJ-270
+// ej254_001li6 -- EJ-254 doped at 0.1% Li-6 by wt. (NuLat) -- AKA EJ-270
 {
 name: "MATERIAL",
 index: "ej254_001li6",

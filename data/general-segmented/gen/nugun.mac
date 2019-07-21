@@ -1,6 +1,6 @@
 # nugun.mac -- nuebar gun
 
-/generator/add combo gun:point:poisson
-/generator/vtx/set anti_nu_e 0 0 1 4.0  # 4MeV nuebars directed along the +z axis
-/generator/pos/set 0 -9450 -4500
+/generator/add combo gun:regexfill:poisson
+/generator/vtx/set neutron 1 0 0 3.0 # 3-MeV neutrons directed +x
+/generator/pos/set source
 /generator/rate/set 1
