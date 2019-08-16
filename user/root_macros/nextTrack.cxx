@@ -1,3 +1,6 @@
+// nextTrack -- spit out [x y z] for next particle track
+
+
 ds = r.NextEvent();
 RAT::TrackNav nav(ds);
 RAT::TrackCursor c = nav.Cursor(false);
