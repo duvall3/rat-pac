@@ -111,10 +111,10 @@ ca_width=$(echo "$COLS*($W+$S)*1.0" | bc -l)
 ca_height=$(echo "$LYRS*($H+$S)*1.0" | bc -l)
 # write result
 echo -e "\
-// -------- GEO[cell_array]
+// -------- GEO[target_cell_array]
 {
 name: \"GEO\",
-index: \"cell_array\",
+index: \"target_cell_array\",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: \"world\",
