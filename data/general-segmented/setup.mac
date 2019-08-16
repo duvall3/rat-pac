@@ -1,11 +1,16 @@
 # setup -- single macro to prepare run
 
+/rat/db/load MATERIALS.ratdb
+/rat/db/load MATERIALS_general-segmented.ratdb
+/rat/db/load OPTICS_NuLat.ratdb
+
 /control/execute init.mac
 #/control/execute vis.mac
 #/control/execute gen/ibd.mac
-/control/execute gen/nugun.mac
-#/control/execute gen/erica.mac
-#/control/execute gen/mugun.mac
+/control/execute gen/epgun.mac
+#/control/execute gen/nugun.mac
+/control/execute gen/erica.mac
+/control/execute gen/mugun.mac
 /control/shell echo "REMINDER: Set output filename before starting run!"
 
 /tracking/storeTrajectory 1
