@@ -23,6 +23,7 @@ drawBox3d(cell_array, 'color', 'b');
 axlim = [-5000 5000]; % default
 xlim(axlim); ylim(axlim); zlim(axlim);
 
+title 'Particle Trajectory'
 xlabel 'x (mm)'
 ylabel 'z (mm)'
 zlabel 'y (mm)'
