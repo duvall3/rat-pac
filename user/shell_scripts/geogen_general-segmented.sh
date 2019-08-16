@@ -7,18 +7,39 @@
 
 
 
+
+
 ## check / create filenames
 PROJ=$(pwd | sed s_/_\ _g | awk '{print $NF}')
 BASEFILE="$PROJ"_base.geo
 ARRFILE="$PROJ"_cell-array.geo
 OUTFILE="$PROJ".geo
-# don't overwrite
+
+
+
+## clear command
+if [[ $1 = "reset" ]]; then
+  if [[ -f $BASEFILE ]]; then
+    echo "Resetting experiment to base; clearing detector..."
+      if [[ -f $ARRFILE ]]; then rm $ARRFILE; fi
+      if [[ -f $OUTFILE ]]; then rm $OUTFILE; fi
+      if [[ -f $OUTFILE"~" ]]; then rm $OUTFILE"~"; fi
+    echo "Detector geometry cleared." && exit 0
+  else
+    echo "ERROR: Base file is missing; cannot reset to base geometry." && exit 15
+  fi
+fi
+
+
+
+## don't overwrite
 if [ -e $ARRFILE ]; then
   echo "ERROR: $ARRFILE already exists; please remove if you are certain you want to define a new experiment geometry." && exit 11
 fi
 if [ -e $OUTFILE ]; then
   echo "ERROR: $OUTFILE already exists; please remove if you are certain you want to define a new experiment geometry." && exit 12
 fi
+
 
 
 ## check for bc
@@ -135,10 +156,10 @@ name: \"GEO\",
 index: \"$index_name\",
 valid_begin: [0, 0],
 valid_end: [0, 0],
-mother: \"cell_array\",
+mother: \"target_cell_array\",
 type: \"box\",
 size: [$L, $W, $H], // mm  // for sphere, change size to single-value r_max
-material: \"ej254_001li6\",
+material: \"ej254_015li6\",
 invisible: 0,
 position: [$x, $y, $z] // mm
 }\n\n" >> $ARRFILE
