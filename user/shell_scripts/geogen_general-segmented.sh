@@ -117,7 +117,7 @@ name: \"GEO\",
 index: \"target_cell_array\",
 valid_begin: [0, 0],
 valid_end: [0, 0],
-mother: \"world\",
+mother: \"cave\",
 type: \"box\",
 size: [$ca_length, $ca_width, $ca_height], // mm
 material: \"air\",
