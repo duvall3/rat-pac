@@ -42,7 +42,7 @@ for (( k=0; k<$NINSTS; k++ )) {
 
   # prepare simulation, post-processing, and combination commands
   RATCMD="rat -l $INST_DIR.log run.mac" # assume IBD run
-  PROCCMD="process_ibd_run.sh $INST_DIR $NEVENTS"
+  PROCCMD="/$RATROOT/user/shell_scripts/process_ibd_run.sh $INST_DIR $NEVENTS"
   FULLCMD="eval $RATCMD && eval $PROCCMD"
 
   # RUN
@@ -55,7 +55,7 @@ for (( k=0; k<$NINSTS; k++ )) {
 } # end datarun / dir loop
 
 # combine dataruns into a single _T file for use with SEDAQ.cxx
-chain.sh
+$RATROOT/user/shell_scripts/chain.sh
 
 
 ## all pau!   )
