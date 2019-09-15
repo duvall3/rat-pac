@@ -8,15 +8,12 @@
 # 2) Open ROOT and run the following commands:
 # 3) TChain ch("T");
 # 5) .x chain.cxx
-# 7) ch.Merge("<OUTPUT_FILENAME>.root");
-# 9) .x $RATROOT/Plot_SEDAQ_Results.cxx
-#10) f.Close ();
-# -- NOTE: You will have to supply the full path for $RATROOT
+# 7) ch.Merge("<OUTPUT_FILENAME>_T.root");
 
 
 echo -e "\
 // chain.cxx -- combine TChains
-// -- for use with SimpleEnergyDAQ from $RATROOT/user/root_macros/SimpleEnergyDAQ.cxx
+// -- for use with SimpleEnergyDAQ from $RATROOT/user/root_macros/SEDAQ.cxx
 // Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2017 ~ //
 
 
