@@ -28,6 +28,7 @@ void SEDAQ( const char* filename, Double_t prompt_low, Double_t delayed_low, Dou
 gStyle->SetHistLineWidth(2);
 gStyle->SetHistLineColor(kBlue);
 gStyle->SetOptLogy(true);
+Double_t pi = TMath::Pi();
 TString FileName, basename, savename;
 FileName = filename;
 if (FileName.Contains("_T.root")) {
@@ -68,6 +69,7 @@ T->SetBranchAddress( "interevent_time", &interevent_time );
 Double_t prompt_cand_t, prompt_cand_eq, delayed_cand_t, delayed_cand_eq;
 Double_t prompt_cand_x, prompt_cand_y, prompt_cand_z;
 Double_t delayed_cand_x, delayed_cand_y, delayed_cand_z;
+Double_t angle_recon;
 T2->Branch("prompt_cand_t", &prompt_cand_t, "prompt_cand_t/D");
 T2->Branch("prompt_cand_eq", &prompt_cand_eq, "prompt_cand_eq/D");
 T2->Branch("delayed_cand_t", &delayed_cand_t, "delayed_cand_t/D");
@@ -79,6 +81,7 @@ T2->Branch("prompt_cand_z", &prompt_cand_z, "prompt_cand_z/D");
 T2->Branch("delayed_cand_x", &delayed_cand_x, "delayed_cand_x/D");
 T2->Branch("delayed_cand_y", &delayed_cand_y, "delayed_cand_y/D");
 T2->Branch("delayed_cand_z", &delayed_cand_z, "delayed_cand_z/D");
+T2->Branch("angle_recon", &angle_recon, "angle_recon/D");
 
 
 //// T PLOTS
@@ -255,8 +258,9 @@ for (( k = 0; k < num_bursts; k++ )) {
       }
     }
   }
-  // if candidate burst pair is found, add burst times and energies to tree:
+  // if candidate burst pair is found, add burst times and energies and reconstructed angle to tree: //NOTE: phi=arctan(y/x) unless changed manually below
   if ( prompt_tf & delayed_tf ) {
+    angle_recon = atan( (delayed_cand_y-prompt_cand_y) / (delayed_cand_x-prompt_cand_x) ) * 180/pi;
     // NuLat -- additional cuts
     Double_t cube_half_length = 25.; //mm
     Double_t cube_separation = 1.; //mm
@@ -267,7 +271,7 @@ for (( k = 0; k < num_bursts; k++ )) {
     } else { // just fill
     T2->Fill();
     } //endif
-  }
+  } //endif
 } //end event loop
 
 // save ibd trigger parameters and result
