@@ -15,6 +15,7 @@ fi
 DATARUN=$1
 NEVENTS=$2
 NINSTS=$3
+EXPDIR=$RATROOT/data/$(basename $(pwd) /)
 
 #debug
 echo $DATARUN
@@ -38,11 +39,11 @@ for (( k=0; k<$NINSTS; k++ )) {
   cd $INST_DIR
 
   # create run.mac
-  echo -e "/control/execute ../../setup.mac\n/rat/procset file \"$INST_DIR.root\"\n/run/beamOn $NEVENTS" > run.mac # assume IBD run
+  echo -e "/control/execute $EXPDIR/setup.mac\n/rat/procset file \"$INST_DIR.root\"\n/run/beamOn $NEVENTS" > run.mac # assume IBD run
 
   # prepare simulation, post-processing, and combination commands
   RATCMD="rat -l $INST_DIR.log run.mac" # assume IBD run
-  PROCCMD="/$RATROOT/user/shell_scripts/process_ibd_run.sh $INST_DIR $NEVENTS"
+  PROCCMD="$RATROOT/user/shell_scripts/process_ibd_run.sh $INST_DIR $NEVENTS"
   FULLCMD="eval $RATCMD && eval $PROCCMD"
 
   # RUN
