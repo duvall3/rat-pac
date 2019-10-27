@@ -3,7 +3,7 @@
 
 
 
-void ROOTEventViewer( const char* filename ) {
+void ROOTEventViewer( const char* FileName ) {
 
 
 
@@ -12,11 +12,12 @@ void ROOTEventViewer( const char* filename ) {
 
 // init
 
+TString filename = FileName;
 gSystem->Load("libGeom");
 TGeoManager *geo = new TGeoManager(filename+"_GM", "TGeoManager for "+filename);
 // placeholder material / medium
 TGeoMaterial *mat = new TGeoMaterial("vacuum", 0, 0, 0);
-TGeoMedium *med = new TGeoMaterial("vacuum", 1, mat);
+TGeoMedium *med = new TGeoMedium("vacuum", 1, mat);
 // top volume
 TGeoVolume* top = geo->MakeBox("Top", med, 1.e4, 1.e4, 1.e4); //cm
 geo->SetTopVolume(top);
@@ -34,10 +35,10 @@ TGeoVolume* cell_array = geo->MakeBox("CellArray", med, 22.4, 22.4, 40.2); //cm
 geo->CloseGeometry();
 top->SetLineColor(kBlack);
 geo->SetTopVisible(kTRUE); //debug
+TCanvas* can = new TCanvas("can", filename, 1000, 100, 850, 700);
 top->Draw();
-
-
-
+TView* view = can->GetView();
+view->ZoomOut();
 
 
 
