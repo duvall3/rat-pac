@@ -53,12 +53,12 @@ Int_t track_id(0); //POSSIBLE ISSUE: Should these track ID's be forced to match 
 RAT::DSReader r(filename);
 RAT::DS::Root *ds = r.GetEvent(0);
 RAT::DS::MC *mc = ds->GetMC();
-//RAT::TrackNav nav(ds);
-//RAT::TrackCursor c = nav.Cursor(kFALSE);
-//RAT::TrackNode *n = c.GoChild(0);
+RAT::TrackNav nav(ds);
+RAT::TrackCursor c = nav.Cursor(kFALSE);
+RAT::TrackNode *n;
 RAT::DS::MCParticle* par;
-RAT::DS::MCTrack* mct;
-RAT::DS::MCTrackStep* mcts;
+//RAT::DS::MCTrack* mct;
+//RAT::DS::MCTrackStep* mcts;
 TString parname;
 
 //// GENERAL VERSION:
@@ -88,28 +88,62 @@ TString parname;
 // ASSUME IBD -- i.e., 2 primary tracks per event (e+, n0)
 
 // positron
-mct = mc->GetMCTrack(1);
-parname = mct->GetParticleName();
-stepcount = mct->GetMCTrackStepCount();
-geo->AddTrack( 1, mct->GetPDGCode() );
+//// directly accessing ds -- TRACK ID MISMATCH
+//mct = mc->GetMCTrack(1);
+//parname = mct->GetParticleName();
+//stepcount = mct->GetMCTrackStepCount();
+//geo->AddTrack( 1, mct->GetPDGCode() );
+//TGeoTrack* e_track = geo->GetListOfTracks()->At(0);
+//for ( step = 0; step < stepcount; step++ ) {
+//  mcts = mct->GetMCTrackStep(step);
+//  e_track->AddPoint( mcts->GetEndpoint().x(), mcts->GetEndpoint().y(), mcts->GetEndpoint().z(), mcts->GetGlobalTime() );
+//}
+//e_track->SetName(parname);
+//e_track->SetLineColor(kRed);
+//e_track->SetLineWidth(2.0);
+
+// neutron
+//// directly accessing ds -- TRACK ID MISMATCH
+//mct = mc->GetMCTrack(2);
+//parname = mct->GetParticleName();
+//stepcount = mct->GetMCTrackStepCount();
+//geo->AddTrack( 2, mct->GetPDGCode() );
+//TGeoTrack* n_track = geo->GetListOfTracks()->At(1);
+//for ( step = 0; step < stepcount; step++ ) {
+//  mcts = mct->GetMCTrackStep(step);
+//  n_track->AddPoint( mcts->GetEndpoint().x(), mcts->GetEndpoint().y(), mcts->GetEndpoint().z(), mcts->GetGlobalTime() );
+//}
+//n_track->SetName(parname);
+//n_track->SetLineColor(kBlue);
+//n_track->SetLineWidth(2.0);
+
+// positron
+//// using RAT::TrackNav
+c = nav.Cursor(kFALSE);
+n = c.GoChild(0);
+parname = n->GetParticleName();
+stepcount = c.StepCount();
+geo->AddTrack( 1, n->GetPDGCode() );
 TGeoTrack* e_track = geo->GetListOfTracks()->At(0);
 for ( step = 0; step < stepcount; step++ ) {
-  mcts = mct->GetMCTrackStep(step);
-  e_track->AddPoint( mcts->GetEndpoint().x(), mcts->GetEndpoint().y(), mcts->GetEndpoint().z(), mcts->GetGlobalTime() );
+  n = c.GoStep(step);
+  e_track->AddPoint( n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z(), n->GetGlobalTime() );
 }
 e_track->SetName(parname);
 e_track->SetLineColor(kRed);
 e_track->SetLineWidth(2.0);
 
 // neutron
-mct = mc->GetMCTrack(2);
-parname = mct->GetParticleName();
-stepcount = mct->GetMCTrackStepCount();
-geo->AddTrack( 2, mct->GetPDGCode() );
+//// using RAT::TrackNav
+c.GoParent();
+n = c.GoChild(1);
+parname = n->GetParticleName();
+stepcount = c.StepCount();
+geo->AddTrack( 2, n->GetPDGCode() );
 TGeoTrack* n_track = geo->GetListOfTracks()->At(1);
 for ( step = 0; step < stepcount; step++ ) {
-  mcts = mct->GetMCTrackStep(step);
-  n_track->AddPoint( mcts->GetEndpoint().x(), mcts->GetEndpoint().y(), mcts->GetEndpoint().z(), mcts->GetGlobalTime() );
+  n = c.GoStep(step);
+  n_track->AddPoint( n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z(), n->GetGlobalTime() );
 }
 n_track->SetName(parname);
 n_track->SetLineColor(kBlue);
@@ -117,9 +151,6 @@ n_track->SetLineWidth(2.0);
 
 // draw tracks
 geo->DrawTracks("");
-//geo->DrawTracks("SAME");
-//e_track->Draw();
-//n_track->Draw();
 
 cout << endl << geo->GetListOfTracks()->GetEntries() << endl; //debug
 geo->GetListOfTracks()->Print(); //debug
