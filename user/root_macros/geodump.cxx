@@ -1,7 +1,8 @@
 // geodump -- EWISotT
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 9/2019 ~ //
+// -- recommended usage: root -q -b 'geodump.cxx("<FILENAME>.root")' | awk '$1 ~ "^GEO" {$1=""; print $0}' > geodump.txt
 
-void geodump( const char* filename ) {
+void geodump( const char* filename, TRegexp tr = "target_cell_[0-9].*position" ) {
 
 // init
 TFile* f = TFile::Open(filename);
@@ -16,12 +17,7 @@ for ( i = db->begin(); i != db->end(); ++i ) {
   TObjString* val = tp->Value();
   TString keystr = key->GetString(), valstr = val->GetString();
 
-//  // test for GEO.<position||size> entry
-//  if ( keystr.Contains("size") || keystr.Contains("position") ) {
-
   // test for target volume and position
-//if ( keystr.Contains('"target_cell_.*position"') ) {
-  TRegexp tr = "target_cell_[0-9].*position";
   if ( keystr.Contains(tr) ) {
 
     // cleanup

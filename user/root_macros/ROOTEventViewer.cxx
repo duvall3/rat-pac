@@ -23,7 +23,7 @@ TGeoVolume* top = geo->MakeBox("Top", med, 1.2e5, 1.2e5, 1.2e5); //cm
 geo->SetTopVolume(top);
 
 
-// load detector into TGeoManager
+// load detector from db into TGeoManager
 /*
  * PENDING
  */ 
@@ -59,6 +59,7 @@ RAT::DS::MC *mc = ds->GetMC();
 RAT::DS::MCParticle* par;
 RAT::DS::MCTrack* mct;
 RAT::DS::MCTrackStep* mcts;
+TString parname;
 
 //// GENERAL VERSION:
 //// generate list of primary tracks 
@@ -87,39 +88,37 @@ RAT::DS::MCTrackStep* mcts;
 // ASSUME IBD -- i.e., 2 primary tracks per event (e+, n0)
 
 // positron
-par = mc->GetMCParticle(0);
-mct = mc->GetMCTrack(0);
+mct = mc->GetMCTrack(1);
+parname = mct->GetParticleName();
 stepcount = mct->GetMCTrackStepCount();
-geo->AddTrack( 0, par->GetPDGCode(), par );
-//TIter i = geo->GetListOfTracks()->begin();
-//TGeoTrack* track = *i;
+geo->AddTrack( 1, mct->GetPDGCode() );
 TGeoTrack* e_track = geo->GetListOfTracks()->At(0);
 for ( step = 0; step < stepcount; step++ ) {
   mcts = mct->GetMCTrackStep(step);
   e_track->AddPoint( mcts->GetEndpoint().x(), mcts->GetEndpoint().y(), mcts->GetEndpoint().z(), mcts->GetGlobalTime() );
 }
+e_track->SetName(parname);
 e_track->SetLineColor(kRed);
 e_track->SetLineWidth(2.0);
 
 // neutron
-par = mc->GetMCParticle(1);
-mct = mc->GetMCTrack(1);
+mct = mc->GetMCTrack(2);
+parname = mct->GetParticleName();
 stepcount = mct->GetMCTrackStepCount();
-geo->AddTrack( 1, par->GetPDGCode(), par );
-//TIter i = geo->GetListOfTracks()->end();
-//TGeoTrack* track = *i;
+geo->AddTrack( 2, mct->GetPDGCode() );
 TGeoTrack* n_track = geo->GetListOfTracks()->At(1);
 for ( step = 0; step < stepcount; step++ ) {
   mcts = mct->GetMCTrackStep(step);
   n_track->AddPoint( mcts->GetEndpoint().x(), mcts->GetEndpoint().y(), mcts->GetEndpoint().z(), mcts->GetGlobalTime() );
 }
+n_track->SetName(parname);
 n_track->SetLineColor(kBlue);
 n_track->SetLineWidth(2.0);
 
 // draw tracks
-//geo->DrawTracks("");
+geo->DrawTracks("");
 //geo->DrawTracks("SAME");
-e_track->Draw();
+//e_track->Draw();
 //n_track->Draw();
 
 cout << endl << geo->GetListOfTracks()->GetEntries() << endl; //debug
