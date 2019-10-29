@@ -11,8 +11,9 @@ void ROOTEventViewer( const char* FileName ) {
 
 
 // init
-
 TString filename = FileName;
+TFile* f = TFile::Open(filename);
+RAT::DSReader r(filename);
 gSystem->Load("libGeom");
 TGeoManager *geo = new TGeoManager(filename+"_GM", "TGeoManager for "+filename);
 // placeholder material / medium
@@ -47,21 +48,19 @@ TView* view = can->GetView();
 
 //// PARTICLE TRACKS
 
-// init using event 0, particle/track 0
-Int_t primary_tracks_this_event(0), primary_id(0), track_id(0), step, stepcount;
-Int_t track_id(0); //POSSIBLE ISSUE: Should these track ID's be forced to match RAT-PAC's?
-RAT::DSReader r(filename);
-RAT::DS::Root *ds = r.GetEvent(0);
-RAT::DS::MC *mc = ds->GetMC();
-RAT::TrackNav nav(ds);
-RAT::TrackCursor c = nav.Cursor(kFALSE);
-RAT::TrackNode *n;
-RAT::DS::MCParticle* par;
-//RAT::DS::MCTrack* mct;
-//RAT::DS::MCTrackStep* mcts;
-TString parname;
-
 //// GENERAL VERSION:
+
+//// init using event 0, particle/track 0
+//Int_t primary_tracks_this_event(0), primary_id(0), track_id(0), step, stepcount;
+//Int_t track_id(0); //POSSIBLE ISSUE: Should these track ID's be forced to match RAT-PAC's?
+//RAT::DSReader r(filename);
+//RAT::DS::Root *ds = r.GetEvent(0);
+//RAT::DS::MC *mc = ds->GetMC();
+//RAT::DS::MCParticle* par;
+////RAT::DS::MCTrack* mct;
+////RAT::DS::MCTrackStep* mcts;
+//TString parname;
+
 //// generate list of primary tracks 
 //primary_tracks_this_event = mc->GetMCParticleCount();
 //for ( primary_id = 0; primary_id < primary_tracks_this_event; primary_id++ ) {
@@ -87,74 +86,89 @@ TString parname;
 
 // ASSUME IBD -- i.e., 2 primary tracks per event (e+, n0)
 
-// positron
-//// directly accessing ds -- TRACK ID MISMATCH
-//mct = mc->GetMCTrack(1);
-//parname = mct->GetParticleName();
-//stepcount = mct->GetMCTrackStepCount();
-//geo->AddTrack( 1, mct->GetPDGCode() );
-//TGeoTrack* e_track = geo->GetListOfTracks()->At(0);
-//for ( step = 0; step < stepcount; step++ ) {
-//  mcts = mct->GetMCTrackStep(step);
-//  e_track->AddPoint( mcts->GetEndpoint().x(), mcts->GetEndpoint().y(), mcts->GetEndpoint().z(), mcts->GetGlobalTime() );
-//}
-//e_track->SetName(parname);
-//e_track->SetLineColor(kRed);
-//e_track->SetLineWidth(2.0);
+// define function to draw e+ and n0 tracks for a given top-level MC event
+void drawTracks( Int_t event ) {
 
-// neutron
-//// directly accessing ds -- TRACK ID MISMATCH
-//mct = mc->GetMCTrack(2);
-//parname = mct->GetParticleName();
-//stepcount = mct->GetMCTrackStepCount();
-//geo->AddTrack( 2, mct->GetPDGCode() );
-//TGeoTrack* n_track = geo->GetListOfTracks()->At(1);
-//for ( step = 0; step < stepcount; step++ ) {
-//  mcts = mct->GetMCTrackStep(step);
-//  n_track->AddPoint( mcts->GetEndpoint().x(), mcts->GetEndpoint().y(), mcts->GetEndpoint().z(), mcts->GetGlobalTime() );
-//}
-//n_track->SetName(parname);
-//n_track->SetLineColor(kBlue);
-//n_track->SetLineWidth(2.0);
+  ////// using RAT::TrackNav
 
-// positron
-//// using RAT::TrackNav
-c = nav.Cursor(kFALSE);
-n = c.GoChild(0);
-parname = n->GetParticleName();
-stepcount = c.StepCount();
-geo->AddTrack( 1, n->GetPDGCode() );
-TGeoTrack* e_track = geo->GetListOfTracks()->At(0);
-for ( step = 0; step < stepcount; step++ ) {
-  n = c.GoStep(step);
-  e_track->AddPoint( n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z(), n->GetGlobalTime() );
-}
-e_track->SetName(parname);
-e_track->SetLineColor(kRed);
-e_track->SetLineWidth(2.0);
+  // init
+  Int_t step, stepcount;
+  TString filename = gDirectory->GetFile()->GetName();
+  TString parname;
+  RAT::DSReader r(filename);
+  RAT::DS::Root *ds = r.GetEvent(event);
+  RAT::TrackNav nav(ds);
+  RAT::TrackCursor c = nav.Cursor(kFALSE);
+  RAT::TrackNode *n;
+  TGeoManager* geo = gGeoManager;
+  geo->ClearTracks();
 
-// neutron
-//// using RAT::TrackNav
-c.GoParent();
-n = c.GoChild(1);
-parname = n->GetParticleName();
-stepcount = c.StepCount();
-geo->AddTrack( 2, n->GetPDGCode() );
-TGeoTrack* n_track = geo->GetListOfTracks()->At(1);
-for ( step = 0; step < stepcount; step++ ) {
-  n = c.GoStep(step);
-  n_track->AddPoint( n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z(), n->GetGlobalTime() );
-}
-n_track->SetName(parname);
-n_track->SetLineColor(kBlue);
-n_track->SetLineWidth(2.0);
+  // positron
+  n = c.GoChild(0);
+  parname = n->GetParticleName();
+  stepcount = c.StepCount();
+  geo->AddTrack( 1, n->GetPDGCode() );
+  TGeoTrack* e_track = geo->GetListOfTracks()->At(0);
+  for ( step = 0; step < stepcount; step++ ) {
+    n = c.GoStep(step);
+    e_track->AddPoint( n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z(), n->GetGlobalTime() );
+  }
+  e_track->SetName(parname);
+  e_track->SetLineColor(kRed);
+  e_track->SetLineWidth(2.0);
 
-// draw tracks
-geo->DrawTracks("");
+  // back to top-level event
+  c.GoParent();
 
-cout << endl << geo->GetListOfTracks()->GetEntries() << endl; //debug
-geo->GetListOfTracks()->Print(); //debug
+  // neutron
+  n = c.GoChild(1);
+  parname = n->GetParticleName();
+  stepcount = c.StepCount();
+  geo->AddTrack( 2, n->GetPDGCode() );
+  TGeoTrack* n_track = geo->GetListOfTracks()->At(1);
+  for ( step = 0; step < stepcount; step++ ) {
+    n = c.GoStep(step);
+    n_track->AddPoint( n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z(), n->GetGlobalTime() );
+  }
+  n_track->SetName(parname);
+  n_track->SetLineColor(kBlue);
+  n_track->SetLineWidth(2.0);
 
+  ////// directly accessing ds -- TRACK ID MISMATCH
+  //
+  //// positron
+  ////mct = mc->GetMCTrack(1);
+  ////parname = mct->GetParticleName();
+  ////stepcount = mct->GetMCTrackStepCount();
+  ////geo->AddTrack( 1, mct->GetPDGCode() );
+  ////TGeoTrack* e_track = geo->GetListOfTracks()->At(0);
+  ////for ( step = 0; step < stepcount; step++ ) {
+  ////  mcts = mct->GetMCTrackStep(step);
+  ////  e_track->AddPoint( mcts->GetEndpoint().x(), mcts->GetEndpoint().y(), mcts->GetEndpoint().z(), mcts->GetGlobalTime() );
+  ////}
+  ////e_track->SetName(parname);
+  ////e_track->SetLineColor(kRed);
+  ////e_track->SetLineWidth(2.0);
+  //
+  //// neutron
+  ////mct = mc->GetMCTrack(2);
+  ////parname = mct->GetParticleName();
+  ////stepcount = mct->GetMCTrackStepCount();
+  ////geo->AddTrack( 2, mct->GetPDGCode() );
+  ////TGeoTrack* n_track = geo->GetListOfTracks()->At(1);
+  ////for ( step = 0; step < stepcount; step++ ) {
+  ////  mcts = mct->GetMCTrackStep(step);
+  ////  n_track->AddPoint( mcts->GetEndpoint().x(), mcts->GetEndpoint().y(), mcts->GetEndpoint().z(), mcts->GetGlobalTime() );
+  ////}
+  ////n_track->SetName(parname);
+  ////n_track->SetLineColor(kBlue);
+  ////n_track->SetLineWidth(2.0);
+
+  // draw tracks and print summary
+  geo->DrawTracks("");
+  geo->GetListOfTracks()->Print();
+
+  } // end function drawTracks()
 
 //// all pau!   )
 }
