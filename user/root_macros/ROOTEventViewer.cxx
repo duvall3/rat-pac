@@ -13,6 +13,11 @@ void ROOTEventViewer( const char* FileName ) {
 // init
 TString filename = FileName;
 TFile* f = TFile::Open(filename);
+TObjString* dtr_path_tos = db->GetValue("DETECTOR[].experiment");
+TString dtr_path = dtr_path_tos->GetString();
+TString detector_name = dtr_path( dtr_path.Last('/')+1, dtr_path.Length() );
+detector_name.ReplaceAll("\"", "");
+detector_name.Prepend("DETECTOR: ");
 RAT::DSReader r(filename);
 gSystem->Load("libGeom");
 TGeoManager *geo = new TGeoManager(filename+"_GM", "TGeoManager for "+filename);
@@ -20,15 +25,22 @@ TGeoManager *geo = new TGeoManager(filename+"_GM", "TGeoManager for "+filename);
 TGeoMaterial *mat = new TGeoMaterial("vacuum", 0, 0, 0);
 TGeoMedium *med = new TGeoMedium("vacuum", 1, mat);
 // top volume
-//TGeoVolume* top = geo->MakeBox("Top", med, 2.1e3, 2.1e3, 2.1e3); //cm
 TGeoVolume* top = geo->MakeBox("Top", med, 1.e3, 1.e3, 1.e3); //cm
 geo->SetTopVolume(top);
 
-
-// load detector from db into TGeoManager
-/*
- * PENDING
- */ 
+//// load detector from db into TGeoManager
+//TIter i = db->begin();
+//for ( i = db->begin(); i != db->end(); ++i ) {
+//
+//  // declarations and first entry
+//  TPair* tp = *i;
+//  TObjString* key = tp->Key();
+//  TObjString* val = tp->Value();
+//  TString keystr = key->GetString(), valstr = val->GetString();
+//
+//  // test for position entry of target volume
+//
+//} //end db loop
 
 // placeholder box (e.g., cell array)
 TGeoVolume* cell_array = geo->MakeBox("CellArray", med, 22.4, 22.4, 40.2); //cm
@@ -38,8 +50,8 @@ geo->CloseGeometry();
 top->SetLineColor(kMagenta);
 geo->SetTopVisible(kTRUE); //debug
 cell_array->SetLineColor(kBlack);
-cell_array->SetLineWidth(2.0);
-TCanvas* can = new TCanvas("can", filename, 1000, 100, 850, 700);
+cell_array->SetLineWidth(0.5);
+TCanvas* can = new TCanvas("can", detector_name, 1000, 100, 850, 700);
 top->Draw();
 cell_array->Draw("SAME");
 TView* view = can->GetView();
