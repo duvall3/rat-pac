@@ -85,9 +85,58 @@ TGeoVolume* cell_array = geo->MakeBox("CellArray", med, ca_siz_x, ca_siz_y, ca_s
 //  TObjString* val = tp->Value();
 //  TString keystr = key->GetString(), valstr = val->GetString();
 //
-//  // test for position entry of target volume
+//  // get size values -- FOR NOW, ASSUME 0.5 x 0.5 x 40 cm^3
+//  Double_t target_cell_siz_x =  0.5; //cm
+//  Double_t target_cell_siz_y =  0.5; //cm
+//  Double_t target_cell_siz_z = 20.0; //cm
 //
-//} //end db loop
+//  // create target cell
+//  TGeoVolume* target_celll = geo->MakeBox("target cell", med, target_cell_siz_x, target_cell_siz_y, target_cell_siz_z );
+//
+////  // test for target cell
+////  TRegexp tr = "target_cell_[0-9].*";
+////  if ( keystr.Contains(tr) ) {
+////    // get cell row, col, lyr
+////    keystr.ReplaceAll("GEO[target_cell_", "");
+////    TString row_col_lyr = keystr.Remove(keystr.Index(']'));
+////  }
+//  
+//  // test for position entry of target volume
+//  TRegexp tr = "target_cell_[0-9].*position";
+//  if ( keystr.Contains(tr) ) {
+//    
+//    // get position values
+//    valstr.ReplaceAll("d", "");
+//    valstr.ReplaceAll("[", "");
+//    valstr.ReplaceAll(" ", "");
+//    valstr.Remove(valstr.Last(','));
+//    TObjArray* target_cell_pos = valstr.Tokenize(',');
+//    TObjString* target_cell_pos_obj_x = target_cell_pos->At(0);
+//    TObjString* target_cell_pos_obj_y = target_cell_pos->At(1);
+//    TObjString* target_cell_pos_obj_z = target_cell_pos->At(2);
+//    TString target_cell_pos_str_x = target_cell_pos_obj_x->GetString();
+//    TString target_cell_pos_str_y = target_cell_pos_obj_y->GetString();
+//    TString target_cell_pos_str_z = target_cell_pos_obj_z->GetString();
+//    Double_t target_cell_pos_x = target_cell_pos_str_x.Atof();
+//    Double_t target_cell_pos_y = target_cell_pos_str_y.Atof();
+//    Double_t target_cell_pos_z = target_cell_pos_str_z.Atof();
+//
+////    // get size values -- FOR NOW, ASSUME 0.5 x 0.5 x 40 cm^3
+////    Double_t target_cell_siz_x =  0.5; //cm
+////    Double_t target_cell_siz_y =  0.5; //cm
+////    Double_t target_cell_siz_z = 20.0; //cm
+//
+////    // create target cell
+////    TGeoVolume* target_cell;
+////    target_cell = geo->MakeBox("target cell", med, target_cell_siz_x, target_cell_siz_y, target_cell_siz_z );
+//
+//    // create target cell
+//    TGeoTranslation* trans = new TGeoTranslation(target_cell_pos_x, target_cell_pos_y, target_cell_pos_z);
+//    target_cell->AddNode(cell_array, 1, trans);
+//      
+//    } //end if -- target cell
+//
+//  } //end db loop
 
 // finish and draw
 geo->CloseGeometry();
