@@ -27,11 +27,7 @@ TGeoMedium *med = new TGeoMedium("vacuum", 1, mat);
 TGeoVolume* top = geo->MakeBox("Top", med, 1.e3, 1.e3, 1.e3); //cm
 geo->SetTopVolume(top);
 
-//// placeholder box (e.g., cell array)
-//TGeoVolume* cell_array = geo->MakeBox("CellArray", med, 22.4, 22.4, 40.2); //cm
-
 // target cell array
-TRegexp reg_cellarray = "target_cell_array";
 // obnoxious string manipulations to extract the database entries:
 // position
 TObjString* cellarray_pos_tos = db->GetValue("GEO[target_cell_array].position");
@@ -66,88 +62,111 @@ TObjString* ca_siz_obj_z = ca_siz_arr->At(2);
 TString ca_siz_str_x = ca_siz_obj_x->GetString();
 TString ca_siz_str_y = ca_siz_obj_y->GetString();
 TString ca_siz_str_z = ca_siz_obj_z->GetString();
-Double_t ca_siz_x = ca_siz_str_x.Atof();
-Double_t ca_siz_y = ca_siz_str_y.Atof();
-Double_t ca_siz_z = ca_siz_str_z.Atof();
+Double_t ca_siz_x = ca_siz_str_x.Atof()/10.; //cm
+Double_t ca_siz_y = ca_siz_str_y.Atof()/10.; //cm
+Double_t ca_siz_z = ca_siz_str_z.Atof()/10.; //cm
 //cout << cellarray_siz.Data() << endl; //debug
 //cout << ca_siz_x << "\t" << ca_siz_y << "\t" << ca_siz_z << endl;//debug
 
-// finally create cell_array TGeoVolume
+// finally create TGeoVolume cell_array
 TGeoVolume* cell_array = geo->MakeBox("CellArray", med, ca_siz_x, ca_siz_y, ca_siz_z);
 
-//// load detector from db into TGeoManager
-//TIter i = db->begin();
-//for ( i = db->begin(); i != db->end(); ++i ) {
-//
-//  // declarations and first entry
-//  TPair* tp = *i;
-//  TObjString* key = tp->Key();
-//  TObjString* val = tp->Value();
-//  TString keystr = key->GetString(), valstr = val->GetString();
-//
-//  // get size values -- FOR NOW, ASSUME 0.5 x 0.5 x 40 cm^3
-//  Double_t target_cell_siz_x =  0.5; //cm
-//  Double_t target_cell_siz_y =  0.5; //cm
-//  Double_t target_cell_siz_z = 20.0; //cm
-//
-//  // create target cell
-//  TGeoVolume* target_celll = geo->MakeBox("target cell", med, target_cell_siz_x, target_cell_siz_y, target_cell_siz_z );
-//
-////  // test for target cell
-////  TRegexp tr = "target_cell_[0-9].*";
-////  if ( keystr.Contains(tr) ) {
-////    // get cell row, col, lyr
-////    keystr.ReplaceAll("GEO[target_cell_", "");
-////    TString row_col_lyr = keystr.Remove(keystr.Index(']'));
-////  }
-//  
-//  // test for position entry of target volume
-//  TRegexp tr = "target_cell_[0-9].*position";
-//  if ( keystr.Contains(tr) ) {
-//    
-//    // get position values
-//    valstr.ReplaceAll("d", "");
-//    valstr.ReplaceAll("[", "");
-//    valstr.ReplaceAll(" ", "");
-//    valstr.Remove(valstr.Last(','));
-//    TObjArray* target_cell_pos = valstr.Tokenize(',');
-//    TObjString* target_cell_pos_obj_x = target_cell_pos->At(0);
-//    TObjString* target_cell_pos_obj_y = target_cell_pos->At(1);
-//    TObjString* target_cell_pos_obj_z = target_cell_pos->At(2);
-//    TString target_cell_pos_str_x = target_cell_pos_obj_x->GetString();
-//    TString target_cell_pos_str_y = target_cell_pos_obj_y->GetString();
-//    TString target_cell_pos_str_z = target_cell_pos_obj_z->GetString();
-//    Double_t target_cell_pos_x = target_cell_pos_str_x.Atof();
-//    Double_t target_cell_pos_y = target_cell_pos_str_y.Atof();
-//    Double_t target_cell_pos_z = target_cell_pos_str_z.Atof();
-//
-////    // get size values -- FOR NOW, ASSUME 0.5 x 0.5 x 40 cm^3
-////    Double_t target_cell_siz_x =  0.5; //cm
-////    Double_t target_cell_siz_y =  0.5; //cm
-////    Double_t target_cell_siz_z = 20.0; //cm
-//
-////    // create target cell
-////    TGeoVolume* target_cell;
-////    target_cell = geo->MakeBox("target cell", med, target_cell_siz_x, target_cell_siz_y, target_cell_siz_z );
-//
-//    // create target cell
-//    TGeoTranslation* trans = new TGeoTranslation(target_cell_pos_x, target_cell_pos_y, target_cell_pos_z);
-//    target_cell->AddNode(cell_array, 1, trans);
-//      
-//    } //end if -- target cell
-//
-//  } //end db loop
+// load detector from db into TGeoManager
+Int_t db_entry;
+TString rcl_str, row_col_lyr;
+TIter i = db->begin();
+for ( i = db->begin(); i != db->end(); ++i ) {
+//TIterator* i = db->MakeIterator();
+//for ( db_entry = 0; db_entry < db->GetEntries(); db_entry++ ) {
+
+  // declarations and first entry
+  TPair* tp = *i;
+//TPair* tp = (TPair*)i->Next();
+  TObjString* key = (TObjString*)tp->Key();
+  TObjString* val = (TObjString*)tp->Value();
+  TString keystr = (TString)key->GetString();
+  TString valstr = (TString)val->GetString();
+  TString row_col_lyr = keystr.Copy();
+  TString target_cell_pos_str_x = "";
+  TString target_cell_pos_str_y = "";
+  TString target_cell_pos_str_z = "";
+  Double_t target_cell_pos_x, target_cell_pos_y, target_cell_pos_z;
+//tp->Print(); //debug
+//cout << keystr->Data() << "\t" << valstr->Data() << endl; //debug
+
+  // get size values -- FOR NOW, ASSUME 0.5 x 0.5 x 40 cm^3
+  Double_t target_cell_siz_x =  0.5; //cm
+  Double_t target_cell_siz_y =  0.5; //cm
+  Double_t target_cell_siz_z = 20.0; //cm
+
+  // create model target cell
+  TGeoVolume* target_cell = geo->MakeBox("target cell", med, target_cell_siz_x, target_cell_siz_y, target_cell_siz_z );
+
+  // test for target cell
+  TRegexp tc = "target_cell_[0-9].*position";
+  if ( keystr.Contains(tc) ) {
+    // get cell row, col, lyr
+    row_col_lyr.ReplaceAll("GEO[target_cell_", "");
+    row_col_lyr.Remove(row_col_lyr.Index(']'));
+//  cout << row_col_lyr.Data() << "\t"; //debug
+  } //end if -- rcl
+
+    // test for position entry of target volume
+    TRegexp tr = "target_cell_[0-9].*position";
+    if ( keystr.Contains(tr) ) {
+
+//  cout << row_col_lyr.Data() << "\t" << valstr.Data() << endl; //debug
+
+    // get position values
+    valstr.ReplaceAll("d", "");
+    valstr.ReplaceAll("[", "");
+    valstr.ReplaceAll(" ", "");
+    valstr.Remove(valstr.Last(','));
+//  cout << keystr.Data() << "\t" << valstr.Data() << endl; //debug
+    TObjArray* target_cell_pos = valstr.Tokenize(',');
+    TObjString* target_cell_pos_obj_x = target_cell_pos->At(0);
+    TObjString* target_cell_pos_obj_y = target_cell_pos->At(1);
+    TObjString* target_cell_pos_obj_z = target_cell_pos->At(2);
+    target_cell_pos_str_x = target_cell_pos_obj_x->GetString();
+    target_cell_pos_str_y = target_cell_pos_obj_y->GetString();
+    target_cell_pos_str_z = target_cell_pos_obj_z->GetString();
+    target_cell_pos_x = target_cell_pos_str_x.Atof()/10.; //cm
+    target_cell_pos_y = target_cell_pos_str_y.Atof()/10.; //cm
+    target_cell_pos_z = target_cell_pos_str_z.Atof()/10.; //cm
+//  cout << target_cell_pos_x << "\t" << target_cell_pos_y << "\t" << target_cell_pos_z << endl; //debug
+
+    // get size values -- FOR NOW, ASSUME 0.5 x 0.5 x 40 cm^3
+    Double_t target_cell_siz_x =  0.5; //cm
+    Double_t target_cell_siz_y =  0.5; //cm
+    Double_t target_cell_siz_z = 20.0; //cm
+
+////  // create target cell
+////  TGeoVolume* target_cell;
+////  target_cell = geo->MakeBox("target cell", med, target_cell_siz_x, target_cell_siz_y, target_cell_siz_z );
+
+  // create target cell
+  TGeoTranslation* trans = new TGeoTranslation(target_cell_pos_x, target_cell_pos_y, target_cell_pos_z);
+  cell_array->AddNode(target_cell, 1, trans);
+      
+  } //end if -- target cell
+
+} //end db loop
+
+cout << endl;
 
 // finish and draw
 geo->CloseGeometry();
 top->SetLineColor(kMagenta);
 geo->SetTopVisible(kTRUE);
-cell_array->SetLineColor(kBlack);
+cell_array->SetLineColor(kGray);
 cell_array->SetLineWidth(0.5);
+target_cell->SetLineColor(kBlack);
+target_cell->SetLineWidth(2.0);
 TString can_name = detector_name+", \""+filename+"\"";
 TCanvas* can = new TCanvas("can", can_name, 1000, 100, 850, 700);
 top->Draw();
 cell_array->Draw("SAME");
+//target_cell->Draw("SAME");
 TView* view = can->GetView();
 // annotations
 TLegend *gleg = new TLegend(0.01, 0.01, 0.3, 0.15);
