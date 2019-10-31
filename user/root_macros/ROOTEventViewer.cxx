@@ -175,17 +175,16 @@ geo->SetTopVisible(kTRUE);
 cell_array->SetLineColor(kGray);
 cell_array->SetLineWidth(0.5);
 target_cell->SetLineColor(kBlack);
-target_cell->SetLineWidth(2.0);
+target_cell->SetLineWidth(1.0);
 TString can_name = detector_name+", \""+filename+"\"";
 TCanvas* can = new TCanvas("can", can_name, 1000, 100, 850, 700);
 top->Draw();
 cell_array->Draw("SAME");
-//target_cell->Draw("SAME");
 TView* view = can->GetView();
 // annotations
-TLegend *gleg = new TLegend(0.01, 0.01, 0.3, 0.15);
+TLegend *gleg = new TLegend(0.01, 0.01, 0.25, 0.15);
 gleg->SetName("Geometry Legend");
-gleg->AddEntry(cell_array, "Target Cell Array", "lf");
+gleg->AddEntry(target_cell, "Target Cells", "lf");
 gleg->AddEntry(top, "Cave Walls", "lf");
 gleg->Draw();
 
@@ -248,15 +247,15 @@ int drawTracks( Int_t event, Bool_t ibd_tf = kTRUE ) {
   } //end if -- IBD
 
   // draw tracks and print summary
-  geo->DrawTracks("");
-  Printf( "\nIBD Track Summary for Event %i:\n", event);
+  geo->DrawTracks();
+  Printf( "\nTrack Summary for Event %i:\n", event);
   geo->GetListOfTracks()->Print();
 
   // create legend if needed 
   TList* can_list = can->GetListOfPrimitives();
   TLegend* tleg = can_list->FindObject("Track Legend");
   if ( tleg == 0x0 ) {
-    TLegend* tleg = new TLegend(0.80, 0.01, 0.99, 0.15);
+    TLegend* tleg = new TLegend(0.75, 0.01, 0.99, 0.15);
     tleg->SetName("Track Legend");
     tleg->AddEntry(e_track, e_track->GetName());
     if ( ibd_tf == kTRUE ) tleg->AddEntry(n_track, n_track->GetName());
