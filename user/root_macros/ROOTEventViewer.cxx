@@ -1,4 +1,18 @@
 // ROOTEventViewer -- for viewing RAT-PAC geometry + particle tracks
+// -- usage: "ROOTEventViewer( <RAT-PAC rootfile> )" to draw detector;
+//      "drawTracks( <event number>, [IBD_TF] )" to draw tracks for a given event
+// -- "IBD_TF" should be kTRUE for runs using the RAT-PAC IBD generator builtin
+//      and kFALSE otherwise
+// -- "IBD_TF" is kTRUE by default; this can be changed in the function
+//      definition for "drawTracks()"
+// -- Example ~ Scan through IBD events:
+//      root] .L ROOTEventViewer.cxx
+//      root] ROOTEventViewer( "some_IBD_run.root" );
+//      root] Int_t event = 0;
+//      root] drawTracks(event); event++;
+//      root] drawTracks(event); event++;
+//      root] drawTracks(event); event++;
+//    etc.
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2019 ~ //
 
 
@@ -183,7 +197,7 @@ gleg->Draw();
 // ASSUME IBD -- i.e., 2 primary tracks per event (e+, n0)
 
 // define function to draw e+ and n0 tracks for a given top-level MC event
-int drawTracks( Int_t event ) {
+int drawTracks( Int_t event, Bool_t ibd_tf = kTRUE ) {
 
   // init
   Int_t step, stepcount;
@@ -197,7 +211,7 @@ int drawTracks( Int_t event ) {
   TGeoManager* geo = gGeoManager;
   geo->ClearTracks();
 
-  // positron
+  // positron if IBD (otherwise, single primary particle)
   n = c.GoChild(0);
   parname = n->GetParticleName();
   stepcount = c.StepCount();
@@ -211,22 +225,27 @@ int drawTracks( Int_t event ) {
   e_track->SetLineColor(kRed);
   e_track->SetLineWidth(2.0);
 
-  // back to top-level event
-  c.GoParent();
+  // for IBD, now process neutron
 
-  // neutron
-  n = c.GoChild(1);
-  parname = n->GetParticleName();
-  stepcount = c.StepCount();
-  geo->AddTrack( 2, n->GetPDGCode() );
-  TGeoTrack* n_track = geo->GetListOfTracks()->At(1);
-  for ( step = 0; step < stepcount; step++ ) {
-    n = c.GoStep(step);
-    n_track->AddPoint( n->GetEndpoint().x()/10., n->GetEndpoint().y()/10., n->GetEndpoint().z()/10., n->GetGlobalTime() ); //cm
-  }
-  n_track->SetName(parname);
-  n_track->SetLineColor(kBlue);
-  n_track->SetLineWidth(2.0);
+  if ( ibd_tf == kTRUE ) {
+
+    // back to top-level event
+    c.GoParent();
+
+    // neutron
+    n = c.GoChild(1);
+    parname = n->GetParticleName();
+    stepcount = c.StepCount();
+    geo->AddTrack( 2, n->GetPDGCode() );
+    TGeoTrack* n_track = geo->GetListOfTracks()->At(1);
+    for ( step = 0; step < stepcount; step++ ) {
+      n = c.GoStep(step);
+      n_track->AddPoint( n->GetEndpoint().x()/10., n->GetEndpoint().y()/10., n->GetEndpoint().z()/10., n->GetGlobalTime() ); //cm
+    }
+    n_track->SetName(parname);
+    n_track->SetLineColor(kBlue);
+    n_track->SetLineWidth(2.0);
+  } //end if -- IBD
 
   // draw tracks and print summary
   geo->DrawTracks("");
@@ -240,10 +259,8 @@ int drawTracks( Int_t event ) {
     TLegend* tleg = new TLegend(0.80, 0.01, 0.99, 0.15);
     tleg->SetName("Track Legend");
     tleg->AddEntry(e_track, e_track->GetName());
-    tleg->AddEntry(n_track, n_track->GetName());
+    if ( ibd_tf == kTRUE ) tleg->AddEntry(n_track, n_track->GetName());
     tleg->Draw();
-  } else {
-    // nothing needed
   }
 
   // update event label
