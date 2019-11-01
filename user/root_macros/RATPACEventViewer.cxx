@@ -1,23 +1,45 @@
-// ROOTEventViewer -- for viewing RAT-PAC geometry + particle tracks
-// -- usage: "ROOTEventViewer( <RAT-PAC rootfile> )" to draw detector;
-//      "drawTracks( <event number>, [IBD_TF] )" to draw tracks for a given event
+// RATPACEventViewer -- for viewing RAT-PAC detector geometry and particle tracks in ROOT
+//
+// -- usage: "RATPACEventViewer( <RAT-PAC rootfile> )" to draw detector;
+//      then "drawTracks( <event number>, [IBD_TF] )" to draw tracks for a given event
+//
 // -- "IBD_TF" should be kTRUE for runs using the RAT-PAC IBD generator builtin
 //      and kFALSE otherwise
-// -- "IBD_TF" is kTRUE by default; this can be changed in the function
-//      definition for "drawTracks()"
+//      -- note: in standard ROOT, kTRUE == true == 1 and KFALSE == false == 0
+//
+// -- NOTE: Primarily written for IBD events, but should work just fine for anything
+//      with either one particle per top-level MC event (use IBD_TF = kFALSE)
+//      or two (use IBD_TF = kTRUE or simply omit IBD_TF argument)
+//
+// -- "IBD_TF" is kTRUE by default; this default can be changed in the function
+//      definition for "drawTracks()" if desired
+//
 // -- Example ~ Scan through IBD events:
-//      root] .L ROOTEventViewer.cxx
-//      root] ROOTEventViewer( "some_IBD_run.root" );
+//      root] .L RATPACEventViewer.cxx
+//      root] RATPACEventViewer( "some_IBD_run.root" );
 //      root] Int_t event = 0;
 //      root] drawTracks(event); event++;
 //      root] drawTracks(event); event++;
 //      root] drawTracks(event); event++;
 //    etc.
+//
+// -- As of this version, the following items are still hard-coded
+//      (i.e., auto-detection from the RATDB in the .root file is
+//      still under development):
+//      - name of top / world volume
+//      - shape of top / world volume
+//      - dimensions of top / world volume
+//      - name of target cells
+//      - shape of target cells
+//      - dimensions of target cells
+//    -- these hard-coded items are tagged in the code below with //HC//
+//
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2019 ~ //
+// ~ RATPACEventviewer v0.9.3 ~ //
 
 
 
-void ROOTEventViewer( const char* FileName ) {
+void RATPACEventViewer( const char* FileName ) {
 
 
 
@@ -34,15 +56,15 @@ detector_name.ReplaceAll("\"", "");
 RAT::DSReader r(filename);
 gSystem->Load("libGeom");
 TGeoManager *geo = new TGeoManager(filename+"_GM", "TGeoManager for "+filename);
-// placeholder material / medium
+// placeholder material / medium -- meaningless if only used for drawing events
 TGeoMaterial *mat = new TGeoMaterial("vacuum", 0, 0, 0);
 TGeoMedium *med = new TGeoMedium("vacuum", 1, mat);
-// top volume
+// top volume //HC//
 TGeoVolume* top = geo->MakeBox("Top", med, 1.e3, 1.e3, 1.e3); //cm
 geo->SetTopVolume(top);
 
 // target cell array
-// obnoxious string manipulations to extract the database entries:
+// Note: extracting the database entries involves extensive class and string manipulations
 // position
 TObjString* cellarray_pos_tos = db->GetValue("GEO[target_cell_array].position");
 TString cellarray_pos = cellarray_pos_tos->GetString();
@@ -57,9 +79,9 @@ TObjString* ca_pos_obj_z = ca_pos_arr->At(2);
 TString ca_pos_str_x = ca_pos_obj_x->GetString();
 TString ca_pos_str_y = ca_pos_obj_y->GetString();
 TString ca_pos_str_z = ca_pos_obj_z->GetString();
-Double_t ca_pos_x = ca_pos_str_x.Atof();
-Double_t ca_pos_y = ca_pos_str_y.Atof();
-Double_t ca_pos_z = ca_pos_str_z.Atof();
+Double_t ca_pos_x = ca_pos_str_x.Atof()/10.; //cm
+Double_t ca_pos_y = ca_pos_str_y.Atof()/10.; //cm
+Double_t ca_pos_z = ca_pos_str_z.Atof()/10.; //cm
 //cout << cellarray_pos.Data() << endl; //debug
 //cout << ca_pos_x << "\t" << ca_pos_y << "\t" << ca_pos_z << endl;//debug
 // size
@@ -90,12 +112,9 @@ Int_t db_entry;
 TString rcl_str, row_col_lyr;
 TIter i = db->begin();
 for ( i = db->begin(); i != db->end(); ++i ) {
-//TIterator* i = db->MakeIterator();
-//for ( db_entry = 0; db_entry < db->GetEntries(); db_entry++ ) {
 
   // declarations and first entry
   TPair* tp = *i;
-//TPair* tp = (TPair*)i->Next();
   TObjString* key = (TObjString*)tp->Key();
   TObjString* val = (TObjString*)tp->Value();
   TString keystr = (TString)key->GetString();
@@ -108,7 +127,7 @@ for ( i = db->begin(); i != db->end(); ++i ) {
 //tp->Print(); //debug
 //cout << keystr->Data() << "\t" << valstr->Data() << endl; //debug
 
-  // get size values -- FOR NOW, ASSUME 0.5 x 0.5 x 40 cm^3
+  // get size values //HC//
   Double_t target_cell_siz_x =  0.5; //cm
   Double_t target_cell_siz_y =  0.5; //cm
   Double_t target_cell_siz_z = 20.0; //cm
@@ -117,7 +136,7 @@ for ( i = db->begin(); i != db->end(); ++i ) {
   TGeoVolume* target_cell = geo->MakeBox("target cell", med, target_cell_siz_x, target_cell_siz_y, target_cell_siz_z );
 
   // test for target cell
-  TRegexp tc = "target_cell_[0-9].*position";
+  TRegexp tc = "target_cell_[0-9].*position"; //HC//
   if ( keystr.Contains(tc) ) {
     // get cell row, col, lyr
     row_col_lyr.ReplaceAll("GEO[target_cell_", "");
@@ -126,7 +145,7 @@ for ( i = db->begin(); i != db->end(); ++i ) {
   } //end if -- rcl
 
     // test for position entry of target volume
-    TRegexp tr = "target_cell_[0-9].*position";
+    TRegexp tr = "target_cell_[0-9].*position"; //HC//
     if ( keystr.Contains(tr) ) {
 
 //  cout << row_col_lyr.Data() << "\t" << valstr.Data() << endl; //debug
@@ -149,18 +168,14 @@ for ( i = db->begin(); i != db->end(); ++i ) {
     target_cell_pos_z = target_cell_pos_str_z.Atof()/10.; //cm
 //  cout << target_cell_pos_x << "\t" << target_cell_pos_y << "\t" << target_cell_pos_z << endl; //debug
 
-    // get size values -- FOR NOW, ASSUME 0.5 x 0.5 x 40 cm^3
+    // get size values //HC//
     Double_t target_cell_siz_x =  0.5; //cm
     Double_t target_cell_siz_y =  0.5; //cm
     Double_t target_cell_siz_z = 20.0; //cm
 
-////  // create target cell
-////  TGeoVolume* target_cell;
-////  target_cell = geo->MakeBox("target cell", med, target_cell_siz_x, target_cell_siz_y, target_cell_siz_z );
-
-  // create target cell
-  TGeoTranslation* trans = new TGeoTranslation(target_cell_pos_x, target_cell_pos_y, target_cell_pos_z);
-  cell_array->AddNode(target_cell, 1, trans);
+    // create target cell
+    TGeoTranslation* trans = new TGeoTranslation(target_cell_pos_x, target_cell_pos_y, target_cell_pos_z);
+    cell_array->AddNode(target_cell, 1, trans);
       
   } //end if -- target cell
 
@@ -180,7 +195,7 @@ TString can_name = detector_name+", \""+filename+"\"";
 TCanvas* can = new TCanvas("can", can_name, 1000, 100, 850, 700);
 top->Draw();
 cell_array->Draw("SAME");
-TView* view = can->GetView();
+//TView* view = can->GetView();
 // annotations
 TLegend *gleg = new TLegend(0.01, 0.01, 0.25, 0.15);
 gleg->SetName("Geometry Legend");
@@ -196,7 +211,7 @@ gleg->Draw();
 // ASSUME IBD -- i.e., 2 primary tracks per event (e+, n0)
 
 // define function to draw e+ and n0 tracks for a given top-level MC event
-int drawTracks( Int_t event, Bool_t ibd_tf = kTRUE ) {
+int drawTracks( Int_t event = 0, Bool_t ibd_tf = kTRUE ) {
 
   // init
   Int_t step, stepcount;
@@ -210,7 +225,7 @@ int drawTracks( Int_t event, Bool_t ibd_tf = kTRUE ) {
   TGeoManager* geo = gGeoManager;
   geo->ClearTracks();
 
-  // positron if IBD (otherwise, single primary particle)
+  // positron (if IBD; otherwise, single primary particle)
   n = c.GoChild(0);
   parname = n->GetParticleName();
   stepcount = c.StepCount();
@@ -228,7 +243,7 @@ int drawTracks( Int_t event, Bool_t ibd_tf = kTRUE ) {
 
   if ( ibd_tf == kTRUE ) {
 
-    // back to top-level event
+    // back to top-level MC event
     c.GoParent();
 
     // neutron
@@ -244,7 +259,7 @@ int drawTracks( Int_t event, Bool_t ibd_tf = kTRUE ) {
     n_track->SetName(parname);
     n_track->SetLineColor(kBlue);
     n_track->SetLineWidth(2.0);
-  } //end if -- IBD
+  } //end if -- IBD_TF
 
   // draw tracks and print summary
   geo->DrawTracks();
@@ -275,7 +290,7 @@ int drawTracks( Int_t event, Bool_t ibd_tf = kTRUE ) {
   label->AddText(evname);
   label->Draw();
 
-  // return event number for later use (i.e., plotNextEvent or similar)
+  // return event number for possible additional use
   return event;
   cout << endl;
   } // end function drawTracks()
