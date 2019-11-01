@@ -6,7 +6,7 @@
 
 ## usage
 if [ $# -lt 2 ]; then
-  echo -e "USAGE: process_ibd_run <DATARUN_NAME> <NUM_EVENTS>\n"
+  echo -e "USAGE: process_ibd_run <DATARUN_NAME> <NUM_EVENTS>\n" && exit 10
 fi
 
 FILENAME=$1
