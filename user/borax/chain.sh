@@ -4,7 +4,7 @@
 
 
 # Usage:
-# 1) Run this script.
+# 1) Run this script in the umbrella directory of your datarun
 # 2) Open ROOT and run the following commands:
 # 3) TChain ch("T");
 # 5) .x chain.cxx
