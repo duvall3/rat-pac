@@ -293,7 +293,45 @@ int drawTracks( Int_t event = 0, Bool_t ibd_tf = kTRUE ) {
   // return event number for possible additional use
   return event;
   cout << endl;
-  } // end function drawTracks()
+} // end function drawTracks()
+
+
+// attempt at prev/next buttons
+
+// control bar:
+TControlBar* bar = new TControlBar( "horizontal", "Event Selector", 20, 20 );
+bar->AddButton("Prev", "drawPrevEvent()", "Go back one event");
+bar->AddButton("Next", "drawNextEvent()", "Go forward one event");
+bar->Show();
+
+// button functions:
+
+// drawPrevEvent
+void drawPrevEvent() {
+  TCanvas* c = gPad->GetCanvas();
+  TPaveText* lab = c->GetListOfPrimitives()->FindObject("Event Label");
+  TString evname = lab->GetLine(0)->GetTitle();
+  TRegexp tr = "[0-9]";
+  evname.Remove( 0, evname.Index(tr) );
+  Int_t ev = evname.Atoi();
+  ev--;
+  drawTracks(ev); //FIXME need to retrieve and include IBD_TF
+}
+
+// drawNextEvent
+void drawNextEvent() {
+  TCanvas* c = gPad->GetCanvas();
+  TPaveText* lab = c->GetListOfPrimitives()->FindObject("Event Label");
+  TString evname = lab->GetLine(0)->GetTitle();
+  TRegexp tr = "[0-9]";
+  evname.Remove( 0, evname.Index(tr) );
+  Int_t ev = evname.Atoi();
+  ev++;
+  drawTracks(ev); //FIXME need to retrieve and include IBD_TF
+  return ev;
+}
+
+
 
 //// all pau!   )
 }
