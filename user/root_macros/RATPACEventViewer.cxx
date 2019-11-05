@@ -49,6 +49,9 @@ void RATPACEventViewer( const char* FileName ) {
 // init
 TString filename = FileName;
 TFile* f = TFile::Open(filename);
+TKey* db_key = f->FindKey("db");
+TMap* db = new TMap;
+db_key->Read(db);
 TObjString* dtr_path_tos = db->GetValue("DETECTOR[].experiment");
 TString dtr_path = dtr_path_tos->GetString();
 TString detector_name = dtr_path( dtr_path.Last('/')+1, dtr_path.Length() );
@@ -214,6 +217,9 @@ gleg->Draw();
 int drawTracks( Int_t event = 0, Bool_t ibd_tf = kTRUE ) {
 
   // init
+//TTree* tree = gDirectory->GetList()->FindObject("T");
+//Int_t last_event = tree->GetEntries();
+//if ( event >= last_event )  { return -1 } };
   Int_t step, stepcount;
   TString filename = gDirectory->GetFile()->GetName();
   TString parname;
@@ -296,13 +302,13 @@ int drawTracks( Int_t event = 0, Bool_t ibd_tf = kTRUE ) {
 } // end function drawTracks()
 
 
-// attempt at prev/next buttons
-
-// control bar:
-TControlBar* bar = new TControlBar( "horizontal", "Event Selector", 20, 20 );
-bar->AddButton("Prev", "drawPrevEvent()", "Go back one event");
-bar->AddButton("Next", "drawNextEvent()", "Go forward one event");
-bar->Show();
+//// attempt at prev/next buttons
+//
+//// control bar:
+//TControlBar* bar = new TControlBar( "horizontal", "Event Selector", 20, 20 );
+//bar->AddButton("Prev", "drawPrevEvent()", "Go back one event");
+//bar->AddButton("Next", "drawNextEvent()", "Go forward one event");
+//bar->Show();
 
 // button functions:
 
@@ -328,10 +334,9 @@ void drawNextEvent() {
   Int_t ev = evname.Atoi();
   ev++;
   drawTracks(ev); //FIXME need to retrieve and include IBD_TF
-  return ev;
 }
 
 
 
-//// all pau!   )
+// all pau!   )
 }
