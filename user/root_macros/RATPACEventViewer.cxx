@@ -52,7 +52,7 @@ TFile* f = TFile::Open(filename);
 TKey* db_key = f->FindKey("db");
 TMap* db = new TMap;
 db_key->Read(db);
-TObjString* dtr_path_tos = db->GetValue("DETECTOR[].experiment");
+TObjString* dtr_path_tos = (TObjString*)db->GetValue("DETECTOR[].experiment");
 TString dtr_path = dtr_path_tos->GetString();
 TString detector_name = dtr_path( dtr_path.Last('/')+1, dtr_path.Length() );
 detector_name.ReplaceAll("\"", "");
