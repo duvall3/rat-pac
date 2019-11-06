@@ -217,9 +217,14 @@ gleg->Draw();
 int drawTracks( Int_t event = 0, Bool_t ibd_tf = kTRUE ) {
 
   // init
-//TTree* tree = gDirectory->GetList()->FindObject("T");
-//Int_t last_event = tree->GetEntries();
-//if ( event >= last_event )  { return -1 } };
+  TKey* key_T = gDirectory->FindKey("T");
+  TTree* tree = new TTree;
+  key_T->Read(tree);
+  Int_t last_event = tree->GetEntries()-1;
+  if ( event < 0 || event > last_event ) {
+    cerr << "Error: No such event (requested event: " << event << "). Final event: " << last_event << "." << endl;
+    return -1;
+  }
   Int_t step, stepcount;
   TString filename = gDirectory->GetFile()->GetName();
   TString parname;
@@ -316,6 +321,10 @@ int drawTracks( Int_t event = 0, Bool_t ibd_tf = kTRUE ) {
 void drawPrevEvent() {
   TCanvas* c = gPad->GetCanvas();
   TPaveText* lab = c->GetListOfPrimitives()->FindObject("Event Label");
+  if ( lab == 0x0 )  {
+    cerr << "Error: No event drawn yet; use drawTracks(<EVENT>, [IBD_TF])." << endl;
+    return;
+  }
   TString evname = lab->GetLine(0)->GetTitle();
   TRegexp tr = "[0-9]";
   evname.Remove( 0, evname.Index(tr) );
@@ -328,6 +337,10 @@ void drawPrevEvent() {
 void drawNextEvent() {
   TCanvas* c = gPad->GetCanvas();
   TPaveText* lab = c->GetListOfPrimitives()->FindObject("Event Label");
+  if ( lab == 0x0 )  {
+    cerr << "Error: No event drawn yet; use drawTracks(<EVENT>, [IBD_TF])." << endl;
+    return;
+  }
   TString evname = lab->GetLine(0)->GetTitle();
   TRegexp tr = "[0-9]";
   evname.Remove( 0, evname.Index(tr) );
