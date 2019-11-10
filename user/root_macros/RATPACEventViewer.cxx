@@ -77,7 +77,7 @@ cellarray_pos.ReplaceAll(" ", "");
 cellarray_pos.Remove(cellarray_pos.Last(','));
 TObjArray* ca_pos_arr = cellarray_pos.Tokenize(',');
 TObjString* ca_pos_obj_x = (TObjString*)ca_pos_arr->At(0);
-TObjString* ca_pos_obj_y = (TObjString*)ba_pos_arr->At(1);
+TObjString* ca_pos_obj_y = (TObjString*)ca_pos_arr->At(1);
 TObjString* ca_pos_obj_z = (TObjString*)ca_pos_arr->At(2);
 TString ca_pos_str_x = ca_pos_obj_x->GetString();
 TString ca_pos_str_y = ca_pos_obj_y->GetString();
