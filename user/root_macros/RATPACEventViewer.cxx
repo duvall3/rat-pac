@@ -69,16 +69,16 @@ geo->SetTopVolume(top);
 // target cell array
 // Note: extracting the database entries involves extensive class and string manipulations
 // position
-TObjString* cellarray_pos_tos = db->GetValue("GEO[target_cell_array].position");
+TObjString* cellarray_pos_tos = (TObjString*)db->GetValue("GEO[target_cell_array].position");
 TString cellarray_pos = cellarray_pos_tos->GetString();
 cellarray_pos.ReplaceAll("d", "");
 cellarray_pos.ReplaceAll("[", "");
 cellarray_pos.ReplaceAll(" ", "");
 cellarray_pos.Remove(cellarray_pos.Last(','));
 TObjArray* ca_pos_arr = cellarray_pos.Tokenize(',');
-TObjString* ca_pos_obj_x = ca_pos_arr->At(0);
-TObjString* ca_pos_obj_y = ca_pos_arr->At(1);
-TObjString* ca_pos_obj_z = ca_pos_arr->At(2);
+TObjString* ca_pos_obj_x = (TObjString*)ca_pos_arr->At(0);
+TObjString* ca_pos_obj_y = (TObjString*)ba_pos_arr->At(1);
+TObjString* ca_pos_obj_z = (TObjString*)ca_pos_arr->At(2);
 TString ca_pos_str_x = ca_pos_obj_x->GetString();
 TString ca_pos_str_y = ca_pos_obj_y->GetString();
 TString ca_pos_str_z = ca_pos_obj_z->GetString();
@@ -88,16 +88,16 @@ Double_t ca_pos_z = ca_pos_str_z.Atof()/10.; //cm
 //cout << cellarray_pos.Data() << endl; //debug
 //cout << ca_pos_x << "\t" << ca_pos_y << "\t" << ca_pos_z << endl;//debug
 // size
-TObjString* cellarray_siz_tos = db->GetValue("GEO[target_cell_array].size");
+TObjString* cellarray_siz_tos = (TObjString*)db->GetValue("GEO[target_cell_array].size");
 TString cellarray_siz = cellarray_siz_tos->GetString();
 cellarray_siz.ReplaceAll("d", "");
 cellarray_siz.ReplaceAll("[", "");
 cellarray_siz.ReplaceAll(" ", "");
 cellarray_siz.Remove(cellarray_siz.Last(','));
 TObjArray* ca_siz_arr = cellarray_siz.Tokenize(',');
-TObjString* ca_siz_obj_x = ca_siz_arr->At(0);
-TObjString* ca_siz_obj_y = ca_siz_arr->At(1);
-TObjString* ca_siz_obj_z = ca_siz_arr->At(2);
+TObjString* ca_siz_obj_x = (TObjString*)ca_siz_arr->At(0);
+TObjString* ca_siz_obj_y = (TObjString*)ca_siz_arr->At(1);
+TObjString* ca_siz_obj_z = (TObjString*)ca_siz_arr->At(2);
 TString ca_siz_str_x = ca_siz_obj_x->GetString();
 TString ca_siz_str_y = ca_siz_obj_y->GetString();
 TString ca_siz_str_z = ca_siz_obj_z->GetString();
@@ -160,9 +160,9 @@ for ( i = db->begin(); i != db->end(); ++i ) {
     valstr.Remove(valstr.Last(','));
 //  cout << keystr.Data() << "\t" << valstr.Data() << endl; //debug
     TObjArray* target_cell_pos = valstr.Tokenize(',');
-    TObjString* target_cell_pos_obj_x = target_cell_pos->At(0);
-    TObjString* target_cell_pos_obj_y = target_cell_pos->At(1);
-    TObjString* target_cell_pos_obj_z = target_cell_pos->At(2);
+    TObjString* target_cell_pos_obj_x = (TObjString*)target_cell_pos->At(0);
+    TObjString* target_cell_pos_obj_y = (TObjString*)target_cell_pos->At(1);
+    TObjString* target_cell_pos_obj_z = (TObjString*)target_cell_pos->At(2);
     target_cell_pos_str_x = target_cell_pos_obj_x->GetString();
     target_cell_pos_str_y = target_cell_pos_obj_y->GetString();
     target_cell_pos_str_z = target_cell_pos_obj_z->GetString();
