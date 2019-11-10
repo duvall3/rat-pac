@@ -137,7 +137,9 @@ for ( i = db->begin(); i != db->end(); ++i ) {
 
   // create model target cell
   TGeoVolume* target_cell = geo->MakeBox("target cell", med, target_cell_siz_x, target_cell_siz_y, target_cell_siz_z );
-  target_cell->Print(); //debug
+  target_cell->SetLineColor(kBlack);
+  target_cell->SetLineWidth(1.0);
+//target_cell->Print(); //debug
 
   // test for target cell
   TRegexp tc = "target_cell_[0-9].*position"; //HC//
@@ -180,6 +182,8 @@ for ( i = db->begin(); i != db->end(); ++i ) {
     // create target cell
     TGeoTranslation* trans = new TGeoTranslation(target_cell_pos_x, target_cell_pos_y, target_cell_pos_z);
     cell_array->AddNode(target_cell, 1, trans);
+//  target_cell->SetLineColor(kBlack);
+//  target_cell->SetLineWidth(1.0);
       
   } //end if -- target cell
 
@@ -193,8 +197,6 @@ top->SetLineColor(kMagenta);
 geo->SetTopVisible(kTRUE);
 cell_array->SetLineColor(kGray);
 cell_array->SetLineWidth(1);
-target_cell->SetLineColor(kBlack);
-target_cell->SetLineWidth(1.0);
 TString can_name = detector_name+", \""+filename+"\"";
 TCanvas* can = new TCanvas("can", can_name, 1000, 100, 850, 700);
 top->Draw();
@@ -203,7 +205,7 @@ cell_array->Draw("SAME");
 // annotations
 TLegend *gleg = new TLegend(0.01, 0.01, 0.25, 0.15);
 gleg->SetName("Geometry Legend");
-gleg->AddEntry(target_cell, "Target Cells", "lf");
+//gleg->AddEntry(target_cell, "Target Cells", "lf");
 gleg->AddEntry(top, "Cave Walls", "lf");
 gleg->Draw();
 
