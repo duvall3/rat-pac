@@ -226,7 +226,7 @@ cell_array->Draw("SAME");
 // annotations
 TLegend *gleg = new TLegend(0.01, 0.01, 0.25, 0.15);
 gleg->SetName("Geometry Legend");
-gleg->AddEntry(target_cell, "Target Cells", "lf");
+//gleg->AddEntry(target_cell, "Target Cells", "lf");
 gleg->AddEntry(top, "Cave Walls", "lf");
 gleg->Draw();
 
