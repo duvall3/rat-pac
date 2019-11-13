@@ -112,9 +112,9 @@ TGeoVolume* cell_array = geo->MakeBox("CellArray", med, ca_siz_x, ca_siz_y, ca_s
 
 // load detector from db into TGeoManager
 Int_t db_entry;
-TString rcl_str, row_col_lyr;
+TString rcl_str;
 TIter i = db->begin();
-for ( i = db->begin(); i != db->end(); ++i ) {
+//for ( i = db->begin(); i != db->end(); ++i ) {
 
   // declarations and first entry
   TPair* tp = (TPair*)*i;
@@ -208,7 +208,7 @@ for ( i = db->begin(); i != db->end(); ++i ) {
       
   } //end if -- target cell
 
-} //end db loop
+//} //end db loop
 
 cout << endl;
 
