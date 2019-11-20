@@ -4,6 +4,8 @@
 #      which is expected to contain a base geometry file (i.e., without cell array)
 #      called "foo-experiment_base.geo"
 # -- for an example, see https://github.com/duvall3/rat-pac/blob/comparison/data/general-segmented/general-segmented_base.geo
+#
+# USAGE: geogen_general-segmented.sh [reset]
 
 
 
