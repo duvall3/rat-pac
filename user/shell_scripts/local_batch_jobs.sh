@@ -1,21 +1,37 @@
 #!/bin/bash
 # local_batch_jobs -- script to create and run a set of RAT-PAC simulations
 #	using multiple cores on the same machine
+#
 # -- should be run in the relevant $RATROOT/data/<EXPERIMENT> directory
 #
-# ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 9/2019 ~ #
+# -- Usage: local_batch_jobs.sh <DATARUN_NAME> <EVENTS_PER_INSTANCE> <NUM_INSTANCES> [OUTPUT_DIR]
 #
-# USAGE: local_batch_jobs.sh <DATARUN_NAME> <EVENTS_PER_INSTANCE> <NUM_INSTANCES>
+# -- Example: local_batch_jobs.sh some_datarun 200 5
+#      -- this would run a combined total of 1000 events split over 5 instances
+#         of RAT-PAC containing 200 events each, all under an umbrella
+#         directory named "some_datarun"
+#
+# -- NOTE: This script depends on the following companion scripts from GitHub at:
+#      https://github.com/duvall3/rat-pac/tree/comparison/ :
+#      -- 
+#      -- 
+#      -- 
+#
+# ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 9/2019 ~ #
 
 
 ## init
 if [[ $# -lt 3 ]]; then
-  echo "USAGE: local_batch_jobs.sh <DATARUN_NAME> <EVENTS_PER_INSTANCE> <NUM_INSTANCES>" && exit 10
+  echo "USAGE: local_batch_jobs.sh <DATARUN_NAME> <EVENTS_PER_INSTANCE> <NUM_INSTANCES> [OUTPUT_DIR]" && exit 10
 fi
 DATARUN=$1
 NEVENTS=$2
 NINSTS=$3
-EXPDIR=$RATROOT/data/$(basename $(pwd) /)
+if [[ $# -lt 4 ]]; then
+  EXPDIR=$RATROOT/data/$(basename $(pwd) /)
+else
+  EXPDIR=$4
+fi
 
 #debug
 echo $DATARUN
@@ -33,7 +49,7 @@ mkdir $DATARUN && cd $DATARUN
 # loop over run directories
 for (( k=0; k<$NINSTS; k++ )) {
 
-  # sudir init
+  # RAT-PAC instance subdirectory init
   INST_DIR="$DATARUN"_$k
   mkdir $INST_DIR
   cd $INST_DIR
@@ -48,7 +64,6 @@ for (( k=0; k<$NINSTS; k++ )) {
 
   # RUN
   eval "$FULLCMD &"
-# echo "$FULLCMD &" #debug
   cd ..
   echo
   sleep 1s
