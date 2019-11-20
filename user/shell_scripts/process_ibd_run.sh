@@ -1,8 +1,7 @@
 #!/bin/bash
 # process_ibd_run -- process ROOT file from IBD run; prepare data & .m files
 # ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ August 2015 ~ #
-
-# APPROACHING READINESS! #
+# ~ last updated 11/2019 ~ #
 
 ## usage
 if [ $# -lt 2 ]; then
@@ -23,21 +22,6 @@ RTCOMMAND=$(printf "'$RATROOT/user/root_macros/rt_to_root.cxx(\"$RTFILE\")'")
 # other stuff
 eval "root -q -l -b $RTCOMMAND"
 #cd ..
-
-
-# old ROOT processing
-#ROOTCOMMAND=$(printf "'$RATROOT/user/root_macros/IBD.cxx(\"$ROOTFILE\",$NUM_EVENTS)'")
-#eval "root -q -l -b $ROOTCOMMAND > \"$FILENAME\".ibd.dat"
-#ibd_dat_to_txt.sh "$FILENAME".ibd.dat | column -t > "$FILENAME".txt
-#nCapAgents_ibd.sh "$FILENAME".ibd.dat
-#ibd_term_vols.sh "$FILENAME".ibd.dat
-#plot_gammas_mfile.sh $FILENAME
-
-## make output directory & move all the new output files there
-#if [ ! -d $FILENAME ]; then
-#  mkdir $FILENAME
-#fi
-##mv -t $FILENAME $FILENAME?* # gam/ plot_gammas.m scatters
 
 
 # all pau!  )

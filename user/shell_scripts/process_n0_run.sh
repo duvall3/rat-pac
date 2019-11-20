@@ -2,6 +2,7 @@
 # process_n0_run -- this script duplicates the post-run processing of ratrun.sh
 # -- Usage: process_n0_run <FILENAME> <NUMBER_OF_EVENTS>
 # ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ August 2015 ~ #
+# ~ last updated 11/2019 ~ #
 
 
 ## init
@@ -49,8 +50,6 @@ if [ $ROOT_TF = true ]; then
   # post-ROOT text processing
   n0_dat_to_txt.sh "$FILENAME".n0.dat | column -t > "$FILENAME".txt
   nCapAgents.sh "$FILENAME".n0.dat
-  #plot_gammas_mfile.sh $FILENAME
-  #n0_dat_to_sc.sh "$FILENAME".n0.dat
   n0_term_vols.sh "$FILENAME".n0.dat #"$FILENAME"
 elif [ $ROOT_TF = false ]; then : # do nothing
 else
