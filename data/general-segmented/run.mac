@@ -1,6 +1,6 @@
 /control/execute setup.mac
-#/rat/procset file "/neu-test_1.root"
-/rat/procset file "neu-test_1.root"
+#/rat/procset file "/new_test.root"
+/rat/procset file "new_test.root"
 /rat/proc count
 /rat/procset update 1000
-/run/beamOn 1000
+/run/beamOn 100

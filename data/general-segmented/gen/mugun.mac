@@ -1,8 +1,11 @@
 # mugun.mac -- mu- gun
 
-/generator/add combo gun:point:poisson
+#/generator/add combo gun:point:poisson
+/generator/add combo gun:regexfill:poisson
+#/generator/add combo gun:fill:poisson
 #/generator/vtx/set mu- 0 0 1 400.0  # 400MeV muons directed along the +z axis
-/generator/vtx/set mu- 0 0 0 400.0  # 400MeV muons directed along the +z axis
+/generator/vtx/set mu- 1 0 0 10.0 # 10MeV muons along x 
 #/generator/pos/set 0 -9924 -4500
-/generator/pos/set 0 0 0
+/generator/pos/set ^source$
+#/generator/pos/set 700 0 0
 /generator/rate/set 1
