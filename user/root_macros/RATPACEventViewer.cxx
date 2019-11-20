@@ -236,12 +236,12 @@ int drawTracks( Int_t event = 0, Bool_t ibd_tf = kTRUE ) {
   key_T->Read(tree);
   Int_t last_event = tree->GetEntries()-1;
   if ( event < 0 || event > last_event ) {
-    cerr << "Error: No such event (requested event: " << event << "). Final event: " << last_event << "." << endl;
+    cerr << "Error: No such event (" << event << "); Final event: " << last_event << "." << endl;
     return -1;
   }
   Int_t step, stepcount;
   TString filename = gDirectory->GetFile()->GetName();
-  TString parname;
+  TString pclname;
   RAT::DSReader r(filename);
   RAT::DS::Root *ds = r.GetEvent(event);
   RAT::TrackNav nav(ds);
@@ -252,7 +252,7 @@ int drawTracks( Int_t event = 0, Bool_t ibd_tf = kTRUE ) {
 
   // positron (if IBD; otherwise, single primary particle)
   n = c.GoChild(0);
-  parname = n->GetParticleName();
+  pclname = n->GetParticleName();
   stepcount = c.StepCount();
   geo->AddTrack( 1, n->GetPDGCode() );
   TGeoTrack* e_track = geo->GetListOfTracks()->At(0);
@@ -260,7 +260,7 @@ int drawTracks( Int_t event = 0, Bool_t ibd_tf = kTRUE ) {
     n = c.GoStep(step);
     e_track->AddPoint( n->GetEndpoint().x()/10., n->GetEndpoint().y()/10., n->GetEndpoint().z()/10., n->GetGlobalTime() ); //cm
   }
-  e_track->SetName(parname);
+  e_track->SetName(pclname);
   e_track->SetLineColor(kRed);
   e_track->SetLineWidth(2.0);
 
@@ -273,7 +273,7 @@ int drawTracks( Int_t event = 0, Bool_t ibd_tf = kTRUE ) {
 
     // neutron
     n = c.GoChild(1);
-    parname = n->GetParticleName();
+    pclname = n->GetParticleName();
     stepcount = c.StepCount();
     geo->AddTrack( 2, n->GetPDGCode() );
     TGeoTrack* n_track = geo->GetListOfTracks()->At(1);
@@ -281,7 +281,7 @@ int drawTracks( Int_t event = 0, Bool_t ibd_tf = kTRUE ) {
       n = c.GoStep(step);
       n_track->AddPoint( n->GetEndpoint().x()/10., n->GetEndpoint().y()/10., n->GetEndpoint().z()/10., n->GetGlobalTime() ); //cm
     }
-    n_track->SetName(parname);
+    n_track->SetName(pclname);
     n_track->SetLineColor(kBlue);
     n_track->SetLineWidth(2.0);
   } //end if -- IBD_TF

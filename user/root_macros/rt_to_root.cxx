@@ -1,7 +1,7 @@
 // rt_to_root -- small ancillary script to bring .rt file data into ROOT
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2017 ~ //
 
-void rt_to_root( const char* filename ) {
+int rt_to_root( const char* filename ) {
 
 
 // arg check, create outfile
@@ -65,5 +65,5 @@ for (( k = 0; k < num_bursts; k++ )) {
 // all pau!   )
 f.Write();
 f.Close();
-return;
+return 0;
 }
