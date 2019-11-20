@@ -14,28 +14,24 @@
 // -- "IBD_TF" is kTRUE by default; this default can be changed in the function
 //      definition for "drawTracks()" if desired
 //
-// -- Example ~ Scan through IBD events:
-//      root] .L RATPACEventViewer.cxx
-//      root] RATPACEventViewer( "some_IBD_run.root" );
-//      root] Int_t event = 0;
-//      root] drawTracks(event); event++;
-//      root] drawTracks(event); event++;
-//      root] drawTracks(event); event++;
-//    etc.
+// -- Example ~ Scan through some IBD events:
+//      .L RATPACEventViewer.cxx
+//      RATPACEventViewer( "some_IBD_run.root" );
+//      Int_t event = 0;
+//      drawTracks(event); event++;
+//      drawTracks(event); event++;
+//      drawTracks(event); event++;
 //
 // -- As of this version, the following items are still hard-coded
-//      (i.e., auto-detection from the RATDB in the .root file is
-//      still under development):
-//      - name of top / world volume
-//      - shape of top / world volume
-//      - dimensions of top / world volume
-//      - name of target cells
-//      - shape of target cells
-//      - dimensions of target cells
-//    -- these hard-coded items are tagged in the code below with //HC//
+//    and are tagged with //HC// in the code below:
+//    - name of top & world volumes
+//    - shape of top & world volumes
+//    - dimensions of top & world volumes
+//    - names of target cells
+//    - shapes of target cells
 //
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2019 ~ //
-// ~ RATPACEventviewer v0.9.3 ~ //
+// ~ RATPACEventviewer v0.9.4 ~ //
 
 
 

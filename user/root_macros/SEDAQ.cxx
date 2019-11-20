@@ -1,7 +1,9 @@
 // SEDAQ -- modified version of SimpleEnergyDAQ to operate on files that
-// already contain T but not T2
-// -- see documentation in duvall3->comparision->$RATROOT/user/root_macros/SimpleEnergyDAQ.cxx
+//   already contain T but not T2
+// -- further documentation forthcoming
+// -- see https://github.com/duvall3/rat-pac/tree/collab
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2017 ~ //
+// ~ SEDAQ v0.9.0 ~ 11/2019 ~ //
 
 // INPUT: ROOT file containing TTree "T" (Scintillation Data)
 // OUTPUT: ROOT file containing TTrees "T2" (IBD Candidate Data) and "T_Trig" (IBD Trigger Parameters and Result)
@@ -17,8 +19,6 @@
 
 #include <math.h>
 
-//void SEDAQ( const char* filename, Double_t prompt_low, Double_t delayed_low, bool graphics_tf=false ) {
-//void SEDAQ( const char* filename, Double_t prompt_low, Double_t delayed_low, Double_t deltaT_low, Double_t deltaT_high, bool graphics_tf=false ) {
 void SEDAQ( const char* filename, Double_t prompt_low, Double_t delayed_low, Double_t deltaT_low, Double_t deltaT_high, Bool_t graphics_tf, Bool_t nulat_tf ) {
 
 
@@ -200,7 +200,7 @@ if ( graphics_tf == true ) { // skip graphics unless in batch mode (default)
 // init
 Bool_t prompt_tf, delayed_tf;
 Double_t deltaT_low, deltaT_high, trigger_reset;
-//Double_t prompt_low, prompt_high, delayed_low, delayed_high;
+//Double_t prompt_low, prompt_high, delayed_low, delayed_high; // for later implementation
 Double_t prompt_high, delayed_low, delayed_high;
 // for NuLat: address cube-centered positions
 Bool_t cubed_tf = ( T->FindBranch("cubed_x") != 0x0 );

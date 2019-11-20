@@ -1,4 +1,4 @@
-// drawNextEvent -- see github.com/duvall3-->RAT-PAC-->Comparison-->user-->root_macros-->drawTracks.cxx
+// drawNextEvent -- see github.com/duvall3-->RAT-PAC-->collab-->user-->root_macros-->drawTracks.cxx
 
 
 //// PARTICLE TRACKS
