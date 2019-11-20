@@ -38,6 +38,7 @@ echo $DATARUN
 echo $NEVENTS
 echo $NINSTS
 echo $RATROOT
+echo $EXPDIR
 echo
 
 
@@ -55,7 +56,7 @@ for (( k=0; k<$NINSTS; k++ )) {
   cd $INST_DIR
 
   # create run.mac
-  echo -e "/control/execute $EXPDIR/setup.mac\n/rat/procset file \"$INST_DIR.root\"\n/run/beamOn $NEVENTS" > run.mac # assume IBD run
+  echo -e "/control/macroPath $EXPDIR\n/control/execute setup.mac\n/rat/procset file \"$INST_DIR.root\"\n/run/beamOn $NEVENTS" > run.mac # assume IBD run
 
   # prepare simulation, post-processing, and combination commands
   RATCMD="rat -l $INST_DIR.log run.mac" # assume IBD run
@@ -64,6 +65,7 @@ for (( k=0; k<$NINSTS; k++ )) {
 
   # RUN
   eval "$FULLCMD &"
+# echo $FULLCMD #debug
   cd ..
   echo
   sleep 1s

@@ -21,8 +21,7 @@ awk '$1 ~ /EVENT/ && ( $6>0 || $8>0 || $10>0 ) {print $2"\t"$4"\t"$6"\t"$8"\t"$1
 RTCOMMAND=$(printf "'$RATROOT/user/root_macros/rt_to_root.cxx(\"$RTFILE\")'")
 # other stuff
 eval "root -q -l -b $RTCOMMAND"
-#cd ..
-
+cd ..
 
 # all pau!  )
 exit 0
