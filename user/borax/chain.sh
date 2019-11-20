@@ -5,19 +5,18 @@
 
 # Usage:
 # 1) Run this script in the umbrella directory of your datarun
-# 2) Open ROOT and run the following commands:
-# 3) TChain ch("T");
-# 5) .x chain.cxx
-# 7) ch.Merge("<OUTPUT_FILENAME>_T.root");
+# 2) Open a ROOT prompt and run ".x ./chain.cxx"
 
 
 echo -e "\
 // chain.cxx -- combine TChains
-// -- for use with SimpleEnergyDAQ from $RATROOT/user/root_macros/SEDAQ.cxx
+// -- for use with SimpleEnergyDAQ from \$RATROOT/user/root_macros/SEDAQ.cxx
+// -- USAGE: open ROOT and run \".x ./chain.cxx\"
 // Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2017 ~ //
 
+void chain() {
 
-chain() {\n" > chain.cxx
+TChain ch(\"T\");\n" > chain.cxx
 
 for DIR in */; do
   FILE_BASE=$(basename $DIR /)
@@ -26,7 +25,9 @@ for DIR in */; do
   echo "ch.Add(\"$FILENAME\");" >> chain.cxx
 done
 
-echo -e "\n//all pau!   )\n}" >> chain.cxx
+OUTFILE=$(basename $(pwd))"_T.root"
+
+echo -e "\nch.Merge(\"$OUTFILE\");\n\n//all pau!   )\n}" >> chain.cxx
 
 # all pau!  )
 exit 0
