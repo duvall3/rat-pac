@@ -3,7 +3,7 @@
 // -- further documentation forthcoming
 // -- see https://github.com/duvall3/rat-pac/tree/collab
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2017 ~ //
-// ~ SEDAQ v0.9.0 ~ 11/2019 ~ //
+// ~ SEDAQ v0.9.1 ~ 11/2019 ~ //
 
 // INPUT: ROOT file containing TTree "T" (Scintillation Data)
 // OUTPUT: ROOT file containing TTrees "T2" (IBD Candidate Data) and "T_Trig" (IBD Trigger Parameters and Result)
@@ -36,7 +36,7 @@ if (FileName.Contains("_T.root")) {
 } else if (FileName.Contains(".root")) {
   basename = FileName(0,FileName.Index("_T.root"));
 } else {
-  cout << endl << "Possible error: Check file type. Exiting..." << endl << endl;
+  cout << endl << "Possible file-type error: SEDAQ operates on the output of $RATROOT/user/root_macros/rt_to_root.cxx. Exiting..." << endl << endl;
   return 2;
 }
 savename = basename+"_results.root";
@@ -284,16 +284,16 @@ for (( k = 0; k < num_bursts; k++ )) {
 
 // save ibd trigger parameters and result
 Long64_t ibd_candidates = T2->GetEntries();
-TString units = "Time (ns), Energy (MeV)";
+const char* units = "Time (ns), Energy (MeV)";
 TTree* T_Trig = new TTree("T_Trig","IBD Trigger Parameters and Total");
-T_Trig->Branch("units",&units);
-T_Trig->Branch("deltaT_low",&deltaT_low);
-T_Trig->Branch("deltaT_high",&deltaT_high);
-T_Trig->Branch("prompt_low",&prompt_low);
-T_Trig->Branch("prompt_high",&prompt_high);
-T_Trig->Branch("delayed_low",&delayed_low);
-T_Trig->Branch("delayed_high",&delayed_high);
-T_Trig->Branch("ibd_candidates",&ibd_candidates);
+T_Trig->Branch("units",units,"units/C");
+T_Trig->Branch("deltaT_low",&deltaT_low,"deltaT_low/D");
+T_Trig->Branch("deltaT_high",&deltaT_high,"deltaT_high/D");
+T_Trig->Branch("prompt_low",&prompt_low,"prompt_low/D");
+T_Trig->Branch("prompt_high",&prompt_high,"prompt_high/D");
+T_Trig->Branch("delayed_low",&delayed_low,"delayed_low/D");
+T_Trig->Branch("delayed_high",&delayed_high,"delayed_high/D");
+T_Trig->Branch("ibd_candidates",&ibd_candidates,"ibd_candidates/L");
 T_Trig->Fill();
 
 // print summary to stdout
