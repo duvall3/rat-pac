@@ -23,7 +23,7 @@ for DIR in */; do
   increment=$(tail -qn 4 $NAME/"$NAME".log | awk '$1 ~ /EVENT/ {print $2}')
   total=$((total + increment))
 done
-echo $(echo "$total / ($k*$EVENTS_PER_JOB) * 100" | bc -l | cut -c1-3)" %"
+echo $(echo "$total / ($k*$EVENTS_PER_JOB) * 100" | bc -l | cut -c1-4)" %"
 
 # all pau!   )
 exit 0
