@@ -4,7 +4,7 @@
 int rt_to_root( const char* filename ) {
 
 
-// arg check, create outfile
+// arg check
 TString FileName, basename;
 FileName = filename;
 if ( FileName.Contains(".rt") ) {
@@ -13,6 +13,14 @@ if ( FileName.Contains(".rt") ) {
   cout << endl << "ERROR: Check file type. Exiting..." << endl << endl;
   return 2;
 }
+
+// retrieve total top-level RAT-PAC MC events from the original ROOT file
+Long64_t total_RAT_events;
+TFile _f = TFile::Open(basename+".root");
+total_RAT_events = T->GetEntries();
+_f.Close();
+
+// create outfile
 TFile f = TFile(basename+"_T.root", "new");
 
 // create tree, read ASCII data, set branch addresses
