@@ -38,12 +38,13 @@ theta_rms = h_theta->GetRMS();
 theta_unc = theta_rms / sqrt(N);
 
 // report results
+Double_t phi_true(0), theta_true(0); // assume true neutrino direction is at phi = 0 deg, theta = 0 deg
 printf( "\n\nIBD Angular Reconstruction Results,\n  uncertainty = RMS / sqrt(N) :\n\n" );
 printf( "Azimuthal Angle (deg):\n  phi_mean\t\t%2.2f\n  phi_rms\t\t%2.2f\n  phi_unc\t\t%2.2f\n\n", phi_mean, phi_rms, phi_unc );
 printf( "Polar Angle (deg):\n  theta_mean\t%2.2f\n  theta_rms\t%2.2f\n  theta_unc\t%2.2f\n\n", theta_mean, theta_rms, theta_unc );
 printf( "SUMMARY (N = %d):\n", N );
-printf( "  phi   = %2.2f +/- %2.2f deg\n", phi_mean, phi_unc );
-printf( "  theta = %2.2f +/- %2.2f deg\n\n\n", theta_mean, theta_unc );
+printf( "  phi   = %2.2f +/- %2.2f deg\t(%2.2f sigma)\n", phi_mean, phi_unc, (phi_mean-phi_true)/phi_unc );
+printf( "  theta = %2.2f +/- %2.2f deg\t(%2.2f sigma)\n\n\n", theta_mean, theta_unc, (theta_mean-theta_true)/theta_unc);
 
 // all pau!   )
 }
