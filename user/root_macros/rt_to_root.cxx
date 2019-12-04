@@ -16,9 +16,9 @@ if ( FileName.Contains(".rt") ) {
 
 // retrieve total top-level RAT-PAC MC events from the original ROOT file
 Long64_t total_RAT_events;
-TFile _f = TFile::Open(basename+".root");
+TFile* _f = TFile::Open(basename+".root");
 total_RAT_events = T->GetEntries();
-_f.Close();
+_f->Close();
 
 // create outfile
 TFile f = TFile(basename+"_T.root", "new");
