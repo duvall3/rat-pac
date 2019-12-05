@@ -3,14 +3,15 @@
 // -- USAGE: root <DATARUN_results.root> --> .L angularRecon.cxx --> angularRecon(T2);
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 12/2019 ~ //
 
-void angularRecon( const TTree* T ) {
+void angularRecon( const TTree* T, int nIBDs = 10000 ) {
 
 // init
+TString fileName = gDirectory->GetName();
 Int_t N = T2->GetEntries();
 Double_t phi_mean, phi_rms, phi_unc;
 Double_t theta_mean, theta_rms, theta_unc;
 TH1F *h_phi, *h_theta;
-TCanvas* c4 = new TCanvas("c4", "IBD Angular Reconstruction", 70, 60, 1500, 800);
+TCanvas* c4 = new TCanvas("c4", "IBD Angular Reconstruction", 820, 120, 1100, 900);
 c4->Divide(1,2);
 
 // phi = azimuthal angle
@@ -39,12 +40,14 @@ theta_unc = theta_rms / sqrt(N);
 
 // report results
 Double_t phi_true(0), theta_true(0); // assume true neutrino direction is at phi = 0 deg, theta = 0 deg
-printf( "\n\nIBD Angular Reconstruction Results,\n  uncertainty = RMS / sqrt(N) :\n\n" );
+Double_t eff = (Double_t)N/nIBDs;
+printf( "\n\nIBD Angular Reconstruction Results\n  for datarun \"%s\",\n  with uncertainty = RMS / sqrt(N) :\n\n", fileName.Data() );
 printf( "Azimuthal Angle (deg):\n  phi_mean\t\t%2.2f\n  phi_rms\t\t%2.2f\n  phi_unc\t\t%2.2f\n\n", phi_mean, phi_rms, phi_unc );
 printf( "Polar Angle (deg):\n  theta_mean\t%2.2f\n  theta_rms\t%2.2f\n  theta_unc\t%2.2f\n\n", theta_mean, theta_rms, theta_unc );
-printf( "SUMMARY (N = %d):\n", N );
-printf( "  phi   = %2.2f +/- %2.2f deg\t(%2.2f sigma)\n", phi_mean, phi_unc, (phi_mean-phi_true)/phi_unc );
-printf( "  theta = %2.2f +/- %2.2f deg\t(%2.2f sigma)\n\n\n", theta_mean, theta_unc, (theta_mean-theta_true)/theta_unc);
+printf( "SUMMARY:\n" );
+printf( "  N = %d\n  IBD Efficiency = %2.1f%%\n", N, eff*100 );
+printf( "  phi   = %2.2f +/- %2.2f deg\t(%2.2f sigma from true value)\n", phi_mean, phi_unc, (phi_mean-phi_true)/phi_unc );
+printf( "  theta = %2.2f +/- %2.2f deg\t(%2.2f sigma from true value)\n\n\n", theta_mean, theta_unc, (theta_mean-theta_true)/theta_unc);
 
 // all pau!   )
 }
