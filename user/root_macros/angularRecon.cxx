@@ -41,13 +41,13 @@ theta_unc = theta_rms / sqrt(N);
 // report results
 Double_t phi_true(0), theta_true(0); // assume true neutrino direction is at phi = 0 deg, theta = 0 deg
 Double_t eff = (Double_t)N/nIBDs;
-printf( "\n\nIBD Angular Reconstruction Results\n  for datarun \"%s\",\n  with uncertainty = RMS / sqrt(N) :\n\n", fileName.Data() );
-printf( "Azimuthal Angle (deg):\n  phi_mean\t\t%2.2f\n  phi_rms\t\t%2.2f\n  phi_unc\t\t%2.2f\n\n", phi_mean, phi_rms, phi_unc );
+printf( "\n\nIBD Angular Reconstruction:\n  * datafile = \"%s\"\n  * uncertainty = RMS / sqrt(N)\n\n", fileName.Data() );
+printf( "Azimuthal Angle (deg):\n  phi_mean\t%2.2f\n  phi_rms\t%2.2f\n  phi_unc\t%2.2f\n\n", phi_mean, phi_rms, phi_unc );
 printf( "Polar Angle (deg):\n  theta_mean\t%2.2f\n  theta_rms\t%2.2f\n  theta_unc\t%2.2f\n\n", theta_mean, theta_rms, theta_unc );
 printf( "SUMMARY:\n" );
 printf( "  N = %d\n  IBD Efficiency = %2.1f%%\n", N, eff*100 );
-printf( "  phi   = %2.2f +/- %2.2f deg\t(%2.2f sigma from true value)\n", phi_mean, phi_unc, (phi_mean-phi_true)/phi_unc );
-printf( "  theta = %2.2f +/- %2.2f deg\t(%2.2f sigma from true value)\n\n\n", theta_mean, theta_unc, (theta_mean-theta_true)/theta_unc);
+printf( "  phi   = %2.2f +/- %2.2f deg\t(%2.2f sigma from true value)\n", phi_mean, phi_unc, TMath::Abs((phi_mean-phi_true))/phi_unc );
+printf( "  theta = %2.2f +/- %2.2f deg\t(%2.2f sigma from true value)\n\n\n", theta_mean, theta_unc, TMath::Abs((theta_mean-theta_true))/theta_unc );
 
 // all pau!   )
 }

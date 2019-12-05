@@ -33,6 +33,9 @@
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2019 ~ //
 // ~ RATPACEventviewer v0.9.4 ~ //
 
+#include <drawTracks.cxx>
+#include <drawNextEvent.cxx>
+#include <drawPrevEvent.cxx>
 
 
 void RATPACEventViewer( const char* FileName ) {
