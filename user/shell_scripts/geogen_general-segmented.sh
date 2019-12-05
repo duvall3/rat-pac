@@ -130,6 +130,8 @@ position: [0.0, 0.0, 0.0] // mm
 
 ## generate cells
 
+echo -e "\nGenerating cells..."
+
 for (( k_lr=0; k_lr<$ROWS; k_lr++ )); do
 
   for (( k_ud=0; k_ud<$COLS; k_ud++ )); do
@@ -172,12 +174,13 @@ position: [$x, $y, $z] // mm
 
 done #k_lr
 
-printf "\nArray written to %s\n\n" $ARRFILE
+echo "Done."
+printf "Array written to: %s\n" $ARRFILE
 
 
 ## finalize by combining base .geo file with array .geo file
 cat $BASEFILE $ARRFILE > $OUTFILE
-printf "\n\nRESULT WRITTEN TO: %s\n\n\n\n" $OUTFILE
+printf "\nRAT GEO FILE WRITTEN TO: %s\n\n\n" $OUTFILE
 
 
 ## all pau!   )
