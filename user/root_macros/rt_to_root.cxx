@@ -15,10 +15,16 @@ if ( FileName.Contains(".rt") ) {
 }
 
 // retrieve total top-level RAT-PAC MC events from the original ROOT file
-Long64_t total_RAT_events;
+Long64_t totalRATEvents;
 TFile* _f = TFile::Open(basename+".root");
-total_RAT_events = T->GetEntries();
+totalRATEvents = T->GetEntries();
+TString nMCEvents = TString::LLtoa(totalRATEvents, 10); // Long to TString, base-10
+TObjArray *nMCRun = new TObjArray(0);
+TObjString *nMCRunTotName = new TObjString("Total top-level RAT-PAC MC Events");
+TObjString *nMCRunTotEvents = new TObjString(nMCEvents);
 _f->Close();
+nMCRun->Add(nMCRunTotName);
+nMCRun->Add(nMCRunTotEvents);
 
 // create outfile
 TFile f = TFile(basename+"_T.root", "new");
@@ -71,6 +77,10 @@ for (( k = 0; k < num_bursts; k++ )) {
 
 
 // all pau!   )
+nMCRunTotEvents->Write("nMCRunTotEvents");
+// NOTE: Read this integer from the "_T.root" file
+//   via, for example:
+//   Int_t nMCEvents = nMCRunTotEvents->GetString()->Atoi();
 f.Write();
 f.Close();
 return 0;
