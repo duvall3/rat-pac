@@ -5,6 +5,7 @@
 # -- should be run in the relevant $RATROOT/data/<EXPERIMENT> directory
 #
 # -- Usage: local_batch_jobs.sh <DATARUN_NAME> <EVENTS_PER_INSTANCE> <NUM_INSTANCES> [OUTPUT_DIR]
+#      OR   local_batch_jobs.sh kill
 #
 # -- Example: local_batch_jobs.sh some_datarun 200 5
 #      -- this would run a combined total of 1000 events split over 5 instances
@@ -20,9 +21,41 @@
 # ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 9/2019 ~ #
 
 
-## init
+## KILL option: kill all instances of RAT-PAC belonging to the current user
+
+if [[ $1 = "kill" ]]; then
+
+  # check whether there are any relevant jobs
+  if [[ ! $(pgrep -u $USER -x rat) ]]; then # user currently does not have RAT-PAC running
+    echo -e "\nUser $USER does not currently have any RAT-PAC jobs running.\n\nKill canceled.\n" && exit 2
+  fi
+  
+  # prompt for confirmation
+  echo -en "\nWARNING: This will kill all of your current RAT-PAC jobs. Confirm kill (Y/N)?  " \
+    && read KILL_YN
+  
+  # execute user's reply
+  if [ $( grep "[Yy]" <(echo $KILL_YN) ) ]; then # reply contained "Y" or "y"
+    # kill
+    echo -e "\nKilling all current RAT-PAC jobs belonging to $USER..."
+      pkill -SIGKILL -u $USER -x rat \
+      && echo -e "\nDone.\n" \
+      && exit 0
+  elif [ $( grep "[Nn]" <(echo $KILL_YN) ) ]; then # reply contained "N" or "n"
+    # do not kill
+    echo -e "\nKill canceled.\n" && exit 2
+  else
+    # user entered something other than y(es) or n(o)
+    echo -e "\nInput not recognized; please try again.\n" && exit 3
+  fi
+
+fi
+
+
+## INIT
+
 if [[ $# -lt 3 ]]; then
-  echo "USAGE: local_batch_jobs.sh <DATARUN_NAME> <EVENTS_PER_INSTANCE> <NUM_INSTANCES> [OUTPUT_DIR]" && exit 10
+  echo -e "\nUSAGE: local_batch_jobs.sh <DATARUN_NAME> <EVENTS_PER_INSTANCE> <NUM_INSTANCES> [OUTPUT_DIR]\n" && exit 10
 fi
 DATARUN=$1
 NEVENTS=$2
@@ -30,16 +63,16 @@ NINSTS=$3
 if [[ $# -lt 4 ]]; then
   EXPDIR=$RATROOT/data/$(basename $(pwd) /)
 else
-  EXPDIR=$4
+  EXPDIR=$(basename $4 /)
 fi
 
-#debug
-echo $DATARUN
-echo $NEVENTS
-echo $NINSTS
-echo $RATROOT
-echo $EXPDIR
-echo
+##debug
+#echo $DATARUN
+#echo $NEVENTS
+#echo $NINSTS
+#echo $RATROOT
+#echo $EXPDIR
+#echo
 
 
 ## MAIN
