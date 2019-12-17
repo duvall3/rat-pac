@@ -88,6 +88,18 @@ T2->Branch("delayed_cand_z", &delayed_cand_z, "delayed_cand_z/D");
 T2->Branch("phi_recon", &phi_recon, "phi_recon/D");
 T2->Branch("theta_recon", &theta_recon, "theta_recon/D");
 
+// Copy total number of top-level MC events from T to T2
+// -- NOTE: this method is not especially robust;
+//      anyone anyone using the TTree's UserInfo for anything else
+//      will have to modify
+TList* Tuser = T->GetUserInfo();
+TList* T2user = T2->GetUserInfo();
+TObjString* nMCEvents_tos1 = Tuser->At(0);
+TString nMCEvents_ts = nMCEvents_tos1->GetString();
+//cout << endl << nMCEvents_ts.Data() << endl; //debug
+TObjString* nMCEvents_tos2 = new TObjString(nMCEvents_ts.Data());
+T2user->Add(nMCEvents_tos2);
+T2user->Write();
 
 //// T PLOTS
 
@@ -282,11 +294,17 @@ for (( k = 0; k < num_bursts; k++ )) {
   } //endif
 } //end event loop
 
-// save ibd trigger parameters and result
+// prepare some summary variables
 Long64_t ibd_candidates = T2->GetEntries();
+//Long64_t nMCEvents = nMCEvents_tos->GetString()->Atoll(); // convert back to long
+Long64_t nMCEvents = 50; //debug
+//Double_t ibd_eff = (Double_t)ibd_candidates/nMCEvents;
 const char* units = "Time (ns), Energy (MeV)";
+
+// save ibd trigger parameters and result
 TTree* T_Trig = new TTree("T_Trig","IBD Trigger Parameters and Total");
 T_Trig->Branch("units",units,"units/C");
+//T_Trig->Branch("nMCEvents",&nMCEvents,"nMCEvents/L");
 T_Trig->Branch("deltaT_low",&deltaT_low,"deltaT_low/D");
 T_Trig->Branch("deltaT_high",&deltaT_high,"deltaT_high/D");
 T_Trig->Branch("prompt_low",&prompt_low,"prompt_low/D");
@@ -294,6 +312,7 @@ T_Trig->Branch("prompt_high",&prompt_high,"prompt_high/D");
 T_Trig->Branch("delayed_low",&delayed_low,"delayed_low/D");
 T_Trig->Branch("delayed_high",&delayed_high,"delayed_high/D");
 T_Trig->Branch("ibd_candidates",&ibd_candidates,"ibd_candidates/L");
+//T_Trig->Branch("ibd_eff",&ibd_eff,"ibd_eff/D");
 T_Trig->Fill();
 
 // print summary to stdout
