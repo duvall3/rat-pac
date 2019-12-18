@@ -94,7 +94,7 @@ T2->Branch("theta_recon", &theta_recon, "theta_recon/D");
 //      will have to modify
 TList* Tuser = T->GetUserInfo();
 TList* T2user = T2->GetUserInfo();
-TObjString* nMCEvents_tos1 = Tuser->At(0);
+TObjString* nMCEvents_tos1 = (TObjString*)Tuser->At(0);
 TString nMCEvents_ts = nMCEvents_tos1->GetString();
 //cout << endl << nMCEvents_ts.Data() << endl; //debug
 TObjString* nMCEvents_tos2 = new TObjString(nMCEvents_ts.Data());

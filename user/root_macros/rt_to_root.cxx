@@ -1,5 +1,6 @@
 // rt_to_root -- small ancillary script to bring .rt file data into ROOT
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2017 ~ //
+// Last modified: 12/2019 //
 
 int rt_to_root( const char* filename ) {
 
@@ -15,22 +16,19 @@ if ( FileName.Contains(".rt") ) {
 }
 
 // retrieve total top-level RAT-PAC MC events from the original ROOT file
-Long64_t totalRATEvents;
 TFile* _f = TFile::Open(basename+".root");
+Long64_t totalRATEvents;
 totalRATEvents = T->GetEntries();
 TString nMCEvents = TString::LLtoa(totalRATEvents, 10); // Long to TString, base-10
-TObjArray *nMCRun = new TObjArray(0);
-TObjString *nMCRunTotName = new TObjString("Total top-level RAT-PAC MC Events");
-TObjString *nMCRunTotEvents = new TObjString(nMCEvents);
+TObjString *nMCEvents_tos = new TObjString(nMCEvents);
 _f->Close();
-nMCRun->Add(nMCRunTotName);
-nMCRun->Add(nMCRunTotEvents);
 
 // create outfile
 TFile f = TFile(basename+"_T.root", "new");
 
 // create tree, read ASCII data, set branch addresses
 TTree* T = new TTree("T","Scintillation Data");
+T->GetUserInfo()->Add(nMCEvents_tos);
 T->ReadFile( filename, "event/I:event_time/D:wall_time/D:energy/D:energy_q/D:x/D:y/D:z/D" );
 Long64_t num_bursts = T->GetEntries();
 Int_t event;
@@ -77,10 +75,6 @@ for (( k = 0; k < num_bursts; k++ )) {
 
 
 // all pau!   )
-nMCRunTotEvents->Write("nMCRunTotEvents");
-// NOTE: Read this integer from the "_T.root" file
-//   via, for example:
-//   Int_t nMCEvents = nMCRunTotEvents->GetString()->Atoi();
 f.Write();
 f.Close();
 return 0;

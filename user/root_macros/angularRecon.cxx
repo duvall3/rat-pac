@@ -3,14 +3,22 @@
 // -- USAGE: root <DATARUN_results.root> --> .L angularRecon.cxx --> angularRecon(T2);
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 12/2019 ~ //
 
-void angularRecon( const TTree* T, int nIBDs = 10000 ) {
+//void angularRecon( const TTree* T, int nIBDs = 10000 ) {
+void angularRecon( const char* filename ) {
 
 // init
-TString fileName = gDirectory->GetName();
-Int_t N = T2->GetEntries();
+//TString fileName = gDirectory->GetName();
+TString fileName = filename;
+TFile* f = TFile::Open(filename);
+TTree* T = T2;
+Long64_t N = T2->GetEntries();
+TObjString* nIBDs_tos = (TObjString*)T2->GetUserInfo()->At(0);
+Long64_t nIBDs = nIBDs_tos->GetString().Atoll();
 Double_t phi_mean, phi_rms, phi_unc;
 Double_t theta_mean, theta_rms, theta_unc;
 TH1F *h_phi, *h_theta;
+
+// create histograms
 TCanvas* c4 = new TCanvas("c4", "IBD Angular Reconstruction", 820, 120, 1100, 900);
 c4->Divide(1,2);
 
@@ -50,4 +58,5 @@ printf( "  phi   = %2.2f +/- %2.2f deg\t(%2.2f sigma from true value)\n", phi_me
 printf( "  theta = %2.2f +/- %2.2f deg\t(%2.2f sigma from true value)\n\n\n", theta_mean, theta_unc, TMath::Abs((theta_mean-theta_true))/theta_unc );
 
 // all pau!   )
+f->Close();
 }
