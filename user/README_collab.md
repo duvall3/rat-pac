@@ -10,7 +10,7 @@ Required Files
 
 The viewer is a self-contained ROOT macro. It is located on GitHub at duvall3 --> rat-pac --> branch collab --> user --> root_macros --> [RATPACEventviewer.cxx](github.com/duvall3/rat-pac/tree/collab/user/root_macros/RATPACEventViewer.cxx).
 
-Currently, all detector volumes to be drawn **must** include "`target_cell_<number>`" in their volume name (as used in [geogen_general_segmented.sh](github.com/duvall3/rat-pac/blob/collab/user/shell_scripts/geogen_general-segmented.sh)).
+Currently, all detector volumes to be drawn **must** include "`target_cell_<number>`" in their volume name (as used in [geogen_general-segmented.sh](github.com/duvall3/rat-pac/blob/collab/user/shell_scripts/geogen_general-segmented.sh)).
 The following are all valid examples: `target_cell_5`, `target_cell_2_4`, `target_cell_0_0_0`. An update with more flexible volume names is in development, but for now this is hard-coded.
 
 Usage
@@ -30,7 +30,7 @@ drawNextEvent()
 drawPrevEvent()
 ```
 
-The macro will print out a summary for each event, including particle name, number of points, and the production and termination vertices.
+The macro will print out a summary for each event, including particle name, number of points, and production and termination vertices.
 
 The comments in the macro file contain more detailed information on usage. They are copied here below for convenience.
 
@@ -40,16 +40,16 @@ Details
 ```cpp
 // RATPACEventViewer -- for viewing RAT-PAC detector geometry and particle tracks in ROOT
 //
-// -- usage: "RATPACEventViewer( <RAT-PAC rootfile> )" to draw detector;
+// -- Usage: "RATPACEventViewer( <RAT-PAC rootfile> )" to draw detector;
 //      then "drawTracks( <event number>, [IBD_TF] )" to draw tracks for a given event
+//
+// -- Primarily written for IBD events, but should work just fine for anything
+//      with either one particle per top-level MC event (use IBD_TF = kFALSE)
+//      or two (use IBD_TF = kTRUE or simply omit IBD_TF argument)
 //
 // -- "IBD_TF" should be kTRUE for runs using the RAT-PAC IBD generator builtin
 //      and kFALSE otherwise
 //      -- note: in standard ROOT, kTRUE == true == 1 and KFALSE == false == 0
-//
-// -- NOTE: Primarily written for IBD events, but should work just fine for anything
-//      with either one particle per top-level MC event (use IBD_TF = kFALSE)
-//      or two (use IBD_TF = kTRUE or simply omit IBD_TF argument)
 //
 // -- "IBD_TF" is kTRUE by default; this default can be changed in the function
 //      definition for "drawTracks()" if desired
@@ -71,6 +71,5 @@ Details
 //    - shapes of target cells
 //
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2019 ~ //
-// ~ RATPACEventviewer v0.9.4 ~ //
+// ~ RATPACEventviewer v0.9.5 ~ //
 ```
-
