@@ -8,9 +8,9 @@ Instructions for using Mark Duvall's ROOT-based event viewer for RAT-PAC IBD eve
 Required Files
 ------------------
 
-The viewer is a self-contained ROOT macro. It is located on GitHub at duvall3 --> rat-pac --> branch collab --> user --> root_macros --> [RATPACEventviewer.cxx](github.com/duvall3/rat-pac/blob/collab/user/root_macros/RATPACEventViewer.cxx).
+The viewer is a self-contained ROOT macro. It is located on GitHub at duvall3 --> rat-pac --> branch collab --> user --> root_macros --> [RATPACEventviewer.cxx](https://github.com/duvall3/rat-pac/blob/collab/user/root_macros/RATPACEventViewer.cxx).
 
-Currently, all detector volumes to be drawn **must** include "`target_cell_<number>`" in their volume name (as used in [geogen_general-segmented.sh](github.com/duvall3/rat-pac/blob/collab/user/shell_scripts/geogen_general-segmented.sh)).
+Currently, all detector volumes to be drawn **must** include "`target_cell_<number>`" in their volume name (as used in [geogen_general-segmented.sh](https://github.com/duvall3/rat-pac/blob/collab/user/shell_scripts/geogen_general-segmented.sh)).
 The following are all valid examples: `target_cell_5`, `target_cell_2_4`, `target_cell_0_0_0`. An update with more flexible volume names is in development, but for now this is hard-coded.
 
 Usage
