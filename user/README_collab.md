@@ -21,7 +21,7 @@ To use the viewer, simply load the macro and run it on the desired ROOT file. Re
 .L RATPACEventViewer.cxx
 RATPACEventViewer("some_data_file.root");
 ```
-The commands in the macro are as follows:
+The commands in the macro are as follows, where `event` is the event number:
 
 ```cpp
 drawTracks( <event> )
