@@ -3,9 +3,9 @@ RAT-PAC / ROOT IBD Event Viewer
 
 Instructions for using Mark Duvall's ROOT-based event viewer for RAT-PAC IBD events.
 
-** Written for ROOT 5.34 **
+**Written for ROOT 5.34**
 
-** ROOT 6 version currently in development **
+**ROOT 6 version currently in development**
 
 Required Files
 ------------------
@@ -15,7 +15,7 @@ The viewer is a self-contained ROOT macro. It is located on GitHub at duvall3 --
 Usage
 --------------
 
-To use the viewer, simply load the macro and run it on the desired ROOT file. Remember that the macro (or a link to it) must be located in your $ROOTSYS/macros directory, or you will have to specify the full path to the macro file.
+To use the viewer, simply load the macro and run it on the desired ROOT file. Remember that the macro (or a link to it) must be located in your `$ROOTSYS/macros` directory, or you will have to specify the full path to the macro file.
 
 ```cpp
 .L RATPACEventViewer.cxx
