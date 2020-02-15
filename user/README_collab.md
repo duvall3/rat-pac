@@ -30,7 +30,7 @@ drawNextEvent()
 drawPrevEvent()
 ```
 
-The macro will print out a summary for each event, including particle name, number of points, and production and termination vertices.
+The macro will print out a summary for each track, including particle name, number of points, and production and termination vertices.
 
 The comments in the macro file contain more detailed information on usage. They are copied here below for convenience.
 
