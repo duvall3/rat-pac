@@ -1,15 +1,15 @@
 // RATPACEventViewer -- for viewing RAT-PAC detector geometry and particle tracks in ROOT
 //
-// -- usage: "RATPACEventViewer( <RAT-PAC rootfile> )" to draw detector;
+// -- Usage: "RATPACEventViewer( <RAT-PAC rootfile> )" to draw detector;
 //      then "drawTracks( <event number>, [IBD_TF] )" to draw tracks for a given event
+//
+// -- Primarily written for IBD events, but should work just fine for anything
+//      with either one particle per top-level MC event (use IBD_TF = kFALSE)
+//      or two (use IBD_TF = kTRUE or simply omit IBD_TF argument)
 //
 // -- "IBD_TF" should be kTRUE for runs using the RAT-PAC IBD generator builtin
 //      and kFALSE otherwise
 //      -- note: in standard ROOT, kTRUE == true == 1 and KFALSE == false == 0
-//
-// -- NOTE: Primarily written for IBD events, but should work just fine for anything
-//      with either one particle per top-level MC event (use IBD_TF = kFALSE)
-//      or two (use IBD_TF = kTRUE or simply omit IBD_TF argument)
 //
 // -- "IBD_TF" is kTRUE by default; this default can be changed in the function
 //      definition for "drawTracks()" if desired
@@ -18,9 +18,9 @@
 //      .L RATPACEventViewer.cxx
 //      RATPACEventViewer( "some_IBD_run.root" );
 //      Int_t event = 0;
-//      drawTracks(event); event++;
-//      drawTracks(event); event++;
-//      drawTracks(event); event++;
+//      drawTracks(event);
+//      drawNextEvent();
+//      drawNextEvent();
 //
 // -- As of this version, the following items are still hard-coded
 //    and are tagged with //HC// in the code below:
@@ -31,7 +31,7 @@
 //    - shapes of target cells
 //
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2019 ~ //
-// ~ RATPACEventviewer v0.9.4 ~ //
+// ~ RATPACEventviewer v0.9.5 ~ //
 
 #include <drawTracks.cxx>
 #include <drawNextEvent.cxx>
