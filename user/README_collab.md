@@ -3,9 +3,7 @@ RAT-PAC / ROOT IBD Event Viewer
 
 Instructions for using Mark Duvall's ROOT-based event viewer for RAT-PAC IBD events.
 
-**Written for ROOT 5.34**
-
-**ROOT 6 version currently in development**
+**Written for ROOT 5.34; ROOT 6 version currently in development**
 
 Required Files
 ------------------
@@ -28,6 +26,8 @@ drawTracks( <event> )
 drawNextEvent()
 drawPrevEvent()
 ```
+
+The macro will print out a summary for each event, including particle name, number of points, and the production and termination vertices.
 
 The comments in the macro file contain more detailed information on usage. They are copied here below for convenience.
 
