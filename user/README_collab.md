@@ -1,4 +1,4 @@
-# RAT-PAC / ROOT IBD Event Viewer
+RAT-PAC / ROOT IBD Event Viewer
 =======================================
 
 Instructions for using Mark Duvall's ROOT-based event viewer for RAT-PAC IBD events.
