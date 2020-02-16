@@ -5,23 +5,38 @@ Instructions for using Mark Duvall's ROOT-based event viewer for RAT-PAC IBD eve
 
 **Written for ROOT 5.34; ROOT 6 version currently in development**
 
+
 Required Files
 ------------------
 
 The viewer is a self-contained ROOT macro. It is located on GitHub at duvall3 --> rat-pac --> branch collab --> user --> root_macros --> [RATPACEventviewer.cxx](https://github.com/duvall3/rat-pac/raw/collab/user/root_macros/RATPACEventViewer.cxx).
 
-The viewer decides which detector volumes to draw by looking for a regular expression, which by default is `target_cell_[0-9].*`. This can be altered by providing an optional second argument to the macro command -- e.g., "target_cube", "scintillator_volume[0-9].?", etc. Please see [TRegexp](https://root.cern.ch/doc/master/classTRegexp.html) for details on how to construct a ROOT-compatible regex.
-The default option covers any volume whose name contains `target_cell_`, followed by at least one digit, followed by any other characters. The following are all valid examples compatible with the default option: `target_cell_5`, `target_cell_2_4`, `target_cell_0_0_0`.
 
 Usage
 --------------
 
-To use the viewer, simply load the macro and run it on the desired ROOT file. Remember that the macro (or a link to it) must be located in your `$ROOTSYS/macros` directory, or you will have to specify the full path to the macro file.
+#H3 Basic Invocation
+
+To use the viewer, simply load the macro and run it on the desired ROOT file. Remember that the macro (or a link to it) must be located in your `$ROOTSYS/macros` directory, or you will have to specify the full path to the macro file. To use it in its default configuration, simply type the following at the ROOT prompt:
 
 ```cpp
 .L RATPACEventViewer.cxx
-RATPACEventViewer("some_data_file.root", [TString tcs = "target_cell_[0-9].*"] );
+RATPACEventViewer("some_data_file.root");
 ```
+#H3 General Invocation
+
+The viewer decides which detector volumes to draw by looking for a regular expression in the volume names, which by default is `target_cell_[0-9].*`. This can be altered by providing an optional second argument to command invoking the macro.
+The default option covers any volume whose name contains `target_cell_`, followed by at least one digit, followed by any other characters. The following are all valid examples compatible with the default option: `target_cell_5`, `target_cell_2_4`, `target_cell_0_0_0`. Examples of alternate regular expressions to provide as the optional second argument include `target_cube`, `scintillator_volume[0-9].?`, etc. Please see [TRegexp](https://root.cern.ch/doc/master/classTRegexp.html) for further details on how to construct a ROOT-compatible regular expression.
+
+In this more general case, invoke the viewer as follows, where `tcr` is the target-cell regex:
+
+```cpp
+.L RATPACEventViewer.cxx
+RATPACEventViewer("some_data_file.root", tcr);
+```
+
+#H3 Commands
+
 The commands in the macro are as follows, where `event` is the event number:
 
 ```cpp
@@ -30,9 +45,14 @@ drawNextEvent()
 drawPrevEvent()
 ```
 
-The macro will print out a summary for each track, including particle name, number of points, and production and termination vertices.
+#H3 Output
+
+In addition to drawing the particle tracks in the viewer, the macro will print out a summary for each track, including particle name, number of points, and production and termination vertices.
+
+#H3 Further Information
 
 The comments in the macro file contain more detailed information on usage. They are copied here below for convenience.
+
 
 Details
 --------------------
