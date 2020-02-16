@@ -10,6 +10,8 @@
 // -- "target_cell_regex" determines which detector volumes will be drawn;
 //      it defaults to "target_cell_[0-9].*", but any regex
 //      matching (exclusively) your target volumes should work
+//      -- for more information on ROOT-compatible regexes, see:
+//         https://root.cern.ch/doc/master/classTRegexp.html
 //
 // -- "IBD_TF" should be kTRUE for runs using the RAT-PAC IBD generator builtin
 //      and kFALSE otherwise
@@ -35,7 +37,7 @@
 //    - material of target cells (currently Eljen EJ-254 doped at 1.5%wt Li-6)
 //
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2019 ~ //
-// ~ RATPACEventviewer v1.0.0 ~ //
+// ~ RATPACEventviewer v1.0.1 ~ //
 
 #include <drawTracks.cxx>
 #include <drawNextEvent.cxx>
