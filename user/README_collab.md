@@ -61,7 +61,7 @@ Details
 --------------------
 
 ```cpp
-//RATPACEventViewer -- for viewing RAT-PAC detector geometry and particle tracks in ROOT
+// RATPACEventViewer -- for viewing RAT-PAC detector geometry and particle tracks in ROOT
 //
 // -- Usage: "RATPACEventViewer( <RAT-PAC rootfile>, [target_cell_regex] )" to draw detector;
 //      then "drawTracks( <event number>, [IBD_TF] )" to draw tracks for a given event
