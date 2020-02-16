@@ -20,9 +20,9 @@
 // -- "IBD_TF" is kTRUE by default; this default can be changed in the function
 //      definition for "drawTracks()" if desired
 //
-// -- Example ~ Scan through some IBD events:
+// -- Example ~ Scan through some events:
 //      .L RATPACEventViewer.cxx
-//      RATPACEventViewer( "some_IBD_run.root" );
+//      RATPACEventViewer( "some_data_run.root" );
 //      drawTracks(0);
 //      drawNextEvent();
 //      drawNextEvent();
@@ -37,7 +37,7 @@
 //    - material of target cells (currently Eljen EJ-254 doped at 1.5%wt Li-6)
 //
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2019 ~ //
-// ~ RATPACEventviewer v1.0.1 ~ //
+// ~ RATPACEventviewer v1.0.2 ~ //
 
 #include <drawTracks.cxx>
 #include <drawNextEvent.cxx>
