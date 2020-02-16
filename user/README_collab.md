@@ -27,8 +27,9 @@ RATPACEventViewer("some_data_file.root");
 
 The viewer decides which detector volumes to draw by looking for a regular expression in the volume names, which by default is `target_cell_[0-9].*`.
 This default option matches any volume whose name contains `target_cell_` followed by at least one digit, followed by any other characters.
+The following are all valid examples compatible with the default option: `target_cell_5`, `target_cell_2_4`, `target_cell_0_0_0`.
 This can be altered by providing an optional second argument to the command invoking the macro.
-The following are all valid examples compatible with the default option: `target_cell_5`, `target_cell_2_4`, `target_cell_0_0_0`. Examples of alternate regular expressions to provide as the optional second argument include `target_cube`, `scintillator_volume[0-9].?`, `ej254.*`.
+Examples of alternate regular expressions to provide as the optional second argument include `target_cube`, `scintillator_volume[0-9].?`, `ej254.*`.
 Please see [TRegexp](https://root.cern.ch/doc/master/classTRegexp.html) for further details on how to construct a ROOT-compatible regular expression.
 
 In this more general case, invoke the viewer as follows, where `tcr` is the target-cell regex:
@@ -40,7 +41,7 @@ RATPACEventViewer("some_data_file.root", tcr);
 
 ### Commands
 
-Invoking the macro will automatically draw the detector geometry. The commands to then draw the particle tracks for a given event are as follows, where `event` is the event number:
+Invoking the macro will automatically draw the detector geometry. The commands to then draw the particle tracks for a given event are as follows, where `event` is the event number as defined in the original RAT-PAC TTree's 'mc.id'.
 
 ```cpp
 drawTracks( <event> )
