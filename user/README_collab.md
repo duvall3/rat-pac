@@ -15,7 +15,7 @@ The viewer is a self-contained ROOT macro. It is located on GitHub at duvall3 --
 Usage
 --------------
 
-#H3 Basic Invocation
+### Basic Invocation
 
 To use the viewer, simply load the macro and run it on the desired ROOT file. Remember that the macro (or a link to it) must be located in your `$ROOTSYS/macros` directory, or you will have to specify the full path to the macro file. To use it in its default configuration, simply type the following at the ROOT prompt:
 
@@ -23,7 +23,7 @@ To use the viewer, simply load the macro and run it on the desired ROOT file. Re
 .L RATPACEventViewer.cxx
 RATPACEventViewer("some_data_file.root");
 ```
-#H3 General Invocation
+### General Invocation
 
 The viewer decides which detector volumes to draw by looking for a regular expression in the volume names, which by default is `target_cell_[0-9].*`. This can be altered by providing an optional second argument to command invoking the macro.
 The default option covers any volume whose name contains `target_cell_`, followed by at least one digit, followed by any other characters. The following are all valid examples compatible with the default option: `target_cell_5`, `target_cell_2_4`, `target_cell_0_0_0`. Examples of alternate regular expressions to provide as the optional second argument include `target_cube`, `scintillator_volume[0-9].?`, etc. Please see [TRegexp](https://root.cern.ch/doc/master/classTRegexp.html) for further details on how to construct a ROOT-compatible regular expression.
@@ -35,7 +35,7 @@ In this more general case, invoke the viewer as follows, where `tcr` is the targ
 RATPACEventViewer("some_data_file.root", tcr);
 ```
 
-#H3 Commands
+### Commands
 
 The commands in the macro are as follows, where `event` is the event number:
 
@@ -45,11 +45,11 @@ drawNextEvent()
 drawPrevEvent()
 ```
 
-#H3 Output
+### Output
 
 In addition to drawing the particle tracks in the viewer, the macro will print out a summary for each track, including particle name, number of points, and production and termination vertices.
 
-#H3 Further Information
+### Further Information
 
 The comments in the macro file contain more detailed information on usage. They are copied here below for convenience.
 
