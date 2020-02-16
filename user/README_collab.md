@@ -26,7 +26,7 @@ RATPACEventViewer("some_data_file.root");
 ### General Invocation
 
 The viewer decides which detector volumes to draw by looking for a regular expression in the volume names, which by default is `target_cell_[0-9].*`. This can be altered by providing an optional second argument to command invoking the macro.
-The default option covers any volume whose name contains `target_cell_`, followed by at least one digit, followed by any other characters. The following are all valid examples compatible with the default option: `target_cell_5`, `target_cell_2_4`, `target_cell_0_0_0`. Examples of alternate regular expressions to provide as the optional second argument include `target_cube`, `scintillator_volume[0-9].?`, etc. Please see [TRegexp](https://root.cern.ch/doc/master/classTRegexp.html) for further details on how to construct a ROOT-compatible regular expression.
+The default option covers any volume whose name contains `target_cell_` followed by at least one digit, followed by any other characters. The following are all valid examples compatible with the default option: `target_cell_5`, `target_cell_2_4`, `target_cell_0_0_0`. Examples of alternate regular expressions to provide as the optional second argument include `target_cube`, `scintillator_volume[0-9].?`, `ej254.*`. Please see [TRegexp](https://root.cern.ch/doc/master/classTRegexp.html) for further details on how to construct a ROOT-compatible regular expression.
 
 In this more general case, invoke the viewer as follows, where `tcr` is the target-cell regex:
 
@@ -60,12 +60,18 @@ Details
 ```cpp
 // RATPACEventViewer -- for viewing RAT-PAC detector geometry and particle tracks in ROOT
 //
-// -- Usage: "RATPACEventViewer( <RAT-PAC rootfile> )" to draw detector;
+// -- Usage: "RATPACEventViewer( <RAT-PAC rootfile>, [target_cell_regex] )" to draw detector;
 //      then "drawTracks( <event number>, [IBD_TF] )" to draw tracks for a given event
 //
 // -- Primarily written for IBD events, but should work just fine for anything
 //      with either one particle per top-level MC event (use IBD_TF = kFALSE)
 //      or two (use IBD_TF = kTRUE or simply omit IBD_TF argument)
+//
+// -- "target_cell_regex" determines which detector volumes will be drawn;
+//      it defaults to "target_cell_[0-9].*", but any regex
+//      matching (exclusively) your target volumes should work
+//      -- for more information on ROOT-compatible regexes, see:
+//         https://root.cern.ch/doc/master/classTRegexp.html
 //
 // -- "IBD_TF" should be kTRUE for runs using the RAT-PAC IBD generator builtin
 //      and kFALSE otherwise
@@ -77,8 +83,8 @@ Details
 // -- Example ~ Scan through some IBD events:
 //      .L RATPACEventViewer.cxx
 //      RATPACEventViewer( "some_IBD_run.root" );
-//      Int_t event = 0;
-//      drawTracks(event);
+//      drawTracks(0);
+//      drawNextEvent();
 //      drawNextEvent();
 //      drawNextEvent();
 //
@@ -87,9 +93,9 @@ Details
 //    - name of top & world volumes
 //    - shape of top & world volumes
 //    - dimensions of top & world volumes
-//    - names of target cells
-//    - shapes of target cells
+//    - shapes of target cells (currently "box")
+//    - material of target cells (currently Eljen EJ-254 doped at 1.5%wt Li-6)
 //
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2019 ~ //
-// ~ RATPACEventviewer v0.9.5 ~ //
+// ~ RATPACEventviewer v1.0.1 ~ //
 ```
