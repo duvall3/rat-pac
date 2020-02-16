@@ -1,11 +1,15 @@
 // RATPACEventViewer -- for viewing RAT-PAC detector geometry and particle tracks in ROOT
 //
-// -- Usage: "RATPACEventViewer( <RAT-PAC rootfile> )" to draw detector;
+// -- Usage: "RATPACEventViewer( <RAT-PAC rootfile>, [target_cell_regex] )" to draw detector;
 //      then "drawTracks( <event number>, [IBD_TF] )" to draw tracks for a given event
 //
 // -- Primarily written for IBD events, but should work just fine for anything
 //      with either one particle per top-level MC event (use IBD_TF = kFALSE)
 //      or two (use IBD_TF = kTRUE or simply omit IBD_TF argument)
+//
+// -- "target_cell_regex" determines which detector volumes will be drawn;
+//      it defaults to "target_cell_[0-9].*", but any regex
+//      matching (exclusively) your target volumes should work
 //
 // -- "IBD_TF" should be kTRUE for runs using the RAT-PAC IBD generator builtin
 //      and kFALSE otherwise
@@ -17,8 +21,8 @@
 // -- Example ~ Scan through some IBD events:
 //      .L RATPACEventViewer.cxx
 //      RATPACEventViewer( "some_IBD_run.root" );
-//      Int_t event = 0;
-//      drawTracks(event);
+//      drawTracks(0);
+//      drawNextEvent();
 //      drawNextEvent();
 //      drawNextEvent();
 //
@@ -27,18 +31,18 @@
 //    - name of top & world volumes
 //    - shape of top & world volumes
 //    - dimensions of top & world volumes
-//    - names of target cells
-//    - shapes of target cells
+//    - shapes of target cells (currently "box")
+//    - material of target cells (currently Eljen EJ-254 doped at 1.5%wt Li-6)
 //
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2019 ~ //
-// ~ RATPACEventviewer v0.9.5 ~ //
+// ~ RATPACEventviewer v1.0.0 ~ //
 
 #include <drawTracks.cxx>
 #include <drawNextEvent.cxx>
 #include <drawPrevEvent.cxx>
 
 
-void RATPACEventViewer( const char* FileName ) {
+void RATPACEventViewer( const char* FileName, TString tcs = "target_cell_[0-9].*" ) {
 
 
 
@@ -65,53 +69,54 @@ TGeoMedium *med = new TGeoMedium("vacuum", 1, mat);
 TGeoVolume* top = geo->MakeBox("Top", med, 1.e3, 1.e3, 1.e3); //cm
 geo->SetTopVolume(top);
 
-// target cell array
-// Note: extracting the database entries involves extensive class and string manipulations
-// position
-TObjString* cellarray_pos_tos = (TObjString*)db->GetValue("GEO[target_cell_array].position");
-TString cellarray_pos = cellarray_pos_tos->GetString();
-cellarray_pos.ReplaceAll("d", "");
-cellarray_pos.ReplaceAll("[", "");
-cellarray_pos.ReplaceAll(" ", "");
-cellarray_pos.Remove(cellarray_pos.Last(','));
-TObjArray* ca_pos_arr = cellarray_pos.Tokenize(',');
-TObjString* ca_pos_obj_x = (TObjString*)ca_pos_arr->At(0);
-TObjString* ca_pos_obj_y = (TObjString*)ca_pos_arr->At(1);
-TObjString* ca_pos_obj_z = (TObjString*)ca_pos_arr->At(2);
-TString ca_pos_str_x = ca_pos_obj_x->GetString();
-TString ca_pos_str_y = ca_pos_obj_y->GetString();
-TString ca_pos_str_z = ca_pos_obj_z->GetString();
-Double_t ca_pos_x = ca_pos_str_x.Atof()/10.; //cm
-Double_t ca_pos_y = ca_pos_str_y.Atof()/10.; //cm
-Double_t ca_pos_z = ca_pos_str_z.Atof()/10.; //cm
-//cout << cellarray_pos.Data() << endl; //debug
-//cout << ca_pos_x << "\t" << ca_pos_y << "\t" << ca_pos_z << endl;//debug
-// size
-TObjString* cellarray_siz_tos = (TObjString*)db->GetValue("GEO[target_cell_array].size");
-TString cellarray_siz = cellarray_siz_tos->GetString();
-cellarray_siz.ReplaceAll("d", "");
-cellarray_siz.ReplaceAll("[", "");
-cellarray_siz.ReplaceAll(" ", "");
-cellarray_siz.Remove(cellarray_siz.Last(','));
-TObjArray* ca_siz_arr = cellarray_siz.Tokenize(',');
-TObjString* ca_siz_obj_x = (TObjString*)ca_siz_arr->At(0);
-TObjString* ca_siz_obj_y = (TObjString*)ca_siz_arr->At(1);
-TObjString* ca_siz_obj_z = (TObjString*)ca_siz_arr->At(2);
-TString ca_siz_str_x = ca_siz_obj_x->GetString();
-TString ca_siz_str_y = ca_siz_obj_y->GetString();
-TString ca_siz_str_z = ca_siz_obj_z->GetString();
-Double_t ca_siz_x = ca_siz_str_x.Atof()/10.; //cm
-Double_t ca_siz_y = ca_siz_str_y.Atof()/10.; //cm
-Double_t ca_siz_z = ca_siz_str_z.Atof()/10.; //cm
-//cout << cellarray_siz.Data() << endl; //debug
-//cout << ca_siz_x << "\t" << ca_siz_y << "\t" << ca_siz_z << endl;//debug
-
-// finally create TGeoVolume cell_array
-TGeoVolume* cell_array = geo->MakeBox("CellArray", med, ca_siz_x, ca_siz_y, ca_siz_z);
+////// ELIMINATED FOR FLEXIBILITY IN TARGET-VOLUME NAMES
+//// target cell array
+//// Note: extracting the database entries involves extensive class and string manipulations
+//// position
+//TObjString* cellarray_pos_tos = (TObjString*)db->GetValue("GEO[target_cell_array].position");
+//TString cellarray_pos = cellarray_pos_tos->GetString();
+//cellarray_pos.ReplaceAll("d", "");
+//cellarray_pos.ReplaceAll("[", "");
+//cellarray_pos.ReplaceAll(" ", "");
+//cellarray_pos.Remove(cellarray_pos.Last(','));
+//TObjArray* ca_pos_arr = cellarray_pos.Tokenize(',');
+//TObjString* ca_pos_obj_x = (TObjString*)ca_pos_arr->At(0);
+//TObjString* ca_pos_obj_y = (TObjString*)ca_pos_arr->At(1);
+//TObjString* ca_pos_obj_z = (TObjString*)ca_pos_arr->At(2);
+//TString ca_pos_str_x = ca_pos_obj_x->GetString();
+//TString ca_pos_str_y = ca_pos_obj_y->GetString();
+//TString ca_pos_str_z = ca_pos_obj_z->GetString();
+//Double_t ca_pos_x = ca_pos_str_x.Atof()/10.; //cm
+//Double_t ca_pos_y = ca_pos_str_y.Atof()/10.; //cm
+//Double_t ca_pos_z = ca_pos_str_z.Atof()/10.; //cm
+////cout << cellarray_pos.Data() << endl; //debug
+////cout << ca_pos_x << "\t" << ca_pos_y << "\t" << ca_pos_z << endl;//debug
+//// size
+//TObjString* cellarray_siz_tos = (TObjString*)db->GetValue("GEO[target_cell_array].size");
+//TString cellarray_siz = cellarray_siz_tos->GetString();
+//cellarray_siz.ReplaceAll("d", "");
+//cellarray_siz.ReplaceAll("[", "");
+//cellarray_siz.ReplaceAll(" ", "");
+//cellarray_siz.Remove(cellarray_siz.Last(','));
+//TObjArray* ca_siz_arr = cellarray_siz.Tokenize(',');
+//TObjString* ca_siz_obj_x = (TObjString*)ca_siz_arr->At(0);
+//TObjString* ca_siz_obj_y = (TObjString*)ca_siz_arr->At(1);
+//TObjString* ca_siz_obj_z = (TObjString*)ca_siz_arr->At(2);
+//TString ca_siz_str_x = ca_siz_obj_x->GetString();
+//TString ca_siz_str_y = ca_siz_obj_y->GetString();
+//TString ca_siz_str_z = ca_siz_obj_z->GetString();
+//Double_t ca_siz_x = ca_siz_str_x.Atof()/10.; //cm
+//Double_t ca_siz_y = ca_siz_str_y.Atof()/10.; //cm
+//Double_t ca_siz_z = ca_siz_str_z.Atof()/10.; //cm
+////cout << cellarray_siz.Data() << endl; //debug
+////cout << ca_siz_x << "\t" << ca_siz_y << "\t" << ca_siz_z << endl;//debug
+//
+//// finally create TGeoVolume cell_array
+//TGeoVolume* cell_array = geo->MakeBox("CellArray", med, ca_siz_x, ca_siz_y, ca_siz_z);
 
 // load detector from db into TGeoManager
 Int_t k_target_cell; // target cell counter
-TString rcl_str; // ROW COL LYR
+//TString rcl_str; // ROW COL LYR //debug
 TIter i = db->begin();
 for ( i = db->begin(); i != db->end(); ++i ) {
 
@@ -121,7 +126,7 @@ for ( i = db->begin(); i != db->end(); ++i ) {
   TObjString* val = (TObjString*)tp->Value();
   TString keystr = (TString)key->GetString();
   TString valstr = (TString)val->GetString();
-  TString row_col_lyr = keystr.Copy();
+//TString row_col_lyr = keystr.Copy(); //debug
   TString target_cell_pos_str_x = "";
   TString target_cell_pos_str_y = "";
   TString target_cell_pos_str_z = "";
@@ -135,11 +140,13 @@ for ( i = db->begin(); i != db->end(); ++i ) {
 
 
   // test for target cell
-  TRegexp tc = "target_cell_[0-9].*position"; //HC//
+//TRegexp tc = "target_cell_[0-9].*position"; //HC//
+  TString tcsp = tcs+"position";
+  TRegexp tc = tcsp;
   if ( keystr.Contains(tc) ) {
-    // get cell row, col, lyr
-    row_col_lyr.ReplaceAll("GEO[target_cell_", "");
-    row_col_lyr.Remove(row_col_lyr.Index(']'));
+    // DEBUG: get cell row, col, lyr
+//  row_col_lyr.ReplaceAll("GEO[target_cell_", "");
+//  row_col_lyr.Remove(row_col_lyr.Index(']'));
 //  cout << row_col_lyr.Data() << "\t"; //debug
 
 //  cout << row_col_lyr.Data() << "\t" << valstr.Data() << endl; //debug
@@ -192,7 +199,8 @@ for ( i = db->begin(); i != db->end(); ++i ) {
     target_cell->SetLineWidth(1.0);
 //  target_cell->Print(); //debug
     TGeoTranslation* trans = new TGeoTranslation(target_cell_pos_x, target_cell_pos_y, target_cell_pos_z);
-    cell_array->AddNode(target_cell, k_target_cell, trans);
+//  cell_array->AddNode(target_cell, k_target_cell, trans);
+    top->AddNode(target_cell, k_target_cell, trans);
     k_target_cell++;
       
   } //end if -- target cell
@@ -205,12 +213,15 @@ cout << endl;
 geo->CloseGeometry();
 top->SetLineColor(kMagenta);
 geo->SetTopVisible(kTRUE);
-cell_array->SetLineColor(kGray);
-cell_array->SetLineWidth(1);
+//cell_array->SetLineColor(kGray);
+//cell_array->SetLineWidth(1);
+top->SetLineColor(kGray);
+top->SetLineWidth(1);
 TString can_name = detector_name+", \""+filename+"\"";
 TCanvas* can = new TCanvas("can", can_name, 1000, 100, 850, 700);
 top->Draw();
-cell_array->Draw("SAME");
+//cell_array->Draw("SAME");
+top->Draw("SAME");
 //TView* view = can->GetView();
 // annotations
 TLegend *gleg = new TLegend(0.01, 0.01, 0.25, 0.15);
