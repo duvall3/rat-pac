@@ -10,8 +10,8 @@ Required Files
 
 The viewer is a self-contained ROOT macro. It is located on GitHub at duvall3 --> rat-pac --> branch collab --> user --> root_macros --> [RATPACEventviewer.cxx](https://github.com/duvall3/rat-pac/raw/collab/user/root_macros/RATPACEventViewer.cxx).
 
-Currently, all detector volumes to be drawn **must** include "`target_cell_<number>`" in their volume name (as used in [geogen_general-segmented.sh](https://github.com/duvall3/rat-pac/blob/collab/user/shell_scripts/geogen_general-segmented.sh)).
-The following are all valid examples: `target_cell_5`, `target_cell_2_4`, `target_cell_0_0_0`. An update with more flexible volume names is in development, but for now this is hard-coded.
+The viewer decides which detector volumes to draw by looking for a regular expression, which by default is `target_cell_[0-9].*`. This can be altered by providing an optional second argument to the macro command -- e.g., "target_cube", "scintillator_volume[0-9].?", etc. Please see [TRegexp](https://root.cern.ch/doc/master/classTRegexp.html) for details on how to construct a ROOT-compatible regex.
+The default option covers any volume whose name contains `target_cell_`, followed by at least one digit, followed by any other characters. The following are all valid examples compatible with the default option: `target_cell_5`, `target_cell_2_4`, `target_cell_0_0_0`.
 
 Usage
 --------------
@@ -20,7 +20,7 @@ To use the viewer, simply load the macro and run it on the desired ROOT file. Re
 
 ```cpp
 .L RATPACEventViewer.cxx
-RATPACEventViewer("some_data_file.root");
+RATPACEventViewer("some_data_file.root", [TString tcs = "target_cell_[0-9].*"] );
 ```
 The commands in the macro are as follows, where `event` is the event number:
 
