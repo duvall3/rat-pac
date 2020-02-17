@@ -10,14 +10,19 @@ Required Files
 ------------------
 
 The viewer is a self-contained ROOT macro. It is located on GitHub at duvall3 --> rat-pac --> branch collab --> user --> root_macros --> [RATPACEventviewer.cxx](https://github.com/duvall3/rat-pac/raw/collab/user/root_macros/RATPACEventViewer.cxx).
-
+Remember that the macro (or a link to it) must be located in your `$ROOTSYS/macros` directory, or you will have to specify the full path to the macro file.
+As of the current version, in order to comply with ROOT's requirements for function definitions, the commands within the macro are provided in separate files, linked below.
+These files must also be located (or linked) in `$ROOTSYS/macros`, as with the main file itself. They are located as follows:
+* [drawTracks.cxx](https://github.com/duvall3/rat-pac/raw/collab/user/root_macros/drawTracks.cxx)
+* [drawNextEvent.cxx](https://github.com/duvall3/rat-pac/raw/collab/user/root_macros/drawNextEvent.cxx)
+* [drawPrevEvent.cxx](https://github.com/duvall3/rat-pac/raw/collab/user/root_macros/drawPrevEvent.cxx)
 
 Usage
 --------------
 
 ### Basic Invocation
 
-To use the viewer, simply load the macro and run it on the desired ROOT file. Remember that the macro (or a link to it) must be located in your `$ROOTSYS/macros` directory, or you will have to specify the full path to the macro file. To invoke it in its default configuration, simply type the following at the ROOT prompt:
+To use the viewer, simply load the macro and run it on the desired ROOT file.  To invoke it in its default configuration, simply type the following at the ROOT prompt:
 
 ```cpp
 .L RATPACEventViewer.cxx
