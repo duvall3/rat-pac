@@ -15,7 +15,7 @@
 //
 // -- "IBD_TF" should be kTRUE for runs using the RAT-PAC IBD generator builtin
 //      and kFALSE otherwise
-//      -- note: in standard ROOT, kTRUE == true == 1 and KFALSE == false == 0
+//      -- note: in standard ROOT, kTRUE == true == 1 and kFALSE == false == 0
 //
 // -- "IBD_TF" is kTRUE by default; this default can be changed in the function
 //      definition for "drawTracks()" if desired
@@ -37,7 +37,7 @@
 //    - material of target cells (currently Eljen EJ-254 doped at 1.5%wt Li-6)
 //
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2019 ~ //
-// ~ RATPACEventviewer v1.0.2 ~ //
+// ~ RATPACEventviewer v1.0.3 ~ //
 
 #include <drawTracks.cxx>
 #include <drawNextEvent.cxx>
