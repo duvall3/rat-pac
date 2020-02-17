@@ -5,7 +5,7 @@ Instructions for using Mark Duvall's ROOT-based event viewer for RAT-PAC IBD eve
 
 **Written for ROOT 5.34; ROOT 6 version currently in development**
 
-**NOTE: The version of ROOT used _must_ be one compiled against RAT-PAC, as described in the RAT-PAC documentation [here](https://rat.readthedocs.io/en/latest/installation.html).**
+**NOTE: This document presupposes that a working installation of RAT-PAC and its accompanying build of ROOT are active on the machine in use. In other words, the version of ROOT used _must_ be one compiled against RAT-PAC, as described in the RAT-PAC documentation [here](https://rat.readthedocs.io/en/latest/installation.html).**
 
 
 Required Files
