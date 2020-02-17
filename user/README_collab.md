@@ -88,7 +88,7 @@ Details
 //
 // -- "IBD_TF" should be kTRUE for runs using the RAT-PAC IBD generator builtin
 //      and kFALSE otherwise
-//      -- note: in standard ROOT, kTRUE == true == 1 and KFALSE == false == 0
+//      -- note: in standard ROOT, kTRUE == true == 1 and kFALSE == false == 0
 //
 // -- "IBD_TF" is kTRUE by default; this default can be changed in the function
 //      definition for "drawTracks()" if desired
