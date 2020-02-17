@@ -5,11 +5,13 @@ Instructions for using Mark Duvall's ROOT-based event viewer for RAT-PAC IBD eve
 
 **Written for ROOT 5.34; ROOT 6 version currently in development**
 
+**NOTE: The version of ROOT used _must_ be one compiled against RAT-PAC, as described in the RAT-PAC documentation [here](https://rat.readthedocs.io/en/latest/installation.html).**
+
 
 Required Files
 ------------------
 
-The viewer is a self-contained ROOT macro. It is located on GitHub at duvall3 --> rat-pac --> branch collab --> user --> root_macros --> [RATPACEventviewer.cxx](https://github.com/duvall3/rat-pac/raw/collab/user/root_macros/RATPACEventViewer.cxx).
+The viewer is a self-contained ROOT macro (mostly; see function files below). It is located on GitHub at duvall3 --> rat-pac --> branch collab --> user --> root_macros --> [RATPACEventviewer.cxx](https://github.com/duvall3/rat-pac/raw/collab/user/root_macros/RATPACEventViewer.cxx).
 Remember that the macro (or a link to it) must be located in your `$ROOTSYS/macros` directory, or you will have to specify the full path to the macro file.
 As of the current version, in order to comply with ROOT's requirements for function definitions, the commands within the macro are provided in separate files, linked below.
 These files must also be located (or linked) in `$ROOTSYS/macros`, as with the main file itself. They are located as follows:
