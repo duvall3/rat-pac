@@ -36,12 +36,12 @@ In this more general case, invoke the viewer as follows, where `tcr` is the targ
 
 ```cpp
 .L RATPACEventViewer.cxx
-RATPACEventViewer("some_data_file.root", tcr);
+RATPACEventViewer("some_data_file.root", "tcr");
 ```
 
 ### Commands
 
-Invoking the macro will automatically draw the detector geometry. The commands to then draw the particle tracks for a given event are as follows, where `event` is the event number as defined in the original RAT-PAC TTree's 'mc.id'.
+Invoking the macro will automatically draw the detector geometry. The commands to then draw the particle tracks for a given event are as follows, where `event` is the event number as defined in the original RAT-PAC TTree's 'mc.id':
 
 ```cpp
 drawTracks( <event> )
