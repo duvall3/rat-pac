@@ -37,7 +37,7 @@
 //    - material of target cells (currently Eljen EJ-254 doped at 1.5%wt Li-6)
 //
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2019 ~ //
-// ~ RATPACEventviewer v1.0.3 ~ //
+// ~ RATPACEventviewer v1.1.0 ~ //
 
 #include <drawTracks.cxx>
 #include <drawNextEvent.cxx>
