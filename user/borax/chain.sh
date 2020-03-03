@@ -16,18 +16,44 @@ echo -e "\
 
 void chain() {
 
-TChain ch(\"T\");\n" > chain.cxx
+// init
+TChain ch(\"T\");\nLong64_t nIBDs(0);\n\n// file loop\n" > chain.cxx
 
 for DIR in */; do
   FILE_BASE=$(basename $DIR /)
   FILE_PREFIX="$FILE_BASE/$FILE_BASE"
   FILENAME=$FILE_PREFIX"_T.root"
-  echo "ch.Add(\"$FILENAME\");" >> chain.cxx
+  echo "\
+ch.Add(\"$FILENAME\");
+T->GetEntries();
+TTree* t = T->GetTree();
+TObjString* tos = (TObjString*)t->GetUserInfo()->At(0);
+nIBDs = nIBDs + tos->GetString().Atoll();
+"  >> chain.cxx
 done
 
 OUTFILE=$(basename $(pwd))"_T.root"
 
-echo -e "\nch.Merge(\"$OUTFILE\");\n\n//all pau!   )\n}" >> chain.cxx
+echo "\
+// merge trees and prepare nIBDs as a TObjString*
+ch.Merge(\"$OUTFILE\");
+TString nIBDs_ts = TString::LLtoa(nIBDs, 10); // base 10
+TObjString* nIBDs_tos = new TObjString(nIBDs_ts.Data());
+
+// update nIBDs in output file
+TFile* f = TFile::Open(\"$OUTFILE\", \"update\");
+TKey* tk = f->FindKey(\"T\");
+TTree* tr = tk->ReadObj();
+TList* t_user = tr->GetUserInfo();
+t_user->Clear();
+t_user->Add(nIBDs_tos);
+tr->Write();
+f->Save();
+f->Close();
+
+//all pau!   )
+}" >> chain.cxx
+
 
 # all pau!  )
 exit 0
