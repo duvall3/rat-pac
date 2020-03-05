@@ -8,8 +8,8 @@
 //      or two (use IBD_TF = kTRUE or simply omit IBD_TF argument)
 //
 // -- "target_cell_regex" determines which detector volumes will be drawn;
-//      it defaults to "target_cell_[0-9].*", but any regex
-//      matching (exclusively) your target volumes should work
+//      it defaults to ".*target_cell_[0-9].*", but any regex
+//      matching (exclusively) your desired volumes should work
 //      -- for more information on ROOT-compatible regexes, see:
 //         https://root.cern.ch/doc/master/classTRegexp.html
 //
@@ -37,14 +37,14 @@
 //    - material of target cells (currently Eljen EJ-254 doped at 1.5%wt Li-6)
 //
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2019 ~ //
-// ~ RATPACEventviewer v1.1.0 ~ //
+// ~ RATPACEventviewer v1.2.0 ~ //
 
 #include <drawTracks.cxx>
 #include <drawNextEvent.cxx>
 #include <drawPrevEvent.cxx>
 
 
-void RATPACEventViewer( const char* FileName, TString tcs = "target_cell_[0-9].*" ) {
+void RATPACEventViewer( const char* FileName, TString tcs = ".*target_cell_[0-9].*" ) {
 
 
 
@@ -135,8 +135,12 @@ for ( i = db->begin(); i != db->end(); ++i ) {
     target_cell_siz_y = target_cell_siz_str_y.Atof()/10.; //cm
     target_cell_siz_z = target_cell_siz_str_z.Atof()/10.; //cm
 
+    // get cell name
+    keystr.ReplaceAll("GEO[", "");
+    keystr.Remove(keystr.Index("]"));
+
     // create target cell
-    TGeoVolume* target_cell = geo->MakeBox("target cell", med, target_cell_siz_x, target_cell_siz_y, target_cell_siz_z );
+    TGeoVolume* target_cell = geo->MakeBox(keystr.Data(), med, target_cell_siz_x, target_cell_siz_y, target_cell_siz_z );
     target_cell->SetLineColor(kBlack);
     target_cell->SetLineWidth(1.0);
     TGeoTranslation* trans = new TGeoTranslation(target_cell_pos_x, target_cell_pos_y, target_cell_pos_z);
