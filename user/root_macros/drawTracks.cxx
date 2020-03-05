@@ -43,7 +43,8 @@ int drawTracks( Int_t event = 0, Bool_t ibd_tf = kTRUE ) {
   }
   e_track->SetName(parname);
   e_track->SetLineColor(kRed);
-  e_track->SetLineWidth(2.0);
+  e_track->SetLineWidth(3);
+  e_track->SetLineStyle(0);
 
   // for IBD, now process neutron
 
@@ -64,7 +65,9 @@ int drawTracks( Int_t event = 0, Bool_t ibd_tf = kTRUE ) {
     }
     n_track->SetName(parname);
     n_track->SetLineColor(kBlue);
-    n_track->SetLineWidth(2.0);
+    n_track->SetLineWidth(3);
+    n_track->SetLineStyle(0);
+
   } //end if -- IBD_TF
 
   // draw tracks and print summary

@@ -142,7 +142,7 @@ for ( i = db->begin(); i != db->end(); ++i ) {
     // create target cell
     TGeoVolume* target_cell = geo->MakeBox(keystr.Data(), med, target_cell_siz_x, target_cell_siz_y, target_cell_siz_z );
     target_cell->SetLineColor(kBlack);
-    target_cell->SetLineWidth(1.0);
+    target_cell->SetLineWidth(1);
     TGeoTranslation* trans = new TGeoTranslation(target_cell_pos_x, target_cell_pos_y, target_cell_pos_z);
     top->AddNode(target_cell, k_target_cell, trans);
     k_target_cell++;

@@ -23,6 +23,7 @@
 
 ## KILL option: kill all instances of RAT-PAC belonging to the current user
 
+ARG1=$(echo $1 | tr [:upper:] [:lower:])
 if [[ $1 = "kill" ]]; then
 
   # check whether there are any relevant jobs
@@ -55,7 +56,7 @@ fi
 ## INIT
 
 if [[ $# -lt 3 ]]; then
-  echo -e "\nUSAGE: local_batch_jobs.sh <DATARUN_NAME> <EVENTS_PER_INSTANCE> <NUM_INSTANCES> [OUTPUT_DIR]\n" && exit 10
+  echo -e "\nUSAGE: local_batch_jobs.sh <DATARUN_NAME> <EVENTS_PER_INSTANCE> <NUM_INSTANCES> [OUTPUT_DIR]\n  OR   local_batch_jobs.sh <kill>\n" && exit 10
 fi
 DATARUN=$1
 NEVENTS=$2
