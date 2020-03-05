@@ -34,7 +34,7 @@ RATPACEventViewer("some_data_file.root");
 ```
 ### General Invocation
 
-The viewer decides which detector volumes to draw by looking for a regular expression in the volume names, which by default is `target_cell_[0-9].*`.
+The viewer decides which detector volumes to draw by looking for a regular expression in the volume names, which by default is `.*target_cell_[0-9].*`.
 This default option matches any volume whose name contains `target_cell_` followed by at least one digit, followed by any other characters.
 The following are all valid examples compatible with the default option: `target_cell_5`, `target_cell_2_4`, `target_cell_0_0_0`.
 This can be altered by providing an optional second argument to the command invoking the macro.
@@ -73,7 +73,7 @@ Details
 ```cpp
 // RATPACEventViewer -- for viewing RAT-PAC detector geometry and particle tracks in ROOT
 //
-// -- Usage: "RATPACEventViewer( <RAT-PAC rootfile>, [target_cell_regex] )" to draw detector;
+// -- Usage: "RATPACEventViewer( <RAT-PAC rootfile>, ["target_cell_regex"] )" to draw detector;
 //      then "drawTracks( <event number>, [IBD_TF] )" to draw tracks for a given event
 //
 // -- Primarily written for IBD events, but should work just fine for anything
@@ -81,8 +81,8 @@ Details
 //      or two (use IBD_TF = kTRUE or simply omit IBD_TF argument)
 //
 // -- "target_cell_regex" determines which detector volumes will be drawn;
-//      it defaults to "target_cell_[0-9].*", but any regex
-//      matching (exclusively) your target volumes should work
+//      it defaults to ".*target_cell_[0-9].*", but any regex
+//      matching (exclusively) your desired volumes should work
 //      -- for more information on ROOT-compatible regexes, see:
 //         https://root.cern.ch/doc/master/classTRegexp.html
 //
@@ -110,5 +110,5 @@ Details
 //    - material of target cells (currently Eljen EJ-254 doped at 1.5%wt Li-6)
 //
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2019 ~ //
-// ~ RATPACEventviewer v1.0.2 ~ //
+// ~ RATPACEventviewer v1.2.0 ~ //
 ```
