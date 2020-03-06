@@ -36,12 +36,13 @@
 //    - shapes of target cells (currently "box")
 //    - material of target cells (currently Eljen EJ-254 doped at 1.5%wt Li-6)
 //
-// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2019 ~ //
-// ~ RATPACEventviewer v1.2.0 ~ //
+// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ Written 10/2019 ~ Updated 3/2020 ~ //
+// ~ RATPACEventviewer v1.3.0 ~ //
 
 #include <drawTracks.cxx>
 #include <drawNextEvent.cxx>
 #include <drawPrevEvent.cxx>
+#include <highlightCells.cxx>
 
 
 void RATPACEventViewer( const char* FileName, TString tcs = ".*target_cell_[0-9].*" ) {
@@ -169,7 +170,6 @@ gleg->SetName("Geometry Legend");
 gleg->AddEntry(target_cell, "Target Cells", "lf");
 gleg->AddEntry(top, "Cave Walls", "lf");
 gleg->Draw();
-
 
 // all pau!   )
 }
