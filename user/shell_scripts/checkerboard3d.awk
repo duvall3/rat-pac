@@ -12,12 +12,12 @@ BEGIN{
 }
 
 # print all non-target-cell entries
-$2 !~ /target_cell/ {print $0}
+$1 !~ /target_cube/ {print $0 "\n"}
 
 # only print target cells when ROW, COL, and LYR are either all even or all odd
-$2 ~ /target_cell/ {
-  match($2, /[[:digit:]]+/, ROW)
-  field_copy = $2
+$1 ~ /target_cube/ {
+  match($1, /[[:digit:]]+/, ROW)
+  field_copy = $1
   sub(/[[:digit:]]+/, "", field_copy)
   match(field_copy, /[[:digit:]]+/, COL)
   sub(/[[:digit:]]+/, "", field_copy)
@@ -26,7 +26,7 @@ $2 ~ /target_cell/ {
   col_even = strtonum(COL[0]) % 2
   lyr_even = strtonum(LYR[0]) % 2
   if ( (row_even==col_even) && (col_even==lyr_even) )
-    print $0
+    print $0 "\n"
 }
 
 # all pau!   )
