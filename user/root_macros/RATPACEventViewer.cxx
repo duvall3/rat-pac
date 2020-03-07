@@ -1,7 +1,7 @@
 // RATPACEventViewer -- for viewing RAT-PAC detector geometry and particle tracks in ROOT
 //
 // -- Usage: "RATPACEventViewer( <RAT-PAC rootfile>, ["target_cell_regex"] )" to draw detector;
-//      then "drawTracks( <event number>, [IBD_TF] )" to draw tracks for a given event
+//      then "drawTracks( <event number>, [IBD_TF], highlight_TF )" to draw tracks for a given event
 //
 // -- Primarily written for IBD events, but should work just fine for anything
 //      with either one particle per top-level MC event (use IBD_TF = kFALSE)
@@ -20,6 +20,12 @@
 // -- "IBD_TF" is kTRUE by default; this default can be changed in the function
 //      definition for "drawTracks()" if desired
 //
+// -- "highlight_TF" simply switches cell highlighting on or off (default is on)
+//    -- default for IBD events:
+//       green = generation cell
+//       red = positron-annihilation cell
+//       blue = neutron-capture cell
+//
 // -- Example ~ Scan through some events:
 //      .L RATPACEventViewer.cxx
 //      RATPACEventViewer( "some_data_run.root" );
@@ -37,7 +43,7 @@
 //    - material of target cells (currently Eljen EJ-254 doped at 1.5%wt Li-6)
 //
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ Written 10/2019 ~ Updated 3/2020 ~ //
-// ~ RATPACEventviewer v1.3.0 ~ //
+// ~ RATPACEventviewer v1.3.1 ~ //
 
 #include <drawTracks.cxx>
 #include <drawNextEvent.cxx>

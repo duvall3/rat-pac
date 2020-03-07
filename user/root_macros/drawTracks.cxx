@@ -1,6 +1,6 @@
 // drawTracks.cxx -- macro for replacing first function in RATPACEventViewer.cxx
 //
-// -- USAGE: drawTracks( <Int_t EVENT>, [Bool_t ibd_TF], [Bool_t highlight_TF );
+// -- USAGE: drawTracks( <Int_t EVENT>, [Bool_t ibd_TF], [Bool_t highlight_TF] );
 
 
 // PARTICLE TRACKS
