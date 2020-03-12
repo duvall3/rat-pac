@@ -8,14 +8,15 @@ Instructions for using Mark Duvall's ROOT-based event viewer for RAT-PAC IBD eve
 **NOTE: This document presupposes that a working installation of RAT-PAC and its accompanying build of ROOT are active on the machine in use. In other words, the version of ROOT used _must_ be one compiled against RAT-PAC, as described in the RAT-PAC documentation [here](https://rat.readthedocs.io/en/latest/installation.html).**
 
 
-Installation (Automatic)
+Installation
 --------------------------
+
+### Automatic
 
 For users running a BASH-type shell, there is an installer script on GitHub at *duvall3 --> rat-pac --> branch collab --> user --> shell_scripts --> [RPEV_Installer.sh](https://github.com/duvall3/rat-pac/blob/collab/user/shell_scripts/RPEV_Installer.sh) ([file](https://github.com/duvall3/rat-pac/raw/collab/user/shell_scripts/RPEV_Installer.sh))*.
 
 
-Installation (Manual)
---------------------------
+### Manual
 
 The viewer is a mostly self-contained ROOT macro. It is located on GitHub at *duvall3 --> rat-pac --> branch collab --> user --> root_macros --> [RATPACEventviewer.cxx](https://github.com/duvall3/rat-pac/blob/collab/user/root_macros/RATPACEventViewer.cxx) ([file](https://github.com/duvall3/rat-pac/raw/collab/user/root_macros/RATPACEventViewer.cxx))*.
 Remember that the macro (or a link to it) must be located in your `$ROOTSYS/macros` directory, or you will have to specify the full path to the macro file.
