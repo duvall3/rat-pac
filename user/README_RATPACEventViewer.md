@@ -80,8 +80,8 @@ Details
 ```cpp
 // RATPACEventViewer -- for viewing RAT-PAC detector geometry and particle tracks in ROOT
 //
-// -- Usage: "RATPACEventViewer( <RAT-PAC rootfile>, ["target_cell_regex"] )" to draw detector;
-//      then "drawTracks( <event number>, [IBD_TF], highlight_TF )" to draw tracks for a given event
+// -- Usage: 'RATPACEventViewer( <RAT-PAC rootfile>, ["target_cell_regex"] )' to draw detector;
+//      then 'drawTracks( <event number>, [IBD_TF], [highlight_TF] )' to draw tracks for a given event
 //
 // -- Primarily written for IBD events, but should work just fine for anything
 //      with either one particle per top-level MC event (use IBD_TF = kFALSE)
