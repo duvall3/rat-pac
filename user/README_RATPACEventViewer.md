@@ -11,7 +11,7 @@ Instructions for using Mark Duvall's ROOT-based event viewer for RAT-PAC IBD eve
 Installation (Automatic)
 --------------------------
 
-For users running a BASH-type shell, there is an installer script on GitHub at *duvall3 --> rat-pac --> branch collab --> user --> root_macros --> [RATPACEventviewer.cxx](https://github.com/duvall3/rat-pac/blob/collab/user/shell_scripts/RPEV_Installer.sh) ([file](https://github.com/duvall3/rat-pac/raw/collab/user/shell_scripts/RPEV_Installer.sh))*.
+For users running a BASH-type shell, there is an installer script on GitHub at *duvall3 --> rat-pac --> branch collab --> user --> shell_scripts --> [RPEV_Installer.sh](https://github.com/duvall3/rat-pac/blob/collab/user/shell_scripts/RPEV_Installer.sh) ([file](https://github.com/duvall3/rat-pac/raw/collab/user/shell_scripts/RPEV_Installer.sh))*.
 
 
 Installation (Manual)
