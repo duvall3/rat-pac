@@ -2,7 +2,6 @@
 # RPEV_Installer.sh -- simple installer script for Mark Duvall's RATPACEventViewer
 # -- USAGE: RPEV_Installer.sh [PREFERRED_ROOTSYS]
 # -- see https://github.com/duvall3/rat-pac/blob/collab/user/README_RATPACEventViewer.md
-#      for more information
 # ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 3/2020 ~ #
 
 # get ROOTSYS and set INSTALL_DIR
