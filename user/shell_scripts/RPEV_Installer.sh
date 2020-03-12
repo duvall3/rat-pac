@@ -5,9 +5,7 @@
 # ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 3/2020 ~ #
 
 # get ROOTSYS and set INSTALL_DIR
-if [ $1 ]; then
-  ROOTSYS=$1
-fi
+if [ $1 ]; then ROOTSYS=$1; fi
 if [ -z $ROOTSYS ]; then
   echo -e '\nError: No $ROOTSYS found or given. Please either set this environment variable or provide it on the command line.\n'
   exit 10
