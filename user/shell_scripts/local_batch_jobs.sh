@@ -24,7 +24,7 @@
 ## KILL option: kill all instances of RAT-PAC belonging to the current user
 
 ARG1=$(echo $1 | tr [:upper:] [:lower:])
-if [[ $1 = "kill" ]]; then
+if [[ $ARG1 = "kill" ]]; then
 
   # check whether there are any relevant jobs
   if [[ ! $(pgrep -u $USER -x rat) ]]; then # user currently does not have RAT-PAC running
@@ -47,7 +47,7 @@ if [[ $1 = "kill" ]]; then
     echo -e "\nKill canceled.\n" && exit 2
   else
     # user entered something other than y(es) or n(o)
-    echo -e "\nInput not recognized; please try again.\n" && exit 3
+    echo -e "\nInput not recognized; please try again.\n" && local_batch_jobs.sh kill
   fi
 
 fi
