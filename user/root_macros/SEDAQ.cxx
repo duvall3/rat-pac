@@ -18,6 +18,8 @@
 //   -- nulat_tf -- whether to apply cuts specific to NuLat
 
 #include <math.h>
+#include <aTanFull.cxx>
+#include <aTanFull.cxx>
 
 void SEDAQ( const char* filename, Double_t prompt_low, Double_t delayed_low, Double_t deltaT_low, Double_t deltaT_high, Bool_t graphics_tf, Bool_t nulat_tf ) {
 
@@ -279,8 +281,8 @@ for (( k = 0; k < num_bursts; k++ )) {
   }
   // if candidate burst pair is found, add burst times and energies and reconstructed angle to tree: //NOTE: phi=arctan(y/x) unless changed manually below
   if ( prompt_tf & delayed_tf ) {
-    phi_recon = atan( (delayed_cand_y-prompt_cand_y) / (delayed_cand_x-prompt_cand_x) ) * 180/pi;
-    theta_recon = atan( -(delayed_cand_z-prompt_cand_z) / sqrt( (delayed_cand_x-prompt_cand_x)**2 + (delayed_cand_y-prompt_cand_y)**2 ) ) * 180/pi;
+    phi_recon = aTanFull( (delayed_cand_y-prompt_cand_y), (delayed_cand_x-prompt_cand_x) ) * 180/pi;
+    theta_recon = acos( -(delayed_cand_z-prompt_cand_z) / sqrt( (delayed_cand_x-prompt_cand_x)**2 + (delayed_cand_y-prompt_cand_y)**2 ) ) * 180/pi;
     // NuLat -- additional cuts
     Double_t cube_half_length = 25.; //mm
     Double_t cube_separation = 1.; //mm
