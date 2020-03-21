@@ -19,7 +19,6 @@
 
 #include <math.h>
 #include <aTanFull.cxx>
-#include <aTanFull.cxx>
 
 void SEDAQ( const char* filename, Double_t prompt_low, Double_t delayed_low, Double_t deltaT_low, Double_t deltaT_high, Bool_t graphics_tf, Bool_t nulat_tf ) {
 
@@ -72,6 +71,7 @@ Int_t prompt_cand_event, delayed_cand_event;
 Double_t prompt_cand_t, prompt_cand_eq, delayed_cand_t, delayed_cand_eq;
 Double_t prompt_cand_x, prompt_cand_y, prompt_cand_z;
 Double_t delayed_cand_x, delayed_cand_y, delayed_cand_z;
+Double_t cos_psi; // where psi (ψ) = angle between incoming and reconstructed neutrino momenta
 Double_t phi_recon;
 Double_t theta_recon;
 T2->Branch("prompt_cand_event", &prompt_cand_event, "prompt_cand_event/I");
@@ -87,6 +87,7 @@ T2->Branch("prompt_cand_z", &prompt_cand_z, "prompt_cand_z/D");
 T2->Branch("delayed_cand_x", &delayed_cand_x, "delayed_cand_x/D");
 T2->Branch("delayed_cand_y", &delayed_cand_y, "delayed_cand_y/D");
 T2->Branch("delayed_cand_z", &delayed_cand_z, "delayed_cand_z/D");
+T2->Branch("cos_psi", &cos_psi, "cos_psi/D");
 T2->Branch("phi_recon", &phi_recon, "phi_recon/D");
 T2->Branch("theta_recon", &theta_recon, "theta_recon/D");
 
@@ -213,6 +214,7 @@ if ( graphics_tf == true ) { // skip graphics unless in batch mode (default)
 
 // init
 Bool_t prompt_tf, delayed_tf;
+Double_t deltaX, deltaY, deltaZ, R;
 Double_t deltaT_low, deltaT_high, trigger_reset;
 //Double_t prompt_low, prompt_high, delayed_low, delayed_high; // for later implementation
 Double_t prompt_high, delayed_low, delayed_high;
@@ -281,8 +283,18 @@ for (( k = 0; k < num_bursts; k++ )) {
   }
   // if candidate burst pair is found, add burst times and energies and reconstructed angle to tree: //NOTE: phi=arctan(y/x) unless changed manually below
   if ( prompt_tf & delayed_tf ) {
-    phi_recon = aTanFull( (delayed_cand_y-prompt_cand_y), (delayed_cand_x-prompt_cand_x) ) * 180/pi;
-    theta_recon = acos( -(delayed_cand_z-prompt_cand_z) / sqrt( (delayed_cand_x-prompt_cand_x)**2 + (delayed_cand_y-prompt_cand_y)**2 ) ) * 180/pi;
+//  cos_psi = (delayed_cand_x-prompt_cand_x) / sqrt( (delayed_cand_x-prompt_cand_x)**2 + (delayed_cand_y-prompt_cand_y)**2 );
+//  phi_recon = aTanFull( (delayed_cand_y-prompt_cand_y), (delayed_cand_x-prompt_cand_x) ) * 180/pi;
+//  theta_recon = acos( -(delayed_cand_z-prompt_cand_z) / sqrt( (delayed_cand_x-prompt_cand_x)**2 + (delayed_cand_y-prompt_cand_y)**2 ) ) * 180/pi;
+    deltaX = delayed_cand_x - prompt_cand_x;
+    deltaY = delayed_cand_y - prompt_cand_y;
+    deltaZ = delayed_cand_z - prompt_cand_z;
+    R = sqrt( deltaX**2 + deltaY**2 + deltaZ**2 );
+    // reverse travel direction to point at neutrino source
+    cos_psi = -deltaX / R; // incoming neutrinos are directed along +z
+    phi_recon = aTanFull(deltaY, deltaX) * 180/pi ;
+    if ( phi_recon < 0 )  { phi_recon = phi_recon + 360; }
+    theta_recon = acos( -deltaZ / R ) * 180/pi;
     // NuLat -- additional cuts
     Double_t cube_half_length = 25.; //mm
     Double_t cube_separation = 1.; //mm

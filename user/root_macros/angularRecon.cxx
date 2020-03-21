@@ -3,31 +3,32 @@
 // -- USAGE: root <DATARUN_results.root> --> .L angularRecon.cxx --> angularRecon(T2);
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 12/2019 ~ //
 
-//void angularRecon( const TTree* T, int nIBDs = 10000 ) {
 void angularRecon( const char* filename ) {
 
 // init
-//TString fileName = gDirectory->GetName();
 TString fileName = filename;
 TString basename = fileName(0,fileName.Index(".root"));
 TFile* f = TFile::Open(filename);
 TTree* T = T2;
 Long64_t N = T2->GetEntries();
+Double_t cos_psi;
 Double_t phi_mean, phi_rms, phi_unc;
 Double_t theta_mean, theta_rms, theta_unc;
-TH1F *h_phi, *h_theta;
+TH1F *h_phi, *h_theta, *h_cos_psi;
 
 // create histograms
 TCanvas* c4 = new TCanvas("c4", "IBD Angular Reconstruction", 820, 120, 1100, 900);
 c4->Divide(1,2);
+TCanvas* c5 = new TCanvas("c5", "Actual vs. Reconstructed Angle (\psi)", 820, 120, 1100, 900);
 
 // phi = azimuthal angle
 c4->cd(1);
+gPad->SetLogy(kFALSE);
 T->Draw("phi_recon");
 h_phi = htemp;
 h_phi->SetName("h_phi");
-h_phi->SetTitle("Azimuthal Angle (deg)");
-h_phi->GetXaxis()->SetLimits(-180, 180);
+h_phi->SetTitle("Azimuthal Angle (deg) #minus #phi^{o}");
+h_phi->GetXaxis()->SetLimits(0, 360);
 h_phi->Draw();
 phi_mean = h_phi->GetMean();
 phi_rms = h_phi->GetRMS();
@@ -35,15 +36,27 @@ phi_unc = phi_rms / sqrt(N);
 
 // theta = polar angle
 c4->cd(2);
+gPad->SetLogy(kFALSE);
 T->Draw("theta_recon");
 h_theta = (TH1F*)c4_2->FindObject("htemp");
 h_theta->SetName("h_theta");
-h_theta->SetTitle("Polar Angle (deg)");
+h_theta->SetTitle("Polar Angle (deg) #minus #theta^{o}");
 h_theta->GetXaxis()->SetLimits(0, 180);
 h_theta->Draw();
 theta_mean = h_theta->GetMean();
 theta_rms = h_theta->GetRMS();
 theta_unc = theta_rms / sqrt(N);
+
+// psi = angle between actual and reconstr. neutrino momenta
+c5->cd();
+gPad->SetLogy(kFALSE);
+T->Draw("cos_psi");
+h_cos_psi = (TH1F*)c5->FindObject("htemp");
+h_cos_psi->SetBins(10, -1, 1);
+h_cos_psi->SetName("h_cos_psi");
+h_cos_psi->SetTitle("Cos(#psi)");
+h_cos_psi->GetXaxis()->SetLimits(-1,1);
+h_cos_psi->Draw();
 
 // calculate IBD efficiency
 TObjString* nIBDs_tos = (TObjString*)T2->GetUserInfo()->At(0);
@@ -63,7 +76,8 @@ printf( "                 +/-  %2.2f deg (SDM)\t%2.2f sigma from true value\n\n"
 
 // save plot
 TString savename = basename+"-ang.png";
-c4->SaveAs(savename);
+c5->SaveAs(savename);
+c4->SaveAs(basename+"-ang-separate.png");
 printf( "\n\n" );
 
 // all pau!   )
