@@ -8,8 +8,9 @@ void angularRecon( const char* filename ) {
 // init
 TString fileName = filename;
 TString basename = fileName(0,fileName.Index(".root"));
-TFile* f = TFile::Open(filename);
+TFile* f = TFile::Open(filename, "update");
 TTree* T = T2;
+TTree* T_map = T_map;
 Long64_t N = T2->GetEntries();
 Double_t cos_psi;
 Double_t phi_mean, phi_rms, phi_unc;
@@ -17,19 +18,18 @@ Double_t theta_mean, theta_rms, theta_unc;
 TH1F *h_phi, *h_theta, *h_cos_psi;
 
 // create histograms
-TCanvas* c4 = new TCanvas("c4", "IBD Angular Reconstruction", 820, 120, 1100, 900);
+TCanvas* c4 = new TCanvas("c4", "IBD Angular Reconstruction", 820, 120, 1000, 1000);
 c4->Divide(1,2);
-TCanvas* c5 = new TCanvas("c5", "Actual vs. Reconstructed Angle (\psi)", 820, 120, 1100, 900);
+TCanvas* c5 = new TCanvas("c5", "Actual vs. Reconstructed Angle (#psi)", 820, 120, 1100, 900);
+TCanvas* c6 = new TCanvas("c6", "Sky Heatmap Pointing to Antineutrino Source", 820, 120, 1100, 900);
 
 // phi = azimuthal angle
 c4->cd(1);
 gPad->SetLogy(kFALSE);
-T->Draw("phi_recon");
+T->Draw("phi_recon", "", "cyl lego");
 h_phi = htemp;
 h_phi->SetName("h_phi");
 h_phi->SetTitle("Azimuthal Angle (deg) #minus #phi^{o}");
-h_phi->GetXaxis()->SetLimits(0, 360);
-h_phi->Draw();
 phi_mean = h_phi->GetMean();
 phi_rms = h_phi->GetRMS();
 phi_unc = phi_rms / sqrt(N);
@@ -39,9 +39,15 @@ c4->cd(2);
 gPad->SetLogy(kFALSE);
 T->Draw("theta_recon");
 h_theta = (TH1F*)c4_2->FindObject("htemp");
+//TH2F* h_theta = new TH2F;
 h_theta->SetName("h_theta");
 h_theta->SetTitle("Polar Angle (deg) #minus #theta^{o}");
+//h_theta->SetBins(18, 0, 180, 5, 0, 1.2);
 h_theta->GetXaxis()->SetLimits(0, 180);
+//Double_t theta;
+//T2->SetBranchAddress("theta_recon", &theta);
+//for ( Int_t ev=0; ev<T2->GetEntries(); ev++ )  { h_theta->Fill(theta, 1); }
+//h_theta->Draw("cyl lego2");
 h_theta->Draw();
 theta_mean = h_theta->GetMean();
 theta_rms = h_theta->GetRMS();
@@ -57,6 +63,11 @@ h_cos_psi->SetName("h_cos_psi");
 h_cos_psi->SetTitle("Cos(#psi)");
 h_cos_psi->GetXaxis()->SetLimits(-1,1);
 h_cos_psi->Draw();
+
+// skymap
+c6->cd();
+gPad->SetLogy(kFALSE);
+T_map->Draw("theta_map:phi_map", "", "aitoff");
 
 // calculate IBD efficiency
 TObjString* nIBDs_tos = (TObjString*)T2->GetUserInfo()->At(0);
@@ -74,7 +85,10 @@ printf( "                 +/-  %2.2f deg (SDM)\t%2.2f sigma from true value\n", 
 printf( "  theta = %2.2f   +/- %2.2f deg (SD)\t%2.2f sigma from true value,  or\n", theta_mean, theta_rms, TMath::Abs((theta_mean-theta_true))/theta_rms );
 printf( "                 +/-  %2.2f deg (SDM)\t%2.2f sigma from true value\n\n", theta_mean, theta_unc, TMath::Abs((theta_mean-theta_true))/theta_unc );
 
-// save plot
+// save plots
+h_phi->Write();
+h_theta->Write();
+h_cos_psi->Write();
 TString savename = basename+"-ang.png";
 c5->SaveAs(savename);
 c4->SaveAs(basename+"-ang-separate.png");
