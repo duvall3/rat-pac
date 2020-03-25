@@ -240,10 +240,10 @@ prompt_high = 100.;
 delayed_high = 100.;
 
 // for drawing skymap
-Double_t phi_map, theta_map;
+Double_t longtd, lattd;
 TTree* T_map = new TTree("T_map", "Skymap Angle Transform");
-T_map->Branch("phi_map", &phi_map);
-T_map->Branch("theta_map", &theta_map);
+T_map->Branch("longtd", &longtd);
+T_map->Branch("lattd", &lattd);
 
 // scan through events for IBD candidates
 for (( k = 0; k < num_bursts; k++ )) {
@@ -300,11 +300,11 @@ for (( k = 0; k < num_bursts; k++ )) {
     theta_recon = acos( -deltaZ / R ) * 180/pi;
     // transform angles for skymap projection
     if ( phi_recon <= 180 ) {
-      phi_map = phi_recon;
+      longtd = phi_recon;
     } else {
-      phi_map = phi_recon - 360;
+      longtd = phi_recon - 360;
     }
-    theta_map = theta_recon - 90;
+    lattd = theta_recon - 90;
     T_map->Fill();
     // NuLat -- additional cuts
     Double_t cube_half_length = 25.; //mm

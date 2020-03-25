@@ -33,6 +33,7 @@ h_phi->SetTitle("Azimuthal Angle (deg) #minus #phi^{o}");
 phi_mean = h_phi->GetMean();
 phi_rms = h_phi->GetRMS();
 phi_unc = phi_rms / sqrt(N);
+h_phi->Write();
 
 // theta = polar angle
 c4->cd(2);
@@ -67,7 +68,13 @@ h_cos_psi->Draw();
 // skymap
 c6->cd();
 gPad->SetLogy(kFALSE);
-T_map->Draw("theta_map:phi_map", "", "aitoff");
+T_map->Draw("lattd:longtd", "", "aitoff");
+TH2F* h_map = htemp;
+h_map->SetTitle("Skymap Pointing to Reconstructed #bar{#nu_{e}} Source");
+h_map->GetXaxis()->SetTitle("longitude (^{o})");
+h_map->GetYaxis()->SetTitle("latitude (^{o})");
+h_map->GetXaxis()->SetTitleFont(62);
+h_map->GetYaxis()->SetTitleFont(62);
 
 // calculate IBD efficiency
 TObjString* nIBDs_tos = (TObjString*)T2->GetUserInfo()->At(0);
@@ -86,12 +93,16 @@ printf( "  theta = %2.2f   +/- %2.2f deg (SD)\t%2.2f sigma from true value,  or\
 printf( "                 +/-  %2.2f deg (SDM)\t%2.2f sigma from true value\n\n", theta_mean, theta_unc, TMath::Abs((theta_mean-theta_true))/theta_unc );
 
 // save plots
+c4->Write();
+c5->Write();
+c6->Write();
 h_phi->Write();
 h_theta->Write();
 h_cos_psi->Write();
-TString savename = basename+"-ang.png";
-c5->SaveAs(savename);
+h_map->Write();
 c4->SaveAs(basename+"-ang-separate.png");
+c5->SaveAs(basename+"-ang.png");
+c6->SaveAs(basename+"-skymap.png");
 printf( "\n\n" );
 
 // all pau!   )
