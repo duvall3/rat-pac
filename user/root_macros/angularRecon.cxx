@@ -16,6 +16,7 @@ Double_t cos_psi;
 Double_t phi_mean, phi_rms, phi_unc;
 Double_t theta_mean, theta_rms, theta_unc;
 TH1F *h_phi, *h_theta, *h_cos_psi;
+TH2F *h_map;
 
 // create histograms
 TCanvas* c4 = new TCanvas("c4", "IBD Angular Reconstruction", 820, 120, 1000, 1000);
@@ -33,7 +34,6 @@ h_phi->SetTitle("Azimuthal Angle (deg) #minus #phi^{o}");
 phi_mean = h_phi->GetMean();
 phi_rms = h_phi->GetRMS();
 phi_unc = phi_rms / sqrt(N);
-h_phi->Write();
 
 // theta = polar angle
 c4->cd(2);
@@ -69,7 +69,8 @@ h_cos_psi->Draw();
 c6->cd();
 gPad->SetLogy(kFALSE);
 T_map->Draw("lattd:longtd", "", "aitoff");
-TH2F* h_map = htemp;
+h_map = htemp;
+h_map->SetName("h_map");
 h_map->SetTitle("Skymap Pointing to Reconstructed #bar{#nu_{e}} Source");
 h_map->GetXaxis()->SetTitle("longitude (^{o})");
 h_map->GetYaxis()->SetTitle("latitude (^{o})");
