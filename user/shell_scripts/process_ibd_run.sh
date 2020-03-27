@@ -21,7 +21,11 @@ RTCOMMAND=$(printf "'$RATROOT/user/root_macros/rt_to_root.cxx(\"$RTFILE\")'")
 
 ## main
 eval "root -q -l -b $RTCOMMAND"
-cd ..
+
+## tidying up
+# make output directory & move all the new output files there
+mkdir $FILENAME
+mv -t $FILENAME $FILENAME?*
 
 # all pau!  )
 exit 0
