@@ -30,7 +30,7 @@ for (Int_t k=0; k<steps; k++) {
 }
 
 // set up and fill histogram
-TH1F *h = new TH1F("h", "Step-wise Energies", 100, ens.Min(), ens.Max());
+TH1D *h = new TH1D("h", "Step-wise Energies", 100, ens.Min(), ens.Max());
 for (Int_t k=0; k<steps; k++) { h->Fill(ens[k]); }
 
 // draw time plot

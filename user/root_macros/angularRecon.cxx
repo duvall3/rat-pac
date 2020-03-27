@@ -15,8 +15,8 @@ Long64_t N = T2->GetEntries();
 Double_t cos_psi;
 Double_t phi_mean, phi_rms, phi_unc;
 Double_t theta_mean, theta_rms, theta_unc;
-TH1F *h_phi, *h_theta, *h_cos_psi;
-TH2F *h_map;
+TH1D *h_phi, *h_theta, *h_cos_psi;
+TH2D *h_map;
 
 // create histograms
 TCanvas* c4 = new TCanvas("c4", "IBD Angular Reconstruction", 820, 120, 1000, 1000);
@@ -28,7 +28,7 @@ TCanvas* c6 = new TCanvas("c6", "Sky Heatmap Pointing to Antineutrino Source", 8
 c4->cd(1);
 gPad->SetLogy(kFALSE);
 T->Draw("phi_recon", "", "cyl lego");
-h_phi = htemp;
+h_phi = (TH1D*)htemp;
 h_phi->SetName("h_phi");
 h_phi->SetTitle("Azimuthal Angle (deg) #minus #phi^{o}");
 phi_mean = h_phi->GetMean();
@@ -39,16 +39,11 @@ phi_unc = phi_rms / sqrt(N);
 c4->cd(2);
 gPad->SetLogy(kFALSE);
 T->Draw("theta_recon");
-h_theta = (TH1F*)c4_2->FindObject("htemp");
-//TH2F* h_theta = new TH2F;
+h_theta = (TH1D*)htemp;
 h_theta->SetName("h_theta");
 h_theta->SetTitle("Polar Angle (deg) #minus #theta^{o}");
 //h_theta->SetBins(18, 0, 180, 5, 0, 1.2);
 h_theta->GetXaxis()->SetLimits(0, 180);
-//Double_t theta;
-//T2->SetBranchAddress("theta_recon", &theta);
-//for ( Int_t ev=0; ev<T2->GetEntries(); ev++ )  { h_theta->Fill(theta, 1); }
-//h_theta->Draw("cyl lego2");
 h_theta->Draw();
 theta_mean = h_theta->GetMean();
 theta_rms = h_theta->GetRMS();
@@ -58,7 +53,7 @@ theta_unc = theta_rms / sqrt(N);
 c5->cd();
 gPad->SetLogy(kFALSE);
 T->Draw("cos_psi");
-h_cos_psi = (TH1F*)c5->FindObject("htemp");
+h_cos_psi = (TH1D*)htemp;
 h_cos_psi->SetBins(10, -1, 1);
 h_cos_psi->SetName("h_cos_psi");
 h_cos_psi->SetTitle("Cos(#psi)");
@@ -69,7 +64,7 @@ h_cos_psi->Draw();
 c6->cd();
 gPad->SetLogy(kFALSE);
 T_map->Draw("lattd:longtd", "", "aitoff");
-h_map = htemp;
+h_map = (TH2D*)htemp;
 h_map->SetName("h_map");
 h_map->SetTitle("Skymap Pointing to Reconstructed #bar{#nu_{e}} Source");
 h_map->GetXaxis()->SetTitle("longitude (^{o})");
@@ -104,6 +99,9 @@ h_map->Write();
 c4->SaveAs(basename+"-ang-separate.png");
 c5->SaveAs(basename+"-ang.png");
 c6->SaveAs(basename+"-skymap.png");
+c4->Close();
+c5->Close();
+c6->Close();
 printf( "\n\n" );
 
 // all pau!   )

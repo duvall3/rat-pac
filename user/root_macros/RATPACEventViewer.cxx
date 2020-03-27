@@ -163,7 +163,7 @@ cout << endl;
 // finish and draw
 geo->CloseGeometry();
 top->SetLineColor(kMagenta);
-geo->SetTopVisible(kTRUE);
+geo->SetTopVisible(kFALSE);
 top->SetLineColor(kGray);
 top->SetLineWidth(1);
 TString can_name = detector_name+", \""+filename+"\"";
