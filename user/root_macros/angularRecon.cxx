@@ -38,13 +38,13 @@ phi_unc = phi_rms / sqrt(N);
 // theta = polar angle
 c4->cd(2);
 gPad->SetLogy(kFALSE);
-T->Draw("theta_recon");
+T->Draw("theta_recon", "", "cyl lego");
 h_theta = (TH1D*)htemp;
 h_theta->SetName("h_theta");
 h_theta->SetTitle("Polar Angle (deg) #minus #theta^{o}");
 //h_theta->SetBins(18, 0, 180, 5, 0, 1.2);
-h_theta->GetXaxis()->SetLimits(0, 180);
-h_theta->Draw();
+//h_theta->GetXaxis()->SetLimits(0, 180);
+//h_theta->Draw();
 theta_mean = h_theta->GetMean();
 theta_rms = h_theta->GetRMS();
 theta_unc = theta_rms / sqrt(N);

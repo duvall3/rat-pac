@@ -295,7 +295,7 @@ for (( k = 0; k < num_bursts; k++ )) {
     deltaZ = delayed_cand_z - prompt_cand_z;
     R = sqrt( deltaX**2 + deltaY**2 + deltaZ**2 );
     // reverse travel direction to point at neutrino source
-    cos_psi = -deltaX / R; // incoming neutrinos are directed along +x
+    cos_psi = -deltaX / R; // true direction to neutrino source is [-x,0,0]
     phi_recon = aTanFull(deltaY, deltaX) * 180/pi ;
     theta_recon = acos( -deltaZ / R ) * 180/pi;
     // transform angles for skymap projection
