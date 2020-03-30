@@ -2,15 +2,12 @@
 #   to (2D) checkerboard pattern
 # -- usage: 
 #    mv foo.geo foo.geo~; \
-#      awk -f $RATROOT/user/shell_scripts_checkerboard.awk \
+#      awk -f $RATROOT/user/shell_scripts_checkerboard2d.awk \
 #      foo.geo~ > foo.geo
-# -- NOTE: This script assumes the first two cell indices are the relevant ones;
-#      a version where either ROW or COL can be static while LYR changes
-#      may be developed in the future
 
 # set field and field separators
 BEGIN{
-  RS="\n\n"
+  RS="\n{2,}"
   FS="\n"
 }
 

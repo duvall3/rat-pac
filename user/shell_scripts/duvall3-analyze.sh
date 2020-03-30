@@ -24,7 +24,7 @@ echo $RTCMD_2 #debug
 echo $RTCMD_3 #debug
 
 # MAIN
-eval $RTCMD_1
+if [ ! -e "$DATARUN".rt ]; then eval $RTCMD_1; fi
 eval $RTCMD_2
 eval $RTCMD_3
 

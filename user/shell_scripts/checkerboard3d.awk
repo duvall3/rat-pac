@@ -2,20 +2,20 @@
 #   into "3D checkerboard" pattern
 # -- usage: 
 #    mv foo.geo foo.geo~; \
-#      awk -f $RATROOT/user/shell_scripts_checkerboard.awk \
+#      awk -f $RATROOT/user/shell_scripts_checkerboard3d.awk \
 #      foo.geo~ > foo.geo
 
 # set field and field separators
 BEGIN{
-  RS="\n\n"
+  RS="\n{2,}"
   FS="\n"
 }
 
 # print all non-target-cell entries
-$1 !~ /target_cube/ {print $0 "\n"}
+$1 !~ /target_cell/ {print $0 "\n"}
 
 # only print target cells when ROW, COL, and LYR are either all even or all odd
-$1 ~ /target_cube/ {
+$1 ~ /target_cell/ {
   match($1, /[[:digit:]]+/, ROW)
   field_copy = $1
   sub(/[[:digit:]]+/, "", field_copy)
