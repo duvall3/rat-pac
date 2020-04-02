@@ -29,4 +29,7 @@ $1 ~ /target_cell/ {
     print $0 "\n"
 }
 
+# debug
+#{print "debug: " ROW[0] "\t" COL[0] "\t" LYR[0] "\t\t" row_even "\t" col_even "\t" lyr_even "\n"}
+
 # all pau!   )

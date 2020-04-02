@@ -6,12 +6,12 @@
 
 # arg / usage check
 if [ $# -lt 1 ]; then
-  echo -e "\nUSAGE: duvall3_analyze.sh <DATARUN_NAME>\n-- NOTE: Enter DATARUN_NAME without any file extension.\n"
-  exit 2
+  DATARUN=$(basename $(pwd) /)
+else
+  DATARUN=$1
 fi
 
 # init
-DATARUN=$1
 DTRNT="$DATARUN"_T.root
 DTRNR="$DATARUN"_results.root
 
@@ -19,12 +19,13 @@ DTRNR="$DATARUN"_results.root
 RTCMD_1=$(echo -e "root -q -l -b 'rt_to_root.cxx(\"$DATARUN.rt\")'")
 RTCMD_2=$(echo -e "root -q -l -b 'SEDAQ.cxx(\"$DTRNT\", true)'")
 RTCMD_3=$(echo -e "root -q -l -b 'angularRecon.cxx(\"$DTRNR\")'")
-echo $RTCMD_1 #debug
-echo $RTCMD_2 #debug
-echo $RTCMD_3 #debug
+# debug
+#echo $RTCMD_1
+#echo $RTCMD_2
+#echo $RTCMD_3
 
 # MAIN
-if [ ! -e "$DATARUN".rt ]; then eval $RTCMD_1; fi
+if [[ -e "$DATARUN".rt && ! -e "$DATARUN"_T.root ]]; then eval $RTCMD_1; fi
 eval $RTCMD_2
 eval $RTCMD_3
 

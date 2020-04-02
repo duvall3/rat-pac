@@ -244,6 +244,7 @@ Double_t longtd, lattd;
 TTree* T_map = new TTree("T_map", "Skymap Angle Transform");
 T_map->Branch("longtd", &longtd);
 T_map->Branch("lattd", &lattd);
+T_map->Branch("deltaX", &deltaX); //debug
 
 // scan through events for IBD candidates
 for (( k = 0; k < num_bursts; k++ )) {
@@ -295,9 +296,10 @@ for (( k = 0; k < num_bursts; k++ )) {
     deltaZ = delayed_cand_z - prompt_cand_z;
     R = sqrt( deltaX**2 + deltaY**2 + deltaZ**2 );
     // reverse travel direction to point at neutrino source
-    cos_psi = -deltaX / R; // true direction to neutrino source is [-x,0,0]
-    phi_recon = aTanFull(deltaY, deltaX) * 180/pi ;
+    phi_recon = aTanFull(-deltaY, -deltaX) * 180/pi ;
     theta_recon = acos( -deltaZ / R ) * 180/pi;
+    // cos(psi) = projection of reconstructed incoming neutrino direction (-dX) along -x --> -(-dX/R) = +dX/R
+    cos_psi = deltaX / R;
     // transform angles for skymap projection
     if ( phi_recon <= 180 ) {
       longtd = phi_recon;
@@ -416,14 +418,14 @@ if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there 
   // prompt
   TCanvas* c3 = new TCanvas("c3",filename, 70, 60, 800, 800);
   c3->SetLogy(false);
-  T2->Draw("prompt_cand_y:prompt_cand_x:prompt_cand_z>>h_prompt"); // recall that RAT-PAC uses "y" for the vertical axis, not "z"
+  T2->Draw("prompt_cand_z:prompt_cand_x:prompt_cand_y>>h_prompt"); // recall that RAT-PAC uses "y" for the vertical axis, not "z"
   h_prompt->SetMarkerColor(kRed);
   h_prompt->SetMarkerStyle(4);
   h_prompt->GetXaxis()->SetLimits(-x_abs,x_abs);
   h_prompt->GetYaxis()->SetLimits(-x_abs,x_abs);
   h_prompt->GetZaxis()->SetLimits(-x_abs,x_abs);
   // delayed
-  T2->Draw("delayed_cand_y:delayed_cand_x:delayed_cand_z>>h_delayed"); // recall that RAT-PAC uses "y" for the vertical axis, not "z"
+  T2->Draw("delayed_cand_z:delayed_cand_x:delayed_cand_y>>h_delayed"); // recall that RAT-PAC uses "y" for the vertical axis, not "z"
   h_delayed->SetMarkerColor(kBlue);
   h_delayed->SetMarkerStyle(5);
   h_delayed->GetXaxis()->SetLimits(-x_abs,x_abs);

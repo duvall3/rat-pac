@@ -98,6 +98,18 @@ for ( i = db->begin(); i != db->end(); ++i ) {
   TString target_cell_siz_str_z = "";
   Double_t target_cell_siz_x, target_cell_siz_y, target_cell_siz_z;
 
+//  // get mother volume
+//  TString tcm = tcs+"mother";
+//  cout << endl << tcm.Data() << endl; //debug
+//  TRegexp tm = tcm;
+//  TGeoVolume* mother;
+//  if ( keystr.Contains(tm) ) {
+////  valstr.ReplaceAll("\\","");
+////  valstr.ReplaceAll("\"","");
+//    mother = (TGeoVolume*)geo->GetListOfVolumes()->FindObject(valstr);
+//  }
+////cout << endl << valstr.Data() << endl; //debug
+////mother->ls(); //debug
 
   // test for target cell
   TString tcsp = tcs+"position";
@@ -148,10 +160,11 @@ for ( i = db->begin(); i != db->end(); ++i ) {
 
     // create target cell
     TGeoVolume* target_cell = geo->MakeBox(keystr.Data(), med, target_cell_siz_x, target_cell_siz_y, target_cell_siz_z );
-    target_cell->SetLineColor(kBlack);
+    target_cell->SetLineColor(kCyan);
     target_cell->SetLineWidth(1);
     TGeoTranslation* trans = new TGeoTranslation(target_cell_pos_x, target_cell_pos_y, target_cell_pos_z);
     top->AddNode(target_cell, k_target_cell, trans);
+//  mother->AddNode(target_cell, k_target_cell, trans);
     k_target_cell++;
       
   } //end if -- target cell

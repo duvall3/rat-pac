@@ -27,7 +27,8 @@ TCanvas* c6 = new TCanvas("c6", "Sky Heatmap Pointing to Antineutrino Source", 8
 // phi = azimuthal angle
 c4->cd(1);
 gPad->SetLogy(kFALSE);
-T->Draw("phi_recon", "", "cyl lego");
+//T->Draw("phi_recon", "", "cyl lego");
+T->Draw("phi_recon", "", "");
 h_phi = (TH1D*)htemp;
 h_phi->SetName("h_phi");
 h_phi->SetTitle("Azimuthal Angle (deg) #minus #phi^{o}");
@@ -38,7 +39,8 @@ phi_unc = phi_rms / sqrt(N);
 // theta = polar angle
 c4->cd(2);
 gPad->SetLogy(kFALSE);
-T->Draw("theta_recon", "", "cyl lego");
+//T->Draw("theta_recon", "", "cyl lego");
+T->Draw("theta_recon", "", "");
 h_theta = (TH1D*)htemp;
 h_theta->SetName("h_theta");
 h_theta->SetTitle("Polar Angle (deg) #minus #theta^{o}");
