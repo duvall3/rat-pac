@@ -6,8 +6,13 @@
 
 
 # provide filename or let loop
-if [[ $1 ]]; then
+if [[ $1 && $1 == "*.root" ]]; then
   FULLFILE=$1
+else if [[ $1 && $1 != "*.root" ]]; then
+  echo -e '\
+USAGE: eff_checks.sh $FILENAME to run AWK section on file, OR:
+       eff_checks.sh	      to execute full processing of subdirectories'
+  echo "CHECK USAGE" >2 && exit 10
 else
   DATARUN=$(basename $(pwd) /)
   FULLFILE=eff_checks_$DATARUN

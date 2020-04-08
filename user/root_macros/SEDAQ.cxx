@@ -20,7 +20,7 @@
 #include <math.h>
 #include <aTanFull.cxx>
 
-void SEDAQ( const char* filename, Double_t prompt_low, Double_t delayed_low, Double_t deltaT_low, Double_t deltaT_high, Bool_t graphics_tf, Bool_t nulat_tf ) {
+void SEDAQ( const char* filename, Bool_t graphics_tf = kFALSE, Double_t prompt_low = 0, Double_t delayed_low = 0, Double_t deltaT_low = 5.e-6, Double_t deltaT_high = 100.e-6, Bool_t nulat_tf = kFALSE) {
 
 
 //// INIT
@@ -274,7 +274,7 @@ for (( k = 0; k < num_bursts; k++ )) {
       if ( interevent_time > deltaT_low & interevent_time < deltaT_high & energy_q > delayed_low & energy_q < delayed_high ) {
         delayed_tf = true;
 	delayed_cand_event = event;
-	delayed_cand_t = wall_time_adj;
+ 	delayed_cand_t = wall_time_adj;
 	delayed_cand_eq = energy_q;
 	if ( cubed_tf ) { // i.e., if NuLat cube-centered values are available
 	  delayed_cand_x = cubed_x;
@@ -449,51 +449,8 @@ if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there 
 } //endif -- IBD candidates && no batch mode
 
 
-//// mostly pau!   )
+//// ALL PAU!   )
 f.Write();
 f.Close();
 return;
 }
-
-
-//// OVERLOADING
-
-void SEDAQ ( const char* filename ) {
-  SEDAQ( filename, 0., 0., false );
-}
-
-void SEDAQ ( const char* filename, bool graphics_tf ) {
-  SEDAQ( filename, 0., 0., graphics_tf );
-}
-
-void SEDAQ ( const char* filename, Double_t prompt_low ) {
-  SEDAQ( filename, prompt_low, 0., false );
-}
-
-void SEDAQ ( const char* filename, Bool_t graphics_tf, Bool_t nulat_tf ) {
-  SEDAQ( filename, prompt_low, 0., 10.e-6, 100.e-6, graphics_tf, nulat_tf );
-}
-
-void SEDAQ ( const char* filename, Double_t prompt_low, Bool_t graphics_tf ) {
-  SEDAQ( filename, prompt_low, 0., graphics_tf );
-}
-
-void SEDAQ ( const char* filename, Double_t prompt_low, Double_t delayed_low ) {
-  SEDAQ( filename, prompt_low, delayed_low, false );
-}
-
-void SEDAQ ( const char* filename, Double_t prompt_low, Double_t delayed_low, Bool_t graphics_tf ) {
-  SEDAQ( filename, prompt_low, delayed_low, 10.e-6, 100.e-6, graphics_tf );
-}
-
-void SEDAQ ( const char* filename, Double_t prompt_low, Double_t delayed_low, Double_t deltaT_high, Bool_t graphics_tf ) {
-  SEDAQ( filename, prompt_low, delayed_low, deltaT_low, 100.e-6, graphics_tf );
-}
-
-void SEDAQ ( const char* filename, Double_t prompt_low, Double_t delayed_low, Double_t deltaT_low, Double_t deltaT_high, Bool_t graphics_tf ) {
-  SEDAQ( filename, prompt_low, delayed_low, deltaT_low, deltaT_high, graphics_tf, false );
-}
-
-
-
-//// ALL PAU!   )

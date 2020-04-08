@@ -31,13 +31,16 @@ RAT::TrackCursor c = nav.Cursor(kFALSE);
 RAT::TrackNode *n;
 TGeoManager* geo = gGeoManager;
 geo->ClearTracks();
+TObjArray* track_list = geo->GetListOfTracks();
+Int_t track_no;
 
 // positron (if IBD; otherwise, single primary particle)
 n = c.GoChild(0);
 parname = n->GetParticleName();
 stepcount = c.StepCount();
-geo->AddTrack( 1, n->GetPDGCode() );
-TGeoTrack* e_track = geo->GetListOfTracks()->At(0);
+track_no++;
+geo->AddTrack( track_no, n->GetPDGCode() );
+TGeoTrack* e_track = track_list->At(track_no-1);
 for ( step = 0; step < stepcount; step++ ) {
   n = c.GoStep(step);
   e_track->AddPoint( n->GetEndpoint().x()/10., n->GetEndpoint().y()/10., n->GetEndpoint().z()/10., n->GetGlobalTime() ); //cm
@@ -58,8 +61,9 @@ if ( ibd_TF == kTRUE ) {
   n = c.GoChild(1);
   parname = n->GetParticleName();
   stepcount = c.StepCount();
-  geo->AddTrack( 2, n->GetPDGCode() );
-  TGeoTrack* n_track = geo->GetListOfTracks()->At(1);
+  track_no++;
+  geo->AddTrack( track_no, n->GetPDGCode() );
+  TGeoTrack* n_track = track_list->At(track_no-1);
   for ( step = 0; step < stepcount; step++ ) {
     n = c.GoStep(step);
     n_track->AddPoint( n->GetEndpoint().x()/10., n->GetEndpoint().y()/10., n->GetEndpoint().z()/10., n->GetGlobalTime() ); //cm
@@ -69,23 +73,51 @@ if ( ibd_TF == kTRUE ) {
   n_track->SetLineWidth(3);
   n_track->SetLineStyle(0);
 
+  // capture products
+  Int_t cap_prod_count = c.ChildCount();
+  Int_t cap_prod_no;
+  for ( cap_prod_no=0; cap_prod_no<cap_prod_count; cap_prod_no++ ) {
+    n = c.GoChild(cap_prod_no);
+    parname = n->GetParticleName();
+    stepcount = c.StepCount();
+    track_no++;
+    geo->AddTrack( track_no, n->GetPDGCode() );
+    TGeoTrack* cap_prod_track = track_list->At(track_no-1);
+    for ( step = 0; step < stepcount; step++ ) {
+      n = c.GoStep(step);
+      cap_prod_track->AddPoint( n->GetEndpoint().x()/10., n->GetEndpoint().y()/10., n->GetEndpoint().z()/10., n->GetGlobalTime() ); //cm
+    }
+    cap_prod_track->SetName(parname);
+    cap_prod_track->SetLineColor(5+cap_prod_no);
+    cap_prod_track->SetLineWidth(3);
+    cap_prod_track->SetLineStyle(0);
+    c.GoParent();
+  } //end for
+
 } //end if -- ibd_TF
 
 // draw tracks and print summary
 geo->DrawTracks();
 Printf( "\nTrack Summary for Event %i:\n", event);
-geo->GetListOfTracks()->Print();
+track_list->Print();
 
 // create legend if needed 
+Int_t k;
 TList* can_list = can->GetListOfPrimitives();
 TLegend* tleg = can_list->FindObject("Track Legend");
-if ( tleg == 0x0 ) {
-  TLegend* tleg = new TLegend(0.75, 0.01, 0.99, 0.15);
-  tleg->SetName("Track Legend");
-  tleg->AddEntry(e_track, e_track->GetName());
-  if ( ibd_TF == kTRUE ) tleg->AddEntry(n_track, n_track->GetName());
-  tleg->Draw();
+if ( tleg != 0x0 )  { tleg->Delete(); }
+TLegend* tleg = new TLegend(0.85, 0.01, 0.99, 0.30);
+tleg->SetName("Track Legend");
+tleg->AddEntry(e_track, e_track->GetName());
+if ( ibd_TF == kTRUE )  { tleg->AddEntry(n_track, n_track->GetName()); }
+Int_t total_tracks = track_list->GetEntries();
+if ( total_tracks > 2 ) {
+  for ( k=2; k<total_tracks; k++ ) {
+    TGeoTrack* cap_track = (TGeoTrack*)track_list->At(k);
+    tleg->AddEntry(cap_track, cap_track->GetName());
+  }
 }
+tleg->Draw();
 
 // update event label
 TPaveText* label = can_list->FindObject("Event Label");
