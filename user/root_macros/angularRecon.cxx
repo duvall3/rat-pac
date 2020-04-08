@@ -80,7 +80,7 @@ Long64_t nIBDs = nIBDs_tos->GetString().Atoll();
 Double_t eff = (Double_t)N/nIBDs;
 
 // report results
-Double_t phi_true(0), theta_true(0); // assume true neutrino direction is at phi = 0 deg, theta = 0 deg
+Double_t phi_true(0), theta_true(90); // assume true neutrino direction is at phi = 0 deg, theta = 90 deg
 printf( "\n\nIBD Angular Reconstruction:\n* datafile = \"%s\"\n* Note: SDM = SD/sqrt(N)\n\n", fileName.Data() );
 printf( "Azimuthal Angle (deg):\n  phi_mean\t%2.2f\n  phi_sd\t%2.2f\n  phi_sdm\t%2.2f\n\n", phi_mean, phi_rms, phi_unc );
 printf( "Polar Angle (deg):\n  theta_mean\t%2.2f\n  theta_sd\t%2.2f\n  theta_sdm\t%2.2f\n\n", theta_mean, theta_rms, theta_unc );
