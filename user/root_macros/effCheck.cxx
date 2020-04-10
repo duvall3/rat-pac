@@ -1,6 +1,7 @@
 // effCheck.cxx basic cross-check on IBD efficiency
-void effCheck(const char* filename){
+void effCheck(const char* filename, const char* target_cell_regex = "target_cell"){
 
+TString tcr = target_cell_regex;
 RAT::DSReader r(filename);
 RAT::DS::Root* ds = r.NextEvent();
 RAT::TrackNav nav(ds);
@@ -23,7 +24,7 @@ for ( ev=0; ev<N; ev++ ) {
   cout << vol.Data() << "\t\t"; //debug
   proc = n->GetProcess();
   cout << proc.Data() << "\t\t"; //debug
-  if ( vol.Contains("target_cell") )  { e_tf=kTRUE; anh++; }
+  if ( vol.Contains(tcr) )  { e_tf=kTRUE; anh++; }
   c.GoParent();
   c.GoChild(1);
   n = c.GoTrackEnd();
@@ -31,7 +32,7 @@ for ( ev=0; ev<N; ev++ ) {
   cout << vol.Data() << "\t\t"; //debug
   proc = n->GetProcess();
   cout << proc.Data() << endl; //debug
-  if ( vol.Contains("target_cell") )  { n_tf=kTRUE; cap++; }
+  if ( vol.Contains(tcr) )  { n_tf=kTRUE; cap++; }
   if ( e_tf & n_tf )  { both++; }
 }
 
