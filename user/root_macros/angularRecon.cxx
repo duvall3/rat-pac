@@ -3,7 +3,7 @@
 // -- USAGE: root <DATARUN_results.root> --> .L angularRecon.cxx --> angularRecon(T2);
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 12/2019 ~ //
 
-void angularRecon( const char* filename ) {
+void angularRecon( const char* filename, bool graphics_tf = kFALSE ) {
 
 // init
 TString fileName = filename;
@@ -91,16 +91,20 @@ printf( "  theta = %2.2f   +/- %2.2f deg (SD)\t%2.2f sigma from true value,  or\
 printf( "                 +/-  %2.2f deg (SDM)\t%2.2f sigma from true value\n\n", theta_mean, theta_unc, TMath::Abs((theta_mean-theta_true))/theta_unc );
 
 // save plots
-c4->Write();
-c5->Write();
-c6->Write();
-h_phi->Write();
-h_theta->Write();
-h_cos_psi->Write();
-h_map->Write();
-c4->SaveAs(basename+"-ang-separate.png");
-c5->SaveAs(basename+"-ang.png");
-c6->SaveAs(basename+"-skymap.png");
+if ( graphics_tf ) {
+  c4->Write();
+  c5->Write();
+  c6->Write();
+  h_phi->Write();
+  h_theta->Write();
+  h_cos_psi->Write();
+  h_map->Write();
+  c4->SaveAs(basename+"-ang-separate.png");
+  c5->SaveAs(basename+"-ang.png");
+  c6->SaveAs(basename+"-skymap.png");
+}
+
+// tidy up
 c4->Close();
 c5->Close();
 c6->Close();
