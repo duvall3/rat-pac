@@ -7,6 +7,8 @@ gROOT->LoadMacro("angularRecon.cxx");
 gROOT->LoadMacro("aTanFull.cxx");
 gROOT->LoadMacro("centerStatsBox.cxx");
 gROOT->LoadMacro("chkbd3d.cxx");
+gROOT->LoadMacro("compareAngs.cxx");
+gROOT->LoadMacro("cps.cxx");
 gROOT->LoadMacro("drawNextEvent.cxx");
 gROOT->LoadMacro("drawPrevEvent.cxx");
 gROOT->LoadMacro("drawSANDDwv4m.cxx");
