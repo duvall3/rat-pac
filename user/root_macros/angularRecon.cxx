@@ -11,56 +11,72 @@ TString basename = fileName(0,fileName.Index(".root"));
 TFile* f = TFile::Open(filename, "update");
 TTree* T = T2;
 TTree* T_map = T_map;
-Long64_t N = T2->GetEntries();
+Long64_t k(0), N = T2->GetEntries();
 Double_t cos_psi;
-Double_t phi_mean, phi_rms, phi_unc;
-Double_t theta_mean, theta_rms, theta_unc;
+Double_t phi, phi_mean, phi_rms, phi_unc;
+Double_t theta, theta_mean, theta_rms, theta_unc;
+Double_t lattd, longtd;
+T2->SetBranchAddress("phi_recon", &phi);
+T2->SetBranchAddress("theta_recon", &theta);
+T2->SetBranchAddress("cos_psi", &cos_psi);
+T_map->SetBranchAddress("lattd", &lattd);
+T_map->SetBranchAddress("longtd", &longtd);
 TH1D *h_phi, *h_theta, *h_cos_psi;
 TH2D *h_map;
+gStyle->SetHistLineWidth(3);
+gStyle->SetHistLineColor(kBlue);
 
-// create histograms
+// create canvases
 TCanvas* c4 = new TCanvas("c4", "IBD Angular Reconstruction", 820, 120, 1000, 1000);
 c4->Divide(1,2);
 TCanvas* c5 = new TCanvas("c5", "Actual vs. Reconstructed Angle (#psi)", 820, 120, 1100, 900);
 TCanvas* c6 = new TCanvas("c6", "Sky Heatmap Pointing to Antineutrino Source", 820, 120, 1100, 900);
 
+
+// set up histograms
+TH1D* h_phi = new TH1D("h_phi", "Azimuthal Angle (deg) #minus #phi^{o}", 36, -180, 180);
+TH1D* h_theta = new TH1D("h_theta", "Polar Angle (deg) #minus #theta^{o}", 36, 0, 360);
+TH1D* h_cos_psi = new TH1D("h_cos_psi", "Cos(#psi)", 10, -1, 1);
+//TH2D* h_map = new TH2D("h_map", "Skymap Pointing to Reconstructed #bar{#nu_{e}} Source", 36, -180., 180., 18, -90., 90.);
+//TH2D* h_map = new TH2D("h_map", "Skymap Pointing to Reconstructed #bar{#nu_{e}} Source", 18, -90., 90., 36, -180., 180.);
+
+
+// fill histograms
+for ( k = 0; k < N; k++ ) {
+  T2->GetEntry(k);
+  h_phi->Fill(phi);
+  h_theta->Fill(theta);
+  h_cos_psi->Fill(cos_psi);
+  T_map->GetEntry(k);
+//h_map->Fill(lattd, longtd);
+//h_map->Fill(longtd, lattd);
+}
+
+
+// draw histograms
+
 // phi = azimuthal angle
 c4->cd(1);
+//h_phi->Draw("cyl lego");
+h_phi->Draw();
 gPad->SetLogy(kFALSE);
-//T->Draw("phi_recon", "", "cyl lego");
-T->Draw("phi_recon", "", "");
-h_phi = (TH1D*)htemp;
-h_phi->SetName("h_phi");
-h_phi->SetTitle("Azimuthal Angle (deg) #minus #phi^{o}");
 phi_mean = h_phi->GetMean();
 phi_rms = h_phi->GetRMS();
 phi_unc = phi_rms / sqrt(N);
 
 // theta = polar angle
 c4->cd(2);
+//h_theta->Draw("cyl lego");
+h_theta->Draw();
 gPad->SetLogy(kFALSE);
-//T->Draw("theta_recon", "", "cyl lego");
-T->Draw("theta_recon", "", "");
-h_theta = (TH1D*)htemp;
-h_theta->SetName("h_theta");
-h_theta->SetTitle("Polar Angle (deg) #minus #theta^{o}");
-//h_theta->SetBins(18, 0, 180, 5, 0, 1.2);
-//h_theta->GetXaxis()->SetLimits(0, 180);
-//h_theta->Draw();
 theta_mean = h_theta->GetMean();
 theta_rms = h_theta->GetRMS();
 theta_unc = theta_rms / sqrt(N);
 
 // psi = angle between actual and reconstr. neutrino momenta
 c5->cd();
-gPad->SetLogy(kFALSE);
-T->Draw("cos_psi");
-h_cos_psi = (TH1D*)htemp;
-h_cos_psi->SetBins(10, -1, 1);
-h_cos_psi->SetName("h_cos_psi");
-h_cos_psi->SetTitle("Cos(#psi)");
-h_cos_psi->GetXaxis()->SetLimits(-1,1);
 h_cos_psi->Draw();
+gPad->SetLogy(kFALSE);
 
 // skymap
 c6->cd();
@@ -69,6 +85,7 @@ T_map->Draw("lattd:longtd", "", "aitoff");
 h_map = (TH2D*)htemp;
 h_map->SetName("h_map");
 h_map->SetTitle("Skymap Pointing to Reconstructed #bar{#nu_{e}} Source");
+//h_map->Draw("aitoff");
 h_map->GetXaxis()->SetTitle("longitude (^{o})");
 h_map->GetYaxis()->SetTitle("latitude (^{o})");
 h_map->GetXaxis()->SetTitleFont(62);
