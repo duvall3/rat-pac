@@ -1,0 +1,152 @@
+.\" Man page generated from reStructuredText.
+.
+.\".TH RAT-PAC / ROOT IBD EVENT VIEWER  "" "" ""
+.\".TH "RAT" "1" "Apr 27, 2021" "1.0" "RAT"
+.TH "RATPACEventViewer" "1" "3/2020" "1.0" "RAT"
+.SH NAME
+RAT-PAC / ROOT IBD Event Viewer \- 
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.sp
+Instructions for using Mark Duvall\(aqs ROOT\-based event viewer for RAT\-PAC IBD events.
+.sp
+\fBWritten for ROOT 5.34; ROOT 6 version currently in development\fP
+.sp
+\fBNOTE: This document presupposes that a working installation of RAT\-PAC and its accompanying build of ROOT are active on the machine in use. In other words, the version of ROOT used _must_ be one compiled against RAT\-PAC, as described in the RAT\-PAC documentation [here](https://rat.readthedocs.io/en/latest/installation.html).\fP
+.SH INSTALLATION
+.sp
+### Automatic
+.sp
+For users running a BASH\-type shell, there is an installer script on GitHub at \fIduvall3 \-\-> rat\-pac \-\-> branch collab \-\-> user \-\-> shell_scripts \-\-> [RPEV_Installer.sh](https://github.com/duvall3/rat\-pac/blob/collab/user/shell_scripts/RPEV_Installer.sh) ([file](https://github.com/duvall3/rat\-pac/raw/collab/user/shell_scripts/RPEV_Installer.sh))\fP\&.
+.sp
+### Manual
+.sp
+The viewer is a mostly self\-contained ROOT macro. It is located on GitHub at \fIduvall3 \-\-> rat\-pac \-\-> branch collab \-\-> user \-\-> root_macros \-\-> [RATPACEventviewer.cxx](https://github.com/duvall3/rat\-pac/blob/collab/user/root_macros/RATPACEventViewer.cxx) ([file](https://github.com/duvall3/rat\-pac/raw/collab/user/root_macros/RATPACEventViewer.cxx))\fP\&.
+Remember that the macro (or a link to it) must be located in your \fI$ROOTSYS/macros\fP directory, or you will have to specify the full path to the macro file.
+As of the current version, in order to comply with ROOT\(aqs requirements for function definitions, the commands within the macro are provided in separate files, linked below.
+These files must also be located (or linked) in \fI$ROOTSYS/macros\fP, as with the main file itself.
+They can be found at the following locations:
+* [drawTracks.cxx](\fI\%https://github.com/duvall3/rat\-pac/blob/collab/user/root_macros/drawTracks.cxx\fP) ([file](\fI\%https://github.com/duvall3/rat\-pac/raw/collab/user/root_macros/drawTracks.cxx\fP))
+* [drawNextEvent.cxx](\fI\%https://github.com/duvall3/rat\-pac/blob/collab/user/root_macros/drawNextEvent.cxx\fP) ([file](\fI\%https://github.com/duvall3/rat\-pac/raw/collab/user/root_macros/drawNextEvent.cxx\fP))
+* [drawPrevEvent.cxx](\fI\%https://github.com/duvall3/rat\-pac/blob/collab/user/root_macros/drawPrevEvent.cxx\fP) ([file](\fI\%https://github.com/duvall3/rat\-pac/raw/collab/user/root_macros/drawPrevEvent.cxx\fP))
+* [highlightCell.cxx](\fI\%https://github.com/duvall3/rat\-pac/blob/collab/user/root_macros/highlightCells.cxx\fP) ([file](\fI\%https://raw.githubusercontent.com/duvall3/rat\-pac/collab/user/root_macros/highlightCells.cxx\fP))
+.SH USAGE
+.sp
+### Basic Invocation
+.sp
+To use the viewer, simply load the macro and run it on the desired ROOT file.  To invoke it in its default configuration, simply type the following at the ROOT prompt:
+.sp
+\fB\(gacpp
+\&.L RATPACEventViewer.cxx
+RATPACEventViewer("some_data_file.root");
+\(ga\fP
+### General Invocation
+.sp
+The viewer decides which detector volumes to draw by looking for a regular expression in the volume names, which by default is \fI\&.*target_cell_[0\-9].*\fP\&.
+This default option matches any volume whose name contains \fItarget_cell_\fP followed by at least one digit, followed by any other characters.
+The following are all valid examples compatible with the default option: \fItarget_cell_5\fP, \fItarget_cell_2_4\fP, \fItarget_cell_0_0_0\fP\&.
+This can be altered by providing an optional second argument to the command invoking the macro.
+Examples of alternate regular expressions to provide as the optional second argument include \fItarget_cube\fP, \fIscintillator_volume[0\-9].?\fP, \fI\&.*ej254.*\fP\&.
+Please see [TRegexp](\fI\%https://root.cern.ch/doc/master/classTRegexp.html\fP) for further details on how to construct a ROOT\-compatible regular expression.
+.sp
+In this more general case, invoke the viewer as follows, where \fItcr\fP is the target\-cell regex:
+.sp
+\fB\(gacpp
+\&.L RATPACEventViewer.cxx
+RATPACEventViewer("some_data_file.root", "tcr");
+\(ga\fP
+.sp
+### Commands
+.sp
+Invoking the macro will automatically draw the detector geometry. The commands to then draw the particle tracks for a given event are as follows, where \fIevent\fP is the event number as defined in the original RAT\-PAC TTree\(aqs \(aqmc.id\(aq:
+.sp
+\fB\(gacpp
+drawTracks( <event> )
+drawNextEvent()
+drawPrevEvent()
+\(ga\fP
+.sp
+### Output
+.sp
+In addition to drawing the particle tracks in the viewer, the macro will also print out a summary for each track, including particle name, number of points, and production and termination vertices.
+.sp
+### Further Information
+.sp
+The comments in the macro file contain more\-detailed information on usage. They are copied here below for convenience.
+.SH DETAILS
+.sp
+\fB\(gacpp
+// RATPACEventViewer \-\- for viewing RAT\-PAC detector geometry and particle tracks in ROOT
+//
+// \-\- Usage: \(aqRATPACEventViewer( <RAT\-PAC rootfile>, ["target_cell_regex"] )\(aq to draw detector;
+//      then \(aqdrawTracks( <event number>, [IBD_TF], [highlight_TF] )\(aq to draw tracks for a given event
+//
+// \-\- Primarily written for IBD events, but should work just fine for anything
+//      with either one particle per top\-level MC event (use IBD_TF = kFALSE)
+//      or two (use IBD_TF = kTRUE or simply omit IBD_TF argument)
+//
+// \-\- "target_cell_regex" determines which detector volumes will be drawn;
+//      it defaults to ".*target_cell_[0\-9].*", but any regex
+//      matching (exclusively) your desired volumes should work
+//      \-\- for more information on ROOT\-compatible regexes, see:
+//         https://root.cern.ch/doc/master/classTRegexp.html
+//
+// \-\- "IBD_TF" should be kTRUE for runs using the RAT\-PAC IBD generator builtin
+//      and kFALSE otherwise
+//      \-\- note: in standard ROOT, kTRUE == true == 1 and kFALSE == false == 0
+//
+// \-\- "IBD_TF" is kTRUE by default; this default can be changed in the function
+//      definition for "drawTracks()" if desired
+//
+// \-\- "highlight_TF" simply switches cell highlighting on or off (default is on)
+//    \-\- default for IBD events:
+//       green = generation cell
+//       red = positron\-annihilation cell
+//       blue = neutron\-capture cell
+//
+// \-\- Example ~ Scan through some events:
+//      .L RATPACEventViewer.cxx
+//      RATPACEventViewer( "some_data_run.root" );
+//      drawTracks(0);
+//      drawNextEvent();
+//      drawNextEvent();
+//      drawNextEvent();
+//
+// \-\- As of this version, the following items are still hard\-coded
+//    and are tagged with //HC// in the code below:
+//    \- name of top & world volumes
+//    \- shape of top & world volumes
+//    \- dimensions of top & world volumes
+//    \- shapes of target cells (currently "box")
+//    \- material of target cells (currently Eljen EJ\-254 doped at 1.5%wt Li\-6)
+//
+// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ Written 10/2019 ~ Updated 3/2020 ~ //
+// ~ RATPACEventviewer v1.3.1 ~ //
+\(ga\fP
+.\" Generated by docutils manpage writer.
+.
