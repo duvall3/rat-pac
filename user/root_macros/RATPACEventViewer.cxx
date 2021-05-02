@@ -112,33 +112,11 @@ for ( i = db->begin(); i != db->end(); ++i ) {
 ////mother->ls(); //debug
 
   // test for target cell
-  TString tcsp = tcs+"position";
+  TString tcsp = tcs+"size";
   TRegexp tc = tcsp;
   if ( keystr.Contains(tc) ) {
-    // get position values
-    valstr.ReplaceAll("d", "");
-    valstr.ReplaceAll("[", "");
-    valstr.ReplaceAll(" ", "");
-    valstr.Remove(valstr.Last(','));
-    TObjArray* target_cell_pos = valstr.Tokenize(',');
-    TObjString* target_cell_pos_obj_x = (TObjString*)target_cell_pos->At(0);
-    TObjString* target_cell_pos_obj_y = (TObjString*)target_cell_pos->At(1);
-    TObjString* target_cell_pos_obj_z = (TObjString*)target_cell_pos->At(2);
-    target_cell_pos_str_x = target_cell_pos_obj_x->GetString();
-    target_cell_pos_str_y = target_cell_pos_obj_y->GetString();
-    target_cell_pos_str_z = target_cell_pos_obj_z->GetString();
-    target_cell_pos_x = target_cell_pos_str_x.Atof()/10.; //cm
-    target_cell_pos_y = target_cell_pos_str_y.Atof()/10.; //cm
-    target_cell_pos_z = target_cell_pos_str_z.Atof()/10.; //cm
-    
-    // clear value half of pair
-    valstr.Clear();
 
     // get size values
-    Double_t target_cell_siz_x, target_cell_siz_y, target_cell_siz_z;
-    keystr.ReplaceAll("position", "size");
-    val = (TObjString*)db->GetValue(keystr);
-    valstr = val->GetString();
     valstr.ReplaceAll("d", "");
     valstr.ReplaceAll("[", "");
     valstr.ReplaceAll(" ", "");
@@ -153,6 +131,30 @@ for ( i = db->begin(); i != db->end(); ++i ) {
     target_cell_siz_x = target_cell_siz_str_x.Atof()/10.; //cm
     target_cell_siz_y = target_cell_siz_str_y.Atof()/10.; //cm
     target_cell_siz_z = target_cell_siz_str_z.Atof()/10.; //cm
+
+    // clear value half of pair
+    valstr.Clear();
+
+    // get position values
+    keystr.ReplaceAll("size", "position");
+    val = (TObjString*)db->GetValue(keystr);
+    if (val != 0x0) { // if position is specified, replace default zero values
+      valstr = val->GetString();
+      valstr.ReplaceAll("d", "");
+      valstr.ReplaceAll("[", "");
+      valstr.ReplaceAll(" ", "");
+      valstr.Remove(valstr.Last(','));
+      TObjArray* target_cell_pos = valstr.Tokenize(',');
+      TObjString* target_cell_pos_obj_x = (TObjString*)target_cell_pos->At(0);
+      TObjString* target_cell_pos_obj_y = (TObjString*)target_cell_pos->At(1);
+      TObjString* target_cell_pos_obj_z = (TObjString*)target_cell_pos->At(2);
+      target_cell_pos_str_x = target_cell_pos_obj_x->GetString();
+      target_cell_pos_str_y = target_cell_pos_obj_y->GetString();
+      target_cell_pos_str_z = target_cell_pos_obj_z->GetString();
+      target_cell_pos_x = target_cell_pos_str_x.Atof()/10.; //cm
+      target_cell_pos_y = target_cell_pos_str_y.Atof()/10.; //cm
+      target_cell_pos_z = target_cell_pos_str_z.Atof()/10.; //cm
+    }
 
     // get cell name
     keystr.ReplaceAll("GEO[", "");
