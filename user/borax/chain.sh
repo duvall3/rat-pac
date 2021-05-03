@@ -24,7 +24,7 @@ for DIR in */; do
   FILE_PREFIX="$FILE_BASE/$FILE_BASE"
   FILENAME=$FILE_PREFIX"_T.root"
   echo "\
-ch.Add(\"$FILENAME\");
+ch.Add(\"$FILE_BASE/$FILENAME\");
 T->GetEntries();
 TTree* t = T->GetTree();
 TObjString* tos = (TObjString*)t->GetUserInfo()->At(0);
