@@ -61,6 +61,7 @@ material: "gd_scintillator",
 invisible: 0,
 //position: [0.0, -9924.0, 0.0], // mm
 //position: [0.0, -5000.0, 0.0]
+//position: [0.0, 0.0, 0.0] // mm
 }
 
 
