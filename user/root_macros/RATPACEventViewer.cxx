@@ -1,5 +1,4 @@
-// RATPACEventViewer -- for viewing RAT-PAC detector geometry and particle tracks in ROOT;
-//   attempting to upgrade to incorporate (at least 1 level of) mother volumes
+// RATPACEventViewer -- for viewing RAT-PAC detector geometry and particle tracks in ROOT
 //
 // -- Usage: 'RATPACEventViewer( <RAT-PAC rootfile> )' to draw detector;
 //      then 'drawTracks( <event number>, [IBD_TF], [highlight_TF] )' to draw tracks for a given event
@@ -44,7 +43,7 @@
 //    - material of target cells (currently Eljen EJ-254 doped at 1.5%wt Li-6)
 //
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ Written 10/2019 ~ Updated 5/2021 ~ //
-// ~ RATPACEventviewer v1.5.0 ~ //
+// ~ RATPACEventviewer v1.6.0 ~ //
 
 #include <drawTracks.cxx>
 #include <drawNextEvent.cxx>
@@ -129,8 +128,8 @@ for ( i = db->begin(); i != db->end(); ++i ) {
     keystr.Remove(keystr.Index("]"));
 
     // create volume
-//  TGeoVolume* volume = geo->MakeBox(keystr.Data(), med, volume_siz_x, volume_siz_y, volume_siz_z );
     // rotate axes for RAT-PAC vs. ROOT:
+//  TGeoVolume* volume = geo->MakeBox(keystr.Data(), med, volume_siz_x, volume_siz_y, volume_siz_z );
     TGeoVolume* volume = geo->MakeBox(keystr.Data(), med, volume_siz_z, volume_siz_x, volume_siz_y );
     if ( keystr == "world" ) { // top volume //HC//
       if ( ! volume->IsTopVolume() ) {
@@ -181,6 +180,7 @@ for ( iv = vols->begin(); iv != vols->end(); ++iv ) {
     volume_pos_x = volume_pos_str_x.Atof()/10.; //cm
     volume_pos_y = volume_pos_str_y.Atof()/10.; //cm
     volume_pos_z = volume_pos_str_z.Atof()/10.; //cm
+    // rotate axes for RAT-PAC vs. ROOT:
 //  TGeoTranslation* trans = new TGeoTranslation(volume_pos_x, volume_pos_y, volume_pos_z); // position translation
     TGeoTranslation* trans = new TGeoTranslation(volume_pos_z, volume_pos_x, volume_pos_y); // position translation
 
@@ -191,7 +191,7 @@ for ( iv = vols->begin(); iv != vols->end(); ++iv ) {
 
     } //endif -- position given
 
-  // find mother
+  // find mother and add node
   if (volname != "world") {
     TString vol_mother_entry(volname);
     vol_mother_entry.Prepend("GEO[");

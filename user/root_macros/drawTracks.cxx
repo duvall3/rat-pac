@@ -68,6 +68,8 @@ if ( ibd_TF == kTRUE ) {
   TGeoTrack* n_track = track_list->At(track_no-1);
   for ( step = 0; step < stepcount; step++ ) {
     n = c.GoStep(step);
+    // rotate axes for RAT-PAC vs. ROOT
+//  n_track->AddPoint( n->GetEndpoint().x()/10., n->GetEndpoint().y()/10., n->GetEndpoint().z()/10., n->GetGlobalTime() ); //cm
     n_track->AddPoint( n->GetEndpoint().z()/10., n->GetEndpoint().x()/10., n->GetEndpoint().y()/10., n->GetGlobalTime() ); //cm
   }
   n_track->SetName(parname);
@@ -87,6 +89,8 @@ if ( ibd_TF == kTRUE ) {
     TGeoTrack* cap_prod_track = track_list->At(track_no-1);
     for ( step = 0; step < stepcount; step++ ) {
       n = c.GoStep(step);
+      // rotate axes for RAT-PAC vs. ROOT
+//    cap_prod_track->AddPoint( n->GetEndpoint().x()/10., n->GetEndpoint().y()/10., n->GetEndpoint().z()/10., n->GetGlobalTime() ); //cm
       cap_prod_track->AddPoint( n->GetEndpoint().z()/10., n->GetEndpoint().x()/10., n->GetEndpoint().y()/10., n->GetGlobalTime() ); //cm
     }
     cap_prod_track->SetName(parname);
