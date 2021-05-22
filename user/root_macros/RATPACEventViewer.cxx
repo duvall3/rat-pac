@@ -129,7 +129,9 @@ for ( i = db->begin(); i != db->end(); ++i ) {
     keystr.Remove(keystr.Index("]"));
 
     // create volume
-    TGeoVolume* volume = geo->MakeBox(keystr.Data(), med, volume_siz_x, volume_siz_y, volume_siz_z );
+//  TGeoVolume* volume = geo->MakeBox(keystr.Data(), med, volume_siz_x, volume_siz_y, volume_siz_z );
+    // rotate axes for RAT-PAC vs. ROOT:
+    TGeoVolume* volume = geo->MakeBox(keystr.Data(), med, volume_siz_z, volume_siz_x, volume_siz_y );
     if ( keystr == "world" ) { // top volume //HC//
       if ( ! volume->IsTopVolume() ) {
       geo->SetTopVolume(volume);
@@ -179,7 +181,8 @@ for ( iv = vols->begin(); iv != vols->end(); ++iv ) {
     volume_pos_x = volume_pos_str_x.Atof()/10.; //cm
     volume_pos_y = volume_pos_str_y.Atof()/10.; //cm
     volume_pos_z = volume_pos_str_z.Atof()/10.; //cm
-    TGeoTranslation* trans = new TGeoTranslation(volume_pos_x, volume_pos_y, volume_pos_z); // position translation
+//  TGeoTranslation* trans = new TGeoTranslation(volume_pos_x, volume_pos_y, volume_pos_z); // position translation
+    TGeoTranslation* trans = new TGeoTranslation(volume_pos_z, volume_pos_x, volume_pos_y); // position translation
 
 //  //debug
 //  cout << keystr << "\t" << valstr << "\t" << val->GetString() << endl;
