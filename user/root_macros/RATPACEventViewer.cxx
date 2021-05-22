@@ -77,11 +77,7 @@ TGeoManager *geo = new TGeoManager(filename+"_GM", "TGeoManager for "+filename);
 TGeoMaterial *mat = new TGeoMaterial("vacuum", 0, 0, 0);
 TGeoMedium *med = new TGeoMedium("vacuum", 1, mat);
 // top volume //HC//
-//TGeoVolume* top = geo->MakeBox("Top", med, 1.e3, 1.e3, 1.e3); //cm
-//geo->SetTopVolume(top);
-// top volume //HC//
 TGeoVolume* world = geo->MakeBox("world", med, 1.e3, 1.e3, 1.e3); //cm
-//geo->SetMasterVolume(world);
 geo->SetTopVolume(world);
 
 // load *entire* detector from db into TGeoManager
@@ -128,27 +124,6 @@ for ( i = db->begin(); i != db->end(); ++i ) {
     // clear value half of pair
     valstr.Clear();
 
-//    // get position values
-//    keystr.ReplaceAll("size", "position");
-//    val = (TObjString*)db->GetValue(keystr);
-//    if (val != 0x0) { // if position is specified, replace default zero values
-//      valstr = val->GetString();
-//      valstr.ReplaceAll("d", "");
-//      valstr.ReplaceAll("[", "");
-//      valstr.ReplaceAll(" ", "");
-//      valstr.Remove(valstr.Last(','));
-//      TObjArray* volume_pos = valstr.Tokenize(',');
-//      TObjString* volume_pos_obj_x = (TObjString*)volume_pos->At(0);
-//      TObjString* volume_pos_obj_y = (TObjString*)volume_pos->At(1);
-//      TObjString* volume_pos_obj_z = (TObjString*)volume_pos->At(2);
-//      volume_pos_str_x = volume_pos_obj_x->GetString();
-//      volume_pos_str_y = volume_pos_obj_y->GetString();
-//      volume_pos_str_z = volume_pos_obj_z->GetString();
-//      volume_pos_x = volume_pos_str_x.Atof()/10.; //cm
-//      volume_pos_y = volume_pos_str_y.Atof()/10.; //cm
-//      volume_pos_z = volume_pos_str_z.Atof()/10.; //cm
-//    } //endif -- position given
-
     // get cell name
     keystr.ReplaceAll("GEO[", "");
     keystr.Remove(keystr.Index("]"));
@@ -158,7 +133,6 @@ for ( i = db->begin(); i != db->end(); ++i ) {
     if ( keystr == "world" ) { // top volume //HC//
       if ( ! volume->IsTopVolume() ) {
       geo->SetTopVolume(volume);
-//    volume->SetNumber(0);
       }
     } else { // all other volumes
       volume->SetLineColor(kBlack);
@@ -173,10 +147,8 @@ for ( i = db->begin(); i != db->end(); ++i ) {
 } //end db loop
 
 // now incorporate mother(s) and create nodes
-//Int_t k_volume = 1; // volume counter
 Int_t k_volume(0); // volume counter
 TGeoVolume* mother = new TGeoVolume; // mother volume
-//TGeoTranslation* trans = new TGeoTranslation; // position translation
 TObjArray* vols = geo->GetListOfVolumes();
 
 // loop over creted TGeoVolumes
@@ -186,10 +158,6 @@ for ( iv = vols->begin(); iv != vols->end(); ++iv ) {
   // get volume
   TGeoVolume* vol = (TGeoVolume*)*iv;
   TString volname = vol->GetName();
-//cout << volname.Data() << endl; //debug
-//if ( vol->IsTopVolume() ) break; // skip top volume
-  // get position values
-//keystr.Clear();
   keystr = volname;
   keystr.Prepend("GEO[");
   keystr.Append("].position");
@@ -212,7 +180,6 @@ for ( iv = vols->begin(); iv != vols->end(); ++iv ) {
     volume_pos_y = volume_pos_str_y.Atof()/10.; //cm
     volume_pos_z = volume_pos_str_z.Atof()/10.; //cm
     TGeoTranslation* trans = new TGeoTranslation(volume_pos_x, volume_pos_y, volume_pos_z); // position translation
-//  trans->SetTranslation(volume_pos_x, volume_pos_y, volume_pos_z);
 
 //  //debug
 //  cout << keystr << "\t" << valstr << "\t" << val->GetString() << endl;
