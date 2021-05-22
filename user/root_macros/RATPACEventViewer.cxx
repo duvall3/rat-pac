@@ -1,6 +1,7 @@
-// RATPACEventViewer -- for viewing RAT-PAC detector geometry and particle tracks in ROOT
+// RATPACEventViewer -- for viewing RAT-PAC detector geometry and particle tracks in ROOT;
+//   attempting to upgrade to incorporate (at least 1 level of) mother volumes
 //
-// -- Usage: 'RATPACEventViewer( <RAT-PAC rootfile>, ["target_cell_regex"] )' to draw detector;
+// -- Usage: 'RATPACEventViewer( <RAT-PAC rootfile> )' to draw detector;
 //      then 'drawTracks( <event number>, [IBD_TF], [highlight_TF] )' to draw tracks for a given event
 //
 // -- Primarily written for IBD events, but should work just fine for anything
@@ -42,8 +43,8 @@
 //    - shapes of target cells (currently "box")
 //    - material of target cells (currently Eljen EJ-254 doped at 1.5%wt Li-6)
 //
-// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ Written 10/2019 ~ Updated 3/2020 ~ //
-// ~ RATPACEventviewer v1.3.1 ~ //
+// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ Written 10/2019 ~ Updated 5/2021 ~ //
+// ~ RATPACEventviewer v1.5.0 ~ //
 
 #include <drawTracks.cxx>
 #include <drawNextEvent.cxx>
@@ -51,7 +52,8 @@
 #include <highlightCells.cxx>
 
 
-void RATPACEventViewer( const char* FileName, TString tcs = ".*target_cell_[0-9].*" ) {
+//void RATPACEventViewer( const char* FileName, TString tcs = ".*target_cell_[0-9].*" ) {
+void RATPACEventViewer( const char* FileName, TString tcs = ".*" ) {
 
 
 
@@ -75,11 +77,16 @@ TGeoManager *geo = new TGeoManager(filename+"_GM", "TGeoManager for "+filename);
 TGeoMaterial *mat = new TGeoMaterial("vacuum", 0, 0, 0);
 TGeoMedium *med = new TGeoMedium("vacuum", 1, mat);
 // top volume //HC//
-TGeoVolume* top = geo->MakeBox("Top", med, 1.e3, 1.e3, 1.e3); //cm
-geo->SetTopVolume(top);
+//TGeoVolume* top = geo->MakeBox("Top", med, 1.e3, 1.e3, 1.e3); //cm
+//geo->SetTopVolume(top);
+// top volume //HC//
+TGeoVolume* world = geo->MakeBox("world", med, 1.e3, 1.e3, 1.e3); //cm
+//geo->SetMasterVolume(world);
+geo->SetTopVolume(world);
 
-// load detector from db into TGeoManager
-Int_t k_target_cell; // target cell counter
+// load *entire* detector from db into TGeoManager
+//Int_t k_volume = 1; // volume counter //for drawing entire detector
+//TGeoTranslation* trans = new TGeoTranslation; //for drawing entire detector
 TIter i = db->begin();
 for ( i = db->begin(); i != db->end(); ++i ) {
 
@@ -89,105 +96,167 @@ for ( i = db->begin(); i != db->end(); ++i ) {
   TObjString* val = (TObjString*)tp->Value();
   TString keystr = (TString)key->GetString();
   TString valstr = (TString)val->GetString();
-  TString target_cell_pos_str_x = "";
-  TString target_cell_pos_str_y = "";
-  TString target_cell_pos_str_z = "";
-  Double_t target_cell_pos_x, target_cell_pos_y, target_cell_pos_z;
-  TString target_cell_siz_str_x = "";
-  TString target_cell_siz_str_y = "";
-  TString target_cell_siz_str_z = "";
-  Double_t target_cell_siz_x, target_cell_siz_y, target_cell_siz_z;
+  TString volume_pos_str_x = "";
+  TString volume_pos_str_y = "";
+  TString volume_pos_str_z = "";
+  Double_t volume_pos_x, volume_pos_y, volume_pos_z;
+  TString volume_siz_str_x = "";
+  TString volume_siz_str_y = "";
+  TString volume_siz_str_z = "";
+  Double_t volume_siz_x, volume_siz_y, volume_siz_z;
 
-  // test for target cell
-  TString tcsp = tcs+"size";
-  TRegexp tc = tcsp;
-  if ( keystr.Contains(tc) ) {
-
-    // get mother volume
-    TString tcm = tcs+"mother";
-//  cout << endl << tcm.Data() << endl; //debug
-    TRegexp tm = tcm;
-    TGeoVolume* mother;
-//  if ( keystr.Contains(tm) ) {
-//    valstr.ReplaceAll("\\","");
-//    valstr.ReplaceAll("\"","");
-    mother = (TGeoVolume*)geo->GetListOfVolumes()->FindObject(valstr);
-//  }
-
+  // test for volume
+  TString volszstr = "size";
+  TRegexp volre = volszstr;
+  if ( keystr.Contains(volre) ) {
     // get size values
     valstr.ReplaceAll("d", "");
     valstr.ReplaceAll("[", "");
     valstr.ReplaceAll(" ", "");
     valstr.Remove(valstr.Last(','));
-    TObjArray* target_cell_siz = valstr.Tokenize(',');
-    TObjString* target_cell_siz_obj_x = (TObjString*)target_cell_siz->At(0);
-    TObjString* target_cell_siz_obj_y = (TObjString*)target_cell_siz->At(1);
-    TObjString* target_cell_siz_obj_z = (TObjString*)target_cell_siz->At(2);
-    target_cell_siz_str_x = target_cell_siz_obj_x->GetString();
-    target_cell_siz_str_y = target_cell_siz_obj_y->GetString();
-    target_cell_siz_str_z = target_cell_siz_obj_z->GetString();
-    target_cell_siz_x = target_cell_siz_str_x.Atof()/10.; //cm
-    target_cell_siz_y = target_cell_siz_str_y.Atof()/10.; //cm
-    target_cell_siz_z = target_cell_siz_str_z.Atof()/10.; //cm
+    TObjArray* volume_siz = valstr.Tokenize(',');
+    TObjString* volume_siz_obj_x = (TObjString*)volume_siz->At(0);
+    TObjString* volume_siz_obj_y = (TObjString*)volume_siz->At(1);
+    TObjString* volume_siz_obj_z = (TObjString*)volume_siz->At(2);
+    volume_siz_str_x = volume_siz_obj_x->GetString();
+    volume_siz_str_y = volume_siz_obj_y->GetString();
+    volume_siz_str_z = volume_siz_obj_z->GetString();
+    volume_siz_x = volume_siz_str_x.Atof()/10.; //cm
+    volume_siz_y = volume_siz_str_y.Atof()/10.; //cm
+    volume_siz_z = volume_siz_str_z.Atof()/10.; //cm
 
     // clear value half of pair
     valstr.Clear();
 
-    // get position values
-    keystr.ReplaceAll("size", "position");
-    val = (TObjString*)db->GetValue(keystr);
-    if (val != 0x0) { // if position is specified, replace default zero values
-      valstr = val->GetString();
-      valstr.ReplaceAll("d", "");
-      valstr.ReplaceAll("[", "");
-      valstr.ReplaceAll(" ", "");
-      valstr.Remove(valstr.Last(','));
-      TObjArray* target_cell_pos = valstr.Tokenize(',');
-      TObjString* target_cell_pos_obj_x = (TObjString*)target_cell_pos->At(0);
-      TObjString* target_cell_pos_obj_y = (TObjString*)target_cell_pos->At(1);
-      TObjString* target_cell_pos_obj_z = (TObjString*)target_cell_pos->At(2);
-      target_cell_pos_str_x = target_cell_pos_obj_x->GetString();
-      target_cell_pos_str_y = target_cell_pos_obj_y->GetString();
-      target_cell_pos_str_z = target_cell_pos_obj_z->GetString();
-      target_cell_pos_x = target_cell_pos_str_x.Atof()/10.; //cm
-      target_cell_pos_y = target_cell_pos_str_y.Atof()/10.; //cm
-      target_cell_pos_z = target_cell_pos_str_z.Atof()/10.; //cm
-    }
+//    // get position values
+//    keystr.ReplaceAll("size", "position");
+//    val = (TObjString*)db->GetValue(keystr);
+//    if (val != 0x0) { // if position is specified, replace default zero values
+//      valstr = val->GetString();
+//      valstr.ReplaceAll("d", "");
+//      valstr.ReplaceAll("[", "");
+//      valstr.ReplaceAll(" ", "");
+//      valstr.Remove(valstr.Last(','));
+//      TObjArray* volume_pos = valstr.Tokenize(',');
+//      TObjString* volume_pos_obj_x = (TObjString*)volume_pos->At(0);
+//      TObjString* volume_pos_obj_y = (TObjString*)volume_pos->At(1);
+//      TObjString* volume_pos_obj_z = (TObjString*)volume_pos->At(2);
+//      volume_pos_str_x = volume_pos_obj_x->GetString();
+//      volume_pos_str_y = volume_pos_obj_y->GetString();
+//      volume_pos_str_z = volume_pos_obj_z->GetString();
+//      volume_pos_x = volume_pos_str_x.Atof()/10.; //cm
+//      volume_pos_y = volume_pos_str_y.Atof()/10.; //cm
+//      volume_pos_z = volume_pos_str_z.Atof()/10.; //cm
+//    } //endif -- position given
 
     // get cell name
     keystr.ReplaceAll("GEO[", "");
     keystr.Remove(keystr.Index("]"));
 
-    // create target cell
-    TGeoVolume* target_cell = geo->MakeBox(keystr.Data(), med, target_cell_siz_x, target_cell_siz_y, target_cell_siz_z );
-    target_cell->SetLineColor(kCyan);
-    target_cell->SetLineWidth(1);
-    TGeoTranslation* trans = new TGeoTranslation(target_cell_pos_x, target_cell_pos_y, target_cell_pos_z);
-    top->AddNode(target_cell, k_target_cell, trans);
-//  mother->AddNode(target_cell, k_target_cell, trans);
-    k_target_cell++;
-      
-  } //end if -- target cell
+    // create volume
+    TGeoVolume* volume = geo->MakeBox(keystr.Data(), med, volume_siz_x, volume_siz_y, volume_siz_z );
+    if ( keystr == "world" ) { // top volume //HC//
+      if ( ! volume->IsTopVolume() ) {
+      geo->SetTopVolume(volume);
+//    volume->SetNumber(0);
+      }
+    } else { // all other volumes
+      volume->SetLineColor(kBlack);
+      volume->SetLineWidth(1);
+//    trans->SetTranslation(volume_pos_x, volume_pos_y, volume_pos_z); //for drawing entire detector
+//    top->AddNode(volume, k_volume, trans); //for drawing entire detector
+//    k_volume++; //for drawing entire detector
+    } // endif -- world (top)
+
+  } //endif -- isvolume
 
 } //end db loop
+
+// now incorporate mother(s) and create nodes
+//Int_t k_volume = 1; // volume counter
+Int_t k_volume(0); // volume counter
+TGeoVolume* mother = new TGeoVolume; // mother volume
+//TGeoTranslation* trans = new TGeoTranslation; // position translation
+TObjArray* vols = geo->GetListOfVolumes();
+
+// loop over creted TGeoVolumes
+TIter iv = vols->begin();
+for ( iv = vols->begin(); iv != vols->end(); ++iv ) {
+
+  // get volume
+  TGeoVolume* vol = (TGeoVolume*)*iv;
+  TString volname = vol->GetName();
+//cout << volname.Data() << endl; //debug
+//if ( vol->IsTopVolume() ) break; // skip top volume
+  // get position values
+//keystr.Clear();
+  keystr = volname;
+  keystr.Prepend("GEO[");
+  keystr.Append("].position");
+  val = (TObjString*)db->GetValue(keystr);
+
+  if (val != 0x0) { // if position is specified, replace default zero values
+    valstr = val->GetString();
+    valstr.ReplaceAll("d", "");
+    valstr.ReplaceAll("[", "");
+    valstr.ReplaceAll(" ", "");
+    valstr.Remove(valstr.Last(','));
+    TObjArray* volume_pos = valstr.Tokenize(',');
+    TObjString* volume_pos_obj_x = (TObjString*)volume_pos->At(0);
+    TObjString* volume_pos_obj_y = (TObjString*)volume_pos->At(1);
+    TObjString* volume_pos_obj_z = (TObjString*)volume_pos->At(2);
+    volume_pos_str_x = volume_pos_obj_x->GetString();
+    volume_pos_str_y = volume_pos_obj_y->GetString();
+    volume_pos_str_z = volume_pos_obj_z->GetString();
+    volume_pos_x = volume_pos_str_x.Atof()/10.; //cm
+    volume_pos_y = volume_pos_str_y.Atof()/10.; //cm
+    volume_pos_z = volume_pos_str_z.Atof()/10.; //cm
+    TGeoTranslation* trans = new TGeoTranslation(volume_pos_x, volume_pos_y, volume_pos_z); // position translation
+//  trans->SetTranslation(volume_pos_x, volume_pos_y, volume_pos_z);
+
+//  //debug
+//  cout << keystr << "\t" << valstr << "\t" << val->GetString() << endl;
+//  cout << volume_pos_x << "\t" << volume_pos_y << "\t" << volume_pos_z << endl;
+//  trans->Print();
+
+    } //endif -- position given
+
+  // find mother
+  if (volname != "world") {
+    TString vol_mother_entry(volname);
+    vol_mother_entry.Prepend("GEO[");
+    vol_mother_entry.Append("].mother");
+    TObjString* volmother_tos = (TObjString*)db->GetValue(vol_mother_entry);
+    TString volmother = volmother_tos.GetString();
+    volmother.ReplaceAll("\"","");
+    TGeoVolume* mother = (TGeoVolume*)vols->FindObject(volmother);
+//  cout << volname.Data() << "\t" << vol_mother_entry.Data() << "\t" << volmother.Data() << "\t"<< mother << endl; //debug
+//  trans->Print(); //debug
+    mother->AddNode(vol, k_volume, trans);
+//  world->AddNode(vol, k_volume, trans); //debug
+    k_volume++;
+  }
+
+} // end mother/node db loop
 
 cout << endl;
 
 // finish and draw
 geo->CloseGeometry();
-top->SetLineColor(kMagenta);
-geo->SetTopVisible(kFALSE);
-top->SetLineColor(kGray);
-top->SetLineWidth(1);
+world->SetLineColor(kGray);
+world->SetLineWidth(1);
+//geo->SetTopVisible(kFALSE);
+geo->SetTopVisible(kTRUE);
 TString can_name = detector_name+", \""+filename+"\"";
 TCanvas* can = new TCanvas("can", can_name, 1000, 100, 850, 700);
-top->Draw();
-top->Draw("SAME");
+world->Draw();
+world->Draw("SAME");
 // annotations
 TLegend *gleg = new TLegend(0.01, 0.01, 0.25, 0.15);
 gleg->SetName("Geometry Legend");
-gleg->AddEntry(target_cell, "Target Cells", "lf");
-gleg->AddEntry(top, "Cave Walls", "lf");
+gleg->AddEntry(volume, "Detector Volume(s)", "lf");
+//gleg->AddEntry(target_cell, "Target Cells", "lf");
+gleg->AddEntry(world, "Cave Walls", "lf");
 gleg->Draw();
 
 // all pau!   )
