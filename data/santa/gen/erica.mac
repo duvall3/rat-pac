@@ -1,8 +1,9 @@
 # erica.mac -- generator to match Erica's input
 
 /generator/add combo gun:regexfill:poisson
-/generator/vtx/set neutron 0 0 1 0.010  # 10keV neutrons directed along the +z axis
+#/generator/vtx/set neutron 0 0 1 0.010  # 10keV neutrons directed along the +z axis
 #/generator/vtx/set neutron 0 0 1 0.004  # 4keV neutrons directed along the +z axis
+/generator/vtx/set neutron 0 0 1 0.001  # 1keV neutrons directed along the +z axis
 
 # angle tests
 #/generator/vtx/set neutron 0.17633 0 1 0.01  # 10keV neutrons directed at +10deg. to the +z axis

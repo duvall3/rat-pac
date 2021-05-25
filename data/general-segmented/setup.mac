@@ -1,8 +1,9 @@
 # setup -- single macro to prepare run
 
-/control/execute/setup.mac
+/control/execute init.mac
 #/control/execute vis.mac
-/control/execute /home/mark/Public/rat-pac/data/general-segmented/gen/ibd.mac
+#/control/execute /home/mark/rat-pac/data/general-segmented/gen/ibd.mac
+/control/execute gen/ibd.mac
 #/control/execute gen/bg.mac
 #/control/execute gen/erica.mac
 #/control/execute gen/mugun.mac

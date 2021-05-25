@@ -4,10 +4,10 @@ function [ energies ] = neutron_spectrum( n )
 % -- calculate integral: http://www.wolframalpha.com/input/?i=integrate+[+1.006e-6+*+exp%28-.35*%28log%28x%29%29^2%2B2.1451*log%28x%29%29+%2B+1.011e-3+*+exp%28-.4106*%28log%28x%29%29^2-.667*log%28x%29%29,+x,+0.1,+1000+]
 % ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ February 2016 ~
 
-% NOTE: MATLAB and Octave require different versions of the last line!
+% NOTE: MATLAB and Octave require different versions of the 'randsample' line!
 
 
-%% prep / init
+% prep / init
 % settings check
 
 % energy vector
@@ -23,8 +23,8 @@ phi2 = A2 * exp( -b2 * (log(En)).^2 + c2 * log(En) );
 phi = phi1 + phi2;
 
 %% sample from spectrum
-energies = randsample( En, n, true, phi ); % MATLAB
-%energies = randsample_mod( En, n, true, phi ); % Octave (modified version of randsample)
+%energies = randsample( En, n, true, phi ); % MATLAB
+energies = randsample_mod( En, n, true, phi ); % Octave (modified version of randsample)
 
 %% all pau!   )
 end %function

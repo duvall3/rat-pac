@@ -14,6 +14,9 @@
 #
 # Draw geometry:
 /vis/drawVolume
+
+# Set upward direction to z-axis:
+/vis/viewer/set/upVector 0 0 1
 #
 # Specify view angle:
 /vis/viewer/set/viewpointVector .5 .1 .3

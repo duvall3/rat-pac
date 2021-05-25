@@ -17,8 +17,9 @@
 //   -- graphics_tf -- whether to draw & save plots; defaults to false for batch mode
 //   -- nulat_tf -- whether to apply cuts specific to NuLat
 
+// NOTE: for now, default to "neutrino_direction = TVector3(-1, 0, 0);" (see NEUTRINO TRIGGER "init" section below)
+
 #include <math.h>
-#include <aTanFull.cxx>
 
 void SEDAQ( const char* filename, Bool_t graphics_tf = kFALSE, Double_t prompt_low = 0, Double_t delayed_low = 0, Double_t deltaT_low = 5.e-6, Double_t deltaT_high = 100.e-6, Bool_t nulat_tf = kFALSE) {
 
@@ -26,6 +27,7 @@ void SEDAQ( const char* filename, Bool_t graphics_tf = kFALSE, Double_t prompt_l
 //// INIT
 
 // init
+gSystem->Load("libPhysics.so");
 gStyle->SetHistLineWidth(2);
 gStyle->SetHistLineColor(kBlue);
 gStyle->SetOptLogy(true);
@@ -120,7 +122,7 @@ if ( graphics_tf == true ) { // skip graphics unless in batch mode (default)
   Double_t xbinsEBP[nBinsEBP+1];
   xbinsEBP[0] = xmin;
   for (Int_t m=1;m<=nBinsEBP;m++) {
-  xbinsEBP[m] = TMath::Power(10,logxmin+m*binwidth);
+    xbinsEBP[m] = TMath::Power(10,logxmin+m*binwidth);
   }
   // now ready to create the histogram:
   TH1D* h1 = new TH1D("h1", "Time Between Bursts (Interevent Time)", nBinsEBP, xbinsEBP );
@@ -141,7 +143,7 @@ if ( graphics_tf == true ) { // skip graphics unless in batch mode (default)
   Double_t ybinsEBP[nBinsEBP+1];
   ybinsEBP[0] = ymin;
   for ((m=1;m<=nBinsEBP;m++)) {
-  ybinsEBP[m] = TMath::Power(10,logymin+m*binwidth);
+    ybinsEBP[m] = TMath::Power(10,logymin+m*binwidth);
   }
   //now ready to create the histogram:
   TH2D* h2 = new TH2D("h2", "Quenched Energy vs. Interevent Time", nBinsEBP, xbinsEBP, nBinsEBP, ybinsEBP );
@@ -171,13 +173,13 @@ if ( graphics_tf == true ) { // skip graphics unless in batch mode (default)
 
   // fill all histograms:
   for (( k=0; k < num_bursts; k++ )) {
-  T->GetEntry(k);
-  if ( energy_q > 0 ) {
-    h1->Fill(interevent_time);
-    h2->Fill(interevent_time, energy_q); // time in s, energy in MeV
-    h3->Fill(energy);
-    h4->Fill(energy_q);
-    h5->Fill(interevent_time, energy);
+    T->GetEntry(k);
+    if ( energy_q > 0 ) {
+      h1->Fill(interevent_time);
+      h2->Fill(interevent_time, energy_q); // time in s, energy in MeV
+      h3->Fill(energy);
+      h4->Fill(energy_q);
+      h5->Fill(interevent_time, energy);
     }
   }
 
@@ -225,8 +227,10 @@ if ( cubed_tf ) {
   T->SetBranchAddress("cubed_y", &cubed_y);
   T->SetBranchAddress("cubed_z", &cubed_z);
 }
-// error checking -- nulat option XOR cubed branch
+// error checking -- nulat option XOR cubed branch (i.e., one but not the other)
 if ( nulat_tf ^ cubed_tf )  cout << "WARNING: Partial but incomplete NuLat parameters found." << endl;
+TVector3 neutrino_direction, nu_hat, displacement, disp_hat;
+// moving neutrino_direction assignment down to vector-analysis section for editing convenience
 
 // set cut parameters //thresholds
 trigger_reset = 800.e-6;
@@ -244,7 +248,7 @@ Double_t longtd, lattd;
 TTree* T_map = new TTree("T_map", "Skymap Angle Transform");
 T_map->Branch("longtd", &longtd);
 T_map->Branch("lattd", &lattd);
-T_map->Branch("deltaX", &deltaX); //debug
+//T_map->Branch("deltaX", &deltaX); //debug
 
 // scan through events for IBD candidates
 for (( k = 0; k < num_bursts; k++ )) {
@@ -294,20 +298,32 @@ for (( k = 0; k < num_bursts; k++ )) {
     deltaX = delayed_cand_x - prompt_cand_x;
     deltaY = delayed_cand_y - prompt_cand_y;
     deltaZ = delayed_cand_z - prompt_cand_z;
-    R = sqrt( deltaX**2 + deltaY**2 + deltaZ**2 );
-    // reverse travel direction to point at neutrino source
-    phi_recon = aTanFull(-deltaY, -deltaX) * 180/pi ;
-    theta_recon = acos( -deltaZ / R ) * 180/pi;
-    // cos(psi) = projection of reconstructed incoming neutrino direction (-dX) along -x --> -(-dX/R) = +dX/R
-    cos_psi = deltaX / R;
+
+//    // old version:
+//    R = sqrt( deltaX**2 + deltaY**2 + deltaZ**2 );
+//    // reverse travel direction to point at neutrino source
+//    phi_recon = aTanFull(-deltaY, -deltaX) * 180/pi ;
+//    theta_recon = acos( -deltaZ / R ) * 180/pi;
+//    // cos(psi) = projection of reconstructed incoming neutrino direction (-dX) along -x --> -(-dX/R) = +dX/R
+//    cos_psi = deltaX / R;
+
+    // new version using TVector3:
+    // -- reminder: TVector3 defaults to {x=out,y=right,z=up} (un.) and {rho=length,theta=polar(z),phi=azimuthal(x->y)} (rad)
+    //neutrino_direction = TVector3(0, 0, -1);
+    //neutrino_direction = TVector3(-1, 0, 0);
+    neutrino_direction = TVector3(0, -1, 0);
+    nu_hat = neutrino_direction.Unit();
+    displacement = TVector3(deltaX, deltaY, deltaZ);
+    disp_hat = displacement.Unit();
+    cos_psi = nu_hat.Dot(disp_hat);
+    phi_recon = (-displacement).Phi() * 180/pi; // TVector3.Phi() returns on (-pi,+pi)
+    theta_recon = (-displacement).Theta() * 180/pi; // TVector3.Theta() returns on (0, +pi)
+
     // transform angles for skymap projection
-    if ( phi_recon <= 180 ) {
-      longtd = phi_recon;
-    } else {
-      longtd = phi_recon - 360;
-    }
-    lattd = theta_recon - 90;
+    longtd = phi_recon; // aitoff longtd: (-180,+180)
+    lattd = 90 - theta_recon; // aitoff lattd: (-90,+90)
     T_map->Fill();
+
     // NuLat -- additional cuts
     Double_t cube_half_length = 25.; //mm
     Double_t cube_separation = 1.; //mm
@@ -316,7 +332,7 @@ for (( k = 0; k < num_bursts; k++ )) {
         T2->Fill();
       }
     } else { // just fill
-    T2->Fill();
+      T2->Fill();
     } //endif
   } //endif
 

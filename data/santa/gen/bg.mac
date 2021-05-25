@@ -2,8 +2,8 @@
 
 # testing rat-pac doc example
 #/generator/add decaychain 222Rn:regexfill
-#/generator/pos/set ^target_strip[0-9]+$
-#/generator/pos/set target_strip
+#/generator/pos/set ^target_bar[0-9]+$
+#/generator/pos/set target_bar
 
 
 # using the "external" generator

@@ -1,7 +1,9 @@
 # ibd.mac -- IBD generator for CHOOZ-style experiment
 
 /generator/add combo ibd:point:poisson
-/generator/vtx/set 0 0 1 # neutrinos along +z
+#/generator/vtx/set 0 0 1 # neutrinos along +z
+#/generator/vtx/set 0 0 -1 # neutrinos along -z
+/generator/vtx/set -1 0 0 # neutrinos directed along -x direction
 #/generator/vtx/set 0 0 0 # isotropic neutrinos
 #/generator/pos/set 0 -9450 0
 /generator/pos/set 0 0 0

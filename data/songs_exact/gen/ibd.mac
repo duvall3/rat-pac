@@ -1,7 +1,8 @@
 # ibd.mac -- basic IBD generator; +z-direction ##in center of detector
 
 /generator/add combo ibd:regexfill:poisson
-/generator/vtx/set 0 0 1
+#/generator/vtx/set 0 0 1
+/generator/vtx/set -1 0 0 # neutrinos directed along -x direction
 /generator/pos/set ^.+cell
 #/generator/rate/set 1
 /generator/rate/set 4.39e-2

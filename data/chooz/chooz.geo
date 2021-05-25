@@ -46,7 +46,7 @@ material: "steel",
 color: [0.5, 0.5, 0.5],
 //position: [0.0, -9450.0, 0.0] // mm
 position: [0.0, 0.0, 0.0] // mm -- moved to center of cave
-rotation: [90.0, 0.0, 0.0] // degrees
+//rotation: [90.0, 0.0, 0.0] // degrees
 }
 
 

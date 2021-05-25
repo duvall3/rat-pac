@@ -1,5 +1,7 @@
 # ibd.mac -- basic IBD generator; +z-direction in center of detector
 
 /generator/add combo ibd:point:poisson
-/generator/pos/set 0 0 1
+#/generator/pos/set 0 0 1
+/generator/pos/set 0 0 0
+/generator/vtx/set -1 0 0
 /generator/rate/set 1

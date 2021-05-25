@@ -39,7 +39,8 @@ valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "cave",
 type: "box",
-size: [680., 740., 680.], // mm
+//size: [680., 740., 680.], // mm
+size: [680., 680., 740.], // mm
 material: "water",
 invisible: 0,
 }
@@ -54,7 +55,8 @@ valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "water_shield",
 type: "box",
-size: [430., 490., 430.]
+//size: [430., 490., 430.]
+size: [430., 430., 490.]
 material: "air"
 invisible: 0,
 position: [0., 0., 0.]
@@ -70,7 +72,7 @@ valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "detector_space",
 type: "box",
-size: [430., 490., 430.]
+size: [430., 430., 490.]
 material: "air"
 invisible: 0,
 position: [0., 0., 0.]
@@ -86,10 +88,10 @@ valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "cell_array",
 type: "box",
-size: [215., 490., 215.]
+size: [215., 215., 490.]
 material: "gd_scintillator",
 invisible: 0,
-position: [215., 0., 215.]
+position: [215., 215., 0.]
 }
 
 // INERT CELL 1
@@ -101,10 +103,10 @@ valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "cell_array",
 type: "box",
-size: [215., 490., 215.]
+size: [215., 215., 490.]
 material: "gd_scintillator_OFF",
 invisible: 0,
-position: [-215., 0., 215.]
+position: [-215., 215., 0.]
 }
 
 // INERT CELL 2
@@ -116,10 +118,10 @@ valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "cell_array",
 type: "box",
-size: [215., 490., 215.]
+size: [215., 215., 490.]
 material: "gd_scintillator_OFF",
 invisible: 0,
-position: [-215., 0., -215.]
+position: [-215., -215., 0.]
 }
 
 // INERT CELL 3
@@ -131,10 +133,10 @@ valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "cell_array",
 type: "box",
-size: [215., 490., 215.]
+size: [215., 215., 490.]
 material: "gd_scintillator_OFF",
 invisible: 0,
-position: [215., 0., -215.]
+position: [215., -215., 0.]
 }
 
 

@@ -6,35 +6,48 @@
 # -- for an example, see https://github.com/duvall3/rat-pac/blob/comparison/data/general-segmented/general-segmented_base.geo
 #
 # USAGE: geogen_general-segmented.sh [reset]
+#
+# ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ Updated 5/21 ~ #
 
 
+##Copyright (C) 2021 Mark J. Duvall
+##
+##    This program is free software: you can redistribute it and/or modify
+##    it under the terms of the GNU General Public License as published by
+##    the Free Software Foundation, either version 3 of the License, or
+##    (at your option) any later version.
+##
+##    This program is distributed in the hope that it will be useful,
+##    but WITHOUT ANY WARRANTY; without even the implied warranty of
+##    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##    GNU General Public License for more details.
+##
+##    You should have received a copy of the GNU General Public License
+##    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
+## init
 
-## check / create filenames
+# check / create filenames
 PROJ=$(pwd | sed s_/_\ _g | awk '{print $NF}')
 BASEFILE="$PROJ"_base.geo
 ARRFILE="$PROJ"_cell-array.geo
 OUTFILE="$PROJ".geo
 
-
-
-## clear command
+# clear command
 if [[ $1 = "reset" ]]; then
   if [[ -f $BASEFILE ]]; then
     echo "Resetting experiment to base; clearing detector..."
       if [[ -f $ARRFILE ]]; then rm $ARRFILE; fi
       if [[ -f $OUTFILE ]]; then rm $OUTFILE; fi
-      if [[ -f $OUTFILE"~" ]]; then rm $OUTFILE"~"; fi
+#     if [[ -f $OUTFILE"~" ]]; then rm $OUTFILE"~"; fi
     echo "Detector geometry cleared." && exit 0
   else
     echo "ERROR: Base file is missing; cannot reset to base geometry." && exit 15
   fi
 fi
 
-
-
-## don't overwrite
+# don't overwrite
 if [ -e $ARRFILE ]; then
   echo "ERROR: $ARRFILE already exists; please remove if you are certain you want to define a new experiment geometry." && exit 11
 fi
@@ -42,19 +55,19 @@ if [ -e $OUTFILE ]; then
   echo "ERROR: $OUTFILE already exists; please remove if you are certain you want to define a new experiment geometry." && exit 12
 fi
 
-
-
-## check for bc
+# check for bc
 echo -e "\n\nChecking for bc..."
 if [ $(which bc) ]; then
   echo "Success: bc found in $(which bc)"
 else
-# echo "WARNING: bc not found; calculations will be performed by BASH and all non-integers will lose their decimal part."
   echo -e "ERROR: Program 'bc' is needed to run this script.\n\n" && exit 10
 fi
 
+
 printf "\n\n"
   
+
+## template
 
 #### TEMPLATE:
 #// -------- GEO[]
@@ -74,7 +87,7 @@ printf "\n\n"
 #
 
 
-## INIT
+## configure geometry
 
 # determine configuration
 echo "Enter number of rows: " && read ROWS
@@ -88,18 +101,17 @@ echo "Enter cell half-width (mm): " && read W
 echo "Enter cell half-height (mm): " && read H
 echo "Enter cell half-spacing (mm): " && read S
 
-## force float format for RAT-PAC
+# force float format for RAT-PAC
 L=$( echo "$L*1.0" | bc -l )
 W=$( echo "$W*1.0" | bc -l )
 H=$( echo "$H*1.0" | bc -l )
 S=$( echo "$S*1.0" | bc -l )
 
-## double cell half-dimensions for summary
+# double cell half-dimensions for summary
 FL=$( echo "$L*2.0" | bc -l )
 FW=$( echo "$W*2.0" | bc -l )
 FH=$( echo "$H*2.0" | bc -l )
 FS=$( echo "$S*2.0" | bc -l )
-
 
 # print config
 printf "\n\nRows: %i\nColumns: %i\nLayers: %i\n" $ROWS $COLS $LYRS
@@ -128,7 +140,9 @@ position: [0.0, 0.0, 0.0] // mm
 }\n\n" >> $ARRFILE
 
 
-## generate cells
+## MAIN
+
+# generate cells
 
 echo -e "\nGenerating cells..."
 
@@ -180,7 +194,7 @@ printf "Array written to: %s\n" $ARRFILE
 
 ## finalize by combining base .geo file with array .geo file
 cat $BASEFILE $ARRFILE > $OUTFILE
-printf "\nRAT GEO FILE WRITTEN TO: %s\n\n\n" $OUTFILE
+printf "\nRAT-PAC .GEO FILE WRITTEN TO: %s\n\n\n" $OUTFILE
 
 
 ## all pau!   )

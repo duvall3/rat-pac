@@ -3,8 +3,9 @@
 
 #/generator/add combo ibd:fill:poisson
 /generator/add combo ibd:regexfill:poisson
-/generator/vtx/set 0 0 1
+/generator/vtx/set -1 0 0 # neutrinos directed along -x direction
+#/generator/vtx/set 0 0 1
 #/generator/pos/set 0 -9000 -500
 #/generator/pos/set target_plane
-/generator/pos/set target_strip
+/generator/pos/set target_bar
 /generator/rate/set 1

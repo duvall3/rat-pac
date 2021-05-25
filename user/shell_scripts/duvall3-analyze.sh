@@ -1,7 +1,8 @@
 #!/bin/bash
 # duvall3_analyze.sh -- wrapper script for ROOT analysis macros
-# -- USAGE: duvall3_analyze.sh <DATARUN_NAME>
-#    -- NOTE: Enter DATARUN_NAME without any file extension
+# -- USAGE: duvall3_analyze.sh [DATARUN_NAME]
+#    -- DATARUN_NAME defaults to name of current directory
+#    -- Enter DATARUN_NAME without any filename extension
 # ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 12/2019 ~ #
 
 # arg / usage check
@@ -18,7 +19,7 @@ DTRNR="$DATARUN"_results.root
 # root-command defs
 RTCMD_1=$(echo -e "root -q -l -b 'rt_to_root.cxx(\"$DATARUN.rt\")'")
 RTCMD_2=$(echo -e "root -q -l -b 'SEDAQ.cxx(\"$DTRNT\", true)'")
-RTCMD_3=$(echo -e "root -q -l -b 'angularRecon.cxx(\"$DTRNR\")'")
+RTCMD_3=$(echo -e "root -q -l -b 'angularRecon.cxx(\"$DTRNR\", true)'")
 # debug
 #echo $RTCMD_1
 #echo $RTCMD_2
