@@ -21,15 +21,16 @@ Int_t event = evname.Atoi();
 // retrieve items from gGeoManager
 TCanvas* can = gPad->GetCanvas();
 TObjArray* vol_list = gGeoManager->GetListOfVolumes();
-TGeoVolume* top = vol_list->FindObject("Top");
+//TGeoVolume* top = vol_list->FindObject("Top");
 
 // find current highlights, if any
+TRegexp tcr = "target";
 TObjArray* vol_colors = new TObjArray;
 TIter vi = vol_list->begin();
 for (( vi = vol_list->begin(); vi != vol_list->end(); ++vi )) {
   TGeoVolume* vol_vi = (TGeoVolume*)*vi;
   TString vol_vi_name = vol_vi->GetName();
-  if ( vol_vi_name.Contains("target") && vol_vi->GetLineColor() != kBlack ) {
+  if ( vol_vi_name.Contains(tcr) && vol_vi->GetLineColor() != kBlack ) {
     vol_colors->Add(vol_vi);
   }
 }
@@ -38,13 +39,13 @@ for (( vi = vol_list->begin(); vi != vol_list->end(); ++vi )) {
 if ( vol_colors != 0x0 ) {
 //cout << "vol_colors est'" << endl; //debug
   TIter vci = vol_colors->begin();
-  for (( vci = vol_colors->begin(); vci != vol_colors->end(); ++vci )) {
+  for ( vci = vol_colors->begin(); vci != vol_colors->end(); ++vci ) {
     TGeoVolume* vol_vci = (TGeoVolume*)*vci;
     vol_vci->SetLineColor(kBlack);
     vol_vci->SetLineWidth(1);
-    can->Draw();
   }
 }
+can->Draw();
 
 // RAT-PAC track(s)
 RAT::DSReader r(filename.Data());

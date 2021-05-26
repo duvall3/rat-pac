@@ -13,9 +13,7 @@
 int drawTracks( Int_t event = 0, Bool_t ibd_TF = kTRUE, Bool_t highlight_TF = kTRUE ) {
 
 // init
-TKey* key_T = gDirectory->FindKey("T");
-TTree* tree = new TTree;
-key_T->Read(tree);
+TTree* tree = (TTree*)gDirectory->FindObjectAny("T");
 Int_t last_event = tree->GetEntries()-1;
 if ( event < 0 || event > last_event ) {
   cerr << "Error: No such event (requested event: " << event << "). Final event: " << last_event << "." << endl;
@@ -43,9 +41,7 @@ geo->AddTrack( track_no, n->GetPDGCode() );
 TGeoTrack* e_track = track_list->At(track_no-1);
 for ( step = 0; step < stepcount; step++ ) {
   n = c.GoStep(step);
-  // rotate axes for RAT-PAC vs. ROOT
-//e_track->AddPoint( n->GetEndpoint().x()/10., n->GetEndpoint().y()/10., n->GetEndpoint().z()/10., n->GetGlobalTime() ); //cm
-  e_track->AddPoint( n->GetEndpoint().z()/10., n->GetEndpoint().x()/10., n->GetEndpoint().y()/10., n->GetGlobalTime() ); //cm
+  e_track->AddPoint( n->GetEndpoint().x()/10., n->GetEndpoint().y()/10., n->GetEndpoint().z()/10., n->GetGlobalTime() ); //cm
 }
 e_track->SetName(parname);
 e_track->SetLineColor(kRed);
@@ -68,9 +64,7 @@ if ( ibd_TF == kTRUE ) {
   TGeoTrack* n_track = track_list->At(track_no-1);
   for ( step = 0; step < stepcount; step++ ) {
     n = c.GoStep(step);
-    // rotate axes for RAT-PAC vs. ROOT
-//  n_track->AddPoint( n->GetEndpoint().x()/10., n->GetEndpoint().y()/10., n->GetEndpoint().z()/10., n->GetGlobalTime() ); //cm
-    n_track->AddPoint( n->GetEndpoint().z()/10., n->GetEndpoint().x()/10., n->GetEndpoint().y()/10., n->GetGlobalTime() ); //cm
+    n_track->AddPoint( n->GetEndpoint().x()/10., n->GetEndpoint().y()/10., n->GetEndpoint().z()/10., n->GetGlobalTime() ); //cm
   }
   n_track->SetName(parname);
   n_track->SetLineColor(kBlue);
@@ -89,9 +83,7 @@ if ( ibd_TF == kTRUE ) {
     TGeoTrack* cap_prod_track = track_list->At(track_no-1);
     for ( step = 0; step < stepcount; step++ ) {
       n = c.GoStep(step);
-      // rotate axes for RAT-PAC vs. ROOT
-//    cap_prod_track->AddPoint( n->GetEndpoint().x()/10., n->GetEndpoint().y()/10., n->GetEndpoint().z()/10., n->GetGlobalTime() ); //cm
-      cap_prod_track->AddPoint( n->GetEndpoint().z()/10., n->GetEndpoint().x()/10., n->GetEndpoint().y()/10., n->GetGlobalTime() ); //cm
+      cap_prod_track->AddPoint( n->GetEndpoint().x()/10., n->GetEndpoint().y()/10., n->GetEndpoint().z()/10., n->GetGlobalTime() ); //cm
     }
     cap_prod_track->SetName(parname);
     cap_prod_track->SetLineColor(5+cap_prod_no);

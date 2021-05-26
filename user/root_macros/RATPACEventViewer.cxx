@@ -45,6 +45,23 @@
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ Written 10/2019 ~ Updated 5/2021 ~ //
 // ~ RATPACEventviewer v1.7.0 ~ //
 
+
+//Copyright (C) 2021 Mark J. Duvall
+//
+//    This program is free software: you can redistribute it and/or modify
+//    it under the terms of the GNU General Public License as published by
+//    the Free Software Foundation, either version 3 of the License, or
+//    (at your option) any later version.
+//
+//    This program is distributed in the hope that it will be useful,
+//    but WITHOUT ANY WARRANTY; without even the implied warranty of
+//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//    GNU General Public License for more details.
+//
+//    You should have received a copy of the GNU General Public License
+//    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
 #include <drawTracks.cxx>
 #include <drawNextEvent.cxx>
 #include <drawPrevEvent.cxx>
@@ -61,6 +78,7 @@ void RATPACEventViewer( const char* FileName, TString tcs = ".*" ) {
 
 // init
 TString filename = FileName;
+TRegexp tcregex = tcs;
 TFile* f = TFile::Open(filename);
 TKey* db_key = f->FindKey("db");
 TMap* db = new TMap;
@@ -75,9 +93,11 @@ TGeoManager *geo = new TGeoManager(filename+"_GM", "TGeoManager for "+filename);
 // placeholder material / medium -- meaningless if only used for drawing events
 TGeoMaterial *mat = new TGeoMaterial("vacuum", 0, 0, 0);
 TGeoMedium *med = new TGeoMedium("vacuum", 1, mat);
+TString waterstr = "water";
+TRegexp waterregex = waterstr;
 // top volume //HC//
-TGeoVolume* world = geo->MakeBox("world", med, 1.e3, 1.e3, 1.e3); //cm
-geo->SetTopVolume(world);
+//TGeoVolume* world = geo->MakeBox("world", med, 1.e3, 1.e3, 1.e3); //cm
+//geo->SetTopVolume(world);
 
 // load *entire* detector from db into TGeoManager
 //Int_t k_volume = 1; // volume counter //for drawing entire detector
@@ -134,7 +154,11 @@ for ( i = db->begin(); i != db->end(); ++i ) {
       geo->SetTopVolume(volume);
       }
     } else { // all other volumes
-      volume->SetLineColor(kBlack);
+      if (keystr.Contains(waterregex)) {
+        volume->SetLineColor(kBlue);
+      } else {
+	volume->SetLineColor(kBlack);
+      }
       volume->SetLineWidth(1);
 //    trans->SetTranslation(volume_pos_x, volume_pos_y, volume_pos_z); //for drawing entire detector
 //    top->AddNode(volume, k_volume, trans); //for drawing entire detector
@@ -146,9 +170,11 @@ for ( i = db->begin(); i != db->end(); ++i ) {
 } //end db loop
 
 // now incorporate mother(s) and create nodes
-Int_t k_volume(0); // volume counter
-TGeoVolume* mother = new TGeoVolume; // mother volume
 TObjArray* vols = geo->GetListOfVolumes();
+TGeoVolume* world = (TGeoVolume*)vols->FindObject("world");
+geo->SetTopVolume(world);
+TGeoVolume* mother = new TGeoVolume; // mother volume
+Int_t k_volume(0); // volume counter
 
 // loop over creted TGeoVolumes
 TIter iv = vols->begin();
@@ -179,13 +205,13 @@ for ( iv = vols->begin(); iv != vols->end(); ++iv ) {
     volume_pos_y = volume_pos_str_y.Atof()/10.; //cm
     volume_pos_z = volume_pos_str_z.Atof()/10.; //cm
     TGeoTranslation* trans = new TGeoTranslation(volume_pos_x, volume_pos_y, volume_pos_z); // position translation
-
 //  //debug
 //  cout << keystr << "\t" << valstr << "\t" << val->GetString() << endl;
 //  cout << volume_pos_x << "\t" << volume_pos_y << "\t" << volume_pos_z << endl;
 //  trans->Print();
-
-    } //endif -- position given
+    }// else {
+      //trans = new TGeoTranslation(0.,0.,0.);
+    //} //endif -- position given
 
   // find mother and add node
   if (volname != "world") {
@@ -193,12 +219,12 @@ for ( iv = vols->begin(); iv != vols->end(); ++iv ) {
     vol_mother_entry.Prepend("GEO[");
     vol_mother_entry.Append("].mother");
     TObjString* volmother_tos = (TObjString*)db->GetValue(vol_mother_entry);
-    TString volmother = volmother_tos.GetString();
+    TString volmother = volmother_tos->GetString();
     volmother.ReplaceAll("\"","");
     TGeoVolume* mother = (TGeoVolume*)vols->FindObject(volmother);
 //  cout << volname.Data() << "\t" << vol_mother_entry.Data() << "\t" << volmother.Data() << "\t"<< mother << endl; //debug
 //  trans->Print(); //debug
-    mother->AddNode(vol, k_volume, trans);
+    if (volname.Contains(tcregex)) mother->AddNode(vol, k_volume, trans);
 //  world->AddNode(vol, k_volume, trans); //debug
     k_volume++;
   }

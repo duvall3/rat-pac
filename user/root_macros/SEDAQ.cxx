@@ -3,11 +3,11 @@
 // -- further documentation forthcoming
 // -- see https://github.com/duvall3/rat-pac/tree/collab
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2017 ~ //
-// ~ SEDAQ v0.9.1 ~ 11/2019 ~ //
-
+// ~ SEDAQ v0.9.8 ~ 5/21 ~ //
+//
 // INPUT: ROOT file containing TTree "T" (Scintillation Data)
 // OUTPUT: ROOT file containing TTrees "T2" (IBD Candidate Data) and "T_Trig" (IBD Trigger Parameters and Result)
-// 	*** NOTE: View trigger parameters using T_Trig->Show(0), NOT T_Trig->Scan() ***
+//   -- NOTE: View trigger parameters and results using T_Trig->Show(0)
 // ARGUMENTS:
 //   -- filename -- input ROOT file
 //   -- prompt_low -- IBD trigger, low threshold on prompt event (MeV)
@@ -16,17 +16,34 @@
 //   -- delayed_low -- IBD trigger, low threshold on delayed event (MeV)
 //   -- graphics_tf -- whether to draw & save plots; defaults to false for batch mode
 //   -- nulat_tf -- whether to apply cuts specific to NuLat
+// NOTE: For now, default to "neutrino_direction = TVector3(-1, 0, 0);" (see NEUTRINO TRIGGER "init" section below)
 
-// NOTE: for now, default to "neutrino_direction = TVector3(-1, 0, 0);" (see NEUTRINO TRIGGER "init" section below)
+
+//Copyright (C) 2021 Mark J. Duvall
+//
+//    This program is free software: you can redistribute it and/or modify
+//    it under the terms of the GNU General Public License as published by
+//    the Free Software Foundation, either version 3 of the License, or
+//    (at your option) any later version.
+//
+//    This program is distributed in the hope that it will be useful,
+//    but WITHOUT ANY WARRANTY; without even the implied warranty of
+//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//    GNU General Public License for more details.
+//
+//    You should have received a copy of the GNU General Public License
+//    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 
 #include <math.h>
+
 
 void SEDAQ( const char* filename, Bool_t graphics_tf = kFALSE, Double_t prompt_low = 0, Double_t delayed_low = 0, Double_t deltaT_low = 5.e-6, Double_t deltaT_high = 100.e-6, Bool_t nulat_tf = kFALSE) {
 
 
 //// INIT
 
-// init
+// general
 gSystem->Load("libPhysics.so");
 gStyle->SetHistLineWidth(2);
 gStyle->SetHistLineColor(kBlue);
@@ -37,10 +54,13 @@ FileName = filename;
 if (FileName.Contains("_T.root")) {
   basename = FileName(0,FileName.Index("_T.root"));
 } else if (FileName.Contains(".root")) {
-  basename = FileName(0,FileName.Index("_T.root"));
+  cout << endl << "WARNING: Possible file-type error: SEDAQ operates on the output of $RATROOT/user/root_macros/rt_to_root.cxx; filename is expected to match \"*_T.root\". Trying anyway..." << endl << endl;
+  cerr << endl << "WARNING: Possible file-type error: SEDAQ operates on the output of $RATROOT/user/root_macros/rt_to_root.cxx; filename is expected to match \"*_T.root\". Trying anyway..." << endl << endl;
+  basename = FileName(0,FileName.Index(".root"));
 } else {
-  cout << endl << "Possible file-type error: SEDAQ operates on the output of $RATROOT/user/root_macros/rt_to_root.cxx. Exiting..." << endl << endl;
-  return 2;
+  cout << endl << "WARNING: Possible file-type error: SEDAQ operates on the output of $RATROOT/user/root_macros/rt_to_root.cxx; filename is expected to match \"*_T.root\". Trying anyway..." << endl << endl;
+  cerr << endl << "WARNING: Possible file-type error: SEDAQ operates on the output of $RATROOT/user/root_macros/rt_to_root.cxx; filename is expected to match \"*_T.root\". Trying anyway..." << endl << endl;
+  basename = FileName;
 }
 savename = basename+"_results.root";
 TFile f = TFile(savename, "recreate");
@@ -103,7 +123,8 @@ TString nMCEvents_ts = nMCEvents_tos1->GetString();
 //cout << endl << nMCEvents_ts.Data() << endl; //debug
 TObjString* nMCEvents_tos2 = new TObjString(nMCEvents_ts.Data());
 T2user->Add(nMCEvents_tos2);
-T2user->Write();
+//T2user->Write();
+
 
 //// T PLOTS
 
@@ -184,7 +205,7 @@ if ( graphics_tf == true ) { // skip graphics unless in batch mode (default)
   }
 
   // draw all histograms:
-  TCanvas* c1 = new TCanvas("c1",filename, 70, 60, 1500, 800);
+  TCanvas* c1 = new TCanvas("c1","Scintillation Bursts", 70, 60, 1500, 800);
   c1->Divide(2,2);
   c1->cd(1);
   h1->Draw();
@@ -219,6 +240,7 @@ Double_t deltaX, deltaY, deltaZ, R;
 Double_t deltaT_low, deltaT_high, trigger_reset;
 //Double_t prompt_low;
 Double_t prompt_high, delayed_low, delayed_high;
+TVector3 neutrino_direction, nu_hat, displacement, disp_hat, source_recon, src_hat;
 // for NuLat: address cube-centered positions
 Bool_t cubed_tf = ( T->FindBranch("cubed_x") != 0x0 );
 if ( cubed_tf ) {
@@ -229,8 +251,15 @@ if ( cubed_tf ) {
 }
 // error checking -- nulat option XOR cubed branch (i.e., one but not the other)
 if ( nulat_tf ^ cubed_tf )  cout << "WARNING: Partial but incomplete NuLat parameters found." << endl;
-TVector3 neutrino_direction, nu_hat, displacement, disp_hat;
-// moving neutrino_direction assignment down to vector-analysis section for editing convenience
+
+// prepare *known* (i.e., not reconstructed) neutrino-direction vectors
+// reminder: TVector3 defaults to {x=out,y=right,z=up} and {rho=length,theta=polar(z),phi=azimuthal(x->y)} (rad)
+cout << "Using default antineutrino direction." << endl;
+cerr << "Using default antineutrino direction." << endl;
+neutrino_direction = TVector3(-1, 0, 0); //HC//
+//neutrino_direction = TVector3(0, 0, -1); //HC//
+//neutrino_direction = TVector3(0, -1, 0); //HC//
+nu_hat = neutrino_direction.Unit();
 
 // set cut parameters //thresholds
 trigger_reset = 800.e-6;
@@ -293,31 +322,22 @@ for (( k = 0; k < num_bursts; k++ )) {
     }
   }
 
-  // if candidate burst pair is found, add burst times and energies and reconstructed angle to tree: //NOTE: phi=arctan(y/x) unless changed manually below
+  // if candidate burst pair is found, add burst times and energies and reconstructed angle to tree
   if ( prompt_tf & delayed_tf ) {
+
+    // calculate positron-to-neutron displacement
     deltaX = delayed_cand_x - prompt_cand_x;
     deltaY = delayed_cand_y - prompt_cand_y;
     deltaZ = delayed_cand_z - prompt_cand_z;
-
-//    // old version:
-//    R = sqrt( deltaX**2 + deltaY**2 + deltaZ**2 );
-//    // reverse travel direction to point at neutrino source
-//    phi_recon = aTanFull(-deltaY, -deltaX) * 180/pi ;
-//    theta_recon = acos( -deltaZ / R ) * 180/pi;
-//    // cos(psi) = projection of reconstructed incoming neutrino direction (-dX) along -x --> -(-dX/R) = +dX/R
-//    cos_psi = deltaX / R;
-
-    // new version using TVector3:
-    // -- reminder: TVector3 defaults to {x=out,y=right,z=up} (un.) and {rho=length,theta=polar(z),phi=azimuthal(x->y)} (rad)
-    //neutrino_direction = TVector3(0, 0, -1);
-    //neutrino_direction = TVector3(-1, 0, 0);
-    neutrino_direction = TVector3(0, -1, 0);
-    nu_hat = neutrino_direction.Unit();
     displacement = TVector3(deltaX, deltaY, deltaZ);
     disp_hat = displacement.Unit();
-    cos_psi = nu_hat.Dot(disp_hat);
-    phi_recon = (-displacement).Phi() * 180/pi; // TVector3.Phi() returns on (-pi,+pi)
-    theta_recon = (-displacement).Theta() * 180/pi; // TVector3.Theta() returns on (0, +pi)
+
+    // reverse displacement vector in order to point back at the antineutrino source and get angle info
+    source_recon = -displacement;
+    src_hat = source_recon.Unit();
+    phi_recon = source_recon.Phi() * 180/pi; // TVector3.Phi() returns on (-pi,+pi)
+    theta_recon = source_recon.Theta() * 180/pi; // TVector3.Theta() returns on (0, +pi)
+    cos_psi = nu_hat.Dot(src_hat);
 
     // transform angles for skymap projection
     longtd = phi_recon; // aitoff longtd: (-180,+180)
@@ -325,8 +345,8 @@ for (( k = 0; k < num_bursts; k++ )) {
     T_map->Fill();
 
     // NuLat -- additional cuts
-    Double_t cube_half_length = 25.; //mm
-    Double_t cube_separation = 1.; //mm
+    Double_t cube_half_length = 25.; //mm //HC//
+    Double_t cube_separation = 1.; //mm //HC//
     if ( nulat_tf & cubed_tf ) { // apply NuLat position cuts -- cubes must be adjacent
       if ( abs(delayed_cand_x-prompt_cand_x)<=(2*cube_half_length+cube_separation) & abs(delayed_cand_y-prompt_cand_y)<=(2*cube_half_length+cube_separation) & abs(delayed_cand_z-prompt_cand_z)<=(2*cube_half_length+cube_separation) ) {
         T2->Fill();
@@ -340,15 +360,11 @@ for (( k = 0; k < num_bursts; k++ )) {
 
 // prepare some summary variables
 Long64_t ibd_candidates = T2->GetEntries();
-//Long64_t nMCEvents = nMCEvents_tos->GetString()->Atoll(); // convert back to long
-Long64_t nMCEvents = 50; //debug
-//Double_t ibd_eff = (Double_t)ibd_candidates/nMCEvents;
 const char* units = "Time (ns), Energy (MeV)";
 
 // save ibd trigger parameters and result
 TTree* T_Trig = new TTree("T_Trig","IBD Trigger Parameters and Total");
 T_Trig->Branch("units",units,"units/C");
-//T_Trig->Branch("nMCEvents",&nMCEvents,"nMCEvents/L");
 T_Trig->Branch("deltaT_low",&deltaT_low,"deltaT_low/D");
 T_Trig->Branch("deltaT_high",&deltaT_high,"deltaT_high/D");
 T_Trig->Branch("prompt_low",&prompt_low,"prompt_low/D");
@@ -356,7 +372,6 @@ T_Trig->Branch("prompt_high",&prompt_high,"prompt_high/D");
 T_Trig->Branch("delayed_low",&delayed_low,"delayed_low/D");
 T_Trig->Branch("delayed_high",&delayed_high,"delayed_high/D");
 T_Trig->Branch("ibd_candidates",&ibd_candidates,"ibd_candidates/L");
-//T_Trig->Branch("ibd_eff",&ibd_eff,"ibd_eff/D");
 T_Trig->Fill();
 
 // print summary to stdout
@@ -421,7 +436,7 @@ if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there 
   }
 
   // draw histograms
-  TCanvas* c2 = new TCanvas("c2",filename, 70, 60, 1500, 800);
+  TCanvas* c2 = new TCanvas("c2","Neutrino Trigger Results", 70, 60, 1500, 800);
   h_ibd2->Draw("lego3");
   h_ibd->Draw("samelego");
   c2->SetTheta(35);
@@ -432,16 +447,18 @@ if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there 
   // position plot
   Double_t x_abs = 600.;
   // prompt
-  TCanvas* c3 = new TCanvas("c3",filename, 70, 60, 800, 800);
+  TCanvas* c3 = new TCanvas("c3","IBD Candidate Positions", 70, 60, 800, 800);
   c3->SetLogy(false);
-  T2->Draw("prompt_cand_z:prompt_cand_x:prompt_cand_y>>h_prompt"); // recall that RAT-PAC uses "y" for the vertical axis, not "z"
+//T2->Draw("prompt_cand_z:prompt_cand_x:prompt_cand_y>>h_prompt"); // recall that RAT-PAC uses "y" for the vertical axis, not "z"
+  T2->Draw("prompt_cand_x:prompt_cand_y:prompt_cand_z>>h_prompt");
   h_prompt->SetMarkerColor(kRed);
   h_prompt->SetMarkerStyle(4);
   h_prompt->GetXaxis()->SetLimits(-x_abs,x_abs);
   h_prompt->GetYaxis()->SetLimits(-x_abs,x_abs);
   h_prompt->GetZaxis()->SetLimits(-x_abs,x_abs);
   // delayed
-  T2->Draw("delayed_cand_z:delayed_cand_x:delayed_cand_y>>h_delayed"); // recall that RAT-PAC uses "y" for the vertical axis, not "z"
+//T2->Draw("delayed_cand_z:delayed_cand_x:delayed_cand_y>>h_delayed"); // recall that RAT-PAC uses "y" for the vertical axis, not "z"
+  T2->Draw("delayed_cand_x:delayed_cand_y:delayed_cand_z>>h_delayed");
   h_delayed->SetMarkerColor(kBlue);
   h_delayed->SetMarkerStyle(5);
   h_delayed->GetXaxis()->SetLimits(-x_abs,x_abs);

@@ -30,78 +30,95 @@ invisible: 1,
 }
 
 
-// CAVE FACES -- for visualization purposes
-// -------- GEO[cave_floor]
+//// CAVE FACES -- for visualization purposes
+//// -------- GEO[cave_floor]
+//{
+//name: "GEO",
+//index: "cave_floor",
+//valid_begin: [0, 0],
+//valid_end: [0, 0],
+//mother: "world",
+//type: "box",
+//size: [10000.0, 1.0, 10000.0], // mm
+//material: "rock",
+//invisible: 0,
+//position: [0.0, -10002.0, 0.0] // mm
+//}
+//
+//// -------- GEO[cave_ceiling]
+//{
+//name: "GEO",
+//index: "cave_ceiling",
+//valid_begin: [0, 0],
+//valid_end: [0, 0],
+//mother: "world",
+//type: "box",
+//size: [10000.0, 1.0, 10000.0], // mm
+//material: "rock",
+//invisible: 0,
+//position: [0.0, 10002.0, 0.0] // mm
+//}
+//
+//
+//// -------- GEO[cave_back]
+//{
+//name: "GEO",
+//index: "cave_back",
+//valid_begin: [0, 0],
+//valid_end: [0, 0],
+//mother: "world",
+//type: "box",
+//size: [10000.0, 10000.0, 1.0], // mm
+//material: "rock",
+//invisible: 0,
+//position: [0.0, 0.0, 10002.0] // mm
+//}
+//
+//
+//// -------- GEO[cave_lwall]
+//{
+//name: "GEO",
+//index: "cave_lwall",
+//valid_begin: [0, 0],
+//valid_end: [0, 0],
+//mother: "world",
+//type: "box",
+//size: [1.0, 10000.0, 10000.0], // mm
+//material: "rock",
+//invisible: 0,
+//position: [-10002.0, 0.0, 0.0] // mm
+//}
+//
+//
+//// -------- GEO[cave_rwall]
+//{
+//name: "GEO",
+//index: "cave_rwall",
+//valid_begin: [0, 0],
+//valid_end: [0, 0],
+//mother: "world",
+//type: "box",
+//size: [1.0, 10000.0, 10000.0], // mm
+//material: "rock",
+//invisible: 0,
+//position: [10002.0, 0.0, 0.0] // mm
+//}
+
+
+// water shield
+// -------- GEO[water_shield]
 {
 name: "GEO",
-index: "cave_floor",
+index: "water_shield",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "world",
 type: "box",
-size: [10000.0, 1.0, 10000.0], // mm
-material: "rock",
+size: [326.0, 326.0, 326.0], // mm
+material: "water",
 invisible: 0,
-position: [0.0, -10002.0, 0.0] // mm
-}
-
-// -------- GEO[cave_ceiling]
-{
-name: "GEO",
-index: "cave_ceiling",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "world",
-type: "box",
-size: [10000.0, 1.0, 10000.0], // mm
-material: "rock",
-invisible: 0,
-position: [0.0, 10002.0, 0.0] // mm
-}
-
-
-// -------- GEO[cave_back]
-{
-name: "GEO",
-index: "cave_back",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "world",
-type: "box",
-size: [10000.0, 10000.0, 1.0], // mm
-material: "rock",
-invisible: 0,
-position: [0.0, 0.0, 10002.0] // mm
-}
-
-
-// -------- GEO[cave_lwall]
-{
-name: "GEO",
-index: "cave_lwall",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "world",
-type: "box",
-size: [1.0, 10000.0, 10000.0], // mm
-material: "rock",
-invisible: 0,
-position: [-10002.0, 0.0, 0.0] // mm
-}
-
-
-// -------- GEO[cave_rwall]
-{
-name: "GEO",
-index: "cave_rwall",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "world",
-type: "box",
-size: [1.0, 10000.0, 10000.0], // mm
-material: "rock",
-invisible: 0,
-position: [10002.0, 0.0, 0.0] // mm
+//position: [0.0, -9924.0, 0.0], // mm
+//position: [0.0, 0.0, -9924.0], // mm
 }
 
 
@@ -112,12 +129,13 @@ name: "GEO",
 index: "cube_array",
 valid_begin: [0, 0],
 valid_end: [0, 0],
-mother: "world",
+mother: "water_shield",
 type: "box",
 size: [76.0, 76.0, 76.0], // mm
 material: "air",
 invisible: 0,
-position: [0.0, -9924.0, 0.0], // mm
+//position: [0.0, -9924.0, 0.0], // mm
+//position: [0.0, 0.0, -9924.0], // mm
 }
 
 

@@ -38,17 +38,17 @@
 #/vis/geometry/set/visibility world 0 false
 /vis/viewer/set/background black
 /vis/viewer/zoom 8
-/vis/viewer/pan 0 -9 m
+#/vis/viewer/pan 0 -9 m
 
 # set or correct volume properties:
 /vis/geometry/set/colour world 0 .6 .2 .1 .1
 /vis/geometry/set/visibility world 0 1
 #/vis/geometry/set/colour cave 0 0 0 0 .2
-/vis/geometry/set/colour cave_floor 0 .6 .2 .1 .3
-/vis/geometry/set/colour cave_ceiling 0 .6 .2 .1 .3
-/vis/geometry/set/colour cave_back 0 .6 .2 .1 .3
-/vis/geometry/set/colour cave_lwall 0 .6 .2 .1 .3
-/vis/geometry/set/colour cave_rwall 0 .6 .2 .1 .3
+#/vis/geometry/set/colour cave_floor 0 .6 .2 .1 .3
+#/vis/geometry/set/colour cave_ceiling 0 .6 .2 .1 .3
+#/vis/geometry/set/colour cave_back 0 .6 .2 .1 .3
+#/vis/geometry/set/colour cave_lwall 0 .6 .2 .1 .3
+#/vis/geometry/set/colour cave_rwall 0 .6 .2 .1 .3
 /vis/geometry/
 /vis/viewer/set/style s
 # or surface:
@@ -56,7 +56,7 @@
 #/vis/geometry/set/colour
 
 /vis/viewer/set/hiddenMarker true
-/vis/viewer/set/targetPoint 0 -9 0 m
+#/vis/viewer/set/targetPoint 0 -9 0 m
 
 # Draw smooth trajectories at end of event, showing trajectory points
 # as markers 2 pixels wide:

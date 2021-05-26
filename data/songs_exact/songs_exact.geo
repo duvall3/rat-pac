@@ -104,13 +104,13 @@ valid_end: [0, 0],
 mother: "cell_array",
 type: "box",
 size: [215., 215., 490.]
-material: "gd_scintillator_OFF",
+material: "gd_scintillator",
 invisible: 0,
 position: [-215., 215., 0.]
 }
 
 // INERT CELL 2
-// -------- GEO[inert_cell_1]
+// -------- GEO[inert_cell_2]
 {
 name: "GEO",
 index: "inert_cell_2",
@@ -119,7 +119,7 @@ valid_end: [0, 0],
 mother: "cell_array",
 type: "box",
 size: [215., 215., 490.]
-material: "gd_scintillator_OFF",
+material: "gd_scintillator",
 invisible: 0,
 position: [-215., -215., 0.]
 }
@@ -134,7 +134,7 @@ valid_end: [0, 0],
 mother: "cell_array",
 type: "box",
 size: [215., 215., 490.]
-material: "gd_scintillator_OFF",
+material: "gd_scintillator",
 invisible: 0,
 position: [215., -215., 0.]
 }

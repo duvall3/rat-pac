@@ -1,9 +1,27 @@
 // angularRecon.cxx -- function (temporarily macro) for calculating and displaying results of IBD angular reconstruction
 // -- operates on results of SEDAQ.cxx from github-->duvall3-->rat-pac-->collab-->user-->root_macros
 // -- USAGE: root <DATARUN_results.root> --> .L angularRecon.cxx --> angularRecon(T2);
-// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 12/2019 ~ //
+// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 12/2019 ~ Updated 5/21 ~ //
+
+
+//Copyright (C) 2021 Mark J. Duvall
+//
+//    This program is free software: you can redistribute it and/or modify
+//    it under the terms of the GNU General Public License as published by
+//    the Free Software Foundation, either version 3 of the License, or
+//    (at your option) any later version.
+//
+//    This program is distributed in the hope that it will be useful,
+//    but WITHOUT ANY WARRANTY; without even the implied warranty of
+//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//    GNU General Public License for more details.
+//
+//    You should have received a copy of the GNU General Public License
+//    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 
 void angularRecon( const char* filename, bool graphics_tf = kFALSE ) {
+
 
 // init
 TString fileName = filename;
@@ -77,6 +95,7 @@ theta_unc = theta_rms / sqrt(N);
 c5->cd();
 h_cos_psi->Draw();
 gPad->SetLogy(kFALSE);
+h_cos_psi->GetYaxis()->SetRangeUser(0., 1.2 * h_cos_psi->GetMaximum());
 
 // skymap
 c6->cd();
