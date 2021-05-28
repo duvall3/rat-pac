@@ -17,6 +17,9 @@
 //   -- graphics_tf -- whether to draw & save plots; defaults to false for batch mode
 //   -- nulat_tf -- whether to apply cuts specific to NuLat
 // NOTE: For now, default to "neutrino_direction = TVector3(-1, 0, 0);" (see NEUTRINO TRIGGER "init" section below)
+// Upgrade reminder: Possibly fix this by implementing the following BASH line (maybe using gSystem->Exec()):
+//   awk '$0 ~ /^[^#]generator\/vtx\/set -?[[:digit:]]/ {print "neutron_direction = TVector3(" $2 "," $3 "," $4 ");"}' $DATARUN.conf
+
 
 
 //Copyright (C) 2021 Mark J. Duvall
@@ -77,7 +80,6 @@ Long64_t num_bursts = T->GetEntries();
 Int_t event;
 Double_t event_time, wall_time, energy, energy_q, x, y, z;
 Double_t run_start, interevent_time, event_time_adj, wall_time_adj;
-Double_t deltaXhat, deltaYhat, deltaZhat; //debug
 T->SetBranchAddress( "event", &event );
 T->SetBranchAddress( "event_time", &event_time );
 T->SetBranchAddress( "wall_time", &wall_time );
@@ -97,6 +99,8 @@ Double_t prompt_cand_x, prompt_cand_y, prompt_cand_z;
 Double_t delayed_cand_x, delayed_cand_y, delayed_cand_z;
 Double_t cos_psi; // where psi (ψ) = angle between incoming and reconstructed neutrino momenta
 Double_t phi_recon, theta_recon; // angle reconstruction
+//Double_t deltaX, deltaY, deltaZ; //debug
+//Double_t deltaXhat, deltaYhat, deltaZhat; //debug
 T2->Branch("prompt_cand_event", &prompt_cand_event, "prompt_cand_event/I");
 T2->Branch("delayed_cand_event", &delayed_cand_event, "delayed_cand_event/I");
 T2->Branch("prompt_cand_t", &prompt_cand_t, "prompt_cand_t/D");
@@ -114,9 +118,12 @@ T2->Branch("cos_psi", &cos_psi, "cos_psi/D");
 T2->Branch("phi_recon", &phi_recon, "phi_recon/D");
 T2->Branch("theta_recon", &theta_recon, "theta_recon/D");
 //debug
-T2->Branch("deltaXhat", &deltaXhat, "deltaXhat/D");
-T2->Branch("deltaYhat", &deltaYhat, "deltaYhat/D");
-T2->Branch("deltaZhat", &deltaZhat, "deltaZhat/D");
+//T2->Branch("deltaX", &deltaX, "deltaX/D");
+//T2->Branch("deltaY", &deltaY, "deltaY/D");
+//T2->Branch("deltaZ", &deltaZ, "deltaZ/D");
+//T2->Branch("deltaXhat", &deltaXhat, "deltaXhat/D");
+//T2->Branch("deltaYhat", &deltaYhat, "deltaYhat/D");
+//T2->Branch("deltaZhat", &deltaZhat, "deltaZhat/D");
 
 // Copy total number of top-level MC events from T to T2
 // -- NOTE: this method is not especially robust;
@@ -338,9 +345,12 @@ for (( k = 0; k < num_bursts; k++ )) {
     displacement = TVector3(deltaX, deltaY, deltaZ);
     disp_hat = displacement.Unit();
     //debug
-    deltaXhat = disp_hat.X();
-    deltaYhat = disp_hat.Y();
-    deltaZhat = disp_hat.Z();
+//  deltaX = displacement.X();
+//  deltaY = displacement.Y();
+//  deltaZ = displacement.Z();
+//  deltaXhat = disp_hat.X();
+//  deltaYhat = disp_hat.Y();
+//  deltaZhat = disp_hat.Z();
 
     // compare actual and reconsructed neutrino directions
     cos_psi = nu_hat.Dot(disp_hat);

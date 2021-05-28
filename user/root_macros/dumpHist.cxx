@@ -18,55 +18,72 @@
 
 
 //void dumpHist( TH1* histo, const char* filename = "" ) {
+//void dumpHist( const char* histo_name, const char* filename = "" ) {
+void dumpHist( TH1* histo ) {
+
+Int_t nbins, k;
+nbins = histo->GetNbinsX();
+for ( k=0; k<nbins; k++ ) cout << histo->GetBinCenter(k) << "\t" << histo->GetBinContent(k) << endl;
+
+// all pau!   )
+}
+
+// overload
 void dumpHist( const char* histo_name, const char* filename = "" ) {
 
-  // get desired ROOT file
-  Bool_t newfile_tf;
-  TFile* f_initial = gFile;
-  if (filename == "") { // if no filename given, just use currently-open file
-    TFile* f = f_initial;
-    newfile_tf = kFALSE;
-    if (f_initial == 0x0) { // if there is no currently-open file, print error msg and finish
-      cerr << "Error: No file open or specified." << endl;
+// get desired ROOT file
+Bool_t newfile_tf;
+TFile* f_initial = gFile;
+if (filename == "") { // if no filename given, just use currently-open file
+  TFile* f = f_initial;
+  newfile_tf = kFALSE;
+  if (f_initial == 0x0) { // if there is no currently-open file, print error msg and finish
+    cerr << "Error: No file open or specified." << endl;
+    return;
+  }
+} else { // filename is specified
+  if ( f_initial == 0x0 ) { // no file is initially open
+    TFile* f = TFile::Open(filename);
+    if ( f == 0x0 ) {
+      cerr << "Error: File \"" << filename << "\" not found." << endl;
       return;
     }
-  } else { // filename is specified
-    if ( f_initial == 0x0 ) { // no file is initially open
+    newfile_tf = kFALSE;
+  } else { // a file is initially open
+    if ( filename != f_initial->GetName() ) { // filename is some new file
       TFile* f = TFile::Open(filename);
+      if ( f == 0x0 ) {
+	cerr << "Error: File \"" << filename << "\" not found." << endl;
+	return;
+      }
+      newfile_tf = kTRUE;
+    } else { // filename is for already-open file
+      TFile* f = f_initial;
       newfile_tf = kFALSE;
-    } else { // a file is initially open
-      if ( filename != f_initial->GetName() ) { // filename is some new file
-	TFile* f = TFile::Open(filename);
-	newfile_tf = kTRUE;
-      } else { // filename is for already-open file
-	TFile* f = f_initial;
-	newfile_tf = kFALSE;
-      } //endif -- test filename match
-    } //endif -- a file is initially open
-  } //endif -- filename given
+    } //endif -- test filename match
+  } //endif -- a file is initially open
+} //endif -- filename given
 
-  // get specified histogram
-  TH1* h = (TH1*)f->FindObjectAny(histo_name);
-  if (h == 0x0) { // if histo_name not found
-    cerr << "Error: Specified histogram \"" << histo_name << "\" not found." << endl;
-    // re-open original file if applicable
-    if ( (newfile_tf == kTRUE) && (f_initial != 0x0) ) {
-      f->Close();
-      TFile::Open(f_initial->GetName());
-    }
-    return;
-  } //endif -- histo_name found
-
-  // MAIN
-  Int_t nbins, k;
-  nbins = h->GetNbinsX();
-  for ( k=0; k<nbins; k++ ) cout << h->GetBinCenter(k) << "\t" << h->GetBinContent(k) << endl;
-
+// get specified histogram
+TH1* h = (TH1*)f->FindObjectAny(histo_name);
+if (h == 0x0) { // if histo_name not found
+  cerr << "Error: Specified histogram \"" << histo_name << "\" not found." << endl;
   // re-open original file if applicable
   if ( (newfile_tf == kTRUE) && (f_initial != 0x0) ) {
     f->Close();
     TFile::Open(f_initial->GetName());
   }
+  return;
+} //endif -- histo_name found
+
+// MAIN
+dumpHist(h);
+
+// re-open original file if applicable
+if ( (newfile_tf == kTRUE) && (f_initial != 0x0) ) {
+  f->Close();
+  TFile::Open(f_initial->GetName());
+}
 
 // all pau!   )
 }

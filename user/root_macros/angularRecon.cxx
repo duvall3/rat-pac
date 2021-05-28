@@ -118,6 +118,9 @@ h_map->GetXaxis()->SetTitle("longitude (^{o})");
 h_map->GetYaxis()->SetTitle("latitude (^{o})");
 h_map->GetXaxis()->SetTitleFont(62);
 h_map->GetYaxis()->SetTitleFont(62);
+h_map->GetXaxis()->SetLimits(-180., 180.);
+h_map->GetYaxis()->SetLimits(-90., 90.);
+c6->Draw();
 
 // calculate IBD efficiency
 TObjString* nIBDs_tos = (TObjString*)T2->GetUserInfo()->At(0);
