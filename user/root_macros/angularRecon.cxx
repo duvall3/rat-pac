@@ -20,6 +20,9 @@
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
+#include <TMath.h>
+
+
 void angularRecon( const char* filename, bool graphics_tf = kFALSE ) {
 
 
@@ -31,8 +34,8 @@ TTree* T = T2;
 TTree* T_map = T_map;
 Long64_t k(0), N = T2->GetEntries();
 Double_t cos_psi;
-Double_t phi, phi_mean, phi_std, phi_unc;
-Double_t theta, theta_mean, theta_std, theta_unc;
+Double_t phi, phi_mean, phi_std, phi_sdm;
+Double_t theta, theta_mean, theta_std, theta_sdm;
 Double_t lattd, longtd;
 T2->SetBranchAddress("phi_recon", &phi);
 T2->SetBranchAddress("theta_recon", &theta);
@@ -43,6 +46,7 @@ TH1D *h_phi, *h_theta, *h_cos_psi;
 TH2D *h_map;
 gStyle->SetHistLineWidth(3);
 gStyle->SetHistLineColor(kBlue);
+Double_t pi = TMath::Pi();
 
 // check for presence of IBD candidates
 if ( N == 0 ) {
@@ -88,7 +92,7 @@ gPad->SetLogy(kFALSE);
 h_phi->GetYaxis()->SetRangeUser(0., 1.2 * h_phi->GetMaximum());
 phi_mean = h_phi->GetMean();
 phi_std = h_phi->GetStdDev();
-phi_unc = phi_std / sqrt(N);
+phi_sdm = phi_std / sqrt(N);
 
 // theta = polar angle
 c4->cd(2);
@@ -98,7 +102,7 @@ gPad->SetLogy(kFALSE);
 h_theta->GetYaxis()->SetRangeUser(0., 1.2 * h_theta->GetMaximum());
 theta_mean = h_theta->GetMean();
 theta_std = h_theta->GetStdDev();
-theta_unc = theta_std / sqrt(N);
+theta_sdm = theta_std / sqrt(N);
 
 // psi = angle between actual and reconstr. neutrino momenta
 c5->cd();
@@ -127,18 +131,26 @@ TObjString* nIBDs_tos = (TObjString*)T2->GetUserInfo()->At(0);
 Long64_t nIBDs = nIBDs_tos->GetString().Atoll();
 Double_t eff = (Double_t)N/nIBDs;
 
-// report results
-Double_t phi_true(0), theta_true(90); // assume true neutrino direction is at phi = 0 deg, theta = 90 deg
+// set / report antineutrino direction
+Double_t phi_true, theta_true;
 cout << "Using default antineutrino direction." << endl;
 cerr << "Using default antineutrino direction." << endl;
+TVector3 neutrino_direction, nu_hat;
+cout << "neutrino_direction: "; neutrino_direction = TVector3(-1,0,0);
+nu_hat = neutrino_direction.Unit();
+nu_hat.Print();
+phi_true = (-nu_hat).Phi() * 180/pi;
+theta_true = (-nu_hat).Theta() * 180/pi;
+
+// report results
 printf( "\n\nIBD Angular Reconstruction:\n* datafile = \"%s\"\n* Note: SDM = SD/sqrt(N)\n\n", fileName.Data() );
-printf( "Azimuthal Angle (deg):\n  phi_mean\t%2.2f\n  phi_sd\t%2.2f\n  phi_sdm\t%2.2f\n\n", phi_mean, phi_std, phi_unc );
-printf( "Polar Angle (deg):\n  theta_mean\t%2.2f\n  theta_sd\t%2.2f\n  theta_sdm\t%2.2f\n\n", theta_mean, theta_std, theta_unc );
+printf( "Azimuthal Angle (deg):\n  phi_mean\t%2.2f\n  phi_sd\t%2.2f\n  phi_sdm\t%2.2f\n\n", phi_mean, phi_std, phi_sdm );
+printf( "Polar Angle (deg):\n  theta_mean\t%2.2f\n  theta_sd\t%2.2f\n  theta_sdm\t%2.2f\n\n", theta_mean, theta_std, theta_sdm );
 printf( "SUMMARY:\n  Total IBDs: %d\n  N = %d\n  IBD Efficiency = %2.2f%%\n", nIBDs, N, eff*100 );
 printf( "  phi   = %2.2f   +/- %2.2f deg (SD)\t%2.2f sigma from true value,  or\n", phi_mean, phi_std, TMath::Abs((phi_mean-phi_true))/phi_std );
-printf( "                 +/-  %2.2f deg (SDM)\t%2.2f sigma from true value\n", phi_mean, phi_unc, TMath::Abs((phi_mean-phi_true))/phi_unc );
+printf( "                 +/-  %2.2f deg (SDM)\t%2.2f sigma from true value\n", phi_sdm, TMath::Abs((phi_mean-phi_true))/phi_sdm );
 printf( "  theta = %2.2f   +/- %2.2f deg (SD)\t%2.2f sigma from true value,  or\n", theta_mean, theta_std, TMath::Abs((theta_mean-theta_true))/theta_std );
-printf( "                 +/-  %2.2f deg (SDM)\t%2.2f sigma from true value\n\n", theta_mean, theta_unc, TMath::Abs((theta_mean-theta_true))/theta_unc );
+printf( "                 +/-  %2.2f deg (SDM)\t%2.2f sigma from true value\n\n", theta_sdm, TMath::Abs((theta_mean-theta_true))/theta_sdm );
 
 // save plots
 if ( graphics_tf ) {

@@ -273,6 +273,7 @@ neutrino_direction = TVector3(-1, 0, 0); //HC//
 //neutrino_direction = TVector3(0, 0, -1); //HC//
 //neutrino_direction = TVector3(0, -1, 0); //HC//
 nu_hat = neutrino_direction.Unit();
+nu_hat.Print();
 
 // set cut parameters //thresholds
 trigger_reset = 800.e-6;
@@ -476,7 +477,7 @@ if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there 
   c2->SetLogy(0);
 
   // position plot
-  Double_t x_abs = 600.;
+  Double_t x_abs = 1000.; //mm
   // prompt
   TCanvas* c3 = new TCanvas("c3","IBD Candidate Positions", 70, 60, 800, 800);
   c3->SetLogy(false);
