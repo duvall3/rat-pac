@@ -176,6 +176,8 @@ geo->SetTopVolume(world);
 TGeoVolume* mother = new TGeoVolume; // mother volume
 Int_t k_volume(0); // volume counter
 
+//vols->Print(); //debug
+
 // loop over creted TGeoVolumes
 TIter iv = vols->begin();
 for ( iv = vols->begin(); iv != vols->end(); ++iv ) {
@@ -188,33 +190,34 @@ for ( iv = vols->begin(); iv != vols->end(); ++iv ) {
   keystr.Append("].position");
   val = (TObjString*)db->GetValue(keystr);
 
-  if (val != 0x0) { // if position is specified, replace default zero values
-    valstr = val->GetString();
-    valstr.ReplaceAll("d", "");
-    valstr.ReplaceAll("[", "");
-    valstr.ReplaceAll(" ", "");
-    valstr.Remove(valstr.Last(','));
-    TObjArray* volume_pos = valstr.Tokenize(',');
-    TObjString* volume_pos_obj_x = (TObjString*)volume_pos->At(0);
-    TObjString* volume_pos_obj_y = (TObjString*)volume_pos->At(1);
-    TObjString* volume_pos_obj_z = (TObjString*)volume_pos->At(2);
-    volume_pos_str_x = volume_pos_obj_x->GetString();
-    volume_pos_str_y = volume_pos_obj_y->GetString();
-    volume_pos_str_z = volume_pos_obj_z->GetString();
-    volume_pos_x = volume_pos_str_x.Atof()/10.; //cm
-    volume_pos_y = volume_pos_str_y.Atof()/10.; //cm
-    volume_pos_z = volume_pos_str_z.Atof()/10.; //cm
-    TGeoTranslation* trans = new TGeoTranslation(volume_pos_x, volume_pos_y, volume_pos_z); // position translation
-//  //debug
-//  cout << keystr << "\t" << valstr << "\t" << val->GetString() << endl;
-//  cout << volume_pos_x << "\t" << volume_pos_y << "\t" << volume_pos_z << endl;
-//  trans->Print();
-    }// else {
-      //trans = new TGeoTranslation(0.,0.,0.);
-    //} //endif -- position given
+  if (volname != "world") { // skip world (already positioned when made top volume)
 
-  // find mother and add node
-  if (volname != "world") {
+    if (val != 0x0) { // if position is specified, replace default zero values
+      valstr = val->GetString();
+      valstr.ReplaceAll("d", "");
+      valstr.ReplaceAll("[", "");
+      valstr.ReplaceAll(" ", "");
+      valstr.Remove(valstr.Last(','));
+      TObjArray* volume_pos = valstr.Tokenize(',');
+      TObjString* volume_pos_obj_x = (TObjString*)volume_pos->At(0);
+      TObjString* volume_pos_obj_y = (TObjString*)volume_pos->At(1);
+      TObjString* volume_pos_obj_z = (TObjString*)volume_pos->At(2);
+      volume_pos_str_x = volume_pos_obj_x->GetString();
+      volume_pos_str_y = volume_pos_obj_y->GetString();
+      volume_pos_str_z = volume_pos_obj_z->GetString();
+      volume_pos_x = volume_pos_str_x.Atof()/10.; //cm
+      volume_pos_y = volume_pos_str_y.Atof()/10.; //cm
+      volume_pos_z = volume_pos_str_z.Atof()/10.; //cm
+      TGeoTranslation* trans = new TGeoTranslation(volume_pos_x, volume_pos_y, volume_pos_z); // position translation
+//    //debug
+//    cout << keystr << "\t" << valstr << "\t" << val->GetString() << endl;
+//    cout << volume_pos_x << "\t" << volume_pos_y << "\t" << volume_pos_z << endl;
+//    trans->Print();
+      }// else {
+        //trans = new TGeoTranslation(0.,0.,0.);
+      //} //endif -- position given
+
+    // find mother and add node
     TString vol_mother_entry(volname);
     vol_mother_entry.Prepend("GEO[");
     vol_mother_entry.Append("].mother");
@@ -222,12 +225,13 @@ for ( iv = vols->begin(); iv != vols->end(); ++iv ) {
     TString volmother = volmother_tos->GetString();
     volmother.ReplaceAll("\"","");
     TGeoVolume* mother = (TGeoVolume*)vols->FindObject(volmother);
-//  cout << volname.Data() << "\t" << vol_mother_entry.Data() << "\t" << volmother.Data() << "\t"<< mother << endl; //debug
-//  trans->Print(); //debug
+  //cout << volname.Data() << "\t" << vol_mother_entry.Data() << "\t" << volmother.Data() << "\t"<< mother << endl; //debug
+  //trans->Print(); //debug
     if (volname.Contains(tcregex)) mother->AddNode(vol, k_volume, trans);
-//  world->AddNode(vol, k_volume, trans); //debug
+  //world->AddNode(vol, k_volume, trans); //debug
     k_volume++;
-  }
+
+  } //endif -- skipping top volume
 
 } // end mother/node db loop
 
@@ -242,7 +246,13 @@ geo->SetTopVisible(kTRUE);
 TString can_name = detector_name+", \""+filename+"\"";
 TCanvas* can = new TCanvas("can", can_name, 1000, 100, 850, 700);
 world->Draw();
-world->Draw("SAME");
+// draw desired volumes
+for ( iv = vols->begin(); iv != vols->end(); ++iv ) {
+  vol = (TGeoVolume*)*iv;
+  volname = vol->GetName();
+  if (volname.Contains(tcregex)) vol->Draw("SAME");
+}
+
 // annotations
 TLegend *gleg = new TLegend(0.01, 0.01, 0.25, 0.15);
 gleg->SetName("Geometry Legend");

@@ -7,7 +7,7 @@
 //Copyright (C) 2021 Mark J. Duvall
 //
 //    This program is free software: you can redistribute it and/or modify
-//    it under the terms of the GNU General Public License as published by
+//    it under the testd of the GNU General Public License as published by
 //    the Free Software Foundation, either version 3 of the License, or
 //    (at your option) any later version.
 //
@@ -31,8 +31,8 @@ TTree* T = T2;
 TTree* T_map = T_map;
 Long64_t k(0), N = T2->GetEntries();
 Double_t cos_psi;
-Double_t phi, phi_mean, phi_rms, phi_unc;
-Double_t theta, theta_mean, theta_rms, theta_unc;
+Double_t phi, phi_mean, phi_std, phi_unc;
+Double_t theta, theta_mean, theta_std, theta_unc;
 Double_t lattd, longtd;
 T2->SetBranchAddress("phi_recon", &phi);
 T2->SetBranchAddress("theta_recon", &theta);
@@ -43,6 +43,13 @@ TH1D *h_phi, *h_theta, *h_cos_psi;
 TH2D *h_map;
 gStyle->SetHistLineWidth(3);
 gStyle->SetHistLineColor(kBlue);
+
+// check for presence of IBD candidates
+if ( N == 0 ) {
+  cout << "No IBD candidate events found in "<< filename << ". Exiting..." << endl;
+  cerr << "No IBD candidate events found in "<< filename << ". Exiting..." << endl;
+  return;
+}
 
 // create canvases
 TCanvas* c4 = new TCanvas("c4", "IBD Angular Reconstruction", 820, 120, 1000, 1000);
@@ -78,18 +85,20 @@ c4->cd(1);
 //h_phi->Draw("cyl lego");
 h_phi->Draw();
 gPad->SetLogy(kFALSE);
+h_phi->GetYaxis()->SetRangeUser(0., 1.2 * h_phi->GetMaximum());
 phi_mean = h_phi->GetMean();
-phi_rms = h_phi->GetRMS();
-phi_unc = phi_rms / sqrt(N);
+phi_std = h_phi->GetStdDev();
+phi_unc = phi_std / sqrt(N);
 
 // theta = polar angle
 c4->cd(2);
 //h_theta->Draw("cyl lego");
 h_theta->Draw();
 gPad->SetLogy(kFALSE);
+h_theta->GetYaxis()->SetRangeUser(0., 1.2 * h_theta->GetMaximum());
 theta_mean = h_theta->GetMean();
-theta_rms = h_theta->GetRMS();
-theta_unc = theta_rms / sqrt(N);
+theta_std = h_theta->GetStdDev();
+theta_unc = theta_std / sqrt(N);
 
 // psi = angle between actual and reconstr. neutrino momenta
 c5->cd();
@@ -117,13 +126,15 @@ Double_t eff = (Double_t)N/nIBDs;
 
 // report results
 Double_t phi_true(0), theta_true(90); // assume true neutrino direction is at phi = 0 deg, theta = 90 deg
+cout << "Using default antineutrino direction." << endl;
+cerr << "Using default antineutrino direction." << endl;
 printf( "\n\nIBD Angular Reconstruction:\n* datafile = \"%s\"\n* Note: SDM = SD/sqrt(N)\n\n", fileName.Data() );
-printf( "Azimuthal Angle (deg):\n  phi_mean\t%2.2f\n  phi_sd\t%2.2f\n  phi_sdm\t%2.2f\n\n", phi_mean, phi_rms, phi_unc );
-printf( "Polar Angle (deg):\n  theta_mean\t%2.2f\n  theta_sd\t%2.2f\n  theta_sdm\t%2.2f\n\n", theta_mean, theta_rms, theta_unc );
+printf( "Azimuthal Angle (deg):\n  phi_mean\t%2.2f\n  phi_sd\t%2.2f\n  phi_sdm\t%2.2f\n\n", phi_mean, phi_std, phi_unc );
+printf( "Polar Angle (deg):\n  theta_mean\t%2.2f\n  theta_sd\t%2.2f\n  theta_sdm\t%2.2f\n\n", theta_mean, theta_std, theta_unc );
 printf( "SUMMARY:\n  Total IBDs: %d\n  N = %d\n  IBD Efficiency = %2.2f%%\n", nIBDs, N, eff*100 );
-printf( "  phi   = %2.2f   +/- %2.2f deg (SD)\t%2.2f sigma from true value,  or\n", phi_mean, phi_rms, TMath::Abs((phi_mean-phi_true))/phi_rms );
+printf( "  phi   = %2.2f   +/- %2.2f deg (SD)\t%2.2f sigma from true value,  or\n", phi_mean, phi_std, TMath::Abs((phi_mean-phi_true))/phi_std );
 printf( "                 +/-  %2.2f deg (SDM)\t%2.2f sigma from true value\n", phi_mean, phi_unc, TMath::Abs((phi_mean-phi_true))/phi_unc );
-printf( "  theta = %2.2f   +/- %2.2f deg (SD)\t%2.2f sigma from true value,  or\n", theta_mean, theta_rms, TMath::Abs((theta_mean-theta_true))/theta_rms );
+printf( "  theta = %2.2f   +/- %2.2f deg (SD)\t%2.2f sigma from true value,  or\n", theta_mean, theta_std, TMath::Abs((theta_mean-theta_true))/theta_std );
 printf( "                 +/-  %2.2f deg (SDM)\t%2.2f sigma from true value\n\n", theta_mean, theta_unc, TMath::Abs((theta_mean-theta_true))/theta_unc );
 
 // save plots

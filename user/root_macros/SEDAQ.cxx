@@ -3,7 +3,7 @@
 // -- further documentation forthcoming
 // -- see https://github.com/duvall3/rat-pac/tree/collab
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2017 ~ //
-// ~ SEDAQ v0.9.8 ~ 5/21 ~ //
+// ~ SEDAQ v0.9.9 ~ 5/21 ~ //
 //
 // INPUT: ROOT file containing TTree "T" (Scintillation Data)
 // OUTPUT: ROOT file containing TTrees "T2" (IBD Candidate Data) and "T_Trig" (IBD Trigger Parameters and Result)
@@ -38,12 +38,13 @@
 #include <math.h>
 
 
-void SEDAQ( const char* filename, Bool_t graphics_tf = kFALSE, Double_t prompt_low = 0, Double_t delayed_low = 0, Double_t deltaT_low = 5.e-6, Double_t deltaT_high = 100.e-6, Bool_t nulat_tf = kFALSE) {
+void SEDAQ( const char* filename, Bool_t graphics_tf = kFALSE, Double_t prompt_low = 0, Double_t delayed_low = 0, Double_t deltaT_low = 1.e-6, Double_t deltaT_high = 100.e-6, Bool_t nulat_tf = kFALSE) {
 
 
 //// INIT
 
 // general
+const char* sedaq_version = "0.9.9";
 gSystem->Load("libPhysics.so");
 gStyle->SetHistLineWidth(2);
 gStyle->SetHistLineColor(kBlue);
@@ -76,6 +77,7 @@ Long64_t num_bursts = T->GetEntries();
 Int_t event;
 Double_t event_time, wall_time, energy, energy_q, x, y, z;
 Double_t run_start, interevent_time, event_time_adj, wall_time_adj;
+Double_t deltaXhat, deltaYhat, deltaZhat; //debug
 T->SetBranchAddress( "event", &event );
 T->SetBranchAddress( "event_time", &event_time );
 T->SetBranchAddress( "wall_time", &wall_time );
@@ -111,6 +113,10 @@ T2->Branch("delayed_cand_z", &delayed_cand_z, "delayed_cand_z/D");
 T2->Branch("cos_psi", &cos_psi, "cos_psi/D");
 T2->Branch("phi_recon", &phi_recon, "phi_recon/D");
 T2->Branch("theta_recon", &theta_recon, "theta_recon/D");
+//debug
+T2->Branch("deltaXhat", &deltaXhat, "deltaXhat/D");
+T2->Branch("deltaYhat", &deltaYhat, "deltaYhat/D");
+T2->Branch("deltaZhat", &deltaZhat, "deltaZhat/D");
 
 // Copy total number of top-level MC events from T to T2
 // -- NOTE: this method is not especially robust;
@@ -124,7 +130,7 @@ TString nMCEvents_ts = nMCEvents_tos1->GetString();
 TObjString* nMCEvents_tos2 = new TObjString(nMCEvents_ts.Data());
 T2user->Add(nMCEvents_tos2);
 //T2user->Write();
-
+//T2->GetUserInfo()->Print(); //debug
 
 //// T PLOTS
 
@@ -317,10 +323,10 @@ for (( k = 0; k < num_bursts; k++ )) {
 	  delayed_cand_x = x;
 	  delayed_cand_y = y;
 	  delayed_cand_z = z;
-	} //end if
-      }
-    }
-  }
+	} //endif -- cubed_tf
+      } //endif -- delayed satisfies neutrino trigger
+    } //endif -- not last entry in T
+  } //endif -- prompt satisfies neutrino trigger
 
   // if candidate burst pair is found, add burst times and energies and reconstructed angle to tree
   if ( prompt_tf & delayed_tf ) {
@@ -331,13 +337,26 @@ for (( k = 0; k < num_bursts; k++ )) {
     deltaZ = delayed_cand_z - prompt_cand_z;
     displacement = TVector3(deltaX, deltaY, deltaZ);
     disp_hat = displacement.Unit();
+    //debug
+    deltaXhat = disp_hat.X();
+    deltaYhat = disp_hat.Y();
+    deltaZhat = disp_hat.Z();
+
+    // compare actual and reconsructed neutrino directions
+    cos_psi = nu_hat.Dot(disp_hat);
 
     // reverse displacement vector in order to point back at the antineutrino source and get angle info
     source_recon = -displacement;
     src_hat = source_recon.Unit();
     phi_recon = source_recon.Phi() * 180/pi; // TVector3.Phi() returns on (-pi,+pi)
     theta_recon = source_recon.Theta() * 180/pi; // TVector3.Theta() returns on (0, +pi)
-    cos_psi = nu_hat.Dot(src_hat);
+
+//    //debug
+//    displacement.Print();
+//    disp_hat.Print();
+//    source_recon.Print();
+//    src_hat.Print();
+//    printf("%d\n", cos_psi);
 
     // transform angles for skymap projection
     longtd = phi_recon; // aitoff longtd: (-180,+180)
@@ -364,6 +383,7 @@ const char* units = "Time (ns), Energy (MeV)";
 
 // save ibd trigger parameters and result
 TTree* T_Trig = new TTree("T_Trig","IBD Trigger Parameters and Total");
+T_Trig->Branch("sedaq_version",sedaq_version,"sedaq_version/C");
 T_Trig->Branch("units",units,"units/C");
 T_Trig->Branch("deltaT_low",&deltaT_low,"deltaT_low/D");
 T_Trig->Branch("deltaT_high",&deltaT_high,"deltaT_high/D");
@@ -383,6 +403,7 @@ cout << endl;
 //// PLOT NEUTRINO-CANDIDATE RESULTS
 
 if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there were no IBD triggers or if batch mode is on
+//if ( graphics_tf==true ) { // debug
 
   // interevent time bins
   const Int_t nBinsEBP = 100;
@@ -449,7 +470,6 @@ if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there 
   // prompt
   TCanvas* c3 = new TCanvas("c3","IBD Candidate Positions", 70, 60, 800, 800);
   c3->SetLogy(false);
-//T2->Draw("prompt_cand_z:prompt_cand_x:prompt_cand_y>>h_prompt"); // recall that RAT-PAC uses "y" for the vertical axis, not "z"
   T2->Draw("prompt_cand_x:prompt_cand_y:prompt_cand_z>>h_prompt");
   h_prompt->SetMarkerColor(kRed);
   h_prompt->SetMarkerStyle(4);
@@ -457,7 +477,6 @@ if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there 
   h_prompt->GetYaxis()->SetLimits(-x_abs,x_abs);
   h_prompt->GetZaxis()->SetLimits(-x_abs,x_abs);
   // delayed
-//T2->Draw("delayed_cand_z:delayed_cand_x:delayed_cand_y>>h_delayed"); // recall that RAT-PAC uses "y" for the vertical axis, not "z"
   T2->Draw("delayed_cand_x:delayed_cand_y:delayed_cand_z>>h_delayed");
   h_delayed->SetMarkerColor(kBlue);
   h_delayed->SetMarkerStyle(5);
