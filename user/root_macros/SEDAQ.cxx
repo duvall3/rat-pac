@@ -46,6 +46,8 @@ void SEDAQ( const char* filename, Bool_t graphics_tf = kFALSE, Double_t prompt_l
 
 //// INIT
 
+cout << endl;
+
 // general
 const char* sedaq_version = "0.9.9";
 gSystem->Load("libPhysics.so");
@@ -267,7 +269,7 @@ if ( nulat_tf ^ cubed_tf )  cout << "WARNING: Partial but incomplete NuLat param
 
 // prepare *known* (i.e., not reconstructed) neutrino-direction vectors
 // reminder: TVector3 defaults to {x=out,y=right,z=up} and {rho=length,theta=polar(z),phi=azimuthal(x->y)} (rad)
-cout << "Using default antineutrino direction." << endl;
+cout << endl << "Using default antineutrino direction." << endl;
 cerr << "Using default antineutrino direction." << endl;
 neutrino_direction = TVector3(-1, 0, 0); //HC//
 //neutrino_direction = TVector3(0, 0, -1); //HC//

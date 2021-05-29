@@ -1,7 +1,11 @@
 // angularRecon.cxx -- function (temporarily macro) for calculating and displaying results of IBD angular reconstruction
 // -- operates on results of SEDAQ.cxx from github-->duvall3-->rat-pac-->collab-->user-->root_macros
 // -- USAGE: root <DATARUN_results.root> --> .L angularRecon.cxx --> angularRecon(T2);
-// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 12/2019 ~ Updated 5/21 ~ //
+// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 12/2019 ~ //
+// ~ Version 0.9.0 ~ Updated 5/21 ~ //
+//
+// NOTE: The angular summary can be printed from the saved output file
+//   by running "angular_summary->GetString();" at the ROOT/CINT prompt
 
 
 //Copyright (C) 2021 Mark J. Duvall
@@ -48,10 +52,12 @@ gStyle->SetHistLineWidth(3);
 gStyle->SetHistLineColor(kBlue);
 Double_t pi = TMath::Pi();
 
+cout << endl;
+
 // check for presence of IBD candidates
 if ( N == 0 ) {
-  cout << "No IBD candidate events found in "<< filename << ". Exiting..." << endl;
-  cerr << "No IBD candidate events found in "<< filename << ". Exiting..." << endl;
+  cout << endl << "No IBD candidate events found in "<< filename << ". Exiting..." << endl;
+  cerr << endl << "No IBD candidate events found in "<< filename << ". Exiting..." << endl;
   return;
 }
 
@@ -133,7 +139,7 @@ Double_t eff = (Double_t)N/nIBDs;
 
 // set / report antineutrino direction
 Double_t phi_true, theta_true;
-cout << "Using default antineutrino direction." << endl;
+cout << endl << "Using default antineutrino direction." << endl;
 cerr << "Using default antineutrino direction." << endl;
 TVector3 neutrino_direction, nu_hat;
 cout << "neutrino_direction: "; neutrino_direction = TVector3(-1,0,0);
@@ -142,15 +148,20 @@ nu_hat.Print();
 phi_true = (-nu_hat).Phi() * 180/pi;
 theta_true = (-nu_hat).Theta() * 180/pi;
 
-// report results
-printf( "\n\nIBD Angular Reconstruction:\n* datafile = \"%s\"\n* Note: SDM = SD/sqrt(N)\n\n", fileName.Data() );
-printf( "Azimuthal Angle (deg):\n  phi_mean\t%2.2f\n  phi_sd\t%2.2f\n  phi_sdm\t%2.2f\n\n", phi_mean, phi_std, phi_sdm );
-printf( "Polar Angle (deg):\n  theta_mean\t%2.2f\n  theta_sd\t%2.2f\n  theta_sdm\t%2.2f\n\n", theta_mean, theta_std, theta_sdm );
-printf( "SUMMARY:\n  Total IBDs: %d\n  N = %d\n  IBD Efficiency = %2.2f%%\n", nIBDs, N, eff*100 );
-printf( "  phi   = %2.2f   +/- %2.2f deg (SD)\t%2.2f sigma from true value,  or\n", phi_mean, phi_std, TMath::Abs((phi_mean-phi_true))/phi_std );
-printf( "                 +/-  %2.2f deg (SDM)\t%2.2f sigma from true value\n", phi_sdm, TMath::Abs((phi_mean-phi_true))/phi_sdm );
-printf( "  theta = %2.2f   +/- %2.2f deg (SD)\t%2.2f sigma from true value,  or\n", theta_mean, theta_std, TMath::Abs((theta_mean-theta_true))/theta_std );
-printf( "                 +/-  %2.2f deg (SDM)\t%2.2f sigma from true value\n\n", theta_sdm, TMath::Abs((theta_mean-theta_true))/theta_sdm );
+// report results and save summary
+TString ts1, ts2, ts3, ts4, ts5, ts6, ts7, ts8, ts_summary;
+ts1 = TString::Format( "\n\nIBD Angular Reconstruction:\n* datafile = \"%s\"\n* Note: SDM = SD/sqrt(N)\n\n", fileName.Data() );
+ts2 = TString::Format( "Azimuthal Angle (deg):\n  phi_mean\t%2.2f\n  phi_sd\t%2.2f\n  phi_sdm\t%2.2f\n\n", phi_mean, phi_std, phi_sdm );
+ts3 = TString::Format( "Polar Angle (deg):\n  theta_mean\t%2.2f\n  theta_sd\t%2.2f\n  theta_sdm\t%2.2f\n\n", theta_mean, theta_std, theta_sdm );
+ts4 = TString::Format( "SUMMARY:\n  Total IBDs: %d\n  N = %d\n  IBD Efficiency = %2.2f%%\n", nIBDs, N, eff*100 );
+ts5 = TString::Format( "  phi   = %2.2f   +/- %2.2f deg (SD)\t%2.2f sigma from true value,  or\n", phi_mean, phi_std, TMath::Abs((phi_mean-phi_true))/phi_std );
+ts6 = TString::Format( "                 +/-  %2.2f deg (SDM)\t%2.2f sigma from true value\n", phi_sdm, TMath::Abs((phi_mean-phi_true))/phi_sdm );
+ts7 = TString::Format( "  theta = %2.2f   +/- %2.2f deg (SD)\t%2.2f sigma from true value,  or\n", theta_mean, theta_std, TMath::Abs((theta_mean-theta_true))/theta_std );
+ts8 = TString::Format( "                 +/-  %2.2f deg (SDM)\t%2.2f sigma from true value\n\n", theta_sdm, TMath::Abs((theta_mean-theta_true))/theta_sdm );
+ts_summary = ts1+ts2+ts3+ts4+ts5+ts6+ts7+ts8;
+printf("\n%s", ts_summary.Data());
+TObjString angular_summary = ts_summary;
+angular_summary.Write("angular_summary");
 
 // save plots
 if ( graphics_tf ) {
