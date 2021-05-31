@@ -136,9 +136,9 @@ for ( i = db->begin(); i != db->end(); ++i ) {
     volume_siz_str_x = volume_siz_obj_x->GetString();
     volume_siz_str_y = volume_siz_obj_y->GetString();
     volume_siz_str_z = volume_siz_obj_z->GetString();
-    volume_siz_x = volume_siz_str_x.Atof()/10.; //cm
-    volume_siz_y = volume_siz_str_y.Atof()/10.; //cm
-    volume_siz_z = volume_siz_str_z.Atof()/10.; //cm
+    volume_siz_x = volume_siz_str_x.Atof();///10.; //cm
+    volume_siz_y = volume_siz_str_y.Atof();///10.; //cm
+    volume_siz_z = volume_siz_str_z.Atof();///10.; //cm
 
     // clear value half of pair
     valstr.Clear();
@@ -205,9 +205,9 @@ for ( iv = vols->begin(); iv != vols->end(); ++iv ) {
       volume_pos_str_x = volume_pos_obj_x->GetString();
       volume_pos_str_y = volume_pos_obj_y->GetString();
       volume_pos_str_z = volume_pos_obj_z->GetString();
-      volume_pos_x = volume_pos_str_x.Atof()/10.; //cm
-      volume_pos_y = volume_pos_str_y.Atof()/10.; //cm
-      volume_pos_z = volume_pos_str_z.Atof()/10.; //cm
+      volume_pos_x = volume_pos_str_x.Atof();///10.; //cm
+      volume_pos_y = volume_pos_str_y.Atof();///10.; //cm
+      volume_pos_z = volume_pos_str_z.Atof();///10.; //cm
       TGeoTranslation* trans = new TGeoTranslation(volume_pos_x, volume_pos_y, volume_pos_z); // position translation
 //    //debug
 //    cout << keystr << "\t" << valstr << "\t" << val->GetString() << endl;

@@ -3,7 +3,7 @@
 // -- further documentation forthcoming
 // -- see https://github.com/duvall3/rat-pac/tree/collab
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2017 ~ //
-// ~ SEDAQ v0.9.9 ~ 5/21 ~ //
+// ~ SEDAQ v0.9.91 ~ 5/21 ~ //
 //
 // INPUT: ROOT file containing TTree "T" (Scintillation Data)
 // OUTPUT: ROOT file containing TTrees "T2" (IBD Candidate Data) and "T_Trig" (IBD Trigger Parameters and Result)
@@ -49,7 +49,7 @@ void SEDAQ( const char* filename, Bool_t graphics_tf = kFALSE, Double_t prompt_l
 cout << endl;
 
 // general
-const char* sedaq_version = "0.9.9";
+const char* sedaq_version = "0.9.91";
 gSystem->Load("libPhysics.so");
 gStyle->SetHistLineWidth(2);
 gStyle->SetHistLineColor(kBlue);
@@ -101,8 +101,8 @@ Double_t prompt_cand_x, prompt_cand_y, prompt_cand_z;
 Double_t delayed_cand_x, delayed_cand_y, delayed_cand_z;
 Double_t cos_psi; // where psi (ψ) = angle between incoming and reconstructed neutrino momenta
 Double_t phi_recon, theta_recon; // angle reconstruction
-//Double_t deltaX, deltaY, deltaZ; //debug
-//Double_t deltaXhat, deltaYhat, deltaZhat; //debug
+Double_t deltaX, deltaY, deltaZ; //debug
+Double_t deltaXhat, deltaYhat, deltaZhat; //debug
 T2->Branch("prompt_cand_event", &prompt_cand_event, "prompt_cand_event/I");
 T2->Branch("delayed_cand_event", &delayed_cand_event, "delayed_cand_event/I");
 T2->Branch("prompt_cand_t", &prompt_cand_t, "prompt_cand_t/D");
@@ -120,12 +120,12 @@ T2->Branch("cos_psi", &cos_psi, "cos_psi/D");
 T2->Branch("phi_recon", &phi_recon, "phi_recon/D");
 T2->Branch("theta_recon", &theta_recon, "theta_recon/D");
 //debug
-//T2->Branch("deltaX", &deltaX, "deltaX/D");
-//T2->Branch("deltaY", &deltaY, "deltaY/D");
-//T2->Branch("deltaZ", &deltaZ, "deltaZ/D");
-//T2->Branch("deltaXhat", &deltaXhat, "deltaXhat/D");
-//T2->Branch("deltaYhat", &deltaYhat, "deltaYhat/D");
-//T2->Branch("deltaZhat", &deltaZhat, "deltaZhat/D");
+T2->Branch("deltaX", &deltaX, "deltaX/D");
+T2->Branch("deltaY", &deltaY, "deltaY/D");
+T2->Branch("deltaZ", &deltaZ, "deltaZ/D");
+T2->Branch("deltaXhat", &deltaXhat, "deltaXhat/D");
+T2->Branch("deltaYhat", &deltaYhat, "deltaYhat/D");
+T2->Branch("deltaZhat", &deltaZhat, "deltaZhat/D");
 
 // Copy total number of top-level MC events from T to T2
 // -- NOTE: this method is not especially robust;
@@ -348,12 +348,12 @@ for (( k = 0; k < num_bursts; k++ )) {
     displacement = TVector3(deltaX, deltaY, deltaZ);
     disp_hat = displacement.Unit();
     //debug
-//  deltaX = displacement.X();
-//  deltaY = displacement.Y();
-//  deltaZ = displacement.Z();
-//  deltaXhat = disp_hat.X();
-//  deltaYhat = disp_hat.Y();
-//  deltaZhat = disp_hat.Z();
+    deltaX = displacement.X();
+    deltaY = displacement.Y();
+    deltaZ = displacement.Z();
+    deltaXhat = disp_hat.X();
+    deltaYhat = disp_hat.Y();
+    deltaZhat = disp_hat.Z();
 
     // compare actual and reconsructed neutrino directions
     cos_psi = nu_hat.Dot(disp_hat);
