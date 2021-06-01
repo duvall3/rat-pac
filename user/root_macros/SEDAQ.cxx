@@ -3,7 +3,7 @@
 // -- further documentation forthcoming
 // -- see https://github.com/duvall3/rat-pac/tree/collab
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2017 ~ //
-// ~ SEDAQ v0.9.91 ~ 5/21 ~ //
+// ~ SEDAQ v0.9.92 ~ 5/21 ~ //
 //
 // INPUT: ROOT file containing TTree "T" (Scintillation Data)
 // OUTPUT: ROOT file containing TTrees "T2" (IBD Candidate Data) and "T_Trig" (IBD Trigger Parameters and Result)
@@ -49,7 +49,7 @@ void SEDAQ( const char* filename, Bool_t graphics_tf = kFALSE, Double_t prompt_l
 cout << endl;
 
 // general
-const char* sedaq_version = "0.9.91";
+const char* sedaq_version = "0.9.92";
 gSystem->Load("libPhysics.so");
 gStyle->SetHistLineWidth(2);
 gStyle->SetHistLineColor(kBlue);
@@ -483,14 +483,16 @@ if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there 
   // prompt
   TCanvas* c3 = new TCanvas("c3","IBD Candidate Positions", 70, 60, 800, 800);
   c3->SetLogy(false);
-  T2->Draw("prompt_cand_x:prompt_cand_y:prompt_cand_z>>h_prompt");
+  // cycle coordinates to adjust for TTree->Draw(TH3) //KEEPME//
+  T2->Draw("prompt_cand_z:prompt_cand_x:prompt_cand_y>>h_prompt");
   h_prompt->SetMarkerColor(kRed);
   h_prompt->SetMarkerStyle(4);
   h_prompt->GetXaxis()->SetLimits(-x_abs,x_abs);
   h_prompt->GetYaxis()->SetLimits(-x_abs,x_abs);
   h_prompt->GetZaxis()->SetLimits(-x_abs,x_abs);
   // delayed
-  T2->Draw("delayed_cand_x:delayed_cand_y:delayed_cand_z>>h_delayed");
+  // cycle coordinates to adjust for TTree->Draw(TH3) //KEEPME//
+  T2->Draw("delayed_cand_z:delayed_cand_x:delayed_cand_y>>h_delayed");
   h_delayed->SetMarkerColor(kBlue);
   h_delayed->SetMarkerStyle(5);
   h_delayed->GetXaxis()->SetLimits(-x_abs,x_abs);
