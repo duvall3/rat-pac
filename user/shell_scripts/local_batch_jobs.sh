@@ -94,7 +94,7 @@ for (( k=0; k<$NINSTS; k++ )) {
 
   # prepare simulation, post-processing, and combination commands
   RATCMD="rat -l $INST_DIR.log run.mac" # assume IBD run
-  PROCCMD="$RATROOT/user/shell_scripts/process_ibd_run.sh $INST_DIR $NEVENTS"
+  PROCCMD="$RATROOT/user/shell_scripts/process_rat_run.sh $INST_DIR $NEVENTS"
   FULLCMD="eval $RATCMD && eval $PROCCMD"
 
   # RUN
