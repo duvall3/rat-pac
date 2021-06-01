@@ -5,7 +5,7 @@
 # -- should be run in the relevant $RATROOT/data/<EXPERIMENT> directory
 #
 # -- Usage: local_batch_jobs.sh <DATARUN_NAME> <EVENTS_PER_INSTANCE> <NUM_INSTANCES> [OUTPUT_DIR]
-#      OR   local_batch_jobs.sh kill
+#      OR   local_batch_jobs.sh <kill>
 #
 # -- Example: local_batch_jobs.sh some_datarun 200 5
 #      -- this would run a combined total of 1000 events split over 5 instances
@@ -18,7 +18,7 @@
 #      -- 
 #      -- 
 #
-# ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 9/2019 ~ #
+# ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 9/2019 ~ Updated 5/21 ~ #
 
 
 ## KILL option: kill all instances of RAT-PAC belonging to the current user
@@ -81,7 +81,7 @@ fi
 # prepare super-directory
 mkdir $DATARUN && cd $DATARUN
 
-# loop over run directories
+# loop over instance subdirectories
 for (( k=0; k<$NINSTS; k++ )) {
 
   # RAT-PAC instance subdirectory init
@@ -95,20 +95,29 @@ for (( k=0; k<$NINSTS; k++ )) {
   # prepare simulation, post-processing, and combination commands
   RATCMD="rat -l $INST_DIR.log run.mac" # assume IBD run
   PROCCMD="$RATROOT/user/shell_scripts/process_rat_run.sh $INST_DIR $NEVENTS"
-  FULLCMD="eval $RATCMD && eval $PROCCMD"
+  ECHOCMD="echo -e \"\n$INST_DIR complete.\n\""
+  FULLCMD="eval $RATCMD && eval $PROCCMD && eval $ECHOCMD"
 
   # RUN
   eval "$FULLCMD &"
-# echo $FULLCMD #debug
-  cd ..
-  echo
-  sleep 1s
+  sleep 2s
+  cd $EXPDIR/$DATARUN
 
 } # end datarun / dir loop
 
+# wait for RAT and ROOT to finish
+while pgrep -t $(tty | sed s_/dev/__) "rat|root" > /dev/null; do
+  sleep 1s
+done
+
+# simulations and conversions should be finished here
+echo -e "\nBatch jobs complete.\n"
+
 # combine dataruns into a single _T file for use with SEDAQ.cxx
-$RATROOT/user/shell_scripts/chain.sh
+echo -e "\nCombining scintillation data...\n"
+chain.sh && echo -e "\nTChain complete.\n"
 
 
 ## all pau!   )
+echo -e "\nBatch run complete!\n\n"
 exit 0

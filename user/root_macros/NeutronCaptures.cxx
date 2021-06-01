@@ -3,7 +3,7 @@
 //   -- recommended usage: root -q -l -b 'NeutronCaptures.cxx("INPUT_FILENAME",NUMBER_OF_EVENTS)' > OUTPUT_FILENAME.n0.dat
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ July 2015 ~ //
 
-void NeutronCaptures(const char* inputfile, int number_of_events) {
+void NeutronCaptures(const char* inputfile, int number_of_events, bool ibd_tf = kFALSE) {
 
 TFile *file0 = TFile::Open(inputfile);
 RAT::DSReader r(inputfile);
@@ -32,7 +32,11 @@ for (int event=1; event<=number_of_events; event++) { // event loop
   RAT::TrackCursor c = nav.Cursor(false);  // create cursor
 
   // enter neutron track
-  c.GoChild(0);
+  if (ibd_tf==kFALSE) {
+    c.GoChild(0);
+  } else {
+    c.GoChild(1);
+  }
 
 
   // get starting point
