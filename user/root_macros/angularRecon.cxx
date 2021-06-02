@@ -71,8 +71,6 @@ TCanvas* c6 = new TCanvas("c6", "Sky Heatmap Pointing to Antineutrino Source", 8
 TH1D* h_phi = new TH1D("h_phi", "Azimuthal Angle (deg) #minus #phi^{o}", 36, -180, 180);
 TH1D* h_theta = new TH1D("h_theta", "Polar Angle (deg) #minus #theta^{o}", 36, 0, 180);
 TH1D* h_cos_psi = new TH1D("h_cos_psi", "Cos(#psi)", 10, -1, 1);
-//TH2D* h_map = new TH2D("h_map", "Skymap Pointing to Reconstructed #bar{#nu_{e}} Source", 36, -180., 180., 18, -90., 90.);
-//TH2D* h_map = new TH2D("h_map", "Skymap Pointing to Reconstructed #bar{#nu_{e}} Source", 18, -90., 90., 36, -180., 180.);
 
 
 // fill histograms
@@ -88,7 +86,6 @@ for ( k = 0; k < N; k++ ) {
 
 // phi = azimuthal angle
 c4->cd(1);
-//h_phi->Draw("cyl lego");
 h_phi->Draw();
 gPad->SetLogy(kFALSE);
 h_phi->GetYaxis()->SetLimits(0., 1.2 * h_phi->GetMaximum());
@@ -98,7 +95,6 @@ phi_sdm = phi_std / sqrt(N);
 
 // theta = polar angle
 c4->cd(2);
-//h_theta->Draw("cyl lego");
 h_theta->Draw();
 gPad->SetLogy(kFALSE);
 h_theta->GetYaxis()->SetLimits(0., 1.2 * h_theta->GetMaximum());
@@ -110,7 +106,8 @@ theta_sdm = theta_std / sqrt(N);
 c5->cd();
 h_cos_psi->Draw();
 gPad->SetLogy(kFALSE);
-h_cos_psi->GetYaxis()->SetLimits(0., 1.2 * h_cos_psi->GetMaximum());
+h_cos_psi->GetYaxis()->SetRangeUser(0., 1.2 * h_cos_psi->GetMaximum());
+c5->Draw();
 
 // skymap
 c6->cd();

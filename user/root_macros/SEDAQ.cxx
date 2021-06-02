@@ -464,7 +464,7 @@ if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there 
   // draw histograms
   TCanvas* c2 = new TCanvas("c2","Neutrino Trigger Results", 70, 60, 1500, 800);
   T2->Draw("prompt_cand_eq:tmin>>h_ibd2", "", "lego3");
-  T2->Draw("delayed_cand_t-prompt_cand_t:delayed_cand_eq>>h_ibd", "", "samelego");
+  T2->Draw("delayed_cand_eq:delayed_cand_t-prompt_cand_t>>h_ibd", "", "samelego");
   c2->SetTheta(35);
   c2->SetPhi(265);
   c2->SetLogx(1);

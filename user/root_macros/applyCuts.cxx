@@ -37,7 +37,7 @@ TH1D* h_ibd = (TH1D*)gDirectory->FindObjectAny("h_ibd");
 c2->Draw();
 c2->cd();
 T2->Draw("prompt_cand_eq:tmin>>h_ibd2", cut, "lego3");
-T2->Draw("delayed_cand_t-prompt_cand_t:delayed_cand_eq>>h_ibd", cut, "legosame");
+T2->Draw("delayed_cand_eq:delayed_cand_t-prompt_cand_t>>h_ibd", cut, "legosame");
 
 // positions
 TH3D* h_prompt = (TH3D*)gFile->FindObjectAny("h_prompt");
