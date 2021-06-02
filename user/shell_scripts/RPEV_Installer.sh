@@ -30,11 +30,10 @@ fi
 INSTALL_DIR=$ROOTSYS/macros
 
 # download files
-cd $INSTALL_DIR
-wget https://github.com/duvall3/rat-pac/raw/collab/user/README_RATPACEventViewer.md
+wget -P $INSTALL_DIR https://github.com/duvall3/rat-pac/raw/collab/user/README_RATPACEventViewer.md
 FILE_LIST=(RATPACEventViewer.cxx rpevFunctions.cxx)
 for FILE in ${FILE_LIST[*]}; do
-  wget https://github.com/duvall3/rat-pac/raw/collab/user/root_macros/$FILE
+  wget -P $INSTALL_DIR https://github.com/duvall3/rat-pac/raw/collab/user/root_macros/$FILE
 done
 
 # all pau!   )
