@@ -20,6 +20,7 @@ gROOT->LoadMacro("dumpHist.cxx");
 gROOT->LoadMacro("SEDAQ.cxx");
 gROOT->LoadMacro("RATPACEventViewer.cxx");
 gROOT->LoadMacro("angularRecon.cxx");
+gROOT->LoadMacro("applyCuts.cxx");
 
 // all pau!   )
 }

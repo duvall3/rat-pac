@@ -1,1 +1,0 @@
-../../../user/shell_scripts/geogen_nulat.sh
