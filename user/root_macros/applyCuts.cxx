@@ -20,7 +20,7 @@
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
-void applyCuts( TCut cut, Bool_t save_tf = kFALSE ) {
+void applyCuts( TCut cut = "", Bool_t save_tf = kFALSE ) {
 
 
 //// init
