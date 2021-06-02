@@ -6,8 +6,9 @@ Instructions for using the (most useful) macros in
 
 ### Installation
 
-If installing individually (rather than git-cloning this repository),
-  run the following commands at your BASH prompt:
+After git-cloning this repository (or downloading the individual files),
+  run the following commands at your BASH prompt
+  from the directory containing the macros:
 
 ```sh
 ln -s $(pwd)/duvall3Include.cxx "$ROOTSYS"/macros
