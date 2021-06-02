@@ -23,10 +23,7 @@ Remember that the macro (or a link to it) must be located in your `$ROOTSYS/macr
 As of the current version, in order to comply with ROOT's requirements for function definitions, the commands within the macro are provided in separate files, linked below.
 These files must also be located (or linked) in `$ROOTSYS/macros`, as with the main file itself.
 They can be found at the following locations:
-* [drawTracks.cxx](https://github.com/duvall3/rat-pac/blob/collab/user/root_macros/drawTracks.cxx) ([file](https://github.com/duvall3/rat-pac/raw/collab/user/root_macros/drawTracks.cxx))
-* [drawNextEvent.cxx](https://github.com/duvall3/rat-pac/blob/collab/user/root_macros/drawNextEvent.cxx) ([file](https://github.com/duvall3/rat-pac/raw/collab/user/root_macros/drawNextEvent.cxx))
-* [drawPrevEvent.cxx](https://github.com/duvall3/rat-pac/blob/collab/user/root_macros/drawPrevEvent.cxx) ([file](https://github.com/duvall3/rat-pac/raw/collab/user/root_macros/drawPrevEvent.cxx))
-* [highlightCell.cxx](https://github.com/duvall3/rat-pac/blob/collab/user/root_macros/highlightCells.cxx) ([file](https://raw.githubusercontent.com/duvall3/rat-pac/collab/user/root_macros/highlightCells.cxx))
+* [rpevFunctions.cxx](https://github.com/duvall3/rat-pac/blob/collab/user/root_macros/rpevFunctions.cxx) ([file](https://github.com/duvall3/rat-pac/raw/collab/user/root_macros/rpevFunctions.cxx))
 
 
 Usage
