@@ -102,3 +102,18 @@ if (save_tf == kTRUE) {
 // all pau!   )
 return;
 }
+
+
+// overload for detector-specific defaults
+void applyCuts( const char* dtrname ) {
+  TString detector = dtrname;
+  detector.ToLower();
+  if (detector == "santa") {
+    TCut pcut = "prompt_cand_x > 0", dcut = "delayed_cand_x < 0";
+    applyCuts(pcut+dcut, kTRUE);
+  } else {
+    TString errmsg = "Default cuts for detector "+detector+" not found.";
+    gDirectory->Error(errmsg.Data(), "%s");
+  }
+}
+
