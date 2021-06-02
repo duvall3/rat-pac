@@ -2,7 +2,7 @@ ROOT MACROS
 ===================
 
 Instructions for using the (most useful) macros in
-  *duvall3 --> rat-pac --> branch collab --> user --> [macros](https://github.com/duvall3/rat-pac/blob/collab/user/macros)*.
+  *duvall3 --> rat-pac --> branch collab --> user --> [root_macros](https://github.com/duvall3/rat-pac/blob/collab/user/root_macros)*.
 
 ### Installation
 
