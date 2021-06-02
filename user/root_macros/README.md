@@ -2,7 +2,7 @@ ROOT MACROS
 ===================
 
 Instructions for using the (most useful) macros in
-  *duvall3 --> rat-pac --> branch collab --> user --> shell_scripts --> [RPEV_Installer.sh](https://github.com/duvall3/rat-pac/blob/collab/user/shell_scripts/RPEV_Installer.sh) ([file](https://github.com/duvall3/rat-pac/raw/collab/user/shell_scripts/RPEV_Installer.sh))*.
+  *duvall3 --> rat-pac --> branch collab --> user --> [macros](https://github.com/duvall3/rat-pac/blob/collab/user/macros)*.
 
 ### Installation
 
