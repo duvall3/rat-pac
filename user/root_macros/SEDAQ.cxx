@@ -3,7 +3,7 @@
 // -- further documentation forthcoming
 // -- see https://github.com/duvall3/rat-pac/tree/collab
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2017 ~ //
-// ~ SEDAQ v0.9.92 ~ 5/21 ~ //
+// ~ SEDAQ v0.9.93 ~ 5/21 ~ //
 //
 // INPUT: ROOT file containing TTree "T" (Scintillation Data)
 // OUTPUT: ROOT file containing TTrees "T2" (IBD Candidate Data) and "T_Trig" (IBD Trigger Parameters and Result)
@@ -49,7 +49,7 @@ void SEDAQ( const char* filename, Bool_t graphics_tf = kFALSE, Double_t prompt_l
 cout << endl;
 
 // general
-const char* sedaq_version = "0.9.92";
+const char* sedaq_version = "0.9.93";
 gSystem->Load("libPhysics.so");
 gStyle->SetHistLineWidth(2);
 gStyle->SetHistLineColor(kBlue);
@@ -101,6 +101,8 @@ Double_t prompt_cand_x, prompt_cand_y, prompt_cand_z;
 Double_t delayed_cand_x, delayed_cand_y, delayed_cand_z;
 Double_t cos_psi; // where psi (ψ) = angle between incoming and reconstructed neutrino momenta
 Double_t phi_recon, theta_recon; // angle reconstruction
+Double_t tmin;
+Double_t longtd, lattd;
 Double_t deltaX, deltaY, deltaZ; //debug
 Double_t deltaXhat, deltaYhat, deltaZhat; //debug
 T2->Branch("prompt_cand_event", &prompt_cand_event, "prompt_cand_event/I");
@@ -119,6 +121,9 @@ T2->Branch("delayed_cand_z", &delayed_cand_z, "delayed_cand_z/D");
 T2->Branch("cos_psi", &cos_psi, "cos_psi/D");
 T2->Branch("phi_recon", &phi_recon, "phi_recon/D");
 T2->Branch("theta_recon", &theta_recon, "theta_recon/D");
+T2->Branch("tmin", &tmin, "tmin/D");
+T2->Branch("longtd", &longtd, "longtd/D");
+T2->Branch("lattd", &lattd, "lattd/D");
 //debug
 T2->Branch("deltaX", &deltaX, "deltaX/D");
 T2->Branch("deltaY", &deltaY, "deltaY/D");
@@ -250,6 +255,7 @@ if ( graphics_tf == true ) { // skip graphics unless in batch mode (default)
 //// NEUTRINO TRIGGER
 
 // init
+tmin = 1.e-7; //s;
 Bool_t prompt_tf, delayed_tf;
 Double_t deltaX, deltaY, deltaZ, R;
 Double_t deltaT_low, deltaT_high, trigger_reset;
@@ -287,13 +293,6 @@ prompt_high = 100.;
 //delayed_low = 0.00;
 //delayed_low = 1.00;
 delayed_high = 100.;
-
-// for drawing skymap
-Double_t longtd, lattd;
-TTree* T_map = new TTree("T_map", "Skymap Angle Transform");
-T_map->Branch("longtd", &longtd);
-T_map->Branch("lattd", &lattd);
-//T_map->Branch("deltaX", &deltaX); //debug
 
 // scan through events for IBD candidates
 for (( k = 0; k < num_bursts; k++ )) {
@@ -374,7 +373,6 @@ for (( k = 0; k < num_bursts; k++ )) {
     // transform angles for skymap projection
     longtd = phi_recon; // aitoff longtd: (-180,+180)
     lattd = 90 - theta_recon; // aitoff lattd: (-90,+90)
-    T_map->Fill();
 
     // NuLat -- additional cuts
     Double_t cube_half_length = 25.; //mm //HC//
@@ -420,7 +418,8 @@ if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there 
 
   // interevent time bins
   const Int_t nBinsEBP = 100;
-  Double_t xmin = 1.e-7; //s
+//Double_t xmin = 1.e-7; //s
+  Double_t xmin = tmin; //s
   Double_t xmax = 5.e-4; //s
   Double_t logxmin = TMath::Log10(xmin);
   Double_t logxmax = TMath::Log10(xmax);
@@ -462,17 +461,10 @@ if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there 
   h_ibd2x->SetTitleOffset(1.5);
   h_ibd2y->SetTitleOffset(1.5);
 
-  // fill histograms
-  for (( k = 0; k < T2->GetEntries(); k++ )) {
-    T2->GetEntry(k);
-    h_ibd->Fill(delayed_cand_t-prompt_cand_t, delayed_cand_eq);
-    h_ibd2->Fill(xmin, prompt_cand_eq);
-  }
-
   // draw histograms
   TCanvas* c2 = new TCanvas("c2","Neutrino Trigger Results", 70, 60, 1500, 800);
-  h_ibd2->Draw("lego3");
-  h_ibd->Draw("samelego");
+  T2->Draw("prompt_cand_eq:tmin>>h_ibd2", "", "lego3");
+  T2->Draw("delayed_cand_t-prompt_cand_t:delayed_cand_eq>>h_ibd", "", "samelego");
   c2->SetTheta(35);
   c2->SetPhi(265);
   c2->SetLogx(1);

@@ -43,7 +43,7 @@
 //    - material of target cells (currently Eljen EJ-254 doped at 1.5%wt Li-6)
 //
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ Written 10/2019 ~ Updated 5/2021 ~ //
-// ~ RATPACEventviewer v1.7.0 ~ //
+// ~ RATPACEventviewer v1.8.0 ~ //
 
 
 //Copyright (C) 2021 Mark J. Duvall
@@ -62,10 +62,7 @@
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
-#include <drawTracks.cxx>
-#include <drawNextEvent.cxx>
-#include <drawPrevEvent.cxx>
-#include <highlightCells.cxx>
+#include <rpevFunctions.cxx>
 
 
 //void RATPACEventViewer( const char* FileName, TString tcs = ".*target_cell_[0-9].*" ) {

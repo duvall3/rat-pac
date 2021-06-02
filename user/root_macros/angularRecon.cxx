@@ -2,7 +2,7 @@
 // -- operates on results of SEDAQ.cxx from github-->duvall3-->rat-pac-->collab-->user-->root_macros
 // -- USAGE: root <DATARUN_results.root> --> .L angularRecon.cxx --> angularRecon(T2);
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 12/2019 ~ //
-// ~ Version 0.9.0 ~ Updated 5/21 ~ //
+// ~ Version 0.9.1 ~ Updated 6/21 ~ //
 //
 // NOTE: The angular summary can be printed from the saved output file
 //   by running "angular_summary->GetString();" at the ROOT/CINT prompt
@@ -35,7 +35,6 @@ TString fileName = filename;
 TString basename = fileName(0,fileName.Index(".root"));
 TFile* f = TFile::Open(filename, "update");
 TTree* T = T2;
-TTree* T_map = T_map;
 Long64_t k(0), N = T2->GetEntries();
 Double_t cos_psi;
 Double_t phi, phi_mean, phi_std, phi_sdm;
@@ -44,8 +43,8 @@ Double_t lattd, longtd;
 T2->SetBranchAddress("phi_recon", &phi);
 T2->SetBranchAddress("theta_recon", &theta);
 T2->SetBranchAddress("cos_psi", &cos_psi);
-T_map->SetBranchAddress("lattd", &lattd);
-T_map->SetBranchAddress("longtd", &longtd);
+T2->SetBranchAddress("lattd", &lattd);
+T2->SetBranchAddress("longtd", &longtd);
 TH1D *h_phi, *h_theta, *h_cos_psi;
 TH2D *h_map;
 gStyle->SetHistLineWidth(3);
@@ -82,9 +81,6 @@ for ( k = 0; k < N; k++ ) {
   h_phi->Fill(phi);
   h_theta->Fill(theta);
   h_cos_psi->Fill(cos_psi);
-  T_map->GetEntry(k);
-//h_map->Fill(lattd, longtd);
-//h_map->Fill(longtd, lattd);
 }
 
 
@@ -95,7 +91,7 @@ c4->cd(1);
 //h_phi->Draw("cyl lego");
 h_phi->Draw();
 gPad->SetLogy(kFALSE);
-h_phi->GetYaxis()->SetRangeUser(0., 1.2 * h_phi->GetMaximum());
+h_phi->GetYaxis()->SetLimits(0., 1.2 * h_phi->GetMaximum());
 phi_mean = h_phi->GetMean();
 phi_std = h_phi->GetStdDev();
 phi_sdm = phi_std / sqrt(N);
@@ -105,7 +101,7 @@ c4->cd(2);
 //h_theta->Draw("cyl lego");
 h_theta->Draw();
 gPad->SetLogy(kFALSE);
-h_theta->GetYaxis()->SetRangeUser(0., 1.2 * h_theta->GetMaximum());
+h_theta->GetYaxis()->SetLimits(0., 1.2 * h_theta->GetMaximum());
 theta_mean = h_theta->GetMean();
 theta_std = h_theta->GetStdDev();
 theta_sdm = theta_std / sqrt(N);
@@ -114,16 +110,15 @@ theta_sdm = theta_std / sqrt(N);
 c5->cd();
 h_cos_psi->Draw();
 gPad->SetLogy(kFALSE);
-h_cos_psi->GetYaxis()->SetRangeUser(0., 1.2 * h_cos_psi->GetMaximum());
+h_cos_psi->GetYaxis()->SetLimits(0., 1.2 * h_cos_psi->GetMaximum());
 
 // skymap
 c6->cd();
 gPad->SetLogy(kFALSE);
-T_map->Draw("lattd:longtd", "", "aitoff");
+T2->Draw("lattd:longtd", "", "aitoff");
 h_map = (TH2D*)htemp;
 h_map->SetName("h_map");
 h_map->SetTitle("Skymap Pointing to Reconstructed #bar{#nu_{e}} Source");
-//h_map->Draw("aitoff");
 h_map->GetXaxis()->SetTitle("longitude (^{o})");
 h_map->GetYaxis()->SetTitle("latitude (^{o})");
 h_map->GetXaxis()->SetTitleFont(62);
