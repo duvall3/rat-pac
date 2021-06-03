@@ -42,7 +42,8 @@ type: "box",
 size: [3.0, 1005.0, 1025.0] // mm
 //position: [0.0, -8980.0, -500.0] // mm
 //position: [-500.0, 0.0, -8980.0] // mm
-position: [500.0, 0.0, -8980.0] // mm
+//position: [500.0, 0.0, -8980.0] // mm
+position: [500.0, 0.0, 0.0] // mm
 material: "air",   // this volume will contain scintillator bars
 color: [0, 0, 1],
 }
@@ -75,7 +76,8 @@ type: "box",
 size: [35.0, 1005.0, 1025.0], // mm
 //position: [0.0, -8980.0, 500.0] // mm
 //position: [500.0, 0.0, -8980.0] // mm
-position: [-500.0, 0.0, -8980.0] // mm
+//position: [-500.0, 0.0, -8980.0] // mm
+position: [-500.0, 0.0, 0.0] // mm
 material: "air", // this volume will contain the bar stack
 color: [0, .1, 0],
 }

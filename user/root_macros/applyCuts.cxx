@@ -20,6 +20,9 @@
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
+#include <TMath.h>
+
+
 void applyCuts( TCut cut = "", Bool_t save_tf = kFALSE ) {
 
 
@@ -108,12 +111,39 @@ return;
 void applyCuts( const char* dtrname ) {
   TString detector = dtrname;
   detector.ToLower();
-  if (detector == "santa") {
-    TCut pcut = "prompt_cand_x > 0", dcut = "delayed_cand_x < 0";
-    applyCuts(pcut+dcut, kTRUE);
-  } else {
-    TString errmsg = "Default cuts for detector "+detector+" not found.";
-    gDirectory->Error(errmsg.Data(), "%s");
-  }
+  const char* detectorname = detector.Data();
+if (detector == "santa") {
+  TCut pcut = "prompt_cand_x > 0", dcut = "delayed_cand_x < 0";
+  applyCuts(pcut+dcut, kTRUE);
+} else if (detector == "songs") {
+    TCut xcut = "(TMath::Abs(prompt_cand_x)<382.0)&&(TMath::Abs(delayed_cand_x)<382.0)";
+    TCut ycut = "(TMath::Abs(prompt_cand_y)<382.0)&&(TMath::Abs(delayed_cand_y)<382.0)";
+    TCut zcut = "(TMath::Abs(prompt_cand_z)<382.0)&&(TMath::Abs(delayed_cand_z)<382.0)";
+    applyCuts(xcut+ycut+zcut, kTRUE);
+} else if (detector == "songs_exact") {
+    TCut xcut = "(TMath::Abs(prompt_cand_x)<430.0)&&(TMath::Abs(delayed_cand_x)<430.0)";
+    TCut ycut = "(TMath::Abs(prompt_cand_y)<430.0)&&(TMath::Abs(delayed_cand_y)<430.0)";
+    TCut zcut = "(TMath::Abs(prompt_cand_z)<490.0)&&(TMath::Abs(delayed_cand_z)<490.0)";
+    applyCuts(xcut+ycut+zcut, kTRUE);
+} else {
+  TString errmsg = "Default cuts for detector \""+detector+"\" not found.";
+  gDirectory->Error(errmsg.Data(), "%s");
+}
+//  switch (detectorname) {
+//    case "santa":
+//      TCut pcut = "prompt_cand_x > 0", dcut = "delayed_cand_x < 0";
+//      applyCuts(pcut+dcut, kTRUE);
+//      break;
+//    case "songs":
+//      Double_t halfside = 382.0;
+//      TCut xcut = "(TMath::Abs(prompt_cand_x)<halfside)&&(TMath::Abs(delayed_cand_x)<halfside)";
+//      TCut ycut = "(TMath::Abs(prompt_cand_y)<halfside)&&(TMath::Abs(delayed_cand_y)<halfside)";
+//      TCut zcut = "(TMath::Abs(prompt_cand_z)<halfside)&&(TMath::Abs(delayed_cand_z)<halfside)";
+//      applyCuts(xcut+ycut+zcut, kTRUE);
+//      break;
+//    default:
+//      TString errmsg = "Default cuts for detector "+detector+" not found.";
+//      gDirectory->Error(errmsg.Data(), "%s");
+//  }
 }
 
