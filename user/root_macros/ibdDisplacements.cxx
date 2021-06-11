@@ -1,12 +1,9 @@
 // ibdDisplacements -- macro to draw prompt-to-delayed displacement vectors
 //   from IBD candidate events
 // -- for use with the macros in https://github.com/duvall3/rat-pac/tree/collab/user/root-macros/
-// -- runs on "$DATARUN_results.root" file created by SEDAQ.cxx
-// -- run RATPACEventViewer.cxx in ROOT session first
-// -- see "duvall3Include.h" in the above for installation
-// -- see comments in the individual macros for details
+// -- runs on original RAT-PAC .root file
 //
-// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 5/21 ~ //
+// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 6/21 ~ //
 
 TH1D* ibdDisplacements ( const char* filename ) {
 
@@ -16,8 +13,10 @@ TFile* f = TFile::Open(filename, "update");
 Int_t k=0, N=T->GetEntries();
 Double_t xp, xd, yp, yd, zp, zd, energy, energy_q;
 Double_t xp0, yp0, zp0, xpm, ypm, zpm;
+Double_t xd0, yd0, zd0;
 TH1D* h = new TH1D("h", "deltaX_MC", 100, -60., 60.);
-TRegexp tarname = ".*target.*";
+TRegexp tarname = ".*target.*"; // general
+//TRegexp tarname = ".*[target|capture].*"; // SANTA
 TString volname;
 RAT::DSReader r(filename);
 RAT::DS::Root* ds = r.GetEvent(0);
@@ -27,8 +26,9 @@ RAT::TrackNode* n = c.Here();
 Bool_t prompt_tf, delayed_tf;
 
 // create new TTree and TFile
-TTree* T_xyz = new TTree("T_xyz", "MC Positron Position Data");
+TTree* T_xyz = new TTree("T_xyz", "MC Position Data");
 Double_t xpi, ypi, zpi, xpa, ypa, zpa, xpf, ypf, zpf;
+Double_t xdi, ydi, zdi, xdf, ydf, zdf;
 Int_t event;
 T_xyz->Branch("event", &event);
 T_xyz->Branch("xpi", &xpi);
@@ -40,6 +40,12 @@ T_xyz->Branch("zpa", &zpa);
 T_xyz->Branch("xpf", &xpf);
 T_xyz->Branch("ypf", &ypf);
 T_xyz->Branch("zpf", &zpf);
+T_xyz->Branch("xdi", &xdi);
+T_xyz->Branch("ydi", &ydi);
+T_xyz->Branch("zdi", &zdi);
+T_xyz->Branch("xdf", &xdf);
+T_xyz->Branch("ydf", &ydf);
+T_xyz->Branch("zdf", &zdf);
 
 // MAIN
 for ( k=0; k<(N-1); k++ ) {
@@ -61,6 +67,9 @@ for ( k=0; k<(N-1); k++ ) {
     zp = n->GetEndpoint().Z();
   }
   c.GoParent();
+  xd0 = n->GetEndpoint().X();
+  yd0 = n->GetEndpoint().Y();
+  zd0 = n->GetEndpoint().Z();
   c.GoChild(1);
   n = c.GoTrackEnd();
   volname = n->GetVolume();
@@ -79,7 +88,9 @@ for ( k=0; k<(N-1); k++ ) {
 //  cout << k << "\t" << xpm << " " << ypm << " " << zpm << "\t" << xd << " " << yd << " " << zd << endl;
 //  printf( "%d\t%f %f %f\n\t%f %f %f\n\t%f %f %f\n\t%f %f %f\n\n", k, xp0, yp0, zp0, xpm, ypm, zpm, xp, yp, zp, xd, yd, zd );
     // copy values to new TTree
-    event = k; xpi = xp0; ypi = yp0; zpi = zp0; xpa = xpm; ypa = ypm; zpa = zpm; xpf = xp; ypf = yp; zpf = zp;
+    event = k;
+    xpi = xp0; ypi = yp0; zpi = zp0; xpa = xpm; ypa = ypm; zpa = zpm; xpf = xp; ypf = yp; zpf = zp;
+    xdi = xd0; ydi = xd0; zdi = zd0; xdf = xd; ydf = yd; zdf = zd;
     T_xyz->Fill();
   }
 }
