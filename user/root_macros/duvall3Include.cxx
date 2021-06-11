@@ -6,7 +6,7 @@
 //   at your BASH prompt while in this directory:
 /*
 ln -s $(pwd)/duvall3Include.cxx "$ROOTSYS"/macros
-FILE_LIST=(rt_to_root dumpHist SEDAQ RATPACEventViewer angularRecon)
+FILE_LIST=(rt_to_root dumpHist SEDAQ RATPACEventViewer angularRecon neutronInitialMomenta)
 for FILE in ${FILE_LIST[*]}; do
   ln -s $(pwd)/"$FILE".cxx "$ROOTSYS"/macros
 done

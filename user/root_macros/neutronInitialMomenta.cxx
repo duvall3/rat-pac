@@ -1,4 +1,4 @@
-// neutronFirstScatters -- prepare a skymap of initial neutron directions
+// neutronInitialMomenta -- prepare a skymap of initial neutron directions
 //   from a RAT-PAC IBD run
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 6/21 ~ //
 
@@ -22,7 +22,7 @@
 #include <TMath.h>
 
 
-TTree* neutronFirstScatters() {
+TTree* neutronInitialMomenta() {
 
 
 // RAT-PAC object init
@@ -53,6 +53,7 @@ for ( k=0; k<N-1; k++ ) {
   c = nav.Cursor(0);
   n = c.GoChild(1);
   p = n->GetMomentum();
+  p = -p;
   longtd = p.Phi()*180/pi;
   lattd = 90 - (p.Theta()*180/pi);
   T3->Fill();
