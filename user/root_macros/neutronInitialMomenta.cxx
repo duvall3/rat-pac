@@ -24,7 +24,6 @@
 
 TTree* neutronInitialMomenta() {
 
-
 // RAT-PAC object init
 RAT::DSReader r(gFile->GetName());
 RAT::DS::Root* ds = r.GetEvent(0);
@@ -32,6 +31,16 @@ RAT::TrackNav nav(ds);
 RAT::TrackCursor c = nav.Cursor(0);
 RAT::TrackNode* n = c.Here();
 
+// filename stuff
+TString filename = gFile->GetName();
+TString datarun = filename(0,filename.Index(".root"));
+TPair* tp = db->FindObject("DETECTOR[].experiment");
+TObjString* tos = tp->Value();
+TString detectorpath = tos->GetString();
+detectorpath.ReplaceAll("\"", "");
+TObjArray* toa = detectorpath.Tokenize("/");
+tos = (TObjString*)toa->At(toa->GetEntries()-1);
+TString detector = tos->GetString();
 
 // general init
 Int_t k, N = r.GetTotal();
@@ -39,12 +48,10 @@ Double_t lattd, longtd;
 TVector3 p;
 Double_t pi = TMath::Pi();
 
-
 // prepare new TTree
 TTree* T3 = new TTree("T3", "Initial Neutron Momenta");
 T3->Branch("lattd", &lattd);
 T3->Branch("longtd", &longtd);
-
 
 // MAIN
 for ( k=0; k<N-1; k++ ) {
@@ -53,15 +60,14 @@ for ( k=0; k<N-1; k++ ) {
   c = nav.Cursor(0);
   n = c.GoChild(1);
   p = n->GetMomentum();
-  p = -p;
+  p = -p; // for a nicer view if neutrinos had momenta parallel to {-1,0,0}
   longtd = p.Phi()*180/pi;
   lattd = 90 - (p.Theta()*180/pi);
   T3->Fill();
 }
 
-
 // draw skymap
-TCanvas* can = new TCanvas("can", gFile->GetName(), 820, 120, 800, 700);
+TCanvas* can = new TCanvas("can", detector+"\t|\t"+filename, 820, 120, 800, 700);
 T3->Draw("lattd:longtd", "", "aitoff");
 TH2D* hmap = (TH2D*)htemp;
 hmap->SetTitle(T3->GetTitle());
@@ -70,7 +76,6 @@ hmap->GetYaxis()->SetLimits(-90., 90);
 hmap->GetXaxis()->SetTitle("Longitude (^{o})");
 hmap->GetYaxis()->SetTitle("Lattitude (^{o})");
 can->Draw();
-
 
 // all pau!   )
 return T3;
