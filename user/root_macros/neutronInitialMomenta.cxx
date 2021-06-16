@@ -22,17 +22,20 @@
 #include <TMath.h>
 
 
-TTree* neutronInitialMomenta() {
-
-// RAT-PAC object init
-RAT::DSReader r(gFile->GetName());
-RAT::DS::Root* ds = r.GetEvent(0);
-RAT::TrackNav nav(ds);
-RAT::TrackCursor c = nav.Cursor(0);
-RAT::TrackNode* n = c.Here();
+TTree* neutronInitialMomenta(const char* fileName = "") {
 
 // filename stuff
-TString filename = gFile->GetName();
+if (fileName == "") {
+  if (gFile != 0x0) {
+    TString filename = gFile->GetName();
+  } else {
+    gROOT->Error("No file specified or loaded.", "%s/\n");
+    return 0x0;
+  }
+} else {
+  TString filename = fileName;
+  TFile* f = TFile::Open(filename);
+}
 TString datarun = filename(0,filename.Index(".root"));
 TPair* tp = db->FindObject("DETECTOR[].experiment");
 TObjString* tos = tp->Value();
@@ -41,6 +44,14 @@ detectorpath.ReplaceAll("\"", "");
 TObjArray* toa = detectorpath.Tokenize("/");
 tos = (TObjString*)toa->At(toa->GetEntries()-1);
 TString detector = tos->GetString();
+
+// RAT-PAC object init
+//RAT::DSReader r(gFile->GetName());
+RAT::DSReader r(filename.Data());
+RAT::DS::Root* ds = r.GetEvent(0);
+RAT::TrackNav nav(ds);
+RAT::TrackCursor c = nav.Cursor(0);
+RAT::TrackNode* n = c.Here();
 
 // general init
 Int_t k, N = r.GetTotal();
