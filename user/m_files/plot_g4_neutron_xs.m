@@ -62,6 +62,7 @@ endif
 % MAIN
 %f = figure;
 ax = gca;
+set(gcf, 'name', 'GEANT4 Neutron Cross-Section Data');
 ps = plot(el(:,1), el(:,2), 'color', 'red', 'linewidth', 2);
 hold on
 pi = plot(inel(:,1), inel(:,2), 'color', 'cyan', 'linewidth', 2);
