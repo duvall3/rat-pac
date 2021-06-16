@@ -2,10 +2,10 @@ function [ps, pi, pc] = plot_g4_neutron_xs( Z, keV_tf = false )
 
 % [ps, pi, pc] = plot_g4_neutron_xs( Z, keV_tf = false ) -- plot GEANT4 neutron-interaction cross-sections
 %   for given element
-% -- [pc, ps] are the graphics handles for the capture plot
-%      and the elastic-scattering plot, respectively
+% -- [ps, pi, pc] are the graphics handles for the elastic-scattering plot,
+%      the inelastic-scattering plot, and the capture plot, respectively
 % -- Z is the atomic number of the desired nucleus
-% -- keV_tf: if true, plots energy in keV; otherwise, defaults to MeV
+% -- keV_tf: if true, changes energy units to keV; otherwise, defaults to MeV
 % -- optional isotope "I" argument (equal to isotope nuclear mass in amu)
 %      may be added in the future
 % ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 6/21 ~ %
