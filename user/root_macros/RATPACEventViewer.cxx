@@ -90,11 +90,14 @@ TGeoManager *geo = new TGeoManager(filename+"_GM", "TGeoManager for "+filename);
 // placeholder material / medium -- meaningless if only used for drawing events
 TGeoMaterial *mat = new TGeoMaterial("vacuum", 0, 0, 0);
 TGeoMedium *med = new TGeoMedium("vacuum", 1, mat);
+TGeoMedium *ej254_005li6 = new TGeoMedium("vacuum", 1, mat);
+TGeoMedium *glass = new TGeoMedium("vacuum", 1, mat);
 TString waterstr = "water";
 TRegexp waterregex = waterstr;
 // top volume //HC//
 //TGeoVolume* world = geo->MakeBox("world", med, 1.e3, 1.e3, 1.e3); //cm
 //geo->SetTopVolume(world);
+enum EColor color;
 
 // load *entire* detector from db into TGeoManager
 //Int_t k_volume = 1; // volume counter //for drawing entire detector
@@ -103,6 +106,7 @@ TIter i = db->begin();
 for ( i = db->begin(); i != db->end(); ++i ) {
 
   // declarations and first entry
+  TGeoMedium* rpmed = 0x0;
   TPair* tp = (TPair*)*i;
   TObjString* key = (TObjString*)tp->Key();
   TObjString* val = (TObjString*)tp->Value();
@@ -137,8 +141,33 @@ for ( i = db->begin(); i != db->end(); ++i ) {
     volume_siz_y = volume_siz_str_y.Atof();///10.; //cm
     volume_siz_z = volume_siz_str_z.Atof();///10.; //cm
 
-    // clear value half of pair
-    valstr.Clear();
+    // get material
+    TString keystr_mat = keystr;
+    keystr_mat.ReplaceAll("size", "material");
+    TObjString *valstr_mat = (TObjString*)db->GetValue(keystr_mat.Data());
+//  cout << keystr << "\t" << keystr_mat << "\t" << valstr_mat << endl; //debug
+    TString material = valstr_mat->GetString();
+
+    // check if scintillator
+//  cout << material << endl; //debug
+    TString keystr_scint = material;
+    keystr_scint.ReplaceAll("\"", "");
+    keystr_scint.Prepend("OPTICS[");
+    keystr_scint.Append("].SCINTILLATION_option");
+//  if (material.Contains("ej254")) {
+//  cout << keystr_scint << "\t" << db->FindObject(keystr_scint) << endl; //debug
+    if (db->FindObject(keystr_scint)) {
+//    rpmed = ej254_005li6;
+      color = kCyan;
+    } else if (material.Contains("glass")) {
+//    rpmed = glass;
+      color = kGray;
+    } else {
+//    rpmed = med;
+      color = kBlack;
+    }
+
+//  cout << color << endl; //debug
 
     // get cell name
     keystr.ReplaceAll("GEO[", "");
@@ -146,21 +175,26 @@ for ( i = db->begin(); i != db->end(); ++i ) {
 
     // create volume
     TGeoVolume* volume = geo->MakeBox(keystr.Data(), med, volume_siz_x, volume_siz_y, volume_siz_z );
+//  TGeoVolume* volume = geo->MakeBox(keystr.Data(), rpmed, volume_siz_x, volume_siz_y, volume_siz_z );
     if ( keystr == "world" ) { // top volume //HC//
       if ( ! volume->IsTopVolume() ) {
       geo->SetTopVolume(volume);
       }
     } else { // all other volumes
-      if (keystr.Contains(waterregex)) {
-        volume->SetLineColor(kBlue);
-      } else {
-	volume->SetLineColor(kBlack);
-      }
+//      if (keystr.Contains(waterregex)) {
+//        volume->SetLineColor(kBlue);
+//      } else {
+//	volume->SetLineColor(kBlack);
+//      }
+      volume->SetLineColor(color);
       volume->SetLineWidth(1);
 //    trans->SetTranslation(volume_pos_x, volume_pos_y, volume_pos_z); //for drawing entire detector
 //    top->AddNode(volume, k_volume, trans); //for drawing entire detector
 //    k_volume++; //for drawing entire detector
     } // endif -- world (top)
+
+    // clear value half of pair
+    valstr.Clear();
 
   } //endif -- isvolume
 
