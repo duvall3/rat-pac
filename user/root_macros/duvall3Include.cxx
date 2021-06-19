@@ -22,8 +22,8 @@ gROOT->LoadMacro("SEDAQ.cxx");
 gROOT->LoadMacro("RATPACEventViewer.cxx");
 gROOT->LoadMacro("angularRecon.cxx");
 gROOT->LoadMacro("applyCuts.cxx");
-gROOT->LoadMacro("util/neutronInitialMomenta.cxx");
-gROOT->LoadMacro("util/neutronCaptures.cxx");
+gROOT->LoadMacro("neutronInitialMomenta.cxx");
+gROOT->LoadMacro("neutronCaptures.cxx");
 
 // all pau!   )
 }

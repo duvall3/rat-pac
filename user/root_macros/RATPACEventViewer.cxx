@@ -157,17 +157,14 @@ for ( i = db->begin(); i != db->end(); ++i ) {
 //  if (material.Contains("ej254")) {
 //  cout << keystr_scint << "\t" << db->FindObject(keystr_scint) << endl; //debug
     if (db->FindObject(keystr_scint)) {
-//    rpmed = ej254_005li6;
       color = kCyan;
     } else if (material.Contains("glass")) {
-//    rpmed = glass;
-      color = kGray;
-    } else {
-//    rpmed = med;
       color = kBlack;
+    } else if (material.Contains("water")) {
+      color = kBlue;
+    } else {
+      color = kGray;
     }
-
-//  cout << color << endl; //debug
 
     // get cell name
     keystr.ReplaceAll("GEO[", "");
@@ -175,18 +172,11 @@ for ( i = db->begin(); i != db->end(); ++i ) {
 
     // create volume
     TGeoVolume* volume = geo->MakeBox(keystr.Data(), med, volume_siz_x, volume_siz_y, volume_siz_z );
-//  TGeoVolume* volume = geo->MakeBox(keystr.Data(), rpmed, volume_siz_x, volume_siz_y, volume_siz_z );
     if ( keystr == "world" ) { // top volume //HC//
       if ( ! volume->IsTopVolume() ) {
       geo->SetTopVolume(volume);
       }
     } else { // all other volumes
-//      if (keystr.Contains(waterregex)) {
-//        volume->SetLineColor(kBlue);
-//      } else {
-//	volume->SetLineColor(kBlack);
-//      }
-      volume->SetLineColor(color);
       volume->SetLineWidth(1);
 //    trans->SetTranslation(volume_pos_x, volume_pos_y, volume_pos_z); //for drawing entire detector
 //    top->AddNode(volume, k_volume, trans); //for drawing entire detector
@@ -240,13 +230,7 @@ for ( iv = vols->begin(); iv != vols->end(); ++iv ) {
       volume_pos_y = volume_pos_str_y.Atof();///10.; //cm
       volume_pos_z = volume_pos_str_z.Atof();///10.; //cm
       TGeoTranslation* trans = new TGeoTranslation(volume_pos_x, volume_pos_y, volume_pos_z); // position translation
-//    //debug
-//    cout << keystr << "\t" << valstr << "\t" << val->GetString() << endl;
-//    cout << volume_pos_x << "\t" << volume_pos_y << "\t" << volume_pos_z << endl;
-//    trans->Print();
-      }// else {
-        //trans = new TGeoTranslation(0.,0.,0.);
-      //} //endif -- position given
+      }
 
     // find mother and add node
     TString vol_mother_entry(volname);
@@ -256,10 +240,7 @@ for ( iv = vols->begin(); iv != vols->end(); ++iv ) {
     TString volmother = volmother_tos->GetString();
     volmother.ReplaceAll("\"","");
     TGeoVolume* mother = (TGeoVolume*)vols->FindObject(volmother);
-  //cout << volname.Data() << "\t" << vol_mother_entry.Data() << "\t" << volmother.Data() << "\t"<< mother << endl; //debug
-  //trans->Print(); //debug
     if (volname.Contains(tcregex)) mother->AddNode(vol, k_volume, trans);
-  //world->AddNode(vol, k_volume, trans); //debug
     k_volume++;
 
   } //endif -- skipping top volume
@@ -272,8 +253,8 @@ cout << endl;
 geo->CloseGeometry();
 world->SetLineColor(kGray);
 world->SetLineWidth(1);
-//geo->SetTopVisible(kFALSE);
-geo->SetTopVisible(kTRUE);
+geo->SetTopVisible(kFALSE);
+//geo->SetTopVisible(kTRUE);
 TString can_name = detector_name+", \""+filename+"\"";
 TCanvas* can = new TCanvas("can", can_name, 1000, 100, 850, 700);
 world->Draw();

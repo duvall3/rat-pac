@@ -90,8 +90,7 @@ for ( k=0; k<N; k++ ) {
 
 // draw skymap
 TCanvas* can_skymap = new TCanvas("can_skymap", detector+" | "+filename, 820, 120, 800, 700);
-T->Draw("lattd:longtd", "", "aitoff");
-TH2D* hmap = (TH2D*)htemp;
+T->Draw("lattd:longtd>>hmap", "", "aitoff");
 hmap->SetTitle(T->GetTitle());
 hmap->GetXaxis()->SetLimits(-180., 180.);
 hmap->GetYaxis()->SetLimits(-90., 90);
@@ -101,10 +100,11 @@ can_skymap->Draw();
 
 // draw capture-distance plot
 TCanvas* can_capdist = new TCanvas("can_capdist", detector+" | "+filename, 820, 120, 800, 700);
-T->Draw("R");
-TH1D* hdis = (TH1D*)htemp;
+T->Draw("R>>hdis", "R<1000");
 hdis->SetTitle(T->GetTitle());
 hdis->GetXaxis()->SetTitle("Neutron-Capture Distance (mm)");
+hdis->SetLineWidth(2);
+hdis->SetLineColor(kBlue);
 can_capdist->SetLogy(kTRUE);
 can_capdist->Draw();
 
@@ -114,6 +114,11 @@ TH1D* hcospsi = new TH1D("hcospsi", T->GetTitle(), 10, -1., 1.);
 T->Draw("cos_psi>>hcospsi");
 hcospsi->GetXaxis()->SetTitle("cos[#psi]");
 hcospsi->GetYaxis()->SetRangeUser(0., 1.2*hcospsi->GetMaximum());
+hcospsi->SetLineWidth(2);
+hcospsi->SetLineColor(kRed);
+//TPaveStats* st_cospsi = (TPaveStats*)can_cospsi->GetPrimitive("stats");
+//st_cospsi->SetX1(-1.);
+//st_cospsi->SetX2(2.5);
 can_cospsi->Draw();
 
 // save if desired
