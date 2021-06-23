@@ -12,21 +12,32 @@ BEGIN{
 }
 
 # print all non-target-cell entries
-$1 !~ /target_cell/ {print $0 "\n"}
+$2 !~ /target_cell/ {print $0 "\n"}
+
+#debug
+#{print $0}
+{print $1 "\t" $2 "\n"}
 
 # only print target cells when ROW, COL, and LYR are either all even or all odd
 $1 ~ /target_cell/ {
-  match($1, /[[:digit:]]+/, ROW)
-  field_copy = $1
+# match($1, /[[:digit:]]+/, ROW)
+# field_copy = $1
+# match(field_copy, /[[:digit:]]+/)
+  match($1, /[[:digit:]]+/)
+  ROW = substr($1, RSTART, RLENGTH)
+  print length(ROW) "\t" ROW "\n" #debug
   sub(/[[:digit:]]+/, "", field_copy)
-  match(field_copy, /[[:digit:]]+/, COL)
+# match(field_copy, /[[:digit:]]+/, COL)
   sub(/[[:digit:]]+/, "", field_copy)
-  match(field_copy, /[[:digit:]]+/, LYR)
-  row_even = strtonum(ROW[0]) % 2
-  col_even = strtonum(COL[0]) % 2
-  lyr_even = strtonum(LYR[0]) % 2
-  if ( (row_even==col_even) && (col_even==lyr_even) )
-    print $0 "\n"
+# match(field_copy, /[[:digit:]]+/, LYR)
+# row_even = strtonum(ROW[0]) % 2
+# col_even = strtonum(COL[0]) % 2
+# lyr_even = strtonum(LYR[0]) % 2
+# if ( (row_even==col_even) && (col_even==lyr_even) )
+#   print $0 "\n"
+# else # rather than deleting volume, replace with alternate material
+#  sub("ej254_005li6", "glass", $0)
+#  print $0 "\n"
 }
 
 # debug

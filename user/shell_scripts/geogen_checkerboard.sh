@@ -89,17 +89,26 @@ printf "\n\n"
 
 ## configure geometry
 
-# determine configuration
+# prompt for configuration
 echo "Enter number of rows: " && read ROWS
 echo "Enter number of columns: " && read COLS
 echo "Enter number of layers: " && read LYRS
 echo
 
-# determine cell dimensions
+# prompt for cell dimensions
 echo "Enter cell half-length (mm): " && read L
 echo "Enter cell half-width (mm): " && read W
 echo "Enter cell half-height (mm): " && read H
 echo "Enter cell half-spacing (mm): " && read S
+echo
+
+# prompt for materials
+echo "Enter material for active cells (default: ej254_005li6-- PVT @ 0.5%wt. Li-6): " && read CELL_ON_MATERIAL
+echo "Enter material for inactive cells (default: glass -- SiO2): " && read CELL_ON_MATERIAL
+echo
+# defaults
+if [[ -z $CELL_ON_MATERIAL ]]; then CELL_ON_MATERIAL="ej254_005li6"; fi
+if [[ -z $CELL_OFF_MATERIAL ]]; then CELL_OFF_MATERIAL="glass"; fi
 
 # force float format for RAT-PAC
 L=$( echo "$L*1.0" | bc -l )
@@ -171,10 +180,14 @@ for (( k_lr=0; k_lr<$ROWS; k_lr++ )); do
       COL_EVEN=$((k_ud % 2))
       LYR_EVEN=$((k_fb % 2))
       if [[ $ROW_EVEN -eq $COL_EVEN && $COL_EVEN -eq $LYR_EVEN ]]; then
-        MATERIAL="ej254_005li6" # scintillator cell
+#       MATERIAL="ej254_005li6" # scintillator cell
+        MATERIAL=$CELL_ON_MATERIAL
+	COLOR="[0.0, 1.0, 1.0]"
       else
         #MATERIAL="air" # non-scintillator cell
-        MATERIAL="glass" # non-scintillator cell
+#       MATERIAL="glass" # non-scintillator cell
+        MATERIAL=$CELL_OFF_MATERIAL
+	COLOR="[0.5, 0.5, 0.5]"
       fi
 
       # print results for this cell  
@@ -190,6 +203,7 @@ type: \"box\",
 size: [$L, $W, $H], // mm  // for sphere, change size to single-value r_max
 material: \"$MATERIAL\",
 invisible: 0,
+color: $COLOR,
 position: [$x, $y, $z] // mm
 }\n\n" >> $ARRFILE
       

@@ -72,7 +72,8 @@ for ( k=0; k<N; k++ ) {
   ds = r.GetEvent(k);
   RAT::TrackNav nav(ds);
   c = nav.Cursor(0);
-  n = c.GoChild(0);
+//n = c.GoChild(0); // neutron-only run
+  n = c.GoChild(1); // IBD run
   xi = n->GetEndpoint().X(); yi = n->GetEndpoint().Y(); zi = n->GetEndpoint().Z();
   n = c.GoTrackEnd();
   if ( (n->GetProcess() == "nCapture") | (n->GetProcess() == "neutronInelastic") ) {
