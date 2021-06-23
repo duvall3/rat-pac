@@ -1,6 +1,6 @@
 {
 //=========Macro generated from canvas: c_comp_R/Comparison
-//=========  (Wed Jun 23 15:36:40 2021) by ROOT version5.34/30
+//=========  (Wed Jun 23 15:43:02 2021) by ROOT version5.34/30
    TCanvas *c_comp_R = new TCanvas("c_comp_R", "Comparison",720,80,1200,1000);
    c_comp_R->SetHighLightColor(2);
    c_comp_R->Range(-31.25,-0.6132371,281.25,2.508834);
@@ -207,13 +207,13 @@
    h_glass->SetBinContent(101,278);
    h_glass->SetEntries(2000);
    
-   ptstats = new TPaveStats(0.78,0.835,0.98,0.995,"brNDC");
+   ptstats = new TPaveStats(0.7801003,0.6529774,0.9807692,0.8131417,"brNDC");
    ptstats->SetName("stats");
    ptstats->SetBorderSize(1);
    ptstats->SetFillColor(0);
    ptstats->SetTextAlign(12);
    text = ptstats->AddText("h_glass");
-   text->SetTextSize(0.0368);
+   text->SetTextSize(0.03683778);
    text = ptstats->AddText("Entries = 2000   ");
    text = ptstats->AddText("Mean  =  121.4");
    text = ptstats->AddText("RMS   =  65.47");
@@ -327,13 +327,13 @@
    h_air->SetBinContent(101,832);
    h_air->SetEntries(2000);
    
-   ptstats = new TPaveStats(0.78,0.835,0.98,0.995,"brNDC");
+   ptstats = new TPaveStats(0.7792642,0.2258727,0.9799331,0.386037,"brNDC");
    ptstats->SetName("stats");
    ptstats->SetBorderSize(1);
    ptstats->SetFillColor(0);
    ptstats->SetTextAlign(12);
    text = ptstats->AddText("h_air");
-   text->SetTextSize(0.0368);
+   text->SetTextSize(0.03683778);
    text = ptstats->AddText("Entries = 2000   ");
    text = ptstats->AddText("Mean  =  131.6");
    text = ptstats->AddText("RMS   =  72.07");
@@ -350,7 +350,7 @@
    h_air->GetXaxis()->SetTitleFont(132);
    h_air->Draw("sames");
    
-   TLegend *leg = new TLegend(0.85,0.65,0.95,0.8,NULL,"brNDC");
+   TLegend *leg = new TLegend(0.01505017,0.6386037,0.1153846,0.788501,NULL,"brNDC");
    leg->SetBorderSize(1);
    leg->SetTextFont(132);
    leg->SetLineColor(1);
