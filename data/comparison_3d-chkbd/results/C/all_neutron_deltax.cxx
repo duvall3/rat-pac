@@ -1,7 +1,7 @@
 // all_neutron_deltax.cxx -- plot neutron x-displacements together
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 6/2021 ~ //
 
-void all_neutron_deltax() {
+void all_neutron_deltax( bool save_tf = KFALSE ) {
 
 // global opts
 gStyle->SetHistLineWidth(3);
@@ -88,8 +88,10 @@ h_pvt->GetXaxis()->SetTitle("Neutron #Deltax (mm)");
 
 // redraw and save
 c_comp->Draw();
-//c_comp->SaveSoruce();
-c_comp->SaveAs("c_comp.eps");
+if (save_tf == kTRUE) {
+  //c_comp->SaveSoruce();
+  c_comp->SaveAs("c_comp.eps");
+}
 
 // all pau!   )
 }

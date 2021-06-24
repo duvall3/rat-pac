@@ -34,6 +34,7 @@ for ( ev=0; ev<N; ev++ ) {
   cout << proc.Data() << endl; //debug
   if ( vol.Contains(tcr) )  { n_tf=kTRUE; cap++; }
   if ( e_tf & n_tf )  { both++; }
+  nav.Clear();
 }
 
 cout << endl;

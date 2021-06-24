@@ -75,6 +75,7 @@ for ( k=0; k<N-1; k++ ) {
   longtd = p.Phi()*180/pi;
   lattd = 90 - (p.Theta()*180/pi);
   T3->Fill();
+  nav.Clear();
 }
 
 // draw skymap

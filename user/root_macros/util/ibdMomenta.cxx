@@ -51,6 +51,7 @@ for ( k=0; k<N-1; k++ ) {
   pn = n->GetMomentum();
   hx->Fill(pe.X()+pn.X());
   h->Fill(pe.Y()+pn.Y(), pe.Z()+pn.Z());
+  nav.Clear();
 }
 
 // plot results

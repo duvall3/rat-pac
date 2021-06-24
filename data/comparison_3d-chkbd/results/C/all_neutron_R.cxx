@@ -1,7 +1,7 @@
 // all_neutron_R.cxx -- plot neutron x-displacements together
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 6/2021 ~ //
 
-void all_neutron_R() {
+void all_neutron_R( bool save_tf = kFALSE ) {
 
 // global opts
 gStyle->SetHistLineWidth(3);
@@ -10,9 +10,9 @@ gROOT->LoadMacro("neutronCaptures.cxx");
 
 // init
 Int_t k, N;
-TH1D* h_pvt = new TH1D("h_pvt", "PVT", 100, 0., 250.);
-TH1D* h_glass = new TH1D("h_glass", "Glass", 100, 0., 250.);
-TH1D* h_air = new TH1D("h_air", "Air", 100, 0., 250.);
+TH1D* h_pvt = new TH1D("h_pvt", "PVT", 100, 0., 500.);
+TH1D* h_glass = new TH1D("h_glass", "Glass", 100, 0., 500.);
+TH1D* h_air = new TH1D("h_air", "Air", 100, 0., 500.);
 Double_t R;
 TPaveStats* s_pvt, s_glass, s_air;
 TCanvas* c_comp_R = new TCanvas("c_comp_R", "Comparison", 800, 100, 1200, 1000);
@@ -63,6 +63,7 @@ h_air->Draw("sames");
 can_skymap->Close();
 can_capdist->Close();
 can_cospsi->Close();
+can_zeta->Close();
 f->Close();
 
 // prepare plots
@@ -88,8 +89,10 @@ h_pvt->GetXaxis()->SetTitle("Neutron-Capture Displacement (mm)");
 // redraw and save
 c_comp_R->SetLogy(1);
 c_comp_R->Draw();
-//c_comp_R->SaveSoruce();
-c_comp_R->SaveAs("c_comp_R.eps");
+if (save_tf == kTRUE) {
+  //c_comp_R->SaveSoruce();
+  c_comp_R->SaveAs("c_comp_R.eps");
+}
 
 // all pau!   )
 }

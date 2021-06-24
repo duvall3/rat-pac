@@ -21,7 +21,7 @@
 #include <TMath.h>
 
 
-TTree* neutronCaptures(const char* fileName = "", bool save_tf = kFALSE) {
+TTree* neutronCaptures(const char* fileName = "", bool save_tf = kFALSE, int neutron_child = 0) {
 
 // filename stuff
 if (fileName == "") {
@@ -57,7 +57,7 @@ Int_t k, N = r.GetTotal();
 Double_t lattd, longtd;
 TVector3 dr, pi_hat = TVector3(-1,0,0);
 Double_t xi, yi, zi, xf, yf, zf;
-Double_t R, cos_psi;
+Double_t R, cos_psi, zeta;
 Double_t pi = TMath::Pi();
 
 // prepare new TTree
@@ -66,6 +66,7 @@ T->Branch("lattd", &lattd);
 T->Branch("longtd", &longtd);
 T->Branch("R", &R);
 T->Branch("cos_psi", &cos_psi);
+T->Branch("zeta", &zeta);
 
 // MAIN
 for ( k=0; k<N; k++ ) {
@@ -73,15 +74,18 @@ for ( k=0; k<N; k++ ) {
   RAT::TrackNav nav(ds);
   c = nav.Cursor(0);
 //n = c.GoChild(0); // neutron-only run
-  n = c.GoChild(1); // IBD run
+//n = c.GoChild(1); // IBD run
+  n = c.GoChild(neutron_child);
   xi = n->GetEndpoint().X(); yi = n->GetEndpoint().Y(); zi = n->GetEndpoint().Z();
   n = c.GoTrackEnd();
   if ( (n->GetProcess() == "nCapture") | (n->GetProcess() == "neutronInelastic") ) {
     xf = n->GetEndpoint().X(); yf = n->GetEndpoint().Y(); zf = n->GetEndpoint().Z();
     dr = TVector3(xf-xi, yf-yi, zf-zi);
-    cos_psi = pi_hat.Dot(dr.Unit());
-    dr = -dr; // for nicer view if initial direction was {-1,0,0}
     R = dr.Mag();
+//  cos_psi = pi_hat.Dot(dr.Unit());
+    cos_psi = -dr.X() / R; // for p_hat_init = {-1,0,0}
+    zeta = TMath::ATan2( dr.Z(), dr.Y() ) * 180/pi;
+    dr = -dr; // for nicer view if initial direction was {-1,0,0}
     longtd = dr.Phi()*180/pi;
     lattd = 90 - (dr.Theta()*180/pi);
     T->Fill();
@@ -122,14 +126,27 @@ hcospsi->SetLineColor(kRed);
 //st_cospsi->SetX2(2.5);
 can_cospsi->Draw();
 
+// draw zeta plot
+TCanvas* can_zeta = new TCanvas("can_zeta", detector+" | "+filename, 820, 120, 800, 700);
+TH1D* hzeta = new TH1D("hzeta", T->GetTitle(), 100, -180., 180.);
+T->Draw("zeta>>hzeta");
+Double_t zeta_maxcount = hzeta->GetMaximum();
+hzeta->GetYaxis()->SetRangeUser(0., 1.2*zeta_maxcount);
+hzeta->GetXaxis()->SetTitle("#zeta (^{o})");
+hzeta->SetLineWidth(2);
+hzeta->SetLineColor(kMagenta);
+can_zeta->Draw();
+
 // save if desired
 if (save_tf == kTRUE) {
   TString savename_skymap = datarun+"_nCapDirections.png";
   TString savename_capdist = datarun+"_nCapDistances.png";
   TString savename_cospsi = datarun+"_nCapCosPsi.png";
+  TString savename_zeta = datarun+"_nCapZeta.png";
   can_skymap->SaveAs(savename_skymap);
   can_capdist->SaveAs(savename_capdist);
   can_cospsi->SaveAs(savename_cospsi);
+  can_cospsi->SaveAs(savename_zeta);
 }
 
 // all pau!   )

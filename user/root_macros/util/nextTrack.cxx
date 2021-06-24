@@ -31,6 +31,8 @@ void nextTrack( const char* filename ) {
 
     cout << n->GetMomentum().x() << "\t" << n->GetMomentum().y() << "\t" << n->GetMomentum().z() << "\n" << endl;
 
+    nav.Clear();
+
   } // end for -- event loop
 
 //} // end namespace RAT
