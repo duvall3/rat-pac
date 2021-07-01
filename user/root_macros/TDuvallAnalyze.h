@@ -22,33 +22,56 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#include "TObject.h"
 #include "TFile.h"
-#include "TNamed.h"
-#include "TString.h"
 
+////#include <RAT/DS/Root.hh>
+//gSystem->AddIncludePath(" -I$RATROOT/include");
+//gSystem->Load("libRATEvent");
+//gSystem->AddIncludePath(" -I$RATROOT/user/root_macros");
+////#include <RAT/DSWriter.hh>
+
+//std::string ratroot = getenv("RATROOT");
+//std::string initmacro = ratroot + std::string("/rootinit.C");
+//gROOT->ProcessLine((std::string(".x ") + initmacro).c_str());
+//gSystem->AddIncludePath(" -I$RATROOT/user/root_macros");
+
+
+//class TDuvallAnalyze : public TClass {
 class TDuvallAnalyze : public TNamed {
 
 private:
-  TFile*	fFile;			// current ROOT datafile
-  TString 	fExperiment;		// name of RAT-PAC experiment
-  TString	fExperimentPath;	// path to RAT-PAC data directory
-  //TList(TTree Entries*) currentEventSet --> data from *_results.root T2
-  //TList(TCut) currentCuts
+  TFile*		fFile;			// current ROOT datafile
+  TString		fFileName;		// name of current ROOT datafile
+  TString 		fExperiment;		// name of RAT-PAC experiment
+  TString		fExperimentPath;	// path to RAT-PAC data directory
+  //RAT::DSReader		fDSReader;		// RAT-PAC DS reader
+//  RAT::DS::Root*	fDS;			// RAT-PAC data structure
+//  RAT::TrackNav		fNavigator;		// RAT-PAC navigator
+//  RAT::TrackCursor	fCursor;		// RAT-PAC track cursor
+//  RAT::TrackNode*	fNode;			// RAT-PAC track node
+//  //TList(TTree Entries*) currentEventSet --> data from *_results.root T2
+//  //TList(TCut) currentCuts
+  TCut			fCut;			// current cuts on data
+  TList*		fCutList;		// list of cuts
 
 public:  // voids TEMPORARY
   TDuvallAnalyze();
   TDuvallAnalyze( const char* fileName );
 //TDuvallAnalyze( const char* name, const char* title, const char* fileName )
   TFile*		GetFile() const { return fFile; }
+  TString		GetFileName() const { return fFileName; }
   TString		GetExperiment()	const { return fExperiment; }
-  TString		GetExperimentPath()	const { return fExperimentPath; }
+  TString		GetExperimentPath() const { return fExperimentPath; }
+  TCut			GetCuts() const { return fCut; }
+  TList*		GetListOfCuts() const { return fCutList; }
+  TCut			AddCut( TCut newCut );
+  void			CombineCuts();
+  void			ShowCuts();
 //void			Draw() // DrawAllPlots()
 //void			DrawPlot(enum) // individ. plots
 //void			RestoreDefaultCuts() // arg. experiment, config file, other?
 //void			ApplyCut(TCut) //temp -- return ptr for TList, TTree, TSelection, other?
 //void			RemoveCut(TCut) //temp -- return ptr for TList, TTree, TSelection, other?
-//void			ShowCuts() //temp -- return ptr for TList, TTree, TSelection, other?
 //void			Voxelize(xyz_quant_data)
 
 //Integrating the TDuvallAnalyze class to ROOT.

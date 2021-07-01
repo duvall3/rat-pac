@@ -20,31 +20,34 @@
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <TDuvallAnalyze.h>
-#include "TMap.h"
-#include "TObjString.h"
-#include "TObjArray.h"
+//#include "TDuvallAnalyze.h"
+//#include "/home/mark/rat-pac/user/root_macros/TDuvallAnalyze.h"
 
 // Call the ClassImp() macro to give the TDuvallAnalyze class RTTI and full I/O capabilities.
 #if !defined(__CLING__)
   ClassImp(TDuvallAnalyze);
 #endif
 
-TString defaultName = "TDuvallAnalyze";
+TString defaultName = "D";
 TString defaultTitle = "class for analyzing RAT-PAC IBD runs";
+TCut defaultCut = "";
 
 //______________________________________________________________________________
-// default constructor
+// default ctor
 TDuvallAnalyze::TDuvallAnalyze()
 {
   SetName(defaultName);
   SetTitle(defaultTitle);
   fFile = 0;
+  fFileName = "";
   fExperiment = "";
   fExperimentPath = "";
+  fCut = "";
+  fCutList = 0;
 }
 
 ////______________________________________________________________________________
-//// primary constructor
+//// primary ctor
 //TDuvallAnalyze::TDuvallAnalyze( const char* name, const char* title, const char* fileName )
 //{
 //  SetName(name);
@@ -66,15 +69,24 @@ TDuvallAnalyze::TDuvallAnalyze()
 //}
 
 //______________________________________________________________________________
-// fileName-only constructor
+// fileName-only ctor
 TDuvallAnalyze::TDuvallAnalyze( const char* fileName )
 {
+  // init
   SetName(defaultName);
   SetTitle(defaultTitle);
   fFile = TFile::Open(fileName);
+  fFileName = fFile->GetName();
+  fCut = defaultCut;
+  fCutList = new TList;
+//AddCut(defaultCut);
+  fCutList->Add(&defaultCut);
+  // get experiment
   TMap* db = (TMap*)fFile->FindObjectAny("db");
   if ( db == 0x0 ) {
-    Warning(ClassName, "RAT-PAC database not found in "+fFile->GetName()+".");
+    Warning(ClassName, "RAT-PAC database not found in "+fFile->GetName()+". Experiment name and path unknown.");
+    fExperiment = "";
+    fExperimentPath = "";
   } else {
     TPair* tp = db->FindObject("DETECTOR[].experiment");
     TObjString* tos = tp->Value();
@@ -87,12 +99,49 @@ TDuvallAnalyze::TDuvallAnalyze( const char* fileName )
   } //endif
 }
 
+//______________________________________________________________________________
+// ShowCuts
+TDuvallAnalyze::ShowCuts()
+{
+  fCut.Print();
+}
+
+//______________________________________________________________________________
+// CombineCuts
+TDuvallAnalyze::CombineCuts()
+{
+  fCut.Clear();
+  TCut* c;
+  for ( TIter i=fCutList->begin(); i!=fCutList->end(); ++i ) {
+    c = (TCut*)*i;
+    fCut = fCut && (*c);
+  }
+}
+
+//______________________________________________________________________________
+// AddCut
+TDuvallAnalyze::AddCut( TCut newCut )
+{
+  TCut* newCutptr = &newCut;
+  fCutList->Add(newCutptr);
+  CombineCuts();
+//fCut = fCut+newCut;
+//return fCut;
+}
+
 ////______________________________________________________________________________
-//// fileName-only constructor
-//TDuvallAnalyze::TDuvallAnalyze( const char* fileName )
+//TDuvallAnalyze::
 //{
-//  TDuvallAnalyze d =  TDuvallAnalyze( defaultName, defaultTitle, fileName );
-//  return d;
+//}
+
+////______________________________________________________________________________
+//TDuvallAnalyze::
+//{
+//}
+
+////______________________________________________________________________________
+//TDuvallAnalyze::
+//{
 //}
 
 ////______________________________________________________________________________
@@ -111,42 +160,13 @@ TDuvallAnalyze::Print()
 {
   TString className, fileName, Name, Title;
   className = Class_Name();
-//fileName = GetFile();
+  fileName = GetFileName();
   Name = GetName();
   Title = GetTitle();
+  TCut Cuts = GetCuts();
   printf("%s\t%s\t%s\n", className.Data(), Name.Data(), Title.Data());
-//printf("ROOT file:\t%s\n", fileName.Data());
+  printf("ROOT file:\t%s\n", fileName.Data());
+  printf("Current cuts:\t%s\n", fCut.GetTitle());
 }
-
-////______________________________________________________________________________
-//// apply cut
-//TDuvallAnalyze::ApplyCut (
-//{
-//}
-
-////______________________________________________________________________________
-//TDuvallAnalyze::
-//{
-//}
-
-////______________________________________________________________________________
-//TDuvallAnalyze::
-//{
-//}
-
-////______________________________________________________________________________
-//TDuvallAnalyze::
-//{
-//}
-
-////______________________________________________________________________________
-//TDuvallAnalyze::
-//{
-//}
-
-//// Call the ClassImp() macro to give the TDuvallAnalyze class RTTI and full I/O capabilities.
-//#if !defined(__CLING__)
-//    ClassImp(TDuvallAnalyze);
-//#endif
 
 // all pau!   )
