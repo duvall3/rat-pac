@@ -20,8 +20,6 @@
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <TDuvallAnalyze.h>
-//#include "TDuvallAnalyze.h"
-//#include "/home/mark/rat-pac/user/root_macros/TDuvallAnalyze.h"
 
 // Call the ClassImp() macro to give the TDuvallAnalyze class RTTI and full I/O capabilities.
 #if !defined(__CLING__)

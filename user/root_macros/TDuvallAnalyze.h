@@ -24,18 +24,6 @@
 
 #include "TFile.h"
 
-////#include <RAT/DS/Root.hh>
-//gSystem->AddIncludePath(" -I$RATROOT/include");
-//gSystem->Load("libRATEvent");
-//gSystem->AddIncludePath(" -I$RATROOT/user/root_macros");
-////#include <RAT/DSWriter.hh>
-
-//std::string ratroot = getenv("RATROOT");
-//std::string initmacro = ratroot + std::string("/rootinit.C");
-//gROOT->ProcessLine((std::string(".x ") + initmacro).c_str());
-//gSystem->AddIncludePath(" -I$RATROOT/user/root_macros");
-
-
 //class TDuvallAnalyze : public TClass {
 class TDuvallAnalyze : public TNamed {
 
@@ -44,13 +32,6 @@ private:
   TString		fFileName;		// name of current ROOT datafile
   TString 		fExperiment;		// name of RAT-PAC experiment
   TString		fExperimentPath;	// path to RAT-PAC data directory
-  //RAT::DSReader		fDSReader;		// RAT-PAC DS reader
-//  RAT::DS::Root*	fDS;			// RAT-PAC data structure
-//  RAT::TrackNav		fNavigator;		// RAT-PAC navigator
-//  RAT::TrackCursor	fCursor;		// RAT-PAC track cursor
-//  RAT::TrackNode*	fNode;			// RAT-PAC track node
-//  //TList(TTree Entries*) currentEventSet --> data from *_results.root T2
-//  //TList(TCut) currentCuts
   TCut			fCut;			// current cuts on data
   TList*		fCutList;		// list of cuts
 
