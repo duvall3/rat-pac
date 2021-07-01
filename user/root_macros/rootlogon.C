@@ -7,7 +7,9 @@
   gStyle->SetHistLineColor(kBlue);
   gStyle->SetOptLogy(true);
 
-  gROOT->LoadMacro("duvall3Include.h");
+  #include <TDuvallAnalyze.cxx>
+
+  gROOT->LoadMacro("duvall3Include.cxx");
   duvall3Include();
 
 }
