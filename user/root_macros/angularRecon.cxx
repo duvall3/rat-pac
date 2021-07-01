@@ -49,7 +49,7 @@ TH1D *h_phi, *h_theta, *h_cos_psi;
 TH2D *h_map;
 gStyle->SetHistLineWidth(3);
 gStyle->SetHistLineColor(kBlue);
-Double_t pi = TMath::Pi();
+const Double_t pi = TMath::Pi();
 
 cout << endl;
 

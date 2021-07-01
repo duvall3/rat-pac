@@ -57,7 +57,7 @@ RAT::TrackNode* n = c.Here();
 Int_t k, N = r.GetTotal();
 Double_t lattd, longtd;
 TVector3 p;
-Double_t pi = TMath::Pi();
+const Double_t pi = TMath::Pi();
 
 // prepare new TTree
 TTree* T3 = new TTree("T3", "Initial Neutron Momenta");

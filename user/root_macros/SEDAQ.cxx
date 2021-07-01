@@ -54,7 +54,7 @@ gSystem->Load("libPhysics.so");
 gStyle->SetHistLineWidth(2);
 gStyle->SetHistLineColor(kBlue);
 gStyle->SetOptLogy(true);
-Double_t pi = TMath::Pi();
+const Double_t pi = TMath::Pi();
 TString FileName, basename, savename;
 FileName = filename;
 if (FileName.Contains("_T.root")) {

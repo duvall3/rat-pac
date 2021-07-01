@@ -58,7 +58,7 @@ Double_t lattd, longtd;
 TVector3 dr, pi_hat = TVector3(-1,0,0);
 Double_t xi, yi, zi, xf, yf, zf;
 Double_t R, cos_psi, zeta;
-Double_t pi = TMath::Pi();
+const Double_t pi = TMath::Pi();
 
 // prepare new TTree
 TTree* T = new TTree("T", "Neutron-Capture Displacements");
