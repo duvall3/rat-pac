@@ -103,6 +103,14 @@ TDuvallAnalyze::AddCut( TCut* c )
 }
 
 //______________________________________________________________________________
+// overload AddCut
+TDuvallAnalyze::AddCut( const char* cut )
+{
+  TCut* c = new TCut(cut);
+  AddCut(c);
+}
+
+//______________________________________________________________________________
 // ClearCuts
 TDuvallAnalyze::ClearCuts()
 {

@@ -24,6 +24,7 @@
 
 #include "TFile.h"
 #include "TClass.h"
+#include "TCut.h"
 
 class TDuvallAnalyze : public TClass {
 
@@ -45,9 +46,8 @@ public:  // voids TEMPORARY
   TString		GetExperimentPath() const { return fExperimentPath; }
   TCut			GetCuts() { return fCut; }
   TObjArray*		GetListOfCuts() { return fCutList; }
-//TObjArray			GetListOfCuts() { return fCutList; }
-//TCut			AddCut( TCut newCut );
   void			AddCut( TCut* c );
+  void			AddCut( const char* cut );
   void			CombineCuts();
   void			ShowCuts();
   void			ClearCuts();
