@@ -146,7 +146,7 @@ if (save_tf == kTRUE) {
   can_skymap->SaveAs(savename_skymap);
   can_capdist->SaveAs(savename_capdist);
   can_cospsi->SaveAs(savename_cospsi);
-  can_cospsi->SaveAs(savename_zeta);
+  can_zeta->SaveAs(savename_zeta);
 }
 
 // all pau!   )

@@ -1,13 +1,30 @@
 #!/bin/bash
 # geogen_checkerboard -- generate a *checkerboarded* segmented, rectangular-lattice detector .geo file
+#
 # -- this script expects to be run in a directory such as $RATROOT/data/foo-experiment,
 #      which is expected to contain a base geometry file (i.e., without cell array)
 #      called "foo-experiment_base.geo"
-# -- for an example, see https://github.com/duvall3/rat-pac/blob/comparison/data/general-segmented/general-segmented_base.geo
 #
-# USAGE: geogen_general-segmented.sh [reset]
+# -- for an example base file, see:
+#      https://github.com/duvall3/rat-pac/blob/comparison/data/general-segmented/general-segmented_base.geo
 #
-# ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 6/21 ~ #
+# USAGES: geogen_general-segmented.sh [INERT_CELL_VISIBLE]
+#         geogen_general-segmented.sh <COMMAND>
+#           where:
+#           INERT_CELL_VISIBLE = true | false
+#           COMMAND = reset | inert_vis_on | inert_vis_off
+#
+# -- the optional Boolean argument INERT_CELL_VISIBLE determines the default visibility
+#      of the inert cells during geometry generation
+#    -- if omitted, defaults to "true"
+#    -- reminder: in BASH, 0 is "true" and nonzero is "false"
+#
+# -- the "reset" command will clear the cell array and the main .geo file,
+#      leaving only the "_base.geo" file, in preparation for generating a new detector
+#  *!!!* WARNING: THIS DELETES THE DETECTOR GEOMETRY *!!!*
+#
+# -- the "inert_vis" commands modify the main .geo file (after generation)
+#      to set the inert-cell visibility on or of
 
 
 ##Copyright (C) 2021 Mark J. Duvall
@@ -28,6 +45,9 @@
 
 ## init
 
+# fix character cases if needed
+ARG=$(echo $1 | tr [:upper:] [:lower:])
+
 # check / create filenames
 PROJ=$(pwd | sed s_/_\ _g | awk '{print $NF}')
 BASEFILE="$PROJ"_base.geo
@@ -35,16 +55,42 @@ ARRFILE="$PROJ"_cell-array.geo
 OUTFILE="$PROJ".geo
 
 # reset command
-if [[ $1 = "reset" ]]; then
+if [[ $ARG = "reset" ]]; then
   if [[ -f $BASEFILE ]]; then
     echo "Resetting experiment to base; clearing detector..."
-      if [[ -f $ARRFILE ]]; then rm $ARRFILE; fi
-      if [[ -f $OUTFILE ]]; then rm $OUTFILE; fi
-#     if [[ -f $OUTFILE"~" ]]; then rm $OUTFILE"~"; fi
+      if [[ -f $ARRFILE ]]; then /usr/bin/rm $ARRFILE; fi
+      if [[ -f $OUTFILE ]]; then /usr/bin/rm $OUTFILE; fi
     echo "Detector geometry cleared." && exit 0
   else
     echo "ERROR: Base file is missing; cannot reset to base geometry." && exit 15
   fi
+fi
+
+# inert-visibility switching commands
+if [[ $ARG = "inert_vis_on" ]]; then
+  echo "Setting inert-cell visibility on..."
+  cp $OUTFILE "$OUTFILE"_tmp
+  cat "$OUTFILE"_tmp | sed s/'invisible: 1, \/\/ inert cell'/'invisible: 0, \/\/ inert cell'/ > $OUTFILE
+  /usr/bin/rm "$OUTFILE"_tmp
+  echo "Done." && exit 0
+elif [[ $ARG = "inert_vis_off" ]]; then
+  echo "Setting inert-cell visibility off..."
+  cp $OUTFILE "$OUTFILE"_tmp
+  cat "$OUTFILE"_tmp | sed s/'invisible: 0, \/\/ inert cell'/'invisible: 1, \/\/ inert cell'/ > $OUTFILE
+  /usr/bin/rm "$OUTFILE"_tmp
+  echo "Done." && exit 0
+fi
+
+# inert cell visibility during generation
+if [[ $ARG ]]; then
+  INERT_CELL_VISIBLE=$ARG
+else
+  INERT_CELL_VISIBLE=true
+fi
+if $INERT_CELL_VISIBLE; then
+  INERT_CELL_INVISIBLE="0"
+else
+  INERT_CELL_INVISIBLE="1"
 fi
 
 # don't overwrite
@@ -103,12 +149,12 @@ echo "Enter cell half-spacing (mm): " && read S
 echo
 
 # prompt for materials
-echo "Enter material for active cells (default: ej254_005li6-- PVT @ 0.5%wt. Li-6): " && read CELL_ON_MATERIAL
-echo "Enter material for inactive cells (default: glass -- SiO2): " && read CELL_ON_MATERIAL
+echo "Enter material for active cells (default: ej254_005li6 -- PVT @ 0.5%wt. Li-6): " && read ACTIVE_CELL_MATERIAL
+echo "Enter material for inactive cells (default: glass -- SiO2): " && read ACTIVE_CELL_MATERIAL
 echo
 # defaults
-if [[ -z $CELL_ON_MATERIAL ]]; then CELL_ON_MATERIAL="ej254_005li6"; fi
-if [[ -z $CELL_OFF_MATERIAL ]]; then CELL_OFF_MATERIAL="glass"; fi
+if [[ -z $ACTIVE_CELL_MATERIAL ]]; then ACTIVE_CELL_MATERIAL="ej254_005li6"; fi
+if [[ -z $INERT_CELL_MATERIAL ]]; then INERT_CELL_MATERIAL="glass"; fi
 
 # force float format for RAT-PAC
 L=$( echo "$L*1.0" | bc -l )
@@ -179,15 +225,16 @@ for (( k_lr=0; k_lr<$ROWS; k_lr++ )); do
       ROW_EVEN=$((k_lr % 2))
       COL_EVEN=$((k_ud % 2))
       LYR_EVEN=$((k_fb % 2))
-      if [[ $ROW_EVEN -eq $COL_EVEN && $COL_EVEN -eq $LYR_EVEN ]]; then
-#       MATERIAL="ej254_005li6" # scintillator cell
-        MATERIAL=$CELL_ON_MATERIAL
+      if [[ $ROW_EVEN -eq $COL_EVEN && $COL_EVEN -eq $LYR_EVEN ]]; then #CELL=ACTIVE
+        MATERIAL=$ACTIVE_CELL_MATERIAL
 	COLOR="[0.0, 1.0, 1.0]"
-      else
-        #MATERIAL="air" # non-scintillator cell
-#       MATERIAL="glass" # non-scintillator cell
-        MATERIAL=$CELL_OFF_MATERIAL
+#	INVISIBLE="0"
+	INVISIBLE_LINE="invisible: 0, // active cell"
+      else								#CELL=INERT
+        MATERIAL=$INERT_CELL_MATERIAL
 	COLOR="[0.5, 0.5, 0.5]"
+#	INVISIBLE=$INERT_CELL_INVISIBLE
+	INVISIBLE_LINE="invisible: $INERT_CELL_INVISIBLE, // inert cell"
       fi
 
       # print results for this cell  
@@ -202,7 +249,7 @@ mother: \"target_cell_array\",
 type: \"box\",
 size: [$L, $W, $H], // mm  // for sphere, change size to single-value r_max
 material: \"$MATERIAL\",
-invisible: 0,
+$INVISIBLE_LINE
 color: $COLOR,
 position: [$x, $y, $z] // mm
 }\n\n" >> $ARRFILE
