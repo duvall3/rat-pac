@@ -23,10 +23,8 @@
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "TFile.h"
-#include "TNamed.h"
 #include "TClass.h"
 
-//class TDuvallAnalyze : public TNamed {
 class TDuvallAnalyze : public TClass {
 
 private:
@@ -36,8 +34,6 @@ private:
   TString		fExperimentPath;	// path to directory defining fExperiment, usually either absolute or relative to $RATROOT/data
   TCut			fCut;			// current cuts on data
   TObjArray* 		fCutList;		// list of cuts
-//TRotation		fRot;			//debug
-//TObjArray*		fRotList;		//debug
 
 public:  // voids TEMPORARY
   TDuvallAnalyze();
@@ -62,10 +58,6 @@ public:  // voids TEMPORARY
 //void			ApplyCut(TCut) //temp -- return ptr for TObjArray, TTree, TSelection, other?
 //void			RemoveCut(TCut) //temp -- return ptr for TObjArray, TTree, TSelection, other?
 //void			Voxelize(xyz_quant_data)
-//TRotation*		GetRotation() { return fRot; } //debug
-//TObjArray*		GetListOfRotations() { return fRotList; } //debug
-//void			CombineRotations(); //debug
-//void			AddRotation( TRotation* rot ); //debug
 
 //Integrating the TDuvallAnalyze class to ROOT.
 ClassDef(TDuvallAnalyze,1)

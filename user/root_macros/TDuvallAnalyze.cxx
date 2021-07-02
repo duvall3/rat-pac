@@ -42,9 +42,6 @@ TDuvallAnalyze::TDuvallAnalyze()
   fExperimentPath = "";
   fCut = "";
   fCutList = new TObjArray;
-////DEBUG//
-//fRot = new TRotation;
-//fRotList = new TObjArray;
 }
 
 //______________________________________________________________________________
@@ -96,7 +93,7 @@ TDuvallAnalyze::CombineCuts()
     fCut = fCut && C;
   }
 }
-//
+
 //______________________________________________________________________________
 // AddCut
 TDuvallAnalyze::AddCut( TCut* c )
@@ -159,49 +156,18 @@ TDuvallAnalyze::ResetCuts()
 //// override ls
 //TDuvallAnalyze::ls()
 //{
-//  TString name(this->GetName()), title(this->GetTitle()), classname(this->Class_Name());
-//  if (fName.IsNull()) name = defaultName;
-//  if (fTitle.IsNull()) title = defaultTitle;
-//  cout << classname << "\t\t" << name << ":\t\t" << title << endl;
 //}
 
 //______________________________________________________________________________
 //override print
 TDuvallAnalyze::Print()
 {
+  printf("\n");
   printf("%s\t%s\t%s\n", Class_Name(), GetName(), GetTitle());
   printf("ROOT file:\t%s\n", GetFileName().Data());
   printf("Current cuts:\t%s\n", fCut.GetTitle());
   fCutList->ls();
-////DEBUG//
-//printf("Current rotation:\t\t%f %f %f\n", fRot.ThetaX(), fRot.ThetaY(), fRot.ThetaZ());
-//fRotList->ls();
+  printf("\n");
 }
-
-////DEBUG//
-////
-////______________________________________________________________________________
-//TDuvallAnalyze::CombineRotations()
-//{
-//  fRot.Clear();
-//  TRotation* r;
-//  TRotation R;
-//  TIter i(fRotList);
-//  while (( r = (TRotation*)i.Next() )) {
-//    R = (*r);
-//    fRot = fRot * R;
-//  }
-//}
-////
-////______________________________________________________________________________
-//TDuvallAnalyze::AddRotation( TRotation* rot )
-//{
-//  fRotList->Add(rot);
-//}
-////
-//////______________________________________________________________________________
-////TDuvallAnalyze::
-////{
-////}
 
 // all pau!   )
