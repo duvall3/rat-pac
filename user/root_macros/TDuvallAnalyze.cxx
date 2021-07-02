@@ -58,7 +58,7 @@ TDuvallAnalyze::TDuvallAnalyze( const char* fileName )
   // get experiment
   TMap* db = (TMap*)fFile->FindObjectAny("db");
   if ( db == 0x0 ) {
-    Warning(ClassName, "RAT-PAC database not found in "+fFile->GetName()+". Experiment name and path unknown.");
+    Warning(Class_Name(), "RAT-PAC database not found in "+fFile->GetName()+". Experiment name and path unknown.");
     fExperiment = "";
     fExperimentPath = "";
   } else {
@@ -71,6 +71,57 @@ TDuvallAnalyze::TDuvallAnalyze( const char* fileName )
     tos = (TObjString*)toa->At(toa->GetEntries()-1);
     fExperiment = tos->GetString();
   } //endif
+}
+
+//______________________________________________________________________________
+// primary ctor
+TDuvallAnalyze::TDuvallAnalyze( const char* name, const char* title, const char* fileName )
+{
+  // init
+  SetName(name);
+  SetTitle(title);
+  fFile = TFile::Open(fileName);
+  fFileName = fFile->GetName();
+  fCut = defaultCut;
+  fCutList = new TObjArray;
+  FindExperiment();
+//// get experiment
+//TMap* db = (TMap*)fFile->FindObjectAny("db");
+//if ( db == 0x0 ) {
+//  Warning(ClassName, "RAT-PAC database not found in "+fFile->GetName()+". Experiment name and path unknown.");
+//  fExperiment = "";
+//  fExperimentPath = "";
+//} else {
+//  TPair* tp = db->FindObject("DETECTOR[].experiment");
+//  TObjString* tos = tp->Value();
+//  fExperimentPath = tos->GetString();
+//  fExperimentPath.ReplaceAll("\"", "");
+//  TString experimentPath = fExperimentPath;
+//  TObjArray* toa = experimentPath.Tokenize("/");
+//  tos = (TObjString*)toa->At(toa->GetEntries()-1);
+//  fExperiment = tos->GetString();
+//} //endif
+}
+
+//______________________________________________________________________________
+// FindExperiment
+TDuvallAnalyze::FindExperiment()
+{
+  TMap* db = (TMap*)fFile->FindObjectAny("db");
+  if ( db == 0x0 ) {
+    Warning(ClassName, "RAT-PAC database not found in "+fFile->GetName()+". Experiment name and path unknown.");
+    fExperiment = "";
+    fExperimentPath = "";
+  } else {
+    TPair* tp = db->FindObject("DETECTOR[].experiment");
+    TObjString* tos = tp->Value();
+    fExperimentPath = tos->GetString();
+    fExperimentPath.ReplaceAll("\"", "");
+    TString experimentPath = fExperimentPath;
+    TObjArray* toa = experimentPath.Tokenize("/");
+    tos = (TObjString*)toa->At(toa->GetEntries()-1);
+    fExperiment = tos->GetString();
+  }
 }
 
 //______________________________________________________________________________
@@ -139,28 +190,6 @@ TDuvallAnalyze::ResetCuts()
 //}
 
 ////______________________________________________________________________________
-//// primary ctor
-//TDuvallAnalyze::TDuvallAnalyze( const char* name, const char* title, const char* fileName )
-//{
-//  SetName(name);
-//  SetTitle(title);
-//  fFile = TFile::Open(fileName);
-//  TMap* db = (TMap*)fFile->FindObjectAny("db");
-//  if ( db == 0x0 ) {
-//    Warning(ClassName, "RAT-PAC database not found in "+fFile->GetName()+".");
-//  } else {
-//    TPair* tp = db->FindObject("DETECTOR[].experiment");
-//    TObjString* tos = tp->Value();
-//    fExperimentPath = tos->GetString();
-//    fExperimentPath.ReplaceAll("\"", "");
-//    TString experimentPath = fExperimentPath;
-//    TObjArray* toa = experimentPath.Tokenize("/");
-//    tos = (TObjString*)toa->At(toa->GetEntries()-1);
-//    fExperiment = tos->GetString();
-//  } //endif
-//}
-
-////______________________________________________________________________________
 //// override ls
 //TDuvallAnalyze::ls()
 //{
@@ -174,7 +203,7 @@ TDuvallAnalyze::Print()
   printf("%s\t%s\t%s\n", Class_Name(), GetName(), GetTitle());
   printf("ROOT file:\t%s\n", GetFileName().Data());
   printf("Current cuts:\t%s\n", fCut.GetTitle());
-  fCutList->ls();
+//fCutList->ls();
   printf("\n");
 }
 

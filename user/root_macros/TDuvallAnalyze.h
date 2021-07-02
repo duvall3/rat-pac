@@ -39,7 +39,8 @@ private:
 public:  // voids TEMPORARY
   TDuvallAnalyze();
   TDuvallAnalyze( const char* fileName );
-//TDuvallAnalyze( const char* name, const char* title, const char* fileName )
+  TDuvallAnalyze( const char* name, const char* title, const char* fileName );
+  void			FindExperiment();
   TFile*		GetFile() const { return fFile; }
   TString		GetFileName() const { return fFileName; }
   TString		GetExperiment()	const { return fExperiment; }
