@@ -23,17 +23,21 @@
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "TFile.h"
+#include "TNamed.h"
+#include "TClass.h"
 
-//class TDuvallAnalyze : public TClass {
-class TDuvallAnalyze : public TNamed {
+//class TDuvallAnalyze : public TNamed {
+class TDuvallAnalyze : public TClass {
 
 private:
   TFile*		fFile;			// current ROOT datafile
   TString		fFileName;		// name of current ROOT datafile
   TString 		fExperiment;		// name of RAT-PAC experiment
-  TString		fExperimentPath;	// path to RAT-PAC data directory
+  TString		fExperimentPath;	// path to directory defining fExperiment, usually either absolute or relative to $RATROOT/data
   TCut			fCut;			// current cuts on data
-  TList*		fCutList;		// list of cuts
+  TObjArray* 		fCutList;		// list of cuts
+//TRotation		fRot;			//debug
+//TObjArray*		fRotList;		//debug
 
 public:  // voids TEMPORARY
   TDuvallAnalyze();
@@ -43,17 +47,25 @@ public:  // voids TEMPORARY
   TString		GetFileName() const { return fFileName; }
   TString		GetExperiment()	const { return fExperiment; }
   TString		GetExperimentPath() const { return fExperimentPath; }
-  TCut			GetCuts() const { return fCut; }
-  TList*		GetListOfCuts() const { return fCutList; }
-  TCut			AddCut( TCut newCut );
+  TCut			GetCuts() { return fCut; }
+  TObjArray*		GetListOfCuts() { return fCutList; }
+//TObjArray			GetListOfCuts() { return fCutList; }
+//TCut			AddCut( TCut newCut );
+  void			AddCut( TCut* c );
   void			CombineCuts();
   void			ShowCuts();
+  void			ClearCuts();
+  void			ResetCuts();
 //void			Draw() // DrawAllPlots()
 //void			DrawPlot(enum) // individ. plots
 //void			RestoreDefaultCuts() // arg. experiment, config file, other?
-//void			ApplyCut(TCut) //temp -- return ptr for TList, TTree, TSelection, other?
-//void			RemoveCut(TCut) //temp -- return ptr for TList, TTree, TSelection, other?
+//void			ApplyCut(TCut) //temp -- return ptr for TObjArray, TTree, TSelection, other?
+//void			RemoveCut(TCut) //temp -- return ptr for TObjArray, TTree, TSelection, other?
 //void			Voxelize(xyz_quant_data)
+//TRotation*		GetRotation() { return fRot; } //debug
+//TObjArray*		GetListOfRotations() { return fRotList; } //debug
+//void			CombineRotations(); //debug
+//void			AddRotation( TRotation* rot ); //debug
 
 //Integrating the TDuvallAnalyze class to ROOT.
 ClassDef(TDuvallAnalyze,1)

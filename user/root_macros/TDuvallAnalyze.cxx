@@ -41,30 +41,11 @@ TDuvallAnalyze::TDuvallAnalyze()
   fExperiment = "";
   fExperimentPath = "";
   fCut = "";
-  fCutList = 0;
+  fCutList = new TObjArray;
+////DEBUG//
+//fRot = new TRotation;
+//fRotList = new TObjArray;
 }
-
-////______________________________________________________________________________
-//// primary ctor
-//TDuvallAnalyze::TDuvallAnalyze( const char* name, const char* title, const char* fileName )
-//{
-//  SetName(name);
-//  SetTitle(title);
-//  fFile = TFile::Open(fileName);
-//  TMap* db = (TMap*)fFile->FindObjectAny("db");
-//  if ( db == 0x0 ) {
-//    Warning(ClassName, "RAT-PAC database not found in "+fFile->GetName()+".");
-//  } else {
-//    TPair* tp = db->FindObject("DETECTOR[].experiment");
-//    TObjString* tos = tp->Value();
-//    fExperimentPath = tos->GetString();
-//    fExperimentPath.ReplaceAll("\"", "");
-//    TString experimentPath = fExperimentPath;
-//    TObjArray* toa = experimentPath.Tokenize("/");
-//    tos = (TObjString*)toa->At(toa->GetEntries()-1);
-//    fExperiment = tos->GetString();
-//  } //endif
-//}
 
 //______________________________________________________________________________
 // fileName-only ctor
@@ -76,9 +57,7 @@ TDuvallAnalyze::TDuvallAnalyze( const char* fileName )
   fFile = TFile::Open(fileName);
   fFileName = fFile->GetName();
   fCut = defaultCut;
-  fCutList = new TList;
-//AddCut(defaultCut);
-  fCutList->Add(&defaultCut);
+  fCutList = new TObjArray;
   // get experiment
   TMap* db = (TMap*)fFile->FindObjectAny("db");
   if ( db == 0x0 ) {
@@ -110,21 +89,38 @@ TDuvallAnalyze::CombineCuts()
 {
   fCut.Clear();
   TCut* c;
-  for ( TIter i=fCutList->begin(); i!=fCutList->end(); ++i ) {
-    c = (TCut*)*i;
-    fCut = fCut && (*c);
+  TCut C;
+  TIter i(fCutList);
+  while (( c = (TCut*)i.Next() )) {
+    C = (*c);
+    fCut = fCut && C;
   }
+}
+//
+//______________________________________________________________________________
+// AddCut
+TDuvallAnalyze::AddCut( TCut* c )
+{
+  fCutList->Add(c);
+  CombineCuts();
 }
 
 //______________________________________________________________________________
-// AddCut
-TDuvallAnalyze::AddCut( TCut newCut )
+// ClearCuts
+TDuvallAnalyze::ClearCuts()
 {
-  TCut* newCutptr = &newCut;
-  fCutList->Add(newCutptr);
-  CombineCuts();
-//fCut = fCut+newCut;
-//return fCut;
+  fCut.Clear();
+  fCutList->Clear();
+}
+
+//______________________________________________________________________________
+// ResetCuts
+TDuvallAnalyze::ResetCuts()
+{
+  fCut = defaultCut;
+  fCutList->Clear();
+  TCut* c = &defaultCut;
+  fCutList->Add(c);
 }
 
 ////______________________________________________________________________________
@@ -138,8 +134,25 @@ TDuvallAnalyze::AddCut( TCut newCut )
 //}
 
 ////______________________________________________________________________________
-//TDuvallAnalyze::
+//// primary ctor
+//TDuvallAnalyze::TDuvallAnalyze( const char* name, const char* title, const char* fileName )
 //{
+//  SetName(name);
+//  SetTitle(title);
+//  fFile = TFile::Open(fileName);
+//  TMap* db = (TMap*)fFile->FindObjectAny("db");
+//  if ( db == 0x0 ) {
+//    Warning(ClassName, "RAT-PAC database not found in "+fFile->GetName()+".");
+//  } else {
+//    TPair* tp = db->FindObject("DETECTOR[].experiment");
+//    TObjString* tos = tp->Value();
+//    fExperimentPath = tos->GetString();
+//    fExperimentPath.ReplaceAll("\"", "");
+//    TString experimentPath = fExperimentPath;
+//    TObjArray* toa = experimentPath.Tokenize("/");
+//    tos = (TObjString*)toa->At(toa->GetEntries()-1);
+//    fExperiment = tos->GetString();
+//  } //endif
 //}
 
 ////______________________________________________________________________________
@@ -156,15 +169,39 @@ TDuvallAnalyze::AddCut( TCut newCut )
 //override print
 TDuvallAnalyze::Print()
 {
-  TString className, fileName, Name, Title;
-  className = Class_Name();
-  fileName = GetFileName();
-  Name = GetName();
-  Title = GetTitle();
-  TCut Cuts = GetCuts();
-  printf("%s\t%s\t%s\n", className.Data(), Name.Data(), Title.Data());
-  printf("ROOT file:\t%s\n", fileName.Data());
+  printf("%s\t%s\t%s\n", Class_Name(), GetName(), GetTitle());
+  printf("ROOT file:\t%s\n", GetFileName().Data());
   printf("Current cuts:\t%s\n", fCut.GetTitle());
+  fCutList->ls();
+////DEBUG//
+//printf("Current rotation:\t\t%f %f %f\n", fRot.ThetaX(), fRot.ThetaY(), fRot.ThetaZ());
+//fRotList->ls();
 }
+
+////DEBUG//
+////
+////______________________________________________________________________________
+//TDuvallAnalyze::CombineRotations()
+//{
+//  fRot.Clear();
+//  TRotation* r;
+//  TRotation R;
+//  TIter i(fRotList);
+//  while (( r = (TRotation*)i.Next() )) {
+//    R = (*r);
+//    fRot = fRot * R;
+//  }
+//}
+////
+////______________________________________________________________________________
+//TDuvallAnalyze::AddRotation( TRotation* rot )
+//{
+//  fRotList->Add(rot);
+//}
+////
+//////______________________________________________________________________________
+////TDuvallAnalyze::
+////{
+////}
 
 // all pau!   )
