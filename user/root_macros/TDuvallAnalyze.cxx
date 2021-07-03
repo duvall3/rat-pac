@@ -2,7 +2,7 @@
 //   using functionality from github.com > duvall3 > rat-pac > \
 //     collab > user > root_macros
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 6/2021 ~ //
-// -- partial motivation: flexibility for bursts vs. raw MC
+// -- partial motivation: flexibility for scint. bursts vs. raw MC
 
 //Copyright (C) 2021 Mark J. Duvall
 //
@@ -26,9 +26,10 @@
   ClassImp(TDuvallAnalyze);
 #endif
 
-TString defaultName = "D";
-TString defaultTitle = "class for analyzing RAT-PAC IBD runs";
-TCut defaultCut = "";
+const TString defaultName = "DuvAn";
+const TString defaultTitle = "class for analyzing RAT-PAC IBD runs";
+const TCut defaultCut = "";
+const char* defaultTree = "T_xyz";  //TEMP
 
 //______________________________________________________________________________
 // default ctor
@@ -42,65 +43,39 @@ TDuvallAnalyze::TDuvallAnalyze()
   fExperimentPath = "";
   fCut = "";
   fCutList = new TObjArray;
+  fCanList = new TObjArray;
 }
 
 //______________________________________________________________________________
 // fileName-only ctor
 TDuvallAnalyze::TDuvallAnalyze( const char* fileName )
 {
-  // init
   SetName(defaultName);
   SetTitle(defaultTitle);
   fFile = TFile::Open(fileName);
-  fFileName = fFile->GetName();
-  fCut = defaultCut;
-  fCutList = new TObjArray;
-  // get experiment
-  TMap* db = (TMap*)fFile->FindObjectAny("db");
-  if ( db == 0x0 ) {
-    Warning(Class_Name(), "RAT-PAC database not found in "+fFile->GetName()+". Experiment name and path unknown.");
-    fExperiment = "";
-    fExperimentPath = "";
-  } else {
-    TPair* tp = db->FindObject("DETECTOR[].experiment");
-    TObjString* tos = tp->Value();
-    fExperimentPath = tos->GetString();
-    fExperimentPath.ReplaceAll("\"", "");
-    TString experimentPath = fExperimentPath;
-    TObjArray* toa = experimentPath.Tokenize("/");
-    tos = (TObjString*)toa->At(toa->GetEntries()-1);
-    fExperiment = tos->GetString();
-  } //endif
+  Init();
 }
 
 //______________________________________________________________________________
 // primary ctor
 TDuvallAnalyze::TDuvallAnalyze( const char* name, const char* title, const char* fileName )
 {
-  // init
   SetName(name);
   SetTitle(title);
   fFile = TFile::Open(fileName);
+  Init();
+}
+
+//______________________________________________________________________________
+// Init
+TDuvallAnalyze::Init()
+{
   fFileName = fFile->GetName();
+  FindExperiment();
+  fTree = (TTree*)fFile->FindObjectAny(defaultTree);
   fCut = defaultCut;
   fCutList = new TObjArray;
-  FindExperiment();
-//// get experiment
-//TMap* db = (TMap*)fFile->FindObjectAny("db");
-//if ( db == 0x0 ) {
-//  Warning(ClassName, "RAT-PAC database not found in "+fFile->GetName()+". Experiment name and path unknown.");
-//  fExperiment = "";
-//  fExperimentPath = "";
-//} else {
-//  TPair* tp = db->FindObject("DETECTOR[].experiment");
-//  TObjString* tos = tp->Value();
-//  fExperimentPath = tos->GetString();
-//  fExperimentPath.ReplaceAll("\"", "");
-//  TString experimentPath = fExperimentPath;
-//  TObjArray* toa = experimentPath.Tokenize("/");
-//  tos = (TObjString*)toa->At(toa->GetEntries()-1);
-//  fExperiment = tos->GetString();
-//} //endif
+  fCanList = new TObjArray;
 }
 
 //______________________________________________________________________________
@@ -179,10 +154,30 @@ TDuvallAnalyze::ResetCuts()
   fCutList->Add(c);
 }
 
-////______________________________________________________________________________
-//TDuvallAnalyze::
-//{
-//}
+//______________________________________________________________________________
+// DrawHist
+TDuvallAnalyze::DrawHist( const char* varexp )
+{
+  // init
+//  TString vars(varexp);
+//  TString can_name(vars);
+//  TString h_name(vars);
+//  can_name.ReplaceAll(":","");
+//  h_name.ReplaceAll(":","");
+//  can_name.Prepend("c_");
+//  h_name.Prepend("h_");
+//  if ( fCanList->FindObject(can_name.Data()) == 0x0 ) {
+//    TCanvas* c = new TCanvas(can_name.Data(), can_name.Data(), 800, 100, 1000, 1000);
+//    fCanList->Add(c);
+//  } else {
+//    c->cd();
+//  }
+//  // draw
+//  vars = vars + ">>" + h_name;
+////fTree->Draw( vars.Data(), fCut );
+  fTree->Draw( "xdf>>h_xdf" );
+////c->
+}
 
 ////______________________________________________________________________________
 //TDuvallAnalyze::
@@ -196,12 +191,13 @@ TDuvallAnalyze::ResetCuts()
 //}
 
 //______________________________________________________________________________
-//override print
+// override Print
 TDuvallAnalyze::Print()
 {
   printf("\n");
   printf("%s\t%s\t%s\n", Class_Name(), GetName(), GetTitle());
-  printf("ROOT file:\t%s\n", GetFileName().Data());
+  printf("ROOT file:\t%s\n", GetFileName());
+  printf("Tree:\t\t%s\n", fTree->GetName());
   printf("Current cuts:\t%s\n", fCut.GetTitle());
 //fCutList->ls();
   printf("\n");

@@ -5,7 +5,7 @@
 //   using functionality from github.com > duvall3 > rat-pac > \
 //     collab > user > root_macros
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 6/2021 ~ //
-// -- partial motivation: flexibility for bursts vs. raw MC
+// -- partial motivation: flexibility for scint. bursts vs. raw MC
 
 //Copyright (C) 2021 Mark J. Duvall
 //
@@ -24,39 +24,44 @@
 
 #include "TFile.h"
 #include "TClass.h"
-#include "TCut.h"
+#include "TTree.h"
 
 class TDuvallAnalyze : public TClass {
 
 private:
   TFile*		fFile;			// current ROOT datafile
-  TString		fFileName;		// name of current ROOT datafile
+  const char*		fFileName;		// name of current ROOT datafile
   TString 		fExperiment;		// name of RAT-PAC experiment
   TString		fExperimentPath;	// path to directory defining fExperiment, usually either absolute or relative to $RATROOT/data
+  TTree*		fTree;			// current TTree
   TCut			fCut;			// current cuts on data
   TObjArray* 		fCutList;		// list of cuts
+  TObjArray* 		fCanList;		// list of canvases
 
-public:  // voids TEMPORARY
+private:
+  void			Init();
+  void			FindExperiment();
+
+public:
   TDuvallAnalyze();
   TDuvallAnalyze( const char* fileName );
   TDuvallAnalyze( const char* name, const char* title, const char* fileName );
-  void			FindExperiment();
   TFile*		GetFile() const { return fFile; }
-  TString		GetFileName() const { return fFileName; }
+  virtual const char* 	GetFileName() const { return fFileName; }
   TString		GetExperiment()	const { return fExperiment; }
   TString		GetExperimentPath() const { return fExperimentPath; }
-  TCut			GetCuts() { return fCut; }
-  TObjArray*		GetListOfCuts() { return fCutList; }
+  TTree*		GetTree() const { return fTree; }
+  TCut			GetCuts() const { return fCut; }
+  TObjArray*		GetListOfCuts() const { return fCutList; }
+  TObjArray*		GetListOfCanvases() const { return fCanList; }
   void			AddCut( TCut* c );
   void			AddCut( const char* cut );
   void			CombineCuts();
   void			ShowCuts();
   void			ClearCuts();
   void			ResetCuts();
-//void			Draw() // DrawAllPlots()
+  TH1D*			DrawHist( const char* varexp );
 //void			DrawPlot(enum) // individ. plots
-//void			RestoreDefaultCuts() // arg. experiment, config file, other?
-//void			ApplyCut(TCut) //temp -- return ptr for TObjArray, TTree, TSelection, other?
 //void			RemoveCut(TCut) //temp -- return ptr for TObjArray, TTree, TSelection, other?
 //void			Voxelize(xyz_quant_data)
 

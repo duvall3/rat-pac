@@ -3,7 +3,6 @@
 // -- for use with the macros in https://github.com/duvall3/rat-pac/tree/collab/user/root-macros/
 // -- runs on original RAT-PAC .root file
 //
-// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 6/21 ~ //
 
 //TH1D* ibdDisplacements ( const char* filename ) {
 TH1D* ibdDisplacements ( const char* filename, bool ibd_tf = kTRUE ) {
