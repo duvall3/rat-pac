@@ -60,7 +60,7 @@ public:
   void			ShowCuts();
   void			ClearCuts();
   void			ResetCuts();
-  TH1D*			DrawHist( const char* varexp );
+  void			DrawHist( const char* varexp );
 //void			DrawPlot(enum) // individ. plots
 //void			RemoveCut(TCut) //temp -- return ptr for TObjArray, TTree, TSelection, other?
 //void			Voxelize(xyz_quant_data)

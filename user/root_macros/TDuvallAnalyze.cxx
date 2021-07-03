@@ -159,25 +159,43 @@ TDuvallAnalyze::ResetCuts()
 TDuvallAnalyze::DrawHist( const char* varexp )
 {
   // init
-//  TString vars(varexp);
-//  TString can_name(vars);
-//  TString h_name(vars);
-//  can_name.ReplaceAll(":","");
-//  h_name.ReplaceAll(":","");
-//  can_name.Prepend("c_");
-//  h_name.Prepend("h_");
-//  if ( fCanList->FindObject(can_name.Data()) == 0x0 ) {
-//    TCanvas* c = new TCanvas(can_name.Data(), can_name.Data(), 800, 100, 1000, 1000);
-//    fCanList->Add(c);
-//  } else {
-//    c->cd();
-//  }
-//  // draw
-//  vars = vars + ">>" + h_name;
-////fTree->Draw( vars.Data(), fCut );
-  fTree->Draw( "xdf>>h_xdf" );
-////c->
+    TString vars(varexp);
+    TString can_name(vars);
+    TString h_name(vars);
+    can_name.ReplaceAll(":","");
+    h_name.ReplaceAll(":","");
+    can_name.Prepend("c_");
+    h_name.Prepend("h_");
+    if ( fCanList->FindObject(can_name.Data()) == 0x0 ) {
+      TCanvas* c = new TCanvas(can_name.Data(), can_name.Data(), 800, 100, 1000, 1000);
+      fCanList->Add(c);
+    } else {
+      c = (TCanvas*)fCanList->FindObject(can_name.Data());
+      c->cd();
+    }
+    // draw
+    vars = vars + ">>" + h_name;
+    fTree->Draw( vars.Data(), fCut );
+    auto h = c->FindObject(h_name.Data());
+//  if ( (inhTH2) && !(inhTH3) ) h->Draw("colz");
+//  if ( h->InheritsFrom("TH2") ) h->Draw("colz");
+    h->Draw("colz");  // doesn't work for some reason
 }
+
+////______________________________________________________________________________
+//TDuvallAnalyze::
+//{
+//}
+
+////______________________________________________________________________________
+//TDuvallAnalyze::
+//{
+//}
+
+////______________________________________________________________________________
+//TDuvallAnalyze::
+//{
+//}
 
 ////______________________________________________________________________________
 //TDuvallAnalyze::
