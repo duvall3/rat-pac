@@ -82,16 +82,20 @@ TDuvallAnalyze::LoadFile( const char* fileName )
 }
 
 //______________________________________________________________________________
+// LoadTree
+TDuvallAnalyze::LoadTree( const char* treeName )
+{
+  fTree = (TTree*)fFile->FindObjectAny(treeName);
+}
+
+//______________________________________________________________________________
 // FindExperiment
 TDuvallAnalyze::FindExperiment()
 {
   TMap* db = (TMap*)fFile->FindObjectAny("db");
   if ( db == 0x0 ) {
-    TString warnLoc = Class_Name();
-    warnLoc.Append("::FindExperiment");
-    TString warnMsg = "RAT-PAC database not found in ";
-    warnMsg.Append(fFileName);
-    warnMsg.Append("; experiment name and path unknown.");
+    TString warnLoc = TString::Format("%s::FindExperiment", Class_Name());
+    TString warnMsg = TString::Format("RAT-PAC database not found in %s; experiment name and path unknown.", fFileName);
     Warning(warnLoc.Data(), warnMsg.Data());
     fExperiment = "";
     fExperimentPath = "";
@@ -107,16 +111,12 @@ TDuvallAnalyze::FindExperiment()
   }
 }
 
-////______________________________________________________________________________
-//TDuvallAnalyze::
-//{
-//}
-
 //______________________________________________________________________________
 // ShowCuts
 TDuvallAnalyze::ShowCuts()
 {
-  fCut.Print();
+//fCut.Print();
+  fCutList->ls();
 }
 
 //______________________________________________________________________________
@@ -173,12 +173,10 @@ TDuvallAnalyze::DrawHist( const char* varexp )
 {
   // init
     TString vars(varexp);
-    TString can_name(vars);
-    TString h_name(vars);
+    TString can_name = TString::Format("c_%s", varexp.Data());
+    TString h_name = TString::Format("h_%s", varexp.Data());
     can_name.ReplaceAll(":","");
     h_name.ReplaceAll(":","");
-    can_name.Prepend("c_");
-    h_name.Prepend("h_");
     if ( fCanList->FindObject(can_name.Data()) == 0x0 ) {
       TCanvas* c = new TCanvas(can_name.Data(), can_name.Data(), 800, 100, 1000, 1000);
       fCanList->Add(c);
@@ -238,20 +236,39 @@ TDuvallAnalyze::RATPACEventViewer()
 // Analyze
 TDuvallAnalyze::Analyze()
 {
+}
+
+//______________________________________________________________________________
+// AnalyzeTracks
+TDuvallAnalyze::AnalyzeTracks()
+{
+}
+
+//______________________________________________________________________________
+// AnalyzeScint()
+TDuvallAnalyze::AnalyzeScint()
+{
   TString datarunName = fFileName;
   datarunName = datarunName(0, datarunName.Index(".root"));
-  TString rtFileName = datarunName;
-  rtFileName.Append(".rt");
-  TString sedaqFileName = datarunName;
-  sedaqFileName.Append("_T.root");
-  TString arFileName = datarunName;
-  arFileName.Append("_results.root");
+  TString rtFileName = TString::Format("%s.rt", datarunName.Data());
+  TString sedaqFileName = TString::Format("%s_T.root", datarunName.Data());
+  TString arFileName = TString::Format("%s_results.root", datarunName.Data());
   RtToRoot(rtFileName);
   SEDAQ(sedaqFileName);
   AngularRecon(arFileName);
   // TODO: send cuts to SEDAQ
   // TODO: send resutls to AngularRecon
 }
+
+////______________________________________________________________________________
+//TDuvallAnalyze::
+//{
+//}
+
+////______________________________________________________________________________
+//TDuvallAnalyze::
+//{
+//}
 
 ////______________________________________________________________________________
 //TDuvallAnalyze::

@@ -1,6 +1,3 @@
-#ifndef TDuvallAnalyze
-#define TDuvallAnalyze
-
 // TDuvallAnalyze -- master object for analyzing RAT-PAC IBD runs
 //   using functionality from github.com > duvall3 > rat-pac > \
 //     collab > user > root_macros
@@ -21,6 +18,9 @@
 //
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+#ifndef TDuvallAnalyze
+#define TDuvallAnalyze
 
 #include "TFile.h"
 #include "TClass.h"
@@ -47,6 +47,8 @@ public:
   TDuvallAnalyze();
   TDuvallAnalyze( const char* fileName );
   TDuvallAnalyze( const char* name, const char* title, const char* fileName );
+  void			LoadFile( const char* fileName );
+  TTree*		LoadTree( const char* treeName );
   TFile*		GetFile() const { return fFile; }
   virtual const char* 	GetFileName() const { return fFileName; }
   TString		GetExperiment()	const { return fExperiment; }
@@ -56,7 +58,6 @@ public:
   TObjArray*		GetListOfCuts() const { return fCutList; }
   TObjArray*		GetListOfCanvases() const { return fCanList; }
   TObjArray*		GetListOfHistograms() const { return fHistList; }
-  void			LoadFile( const char* fileName );
   void			AddCut( TCut* c );
   void			AddCut( const char* cut );
   void			ShowCuts();
@@ -71,6 +72,8 @@ public:
 //void			RATPACEventViewer( const char* fileName, TString cellExpr = ".*" );
   void			RATPACEventViewer( const char* fileName );
   void			Analyze();
+  void			AnalyzeScint();
+  void			AnalyzeTracks();
 //void			DrawPlot(enum) // individ. plots
 //void			RemoveCut(TCut) //temp -- return ptr for TObjArray, TTree, TSelection, other?
 //void			Voxelize(xyz_quant_data)
