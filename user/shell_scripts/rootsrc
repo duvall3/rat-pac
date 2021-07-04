@@ -1,0 +1,58 @@
+#!/bin/bash
+# rootsrc -- simple script to view the source files for a given ROOT class
+# ~ Mark J. Duvall ~ duvall3@github.com ~ 7/2021 ~ #
+#
+# USAGE: rootsrc <ROOTclass>
+
+
+##Copyright (C) 2021 Mark J. Duvall
+##
+##    This program is free software: you can redistribute it and/or modify
+##    it under the terms of the GNU General Public License as published by
+##    the Free Software Foundation, either version 3 of the License, or
+##    (at your option) any later version.
+##
+##    This program is distributed in the hope that it will be useful,
+##    but WITHOUT ANY WARRANTY; without even the implied warranty of
+##    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##    GNU General Public License for more details.
+##
+##    You should have received a copy of the GNU General Public License
+##    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+# arg check
+if [[ ! $1 ]]; then
+  echo -e "\nUSAGE: rootsrc <ROOTclass>"
+  exit 10
+fi
+
+# init
+HFILE_NAME="$1".h
+CFILE_NAME="$1".cxx
+
+# locate files
+HFILE=$(find $ROOTSYS -name $HFILE_NAME | head -1)
+CFILE=$(find $ROOTSYS -name $CFILE_NAME | head -1)
+if [[ $HFILE ]]; then
+  HFILE_TF=true
+else
+  HFILE_TF=false
+  echo "Warning: Header file $HFILE_NAME not found."
+fi
+if [[ $CFILE ]]; then
+  CFILE_TF=true
+else
+  CFILE_TF=false
+  echo "Warning: Source file $CFILE_NAME not found."
+fi
+if (! $HFILE_TF) && (! $CFILE_TF); then
+  echo "Error: No .h or .cxx files for class \"$1\" found under $ROOTSYS. Exiting now."
+  exit 1
+fi
+
+# open for reading only
+vim -R -c ":set filetype+=.root" -c ":au BufNewFile,BufRead * set filetype+=.root" $HFILE $CFILE
+
+# all pau!   )
+exit 0
