@@ -390,7 +390,7 @@ for (( k = 0; k < num_bursts; k++ )) {
 
 // prepare some summary variables
 Long64_t ibd_candidates = T2->GetEntries();
-const char* units = "Time (ns), Energy (MeV)";
+const char* units = "Time (s), Energy (MeV)";
 
 // save ibd trigger parameters and result
 TTree* T_Trig = new TTree("T_Trig","IBD Trigger Parameters and Total");

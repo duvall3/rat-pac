@@ -28,8 +28,9 @@
 
 const TString defaultName = "DuvAn";
 const TString defaultTitle = "class for analyzing RAT-PAC IBD runs";
-const TCut defaultCut = "";
 const char* defaultTree = "T";  //TEMP
+//const TCut defaultCut = "(deltaT>1.e-6)&&(deltaT<100.e-6)";
+const TCut defaultCut = "";
 
 //______________________________________________________________________________
 // default ctor
@@ -41,9 +42,11 @@ TDuvallAnalyze::TDuvallAnalyze()
   fFileName = "";
   fExperiment = "";
   fExperimentPath = "";
+  fTree = 0;
   fCut = "";
   fCutList = new TObjArray;
   fCanList = new TObjArray;
+  fHistList = new TObjArray;
 }
 
 //______________________________________________________________________________
@@ -52,8 +55,7 @@ TDuvallAnalyze::TDuvallAnalyze( const char* fileName )
 {
   SetName(defaultName);
   SetTitle(defaultTitle);
-  fFile = TFile::Open(fileName);
-  Init();
+  LoadFile(fileName);
 }
 
 //______________________________________________________________________________
@@ -62,20 +64,21 @@ TDuvallAnalyze::TDuvallAnalyze( const char* name, const char* title, const char*
 {
   SetName(name);
   SetTitle(title);
-  fFile = TFile::Open(fileName);
-  Init();
+  LoadFile(fileName);
 }
 
 //______________________________________________________________________________
-// Init
-TDuvallAnalyze::Init()
+// LoadFile
+TDuvallAnalyze::LoadFile( const char* fileName )
 {
+  fFile = TFile::Open(fileName);
   fFileName = fFile->GetName();
   FindExperiment();
   fTree = (TTree*)fFile->FindObjectAny(defaultTree);
   fCut = defaultCut;
   fCutList = new TObjArray;
   fCanList = new TObjArray;
+  fHistList = new TObjArray;
 }
 
 //______________________________________________________________________________
@@ -84,10 +87,12 @@ TDuvallAnalyze::FindExperiment()
 {
   TMap* db = (TMap*)fFile->FindObjectAny("db");
   if ( db == 0x0 ) {
+    TString warnLoc = Class_Name();
+    warnLoc.Append("::FindExperiment");
     TString warnMsg = "RAT-PAC database not found in ";
     warnMsg.Append(fFileName);
-    warnMsg.Append(". Experiment name and path unknown.");
-    Warning(Class_Name(), warnMsg.Data());
+    warnMsg.Append("; experiment name and path unknown.");
+    Warning(warnLoc.Data(), warnMsg.Data());
     fExperiment = "";
     fExperimentPath = "";
   } else {
@@ -100,14 +105,6 @@ TDuvallAnalyze::FindExperiment()
     tos = (TObjString*)toa->At(toa->GetEntries()-1);
     fExperiment = tos->GetString();
   }
-}
-
-//______________________________________________________________________________
-// LoadFile
-TDuvallAnalyze::LoadFile( const char* fileName )
-{
-  fFile = TFile::Open(fileName);
-  Init();
 }
 
 ////______________________________________________________________________________
@@ -193,10 +190,10 @@ TDuvallAnalyze::DrawHist( const char* varexp )
     vars = vars + ">>" + h_name;
     fTree->Draw( vars.Data(), fCut );
     auto h = c->FindObject(h_name.Data());
+    fHistList->Add(h);
 //  if ( (inhTH2) && !(inhTH3) ) h->Draw("colz");
 //  if ( h->InheritsFrom("TH2") ) h->Draw("colz");
-    h->Draw("colz");  // doesn't work for some reason
-    fHistList->Add(h);
+//  h->Draw("colz");  // doesn't work for some reason
 }
 
 //______________________________________________________________________________
@@ -207,37 +204,59 @@ TDuvallAnalyze::RtToRoot( const char* rt_file )
   rt_to_root(rt_file);
 }
 
-////______________________________________________________________________________
-//// SEDAQ
-//TDuvallAnalyze::SEDAQ( const char* fileName, Bool_t kGraphics, Double_t promptLow, Double_t delayedLow, Double_t deltaTLow, Double_t deltaTHigh, Bool_t kNuLat )
-//{
-//  if ( ! gInterpreter->IsLoaded("SEDAQ.cxx") ) gROOT->LoadMacro("SEDAQ.cxx");
-//  SEDAQ( fileName, kGraphics, promptLow, delayedLow, deltaTLow, deltaTHigh, kNuLat );
-//}
-
 //______________________________________________________________________________
 // SEDAQ
-TDuvallAnalyze::SEDAQ( const char* fileName, Bool_t kGraphics )
+//TDuvallAnalyze::SEDAQ( const char* fileName, Bool_t kGraphics, Double_t promptLow, Double_t delayedLow, Double_t deltaTLow, Double_t deltaTHigh, Bool_t kNuLat )
+TDuvallAnalyze::SEDAQ( const char* fileName )
 {
   if ( ! gInterpreter->IsLoaded("SEDAQ.cxx") ) gROOT->LoadMacro("SEDAQ.cxx");
-  SEDAQ( fileName, kGraphics );
+//SEDAQ( fileName, kGraphics, promptLow, delayedLow, deltaTLow, deltaTHigh, kNuLat );
+  SEDAQ( fileName, kTRUE, 0., 0., 1.e-6, 100.e-6, kFALSE );
 }
 
 //______________________________________________________________________________
 // AngularRecon
-TDuvallAnalyze::AngularRecon( const char* fileName, Bool_t kGraphics )
+//TDuvallAnalyze::AngularRecon( const char* fileName, Bool_t kGraphics )
+  TDuvallAnalyze::AngularRecon( const char* fileName )
 {
   if ( ! gInterpreter->IsLoaded("angularRecon.cxx") ) gROOT->LoadMacro("angularRecon.cxx");
-  angularRecon( fileName, kGraphics );
+//angularRecon( fileName, kGraphics );
+  angularRecon( fileName );
 }
 
 //______________________________________________________________________________
 // RATPACEventViewer
-TDuvallAnalyze::RATPACEventViewer( const char* fileName, TString cellExpr )
+//TDuvallAnalyze::RATPACEventViewer( const char* fileName, TString cellExpr )
+TDuvallAnalyze::RATPACEventViewer()
 {
   if ( ! gInterpreter->IsLoaded("RATPACEventViewer.cxx") ) gROOT->LoadMacro("RATPACEventViewer.cxx");
-  RATPACEventViewer( fileName, cellExpr );
+//RATPACEventViewer( fileName, cellExpr );
+  RATPACEventViewer();
 }
+
+//______________________________________________________________________________
+// Analyze
+TDuvallAnalyze::Analyze()
+{
+  TString datarunName = fFileName;
+  datarunName = datarunName(0, datarunName.Index(".root"));
+  TString rtFileName = datarunName;
+  rtFileName.Append(".rt");
+  TString sedaqFileName = datarunName;
+  sedaqFileName.Append("_T.root");
+  TString arFileName = datarunName;
+  arFileName.Append("_results.root");
+  RtToRoot(rtFileName);
+  SEDAQ(sedaqFileName);
+  AngularRecon(arFileName);
+  // TODO: send cuts to SEDAQ
+  // TODO: send resutls to AngularRecon
+}
+
+////______________________________________________________________________________
+//TDuvallAnalyze::
+//{
+//}
 
 ////______________________________________________________________________________
 //TDuvallAnalyze::
@@ -271,7 +290,8 @@ TDuvallAnalyze::Print()
   printf("ROOT File:\t%s\n", fFileName);
   printf("Current Tree:\t%s\n", treeName.Data());
   printf("Current Cuts:\t%s\n", fCut.GetTitle());
-//fCutList->ls();
+//fCutList->ls(); //temp
+//fHistList->ls(); //temp
   printf("\n");
 }
 
