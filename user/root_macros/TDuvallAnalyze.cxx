@@ -29,7 +29,7 @@
 const TString defaultName = "DuvAn";
 const TString defaultTitle = "class for analyzing RAT-PAC IBD runs";
 const TCut defaultCut = "";
-const char* defaultTree = "T_xyz";  //TEMP
+const char* defaultTree = "T";  //TEMP
 
 //______________________________________________________________________________
 // default ctor
@@ -84,7 +84,10 @@ TDuvallAnalyze::FindExperiment()
 {
   TMap* db = (TMap*)fFile->FindObjectAny("db");
   if ( db == 0x0 ) {
-    Warning(ClassName, "RAT-PAC database not found in "+fFile->GetName()+". Experiment name and path unknown.");
+    TString warnMsg = "RAT-PAC database not found in ";
+    warnMsg.Append(fFileName);
+    warnMsg.Append(". Experiment name and path unknown.");
+    Warning(Class_Name(), warnMsg.Data());
     fExperiment = "";
     fExperimentPath = "";
   } else {
@@ -98,6 +101,19 @@ TDuvallAnalyze::FindExperiment()
     fExperiment = tos->GetString();
   }
 }
+
+//______________________________________________________________________________
+// LoadFile
+TDuvallAnalyze::LoadFile( const char* fileName )
+{
+  fFile = TFile::Open(fileName);
+  Init();
+}
+
+////______________________________________________________________________________
+//TDuvallAnalyze::
+//{
+//}
 
 //______________________________________________________________________________
 // ShowCuts
@@ -180,17 +196,48 @@ TDuvallAnalyze::DrawHist( const char* varexp )
 //  if ( (inhTH2) && !(inhTH3) ) h->Draw("colz");
 //  if ( h->InheritsFrom("TH2") ) h->Draw("colz");
     h->Draw("colz");  // doesn't work for some reason
+    fHistList->Add(h);
+}
+
+//______________________________________________________________________________
+// RtToRoot
+TDuvallAnalyze::RtToRoot( const char* rt_file )
+{
+  if ( ! gInterpreter->IsLoaded("rt_to_root.cxx") ) gROOT->LoadMacro("rt_to_root.cxx");
+  rt_to_root(rt_file);
 }
 
 ////______________________________________________________________________________
-//TDuvallAnalyze::
+//// SEDAQ
+//TDuvallAnalyze::SEDAQ( const char* fileName, Bool_t kGraphics, Double_t promptLow, Double_t delayedLow, Double_t deltaTLow, Double_t deltaTHigh, Bool_t kNuLat )
 //{
+//  if ( ! gInterpreter->IsLoaded("SEDAQ.cxx") ) gROOT->LoadMacro("SEDAQ.cxx");
+//  SEDAQ( fileName, kGraphics, promptLow, delayedLow, deltaTLow, deltaTHigh, kNuLat );
 //}
 
-////______________________________________________________________________________
-//TDuvallAnalyze::
-//{
-//}
+//______________________________________________________________________________
+// SEDAQ
+TDuvallAnalyze::SEDAQ( const char* fileName, Bool_t kGraphics )
+{
+  if ( ! gInterpreter->IsLoaded("SEDAQ.cxx") ) gROOT->LoadMacro("SEDAQ.cxx");
+  SEDAQ( fileName, kGraphics );
+}
+
+//______________________________________________________________________________
+// AngularRecon
+TDuvallAnalyze::AngularRecon( const char* fileName, Bool_t kGraphics )
+{
+  if ( ! gInterpreter->IsLoaded("angularRecon.cxx") ) gROOT->LoadMacro("angularRecon.cxx");
+  angularRecon( fileName, kGraphics );
+}
+
+//______________________________________________________________________________
+// RATPACEventViewer
+TDuvallAnalyze::RATPACEventViewer( const char* fileName, TString cellExpr )
+{
+  if ( ! gInterpreter->IsLoaded("RATPACEventViewer.cxx") ) gROOT->LoadMacro("RATPACEventViewer.cxx");
+  RATPACEventViewer( fileName, cellExpr );
+}
 
 ////______________________________________________________________________________
 //TDuvallAnalyze::
@@ -212,11 +259,18 @@ TDuvallAnalyze::DrawHist( const char* varexp )
 // override Print
 TDuvallAnalyze::Print()
 {
+  TString treeName;
+  if ( fTree != 0x0 ) {
+    treeName = fTree->GetName();
+  } else {
+    treeName = "";
+  }
   printf("\n");
   printf("%s\t%s\t%s\n", Class_Name(), GetName(), GetTitle());
-  printf("ROOT file:\t%s\n", GetFileName());
-  printf("Tree:\t\t%s\n", fTree->GetName());
-  printf("Current cuts:\t%s\n", fCut.GetTitle());
+  printf("Experiment:\t%s\n", fExperiment.Data());
+  printf("ROOT File:\t%s\n", fFileName);
+  printf("Current Tree:\t%s\n", treeName.Data());
+  printf("Current Cuts:\t%s\n", fCut.GetTitle());
 //fCutList->ls();
   printf("\n");
 }

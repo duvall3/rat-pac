@@ -37,6 +37,7 @@ private:
   TCut			fCut;			// current cuts on data
   TObjArray* 		fCutList;		// list of cuts
   TObjArray* 		fCanList;		// list of canvases
+  TObjArray*		fHistList;		// list of histograms
 
 private:
   void			Init();
@@ -54,6 +55,8 @@ public:
   TCut			GetCuts() const { return fCut; }
   TObjArray*		GetListOfCuts() const { return fCutList; }
   TObjArray*		GetListOfCanvases() const { return fCanList; }
+  TObjArray*		GetListOfHistograms() const { return fHistList; }
+  void			LoadFile( const char* fileName );
   void			AddCut( TCut* c );
   void			AddCut( const char* cut );
   void			CombineCuts();
@@ -61,6 +64,10 @@ public:
   void			ClearCuts();
   void			ResetCuts();
   void			DrawHist( const char* varexp );
+  int			RtToRoot( const char* rt_file );
+  void			SEDAQ( const char* fileName, Bool_t kGraphics = kFALSE, Double_t promptLow = 0, Double_t delayedLow = 0, Double_t deltaTLow  = 1.e-6, Double_t deltaTHigh = 100.e-6, Bool_t kNuLat = kFALSE );
+  void			AngularRecon( const char* fileName, Bool_t kGraphics = kFALSE );
+  void			RATPACEventViewer( const char* fileName, TString cellExpr = ".*" );
 //void			DrawPlot(enum) // individ. plots
 //void			RemoveCut(TCut) //temp -- return ptr for TObjArray, TTree, TSelection, other?
 //void			Voxelize(xyz_quant_data)

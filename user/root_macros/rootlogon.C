@@ -9,7 +9,7 @@
 
   #include <TDuvallAnalyze.cxx>
 
-  gROOT->LoadMacro("duvall3Include.cxx");
-  duvall3Include();
+  gROOT->LoadMacro("duvall3Macros.cxx");
+  duvall3Macros();
 
 }
