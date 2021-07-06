@@ -38,6 +38,7 @@ TDuvallAnalyze::TDuvallAnalyze()
 {
   SetName(defaultName);
   SetTitle(defaultTitle);
+  fDatarun = "";
   fFile = 0;
   fFileName = "";
   fExperiment = "";
@@ -51,20 +52,24 @@ TDuvallAnalyze::TDuvallAnalyze()
 
 //______________________________________________________________________________
 // fileName-only ctor
-TDuvallAnalyze::TDuvallAnalyze( const char* fileName )
+TDuvallAnalyze::TDuvallAnalyze( const char* datarunName )
 {
   SetName(defaultName);
   SetTitle(defaultTitle);
-  LoadFile(fileName);
+  fDatarun = datarunName;
+  TString fileName = TString::Format("%s.root", fDatarun);
+  LoadFile(fileName.Data());
 }
 
 //______________________________________________________________________________
 // primary ctor
-TDuvallAnalyze::TDuvallAnalyze( const char* name, const char* title, const char* fileName )
+TDuvallAnalyze::TDuvallAnalyze( const char* name, const char* title, const char* datarunName )
 {
   SetName(name);
   SetTitle(title);
-  LoadFile(fileName);
+  fDatarun = datarunName;
+  TString fileName = TString::Format("%s.root", fDatarun);
+  LoadFile(fileName.Data());
 }
 
 //______________________________________________________________________________
@@ -73,8 +78,12 @@ TDuvallAnalyze::LoadFile( const char* fileName )
 {
   fFile = TFile::Open(fileName);
   fFileName = fFile->GetName();
-  FindExperiment();
-  fTree = (TTree*)fFile->FindObjectAny(defaultTree);
+  TString filename(fFileName);
+  if ((! filename.Contains("_T.root")) && (! filename.Contains("_results.root"))) FindExperiment();
+//fTree = (TTree*)fFile->FindObjectAny(defaultTree);
+  LoadTree(defaultTree);
+  if (fTree==0) LoadTree("T");		// for convenience
+  if (fTree==0) LoadTree("T2");		// for convenience
   fCut = defaultCut;
   fCutList = new TObjArray;
   fCanList = new TObjArray;
@@ -115,7 +124,6 @@ TDuvallAnalyze::FindExperiment()
 // ShowCuts
 TDuvallAnalyze::ShowCuts()
 {
-//fCut.Print();
   fCutList->ls();
 }
 
@@ -248,14 +256,13 @@ TDuvallAnalyze::AnalyzeTracks()
 // AnalyzeScint()
 TDuvallAnalyze::AnalyzeScint()
 {
-  TString datarunName = fFileName;
-  datarunName = datarunName(0, datarunName.Index(".root"));
-  TString rtFileName = TString::Format("%s.rt", datarunName.Data());
-  TString sedaqFileName = TString::Format("%s_T.root", datarunName.Data());
-  TString arFileName = TString::Format("%s_results.root", datarunName.Data());
+  TString rtFileName = TString::Format("%s.rt", fDatarun);
+  TString sedaqFileName = TString::Format("%s_T.root", fDatarun);
+  TString arFileName = TString::Format("%s_results.root", fDatarun);
   RtToRoot(rtFileName);
   SEDAQ(sedaqFileName);
   AngularRecon(arFileName);
+  LoadFile(arFileName);
   // TODO: send cuts to SEDAQ
   // TODO: send resutls to AngularRecon
 }
@@ -304,6 +311,7 @@ TDuvallAnalyze::Print()
   printf("\n");
   printf("%s\t%s\t%s\n", Class_Name(), GetName(), GetTitle());
   printf("Experiment:\t%s\n", fExperiment.Data());
+  printf("Datarun:\t%s\n", fDatarun);
   printf("ROOT File:\t%s\n", fFileName);
   printf("Current Tree:\t%s\n", treeName.Data());
   printf("Current Cuts:\t%s\n", fCut.GetTitle());

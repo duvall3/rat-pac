@@ -29,6 +29,7 @@
 class TDuvallAnalyze : public TClass {
 
 private:
+  const char*		fDatarun;		// current datarun name
   TFile*		fFile;			// current ROOT datafile
   const char*		fFileName;		// name of current ROOT datafile
   TString 		fExperiment;		// name of RAT-PAC experiment
@@ -48,7 +49,8 @@ public:
   TDuvallAnalyze( const char* fileName );
   TDuvallAnalyze( const char* name, const char* title, const char* fileName );
   void			LoadFile( const char* fileName );
-  TTree*		LoadTree( const char* treeName );
+  void			LoadTree( const char* treeName );
+  virtual const char*	GetDatarun() const { return fDatarun; }
   TFile*		GetFile() const { return fFile; }
   virtual const char* 	GetFileName() const { return fFileName; }
   TString		GetExperiment()	const { return fExperiment; }
