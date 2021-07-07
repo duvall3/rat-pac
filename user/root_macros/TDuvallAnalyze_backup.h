@@ -1,3 +1,6 @@
+#ifndef TDuvallAnalyze
+#define TDuvallAnalyze
+
 // TDuvallAnalyze -- master object for analyzing RAT-PAC IBD runs
 //   using functionality from github.com > duvall3 > rat-pac > \
 //     collab > user > root_macros
@@ -19,9 +22,6 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#ifndef TDuvallAnalyze
-#define TDuvallAnalyze
-
 #include "TFile.h"
 #include "TClass.h"
 #include "TTree.h"
@@ -29,7 +29,6 @@
 class TDuvallAnalyze : public TClass {
 
 private:
-  const char*		fDatarun;		// current datarun name
   TFile*		fFile;			// current ROOT datafile
   const char*		fFileName;		// name of current ROOT datafile
   TString 		fExperiment;		// name of RAT-PAC experiment
@@ -38,19 +37,18 @@ private:
   TCut			fCut;			// current cuts on data
   TObjArray* 		fCutList;		// list of cuts
   TObjArray* 		fCanList;		// list of canvases
-//TObjArray*		fHistList;		// list of histograms
+  TObjArray*		fHistList;		// list of histograms
 
 private:
   void			FindExperiment();
   void			CombineCuts();
+  void			LoadFile( const char* fileName );
 
 public:
   TDuvallAnalyze();
   TDuvallAnalyze( const char* fileName );
   TDuvallAnalyze( const char* name, const char* title, const char* fileName );
-  void			LoadFile( const char* fileName );
-  void			LoadTree( const char* treeName );
-  virtual const char*	GetDatarun() const { return fDatarun; }
+  TTree*		LoadTree( const char* treeName );
   TFile*		GetFile() const { return fFile; }
   virtual const char* 	GetFileName() const { return fFileName; }
   TString		GetExperiment()	const { return fExperiment; }
@@ -59,25 +57,23 @@ public:
   TCut			GetCuts() const { return fCut; }
   TObjArray*		GetListOfCuts() const { return fCutList; }
   TObjArray*		GetListOfCanvases() const { return fCanList; }
-//TObjArray*		GetListOfHistograms() const { return fHistList; }
+  TObjArray*		GetListOfHistograms() const { return fHistList; }
   void			AddCut( TCut* c );
   void			AddCut( const char* cut );
   void			ShowCuts();
   void			ClearCuts();
   void			ResetCuts();
-  void			DrawHisto( const char* varexp );
-  void			DrawHisto( TH1* histo );
-  int			RtToRoot();
-  void			ibdTracksToScint();
+  void			DrawHist( const char* varexp );
+  int			RtToRoot( const char* rt_file );
 //void			SEDAQ( const char* fileName, Bool_t kGraphics = kFALSE, Double_t promptLow = 0, Double_t delayedLow = 0, Double_t deltaTLow  = 1.e-6, Double_t deltaTHigh = 100.e-6, Bool_t kNuLat = kFALSE );
-  void			SEDAQ();
+  void			SEDAQ( const char* fileName );
 //void			AngularRecon( const char* fileName, Bool_t kGraphics = kFALSE );
-  void			AngularRecon();
+  void			AngularRecon( const char* fileName );
 //void			RATPACEventViewer( const char* fileName, TString cellExpr = ".*" );
-  void			RATPACEventViewer();
+  void			RATPACEventViewer( const char* fileName );
   void			Analyze();
-  void			AnalyzeScint();
   void			AnalyzeTracks();
+  void			AnalyzeScint();
 //void			DrawPlot(enum) // individ. plots
 //void			RemoveCut(TCut) //temp -- return ptr for TObjArray, TTree, TSelection, other?
 //void			Voxelize(xyz_quant_data)

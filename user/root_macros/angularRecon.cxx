@@ -70,7 +70,7 @@ TCanvas* c6 = new TCanvas("c6", "Sky Heatmap Pointing to Antineutrino Source", 8
 // set up histograms
 TH1D* h_phi = new TH1D("h_phi", "Azimuthal Angle (deg) #minus #phi^{o}", 36, -180, 180);
 TH1D* h_theta = new TH1D("h_theta", "Polar Angle (deg) #minus #theta^{o}", 36, 0, 180);
-TH1D* h_cos_psi = new TH1D("h_cos_psi", "Cos(#psi)", 10, -1, 1);
+TH1D* h_cos_psi = new TH1D("h_cos_psi", "Cos[#psi]", 10, -1, 1);
 
 
 // fill histograms

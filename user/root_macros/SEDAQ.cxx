@@ -3,7 +3,7 @@
 // -- further documentation forthcoming
 // -- see https://github.com/duvall3/rat-pac/tree/collab
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2017 ~ //
-// ~ SEDAQ v0.9.93 ~ 5/21 ~ //
+// ~ SEDAQ v0.9.94 ~ 6/21 ~ //
 //
 // INPUT: ROOT file containing TTree "T" (Scintillation Data)
 // OUTPUT: ROOT file containing TTrees "T2" (IBD Candidate Data) and "T_Trig" (IBD Trigger Parameters and Result)
@@ -49,7 +49,7 @@ void SEDAQ( const char* filename, Bool_t graphics_tf = kFALSE, Double_t prompt_l
 cout << endl;
 
 // general
-const char* sedaq_version = "0.9.93";
+const char* sedaq_version = "0.9.94";
 gSystem->Load("libPhysics.so");
 gStyle->SetHistLineWidth(2);
 gStyle->SetHistLineColor(kBlue);
