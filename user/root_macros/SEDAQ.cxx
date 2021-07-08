@@ -60,12 +60,8 @@ FileName = filename;
 if (FileName.Contains("_T.root")) {
   basename = FileName(0,FileName.Index("_T.root"));
 } else if (FileName.Contains(".root")) {
-//cout << endl << "WARNING: Possible file-type error: SEDAQ operates on the output of $RATROOT/user/root_macros/rt_to_root.cxx; filename is expected to match \"*_T.root\". Trying anyway..." << endl << endl;
-//cerr << endl << "WARNING: Possible file-type error: SEDAQ operates on the output of $RATROOT/user/root_macros/rt_to_root.cxx; filename is expected to match \"*_T.root\". Trying anyway..." << endl << endl;
   basename = FileName(0,FileName.Index(".root"));
 } else {
-//cout << endl << "WARNING: Possible file-type error: SEDAQ operates on the output of $RATROOT/user/root_macros/rt_to_root.cxx; filename is expected to match \"*_T.root\". Trying anyway..." << endl << endl;
-//cerr << endl << "WARNING: Possible file-type error: SEDAQ operates on the output of $RATROOT/user/root_macros/rt_to_root.cxx; filename is expected to match \"*_T.root\". Trying anyway..." << endl << endl;
   basename = FileName;
 }
 savename = basename+"_results.root";
@@ -73,15 +69,6 @@ TFile f = TFile(savename, "recreate");
 
 // TTree T and T2 -- read/create
 TTree* T2 = new TTree("T2","IBD Candidate Data");
-//if (f.FindObjectAny("T_scint")) {
-//  TFriendElement* TF = T2->AddFriend("T_scint",filename);
-//} else {
-////TFriendElement* TF = T2->AddFriend("T",filename);
-//  TString errLoc = "SEDAQ";
-//  TString errMsg = TString::Format("No scintillation tree \"T_scint\" found in file \"%s\".\n", filename);
-//  f.Error(errLoc.Data(), errMsg.Data());
-//  return;
-//}
 TFriendElement* TF = T2->AddFriend("T_scint",filename);
 TTree* T_scint = TF->GetTree();
 
@@ -140,19 +127,17 @@ T2->Branch("deltaXhat", &deltaXhat, "deltaXhat/D");
 T2->Branch("deltaYhat", &deltaYhat, "deltaYhat/D");
 T2->Branch("deltaZhat", &deltaZhat, "deltaZhat/D");
 
-//// Copy total number of top-level MC events from T to T2
-//// -- NOTE: this method is not especially robust;
-////      anyone anyone using the TTree's UserInfo for anything else
-////      will have to modify
-//TList* Tuser = T_scint->GetUserInfo();
-//TList* T2user = T2->GetUserInfo();
-//TObjString* nMCEvents_tos1 = (TObjString*)Tuser->At(0);
-//TString nMCEvents_ts = nMCEvents_tos1->GetString();
-////cout << endl << nMCEvents_ts.Data() << endl; //debug
-//TObjString* nMCEvents_tos2 = new TObjString(nMCEvents_ts.Data());
-//T2user->Add(nMCEvents_tos2);
-////T2user->Write();
-////T2->GetUserInfo()->Print(); //debug
+// Copy total number of top-level MC events from T to T2
+// -- NOTE: this method is not especially robust;
+//      anyone anyone using the TTree's UserInfo for anything else
+//      will have to modify
+TList* Tuser = T_scint->GetUserInfo();
+TList* T2user = T2->GetUserInfo();
+TObjString* nMCEvents_tos1 = (TObjString*)Tuser->At(0);
+TString nMCEvents_ts = nMCEvents_tos1->GetString();
+TObjString* nMCEvents_tos2 = new TObjString(nMCEvents_ts.Data());
+T2user->Add(nMCEvents_tos2);
+T2user->Write();
 
 //// T PLOTS
 
@@ -423,7 +408,6 @@ cout << endl;
 //// PLOT NEUTRINO-CANDIDATE RESULTS
 
 if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there were no IBD triggers or if batch mode is on
-//if ( graphics_tf==true ) { // debug
 
   // interevent time bins
   const Int_t nBinsEBP = 100;

@@ -25,12 +25,16 @@ void ibdTracksToScint ( const char* filename ) {
 // load utility macros if needed
 if (! gInterpreter->IsLoaded("findCellScintTotal.cxx")) gROOT->LoadMacro("findCellScintTotal.cxx");
 if (! gInterpreter->IsLoaded("findCellScintTotalQuenched.cxx")) gROOT->LoadMacro("findCellScintTotalQuenched.cxx");
+//if (! gInterpreter->IsLoaded("findChildScintTotal.cxx")) gROOT->LoadMacro("findChildScintTotal.cxx");
+//if (! gInterpreter->IsLoaded("findChildScintTotalQuenched.cxx")) gROOT->LoadMacro("findChildScintTotalQuenched.cxx");
 
 // init
 TString FileName = filename;
 TString basename = FileName(0, FileName.Index(".root"));
-//TFile* f_in = TFile::Open(filename);
-TFile* f_in = TFile::Open(filename, "update");
+TString savename = basename + "_T.root";
+//TFile* f = TFile::Open(filename, "update");
+//TFile* f = TFile::Open(filename);
+TFile* f = new TFile(savename, "recreate");
 RAT::DSReader r(filename);
 RAT::DS::Root* ds = r.GetEvent(0);
 RAT::TrackNav nav(ds);
@@ -117,12 +121,18 @@ for ( k=0; k<N; k++ ) { // event loop
   // neutron
   c.GoParent();
   c.GoChild(1);
+//for ( i=0; i<c.StepCount(); i++ ) { // step loop
+//  n = c.GoStep(i);
+//  //TODO create entries for hadElastic scattering
+//}
   n = c.GoTrackEnd();
   wall_time = event_time + n->GetGlobalTime()*1.e-9;
   TString nProc = n->GetProcess();
-  if ( (nProc == "nCapture") || (nProc == "hadInelastic") ) {
+  if ( (nProc == "nCapture") || (nProc == "neutronInelastic") ) {
     energy = findCellScintTotal(c);
     energy_q = findCellScintTotalQuenched(c);
+//  energy = findChildScintTotal(c); //debug
+//  energy_q = findChildScintTotalQuenched(c); //debug
     x = n->GetEndpoint().X();
     y = n->GetEndpoint().Y();
     z = n->GetEndpoint().Z();
@@ -169,19 +179,12 @@ for (( k = 0; k < T_scint->GetEntries(); k++ )) {
   T_scint->GetBranch("interevent_time")->Fill();
 }
 
-//// switch to outfile
-//f_in->Close();
-////TFile f_out = TFile(basename+"_scint.root", "new");
-//TFile f_out = TFile(basename+"_scint.root", "recreate");
-//
-//// finish up
-//T_scint->Write();
-//f_out->Write();
-//f_out->Close();
-
+// finish up
+//f->Close();
+//TFile f_T = TFile(savename, "recreate");
 T_scint->Write();
-//f_in->Write();
-//f_in->Close();
+//f_T.Close();
+f->Close();
 
 // all pau!   )
 }
