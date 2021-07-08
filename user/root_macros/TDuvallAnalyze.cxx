@@ -3,6 +3,7 @@
 //     collab > user > root_macros
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 6/2021 ~ //
 // -- partial motivation: flexibility for scint. bursts vs. raw MC
+// Last Modified: 7/2021 //
 
 //Copyright (C) 2021 Mark J. Duvall
 //
@@ -181,32 +182,32 @@ TDuvallAnalyze::ResetCuts()
 //{
   
 
-//______________________________________________________________________________
-// DrawHist
-TDuvallAnalyze::DrawHist( const char* varexp )
-{
-  // init
-    TString vars(varexp);
-    TString can_name = TString::Format("c_%s", vars.Data());
-    TString h_name = TString::Format("h_%s", vars.Data());
-    can_name.ReplaceAll(":","");
-    h_name.ReplaceAll(":","");
-    if ( fCanList->FindObject(can_name.Data()) == 0x0 ) {
-      TCanvas* c = new TCanvas(can_name.Data(), can_name.Data(), 800, 100, 1000, 1000);
-      fCanList->Add(c);
-    } else {
-      c = (TCanvas*)fCanList->FindObject(can_name.Data());
-      c->cd();
-    }
-    // draw
-    vars = vars + ">>" + h_name;
-    fTree->Draw( vars.Data(), fCut );
-    auto h = c->FindObject(h_name.Data());
-//  fHistList->Add(h);
-//  if ( (inhTH2) && !(inhTH3) ) h->Draw("colz");
-//  if ( h->InheritsFrom("TH2") ) h->Draw("colz");
-//  h->Draw("colz");  // doesn't work for some reason
-}
+////______________________________________________________________________________
+//// DrawHist
+//TDuvallAnalyze::DrawHist( const char* varexp )
+//{
+//  // init
+//    TString vars(varexp);
+//    TString can_name = TString::Format("c_%s", vars.Data());
+//    TString h_name = TString::Format("h_%s", vars.Data());
+//    can_name.ReplaceAll(":","");
+//    h_name.ReplaceAll(":","");
+//    if ( fCanList->FindObject(can_name.Data()) == 0x0 ) {
+//      TCanvas* c = new TCanvas(can_name.Data(), can_name.Data(), 800, 100, 1000, 1000);
+//      fCanList->Add(c);
+//    } else {
+//      c = (TCanvas*)fCanList->FindObject(can_name.Data());
+//      c->cd();
+//    }
+//    // draw
+//    vars = vars + ">>" + h_name;
+//    fTree->Draw( vars.Data(), fCut );
+//    auto h = c->FindObject(h_name.Data());
+////  fHistList->Add(h);
+////  if ( (inhTH2) && !(inhTH3) ) h->Draw("colz");
+////  if ( h->InheritsFrom("TH2") ) h->Draw("colz");
+////  h->Draw("colz");  // doesn't work for some reason
+//}
 
 //______________________________________________________________________________
 // RtToRoot
@@ -223,7 +224,7 @@ TDuvallAnalyze::ibdTracksToScint()
 {
   TString rootFileName = TString::Format("%s.root", fDatarun);
   if ( ! gInterpreter->IsLoaded("ibdTracksToScint.cxx") ) gROOT->LoadMacro("ibdTracksToScint.cxx");
-  ibdTracksToScint(rootFileName);
+  ibdTracksToScint(rootFileName.Data());
 }
 
 
@@ -232,7 +233,7 @@ TDuvallAnalyze::ibdTracksToScint()
 //TDuvallAnalyze::SEDAQ( const char* fileName, Bool_t kGraphics, Double_t promptLow, Double_t delayedLow, Double_t deltaTLow, Double_t deltaTHigh, Bool_t kNuLat )
 TDuvallAnalyze::SEDAQ()
 {
-  TString sedaqFileName = TString::Format("%s_T.root", fDatarun);
+  TString sedaqFileName = TString::Format("%s_scint.root", fDatarun);
   if ( ! gInterpreter->IsLoaded("SEDAQ.cxx") ) gROOT->LoadMacro("SEDAQ.cxx");
 //SEDAQ( fileName, kGraphics, promptLow, delayedLow, deltaTLow, deltaTHigh, kNuLat );
   SEDAQ( sedaqFileName, kTRUE, 0., 0., 1.e-6, 100.e-6, kFALSE );

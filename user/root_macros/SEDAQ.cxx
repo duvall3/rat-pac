@@ -3,7 +3,7 @@
 // -- further documentation forthcoming
 // -- see https://github.com/duvall3/rat-pac/tree/collab
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2017 ~ //
-// ~ SEDAQ v0.9.94 ~ 6/21 ~ //
+// ~ SEDAQ v0.9.95 ~ 7/21 ~ //
 //
 // INPUT: ROOT file containing TTree "T" (Scintillation Data)
 // OUTPUT: ROOT file containing TTrees "T2" (IBD Candidate Data) and "T_Trig" (IBD Trigger Parameters and Result)
@@ -49,7 +49,7 @@ void SEDAQ( const char* filename, Bool_t graphics_tf = kFALSE, Double_t prompt_l
 cout << endl;
 
 // general
-const char* sedaq_version = "0.9.94";
+const char* sedaq_version = "0.9.95";
 gSystem->Load("libPhysics.so");
 gStyle->SetHistLineWidth(2);
 gStyle->SetHistLineColor(kBlue);
@@ -60,39 +60,47 @@ FileName = filename;
 if (FileName.Contains("_T.root")) {
   basename = FileName(0,FileName.Index("_T.root"));
 } else if (FileName.Contains(".root")) {
-  cout << endl << "WARNING: Possible file-type error: SEDAQ operates on the output of $RATROOT/user/root_macros/rt_to_root.cxx; filename is expected to match \"*_T.root\". Trying anyway..." << endl << endl;
-  cerr << endl << "WARNING: Possible file-type error: SEDAQ operates on the output of $RATROOT/user/root_macros/rt_to_root.cxx; filename is expected to match \"*_T.root\". Trying anyway..." << endl << endl;
+//cout << endl << "WARNING: Possible file-type error: SEDAQ operates on the output of $RATROOT/user/root_macros/rt_to_root.cxx; filename is expected to match \"*_T.root\". Trying anyway..." << endl << endl;
+//cerr << endl << "WARNING: Possible file-type error: SEDAQ operates on the output of $RATROOT/user/root_macros/rt_to_root.cxx; filename is expected to match \"*_T.root\". Trying anyway..." << endl << endl;
   basename = FileName(0,FileName.Index(".root"));
 } else {
-  cout << endl << "WARNING: Possible file-type error: SEDAQ operates on the output of $RATROOT/user/root_macros/rt_to_root.cxx; filename is expected to match \"*_T.root\". Trying anyway..." << endl << endl;
-  cerr << endl << "WARNING: Possible file-type error: SEDAQ operates on the output of $RATROOT/user/root_macros/rt_to_root.cxx; filename is expected to match \"*_T.root\". Trying anyway..." << endl << endl;
+//cout << endl << "WARNING: Possible file-type error: SEDAQ operates on the output of $RATROOT/user/root_macros/rt_to_root.cxx; filename is expected to match \"*_T.root\". Trying anyway..." << endl << endl;
+//cerr << endl << "WARNING: Possible file-type error: SEDAQ operates on the output of $RATROOT/user/root_macros/rt_to_root.cxx; filename is expected to match \"*_T.root\". Trying anyway..." << endl << endl;
   basename = FileName;
 }
 savename = basename+"_results.root";
 TFile f = TFile(savename, "recreate");
-Int_t k(0);
 
 // TTree T and T2 -- read/create
 TTree* T2 = new TTree("T2","IBD Candidate Data");
-TFriendElement* TF = T2->AddFriend("T",filename);
-TTree* T = TF->GetTree();
+//if (f.FindObjectAny("T_scint")) {
+//  TFriendElement* TF = T2->AddFriend("T_scint",filename);
+//} else {
+////TFriendElement* TF = T2->AddFriend("T",filename);
+//  TString errLoc = "SEDAQ";
+//  TString errMsg = TString::Format("No scintillation tree \"T_scint\" found in file \"%s\".\n", filename);
+//  f.Error(errLoc.Data(), errMsg.Data());
+//  return;
+//}
+TFriendElement* TF = T2->AddFriend("T_scint",filename);
+TTree* T_scint = TF->GetTree();
 
-// address T branches
-Long64_t num_bursts = T->GetEntries();
+// address T_scint branches
+Long64_t num_bursts = T_scint->GetEntries();
 Int_t event;
 Double_t event_time, wall_time, energy, energy_q, x, y, z;
 Double_t run_start, interevent_time, event_time_adj, wall_time_adj;
-T->SetBranchAddress( "event", &event );
-T->SetBranchAddress( "event_time", &event_time );
-T->SetBranchAddress( "wall_time", &wall_time );
-T->SetBranchAddress( "energy", &energy );
-T->SetBranchAddress( "energy_q", &energy_q );
-T->SetBranchAddress( "x", &x );
-T->SetBranchAddress( "y", &y );
-T->SetBranchAddress( "z", &z );
-T->SetBranchAddress( "event_time_adj", &event_time_adj );
-T->SetBranchAddress( "wall_time_adj", &wall_time_adj );
-T->SetBranchAddress( "interevent_time", &interevent_time );
+T_scint->SetBranchAddress( "event", &event );
+T_scint->SetBranchAddress( "event_time", &event_time );
+T_scint->SetBranchAddress( "wall_time", &wall_time );
+T_scint->SetBranchAddress( "energy", &energy );
+T_scint->SetBranchAddress( "energy_q", &energy_q );
+T_scint->SetBranchAddress( "x", &x );
+T_scint->SetBranchAddress( "y", &y );
+T_scint->SetBranchAddress( "z", &z );
+T_scint->SetBranchAddress( "event_time_adj", &event_time_adj );
+T_scint->SetBranchAddress( "wall_time_adj", &wall_time_adj );
+T_scint->SetBranchAddress( "interevent_time", &interevent_time );
 
 // address T2 branches
 Int_t prompt_cand_event, delayed_cand_event;
@@ -132,22 +140,23 @@ T2->Branch("deltaXhat", &deltaXhat, "deltaXhat/D");
 T2->Branch("deltaYhat", &deltaYhat, "deltaYhat/D");
 T2->Branch("deltaZhat", &deltaZhat, "deltaZhat/D");
 
-// Copy total number of top-level MC events from T to T2
-// -- NOTE: this method is not especially robust;
-//      anyone anyone using the TTree's UserInfo for anything else
-//      will have to modify
-TList* Tuser = T->GetUserInfo();
-TList* T2user = T2->GetUserInfo();
-TObjString* nMCEvents_tos1 = (TObjString*)Tuser->At(0);
-TString nMCEvents_ts = nMCEvents_tos1->GetString();
-//cout << endl << nMCEvents_ts.Data() << endl; //debug
-TObjString* nMCEvents_tos2 = new TObjString(nMCEvents_ts.Data());
-T2user->Add(nMCEvents_tos2);
-//T2user->Write();
-//T2->GetUserInfo()->Print(); //debug
+//// Copy total number of top-level MC events from T to T2
+//// -- NOTE: this method is not especially robust;
+////      anyone anyone using the TTree's UserInfo for anything else
+////      will have to modify
+//TList* Tuser = T_scint->GetUserInfo();
+//TList* T2user = T2->GetUserInfo();
+//TObjString* nMCEvents_tos1 = (TObjString*)Tuser->At(0);
+//TString nMCEvents_ts = nMCEvents_tos1->GetString();
+////cout << endl << nMCEvents_ts.Data() << endl; //debug
+//TObjString* nMCEvents_tos2 = new TObjString(nMCEvents_ts.Data());
+//T2user->Add(nMCEvents_tos2);
+////T2user->Write();
+////T2->GetUserInfo()->Print(); //debug
 
 //// T PLOTS
 
+Int_t k(0);
 if ( graphics_tf == true ) { // skip graphics unless in batch mode (default)
 
   //// PREPARE PLOTS
@@ -214,7 +223,7 @@ if ( graphics_tf == true ) { // skip graphics unless in batch mode (default)
 
   // fill all histograms:
   for (( k=0; k < num_bursts; k++ )) {
-    T->GetEntry(k);
+    T_scint->GetEntry(k);
     if ( energy_q > 0 ) {
       h1->Fill(interevent_time);
       h2->Fill(interevent_time, energy_q); // time in s, energy in MeV
@@ -263,12 +272,12 @@ Double_t deltaT_low, deltaT_high, trigger_reset;
 Double_t prompt_high, delayed_low, delayed_high;
 TVector3 neutrino_direction, nu_hat, displacement, disp_hat, source_recon, src_hat;
 // for NuLat: address cube-centered positions
-Bool_t cubed_tf = ( T->FindBranch("cubed_x") != 0x0 );
+Bool_t cubed_tf = ( T_scint->FindBranch("cubed_x") != 0x0 );
 if ( cubed_tf ) {
   Double_t cubed_x, cubed_y, cubed_z;
-  T->SetBranchAddress("cubed_x", &cubed_x);
-  T->SetBranchAddress("cubed_y", &cubed_y);
-  T->SetBranchAddress("cubed_z", &cubed_z);
+  T_scint->SetBranchAddress("cubed_x", &cubed_x);
+  T_scint->SetBranchAddress("cubed_y", &cubed_y);
+  T_scint->SetBranchAddress("cubed_z", &cubed_z);
 }
 // error checking -- nulat option XOR cubed branch (i.e., one but not the other)
 if ( nulat_tf ^ cubed_tf )  cout << "WARNING: Partial but incomplete NuLat parameters found." << endl;
@@ -299,7 +308,7 @@ for (( k = 0; k < num_bursts; k++ )) {
 
   prompt_tf = false;
   delayed_tf = false;
-  T->GetEntry(k);
+  T_scint->GetEntry(k);
   // look for prompt:
   if ( interevent_time > trigger_reset & energy_q > prompt_low & energy_q < prompt_high ) {
     prompt_tf = true;
@@ -318,7 +327,7 @@ for (( k = 0; k < num_bursts; k++ )) {
     } // end if
     // look for delayed:
     if ( k < num_bursts-1 ) {
-      T->GetEntry(k+1);
+      T_scint->GetEntry(k+1);
       if ( interevent_time > deltaT_low & interevent_time < deltaT_high & energy_q > delayed_low & energy_q < delayed_high ) {
         delayed_tf = true;
 	delayed_cand_event = event;
@@ -507,6 +516,7 @@ if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there 
 
 } //endif -- IBD candidates && no batch mode
 
+cout << endl;
 
 //// ALL PAU!   )
 f.Write();

@@ -24,6 +24,9 @@ gROOT->LoadMacro("angularRecon.cxx");
 gROOT->LoadMacro("applyCuts.cxx");
 gROOT->LoadMacro("neutronInitialMomenta.cxx");
 gROOT->LoadMacro("neutronCaptures.cxx");
+gROOT->LoadMacro("ibdTracksToScint.cxx");
+gROOT->LoadMacro("findCellScintTotal.cxx");
+gROOT->LoadMacro("findCellScintTotalQuenched.cxx");
 
 // all pau!   )
 }

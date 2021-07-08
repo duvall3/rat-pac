@@ -3,6 +3,7 @@
 //     collab > user > root_macros
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 6/2021 ~ //
 // -- partial motivation: flexibility for scint. bursts vs. raw MC
+// Last modified: 7/2021 //
 
 //Copyright (C) 2021 Mark J. Duvall
 //
@@ -65,8 +66,8 @@ public:
   void			ShowCuts();
   void			ClearCuts();
   void			ResetCuts();
-  void			DrawHisto( const char* varexp );
-  void			DrawHisto( TH1* histo );
+//void			DrawHisto( const char* varexp );
+//void			DrawHisto( TH1* histo );
   int			RtToRoot();
   void			ibdTracksToScint();
 //void			SEDAQ( const char* fileName, Bool_t kGraphics = kFALSE, Double_t promptLow = 0, Double_t delayedLow = 0, Double_t deltaTLow  = 1.e-6, Double_t deltaTHigh = 100.e-6, Bool_t kNuLat = kFALSE );
