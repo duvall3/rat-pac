@@ -463,9 +463,10 @@ if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there 
   c2->SetLogx(1);
   c2->SetLogy(0);
   TLegend* l2 = new TLegend(.01, .83, .12, .93);
+  l2->SetName("legend");
   h_ibd2->SetLineColor(kRed);
-  h_ibd2->SetLineWidth(5);
-  h_ibd->SetLineWidth(5);
+  h_ibd2->SetLineWidth(1);
+  h_ibd->SetLineWidth(1);
   l2->AddEntry(h_ibd2, "Prompt");
   l2->AddEntry(h_ibd, "Delayed");
   l2->Draw();
