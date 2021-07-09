@@ -437,14 +437,16 @@ if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there 
   }
 
   // delayed event histogram
-  TH2D* h_ibd = new TH2D("h_ibd", "IBD Trigger Results", nBinsEBP, xbinsEBP, nBinsEBP, 0., 10.);
+//TH2D* h_ibd = new TH2D("h_ibd", "Delayed", nBinsEBP, xbinsEBP, nBinsEBP, 0., 10.);
+  TH2D* h_ibd = new TH2D("h_ibd", "", nBinsEBP, xbinsEBP, nBinsEBP, 0., 10.);
   TAxis* h_ibdx = h_ibd->GetXaxis();
   TAxis* h_ibdy = h_ibd->GetYaxis();
   h_ibdx->SetTitle("Interevent Times (s)");
   h_ibdy->SetTitle("Energies (MeV)");
 
   // prompt event histogram
-  TH2D* h_ibd2 = new TH2D("h_ibd2", "IBD Trigger Results", nBinsEBP, xbinsEBP, nBinsEBP, 0., 10.);
+//TH2D* h_ibd2 = new TH2D("h_ibd2", "Prompt", nBinsEBP, xbinsEBP, nBinsEBP, 0., 10.);
+  TH2D* h_ibd2 = new TH2D("h_ibd2", "", nBinsEBP, xbinsEBP, nBinsEBP, 0., 10.);
   TAxis* h_ibd2x = h_ibd2->GetXaxis();
   TAxis* h_ibd2y = h_ibd2->GetYaxis();
   TAxis* h_ibd2z = h_ibd2->GetZaxis();
@@ -454,7 +456,7 @@ if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there 
   h_ibd2x->SetTitleOffset(1.5);
   h_ibd2y->SetTitleOffset(1.5);
 
-  // draw histograms
+  // draw histograms and add legend
   TCanvas* c2 = new TCanvas("c2","Neutrino Trigger Results", 70, 60, 1500, 800);
   T2->Draw("prompt_cand_eq:tmin>>h_ibd2", "", "lego3");
   T2->Draw("delayed_cand_eq:delayed_cand_t-prompt_cand_t>>h_ibd", "", "samelego");
@@ -462,6 +464,11 @@ if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there 
   c2->SetPhi(265);
   c2->SetLogx(1);
   c2->SetLogy(0);
+  TLegend* l2 = new TLegend(.01, .85, .15, .95);
+  h_ibd2->SetLineColor(kRed);
+  l2->AddEntry(h_ibd2, "Prompt");
+  l2->AddEntry(h_ibd, "Delayed");
+  l2->Draw();
 
   // position plot
   Double_t x_abs = 1000.; //mm
