@@ -27,6 +27,7 @@ gROOT->LoadMacro("neutronCaptures.cxx");
 gROOT->LoadMacro("ibdTracksToScint.cxx");
 //gROOT->LoadMacro("findCellScintTotal.cxx");
 //gROOT->LoadMacro("findCellScintTotalQuenched.cxx");
+gROOT->LoadMacro("shiftStats.cxx");
 
 // all pau!   )
 }

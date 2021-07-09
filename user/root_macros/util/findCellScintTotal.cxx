@@ -34,6 +34,7 @@ for ( child=0; child<children; child++ ) {
     n = c.GoStep(k);
     currentVol = n->GetVolume();
     if ( currentVol == vol ) cellScintTotal += n->GetTotEDepScint();
+//  cellScintTotal += n->GetTotEDepScint(); //debug
   }
   c.GoParent();
 }

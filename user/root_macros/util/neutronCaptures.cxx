@@ -36,16 +36,19 @@ if (fileName == "") {
   TFile* f = TFile::Open(filename);
 }
 TString datarun = filename(0,filename.Index(".root"));
-TPair* tp = db->FindObject("DETECTOR[].experiment");
-TObjString* tos = tp->Value();
-TString detectorpath = tos->GetString();
-detectorpath.ReplaceAll("\"", "");
-TObjArray* toa = detectorpath.Tokenize("/");
-tos = (TObjString*)toa->At(toa->GetEntries()-1);
-TString detector = tos->GetString();
+TString detector;
+TMap* db = (TMap*)gFile->FindObjectAny("db");
+if ( db != 0x0 ) {
+  TPair* tp = db->FindObject("DETECTOR[].experiment");
+  TObjString* tos = tp->Value();
+  TString detectorpath = tos->GetString();
+  detectorpath.ReplaceAll("\"", "");
+  TObjArray* toa = detectorpath.Tokenize("/");
+  tos = (TObjString*)toa->At(toa->GetEntries()-1);
+  detector = tos->GetString();
+}
 
 // RAT-PAC object init
-//RAT::DSReader r(gFile->GetName());
 RAT::DSReader r(filename.Data());
 RAT::DS::Root* ds = r.GetEvent(0);
 RAT::TrackNav nav(ds);

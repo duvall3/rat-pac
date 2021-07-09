@@ -3,13 +3,12 @@
 
 {
 
-  gStyle->SetHistLineWidth(2);
-  gStyle->SetHistLineColor(kBlue);
-  gStyle->SetOptLogy(true);
-
   #include <TDuvallAnalyze.cxx>
 
   gROOT->LoadMacro("duvall3Macros.cxx");
   duvall3Macros();
+
+  gROOT->LoadMacro("setDefaults.cxx");
+  setDefaults();
 
 }
