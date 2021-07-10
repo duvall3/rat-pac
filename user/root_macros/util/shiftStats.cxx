@@ -30,8 +30,8 @@ y1 = s->GetY1NDC();
 y2 = s->GetY2NDC();
 s->SetX1NDC(x1 + deltaX);
 s->SetX2NDC(x2 + deltaX);
-s->SetY1NDC(x1 + deltaY);
-s->SetY2NDC(x2 + deltaY);
+s->SetY1NDC(y1 + deltaY);
+s->SetY2NDC(y2 + deltaY);
 s->Draw();
 
 // all pau!   )
