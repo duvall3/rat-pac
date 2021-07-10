@@ -114,29 +114,37 @@ for ( k=0; k<N; k++ ) { // event loop
   x = xEQ / eqSum;
   y = yEQ / eqSum;
   z = zEQ / eqSum;
-  if (energy_q > 0) {
-    T_scint->Fill();
-  }
+  if (energy_q > 0) T_scint->Fill();
 
   // neutron
   c.GoParent();
   c.GoChild(1);
 //for ( i=0; i<c.StepCount(); i++ ) { // step loop
 //  n = c.GoStep(i);
-//  //TODO create entries for hadElastic scattering
-//}
+//  if (n->GetProcess() == "hadElastic") {
+//    energy_q = findCellScintTotalQuenched(c);
+//    if (energy_q > 100.e-3) {
+//      wall_time = event_time + n->GetGlobalTime()*1e-9;
+//      energy = findCellScintTotal(c);
+//      x = n->GetEndpoint().X();
+//      y = n->GetEndpoint().Y();
+//      z = n->GetEndpoint().Z();
+//      T_scint->Fill(); // scatters must be <thresh>MeVee or above to register
+//    } //energy_q
+//  } //hadElastic
+//} //step loop
   n = c.GoTrackEnd();
   wall_time = event_time + n->GetGlobalTime()*1.e-9;
   TString nProc = n->GetProcess();
   if ( (nProc == "nCapture") || (nProc == "neutronInelastic") ) {
-    energy = findCellScintTotal(c);
     energy_q = findCellScintTotalQuenched(c);
-//  energy = findChildScintTotal(c); //debug
 //  energy_q = findChildScintTotalQuenched(c); //debug
-    x = n->GetEndpoint().X();
-    y = n->GetEndpoint().Y();
-    z = n->GetEndpoint().Z();
     if (energy_q > 0) {
+      energy = findCellScintTotal(c);
+//    energy = findChildScintTotal(c); //debug
+      x = n->GetEndpoint().X();
+      y = n->GetEndpoint().Y();
+      z = n->GetEndpoint().Z();
       T_scint->Fill();
     }
   }

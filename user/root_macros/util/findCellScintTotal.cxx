@@ -21,7 +21,7 @@
 Double_t findCellScintTotal( RAT::TrackCursor c ) {
 
 // init
-RAT::TrackNode* n = c.GoTrackEnd();
+RAT::TrackNode* n = c.Here();
 Int_t k, child, children = c.ChildCount();
 TString vol = n->GetVolume();
 TString currentVol;
@@ -30,11 +30,12 @@ Double_t cellScintTotal(0);
 // MAIN
 for ( child=0; child<children; child++ ) {
   c.GoChild(child);
-  for ( k=0; k<c.StepCount(); k++ ) {
+  // start at step 1 to avoid double-counting initial eDep
+  for ( k=1; k<c.StepCount(); k++ ) {
     n = c.GoStep(k);
     currentVol = n->GetVolume();
-    if ( currentVol == vol ) cellScintTotal += n->GetTotEDepScint();
-//  cellScintTotal += n->GetTotEDepScint(); //debug
+//  if ( currentVol == vol ) cellScintTotal += n->GetTotEDepScint();
+  cellScintTotal += n->GetTotEDepScint();
   }
   c.GoParent();
 }
