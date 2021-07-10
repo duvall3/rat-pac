@@ -236,6 +236,16 @@ if ( graphics_tf == true ) { // skip graphics unless in batch mode (default)
   h5->Draw("colz");
   c1_2->SetLogx(1);
   c1_2->SetLogz(1);
+  // move stat boxes off of the colz keys
+  c1->Draw();
+  Double_t statsDeltaX = -.1;
+  TPaveStats* s1_2 = (TPaveStats*)c1_2->GetPrimitive("stats");
+  TPaveStats* s1_4 = (TPaveStats*)c1_4->GetPrimitive("stats");
+  s1_2->SetX1NDC( s1_2->GetX1NDC() + statsDeltaX );
+  s1_4->SetX1NDC( s1_4->GetX1NDC() + statsDeltaX );
+  s1_2->SetX2NDC( s1_2->GetX2NDC() + statsDeltaX );
+  s1_4->SetX2NDC( s1_4->GetX2NDC() + statsDeltaX );
+  c1->Draw();
   // save plot
   c1->Write();
   TString savename1;
