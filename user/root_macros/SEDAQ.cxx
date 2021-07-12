@@ -163,9 +163,10 @@ if ( graphics_tf == true ) { // skip graphics unless in batch mode (default)
   TH1D* h1 = new TH1D("h1", "Time Between Bursts (Interevent Time)", nBinsEBP, xbinsEBP );
   h1->SetLineColor(kRed);
   TAxis* h1x = h1->GetXaxis();
-  h1x->SetTitle("Interevent Time(s)");
   TAxis* h1y = h1->GetYaxis();
+  h1x->SetTitle("Interevent Time(s)");
   h1y->SetTitle("Entries");
+  h1x->SetTitleOffset(1.5);
 
   // energy vs. deltaT:
   // again, log-binning courtesy mfb:
@@ -186,6 +187,7 @@ if ( graphics_tf == true ) { // skip graphics unless in batch mode (default)
   TAxis* h2y = h2->GetYaxis();
   h2x->SetTitle("Interevent Time (s)");
   h2y->SetTitle("Energy_Q (MeVee)");
+  h2x->SetTitleOffset(1.5);
 
   // 1D histogram of energies and quenched energies
   TH1D* h3 = new TH1D("h3", "Burst Energy", nBinsEBP, ybinsEBP );
@@ -195,6 +197,7 @@ if ( graphics_tf == true ) { // skip graphics unless in batch mode (default)
   TAxis* h4x = h4->GetXaxis();
   h3x->SetTitle("Burst Energy (MeVee), BLUE=Pure, RED=Quenched");
   h3y->SetTitle("Entries");
+  h3x->SetTitleOffset(1.5);
   h3->SetLineColor(kBlue);
   h4->SetLineColor(kRed);
 
@@ -204,6 +207,7 @@ if ( graphics_tf == true ) { // skip graphics unless in batch mode (default)
   TAxis* h5y = h5->GetYaxis();
   h5x->SetTitle("Interevent Time (s)");
   h5y->SetTitle("Energy (MeVee)");
+  h5x->SetTitleOffset(1.5);
 
 
   //// FILL AND DRAW PLOTS
@@ -504,9 +508,9 @@ if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there 
   hpx->SetTitle("x (mm)");
   hpy->SetTitle("y (mm)");
   hpz->SetTitle("z (mm)");
-  hpx->SetTitleOffset(1.5);
-  hpy->SetTitleOffset(1.5);
-  hpz->SetTitleOffset(1.5);
+  hpx->SetTitleOffset(1.0);
+  hpy->SetTitleOffset(1.0);
+  hpz->SetTitleOffset(1.0);
   // delayed
   // cycle coordinates to adjust for TTree->Draw(TH3) //KEEPME//
   T2->Draw("delayed_cand_z:delayed_cand_x:delayed_cand_y>>h_delayed");
