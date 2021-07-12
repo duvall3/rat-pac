@@ -1,4 +1,4 @@
-// neutronCaptures -- prepare a skymap of neutron-capture displacements
+// neutronCaptures -- analyze simulation datarun based on neutron-capture displacements
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 6/21 ~ //
 
 
@@ -21,7 +21,8 @@
 #include <TMath.h>
 
 
-TTree* neutronCaptures(const char* fileName = "", bool save_tf = kFALSE, int neutron_child = 0) {
+//TTree* neutronCaptures(const char* fileName = "", bool save_tf = kFALSE, int neutron_child = 0) {
+TTree* neutronCaptures(const char* fileName = "", bool save_tf = kTRUE, int neutron_child = 1) {
 
 // filename stuff
 if (fileName == "") {
@@ -151,6 +152,12 @@ if (save_tf == kTRUE) {
   can_cospsi->SaveAs(savename_cospsi);
   can_zeta->SaveAs(savename_zeta);
 }
+
+// clean up
+can_skymap->Close();
+can_capdist->Close();
+can_cospsi->Close();
+can_zeta->Close();
 
 // all pau!   )
 return T;

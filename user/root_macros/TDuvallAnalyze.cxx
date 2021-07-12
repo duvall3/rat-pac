@@ -210,6 +210,14 @@ TDuvallAnalyze::ResetCuts()
 //}
 
 //______________________________________________________________________________
+// IBDToScint
+TDuvallAnalyze::IBDToScint()
+{
+  if ( ! gInterpreter->IsLoaded("ibdTracksToScint.cxx") ) gROOT->LoadMacro("ibdTracksToScint.cxx");
+  ibdTracksToScint(fFileName);
+}
+
+//______________________________________________________________________________
 // RtToRoot
 TDuvallAnalyze::RtToRoot()
 {
@@ -233,7 +241,8 @@ TDuvallAnalyze::ibdTracksToScint()
 //TDuvallAnalyze::SEDAQ( const char* fileName, Bool_t kGraphics, Double_t promptLow, Double_t delayedLow, Double_t deltaTLow, Double_t deltaTHigh, Bool_t kNuLat )
 TDuvallAnalyze::SEDAQ()
 {
-  TString sedaqFileName = TString::Format("%s_scint.root", fDatarun);
+//TString sedaqFileName = TString::Format("%s_scint.root", fDatarun);
+  TString sedaqFileName = TString::Format("%s_T.root", fDatarun);
   if ( ! gInterpreter->IsLoaded("SEDAQ.cxx") ) gROOT->LoadMacro("SEDAQ.cxx");
 //SEDAQ( fileName, kGraphics, promptLow, delayedLow, deltaTLow, deltaTHigh, kNuLat );
   SEDAQ( sedaqFileName, kTRUE, 0., 0., 1.e-6, 100.e-6, kFALSE );
@@ -791,18 +800,28 @@ TDuvallAnalyze::Analyze()
 // AnalyzeTracks
 TDuvallAnalyze::AnalyzeTracks()
 {
+  TString resultsFileName = TString::Format("%s_results.root", fDatarun);
+  IBDToScint();
+  SEDAQ();
+  AngularRecon();
+  LoadFile(resultsFileName);
 }
 
 //______________________________________________________________________________
 // AnalyzeScint()
 TDuvallAnalyze::AnalyzeScint()
 {
-  TString arFileName = TString::Format("%s_results.root", fDatarun);
+  TString resultsFileName = TString::Format("%s_results.root", fDatarun);
   RtToRoot();
   SEDAQ();
   AngularRecon();
-  LoadFile(arFileName);
+  LoadFile(resultsFileName);
 }
+
+////______________________________________________________________________________
+//TDuvallAnalyze::
+//{
+//}
 
 ////______________________________________________________________________________
 //TDuvallAnalyze::

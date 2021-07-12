@@ -34,8 +34,8 @@ for ( child=0; child<children; child++ ) {
   for ( k=1; k<c.StepCount(); k++ ) {
     n = c.GoStep(k);
     currentVol = n->GetVolume();
-//  if ( currentVol == vol ) cellScintTotalQuenched += n->GetTotEDepScintQuenched();
-  cellScintTotalQuenched += n->GetTotEDepScintQuenched();
+    if ( currentVol == vol ) cellScintTotalQuenched += n->GetTotEDepScintQuenched();
+//  cellScintTotalQuenched += n->GetTotEDepScintQuenched(); //debug
   }
   c.GoParent();
 }

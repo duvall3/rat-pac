@@ -68,6 +68,7 @@ public:
   void			ResetCuts();
 //void			DrawHisto( const char* varexp );
 //void			DrawHisto( TH1* histo );
+  int			IBDToScint();
   int			RtToRoot();
   void			ibdTracksToScint();
 //void			SEDAQ( const char* fileName, Bool_t kGraphics = kFALSE, Double_t promptLow = 0, Double_t delayedLow = 0, Double_t deltaTLow  = 1.e-6, Double_t deltaTHigh = 100.e-6, Bool_t kNuLat = kFALSE );

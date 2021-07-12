@@ -9,7 +9,7 @@
 if [ $# -lt 1 ]; then
   DATARUN=$(basename $(pwd) /)
 else
-  DATARUN=$1
+  DATARUN=$(basename $1 .root)
 fi
 
 # init

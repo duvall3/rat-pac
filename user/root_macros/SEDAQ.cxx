@@ -185,14 +185,16 @@ if ( graphics_tf == true ) { // skip graphics unless in batch mode (default)
   TAxis* h2x = h2->GetXaxis();
   TAxis* h2y = h2->GetYaxis();
   h2x->SetTitle("Interevent Time (s)");
-  h2y->SetTitle("Energy_Q (MeV)");
+  h2y->SetTitle("Energy_Q (MeVee)");
 
   // 1D histogram of energies and quenched energies
   TH1D* h3 = new TH1D("h3", "Burst Energy", nBinsEBP, ybinsEBP );
   TH1D* h4 = new TH1D("h4", "Quenched Burst Energy", nBinsEBP, ybinsEBP );
   TAxis* h3x = h3->GetXaxis();
+  TAxis* h3y = h3->GetYaxis();
   TAxis* h4x = h4->GetXaxis();
-  h3x->SetTitle("Burst Energy (MeV), BLUE=Pure, RED=Quenched");
+  h3x->SetTitle("Burst Energy (MeVee), BLUE=Pure, RED=Quenched");
+  h3y->SetTitle("Entries");
   h3->SetLineColor(kBlue);
   h4->SetLineColor(kRed);
 
@@ -201,7 +203,7 @@ if ( graphics_tf == true ) { // skip graphics unless in batch mode (default)
   TAxis* h5x = h5->GetXaxis();
   TAxis* h5y = h5->GetYaxis();
   h5x->SetTitle("Interevent Time (s)");
-  h5y->SetTitle("Energy_Q (MeV)");
+  h5y->SetTitle("Energy (MeVee)");
 
 
   //// FILL AND DRAW PLOTS
@@ -394,7 +396,7 @@ for (( k = 0; k < num_bursts; k++ )) {
 
 // prepare some summary variables
 Long64_t ibd_candidates = T2->GetEntries();
-const char* units = "Time (s), Energy (MeV)";
+const char* units = "Time (s), Energy (MeVee)";
 
 // save ibd trigger parameters and result
 TTree* T_Trig = new TTree("T_Trig","IBD Trigger Parameters and Total");
@@ -451,7 +453,7 @@ if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there 
   TAxis* h_ibdx = h_ibd->GetXaxis();
   TAxis* h_ibdy = h_ibd->GetYaxis();
   h_ibdx->SetTitle("Interevent Times (s)");
-  h_ibdy->SetTitle("Energies (MeV)");
+  h_ibdy->SetTitle("Energies (MeVee)");
 
   // prompt event histogram
   TH2D* h_ibd2 = new TH2D("h_ibd2", "IBD Trigger Results", nBinsEBP, xbinsEBP, nBinsEBP, 0., 10.);
@@ -459,7 +461,7 @@ if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there 
   TAxis* h_ibd2y = h_ibd2->GetYaxis();
   TAxis* h_ibd2z = h_ibd2->GetZaxis();
   h_ibd2x->SetTitle("Interevent Time (s)");
-  h_ibd2y->SetTitle("Energy (MeV)");
+  h_ibd2y->SetTitle("Energy (MeVee)");
   h_ibd2z->SetTitle("Entries");
   h_ibd2x->SetTitleOffset(1.5);
   h_ibd2y->SetTitleOffset(1.5);
@@ -490,9 +492,21 @@ if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there 
   T2->Draw("prompt_cand_z:prompt_cand_x:prompt_cand_y>>h_prompt");
   h_prompt->SetMarkerColor(kRed);
   h_prompt->SetMarkerStyle(4);
-  h_prompt->GetXaxis()->SetLimits(-x_abs,x_abs);
-  h_prompt->GetYaxis()->SetLimits(-x_abs,x_abs);
-  h_prompt->GetZaxis()->SetLimits(-x_abs,x_abs);
+//h_prompt->GetXaxis()->SetLimits(-x_abs,x_abs);
+//h_prompt->GetYaxis()->SetLimits(-x_abs,x_abs);
+//h_prompt->GetZaxis()->SetLimits(-x_abs,x_abs);
+  TAxis* hpx = h_prompt->GetXaxis();
+  TAxis* hpy = h_prompt->GetYaxis();
+  TAxis* hpz = h_prompt->GetZaxis();
+  hpx->SetLimits(-x_abs,x_abs);
+  hpy->SetLimits(-x_abs,x_abs);
+  hpz->SetLimits(-x_abs,x_abs);
+  hpx->SetTitle("x (mm)");
+  hpy->SetTitle("y (mm)");
+  hpz->SetTitle("z (mm)");
+  hpx->SetTitleOffset(1.5);
+  hpy->SetTitleOffset(1.5);
+  hpz->SetTitleOffset(1.5);
   // delayed
   // cycle coordinates to adjust for TTree->Draw(TH3) //KEEPME//
   T2->Draw("delayed_cand_z:delayed_cand_x:delayed_cand_y>>h_delayed");

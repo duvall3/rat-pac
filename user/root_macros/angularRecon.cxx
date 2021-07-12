@@ -87,8 +87,9 @@ for ( k = 0; k < N; k++ ) {
 // phi = azimuthal angle
 c4->cd(1);
 h_phi->Draw();
+h_phi->GetXaxis()->SetTitle("#varphi (^{o})");
 gPad->SetLogy(kFALSE);
-h_phi->GetYaxis()->SetLimits(0., 1.2 * h_phi->GetMaximum());
+h_phi->GetYaxis()->SetRangeUser(0., 1.2 * h_phi->GetMaximum());
 phi_mean = h_phi->GetMean();
 phi_std = h_phi->GetStdDev();
 phi_sdm = phi_std / sqrt(N);
@@ -96,8 +97,9 @@ phi_sdm = phi_std / sqrt(N);
 // theta = polar angle
 c4->cd(2);
 h_theta->Draw();
+h_theta->GetXaxis()->SetTitle("#theta (^{o})");
 gPad->SetLogy(kFALSE);
-h_theta->GetYaxis()->SetLimits(0., 1.2 * h_theta->GetMaximum());
+h_theta->GetYaxis()->SetRangeUser(0., 1.2 * h_theta->GetMaximum());
 theta_mean = h_theta->GetMean();
 theta_std = h_theta->GetStdDev();
 theta_sdm = theta_std / sqrt(N);
@@ -105,6 +107,7 @@ theta_sdm = theta_std / sqrt(N);
 // psi = angle between actual and reconstr. neutrino momenta
 c5->cd();
 h_cos_psi->Draw();
+h_cos_psi->GetXaxis()->SetTitle("cos[#psi]");
 gPad->SetLogy(kFALSE);
 h_cos_psi->GetYaxis()->SetRangeUser(0., 1.2 * h_cos_psi->GetMaximum());
 c5->Draw();
@@ -131,8 +134,8 @@ Double_t eff = (Double_t)N/nIBDs;
 
 // set / report antineutrino direction
 Double_t phi_true, theta_true;
-cout << endl << "Using default antineutrino direction." << endl;
-cerr << "Using default antineutrino direction." << endl;
+cout << endl << "Using default antineutrino direction:" << endl;
+cerr << "Using default antineutrino direction:" << endl;
 TVector3 neutrino_direction, nu_hat;
 cout << "neutrino_direction: "; neutrino_direction = TVector3(-1,0,0);
 nu_hat = neutrino_direction.Unit();
