@@ -52,6 +52,8 @@ en_label = 'Neutron Energy (keV)';
 en_therm = en_therm*1e3;
 en_reactor_low = en_reactor_low*1e3;
 en_reactor_high = en_reactor_high*1e3;
+% switch to barns
+xs_lim = xs_lim*1e24;
 
 % plot prep
 f = figure('position', [720 240 1200 720]);
@@ -73,7 +75,8 @@ legend_names = {'Thermal Energy', 'Reactor Region', '', 'For Each Z:', 'Elastic 
 Tstr = sprintf("Neutron Cross Sections from %s", datadir_basename);
 T = title(Tstr);
 xlabel(en_label)
-ylabel 'Cross Section (cm^{2})'
+%ylabel 'Cross Section (cm^{2})'
+ylabel 'Cross Section (barns)'
 set(ax, 'fontsize', 16)
 colorlist = 'rbgmc';
 
@@ -92,6 +95,7 @@ for z = Z
   % process el-scat data
   if any( el(:,2) > 0 )
     el(:,1) = el(:,1)*1e3; % switch to keV
+    el(:,2) = el(:,2)*1e24; % switch to barns
     el(isnan(el(:,2)),:) = []; % remove non-plottable data
     el(el(:,2)<=0,:) = []; % " "
     pes = plot(el(:,1), el(:,2), 'linewidth', 2); % make plot
@@ -101,6 +105,7 @@ for z = Z
   % process inel-scat data
   if any( inel(:,2) > 0 )
     inel(:,1) = inel(:,1)*1e3;
+    inel(:,2) = inel(:,2)*1e24; % switch to barns
     inel(isnan(inel(:,2)),:) = [];
     inel(inel(:,2)<=0,:) = [];
     pis = plot(inel(:,1), inel(:,2), 'linewidth', 2, 'linestyle', ':');
@@ -110,6 +115,7 @@ for z = Z
   % process cap data
   if any( cap(:,2) > 0 )
     cap(:,1) = cap(:,1)*1e3;
+    cap(:,2) = cap(:,2)*1e24; % switch to barns
     cap(isnan(cap(:,2)),:) = [];
     cap(cap(:,2)<=0,:) = [];
     pc = plot(cap(:,1), cap(:,2), 'linewidth', 2, 'linestyle', '--');
@@ -138,8 +144,10 @@ set(l, 'fontsize', 18)
 % adjust axes
 set(gca, 'xlim', en_lim)
 set(gca, 'ylim', xs_lim)
-% workaround
-printf("Finished plotting data for %d nuclei. To fix the bug in the axes limits, run the following command:\n  set(gca, 'ylim', [1e-30 1e-18])\n", length(Z));
+
+% workaround -- possibly no longer needed?
+%printf("Finished plotting data for %d nuclei. To fix the bug in the axes limits, run the following command:\n  set(gca, 'ylim', [1e-30 1e-18])\n", length(Z));
+%printf("Finished plotting data for %d nuclei. To fix the bug in the axes limits, run the following command:\n  set(gca, 'ylim', [1e-6 1e6])\n", length(Z));
 
 % all pau!   )
 %endfunction
