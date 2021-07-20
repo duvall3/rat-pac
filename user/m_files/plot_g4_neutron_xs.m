@@ -1,15 +1,19 @@
-function [ ] = plot_g4_neutron_xs( Z )
-%function [ ] = plot_g4_neutron_xs( Z, color = 'blue', prev_handles = [], keV_tf = true )
+function [ handle_array ] = plot_g4_neutron_xs( Z )
 
+% [ handle_array ] = plot_g4_neutron_xs( Z )
+% -- Z is the atomic number of the desired nucleus
+% -- handle_array is an Nx3 matrix, where N is the number of elements in Z;
+%      each row contains the plot handles [ el_scat inel_scat cap ]
+% -- optional isotope "I" argument (equal to isotope nuclear mass in amu)
+%      may be added in the future
+% ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 6/21 ~ %
+
+%function [ ] = plot_g4_neutron_xs( Z, color = 'blue', prev_handles = [], keV_tf = true )
 % [pes, pis, pc] = plot_g4_neutron_xs( Z, keV_tf = true ) -- plot GEANT4 neutron-interaction cross-sections
 %   for given element
 % -- [pes, pis, pc] are the graphics handles for the elastic-scattering plot,
 %      the inelastic-scattering plot, and the capture plot, respectively
-% -- Z is the atomic number of the desired nucleus
 % -- keV_tf: if true, changes energy units to keV; otherwise, defaults to MeV
-% -- optional isotope "I" argument (equal to isotope nuclear mass in amu)
-%      may be added in the future
-% ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 6/21 ~ %
 
 
 %Copyright (C) 2021 Mark J. Duvall
@@ -50,18 +54,21 @@ en_reactor_low = en_reactor_low*1e3;
 en_reactor_high = en_reactor_high*1e3;
 
 % plot prep
-f = figure;
-ax = axes('xlim', en_lim, 'ylim', xs_lim, 'xscale', 'log', 'yscale', 'log');
-set(gcf, 'name', 'GEANT4 Neutron Cross-Section Data');
+f = figure('position', [720 240 1200 720]);
+%ax = axes('xlim', en_lim, 'ylim', xs_lim, 'xscale', 'log', 'yscale', 'log');
+ax = axes('xscale', 'log', 'yscale', 'log');
+set(ax, 'fontsize', 20, 'titlefontsizemultiplier', 1.3)
+set(gcf, 'name', 'GEANT4 Neutron Cross-Section Data')
 hold on
 l_es = line( [en_lim(1) en_lim(1)], [xs_lim(1) xs_lim(1)], 'color', 'black' );
 l_is = line( [en_lim(1) en_lim(1)], [xs_lim(1) xs_lim(1)], 'linestyle', ':', 'color', 'black' );
 l_cap = line( [en_lim(1) en_lim(1)], [xs_lim(1) xs_lim(1)], 'linestyle', '--', 'color', 'black' );
-set( [l_es l_is l_cap], 'visible', 'off')
-l_therm = line([en_therm en_therm], [xs_lim(1)*.1 xs_lim(2)*10], 'color', 'black', 'linewidth', 1, 'linestyle', ':');
+l_none = line( [en_lim(1) en_lim(1)], [xs_lim(1) xs_lim(1)], 'color', 'none' );
+set( [l_es l_is l_cap l_none], 'visible', 'off')
+l_therm = line([en_therm en_therm], [xs_lim(1)*.1 xs_lim(2)*10], 'color', [.5 .5 .5], 'linewidth', 2, 'linestyle', '-.');
 p = patch( [en_reactor_low en_reactor_high en_reactor_high en_reactor_low], [xs_lim(2)*10 xs_lim(2)*10 xs_lim(1)*.1 xs_lim(1)*.1], 'facecolor', [.5 .5 .5], 'facealpha', 0.2, 'edgecolor', 'none');
-legend_items = [l_es l_is l_cap l_therm p];
-legend_names = {'Elastic Scattering', 'Inelastic Scattering', 'Capture', 'Thermal Energy', 'Reactor Region'};
+legend_items = [ l_therm p l_none l_none l_es l_is l_cap l_none ];
+legend_names = {'Thermal Energy', 'Reactor Region', '', 'For Each Z:', 'Elastic Scattering', 'Inelastic Scattering', 'Capture', '' };
 
 % labels
 Tstr = sprintf("Neutron Cross Sections from %s", datadir_basename);
@@ -69,10 +76,11 @@ T = title(Tstr);
 xlabel(en_label)
 ylabel 'Cross Section (cm^{2})'
 set(ax, 'fontsize', 16)
-colorlist = 'brmgc';
-icolor = 1;
+colorlist = 'rbgmc';
 
 % MAIN
+icolor = 1;
+handle_array = zeros(1, 3);
 for z = Z
   % read data
   capfile = sprintf("%s/cap%d", datadir, z);
@@ -98,22 +106,26 @@ for z = Z
   set(gca, 'ylim', xs_lim)
   pis = plot(inel(:,1), inel(:,2), 'linewidth', 2, 'linestyle', ':');
   pc = plot(cap(:,1), cap(:,2), 'linewidth', 2, 'linestyle', '--');
-  set( [pes pis pc], 'color', sprintf('%s', colorlist(icolor)))
+  handles = [pes pis pc];
+  set( handles, 'color', sprintf('%s', colorlist(icolor)))
   icolor += 1;
   legend_items(end+1) = pes;
   legend_names(end+1) = pes_label;
+  handle_array(end+1,:) = handles;
 end
 %set(ax, 'xscale', 'log')
 %set(ax, 'yscale', 'log')
 
 % legend
 l = legend( legend_items, legend_names, 'location', 'northeastoutside' );
+%l = legend( legend_items, legend_names, 'location', 'northeast' );
+set(l, 'fontsize', 18)
 
 % adjust axes
-%set(gca, 'xlim', en_lim)
+set(gca, 'xlim', en_lim)
 %set(gca, 'ylim', xs_lim)
 % workaround
-disp "To fix the axes, run the following command: set(gca, 'ylim', [1e-30 1e-18])"
+printf("Finished plotting data for %d nuclei. To fix the bug in the axes limits, run the following command:\n  set(gca, 'ylim', [1e-30 1e-18])\n", length(Z));
 
 % all pau!   )
 %endfunction
