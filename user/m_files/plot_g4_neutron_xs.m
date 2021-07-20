@@ -81,37 +81,56 @@ colorlist = 'rbgmc';
 icolor = 1;
 handle_array = zeros(1, 3);
 for z = Z
+  % (re)set data
+  clear('el', 'inel', 'cap')
   % read data
-  capfile = sprintf("%s/cap%d", datadir, z);
   elastfile = sprintf("%s/elast%d", datadir, z);
   inelastfile = sprintf("%s/inelast%d", datadir, z);
-  cap = dlmread(capfile, '', 2, 0);
+  capfile = sprintf("%s/cap%d", datadir, z);
   el = dlmread(elastfile, '', 2, 0);
   inel = dlmread(inelastfile, '', 2, 0);
-  % switch to keV
-  el(:,1) = el(:,1)*1e3;
-  inel(:,1) = inel(:,1)*1e3;
-  cap(:,1) = cap(:,1)*1e3;
-  % remove non-plottable data
-  cap(isnan(cap(:,2)),:) = [];
-  el(isnan(el(:,2)),:) = [];
-  inel(isnan(inel(:,2)),:) = [];
-  cap(cap(:,2)<=0,:) = [];
-  el(el(:,2)<=0,:) = [];
-  inel(inel(:,2)<=0,:) = [];
-  % make plots
-  pes = plot(el(:,1), el(:,2), 'linewidth', 2);
-  pes_label = sprintf('Z = %d', z);
-  set(gca, 'ylim', xs_lim)
-  pis = plot(inel(:,1), inel(:,2), 'linewidth', 2, 'linestyle', ':');
-  pc = plot(cap(:,1), cap(:,2), 'linewidth', 2, 'linestyle', '--');
+  cap = dlmread(capfile, '', 2, 0);
+  % process el-scat data
+  if any( el(:,2) > 0 )
+    el(:,1) = el(:,1)*1e3; % switch to keV
+    el(isnan(el(:,2)),:) = []; % remove non-plottable data
+    el(el(:,2)<=0,:) = []; % " "
+    pes = plot(el(:,1), el(:,2), 'linewidth', 2); % make plot
+  else
+    pes = 0;
+  endif
+  % process inel-scat data
+  if any( inel(:,2) > 0 )
+    inel(:,1) = inel(:,1)*1e3;
+    inel(isnan(inel(:,2)),:) = [];
+    inel(inel(:,2)<=0,:) = [];
+    pis = plot(inel(:,1), inel(:,2), 'linewidth', 2, 'linestyle', ':');
+  else
+    pis = 0;
+  endif
+  % process cap data
+  if any( cap(:,2) > 0 )
+    cap(:,1) = cap(:,1)*1e3;
+    cap(isnan(cap(:,2)),:) = [];
+    cap(cap(:,2)<=0,:) = [];
+    pc = plot(cap(:,1), cap(:,2), 'linewidth', 2, 'linestyle', '--');
+  else
+    pc = 0;
+  endif
+  % update relevent items
   handles = [pes pis pc];
-  set( handles, 'color', sprintf('%s', colorlist(icolor)))
-  icolor += 1;
-  legend_items(end+1) = pes;
-  legend_names(end+1) = pes_label;
-  handle_array(end+1,:) = handles;
-end
+  if any( handles ~= 0 )
+    current_color = sprintf('%s', colorlist(icolor));
+    lZ = line( [en_lim(1) en_lim(1)], [xs_lim(1) xs_lim(1)], 'linewidth', 2, 'color', current_color );
+    lZ_label = sprintf('Z = %d', z);
+    set( lZ, 'visible', 'off' )
+    set( handles(handles~=0), 'color', current_color )
+    legend_items(end+1) = lZ;
+    legend_names(end+1) = lZ_label;
+    handle_array(end+1,:) = handles;
+    icolor += 1;
+  endif
+end % Z loop
 
 % legend
 l = legend( legend_items, legend_names, 'location', 'northeastoutside' );
@@ -119,7 +138,7 @@ set(l, 'fontsize', 18)
 
 % adjust axes
 set(gca, 'xlim', en_lim)
-%set(gca, 'ylim', xs_lim)
+set(gca, 'ylim', xs_lim)
 % workaround
 printf("Finished plotting data for %d nuclei. To fix the bug in the axes limits, run the following command:\n  set(gca, 'ylim', [1e-30 1e-18])\n", length(Z));
 
