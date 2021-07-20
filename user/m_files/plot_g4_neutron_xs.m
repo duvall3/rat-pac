@@ -79,7 +79,6 @@ colorlist = 'rbgmc';
 
 % MAIN
 icolor = 1;
-handle_array = zeros(1, 3);
 for z = Z
   % (re)set data
   clear('el', 'inel', 'cap')
