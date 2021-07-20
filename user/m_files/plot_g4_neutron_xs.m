@@ -43,8 +43,8 @@ endif
 en_lim = [1e-9 1e5];
 en_label = 'Neutron Energy (MeV)';
 en_therm = (1/40)*1e-6;
-en_reactor_low = 1e-3; % K_n = 1 keV
-en_reactor_high = 1e-2; % K_n = 10 keV
+en_reactor_low = 1e-3; % K_n ~ 10^1 keV
+en_reactor_high = 1e-1; % K_n ~ 10^2 keV
 xs_lim = [1e-30 1e-18];
 % switch to keV
 en_lim = en_lim * 1e3;
@@ -55,7 +55,6 @@ en_reactor_high = en_reactor_high*1e3;
 
 % plot prep
 f = figure('position', [720 240 1200 720]);
-%ax = axes('xlim', en_lim, 'ylim', xs_lim, 'xscale', 'log', 'yscale', 'log');
 ax = axes('xscale', 'log', 'yscale', 'log');
 set(ax, 'fontsize', 20, 'titlefontsizemultiplier', 1.3)
 set(gcf, 'name', 'GEANT4 Neutron Cross-Section Data')
@@ -113,12 +112,9 @@ for z = Z
   legend_names(end+1) = pes_label;
   handle_array(end+1,:) = handles;
 end
-%set(ax, 'xscale', 'log')
-%set(ax, 'yscale', 'log')
 
 % legend
 l = legend( legend_items, legend_names, 'location', 'northeastoutside' );
-%l = legend( legend_items, legend_names, 'location', 'northeast' );
 set(l, 'fontsize', 18)
 
 % adjust axes
