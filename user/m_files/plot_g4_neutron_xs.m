@@ -1,20 +1,16 @@
 function [ handle_array ] = plot_g4_neutron_xs( Z )
 
 % [ handle_array ] = plot_g4_neutron_xs( Z )
-% -- Z is the atomic number of the desired nucleus
+% -- Z is either:
+%      1) the atomic number of the desired nucleus; or
+%      2) an array of atomic numbers to plot simultaneously
+%    -- e.g., `plot_g4_neutron_xs( [1 3 6] )' will show the data
+%         for hydrogen, lithium, and carbon together on a single plot
 % -- handle_array is an Nx3 matrix, where N is the number of elements in Z;
 %      each row contains the plot handles [ el_scat inel_scat cap ]
 % -- optional isotope "I" argument (equal to isotope nuclear mass in amu)
 %      may be added in the future
 % ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 6/21 ~ %
-
-%function [ ] = plot_g4_neutron_xs( Z, color = 'blue', prev_handles = [], keV_tf = true )
-% [pes, pis, pc] = plot_g4_neutron_xs( Z, keV_tf = true ) -- plot GEANT4 neutron-interaction cross-sections
-%   for given element
-% -- [pes, pis, pc] are the graphics handles for the elastic-scattering plot,
-%      the inelastic-scattering plot, and the capture plot, respectively
-% -- keV_tf: if true, changes energy units to keV; otherwise, defaults to MeV
-
 
 %Copyright (C) 2021 Mark J. Duvall
 %
