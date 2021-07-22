@@ -23,7 +23,7 @@
 
 # arg check
 if [[ ! $1 ]]; then
-  echo -e "\nUSAGE: rootsrc <ROOTclass>"
+  echo -e "\nUSAGE: rootsrc <ROOTclass>\n"
   exit 10
 fi
 
@@ -47,8 +47,17 @@ else
   echo "Warning: Source file $CFILE_NAME not found."
 fi
 if (! $HFILE_TF) && (! $CFILE_TF); then
-  echo "Error: No .h or .cxx files for class \"$1\" found under $ROOTSYS. Exiting now."
-  exit 1
+  echo "Error: No .h or .cxx files for class \"$1\" found under $ROOTSYS. Searching for mentions..."
+  GREPLIST=$(grep -iE -IRl $1 "$ROOTSYS")
+  if [[ $GREPLIST ]]; then
+    echo -e "\nMentions of \"$1\" found in the following files:\n"
+    echo $GREPLIST | sed s@$ROOTSYS@'$ROOTSYS'@g | tr ' ' '\n'
+    echo
+    exit 2
+  else
+    echo -e "No mentions of \"$1\" found under $ROOTSYS/src. Exiting.\n"
+    exit 3
+  fi
 fi
 
 # open for reading only
