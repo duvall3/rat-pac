@@ -28,6 +28,8 @@ gROOT->LoadMacro("ibdTracksToScint.cxx");
 //gROOT->LoadMacro("findCellScintTotal.cxx");
 //gROOT->LoadMacro("findCellScintTotalQuenched.cxx");
 gROOT->LoadMacro("shiftStats.cxx");
+gROOT->LoadMacro("nCapEQ.cxx");
+gROOT->LoadMacro("findScintBursts.cxx");
 
 // all pau!   )
 }
