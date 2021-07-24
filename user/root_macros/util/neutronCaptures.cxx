@@ -63,6 +63,7 @@ TVector3 dr, pi_hat = TVector3(-1,0,0);
 Double_t xi, yi, zi, xf, yf, zf;
 Double_t R, cos_psi, zeta;
 const Double_t pi = TMath::Pi();
+TString capProduct;
 
 // prepare new TTree
 TTree* T = new TTree("T", "Neutron-Capture Displacements");
@@ -71,6 +72,7 @@ T->Branch("longtd", &longtd);
 T->Branch("R", &R);
 T->Branch("cos_psi", &cos_psi);
 T->Branch("zeta", &zeta);
+T->Branch("capProduct", &capProduct);
 
 // MAIN
 for ( k=0; k<N; k++ ) {
@@ -92,6 +94,8 @@ for ( k=0; k<N; k++ ) {
     dr = -dr; // for nicer view if initial direction was {-1,0,0}
     longtd = dr.Phi()*180/pi;
     lattd = 90 - (dr.Theta()*180/pi);
+    n = c.GoChild( c.ChildCount() - 1 );
+    capProduct = n->GetParticleName();
     T->Fill();
     nav.Clear();
   }
@@ -141,16 +145,32 @@ hzeta->SetLineWidth(2);
 hzeta->SetLineColor(kMagenta);
 can_zeta->Draw();
 
+// draw capture products
+TCanvas* can_prod_h = new TCanvas("can_prod", detector+" | "+filename, 820, 120, 800, 800);
+T->Draw("capProduct>>hprod", "", "PIE");
+hprod->SetTitle("Neutron-Capture Products");
+TPie* pprod = new TPie(hprod);
+can_prod_h->Close();
+pprod->SetName("pprod");
+pprod->SetLabelFormat("%txt %perc");
+pprod->SetAngularOffset(35.);
+Int_t fillColors [ ] = {2, 3, 4, 5, 6, 7, 8, 9};
+pprod->SetFillColors(fillColors);
+TCanvas* can_prod = new TCanvas("can_prod", detector+" | "+filename, 820, 120, 800, 800);
+pprod->Draw();
+
 // save if desired
 if (save_tf == kTRUE) {
   TString savename_skymap = datarun+"_nCapDirections.png";
   TString savename_capdist = datarun+"_nCapDistances.png";
   TString savename_cospsi = datarun+"_nCapCosPsi.png";
   TString savename_zeta = datarun+"_nCapZeta.png";
+  TString savename_prod = datarun+"_nCapProd.png";
   can_skymap->SaveAs(savename_skymap);
   can_capdist->SaveAs(savename_capdist);
   can_cospsi->SaveAs(savename_cospsi);
   can_zeta->SaveAs(savename_zeta);
+  can_prod->SaveAs(savename_prod);
 }
 
 // clean up
@@ -158,6 +178,7 @@ can_skymap->Close();
 can_capdist->Close();
 can_cospsi->Close();
 can_zeta->Close();
+can_prod->Close();
 
 // all pau!   )
 return T;
