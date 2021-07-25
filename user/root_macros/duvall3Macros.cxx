@@ -30,6 +30,7 @@ gROOT->LoadMacro("ibdTracksToScint.cxx");
 gROOT->LoadMacro("shiftStats.cxx");
 gROOT->LoadMacro("nCapEQ.cxx");
 gROOT->LoadMacro("findScintBursts.cxx");
+//gROOT->LoadMacro("ratfileInit.cxx");
 
 // all pau!   )
 }
