@@ -188,10 +188,7 @@ for (( k = 0; k < T_scint->GetEntries(); k++ )) {
 }
 
 // finish up
-//f->Close();
-//TFile f_T = TFile(savename, "recreate");
 T_scint->Write();
-//f_T.Close();
 f->Close();
 
 // all pau!   )
