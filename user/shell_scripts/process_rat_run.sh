@@ -5,24 +5,25 @@
 
 ## usage
 if [ $# -lt 2 ]; then
-  echo -e "USAGE: process_rat_run <DATARUN_NAME> <NUM_EVENTS>\n" && exit 10
+  echo -e "\nUSAGE: process_rat_run <DATARUN_NAME> <NUM_EVENTS>\n" && exit 10
 fi
 
 ## init
-FILENAME=$1
+BASENAME=$1
 NUM_EVENTS=$2
-ROOTFILE="$FILENAME".root
-RTFILE="$FILENAME".rt
+LOGFILE="$BASENAME".log
+ROOTFILE="$BASENAME".root
+RTFILE="$BASENAME"_energies.rt
 
 ## main
-awk '$1 ~ /EVENT/ && ( $6>0 || $8>0 || $10>0 ) {print $2"\t"$4"\t"$6"\t"$8"\t"$10"\t"$12"\t"$14"\t"$16}' "$FILENAME".log > "$FILENAME".rt
-RTCOMMAND=$(printf "'$RATROOT/user/root_macros/rt_to_root.cxx(\"$RTFILE\")'")
-eval "root -q -l -b $RTCOMMAND"
+awk '$1 ~ /EVENT/ && ( $6>0 || $8>0 || $10>0 ) {print $2"\t"$4"\t"$6"\t"$8"\t"$10"\t"$12"\t"$14"\t"$16}' $LOGFILE > $RTFILE
+ROOTCOMMAND=$(printf "'$RATROOT/user/root_macros/duvallAnalyze.cxx(\"$BASENAME\")'")
+eval "root -q -l -b $ROOTCOMMAND"
 
 ## tidying up
 # make output directory & move all the new output files there
-mkdir $FILENAME
-mv -t $FILENAME $FILENAME?*
+mkdir $BASENAME
+mv -t $BASENAME $BASENAME?*
 
 # all pau!  )
 exit 0

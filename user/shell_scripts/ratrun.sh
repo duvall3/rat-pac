@@ -75,7 +75,7 @@ conflog.sh > "$FILENAME".conf && rat -l "$FILENAME".log run.mac
 process_rat_run.sh $FILENAME $NUM_EVENTS
 
 # reminder
-echo "Reminder: Move output to long-term storage if desired."
+echo -e "Reminder: Move output to long-term storage if desired.\n"
 
 
 ## all pau!  )
