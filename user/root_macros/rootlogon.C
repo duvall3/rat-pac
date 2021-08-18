@@ -19,8 +19,9 @@
   #include <TDuvallAnalyze.cxx>
   #include <TMath.h>
 
-  // make pi
+  // make pi, e
   const Double_t pi = TMath::Pi();
+  const Double_t e = TMath::E();
 
   // load RAT-PAC macros
   gROOT->LoadMacro("duvall3Macros.cxx");

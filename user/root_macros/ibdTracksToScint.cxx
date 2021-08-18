@@ -70,6 +70,7 @@ T_scint->Branch( "y", &y, "y/D" );
 T_scint->Branch( "z", &z, "z/D" );
 
 // MAIN PASS 1
+cout << "Processing particle tracks..." << endl;
 
 Long64_t k(0), N(totalRATEvents);
 Int_t i(0);
@@ -188,6 +189,7 @@ for (( k = 0; k < T_scint->GetEntries(); k++ )) {
 }
 
 // finish up
+cout << "Done." << endl;
 T_scint->Write();
 f->Close();
 

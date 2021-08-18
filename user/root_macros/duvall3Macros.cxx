@@ -32,7 +32,7 @@ gROOT->LoadMacro("shiftStats.cxx");
 gROOT->LoadMacro("nCapEQ.cxx");
 gROOT->LoadMacro("findScintBursts.cxx");
 //gROOT->LoadMacro("ratfileInit.cxx");
-gROOT->LoadMacro("util/correctEnergies.cxx");
+gROOT->LoadMacro("correctEnergies.cxx");
 
 // all pau!   )
 }

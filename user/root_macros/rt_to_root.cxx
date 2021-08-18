@@ -6,14 +6,22 @@ int rt_to_root( const char* filename ) {
 
 
 // arg check
-TString FileName, basename;
+TString FileName, basename_T, basename;
 FileName = filename;
 if ( FileName.Contains(".rt") ) {
-  basename=FileName(0,FileName.Index(".rt"));
+  basename_T = FileName(0,FileName.Index(".rt"));
 } else {
   cout << endl << "ERROR: Check file type. Exiting..." << endl << endl;
   return 2;
 }
+if ( basename_T.Contains("_energies\0") ) {
+  basename = basename_T(0, basename_T.Index("_energies\0"));
+} else {
+  basename = basename_T;
+}
+
+// main
+cout << "Creating ROOT file from .rt file..." << endl;
 
 // retrieve total top-level RAT-PAC MC events from the original ROOT file
 TFile* _f = TFile::Open(basename+".root");
@@ -24,7 +32,7 @@ TObjString *nMCEvents_tos = new TObjString(nMCEvents);
 _f->Close();
 
 // create outfile
-TFile f = TFile(basename+"_T.root", "new");
+TFile f = TFile(basename_T+"_T.root", "recreate");
 
 // create tree, read ASCII data, set branch addresses
 TTree* T_scint = new TTree("T_scint","Scintillation Data");
@@ -53,11 +61,10 @@ T_scint->Branch("interevent_time", &interevent_time, "interevent_time/D");
 // fill new branches
 Int_t k;
 Double_t time_current, time_prev;
-// times aligned to run start
 for (( k = 0; k < num_bursts; k++ )) {
   T_scint->GetEntry(k);
-  event_time_adj = event_time - run_start;
-  wall_time_adj = wall_time - run_start;
+  event_time_adj = event_time - run_start; // times aligned to run start
+  wall_time_adj = wall_time - run_start; // times aligned to run start
   T_scint->GetBranch("event_time_adj")->Fill();
   T_scint->GetBranch("wall_time_adj")->Fill();
   // interevent times
@@ -75,6 +82,7 @@ for (( k = 0; k < num_bursts; k++ )) {
 
 
 // all pau!   )
+cout << "Done." << endl << endl;
 f.Write();
 f.Close();
 return 0;
