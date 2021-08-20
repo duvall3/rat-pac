@@ -545,6 +545,34 @@ if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there 
 
 cout << endl;
 
+// draw capture products
+TString savename7;
+savename7 = basename+"_cap-prod.png";
+TCanvas* can_prod_h = new TCanvas("can_prod", filename, 820, 120, 800, 800);
+T_scint->Draw("cap_product>>h_prod", "cap_product!=\"\"", "PIE");
+can_prod_h->SetLogx(0);
+can_prod_h->SetLogy(0);
+TString prod_title = TString::Format("Neutron-Capture Products (N=%d)", (Int_t)h_prod->GetEntries());
+h_prod->SetTitle(prod_title);
+TPie* p_prod = new TPie(h_prod);
+TCanvas* c7 = new TCanvas("c7", prod_title, 820, 120, 800, 800);
+p_prod->Draw();
+can_prod_h->Close();
+c7->SetLogx(0);
+c7->SetLogy(0);
+p_prod->SetName("p_prod");
+p_prod->SetLabelFormat("#splitline{%txt}{%val (%perc)}");
+p_prod->SetValueFormat("%.f");
+p_prod->SetLabelsOffset(-0.3);
+p_prod->SetAngularOffset(35.);
+Int_t fillColors [ ] = {2, 3, 4, 5, 6, 7, 8, 9};
+p_prod->SetFillColors(fillColors);
+p_prod->Draw();
+p_prod->Write();
+c7->Write();
+c7->SaveAs(savename7);
+c7->Close();
+
 //// ALL PAU!   )
 f.Write();
 f.Close();

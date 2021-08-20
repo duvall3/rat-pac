@@ -113,7 +113,7 @@ matches_0_1_multiple(2) = match_count_multiple;
 // finish up
 f2->Close();
 T1->Write("", TObject::kWriteDelete);
-matches_0_1_multiple->Write("matches_0_1_multiple");
+matches_0_1_multiple.Write("matches_0_1_multiple");
 f1->Close();
 
 // all pau!   )

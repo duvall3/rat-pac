@@ -33,6 +33,7 @@ gROOT->LoadMacro("nCapEQ.cxx");
 gROOT->LoadMacro("findScintBursts.cxx");
 //gROOT->LoadMacro("ratfileInit.cxx");
 gROOT->LoadMacro("correctEnergies.cxx");
+gROOT->LoadMacro("duvallAnalyze.cxx");
 
 // all pau!   )
 }

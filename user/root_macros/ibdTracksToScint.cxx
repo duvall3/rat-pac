@@ -60,6 +60,7 @@ TTree* T_scint = new TTree("T_scint", "Pseudo-Scintillation Data");
 T_scint->GetUserInfo()->Add(nMCEvents_tos);
 Int_t event;
 Double_t event_time, wall_time, energy, energy_q, x, y, z;
+TString cap_product;
 T_scint->Branch( "event", &event, "event/I" );
 T_scint->Branch( "event_time", &event_time, "event_time/D" );
 T_scint->Branch( "wall_time", &wall_time, "wall_time/D" );
@@ -68,6 +69,7 @@ T_scint->Branch( "energy_q", &energy_q, "energy_q/D" );
 T_scint->Branch( "x", &x, "x/D" );
 T_scint->Branch( "y", &y, "y/D" );
 T_scint->Branch( "z", &z, "z/D" );
+T_scint->Branch( "cap_product", &cap_product );
 
 // MAIN PASS 1
 cout << "Processing particle tracks..." << endl;
@@ -115,6 +117,7 @@ for ( k=0; k<N; k++ ) { // event loop
   x = xEQ / eqSum;
   y = yEQ / eqSum;
   z = zEQ / eqSum;
+  cap_product = "";
   if (energy_q > 0) T_scint->Fill();
 
   // neutron
@@ -138,6 +141,9 @@ for ( k=0; k<N; k++ ) { // event loop
   wall_time = event_time + n->GetGlobalTime()*1.e-9;
   TString nProc = n->GetProcess();
   if ( (nProc == "nCapture") || (nProc == "neutronInelastic") ) {
+    n = c.GoChild(c.ChildCount()-1);
+    cap_product = n->GetParticleName();
+    n = c.GoParent();
     energy_q = findCellScintTotalQuenched(c);
 //  energy_q = findChildScintTotalQuenched(c); //debug
     if (energy_q > 0) {
