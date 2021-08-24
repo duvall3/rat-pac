@@ -536,9 +536,9 @@ if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there 
 
 } //endif -- IBD candidates && no batch mode
 
-cout << endl;
 
 //// ALL PAU!   )
+cout << endl;
 f.Write();
 f.Close();
 return;

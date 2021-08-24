@@ -1,6 +1,6 @@
 #!/bin/bash
-# process_n0_run -- this script duplicates the post-run processing of ratrun.sh
-# -- Usage: process_n0_run <FILENAME> <NUMBER_OF_EVENTS>
+# Process_n0_run -- this script duplicates the post-run processing of ratrun.sh
+# -- Usage: Process_n0_run <FILENAME> <NUMBER_OF_EVENTS>
 # ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ August 2015 ~ #
 # ~ last updated 11/2019 ~ #
 

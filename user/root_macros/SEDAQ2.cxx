@@ -3,9 +3,9 @@
 // -- further documentation forthcoming
 // -- see https://github.com/duvall3/rat-pac/tree/collab
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2017 ~ //
-// ~ SEDAQ2 v0.9.96 ~ 8/2021 ~ //
+// ~ SEDAQ2 v0.9.98 ~ 8/2021 ~ //
 //
-// INPUT: ROOT file containing TTree "T" (Scintillation Data)
+// INPUT: ROOT file containing TTree "T_scint" (Scintillation Data)
 // OUTPUT: ROOT file containing TTrees "T2" (IBD Candidate Data) and "T_Trig" (IBD Trigger Parameters and Result)
 //   -- NOTE: View trigger parameters and results using T_Trig->Show(0)
 // ARGUMENTS:
@@ -49,7 +49,7 @@ void SEDAQ2( const char* filename, Bool_t graphics_tf = kFALSE, Double_t prompt_
 cout << endl;
 
 // general
-const char* sedaq_version = "0.9.96";
+const char* sedaq2_version = "0.9.98";
 gSystem->Load("libPhysics.so");
 gStyle->SetHistLineWidth(2);
 gStyle->SetHistLineColor(kBlue);
@@ -98,8 +98,6 @@ Double_t cos_psi; // where psi (ψ) = angle between incoming and reconstructed n
 Double_t phi_recon, theta_recon; // angle reconstruction
 Double_t tmin;
 Double_t longtd, lattd;
-Double_t deltaX, deltaY, deltaZ; //debug
-Double_t deltaXhat, deltaYhat, deltaZhat; //debug
 T2->Branch("prompt_cand_event", &prompt_cand_event, "prompt_cand_event/I");
 T2->Branch("delayed_cand_event", &delayed_cand_event, "delayed_cand_event/I");
 T2->Branch("prompt_cand_t", &prompt_cand_t, "prompt_cand_t/D");
@@ -119,13 +117,6 @@ T2->Branch("theta_recon", &theta_recon, "theta_recon/D");
 T2->Branch("tmin", &tmin, "tmin/D");
 T2->Branch("longtd", &longtd, "longtd/D");
 T2->Branch("lattd", &lattd, "lattd/D");
-//debug
-T2->Branch("deltaX", &deltaX, "deltaX/D");
-T2->Branch("deltaY", &deltaY, "deltaY/D");
-T2->Branch("deltaZ", &deltaZ, "deltaZ/D");
-T2->Branch("deltaXhat", &deltaXhat, "deltaXhat/D");
-T2->Branch("deltaYhat", &deltaYhat, "deltaYhat/D");
-T2->Branch("deltaZhat", &deltaZhat, "deltaZhat/D");
 
 // Copy total number of top-level MC events from T to T2
 // -- NOTE: this method is not especially robust;
@@ -142,7 +133,7 @@ T2user->Write();
 //// T PLOTS
 
 Int_t k(0);
-if ( graphics_tf == true ) { // skip graphics unless in batch mode (default)
+if ( graphics_tf == true ) { // draw graphics unless in batch mode (default false)
 
   //// PREPARE PLOTS
 
@@ -356,13 +347,6 @@ for (( k = 0; k < num_bursts; k++ )) {
     deltaZ = delayed_cand_z - prompt_cand_z;
     displacement = TVector3(deltaX, deltaY, deltaZ);
     disp_hat = displacement.Unit();
-    //debug
-    deltaX = displacement.X();
-    deltaY = displacement.Y();
-    deltaZ = displacement.Z();
-    deltaXhat = disp_hat.X();
-    deltaYhat = disp_hat.Y();
-    deltaZhat = disp_hat.Z();
 
     // compare actual and reconsructed neutrino directions
     cos_psi = nu_hat.Dot(disp_hat);
@@ -372,13 +356,6 @@ for (( k = 0; k < num_bursts; k++ )) {
     src_hat = source_recon.Unit();
     phi_recon = source_recon.Phi() * 180/pi; // TVector3.Phi() returns on (-pi,+pi)
     theta_recon = source_recon.Theta() * 180/pi; // TVector3.Theta() returns on (0, +pi)
-
-//    //debug
-//    displacement.Print();
-//    disp_hat.Print();
-//    source_recon.Print();
-//    src_hat.Print();
-//    printf("%d\n", cos_psi);
 
     // transform angles for skymap projection
     longtd = phi_recon; // aitoff longtd: (-180,+180)
@@ -404,7 +381,7 @@ const char* units = "Time (s), Energy (MeVee)";
 
 // save ibd trigger parameters and result
 TTree* T_Trig = new TTree("T_Trig","IBD Trigger Parameters and Total");
-T_Trig->Branch("sedaq_version",sedaq_version,"sedaq_version/C");
+T_Trig->Branch("sedaq2_version",sedaq2_version,"sedaq2_version/C");
 T_Trig->Branch("units",units,"units/C");
 T_Trig->Branch("deltaT_low",&deltaT_low,"deltaT_low/D");
 T_Trig->Branch("deltaT_high",&deltaT_high,"deltaT_high/D");
@@ -416,7 +393,7 @@ T_Trig->Branch("ibd_candidates",&ibd_candidates,"ibd_candidates/L");
 T_Trig->Fill();
 
 // print summary to stdout
-cout << endl << "SimpleEnergyDAQ IBD Trigger Summary:" << endl;
+cout << endl << "SimpleEnergyDAQ2 IBD Trigger Summary:" << endl;
 T_Trig->Show(0);
 cout << endl;
 
@@ -523,13 +500,6 @@ if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there 
   h_prompt->Draw();
   h_delayed->Draw("same");
 
-  // make and save list
-  TList* plotList = new TList;
-  plotList->Add(c1);
-  plotList->Add(c2);
-  plotList->Add(c3);
-
-
   // save plots
   c2->Write();
   c3->Write();
@@ -543,37 +513,38 @@ if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there 
 
 } //endif -- IBD candidates && no batch mode
 
-cout << endl;
-
 // draw capture products
-TString savename7;
-savename7 = basename+"_cap-prod.png";
-TCanvas* can_prod_h = new TCanvas("can_prod", filename, 820, 120, 800, 800);
-T_scint->Draw("cap_product>>h_prod", "cap_product!=\"\"", "PIE");
-can_prod_h->SetLogx(0);
-can_prod_h->SetLogy(0);
-TString prod_title = TString::Format("Neutron-Capture Products (N=%d)", (Int_t)h_prod->GetEntries());
-h_prod->SetTitle(prod_title);
-TPie* p_prod = new TPie(h_prod);
-TCanvas* c7 = new TCanvas("c7", prod_title, 820, 120, 800, 800);
-p_prod->Draw();
-can_prod_h->Close();
-c7->SetLogx(0);
-c7->SetLogy(0);
-p_prod->SetName("p_prod");
-p_prod->SetLabelFormat("#splitline{%txt}{%val (%perc)}");
-p_prod->SetValueFormat("%.f");
-p_prod->SetLabelsOffset(-0.3);
-p_prod->SetAngularOffset(35.);
-Int_t fillColors [ ] = {2, 3, 4, 5, 6, 7, 8, 9};
-p_prod->SetFillColors(fillColors);
-p_prod->Draw();
-p_prod->Write();
-c7->Write();
-c7->SaveAs(savename7);
-c7->Close();
+if ( graphics_tf == true ) {
+  TString savename7;
+  savename7 = basename+"_cap-prod.png";
+  TCanvas* can_prod_h = new TCanvas("can_prod", filename, 820, 120, 800, 800);
+  T_scint->Draw("cap_product>>h_prod", "cap_product!=\"\"", "PIE");
+  can_prod_h->SetLogx(0);
+  can_prod_h->SetLogy(0);
+  TString prod_title = TString::Format("Neutron-Capture Products (N=%d)", (Int_t)h_prod->GetEntries());
+  h_prod->SetTitle(prod_title);
+  TPie* p_prod = new TPie(h_prod);
+  TCanvas* c7 = new TCanvas("c7", prod_title, 820, 120, 800, 800);
+  p_prod->Draw();
+  can_prod_h->Close();
+  c7->SetLogx(0);
+  c7->SetLogy(0);
+  p_prod->SetName("p_prod");
+  p_prod->SetLabelFormat("#splitline{%txt}{%val (%perc)}");
+  p_prod->SetValueFormat("%.f");
+  p_prod->SetLabelsOffset(-0.15);
+  //p_prod->SetAngularOffset(35.);
+  Int_t fillColors [ ] = {2, 3, 4, 5, 6, 7, 8, 9};
+  p_prod->SetFillColors(fillColors);
+  p_prod->Draw();
+  p_prod->Write();
+  c7->Write();
+  c7->SaveAs(savename7);
+  c7->Close();
+} // end if -- graphics_tf (for batch mode)
 
 //// ALL PAU!   )
+cout << endl;
 f.Write();
 f.Close();
 return;

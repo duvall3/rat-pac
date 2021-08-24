@@ -94,7 +94,7 @@ for (( k=0; k<$NINSTS; k++ )) {
 
   # prepare simulation, post-processing, and combination commands
   RATCMD="rat -l $INST_DIR.log run.mac" # assume IBD run
-  PROCCMD="$RATROOT/user/shell_scripts/process_rat_run.sh $INST_DIR $NEVENTS"
+  PROCCMD="$RATROOT/user/shell_scripts/process_rat_run.sh $INST_DIR $NEVENTS false false"
   ECHOCMD="echo -e \"\n$INST_DIR complete.\n\""
   FULLCMD="eval $RATCMD && eval $PROCCMD && eval $ECHOCMD"
 
@@ -117,7 +117,24 @@ echo -e "\nBatch jobs complete.\n"
 echo -e "\nCombining scintillation data...\n"
 chain.sh && echo -e "\nTChain complete.\n"
 
+# analyze master datafile
+echo -e "\nAnalyzing combined data...\n"
+T_FILE=$DATARUN"_T.root"
+RES_FILE=$DATARUN"_results.root"
+ANCMD1=$(echo -e "root -q -l -b 'SEDAQ2.cxx(\"$T_FILE\", true)'")
+ANCMD2=$(echo -e "root -q -l -b 'angularRecon.cxx(\"$RES_FILE\", true)'")
+#echo -e "\n$ANCMD1\n$ANCMD2\n" #debug
+eval $ANCMD1 && eval $ANCMD2
+#eval $ANCMD1 #debug
+#if [[ $? == 0 ]]; then eval $ANCMD2; fi #debug
 
 ## all pau!   )
-echo -e "\nBatch run complete!\n\n"
-exit 0
+if [[ $? == 0 ]]; then
+  echo -e "\nDone.\n"
+  echo -e "\nBatch run complete!\n\n"
+  exit 0
+else
+  echo -e "\nDone.\n"
+  echo -e "\nBatch run finished, with errors.\n\n"
+  exit 1
+fi

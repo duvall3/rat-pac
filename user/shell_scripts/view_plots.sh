@@ -36,7 +36,8 @@ c3="$DATARUN"_pd-xyz
 c4="$DATARUN"_results-ang-separate
 c5="$DATARUN"_results-ang
 c6="$DATARUN"_results-skymap
-c_LIST=$(echo $c{1..6}.png)
+c7="$DATARUN"_cap-prod
+c_LIST=$(echo $c{1..7}.png)
 
 # main
 eog $c_LIST &

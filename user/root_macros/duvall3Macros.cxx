@@ -18,7 +18,7 @@ void duvall3Macros() {
 
 gROOT->LoadMacro("rt_to_root.cxx");
 gROOT->LoadMacro("dumpHist.cxx");
-gROOT->LoadMacro("SEDAQ.cxx");
+//gROOT->LoadMacro("SEDAQ.cxx");
 gROOT->LoadMacro("SEDAQ2.cxx");
 gROOT->LoadMacro("RATPACEventViewer.cxx");
 gROOT->LoadMacro("angularRecon.cxx");

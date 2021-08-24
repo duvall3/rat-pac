@@ -2,7 +2,7 @@
 // -- operates on results of SEDAQ.cxx from github-->duvall3-->rat-pac-->collab-->user-->root_macros
 // -- USAGE: root <DATARUN_results.root> --> .L angularRecon.cxx --> angularRecon(T2);
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 12/2019 ~ //
-// ~ Version 0.9.1 ~ Updated 6/21 ~ //
+// ~ Version 0.9.2 ~ Updated 8/21 ~ //
 //
 // NOTE: The angular summary can be printed from the saved output file
 //   by running "angular_summary->GetString();" at the ROOT/CINT prompt
