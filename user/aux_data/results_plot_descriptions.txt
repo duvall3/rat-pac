@@ -1,0 +1,13 @@
+Descriptions of Result Plots by Filename and TCanvas Handle
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Handle	Filename Pattern	Description
+--------------------------------------------------
+c1	*_bursts		scintillation bursts -- interevent times, raw & quenched energies
+c2	*_nu-trg		neutrino-trigger results
+c3	*_pd-xyz		{x,y,z} coordinates of IBD-candidate prompt & delayed events
+c4	*_results-ang-separate	reconstructed azimuthal & polar angles pointing to direction of incoming antineutrino, relative to a vertical axis with its origin at the center of the detector
+c5	*_results-cos-psi	cos[psi] distribution comparing reconstructed vs. actual incoming antineutrino direction
+c6	*_results-skymap	skymap of reconstructed incoming antineutrino directions; unless otherwise noted, true direction = (0°,0°)
+c7	*_cap-prod		pie chart of neutron-capture product nuclei
+
