@@ -1,0 +1,157 @@
+// TRATGeo -- class for assembling geometry in a RAT-PAC ROOT file
+// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 8/2021 ~ //
+
+//Copyright (C) 2021 Mark J. Duvall
+//
+//    This program is free software: you can redistribute it and/or modify
+//    it under the terms of the GNU General Public License as published by
+//    the Free Software Foundation, either version 3 of the License, or
+//    (at your option) any later version.
+//
+//    This program is distributed in the hope that it will be useful,
+//    but WITHOUT ANY WARRANTY; without even the implied warranty of
+//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//    GNU General Public License for more details.
+//
+//    You should have received a copy of the GNU General Public License
+//    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+#include <TRATGeo.h>
+
+// Call the ClassImp() macro to give the TRATGeo class RTTI and full I/O capabilities.
+#if !defined(__CLING__)
+  ClassImp(TRATGeo);
+#endif
+
+const TString defaultName = "TRATGeo";
+const TString defaultTitle = "class for assembling geometry from RAT-PAC ROOT file";
+
+//______________________________________________________________________________
+// default ctor
+TRATGeo::TRATGeo()
+{
+  SetName(defaultName);
+  SetTitle(defaultTitle);
+  fFile = 0;
+  fFileName = "";
+  fExperiment = "";
+  fExperimentPath = "";
+  fDB = 0;
+  fVolumeList = new TList;
+}
+
+//______________________________________________________________________________
+// Init
+TRATGeo::Init()
+{
+  if (gFile) {
+    fFile = gFile;
+    fFileName = gFile->GetName();
+  } else {
+    fFile = 0;
+    fFileName = "";
+  }
+  fDB = (TMap*)gDirectory->FindObjectAny("db");
+  if (fDB == 0) {
+    TString errMsg = "RAT-PAC database \"db\" not found\n";
+    this->Error("TRATVolume(const char* name)", errMsg.Data());
+    return;
+  }
+  FindExperiment();
+}
+
+//______________________________________________________________________________
+// Build
+TRATGeo::Build()
+{
+  Init();
+  // Build init
+  TRegexp dbIndexPattern("GEO.*size");
+  Long64_t N = fDB->GetEntries();
+  TPair* tp;
+  TObjString* keyTOS;
+  TString keyStr, infoMsg;
+  TIter i(db);
+  // db entry loop
+  infoMsg.Form("Generating volumes...");
+  this->Info("Build", infoMsg.Data());
+  for ( i=db->begin(); i!=db->end(); ++i ) {
+    tp = (TPair*)*i;
+    keyTOS = (TObjString*)tp->Key();
+    keyStr = keyTOS->GetString();
+    if ( keyStr.Contains(dbIndexPattern) ) { // relevant entry
+      keyStr.ReplaceAll("GEO[","");
+      keyStr.ReplaceAll("].size","");
+//    infoMsg.Form("Found relevant entry: %s", keyStr.Data()); //debug
+//    this->Info("Build()", infoMsg.Data()); //debug
+      // create TRATVolume* and add to list
+      TRATVolume* v = new TRATVolume(keyStr.Data());
+      v->FindAbsolutePosition();
+      fVolumeList->Add(v);
+    } // end if -- relevant entry
+  } // end db entry loop
+  infoMsg.Form("Done.");
+  this->Info("Build", infoMsg.Data());
+}
+
+//______________________________________________________________________________
+// GetVolume
+TRATGeo::GetVolume(const char* volumeName)
+{
+  return fVolumeList->FindObject(volumeName);
+}
+
+//______________________________________________________________________________
+// FindExperiment
+TRATGeo::FindExperiment()
+{
+//TMap* db = (TMap*)fFile->FindObjectAny("db");
+  if ( fDB == 0x0 ) {
+    TString warnLoc = TString::Format("%s::FindExperiment", Class_Name());
+    TString warnMsg = TString::Format("RAT-PAC database not found in %s; experiment name and path unknown.", fFileName);
+    Warning(warnLoc.Data(), warnMsg.Data());
+    fExperiment = "";
+    fExperimentPath = "";
+  } else {
+    TPair* tp = fDB->FindObject("DETECTOR[].experiment");
+    TObjString* tos = tp->Value();
+    fExperimentPath = tos->GetString();
+    fExperimentPath.ReplaceAll("\"", "");
+    TString experimentPath = fExperimentPath;
+    TObjArray* toa = experimentPath.Tokenize("/");
+    tos = (TObjString*)toa->At(toa->GetEntries()-1);
+    fExperiment = tos->GetString();
+  }
+}
+
+////______________________________________________________________________________
+//TRATGeo::
+//{
+//}
+
+////______________________________________________________________________________
+//TRATGeo::
+//{
+//}
+
+////______________________________________________________________________________
+//TRATGeo::
+//{
+//}
+
+//______________________________________________________________________________
+// override Print
+TRATGeo::Print()
+{
+  printf("\n");
+  printf("%s\t%s\t%s\n", Class_Name(), GetName(), GetTitle());
+  printf("Name: %s\tTitle: %s\n", fName.Data(), fTitle.Data());
+  printf("Experiment:\t%s\n", fExperiment.Data());
+  printf("ROOT File:\t%s\n", fFileName);
+  printf("RAT-PAC Database TMap*: "); cout << fDB << endl;
+  printf("Volume List:\n");
+  fVolumeList->Print();
+  printf("\n");
+}
+
+// all pau!   )

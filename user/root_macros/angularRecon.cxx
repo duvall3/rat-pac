@@ -168,7 +168,7 @@ if ( graphics_tf ) {
   h_cos_psi->Write();
   h_map->Write();
   c4->SaveAs(basename+"-ang-separate.png");
-  c5->SaveAs(basename+"-ang.png");
+  c5->SaveAs(basename+"-cos-psi.png");
   c6->SaveAs(basename+"-skymap.png");
 }
 

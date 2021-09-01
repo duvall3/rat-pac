@@ -1,4 +1,4 @@
-// TRATVolume -- class for analyzing geometry in a RAT-PAC ROOT file
+// TRATVolume -- class for analyzing geometry from RAT-PAC ROOT file
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 8/2021 ~ //
 
 //Copyright (C) 2021 Mark J. Duvall
@@ -24,10 +24,10 @@
 #endif
 
 const TString defaultName = "TRATVolume";
-const TString defaultTitle = "class for analyzing geometry in a RAT-PAC ROOT file";
+const TString defaultTitle = "class for analyzing geometry from RAT-PAC ROOT file";
 const char* defaultVolNameChr = "volume_name";
 const TString defaultVolName = TString("volume_name");
-TString keyStr;
+TString keyStrVol;
 
 //______________________________________________________________________________
 // default ctor
@@ -72,13 +72,15 @@ TRATVolume::TRATVolume( const char* name )
   }
   // set (remaining) members
   SetName(name);
-  TString titStr = TString::Format("TRATVolume for volume \"%s\"", name);
+  TString titStr = TString::Format("TRATVolume for \"%s\"", name);
   SetTitle(titStr.Data());
-  fVolNameChr = name;
   fVolName = TString(name);
+  fVolNameChr = fVolName.Data();
   if (gFile) {
+    fFile = gFile;
     fFileName = gFile->GetName();
   } else {
+    fFile = 0;
     fFileName = "";
   }
   FindExperiment();
@@ -91,7 +93,6 @@ TRATVolume::TRATVolume( const char* name )
 // FindExperiment
 TRATVolume::FindExperiment()
 {
-//TMap* db = (TMap*)fFile->FindObjectAny("db");
   if ( fDB == 0x0 ) {
     TString warnLoc = TString::Format("%s::FindExperiment", Class_Name());
     TString warnMsg = TString::Format("RAT-PAC database not found in %s; experiment name and path unknown.", fFileName);
@@ -114,8 +115,8 @@ TRATVolume::FindExperiment()
 // FindMother
 TRATVolume::FindMother()
 {
-  keyStr.Form("GEO[%s].mother", fVolNameChr);
-  TObjString* motherTOS = fDB->GetValue(keyStr.Data());
+  keyStrVol.Form("GEO[%s].mother", fVolNameChr);
+  TObjString* motherTOS = fDB->GetValue(keyStrVol.Data());
   TString mother = motherTOS->GetString();
   mother.ReplaceAll("\"","");
   fMother = mother;
@@ -128,9 +129,9 @@ TRATVolume::FindRelativePosition()
   TString valStrRelative;
   TObjString* valTOS, xTOS, yTOS, zTOS;
   TObjArray* posArr;
-  keyStr.Form("GEO[%s].position", fVolNameChr);
-  if ( fDB->GetValue(keyStr.Data()) != 0 ) {
-    valTOS = (TObjString*)fDB->GetValue(keyStr.Data());
+  keyStrVol.Form("GEO[%s].position", fVolNameChr);
+  if ( fDB->GetValue(keyStrVol.Data()) != 0 ) {
+    valTOS = (TObjString*)fDB->GetValue(keyStrVol.Data());
     valStrRelative = valTOS->GetString();
     valStrRelative.ReplaceAll("[","");
     valStrRelative.ReplaceAll("d","");
@@ -150,25 +151,31 @@ TRATVolume::FindRelativePosition()
 // FindAbsolutePosition
 TRATVolume::FindAbsolutePosition()
 {
-  TVector3 volTrans;
-  TString motherVolName = fMother;
-  // mother loop
-//while ( motherVolName != "" ) { // keeps giving free(): Invalid pointer//Aborted (core dumped)
-  for ( Int_t k=0; k<1000; k++ ) { // workaround: valid for volume nesting depths up to 1000 levels
-    if ( motherVolName == "" ) {
-      TString infoMsg = "Reached top volume\n"; //debug
-//    this->Info("FindAbsolutePosition()", infoMsg.Data()); //debug
-      break;
-    } else {
-//    cout << motherVolName.Data() << endl; //debug
-      TRATVolume motherVol = TRATVolume(motherVolName.Data());
-      volTrans += motherVol.GetRelativePosition();
-      motherVolName = motherVol.GetMother();
-      motherVolName.ReplaceAll("\"","");
-//    cout << motherVolName.Data() << endl; //debug
-    } // end if
-  } // end mother loop
-  fAbsolutePosition = fRelativePosition + volTrans;
+  if (fMother == "") {
+//  TString infoMsg = "Top volume is located at (0,0,0) by definition.";
+//  this->Info("FindAbsolutePosition", infoMsg.Data()); //debug
+    fAbsolutePosition = TVector3(0.0,0.0,0.0);
+  } else {
+    TVector3 volTrans;
+    TString motherVolName = fMother;
+    // mother loop
+  //while ( motherVolName != "" ) { // keeps giving free(): Invalid pointer//Aborted (core dumped)
+    for ( Int_t k=0; k<1000; k++ ) { // workaround: valid for volume nesting depths up to 1000 levels
+      if ( motherVolName == "" ) {
+        TString infoMsg = "Reached top volume"; // KEEP ME
+//      this->Info("FindAbsolutePosition", infoMsg.Data()); //debug
+	break;
+      } else {
+//      cout << motherVolName.Data() << endl; //debug
+	TRATVolume motherVol = TRATVolume(motherVolName.Data());
+	volTrans += motherVol.GetRelativePosition();
+	motherVolName = motherVol.GetMother();
+	motherVolName.ReplaceAll("\"","");
+//      cout << motherVolName.Data() << endl; //debug
+      } // end if
+    } // end mother loop
+    fAbsolutePosition = fRelativePosition + volTrans;
+  }
 }
 
 ////______________________________________________________________________________
@@ -194,15 +201,11 @@ TRATVolume::Print()
   printf("%s\t%s\t%s\n", Class_Name(), GetName(), GetTitle());
   printf("Experiment:\t%s\n", fExperiment.Data());
   printf("ROOT File:\t%s\n", fFileName);
-  printf("Volume Name (chr): %s\nVolume Name (TString): %s\n", fVolNameChr, fVolName.Data());
+  printf("Volume Name: %s\n", fVolNameChr);
   printf("RAT-PAC Database TMap*: "); cout << fDB << endl;
   printf("Mother Volume: %s\n", fMother.Data());
   printf("Relative Position: "); fRelativePosition.Print();
   printf("Absolute Position: "); fAbsolutePosition.Print();
-//printf("Relative Position: %f %f %f\n", fRelativePosition.X(), fRelativePosition.Y(), fRelativePosition.Z());
-//printf("Absolute Position: %f %f %f\n", fAbsolutePosition.X(), fAbsolutePosition.Y(), fAbsolutePosition.Z());
-//fCutList->ls(); //temp
-//fHistList->ls(); //temp
   printf("\n");
 }
 

@@ -1,4 +1,4 @@
-// TRATVolume -- class for analyzing geometry in a RAT-PAC ROOT file
+// TRATVolume -- class for analyzing geometry from RAT-PAC ROOT file
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 8/2021 ~ //
 
 //Copyright (C) 2021 Mark J. Duvall
