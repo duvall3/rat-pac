@@ -41,6 +41,28 @@ TRATGeo::TRATGeo()
 }
 
 //______________________________________________________________________________
+// FindExperiment
+TRATGeo::FindExperiment()
+{
+  if ( fDB == 0x0 ) {
+    TString warnLoc = TString::Format("%s::FindExperiment", defaultName.Data());
+    TString warnMsg = TString::Format("RAT-PAC database not found in %s; experiment name and path unknown.", fFileName);
+    Warning(warnLoc.Data(), warnMsg.Data());
+    fExperiment = "";
+    fExperimentPath = "";
+  } else {
+    TPair* tp = fDB->FindObject("DETECTOR[].experiment");
+    TObjString* tos = tp->Value();
+    fExperimentPath = tos->GetString();
+    fExperimentPath.ReplaceAll("\"", "");
+    TString experimentPath = fExperimentPath;
+    TObjArray* toa = experimentPath.Tokenize("/");
+    tos = (TObjString*)toa->At(toa->GetEntries()-1);
+    fExperiment = tos->GetString();
+  }
+}
+
+//______________________________________________________________________________
 // Init
 TRATGeo::Init()
 {
@@ -51,10 +73,11 @@ TRATGeo::Init()
     fFile = 0;
     fFileName = "";
   }
-  fDB = (TMap*)gDirectory->FindObjectAny("db");
+  fDB = (TMap*)fFile->FindObjectAny("db");
   if (fDB == 0) {
+    TString errLoc = TString::Format("%s::TRATVolume(const char* name)", defaultName.Data());
     TString errMsg = "RAT-PAC database \"db\" not found\n";
-    this->Error("TRATVolume(const char* name)", errMsg.Data());
+    this->Error(errLoc.Data(), errMsg.Data());
     return;
   }
   FindExperiment();
@@ -70,11 +93,12 @@ TRATGeo::Build()
   Long64_t N = fDB->GetEntries();
   TPair* tp;
   TObjString* keyTOS;
-  TString keyStr, infoMsg;
+  TString keyStr, infoLoc, infoMsg;
   TIter i(db);
   // db entry loop
+  infoLoc.Form("%s::Build()", defaultName.Data());
   infoMsg.Form("Generating volumes...");
-  this->Info("Build", infoMsg.Data());
+  this->Info(infoLoc.Data(), infoMsg.Data());
   for ( i=db->begin(); i!=db->end(); ++i ) {
     tp = (TPair*)*i;
     keyTOS = (TObjString*)tp->Key();
@@ -91,35 +115,35 @@ TRATGeo::Build()
     } // end if -- relevant entry
   } // end db entry loop
   infoMsg.Form("Done.");
-  this->Info("Build", infoMsg.Data());
+  this->Info(infoLoc.Data(), infoMsg.Data());
 }
 
 //______________________________________________________________________________
 // GetVolume
+// -- Note: Result must be cast back to correct type
+// -- Example: TRATGeo g; g.Build(); TRATVolume *v = (TRATVolume*)g.GetVolume("water_shield");
 TRATGeo::GetVolume(const char* volumeName)
 {
   return fVolumeList->FindObject(volumeName);
 }
 
 //______________________________________________________________________________
-// FindExperiment
-TRATGeo::FindExperiment()
+// ShowVolume
+TRATGeo::ShowVolume(const char* volumeName)
 {
-  if ( fDB == 0x0 ) {
-    TString warnLoc = TString::Format("%s::FindExperiment", Class_Name());
-    TString warnMsg = TString::Format("RAT-PAC database not found in %s; experiment name and path unknown.", fFileName);
-    Warning(warnLoc.Data(), warnMsg.Data());
-    fExperiment = "";
-    fExperimentPath = "";
-  } else {
-    TPair* tp = fDB->FindObject("DETECTOR[].experiment");
-    TObjString* tos = tp->Value();
-    fExperimentPath = tos->GetString();
-    fExperimentPath.ReplaceAll("\"", "");
-    TString experimentPath = fExperimentPath;
-    TObjArray* toa = experimentPath.Tokenize("/");
-    tos = (TObjString*)toa->At(toa->GetEntries()-1);
-    fExperiment = tos->GetString();
+  TRATVolume* v = (TRATVolume*)fVolumeList->FindObject(volumeName);
+  v->Print();
+}
+
+//______________________________________________________________________________
+// ShowAll
+TRATGeo::ShowAll()
+{
+  TRATVolume* v;
+  TIter i(fVolumeList);
+  for ( i=fVolumeList->begin(); i!=fVolumeList->end(); ++i ) {
+    v = (TRATVolume*)*i;
+    v->Print();
   }
 }
 

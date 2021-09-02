@@ -33,6 +33,7 @@ private:
   TMap*			fDB;			// RAT-PAC database
   TRATGeo*		fRATGeo;		// TRATGeo object containing volume info
   TGeoManager*		fGeoManager;		// ROOT geometry manager
+//RAT::DSReader		fr;			// RAT-PAC DS reader
 
 private:
   void			Init();			// initialize

@@ -1,5 +1,10 @@
 // TRATVolume -- class for analyzing geometry from RAT-PAC ROOT file
-// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 8/2021 ~ //
+// -- NOTE: To be set properly, TRATVolume::FindAbsolutePosition() *MUST* be run
+//         after an object is created
+//    -- Example: TRATVolume v("water_shield"); v.FindAbsolutePosition();
+//    -- This does *not* need to be done manually if TRATVolume objects
+//         are created by TRATGeo::Build()
+// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 9/2021 ~ //
 
 //Copyright (C) 2021 Mark J. Duvall
 //

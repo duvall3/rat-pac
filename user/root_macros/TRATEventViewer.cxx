@@ -23,6 +23,7 @@
   ClassImp(TRATEventViewer);
 #endif
 
+// defaults
 const TString defaultName = "TRATEventViewer";
 const TString defaultTitle = "class for assembling geometry from RAT-PAC ROOT file";
 
@@ -39,6 +40,7 @@ TRATEventViewer::TRATEventViewer()
   fDB = 0;
   fRATGeo = 0;
   fGeoManager = 0;
+//RAT::DSReader r;
 }
 
 //______________________________________________________________________________

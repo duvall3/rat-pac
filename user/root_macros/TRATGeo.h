@@ -48,6 +48,9 @@ public:
   TMap*                 GetDB() const { return fDB; }
   TList*		GetListOfVolumes() const { return fVolumeList; }
   TRATVolume*		GetVolume(const char* volumeName);
+  Int_t			GetEntries() const { return fVolumeList->GetEntries(); }
+  void			ShowVolume(const char* volumeName);
+  void			ShowAll();
   void			Types();		// print volume types
   void			Materials();		// print volume materials
   void			Mothers();		// print volume mother-volumes

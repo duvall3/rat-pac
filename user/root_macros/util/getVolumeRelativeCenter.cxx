@@ -17,13 +17,13 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-TVector3 getVolumeCenter( const char* volName ) {
+TVector3 getVolumeRelativeCenter( const char* volNameRelative ) {
 
 // check for ratdb
 if (gDirectory->FindObjectAny("db")) {
   TMap* db = (TMap*)gDirectory->FindObjectAny("db");
 } else {
-  TString errMsg = TString::Format( "\nCould not evaluate getVolumeRelativeCenter(\"%s\"): RAT-PAC database not found.\n", volName );
+  TString errMsg = TString::Format( "\nCould not evaluate getVolumeRelativeCenter(\"%s\"): RAT-PAC database not found.\n", volNameRelative );
   gDirectory->Error("FindObjectAny", errMsg);
   return;
 }
@@ -31,27 +31,31 @@ if (gDirectory->FindObjectAny("db")) {
 // init
 TVector3 volRelativeCenter;
 TObjString valTOS, xTOS, yTOS, zTOS;
-TString keyStr, valStr, motherName;
+TString keyStrRelative, valStrRelative, motherName;
 TObjArray* posArr;
 
 // get volume's (relative) position
-keyStr.Form("GEO[%s].position", volName);
-valTOS = (TObjString)db->GetValue(keyStr.Data());
-valStr = valTOS.GetString();
-valStr.ReplaceAll("[","");
-valStr.ReplaceAll("d","");
-valStr.ReplaceAll("]","");
-valStr.Replace(valStr.Last(','), 1, "");
-posArr = valStr.Tokenize(",");
-xTOS = (TObjString)posArr->At(0);
-yTOS = (TObjString)posArr->At(1);
-zTOS = (TObjString)posArr->At(2);
-volRelativeCenter = TVector3( xTOS.GetString().Atoll(), yTOS.GetString().Atoll(), zTOS.GetString().Atoll() );
+keyStrRelative.Form("GEO[%s].position", volNameRelative);
+if ( db->GetValue(keyStrRelative.Data()) == 0 ) {
+  volRelativeCenter = TVector3(0.0,0.0,0.0);
+} else {
+  valTOS = (TObjString)db->GetValue(keyStrRelative.Data());
+  valStrRelative = valTOS.GetString();
+  valStrRelative.ReplaceAll("[","");
+  valStrRelative.ReplaceAll("d","");
+  valStrRelative.ReplaceAll("]","");
+  valStrRelative.Replace(valStrRelative.Last(','), 1, "");
+  posArr = valStrRelative.Tokenize(",");
+  xTOS = (TObjString)posArr->At(0);
+  yTOS = (TObjString)posArr->At(1);
+  zTOS = (TObjString)posArr->At(2);
+  volRelativeCenter = TVector3( xTOS.GetString().Atoll(), yTOS.GetString().Atoll(), zTOS.GetString().Atoll() );
+}
 
 // all pau!   )
 return volRelativeCenter;
 }
 
 //// overload
-//TVector3 getVolumeRelativeCenter( TString volNameStr ) = getVolumeRelativeCenter( volNameStr.Data() );
+//TVector3 getVolumeRelativeCenter( TString volNameRelativeStr ) = getVolumeRelativeCenter( volNameRelativeStr.Data() );
 

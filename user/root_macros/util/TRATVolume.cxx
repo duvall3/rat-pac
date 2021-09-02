@@ -1,4 +1,9 @@
 // TRATVolume -- class for analyzing geometry from RAT-PAC ROOT file
+// -- NOTE: To be set properly, TRATVolume::FindAbsolutePosition() *MUST* be run
+//         after an object is created
+//    -- Example: TRATVolume v("water_shield"); v.FindAbsolutePosition();
+//    -- This does *not* need to be done manually if TRATVolume objects
+//         are created by TRATGeo::Build()
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 8/2021 ~ //
 
 //Copyright (C) 2021 Mark J. Duvall
@@ -54,21 +59,22 @@ TRATVolume::TRATVolume()
 TRATVolume::TRATVolume( const char* name )
 {
   // init DB and check for existence
+  TString errLoc = TString::Format("%s::TRATVolume(const char* name)", defaultName.Data());
   if (name == "") {
     TString errMsg = TString::Format("Invalid volume name \"%s\"\n", name);
-    this->Error("TRATVolume(const char* name)", errMsg.Data());
+    this->Error(errLoc.Data(), errMsg.Data());
     return;
   }
   fDB = (TMap*)gDirectory->FindObjectAny("db");
   if (fDB == 0) {
     TString errMsg = "RAT-PAC database \"db\" not found\n";
-    this->Error("TRATVolume(const char* name)", errMsg.Data());
+    this->Error(errLoc.Data(), errMsg.Data());
     return;
   }
   TString dbKey = TString::Format("GEO[%s].type", name);
   if (fDB->GetValue(dbKey) == 0) {
     TString errMsg = TString::Format("No volume found with name \"%s\"\n", name);
-    this->Error("TRATVolume(const char* name)", errMsg.Data());
+    this->Error(errLoc.Data(), errMsg.Data());
     return;
   }
   // set remaining members
@@ -105,7 +111,7 @@ TRATVolume::FindAll()
 TRATVolume::FindExperiment()
 {
   if ( fDB == 0x0 ) {
-    TString warnLoc = TString::Format("%s::FindExperiment", Class_Name());
+    TString warnLoc = TString::Format("%s::FindExperiment()", defaultName.Data());
     TString warnMsg = TString::Format("RAT-PAC database not found in %s; experiment name and path unknown.", fFileName);
     Warning(warnLoc.Data(), warnMsg.Data());
     fExperiment = "";
