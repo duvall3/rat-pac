@@ -21,7 +21,6 @@
 
 #include "TFile.h"
 #include "TClass.h"
-#include "TTree.h"
 
 class TRATVolume : public TClass {
 
@@ -33,23 +32,28 @@ private:
   TString 		fExperiment;		// name of RAT-PAC experiment
   TString		fExperimentPath;	// path to directory defining fExperiment, usually either absolute or relative to $RATROOT/data
   const TMap*		fDB;			// RAT-PAC database TMap
+  TString		fVolumeType;		// name of volume type (i.e., shape)
+  TString		fMaterial;		// volume material
   TString		fMother;		// name of mother volume
+  TVector3		fSize;			// half-lengths in {x,y,z} (*box-type only*)
   TVector3		fRelativePosition;	// volume position, *relative to mother volume*
   TVector3		fAbsolutePosition;	// volume position, *relative to overall coordinate system*
-//TObjArray* 		f___List;		// list of ___
 
 private:
-  void			FindExperiment();	// fill experiment name, path, etc.
-  void			FindMother();		// fill mother volume name
-  void			FindRelativePosition();	// fill volume relative position
-//void			FindAbsolutePosition();	// fill volume absolute position
-  void			FindAll();		// fill all members not individually set in ctor
+  void			FindExperiment();	// set experiment name, path, etc.
+  void			FindVolumeType();	// set volume type (i.e., shape)
+  void			FindMaterial();		// set volume material
+  void			FindMother();		// set mother volume name
+  void			FindRelativePosition();	// set volume relative position
+  void			FindSize();		// set dimensions (*box-type only*)
+  void			FindAll();		// set all members not individually set in ctor
+//void			FindAbsolutePosition();	// set volume absolute position
 
 public:
   TRATVolume();
   TRATVolume( const char* volNameChr );
   TRATVolume( const TString volName );
-  void			FindAbsolutePosition();	// fill volume absolute position
+  void			FindAbsolutePosition();	// set volume absolute position
   virtual const char*	GetVolNameChr() const { return fVolNameChr; }
   const TString		GetVolName() const { return fVolName; }
   TFile*		GetFile() const { return fFile; }
@@ -57,39 +61,15 @@ public:
   TString		GetExperiment()	const { return fExperiment; }
   TString		GetExperimentPath() const { return fExperimentPath; }
   TMap*			GetDB() const { return fDB; }
+  TString		GetVolumeType() const { return fVolumeType; }
+  TString		GetMaterial() const { return fMaterial; }
   TString		GetMother() const { return fMother; }
+  TVector3		GetSize() const { return fSize; }
   TVector3		GetRelativePosition() const { return fRelativePosition; }
   TVector3		GetAbsolutePosition() const { return fAbsolutePosition; }
-//  TTree*		GetTree() const { return fTree; }
-//  TCut			GetCuts() const { return fCut; }
-//  TObjArray*		GetListOfCuts() const { return fCutList; }
-//  TObjArray*		GetListOfCanvases() const { return fCanList; }
-////TObjArray*		GetListOfHistograms() const { return fHistList; }
-//  void			AddCut( TCut* c );
-//  void			AddCut( const char* cut );
-//  void			ShowCuts();
-//  void			ClearCuts();
-//  void			ResetCuts();
-////void			DrawHisto( const char* varexp );
-////void			DrawHisto( TH1* histo );
-//  int			IBDToScint();
-//  int			RtToRoot();
-//  void			ibdTracksToScint();
-////void			SEDAQ( const char* fileName, Bool_t kGraphics = kFALSE, Double_t promptLow = 0, Double_t delayedLow = 0, Double_t deltaTLow  = 1.e-6, Double_t deltaTHigh = 100.e-6, Bool_t kNuLat = kFALSE );
-//  void			SEDAQ();
-////void			AngularRecon( const char* fileName, Bool_t kGraphics = kFALSE );
-//  void			AngularRecon();
-////void			RATPACEventViewer( const char* fileName, TString cellExpr = ".*" );
-//  void			RATPACEventViewer();
-//  void			Analyze();
-//  void			AnalyzeScint();
-//  void			AnalyzeTracks();
-////void			DrawPlot(enum) // individ. plots
-////void			RemoveCut(TCut) //temp -- return ptr for TObjArray, TTree, TSelection, other?
-////void			Voxelize(xyz_quant_data)
 
 //Integrating the TRATVolume class to ROOT.
-ClassDef(TRATVolume,1)
+ClassDef(TRATVolume,3)
 
 }; //endclass
 

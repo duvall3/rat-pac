@@ -32,9 +32,11 @@ if (! gInterpreter->IsLoaded("findCellScintTotalQuenched.cxx")) gROOT->LoadMacro
 TString FileName = filename;
 TString basename = FileName(0, FileName.Index(".root"));
 TString savename = basename + "_T.root";
-//TFile* f = TFile::Open(filename, "update");
-//TFile* f = TFile::Open(filename);
+TFile* f0 = TFile::Open(filename); // needed by TRATGeo for RAT database
+TRATGeo g;
+g.Build();
 TFile* f = new TFile(savename, "recreate");
+f->cd(); // just to be safe
 RAT::DSReader r(filename);
 RAT::DS::Root* ds = r.GetEvent(0);
 RAT::TrackNav nav(ds);
@@ -59,8 +61,8 @@ TTree* T_scint = new TTree("T_scint", "Pseudo-Scintillation Data");
 //TTree* T_scint = new TTree("T", "Pseudo-Scintillation Data");
 T_scint->GetUserInfo()->Add(nMCEvents_tos);
 Int_t event;
-Double_t event_time, wall_time, energy, energy_q, x, y, z;
-TString cap_product;
+Double_t event_time, wall_time, energy, energy_q, x, y, z, x_quantized, y_quantized, z_quantized;
+TString cap_product, vol_name;
 T_scint->Branch( "event", &event, "event/I" );
 T_scint->Branch( "event_time", &event_time, "event_time/D" );
 T_scint->Branch( "wall_time", &wall_time, "wall_time/D" );
@@ -69,7 +71,11 @@ T_scint->Branch( "energy_q", &energy_q, "energy_q/D" );
 T_scint->Branch( "x", &x, "x/D" );
 T_scint->Branch( "y", &y, "y/D" );
 T_scint->Branch( "z", &z, "z/D" );
+T_scint->Branch( "x_quantized", &x_quantized, "x_quantized/D" );
+T_scint->Branch( "y_quantized", &y_quantized, "y_quantized/D" );
+T_scint->Branch( "z_quantized", &z_quantized, "z_quantized/D" );
 T_scint->Branch( "cap_product", &cap_product );
+T_scint->Branch( "vol_name", &vol_name );
 
 // MAIN PASS 1
 cout << "Processing particle tracks..." << endl;
@@ -78,6 +84,7 @@ Long64_t k(0), N(totalRATEvents);
 Int_t i(0);
 Double_t eStep, eSum, eqStep, eqSum;
 Double_t xStep, yStep, zStep, xEQ, yEQ, zEQ;
+TRATVolume* vol;
 
 for ( k=0; k<N; k++ ) { // event loop
 
@@ -91,6 +98,13 @@ for ( k=0; k<N; k++ ) { // event loop
 
   // positron
   n = c.GoChild(0);
+  // current: use *starting volume* of e+ track for quantized position
+  // TODO: instead, use volume with greatest scint. energy deposit
+  vol_name = n->GetVolume();
+  vol = (TRATVolume*)g.GetVolume(vol_name.Data());
+  x_quantized = vol->GetAbsolutePosition().X();
+  y_quantized = vol->GetAbsolutePosition().Y();
+  z_quantized = vol->GetAbsolutePosition().Z();
   wall_time = event_time + n->GetGlobalTime()*1.e-9;
   xEQ = 0;
   yEQ = 0;
@@ -118,7 +132,8 @@ for ( k=0; k<N; k++ ) { // event loop
   y = yEQ / eqSum;
   z = zEQ / eqSum;
   cap_product = "";
-  if (energy_q > 0) T_scint->Fill();
+  if (energy_q > 0) T_scint->Fill(); // possible bugfix
+//T_scint->Fill(); // possible bugfix
 
   // neutron
   c.GoParent();
@@ -141,6 +156,11 @@ for ( k=0; k<N; k++ ) { // event loop
   wall_time = event_time + n->GetGlobalTime()*1.e-9;
   TString nProc = n->GetProcess();
   if ( (nProc == "nCapture") || (nProc == "neutronInelastic") ) {
+    vol_name = n->GetVolume();
+    vol = (TRATVolume*)g.GetVolume(vol_name.Data());
+    x_quantized = vol->GetAbsolutePosition().X();
+    y_quantized = vol->GetAbsolutePosition().Y();
+    z_quantized = vol->GetAbsolutePosition().Z();
     n = c.GoChild(c.ChildCount()-1);
     cap_product = n->GetParticleName();
     n = c.GoParent();

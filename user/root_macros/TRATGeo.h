@@ -34,14 +34,13 @@ private:
   TList*		fVolumeList;		// list of TRATVolume objects
 
 private:
-//void			Init();			// initialize
+  void			Init();			// initialize
   void			FindExperiment();	// fill experiment name, path, etc.
 //void			Build();		// construct TRATVolume list
 
 public:
   TRATGeo();
-  void			Init();
-  void			Build();
+  void			Build();		// construct TRATVolume list
   TFile*                GetFile() const { return fFile; }
   virtual const char*   GetFileName() const { return fFileName; }
   TString               GetExperiment() const { return fExperiment; }
@@ -49,9 +48,14 @@ public:
   TMap*                 GetDB() const { return fDB; }
   TList*		GetListOfVolumes() const { return fVolumeList; }
   TRATVolume*		GetVolume(const char* volumeName);
+  void			Types();		// print volume types
+  void			Materials();		// print volume materials
+  void			Mothers();		// print volume mother-volumes
+  void			Sizes();		// print volume (half-)sizes
+  void			Positions();		// print absolute positions
 
 //Integrating the TRATGeo class to ROOT.
-ClassDef(TRATGeo,1)
+ClassDef(TRATGeo,2)
 
 }; //endclass
 

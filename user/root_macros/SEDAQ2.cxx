@@ -3,24 +3,23 @@
 // -- further documentation forthcoming
 // -- see https://github.com/duvall3/rat-pac/tree/collab
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2017 ~ //
-// ~ SEDAQ2 v0.9.99 ~ 8/2021 ~ //
+// ~ SEDAQ2 v1.0.00 ~ 8/2021 ~ //
 //
 // INPUT: ROOT file containing TTree "T_scint" (Scintillation Data)
 // OUTPUT: ROOT file containing TTrees "T2" (IBD Candidate Data) and "T_Trig" (IBD Trigger Parameters and Result)
 //   -- NOTE: View trigger parameters and results using T_Trig->Show(0)
 // ARGUMENTS:
 //   -- filename -- input ROOT file
+//   -- kGraphics -- whether to draw & save plots; defaults to false for batch mode
+//   -- kQuantizedPositions -- whether to replace raw positions with coordinates of relevant volume centers
 //   -- prompt_low -- IBD trigger, low threshold on prompt event (MeV)
 //   -- deltaT_low -- IBD trigger, lower bound on interevent time
 //   -- deltaT_high -- IBD trigger, upper bound on interevent time
 //   -- delayed_low -- IBD trigger, low threshold on delayed event (MeV)
-//   -- graphics_tf -- whether to draw & save plots; defaults to false for batch mode
-//   -- nulat_tf -- whether to apply cuts specific to NuLat
+//   -- kNuLat -- whether to apply cuts specific to NuLat
 // NOTE: For now, default to "neutrino_direction = TVector3(-1, 0, 0);" (see NEUTRINO TRIGGER "init" section below)
 // Upgrade reminder: Possibly fix this by implementing the following BASH line (maybe using gSystem->Exec()):
 //   awk '$0 ~ /^[^#]generator\/vtx\/set -?[[:digit:]]/ {print "neutron_direction = TVector3(" $2 "," $3 "," $4 ");"}' $DATARUN.conf
-
-
 
 //Copyright (C) 2021 Mark J. Duvall
 //
@@ -41,7 +40,7 @@
 #include <math.h>
 
 
-void SEDAQ2( const char* filename, Bool_t graphics_tf = kFALSE, Double_t prompt_low = 0, Double_t delayed_low = 0, Double_t deltaT_low = 1.e-6, Double_t deltaT_high = 100.e-6, Bool_t nulat_tf = kFALSE) {
+void SEDAQ2( const char* filename, const Bool_t kGraphics = kFALSE, const Bool_t kQuantizedPositions = kFALSE, Double_t prompt_low = 0, Double_t delayed_low = 0, Double_t deltaT_low = 1.e-6, Double_t deltaT_high = 100.e-6, const Bool_t kNuLat = kFALSE) {
 
 
 //// INIT
@@ -49,7 +48,7 @@ void SEDAQ2( const char* filename, Bool_t graphics_tf = kFALSE, Double_t prompt_
 cout << endl;
 
 // general
-const char* sedaq2_version = "0.9.99";
+const char* sedaq2_version = "1.0.00";
 gSystem->Load("libPhysics.so");
 gStyle->SetHistLineWidth(2);
 gStyle->SetHistLineColor(kBlue);
@@ -77,23 +76,32 @@ Long64_t num_bursts = T_scint->GetEntries();
 Int_t event;
 Double_t event_time, wall_time, corrected_energy, corrected_energy_q, x, y, z;
 Double_t run_start, interevent_time, event_time_adj, wall_time_adj;
+TString *vol_name;
 T_scint->SetBranchAddress( "event", &event );
 T_scint->SetBranchAddress( "event_time", &event_time );
 T_scint->SetBranchAddress( "wall_time", &wall_time );
 T_scint->SetBranchAddress( "corrected_energy", &corrected_energy );
 T_scint->SetBranchAddress( "corrected_energy_q", &corrected_energy_q );
-T_scint->SetBranchAddress( "x", &x );
-T_scint->SetBranchAddress( "y", &y );
-T_scint->SetBranchAddress( "z", &z );
+if ( kQuantizedPositions == kFALSE ) {
+  T_scint->SetBranchAddress( "x", &x );
+  T_scint->SetBranchAddress( "y", &y );
+  T_scint->SetBranchAddress( "z", &z );
+} else {
+  T_scint->SetBranchAddress( "x_quantized", &x);
+  T_scint->SetBranchAddress( "y_quantized", &y);
+  T_scint->SetBranchAddress( "z_quantized", &z);
+}
 T_scint->SetBranchAddress( "event_time_adj", &event_time_adj );
 T_scint->SetBranchAddress( "wall_time_adj", &wall_time_adj );
 T_scint->SetBranchAddress( "interevent_time", &interevent_time );
+T_scint->SetBranchAddress( "vol_name", &vol_name );
 
 // address T2 branches
 Int_t prompt_cand_event, delayed_cand_event;
 Double_t prompt_cand_t, prompt_cand_eq, delayed_cand_t, delayed_cand_eq;
 Double_t prompt_cand_x, prompt_cand_y, prompt_cand_z;
 Double_t delayed_cand_x, delayed_cand_y, delayed_cand_z;
+TString *prompt_cand_vol, *delayed_cand_vol;
 Double_t cos_psi; // where psi (ψ) = angle between incoming and reconstructed neutrino momenta
 Double_t phi_recon, theta_recon; // angle reconstruction
 Double_t tmin;
@@ -102,8 +110,10 @@ T2->Branch("prompt_cand_event", &prompt_cand_event, "prompt_cand_event/I");
 T2->Branch("delayed_cand_event", &delayed_cand_event, "delayed_cand_event/I");
 T2->Branch("prompt_cand_t", &prompt_cand_t, "prompt_cand_t/D");
 T2->Branch("prompt_cand_eq", &prompt_cand_eq, "prompt_cand_eq/D");
+T2->Branch("prompt_cand_vol", &prompt_cand_vol);
 T2->Branch("delayed_cand_t", &delayed_cand_t, "delayed_cand_t/D");
 T2->Branch("delayed_cand_eq", &delayed_cand_eq, "delayed_cand_eq/D");
+T2->Branch("delayed_cand_vol", &delayed_cand_vol);
 T2->Branch("interevent_time", &interevent_time, "interevent_time/D");
 T2->Branch("prompt_cand_x", &prompt_cand_x, "prompt_cand_x/D");
 T2->Branch("prompt_cand_y", &prompt_cand_y, "prompt_cand_y/D");
@@ -133,7 +143,7 @@ T2user->Write();
 //// T PLOTS
 
 Int_t k(0);
-if ( graphics_tf == true ) { // draw graphics unless in batch mode (default false)
+if ( kGraphics == true ) { // draw graphics unless in batch mode (default false)
 
   //// PREPARE PLOTS
 
@@ -250,7 +260,7 @@ if ( graphics_tf == true ) { // draw graphics unless in batch mode (default fals
   c1->SaveAs(savename1);
   c1->Close();
 
-} //end if -- graphics_tf for T plots
+} //end if -- kGraphics for T plots
 
 
 //// NEUTRINO TRIGGER
@@ -272,7 +282,7 @@ if ( cubed_tf ) {
   T_scint->SetBranchAddress("cubed_z", &cubed_z);
 }
 // error checking -- nulat option XOR cubed branch (i.e., one but not the other)
-if ( nulat_tf ^ cubed_tf )  cout << "WARNING: Partial but incomplete NuLat parameters found." << endl;
+if ( kNuLat ^ cubed_tf )  cout << "WARNING: Partial but incomplete NuLat parameters found." << endl;
 
 // prepare *known* (i.e., not reconstructed) neutrino-direction vectors
 // reminder: TVector3 defaults to {x=out,y=right,z=up} and {rho=length,theta=polar(z),phi=azimuthal(x->y)} (rad)
@@ -307,6 +317,7 @@ for (( k = 0; k < num_bursts; k++ )) {
     prompt_cand_event = event;
     prompt_cand_t = wall_time_adj;
     prompt_cand_eq = corrected_energy_q;
+    prompt_cand_vol = vol_name;
     // positions: either MC "truth" data (plain x,y,z), or realistic / adjusted values
     if ( cubed_tf ) { // i.e., if NuLat cube-centered values are available
       prompt_cand_x = cubed_x;
@@ -325,6 +336,7 @@ for (( k = 0; k < num_bursts; k++ )) {
 	delayed_cand_event = event;
  	delayed_cand_t = wall_time_adj;
 	delayed_cand_eq = corrected_energy_q;
+        delayed_cand_vol = vol_name;
 	if ( cubed_tf ) { // i.e., if NuLat cube-centered values are available
 	  delayed_cand_x = cubed_x;
 	  delayed_cand_y = cubed_y;
@@ -364,7 +376,7 @@ for (( k = 0; k < num_bursts; k++ )) {
     // NuLat -- additional cuts
     Double_t cube_half_length = 25.; //mm //HC//
     Double_t cube_separation = 1.; //mm //HC//
-    if ( nulat_tf & cubed_tf ) { // apply NuLat position cuts -- cubes must be adjacent
+    if ( kNuLat & cubed_tf ) { // apply NuLat position cuts -- cubes must be adjacent
       if ( abs(delayed_cand_x-prompt_cand_x)<=(2*cube_half_length+cube_separation) & abs(delayed_cand_y-prompt_cand_y)<=(2*cube_half_length+cube_separation) & abs(delayed_cand_z-prompt_cand_z)<=(2*cube_half_length+cube_separation) ) {
         T2->Fill();
       }
@@ -400,7 +412,7 @@ cout << endl;
 
 //// PLOT NEUTRINO-CANDIDATE RESULTS
 
-if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there were no IBD triggers or if batch mode is on
+if ( T2->GetEntries() > 0 && kGraphics==true ) { // skip T2 graphics if there were no IBD triggers or if batch mode is on
 
   // interevent time bins
   const Int_t nBinsEBP = 100;
@@ -517,7 +529,7 @@ if ( T2->GetEntries() > 0 && graphics_tf==true ) { // skip T2 graphics if there 
 } //endif -- IBD candidates && no batch mode
 
 // draw capture products
-if ( graphics_tf == true ) {
+if ( kGraphics == true ) {
   TString savename7;
   savename7 = basename+"_cap-prod.png";
   TCanvas* can_prod_h = new TCanvas("can_prod", filename, 820, 120, 800, 800);
@@ -544,7 +556,7 @@ if ( graphics_tf == true ) {
   c7->Write();
   c7->SaveAs(savename7);
   c7->Close();
-} // end if -- graphics_tf (for batch mode)
+} // end if -- kGraphics (for batch mode)
 
 //// ALL PAU!   )
 cout << endl;

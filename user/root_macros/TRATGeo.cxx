@@ -105,7 +105,6 @@ TRATGeo::GetVolume(const char* volumeName)
 // FindExperiment
 TRATGeo::FindExperiment()
 {
-//TMap* db = (TMap*)fFile->FindObjectAny("db");
   if ( fDB == 0x0 ) {
     TString warnLoc = TString::Format("%s::FindExperiment", Class_Name());
     TString warnMsg = TString::Format("RAT-PAC database not found in %s; experiment name and path unknown.", fFileName);
@@ -124,10 +123,82 @@ TRATGeo::FindExperiment()
   }
 }
 
-////______________________________________________________________________________
-//TRATGeo::
-//{
-//}
+//______________________________________________________________________________
+// Types
+TRATGeo::Types()
+{
+  TString volName, volType;
+  TRATVolume* vol;
+  Int_t k, N(fVolumeList->GetEntries());
+  for ( k=0; k<(N-1); k++ ) {
+    vol = (TRATVolume*)fVolumeList->At(k);
+    volName = vol->GetName();
+    volType = vol->GetVolumeType();
+    printf( "%s\t\t%s\n", volName.Data(), volType.Data() );
+  }
+}
+
+//______________________________________________________________________________
+// Materials
+TRATGeo::Materials()
+{
+  TString volName, volMaterial;
+  TRATVolume* vol;
+  Int_t k, N(fVolumeList->GetEntries());
+  for ( k=0; k<(N-1); k++ ) {
+    vol = (TRATVolume*)fVolumeList->At(k);
+    volName = vol->GetName();
+    volMaterial = vol->GetMaterial();
+    printf( "%s\t\t%s\n", volName.Data(), volMaterial.Data() );
+  }
+}
+
+//______________________________________________________________________________
+// Mothers
+TRATGeo::Mothers()
+{
+  TString volName, volMother;
+  TRATVolume* vol;
+  Int_t k, N(fVolumeList->GetEntries());
+  for ( k=0; k<(N-1); k++ ) {
+    vol = (TRATVolume*)fVolumeList->At(k);
+    volName = vol->GetName();
+    volMother = vol->GetMother();
+    printf( "%s\t\t%s\n", volName.Data(), volMother.Data() );
+  }
+}
+
+//______________________________________________________________________________
+// Sizes
+TRATGeo::Sizes()
+{
+  TString volName;
+  TVector3 volSize;
+  TRATVolume* vol;
+  Int_t k, N(fVolumeList->GetEntries());
+  for ( k=0; k<(N-1); k++ ) {
+    vol = (TRATVolume*)fVolumeList->At(k);
+    volName = vol->GetName();
+    volSize = vol->GetSize();
+    printf( "%s\t\t%f  %f  %f\n", volName.Data(), volSize.X(), volSize.Y(), volSize.Z() );
+  }
+}
+
+//______________________________________________________________________________
+// Positions
+TRATGeo::Positions()
+{
+  TString volName;
+  TVector3 volPosition;
+  TRATVolume* vol;
+  Int_t k, N(fVolumeList->GetEntries());
+  for ( k=0; k<(N-1); k++ ) {
+    vol = (TRATVolume*)fVolumeList->At(k);
+    volName = vol->GetName();
+    volPosition = vol->GetAbsolutePosition();
+    printf( "%s\t\t%f  %f  %f\n", volName.Data(), volPosition.X(), volPosition.Y(), volPosition.Z() );
+  }
+}
 
 ////______________________________________________________________________________
 //TRATGeo::
@@ -145,10 +216,11 @@ TRATGeo::Print()
 {
   printf("\n");
   printf("%s\t%s\t%s\n", Class_Name(), GetName(), GetTitle());
-  printf("Name: %s\tTitle: %s\n", fName.Data(), fTitle.Data());
-  printf("Experiment:\t%s\n", fExperiment.Data());
+  printf("Experiment:\t\t%s\n", fExperiment.Data());
+  printf("Experiment Path:\t%s\n", fExperimentPath.Data());
   printf("ROOT File:\t%s\n", fFileName);
   printf("RAT-PAC Database TMap*: "); cout << fDB << endl;
+  printf("Entries: %d\n", fVolumeList->GetEntries());
   printf("Volume List:\n");
   fVolumeList->Print();
   printf("\n");

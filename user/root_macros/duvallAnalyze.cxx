@@ -16,7 +16,7 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-void duvallAnalyze( const char* baseName, const bool kGraphics = kTRUE, const bool kFullAnalysis = kTRUE ) {
+void duvallAnalyze( const char* baseName, const bool kGraphics = kTRUE, const bool kQuantizedPositions = kFALSE, const bool kFullAnalysis = kTRUE ) {
 
 // filenames
 TString basename(baseName);
@@ -44,7 +44,7 @@ correctEnergies( scintfile.Data(), energiesfile.Data() );
 printf( "//// Preparation Complete ////\n\n\n" );
 if ( kFullAnalysis == true ) {
   printf( "\n\n//// Analyzing datarun \"%s\"... ////\n\n\n", basename.Data() );
-  SEDAQ2( scintfile.Data(), kGraphics );
+  SEDAQ2( scintfile.Data(), kGraphics, kQuantizedPositions );
   angularRecon( resultsfile.Data(), kGraphics );
   printf( "//// Analysis Complete ////\n\n\n" );
 }

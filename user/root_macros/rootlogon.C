@@ -17,6 +17,8 @@
 {
 
   #include <TDuvallAnalyze.cxx>
+  #include <TRATVolume.cxx>
+  #include <TRATGeo.cxx>
   #include <TMath.h>
 
   // make pi, e

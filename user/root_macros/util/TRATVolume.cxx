@@ -42,17 +42,18 @@ TRATVolume::TRATVolume()
   fExperiment = "";
   fExperimentPath = "";
   fDB = 0;
+  fVolumeType = "";
   fMother = "";
+  fSize = TVector3(0.0,0.0,0.0);
   fRelativePosition = TVector3(0.0,0.0,0.0);
   fAbsolutePosition = TVector3(0.0,0.0,0.0);
-//fHistList = new TObjArray;
 }
 
 //______________________________________________________________________________
 // primary ctor
 TRATVolume::TRATVolume( const char* name )
 {
-  // init and check for existence
+  // init DB and check for existence
   if (name == "") {
     TString errMsg = TString::Format("Invalid volume name \"%s\"\n", name);
     this->Error("TRATVolume(const char* name)", errMsg.Data());
@@ -64,13 +65,13 @@ TRATVolume::TRATVolume( const char* name )
     this->Error("TRATVolume(const char* name)", errMsg.Data());
     return;
   }
-  TString dbKey = TString::Format("GEO[%s].size", name);
+  TString dbKey = TString::Format("GEO[%s].type", name);
   if (fDB->GetValue(dbKey) == 0) {
     TString errMsg = TString::Format("No volume found with name \"%s\"\n", name);
     this->Error("TRATVolume(const char* name)", errMsg.Data());
     return;
   }
-  // set (remaining) members
+  // set remaining members
   SetName(name);
   TString titStr = TString::Format("TRATVolume for \"%s\"", name);
   SetTitle(titStr.Data());
@@ -83,10 +84,20 @@ TRATVolume::TRATVolume( const char* name )
     fFile = 0;
     fFileName = "";
   }
-  FindExperiment();
-  FindMother();
-  FindRelativePosition();
+  FindAll();
 //FindAbsolutePosition();
+}
+
+//______________________________________________________________________________
+// FindAll
+TRATVolume::FindAll()
+{
+  FindExperiment();
+  FindVolumeType();
+  FindMaterial();
+  FindMother();
+  FindSize();
+  FindRelativePosition();
 }
 
 //______________________________________________________________________________
@@ -112,6 +123,28 @@ TRATVolume::FindExperiment()
 }
 
 //______________________________________________________________________________
+// FindMaterial
+TRATVolume::FindMaterial()
+{
+  keyStrVol.Form("GEO[%s].material", fVolNameChr);
+  TObjString* typeTOS = fDB->GetValue(keyStrVol.Data());
+  TString volMaterial = typeTOS->GetString();
+  volMaterial.ReplaceAll("\"","");
+  fMaterial = volMaterial;
+}
+
+//______________________________________________________________________________
+// FindVolumeType
+TRATVolume::FindVolumeType()
+{
+  keyStrVol.Form("GEO[%s].type", fVolNameChr);
+  TObjString* typeTOS = fDB->GetValue(keyStrVol.Data());
+  TString volumeType = typeTOS->GetString();
+  volumeType.ReplaceAll("\"","");
+  fVolumeType = volumeType;
+}
+
+//______________________________________________________________________________
 // FindMother
 TRATVolume::FindMother()
 {
@@ -120,6 +153,27 @@ TRATVolume::FindMother()
   TString mother = motherTOS->GetString();
   mother.ReplaceAll("\"","");
   fMother = mother;
+}
+
+//______________________________________________________________________________
+// FindSize
+TRATVolume::FindSize()
+{
+  TString valStrRelative;
+  TObjString* valTOS, dxTOS, dyTOS, dzTOS;
+  TObjArray* sizeArr;
+  keyStrVol.Form("GEO[%s].size", fVolNameChr);
+  valTOS = (TObjString*)fDB->GetValue(keyStrVol.Data());
+  valStrRelative = valTOS->GetString();
+  valStrRelative.ReplaceAll("[","");
+  valStrRelative.ReplaceAll("d","");
+  valStrRelative.ReplaceAll("]","");
+  valStrRelative.Replace(valStrRelative.Last(','), 1, "");
+  sizeArr = valStrRelative.Tokenize(",");
+  dxTOS = (TObjString*)sizeArr->At(0);
+  dyTOS = (TObjString*)sizeArr->At(1);
+  dzTOS = (TObjString*)sizeArr->At(2);
+  fSize = TVector3( dxTOS.GetString().Atoll(), dyTOS.GetString().Atoll(), dzTOS.GetString().Atoll() ); // ROOT wanted "." member access operators
 }
 
 //______________________________________________________________________________
@@ -199,13 +253,18 @@ TRATVolume::Print()
 {
   printf("\n");
   printf("%s\t%s\t%s\n", Class_Name(), GetName(), GetTitle());
-  printf("Experiment:\t%s\n", fExperiment.Data());
-  printf("ROOT File:\t%s\n", fFileName);
   printf("Volume Name: %s\n", fVolNameChr);
-  printf("RAT-PAC Database TMap*: "); cout << fDB << endl;
+  printf("ROOT File: "); cout << fFile << endl;
+  printf("ROOT Filename:\t%s\n", fFileName);
+  printf("Experiment:\t\t%s\n", fExperiment.Data());
+  printf("Experiment Path:\t%s\n", fExperimentPath.Data());
+  printf("RAT-PAC Database TMap: "); cout << fDB << endl;
+  printf("Volume Type: %s\n", fVolumeType.Data());
+  printf("Material: %s\n", fMaterial.Data());
   printf("Mother Volume: %s\n", fMother.Data());
-  printf("Relative Position: "); fRelativePosition.Print();
-  printf("Absolute Position: "); fAbsolutePosition.Print();
+  printf("Volume Size: %f  %f  %f\n", fSize.X(), fSize.Y(), fSize.Z());
+  printf("Relative Position: %f  %f  %f\n", fRelativePosition.X(), fRelativePosition.Y(), fRelativePosition.Z());
+  printf("Absolute Position: %f  %f  %f\n", fAbsolutePosition.X(), fAbsolutePosition.Y(), fAbsolutePosition.Z());
   printf("\n");
 }
 
