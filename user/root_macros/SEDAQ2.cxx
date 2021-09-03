@@ -16,7 +16,6 @@
 //   -- deltaT_low -- IBD trigger, lower bound on interevent time
 //   -- deltaT_high -- IBD trigger, upper bound on interevent time
 //   -- delayed_low -- IBD trigger, low threshold on delayed event (MeV)
-//   -- kNuLat -- whether to apply cuts specific to NuLat
 // NOTE: For now, default to "neutrino_direction = TVector3(-1, 0, 0);" (see NEUTRINO TRIGGER "init" section below)
 // Upgrade reminder: Possibly fix this by implementing the following BASH line (maybe using gSystem->Exec()):
 //   awk '$0 ~ /^[^#]generator\/vtx\/set -?[[:digit:]]/ {print "neutron_direction = TVector3(" $2 "," $3 "," $4 ");"}' $DATARUN.conf
@@ -40,7 +39,7 @@
 #include <math.h>
 
 
-void SEDAQ2( const char* filename, const Bool_t kGraphics = kFALSE, const Bool_t kQuantizedPositions = kFALSE, Double_t prompt_low = 0, Double_t delayed_low = 0, Double_t deltaT_low = 1.e-6, Double_t deltaT_high = 100.e-6, const Bool_t kNuLat = kFALSE) {
+void SEDAQ2( const char* filename, const Bool_t kGraphics = kFALSE, const Bool_t kQuantizedPositions = kFALSE, Double_t prompt_low = 0, Double_t delayed_low = 0, Double_t deltaT_low = 1.e-6, Double_t deltaT_high = 100.e-6) {
 
 
 //// INIT
@@ -273,16 +272,6 @@ Double_t deltaT_low, deltaT_high, trigger_reset;
 //Double_t prompt_low;
 Double_t prompt_high, delayed_low, delayed_high;
 TVector3 neutrino_direction, nu_hat, displacement, disp_hat, source_recon, src_hat;
-// for NuLat: address cube-centered positions
-Bool_t cubed_tf = ( T_scint->FindBranch("cubed_x") != 0x0 );
-if ( cubed_tf ) {
-  Double_t cubed_x, cubed_y, cubed_z;
-  T_scint->SetBranchAddress("cubed_x", &cubed_x);
-  T_scint->SetBranchAddress("cubed_y", &cubed_y);
-  T_scint->SetBranchAddress("cubed_z", &cubed_z);
-}
-// error checking -- nulat option XOR cubed branch (i.e., one but not the other)
-if ( kNuLat ^ cubed_tf )  cout << "WARNING: Partial but incomplete NuLat parameters found." << endl;
 
 // prepare *known* (i.e., not reconstructed) neutrino-direction vectors
 // reminder: TVector3 defaults to {x=out,y=right,z=up} and {rho=length,theta=polar(z),phi=azimuthal(x->y)} (rad)
@@ -306,7 +295,7 @@ prompt_high = 100.;
 delayed_high = 100.;
 
 // scan through events for IBD candidates
-for (( k = 0; k < num_bursts; k++ )) {
+for (( k = 0; k < (num_bursts-1); k++ )) {
 
   prompt_tf = false;
   delayed_tf = false;
@@ -318,36 +307,21 @@ for (( k = 0; k < num_bursts; k++ )) {
     prompt_cand_t = wall_time_adj;
     prompt_cand_eq = corrected_energy_q;
     prompt_cand_vol = vol_name;
-    // positions: either MC "truth" data (plain x,y,z), or realistic / adjusted values
-    if ( cubed_tf ) { // i.e., if NuLat cube-centered values are available
-      prompt_cand_x = cubed_x;
-      prompt_cand_y = cubed_y;
-      prompt_cand_z = cubed_z;
-    } else {
-      prompt_cand_x = x;
-      prompt_cand_y = y;
-      prompt_cand_z = z;
-    } // end if
+    prompt_cand_x = x;
+    prompt_cand_y = y;
+    prompt_cand_z = z;
     // look for delayed:
-    if ( k < num_bursts-1 ) {
-      T_scint->GetEntry(k+1);
-      if ( interevent_time > deltaT_low & interevent_time < deltaT_high & corrected_energy_q > delayed_low & corrected_energy_q < delayed_high ) {
-        delayed_tf = true;
-	delayed_cand_event = event;
- 	delayed_cand_t = wall_time_adj;
-	delayed_cand_eq = corrected_energy_q;
-        delayed_cand_vol = vol_name;
-	if ( cubed_tf ) { // i.e., if NuLat cube-centered values are available
-	  delayed_cand_x = cubed_x;
-	  delayed_cand_y = cubed_y;
-	  delayed_cand_z = cubed_z;
-	} else {
-	  delayed_cand_x = x;
-	  delayed_cand_y = y;
-	  delayed_cand_z = z;
-	} //endif -- cubed_tf
-      } //endif -- delayed satisfies neutrino trigger
-    } //endif -- not last entry in T
+    T_scint->GetEntry(k+1);
+    if ( interevent_time > deltaT_low & interevent_time < deltaT_high & corrected_energy_q > delayed_low & corrected_energy_q < delayed_high ) {
+      delayed_tf = true;
+      delayed_cand_event = event;
+      delayed_cand_t = wall_time_adj;
+      delayed_cand_eq = corrected_energy_q;
+      delayed_cand_vol = vol_name;
+      delayed_cand_x = x;
+      delayed_cand_y = y;
+      delayed_cand_z = z;
+    } //endif -- delayed satisfies neutrino trigger
   } //endif -- prompt satisfies neutrino trigger
 
   // if candidate burst pair is found, add burst times and energies and reconstructed angle to tree
@@ -373,16 +347,9 @@ for (( k = 0; k < num_bursts; k++ )) {
     longtd = phi_recon; // aitoff longtd: (-180,+180)
     lattd = 90 - theta_recon; // aitoff lattd: (-90,+90)
 
-    // NuLat -- additional cuts
-    Double_t cube_half_length = 25.; //mm //HC//
-    Double_t cube_separation = 1.; //mm //HC//
-    if ( kNuLat & cubed_tf ) { // apply NuLat position cuts -- cubes must be adjacent
-      if ( abs(delayed_cand_x-prompt_cand_x)<=(2*cube_half_length+cube_separation) & abs(delayed_cand_y-prompt_cand_y)<=(2*cube_half_length+cube_separation) & abs(delayed_cand_z-prompt_cand_z)<=(2*cube_half_length+cube_separation) ) {
-        T2->Fill();
-      }
-    } else { // just fill
-      T2->Fill();
-    } //endif
+    // fill results tree
+    T2->Fill();
+
   } //endif
 
 } //end event loop
