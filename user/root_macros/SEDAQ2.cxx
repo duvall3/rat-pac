@@ -3,7 +3,7 @@
 // -- further documentation forthcoming
 // -- see https://github.com/duvall3/rat-pac/tree/collab
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2017 ~ //
-// ~ SEDAQ2 v1.0.00 ~ 8/2021 ~ //
+// ~ SEDAQ2 v1.1.00 ~ 8/2021 ~ //
 //
 // INPUT: ROOT file containing TTree "T_scint" (Scintillation Data)
 // OUTPUT: ROOT file containing TTrees "T2" (IBD Candidate Data) and "T_Trig" (IBD Trigger Parameters and Result)
@@ -47,7 +47,7 @@ void SEDAQ2( const char* filename, const Bool_t kGraphics = kFALSE, const Bool_t
 cout << endl;
 
 // general
-const char* sedaq2_version = "1.0.00";
+const char* sedaq2_version = "1.1.00";
 gSystem->Load("libPhysics.so");
 gStyle->SetHistLineWidth(2);
 gStyle->SetHistLineColor(kBlue);
@@ -266,7 +266,7 @@ if ( kGraphics == true ) { // draw graphics unless in batch mode (default false)
 
 // init
 tmin = 1.e-7; //s;
-Bool_t prompt_tf, delayed_tf;
+Bool_t prompt_tf, delayed_tf, kVolumeTest(kTRUE);
 Double_t deltaX, deltaY, deltaZ, R;
 Double_t deltaT_low, deltaT_high, trigger_reset;
 //Double_t prompt_low;
@@ -295,10 +295,11 @@ prompt_high = 100.;
 delayed_high = 100.;
 
 // scan through events for IBD candidates
-for (( k = 0; k < (num_bursts-1); k++ )) {
+for ( k = 0; k < (num_bursts-1); k++ ) {
 
-  prompt_tf = false;
-  delayed_tf = false;
+  prompt_tf = kFALSE;
+  delayed_tf = kFALSE;
+  if (kQuantizedPositions) kVolumeTest = kFALSE;
   T_scint->GetEntry(k);
   // look for prompt:
   if ( interevent_time > trigger_reset & corrected_energy_q > prompt_low & corrected_energy_q < prompt_high ) {
@@ -306,7 +307,9 @@ for (( k = 0; k < (num_bursts-1); k++ )) {
     prompt_cand_event = event;
     prompt_cand_t = wall_time_adj;
     prompt_cand_eq = corrected_energy_q;
-    prompt_cand_vol = vol_name;
+//  prompt_cand_vol = vol_name;
+    prompt_cand_vol = new TString(vol_name->Data());
+//  cout << prompt_cand_vol.Data() << "  " << vol_name.Data() << endl; //debug
     prompt_cand_x = x;
     prompt_cand_y = y;
     prompt_cand_z = z;
@@ -317,15 +320,27 @@ for (( k = 0; k < (num_bursts-1); k++ )) {
       delayed_cand_event = event;
       delayed_cand_t = wall_time_adj;
       delayed_cand_eq = corrected_energy_q;
-      delayed_cand_vol = vol_name;
+//    delayed_cand_vol = vol_name;
+      delayed_cand_vol = new TString(vol_name->Data());
+//    cout << prompt_cand_vol.Data() << "  " << delayed_cand_vol.Data() << "  " << vol_name.Data() << endl << endl; //debug
       delayed_cand_x = x;
       delayed_cand_y = y;
       delayed_cand_z = z;
     } //endif -- delayed satisfies neutrino trigger
   } //endif -- prompt satisfies neutrino trigger
 
+  // for segmented detectors, discard candidates in which the prompt and delayed events
+  //   occurred in the same volume
+  if (kQuantizedPositions) {
+    if (prompt_cand_vol->Contains(*delayed_cand_vol)) {
+      kVolumeTest = kFALSE;
+    } else {
+      kVolumeTest = kTRUE;
+    }
+  }
+
   // if candidate burst pair is found, add burst times and energies and reconstructed angle to tree
-  if ( prompt_tf & delayed_tf ) {
+  if ( prompt_tf & delayed_tf & kVolumeTest ) {
 
     // calculate positron-to-neutron displacement
     deltaX = delayed_cand_x - prompt_cand_x;
@@ -351,6 +366,11 @@ for (( k = 0; k < (num_bursts-1); k++ )) {
     T2->Fill();
 
   } //endif
+
+//// prevent memory leak
+//delete prompt_cand_vol;
+//delete delayed_cand_vol;
+// ^ this crashes the macro; leaving for now (because it's working)
 
 } //end event loop
 
