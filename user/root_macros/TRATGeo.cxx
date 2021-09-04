@@ -105,7 +105,7 @@ TRATGeo::Build()
     keyStr = keyTOS->GetString();
     if ( keyStr.Contains(dbIndexPattern) ) { // relevant entry
       keyStr.ReplaceAll("GEO[","");
-      keyStr.ReplaceAll("].size","");
+      keyStr = keyStr(0, keyStr.Index(']'));
 //    infoMsg.Form("Found relevant entry: %s", keyStr.Data()); //debug
 //    this->Info("Build()", infoMsg.Data()); //debug
       // create TRATVolume* and add to list

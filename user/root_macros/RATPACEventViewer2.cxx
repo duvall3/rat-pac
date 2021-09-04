@@ -117,7 +117,7 @@ enum EColor color;
 // create TGeoVolumes from TRATVolumes
 TList *rvols = g->GetListOfVolumes();
 //rvols->ls(); //debug
-cout << "rvols Entries: " << rvols->GetEntries() << endl; //debug
+//cout << "rvols Entries: " << rvols->GetEntries() << endl; //debug
 TIter i(rvols);
 TRATVolume *rvol;
 TString volumeName, volumeMother; //, volumeType;
@@ -129,13 +129,14 @@ for ( i=rvols->begin(); i!=rvols->end(); ++i ) {
   volumeSize = rvol->GetSize();
   volumePosition = rvol->GetAbsolutePosition();
   // create volume
-  TGeoVolume* volume = geo->MakeBox(volumeName.Data(), med, volumePosition.X(), volumePosition.Y(), volumePosition.Z() );
+  TGeoVolume* volume = geo->MakeBox(volumeName.Data(), med, volumeSize.X(), volumeSize.Y(), volumeSize.Z() );
   if ( volumeName == "world" ) { // top volume //HC//
     if ( ! volume->IsTopVolume() ) {
     geo->SetTopVolume(volume);
     }
   } else { // all other volumes
     volume->SetLineWidth(1);
+    volume->SetLineColor(kBlack);
   } // endif -- world (top)
 } // end volume loop
 
@@ -146,27 +147,29 @@ geo->SetTopVolume(world);
 TGeoVolume* mother = new TGeoVolume; // mother volume
 Int_t k_volume(0); // volume counter
 // loop over creted TGeoVolumes
-TGeoVolume *vol, volMother;
+TGeoVolume *vol, *volMother;
 TString volname, volMotherName;
+TGeoTranslation *trans;
 TIter iv = vols->begin();
 //vols->ls(); //debug
 for ( iv = vols->begin(); iv != vols->end(); ++iv ) {
 
   // get volume
   vol = (TGeoVolume*)*iv;
+//vol = (TGeoVolume*)vols->FindObject("target_bar_9");
   volname = vol->GetName();
-//cout << volname.Data() << endl; //debug
   rvol = (TRATVolume*)g->GetVolume(volname.Data());
   volPosition = rvol->GetAbsolutePosition();
 
   if (vol->IsTopVolume()) continue; // skip world (already positioned when made top volume)
 
-  TGeoTranslation* trans = new TGeoTranslation( volPosition.X(), volPosition.Y(), volPosition.Z() );
+  trans = new TGeoTranslation( volPosition.X(), volPosition.Y(), volPosition.Z() );
+//trans->Print(); //debug
 
   // find mother and add node
   volMotherName = rvol->GetMother();
   volMother = (TGeoVolume*)vols->FindObject(volMotherName.Data());
-  if (volname.Contains(tcregex)) volMother.AddNode(vol, k_volume, trans);
+  if (volname.Contains(tcregex)) volMother->AddNode(vol, k_volume, trans);
   k_volume++;
 
 //delete trans;
@@ -179,17 +182,19 @@ cout << endl;
 geo->CloseGeometry();
 world->SetLineColor(kGray);
 world->SetLineWidth(1);
-geo->SetTopVisible(kFALSE);
-//geo->SetTopVisible(kTRUE);
+//geo->SetTopVisible(kFALSE);
+geo->SetTopVisible(kTRUE);
 TString can_name = experiment+", \""+filename+"\"";
 TCanvas* can = new TCanvas("can", can_name, 1000, 100, 850, 700);
+//can->SetFillColor(kCyan);
 world->Draw();
 // draw desired volumes
-for ( iv = vols->begin(); iv != vols->end(); ++iv ) {
-  vol = (TGeoVolume*)*iv;
-  volname = vol->GetName();
-  if (volname.Contains(tcregex)) vol->Draw("SAME");
-}
+//for ( iv = vols->begin(); iv != vols->end(); ++iv ) {
+//  vol = (TGeoVolume*)*iv;
+//  volname = vol->GetName();
+//  if (volname.Contains(tcregex)) vol->Draw("SAME");
+//}
+//vol->Draw();
 
 // annotations
 TLegend *gleg = new TLegend(0.01, 0.01, 0.25, 0.15);

@@ -169,17 +169,19 @@ TRATVolume::FindSize()
   TObjString* valTOS, dxTOS, dyTOS, dzTOS;
   TObjArray* sizeArr;
   keyStrVol.Form("GEO[%s].size", fVolNameChr);
-  valTOS = (TObjString*)fDB->GetValue(keyStrVol.Data());
-  valStrRelative = valTOS->GetString();
-  valStrRelative.ReplaceAll("[","");
-  valStrRelative.ReplaceAll("d","");
-  valStrRelative.ReplaceAll("]","");
-  valStrRelative.Replace(valStrRelative.Last(','), 1, "");
-  sizeArr = valStrRelative.Tokenize(",");
-  dxTOS = (TObjString*)sizeArr->At(0);
-  dyTOS = (TObjString*)sizeArr->At(1);
-  dzTOS = (TObjString*)sizeArr->At(2);
-  fSize = TVector3( dxTOS.GetString().Atoll(), dyTOS.GetString().Atoll(), dzTOS.GetString().Atoll() ); // ROOT wanted "." member access operators
+  if (fDB->GetValue(keyStrVol.Data())) {
+    valTOS = (TObjString*)fDB->GetValue(keyStrVol.Data());
+    valStrRelative = valTOS->GetString();
+    valStrRelative.ReplaceAll("[","");
+    valStrRelative.ReplaceAll("d","");
+    valStrRelative.ReplaceAll("]","");
+    valStrRelative.Replace(valStrRelative.Last(','), 1, "");
+    sizeArr = valStrRelative.Tokenize(",");
+    dxTOS = (TObjString*)sizeArr->At(0);
+    dyTOS = (TObjString*)sizeArr->At(1);
+    dzTOS = (TObjString*)sizeArr->At(2);
+    fSize = TVector3( dxTOS.GetString().Atoll(), dyTOS.GetString().Atoll(), dzTOS.GetString().Atoll() ); // ROOT wanted "." member access operators
+  }
 }
 
 //______________________________________________________________________________
