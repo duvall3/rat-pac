@@ -33,6 +33,7 @@ TString FileName = filename;
 TString basename = FileName(0, FileName.Index(".root"));
 TString savename = basename + "_T.root";
 TFile* f0 = TFile::Open(filename); // needed by TRATGeo for RAT database
+Double_t positionResolution = 150.; // position resolution (mm)
 TRATGeo g;
 g.Build();
 TFile* f = new TFile(savename, "recreate");
@@ -61,7 +62,7 @@ TTree* T_scint = new TTree("T_scint", "Pseudo-Scintillation Data");
 //TTree* T_scint = new TTree("T", "Pseudo-Scintillation Data");
 T_scint->GetUserInfo()->Add(nMCEvents_tos);
 Int_t event;
-Double_t event_time, wall_time, energy, energy_q, x, y, z, x_quantized, y_quantized, z_quantized;
+Double_t event_time, wall_time, energy, energy_q, x, y, z, x_quantized, y_quantized, z_quantized, x_res, y_res, z_res;
 TString cap_product, vol_name;
 T_scint->Branch( "event", &event, "event/I" );
 T_scint->Branch( "event_time", &event_time, "event_time/D" );
@@ -74,6 +75,9 @@ T_scint->Branch( "z", &z, "z/D" );
 T_scint->Branch( "x_quantized", &x_quantized, "x_quantized/D" );
 T_scint->Branch( "y_quantized", &y_quantized, "y_quantized/D" );
 T_scint->Branch( "z_quantized", &z_quantized, "z_quantized/D" );
+T_scint->Branch( "x_res", &x_res, "x_res/D" );
+T_scint->Branch( "y_res", &y_res, "y_res/D" );
+T_scint->Branch( "z_res", &z_res, "z_res/D" );
 T_scint->Branch( "cap_product", &cap_product );
 T_scint->Branch( "vol_name", &vol_name );
 
@@ -131,6 +135,9 @@ for ( k=0; k<N; k++ ) { // event loop
   x = xEQ / eqSum;
   y = yEQ / eqSum;
   z = zEQ / eqSum;
+  x_res = gRandom->Gaus(x, positionResolution);
+  y_res = gRandom->Gaus(y, positionResolution);
+  z_res = gRandom->Gaus(z, positionResolution);
   cap_product = "";
   if (energy_q > 0) T_scint->Fill(); // possible bugfix
 //T_scint->Fill(); // possible bugfix
@@ -172,6 +179,9 @@ for ( k=0; k<N; k++ ) { // event loop
       x = n->GetEndpoint().X();
       y = n->GetEndpoint().Y();
       z = n->GetEndpoint().Z();
+      x_res = gRandom->Gaus(x, positionResolution);
+      y_res = gRandom->Gaus(y, positionResolution);
+      z_res = gRandom->Gaus(z, positionResolution);
       T_scint->Fill();
     }
   }

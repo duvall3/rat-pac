@@ -12,6 +12,8 @@
 //   -- filename -- input ROOT file
 //   -- kGraphics -- whether to draw & save plots; defaults to false for batch mode
 //   -- kQuantizedPositions -- whether to replace raw positions with coordinates of relevant volume centers
+//   -- kPositionResolution -- whether to replace raw positions with positions that have undergond a Gaussian spread
+//        (see "positionResolution" in ibdTracksToScint.cxx for width of Gaussian)
 //   -- prompt_low -- IBD trigger, low threshold on prompt event (MeV)
 //   -- deltaT_low -- IBD trigger, lower bound on interevent time
 //   -- deltaT_high -- IBD trigger, upper bound on interevent time
@@ -39,7 +41,7 @@
 #include <math.h>
 
 
-void SEDAQ2( const char* filename, const Bool_t kGraphics = kFALSE, const Bool_t kQuantizedPositions = kFALSE, Double_t prompt_low = 0, Double_t delayed_low = 0, Double_t deltaT_low = 1.e-6, Double_t deltaT_high = 100.e-6) {
+void SEDAQ2( const char* filename, const Bool_t kGraphics = kFALSE, const Bool_t kQuantizedPositions = kFALSE, const Bool_t kPositionResolution = kFALSE, Double_t prompt_low = 0, Double_t delayed_low = 0, Double_t deltaT_low = 1.e-6, Double_t deltaT_high = 100.e-6) {
 
 
 //// INIT
@@ -81,14 +83,18 @@ T_scint->SetBranchAddress( "event_time", &event_time );
 T_scint->SetBranchAddress( "wall_time", &wall_time );
 T_scint->SetBranchAddress( "corrected_energy", &corrected_energy );
 T_scint->SetBranchAddress( "corrected_energy_q", &corrected_energy_q );
-if ( kQuantizedPositions == kFALSE ) {
-  T_scint->SetBranchAddress( "x", &x );
-  T_scint->SetBranchAddress( "y", &y );
-  T_scint->SetBranchAddress( "z", &z );
-} else {
+if (kQuantizedPositions) {
   T_scint->SetBranchAddress( "x_quantized", &x);
   T_scint->SetBranchAddress( "y_quantized", &y);
   T_scint->SetBranchAddress( "z_quantized", &z);
+} else if (kPositionResolution) {
+  T_scint->SetBranchAddress( "x_res", &x );
+  T_scint->SetBranchAddress( "y_res", &y );
+  T_scint->SetBranchAddress( "z_res", &z );
+} else {
+  T_scint->SetBranchAddress( "x", &x );
+  T_scint->SetBranchAddress( "y", &y );
+  T_scint->SetBranchAddress( "z", &z );
 }
 T_scint->SetBranchAddress( "event_time_adj", &event_time_adj );
 T_scint->SetBranchAddress( "wall_time_adj", &wall_time_adj );

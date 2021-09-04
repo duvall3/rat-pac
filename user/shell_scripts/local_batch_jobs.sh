@@ -62,9 +62,19 @@ DATARUN=$1
 NEVENTS=$2
 NINSTS=$3
 if [[ $# -lt 4 ]]; then
+  QUANTIZED_POSITIONS_TF=false
+else
+  QUANTIZED_POSITIONS_TF=$4
+fi
+if [[ $# -lt 5 ]]; then
+  POSITION_RESOLUTION_TF=false
+else
+  POSITION_RESOLUTION_TF=$5
+fi
+if [[ $# -lt 6 ]]; then
   EXPDIR=$RATROOT/data/$(basename $(pwd) /)
 else
-  EXPDIR=$(basename $4 /)
+  EXPDIR=$(basename $6 /)
 fi
 
 ##debug
@@ -94,7 +104,7 @@ for (( k=0; k<$NINSTS; k++ )) {
 
   # prepare simulation, post-processing, and combination commands
   RATCMD="rat -l $INST_DIR.log run.mac" # assume IBD run
-  PROCCMD="$RATROOT/user/shell_scripts/process_rat_run.sh $INST_DIR $NEVENTS false false"
+  PROCCMD="$RATROOT/user/shell_scripts/process_rat_run.sh $INST_DIR $NEVENTS false $QUANTIZED_POSITIONS_TF $POSITION_RESOLUTION_TF"
   ECHOCMD="echo -e \"\n$INST_DIR complete.\n\""
   FULLCMD="eval $RATCMD && eval $PROCCMD && eval $ECHOCMD"
 
@@ -113,7 +123,7 @@ done
 # simulations and conversions should be finished here
 echo -e "\nBatch jobs complete.\n"
 
-# combine dataruns into a single _T file for use with SEDAQ.cxx
+# combine dataruns into a single _T file for use with SEDAQ2.cxx
 echo -e "\nCombining scintillation data...\n"
 chain.sh && echo -e "\nTChain complete.\n"
 
@@ -121,7 +131,7 @@ chain.sh && echo -e "\nTChain complete.\n"
 echo -e "\nAnalyzing combined data...\n"
 T_FILE=$DATARUN"_T.root"
 RES_FILE=$DATARUN"_results.root"
-ANCMD1=$(echo -e "root -q -l -b 'SEDAQ2.cxx(\"$T_FILE\", true)'")
+ANCMD1=$(echo -e "root -q -l -b 'SEDAQ2.cxx(\"$T_FILE\", true, $QUANTIZED_POSITIONS_TF)'")
 ANCMD2=$(echo -e "root -q -l -b 'angularRecon.cxx(\"$RES_FILE\", true)'")
 #echo -e "\n$ANCMD1\n$ANCMD2\n" #debug
 eval $ANCMD1 && eval $ANCMD2
