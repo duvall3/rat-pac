@@ -68,6 +68,10 @@ Int_t N_list, j;
 cout << "Importing corrected energies..." << endl;
 for ( k=0; k<N; k++ ) {
 
+  // reset energies
+  corrected_energy = 0;
+  corrected_energy_q = 0;
+
   // setup
   T1->GetEntry(k);
   T2->GetEntry(k);
@@ -85,14 +89,14 @@ for ( k=0; k<N; k++ ) {
     match_count_0++;
   } else if ( N_list == 1 ) {
     match_count_1++;
+    corrected_energy = _corrected_energy;
+    corrected_energy_q = _corrected_energy_q;
   } else {
     match_count_multiple++;
   }
 
-  // copy energies
-  T2->GetEntry(elist->GetEntry(j));
-  corrected_energy = _corrected_energy;
-  corrected_energy_q = _corrected_energy_q;
+  // fill energies
+//T2->GetEntry(elist->GetEntry(j));
   cor_en_b->Fill();
   cor_en_q_b->Fill();
 
@@ -103,9 +107,9 @@ cout << "Done." << endl;
 //// END
 
 // report and prepare to save match counts
-printf( "Entries without matches:\t\t%d (%2.1f\%)\n", match_count_0, (Double_t)match_count_0/N );
-printf( "Entries with exactly 1 match:\t\t%d (%2.1f\%)\n", match_count_1, (Double_t)match_count_1/N );
-printf( "Entries with multiple matches:\t\t%d (%2.1f\%)\n", match_count_multiple, (Double_t)match_count_multiple/N );
+printf( "Entries without matches:\t\t%d (%2.1f\%)\n", match_count_0, (Double_t)100*match_count_0/N );
+printf( "Entries with exactly 1 match:\t\t%d (%2.1f\%)\n", match_count_1, (Double_t)100*match_count_1/N );
+printf( "Entries with multiple matches:\t\t%d (%2.1f\%)\n", match_count_multiple, (Double_t)100*match_count_multiple/N );
 matches_0_1_multiple(0) = match_count_0;
 matches_0_1_multiple(1) = match_count_1;
 matches_0_1_multiple(2) = match_count_multiple;
