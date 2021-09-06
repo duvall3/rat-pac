@@ -1,6 +1,6 @@
 #!/bin/bash
 # ratrun -- master script to configure & execute macros for a RAT-PAC run (incl. data extraction from ROOT tree)
-# usage:  ratrun [FILENAME] [NUM_EVENTS] [SEDAQ_GRAPHICS_TF] [QUANTIZED_POSITIONS] [POSITION_RESOLUTION_TF]"
+# usage:  ratrun [FILENAME] [NUM_EVENTS] [SEDAQ_GRAPHICS_TF] [QUANTIZED_POSITIONS] [POSITION_RESOLUTIONS]"
 #	-- FILENAME is the *base* name (i.e., no extension) for the output folder/files
 #	-- NUM_EVENTS is the number of events to be run (i.e., passed to the '/run/beamOn' command)
 #	-- if either of these is unspecified, the user will be prompted, so make sure to specify these on the command line
@@ -33,7 +33,7 @@ export G4NEUTRONHP_USE_ONLY_PHOTONEVAPORATION=1
 
 # argument check / get info:
 if [ $# -lt 1 ]; then
-  echo -e "\nUsage: ratrun.sh <FILENAME> [NUM_EVENTS] [SEDAQ_GRAPHICS_TF] [QUANTIZED_POSITIONS_TF] [POSITION_RESOLUTION_TF]\n"
+  echo -e "\nUsage: ratrun.sh <FILENAME> [NUM_EVENTS] [SEDAQ_GRAPHICS_TF] [QUANTIZED_POSITIONS] [POSITION_RESOLUTIONS]\n"
   exit 100
 fi
 echo
@@ -53,12 +53,12 @@ fi
 if [ $4 ]; then
   QUANTIZED_POSITIONS=$4
 else
-  QUANTIZED_POSITIONS=false
+  QUANTIZED_POSITIONS=""
 fi
 if [ $5 ]; then
-  POSITION_RESOLUTION=$5
+  POSITION_RESOLUTIONS=$5
 else
-  POSITION_RESOLUTION=false
+  POSITION_RESOLUTIONS=""
 fi
 
 
@@ -82,7 +82,7 @@ echo -e "\n\n### Beginning RAT-PAC run...\n\n"
 conflog.sh > "$FILENAME".conf && rat -l "$FILENAME".log run.mac
 
 # process run data
-process_rat_run.sh $FILENAME $NUM_EVENTS $SEDAQ_GRAPHICS_TF $QUANTIZED_POSITIONS_TF $POSITION_RESOLUTION_TF
+process_rat_run.sh $FILENAME $NUM_EVENTS $SEDAQ_GRAPHICS_TF $QUANTIZED_POSITIONS $POSITION_RESOLUTIONS
 
 # reminder
 echo -e "Reminder: Move output to long-term storage if desired.\n"

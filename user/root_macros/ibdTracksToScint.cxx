@@ -139,8 +139,8 @@ for ( k=0; k<N; k++ ) { // event loop
   y_res = gRandom->Gaus(y, positionResolution);
   z_res = gRandom->Gaus(z, positionResolution);
   cap_product = "";
-  if (energy_q > 0) T_scint->Fill(); // possible bugfix
-//T_scint->Fill(); // possible bugfix
+//if (energy_q > 0) T_scint->Fill(); // possible bugfix
+  T_scint->Fill();
 
   // neutron
   c.GoParent();
@@ -173,17 +173,15 @@ for ( k=0; k<N; k++ ) { // event loop
     n = c.GoParent();
     energy_q = findCellScintTotalQuenched(c);
 //  energy_q = findChildScintTotalQuenched(c); //debug
-    if (energy_q > 0) {
-      energy = findCellScintTotal(c);
-//    energy = findChildScintTotal(c); //debug
-      x = n->GetEndpoint().X();
-      y = n->GetEndpoint().Y();
-      z = n->GetEndpoint().Z();
-      x_res = gRandom->Gaus(x, positionResolution);
-      y_res = gRandom->Gaus(y, positionResolution);
-      z_res = gRandom->Gaus(z, positionResolution);
-      T_scint->Fill();
-    }
+    energy = findCellScintTotal(c);
+//  energy = findChildScintTotal(c); //debug
+    x = n->GetEndpoint().X();
+    y = n->GetEndpoint().Y();
+    z = n->GetEndpoint().Z();
+    x_res = gRandom->Gaus(x, positionResolution);
+    y_res = gRandom->Gaus(y, positionResolution);
+    z_res = gRandom->Gaus(z, positionResolution);
+    T_scint->Fill();
   }
 
   // keep memory from blowing up

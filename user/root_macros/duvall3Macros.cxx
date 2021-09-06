@@ -35,6 +35,7 @@ gROOT->LoadMacro("findScintBursts.cxx");
 //gROOT->LoadMacro("ratfileInit.cxx");
 gROOT->LoadMacro("correctEnergies.cxx");
 gROOT->LoadMacro("duvallAnalyze.cxx");
+gROOT->LoadMacro("duvallAnalyzeFull.cxx");
 //gROOT->LoadMacro("getVolumeRelativeCenter.cxx");
 //gROOT->LoadMacro("getVolumeCenter.cxx");
 

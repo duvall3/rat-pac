@@ -64,7 +64,7 @@ Int_t match_count_0, match_count_1, match_count_multiple;
 //TString warn_msg;
 
 // burst loop
-Int_t N_list, j;
+Int_t N_list;
 cout << "Importing corrected energies..." << endl;
 for ( k=0; k<N; k++ ) {
 
@@ -74,7 +74,7 @@ for ( k=0; k<N; k++ ) {
 
   // setup
   T1->GetEntry(k);
-  T2->GetEntry(k);
+//T2->GetEntry(k);
   ev_cutstr = TString::Format("event == %d", event);
   time_cutstr = TString::Format("abs(wall_time_adj-%1.20e) < %e", wall_time_adj, time_tol);
   ev_cut = TCut(ev_cutstr);
@@ -89,14 +89,17 @@ for ( k=0; k<N; k++ ) {
     match_count_0++;
   } else if ( N_list == 1 ) {
     match_count_1++;
+    T2->GetEntry(elist->GetEntry(0));
     corrected_energy = _corrected_energy;
     corrected_energy_q = _corrected_energy_q;
   } else {
     match_count_multiple++;
+//  T2->GetEntry(elist->GetEntry(0));
+//  corrected_energy = _corrected_energy;
+//  corrected_energy_q = _corrected_energy_q;
   }
 
   // fill energies
-//T2->GetEntry(elist->GetEntry(j));
   cor_en_b->Fill();
   cor_en_q_b->Fill();
 

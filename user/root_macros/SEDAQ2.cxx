@@ -106,9 +106,9 @@ T_scint->SetBranchAddress("x", &x);
 T_scint->SetBranchAddress("y", &y);
 T_scint->SetBranchAddress("z", &z);
 // quantization
-if (sPositionResolution.Contains('x')) T_scint->SetBranchAddress("x_quantized", &x);
-if (sPositionResolution.Contains('y')) T_scint->SetBranchAddress("y_quantized", &y);
-if (sPositionResolution.Contains('z')) T_scint->SetBranchAddress("z_quantized", &z);
+if (sQuantizedPositions.Contains('x')) T_scint->SetBranchAddress("x_quantized", &x);
+if (sQuantizedPositions.Contains('y')) T_scint->SetBranchAddress("y_quantized", &y);
+if (sQuantizedPositions.Contains('z')) T_scint->SetBranchAddress("z_quantized", &z);
 // position resolution
 if (sPositionResolution.Contains('x')) {
   if (sQuantizedPositions.Contains('x')) {
@@ -512,7 +512,7 @@ if ( T2->GetEntries() > 0 && kGraphics==true ) { // skip T2 graphics if there we
   TCanvas* c3 = new TCanvas("c3","IBD Candidate Positions", 70, 60, 800, 800);
   c3->SetLogy(false);
   // cycle coordinates to adjust for TTree->Draw(TH3) //KEEPME//
-  T2->Draw("prompt_cand_z:prompt_cand_x:prompt_cand_y>>h_prompt");
+  T2->Draw("prompt_cand_z:prompt_cand_y:prompt_cand_x>>h_prompt");
   h_prompt->SetMarkerColor(kRed);
   h_prompt->SetMarkerStyle(4);
   TAxis* hpx = h_prompt->GetXaxis();
@@ -524,12 +524,12 @@ if ( T2->GetEntries() > 0 && kGraphics==true ) { // skip T2 graphics if there we
   hpx->SetTitle("x (mm)");
   hpy->SetTitle("y (mm)");
   hpz->SetTitle("z (mm)");
-  hpx->SetTitleOffset(1.0);
-  hpy->SetTitleOffset(1.0);
-  hpz->SetTitleOffset(1.0);
+  hpx->SetTitleOffset(1.5);
+  hpy->SetTitleOffset(1.5);
+  hpz->SetTitleOffset(1.5);
   // delayed
   // cycle coordinates to adjust for TTree->Draw(TH3) //KEEPME//
-  T2->Draw("delayed_cand_z:delayed_cand_x:delayed_cand_y>>h_delayed");
+  T2->Draw("delayed_cand_z:delayed_cand_y:delayed_cand_x>>h_delayed");
   h_delayed->SetMarkerColor(kBlue);
   h_delayed->SetMarkerStyle(5);
   h_delayed->GetXaxis()->SetLimits(-x_abs,x_abs);
@@ -581,12 +581,12 @@ if ( kGraphics == true ) {
   //p_prod->SetAngularOffset(35.);
   Int_t fillColors [ ] = {2, 3, 4, 5, 6, 7, 8, 9};
   p_prod->SetFillColors(fillColors);
-  // bugfix? -- in output file, slice values are getting doubled
-  Int_t slice(0), nSlices(p_prod->GetEntries()), sliceVal;
-  for ( slice=0; slice<nSlices; slice++ ) {
-    sliceVal = p_prod->GetEntryVal(slice);
-    p_prod->SetEntryVal(slice, sliceVal/2);
-  }
+//// bugfix? -- in output file, slice values are getting doubled
+//Int_t slice(0), nSlices(p_prod->GetEntries()), sliceVal;
+//for ( slice=0; slice<nSlices; slice++ ) {
+//  sliceVal = p_prod->GetEntryVal(slice);
+//  p_prod->SetEntryVal(slice, sliceVal/2);
+//}
   p_prod->Draw();
   p_prod->Write();
   c7->Write();
