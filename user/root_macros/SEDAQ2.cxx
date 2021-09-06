@@ -3,7 +3,7 @@
 // -- further documentation forthcoming
 // -- see https://github.com/duvall3/rat-pac/tree/collab
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2017 ~ //
-// ~ SEDAQ2 v1.1.00 ~ 8/2021 ~ //
+// ~ SEDAQ2 v1.2.00 ~ 8/2021 ~ //
 //
 // INPUT: ROOT file containing TTree "T_scint" (Scintillation Data)
 // OUTPUT: ROOT file containing TTrees "T2" (IBD Candidate Data) and "T_Trig" (IBD Trigger Parameters and Result)
@@ -41,7 +41,8 @@
 #include <math.h>
 
 
-void SEDAQ2( const char* filename, const Bool_t kGraphics = kFALSE, const Bool_t kQuantizedPositions = kFALSE, const Bool_t kPositionResolution = kFALSE, Double_t prompt_low = 0, Double_t delayed_low = 0, Double_t deltaT_low = 1.e-6, Double_t deltaT_high = 100.e-6) {
+//void SEDAQ2( const char* filename, const Bool_t kGraphics = kFALSE, const Bool_t kQuantizedPositions = kFALSE, const Bool_t kPositionResolution = kFALSE, Double_t prompt_low = 0, Double_t delayed_low = 0, Double_t deltaT_low = 1.e-6, Double_t deltaT_high = 100.e-6) {
+void SEDAQ2( const char* filename, const Bool_t kGraphics = kFALSE, const char* kQuantizedPositions = "", const char* kPositionResolution = "", Double_t prompt_low = 0, Double_t delayed_low = 0, Double_t deltaT_low = 1.e-6, Double_t deltaT_high = 100.e-6) {
 
 
 //// INIT
@@ -49,7 +50,7 @@ void SEDAQ2( const char* filename, const Bool_t kGraphics = kFALSE, const Bool_t
 cout << endl;
 
 // general
-const char* sedaq2_version = "1.1.00";
+const char* sedaq2_version = "1.2.00";
 gSystem->Load("libPhysics.so");
 gStyle->SetHistLineWidth(2);
 gStyle->SetHistLineColor(kBlue);
@@ -83,23 +84,59 @@ T_scint->SetBranchAddress( "event_time", &event_time );
 T_scint->SetBranchAddress( "wall_time", &wall_time );
 T_scint->SetBranchAddress( "corrected_energy", &corrected_energy );
 T_scint->SetBranchAddress( "corrected_energy_q", &corrected_energy_q );
-if (kQuantizedPositions) {
-  T_scint->SetBranchAddress( "x_quantized", &x);
-  T_scint->SetBranchAddress( "y_quantized", &y);
-  T_scint->SetBranchAddress( "z_quantized", &z);
-} else if (kPositionResolution) {
-  T_scint->SetBranchAddress( "x_res", &x );
-  T_scint->SetBranchAddress( "y_res", &y );
-  T_scint->SetBranchAddress( "z_res", &z );
-} else {
-  T_scint->SetBranchAddress( "x", &x );
-  T_scint->SetBranchAddress( "y", &y );
-  T_scint->SetBranchAddress( "z", &z );
-}
 T_scint->SetBranchAddress( "event_time_adj", &event_time_adj );
 T_scint->SetBranchAddress( "wall_time_adj", &wall_time_adj );
 T_scint->SetBranchAddress( "interevent_time", &interevent_time );
 T_scint->SetBranchAddress( "vol_name", &vol_name );
+// parse position adjustments:
+TString sQuantizedPositions(kQuantizedPositions);
+TString sPositionResolution(kPositionResolution);
+sQuantizedPositions.ToLower();
+sPositionResolution.ToLower();
+TString errLoc = "SEDAQ2::parse position adjustments";
+TString errMsg = "Invalid argument for kQuantizedPositions and/or kPositionResolution -- only some combination of \"xyz\" accepted\nExiting.\n";
+TRegexp invalRE = "[^xyz]";
+if ( sQuantizedPositions.Contains(invalRE) | sPositionResolution.Contains(invalRE) ) {
+  T_scint->Error(errLoc.Data(), errMsg.Data());
+  return;
+}
+errMsg = "Cannot use both quantization and position-resolution on coordinate 'COORD'\nExiting.\n";
+// defaults
+T_scint->SetBranchAddress("x", &x);
+T_scint->SetBranchAddress("y", &y);
+T_scint->SetBranchAddress("z", &z);
+// quantization
+if (sPositionResolution.Contains('x')) T_scint->SetBranchAddress("x_quantized", &x);
+if (sPositionResolution.Contains('y')) T_scint->SetBranchAddress("y_quantized", &y);
+if (sPositionResolution.Contains('z')) T_scint->SetBranchAddress("z_quantized", &z);
+// position resolution
+if (sPositionResolution.Contains('x')) {
+  if (sQuantizedPositions.Contains('x')) {
+    errMsg.ReplaceAll("COORD", "x");
+    T_scint->Error(errLoc.Data(), errMsg.Data());
+    return;
+  } else {
+    T_scint->SetBranchAddress("x_res", &x);
+  }
+}
+if (sPositionResolution.Contains('y')) {
+  if (sQuantizedPositions.Contains('y')) {
+    errMsg.ReplaceAll("COORD", "y");
+    T_scint->Error(errLoc.Data(), errMsg.Data());
+    return;
+  } else {
+    T_scint->SetBranchAddress("y_res", &y);
+  }
+}
+if (sPositionResolution.Contains('z')) {
+  if (sQuantizedPositions.Contains('z')) {
+    errMsg.ReplaceAll("COORD", "z");
+    T_scint->Error(errLoc.Data(), errMsg.Data());
+    return;
+  } else {
+    T_scint->SetBranchAddress("z_res", &z);
+  }
+}
 
 // address T2 branches
 Int_t prompt_cand_event, delayed_cand_event;
@@ -305,7 +342,7 @@ for ( k = 0; k < (num_bursts-1); k++ ) {
 
   prompt_tf = kFALSE;
   delayed_tf = kFALSE;
-  if (kQuantizedPositions) kVolumeTest = kFALSE;
+  if (kQuantizedPositions != "") kVolumeTest = kFALSE;
   T_scint->GetEntry(k);
   // look for prompt:
   if ( interevent_time > trigger_reset & corrected_energy_q > prompt_low & corrected_energy_q < prompt_high ) {
@@ -337,7 +374,7 @@ for ( k = 0; k < (num_bursts-1); k++ ) {
 
   // for segmented detectors, discard candidates in which the prompt and delayed events
   //   occurred in the same volume
-  if (kQuantizedPositions) {
+  if (kQuantizedPositions != "") {
     if (prompt_cand_vol->Contains(*delayed_cand_vol)) {
       kVolumeTest = kFALSE;
     } else {
@@ -526,7 +563,7 @@ if ( kGraphics == true ) {
   TString savename7;
   savename7 = basename+"_cap-prod.png";
   TCanvas* can_prod_h = new TCanvas("can_prod", filename, 820, 120, 800, 800);
-  T_scint->Draw("cap_product>>h_prod", "cap_product!=\"\"", "PIE");
+  T_scint->Draw("cap_product>>h_prod", "(cap_product!=\"\")&&(corrected_energy_q>0)", "PIE");
   can_prod_h->SetLogx(0);
   can_prod_h->SetLogy(0);
   TString prod_title = TString::Format("Neutron-Capture Products (N=%d)", (Int_t)h_prod->GetEntries());
@@ -544,6 +581,12 @@ if ( kGraphics == true ) {
   //p_prod->SetAngularOffset(35.);
   Int_t fillColors [ ] = {2, 3, 4, 5, 6, 7, 8, 9};
   p_prod->SetFillColors(fillColors);
+  // bugfix? -- in output file, slice values are getting doubled
+  Int_t slice(0), nSlices(p_prod->GetEntries()), sliceVal;
+  for ( slice=0; slice<nSlices; slice++ ) {
+    sliceVal = p_prod->GetEntryVal(slice);
+    p_prod->SetEntryVal(slice, sliceVal/2);
+  }
   p_prod->Draw();
   p_prod->Write();
   c7->Write();
