@@ -38,6 +38,10 @@ gROOT->LoadMacro("duvallAnalyze.cxx");
 gROOT->LoadMacro("duvallAnalyzeFull.cxx");
 //gROOT->LoadMacro("getVolumeRelativeCenter.cxx");
 //gROOT->LoadMacro("getVolumeCenter.cxx");
+gROOT->LoadMacro("addGeoNuLat.cxx");
+//gROOT->LoadMacro("addGeoChooz.cxx");
+gROOT->LoadMacro("addGeoSANTA.cxx");
+gROOT->LoadMacro("addGeoSANDD.cxx");
 
 // all pau!   )
 }

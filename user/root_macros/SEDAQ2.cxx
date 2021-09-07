@@ -507,20 +507,20 @@ if ( T2->GetEntries() > 0 && kGraphics==true ) { // skip T2 graphics if there we
   l2->Draw();
 
   // position plot
-  Double_t x_abs = 1000.; //mm
+//Double_t x_abs = 6000.; //mm
   // prompt
   TCanvas* c3 = new TCanvas("c3","IBD Candidate Positions", 70, 60, 800, 800);
   c3->SetLogy(false);
   // cycle coordinates to adjust for TTree->Draw(TH3) //KEEPME//
-  T2->Draw("prompt_cand_z:prompt_cand_y:prompt_cand_x>>h_prompt");
+  T2->Draw("prompt_cand_z:prompt_cand_y:prompt_cand_x>>h_prompt"); //KEEPME//
   h_prompt->SetMarkerColor(kRed);
   h_prompt->SetMarkerStyle(4);
   TAxis* hpx = h_prompt->GetXaxis();
   TAxis* hpy = h_prompt->GetYaxis();
   TAxis* hpz = h_prompt->GetZaxis();
-  hpx->SetLimits(-x_abs,x_abs);
-  hpy->SetLimits(-x_abs,x_abs);
-  hpz->SetLimits(-x_abs,x_abs);
+//hpx->SetLimits(-x_abs,x_abs);
+//hpy->SetLimits(-x_abs,x_abs);
+//hpz->SetLimits(-x_abs,x_abs);
   hpx->SetTitle("x (mm)");
   hpy->SetTitle("y (mm)");
   hpz->SetTitle("z (mm)");
@@ -532,9 +532,9 @@ if ( T2->GetEntries() > 0 && kGraphics==true ) { // skip T2 graphics if there we
   T2->Draw("delayed_cand_z:delayed_cand_y:delayed_cand_x>>h_delayed");
   h_delayed->SetMarkerColor(kBlue);
   h_delayed->SetMarkerStyle(5);
-  h_delayed->GetXaxis()->SetLimits(-x_abs,x_abs);
-  h_delayed->GetYaxis()->SetLimits(-x_abs,x_abs);
-  h_delayed->GetZaxis()->SetLimits(-x_abs,x_abs);
+//h_delayed->GetXaxis()->SetLimits(-x_abs,x_abs);
+//h_delayed->GetYaxis()->SetLimits(-x_abs,x_abs);
+//h_delayed->GetZaxis()->SetLimits(-x_abs,x_abs);
   // draw
   h_prompt->Draw();
   h_delayed->Draw("same");

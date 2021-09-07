@@ -39,5 +39,5 @@ done
 chain.sh
 
 # all pau!   )
-echo -e "\n/// Batch job reanalysis complete. ///\n\n"
+echo -e "\n/// Batch job reanalysis complete. You are now ready to run duvallAnalyze.cxx on the new $DATARUN_NAME_T.root file. ///\n\n"
 exit 0

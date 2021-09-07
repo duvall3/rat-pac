@@ -225,6 +225,10 @@ for (( k = 0; k < T_scint->GetEntries(); k++ )) {
 // finish up
 cout << "Done." << endl;
 T_scint->Write();
+//TString gName;
+//gName.Form("%s_TRATGeo", g.GetExperiment().Data());
+//g.Write(gName.Data());
+//g.Write("G");
 f->Close();
 
 // all pau!   )
