@@ -48,7 +48,7 @@ TNode *n;
 TList *nodeList = new TList;
 
 // cell array
-vol = (TRATVolume*)g.GetVolume("cell_array");
+vol = (TRATVolume*)g.GetVolume("target_cell_array");
 TBRIK *cellArrayShape = new TBRIK("cellArrayShape", "prototype shape for cell array", "vacuum", vol->GetSize().X(), vol->GetSize().Y(), vol->GetSize().Z());
 n = new TNode("cellArray", "node for cellArray", "cellArrayShape", vol->GetAbsolutePosition().X(), vol->GetAbsolutePosition().Y(), vol->GetAbsolutePosition().Z());
 nodeList->Add(n);
@@ -83,9 +83,14 @@ hd->Draw("AHsame");
 //Double_t viewLim = 100.;
 TView *view = gPad->GetView();
 //view->SetRange(-viewLim, -viewLim, -viewLim, viewLim, viewLim, viewLim);
-view->SetParallel();
+//view->SetParallel();
 view->ShowAxis();
 view->Draw();
+
+// redraw
+hp->Draw("");
+hd->Draw("AHsame");
+nodeList->At(0)->Draw("same");
 
 // annotations
 //tit3->Draw();
