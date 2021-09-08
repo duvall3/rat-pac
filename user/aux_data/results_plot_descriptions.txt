@@ -3,6 +3,7 @@ Descriptions of Result Plots by Filename and TCanvas Handle
 
 Handle	Filename Pattern	Description
 --------------------------------------------------
+(c0)	*_geo_scale		detector geometry with scale markers (not in ROOT file)
 c1	*_bursts		scintillation bursts -- interevent times, raw & quenched energies
 c2	*_nu-trg		neutrino-trigger results
 c3	*_pd-xyz		{x,y,z} coordinates of IBD-candidate prompt & delayed events
