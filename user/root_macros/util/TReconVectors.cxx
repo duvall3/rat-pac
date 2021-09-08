@@ -70,8 +70,8 @@ TReconVectors::TReconVectors(const char* filename)
     fYaxis.SetPoint(1, 0., 1., 0.);
     fZaxis.SetPoint(1, 0., 0., 1.);
     fXaxis.SetLineColor(kRed);
-    fYaxis.SetLineColor(kBlue);
-    fZaxis.SetLineColor(kGreen);
+    fYaxis.SetLineColor(kGreen);
+    fZaxis.SetLineColor(kBlue);
     fXaxis.SetLineWidth(defaultLineWidth);
     fYaxis.SetLineWidth(defaultLineWidth);
     fZaxis.SetLineWidth(defaultLineWidth);
