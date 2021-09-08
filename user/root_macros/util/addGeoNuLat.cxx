@@ -28,8 +28,8 @@ f1->Close();
 // open results file and get histos and related objects
 TFile *f2 = TFile::Open(resultsFilename);
 TString fileName(resultsFilename);
-TString basename = fileName(0,fileName.Index(".root"));
-TString savename = basename+"_pd-xyz_with-geo.png";
+TString basename = fileName(0,fileName.Index("_results.root"));
+TString savename = basename+"_pd-xyz-with-geo.png";
 TH3F *hp = (TH3F*)gDirectory->Get("h_prompt");
 TH3F *hd = (TH3F*)gDirectory->Get("h_delayed");
 c3->Draw();
@@ -56,6 +56,7 @@ n->Draw("same");
 
 // target-cube prototype
 vol = (TRATVolume*)g.GetVolume("target_cube_mid_mid_mid");
+if (vol==0) vol = (TRATVolume*)g.GetVolume("target_cube_0_0_0");
 TBRIK *targetCube = new TBRIK("target_cube", "prototype shape for target cubes", "vacuum", vol->GetSize().X(), vol->GetSize().Y(), vol->GetSize().Z());
 
 // nodes

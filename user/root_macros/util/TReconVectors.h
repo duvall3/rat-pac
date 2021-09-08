@@ -1,5 +1,5 @@
 // TReconVectors -- class to cycle through reconstructed incoming antineutrino
-//   directions (from SEDAQ2.cxx) for individual IBD events
+//   directions for individual IBD events
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 9/2021 ~ //
 
 //Copyright (C) 2021 Mark J. Duvall

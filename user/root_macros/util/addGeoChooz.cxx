@@ -1,4 +1,5 @@
 // addGeoChooz -- add outlines of Chooz geometry to c3(*_pd-xyz) plot from SEDAQ2.cxx
+// -- run with '.x addGeoChooz.cxx' at the ROOT/CINT prompt
 
 //Copyright (C) 2021 Mark J. Duvall
 //
@@ -18,15 +19,20 @@
 {
 
 const char* resultsFilename;
-if (resultsFilename == "") {
-  cout << "Set resultsFilename" << endl;
+
+// arg check / open results file
+TFile *f2 = TFile::Open(resultsFilename);
+TString warnLoc = "AddGeoChooz.cxx";
+TString warnMsg = "Set (const char* resultsFilename) first!";
+if (f2==0) {
+  gDirectory->Warning( warnLoc.Data(), warnMsg.Data() );
+  return;
 } else {
 
-  // open results file and get histos and related objects
-  TFile *f2 = TFile::Open(resultsFilename);
+  // finish file init and draw histos
   TString fileName(resultsFilename);
-  TString basename = fileName(0,fileName.Index(".root"));
-  TString savename = basename+"_pd-xyz_with-geo.png";
+  TString basename = fileName(0,fileName.Index("_results.root"));
+  TString savename = basename+"_pd-xyz-with-geo.png";
   c3->Draw();
 
   // geo init
@@ -35,7 +41,7 @@ if (resultsFilename == "") {
   TNode *n;
   TList *nodeList = new TList;
 
-  // target tank
+  // make and draw target tank
   TTUBE *targetTank = new TTUBE("targetTank", "prototype shape for target tank", "vacuum", 0., 5000., 5000.);
   n = new TNode("target", "node for target", "targetTank", 0., 0., 0.);
   n->SetLineColor(kGray);
@@ -51,3 +57,4 @@ if (resultsFilename == "") {
 
 // all pau!   )
 }
+

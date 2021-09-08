@@ -389,7 +389,8 @@ for ( k = 0; k < (num_bursts-1); k++ ) {
     deltaX = delayed_cand_x - prompt_cand_x;
     deltaY = delayed_cand_y - prompt_cand_y;
     deltaZ = delayed_cand_z - prompt_cand_z;
-    displacement = TVector3(deltaX, deltaY, deltaZ);
+    displacement = TVector3(deltaX, deltaY, deltaZ); // temporarily substituting for SANDD analysis
+//  displacement = TVector3(deltaX, deltaY, 0.); // temporarily substituting for SANDD analysis
     disp_hat = displacement.Unit();
 
     // compare actual and reconsructed neutrino directions

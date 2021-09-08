@@ -46,9 +46,9 @@ if [ $2 ]; then
     read NUM_EVENTS
 fi
 if [ $3 ]; then
-  SEDAQ_GRAPHICS=$3
+  SEDAQ_GRAPHICS_TF=$3
 else
-  SEDAQ_GRAPHICS=false
+  SEDAQ_GRAPHICS_TF=false
 fi
 if [ $4 ]; then
   QUANTIZED_POSITIONS=$4
@@ -81,8 +81,11 @@ echo "\
 echo -e "\n\n### Beginning RAT-PAC run...\n\n"
 conflog.sh > "$FILENAME".conf && rat -l "$FILENAME".log run.mac
 
+# export settings
+export SEDAQ_GRAPHICS_TF QUANTIZED_POSITIONS POSITION_RESOLUTIONS
+
 # process run data
-process_rat_run.sh $FILENAME $NUM_EVENTS $SEDAQ_GRAPHICS_TF $QUANTIZED_POSITIONS $POSITION_RESOLUTIONS
+process_rat_run.sh $FILENAME $NUM_EVENTS
 
 # reminder
 echo -e "Reminder: Move output to long-term storage if desired.\n"

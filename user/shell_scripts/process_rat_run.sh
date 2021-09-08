@@ -1,19 +1,27 @@
 #!/bin/bash
 # process_rat_run.sh -- prepare and analyze data from a RAT-PAC (IBD) run
 # ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ August 2015 ~ #
-# ~ Updated 8/21 ~ #
+# ~ Updated 9/21 ~ #
 
 ## usage
 if [ $# -lt 2 ]; then
-  echo -e "\nUSAGE: process_rat_run.sh <DATARUN_NAME> <NUM_EVENTS> [GRAPHICS_TF] [QUANTIZED_POSITIONS] [POSITION_RESOLUTIONS] [FULL_ANALYSIS_TF]\n" && exit 10
+  echo -e "\nUSAGE: process_rat_run.sh <DATARUN_NAME> <NUM_EVENTS>\n" && exit 10
 fi
 
 ## init
 BASENAME=$1
 NUM_EVENTS=$2
-if [[ -z $3 ]]; then GRAPHICS_TF=false; else GRAPHICS_TF=$3; fi
-if [[ -z $4 ]]; then QUANTIZED_POSITIONS=""; else QUANTIZED_POSITIONS=$4; fi
-if [[ -z $5 ]]; then POSITION_RESOLUTIONS=""; else POSITION_RESOLUTIONS=$5; fi
+if [[ -z $3 ]]; then
+  if $SEDAQ_GRAPHICS_TF; then
+    GRAPHICS_TF=true
+  else
+    GRAPHICS_TF=false
+  fi
+else
+  GRAPHICS_TF=$3
+fi
+#if [[ -z $4 ]]; then QUANTIZED_POSITIONS=""; else QUANTIZED_POSITIONS=$4; fi
+#if [[ -z $5 ]]; then POSITION_RESOLUTIONS=""; else POSITION_RESOLUTIONS=$5; fi
 LOGFILE="$BASENAME".log
 ROOTFILE="$BASENAME".root
 RTFILE="$BASENAME"_energies.rt

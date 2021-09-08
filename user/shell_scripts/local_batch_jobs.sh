@@ -4,7 +4,7 @@
 #
 # -- should be run in the relevant $RATROOT/data/<EXPERIMENT> directory
 #
-# -- Usage: local_batch_jobs.sh <DATARUN_NAME> <EVENTS_PER_INSTANCE> <NUM_INSTANCES> [OUTPUT_DIR]
+# -- Usage: local_batch_jobs.sh <DATARUN_NAME> <EVENTS_PER_INSTANCE> <NUM_INSTANCES> [QUANTIZED_POSITIONS] [POSITION_RESOLUTIONS]
 #      OR   local_batch_jobs.sh <kill>
 #
 # -- Example: local_batch_jobs.sh some_datarun 200 5
@@ -18,7 +18,7 @@
 #      -- 
 #      -- 
 #
-# ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 9/2019 ~ Updated 5/21 ~ #
+# ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 9/2019 ~ Updated 9/21 ~ #
 
 
 ## KILL option: kill all instances of RAT-PAC belonging to the current user
@@ -56,7 +56,7 @@ fi
 ## INIT
 
 if [[ $# -lt 3 ]]; then
-  echo -e "\nUSAGE: local_batch_jobs.sh <DATARUN_NAME> <EVENTS_PER_INSTANCE> <NUM_INSTANCES> [OUTPUT_DIR]\n  OR   local_batch_jobs.sh <kill>\n" && exit 10
+  echo -e "\nUSAGE: local_batch_jobs.sh <DATARUN_NAME> <EVENTS_PER_INSTANCE> <NUM_INSTANCES> [QUANTIZED_POSITIONS] [POSITION_RESOLUTIONS]\n  OR   local_batch_jobs.sh <kill>\n" && exit 10
 fi
 DATARUN=$1
 NEVENTS=$2
@@ -71,11 +71,11 @@ if [[ $# -lt 5 ]]; then
 else
   POSITION_RESOLUTIONS=$5
 fi
-if [[ $# -lt 6 ]]; then
-  EXPDIR=$RATROOT/data/$(basename $(pwd) /)
-else
-  EXPDIR=$(basename $6 /)
-fi
+#if [[ $# -lt 6 ]]; then #deprecated
+   EXPDIR=$RATROOT/data/$(basename $(pwd) /) #KEEPME
+#else
+#  EXPDIR=$(basename $6 /)
+#fi
 
 ##debug
 #echo $DATARUN

@@ -27,13 +27,13 @@ f1->Close();
 // open results file and get histos and related objects
 TFile *f2 = TFile::Open(resultsFilename);
 TString fileName(resultsFilename);
-TString basename = fileName(0,fileName.Index(".root"));
-TString savename = basename+"_pd-xyz_with-geo.png";
+TString basename = fileName(0,fileName.Index("_results.root"));
+TString savename = basename+"_pd-xyz-with-geo.png";
 TH3F *hp = (TH3F*)gDirectory->Get("h_prompt");
 TH3F *hd = (TH3F*)gDirectory->Get("h_delayed");
 //c3->Draw();
-//TLegend *legend3 = (TLegend*)c3->GetPrimitive("legend3");
-//TLegend *l3 = legend3->Clone("l3");
+TLegend *legend3 = (TLegend*)c3->GetPrimitive("legend3");
+TLegend *l3 = legend3->Clone("l3");
 //TPaveText *title = (TPaveText*)gPad->GetPrimitive("title");
 ////TPaveText *tit3 = title->Clone("tit3");
 //c3->Clear();
@@ -72,16 +72,15 @@ n->Draw("same");
 ////view->ShowAxis();
 //view->Draw();
 
-
 // annotations
 //tit3->Draw();
-//l3->Draw();
+l3->Draw();
 
-//// finish up
-//// NOTE: *DO NOT* write c3 back to _results file!!!
-//c3->SaveAs(savename.Data());
-//c3->Close();
-//f2->Close();
+// finish up
+// NOTE: *DO NOT* write c3 back to _results file!!!
+c3->SaveAs(savename.Data());
+c3->Close();
+f2->Close();
 
 // all pau!   )
 return nodeList;
