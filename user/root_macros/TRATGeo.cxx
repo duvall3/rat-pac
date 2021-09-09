@@ -23,6 +23,8 @@
   ClassImp(TRATGeo);
 #endif
 
+namespace TRG {
+
 const TString defaultName = "TRATGeo";
 const TString defaultTitle = "class for assembling geometry from RAT-PAC ROOT file";
 
@@ -75,7 +77,7 @@ TRATGeo::Init()
   }
   fDB = (TMap*)fFile->FindObjectAny("db");
   if (fDB == 0) {
-    TString errLoc = TString::Format("%s::TRATVolume(const char* name)", defaultName.Data());
+    TString errLoc = TString::Format("%s::TRV::TRATVolume(const char* name)", defaultName.Data());
     TString errMsg = "RAT-PAC database \"db\" not found\n";
     this->Error(errLoc.Data(), errMsg.Data());
     return;
@@ -108,10 +110,13 @@ TRATGeo::Build()
       keyStr = keyStr(0, keyStr.Index(']'));
 //    infoMsg.Form("Found relevant entry: %s", keyStr.Data()); //debug
 //    this->Info("Build()", infoMsg.Data()); //debug
-      // create TRATVolume* and add to list
-      TRATVolume* v = new TRATVolume(keyStr.Data());
+      // create TRV::TRATVolume* and add to list
+      TRV::TRATVolume* v = new TRV::TRATVolume(keyStr.Data());
       v->FindAbsolutePosition();
       fVolumeList->Add(v);
+//    TRV::TRATVolume v(keyStr.Data());
+//    v.FindAbsolutePosition();
+//    fVolumeList->Add(&v);
     } // end if -- relevant entry
   } // end db entry loop
   infoMsg.Form("Done.");
@@ -121,7 +126,7 @@ TRATGeo::Build()
 //______________________________________________________________________________
 // GetVolume
 // -- Note: Result must be cast back to correct type
-// -- Example: TRATGeo g; g.Build(); TRATVolume *v = (TRATVolume*)g.GetVolume("water_shield");
+// -- Example: TRATGeo g; g.Build(); TRV::TRATVolume *v = (TRV::TRATVolume*)g.GetVolume("water_shield");
 TRATGeo::GetVolume(const char* volumeName)
 {
   return fVolumeList->FindObject(volumeName);
@@ -131,7 +136,7 @@ TRATGeo::GetVolume(const char* volumeName)
 // ShowVolume
 TRATGeo::ShowVolume(const char* volumeName)
 {
-  TRATVolume* v = (TRATVolume*)fVolumeList->FindObject(volumeName);
+  TRV::TRATVolume* v = (TRV::TRATVolume*)fVolumeList->FindObject(volumeName);
   v->Print();
 }
 
@@ -139,10 +144,10 @@ TRATGeo::ShowVolume(const char* volumeName)
 // ShowAll
 TRATGeo::ShowAll()
 {
-  TRATVolume* v;
+  TRV::TRATVolume* v;
   TIter i(fVolumeList);
   for ( i=fVolumeList->begin(); i!=fVolumeList->end(); ++i ) {
-    v = (TRATVolume*)*i;
+    v = (TRV::TRATVolume*)*i;
     v->Print();
   }
 }
@@ -152,10 +157,10 @@ TRATGeo::ShowAll()
 TRATGeo::Types()
 {
   TString volName, volType;
-  TRATVolume* vol;
+  TRV::TRATVolume* vol;
   Int_t k, N(fVolumeList->GetEntries());
   for ( k=0; k<(N-1); k++ ) {
-    vol = (TRATVolume*)fVolumeList->At(k);
+    vol = (TRV::TRATVolume*)fVolumeList->At(k);
     volName = vol->GetName();
     volType = vol->GetVolumeType();
     printf( "%s\t\t%s\n", volName.Data(), volType.Data() );
@@ -167,10 +172,10 @@ TRATGeo::Types()
 TRATGeo::Materials()
 {
   TString volName, volMaterial;
-  TRATVolume* vol;
+  TRV::TRATVolume* vol;
   Int_t k, N(fVolumeList->GetEntries());
   for ( k=0; k<(N-1); k++ ) {
-    vol = (TRATVolume*)fVolumeList->At(k);
+    vol = (TRV::TRATVolume*)fVolumeList->At(k);
     volName = vol->GetName();
     volMaterial = vol->GetMaterial();
     printf( "%s\t\t%s\n", volName.Data(), volMaterial.Data() );
@@ -182,10 +187,10 @@ TRATGeo::Materials()
 TRATGeo::Mothers()
 {
   TString volName, volMother;
-  TRATVolume* vol;
+  TRV::TRATVolume* vol;
   Int_t k, N(fVolumeList->GetEntries());
   for ( k=0; k<(N-1); k++ ) {
-    vol = (TRATVolume*)fVolumeList->At(k);
+    vol = (TRV::TRATVolume*)fVolumeList->At(k);
     volName = vol->GetName();
     volMother = vol->GetMother();
     printf( "%s\t\t%s\n", volName.Data(), volMother.Data() );
@@ -198,10 +203,10 @@ TRATGeo::Sizes()
 {
   TString volName;
   TVector3 volSize;
-  TRATVolume* vol;
+  TRV::TRATVolume* vol;
   Int_t k, N(fVolumeList->GetEntries());
   for ( k=0; k<(N-1); k++ ) {
-    vol = (TRATVolume*)fVolumeList->At(k);
+    vol = (TRV::TRATVolume*)fVolumeList->At(k);
     volName = vol->GetName();
     volSize = vol->GetSize();
     printf( "%s\t\t%f  %f  %f\n", volName.Data(), volSize.X(), volSize.Y(), volSize.Z() );
@@ -214,10 +219,10 @@ TRATGeo::Positions()
 {
   TString volName;
   TVector3 volPosition;
-  TRATVolume* vol;
+  TRV::TRATVolume* vol;
   Int_t k, N(fVolumeList->GetEntries());
   for ( k=0; k<(N-1); k++ ) {
-    vol = (TRATVolume*)fVolumeList->At(k);
+    vol = (TRV::TRATVolume*)fVolumeList->At(k);
     volName = vol->GetName();
     volPosition = vol->GetAbsolutePosition();
     printf( "%s\t\t%f  %f  %f\n", volName.Data(), volPosition.X(), volPosition.Y(), volPosition.Z() );
@@ -245,9 +250,11 @@ TRATGeo::Print()
   printf("ROOT File:\t%s\n", fFileName);
   printf("RAT-PAC Database TMap*: "); cout << fDB << endl;
   printf("Entries: %d\n", fVolumeList->GetEntries());
-  printf("Volume List:\n");
-  fVolumeList->Print();
+  printf("Volume List:  "); cout << fVolumeList << endl;
+//fVolumeList->Print();
   printf("\n");
 }
+
+} // namespace TRG
 
 // all pau!   )

@@ -27,13 +27,15 @@
 #include "TFile.h"
 #include "TClass.h"
 
+namespace TRV {
+
 class TRATVolume : public TClass {
 
 private:
   const char*		fVolNameChr;		// volume name
   TString		fVolName;		// volume name (TString)
-  TFile*		fFile;			// current ROOT datafile
-  const char*		fFileName;		// name of current ROOT datafile
+//TFile*		fFile;			// current ROOT datafile
+//const char*		fFileName;		// name of current ROOT datafile
   TString 		fExperiment;		// name of RAT-PAC experiment
   TString		fExperimentPath;	// path to directory defining fExperiment, usually either absolute or relative to $RATROOT/data
   const TMap*		fDB;			// RAT-PAC database TMap
@@ -57,12 +59,12 @@ private:
 public:
   TRATVolume();
   TRATVolume( const char* volNameChr );
-  TRATVolume( const TString volName );
+//TRATVolume( const TString volName );
   void			FindAbsolutePosition();	// set volume absolute position
   virtual const char*	GetVolNameChr() const { return fVolNameChr; }
   const TString		GetVolName() const { return fVolName; }
-  TFile*		GetFile() const { return fFile; }
-  virtual const char* 	GetFileName() const { return fFileName; }
+//TFile*		GetFile() const { return fFile; }
+//virtual const char* 	GetFileName() const { return fFileName; }
   TString		GetExperiment()	const { return fExperiment; }
   TString		GetExperimentPath() const { return fExperimentPath; }
   TMap*			GetDB() const { return fDB; }
@@ -76,7 +78,9 @@ public:
 //Integrating the TRATVolume class to ROOT.
 ClassDef(TRATVolume,3)
 
-}; //endclass
+}; //end class
+
+} // namespace TRV
 
 // all pau!   )
 #endif

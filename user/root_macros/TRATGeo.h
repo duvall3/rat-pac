@@ -23,6 +23,8 @@
 #include "TClass.h"
 #include <TRATVolume.cxx>
 
+namespace TRG {
+
 class TRATGeo : public TClass {
 
 private:
@@ -61,6 +63,8 @@ public:
 ClassDef(TRATGeo,2)
 
 }; //endclass
+
+} // namespace TRG
 
 // all pau!   )
 #endif

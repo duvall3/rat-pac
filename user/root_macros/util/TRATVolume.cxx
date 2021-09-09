@@ -28,6 +28,8 @@
   ClassImp(TRATVolume);
 #endif
 
+namespace TRV {
+
 const TString defaultName = "TRATVolume";
 const TString defaultTitle = "class for analyzing geometry from RAT-PAC ROOT file";
 const char* defaultVolNameChr = "volume_name";
@@ -42,8 +44,8 @@ TRATVolume::TRATVolume()
   SetTitle(defaultTitle);
   fVolNameChr = defaultVolNameChr;
   fVolName = defaultVolName;
-  fFile = 0;
-  fFileName = "";
+//fFile = 0;
+//fFileName = "";
   fExperiment = "";
   fExperimentPath = "";
   fDB = 0;
@@ -83,13 +85,13 @@ TRATVolume::TRATVolume( const char* name )
   SetTitle(titStr.Data());
   fVolName = TString(name);
   fVolNameChr = fVolName.Data();
-  if (gFile) {
-    fFile = gFile;
-    fFileName = gFile->GetName();
-  } else {
-    fFile = 0;
-    fFileName = "";
-  }
+//if (gFile) {
+//  fFile = gFile;
+//  fFileName = gFile->GetName();
+//} else {
+//  fFile = 0;
+//  fFileName = "";
+//}
   FindAll();
 //FindAbsolutePosition();
 }
@@ -112,7 +114,8 @@ TRATVolume::FindExperiment()
 {
   if ( fDB == 0x0 ) {
     TString warnLoc = TString::Format("%s::FindExperiment()", defaultName.Data());
-    TString warnMsg = TString::Format("RAT-PAC database not found in %s; experiment name and path unknown.", fFileName);
+//  TString warnMsg = TString::Format("RAT-PAC database not found in %s; experiment name and path unknown.", fFileName);
+    TString warnMsg = TString::Format("RAT-PAC database not found in file; experiment name and path unknown.");
     Warning(warnLoc.Data(), warnMsg.Data());
     fExperiment = "";
     fExperimentPath = "";
@@ -262,8 +265,8 @@ TRATVolume::Print()
   printf("\n");
   printf("%s\t%s\t%s\n", Class_Name(), GetName(), GetTitle());
   printf("Volume Name: %s\n", fVolNameChr);
-  printf("ROOT File: "); cout << fFile << endl;
-  printf("ROOT Filename:\t%s\n", fFileName);
+//printf("ROOT File: "); cout << fFile << endl;
+//printf("ROOT Filename:\t%s\n", fFileName);
   printf("Experiment:\t\t%s\n", fExperiment.Data());
   printf("Experiment Path:\t%s\n", fExperimentPath.Data());
   printf("RAT-PAC Database TMap: "); cout << fDB << endl;
@@ -275,5 +278,7 @@ TRATVolume::Print()
   printf("Absolute Position: %f  %f  %f\n", fAbsolutePosition.X(), fAbsolutePosition.Y(), fAbsolutePosition.Z());
   printf("\n");
 }
+
+} // namespace TRV
 
 // all pau!   )
