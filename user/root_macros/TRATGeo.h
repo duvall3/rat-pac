@@ -23,7 +23,7 @@
 #include "TClass.h"
 #include <TRATVolume.cxx>
 
-namespace TRG {
+//namespace TRG {
 
 class TRATGeo : public TClass {
 
@@ -64,7 +64,7 @@ ClassDef(TRATGeo,2)
 
 }; //endclass
 
-} // namespace TRG
+//} // namespace TRG
 
 // all pau!   )
 #endif

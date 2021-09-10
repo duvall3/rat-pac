@@ -28,7 +28,7 @@
   ClassImp(TRATVolume);
 #endif
 
-namespace TRV {
+//namespace TRV {
 
 const TString defaultName = "TRATVolume";
 const TString defaultTitle = "class for analyzing geometry from RAT-PAC ROOT file";
@@ -44,8 +44,8 @@ TRATVolume::TRATVolume()
   SetTitle(defaultTitle);
   fVolNameChr = defaultVolNameChr;
   fVolName = defaultVolName;
-//fFile = 0;
-//fFileName = "";
+  fFile = 0;
+  fFileName = "";
   fExperiment = "";
   fExperimentPath = "";
   fDB = 0;
@@ -67,7 +67,7 @@ TRATVolume::TRATVolume( const char* name )
     this->Error(errLoc.Data(), errMsg.Data());
     return;
   }
-  fDB = (TMap*)gDirectory->FindObjectAny("db");
+  fDB = (TMap*)gDirectory->Get("db");
   if (fDB == 0) {
     TString errMsg = "RAT-PAC database \"db\" not found\n";
     this->Error(errLoc.Data(), errMsg.Data());
@@ -83,17 +83,36 @@ TRATVolume::TRATVolume( const char* name )
   SetName(name);
   TString titStr = TString::Format("TRATVolume for \"%s\"", name);
   SetTitle(titStr.Data());
-  fVolName = TString(name);
-  fVolNameChr = fVolName.Data();
-//if (gFile) {
-//  fFile = gFile;
-//  fFileName = gFile->GetName();
-//} else {
-//  fFile = 0;
-//  fFileName = "";
-//}
+  fVolNameChr = name;
+  fVolName = TString(fVolNameChr);
+  if (gFile) {
+    fFile = gFile;
+    fFileName = gFile->GetName();
+  } else {
+    fFile = 0;
+    fFileName = "";
+  }
   FindAll();
 //FindAbsolutePosition();
+}
+
+//______________________________________________________________________________
+// SetVolume
+TRATVolume::SetVolume(const char* newNameChr)
+{
+  TString errLoc = TString::Format("%s::TRATVolume(const char* name)", defaultName.Data());
+  if (newNameChr == "") {
+    TString errMsg = TString::Format("Invalid volume name \"%s\"\n", newNameChr);
+    this->Error(errLoc.Data(), errMsg.Data());
+    return;
+  }
+  SetName(newNameChr);
+  TString titStr = TString::Format("TRATVolume for \"%s\"", newNameChr);
+  SetTitle(titStr.Data());
+  fVolNameChr = newNameChr;
+  fVolName = TString(newNameChr);
+  FindAll();
+  FindAbsolutePosition();
 }
 
 //______________________________________________________________________________
@@ -114,8 +133,7 @@ TRATVolume::FindExperiment()
 {
   if ( fDB == 0x0 ) {
     TString warnLoc = TString::Format("%s::FindExperiment()", defaultName.Data());
-//  TString warnMsg = TString::Format("RAT-PAC database not found in %s; experiment name and path unknown.", fFileName);
-    TString warnMsg = TString::Format("RAT-PAC database not found in file; experiment name and path unknown.");
+    TString warnMsg = TString::Format("RAT-PAC database not found in %s; experiment name and path unknown.", fFileName);
     Warning(warnLoc.Data(), warnMsg.Data());
     fExperiment = "";
     fExperimentPath = "";
@@ -216,6 +234,8 @@ TRATVolume::FindRelativePosition()
 // FindAbsolutePosition
 TRATVolume::FindAbsolutePosition()
 {
+//TRATVolume *motherVol = new TRATVolume("world");
+  TRATVolume *motherVol;
   if (fMother == "") {
 //  TString infoMsg = "Top volume is located at (0,0,0) by definition.";
 //  this->Info("FindAbsolutePosition", infoMsg.Data()); //debug
@@ -232,14 +252,16 @@ TRATVolume::FindAbsolutePosition()
 	break;
       } else {
 //      cout << motherVolName.Data() << endl; //debug
-	TRATVolume motherVol = TRATVolume(motherVolName.Data());
-	volTrans += motherVol.GetRelativePosition();
-	motherVolName = motherVol.GetMother();
+//      motherVol->SetVolume(motherVolName.Data());
+	motherVol = new TRATVolume(motherVolName.Data());
+	volTrans += motherVol->GetRelativePosition();
+	motherVolName = motherVol->GetMother();
 	motherVolName.ReplaceAll("\"","");
 //      cout << motherVolName.Data() << endl; //debug
       } // end if
     } // end mother loop
-    fAbsolutePosition = fRelativePosition + volTrans;
+  fAbsolutePosition = fRelativePosition + volTrans;
+  delete motherVol;
   }
 }
 
@@ -265,8 +287,8 @@ TRATVolume::Print()
   printf("\n");
   printf("%s\t%s\t%s\n", Class_Name(), GetName(), GetTitle());
   printf("Volume Name: %s\n", fVolNameChr);
-//printf("ROOT File: "); cout << fFile << endl;
-//printf("ROOT Filename:\t%s\n", fFileName);
+  printf("ROOT File: "); cout << fFile << endl;
+  printf("ROOT Filename:\t%s\n", fFileName);
   printf("Experiment:\t\t%s\n", fExperiment.Data());
   printf("Experiment Path:\t%s\n", fExperimentPath.Data());
   printf("RAT-PAC Database TMap: "); cout << fDB << endl;
@@ -279,6 +301,6 @@ TRATVolume::Print()
   printf("\n");
 }
 
-} // namespace TRV
+//} // namespace TRV
 
 // all pau!   )
