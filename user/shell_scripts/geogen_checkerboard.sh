@@ -45,8 +45,10 @@
 
 ## init
 
-# fix character cases if needed
-ARG=$(echo $1 | tr [:upper:] [:lower:])
+# prepare $CMD
+if [[ $1 ]]; then
+  CMD=$(echo $1 | tr [:upper:] [:lower:])
+fi
 
 # check / create filenames
 PROJ=$(pwd | sed s_/_\ _g | awk '{print $NF}')
@@ -55,7 +57,7 @@ ARRFILE="$PROJ"_cell-array.geo
 OUTFILE="$PROJ".geo
 
 # reset command
-if [[ $ARG = "reset" ]]; then
+if [[ $CMD = "reset" ]]; then
   if [[ -f $BASEFILE ]]; then
     echo "Resetting experiment to base; clearing detector..."
       if [[ -f $ARRFILE ]]; then /usr/bin/rm $ARRFILE; fi
@@ -67,13 +69,13 @@ if [[ $ARG = "reset" ]]; then
 fi
 
 # inert-visibility switching commands
-if [[ $ARG = "inert_vis_on" ]]; then
+if [[ $CMD = "inert_vis_on" ]]; then
   echo "Setting inert-cell visibility on..."
   cp $OUTFILE "$OUTFILE"_tmp
   cat "$OUTFILE"_tmp | sed s/'invisible: 1, \/\/ inert cell'/'invisible: 0, \/\/ inert cell'/ > $OUTFILE
   /usr/bin/rm "$OUTFILE"_tmp
   echo "Done." && exit 0
-elif [[ $ARG = "inert_vis_off" ]]; then
+elif [[ $CMD = "inert_vis_off" ]]; then
   echo "Setting inert-cell visibility off..."
   cp $OUTFILE "$OUTFILE"_tmp
   cat "$OUTFILE"_tmp | sed s/'invisible: 0, \/\/ inert cell'/'invisible: 1, \/\/ inert cell'/ > $OUTFILE
@@ -82,8 +84,8 @@ elif [[ $ARG = "inert_vis_off" ]]; then
 fi
 
 # inert cell visibility during generation
-if [[ $ARG ]]; then
-  INERT_CELL_VISIBLE=$ARG
+if [[ $CMD ]]; then
+  INERT_CELL_VISIBLE=$CMD
 else
   INERT_CELL_VISIBLE=true
 fi
@@ -101,17 +103,17 @@ if [ -e $OUTFILE ]; then
   echo "ERROR: $OUTFILE already exists; please remove if you are certain you want to define a new experiment geometry." && exit 12
 fi
 
+# proceed
+echo -e "\n### Starting checkerboard geometry generator ###\n"
+
 # check for bc
-echo -e "\n\nChecking for bc..."
+echo "Checking for bc..."
 if [ $(which bc) ]; then
-  echo "Success: bc found in $(which bc)"
+  echo -e "Success: bc found in $(which bc)\n"
 else
-  echo -e "ERROR: Program 'bc' is needed to run this script.\n\n" && exit 10
+  echo -e "ERROR: Program 'bc' is needed to run this script.\n\n"
+  exit 10
 fi
-
-
-printf "\n\n"
-  
 
 ## template
 
@@ -134,6 +136,9 @@ printf "\n\n"
 
 
 ## configure geometry
+
+# prompt for number of dimensions
+echo "Enter \"2\" or \"3\" for 2-D or 3-D checkerboarding: " && read DIMS
 
 # prompt for configuration
 echo "Enter number of rows: " && read ROWS
@@ -222,11 +227,23 @@ for (( k_lr=0; k_lr<$ROWS; k_lr++ )); do
       if [ $z = 0 ]; then z="0.0"; fi
 
       # checkerboarding test
+      CHK_TEST=false
       ROW_EVEN=$((k_lr % 2))
       COL_EVEN=$((k_ud % 2))
       LYR_EVEN=$((k_fb % 2))
-#     if [[ $ROW_EVEN -eq $COL_EVEN && $COL_EVEN -eq $LYR_EVEN ]]; then #CELL=ACTIVE #FIXME: temporarily disabled for 2-d chkbd
-      if [[ $ROW_EVEN -eq $COL_EVEN ]]; then #CELL=ACTIVE #FIXME: temporarily implemented for 2-d chkbd
+      if [[ $DIMS -eq 2 ]]; then
+	if [[ $ROW_EVEN -eq $COL_EVEN ]]; then
+	  CHK_TEST=true #CELL=ACTIVE
+	fi
+      elif [[ $DIMS -eq 3 ]]; then
+	if [[ $ROW_EVEN -eq $COL_EVEN && $COL_EVEN -eq $LYR_EVEN ]]; then
+	  CHK_TEST=true #CELL=ACTIVE
+	fi
+      else
+        echo "Error: Invalid number of checkerboarding dimensions (must be either 2 or 3)."
+	exit 3
+      fi
+      if $CHK_TEST; then
         MATERIAL=$ACTIVE_CELL_MATERIAL
 	COLOR="[0.0, 1.0, 1.0]"
 #	INVISIBLE="0"
@@ -267,8 +284,9 @@ printf "Array written to: %s\n" $ARRFILE
 
 ## finalize by combining base .geo file with array .geo file
 cat $BASEFILE $ARRFILE > $OUTFILE
-printf "\nRAT-PAC .GEO FILE WRITTEN TO: %s\n\n\n" $OUTFILE
+printf "\nRAT-PAC .GEO FILE WRITTEN TO: %s\n\n" $OUTFILE
 
 
 ## all pau!   )
+echo -e "### Checkerboard geometry generator finished. ###\n\n\n"
 exit 0
