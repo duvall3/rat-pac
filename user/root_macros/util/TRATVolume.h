@@ -54,16 +54,14 @@ private:
   void			FindRelativePosition();	// set volume relative position
   void			FindSize();		// set dimensions (*box-type only*)
   void			FindAll();		// set all members not individually set in ctor
-//void			FindAbsolutePosition();	// set volume absolute position
 
 public:
   TRATVolume();
-  TRATVolume( const char* volNameChr );
-//TRATVolume( const TString volName );
+  TRATVolume( const char* volNameChr, const TMap *db );
   void			SetVolume( const char* newNameChr ); // switch to a different volume and re-fill
   void			FindAbsolutePosition();	// set volume absolute position
   virtual const char*	GetVolNameChr() const { return fVolNameChr; }
-  const TString		GetVolName() const { return fVolName; }
+  const TString*	GetVolName() const { return &fVolName; }
   TFile*		GetFile() const { return fFile; }
   virtual const char* 	GetFileName() const { return fFileName; }
   TString		GetExperiment()	const { return fExperiment; }
@@ -72,9 +70,9 @@ public:
   TString		GetVolumeType() const { return fVolumeType; }
   TString		GetMaterial() const { return fMaterial; }
   TString		GetMother() const { return fMother; }
-  TVector3		GetSize() const { return fSize; }
-  TVector3		GetRelativePosition() const { return fRelativePosition; }
-  TVector3		GetAbsolutePosition() const { return fAbsolutePosition; }
+  TVector3*		GetSize() const { return &fSize; }
+  TVector3*		GetRelativePosition() const { return &fRelativePosition; }
+  TVector3*		GetAbsolutePosition() const { return &fAbsolutePosition; }
 
 //Integrating the TRATVolume class to ROOT.
 ClassDef(TRATVolume,3)

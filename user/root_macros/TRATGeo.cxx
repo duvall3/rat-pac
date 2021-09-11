@@ -53,8 +53,9 @@ TRATGeo::FindExperiment()
     fExperiment = "";
     fExperimentPath = "";
   } else {
-    TPair* tp = fDB->FindObject("DETECTOR[].experiment");
-    TObjString* tos = tp->Value();
+//  TPair* tp = fDB->FindObject("DETECTOR[].experiment");
+//  TObjString* tos = tp->Value();
+    TObjString *tos = fDB->GetValue("DETECTOR[].experiment");
     fExperimentPath = tos->GetString();
     fExperimentPath.ReplaceAll("\"", "");
     TString experimentPath = fExperimentPath;
@@ -68,16 +69,17 @@ TRATGeo::FindExperiment()
 // Init
 TRATGeo::Init()
 {
+  TString errLoc = "TRATGeo::Init()";
   if (gFile) {
     fFile = gFile;
     fFileName = gFile->GetName();
   } else {
-    fFile = 0;
-    fFileName = "";
+    TString errMsg = "Please open a RAT-PAC ROOT file before building geometry.";
+    this->Error(errLoc.Data(), errMsg.Data());
+    return;
   }
   fDB = (TMap*)fFile->FindObjectAny("db");
   if (fDB == 0) {
-    TString errLoc = TString::Format("%s::TRATVolume(const char* name)", defaultName.Data());
     TString errMsg = "RAT-PAC database \"db\" not found\n";
     this->Error(errLoc.Data(), errMsg.Data());
     return;
@@ -89,6 +91,7 @@ TRATGeo::Init()
 // Build
 TRATGeo::Build()
 {
+  Int_t volCount; //debug
   Init();
   // Build init
   TRegexp dbIndexPattern("GEO.*size");
@@ -112,13 +115,14 @@ TRATGeo::Build()
 //    infoMsg.Form("Found relevant entry: %s", keyStr.Data()); //debug
 //    this->Info("Build()", infoMsg.Data()); //debug
       // create TRATVolume* and add to list
-      TRATVolume *v = new TRATVolume(keyStr.Data()); //KEEPME //debug disable
-//    TRATVolume *v = new TRATVolume; //debug
+      TRATVolume *v = new TRATVolume(keyStr.Data(), fDB); //KEEPME //debug disable
+      volCount++;
+//    if (volCount % 10 == 0) cout << volCount << endl; //debug
       v->FindAbsolutePosition();
       fVolumeList->Add(v);
     } // end if -- relevant entry
   } // end db entry loop
-infoMsg.Form("Done.");
+infoMsg.Form("Done.\n");
 this->Info(infoLoc.Data(), infoMsg.Data());
 }
 
@@ -201,14 +205,14 @@ TRATGeo::Mothers()
 TRATGeo::Sizes()
 {
   TString volName;
-  TVector3 volSize;
+  TVector3 *volSize;
   TRATVolume* vol;
   Int_t k, N(fVolumeList->GetEntries());
   for ( k=0; k<(N-1); k++ ) {
     vol = (TRATVolume*)fVolumeList->At(k);
     volName = vol->GetName();
     volSize = vol->GetSize();
-    printf( "%s\t\t%f  %f  %f\n", volName.Data(), volSize.X(), volSize.Y(), volSize.Z() );
+    printf( "%s\t\t%f  %f  %f\n", volName.Data(), volSize->X(), volSize->Y(), volSize->Z() );
   }
 }
 

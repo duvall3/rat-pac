@@ -58,42 +58,51 @@ TRATVolume::TRATVolume()
 
 //______________________________________________________________________________
 // primary ctor
-TRATVolume::TRATVolume( const char* name )
+TRATVolume::TRATVolume( const char* name, const TMap *db )
 {
   // init DB and check for existence
-  TString errLoc = TString::Format("%s::TRATVolume(const char* name)", defaultName.Data());
+  TString *errLoc = new TString;
+  errLoc->Form("%s::TRATVolume(const char* name)", defaultName.Data());
   if (name == "") {
     TString errMsg = TString::Format("Invalid volume name \"%s\"\n", name);
-    this->Error(errLoc.Data(), errMsg.Data());
+    this->Error(errLoc->Data(), errMsg.Data());
     return;
   }
-  fDB = (TMap*)gDirectory->Get("db");
-  if (fDB == 0) {
-    TString errMsg = "RAT-PAC database \"db\" not found\n";
-    this->Error(errLoc.Data(), errMsg.Data());
-    return;
-  }
-  TString dbKey = TString::Format("GEO[%s].type", name);
-  if (fDB->GetValue(dbKey) == 0) {
-    TString errMsg = TString::Format("No volume found with name \"%s\"\n", name);
-    this->Error(errLoc.Data(), errMsg.Data());
-    return;
-  }
-  // set remaining members
-  SetName(name);
-  TString titStr = TString::Format("TRATVolume for \"%s\"", name);
-  SetTitle(titStr.Data());
-  fVolNameChr = name;
-  fVolName = TString(fVolNameChr);
   if (gFile) {
     fFile = gFile;
     fFileName = gFile->GetName();
   } else {
-    fFile = 0;
-    fFileName = "";
+    TString errMsg = "Please open a RAT-PAC ROOT file before analyzing volumes.";
+    this->Error(errLoc->Data(), errMsg.Data());
+    return;
   }
+//fDB = (TMap*)gDirectory->Get("db");
+  fDB = db;
+  if (fDB == 0) {
+    TString errMsg = "RAT-PAC database \"db\" not found\n";
+    this->Error(errLoc->Data(), errMsg.Data());
+    return;
+  }
+  TString *dbKey = new TString;
+  dbKey->Form("GEO[%s].type", name);
+  if (fDB->GetValue(dbKey->Data()) == 0) {
+    TString errMsg = TString::Format("No volume found with name \"%s\"\n", name);
+    this->Error(errLoc->Data(), errMsg.Data());
+    return;
+  }
+  // set remaining members
+  SetName(name);
+  TString *titStr = new TString;
+  titStr->Form("TRATVolume for \"%s\"", name);
+  SetTitle(titStr->Data());
+  fVolNameChr = name;
+  fVolName = TString(fVolNameChr);
   FindAll();
 //FindAbsolutePosition();
+  // cleanup
+  delete errLoc;
+  delete dbKey;
+  delete titStr;
 }
 
 //______________________________________________________________________________
@@ -132,18 +141,17 @@ TRATVolume::FindAll()
 TRATVolume::FindExperiment()
 {
   if ( fDB == 0x0 ) {
-    TString warnLoc = TString::Format("%s::FindExperiment()", defaultName.Data());
+    TString warnLoc = "TRATVolume::FindExperiment()";
     TString warnMsg = TString::Format("RAT-PAC database not found in %s; experiment name and path unknown.", fFileName);
     Warning(warnLoc.Data(), warnMsg.Data());
     fExperiment = "";
     fExperimentPath = "";
   } else {
-    TPair* tp = fDB->FindObject("DETECTOR[].experiment");
-    TObjString* tos = tp->Value();
+    TObjString *tos = fDB->GetValue("DETECTOR[].experiment");
     fExperimentPath = tos->GetString();
     fExperimentPath.ReplaceAll("\"", "");
-    TString experimentPath = fExperimentPath;
-    TObjArray* toa = experimentPath.Tokenize("/");
+    TString *experimentPath = &fExperimentPath;
+    TObjArray* toa = experimentPath->Tokenize("/");
     tos = (TObjString*)toa->At(toa->GetEntries()-1);
     fExperiment = tos->GetString();
   }
@@ -234,7 +242,6 @@ TRATVolume::FindRelativePosition()
 // FindAbsolutePosition
 TRATVolume::FindAbsolutePosition()
 {
-//TRATVolume *motherVol = new TRATVolume("world");
   TRATVolume *motherVol;
   if (fMother == "") {
 //  TString infoMsg = "Top volume is located at (0,0,0) by definition.";
@@ -251,24 +258,17 @@ TRATVolume::FindAbsolutePosition()
 //      this->Info("FindAbsolutePosition", infoMsg.Data()); //debug
 	break;
       } else {
-//      cout << motherVolName.Data() << endl; //debug
 //      motherVol->SetVolume(motherVolName.Data());
-	motherVol = new TRATVolume(motherVolName.Data());
-	volTrans += motherVol->GetRelativePosition();
+	motherVol = new TRATVolume(motherVolName.Data(), fDB);
+	volTrans += *(motherVol->GetRelativePosition());
 	motherVolName = motherVol->GetMother();
 	motherVolName.ReplaceAll("\"","");
-//      cout << motherVolName.Data() << endl; //debug
       } // end if
     } // end mother loop
   fAbsolutePosition = fRelativePosition + volTrans;
   delete motherVol;
   }
 }
-
-////______________________________________________________________________________
-//TRATVolume::
-//{
-//}
 
 ////______________________________________________________________________________
 //TRATVolume::

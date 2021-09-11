@@ -36,7 +36,7 @@ TFile* f0 = TFile::Open(filename); // needed by TRATGeo for RAT database
 Double_t positionResolution = 150.; // position resolution (mm)
 TRATGeo g;
 g.Build();
-TFile* f = new TFile(savename, "recreate");
+TFile* f = TFile::Open(savename, "recreate");
 f->cd(); // just to be safe
 RAT::DSReader r(filename);
 RAT::DS::Root* ds = r.GetEvent(0);
@@ -88,7 +88,9 @@ Long64_t k(0), N(totalRATEvents);
 Int_t i(0);
 Double_t eStep, eSum, eqStep, eqSum;
 Double_t xStep, yStep, zStep, xEQ, yEQ, zEQ;
-TRATVolume* vol;
+TRATVolume *vol;
+TVector3 coords;
+TVector3 *volCoords;
 
 for ( k=0; k<N; k++ ) { // event loop
 
@@ -103,38 +105,51 @@ for ( k=0; k<N; k++ ) { // event loop
   // positron
   n = c.GoChild(0);
   // current: use *starting volume* of e+ track for quantized position
+  // -- also using raw MC-truth srartign position for regular coordinates
   // TODO: instead, use volume with greatest scint. energy deposit
+//x = n->GetEndpoint().X();
+//y = n->GetEndpoint().Y();
+//z = n->GetEndpoint().Z();
+  coords = n->GetEndpoint();
+  x = coords.X();
+  y = coords.Y();
+  z = coords.Z();
   vol_name = n->GetVolume();
   vol = (TRATVolume*)g.GetVolume(vol_name.Data());
-  x_quantized = vol->GetAbsolutePosition().X();
-  y_quantized = vol->GetAbsolutePosition().Y();
-  z_quantized = vol->GetAbsolutePosition().Z();
+  // FIXME -- temporary switch for checkerboard analysis
+//x_quantized = vol->GetAbsolutePosition().X();
+//y_quantized = vol->GetAbsolutePosition().Y();
+//z_quantized = vol->GetAbsolutePosition().Z();
+  volCoords = vol->GetRelativePosition();
+  x_quantized = volCoords->X();
+  y_quantized = volCoords->Y();
+  z_quantized = volCoords->Z();
   wall_time = event_time + n->GetGlobalTime()*1.e-9;
-  xEQ = 0;
-  yEQ = 0;
-  zEQ = 0;
-  eSum = 0;
-  eqSum = 0;
-  energy = 0;
-  energy_q = 0;
-  for ( i=0; i<c.StepCount(); i++ ) { // step loop
-    n = c.GoStep(i);
-    eStep = n->GetTotEDepScint();
-    eqStep = n->GetTotEDepScintQuenched();
-    xStep = n->GetEndpoint().X();
-    yStep = n->GetEndpoint().Y();
-    zStep = n->GetEndpoint().Z();
-    xEQ += xStep * eqStep;
-    yEQ += yStep * eqStep;
-    zEQ += zStep * eqStep;
-    eSum += eStep;
-    eqSum += eqStep;
-  } // step loop
-  energy = eSum;
-  energy_q = eqSum;
-  x = xEQ / eqSum;
-  y = yEQ / eqSum;
-  z = zEQ / eqSum;
+//xEQ = 0;
+//yEQ = 0;
+//zEQ = 0;
+//eSum = 0;
+//eqSum = 0;
+//energy = 0;
+//energy_q = 0;
+//for ( i=0; i<c.StepCount(); i++ ) { // step loop
+//  n = c.GoStep(i);
+//  eStep = n->GetTotEDepScint();
+//  eqStep = n->GetTotEDepScintQuenched();
+//  xStep = n->GetEndpoint().X();
+//  yStep = n->GetEndpoint().Y();
+//  zStep = n->GetEndpoint().Z();
+//  xEQ += xStep * eqStep;
+//  yEQ += yStep * eqStep;
+//  zEQ += zStep * eqStep;
+//  eSum += eStep;
+//  eqSum += eqStep;
+//} // step loop
+//energy = eSum;
+//energy_q = eqSum;
+//x = xEQ / eqSum;
+//y = yEQ / eqSum;
+//z = zEQ / eqSum;
   x_res = gRandom->Gaus(x, positionResolution);
   y_res = gRandom->Gaus(y, positionResolution);
   z_res = gRandom->Gaus(z, positionResolution);
@@ -165,9 +180,17 @@ for ( k=0; k<N; k++ ) { // event loop
   if ( (nProc == "nCapture") || (nProc == "neutronInelastic") ) {
     vol_name = n->GetVolume();
     vol = (TRATVolume*)g.GetVolume(vol_name.Data());
-    x_quantized = vol->GetAbsolutePosition().X();
-    y_quantized = vol->GetAbsolutePosition().Y();
-    z_quantized = vol->GetAbsolutePosition().Z();
+// FIXME -- temporary switch for checkerboard analysis
+//  x_quantized = vol->GetAbsolutePosition().X();
+//  y_quantized = vol->GetAbsolutePosition().Y();
+//  z_quantized = vol->GetAbsolutePosition().Z();
+//  x_quantized = vol->GetRelativePosition().X();
+//  y_quantized = vol->GetRelativePosition().Y();
+//  z_quantized = vol->GetRelativePosition().Z();
+    volCoords = vol->GetRelativePosition();
+    x_quantized = volCoords->X();
+    y_quantized = volCoords->Y();
+    z_quantized = volCoords->Z();
     n = c.GoChild(c.ChildCount()-1);
     cap_product = n->GetParticleName();
     n = c.GoParent();
@@ -223,7 +246,7 @@ for (( k = 0; k < T_scint->GetEntries(); k++ )) {
 }
 
 // finish up
-cout << "Done." << endl;
+cout << "Done." << endl << endl;
 T_scint->Write();
 //TString gName;
 //gName.Form("%s_TRATGeo", g.GetExperiment().Data());
