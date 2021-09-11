@@ -146,5 +146,5 @@ if [[ $? == 0 ]]; then
 else
   echo -e "\nDone.\n"
   echo -e "\nBatch run finished, with errors.\n\n"
-  exit 1
+  exit 2
 fi

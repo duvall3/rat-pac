@@ -149,11 +149,11 @@ echo "Enter cell half-spacing (mm): " && read S
 echo
 
 # prompt for materials
-echo "Enter material for active cells (default: ej254_005li6 -- PVT @ 0.5%wt. Li-6): " && read ACTIVE_CELL_MATERIAL
+echo "Enter material for active cells (default: ej254_015li6 -- PVT @ 0.5%wt. Li-6): " && read ACTIVE_CELL_MATERIAL
 echo "Enter material for inactive cells (default: glass -- SiO2): " && read ACTIVE_CELL_MATERIAL
 echo
 # defaults
-if [[ -z $ACTIVE_CELL_MATERIAL ]]; then ACTIVE_CELL_MATERIAL="ej254_005li6"; fi
+if [[ -z $ACTIVE_CELL_MATERIAL ]]; then ACTIVE_CELL_MATERIAL="ej254_015li6"; fi
 if [[ -z $INERT_CELL_MATERIAL ]]; then INERT_CELL_MATERIAL="glass"; fi
 
 # force float format for RAT-PAC
@@ -225,7 +225,8 @@ for (( k_lr=0; k_lr<$ROWS; k_lr++ )); do
       ROW_EVEN=$((k_lr % 2))
       COL_EVEN=$((k_ud % 2))
       LYR_EVEN=$((k_fb % 2))
-      if [[ $ROW_EVEN -eq $COL_EVEN && $COL_EVEN -eq $LYR_EVEN ]]; then #CELL=ACTIVE
+#     if [[ $ROW_EVEN -eq $COL_EVEN && $COL_EVEN -eq $LYR_EVEN ]]; then #CELL=ACTIVE #FIXME: temporarily disabled for 2-d chkbd
+      if [[ $ROW_EVEN -eq $COL_EVEN ]]; then #CELL=ACTIVE #FIXME: temporarily implemented for 2-d chkbd
         MATERIAL=$ACTIVE_CELL_MATERIAL
 	COLOR="[0.0, 1.0, 1.0]"
 #	INVISIBLE="0"
