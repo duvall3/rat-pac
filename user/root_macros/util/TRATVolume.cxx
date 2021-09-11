@@ -76,7 +76,7 @@ TRATVolume::TRATVolume( const char* name, const TMap *db )
     this->Error(errLoc->Data(), errMsg.Data());
     return;
   }
-//fDB = (TMap*)gDirectory->Get("db");
+//fDB = (TMap*)gDirectory->Get("db"); // CAUSED MEMORY LEAK
   fDB = db;
   if (fDB == 0) {
     TString errMsg = "RAT-PAC database \"db\" not found\n";
