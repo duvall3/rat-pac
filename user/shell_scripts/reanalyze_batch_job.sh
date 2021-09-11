@@ -29,16 +29,12 @@ fi
 # init
 DATARUN_NAME=$1
 EVENTS_PER_JOB=$2
-# no graphics for batch subsets
-#if [[ -z $3 ]]; then
-#  if $SEDAQ_GRAPHICS_TF; then
-#    GRAPHICS_TF=true
-#  else
-#    GRAPHICS_TF=false
-#  fi
-#else
-#  GRAPHICS_TF=$3
-#fi
+# default to no graphics for batch subsets
+if [[ -z $3 ]]; then
+  GRAPHICS_TF=false
+else
+  GRAPHICS_TF=$3
+fi
 
 # MAIN
 echo -e "\n/// Reanalyzing batch jobs in $DATARUN_NAME... ///\n"
@@ -46,7 +42,7 @@ for DIR in $DATARUN_NAME_*/; do
   cd $DIR
   mv -t . $DIR/*
   rmdir ./$DIR/
-  process_rat_run.sh $(basename $(pwd)) $EVENTS_PER_JOB false # no graphics for batch subsets
+  prepare_rat_run.sh $(basename $(pwd)) $EVENTS_PER_JOB $GRAPHICS_TF
   cd ..
 done
 
