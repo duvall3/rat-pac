@@ -5,7 +5,7 @@
 
 ## usage
 if [ $# -lt 2 ]; then
-  echo -e "\nUSAGE: process_rat_run.sh <DATARUN_NAME> <NUM_EVENTS>\n" && exit 10
+  echo -e "\nUSAGE: process_rat_run.sh <DATARUN_NAME> <NUM_EVENTS> [GRAPHICS_TF]\n" && exit 10
 fi
 
 ## init
