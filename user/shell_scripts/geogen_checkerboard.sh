@@ -149,7 +149,7 @@ echo "Enter cell half-spacing (mm): " && read S
 echo
 
 # prompt for materials
-echo "Enter material for active cells (default: ej254_015li6 -- PVT @ 0.5%wt. Li-6): " && read ACTIVE_CELL_MATERIAL
+echo "Enter material for active cells (default: ej254_015li6 -- PVT @ 1.5%wt. Li-6): " && read ACTIVE_CELL_MATERIAL
 echo "Enter material for inactive cells (default: glass -- SiO2): " && read ACTIVE_CELL_MATERIAL
 echo
 # defaults
