@@ -213,7 +213,6 @@ void drawPrevEvent() {
 }
 
 
-
 // highlightCells -- highlight IBD-relevant target cells in RATPACEventViewer
 void highlightCells() {
 
@@ -308,6 +307,55 @@ void highlightCells() {
   } // end for -- track loop
 
 }
+
+
+// toggleInertVis -- toggle whether inert cells are drawn in the viewer
+// -- user must provide the number of checkerboarding dimensions:
+//      kDims=2 or kDims=3
+void toggleInertVis( const Int_t kDims = 3 ) {
+
+// init
+TGeoManager *geo = gGeoManager;
+TObjArray *vols = geo->GetListOfVolumes();
+TRegexp tcr = "target_cell_.*_.*";
+TIter i(vols);
+TGeoVolume *v;
+TString vName;
+TObjArray *vNameTOA;
+TObjString *vTOS;
+Int_t R, C, L;
+Bool_t chkTest(kFALSE);
+
+// MAIN
+for ( i=vols->begin(); i!=vols->end(); ++i ) {
+  v = (TGeoVolume*)*i;
+  vName = v->GetName();
+  if (vName.Contains(tcr)) {
+    // extract row, column, and layer
+    vNameTOA = vName.Tokenize('_');
+    vTOS = (TObjString*)vNameTOA->At(2);
+    R = vTOS->GetString().Atoi();
+    vTOS = (TObjString*)vNameTOA->At(3);
+    C = vTOS->GetString().Atoi();
+    vTOS = (TObjString*)vNameTOA->At(4);
+    L = vTOS->GetString().Atoi();
+    // perform checkerboarding test
+    if (kDims==2) {
+      chkTest = ( R%2 == C%2 );
+    } else if (kDims==3) {
+      chkTest = ( (R%2==C%2) && (C%2==L%2) );
+    } else {
+      geo->Error("toggleInertVis.cxx", "Invalid checkerboarding dimension");
+//    return;
+    } // end if -- kDims
+    // switch visibility for *inert* cells
+    if (! chkTest) v->SetVisibility( ! v->IsVisible() );
+  } // end if -- target-cell regex
+} // end volume-list loop
+
+geo->Draw();
+
+} // end function
 
 
 // all pau!   )
