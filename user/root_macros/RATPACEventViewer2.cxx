@@ -121,7 +121,7 @@ TList *rvols = g->GetListOfVolumes();
 TIter i(rvols);
 TRATVolume *rvol;
 TString volumeName, volumeMother; //, volumeType;
-TVector3 volumeSize, volumePosition;
+TVector3 *volumeSize, *volumePosition;
 for ( i=rvols->begin(); i!=rvols->end(); ++i ) {
   rvol = (TRATVolume*)*i;
   volumeName = rvol->GetVolName();
@@ -129,7 +129,7 @@ for ( i=rvols->begin(); i!=rvols->end(); ++i ) {
   volumeSize = rvol->GetSize();
   volumePosition = rvol->GetAbsolutePosition();
   // create volume
-  TGeoVolume* volume = geo->MakeBox(volumeName.Data(), med, volumeSize.X(), volumeSize.Y(), volumeSize.Z() );
+  TGeoVolume* volume = geo->MakeBox(volumeName.Data(), med, volumeSize->X(), volumeSize->Y(), volumeSize->Z() );
   if ( volumeName == "world" ) { // top volume //HC//
     if ( ! volume->IsTopVolume() ) {
     geo->SetTopVolume(volume);
@@ -163,7 +163,7 @@ for ( iv = vols->begin(); iv != vols->end(); ++iv ) {
 
   if (vol->IsTopVolume()) continue; // skip world (already positioned when made top volume)
 
-  trans = new TGeoTranslation( volPosition.X(), volPosition.Y(), volPosition.Z() );
+  trans = new TGeoTranslation( volPosition->X(), volPosition->Y(), volPosition->Z() );
 //trans->Print(); //debug
 
   // find mother and add node
