@@ -70,6 +70,8 @@
 //void RATPACEventViewer2( const char* FileName, TString tcs = ".*" ) {
 TRATGeo* RATPACEventViewer2( const char* FileName, TString tcs = ".*" ) {
 
+// switch default rendering engine to OpenGL
+gStyle->SetCanvasPreferGL(kTRUE);
 
 
 //// DETECTOR GEOMETRY
