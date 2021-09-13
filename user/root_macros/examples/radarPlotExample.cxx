@@ -17,10 +17,6 @@ for ( k=0; k<N; k++ ) {
 TCanvas *can_radar = new TCanvas("can_radar", "can_radar");
 h_radar->Draw("cyllego");
 
-//// adjust view
-//TView *view = gPad->GetView();
-//view->Top();
-
 // to adjust view
 printf("\nTo set the view, run the following lines:\n\n");
 printf("TView *view = gPad->GetView();\n");
