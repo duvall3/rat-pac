@@ -18,6 +18,9 @@
 
 void duvallAnalyzeFull( const char* baseName, const bool kGraphics = kTRUE, const char* kQuantizedPositions = "", const char* kPositionResolution = "" ) {
 
+// set default rendering enging to OpenGL
+gStyle->SetCanvasPreferGL(kTRUE);
+
 // filenames
 TString basename(baseName);
 TString rootfile, rtfile, scintfile, energiesfile, resultsfile;

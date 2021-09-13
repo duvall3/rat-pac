@@ -44,6 +44,8 @@
 //void SEDAQ2( const char* filename, const Bool_t kGraphics = kFALSE, const Bool_t kQuantizedPositions = kFALSE, const Bool_t kPositionResolution = kFALSE, Double_t prompt_low = 0, Double_t delayed_low = 0, Double_t deltaT_low = 1.e-6, Double_t deltaT_high = 100.e-6) {
 void SEDAQ2( const char* filename, const Bool_t kGraphics = kFALSE, const char* kQuantizedPositions = "", const char* kPositionResolution = "", Double_t prompt_low = 0, Double_t delayed_low = 0, Double_t deltaT_low = 1.e-6, Double_t deltaT_high = 100.e-6) {
 
+// set default rendering enging to OpenGL
+gStyle->SetCanvasPreferGL(kTRUE);
 
 //// INIT
 

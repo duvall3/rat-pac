@@ -29,6 +29,8 @@
 
 void angularRecon( const char* filename, bool graphics_tf = kFALSE ) {
 
+// set default rendering enging to OpenGL
+gStyle->SetCanvasPreferGL(kTRUE);
 
 // init
 TString fileName = filename;
@@ -154,7 +156,7 @@ ts5 = TString::Format( "  phi   = %2.2f   +/- %2.2f deg (SD)\t%2.2f sigma from t
 ts6 = TString::Format( "                 +/-  %2.2f deg (SDM)\t%2.2f sigma from true value\n", phi_sdm, TMath::Abs((phi_mean-phi_true))/phi_sdm );
 ts7 = TString::Format( "  theta = %2.2f   +/- %2.2f deg (SD)\t%2.2f sigma from true value,  or\n", theta_mean, theta_std, TMath::Abs((theta_mean-theta_true))/theta_std );
 ts8 = TString::Format( "                 +/-  %2.2f deg (SDM)\t%2.2f sigma from true value\n", theta_sdm, TMath::Abs((theta_mean-theta_true))/theta_sdm );
-ts9 = TString::Format( "  Mean Cos[psi] = %1.3f\n\n", h_cos_psi->GetMean() );
+ts9 = TString::Format( "  <cos[psi]> = %1.3f\n\n", h_cos_psi->GetMean() );
 ts_summary = ts1+ts2+ts3+ts4+ts5+ts6+ts7+ts8+ts9;
 printf("\n%s", ts_summary.Data());
 TObjString angular_summary = ts_summary;
