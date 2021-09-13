@@ -527,7 +527,7 @@ if ( T2->GetEntries() > 0 && kGraphics==true ) { // skip T2 graphics if there we
   hpz->SetTitle("z (mm)");
   hpx->SetTitleOffset(1.5);
   hpy->SetTitleOffset(1.7);
-  hpz->SetTitleOffset(1.2);
+  hpz->SetTitleOffset(1.3);
   // delayed
   // cycle coordinates to adjust for TTree->Draw(TH3) //KEEPME//
   T2->Draw("delayed_cand_z:delayed_cand_y:delayed_cand_x>>h_delayed");
