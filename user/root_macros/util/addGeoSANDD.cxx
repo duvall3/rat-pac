@@ -15,7 +15,18 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+#include <toggleInertVisAddGeo.cxx>
+
 TList* addGeoSANDD(const char* ratFilename, const char* resultsFilename) {
+
+// for OpenGL:
+// get current graphics settings
+const Bool_t origOGL = gStyle->GetCanvasPreferGL();
+const Bool_t origBatch = gROOT->IsBatch();
+// switch default rendering engine
+if (! origOGL) gStyle->SetCanvasPreferGL(kTRUE);
+// set to batch mode if needed
+//if (! origBatch) gROOT->SetBatch(kTRUE);
 
 // open a RAT run and get detector geometry
 TFile *f1 = TFile::Open(ratFilename);
@@ -49,16 +60,17 @@ TList *nodeList = new TList;
 
 // cell array
 vol = (TRATVolume*)g.GetVolume("target_cell_array");
-TBRIK *cellArrayShape = new TBRIK("cellArrayShape", "prototype shape for cell array", "vacuum", vol->GetSize().X(), vol->GetSize().Y(), vol->GetSize().Z());
-n = new TNode("cellArray", "node for cellArray", "cellArrayShape", vol->GetAbsolutePosition().X(), vol->GetAbsolutePosition().Y(), vol->GetAbsolutePosition().Z());
+TBRIK *cellArrayShape = new TBRIK("cellArrayShape", "prototype shape for cell array", "vacuum", vol->GetSize()->X(), vol->GetSize()->Y(), vol->GetSize()->Z());
+n = new TNode("cellArray", "node for cellArray", "cellArrayShape", vol->GetAbsolutePosition()->X(), vol->GetAbsolutePosition()->Y(), vol->GetAbsolutePosition()->Z());
 nodeList->Add(n);
-n->Draw("same");
+//n->Draw("same");
+n->Draw();
 
 // target-cell prototype
 vol = (TRATVolume*)g.GetVolume("target_cell_0_0_0");
-TBRIK *targetcell = new TBRIK("target_cell", "prototype shape for target cells", "vacuum", vol->GetSize().X(), vol->GetSize().Y(), vol->GetSize().Z());
+TBRIK *targetcell = new TBRIK("target_cell", "prototype shape for target cells", "vacuum", vol->GetSize()->X(), vol->GetSize()->Y(), vol->GetSize()->Z());
 
-// nodes
+// individual cells
 TString volName;
 TString nodeName, nodeTitle;
 TIter i(vols);
@@ -68,29 +80,32 @@ for ( i=vols->begin(); i!=vols->end(); ++i ) {
   if (volName.Contains(targetRE)) {
     nodeName.Form("%s_node", vol->GetName());
     nodeTitle.Form("node for %s", vol->GetName());
-    n = new TNode(nodeName.Data(), nodeTitle.Data(), "target_cell", vol->GetAbsolutePosition().X(), vol->GetAbsolutePosition().Y(), vol->GetAbsolutePosition().Z());
+    n = new TNode(nodeName.Data(), nodeTitle.Data(), "target_cell", vol->GetAbsolutePosition()->X(), vol->GetAbsolutePosition()->Y(), vol->GetAbsolutePosition()->Z());
     n->SetLineColor(kGray);
     nodeList->Add(n);
     n->Draw("same");
   }
 }
 
-// draw histos
-hp->Draw("AHsame");
-hd->Draw("AHsame");
+//// turn off inert cells
+//toggleInertVisAddGeo(nodeList, 2);
 
-// adjust view
-//Double_t viewLim = 100.;
-TView *view = gPad->GetView();
-//view->SetRange(-viewLim, -viewLim, -viewLim, viewLim, viewLim, viewLim);
-//view->SetParallel();
-view->ShowAxis();
-view->Draw();
+// redraw histos
+hp->SetAxisColor(0, "XYZ");
+hd->SetAxisColor(0, "XYZ");
+hp->SetLabelColor(0, "XYZ");
+hd->SetLabelColor(0, "XYZ");
+Option_t *hpo = "sameglboxFbBb", *hdo = "sameglbox1FbBb";
+hp->Draw(hpo);
+hd->Draw(hdo);
 
-// redraw
-hp->Draw("");
-hd->Draw("AHsame");
-nodeList->At(0)->Draw("same");
+// fix view
+printf("\nRun the following lines to fix the view:\n");
+printf("// fix view\n");
+printf("TView *view = gPad->GetView();\n");
+printf("view->SetParallel();\n");
+printf("view->ShowAxis();\n");
+printf("view->Draw();\n");
 
 // annotations
 //tit3->Draw();
@@ -98,9 +113,14 @@ l3->Draw();
 
 // finish up
 // NOTE: *DO NOT* write c3 back to _results file!!!
-c3->SaveAs(savename.Data());
-c3->Close();
-f2->Close();
+printf("\nRun the following lines to finish up:\n");
+printf("// save and close\n");
+printf("c3->SaveAs(\"%s\");\n", savename.Data());
+printf("c3->Close();\n");
+printf("gFile->Close();\n");
+if (! origOGL) printf("gStyle->SetCanvasPreferGL(kFALSE);\n");
+if (! origBatch) printf("gROOT->SetBatch(kFALSE);\n");
+printf("\n\n");
 
 // all pau!   )
 return nodeList;

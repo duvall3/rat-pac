@@ -15,6 +15,8 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+#include <toggleInertVisAddGeo.cxx>
+
 TList* addGeoNuLat(const char* ratFilename, const char* resultsFilename) {
 
 // for OpenGL:
@@ -31,6 +33,7 @@ TFile *f1 = TFile::Open(ratFilename);
 TRATGeo g;
 g.Build();
 TList *vols = g.GetListOfVolumes();
+TRegexp targetRE = "target_cell_.*_.*";
 f1->Close();
 
 // open results file and get histos and related objects
@@ -57,11 +60,12 @@ TList *nodeList = new TList;
 
 // cube array
 vol = (TRATVolume*)g.GetVolume("cube_array");
+if (vol==0) vol = (TRATVolume*)g.GetVolume("target_cell_array");
 TBRIK *cubeArrayShape = new TBRIK("cubeArrayShape", "prototype shape for cube array", "vacuum", vol->GetSize()->X(), vol->GetSize()->Y(), vol->GetSize()->Z());
-n = new TNode("cubeArray", "node for cubeArray", "cubeArrayShape", vol->GetAbsolutePosition()->X(), vol->GetAbsolutePosition()->Y(), vol->GetAbsolutePosition()->Z());
-nodeList->Add(n);
-//n->Draw("same");
-n->Draw();
+TNode *nCubeArray = new TNode("cubeArray", "node for cubeArray", "cubeArrayShape", vol->GetAbsolutePosition()->X(), vol->GetAbsolutePosition()->Y(), vol->GetAbsolutePosition()->Z());
+nodeList->Add(nCubeArray);
+//nCubeArray->Draw("same");
+nCubeArray->Draw();
 
 // redraw histos -- prompt or delayed first, depending on NuLat size
 TRegexp nulatRE = "^nulat$";
@@ -83,12 +87,12 @@ if ( g.GetExperiment().Contains(nulatRE) ) { // 3^3 NuLat only
 // target-cube prototype
 vol = (TRATVolume*)g.GetVolume("target_cube_mid_mid_mid");
 if (vol==0) vol = (TRATVolume*)g.GetVolume("target_cube_0_0_0");
+if (vol==0) vol = (TRATVolume*)g.GetVolume("target_cell_0_0_0");
 TBRIK *targetCube = new TBRIK("target_cube", "prototype shape for target cubes", "vacuum", vol->GetSize()->X(), vol->GetSize()->Y(), vol->GetSize()->Z());
 
 // individual cubes
 TString volName;
 TString nodeName, nodeTitle;
-TRegexp targetRE = "target_cube_.*_.*";
 TIter i(vols);
 for ( i=vols->begin(); i!=vols->end(); ++i ) {
   vol = (TRATVolume*)*i;
@@ -110,6 +114,11 @@ printf("TView *view = gPad->GetView();\n");
 printf("view->SetParallel();\n");
 printf("view->ShowAxis();\n");
 printf("view->Draw();\n");
+
+// checkerboarding
+printf("\nIf this is a checkerboarded detector, run the following line to remove the inert cells from the viewer:\n");
+printf("(*note: this assumes you ran the macro using 'TList *vols = addGeoNulat(...)'\n");
+printf("toggleInertVisAddGeo(vols);\n");
 
 // annotations
 //tit3->Draw();
