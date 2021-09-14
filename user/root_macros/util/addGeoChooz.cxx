@@ -20,6 +20,12 @@
 
 const char* resultsFilename;
 
+// for OpenGL:
+// get current graphics settings
+const Bool_t origOGL = gStyle->GetCanvasPreferGL();
+// switch default rendering engine
+if (! origOGL) gStyle->SetCanvasPreferGL(kTRUE);
+
 // arg check / open results file
 TFile *f2 = TFile::Open(resultsFilename);
 TString warnLoc = "AddGeoChooz.cxx";
@@ -29,11 +35,22 @@ if (f2==0) {
   return;
 } else {
 
-  // finish file init and draw histos
+  // finish file init and get histos
   TString fileName(resultsFilename);
   TString basename = fileName(0,fileName.Index("_results.root"));
   TString savename = basename+"_pd-xyz-with-geo.png";
   c3->Draw();
+  TH3F *h_prompt = (TH3F*)gDirectory->Get("h_prompt");
+  TH3F *h_delayed = (TH3F*)gDirectory->Get("h_delayed");
+
+  // redraw histos
+  Option_t *hpo = "glboxFbBb", *hdo = "sameglbox1FbBb";
+  h_prompt->SetFillColor(kRed);
+  h_delayed->SetFillColor(kBlue);
+  h_prompt->SetTitleOffset(2., "Y");
+  h_prompt->SetTitleOffset(2., "Z");
+  h_prompt->Draw(hpo);
+  h_delayed->Draw(hdo);
 
   // geo init
   TMaterial *vacuum = new TMaterial("vacuum", "vacuum", 0., 0., 0.);
@@ -44,16 +61,21 @@ if (f2==0) {
   // make and draw target tank
   TTUBE *targetTank = new TTUBE("targetTank", "prototype shape for target tank", "vacuum", 0., 5000., 5000.);
   n = new TNode("target", "node for target", "targetTank", 0., 0., 0.);
-  n->SetLineColor(kGray);
+  n->SetLineWidth(2.);
+//n->SetLineColor(kGray);
   n->Draw("same");
+//n->Draw();
 
   // finish up
-  // NOTE: *DO NOT* write c3 back to _results file!!!
-  c3->SaveAs(savename.Data());
-  c3->Close();
-  f2->Close();
+  printf("\nNow run the following lines:\n\n");
+  printf("c3->SaveAs(savename.Data());\n");
+  printf("c3->Close();\n");
+  printf("f2->Close();\n\n");
 
 }
+
+// reset graphics settings if applicable
+if (! origOGL) gStyle->SetCanvasPreferGL(kFALSE);
 
 // all pau!   )
 }

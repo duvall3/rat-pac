@@ -3,7 +3,7 @@
 // -- further documentation forthcoming
 // -- see https://github.com/duvall3/rat-pac/tree/collab
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2017 ~ //
-// ~ SEDAQ2 v1.2.00 ~ 8/2021 ~ //
+// ~ Version: SEDAQ2 v1.3.00 ~ 8/2021 ~ //
 //
 // INPUT: ROOT file containing TTree "T_scint" (Scintillation Data)
 // OUTPUT: ROOT file containing TTrees "T2" (IBD Candidate Data) and "T_Trig" (IBD Trigger Parameters and Result)
@@ -12,7 +12,7 @@
 //   -- filename -- input ROOT file
 //   -- kGraphics -- whether to draw & save plots; defaults to false for batch mode
 //   -- kQuantizedPositions -- whether to replace raw positions with coordinates of relevant volume centers
-//   -- kPositionResolution -- whether to replace raw positions with positions that have undergond a Gaussian spread
+//   -- kPositionResolution -- whether to replace raw positions with positions that have undergone a Gaussian spread
 //        (see "positionResolution" in ibdTracksToScint.cxx for width of Gaussian)
 //   -- prompt_low -- IBD trigger, low threshold on prompt event (MeV)
 //   -- deltaT_low -- IBD trigger, lower bound on interevent time
@@ -41,18 +41,22 @@
 #include <math.h>
 
 
-//void SEDAQ2( const char* filename, const Bool_t kGraphics = kFALSE, const Bool_t kQuantizedPositions = kFALSE, const Bool_t kPositionResolution = kFALSE, Double_t prompt_low = 0, Double_t delayed_low = 0, Double_t deltaT_low = 1.e-6, Double_t deltaT_high = 100.e-6) {
 void SEDAQ2( const char* filename, const Bool_t kGraphics = kFALSE, const char* kQuantizedPositions = "", const char* kPositionResolution = "", Double_t prompt_low = 0, Double_t delayed_low = 0, Double_t deltaT_low = 1.e-6, Double_t deltaT_high = 100.e-6) {
-
-// set default rendering enging to OpenGL
-gStyle->SetCanvasPreferGL(kTRUE);
 
 //// INIT
 
 cout << endl;
 
+// for OpenGL:
+// switch default rendering engine
+const Bool_t origOGL = gStyle->GetCanvasPreferGL();
+if (! origOGL) gStyle->SetCanvasPreferGL(kTRUE);
+// set to batch mode if needed
+const Bool_t origBatch = gROOT->IsBatch();
+if (! origBatch) gROOT->SetBatch(kTRUE);
+
 // general
-const char* sedaq2_version = "1.2.00";
+const char* sedaq2_version = "1.3.00";
 gSystem->Load("libPhysics.so");
 gStyle->SetHistLineWidth(2);
 gStyle->SetHistLineColor(kBlue);
@@ -69,6 +73,7 @@ if (FileName.Contains("_T.root")) {
 }
 savename = basename+"_results.root";
 TFile f = TFile(savename, "recreate");
+TString graphicsSaveFormat = ".png";
 
 // TTree T and T2 -- read/create
 TTree* T2 = new TTree("T2","IBD Candidate Data");
@@ -300,7 +305,7 @@ if ( kGraphics == true ) { // draw graphics unless in batch mode (default false)
   // save plot
   c1->Write();
   TString savename1;
-  savename1 = basename+"_bursts.png";
+  savename1 = basename+"_bursts"+graphicsSaveFormat;
   c1->SaveAs(savename1);
   c1->Close();
 
@@ -317,6 +322,9 @@ Double_t deltaT_low, deltaT_high, trigger_reset;
 //Double_t prompt_low;
 Double_t prompt_high, delayed_low, delayed_high;
 TVector3 neutrino_direction, nu_hat, displacement, disp_hat, source_recon, src_hat;
+
+// prepare tiny perturbation to avoid zero-difference problems in segmented detectors
+Double_t pertSigma = 1.e-6; // mm
 
 // prepare *known* (i.e., not reconstructed) neutrino-direction vectors
 // reminder: TVector3 defaults to {x=out,y=right,z=up} and {rho=length,theta=polar(z),phi=azimuthal(x->y)} (rad)
@@ -391,12 +399,16 @@ for ( k = 0; k < (num_bursts-1); k++ ) {
     deltaX = delayed_cand_x - prompt_cand_x;
     deltaY = delayed_cand_y - prompt_cand_y;
     deltaZ = delayed_cand_z - prompt_cand_z;
-    displacement = TVector3(deltaX, deltaY, deltaZ); // temporarily substituting for SANDD analysis
+    // apply tiny perturbation to avoid zero-difference problems in segmented detectors (see "init" above")
+    deltaX = gRandom->Gaus(deltaX, pertSigma);
+    deltaY = gRandom->Gaus(deltaY, pertSigma);
+    deltaZ = gRandom->Gaus(deltaZ, pertSigma);
+    displacement = TVector3(deltaX, deltaY, deltaZ);
 //  displacement = TVector3(deltaX, deltaY, 0.); // temporarily substituting for SANDD analysis
     disp_hat = displacement.Unit();
 
     // compare actual and reconsructed neutrino directions
-    cos_psi = nu_hat.Dot(disp_hat);
+    cos_psi = nu_hat.Dot(disp_hat); // (-) signs cancel
 
     // reverse displacement vector in order to point back at the antineutrino source and get angle info
     source_recon = -displacement;
@@ -529,7 +541,7 @@ if ( T2->GetEntries() > 0 && kGraphics==true ) { // skip T2 graphics if there we
   hpz->SetTitle("z (mm)");
   hpx->SetTitleOffset(1.5);
   hpy->SetTitleOffset(1.7);
-  hpz->SetTitleOffset(1.3);
+  hpz->SetTitleOffset(1.7);
   // delayed
   // cycle coordinates to adjust for TTree->Draw(TH3) //KEEPME//
   T2->Draw("delayed_cand_z:delayed_cand_y:delayed_cand_x>>h_delayed");
@@ -538,9 +550,16 @@ if ( T2->GetEntries() > 0 && kGraphics==true ) { // skip T2 graphics if there we
 //h_delayed->GetXaxis()->SetLimits(-x_abs,x_abs);
 //h_delayed->GetYaxis()->SetLimits(-x_abs,x_abs);
 //h_delayed->GetZaxis()->SetLimits(-x_abs,x_abs);
+//// draw
+//h_prompt->Draw();
+//h_delayed->Draw("same");
+  // prepare OGL options
+  h_prompt->SetFillColor(kRed);
+  h_delayed->SetFillColor(kBlue);
+  Option_t *hpo = "glboxFbBb", *hdo = "glbox1sameFbBb";
   // draw
-  h_prompt->Draw();
-  h_delayed->Draw("same");
+  h_prompt->Draw(hpo);
+  h_delayed->Draw(hdo);
   // legend
   TLegend* l3 = new TLegend(.01, .83, .12, .93);
   l3->SetName("legend3");
@@ -552,8 +571,8 @@ if ( T2->GetEntries() > 0 && kGraphics==true ) { // skip T2 graphics if there we
   c2->Write();
   c3->Write();
   TString savename2, savename3;
-  savename2 = basename+"_nu-trg.png";
-  savename3 = basename+"_pd-xyz.png";
+  savename2 = basename+"_nu-trg"+graphicsSaveFormat;
+  savename3 = basename+"_pd-xyz"+graphicsSaveFormat;
   c2->SaveAs(savename2);
   c3->SaveAs(savename3);
   c2->Close();
@@ -564,7 +583,7 @@ if ( T2->GetEntries() > 0 && kGraphics==true ) { // skip T2 graphics if there we
 // draw capture products
 if ( kGraphics == true ) {
   TString savename7;
-  savename7 = basename+"_cap-prod.png";
+  savename7 = basename+"_cap-prod"+graphicsSaveFormat;
   TCanvas* can_prod_h = new TCanvas("can_prod", filename, 820, 120, 800, 800);
   T_scint->Draw("cap_product>>h_prod", "(cap_product!=\"\")&&(corrected_energy_q>0)", "PIE");
   can_prod_h->SetLogx(0);
@@ -596,6 +615,10 @@ if ( kGraphics == true ) {
   c7->SaveAs(savename7);
   c7->Close();
 } // end if -- kGraphics (for batch mode)
+
+// reset graphics settings if applicable
+if (! origOGL) gStyle->SetCanvasPreferGL(kFALSE);
+if (! origBatch) gROOT->SetBatch(kFALSE);
 
 //// ALL PAU!   )
 cout << endl;

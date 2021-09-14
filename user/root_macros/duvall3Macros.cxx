@@ -42,6 +42,7 @@ gROOT->LoadMacro("addGeoNuLat.cxx");
 //gROOT->LoadMacro("addGeoChooz.cxx");
 gROOT->LoadMacro("addGeoSANTA.cxx");
 gROOT->LoadMacro("addGeoSANDD.cxx");
+gROOT->LoadMacro("exportPlots.cxx");
 
 // all pau!   )
 }

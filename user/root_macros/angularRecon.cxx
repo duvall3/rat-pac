@@ -2,7 +2,7 @@
 // -- operates on results of SEDAQ.cxx from github-->duvall3-->rat-pac-->collab-->user-->root_macros
 // -- USAGE: root <DATARUN_results.root> --> .L angularRecon.cxx --> angularRecon(T2);
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 12/2019 ~ //
-// ~ Version 0.9.2 ~ Updated 8/21 ~ //
+// ~ Version: angularRecon v0.9.3 ~ Updated 9/21 ~ //
 //
 // NOTE: The angular summary can be printed from the saved output file
 //   by running "angular_summary->GetString();" at the ROOT/CINT prompt
@@ -29,12 +29,20 @@
 
 void angularRecon( const char* filename, bool graphics_tf = kFALSE ) {
 
-// set default rendering enging to OpenGL
-gStyle->SetCanvasPreferGL(kTRUE);
+
+// for OpenGL:
+// switch default rendering engine
+const Bool_t origOGL = gStyle->GetCanvasPreferGL();
+if (! origOGL) gStyle->SetCanvasPreferGL(kTRUE);
+// set to batch mode if needed
+const Bool_t origBatch = gROOT->IsBatch();
+if (! origBatch) gROOT->SetBatch(kTRUE);
+
 
 // init
 TString fileName = filename;
 TString basename = fileName(0,fileName.Index(".root"));
+TString graphicsSaveFormat = ".png";
 TFile* f = TFile::Open(filename, "update");
 TTree* T = T2;
 Long64_t k(0), N = T2->GetEntries();
@@ -148,15 +156,15 @@ theta_true = (-nu_hat).Theta() * 180/pi;
 
 // report results and save summary
 TString ts1, ts2, ts3, ts4, ts5, ts6, ts7, ts8, ts9, ts_summary;
-ts1 = TString::Format( "\n\nIBD Angular Reconstruction:\n* datafile = \"%s\"\n* Note: SDM = SD/sqrt(N)\n\n", fileName.Data() );
-ts2 = TString::Format( "Azimuthal Angle (deg):\n  phi_mean\t%2.2f\n  phi_sd\t%2.2f\n  phi_sdm\t%2.2f\n\n", phi_mean, phi_std, phi_sdm );
-ts3 = TString::Format( "Polar Angle (deg):\n  theta_mean\t%2.2f\n  theta_sd\t%2.2f\n  theta_sdm\t%2.2f\n\n", theta_mean, theta_std, theta_sdm );
-ts4 = TString::Format( "SUMMARY:\n  Total IBDs: %d\n  N = %d\n  IBD Efficiency = %2.2f%%\n", nIBDs, N, eff*100 );
-ts5 = TString::Format( "  phi   = %2.2f   +/- %2.2f deg (SD)\t%2.2f sigma from true value,  or\n", phi_mean, phi_std, TMath::Abs((phi_mean-phi_true))/phi_std );
-ts6 = TString::Format( "                 +/-  %2.2f deg (SDM)\t%2.2f sigma from true value\n", phi_sdm, TMath::Abs((phi_mean-phi_true))/phi_sdm );
-ts7 = TString::Format( "  theta = %2.2f   +/- %2.2f deg (SD)\t%2.2f sigma from true value,  or\n", theta_mean, theta_std, TMath::Abs((theta_mean-theta_true))/theta_std );
-ts8 = TString::Format( "                 +/-  %2.2f deg (SDM)\t%2.2f sigma from true value\n", theta_sdm, TMath::Abs((theta_mean-theta_true))/theta_sdm );
-ts9 = TString::Format( "  <cos[psi]> = %1.3f\n\n", h_cos_psi->GetMean() );
+ts1.Form( "\n\nIBD Angular Reconstruction:\n* datafile = \"%s\"\n* Note: SDM = SD/sqrt(N)\n\n", fileName.Data() );
+ts2.Form( "Azimuthal Angle (deg):\n  phi_mean\t%2.2f\n  phi_sd\t%2.2f\n  phi_sdm\t%2.2f\n\n", phi_mean, phi_std, phi_sdm );
+ts3.Form( "Polar Angle (deg):\n  theta_mean\t%2.2f\n  theta_sd\t%2.2f\n  theta_sdm\t%2.2f\n\n", theta_mean, theta_std, theta_sdm );
+ts4.Form( "SUMMARY:\n  Total IBDs: %d\n  N = %d\n  IBD Efficiency = %2.2f%%\n", nIBDs, N, eff*100 );
+ts5.Form( "  phi   = %2.2f   +/- %2.2f deg (SD)\t%2.2f sigma from true value,  or\n", phi_mean, phi_std, TMath::Abs((phi_mean-phi_true))/phi_std );
+ts6.Form( "                 +/-  %2.2f deg (SDM)\t%2.2f sigma from true value\n", phi_sdm, TMath::Abs((phi_mean-phi_true))/phi_sdm );
+ts7.Form( "  theta = %2.2f   +/- %2.2f deg (SD)\t%2.2f sigma from true value,  or\n", theta_mean, theta_std, TMath::Abs((theta_mean-theta_true))/theta_std );
+ts8.Form( "                 +/-  %2.2f deg (SDM)\t%2.2f sigma from true value\n", theta_sdm, TMath::Abs((theta_mean-theta_true))/theta_sdm );
+ts9.Form( "  <cos[psi]> = %1.3f\n\n", h_cos_psi->GetMean() );
 ts_summary = ts1+ts2+ts3+ts4+ts5+ts6+ts7+ts8+ts9;
 printf("\n%s", ts_summary.Data());
 TObjString angular_summary = ts_summary;
@@ -171,9 +179,9 @@ if ( graphics_tf ) {
   h_theta->Write();
   h_cos_psi->Write();
   h_map->Write();
-  c4->SaveAs(basename+"-ang-separate.png");
-  c5->SaveAs(basename+"-cos-psi.png");
-  c6->SaveAs(basename+"-skymap.png");
+  c4->SaveAs(basename+"-ang-separate"+graphicsSaveFormat);
+  c5->SaveAs(basename+"-cos-psi"+graphicsSaveFormat);
+  c6->SaveAs(basename+"-skymap"+graphicsSaveFormat);
 }
 
 // tidy up
@@ -181,6 +189,10 @@ c4->Close();
 c5->Close();
 c6->Close();
 printf( "\n\n" );
+
+// reset graphics settings if applicable
+if (! origOGL) gStyle->SetCanvasPreferGL(kFALSE);
+if (! origBatch) gROOT->SetBatch(kFALSE);
 
 // all pau!   )
 f->Close();

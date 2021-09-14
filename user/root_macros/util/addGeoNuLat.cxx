@@ -17,12 +17,20 @@
 
 TList* addGeoNuLat(const char* ratFilename, const char* resultsFilename) {
 
+// for OpenGL:
+// get current graphics settings
+const Bool_t origOGL = gStyle->GetCanvasPreferGL();
+const Bool_t origBatch = gROOT->IsBatch();
+// switch default rendering engine
+if (! origOGL) gStyle->SetCanvasPreferGL(kTRUE);
+// set to batch mode if needed
+//if (! origBatch) gROOT->SetBatch(kTRUE);
+
 // open a RAT run and get detector geometry
 TFile *f1 = TFile::Open(ratFilename);
 TRATGeo g;
 g.Build();
 TList *vols = g.GetListOfVolumes();
-TRegexp targetRE = "target_cube_.*_.*";
 f1->Close();
 
 // open results file and get histos and related objects
@@ -49,19 +57,38 @@ TList *nodeList = new TList;
 
 // cube array
 vol = (TRATVolume*)g.GetVolume("cube_array");
-TBRIK *cubeArrayShape = new TBRIK("cubeArrayShape", "prototype shape for cube array", "vacuum", vol->GetSize().X(), vol->GetSize().Y(), vol->GetSize().Z());
-n = new TNode("cubeArray", "node for cubeArray", "cubeArrayShape", vol->GetAbsolutePosition().X(), vol->GetAbsolutePosition().Y(), vol->GetAbsolutePosition().Z());
+TBRIK *cubeArrayShape = new TBRIK("cubeArrayShape", "prototype shape for cube array", "vacuum", vol->GetSize()->X(), vol->GetSize()->Y(), vol->GetSize()->Z());
+n = new TNode("cubeArray", "node for cubeArray", "cubeArrayShape", vol->GetAbsolutePosition()->X(), vol->GetAbsolutePosition()->Y(), vol->GetAbsolutePosition()->Z());
 nodeList->Add(n);
-n->Draw("same");
+//n->Draw("same");
+n->Draw();
+
+// redraw histos -- prompt or delayed first, depending on NuLat size
+TRegexp nulatRE = "^nulat$";
+hp->SetAxisColor(0, "XYZ");
+hd->SetAxisColor(0, "XYZ");
+hp->SetLabelColor(0, "XYZ");
+hd->SetLabelColor(0, "XYZ");
+Option_t *hpo = "sameglboxFbBb", *hdo = "sameglbox1FbBb";
+if ( g.GetExperiment().Contains(nulatRE) ) { // 3^3 NuLat only
+//Option_t *hpo = "sameglboxFbBb", *hdo = "glbox1FbBb";
+  hd->Draw(hdo);
+  hp->Draw(hpo);
+} else { // any other (i.e., larger) NuLat
+//Option_t *hpo = "glboxFbBb", *hdo = "sameglbox1FbBb";
+  hp->Draw(hpo);
+  hd->Draw(hdo);
+}
 
 // target-cube prototype
 vol = (TRATVolume*)g.GetVolume("target_cube_mid_mid_mid");
 if (vol==0) vol = (TRATVolume*)g.GetVolume("target_cube_0_0_0");
-TBRIK *targetCube = new TBRIK("target_cube", "prototype shape for target cubes", "vacuum", vol->GetSize().X(), vol->GetSize().Y(), vol->GetSize().Z());
+TBRIK *targetCube = new TBRIK("target_cube", "prototype shape for target cubes", "vacuum", vol->GetSize()->X(), vol->GetSize()->Y(), vol->GetSize()->Z());
 
-// nodes
+// individual cubes
 TString volName;
 TString nodeName, nodeTitle;
+TRegexp targetRE = "target_cube_.*_.*";
 TIter i(vols);
 for ( i=vols->begin(); i!=vols->end(); ++i ) {
   vol = (TRATVolume*)*i;
@@ -69,24 +96,20 @@ for ( i=vols->begin(); i!=vols->end(); ++i ) {
   if (volName.Contains(targetRE)) {
     nodeName.Form("%s_node", vol->GetName());
     nodeTitle.Form("node for %s", vol->GetName());
-    n = new TNode(nodeName.Data(), nodeTitle.Data(), "target_cube", vol->GetAbsolutePosition().X(), vol->GetAbsolutePosition().Y(), vol->GetAbsolutePosition().Z());
+    n = new TNode(nodeName.Data(), nodeTitle.Data(), "target_cube", vol->GetAbsolutePosition()->X(), vol->GetAbsolutePosition()->Y(), vol->GetAbsolutePosition()->Z());
     n->SetLineColor(kGray);
     nodeList->Add(n);
     n->Draw("same");
   }
 }
 
-// draw histos
-hp->Draw("AHsame");
-hd->Draw("AHsame");
-
-// adjust view
-//Double_t viewLim = 100.;
-TView *view = gPad->GetView();
-//view->SetRange(-viewLim, -viewLim, -viewLim, viewLim, viewLim, viewLim);
-view->SetParallel();
-view->ShowAxis();
-view->Draw();
+// fix view
+printf("\nRun the following lines to fix the view:\n");
+printf("// fix view\n");
+printf("TView *view = gPad->GetView();\n");
+printf("view->SetParallel();\n");
+printf("view->ShowAxis();\n");
+printf("view->Draw();\n");
 
 // annotations
 //tit3->Draw();
@@ -94,9 +117,14 @@ l3->Draw();
 
 // finish up
 // NOTE: *DO NOT* write c3 back to _results file!!!
-c3->SaveAs(savename.Data());
-c3->Close();
-f2->Close();
+printf("\nRun the following lines to finish up:\n");
+printf("// save and close\n");
+printf("c3->SaveAs(\"%s\");\n", savename.Data());
+printf("c3->Close();\n");
+printf("gFile->Close();\n");
+if (! origOGL) printf("gStyle->SetCanvasPreferGL(kFALSE);\n");
+if (! origBatch) printf("gROOT->SetBatch(kFALSE);\n");
+printf("\n\n");
 
 // all pau!   )
 return nodeList;

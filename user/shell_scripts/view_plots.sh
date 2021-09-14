@@ -30,6 +30,7 @@ else
 fi
 
 # init
+c0="$DATARUN"_pd-xyz-with-geo
 c1="$DATARUN"_bursts
 c2="$DATARUN"_nu-trg
 c3="$DATARUN"_pd-xyz
@@ -37,7 +38,7 @@ c4="$DATARUN"_results-ang-separate
 c5="$DATARUN"_results-cos-psi
 c6="$DATARUN"_results-skymap
 c7="$DATARUN"_cap-prod
-c_LIST=$(echo $c{1..7}.png)
+c_LIST=$(echo $c{0..7}.png)
 
 # main
 eog $c_LIST &
