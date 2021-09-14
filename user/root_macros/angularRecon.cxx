@@ -1,12 +1,10 @@
 // angularRecon.cxx -- function (temporarily macro) for calculating and displaying results of IBD angular reconstruction
 // -- operates on results of SEDAQ.cxx from github-->duvall3-->rat-pac-->collab-->user-->root_macros
-// -- USAGE: root <DATARUN_results.root> --> .L angularRecon.cxx --> angularRecon(T2);
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 12/2019 ~ //
 // ~ Version: angularRecon v0.9.3 ~ Updated 9/21 ~ //
 //
 // NOTE: The angular summary can be printed from the saved output file
 //   by running "angular_summary->GetString();" at the ROOT/CINT prompt
-
 
 //Copyright (C) 2021 Mark J. Duvall
 //
@@ -23,12 +21,9 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-
 #include <TMath.h>
 
-
 void angularRecon( const char* filename, bool graphics_tf = kFALSE ) {
-
 
 // for OpenGL:
 // switch default rendering engine
@@ -37,7 +32,6 @@ if (! origOGL) gStyle->SetCanvasPreferGL(kTRUE);
 // set to batch mode if needed
 const Bool_t origBatch = gROOT->IsBatch();
 if (! origBatch) gROOT->SetBatch(kTRUE);
-
 
 // init
 TString fileName = filename;
@@ -76,12 +70,10 @@ c4->Divide(1,2);
 TCanvas* c5 = new TCanvas("c5", "Actual vs. Reconstructed Angle (#psi)", 820, 120, 1100, 900);
 TCanvas* c6 = new TCanvas("c6", "Sky Heatmap Pointing to Antineutrino Source", 820, 120, 1100, 900);
 
-
 // set up histograms
 TH1D* h_phi = new TH1D("h_phi", "Azimuthal Angle (deg) #minus #phi^{o}", 36, -180, 180);
 TH1D* h_theta = new TH1D("h_theta", "Polar Angle (deg) #minus #theta^{o}", 36, 0, 180);
 TH1D* h_cos_psi = new TH1D("h_cos_psi", "Cos[#psi]", 10, -1.01, 1.01);
-
 
 // fill histograms
 for ( k = 0; k < N; k++ ) {
@@ -90,7 +82,6 @@ for ( k = 0; k < N; k++ ) {
   h_theta->Fill(theta);
   h_cos_psi->Fill(cos_psi);
 }
-
 
 // draw histograms
 

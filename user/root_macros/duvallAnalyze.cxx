@@ -1,4 +1,6 @@
 // duvallAnalyze -- wrapper macro to run various preparation and analysis code
+// -- see comments in $RATROOT/user/root_macros/{SEDAQ2.cxx,angularRecon.cxx}
+//      in this repository for details
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 8/2021 ~ //
 
 //Copyright (C) 2021 Mark J. Duvall
@@ -16,7 +18,7 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-void duvallAnalyze( const char* baseName, const bool kGraphics = kTRUE, const char* kQuantizedPositions = "", const char* kPositionResolution = "" ) {
+void duvallAnalyze( const char* baseName, const bool kGraphics = kTRUE, const char* kQuantizedPositions = "", const char* kPositionResolution = "", const Bool_t kAzimuthalOnly = kFALSE ) {
 
 // set default rendering enging to OpenGL
 gStyle->SetCanvasPreferGL(kTRUE);
@@ -33,7 +35,7 @@ if ( ! gInterpreter->IsLoaded("angularRecon.cxx") ) gROOT->LoadMacro("angularRec
 
 // MAIN
 printf( "\n\n//// Analyzing datarun \"%s\"... ////\n\n\n", basename.Data() );
-SEDAQ2( scintfile.Data(), kGraphics, kQuantizedPositions, kPositionResolution );
+SEDAQ2( scintfile.Data(), kGraphics, kQuantizedPositions, kPositionResolution, kAzimuthalOnly );
 angularRecon( resultsfile.Data(), kGraphics );
 printf( "//// Analysis Complete ////\n\n\n" );
 

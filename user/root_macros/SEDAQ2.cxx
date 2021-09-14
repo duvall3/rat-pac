@@ -1,9 +1,8 @@
-// SEDAQ2 -- modified version of SimpleEnergyDAQ to operate on files that
-//   already contain T but not T2
-// -- further documentation forthcoming
+// SEDAQ2 -- SimpleEnergyDAQ2: Software for analysis of inverse beta decay (IBD) simulations
+// -- uses RAT-PAC, ROOT5, and GEANT4
 // -- see https://github.com/duvall3/rat-pac/tree/collab
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2017 ~ //
-// ~ Version: SEDAQ2 v1.3.00 ~ 8/2021 ~ //
+// ~ Version: SEDAQ2 v1.4.00 ~ 9/2021 ~ //
 //
 // INPUT: ROOT file containing TTree "T_scint" (Scintillation Data)
 // OUTPUT: ROOT file containing TTrees "T2" (IBD Candidate Data) and "T_Trig" (IBD Trigger Parameters and Result)
@@ -14,6 +13,7 @@
 //   -- kQuantizedPositions -- whether to replace raw positions with coordinates of relevant volume centers
 //   -- kPositionResolution -- whether to replace raw positions with positions that have undergone a Gaussian spread
 //        (see "positionResolution" in ibdTracksToScint.cxx for width of Gaussian)
+//   -- kAzimuthalOnly -- whether to ignore z-axis / polar angle during directional reconstruction
 //   -- prompt_low -- IBD trigger, low threshold on prompt event (MeV)
 //   -- deltaT_low -- IBD trigger, lower bound on interevent time
 //   -- deltaT_high -- IBD trigger, upper bound on interevent time
@@ -41,7 +41,7 @@
 #include <math.h>
 
 
-void SEDAQ2( const char* filename, const Bool_t kGraphics = kFALSE, const char* kQuantizedPositions = "", const char* kPositionResolution = "", Double_t prompt_low = 0, Double_t delayed_low = 0, Double_t deltaT_low = 1.e-6, Double_t deltaT_high = 100.e-6) {
+void SEDAQ2( const char* filename, const Bool_t kGraphics = kFALSE, const char* kQuantizedPositions = "", const char* kPositionResolution = "", const Bool_t kAzimuthalOnly = kFALSE, Double_t prompt_low = 0, Double_t delayed_low = 0, Double_t deltaT_low = 1.e-6, Double_t deltaT_high = 100.e-6) {
 
 //// INIT
 
@@ -56,7 +56,7 @@ const Bool_t origBatch = gROOT->IsBatch();
 if (! origBatch) gROOT->SetBatch(kTRUE);
 
 // general
-const char* sedaq2_version = "1.3.00";
+const char* sedaq2_version = "1.4.00";
 gSystem->Load("libPhysics.so");
 gStyle->SetHistLineWidth(2);
 gStyle->SetHistLineColor(kBlue);
@@ -403,8 +403,11 @@ for ( k = 0; k < (num_bursts-1); k++ ) {
     deltaX = gRandom->Gaus(deltaX, pertSigma);
     deltaY = gRandom->Gaus(deltaY, pertSigma);
     deltaZ = gRandom->Gaus(deltaZ, pertSigma);
-    displacement = TVector3(deltaX, deltaY, deltaZ);
-//  displacement = TVector3(deltaX, deltaY, 0.); // temporarily substituting for SANDD analysis
+    if (kAzimuthalOnly) { // 2-D reconstruction only; assumes neutrino source is located on the horizon
+      displacement = TVector3(deltaX, deltaY, 0.);
+    } else { // full 3-D reconstruction
+      displacement = TVector3(deltaX, deltaY, deltaZ);
+    }
     disp_hat = displacement.Unit();
 
     // compare actual and reconsructed neutrino directions

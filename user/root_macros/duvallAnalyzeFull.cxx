@@ -1,4 +1,4 @@
-// duvallAnalyze -- wrapper macro to run various preparation and analysis code
+// duvallAnalyzeFull -- wrapper macro to run various preparation and analysis code
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 8/2021 ~ //
 
 //Copyright (C) 2021 Mark J. Duvall
@@ -16,7 +16,7 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-void duvallAnalyzeFull( const char* baseName, const bool kGraphics = kTRUE, const char* kQuantizedPositions = "", const char* kPositionResolution = "" ) {
+void duvallAnalyzeFull( const char* baseName, const bool kGraphics = kTRUE, const char* kQuantizedPositions = "", const char* kPositionResolution = "", const Bool_t kAzimuthalOnly = kFALSE ) {
 
 // set default rendering enging to OpenGL
 gStyle->SetCanvasPreferGL(kTRUE);
@@ -44,7 +44,7 @@ ibdTracksToScint( rootfile.Data() );
 correctEnergies( scintfile.Data(), energiesfile.Data() );
 printf( "//// Preparation Complete ////\n\n\n" );
 printf( "\n\n//// Analyzing datarun \"%s\"... ////\n\n\n", basename.Data() );
-SEDAQ2( scintfile.Data(), kGraphics, kQuantizedPositions, kPositionResolution );
+SEDAQ2( scintfile.Data(), kGraphics, kQuantizedPositions, kPositionResolution, kAzimuthalOnly );
 angularRecon( resultsfile.Data(), kGraphics );
 printf( "//// Analysis Complete ////\n\n\n" );
 
