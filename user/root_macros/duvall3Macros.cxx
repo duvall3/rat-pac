@@ -43,6 +43,7 @@ gROOT->LoadMacro("addGeoNuLat.cxx");
 gROOT->LoadMacro("addGeoSANTA.cxx");
 gROOT->LoadMacro("addGeoSANDD.cxx");
 gROOT->LoadMacro("exportPlots.cxx");
+gROOT->LoadMacro("radarPlot.cxx");
 
 // all pau!   )
 }
