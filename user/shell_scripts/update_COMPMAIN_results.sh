@@ -17,19 +17,37 @@
 ##    You should have received a copy of the GNU General Public License
 ##    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-# init
-RESULTS_DIR=$RATROOT/data/COMPMAIN_RESULTS/by_experiment
-RESULTS_LINK_DIR=$RATROOT/data/COMPMAIN_RESULTS/by_plot_type
-CANVASES=(c{0..3} c3_with-geo c{4..7})
-PLOT_NAMES=("_geo_scale" "_bursts" "_nu-trg" "_pd-xyz" "_pd-xyz-with-geo" "_results-ang-separate" "_results-cos-psi" "_results-skymap" "_cap-prod")
+## init
+RESULTS_FILE_PATTERN='COMPMAIN*10?_results.root'
+RESULTS_EXCLUDE_PATTERN='(LI-6)|(pert)|(shield)'
+RESULTS_ORIG_FILES=( $( find $RATROOT/data/*/* -type f -name $RESULTS_FILE_PATTERN | /usr/bin/grep -iEv $RESULTS_EXCLUDE_PATTERN ) )
+RESULTS_BY_EXP_DIR=$RATROOT/data/COMPMAIN_RESULTS/by_experiment
+RESULTS_BY_PLOT_DIR=$RATROOT/data/COMPMAIN_RESULTS/by_plot_type
+CANVASES=(c{0..3} c3_with-geo c{4..8})
+PLOT_NAMES=("_geo_scale" "_bursts" "_nu-trg" "_pd-xyz" "_pd-xyz-with-geo" "_results-ang-separate" "_results-cos-psi" "_results-skymap" "_cap-prod" "_results-phi-radar")
 
-# MAIN
-for k in {0..8}; do
+## MAIN
+
+# update ROOT-file and by_experiment links
+for FILE in ${RESULTS_ORIG_FILES[*]}; do
+  # ROOT file
+  FILE_DIR=$(dirname $FILE)
+  DATARUN_NAME=$(basename $FILE _results.root)
+  EXPERIMENT=$(echo $FILE | /usr/bin/grep -iEo ".*/data/[[:alnum:]-]+" | awk -F / '{print $NF}')
+  if [[ ! -L $RESULTS_BY_EXP_DIR/$EXPERIMENT/$(basename $FILE) ]]; then ln -s $FILE $RESULTS_BY_EXP_DIR/$EXPERIMENT/; fi
+  # by_experiment
+  for PLOT_FILE in $FILE_DIR/COMPMAIN*.png; do
+    if [[ ! -L $RESULTS_BY_EXP_DIR/$EXPERIMENT/$(basename $PLOT_FILE) ]]; then ln -s $PLOT_FILE $RESULTS_BY_EXP_DIR/$EXPERIMENT/; fi
+  done
+done
+
+# update by_plot_type links
+for k in {0..9}; do
   PLOT_LINK_DIR=${CANVASES[k]}
   PLOT_TYPE=${PLOT_NAMES[k]}
   PLOT_PATTERN=$(echo "*"$PLOT_TYPE".png")
-  for FILE in $(find $RESULTS_DIR -name $PLOT_PATTERN); do
-    if [[ ! -L $RESULTS_LINK_DIR/$PLOT_LINK_DIR/$(basename $FILE) ]]; then ln -s -t $RESULTS_LINK_DIR/$PLOT_LINK_DIR/ $FILE; fi
+  for FILE in $(find $RESULTS_BY_EXP_DIR -name $PLOT_PATTERN); do
+    if [[ ! -L $RESULTS_BY_PLOT_DIR/$PLOT_LINK_DIR/$(basename $FILE) ]]; then ln -s -t $RESULTS_BY_PLOT_DIR/$PLOT_LINK_DIR/ $FILE; fi
   done
 done
 

@@ -4,6 +4,9 @@
 
 TH2D* radarPlotExample() {
 
+// force proportional scaling
+gStyle->SetHistMinimumZero(kTRUE);
+
 // init
 Int_t k(0), N(1000);
 TH2D *h_radar = new TH2D("h_radar", "Example Angular Histogram (degrees)", 36, -180., 180., 1, 0., 1.01);
