@@ -21,6 +21,7 @@
 RESULTS_FILE_PATTERN='COMPMAIN*10?_results.root'
 RESULTS_EXCLUDE_PATTERN='(LI-6)|(pert)|(shield)'
 RESULTS_ORIG_FILES=( $( find $RATROOT/data/*/* -type f -name $RESULTS_FILE_PATTERN | /usr/bin/grep -iEv $RESULTS_EXCLUDE_PATTERN ) )
+RESULTS_ROOT_DIR=$RATROOT/data/COMPMAIN_RESULTS/ROOT_files
 RESULTS_BY_EXP_DIR=$RATROOT/data/COMPMAIN_RESULTS/by_experiment
 RESULTS_BY_PLOT_DIR=$RATROOT/data/COMPMAIN_RESULTS/by_plot_type
 CANVASES=(c{0..3} c3_with-geo c{4..8})
@@ -34,7 +35,7 @@ for FILE in ${RESULTS_ORIG_FILES[*]}; do
   FILE_DIR=$(dirname $FILE)
   DATARUN_NAME=$(basename $FILE _results.root)
   EXPERIMENT=$(echo $FILE | /usr/bin/grep -iEo ".*/data/[[:alnum:]-]+" | awk -F / '{print $NF}')
-  if [[ ! -L $RESULTS_BY_EXP_DIR/$EXPERIMENT/$(basename $FILE) ]]; then ln -s $FILE $RESULTS_BY_EXP_DIR/$EXPERIMENT/; fi
+  if [[ ! -L $RESULTS_ROOT_DIR/$(basename $FILE) ]]; then ln -s $FILE $RESULTS_ROOT_DIR/; fi
   # by_experiment
   for PLOT_FILE in $FILE_DIR/COMPMAIN*.png; do
     if [[ ! -L $RESULTS_BY_EXP_DIR/$EXPERIMENT/$(basename $PLOT_FILE) ]]; then ln -s $PLOT_FILE $RESULTS_BY_EXP_DIR/$EXPERIMENT/; fi
