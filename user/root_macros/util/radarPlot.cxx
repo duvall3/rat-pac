@@ -20,6 +20,9 @@
 
 TH2D* radarPlot( TH1D *h_in, Option_t *ho = "cyllego" ) {
 
+// force proportional scaling
+gStyle->SetHistMinimumZero(kTRUE);
+
 // init
 TString hoptString = TString::Format("same%s", ho);
 Option_t *hopt(hoptString);
@@ -35,8 +38,8 @@ newCanTitle = newName;
 TH2D *h_out = new TH2D( newName.Data(), newTitle.Data(), N, xlow, xup, 1, 0., 1. );
 h_out->SetLineColor(h_in->GetLineColor());
 h_out->SetLineWidth(3.);
-for ( k=0; k<N; k++ ) {
-  h_out->SetBinContent( k, 1, h_in->GetBinContent(k) );
+for ( k=0; k<=N; k++ ) {
+  h_out->SetBinContent( k, 1, h_in->GetBinContent(k) ); //KEEPME
 }
 
 // set up scale
