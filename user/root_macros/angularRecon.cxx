@@ -69,11 +69,13 @@ TCanvas* c4 = new TCanvas("c4", "IBD Angular Reconstruction", 820, 120, 1000, 10
 c4->Divide(1,2);
 TCanvas* c5 = new TCanvas("c5", "Actual vs. Reconstructed Angle (#psi)", 820, 120, 1100, 900);
 TCanvas* c6 = new TCanvas("c6", "Sky Heatmap Pointing to Antineutrino Source", 820, 120, 1100, 900);
+TCanvas* c8 = new TCanvas("c8", "Radar Version of Azimuthal Angle", 820, 120, 800, 800);
 
 // set up histograms
 TH1D* h_phi = new TH1D("h_phi", "Azimuthal Angle (deg) #minus #phi^{o}", 36, -180, 180);
 TH1D* h_theta = new TH1D("h_theta", "Polar Angle (deg) #minus #theta^{o}", 36, 0, 180);
 TH1D* h_cos_psi = new TH1D("h_cos_psi", "Cos[#psi]", 10, -1.01, 1.01);
+TH2D* h_phi_radar = new TH2D; // filled by radarPlot below
 
 // fill histograms
 for ( k = 0; k < N; k++ ) {
@@ -129,6 +131,12 @@ h_map->GetXaxis()->SetLimits(-180., 180.);
 h_map->GetYaxis()->SetLimits(-90., 90.);
 c6->Draw();
 
+// radar version of azimuthal plot
+c8->cd();
+gPad->SetLogy(kFALSE);
+h_phi_radar = radarPlot(h_phi, "", kFALSE);
+c8->Draw();
+
 // calculate IBD efficiency
 TObjString* nIBDs_tos = (TObjString*)T2->GetUserInfo()->At(0);
 Long64_t nIBDs = nIBDs_tos->GetString().Atoll();
@@ -166,19 +174,23 @@ if ( graphics_tf ) {
   c4->Write();
   c5->Write();
   c6->Write();
+  c8->Write();
   h_phi->Write();
   h_theta->Write();
   h_cos_psi->Write();
   h_map->Write();
+  h_phi_radar->Write();
   c4->SaveAs(basename+"-ang-separate"+graphicsSaveFormat);
   c5->SaveAs(basename+"-cos-psi"+graphicsSaveFormat);
   c6->SaveAs(basename+"-skymap"+graphicsSaveFormat);
+  c8->SaveAs(basename+"-phi-radar"+graphicsSaveFormat);
 }
 
 // tidy up
 c4->Close();
 c5->Close();
 c6->Close();
+c8->Close();
 printf( "\n\n" );
 
 // reset graphics settings if applicable
