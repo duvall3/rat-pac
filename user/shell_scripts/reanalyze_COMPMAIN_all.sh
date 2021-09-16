@@ -21,6 +21,7 @@
 ## init
 RESULTS_DIR=$RATROOT/data/COMPMAIN_RESULTS/ROOT_files
 ANALYSIS_OPTIONS=()
+ORIG_DIR=$(pwd)
 
 ## MAIN
 
@@ -36,23 +37,30 @@ for LINK in $RESULTS_DIR/*; do
   cd $DATARUN_DIR
 
   # individual experiment settings
-  case EXP_MATCH in
-    first)
-      ...
+  case $EXPERIMENT in
+    chooz)
+      ANALYSIS_OPTIONS=(${ANALYSIS_OPTIONS[*]} "\"\"," "\"xyz\"")
       ;;
-    second)
-      ...
+    santa)
+      ANALYSIS_OPTIONS=(${ANALYSIS_OPTIONS[*]} "\"xz\"," "\"y\"")
+      ;;
+    nulat*|*-3d*)
+      ANALYSIS_OPTIONS=(${ANALYSIS_OPTIONS[*]} "\"xyz\"")
+      ;;
+    sandd|*-2d*)
+      ANALYSIS_OPTIONS=(${ANALYSIS_OPTIONS[*]} "\"xy\"," "\"z\"," "true")
       ;;
     *)
-      ...
+      echo "WARNING: Experiment not recognized among pre-defined types. Proceeding with default analysis settings."
       ;;
   esac
 
   # run analysis
   ROOT_COMMAND="root -q -l -b 'duvallAnalyze.cxx(${ANALYSIS_OPTIONS[*]})'"
-# eval $ROOT_COMMAND
-  echo -e "$FILE\n$EXPERIMENT\n${ANALYSIS_OPTIONS[*]}\n" #debug
-  echo $ROOT_COMMAND #debug
+  eval $ROOT_COMMAND
+# echo -e "$FILE\n$EXPERIMENT\n${ANALYSIS_OPTIONS[*]}" #debug
+# echo $ROOT_COMMAND #debug
+# echo #debug
   EXIT_STATS=(${EXIT_STATS[*]} $?)
 
   # reset options
@@ -62,9 +70,11 @@ done
 
 # update links
 update_COMPMAIN_results.sh
+#echo -e "\nupdate_COMPMAIN_results.sh\n" #debug
 EXIT_STATS=(${EXIT_STATS[*]} $?)
 
-## all pau!   )
+## return and report status
+cd $ORIG_DIR
 if [[ $(( $(echo ${EXIT_STATS[*]} | tr " " "+") )) -gt 0 ]]; then
   echo -e "Reanalysis finished, with errors.\nExit statuses:"
   k=0
@@ -81,8 +91,4 @@ else
   echo -e "\nReanalysis complete!\n\n"
   exit 0
 fi
-
-# if [[ $EXPERIMENT =~ "chooz" ]]; then ANALYSIS_OPTIONS=(${ANALYSIS_OPTIONS[*]} "\"\"," "\"xyz\""); fi
-# if [[ $EXPERIMENT =~ "santa" ]]; then ANALYSIS_OPTIONS=(${ANALYSIS_OPTIONS[*]} "\"xz\"," "\"y\""); fi
-# if [[ ($EXPERIMENT =~ "nulat") || ($EXPERIMENT =~ "3d") ]]; then ANALYSIS_OPTIONS=(${ANALYSIS_OPTIONS[*]} "\"xyz\""); fi
-# if [[ $EXPERIMENT =~ "sandd" ]]; then ANALYSIS_OPTIONS=(${ANALYSIS_OPTIONS[*]} "\"xy\"," "\"z\"," "true"); fi
+## all pau!   )
