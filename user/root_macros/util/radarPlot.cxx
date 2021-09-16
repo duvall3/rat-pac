@@ -38,6 +38,7 @@ newCanTitle = newName;
 TH2D *h_out = new TH2D( newName.Data(), newTitle.Data(), N, xlow, xup, 1, 0., 1. );
 h_out->SetLineColor(h_in->GetLineColor());
 h_out->SetLineWidth(3.);
+h_out->SetStats(0);
 for ( k=0; k<=N; k++ ) {
   h_out->SetBinContent( k, 1, h_in->GetBinContent(k) ); //KEEPME
 }
@@ -52,13 +53,14 @@ Int_t j = 0, nScaleRings = 5, scaleStep = TMath::Nint(1.*hinMax/nScaleRings);
 TH2D *h_scale = new TH2D( "h_scale", "scale for radar plot", N, xlow, xup, nScaleRings, 0., scaleMax );
 h_scale->SetLineColor(kGray);
 h_scale->SetLineWidth(1.);
+h_scale->SetStats(0);
 for ( k=0; k<=N; k++ ) {
   for ( j=0; j<=nScaleRings; j++ ) h_scale->SetBinContent( k, j, j*scaleStep );
 }
 
 // draw radar plot
 if (kNewCanvas) TCanvas *can_out = new TCanvas(newCanName.Data(), newCanTitle.Data());
-h_out->Draw("cyllego");
+h_in->Draw("A");
 TView3D *view = new TView3D;
 view->RotateView(180.001, 180.001);
 h_scale->Draw("samecyllego");
