@@ -29,7 +29,7 @@ for k in {0..8}; do
   PLOT_TYPE=${PLOT_NAMES[k]}
   PLOT_PATTERN=$(echo "*"$PLOT_TYPE".png")
   for FILE in $(find $RESULTS_DIR -name $PLOT_PATTERN); do
-    ln -s -t $RESULTS_LINK_DIR/$PLOT_LINK_DIR/ $FILE
+    if [[ ! -L $RESULTS_LINK_DIR/$PLOT_LINK_DIR/$(basename $FILE) ]]; then ln -s -t $RESULTS_LINK_DIR/$PLOT_LINK_DIR/ $FILE; fi
   done
 done
 
