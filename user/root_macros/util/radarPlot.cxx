@@ -18,7 +18,7 @@
 
 #include "TMath.h"
 
-TH2D* radarPlot( TH1D *h_in, Option_t *ho = "cyllego" ) {
+TH2D* radarPlot( TH1D *h_in, Option_t *ho = "cyllego", const Bool_t kNewCanvas = kTRUE ) {
 
 // force proportional scaling
 gStyle->SetHistMinimumZero(kTRUE);
@@ -57,7 +57,7 @@ for ( k=0; k<=N; k++ ) {
 }
 
 // draw radar plot
-TCanvas *can_out = new TCanvas(newCanName.Data(), newCanTitle.Data());
+if (kNewCanvas) TCanvas *can_out = new TCanvas(newCanName.Data(), newCanTitle.Data());
 h_out->Draw("cyllego");
 TView3D *view = new TView3D;
 view->RotateView(180.001, 180.001);
@@ -78,5 +78,5 @@ return h_out;
 }
 
 // overload for other TH1 types
-TH2D* radarPlot( TH1F *h_in, Option_t *ho = "cyllego" ) { radarPlot( (TH1D*)h_in, ho ); }
-TH2D* radarPlot( TH1I *h_in, Option_t *ho = "cyllego" ) { radarPlot( (TH1D*)h_in, ho ); }
+TH2D* radarPlot( TH1F *h_in, Option_t *ho = "cyllego", const Bool_t kNewCanvas = kTRUE  ) { radarPlot( (TH1D*)h_in, ho ); }
+TH2D* radarPlot( TH1I *h_in, Option_t *ho = "cyllego", const Bool_t kNewCanvas = kTRUE  ) { radarPlot( (TH1D*)h_in, ho ); }
