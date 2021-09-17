@@ -55,7 +55,7 @@ h_scale->SetLineColor(kGray);
 h_scale->SetLineWidth(1.);
 h_scale->SetStats(0);
 for ( k=0; k<=N; k++ ) {
-  for ( j=0; j<=nScaleRings; j++ ) h_scale->SetBinContent( k, j, j*scaleStep );
+  for ( j=0; j<=nScaleRings; j++ ) h_scale->SetBinContent( k, j, (nScaleRings-j)*scaleStep );
 }
 
 // draw radar plot
@@ -64,7 +64,7 @@ gPad->SetLogx(kFALSE);
 gPad->SetLogy(kFALSE);
 h_in->Draw("A");
 TView3D *view = new TView3D;
-view->RotateView(180.001, 180.001);
+view->RotateView(.001, .001);
 h_scale->Draw("samecyllego");
 h_out->Draw(hopt);
 
