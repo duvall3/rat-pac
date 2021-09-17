@@ -108,13 +108,13 @@ for ( i=vols->begin(); i!=vols->end(); ++i ) {
   }
 }
 
-//// fix view
-//printf("\nRun the following lines to fix the view:\n");
-//printf("// fix view\n");
-//printf("TView *view = gPad->GetView();\n");
-//printf("view->SetParallel();\n");
-//printf("view->ShowAxis();\n");
-//printf("view->Draw();\n");
+// fix view
+printf("\nRun the following lines to fix the view:\n");
+printf("// fix view\n");
+printf("TView *view = gPad->GetView();\n");
+printf("view->SetParallel();\n");
+printf("view->ShowAxis();\n");
+printf("view->Draw();\n");
 //TView *view = new TView3D;
 //view->SetParallel();
 //view->ShowAxis();
