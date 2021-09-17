@@ -44,8 +44,9 @@ ibdTracksToScint( rootfile.Data() );
 correctEnergies( scintfile.Data(), energiesfile.Data() );
 printf( "//// Preparation Complete ////\n\n\n" );
 printf( "\n\n//// Analyzing datarun \"%s\"... ////\n\n\n", basename.Data() );
-SEDAQ2( scintfile.Data(), kGraphics, kQuantizedPositions, kPositionResolution, kAzimuthalOnly );
-angularRecon( resultsfile.Data(), kGraphics );
+//SEDAQ2( scintfile.Data(), kGraphics, kQuantizedPositions, kPositionResolution, kAzimuthalOnly );
+//angularRecon( resultsfile.Data(), kGraphics );
+duvallAnalyze( basename, kGraphics, kQuantizedPositions, kPositionResolution, kAzimuthalOnly );
 printf( "//// Analysis Complete ////\n\n\n" );
 
 // all pau!   )

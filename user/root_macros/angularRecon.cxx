@@ -50,7 +50,6 @@ T2->SetBranchAddress("cos_psi", &cos_psi);
 T2->SetBranchAddress("lattd", &lattd);
 T2->SetBranchAddress("longtd", &longtd);
 TH1D *h_phi, *h_theta, *h_cos_psi;
-TH2D *h_map;
 gStyle->SetHistLineWidth(3);
 gStyle->SetHistLineColor(kBlue);
 const Double_t pi = TMath::Pi();
@@ -69,7 +68,6 @@ TCanvas* c4 = new TCanvas("c4", "IBD Angular Reconstruction", 820, 120, 1000, 10
 c4->Divide(1,2);
 TCanvas* c5 = new TCanvas("c5", "Actual vs. Reconstructed Angle (#psi)", 820, 120, 1100, 900);
 TCanvas* c6 = new TCanvas("c6", "Sky Heatmap Pointing to Antineutrino Source", 820, 120, 1100, 900);
-TCanvas* c8 = new TCanvas("c8", "Radar Version of Azimuthal Angle", 820, 120, 800, 800);
 
 // set up histograms
 TH1D* h_phi = new TH1D("h_phi", "Azimuthal Angle (deg) #minus #phi^{o}", 36, -180, 180);
@@ -118,8 +116,7 @@ c5->Draw();
 // skymap
 c6->cd();
 gPad->SetLogy(kFALSE);
-T2->Draw("lattd:longtd", "", "aitoff");
-h_map = (TH2D*)htemp;
+T2->Draw("lattd:longtd>>h_map", "", "aitoff");
 h_map->SetName("h_map");
 TString skymapTitStr = TString::Format("Skymap Pointing to Reconstructed #bar{#nu_{e}} Source (N=%d)", N);
 h_map->SetTitle(skymapTitStr.Data());
@@ -132,10 +129,10 @@ h_map->GetYaxis()->SetLimits(-90., 90.);
 c6->Draw();
 
 // radar version of azimuthal plot
-c8->cd();
-gPad->SetLogy(kFALSE);
-h_phi_radar = radarPlot(h_phi, "", kFALSE);
-c8->Draw();
+h_phi_radar = radarPlot(h_phi);
+TCanvas *c8 = can_h_phi_radar;
+c8->SetName("c8");
+c8->SetTitle("Radar Version of Azimuthal Angle Plot");
 
 // calculate IBD efficiency
 TObjString* nIBDs_tos = (TObjString*)T2->GetUserInfo()->At(0);

@@ -528,6 +528,7 @@ if ( T2->GetEntries() > 0 && kGraphics==true ) { // skip T2 graphics if there we
 //Double_t x_abs = 6000.; //mm
   // prompt
   TCanvas* c3 = new TCanvas("c3","IBD Candidate Positions", 70, 60, 800, 800);
+  c3->SetLogx(false);
   c3->SetLogy(false);
   // cycle coordinates to adjust for TTree->Draw(TH3) //KEEPME//
   T2->Draw("prompt_cand_z:prompt_cand_y:prompt_cand_x>>h_prompt"); //KEEPME//

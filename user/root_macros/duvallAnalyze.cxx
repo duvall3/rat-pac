@@ -20,14 +20,19 @@
 
 void duvallAnalyze( const char* baseName, const bool kGraphics = kTRUE, const char* kQuantizedPositions = "", const char* kPositionResolution = "", const Bool_t kAzimuthalOnly = kFALSE ) {
 
+// for OpenGL:
+// get current settings
+const Bool_t origOGL = gStyle->GetCanvasPreferGL();
+const Bool_t origBatch = gROOT->IsBatch();
 // set default rendering enging to OpenGL
-gStyle->SetCanvasPreferGL(kTRUE);
+if (! origOGL) gStyle->SetCanvasPreferGL(kTRUE);
 
 // filenames
 TString basename(baseName);
-TString scintfile, resultsfile;
+TString scintfile, resultsfile, pdxyzfile, radarfile;
 scintfile = basename + "_T.root";
 resultsfile = basename + "_results.root";
+pdxyzfile = basename + "_pd-xyz.png";
 
 // check / load macros
 if ( ! gInterpreter->IsLoaded("SEDAQ2.cxx") ) gROOT->LoadMacro("SEDAQ2.cxx");
@@ -37,8 +42,30 @@ if ( ! gInterpreter->IsLoaded("angularRecon.cxx") ) gROOT->LoadMacro("angularRec
 printf( "\n\n//// Analyzing datarun \"%s\"... ////\n\n\n", basename.Data() );
 SEDAQ2( scintfile.Data(), kGraphics, kQuantizedPositions, kPositionResolution, kAzimuthalOnly );
 angularRecon( resultsfile.Data(), kGraphics );
-printf( "//// Analysis Complete ////\n\n\n" );
+
+//// fix trouble plots
+//printf("Attempting to fix c3 plot...\n");
+//if (! origBatch) gROOT->SetBatch(kTRUE);
+//TFile *f = TFile::Open(resultsfile.Data());
+////c3->Draw();
+//c3->Print(pdxyzfile.Data());
+////c3->Close();
+//f->Close();
+//if (! origBatch) gROOT->SetBatch(kFALSE);
+
+// fix trouble plots // TODO: automate
+printf("If the c3 (_pd-xyz.png) plot did not save correctly, try:
+1) Quit ROOT
+2) Open ROOT interactively
+3) Run the following lines at the prompt:\n\n");
+printf("TFile *f = TFile::Open(\"%s\");\n", resultsfile.Data());
+printf("c3->Draw();\n");
+printf("c3->Print(\"%s\");\n", pdxyzfile.Data());
+printf("c3->Close();\n");
+printf("f->Close();\n");
+printf("\nAll pau!   )\n\n");
 
 // all pau!   )
+printf( "\n//// Analysis Complete ////\n\n\n" );
 return;
 }

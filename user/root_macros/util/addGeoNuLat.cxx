@@ -33,7 +33,8 @@ TFile *f1 = TFile::Open(ratFilename);
 TRATGeo g;
 g.Build();
 TList *vols = g.GetListOfVolumes();
-TRegexp targetRE = "target_cell_.*_.*";
+TRegexp targetRE0 = "target_cell_.*_.*";
+TRegexp targetRE1 = "target_cube_.*_.*";
 f1->Close();
 
 // open results file and get histos and related objects
@@ -97,7 +98,7 @@ TIter i(vols);
 for ( i=vols->begin(); i!=vols->end(); ++i ) {
   vol = (TRATVolume*)*i;
   volName = TString(vol->GetName());
-  if (volName.Contains(targetRE)) {
+  if ( (volName.Contains(targetRE0)) | (volName.Contains(targetRE1)) ) {
     nodeName.Form("%s_node", vol->GetName());
     nodeTitle.Form("node for %s", vol->GetName());
     n = new TNode(nodeName.Data(), nodeTitle.Data(), "target_cube", vol->GetAbsolutePosition()->X(), vol->GetAbsolutePosition()->Y(), vol->GetAbsolutePosition()->Z());
@@ -107,13 +108,17 @@ for ( i=vols->begin(); i!=vols->end(); ++i ) {
   }
 }
 
-// fix view
-printf("\nRun the following lines to fix the view:\n");
-printf("// fix view\n");
-printf("TView *view = gPad->GetView();\n");
-printf("view->SetParallel();\n");
-printf("view->ShowAxis();\n");
-printf("view->Draw();\n");
+//// fix view
+//printf("\nRun the following lines to fix the view:\n");
+//printf("// fix view\n");
+//printf("TView *view = gPad->GetView();\n");
+//printf("view->SetParallel();\n");
+//printf("view->ShowAxis();\n");
+//printf("view->Draw();\n");
+//TView *view = new TView3D;
+//view->SetParallel();
+//view->ShowAxis();
+//view->Draw();
 
 // checkerboarding
 printf("\nIf this is a checkerboarded detector, run the following line to remove the inert cells from the viewer:\n");

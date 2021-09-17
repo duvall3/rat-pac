@@ -60,6 +60,8 @@ for ( k=0; k<=N; k++ ) {
 
 // draw radar plot
 if (kNewCanvas) TCanvas *can_out = new TCanvas(newCanName.Data(), newCanTitle.Data());
+gPad->SetLogx(kFALSE);
+gPad->SetLogy(kFALSE);
 h_in->Draw("A");
 TView3D *view = new TView3D;
 view->RotateView(180.001, 180.001);
