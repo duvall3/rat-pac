@@ -19,8 +19,8 @@
 
 ## init
 RESULTS_FILE_PATTERN='COMPMAIN*10?_results.root'
-RESULTS_EXCLUDE_PATTERN='(LI-6)|(pert)|(shield)'
-RESULTS_ORIG_FILES=( $( find $RATROOT/data/*/* -type f -name $RESULTS_FILE_PATTERN | /usr/bin/grep -iEv $RESULTS_EXCLUDE_PATTERN ) )
+RESULTS_EXCLUDE_PATTERN='(005LI-6)|(pert)|(shielded)'
+RESULTS_ORIG_FILES=( $( find $RATROOT/data/*/* -type f -name "$RESULTS_FILE_PATTERN" | /usr/bin/grep -iEv $RESULTS_EXCLUDE_PATTERN ) )
 RESULTS_ROOT_DIR=$RATROOT/data/COMPMAIN_RESULTS/ROOT_files
 RESULTS_BY_EXP_DIR=$RATROOT/data/COMPMAIN_RESULTS/by_experiment
 RESULTS_BY_PLOT_DIR=$RATROOT/data/COMPMAIN_RESULTS/by_plot_type
@@ -47,7 +47,7 @@ for k in {0..9}; do
   PLOT_LINK_DIR=${CANVASES[k]}
   PLOT_TYPE=${PLOT_NAMES[k]}
   PLOT_PATTERN=$(echo "*"$PLOT_TYPE".png")
-  for FILE in $(find $RESULTS_BY_EXP_DIR -name $PLOT_PATTERN); do
+  for FILE in $(find $RESULTS_BY_EXP_DIR -name "$PLOT_PATTERN"); do
     if [[ ! -L $RESULTS_BY_PLOT_DIR/$PLOT_LINK_DIR/$(basename $FILE) ]]; then ln -s -t $RESULTS_BY_PLOT_DIR/$PLOT_LINK_DIR/ $FILE; fi
   done
 done
