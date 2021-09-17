@@ -30,6 +30,7 @@
   gStyle->SetCanvasDefH(800);
   gStyle->SetCanvasDefW(800);
   gStyle->SetCanvasPreferGL(kTRUE);
+  gStyle->SetHistMinimumZero(kTRUE);
 
 }
 
