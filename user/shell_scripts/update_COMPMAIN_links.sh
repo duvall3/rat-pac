@@ -1,5 +1,5 @@
 #!/bin/bash
-# update_COMPMAIN_results -- EWISotT
+# update_COMPMAIN_links -- EWISotT
 # ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 9/2021 ~ #
 
 ##Copyright (C) 2021 Mark J. Duvall
@@ -31,10 +31,15 @@ PLOT_NAMES=("_geo_scale" "_bursts" "_nu-trg" "_pd-xyz" "_pd-xyz-with-geo" "_resu
 
 # update ROOT-file and by_experiment links
 for FILE in ${RESULTS_ORIG_FILES[*]}; do
-  # ROOT file
+  # init
   FILE_DIR=$(dirname $FILE)
   DATARUN_NAME=$(basename $FILE _results.root)
   EXPERIMENT=$(echo $FILE | /usr/bin/grep -iEo ".*/data/[[:alnum:]-]+" | awk -F / '{print $NF}')
+  # geo_scale file
+  for GEO_FILE in $RATROOT/data/$EXPERIMENT/*_geo_scale.png; do
+    if [[ ! -L $RESULTS_BY_EXP_DIR/$EXPERIMENT/$(basename $GEO_FILE) ]]; then ln -s $GEO_FILE $RESULTS_BY_EXP_DIR/$EXPERIMENT/; fi
+  done
+  # ROOT file
   if [[ ! -L $RESULTS_ROOT_DIR/$(basename $FILE) ]]; then ln -s $FILE $RESULTS_ROOT_DIR/; fi
   # by_experiment
   for PLOT_FILE in $FILE_DIR/COMPMAIN*.png; do
