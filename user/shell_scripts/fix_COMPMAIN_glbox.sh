@@ -52,15 +52,15 @@ gFile->Close();" >> $OUTPUT_FILE
       echo -e "const char* resultsFilename = \"$FILE_NAME\"\n.x addGeoChooz.cxx" >> $OUTPUT_FILE
       ;;
     santa)
-      echo -e "addGeoSANTA(\"$DATARUN_NAME"_0"/$DATARUN_NAME"_0"/$DATARUN_NAME"_0.root"\", \"$FILE_NAME\");" >> $OUTPUT_FILE
+      echo -e "TList *vols = addGeoSANTA(\"$DATARUN_NAME"_0"/$DATARUN_NAME"_0"/$DATARUN_NAME"_0.root"\", \"$FILE_NAME\");" >> $OUTPUT_FILE
       ;;
     nulat*|*-3d*)
       echo -e "TList *vols = addGeoNuLat(\"$DATARUN_NAME"_0"/$DATARUN_NAME"_0"/$DATARUN_NAME"_0.root"\", \"$FILE_NAME\");" >> $OUTPUT_FILE
-      if [[ $EXPERIMENT =~ "checkerboard" ]]; then echo -e "toggleInertVisAddGeo(vols);" >> $OUTPUT_FILE; fi
+      if [[ $EXPERIMENT =~ checkerboard ]]; then echo -e "toggleInertVisAddGeo(vols);" >> $OUTPUT_FILE; fi
       ;;
     sandd|*-2d*)
       echo -e "TList *vols = addGeoSANDD(\"$DATARUN_NAME"_0"/$DATARUN_NAME"_0"/$DATARUN_NAME"_0.root"\", \"$FILE_NAME\");" >> $OUTPUT_FILE
-      if [[ $EXPERIMENT =~ "checkerboard" ]]; then echo -e "toggleInertVisAddGeo(vols, 2);" >> $OUTPUT_FILE; fi
+      if [[ $EXPERIMENT =~ checkerboard ]]; then echo -e "toggleInertVisAddGeo(vols, 2);" >> $OUTPUT_FILE; fi
       ;;
     *)
       echo -e "WARNING: Experiment \"$EXPERIMENT\" not recognized among pre-defined types. Proceeding with remaining results files."
@@ -68,7 +68,7 @@ gFile->Close();" >> $OUTPUT_FILE
   esac
   echo -e "\
 TView3D *view = gPad->GetView();" >> $OUTPUT_FILE
-if [[ $EXPERIMENT =~ "chooz" ]]; then echo -n "//" >> $OUTPUT_FILE; fi
+if [[ $EXPERIMENT =~ chooz ]]; then echo -n "//" >> $OUTPUT_FILE; fi
 echo -e "view->SetParallel();
 view->ShowAxis();
 view->Draw();
@@ -81,7 +81,7 @@ gFile->Close();
 
 done
 
-echo -e "\ncd $RATROOT/data/COMPMAIN_RESULTS\nupdate_COMPMAIN_results.sh\n" >> $OUTPUT_FILE
+echo -e "\ncd $RATROOT/data/COMPMAIN_RESULTS\nupdate_COMPMAIN_links.sh\n" >> $OUTPUT_FILE
 
 ## return and report status
 cd $ORIG_DIR

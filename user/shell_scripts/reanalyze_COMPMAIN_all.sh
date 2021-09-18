@@ -69,7 +69,7 @@ for LINK in $RESULTS_DIR/*; do
 done
 
 # update links
-update_COMPMAIN_results.sh
+update_COMPMAIN_links.sh
 #echo -e "\nupdate_COMPMAIN_results.sh\n" #debug
 EXIT_STATS=(${EXIT_STATS[*]} $?)
 

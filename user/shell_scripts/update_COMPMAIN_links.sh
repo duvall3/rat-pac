@@ -18,9 +18,10 @@
 ##    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ## init
+GREP=$(which grep)
 RESULTS_FILE_PATTERN='COMPMAIN*10?_results.root'
 RESULTS_EXCLUDE_PATTERN='(005LI-6)|(pert)|(shielded)'
-RESULTS_ORIG_FILES=( $( find $RATROOT/data/*/* -type f -name "$RESULTS_FILE_PATTERN" | /usr/bin/grep -iEv $RESULTS_EXCLUDE_PATTERN ) )
+RESULTS_ORIG_FILES=( $( find $RATROOT/data/*/* -type f -name "$RESULTS_FILE_PATTERN" | $GREP -iEv $RESULTS_EXCLUDE_PATTERN ) )
 RESULTS_ROOT_DIR=$RATROOT/data/COMPMAIN_RESULTS/ROOT_files
 RESULTS_BY_EXP_DIR=$RATROOT/data/COMPMAIN_RESULTS/by_experiment
 RESULTS_BY_PLOT_DIR=$RATROOT/data/COMPMAIN_RESULTS/by_plot_type
@@ -34,7 +35,7 @@ for FILE in ${RESULTS_ORIG_FILES[*]}; do
   # init
   FILE_DIR=$(dirname $FILE)
   DATARUN_NAME=$(basename $FILE _results.root)
-  EXPERIMENT=$(echo $FILE | /usr/bin/grep -iEo ".*/data/[[:alnum:]-]+" | awk -F / '{print $NF}')
+  EXPERIMENT=$(echo $FILE | $GREP -iEo ".*/data/[[:alnum:]-]+" | awk -F / '{print $NF}')
   # geo_scale file
   for GEO_FILE in $RATROOT/data/$EXPERIMENT/*_geo_scale.png; do
     if [[ ! -L $RESULTS_BY_EXP_DIR/$EXPERIMENT/$(basename $GEO_FILE) ]]; then ln -s $GEO_FILE $RESULTS_BY_EXP_DIR/$EXPERIMENT/; fi
