@@ -1,6 +1,12 @@
 #!/bin/bash
 # reanalyze_COMPMAIN_all -- simple script to run $RATROOT/user/root_macros/duvallAnalyze.cxx
 #   on all primary COMPMAIN datasets
+# -- USAGE:   reanalyze_COMPMAIN_all [BATCH_TF <EVENTS_PER_JOB>]
+# -- optional argument BATCH_TF defaults to FALSE and determines whether
+#      to descend into the batch-job RAT-PAC/ROOT files
+#      and re-extract the MC particle-track data
+# -- if BATCH_TF is TRUE, then EVENTS_PER_JOB is the number of events
+#      per individual batch job (defaults to 2500)
 # ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 9/2021 ~ #
 
 ##Copyright (C) 2021 Mark J. Duvall
@@ -21,7 +27,8 @@
 ## init
 RESULTS_DIR=$RATROOT/data/COMPMAIN_RESULTS/ROOT_files
 ANALYSIS_OPTIONS=()
-ORIG_DIR=$(pwd)
+BATCH_TF=${1:=false}
+EVENTS_PER_JOB=${2:=2500}
 
 ## MAIN
 
@@ -35,6 +42,9 @@ for LINK in $RESULTS_DIR/*; do
   ANALYSIS_OPTIONS=("\"$DATARUN_NAME\"," "true,")
   EXIT_STATS=()
   cd $DATARUN_DIR
+
+  # re-process base-level ROOT files if specified
+  if $BATCH_TF; then local_batch_jobs.sh $DATARUN_NAME $EVENTS_PER_JOB
 
   # individual experiment settings
   case $EXPERIMENT in
@@ -74,7 +84,7 @@ update_COMPMAIN_links.sh
 EXIT_STATS=(${EXIT_STATS[*]} $?)
 
 ## return and report status
-cd $ORIG_DIR
+cd $RESULTS_DIR
 if [[ $(( $(echo ${EXIT_STATS[*]} | tr " " "+") )) -gt 0 ]]; then
   echo -e "Reanalysis finished, with errors.\nExit statuses:"
   k=0
