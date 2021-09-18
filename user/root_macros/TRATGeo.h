@@ -34,15 +34,19 @@ private:
   TString		fExperimentPath;	// path to directory defining fExperiment, usually either absolute or relative to $RATROOT/data
   const TMap*		fDB;			// RAT-PAC database TMap*
   TList*		fVolumeList;		// list of TRATVolume objects
+  TList*		fActiveCells;		// list of active cells for checkerboard detectors
+  TList*		fInertCells;		// list of inert cells for checkerboard detectors
 
 private:
   void			Init();			// initialize
   void			FindExperiment();	// fill experiment name, path, etc.
-//void			Build();		// construct TRATVolume list
+  void			FindCheckerboardActive( Int_t kDims ); // fill list of active checkerboard cells
+  void			FindCheckerboardInert( Int_t kDims ); // fill list of inert checkerboard cells
 
 public:
   TRATGeo();
   void			Build();		// construct TRATVolume list
+  void			BuildCheckerboard( const Int_t kDims = 3 ); // construct active/inert checkerboard lists
   TFile*                GetFile() const { return fFile; }
   virtual const char*   GetFileName() const { return fFileName; }
   TString               GetExperiment() const { return fExperiment; }
@@ -51,6 +55,8 @@ public:
   TList*		GetListOfVolumes() const { return fVolumeList; }
   TRATVolume*		GetVolume(const char* volumeName);
   Int_t			GetEntries() const { return fVolumeList->GetEntries(); }
+  TList*		GetCheckerboardActive() const { return fActiveCells; }
+  TList*		GetCheckerboardInert() const { return fInertCells; }
   void			ShowVolume(const char* volumeName);
   void			ShowAll();
   void			Types();		// print volume types
@@ -60,7 +66,7 @@ public:
   void			Positions();		// print absolute positions
 
 //Integrating the TRATGeo class to ROOT.
-ClassDef(TRATGeo,2)
+ClassDef(TRATGeo,3)
 
 }; //endclass
 

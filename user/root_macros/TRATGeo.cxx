@@ -40,6 +40,8 @@ TRATGeo::TRATGeo()
   fExperimentPath = "";
   fDB = 0;
   fVolumeList = new TList;
+  fActiveCells = new TList;
+  fInertCells = new TList;
 }
 
 //______________________________________________________________________________
@@ -88,6 +90,88 @@ TRATGeo::Init()
 }
 
 //______________________________________________________________________________
+// FindCheckerboardActive
+TRATGeo::FindCheckerboardActive( const Int_t kDims ) // = 3
+{
+  // build check
+  TString errLoc = "TRATGeo::GetCheckerboardActive()";
+  if ( (fVolumeList==0) || (fVolumeList->GetEntries()==0) ) {
+    TString errMsg = "Volume list is currently empty; run TRATGeo::Build() first.";
+    this->Error(errLoc.Data(), errMsg.Data());
+    return (TList*)0;
+  }
+  // if list is already filled, simply return pointer
+  if ( fActiveCells->GetEntries() != 0 ) return fActiveCells;
+  // init
+  TRegexp tcr0 = "target_cell_.*_.*", tcr1 = "target_cube_.*_.*";
+  TRATVolume *v;
+  TIter i(fVolumeList);
+  TString vName;
+  TObjArray *vNameTOA;
+  TObjString *vTOS;
+  Int_t R, C, L;
+  Bool_t chkTest(kFALSE);
+  // MAIN
+  for ( i=fVolumeList->begin(); i!=fVolumeList->end(); ++i ) {
+    v = (TRATVolume*)*i;
+    vName = v->GetName();
+    if ( (vName.Contains(tcr0)) || (vName.Contains(tcr1)) ) {
+      // extract row, column, and layer
+      vNameTOA = vName.Tokenize('_');
+      vTOS = (TObjString*)vNameTOA->At(2);
+      R = vTOS->GetString().Atoi();
+      vTOS = (TObjString*)vNameTOA->At(3);
+      C = vTOS->GetString().Atoi();
+      vTOS = (TObjString*)vNameTOA->At(4);
+      L = vTOS->GetString().Atoi();
+      // perform checkerboarding test
+      if (kDims==2) {
+	chkTest = ( R%2 == C%2 );
+      } else if (kDims==3) {
+	chkTest = ( (R%2==C%2) && (C%2==L%2) );
+      } else {
+	TString errMsg = "Invalid checkerboarding dimension";
+	this->Error(errLoc.Data(), errMsg.Data());
+        return (TList*)0;
+      } // end if -- kDims
+      // if cell should be active, add it to list
+      if (chkTest) fActiveCells->Add(v);
+    } // end if -- target-cell regex
+  } // end volume-list loop
+  return fActiveCells;
+}
+
+//______________________________________________________________________________
+// FindCheckerboardInert
+TRATGeo::FindCheckerboardInert( const Int_t kDims ) // = 3
+{
+  // build check
+  TString errLoc = "TRATGeo::GetCheckerboardActive()";
+  if ( (fVolumeList==0) || (fVolumeList->GetEntries()==0) ) {
+    TString errMsg = "Volume list is currently empty; run TRATGeo::Build() first.";
+    this->Error(errLoc.Data(), errMsg.Data());
+    return (TList*)0;
+  }
+  // if list is already filled, simply return pointer
+  if ( fInertCells->GetEntries() != 0 ) return fInertCells;
+  // init
+  TRegexp tcr0 = "target_cell_.*_.*", tcr1 = "target_cube_.*_.*";
+  TRATVolume *v;
+  TIter i(fVolumeList);
+  TString vName;
+  // volume-list loop
+  for ( i=fVolumeList->begin(); i!=fVolumeList->end(); ++i ) {
+    v = (TRATVolume*)*i;
+    vName = v->GetName();
+    // add any target cell not on the "active" list to the "inert" list
+    if ( (vName.Contains(tcr0)) || (vName.Contains(tcr1)) ) {
+      if ( fActiveCells->FindObject(v) == 0 ) fInertCells->Add(v);
+    } // end if -- target-cell regex
+  } // end volume-list loop
+  return fInertCells;
+}
+
+//______________________________________________________________________________
 // Build
 TRATGeo::Build()
 {
@@ -124,6 +208,14 @@ TRATGeo::Build()
   } // end db entry loop
 infoMsg.Form("Done.\n");
 this->Info(infoLoc.Data(), infoMsg.Data());
+}
+
+//______________________________________________________________________________
+// BuildCheckerboard
+TRATGeo::BuildCheckerboard( const Int_t kDims ) // = 3
+{
+  FindCheckerboardActive(kDims);
+  FindCheckerboardInert(kDims);
 }
 
 //______________________________________________________________________________
