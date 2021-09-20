@@ -1,7 +1,6 @@
 // dumpHist -- simple macro to dump TH1 data as (x,y) pairs to stdout,
 //   along with a rough ASCII representation of the graph
-// -- NOTE: Works fine with TH1D and TH1F, but DOES NOT currently
-//      work properly with TH1I and may not with other types
+// -- Note: Developed for use with TH1D and TH1F only
 // -- Example:
 //    TH1D *h = new TH1D("h", "h", 12, -2.5, 2.5);
 //    for (Int_t k=0; k<10000; k++ ) h->Fill( gRandom->Gaus() );
