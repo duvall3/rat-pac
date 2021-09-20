@@ -2,6 +2,24 @@
 //   along with a rough ASCII representation of the graph
 // -- NOTE: Works fine with TH1D and TH1F, but DOES NOT currently
 //      work properly with TH1I and may not with other types
+// -- Example:
+//    TH1D *h = new TH1D("h", "h", 12, -2.5, 2.5);
+//    for (Int_t k=0; k<10000; k++ ) h->Fill( gRandom->Gaus() );
+//    dumpHist(h);
+//    -2.708e+00	56	| |
+//    -2.292e+00	122	| |
+//    -1.875e+00	285	|   |
+//    -1.458e+00	587	|       |
+//    -1.042e+00	937	|            |
+//    -6.250e-01	1367	|                 |
+//    -2.083e-01	1614	|                    |
+//     2.083e-01	1629	|                    |
+//     6.250e-01	1361	|                 |
+//     1.042e+00	1016	|            |
+//     1.458e+00	550	|       |
+//     1.875e+00	276	|   |
+//     2.292e+00	131	|  |
+//     2.708e+00	69	| |
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 5/21 ~ //
 // ~ Updated 9/2021 ~ //
 
