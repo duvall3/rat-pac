@@ -14,8 +14,8 @@ fi
 # main
 while true; do
   PROG=$(avg_progress.sh $EVENTS_PER_INSTANCE)
-  date +"%D %T"
-  echo -e "$PROG\n"
+  TIMESTAMP=$(date +"%D %T")
+  echo -e "\e[7m$TIMESTAMP\n$PROG\n\e[0m"
   sleep 15s
 done
 
