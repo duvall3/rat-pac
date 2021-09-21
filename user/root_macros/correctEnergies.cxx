@@ -31,17 +31,17 @@ TTree* T2 = (TTree*)f2->FindObjectAny("T_scint");
 f1->cd();
 
 // init
-Double_t time_tol = 0.5e-9; // time tolerance (s)
-TString ev_cutstr, time_cutstr;
-TCut ev_cut, time_cut, total_cut;
-TEntryList* elist;
-Int_t N = T1->GetEntries();
-Int_t k;
+Double_t timeTol = 0.5e-9; // time tolerance (s)
+TString evCutStr, timeCutStr;
+TCut evCut, timeCut, totalCut;
+TEntryList* eList;
+Int_t k(0), N = T1->GetEntries();
 Int_t _event, event;
 Double_t _wall_time_adj, wall_time_adj;
 Double_t _corrected_energy, corrected_energy;
 Double_t _corrected_energy_q, corrected_energy_q;
-TVectorF matches_0_1_multiple(3);
+//TVectorF matches_0_1_multiple(3);
+TVectorF matches_0_1_multiple(4);
 
 // address / create T1 branches
 T1->SetBranchAddress("event", &event);
@@ -50,7 +50,7 @@ TBranch* cor_en_b = T1->Branch("corrected_energy", &corrected_energy);
 TBranch* cor_en_q_b = T1->Branch("corrected_energy_q", &corrected_energy_q);
 
 // address T2 branches
-T2->SetBranchAddress("event", _event);
+T2->SetBranchAddress("event", &_event);
 T2->SetBranchAddress("wall_time_adj", &_wall_time_adj);
 T2->SetBranchAddress("energy", &_corrected_energy);
 T2->SetBranchAddress("energy_q", &_corrected_energy_q);
@@ -60,8 +60,8 @@ T2->SetBranchAddress("energy_q", &_corrected_energy_q);
 cout << endl;
 
 // prepare match tracking
-Int_t match_count_0, match_count_1, match_count_multiple;
-//TString warn_msg;
+//Int_t match_count_0, match_count_1, match_count_multiple;
+Int_t match_count_0, match_count_1, match_count_2, match_count_many;
 
 // burst loop
 Int_t N_list;
@@ -75,26 +75,30 @@ for ( k=0; k<N; k++ ) {
   // setup
   T1->GetEntry(k);
 //T2->GetEntry(k);
-  ev_cutstr = TString::Format("event == %d", event);
-  time_cutstr = TString::Format("abs(wall_time_adj-%1.20e) < %e", wall_time_adj, time_tol);
-  ev_cut = TCut(ev_cutstr);
-  time_cut = TCut(time_cutstr);
-  total_cut = ev_cut + time_cut;
+  evCutStr.Form("event == %d", event);
+  timeCutStr.Form("abs(wall_time_adj-%1.35e) < %e", wall_time_adj, timeTol);
+  evCut = TCut(evCutStr);
+  timeCut = TCut(timeCutStr);
+//totalCut = evCut + timeCut;
+  totalCut = evCut;
 
   // match-finding / tolerance tests
-  T2->Draw(">>elist", total_cut, "entrylist");
-  elist = (TEntryList*)gDirectory->FindObjectAny("elist");
-  N_list = elist->GetN();
+  T2->Draw(">>eList", totalCut, "entrylist");
+  eList = (TEntryList*)gDirectory->FindObjectAny("eList");
+  N_list = eList->GetN();
   if ( N_list == 0 ) {
     match_count_0++;
   } else if ( N_list == 1 ) {
     match_count_1++;
-    T2->GetEntry(elist->GetEntry(0));
+    T2->GetEntry(eList->GetEntry(0));
     corrected_energy = _corrected_energy;
     corrected_energy_q = _corrected_energy_q;
+  } else if ( N_list == 2 ) {
+    match_count_2++;
   } else {
-    match_count_multiple++;
-//  T2->GetEntry(elist->GetEntry(0));
+    match_count_many++;
+//  match_count_multiple++;
+//  T2->GetEntry(eList->GetEntry(0));
 //  corrected_energy = _corrected_energy;
 //  corrected_energy_q = _corrected_energy_q;
   }
@@ -109,13 +113,23 @@ cout << "Done." << endl;
 
 //// END
 
+//// report and prepare to save match counts
+//printf( "Entries without matches:\t\t%d (%2.1f\%)\n", match_count_0, (Double_t)100*match_count_0/N );
+//printf( "Entries with exactly 1 match:\t\t%d (%2.1f\%)\n", match_count_1, (Double_t)100*match_count_1/N );
+//printf( "Entries with multiple matches:\t\t%d (%2.1f\%)\n", match_count_multiple, (Double_t)100*match_count_multiple/N );
+//matches_0_1_multiple(0) = match_count_0;
+//matches_0_1_multiple(1) = match_count_1;
+//matches_0_1_multiple(2) = match_count_multiple;
+
 // report and prepare to save match counts
-printf( "Entries without matches:\t\t%d (%2.1f\%)\n", match_count_0, (Double_t)100*match_count_0/N );
-printf( "Entries with exactly 1 match:\t\t%d (%2.1f\%)\n", match_count_1, (Double_t)100*match_count_1/N );
-printf( "Entries with multiple matches:\t\t%d (%2.1f\%)\n", match_count_multiple, (Double_t)100*match_count_multiple/N );
+printf( "Entries without matches:\t\t%d (%.f\%)\n", match_count_0, (Double_t)100*match_count_0/N );
+printf( "Entries with exactly 1 match:\t\t%d (%.f\%)\n", match_count_1, (Double_t)100*match_count_1/N );
+printf( "Entries with exactly 2 matches:\t\t%d (%.f\%)\n", match_count_2, (Double_t)100*match_count_2/N );
+printf( "Entries with matches >= 3:\t\t%d (%.f\%)\n", match_count_many, (Double_t)100*match_count_many/N );
 matches_0_1_multiple(0) = match_count_0;
 matches_0_1_multiple(1) = match_count_1;
-matches_0_1_multiple(2) = match_count_multiple;
+matches_0_1_multiple(2) = match_count_2;
+matches_0_1_multiple(2) = match_count_many;
 
 // finish up
 f2->Close();

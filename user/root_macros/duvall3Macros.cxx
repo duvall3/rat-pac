@@ -44,6 +44,7 @@ gROOT->LoadMacro("addGeoSANTA.cxx");
 gROOT->LoadMacro("addGeoSANDD.cxx");
 gROOT->LoadMacro("exportPlots.cxx");
 gROOT->LoadMacro("radarPlot.cxx");
+gROOT->LoadMacro("drawAllCosPsi.cxx");
 
 // all pau!   )
 }

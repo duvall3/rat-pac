@@ -18,15 +18,11 @@
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 //TList* drawAllCosPsi( const char* directoryName = "" ) {
-TList* drawAllCosPsi() {
+void drawAllCosPsi() {
 
-//// arg check
-//TString dirName;
-//if (directoryName=="") {
-//  dirName = gSystem->pwd();
-//} else {
-//  dirName = directoryName;
-//}
+// graphics-related settings
+gStyle->SetCanvasPreferGL(kTRUE);
+gROOT->SetBatch(kTRUE);
 
 // filesystem setup
 const char* RATROOT = gSystem->ExpandPathName("$RATROOT");
@@ -51,7 +47,7 @@ TH1D *h;
 TLegend *leg = new TLegend(.1, .60, .40, .90);
 Int_t k=0, nFiles=fileList->GetEntries();
 Color_t colors[6] = {4, 3, 7, 2, 6, 11};
-TObjString d0("CHOOZ"), d1("NuLat3"), d2("NuLat5"), d3("SANTA"), d4("SANDD"), d5("2D Chkbd.");
+TObjString d0("CHOOZ"), d1("NuLat 3"), d2("NuLat 5"), d3("SANTA"), d4("SANDD"), d5("2D Chk.");
 TObjArray *detectorNames = new TObjArray;
 detectorNames->Add(&d0);
 detectorNames->Add(&d1);
@@ -72,6 +68,8 @@ for ( iFile=fileList->begin(); iFile!=fileList->end(); ++iFile ) {
   dLabel = dName->GetString();
   dLabel.Append( TString::Format("  %.3f", h->GetMean()) );
   dLabel.ReplaceAll("0.", ".");
+  if (dLabel.Contains("NuLat 3")) dLabel.Append("^{*}");
+  if ( dLabel.Contains("SANDD") || dLabel.Contains("2D Chk.") ) dLabel.Append("^{**}");
   leg->AddEntry(h, dLabel.Data());
   hList->Add(h);
   k++;
@@ -100,14 +98,23 @@ h = (TH1D*)hList->At(0);
 h->SetAxisRange(0., allMax, "y");
 leg->Draw();
 
-// user does something
-// ...
+// export
+can_hcp->Print("cos_psi_all.png");
 
-//for ( iFile=fileList->begin(); iFile!=fileList->end(); ++i ) {
-//  f = (TFile*)*iFile;
-//  f->Close();
-//}
+// close
+for ( iFile=fileList->begin(); iFile!=fileList->end(); ++iFile ) {
+  f = (TFile*)*iFile;
+  f->Close();
+}
 
 // all pau!   )
-return hList;
+return;
 }
+
+//// arg check
+//TString dirName;
+//if (directoryName=="") {
+//  dirName = gSystem->pwd();
+//} else {
+//  dirName = directoryName;
+//}

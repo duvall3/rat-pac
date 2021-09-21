@@ -48,7 +48,7 @@ else
 fi
 if (! $HFILE_TF) && (! $CFILE_TF); then
   echo "Error: No .h or .cxx files for class \"$1\" found under $ROOTSYS. Searching for mentions..."
-  GREPLIST=$(grep -iE -IRl $1 "$ROOTSYS")
+  GREPLIST=$(grep -iE -IRl $1 "$ROOTSYS" 2> /dev/null)
   if [[ $GREPLIST ]]; then
     echo -e "\nMentions of \"$1\" found in the following files:\n"
     echo $GREPLIST | sed s@$ROOTSYS@'$ROOTSYS'@g | tr ' ' '\n'

@@ -12,4 +12,5 @@ c4	*_results-ang-separate	reconstructed azimuthal & polar angles pointing to dir
 c5	*_results-cos-psi	cos[psi] distribution comparing reconstructed vs. actual incoming antineutrino direction
 c6	*_results-skymap	skymap of reconstructed incoming antineutrino directions; unless otherwise noted, true direction = (0°,0°)
 c7	*_cap-prod		pie chart of neutron-capture product nuclei
+c8	*_results-phi-radar	"radar plot" (i.e., angular histogram) version of reconstructed azimuthal angle results
 

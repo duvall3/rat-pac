@@ -42,7 +42,7 @@
 void dumpHist( TH1* h) {
 
 Int_t asciiGradations = 20;
-Int_t k = 0, j=0, nBins = h->GetNbinsX();
+Int_t k = 0, j = 0, nBins = h->GetNbinsX();
 Double_t hMax = h->GetMaximum();
 Double_t binScale = hMax/asciiGradations;
 Double_t binCent;
