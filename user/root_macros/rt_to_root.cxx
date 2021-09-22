@@ -53,7 +53,17 @@ T_scint->SetBranchAddress( "z", &z );
 // create and address new branches 
 Double_t run_start, interevent_time, event_time_adj, wall_time_adj;
 T_scint->GetEntry(0);
-run_start = event_time;
+//if (FileName.Contains("energies.rt")) {
+  // RAT::DS::MC...
+  TString rootFile = basename+".root";
+  RAT::DSReader r(rootFile.Data());
+  RAT::DS::Root *ds = r.GetEvent(0);
+  RAT::DS::MC *mc = ds->GetMC();
+  TTimeStamp runStartTime = mc->GetUTC();
+  run_start = runStartTime.AsDouble();
+//} else {
+  //run_start = event_time;
+//}
 T_scint->Branch("event_time_adj", &event_time_adj, "event_time_adj/D");
 T_scint->Branch("wall_time_adj", &wall_time_adj, "wall_time_adj/D");
 T_scint->Branch("interevent_time", &interevent_time, "interevent_time/D");

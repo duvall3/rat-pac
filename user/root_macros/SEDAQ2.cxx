@@ -347,6 +347,13 @@ prompt_high = 100.;
 //delayed_low = 1.00;
 delayed_high = 100.;
 
+//FIXME/TODO: Clone T2 into a new tree "T_reject" or similar;
+//  fill it with entries/events that do *not*
+//  trip the neutrino trigger
+// -- espec. for debugging event-matching
+//      in correctEnergies.cxx
+//    (e.g., seemingly-missing SANDD events)
+
 // scan through events for IBD candidates
 for ( k = 0; k < (num_bursts-1); k++ ) {
 
@@ -360,7 +367,6 @@ for ( k = 0; k < (num_bursts-1); k++ ) {
     prompt_cand_event = event;
     prompt_cand_t = wall_time_adj;
     prompt_cand_eq = corrected_energy_q;
-//  prompt_cand_vol = vol_name;
     prompt_cand_vol = new TString(vol_name->Data());
 //  cout << prompt_cand_vol.Data() << "  " << vol_name.Data() << endl; //debug
     prompt_cand_x = x;
@@ -373,7 +379,6 @@ for ( k = 0; k < (num_bursts-1); k++ ) {
       delayed_cand_event = event;
       delayed_cand_t = wall_time_adj;
       delayed_cand_eq = corrected_energy_q;
-//    delayed_cand_vol = vol_name;
       delayed_cand_vol = new TString(vol_name->Data());
 //    cout << prompt_cand_vol.Data() << "  " << delayed_cand_vol.Data() << "  " << vol_name.Data() << endl << endl; //debug
       delayed_cand_x = x;

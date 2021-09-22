@@ -116,11 +116,7 @@ for ( k=0; k<N; k++ ) { // event loop
   z = coords.Z();
   vol_name = n->GetVolume();
   vol = (TRATVolume*)g.GetVolume(vol_name.Data());
-  // FIXME -- temporary switch for checkerboard analysis
-//x_quantized = vol->GetAbsolutePosition().X();
-//y_quantized = vol->GetAbsolutePosition().Y();
-//z_quantized = vol->GetAbsolutePosition().Z();
-  volCoords = vol->GetRelativePosition();
+  volCoords = vol->GetAbsolutePosition();
   x_quantized = volCoords->X();
   y_quantized = volCoords->Y();
   z_quantized = volCoords->Z();
@@ -180,14 +176,7 @@ for ( k=0; k<N; k++ ) { // event loop
   if ( (nProc == "nCapture") || (nProc == "neutronInelastic") ) {
     vol_name = n->GetVolume();
     vol = (TRATVolume*)g.GetVolume(vol_name.Data());
-// FIXME -- temporary switch for checkerboard analysis
-//  x_quantized = vol->GetAbsolutePosition().X();
-//  y_quantized = vol->GetAbsolutePosition().Y();
-//  z_quantized = vol->GetAbsolutePosition().Z();
-//  x_quantized = vol->GetRelativePosition().X();
-//  y_quantized = vol->GetRelativePosition().Y();
-//  z_quantized = vol->GetRelativePosition().Z();
-    volCoords = vol->GetRelativePosition();
+    volCoords = vol->GetAbsolutePosition();
     x_quantized = volCoords->X();
     y_quantized = volCoords->Y();
     z_quantized = volCoords->Z();

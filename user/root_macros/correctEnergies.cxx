@@ -77,11 +77,14 @@ for ( k=0; k<N; k++ ) {
 //T2->GetEntry(k);
   evCutStr.Form("event == %d", event);
   timeCutStr.Form("abs(wall_time_adj-%1.35e) < %e", wall_time_adj, timeTol);
-  evCut = TCut(evCutStr);
-  timeCut = TCut(timeCutStr);
-//totalCut = evCut + timeCut;
-  totalCut = evCut;
+//evCut = TCut(evCutStr);
+//timeCut = TCut(timeCutStr);
+  evCut = evCutStr;
+  timeCut = timeCutStr;
+  totalCut = evCut + timeCut;
+//totalCut = evCut; //FIXME debug
 
+  // TODO: first find closest match, *then* test for tolerance (then add)
   // match-finding / tolerance tests
   T2->Draw(">>eList", totalCut, "entrylist");
   eList = (TEntryList*)gDirectory->FindObjectAny("eList");
