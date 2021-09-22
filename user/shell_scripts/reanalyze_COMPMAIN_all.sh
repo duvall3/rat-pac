@@ -44,7 +44,7 @@ for LINK in $RESULTS_DIR/*; do
   cd $DATARUN_DIR
 
   # re-process base-level ROOT files if specified
-  if $BATCH_TF; then local_batch_jobs.sh $DATARUN_NAME $EVENTS_PER_JOB
+  if $BATCH_TF; then local_batch_jobs.sh $DATARUN_NAME $EVENTS_PER_JOB; fi
 
   # individual experiment settings
   case $EXPERIMENT in
