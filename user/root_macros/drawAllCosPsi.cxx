@@ -31,6 +31,7 @@ resultsDir.Append("/data/COMPMAIN_RESULTS/ROOT_files");
 gSystem->cd(resultsDir.Data());
 
 // init
+// file operations
 TFile *f0 = TFile::Open("COMPMAIN_CHOOZ_10k_results.root"), *f1 = TFile::Open("COMPMAIN_NULAT_10K_results.root");
 TFile *f2 = TFile::Open("COMPMAIN_NULAT5_10K_results.root"), *f3 = TFile::Open("COMPMAIN_SANTA_10K_results.root");
 TFile *f4 = TFile::Open("COMPMAIN_SANDD_10K_results.root"), *f5 = TFile::Open("COMPMAIN_CHECKERBOARD-2D_10K_results.root");
@@ -43,10 +44,12 @@ fileList->Add(f4);
 fileList->Add(f5);
 TIter iFile(fileList);
 TFile *f;
+// hist operations
 TH1D *h;
 TLegend *leg = new TLegend(.1, .60, .40, .90);
 Int_t k=0, nFiles=fileList->GetEntries();
 Color_t colors[6] = {4, 3, 7, 2, 6, 11};
+// labeling
 TObjString d0("CHOOZ"), d1("NuLat 3"), d2("NuLat 5"), d3("SANTA"), d4("SANDD"), d5("2D Chk.");
 TObjArray *detectorNames = new TObjArray;
 detectorNames->Add(&d0);
@@ -57,6 +60,10 @@ detectorNames->Add(&d4);
 detectorNames->Add(&d5);
 TObjString *dName = new TObjString;
 TString dLabel;
+// mean markers
+Double_t ylow, yup, yMarker, hMean, kMarkerOffset(0.003);
+TLine *meanLine = new TLine;
+TMarker *meanMarker = new TMarker;
 
 // file loop
 for ( iFile=fileList->begin(); iFile!=fileList->end(); ++iFile ) {
@@ -68,15 +75,17 @@ for ( iFile=fileList->begin(); iFile!=fileList->end(); ++iFile ) {
   dLabel = dName->GetString();
   dLabel.Append( TString::Format("  %.3f", h->GetMean()) );
   dLabel.ReplaceAll("0.", ".");
-  if (dLabel.Contains("NuLat 3")) dLabel.Append("^{*}");
-  if ( dLabel.Contains("SANDD") || dLabel.Contains("2D Chk.") ) dLabel.Append("^{**}");
+  if (dLabel.Contains("NuLat 3")) dLabel.Append(" *");
+  if ( dLabel.Contains("SANDD") || dLabel.Contains("2D Chk.") ) dLabel.Append(" **");
+  h->SetMarkerStyle(k+20);
+  h->SetMarkerColor(colors[k]);
   leg->AddEntry(h, dLabel.Data());
   hList->Add(h);
   k++;
   dLabel.Clear();
 } // end file loop
 
-// draw
+// hist / legend loop
 TCanvas *can_hcp = new TCanvas("can_hcp", "All Cos[psi] COMPMAIN Results");
 can_hcp->cd();
 TIter iH(hList);
@@ -93,10 +102,34 @@ for ( iH=hList->begin(); iH!=hList->end(); ++iH ) {
   binsMax[k] = h->GetMaximum();
   k++;
 }
+leg->Draw();
+
+// axis limits
 Double_t allMax = binsMax.Max();
 h = (TH1D*)hList->At(0);
 h->SetAxisRange(0., allMax, "y");
-leg->Draw();
+
+// mean indicators
+ylow = 0;
+yup = allMax;
+meanLine->SetLineWidth(3.);
+meanLine->SetLineStyle(kDotted);
+//meanLine->SetLineColor(kBlack);
+yMarker = ylow + 0.9*(yup-ylow);
+//meanMarker->SetMarkerStyle(kFullSquare);
+meanMarker->SetMarkerSize(1.2);
+k = 0;
+for ( iH = hList->begin(); iH!=hList->end(); ++iH ) {
+  h = (TH1D*)(*iH);
+  hMean = h->GetMean();
+  meanLine->SetLineColor(colors[k]);
+  meanMarker->SetMarkerColor(colors[k]);
+  meanLine->DrawLine(hMean, ylow, hMean, yup);
+//meanMarker->DrawMarker(hMean+kMarkerOffset, yMarker);
+  meanMarker->SetMarkerStyle(k+20);
+  meanMarker->DrawMarker(hMean, yMarker);
+  k++;
+}
 
 // export
 can_hcp->Print("cos_psi_all.png");
