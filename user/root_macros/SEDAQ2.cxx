@@ -82,11 +82,12 @@ TTree* T_scint = TF->GetTree();
 
 // address T_scint branches
 Long64_t num_bursts = T_scint->GetEntries();
-Int_t event;
+Int_t event, pdgcode;
 Double_t event_time, wall_time, corrected_energy, corrected_energy_q, x, y, z;
 Double_t run_start, interevent_time, event_time_adj, wall_time_adj;
 TString *vol_name;
 T_scint->SetBranchAddress( "event", &event );
+T_scint->SetBranchAddress( "pdgcode", &pdgcode );
 T_scint->SetBranchAddress( "event_time", &event_time );
 T_scint->SetBranchAddress( "wall_time", &wall_time );
 T_scint->SetBranchAddress( "corrected_energy", &corrected_energy );
@@ -147,6 +148,7 @@ if (sPositionResolution.Contains('z')) {
 
 // address T2 branches
 Int_t prompt_cand_event, delayed_cand_event;
+Int_t prompt_cand_pdgcode, delayed_cand_pdgcode;
 Double_t prompt_cand_t, prompt_cand_eq, delayed_cand_t, delayed_cand_eq;
 Double_t prompt_cand_x, prompt_cand_y, prompt_cand_z;
 Double_t delayed_cand_x, delayed_cand_y, delayed_cand_z;
@@ -157,6 +159,8 @@ Double_t tmin;
 Double_t longtd, lattd;
 T2->Branch("prompt_cand_event", &prompt_cand_event, "prompt_cand_event/I");
 T2->Branch("delayed_cand_event", &delayed_cand_event, "delayed_cand_event/I");
+T2->Branch("prompt_cand_pdgcode", &prompt_cand_pdgcode, "prompt_cand_pdgcode/I");
+T2->Branch("delayed_cand_pdgcode", &delayed_cand_pdgcode, "delayed_cand_pdgcode/I");
 T2->Branch("prompt_cand_t", &prompt_cand_t, "prompt_cand_t/D");
 T2->Branch("prompt_cand_eq", &prompt_cand_eq, "prompt_cand_eq/D");
 T2->Branch("prompt_cand_vol", &prompt_cand_vol);
@@ -365,6 +369,7 @@ for ( k = 0; k < (num_bursts-1); k++ ) {
   if ( interevent_time > trigger_reset & corrected_energy_q > prompt_low & corrected_energy_q < prompt_high ) {
     prompt_tf = true;
     prompt_cand_event = event;
+    prompt_cand_pdgcode = pdgcode;
     prompt_cand_t = wall_time_adj;
     prompt_cand_eq = corrected_energy_q;
     prompt_cand_vol = new TString(vol_name->Data());
@@ -377,6 +382,7 @@ for ( k = 0; k < (num_bursts-1); k++ ) {
     if ( interevent_time > deltaT_low & interevent_time < deltaT_high & corrected_energy_q > delayed_low & corrected_energy_q < delayed_high ) {
       delayed_tf = true;
       delayed_cand_event = event;
+      delayed_cand_pdgcode = pdgcode;
       delayed_cand_t = wall_time_adj;
       delayed_cand_eq = corrected_energy_q;
       delayed_cand_vol = new TString(vol_name->Data());

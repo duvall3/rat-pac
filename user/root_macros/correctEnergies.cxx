@@ -74,17 +74,16 @@ for ( k=0; k<N; k++ ) {
 
   // setup
   T1->GetEntry(k);
-//T2->GetEntry(k);
   evCutStr.Form("event == %d", event);
   timeCutStr.Form("abs(wall_time_adj-%1.35e) < %e", wall_time_adj, timeTol);
-//evCut = TCut(evCutStr);
-//timeCut = TCut(timeCutStr);
   evCut = evCutStr;
   timeCut = timeCutStr;
   totalCut = evCut + timeCut;
-//totalCut = evCut; //FIXME debug
 
-  // TODO: first find closest match, *then* test for tolerance (then add)
+  // todo (maybe not needed): first find closest match, *then* test for tolerance (then add)
+  // TODO // NOTE: CURRENTLY NOT TESTING FOR WHETHER ibdTracksToScint ENTRY 
+  //   SHOULD BE SCINTILLATING OR NOT, SO ENTRIES WITHOUT MATCHES ARE EXPECTED;
+  //   TESTING NEEDED TO CONFIRM THE CORRECT ENTRIES ARE "MISSING" // TODO //
   // match-finding / tolerance tests
   T2->Draw(">>eList", totalCut, "entrylist");
   eList = (TEntryList*)gDirectory->FindObjectAny("eList");

@@ -61,10 +61,11 @@ TObjString *nMCEvents_tos = new TObjString(nMCEvents);
 TTree* T_scint = new TTree("T_scint", "Pseudo-Scintillation Data");
 //TTree* T_scint = new TTree("T", "Pseudo-Scintillation Data");
 T_scint->GetUserInfo()->Add(nMCEvents_tos);
-Int_t event;
+Int_t event, pdgcode;
 Double_t event_time, wall_time, energy, energy_q, x, y, z, x_quantized, y_quantized, z_quantized, x_res, y_res, z_res;
 TString cap_product, vol_name;
 T_scint->Branch( "event", &event, "event/I" );
+T_scint->Branch( "pdgcode", &pdgcode, "pdgcode/I" );
 T_scint->Branch( "event_time", &event_time, "event_time/D" );
 T_scint->Branch( "wall_time", &wall_time, "wall_time/D" );
 T_scint->Branch( "energy", &energy, "energy/D" );
@@ -104,6 +105,7 @@ for ( k=0; k<N; k++ ) { // event loop
 
   // positron
   n = c.GoChild(0);
+  pdgcode = n->GetPDGCode();
   // current: use *starting volume* of e+ track for quantized position
   // -- also using raw MC-truth srartign position for regular coordinates
   // TODO: instead, use volume with greatest scint. energy deposit
@@ -155,7 +157,8 @@ for ( k=0; k<N; k++ ) { // event loop
 
   // neutron
   c.GoParent();
-  c.GoChild(1);
+  n = c.GoChild(1);
+  pdgcode = n->GetPDGCode();
 //for ( i=0; i<c.StepCount(); i++ ) { // step loop
 //  n = c.GoStep(i);
 //  if (n->GetProcess() == "hadElastic") {
