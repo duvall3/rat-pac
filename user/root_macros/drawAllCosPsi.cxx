@@ -111,7 +111,7 @@ for ( iFile=fileList->begin(); iFile!=fileList->end(); ++iFile ) {
 
 // hist / legend loop
 TString canTitle = "All Cos[psi] COMPMAIN Results";
-if (kNormalized) canTitle.Append(" (Normalized, No SANTA)");
+if (kNormalized) canTitle.Append(" (Normalized)");
 TCanvas *can_hcp = new TCanvas("can_hcp", canTitle.Data());
 can_hcp->cd();
 TIter iH(hList);
@@ -119,20 +119,18 @@ h = (TH1D*)hList->At(0);
 h->SetStats(0);
 TString hTitle = "All Cos[#psi] Distributions";
 Double_t N;
+h->Draw();
 if (kNormalized) {
-  hTitle.Append(" (Normalized, No SANTA)");
-  h->Draw();
-  TText *ylabel = new TText(1.1, .323, "Relative Frequency (arb.)");
+  hTitle.Append(" (Normalized)");
+//TText *ylabel = new TText(1.1, .323, "Relative Frequency (arb.)");
+  TText *ylabel = new TText(1.1, 0., "Relative Frequency (arb.)");
+} else {
+//TText *ylabel = new TText(1.1, 1850, "Entries");
+  TText *ylabel = new TText(1.1, 0., "Entries");
+}
   ylabel->SetTextSize(.035);
   ylabel->SetTextAngle(-90);
   ylabel->Draw("same");
-//TH1D* hc = h->Clone("hc");
-//TAxis *hy = hc->GetYaxis();
-//hy->SetTitle("Relative Frequency (arb.)");
-//hy->SetNdivisions(0);
-//hc->Draw("samey+");
-//h->Draw("same");
-}
 h->SetTitle(hTitle.Data());
 TVectorD binsMax(nFiles);
 Double_t maxSANTA;
@@ -164,6 +162,7 @@ leg->Draw();
 Double_t allMax = binsMax.Max();
 h = (TH1D*)hList->At(0);
 h->SetAxisRange(0., allMax, "y");
+ylabel->SetY(allMax);
 
 // mean indicators
 ylow = 0;
@@ -196,13 +195,19 @@ can_hcp->RedrawAxis("y");
 // SANTA indicator
 Double_t santArrowX = h->GetBinCenter(maxSANTAbin);
 if (kNormalized) {
-  TArrow * santArrow = new TArrow(santArrowX, allMax, santArrowX, 1.1*allMax);
+  TLine *santaLine = new TLine(0.81, allMax, 0.81, 1.2*allMax);
+  santaLine->SetLineStyle(kDashDotted);
+  santaLine->SetLineColor(kRed);
+  santaLine->SetLineWidth(3);
+  santaLine->Draw();
+  santaLine->DrawLine(1.01, allMax, 1.01, 1.2*allMax);
+  TArrow * santArrow = new TArrow(santArrowX, 1.02*allMax, santArrowX, 1.10*allMax, 0.025);
   santArrow->SetLineColor(kRed);
   santArrow->SetLineWidth(3);
   santArrow->Draw();
   TString santArrowLabel;
   santArrowLabel.Form("to SANTA at %1.2f", maxSANTA);
-  TText *santaLabel = new TText(.35, 1.01*allMax, santArrowLabel.Data());
+  TText *santaLabel = new TText(0.23, 1.01*allMax, santArrowLabel.Data());
   santaLabel->SetTextColor(kRed);
   santaLabel->SetTextSize(.03);
   santaLabel->SetTextFont(52);
