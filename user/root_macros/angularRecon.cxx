@@ -74,6 +74,7 @@ TH1D* h_phi = new TH1D("h_phi", "Azimuthal Angle (deg) #minus #phi^{o}", 36, -18
 TH1D* h_theta = new TH1D("h_theta", "Polar Angle (deg) #minus #theta^{o}", 36, 0, 180);
 TH1D* h_cos_psi = new TH1D("h_cos_psi", "Cos[#psi]", 10, -1.01, 1.01);
 TH2D* h_phi_radar = new TH2D; // filled by radarPlot below
+TH2D *h_map = new TH2D("h_map", "h_map", 40, -180., 180., 40, -90., 90.);
 
 // fill histograms
 for ( k = 0; k < N; k++ ) {
@@ -81,6 +82,7 @@ for ( k = 0; k < N; k++ ) {
   h_phi->Fill(phi);
   h_theta->Fill(theta);
   h_cos_psi->Fill(cos_psi);
+  h_map->Fill(longtd, lattd);
 }
 
 // draw histograms
@@ -116,9 +118,9 @@ c5->Draw();
 // skymap
 c6->cd();
 gPad->SetLogy(kFALSE);
-T2->Draw("lattd:longtd>>h_map", "", "aitoff");
-h_map->SetName("h_map");
-TString skymapTitStr = TString::Format("Skymap Pointing to Reconstructed #bar{#nu_{e}} Source (N=%d)", N);
+//Th_map2D *h_map = new Th_map2D("h_map", "h_map", 40, -180., 180., 40, -90., 90.); // moved up top
+//TString skymapTitStr = TString::Format("Skymap Pointing to Reconstructed #bar{#nu_{e}} Source (N=%d)", N);
+TString skymapTitStr = TString::Format("Skymap Pointing to Reconstructed Antineutrino Source (N=%d)", N);
 h_map->SetTitle(skymapTitStr.Data());
 h_map->GetXaxis()->SetTitle("longitude (^{o})");
 h_map->GetYaxis()->SetTitle("latitude (^{o})");
@@ -126,6 +128,7 @@ h_map->GetXaxis()->SetTitleFont(62);
 h_map->GetYaxis()->SetTitleFont(62);
 h_map->GetXaxis()->SetLimits(-180., 180.);
 h_map->GetYaxis()->SetLimits(-90., 90.);
+h_map->Draw("aitoff");
 c6->Draw();
 
 // radar version of azimuthal plot
