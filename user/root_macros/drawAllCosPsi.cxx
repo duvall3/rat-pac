@@ -17,13 +17,13 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-TList* drawAllCosPsi( Bool_t kNormalized = kFALSE ) {
+TList* drawAllCosPsi( const Bool_t kNormalized = kFALSE, const Bool_t kInteractive = kFALSE ) {
 
 //// INIT
 
 // graphics-related settings
 gStyle->SetCanvasPreferGL(kTRUE);
-gROOT->SetBatch(kTRUE);
+if (! kInteractive) gROOT->SetBatch(kTRUE);
 
 // filesystem setup
 const char* RATROOT = gSystem->ExpandPathName("$RATROOT");
@@ -61,7 +61,7 @@ TIter iFile(fileList);
 // annotations
 TLegend *leg = new TLegend(legxy[0], legxy[1], legxy[2], legxy[3]);
 Int_t k=0, nFiles=fileList->GetEntries();
-Color_t colors[7] = {4, 3, 7, 2, 6, 11, 12};
+Color_t colors[7] = {4, 3, 7, 2, 6, 5, 13};
 // labeling
 TObjString d0("CHOOZ"), d1("NuLat 3"), d2("NuLat 5"), d3("SANTA"), d4("SANDD"), d5("2D Chk."), d6("3D Chk.");
 TObjArray *detectorNames = new TObjArray;
@@ -88,6 +88,7 @@ for ( iFile=fileList->begin(); iFile!=fileList->end(); ++iFile ) {
   f->cd();
   h = h_cos_psi;
   h->SetLineColor(colors[k]);
+  h->SetFillColor(TColor::GetColorTransparent(colors[k], 0.15));
   h->SetMarkerStyle(k+20);
   h->SetMarkerColor(colors[k]);
   dName = (TObjString*)detectorNames->At(k);
@@ -217,10 +218,12 @@ if (kNormalized) {
 //// fin
 
 // export and close
-can_hcp->Print(savename);
-for ( iFile=fileList->begin(); iFile!=fileList->end(); ++iFile ) {
-  f = (TFile*)*iFile;
-  f->Close();
+if (! kInteractive) {
+  can_hcp->Print(savename);
+  for ( iFile=fileList->begin(); iFile!=fileList->end(); ++iFile ) {
+    f = (TFile*)*iFile;
+    f->Close();
+  }
 }
 
 // all pau!   )
