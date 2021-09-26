@@ -1,0 +1,1406 @@
+
+/// Reanalyzing batch jobs in COMPMAIN_CHECKERBOARD-2D_10K... ///
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("COMPMAIN_CHECKERBOARD-2D_10K_0", false, "", "")...
+
+
+//// Preparing datarun "COMPMAIN_CHECKERBOARD-2D_10K_0"... ////
+
+
+Creating ROOT file from .rt file...
+Done.
+
+Processing particle tracks...
+Done.
+
+
+Importing corrected energies...
+Done.
+Entries without matches:		2072 (41%)
+Entries with exactly 1 match:		2928 (59%)
+Entries with exactly 2 matches:		0 (0%)
+Entries with matches >= 3:		0 (0%)
+//// Preparation Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("COMPMAIN_CHECKERBOARD-2D_10K_1", false, "", "")...
+
+
+//// Preparing datarun "COMPMAIN_CHECKERBOARD-2D_10K_1"... ////
+
+
+Creating ROOT file from .rt file...
+Done.
+
+Processing particle tracks...
+Done.
+
+
+Importing corrected energies...
+Done.
+Entries without matches:		2034 (41%)
+Entries with exactly 1 match:		2966 (59%)
+Entries with exactly 2 matches:		0 (0%)
+Entries with matches >= 3:		0 (0%)
+//// Preparation Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("COMPMAIN_CHECKERBOARD-2D_10K_2", false, "", "")...
+
+
+//// Preparing datarun "COMPMAIN_CHECKERBOARD-2D_10K_2"... ////
+
+
+Creating ROOT file from .rt file...
+Done.
+
+Processing particle tracks...
+Done.
+
+
+Importing corrected energies...
+Done.
+Entries without matches:		2061 (41%)
+Entries with exactly 1 match:		2939 (59%)
+Entries with exactly 2 matches:		0 (0%)
+Entries with matches >= 3:		0 (0%)
+//// Preparation Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("COMPMAIN_CHECKERBOARD-2D_10K_3", false, "", "")...
+
+
+//// Preparing datarun "COMPMAIN_CHECKERBOARD-2D_10K_3"... ////
+
+
+Creating ROOT file from .rt file...
+Done.
+
+Processing particle tracks...
+Done.
+
+
+Importing corrected energies...
+Done.
+Entries without matches:		2056 (41%)
+Entries with exactly 1 match:		2943 (59%)
+Entries with exactly 2 matches:		0 (0%)
+Entries with matches >= 3:		0 (0%)
+//// Preparation Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing chain.cxx()...
+
+/// Batch job reanalysis complete. You are now ready to run duvallAnalyze.cxx on the new COMPMAIN_CHECKERBOARD-2D_10K TChain. ///
+
+
+RAT: Libraries loaded.
+
+Processing duvallAnalyze.cxx("COMPMAIN_CHECKERBOARD-2D_10K", true, "xy", "z", true)...
+
+
+//// Analyzing datarun "COMPMAIN_CHECKERBOARD-2D_10K"... ////
+
+
+
+
+Using default antineutrino direction.
+TVector3 A 3D physics vector (x,y,z)=(-1.000000,0.000000,0.000000) (rho,theta,phi)=(1.000000,90.000000,180.000000)
+
+SimpleEnergyDAQ2 IBD Trigger Summary:
+======> EVENT:0
+ sedaq2_version  = 1.4.00
+ units           = Time (s), Energy (MeVee)
+ deltaT_low      = 1e-06
+ deltaT_high     = 0.0001
+ prompt_low      = 0
+ prompt_high     = 100
+ delayed_low     = 0
+ delayed_high    = 100
+ ibd_candidates  = 1653
+
+
+
+
+Using default antineutrino direction:
+neutrino_direction: TVector3 A 3D physics vector (x,y,z)=(-1.000000,0.000000,0.000000) (rho,theta,phi)=(1.000000,90.000000,180.000000)
+
+
+
+IBD Angular Reconstruction:
+* datafile = "COMPMAIN_CHECKERBOARD-2D_10K_results.root"
+* Note: SDM = SD/sqrt(N)
+
+Azimuthal Angle (deg):
+  phi_mean	2.08
+  phi_sd	84.95
+  phi_sdm	2.09
+
+Polar Angle (deg):
+  theta_mean	90.00
+  theta_sd	0.00
+  theta_sdm	0.00
+
+SUMMARY:
+  Total IBDs: 10000
+  N = 1653
+  IBD Efficiency = 16.53%
+  phi   = 2.08   +/- 84.95 deg (SD)	0.02 sigma from true value,  or
+                 +/-  2.09 deg (SDM)	1.00 sigma from true value
+  theta = 90.00   +/- 0.00 deg (SD)	-nan sigma from true value,  or
+                 +/-  0.00 deg (SDM)	-nan sigma from true value
+  <cos[psi]> = 0.285
+
+
+
+If the c3 (_pd-xyz.png) plot did not save correctly, try:
+1) Quit ROOT
+2) Open ROOT interactively
+3) Run the following lines at the prompt:
+
+TFile *f = TFile::Open("COMPMAIN_CHECKERBOARD-2D_10K_results.root");
+c3->Draw();
+c3->Print("COMPMAIN_CHECKERBOARD-2D_10K_pd-xyz.png");
+c3->Close();
+f->Close();
+
+All pau!   )
+
+
+//// Analysis Complete ////
+
+
+
+/// Reanalyzing batch jobs in COMPMAIN_CHECKERBOARD-3D_10K... ///
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("COMPMAIN_CHECKERBOARD-3D_10K_0", false, "", "")...
+
+
+//// Preparing datarun "COMPMAIN_CHECKERBOARD-3D_10K_0"... ////
+
+
+Creating ROOT file from .rt file...
+Done.
+
+Processing particle tracks...
+Done.
+
+
+Importing corrected energies...
+Done.
+Entries without matches:		1546 (31%)
+Entries with exactly 1 match:		3453 (69%)
+Entries with exactly 2 matches:		0 (0%)
+Entries with matches >= 3:		0 (0%)
+//// Preparation Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("COMPMAIN_CHECKERBOARD-3D_10K_1", false, "", "")...
+
+
+//// Preparing datarun "COMPMAIN_CHECKERBOARD-3D_10K_1"... ////
+
+
+Creating ROOT file from .rt file...
+Done.
+
+Processing particle tracks...
+Done.
+
+
+Importing corrected energies...
+Done.
+Entries without matches:		1543 (31%)
+Entries with exactly 1 match:		3457 (69%)
+Entries with exactly 2 matches:		0 (0%)
+Entries with matches >= 3:		0 (0%)
+//// Preparation Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("COMPMAIN_CHECKERBOARD-3D_10K_2", false, "", "")...
+
+
+//// Preparing datarun "COMPMAIN_CHECKERBOARD-3D_10K_2"... ////
+
+
+Creating ROOT file from .rt file...
+Done.
+
+Processing particle tracks...
+Done.
+
+
+Importing corrected energies...
+Done.
+Entries without matches:		1533 (31%)
+Entries with exactly 1 match:		3467 (69%)
+Entries with exactly 2 matches:		0 (0%)
+Entries with matches >= 3:		0 (0%)
+//// Preparation Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("COMPMAIN_CHECKERBOARD-3D_10K_3", false, "", "")...
+
+
+//// Preparing datarun "COMPMAIN_CHECKERBOARD-3D_10K_3"... ////
+
+
+Creating ROOT file from .rt file...
+Done.
+
+Processing particle tracks...
+Done.
+
+
+Importing corrected energies...
+Done.
+Entries without matches:		1570 (31%)
+Entries with exactly 1 match:		3430 (69%)
+Entries with exactly 2 matches:		0 (0%)
+Entries with matches >= 3:		0 (0%)
+//// Preparation Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing chain.cxx()...
+
+/// Batch job reanalysis complete. You are now ready to run duvallAnalyze.cxx on the new COMPMAIN_CHECKERBOARD-3D_10K TChain. ///
+
+
+RAT: Libraries loaded.
+
+Processing duvallAnalyze.cxx("COMPMAIN_CHECKERBOARD-3D_10K", true, "xyz")...
+
+
+//// Analyzing datarun "COMPMAIN_CHECKERBOARD-3D_10K"... ////
+
+
+
+
+Using default antineutrino direction.
+TVector3 A 3D physics vector (x,y,z)=(-1.000000,0.000000,0.000000) (rho,theta,phi)=(1.000000,90.000000,180.000000)
+
+SimpleEnergyDAQ2 IBD Trigger Summary:
+======> EVENT:0
+ sedaq2_version  = 1.4.00
+ units           = Time (s), Energy (MeVee)
+ deltaT_low      = 1e-06
+ deltaT_high     = 0.0001
+ prompt_low      = 0
+ prompt_high     = 100
+ delayed_low     = 0
+ delayed_high    = 100
+ ibd_candidates  = 3919
+
+
+
+
+Using default antineutrino direction:
+neutrino_direction: TVector3 A 3D physics vector (x,y,z)=(-1.000000,0.000000,0.000000) (rho,theta,phi)=(1.000000,90.000000,180.000000)
+
+
+
+IBD Angular Reconstruction:
+* datafile = "COMPMAIN_CHECKERBOARD-3D_10K_results.root"
+* Note: SDM = SD/sqrt(N)
+
+Azimuthal Angle (deg):
+  phi_mean	1.30
+  phi_sd	91.25
+  phi_sdm	1.46
+
+Polar Angle (deg):
+  theta_mean	89.89
+  theta_sd	39.38
+  theta_sdm	0.63
+
+SUMMARY:
+  Total IBDs: 10000
+  N = 3919
+  IBD Efficiency = 39.19%
+  phi   = 1.30   +/- 91.25 deg (SD)	0.01 sigma from true value,  or
+                 +/-  1.46 deg (SDM)	0.89 sigma from true value
+  theta = 89.89   +/- 39.38 deg (SD)	0.00 sigma from true value,  or
+                 +/-  0.63 deg (SDM)	0.17 sigma from true value
+  <cos[psi]> = 0.185
+
+
+
+If the c3 (_pd-xyz.png) plot did not save correctly, try:
+1) Quit ROOT
+2) Open ROOT interactively
+3) Run the following lines at the prompt:
+
+TFile *f = TFile::Open("COMPMAIN_CHECKERBOARD-3D_10K_results.root");
+c3->Draw();
+c3->Print("COMPMAIN_CHECKERBOARD-3D_10K_pd-xyz.png");
+c3->Close();
+f->Close();
+
+All pau!   )
+
+
+//// Analysis Complete ////
+
+
+
+/// Reanalyzing batch jobs in COMPMAIN_CHECKERBOARD-REF_10K... ///
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("COMPMAIN_CHECKERBOARD-REF_10K_0", false, "", "")...
+
+
+//// Preparing datarun "COMPMAIN_CHECKERBOARD-REF_10K_0"... ////
+
+
+Creating ROOT file from .rt file...
+Done.
+
+Processing particle tracks...
+Done.
+
+
+Importing corrected energies...
+Done.
+Entries without matches:		1554 (31%)
+Entries with exactly 1 match:		3446 (69%)
+Entries with exactly 2 matches:		0 (0%)
+Entries with matches >= 3:		0 (0%)
+//// Preparation Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("COMPMAIN_CHECKERBOARD-REF_10K_1", false, "", "")...
+
+
+//// Preparing datarun "COMPMAIN_CHECKERBOARD-REF_10K_1"... ////
+
+
+Creating ROOT file from .rt file...
+Done.
+
+Processing particle tracks...
+Done.
+
+
+Importing corrected energies...
+Done.
+Entries without matches:		1519 (30%)
+Entries with exactly 1 match:		3481 (70%)
+Entries with exactly 2 matches:		0 (0%)
+Entries with matches >= 3:		0 (0%)
+//// Preparation Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("COMPMAIN_CHECKERBOARD-REF_10K_2", false, "", "")...
+
+
+//// Preparing datarun "COMPMAIN_CHECKERBOARD-REF_10K_2"... ////
+
+
+Creating ROOT file from .rt file...
+Done.
+
+Processing particle tracks...
+Done.
+
+
+Importing corrected energies...
+Done.
+Entries without matches:		1491 (30%)
+Entries with exactly 1 match:		3509 (70%)
+Entries with exactly 2 matches:		0 (0%)
+Entries with matches >= 3:		0 (0%)
+//// Preparation Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("COMPMAIN_CHECKERBOARD-REF_10K_3", false, "", "")...
+
+
+//// Preparing datarun "COMPMAIN_CHECKERBOARD-REF_10K_3"... ////
+
+
+Creating ROOT file from .rt file...
+Done.
+
+Processing particle tracks...
+Done.
+
+
+Importing corrected energies...
+Done.
+Entries without matches:		1558 (31%)
+Entries with exactly 1 match:		3442 (69%)
+Entries with exactly 2 matches:		0 (0%)
+Entries with matches >= 3:		0 (0%)
+//// Preparation Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing chain.cxx()...
+
+/// Batch job reanalysis complete. You are now ready to run duvallAnalyze.cxx on the new COMPMAIN_CHECKERBOARD-REF_10K TChain. ///
+
+
+WARNING: Experiment not recognized among pre-defined types. Proceeding with default analysis settings.
+RAT: Libraries loaded.
+
+Processing duvallAnalyze.cxx("COMPMAIN_CHECKERBOARD-REF_10K", true,)...
+
+/// Reanalyzing batch jobs in COMPMAIN_CHOOZ_10k... ///
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("COMPMAIN_CHOOZ_10k_0", false, "", "")...
+
+
+//// Preparing datarun "COMPMAIN_CHOOZ_10k_0"... ////
+
+
+Creating ROOT file from .rt file...
+Done.
+
+Processing particle tracks...
+Done.
+
+
+Importing corrected energies...
+Done.
+Entries without matches:		142 (3%)
+Entries with exactly 1 match:		4858 (97%)
+Entries with exactly 2 matches:		0 (0%)
+Entries with matches >= 3:		0 (0%)
+//// Preparation Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("COMPMAIN_CHOOZ_10k_1", false, "", "")...
+
+
+//// Preparing datarun "COMPMAIN_CHOOZ_10k_1"... ////
+
+
+Creating ROOT file from .rt file...
+Done.
+
+Processing particle tracks...
+Done.
+
+
+Importing corrected energies...
+Done.
+Entries without matches:		142 (3%)
+Entries with exactly 1 match:		4858 (97%)
+Entries with exactly 2 matches:		0 (0%)
+Entries with matches >= 3:		0 (0%)
+//// Preparation Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("COMPMAIN_CHOOZ_10k_2", false, "", "")...
+
+
+//// Preparing datarun "COMPMAIN_CHOOZ_10k_2"... ////
+
+
+Creating ROOT file from .rt file...
+Done.
+
+Processing particle tracks...
+Done.
+
+
+Importing corrected energies...
+Done.
+Entries without matches:		159 (3%)
+Entries with exactly 1 match:		4841 (97%)
+Entries with exactly 2 matches:		0 (0%)
+Entries with matches >= 3:		0 (0%)
+//// Preparation Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("COMPMAIN_CHOOZ_10k_3", false, "", "")...
+
+
+//// Preparing datarun "COMPMAIN_CHOOZ_10k_3"... ////
+
+
+Creating ROOT file from .rt file...
+Done.
+
+Processing particle tracks...
+Done.
+
+
+Importing corrected energies...
+Done.
+Entries without matches:		143 (3%)
+Entries with exactly 1 match:		4857 (97%)
+Entries with exactly 2 matches:		0 (0%)
+Entries with matches >= 3:		0 (0%)
+//// Preparation Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing chain.cxx()...
+
+/// Batch job reanalysis complete. You are now ready to run duvallAnalyze.cxx on the new COMPMAIN_CHOOZ_10k TChain. ///
+
+
+RAT: Libraries loaded.
+
+Processing duvallAnalyze.cxx("COMPMAIN_CHOOZ_10k", true, "", "xyz")...
+
+
+//// Analyzing datarun "COMPMAIN_CHOOZ_10k"... ////
+
+
+
+
+Using default antineutrino direction.
+TVector3 A 3D physics vector (x,y,z)=(-1.000000,0.000000,0.000000) (rho,theta,phi)=(1.000000,90.000000,180.000000)
+
+SimpleEnergyDAQ2 IBD Trigger Summary:
+======> EVENT:0
+ sedaq2_version  = 1.4.00
+ units           = Time (s), Energy (MeVee)
+ deltaT_low      = 1e-06
+ deltaT_high     = 0.0001
+ prompt_low      = 0
+ prompt_high     = 100
+ delayed_low     = 0
+ delayed_high    = 100
+ ibd_candidates  = 9162
+
+
+
+
+Using default antineutrino direction:
+neutrino_direction: TVector3 A 3D physics vector (x,y,z)=(-1.000000,0.000000,0.000000) (rho,theta,phi)=(1.000000,90.000000,180.000000)
+
+
+
+IBD Angular Reconstruction:
+* datafile = "COMPMAIN_CHOOZ_10k_results.root"
+* Note: SDM = SD/sqrt(N)
+
+Azimuthal Angle (deg):
+  phi_mean	-1.94
+  phi_sd	101.85
+  phi_sdm	1.06
+
+Polar Angle (deg):
+  theta_mean	89.86
+  theta_sd	39.16
+  theta_sdm	0.41
+
+SUMMARY:
+  Total IBDs: 10000
+  N = 9162
+  IBD Efficiency = 91.62%
+  phi   = -1.94   +/- 101.85 deg (SD)	0.02 sigma from true value,  or
+                 +/-  1.06 deg (SDM)	1.82 sigma from true value
+  theta = 89.86   +/- 39.16 deg (SD)	0.00 sigma from true value,  or
+                 +/-  0.41 deg (SDM)	0.33 sigma from true value
+  <cos[psi]> = 0.030
+
+
+
+If the c3 (_pd-xyz.png) plot did not save correctly, try:
+1) Quit ROOT
+2) Open ROOT interactively
+3) Run the following lines at the prompt:
+
+TFile *f = TFile::Open("COMPMAIN_CHOOZ_10k_results.root");
+c3->Draw();
+c3->Print("COMPMAIN_CHOOZ_10k_pd-xyz.png");
+c3->Close();
+f->Close();
+
+All pau!   )
+
+
+//// Analysis Complete ////
+
+
+
+/// Reanalyzing batch jobs in COMPMAIN_NULAT_10K... ///
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("COMPMAIN_NULAT_10K_0", false, "", "")...
+
+
+//// Preparing datarun "COMPMAIN_NULAT_10K_0"... ////
+
+
+Creating ROOT file from .rt file...
+Done.
+
+Processing particle tracks...
+Done.
+
+
+Importing corrected energies...
+Done.
+Entries without matches:		1013 (20%)
+Entries with exactly 1 match:		3987 (80%)
+Entries with exactly 2 matches:		0 (0%)
+Entries with matches >= 3:		0 (0%)
+//// Preparation Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("COMPMAIN_NULAT_10K_1", false, "", "")...
+
+
+//// Preparing datarun "COMPMAIN_NULAT_10K_1"... ////
+
+
+Creating ROOT file from .rt file...
+Done.
+
+Processing particle tracks...
+Done.
+
+
+Importing corrected energies...
+Done.
+Entries without matches:		979 (20%)
+Entries with exactly 1 match:		4021 (80%)
+Entries with exactly 2 matches:		0 (0%)
+Entries with matches >= 3:		0 (0%)
+//// Preparation Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("COMPMAIN_NULAT_10K_2", false, "", "")...
+
+
+//// Preparing datarun "COMPMAIN_NULAT_10K_2"... ////
+
+
+Creating ROOT file from .rt file...
+Done.
+
+Processing particle tracks...
+Done.
+
+
+Importing corrected energies...
+Done.
+Entries without matches:		952 (19%)
+Entries with exactly 1 match:		4048 (81%)
+Entries with exactly 2 matches:		0 (0%)
+Entries with matches >= 3:		0 (0%)
+//// Preparation Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("COMPMAIN_NULAT_10K_3", false, "", "")...
+
+
+//// Preparing datarun "COMPMAIN_NULAT_10K_3"... ////
+
+
+Creating ROOT file from .rt file...
+Done.
+
+Processing particle tracks...
+Done.
+
+
+Importing corrected energies...
+Done.
+Entries without matches:		980 (20%)
+Entries with exactly 1 match:		4020 (80%)
+Entries with exactly 2 matches:		0 (0%)
+Entries with matches >= 3:		0 (0%)
+//// Preparation Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("pert_off", false, "", "")...
+
+
+//// Preparing datarun "pert_off"... ////
+
+
+Creating ROOT file from .rt file...
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("pert_on", false, "", "")...
+
+
+//// Preparing datarun "pert_on"... ////
+
+
+Creating ROOT file from .rt file...
+RAT: Libraries loaded.
+
+Processing chain.cxx()...
+
+/// Batch job reanalysis complete. You are now ready to run duvallAnalyze.cxx on the new COMPMAIN_NULAT_10K TChain. ///
+
+
+RAT: Libraries loaded.
+
+Processing duvallAnalyze.cxx("COMPMAIN_NULAT_10K", true, "xyz")...
+
+
+//// Analyzing datarun "COMPMAIN_NULAT_10K"... ////
+
+
+
+
+Using default antineutrino direction.
+TVector3 A 3D physics vector (x,y,z)=(-1.000000,0.000000,0.000000) (rho,theta,phi)=(1.000000,90.000000,180.000000)
+
+SimpleEnergyDAQ2 IBD Trigger Summary:
+======> EVENT:0
+ sedaq2_version  = 1.4.00
+ units           = Time (s), Energy (MeVee)
+ deltaT_low      = 1e-06
+ deltaT_high     = 0.0001
+ prompt_low      = 0
+ prompt_high     = 100
+ delayed_low     = 0
+ delayed_high    = 100
+ ibd_candidates  = 4297
+
+
+
+
+Using default antineutrino direction:
+neutrino_direction: TVector3 A 3D physics vector (x,y,z)=(-1.000000,0.000000,0.000000) (rho,theta,phi)=(1.000000,90.000000,180.000000)
+
+
+
+IBD Angular Reconstruction:
+* datafile = "COMPMAIN_NULAT_10K_results.root"
+* Note: SDM = SD/sqrt(N)
+
+Azimuthal Angle (deg):
+  phi_mean	-0.80
+  phi_sd	90.48
+  phi_sdm	1.38
+
+Polar Angle (deg):
+  theta_mean	89.40
+  theta_sd	42.85
+  theta_sdm	0.65
+
+SUMMARY:
+  Total IBDs: 15000
+  N = 4297
+  IBD Efficiency = 28.65%
+  phi   = -0.80   +/- 90.48 deg (SD)	0.01 sigma from true value,  or
+                 +/-  1.38 deg (SDM)	0.58 sigma from true value
+  theta = 89.40   +/- 42.85 deg (SD)	0.01 sigma from true value,  or
+                 +/-  0.65 deg (SDM)	0.91 sigma from true value
+  <cos[psi]> = 0.209
+
+
+
+If the c3 (_pd-xyz.png) plot did not save correctly, try:
+1) Quit ROOT
+2) Open ROOT interactively
+3) Run the following lines at the prompt:
+
+TFile *f = TFile::Open("COMPMAIN_NULAT_10K_results.root");
+c3->Draw();
+c3->Print("COMPMAIN_NULAT_10K_pd-xyz.png");
+c3->Close();
+f->Close();
+
+All pau!   )
+
+
+//// Analysis Complete ////
+
+
+
+/// Reanalyzing batch jobs in COMPMAIN_NULAT5_10K... ///
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("COMPMAIN_NULAT5_10K_0", false, "", "")...
+
+
+//// Preparing datarun "COMPMAIN_NULAT5_10K_0"... ////
+
+
+Creating ROOT file from .rt file...
+Done.
+
+Processing particle tracks...
+Done.
+
+
+Importing corrected energies...
+Done.
+Entries without matches:		1277 (26%)
+Entries with exactly 1 match:		3723 (74%)
+Entries with exactly 2 matches:		0 (0%)
+Entries with matches >= 3:		0 (0%)
+//// Preparation Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("COMPMAIN_NULAT5_10K_1", false, "", "")...
+
+
+//// Preparing datarun "COMPMAIN_NULAT5_10K_1"... ////
+
+
+Creating ROOT file from .rt file...
+Done.
+
+Processing particle tracks...
+Done.
+
+
+Importing corrected energies...
+Done.
+Entries without matches:		1326 (27%)
+Entries with exactly 1 match:		3674 (73%)
+Entries with exactly 2 matches:		0 (0%)
+Entries with matches >= 3:		0 (0%)
+//// Preparation Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("COMPMAIN_NULAT5_10K_2", false, "", "")...
+
+
+//// Preparing datarun "COMPMAIN_NULAT5_10K_2"... ////
+
+
+Creating ROOT file from .rt file...
+Done.
+
+Processing particle tracks...
+Done.
+
+
+Importing corrected energies...
+Done.
+Entries without matches:		1276 (26%)
+Entries with exactly 1 match:		3724 (74%)
+Entries with exactly 2 matches:		0 (0%)
+Entries with matches >= 3:		0 (0%)
+//// Preparation Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("COMPMAIN_NULAT5_10K_3", false, "", "")...
+
+
+//// Preparing datarun "COMPMAIN_NULAT5_10K_3"... ////
+
+
+Creating ROOT file from .rt file...
+Done.
+
+Processing particle tracks...
+Done.
+
+
+Importing corrected energies...
+Done.
+Entries without matches:		1253 (25%)
+Entries with exactly 1 match:		3746 (75%)
+Entries with exactly 2 matches:		0 (0%)
+Entries with matches >= 3:		0 (0%)
+//// Preparation Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing chain.cxx()...
+
+/// Batch job reanalysis complete. You are now ready to run duvallAnalyze.cxx on the new COMPMAIN_NULAT5_10K TChain. ///
+
+
+RAT: Libraries loaded.
+
+Processing duvallAnalyze.cxx("COMPMAIN_NULAT5_10K", true, "xyz")...
+
+
+//// Analyzing datarun "COMPMAIN_NULAT5_10K"... ////
+
+
+
+
+Using default antineutrino direction.
+TVector3 A 3D physics vector (x,y,z)=(-1.000000,0.000000,0.000000) (rho,theta,phi)=(1.000000,90.000000,180.000000)
+
+SimpleEnergyDAQ2 IBD Trigger Summary:
+======> EVENT:0
+ sedaq2_version  = 1.4.00
+ units           = Time (s), Energy (MeVee)
+ deltaT_low      = 1e-06
+ deltaT_high     = 0.0001
+ prompt_low      = 0
+ prompt_high     = 100
+ delayed_low     = 0
+ delayed_high    = 100
+ ibd_candidates  = 3408
+
+
+
+
+Using default antineutrino direction:
+neutrino_direction: TVector3 A 3D physics vector (x,y,z)=(-1.000000,0.000000,0.000000) (rho,theta,phi)=(1.000000,90.000000,180.000000)
+
+
+
+IBD Angular Reconstruction:
+* datafile = "COMPMAIN_NULAT5_10K_results.root"
+* Note: SDM = SD/sqrt(N)
+
+Azimuthal Angle (deg):
+  phi_mean	1.13
+  phi_sd	86.65
+  phi_sdm	1.48
+
+Polar Angle (deg):
+  theta_mean	90.22
+  theta_sd	42.40
+  theta_sdm	0.73
+
+SUMMARY:
+  Total IBDs: 10000
+  N = 3408
+  IBD Efficiency = 34.08%
+  phi   = 1.13   +/- 86.65 deg (SD)	0.01 sigma from true value,  or
+                 +/-  1.48 deg (SDM)	0.76 sigma from true value
+  theta = 90.22   +/- 42.40 deg (SD)	0.01 sigma from true value,  or
+                 +/-  0.73 deg (SDM)	0.31 sigma from true value
+  <cos[psi]> = 0.250
+
+
+
+If the c3 (_pd-xyz.png) plot did not save correctly, try:
+1) Quit ROOT
+2) Open ROOT interactively
+3) Run the following lines at the prompt:
+
+TFile *f = TFile::Open("COMPMAIN_NULAT5_10K_results.root");
+c3->Draw();
+c3->Print("COMPMAIN_NULAT5_10K_pd-xyz.png");
+c3->Close();
+f->Close();
+
+All pau!   )
+
+
+//// Analysis Complete ////
+
+
+
+/// Reanalyzing batch jobs in COMPMAIN_SANDD_10K... ///
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("COMPMAIN_SANDD_10K_0", false, "", "")...
+
+
+//// Preparing datarun "COMPMAIN_SANDD_10K_0"... ////
+
+
+Creating ROOT file from .rt file...
+Done.
+
+Processing particle tracks...
+Done.
+
+
+Importing corrected energies...
+Done.
+Entries without matches:		2411 (48%)
+Entries with exactly 1 match:		2589 (52%)
+Entries with exactly 2 matches:		0 (0%)
+Entries with matches >= 3:		0 (0%)
+//// Preparation Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("COMPMAIN_SANDD_10K_1", false, "", "")...
+
+
+//// Preparing datarun "COMPMAIN_SANDD_10K_1"... ////
+
+
+Creating ROOT file from .rt file...
+Done.
+
+Processing particle tracks...
+Done.
+
+
+Importing corrected energies...
+Done.
+Entries without matches:		2402 (48%)
+Entries with exactly 1 match:		2598 (52%)
+Entries with exactly 2 matches:		0 (0%)
+Entries with matches >= 3:		0 (0%)
+//// Preparation Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("COMPMAIN_SANDD_10K_2", false, "", "")...
+
+
+//// Preparing datarun "COMPMAIN_SANDD_10K_2"... ////
+
+
+Creating ROOT file from .rt file...
+Done.
+
+Processing particle tracks...
+Done.
+
+
+Importing corrected energies...
+Done.
+Entries without matches:		2420 (48%)
+Entries with exactly 1 match:		2580 (52%)
+Entries with exactly 2 matches:		0 (0%)
+Entries with matches >= 3:		0 (0%)
+//// Preparation Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("COMPMAIN_SANDD_10K_3", false, "", "")...
+
+
+//// Preparing datarun "COMPMAIN_SANDD_10K_3"... ////
+
+
+Creating ROOT file from .rt file...
+Done.
+
+Processing particle tracks...
+Done.
+
+
+Importing corrected energies...
+Done.
+Entries without matches:		2429 (49%)
+Entries with exactly 1 match:		2571 (51%)
+Entries with exactly 2 matches:		0 (0%)
+Entries with matches >= 3:		0 (0%)
+//// Preparation Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing chain.cxx()...
+
+/// Batch job reanalysis complete. You are now ready to run duvallAnalyze.cxx on the new COMPMAIN_SANDD_10K TChain. ///
+
+
+RAT: Libraries loaded.
+
+Processing duvallAnalyze.cxx("COMPMAIN_SANDD_10K", true, "xy", "z", true)...
+
+
+//// Analyzing datarun "COMPMAIN_SANDD_10K"... ////
+
+
+
+
+Using default antineutrino direction.
+TVector3 A 3D physics vector (x,y,z)=(-1.000000,0.000000,0.000000) (rho,theta,phi)=(1.000000,90.000000,180.000000)
+
+SimpleEnergyDAQ2 IBD Trigger Summary:
+======> EVENT:0
+ sedaq2_version  = 1.4.00
+ units           = Time (s), Energy (MeVee)
+ deltaT_low      = 1e-06
+ deltaT_high     = 0.0001
+ prompt_low      = 0
+ prompt_high     = 100
+ delayed_low     = 0
+ delayed_high    = 100
+ ibd_candidates  = 174
+
+
+
+
+Using default antineutrino direction:
+neutrino_direction: TVector3 A 3D physics vector (x,y,z)=(-1.000000,0.000000,0.000000) (rho,theta,phi)=(1.000000,90.000000,180.000000)
+
+
+
+IBD Angular Reconstruction:
+* datafile = "COMPMAIN_SANDD_10K_results.root"
+* Note: SDM = SD/sqrt(N)
+
+Azimuthal Angle (deg):
+  phi_mean	10.07
+  phi_sd	79.82
+  phi_sdm	6.05
+
+Polar Angle (deg):
+  theta_mean	90.00
+  theta_sd	0.00
+  theta_sdm	0.00
+
+SUMMARY:
+  Total IBDs: 10000
+  N = 174
+  IBD Efficiency = 1.74%
+  phi   = 10.07   +/- 79.82 deg (SD)	0.13 sigma from true value,  or
+                 +/-  6.05 deg (SDM)	1.66 sigma from true value
+  theta = 90.00   +/- 0.00 deg (SD)	-nan sigma from true value,  or
+                 +/-  0.00 deg (SDM)	-nan sigma from true value
+  <cos[psi]> = 0.340
+
+
+
+If the c3 (_pd-xyz.png) plot did not save correctly, try:
+1) Quit ROOT
+2) Open ROOT interactively
+3) Run the following lines at the prompt:
+
+TFile *f = TFile::Open("COMPMAIN_SANDD_10K_results.root");
+c3->Draw();
+c3->Print("COMPMAIN_SANDD_10K_pd-xyz.png");
+c3->Close();
+f->Close();
+
+All pau!   )
+
+
+//// Analysis Complete ////
+
+
+
+/// Reanalyzing batch jobs in COMPMAIN_SANTA_10K... ///
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("COMPMAIN_SANTA_10K_0", false, "", "")...
+
+
+//// Preparing datarun "COMPMAIN_SANTA_10K_0"... ////
+
+
+Creating ROOT file from .rt file...
+Done.
+
+Processing particle tracks...
+Done.
+
+
+Importing corrected energies...
+Done.
+Entries without matches:		1917 (38%)
+Entries with exactly 1 match:		3083 (62%)
+Entries with exactly 2 matches:		0 (0%)
+Entries with matches >= 3:		0 (0%)
+//// Preparation Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("COMPMAIN_SANTA_10K_1", false, "", "")...
+
+
+//// Preparing datarun "COMPMAIN_SANTA_10K_1"... ////
+
+
+Creating ROOT file from .rt file...
+Done.
+
+Processing particle tracks...
+Done.
+
+
+Importing corrected energies...
+Done.
+Entries without matches:		1966 (39%)
+Entries with exactly 1 match:		3034 (61%)
+Entries with exactly 2 matches:		0 (0%)
+Entries with matches >= 3:		0 (0%)
+//// Preparation Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("COMPMAIN_SANTA_10K_2", false, "", "")...
+
+
+//// Preparing datarun "COMPMAIN_SANTA_10K_2"... ////
+
+
+Creating ROOT file from .rt file...
+Done.
+
+Processing particle tracks...
+Done.
+
+
+Importing corrected energies...
+Done.
+Entries without matches:		1921 (38%)
+Entries with exactly 1 match:		3079 (62%)
+Entries with exactly 2 matches:		0 (0%)
+Entries with matches >= 3:		0 (0%)
+//// Preparation Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing /home/mark/rat-pac/user/root_macros/duvallAnalyzePrep.cxx("COMPMAIN_SANTA_10K_3", false, "", "")...
+
+
+//// Preparing datarun "COMPMAIN_SANTA_10K_3"... ////
+
+
+Creating ROOT file from .rt file...
+Done.
+
+Processing particle tracks...
+Done.
+
+
+Importing corrected energies...
+Done.
+Entries without matches:		1955 (39%)
+Entries with exactly 1 match:		3045 (61%)
+Entries with exactly 2 matches:		0 (0%)
+Entries with matches >= 3:		0 (0%)
+//// Preparation Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing chain.cxx()...
+
+/// Batch job reanalysis complete. You are now ready to run duvallAnalyze.cxx on the new COMPMAIN_SANTA_10K TChain. ///
+
+
+RAT: Libraries loaded.
+
+Processing duvallAnalyze.cxx("COMPMAIN_SANTA_10K", true, "xz", "y")...
+
+
+//// Analyzing datarun "COMPMAIN_SANTA_10K"... ////
+
+
+
+
+Using default antineutrino direction.
+TVector3 A 3D physics vector (x,y,z)=(-1.000000,0.000000,0.000000) (rho,theta,phi)=(1.000000,90.000000,180.000000)
+
+SimpleEnergyDAQ2 IBD Trigger Summary:
+======> EVENT:0
+ sedaq2_version  = 1.4.00
+ units           = Time (s), Energy (MeVee)
+ deltaT_low      = 1e-06
+ deltaT_high     = 0.0001
+ prompt_low      = 0
+ prompt_high     = 100
+ delayed_low     = 0
+ delayed_high    = 100
+ ibd_candidates  = 2066
+
+
+
+
+Using default antineutrino direction:
+neutrino_direction: TVector3 A 3D physics vector (x,y,z)=(-1.000000,0.000000,0.000000) (rho,theta,phi)=(1.000000,90.000000,180.000000)
+
+
+
+IBD Angular Reconstruction:
+* datafile = "COMPMAIN_SANTA_10K_results.root"
+* Note: SDM = SD/sqrt(N)
+
+Azimuthal Angle (deg):
+  phi_mean	-0.58
+  phi_sd	22.92
+  phi_sdm	0.50
+
+Polar Angle (deg):
+  theta_mean	89.58
+  theta_sd	20.29
+  theta_sdm	0.45
+
+SUMMARY:
+  Total IBDs: 10000
+  N = 2066
+  IBD Efficiency = 20.66%
+  phi   = -0.58   +/- 22.92 deg (SD)	0.03 sigma from true value,  or
+                 +/-  0.50 deg (SDM)	1.16 sigma from true value
+  theta = 89.58   +/- 20.29 deg (SD)	0.02 sigma from true value,  or
+                 +/-  0.45 deg (SDM)	0.95 sigma from true value
+  <cos[psi]> = 0.865
+
+
+
+If the c3 (_pd-xyz.png) plot did not save correctly, try:
+1) Quit ROOT
+2) Open ROOT interactively
+3) Run the following lines at the prompt:
+
+TFile *f = TFile::Open("COMPMAIN_SANTA_10K_results.root");
+c3->Draw();
+c3->Print("COMPMAIN_SANTA_10K_pd-xyz.png");
+c3->Close();
+f->Close();
+
+All pau!   )
+
+
+//// Analysis Complete ////
+
+
+
+Reanalysis complete!
+
+
