@@ -128,6 +128,8 @@ h_map->GetXaxis()->SetTitleFont(62);
 h_map->GetYaxis()->SetTitleFont(62);
 h_map->GetXaxis()->SetLimits(-180., 180.);
 h_map->GetYaxis()->SetLimits(-90., 90.);
+h_map->SetAxisRange(-180., 180., "X");
+h_map->SetAxisRange(-90., 90., "Y");
 h_map->Draw("aitoff");
 c6->Draw();
 

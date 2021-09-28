@@ -47,7 +47,7 @@ TH1D *h;
 TFile *f0 = TFile::Open("COMPMAIN_CHOOZ_10k_results.root"), *f1 = TFile::Open("COMPMAIN_NULAT_10K_results.root");
 TFile *f2 = TFile::Open("COMPMAIN_NULAT5_10K_results.root"), *f3 = TFile::Open("COMPMAIN_SANTA_10K_results.root");
 TFile *f4 = TFile::Open("COMPMAIN_SANDD_10K_results.root"), *f5 = TFile::Open("COMPMAIN_CHECKERBOARD-2D_10K_results.root");
-TFile *f6 = TFile::Open("COMPMAIN_CHECKERBOARD-3D_10K_results.root");
+TFile *f6 = TFile::Open("COMPMAIN_CHECKERBOARD-3D_10K_results.root"); TFile *f7 = TFile::Open("COMPMAIN_IDEAL_10K_results.root");
 TList *fileList = new TList, *hList = new TList;
 fileList->Add(f0);
 fileList->Add(f1);
@@ -56,14 +56,15 @@ fileList->Add(f3);
 fileList->Add(f4);
 fileList->Add(f5);
 fileList->Add(f6);
+fileList->Add(f7);
 TIter iFile(fileList);
 
 // annotations
 TLegend *leg = new TLegend(legxy[0], legxy[1], legxy[2], legxy[3]);
 Int_t k=0, nFiles=fileList->GetEntries();
-Color_t colors[7] = {4, 3, 7, 2, 6, 5, 13};
+Color_t colors[8] = {4, 3, 7, 2, 6, 5, 11, 1};
 // labeling
-TObjString d0("CHOOZ"), d1("NuLat 3"), d2("NuLat 5"), d3("SANTA"), d4("SANDD"), d5("2D Chk."), d6("3D Chk.");
+TObjString d0("CHOOZ"), d1("NuLat 3"), d2("NuLat 5"), d3("SANTA"), d4("SANDD"), d5("2D Chk."), d6("3D Chk."), d7("LN3 LIMIT");
 TObjArray *detectorNames = new TObjArray;
 detectorNames->Add(&d0);
 detectorNames->Add(&d1);
@@ -72,6 +73,7 @@ detectorNames->Add(&d3);
 detectorNames->Add(&d4);
 detectorNames->Add(&d5);
 detectorNames->Add(&d6);
+detectorNames->Add(&d7);
 TObjString *dName = new TObjString;
 TString dLabel;
 // mean markers
@@ -82,7 +84,7 @@ TMarker *meanMarker = new TMarker;
 //// MAIN
 
 // file loop
-TString labSANTA;
+TString labSANTA, dLabelLower;
 for ( iFile=fileList->begin(); iFile!=fileList->end(); ++iFile ) {
   f = (TFile*)*iFile;
   f->cd();
@@ -93,20 +95,17 @@ for ( iFile=fileList->begin(); iFile!=fileList->end(); ++iFile ) {
   h->SetMarkerColor(colors[k]);
   dName = (TObjString*)detectorNames->At(k);
   dLabel = dName->GetString();
+  dLabelLower = dLabel;
+  dLabelLower.ToLower();
   dLabel.Append( TString::Format("  %.3f", h->GetMean()) );
   dLabel.ReplaceAll("0.", ".");
-  if (dLabel.Contains("NuLat 3")) dLabel.Append(" *");
-  if ( dLabel.Contains("SANDD") || dLabel.Contains("2D Chk.") ) dLabel.Append(" **");
+//if ( dLabel.Contains("NuLat 3") ) dLabel.Append(" *");
+//if ( dLabel.Contains("SANDD") || dLabel.Contains("2D Chk.") ) dLabel.Append(" *");
+//if ( dLabelLower.Contains("lim") ) dLabel.Append(" **");
   k++;
   hList->Add(h);
-//if ( (kNormalized) && (dLabel.Contains("SANTA")) ) { // for omitting SANTA from normalized group plot
-//  labSANTA=dLabel;
-//  dLabel.Clear();
-//  continue;
-//} else {
   leg->AddEntry(h, dLabel.Data());
   dLabel.Clear();
-//}
 //cout << h->GetEntries() << " " << h->GetMean() << " " << (h->GetMean()/h->GetEntries()) << endl; //TODO
 } // end file loop
 
@@ -123,10 +122,8 @@ Double_t N;
 h->Draw();
 if (kNormalized) {
   hTitle.Append(" (Normalized)");
-//TText *ylabel = new TText(1.1, .323, "Relative Frequency (arb.)");
   TText *ylabel = new TText(1.1, 0., "Relative Frequency (arb.)");
 } else {
-//TText *ylabel = new TText(1.1, 1850, "Entries");
   TText *ylabel = new TText(1.1, 0., "Entries");
 }
   ylabel->SetTextSize(.035);
@@ -140,11 +137,18 @@ k=0;
 for ( iH=hList->begin(); iH!=hList->end(); ++iH ) {
   h = (TH1D*)*iH;
   h->SetStats(0);
+  dName = (TObjString*)detectorNames->At(k);
+  dLabel = dName->GetString();
+  dLabelLower = dLabel;
+  dLabelLower.ToLower();
+  if ( dLabel.Contains("SANDD") || dLabel.Contains("2D Chk.") ) {
+    h->SetLineStyle(5);
+  } else if (dLabelLower.Contains("lim")) {
+    h->SetLineStyle(kDashed);
+  }
   if (kNormalized) {
     N = h->GetEntries();
     h->Scale(1/N);
-    dName = (TObjString*)detectorNames->At(k);
-    dLabel = dName->GetString();
     if (dLabel.Contains("SANTA")) {
       maxSANTA = h->GetMaximum();
       maxSANTAbin = h->GetMaximumBin();
@@ -166,6 +170,7 @@ h->SetAxisRange(0., allMax, "y");
 ylabel->SetY(allMax);
 
 // mean indicators
+Int_t nBins, markerBin;
 ylow = 0;
 yup = allMax;
 meanLine->SetLineWidth(3.);
@@ -175,10 +180,15 @@ meanMarker->SetMarkerSize(1.7);
 k = 0;
 for ( iH = hList->begin(); iH!=hList->end(); ++iH ) {
   h = (TH1D*)(*iH);
+  nBins = h->GetNbinsX();
   dName = (TObjString*)detectorNames->At(k);
   dLabel = dName->GetString();
+  dLabelLower = dLabel;
+  dLabelLower.ToLower();
   if ( dLabel.Contains("SANDD") || dLabel.Contains("2D Chk.") ) {
     meanLine->SetLineStyle(kDashDotted);
+  } else if ( dLabelLower.Contains("lim") ) {
+    meanLine->SetLineStyle(7);
   } else {
     meanLine->SetLineStyle(kDotted);
   }
@@ -188,6 +198,13 @@ for ( iH = hList->begin(); iH!=hList->end(); ++iH ) {
   meanLine->DrawLine(hMean, ylow, hMean, yup);
   meanMarker->SetMarkerStyle(k+20);
   meanMarker->DrawMarker(hMean, yMarker);
+////if ( k < (nBins-1) ) {
+////  markerBin = k + 1;
+////} else {
+////  markerBin = nBins;
+////}
+//  markerBin = nBins;
+//  meanMarker->DrawMarker(h->GetBinCenter(markerBin), h->GetBinContent(markerBin));
   yMarker -= 0.02*(yup-ylow);
   k++;
 }
@@ -197,7 +214,8 @@ can_hcp->RedrawAxis("y");
 Double_t santArrowX = h->GetBinCenter(maxSANTAbin);
 if (kNormalized) {
   TLine *santaLine = new TLine(0.81, allMax, 0.81, 1.2*allMax);
-  santaLine->SetLineStyle(kDashDotted);
+//santaLine->SetLineStyle(kDashDotted);
+  santaLine->SetLineStyle(kSolid);
   santaLine->SetLineColor(kRed);
   santaLine->SetLineWidth(3);
   santaLine->Draw();

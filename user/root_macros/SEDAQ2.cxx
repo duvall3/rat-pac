@@ -326,6 +326,9 @@ Double_t deltaT_low, deltaT_high, trigger_reset;
 //Double_t prompt_low;
 Double_t prompt_high, delayed_low, delayed_high;
 TVector3 neutrino_direction, nu_hat, displacement, disp_hat, source_recon, src_hat;
+TEntryList *elAll = new TEntryList("elAll", "All Bursts"), *elPrompt = new TEntryList("elPrompt", "Prompt Bursts");
+//TEntryList *elDelayed = new TEntryList("elDelayed", "Delayed Bursts"), *elNeither = new TEntryList("elNeither", "Bursts Not Passing Trigger");
+TEntryList *elDelayed = new TEntryList("elDelayed", "Delayed Bursts"), *elNeither = new TEntryList;
 
 // prepare tiny perturbation to avoid zero-difference problems in segmented detectors
 Double_t pertSigma = 1.e-6; // mm
@@ -351,13 +354,6 @@ prompt_high = 100.;
 //delayed_low = 1.00;
 delayed_high = 100.;
 
-//FIXME/TODO: Clone T2 into a new tree "T_reject" or similar;
-//  fill it with entries/events that do *not*
-//  trip the neutrino trigger
-// -- espec. for debugging event-matching
-//      in correctEnergies.cxx
-//    (e.g., seemingly-missing SANDD events)
-
 // scan through events for IBD candidates
 for ( k = 0; k < (num_bursts-1); k++ ) {
 
@@ -365,9 +361,11 @@ for ( k = 0; k < (num_bursts-1); k++ ) {
   delayed_tf = kFALSE;
   if (kQuantizedPositions != "") kVolumeTest = kFALSE;
   T_scint->GetEntry(k);
+  elAll->Enter(k);
   // look for prompt:
   if ( interevent_time > trigger_reset & corrected_energy_q > prompt_low & corrected_energy_q < prompt_high ) {
     prompt_tf = true;
+//  elPrompt->Enter(k);
     prompt_cand_event = event;
     prompt_cand_pdgcode = pdgcode;
     prompt_cand_t = wall_time_adj;
@@ -381,6 +379,7 @@ for ( k = 0; k < (num_bursts-1); k++ ) {
     T_scint->GetEntry(k+1);
     if ( interevent_time > deltaT_low & interevent_time < deltaT_high & corrected_energy_q > delayed_low & corrected_energy_q < delayed_high ) {
       delayed_tf = true;
+//    elDelayed->Enter(k+1);
       delayed_cand_event = event;
       delayed_cand_pdgcode = pdgcode;
       delayed_cand_t = wall_time_adj;
@@ -406,6 +405,9 @@ for ( k = 0; k < (num_bursts-1); k++ ) {
   // if candidate burst pair is found, add burst times and energies and reconstructed angle to tree
   if ( prompt_tf & delayed_tf & kVolumeTest ) {
 
+    // add to TEntryLists
+    elPrompt->Enter(k);
+    elDelayed->Enter(k+1);
     // calculate positron-to-neutron displacement
     deltaX = delayed_cand_x - prompt_cand_x;
     deltaY = delayed_cand_y - prompt_cand_y;
@@ -437,7 +439,7 @@ for ( k = 0; k < (num_bursts-1); k++ ) {
     // fill results tree
     T2->Fill();
 
-  } //endif
+  } //endif -- neutrino trigger
 
 //// prevent memory leak
 //delete prompt_cand_vol;
@@ -447,6 +449,11 @@ for ( k = 0; k < (num_bursts-1); k++ ) {
 } //end event loop
 
 // prepare some summary variables
+elNeither = (TEntryList*)elAll->Clone("elNeither");
+elNeither->SetName("elNeither");
+elNeither->SetTitle("Bursts Not Passing Trigger");
+elNeither->Subtract(elPrompt);
+elNeither->Subtract(elDelayed);
 Long64_t ibd_candidates = T2->GetEntries();
 const char* units = "Time (s), Energy (MeVee)";
 
@@ -630,6 +637,12 @@ if ( kGraphics == true ) {
   c7->SaveAs(savename7);
   c7->Close();
 } // end if -- kGraphics (for batch mode)
+
+// save TEntryLists
+elAll->Write("elAll");
+elPrompt->Write("elPrompt");
+elDelayed->Write("elDelayed");
+elNeither->Write("elNeither");
 
 // reset graphics settings if applicable
 if (! origOGL) gStyle->SetCanvasPreferGL(kFALSE);
