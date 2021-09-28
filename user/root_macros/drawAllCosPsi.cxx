@@ -30,6 +30,7 @@ const char* RATROOT = gSystem->ExpandPathName("$RATROOT");
 TString resultsDir(RATROOT);
 resultsDir.Append("/data/COMPMAIN_RESULTS/ROOT_files");
 gSystem->cd(resultsDir.Data());
+ofstream summaryFile = "summary.txt";
 
 // defint decent legend coordinates
 Double_t legxy[4] = {.10, .60, .40, .90};
@@ -106,7 +107,6 @@ for ( iFile=fileList->begin(); iFile!=fileList->end(); ++iFile ) {
   hList->Add(h);
   leg->AddEntry(h, dLabel.Data());
   dLabel.Clear();
-//cout << h->GetEntries() << " " << h->GetMean() << " " << (h->GetMean()/h->GetEntries()) << endl; //TODO
 } // end file loop
 
 // hist / legend loop
@@ -118,7 +118,8 @@ TIter iH(hList);
 h = (TH1D*)hList->At(0);
 h->SetStats(0);
 TString hTitle = "All Cos[#psi] Distributions";
-Double_t N;
+Double_t N, cp, cpN;
+TString NString, cpString, cpNString;
 h->Draw();
 if (kNormalized) {
   hTitle.Append(" (Normalized)");
@@ -136,6 +137,9 @@ Int_t maxSANTAbin;
 k=0;
 for ( iH=hList->begin(); iH!=hList->end(); ++iH ) {
   h = (TH1D*)*iH;
+  N = h->GetEntries();
+  cp = h->GetMean();
+  cpN = cp / N;
   h->SetStats(0);
   dName = (TObjString*)detectorNames->At(k);
   dLabel = dName->GetString();
@@ -147,7 +151,6 @@ for ( iH=hList->begin(); iH!=hList->end(); ++iH ) {
     h->SetLineStyle(kDashed);
   }
   if (kNormalized) {
-    N = h->GetEntries();
     h->Scale(1/N);
     if (dLabel.Contains("SANTA")) {
       maxSANTA = h->GetMaximum();
@@ -160,8 +163,19 @@ for ( iH=hList->begin(); iH!=hList->end(); ++iH ) {
   h->Draw("same");
   binsMax[k] = h->GetMaximum();
   k++;
+  if (dLabel.Length()<8) {
+    NString.Form("\t\t%d", (Long64_t)N);
+  } else {
+    NString.Form("\t%d", (Long64_t)N);
+  }
+  cpString.Form("\t%.3f", cp);
+  cpNString.Form("\t%1.3fE-6", cpN*1.e6);
+  summaryFile << dLabel.Data() << NString.Data() << cpString.Data() << cpNString.Data() << endl;
 }
 leg->Draw();
+// redraw NuLat 5, since it seems to be getting covered
+h = (TH1D*)hList->At(2);
+h->Draw("same");
 
 // axis limits
 Double_t allMax = binsMax.Max();
