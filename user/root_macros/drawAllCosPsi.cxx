@@ -67,7 +67,8 @@ TIter iFile(fileList);
 // annotations
 TLegend *leg = new TLegend(legxy[0], legxy[1], legxy[2], legxy[3]);
 Int_t k=0, nFiles=fileList->GetEntries();
-Color_t colors[8] = {4, 3, 7, 11, 2, 6, 5, 1};
+//Color_t colors[8] = {4, 3, 7, 11, 2, 6, 5, 1}; // decent colors if using Fill
+Color_t colors[8] = {4, 3, 7, 11, 2, 6, 9, 1}; // decent colors if not using Fill
 // labeling
 TObjString d0("CHOOZ"), d1("NuLat 3"), d2("NuLat 5"), d3("3D Chk."), d4("SANTA"), d5("SANDD"), d6("2D Chk."), d7("LN3 LIMIT");
 TObjArray *detectorNames = new TObjArray;
@@ -94,6 +95,7 @@ for ( iFile=fileList->begin(); iFile!=fileList->end(); ++iFile ) {
   f = (TFile*)*iFile;
   f->cd();
   h = h_cos_psi;
+  h->SetLineWidth(4.);
 //h->SetLineColor(colors[k]);
   h->SetLineColor(TColor::GetColorTransparent(colors[k], 0.50));
 //h->SetFillColor(TColor::GetColorTransparent(colors[k], 0.15));
@@ -167,34 +169,36 @@ for ( iH=hList->begin(); iH!=hList->end(); ++iH ) {
   }
   h->Draw("same");
   binsMax[k] = h->GetMaximum();
-//if (dLabel.Length()<8) {
-//  NString.Form("\t\t%d", (Long64_t)N);
-//} else {
-//  NString.Form("\t%d", (Long64_t)N);
-    NString.Form(" %d", (Long64_t)N);
-//}
-//cpString.Form("\t%.3f", cp);
-//cpNString.Form("\t%1.3fE-6", cpN*1.e6);
-//summaryFile << dLabel.Data() << NString.Data() << cpString.Data() << cpNString.Data() << endl;
+  // generate data-dependent portion of LaTeX table
+  NString.Form(" %d", (Long64_t)N);
   cpString.Form("\t& %.3f", cp);
-  cpNString.Form("\t& %1.3f", cpN*1.e6);
+  cpNString.Form("%1.2e", cpN);
+  cpNString.Form("\t& %.2f", cpNString.Atof()*1.e6);
+  if (dLabel.Contains("NuLat 3")) {
+    NString.Append("^\\emph{\\dag}");
+    cpString.Append("^\\emph{\\dag}");
+    cpNString.Append("^\\emph{\\dag}");
+  } else if ( (dLabel.Contains("SANDD")) || (dLabel.Contains("2D")) ) {
+    NString.Append("~\t\t");
+    cpString.Append("^\\emph{\\ddag}");
+    cpNString.Append("^\\emph{\\ddag}");
+  } else {
+    NString.Append("~\t\t");
+    cpString.Append("~\t");
+    cpNString.Append("~");
+  }
   summaryFile << NString.Data() << cpString.Data() << cpNString.Data();
-  if (dLabel.Contains("NuLat 3")) summaryFile << "^\\emph{\\dag}";
-  if ( (dLabel.Contains("SANDD")) || (dLabel.Contains("2D")) ) summaryFile << "^\\emph{\\ddag}";
   if ( k < (hList->GetEntries()-1) ) summaryFile << "\\\\";
   summaryFile << endl;
   k++;
 }
-leg->Draw();
 
 // add summaryFile to .tex base
-TString shellCmd;
-shellCmd.Form("paste $THESIS_MAIN/chapters/table_base.tex $RATROOT/data/COMPMAIN_RESULTS/ROOT_files/%s > $THESIS_MAIN/chapters/table.tex", "summary.txt"); //HC//
+TString shellCmd = TString::Format("paste $THESIS_MAIN/chapters/table_base.tex %s/summary.txt > $THESIS_MAIN/chapters/table.tex", resultsDir.Data()); //HC//
 gSystem->Exec(shellCmd.Data());
 
-//// redraw NuLat 5, since it seems to be getting covered
-//h = (TH1D*)hList->At(2);
-//h->Draw("same");
+// draw completed legend
+leg->Draw();
 
 // axis limits
 Double_t allMax = binsMax.Max();
