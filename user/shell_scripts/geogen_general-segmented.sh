@@ -100,6 +100,13 @@ echo "Enter cell half-length (mm): " && read L
 echo "Enter cell half-width (mm): " && read W
 echo "Enter cell half-height (mm): " && read H
 echo "Enter cell half-spacing (mm): " && read S
+echo
+
+# prompt for materials
+echo "Enter material for target cells (default: ej254_015li6 -- PVT @ 1.5%wt. Li-6): " && read TARGET_CELL_MATERIAL
+echo
+# defaults
+if [[ -z $TARGET_CELL_MATERIAL ]]; then TARGET_CELL_MATERIAL="ej254_015li6"; fi
 
 # force float format for RAT-PAC
 L=$( echo "$L*1.0" | bc -l )
@@ -177,7 +184,7 @@ valid_end: [0, 0],
 mother: \"target_cell_array\",
 type: \"box\",
 size: [$L, $W, $H], // mm  // for sphere, change size to single-value r_max
-material: \"ej254_015li6\",
+material: \"$TARGET_CELL_MATERIAL\",
 invisible: 0,
 position: [$x, $y, $z] // mm
 }\n\n" >> $ARRFILE

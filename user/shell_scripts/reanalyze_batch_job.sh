@@ -30,11 +30,7 @@ fi
 DATARUN_NAME=$1
 EVENTS_PER_JOB=$2
 # default to no graphics for batch subsets
-if [[ -z $3 ]]; then
-  GRAPHICS_TF=false
-else
-  GRAPHICS_TF=$3
-fi
+GRAPHICS_TF=${3:-false}
 
 # MAIN
 echo -e "\n/// Reanalyzing batch jobs in $DATARUN_NAME... ///\n"

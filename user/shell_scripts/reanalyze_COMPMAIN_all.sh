@@ -26,79 +26,89 @@
 
 ## init
 RESULTS_DIR=$RATROOT/data/COMPMAIN_RESULTS/ROOT_files
-ANALYSIS_OPTIONS=()
+ANALYSIS_ARGS=()
 BATCH_TF=${1:-false}
 EVENTS_PER_JOB=${2:-2500}
+LOGFILE=$RESULTS_DIR/rean.log
+if [ -e $LOGFILE ]; then mv $LOGFILE $RESULTS_DIR/"rean_prev.log"; fi
+#command > >(tee -a stdout.log) 2> >(tee -a stderr.log >&2)
 
 ## MAIN
 
-for LINK in $RESULTS_DIR/*; do
+for LINK in $RESULTS_DIR/*_results.root; do
 
   # datarun init
   FILE=$(readlink $LINK)
   DATARUN_DIR=$(dirname $FILE)
   DATARUN_NAME=$(basename $FILE _results.root)
   EXPERIMENT=$(echo $FILE | /usr/bin/grep -iEo ".*/data/[[:alnum:]-]+" | awk -F / '{print $NF}')
-  ANALYSIS_OPTIONS=("\"$DATARUN_NAME\"," "true,")
+  ANALYSIS_ARGS=("\"$DATARUN_NAME\"," "true,")
   EXIT_STATS=()
   cd $DATARUN_DIR
 
   # re-process base-level ROOT files if specified
-  if $BATCH_TF; then local_batch_jobs.sh $DATARUN_NAME $EVENTS_PER_JOB; fi
+  if $BATCH_TF; then reanalyze_batch_job.sh $DATARUN_NAME $EVENTS_PER_JOB > >(tee $LOGFILE) 2> >(tee -a $LOGFILE >&2); fi
 
   # individual experiment settings
   case $EXPERIMENT in
     chooz)
-      ANALYSIS_OPTIONS=(${ANALYSIS_OPTIONS[*]} "\"\"," "\"xyz\"")
+      ANALYSIS_ARGS=(${ANALYSIS_ARGS[*]} "\"\"," "\"xyz\"")
       ;;
     santa)
-      ANALYSIS_OPTIONS=(${ANALYSIS_OPTIONS[*]} "\"xz\"," "\"y\"")
+      ANALYSIS_ARGS=(${ANALYSIS_ARGS[*]} "\"xz\"," "\"y\"")
       ;;
     nulat*|*-3d*)
-      ANALYSIS_OPTIONS=(${ANALYSIS_OPTIONS[*]} "\"xyz\"")
+      ANALYSIS_ARGS=(${ANALYSIS_ARGS[*]} "\"xyz\"")
       ;;
-    sandd|*-2d*)
-      ANALYSIS_OPTIONS=(${ANALYSIS_OPTIONS[*]} "\"xy\"," "\"z\"," "true")
+    sandd|*-2d*|*-ref)
+      ANALYSIS_ARGS=(${ANALYSIS_ARGS[*]} "\"xy\"," "\"z\"," "true")
       ;;
     *)
-      echo "WARNING: Experiment not recognized among pre-defined types. Proceeding with default analysis settings."
+      echo "WARNING: Experiment not recognized among pre-defined types. Proceeding with default analysis settings." > >(tee -a $LOGFILE) 2> >(tee -a $LOGFILE >&2)
       ;;
   esac
 
   # run analysis
-  ROOT_COMMAND="root -q -l -b 'duvallAnalyze.cxx(${ANALYSIS_OPTIONS[*]})'"
-  eval $ROOT_COMMAND
-# echo -e "$FILE\n$EXPERIMENT\n${ANALYSIS_OPTIONS[*]}" #debug
+  ROOT_COMMAND="root -q -l -b 'duvallAnalyze.cxx(${ANALYSIS_ARGS[*]})'"
+  eval $ROOT_COMMAND > >(tee -a $LOGFILE) 2> >(tee -a $LOGFILE >&2)
+# echo -e "$FILE\n$EXPERIMENT\n${ANALYSIS_ARGS[*]}" #debug
 # echo $ROOT_COMMAND #debug
 # echo #debug
   EXIT_STATS=(${EXIT_STATS[*]} $?)
 
   # reset options
-  ANALYSIS_OPTIONS=()
+  ANALYSIS_ARGS=()
 
 done
 
+# draw collective cos[psi] plots
+root -q -l -b 'drawAllCosPsi().cxx' > >(tee -a $LOGFILE) 2> >(tee -a $LOGFILE >&2)
+root -q -l -b 'drawAllCosPsi(1).cxx' > >(tee -a $LOGFILE) 2> >(tee -a $LOGFILE >&2)
+
+# run GL fixer
+fix_COMPMAIN_glbox.sh > >(tee -a $LOGFILE) 2> >(tee -a $LOGFILE >&2)
+
 # update links
-update_COMPMAIN_links.sh
+update_COMPMAIN_links.sh > >(tee -a $LOGFILE) 2> >(tee -a $LOGFILE >&2)
 #echo -e "\nupdate_COMPMAIN_results.sh\n" #debug
 EXIT_STATS=(${EXIT_STATS[*]} $?)
 
 ## return and report status
 cd $RESULTS_DIR
 if [[ $(( $(echo ${EXIT_STATS[*]} | tr " " "+") )) -gt 0 ]]; then
-  echo -e "Reanalysis finished, with errors.\nExit statuses:"
+  echo -e "Reanalysis finished, with errors.\nExit statuses:" > >(tee -a $LOGFILE) 2> >(tee -a $LOGFILE >&2)
   k=0
   column -t <(
-  for LINK in $RESULTS_DIR/*; do
-    echo -e $LINK "\t" ${EXIT_STATS[k]} "\n"
-    ((k++))
-  done
-  NUM_STATS=${#EXIT_STATS[*]}
-  echo -e "update_COMPMAIN_results.sh\t${EXIT_STATS[$NUM_STATS-1]}"
-  )
+    for LINK in $RESULTS_DIR/*; do
+      echo -e $LINK "\t" ${EXIT_STATS[k]} "\n"
+      ((k++))
+    done
+    NUM_STATS=${#EXIT_STATS[*]}
+    echo -e "update_COMPMAIN_results.sh\t${EXIT_STATS[$NUM_STATS-1]}"
+  ) > >(tee -a $LOGFILE) 2> >(tee -a $LOGFILE >&2)
   exit 2
 else
-  echo -e "\nReanalysis complete!\n\n"
+  echo -e "\nReanalysis complete!\n\n" > >(tee -a $LOGFILE) 2> >(tee -a $LOGFILE >&2)
   exit 0
 fi
 ## all pau!   )
