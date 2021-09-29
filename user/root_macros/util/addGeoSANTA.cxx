@@ -92,7 +92,7 @@ hp->Draw(hpo);
 // draw geometry
 nodeList->Draw("same");
 
- fix view
+// fix view
 printf("\nRun the following lines to fix the view:\n");
 printf("// fix view\n");
 printf("TView *view = gPad->GetView();\n");

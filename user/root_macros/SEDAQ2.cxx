@@ -41,7 +41,8 @@
 #include <math.h>
 
 
-void SEDAQ2( const char* filename, const Bool_t kGraphics = kFALSE, const char* kQuantizedPositions = "", const char* kPositionResolution = "", const Bool_t kAzimuthalOnly = kFALSE, Double_t prompt_low = 0, Double_t delayed_low = 0, Double_t deltaT_low = 1.e-6, Double_t deltaT_high = 100.e-6) {
+//void SEDAQ2( const char* filename, const Bool_t kGraphics = kFALSE, const char* kQuantizedPositions = "", const char* kPositionResolution = "", const Bool_t kAzimuthalOnly = kFALSE, Double_t prompt_low = 0, Double_t delayed_low = 0, Double_t deltaT_low = 1.e-6, Double_t deltaT_high = 100.e-6) {
+void SEDAQ2( const char* filename, const Bool_t kGraphics = kFALSE, const char* kQuantizedPositions = "", const char* kPositionResolution = "", const Bool_t kAzimuthalOnly = kFALSE, Double_t prompt_low = 0., Double_t delayed_low = 0., Double_t deltaT_low = 0.e-6, Double_t deltaT_high = 100.e-6) {
 
 //// INIT
 
@@ -104,7 +105,7 @@ sPositionResolution.ToLower();
 TString errLoc = "SEDAQ2::parse position adjustments";
 TString errMsg = "Invalid argument for kQuantizedPositions and/or kPositionResolution -- only some combination of \"xyz\" accepted\nExiting.\n";
 TRegexp invalRE = "[^xyz]";
-if ( sQuantizedPositions.Contains(invalRE) | sPositionResolution.Contains(invalRE) ) {
+if ( (sQuantizedPositions.Contains(invalRE)) || (sPositionResolution.Contains(invalRE)) ) {
   T_scint->Error(errLoc.Data(), errMsg.Data());
   return;
 }

@@ -45,10 +45,14 @@ if (kNormalized) {
 // file and hist operations
 TFile *f;
 TH1D *h;
-TFile *f0 = TFile::Open("COMPMAIN_CHOOZ_10k_results.root"), *f1 = TFile::Open("COMPMAIN_NULAT_10K_results.root");
-TFile *f2 = TFile::Open("COMPMAIN_NULAT5_10K_results.root"), *f3 = TFile::Open("COMPMAIN_SANTA_10K_results.root");
-TFile *f4 = TFile::Open("COMPMAIN_SANDD_10K_results.root"), *f5 = TFile::Open("COMPMAIN_CHECKERBOARD-2D_10K_results.root");
-TFile *f6 = TFile::Open("COMPMAIN_CHECKERBOARD-3D_10K_results.root"); TFile *f7 = TFile::Open("COMPMAIN_IDEAL_10K_results.root");
+TFile *f0 = TFile::Open("COMPMAIN_CHOOZ_10k_results.root");
+TFile *f1 = TFile::Open("COMPMAIN_NULAT_10K_results.root");
+TFile *f2 = TFile::Open("COMPMAIN_NULAT5_10K_results.root");
+TFile *f3 = TFile::Open("COMPMAIN_CHECKERBOARD-3D_10K_results.root");
+TFile *f4 = TFile::Open("COMPMAIN_SANTA_10K_results.root");
+TFile *f5 = TFile::Open("COMPMAIN_SANDD_10K_results.root");
+TFile *f6 = TFile::Open("COMPMAIN_CHECKERBOARD-2D_10K_results.root");
+TFile *f7 = TFile::Open("COMPMAIN_IDEAL_10K_results.root");
 TList *fileList = new TList, *hList = new TList;
 fileList->Add(f0);
 fileList->Add(f1);
@@ -63,9 +67,9 @@ TIter iFile(fileList);
 // annotations
 TLegend *leg = new TLegend(legxy[0], legxy[1], legxy[2], legxy[3]);
 Int_t k=0, nFiles=fileList->GetEntries();
-Color_t colors[8] = {4, 3, 7, 2, 6, 5, 11, 1};
+Color_t colors[8] = {4, 3, 7, 11, 2, 6, 5, 1};
 // labeling
-TObjString d0("CHOOZ"), d1("NuLat 3"), d2("NuLat 5"), d3("SANTA"), d4("SANDD"), d5("2D Chk."), d6("3D Chk."), d7("LN3 LIMIT");
+TObjString d0("CHOOZ"), d1("NuLat 3"), d2("NuLat 5"), d3("3D Chk."), d4("SANTA"), d5("SANDD"), d6("2D Chk."), d7("LN3 LIMIT");
 TObjArray *detectorNames = new TObjArray;
 detectorNames->Add(&d0);
 detectorNames->Add(&d1);
@@ -90,10 +94,11 @@ for ( iFile=fileList->begin(); iFile!=fileList->end(); ++iFile ) {
   f = (TFile*)*iFile;
   f->cd();
   h = h_cos_psi;
-  h->SetLineColor(colors[k]);
-  h->SetFillColor(TColor::GetColorTransparent(colors[k], 0.15));
-  h->SetMarkerStyle(k+20);
-  h->SetMarkerColor(colors[k]);
+//h->SetLineColor(colors[k]);
+  h->SetLineColor(TColor::GetColorTransparent(colors[k], 0.50));
+//h->SetFillColor(TColor::GetColorTransparent(colors[k], 0.15));
+//h->SetMarkerStyle(k+20);
+//h->SetMarkerColor(colors[k]);
   dName = (TObjString*)detectorNames->At(k);
   dLabel = dName->GetString();
   dLabelLower = dLabel;
@@ -162,20 +167,34 @@ for ( iH=hList->begin(); iH!=hList->end(); ++iH ) {
   }
   h->Draw("same");
   binsMax[k] = h->GetMaximum();
+//if (dLabel.Length()<8) {
+//  NString.Form("\t\t%d", (Long64_t)N);
+//} else {
+//  NString.Form("\t%d", (Long64_t)N);
+    NString.Form(" %d", (Long64_t)N);
+//}
+//cpString.Form("\t%.3f", cp);
+//cpNString.Form("\t%1.3fE-6", cpN*1.e6);
+//summaryFile << dLabel.Data() << NString.Data() << cpString.Data() << cpNString.Data() << endl;
+  cpString.Form("\t& %.3f", cp);
+  cpNString.Form("\t& %1.3f", cpN*1.e6);
+  summaryFile << NString.Data() << cpString.Data() << cpNString.Data();
+  if (dLabel.Contains("NuLat 3")) summaryFile << "^\\emph{\\dag}";
+  if ( (dLabel.Contains("SANDD")) || (dLabel.Contains("2D")) ) summaryFile << "^\\emph{\\ddag}";
+  if ( k < (hList->GetEntries()-1) ) summaryFile << "\\\\";
+  summaryFile << endl;
   k++;
-  if (dLabel.Length()<8) {
-    NString.Form("\t\t%d", (Long64_t)N);
-  } else {
-    NString.Form("\t%d", (Long64_t)N);
-  }
-  cpString.Form("\t%.3f", cp);
-  cpNString.Form("\t%1.3fE-6", cpN*1.e6);
-  summaryFile << dLabel.Data() << NString.Data() << cpString.Data() << cpNString.Data() << endl;
 }
 leg->Draw();
-// redraw NuLat 5, since it seems to be getting covered
-h = (TH1D*)hList->At(2);
-h->Draw("same");
+
+// add summaryFile to .tex base
+TString shellCmd;
+shellCmd.Form("paste $THESIS_MAIN/chapters/table_base.tex $RATROOT/data/COMPMAIN_RESULTS/ROOT_files/%s > $THESIS_MAIN/chapters/table.tex", "summary.txt"); //HC//
+gSystem->Exec(shellCmd.Data());
+
+//// redraw NuLat 5, since it seems to be getting covered
+//h = (TH1D*)hList->At(2);
+//h->Draw("same");
 
 // axis limits
 Double_t allMax = binsMax.Max();
@@ -211,7 +230,7 @@ for ( iH = hList->begin(); iH!=hList->end(); ++iH ) {
   meanMarker->SetMarkerColor(colors[k]);
   meanLine->DrawLine(hMean, ylow, hMean, yup);
   meanMarker->SetMarkerStyle(k+20);
-  meanMarker->DrawMarker(hMean, yMarker);
+//meanMarker->DrawMarker(hMean, yMarker);
 ////if ( k < (nBins-1) ) {
 ////  markerBin = k + 1;
 ////} else {
