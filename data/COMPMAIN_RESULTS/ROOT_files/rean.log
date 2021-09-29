@@ -1,0 +1,783 @@
+RAT: Libraries loaded.
+
+Processing duvallAnalyze.cxx("COMPMAIN_CHECKERBOARD-2D_10K", true, "xy", "z", true)...
+
+
+//// Analyzing datarun "COMPMAIN_CHECKERBOARD-2D_10K"... ////
+
+
+
+Info in <TCanvas::Print>: png file COMPMAIN_CHECKERBOARD-2D_10K_bursts.png has been created
+
+Using default antineutrino direction.
+Using default antineutrino direction.
+TVector3 A 3D physics vector (x,y,z)=(-1.000000,0.000000,0.000000) (rho,theta,phi)=(1.000000,90.000000,180.000000)
+
+SimpleEnergyDAQ2 IBD Trigger Summary:
+======> EVENT:0
+ sedaq2_version  = 1.4.00
+ units           = Time (s), Energy (MeVee)
+ deltaT_low      = 0
+ deltaT_high     = 0.0001
+ prompt_low      = 0
+ prompt_high     = 100
+ delayed_low     = 0
+ delayed_high    = 100
+ ibd_candidates  = 1860
+
+Info in <TCanvas::Print>: png file COMPMAIN_CHECKERBOARD-2D_10K_nu-trg.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_CHECKERBOARD-2D_10K_pd-xyz.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_CHECKERBOARD-2D_10K_cap-prod.png has been created
+
+
+
+Using default antineutrino direction:
+Using default antineutrino direction:
+neutrino_direction: TVector3 A 3D physics vector (x,y,z)=(-1.000000,0.000000,0.000000) (rho,theta,phi)=(1.000000,90.000000,180.000000)
+Info in <TCanvas::Print>: png file COMPMAIN_CHECKERBOARD-2D_10K_results-ang-separate.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_CHECKERBOARD-2D_10K_results-cos-psi.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_CHECKERBOARD-2D_10K_results-skymap.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_CHECKERBOARD-2D_10K_results-phi-radar.png has been created
+
+
+
+IBD Angular Reconstruction:
+* datafile = "COMPMAIN_CHECKERBOARD-2D_10K_results.root"
+* Note: SDM = SD/sqrt(N)
+
+Azimuthal Angle (deg):
+  phi_mean	3.65
+  phi_sd	84.20
+  phi_sdm	1.95
+
+Polar Angle (deg):
+  theta_mean	90.00
+  theta_sd	0.00
+  theta_sdm	0.00
+
+SUMMARY:
+  Total IBDs: 10000
+  N = 1860
+  IBD Efficiency = 18.60%
+  phi   = 3.65   +/- 84.20 deg (SD)	0.04 sigma from true value,  or
+                 +/-  1.95 deg (SDM)	1.87 sigma from true value
+  theta = 90.00   +/- 0.00 deg (SD)	-nan sigma from true value,  or
+                 +/-  0.00 deg (SDM)	-nan sigma from true value
+  <cos[psi]> = 0.297
+
+
+
+If the c3 (_pd-xyz.png) plot did not save correctly, try:
+1) Quit ROOT
+2) Open ROOT interactively
+3) Run the following lines at the prompt:
+
+TFile *f = TFile::Open("COMPMAIN_CHECKERBOARD-2D_10K_results.root");
+c3->Draw();
+c3->Print("COMPMAIN_CHECKERBOARD-2D_10K_pd-xyz.png");
+c3->Close();
+f->Close();
+
+All pau!   )
+
+
+//// Analysis Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing duvallAnalyze.cxx("COMPMAIN_CHECKERBOARD-3D_10K", true, "xyz")...
+
+
+//// Analyzing datarun "COMPMAIN_CHECKERBOARD-3D_10K"... ////
+
+
+
+Info in <TCanvas::Print>: png file COMPMAIN_CHECKERBOARD-3D_10K_bursts.png has been created
+
+Using default antineutrino direction.
+Using default antineutrino direction.
+TVector3 A 3D physics vector (x,y,z)=(-1.000000,0.000000,0.000000) (rho,theta,phi)=(1.000000,90.000000,180.000000)
+
+SimpleEnergyDAQ2 IBD Trigger Summary:
+======> EVENT:0
+ sedaq2_version  = 1.4.00
+ units           = Time (s), Energy (MeVee)
+ deltaT_low      = 0
+ deltaT_high     = 0.0001
+ prompt_low      = 0
+ prompt_high     = 100
+ delayed_low     = 0
+ delayed_high    = 100
+ ibd_candidates  = 4206
+
+Info in <TCanvas::Print>: png file COMPMAIN_CHECKERBOARD-3D_10K_nu-trg.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_CHECKERBOARD-3D_10K_pd-xyz.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_CHECKERBOARD-3D_10K_cap-prod.png has been created
+
+
+
+Using default antineutrino direction:
+Using default antineutrino direction:
+neutrino_direction: TVector3 A 3D physics vector (x,y,z)=(-1.000000,0.000000,0.000000) (rho,theta,phi)=(1.000000,90.000000,180.000000)
+Info in <TCanvas::Print>: png file COMPMAIN_CHECKERBOARD-3D_10K_results-ang-separate.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_CHECKERBOARD-3D_10K_results-cos-psi.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_CHECKERBOARD-3D_10K_results-skymap.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_CHECKERBOARD-3D_10K_results-phi-radar.png has been created
+
+
+
+IBD Angular Reconstruction:
+* datafile = "COMPMAIN_CHECKERBOARD-3D_10K_results.root"
+* Note: SDM = SD/sqrt(N)
+
+Azimuthal Angle (deg):
+  phi_mean	0.23
+  phi_sd	90.69
+  phi_sdm	1.40
+
+Polar Angle (deg):
+  theta_mean	89.78
+  theta_sd	39.30
+  theta_sdm	0.61
+
+SUMMARY:
+  Total IBDs: 10000
+  N = 4206
+  IBD Efficiency = 42.06%
+  phi   = 0.23   +/- 90.69 deg (SD)	0.00 sigma from true value,  or
+                 +/-  1.40 deg (SDM)	0.16 sigma from true value
+  theta = 89.78   +/- 39.30 deg (SD)	0.01 sigma from true value,  or
+                 +/-  0.61 deg (SDM)	0.36 sigma from true value
+  <cos[psi]> = 0.194
+
+
+
+If the c3 (_pd-xyz.png) plot did not save correctly, try:
+1) Quit ROOT
+2) Open ROOT interactively
+3) Run the following lines at the prompt:
+
+TFile *f = TFile::Open("COMPMAIN_CHECKERBOARD-3D_10K_results.root");
+c3->Draw();
+c3->Print("COMPMAIN_CHECKERBOARD-3D_10K_pd-xyz.png");
+c3->Close();
+f->Close();
+
+All pau!   )
+
+
+//// Analysis Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing duvallAnalyze.cxx("COMPMAIN_CHECKERBOARD-REF_10K", true, "xy", "z", true)...
+
+
+//// Analyzing datarun "COMPMAIN_CHECKERBOARD-REF_10K"... ////
+
+
+
+Info in <TCanvas::Print>: png file COMPMAIN_CHECKERBOARD-REF_10K_bursts.png has been created
+
+Using default antineutrino direction.
+Using default antineutrino direction.
+TVector3 A 3D physics vector (x,y,z)=(-1.000000,0.000000,0.000000) (rho,theta,phi)=(1.000000,90.000000,180.000000)
+
+SimpleEnergyDAQ2 IBD Trigger Summary:
+======> EVENT:0
+ sedaq2_version  = 1.4.00
+ units           = Time (s), Energy (MeVee)
+ deltaT_low      = 0
+ deltaT_high     = 0.0001
+ prompt_low      = 0
+ prompt_high     = 100
+ delayed_low     = 0
+ delayed_high    = 100
+ ibd_candidates  = 3644
+
+Info in <TCanvas::Print>: png file COMPMAIN_CHECKERBOARD-REF_10K_nu-trg.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_CHECKERBOARD-REF_10K_pd-xyz.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_CHECKERBOARD-REF_10K_cap-prod.png has been created
+
+
+
+Using default antineutrino direction:
+Using default antineutrino direction:
+neutrino_direction: TVector3 A 3D physics vector (x,y,z)=(-1.000000,0.000000,0.000000) (rho,theta,phi)=(1.000000,90.000000,180.000000)
+Info in <TCanvas::Print>: png file COMPMAIN_CHECKERBOARD-REF_10K_results-ang-separate.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_CHECKERBOARD-REF_10K_results-cos-psi.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_CHECKERBOARD-REF_10K_results-skymap.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_CHECKERBOARD-REF_10K_results-phi-radar.png has been created
+
+
+
+IBD Angular Reconstruction:
+* datafile = "COMPMAIN_CHECKERBOARD-REF_10K_results.root"
+* Note: SDM = SD/sqrt(N)
+
+Azimuthal Angle (deg):
+  phi_mean	0.09
+  phi_sd	84.04
+  phi_sdm	1.39
+
+Polar Angle (deg):
+  theta_mean	90.00
+  theta_sd	0.00
+  theta_sdm	0.00
+
+SUMMARY:
+  Total IBDs: 10000
+  N = 3644
+  IBD Efficiency = 36.44%
+  phi   = 0.09   +/- 84.04 deg (SD)	0.00 sigma from true value,  or
+                 +/-  1.39 deg (SDM)	0.06 sigma from true value
+  theta = 90.00   +/- 0.00 deg (SD)	-nan sigma from true value,  or
+                 +/-  0.00 deg (SDM)	-nan sigma from true value
+  <cos[psi]> = 0.304
+
+
+
+If the c3 (_pd-xyz.png) plot did not save correctly, try:
+1) Quit ROOT
+2) Open ROOT interactively
+3) Run the following lines at the prompt:
+
+TFile *f = TFile::Open("COMPMAIN_CHECKERBOARD-REF_10K_results.root");
+c3->Draw();
+c3->Print("COMPMAIN_CHECKERBOARD-REF_10K_pd-xyz.png");
+c3->Close();
+f->Close();
+
+All pau!   )
+
+
+//// Analysis Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing duvallAnalyze.cxx("COMPMAIN_CHOOZ_10k", true, "", "xyz")...
+
+
+//// Analyzing datarun "COMPMAIN_CHOOZ_10k"... ////
+
+
+
+Info in <TCanvas::Print>: png file COMPMAIN_CHOOZ_10k_bursts.png has been created
+
+Using default antineutrino direction.
+Using default antineutrino direction.
+TVector3 A 3D physics vector (x,y,z)=(-1.000000,0.000000,0.000000) (rho,theta,phi)=(1.000000,90.000000,180.000000)
+
+SimpleEnergyDAQ2 IBD Trigger Summary:
+======> EVENT:0
+ sedaq2_version  = 1.4.00
+ units           = Time (s), Energy (MeVee)
+ deltaT_low      = 0
+ deltaT_high     = 0.0001
+ prompt_low      = 0
+ prompt_high     = 100
+ delayed_low     = 0
+ delayed_high    = 100
+ ibd_candidates  = 9198
+
+Info in <TCanvas::Print>: png file COMPMAIN_CHOOZ_10k_nu-trg.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_CHOOZ_10k_pd-xyz.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_CHOOZ_10k_cap-prod.png has been created
+
+
+
+Using default antineutrino direction:
+Using default antineutrino direction:
+neutrino_direction: TVector3 A 3D physics vector (x,y,z)=(-1.000000,0.000000,0.000000) (rho,theta,phi)=(1.000000,90.000000,180.000000)
+Info in <TCanvas::Print>: png file COMPMAIN_CHOOZ_10k_results-ang-separate.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_CHOOZ_10k_results-cos-psi.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_CHOOZ_10k_results-skymap.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_CHOOZ_10k_results-phi-radar.png has been created
+
+
+
+IBD Angular Reconstruction:
+* datafile = "COMPMAIN_CHOOZ_10k_results.root"
+* Note: SDM = SD/sqrt(N)
+
+Azimuthal Angle (deg):
+  phi_mean	-1.96
+  phi_sd	101.89
+  phi_sdm	1.06
+
+Polar Angle (deg):
+  theta_mean	89.86
+  theta_sd	39.17
+  theta_sdm	0.41
+
+SUMMARY:
+  Total IBDs: 10000
+  N = 9198
+  IBD Efficiency = 91.98%
+  phi   = -1.96   +/- 101.89 deg (SD)	0.02 sigma from true value,  or
+                 +/-  1.06 deg (SDM)	1.84 sigma from true value
+  theta = 89.86   +/- 39.17 deg (SD)	0.00 sigma from true value,  or
+                 +/-  0.41 deg (SDM)	0.33 sigma from true value
+  <cos[psi]> = 0.030
+
+
+
+If the c3 (_pd-xyz.png) plot did not save correctly, try:
+1) Quit ROOT
+2) Open ROOT interactively
+3) Run the following lines at the prompt:
+
+TFile *f = TFile::Open("COMPMAIN_CHOOZ_10k_results.root");
+c3->Draw();
+c3->Print("COMPMAIN_CHOOZ_10k_pd-xyz.png");
+c3->Close();
+f->Close();
+
+All pau!   )
+
+
+//// Analysis Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing duvallAnalyze.cxx("COMPMAIN_IDEAL_10K", true, "xyz")...
+
+
+//// Analyzing datarun "COMPMAIN_IDEAL_10K"... ////
+
+
+
+Info in <TCanvas::Print>: png file COMPMAIN_IDEAL_10K_bursts.png has been created
+
+Using default antineutrino direction.
+Using default antineutrino direction.
+TVector3 A 3D physics vector (x,y,z)=(-1.000000,0.000000,0.000000) (rho,theta,phi)=(1.000000,90.000000,180.000000)
+
+SimpleEnergyDAQ2 IBD Trigger Summary:
+======> EVENT:0
+ sedaq2_version  = 1.4.00
+ units           = Time (s), Energy (MeVee)
+ deltaT_low      = 0
+ deltaT_high     = 0.0001
+ prompt_low      = 0
+ prompt_high     = 100
+ delayed_low     = 0
+ delayed_high    = 100
+ ibd_candidates  = 3931
+
+Info in <TCanvas::Print>: png file COMPMAIN_IDEAL_10K_nu-trg.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_IDEAL_10K_pd-xyz.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_IDEAL_10K_cap-prod.png has been created
+
+
+
+Using default antineutrino direction:
+Using default antineutrino direction:
+neutrino_direction: TVector3 A 3D physics vector (x,y,z)=(-1.000000,0.000000,0.000000) (rho,theta,phi)=(1.000000,90.000000,180.000000)
+Info in <TCanvas::Print>: png file COMPMAIN_IDEAL_10K_results-ang-separate.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_IDEAL_10K_results-cos-psi.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_IDEAL_10K_results-skymap.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_IDEAL_10K_results-phi-radar.png has been created
+
+
+
+IBD Angular Reconstruction:
+* datafile = "COMPMAIN_IDEAL_10K_results.root"
+* Note: SDM = SD/sqrt(N)
+
+Azimuthal Angle (deg):
+  phi_mean	0.28
+  phi_sd	85.98
+  phi_sdm	1.37
+
+Polar Angle (deg):
+  theta_mean	90.28
+  theta_sd	42.81
+  theta_sdm	0.68
+
+SUMMARY:
+  Total IBDs: 10000
+  N = 3931
+  IBD Efficiency = 39.31%
+  phi   = 0.28   +/- 85.98 deg (SD)	0.00 sigma from true value,  or
+                 +/-  1.37 deg (SDM)	0.21 sigma from true value
+  theta = 90.28   +/- 42.81 deg (SD)	0.01 sigma from true value,  or
+                 +/-  0.68 deg (SDM)	0.41 sigma from true value
+  <cos[psi]> = 0.256
+
+
+
+If the c3 (_pd-xyz.png) plot did not save correctly, try:
+1) Quit ROOT
+2) Open ROOT interactively
+3) Run the following lines at the prompt:
+
+TFile *f = TFile::Open("COMPMAIN_IDEAL_10K_results.root");
+c3->Draw();
+c3->Print("COMPMAIN_IDEAL_10K_pd-xyz.png");
+c3->Close();
+f->Close();
+
+All pau!   )
+
+
+//// Analysis Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing duvallAnalyze.cxx("COMPMAIN_NULAT_10K", true, "xyz")...
+
+
+//// Analyzing datarun "COMPMAIN_NULAT_10K"... ////
+
+
+
+Info in <TCanvas::Print>: png file COMPMAIN_NULAT_10K_bursts.png has been created
+
+Using default antineutrino direction.
+Using default antineutrino direction.
+TVector3 A 3D physics vector (x,y,z)=(-1.000000,0.000000,0.000000) (rho,theta,phi)=(1.000000,90.000000,180.000000)
+
+SimpleEnergyDAQ2 IBD Trigger Summary:
+======> EVENT:0
+ sedaq2_version  = 1.4.00
+ units           = Time (s), Energy (MeVee)
+ deltaT_low      = 0
+ deltaT_high     = 0.0001
+ prompt_low      = 0
+ prompt_high     = 100
+ delayed_low     = 0
+ delayed_high    = 100
+ ibd_candidates  = 4934
+
+Info in <TCanvas::Print>: png file COMPMAIN_NULAT_10K_nu-trg.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_NULAT_10K_pd-xyz.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_NULAT_10K_cap-prod.png has been created
+
+
+
+Using default antineutrino direction:
+Using default antineutrino direction:
+neutrino_direction: TVector3 A 3D physics vector (x,y,z)=(-1.000000,0.000000,0.000000) (rho,theta,phi)=(1.000000,90.000000,180.000000)
+Info in <TCanvas::Print>: png file COMPMAIN_NULAT_10K_results-ang-separate.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_NULAT_10K_results-cos-psi.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_NULAT_10K_results-skymap.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_NULAT_10K_results-phi-radar.png has been created
+
+
+
+IBD Angular Reconstruction:
+* datafile = "COMPMAIN_NULAT_10K_results.root"
+* Note: SDM = SD/sqrt(N)
+
+Azimuthal Angle (deg):
+  phi_mean	-1.37
+  phi_sd	89.45
+  phi_sdm	1.27
+
+Polar Angle (deg):
+  theta_mean	90.00
+  theta_sd	42.93
+  theta_sdm	0.61
+
+SUMMARY:
+  Total IBDs: 15000
+  N = 4934
+  IBD Efficiency = 32.89%
+  phi   = -1.37   +/- 89.45 deg (SD)	0.02 sigma from true value,  or
+                 +/-  1.27 deg (SDM)	1.08 sigma from true value
+  theta = 90.00   +/- 42.93 deg (SD)	0.00 sigma from true value,  or
+                 +/-  0.61 deg (SDM)	0.00 sigma from true value
+  <cos[psi]> = 0.224
+
+
+
+If the c3 (_pd-xyz.png) plot did not save correctly, try:
+1) Quit ROOT
+2) Open ROOT interactively
+3) Run the following lines at the prompt:
+
+TFile *f = TFile::Open("COMPMAIN_NULAT_10K_results.root");
+c3->Draw();
+c3->Print("COMPMAIN_NULAT_10K_pd-xyz.png");
+c3->Close();
+f->Close();
+
+All pau!   )
+
+
+//// Analysis Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing duvallAnalyze.cxx("COMPMAIN_NULAT5_10K", true, "xyz")...
+
+
+//// Analyzing datarun "COMPMAIN_NULAT5_10K"... ////
+
+
+
+Info in <TCanvas::Print>: png file COMPMAIN_NULAT5_10K_bursts.png has been created
+
+Using default antineutrino direction.
+Using default antineutrino direction.
+TVector3 A 3D physics vector (x,y,z)=(-1.000000,0.000000,0.000000) (rho,theta,phi)=(1.000000,90.000000,180.000000)
+
+SimpleEnergyDAQ2 IBD Trigger Summary:
+======> EVENT:0
+ sedaq2_version  = 1.4.00
+ units           = Time (s), Energy (MeVee)
+ deltaT_low      = 0
+ deltaT_high     = 0.0001
+ prompt_low      = 0
+ prompt_high     = 100
+ delayed_low     = 0
+ delayed_high    = 100
+ ibd_candidates  = 3931
+
+Info in <TCanvas::Print>: png file COMPMAIN_NULAT5_10K_nu-trg.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_NULAT5_10K_pd-xyz.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_NULAT5_10K_cap-prod.png has been created
+
+
+
+Using default antineutrino direction:
+Using default antineutrino direction:
+neutrino_direction: TVector3 A 3D physics vector (x,y,z)=(-1.000000,0.000000,0.000000) (rho,theta,phi)=(1.000000,90.000000,180.000000)
+Info in <TCanvas::Print>: png file COMPMAIN_NULAT5_10K_results-ang-separate.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_NULAT5_10K_results-cos-psi.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_NULAT5_10K_results-skymap.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_NULAT5_10K_results-phi-radar.png has been created
+
+
+
+IBD Angular Reconstruction:
+* datafile = "COMPMAIN_NULAT5_10K_results.root"
+* Note: SDM = SD/sqrt(N)
+
+Azimuthal Angle (deg):
+  phi_mean	0.28
+  phi_sd	85.98
+  phi_sdm	1.37
+
+Polar Angle (deg):
+  theta_mean	90.28
+  theta_sd	42.81
+  theta_sdm	0.68
+
+SUMMARY:
+  Total IBDs: 10000
+  N = 3931
+  IBD Efficiency = 39.31%
+  phi   = 0.28   +/- 85.98 deg (SD)	0.00 sigma from true value,  or
+                 +/-  1.37 deg (SDM)	0.21 sigma from true value
+  theta = 90.28   +/- 42.81 deg (SD)	0.01 sigma from true value,  or
+                 +/-  0.68 deg (SDM)	0.41 sigma from true value
+  <cos[psi]> = 0.256
+
+
+
+If the c3 (_pd-xyz.png) plot did not save correctly, try:
+1) Quit ROOT
+2) Open ROOT interactively
+3) Run the following lines at the prompt:
+
+TFile *f = TFile::Open("COMPMAIN_NULAT5_10K_results.root");
+c3->Draw();
+c3->Print("COMPMAIN_NULAT5_10K_pd-xyz.png");
+c3->Close();
+f->Close();
+
+All pau!   )
+
+
+//// Analysis Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing duvallAnalyze.cxx("COMPMAIN_SANDD_10K", true, "xy", "z", true)...
+
+
+//// Analyzing datarun "COMPMAIN_SANDD_10K"... ////
+
+
+
+Info in <TCanvas::Print>: png file COMPMAIN_SANDD_10K_bursts.png has been created
+
+Using default antineutrino direction.
+Using default antineutrino direction.
+TVector3 A 3D physics vector (x,y,z)=(-1.000000,0.000000,0.000000) (rho,theta,phi)=(1.000000,90.000000,180.000000)
+
+SimpleEnergyDAQ2 IBD Trigger Summary:
+======> EVENT:0
+ sedaq2_version  = 1.4.00
+ units           = Time (s), Energy (MeVee)
+ deltaT_low      = 0
+ deltaT_high     = 0.0001
+ prompt_low      = 0
+ prompt_high     = 100
+ delayed_low     = 0
+ delayed_high    = 100
+ ibd_candidates  = 247
+
+Info in <TCanvas::Print>: png file COMPMAIN_SANDD_10K_nu-trg.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_SANDD_10K_pd-xyz.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_SANDD_10K_cap-prod.png has been created
+
+
+
+Using default antineutrino direction:
+Using default antineutrino direction:
+neutrino_direction: TVector3 A 3D physics vector (x,y,z)=(-1.000000,0.000000,0.000000) (rho,theta,phi)=(1.000000,90.000000,180.000000)
+Info in <TCanvas::Print>: png file COMPMAIN_SANDD_10K_results-ang-separate.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_SANDD_10K_results-cos-psi.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_SANDD_10K_results-skymap.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_SANDD_10K_results-phi-radar.png has been created
+
+
+
+IBD Angular Reconstruction:
+* datafile = "COMPMAIN_SANDD_10K_results.root"
+* Note: SDM = SD/sqrt(N)
+
+Azimuthal Angle (deg):
+  phi_mean	8.29
+  phi_sd	78.28
+  phi_sdm	4.98
+
+Polar Angle (deg):
+  theta_mean	90.00
+  theta_sd	0.00
+  theta_sdm	0.00
+
+SUMMARY:
+  Total IBDs: 10000
+  N = 247
+  IBD Efficiency = 2.47%
+  phi   = 8.29   +/- 78.28 deg (SD)	0.11 sigma from true value,  or
+                 +/-  4.98 deg (SDM)	1.66 sigma from true value
+  theta = 90.00   +/- 0.00 deg (SD)	-nan sigma from true value,  or
+                 +/-  0.00 deg (SDM)	-nan sigma from true value
+  <cos[psi]> = 0.360
+
+
+
+If the c3 (_pd-xyz.png) plot did not save correctly, try:
+1) Quit ROOT
+2) Open ROOT interactively
+3) Run the following lines at the prompt:
+
+TFile *f = TFile::Open("COMPMAIN_SANDD_10K_results.root");
+c3->Draw();
+c3->Print("COMPMAIN_SANDD_10K_pd-xyz.png");
+c3->Close();
+f->Close();
+
+All pau!   )
+
+
+//// Analysis Complete ////
+
+
+RAT: Libraries loaded.
+
+Processing duvallAnalyze.cxx("COMPMAIN_SANTA_10K", true, "xz", "y")...
+
+
+//// Analyzing datarun "COMPMAIN_SANTA_10K"... ////
+
+
+
+Info in <TCanvas::Print>: png file COMPMAIN_SANTA_10K_bursts.png has been created
+
+Using default antineutrino direction.
+Using default antineutrino direction.
+TVector3 A 3D physics vector (x,y,z)=(-1.000000,0.000000,0.000000) (rho,theta,phi)=(1.000000,90.000000,180.000000)
+
+SimpleEnergyDAQ2 IBD Trigger Summary:
+======> EVENT:0
+ sedaq2_version  = 1.4.00
+ units           = Time (s), Energy (MeVee)
+ deltaT_low      = 0
+ deltaT_high     = 0.0001
+ prompt_low      = 0
+ prompt_high     = 100
+ delayed_low     = 0
+ delayed_high    = 100
+ ibd_candidates  = 2275
+
+Info in <TCanvas::Print>: png file COMPMAIN_SANTA_10K_nu-trg.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_SANTA_10K_pd-xyz.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_SANTA_10K_cap-prod.png has been created
+
+
+
+Using default antineutrino direction:
+Using default antineutrino direction:
+neutrino_direction: TVector3 A 3D physics vector (x,y,z)=(-1.000000,0.000000,0.000000) (rho,theta,phi)=(1.000000,90.000000,180.000000)
+Info in <TCanvas::Print>: png file COMPMAIN_SANTA_10K_results-ang-separate.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_SANTA_10K_results-cos-psi.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_SANTA_10K_results-skymap.png has been created
+Info in <TCanvas::Print>: png file COMPMAIN_SANTA_10K_results-phi-radar.png has been created
+
+
+
+IBD Angular Reconstruction:
+* datafile = "COMPMAIN_SANTA_10K_results.root"
+* Note: SDM = SD/sqrt(N)
+
+Azimuthal Angle (deg):
+  phi_mean	-0.53
+  phi_sd	22.64
+  phi_sdm	0.47
+
+Polar Angle (deg):
+  theta_mean	89.63
+  theta_sd	20.04
+  theta_sdm	0.42
+
+SUMMARY:
+  Total IBDs: 10000
+  N = 2275
+  IBD Efficiency = 22.75%
+  phi   = -0.53   +/- 22.64 deg (SD)	0.02 sigma from true value,  or
+                 +/-  0.47 deg (SDM)	1.12 sigma from true value
+  theta = 89.63   +/- 20.04 deg (SD)	0.02 sigma from true value,  or
+                 +/-  0.42 deg (SDM)	0.88 sigma from true value
+  <cos[psi]> = 0.869
+
+
+
+If the c3 (_pd-xyz.png) plot did not save correctly, try:
+1) Quit ROOT
+2) Open ROOT interactively
+3) Run the following lines at the prompt:
+
+TFile *f = TFile::Open("COMPMAIN_SANTA_10K_results.root");
+c3->Draw();
+c3->Print("COMPMAIN_SANTA_10K_pd-xyz.png");
+c3->Close();
+f->Close();
+
+All pau!   )
+
+
+//// Analysis Complete ////
+
+
+RAT: Libraries loaded.
+
+
+Plot-fixing prepared!
+
+
+Reanalysis complete!
+
+
