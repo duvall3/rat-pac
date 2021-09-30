@@ -57,6 +57,10 @@ public:
   Int_t			GetEntries() const { return fVolumeList->GetEntries(); }
   TList*		GetCheckerboardActive() const { return fActiveCells; }
   TList*		GetCheckerboardInert() const { return fInertCells; }
+  TList*		FindVolumesContaining( TVector3 location, Bool_t kPrint = kFALSE );
+  TList*		FindVolumesContaining( Double_t x, Double_t y, Double_t z, Bool_t kPrint = kFALSE );
+//TRATVolume*		FindLowestVolumeContaining( TVector3 location, Bool_t kPrint = kTRUE );
+//TRATVolume*		FindLowestVolumeContaining( Double_t x, Double_t y, Double_t z, Bool_t kPrint = kTRUE );
   void			ShowVolume(const char* volumeName);
   void			ShowAll();
   void			Types();		// print volume types
@@ -66,7 +70,7 @@ public:
   void			Positions();		// print absolute positions
 
 //Integrating the TRATGeo class to ROOT.
-ClassDef(TRATGeo,3)
+ClassDef(TRATGeo,4)
 
 }; //endclass
 

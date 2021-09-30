@@ -134,9 +134,9 @@ if (kNormalized) {
 } else {
   TText *ylabel = new TText(1.1, 0., "Entries");
 }
-  ylabel->SetTextSize(.035);
-  ylabel->SetTextAngle(-90);
-  ylabel->Draw("same");
+ylabel->SetTextSize(.035);
+ylabel->SetTextAngle(-90);
+ylabel->Draw("same");
 h->SetTitle(hTitle.Data());
 TVectorD binsMax(nFiles);
 Double_t maxSANTA;
@@ -170,32 +170,37 @@ for ( iH=hList->begin(); iH!=hList->end(); ++iH ) {
   h->Draw("same");
   binsMax[k] = h->GetMaximum();
   // generate data-dependent portion of LaTeX table
-  NString.Form(" %d", (Long64_t)N);
-  cpString.Form("\t& %.3f", cp);
-  cpNString.Form("%1.2e", cpN);
-  cpNString.Form("\t& %.2f", cpNString.Atof()*1.e6);
-  if (dLabel.Contains("NuLat 3")) {
-    NString.Append("^\\emph{\\dag}");
-    cpString.Append("^\\emph{\\dag}");
-    cpNString.Append("^\\emph{\\dag}");
-  } else if ( (dLabel.Contains("SANDD")) || (dLabel.Contains("2D")) ) {
-    NString.Append("~\t\t");
-    cpString.Append("^\\emph{\\ddag}");
-    cpNString.Append("^\\emph{\\ddag}");
-  } else {
-    NString.Append("~\t\t");
-    cpString.Append("~\t");
-    cpNString.Append("~");
+  if ( ! kNormalized ) {
+    NString.Form(" %d", (Long64_t)N);
+    cpString.Form("\t& %.3f", cp);
+    cpNString.Form("%1.2e", cpN);
+//  cout << dLabel.Data() << "\t" << NString.Data() << "\t" << cpString.Data() << "\t" << cpNString.Data() << endl; //debug
+    cpNString.Form("\t& %.2f", cpNString.Atof()*1.e6);
+    if (dLabel.Contains("NuLat 3")) {
+      NString.Append("^\\emph{\\dag}");
+      cpString.Append("^\\emph{\\dag}");
+      cpNString.Append("^\\emph{\\dag}");
+    } else if ( (dLabel.Contains("SANDD")) || (dLabel.Contains("2D")) ) {
+      NString.Append("~\t\t");
+      cpString.Append("^\\emph{\\ddag}");
+      cpNString.Append("^\\emph{\\ddag}");
+    } else {
+      NString.Append("~\t\t");
+      cpString.Append("~\t");
+      cpNString.Append("~");
+    }
+    if ( ! dLabelLower.Contains("lim") ) summaryFile << NString.Data() << cpString.Data() << cpNString.Data();
+    if ( k < (hList->GetEntries()-1) ) summaryFile << "\\\\";
+    summaryFile << endl;
   }
-  summaryFile << NString.Data() << cpString.Data() << cpNString.Data();
-  if ( k < (hList->GetEntries()-1) ) summaryFile << "\\\\";
-  summaryFile << endl;
   k++;
 }
 
 // add summaryFile to .tex base
-TString shellCmd = TString::Format("paste $THESIS_MAIN/chapters/table_base.tex %s/summary.txt > $THESIS_MAIN/chapters/table.tex", resultsDir.Data()); //HC//
-gSystem->Exec(shellCmd.Data());
+if ( ! kNormalized ) {
+  TString shellCmd = TString::Format("paste $THESIS_MAIN/chapters/table_base.tex %s/summary.txt > $THESIS_MAIN/chapters/table.tex", resultsDir.Data()); //HC//
+  gSystem->Exec(shellCmd.Data());
+}
 
 // draw completed legend
 leg->Draw();
@@ -234,7 +239,7 @@ for ( iH = hList->begin(); iH!=hList->end(); ++iH ) {
   meanMarker->SetMarkerColor(colors[k]);
   meanLine->DrawLine(hMean, ylow, hMean, yup);
   meanMarker->SetMarkerStyle(k+20);
-//meanMarker->DrawMarker(hMean, yMarker);
+  meanMarker->DrawMarker(hMean, yMarker);
 ////if ( k < (nBins-1) ) {
 ////  markerBin = k + 1;
 ////} else {
