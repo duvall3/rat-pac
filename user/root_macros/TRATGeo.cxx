@@ -248,7 +248,7 @@ TRATGeo::FindVolumesContaining( TVector3 location, Bool_t kPrint )
   }
   if (kPrint) volList->Print();
   return volList;
-  // delete volList;??
+  delete volList;
 }
 
 //______________________________________________________________________________
@@ -259,32 +259,38 @@ TRATGeo::FindVolumesContaining(Double_t x, Double_t y, Double_t z, Bool_t kPrint
   return volList;
 }
 
-////______________________________________________________________________________
-//// FindLowestVolumeContaining (TVector3)
-//TRATGeo::FindLowestVolumeContaining( TVector3 location )
-//{
-//  TRATVolume *v0, *v1;
-//  TList *volList = (TList*)FindVolumesContaining(location);
-//  TIter i(volList), j(volList);
-//  TString volName, motherVolName;
-//  for ( i=volList->begin(); i!=volList->end(); ++i ) {
-//    v0 = (TRATVolume*)*i;
-//    volName = v0->GetName();
-//    for ( j=volList->begin(); j!=volList->end(); ++j ) {
-//      v1 = (TRATVolume*)*j;
-//      motherVolName = v1->GetMother();
-//      // ...
-//    }
-//  }
-//}
+//______________________________________________________________________________
+// FindLowestVolumeContaining (TVector3)
+TRATGeo::FindLowestVolumeContaining( TVector3 location )
+{
+  TRATVolume *v0, *v1;
+  TList *volList = (TList*)FindVolumesContaining(location);
+  TIter i(volList), j(volList);
+  TString volName, motherVolName;
+  Bool_t matchFound;
+  for ( i=volList->begin(); i!=volList->end(); ++i ) {
+    matchFound = kFALSE;
+    v0 = (TRATVolume*)*i;
+    volName = v0->GetName();
+    for ( j=volList->begin(); j!=volList->end(); ++j ) {
+      v1 = (TRATVolume*)*j;
+      motherVolName = v1->GetMother();
+      if ((volName.Contains(motherVolName)) && (motherVolName.Length()>0)) {
+	matchFound = kTRUE;
+        continue;
+      }
+    }
+    if (! matchFound) return v0;
+  }
+}
 
-////______________________________________________________________________________
-//// FindLowestVolumeContaining (Double_t...)
-//TRATGeo::FindLowestVolumeContaining( Double_t x, Double_t y, Double_t z)
-//{
-//  TRATVolume *v = g.FindLowestVolumeContaining( TVector3(x,y,z) );
-//  return v;
-//}
+//______________________________________________________________________________
+// FindLowestVolumeContaining (Double_t...)
+TRATGeo::FindLowestVolumeContaining( Double_t x, Double_t y, Double_t z)
+{
+  TRATVolume *v = (TRATVolume*)g.FindLowestVolumeContaining( TVector3(x,y,z) );
+  return v;
+}
 
 //______________________________________________________________________________
 // ShowVolume
