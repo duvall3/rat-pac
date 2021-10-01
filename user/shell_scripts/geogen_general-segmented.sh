@@ -33,6 +33,7 @@ PROJ=$(pwd | sed s_/_\ _g | awk '{print $NF}')
 BASEFILE="$PROJ"_base.geo
 ARRFILE="$PROJ"_cell-array.geo
 OUTFILE="$PROJ".geo
+LOGFILE=geogen_"$PROJ".log
 
 # clear command
 if [[ $1 = "reset" ]]; then
@@ -121,8 +122,8 @@ FH=$( echo "$H*2.0" | bc -l )
 FS=$( echo "$S*2.0" | bc -l )
 
 # print config
-printf "\n\nRows: %i\nColumns: %i\nLayers: %i\n" $ROWS $COLS $LYRS
-printf "\nCell Length: \t%f mm\nCell Width: \t%f mm\nCell Height: \t%f mm\nCell Spacing: \t%f mm\n" $FL $FW $FH $FS
+printf "\n\nRows: %i\nColumns: %i\nLayers: %i\n" $ROWS $COLS $LYRS | tee $LOGFILE
+printf "\nCell Length: \t%f mm\nCell Width: \t%f mm\nCell Height: \t%f mm\nCell Spacing: \t%f mm\n" $FL $FW $FH $FS | tee -a $LOGFILE
 
 
 ## create cell array
@@ -151,7 +152,7 @@ position: [0.0, 0.0, 0.0] // mm
 
 # generate cells
 
-echo -e "\nGenerating cells..."
+echo -e "\nGenerating cells..." | tee -a $LOGFILE
 
 for (( k_lr=0; k_lr<$ROWS; k_lr++ )); do
 
@@ -195,13 +196,13 @@ position: [$x, $y, $z] // mm
 
 done #k_lr
 
-echo "Done."
-printf "Array written to: %s\n" $ARRFILE
+echo "Done." | tee -a $LOGFILE
+printf "Array written to: %s\n" $ARRFILE | tee -a $LOGFILE
 
 
 ## finalize by combining base .geo file with array .geo file
 cat $BASEFILE $ARRFILE > $OUTFILE
-printf "\nRAT-PAC .GEO FILE WRITTEN TO: %s\n\n\n" $OUTFILE
+printf "\nRAT-PAC .GEO FILE WRITTEN TO: %s\n\n\n" $OUTFILE | tee -a $LOGFILE
 
 
 ## all pau!   )
