@@ -38,7 +38,8 @@ c4="$DATARUN"_results-ang-separate
 c5="$DATARUN"_results-cos-psi
 c6="$DATARUN"_results-skymap
 c7="$DATARUN"_cap-prod
-c_LIST=$(echo $c{0..7}.png)
+c8="$DATARUN"_results-phi-radar
+c_LIST=$(echo $c{0..8}.png)
 
 # main
 eog $c_LIST &
