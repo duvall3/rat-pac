@@ -54,7 +54,8 @@ angularRecon( resultsfile.Data(), kGraphics );
 //if (! origBatch) gROOT->SetBatch(kFALSE);
 
 // fix trouble plots // TODO: automate
-printf("If the c3 (_pd-xyz.png) plot did not save correctly, try:
+printf("If the c3 plot (%s_pd-xyz.png) did not save correctly, try:", basename.Data());
+printf("
 1) Quit ROOT
 2) Open ROOT interactively
 3) Run the following lines at the prompt:\n\n");

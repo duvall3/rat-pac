@@ -76,6 +76,14 @@ savename = basename+"_results.root";
 TFile f = TFile(savename, "recreate");
 TString graphicsSaveFormat = ".png";
 
+// experiment name
+TFile *scintFile = TFile::Open(filename);
+scintFile->cd();
+TObjString *experiment = (TObjString*)gDirectory->Get("experiment");
+f.cd();
+experiment->Write("experiment");
+scintFile->Close();
+
 // TTree T and T2 -- read/create
 TTree* T2 = new TTree("T2","IBD Candidate Data");
 TFriendElement* TF = T2->AddFriend("T_scint",filename);

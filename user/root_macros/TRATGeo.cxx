@@ -261,7 +261,7 @@ TRATGeo::FindVolumesContaining(Double_t x, Double_t y, Double_t z, Bool_t kPrint
 
 //______________________________________________________________________________
 // FindLowestVolumeContaining (TVector3)
-TRATGeo::FindLowestVolumeContaining( TVector3 location )
+TRATGeo::FindLowestVolumeContaining( TVector3 location, Bool_t kPrint )
 {
   TRATVolume *v0, *v1;
   TList *volList = (TList*)FindVolumesContaining(location);
@@ -280,15 +280,18 @@ TRATGeo::FindLowestVolumeContaining( TVector3 location )
         continue;
       }
     }
-    if (! matchFound) return v0;
+    if (! matchFound) {
+      if (kPrint) v0->Print();
+      return v0;
+    }
   }
 }
 
 //______________________________________________________________________________
 // FindLowestVolumeContaining (Double_t...)
-TRATGeo::FindLowestVolumeContaining( Double_t x, Double_t y, Double_t z)
+TRATGeo::FindLowestVolumeContaining( Double_t x, Double_t y, Double_t z, Bool_t kPrint )
 {
-  TRATVolume *v = (TRATVolume*)g.FindLowestVolumeContaining( TVector3(x,y,z) );
+  TRATVolume *v = (TRATVolume*)g.FindLowestVolumeContaining( TVector3(x,y,z), kPrint );
   return v;
 }
 

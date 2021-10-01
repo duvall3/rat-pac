@@ -33,11 +33,13 @@ TString FileName = filename;
 TString basename = FileName(0, FileName.Index(".root"));
 TString savename = basename + "_T.root";
 TFile* f0 = TFile::Open(filename); // needed by TRATGeo for RAT database
+TObjString experiment = (TObjString)db->GetValue("DETECTOR[].experiment");
 Double_t positionResolution = 150.; // position resolution (mm)
 TRATGeo g;
 g.Build();
 TFile* f = TFile::Open(savename, "recreate");
 f->cd(); // just to be safe
+experiment.Write("experiment");
 RAT::DSReader r(filename);
 RAT::DS::Root* ds = r.GetEvent(0);
 RAT::TrackNav nav(ds);

@@ -59,8 +59,8 @@ public:
   TList*		GetCheckerboardInert() const { return fInertCells; }
   TList*		FindVolumesContaining( TVector3 location, Bool_t kPrint = kFALSE );
   TList*		FindVolumesContaining( Double_t x, Double_t y, Double_t z, Bool_t kPrint = kFALSE );
-  TRATVolume*		FindLowestVolumeContaining( TVector3 location );
-  TRATVolume*		FindLowestVolumeContaining( Double_t x, Double_t y, Double_t z );
+  TRATVolume*		FindLowestVolumeContaining( TVector3 location, Bool_t kPrint = kFALSE );
+  TRATVolume*		FindLowestVolumeContaining( Double_t x, Double_t y, Double_t z, Bool_t kPrint = kFALSE );
   void			ShowVolume(const char* volumeName);
   void			ShowAll();
   void			Types();		// print volume types
