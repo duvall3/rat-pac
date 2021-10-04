@@ -34,7 +34,8 @@ TString basename = FileName(0, FileName.Index(".root"));
 TString savename = basename + "_T.root";
 TFile* f0 = TFile::Open(filename); // needed by TRATGeo for RAT database
 TObjString experiment = (TObjString)db->GetValue("DETECTOR[].experiment");
-Double_t positionResolution = 150.; // position resolution (mm)
+//Double_t positionResolution = 150.; // position resolution (mm)
+Double_t positionResolution = 86.7; // position resolution (mm)
 TRATGeo g;
 g.Build();
 TFile* f = TFile::Open(savename, "recreate");

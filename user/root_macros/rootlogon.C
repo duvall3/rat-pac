@@ -26,6 +26,9 @@
   const Double_t pi = TMath::Pi();
   const Double_t e = TMath::E();
 
+  // define decent legend coordinates
+  Double_t legx1(.01), legy1(.83), legx2(.12), legy2(.93);
+
   // load RAT-PAC macros
   gROOT->LoadMacro("duvall3Macros.cxx");
   duvall3Macros();

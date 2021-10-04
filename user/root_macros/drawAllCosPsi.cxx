@@ -231,6 +231,8 @@ for ( iH = hList->begin(); iH!=hList->end(); ++iH ) {
     meanLine->SetLineStyle(kDashDotted);
   } else if ( dLabelLower.Contains("lim") ) {
     meanLine->SetLineStyle(7);
+//} else if ( dLabel.Contains("NuLat 5") ) {
+//  meanLine->SetLineColor(colors[k]);
   } else {
     meanLine->SetLineStyle(kDotted);
   }
@@ -239,7 +241,7 @@ for ( iH = hList->begin(); iH!=hList->end(); ++iH ) {
   meanMarker->SetMarkerColor(colors[k]);
   meanLine->DrawLine(hMean, ylow, hMean, yup);
   meanMarker->SetMarkerStyle(k+20);
-  meanMarker->DrawMarker(hMean, yMarker);
+//meanMarker->DrawMarker(hMean, yMarker);
 ////if ( k < (nBins-1) ) {
 ////  markerBin = k + 1;
 ////} else {

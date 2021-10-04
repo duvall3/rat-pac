@@ -83,6 +83,7 @@ TObjString *experiment = (TObjString*)gDirectory->Get("experiment");
 f.cd();
 experiment->Write("experiment");
 scintFile->Close();
+TString Experiment = experiment->GetString();
 
 // TTree T and T2 -- read/create
 TTree* T2 = new TTree("T2","IBD Candidate Data");
@@ -153,6 +154,17 @@ if (sPositionResolution.Contains('z')) {
   } else {
     T_scint->SetBranchAddress("z_res", &z);
   }
+}
+
+// unique transformations for PROSPECT
+Experiment.ToLower();
+if (Experiment.Contains("prospect")) {
+  T_scint->SetBranchAddress("x_quantized", &x);
+  T_scint->SetBranchAddress("z_quantized", &y);
+  T_scint->SetBranchAddress("y_res", &z);
+  sQuantizedPositions = "xz";
+  sPositionResolution = "y";
+//kAzimuthalOnly = kTRUE;
 }
 
 // address T2 branches

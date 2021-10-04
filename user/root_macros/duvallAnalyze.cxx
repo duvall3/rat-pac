@@ -65,8 +65,25 @@ printf("c3->Print(\"%s\");\n", pdxyzfile.Data());
 printf("c3->Close();\n");
 printf("f->Close();\n");
 printf("\nAll pau!   )\n\n");
+//ofstream RC = "rootcommands.cxx";
+//RC << "{" << endl;
+//TString cmd0, cmd1, cmd2, cmd3, cmd4;
+//cmd0.Form("TFile *f = TFile::Open(\"%s\");\n", resultsfile.Data());
+//cmd1.Form("c3->Draw();\n");
+//cmd2.Form("c3->Print(\"%s\");\n", pdxyzfile.Data());
+//cmd3.Form("c3->Close();\n");
+//cmd4.Form("f->Close();\n");
+////gInterpreter->ProcessLine(cmd0.Data());
+////gInterpreter->ProcessLine(cmd1.Data());
+////gInterpreter->ProcessLine(cmd2.Data());
+////gInterpreter->ProcessLine(cmd3.Data());
+////gInterpreter->ProcessLine(cmd4.Data());
+//RC << cmd0.Data() << cmd1.Data() << cmd2.Data() << cmd3.Data() << cmd4.Data() << "gSystem->Exit(0);" << endl << "}" << endl;
 
 // all pau!   )
 printf( "\n//// Analysis Complete ////\n\n\n" );
+//printf( "Now run the following line at the shell prompt:\nroot rootcommands.cxx\n\n" );
+//printf( "Now run the following line:\n.x rootcommands.cxx\n\n" );
+//gSystem->Exit(0);
 return;
 }
