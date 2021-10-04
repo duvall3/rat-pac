@@ -48,6 +48,7 @@ for DIR in $DATARUN*/; do
   echo "\
 ch.Add(\"$FILE_BASE/$FILENAME\");
 TTree* t = (TTree*)ch.GetFile()->FindObjectAny(\"T_scint\");
+TObjString *experiment = (TObjString*)ch.GetFile()->FindObjectAny(\"experiment\");
 TObjString* tos = (TObjString*)t->GetUserInfo()->At(0);
 nIBDs = nIBDs + tos->GetString().Atoll();
 TVectorF *matches_job = (TVectorF*)gFile->FindObjectAny(\"matches_0_1_multiple\");
@@ -65,6 +66,7 @@ TString nIBDs_ts = TString::LLtoa(nIBDs, 10); // base 10
 TObjString* nIBDs_tos = new TObjString(nIBDs_ts.Data());\n
 // update nIBDs in output file
 TFile* f = TFile::Open(\"$OUTFILE\", \"update\");
+experiment->Write(\"experiment\");
 TKey* tk = f->FindKey(\"T_scint\");
 TTree* tr = tk->ReadObj();
 TList* t_user = tr->GetUserInfo();

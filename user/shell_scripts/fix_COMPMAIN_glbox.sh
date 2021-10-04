@@ -37,14 +37,19 @@ for LINK in $RESULTS_DIR/*_results.root; do
   XYZ_FILENAME="$DATARUN_NAME"_pd-xyz.png
   XYZ_GEO_FILENAME="$DATARUN_NAME"_pd-xyz-with-geo.png
 
+#  # c3 plots
+#  echo -e "
+#cd $DATARUN_DIR
+#root $FILE_NAME
+#c3->Draw();
+#c3->Print(\"$XYZ_FILENAME\");
+#c3->Close();
+#gFile->Close();" >> $OUTPUT_FILE
+
   # c3 plots
   echo -e "
 cd $DATARUN_DIR
-root $FILE_NAME
-c3->Draw();
-c3->Print(\"$XYZ_FILENAME\");
-c3->Close();
-gFile->Close();" >> $OUTPUT_FILE
+root rootcommands.cxx" >> $OUTPUT_FILE
 
   # c3_with-geo plots
   case $EXPERIMENT in
