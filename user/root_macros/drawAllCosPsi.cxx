@@ -125,9 +125,9 @@ TIter iH(hList);
 h = (TH1D*)hList->At(0);
 h->SetStats(0);
 TString hTitle = "All Cos[#psi] Distributions";
-Double_t N, cp, cpN;
-TString NString, cpString, cpNString;
+h->GetXaxis()->SetLabelOffset(.001);
 h->Draw();
+can_hcp->SetTicks(2,1);
 if (kNormalized) {
   hTitle.Append(" (Normalized)");
   TText *ylabel = new TText(1.1, 0., "Relative Frequency (arb.)");
@@ -141,6 +141,8 @@ h->SetTitle(hTitle.Data());
 TVectorD binsMax(nFiles);
 Double_t maxSANTA;
 Int_t maxSANTAbin;
+Double_t N, cp, cpN;
+TString NString, cpString, cpNString;
 k=0;
 for ( iH=hList->begin(); iH!=hList->end(); ++iH ) {
   h = (TH1D*)*iH;
@@ -202,21 +204,20 @@ if ( ! kNormalized ) {
   gSystem->Exec(shellCmd.Data());
 }
 
-// draw completed legend
-leg->Draw();
-
 // axis limits
 Double_t allMax = binsMax.Max();
 h = (TH1D*)hList->At(0);
 h->SetAxisRange(0., allMax, "y");
 ylabel->SetY(allMax);
 
+// draw completed legend
+leg->Draw();
+
 // mean indicators
 Int_t nBins, markerBin;
-ylow = 0;
-yup = allMax;
-meanLine->SetLineWidth(3.);
-meanLine->SetLineStyle(kDotted);
+ylow = 0.97*allMax;
+yup = 1.03*allMax;
+meanLine->SetLineWidth(4.);
 yMarker = ylow + 0.9*(yup-ylow);
 meanMarker->SetMarkerSize(1.7);
 k = 0;
@@ -233,8 +234,8 @@ for ( iH = hList->begin(); iH!=hList->end(); ++iH ) {
     meanLine->SetLineStyle(7);
 //} else if ( dLabel.Contains("NuLat 5") ) {
 //  meanLine->SetLineColor(colors[k]);
-  } else {
-    meanLine->SetLineStyle(kDotted);
+//} else {
+//  meanLine->SetLineStyle(kDotted);
   }
   hMean = h->GetMean();
   meanLine->SetLineColor(colors[k]);
