@@ -85,6 +85,7 @@ TString dLabel;
 // mean markers
 Double_t ylow, yup, yMarker, hMean, kMarkerOffset(0.003);
 TLine *meanLine = new TLine;
+TArrow *meanArrow = new TArrow;
 TMarker *meanMarker = new TMarker;
 
 //// MAIN
@@ -112,6 +113,14 @@ for ( iFile=fileList->begin(); iFile!=fileList->end(); ++iFile ) {
 //if ( dLabelLower.Contains("lim") ) dLabel.Append(" **");
   k++;
   hList->Add(h);
+  h->SetMarkerStyle(22);
+  h->SetMarkerSize(2);
+  h->SetMarkerColor(h->GetLineColor());
+  if ( dLabel.Contains("SANDD") || dLabel.Contains("2D Chk.") ) {
+    h->SetMarkerStyle(27);
+  } else if ( dLabelLower.Contains("lim") ) {
+    h->SetMarkerStyle(26);
+  }
   leg->AddEntry(h, dLabel.Data());
   dLabel.Clear();
 } // end file loop
@@ -125,9 +134,13 @@ TIter iH(hList);
 h = (TH1D*)hList->At(0);
 h->SetStats(0);
 TString hTitle = "All Cos[#psi] Distributions";
-h->GetXaxis()->SetLabelOffset(.001);
+//h->GetXaxis()->SetLabelOffset(.001);
+h->GetXaxis()->SetLabelOffset(.03);
+h->GetXaxis()->SetTitleOffset(1.2);
+h->GetXaxis()->SetTitle("cos[#psi] ");
+h->SetLineColor(TColor::GetColorTransparent(h->GetLineColor(), 0.5));
 h->Draw();
-can_hcp->SetTicks(2,1);
+//can_hcp->SetTicks(2,1);
 if (kNormalized) {
   hTitle.Append(" (Normalized)");
   TText *ylabel = new TText(1.1, 0., "Relative Frequency (arb.)");
@@ -214,43 +227,23 @@ ylabel->SetY(allMax);
 leg->Draw();
 
 // mean indicators
-Int_t nBins, markerBin;
-ylow = 0.97*allMax;
-yup = 1.03*allMax;
-meanLine->SetLineWidth(4.);
-yMarker = ylow + 0.9*(yup-ylow);
-meanMarker->SetMarkerSize(1.7);
+meanMarker->SetMarkerSize(3.);
+meanMarker->SetMarkerStyle(22);
 k = 0;
 for ( iH = hList->begin(); iH!=hList->end(); ++iH ) {
   h = (TH1D*)(*iH);
-  nBins = h->GetNbinsX();
   dName = (TObjString*)detectorNames->At(k);
   dLabel = dName->GetString();
   dLabelLower = dLabel;
   dLabelLower.ToLower();
   if ( dLabel.Contains("SANDD") || dLabel.Contains("2D Chk.") ) {
-    meanLine->SetLineStyle(kDashDotted);
+    meanMarker->SetMarkerStyle(27);
   } else if ( dLabelLower.Contains("lim") ) {
-    meanLine->SetLineStyle(7);
-//} else if ( dLabel.Contains("NuLat 5") ) {
-//  meanLine->SetLineColor(colors[k]);
-//} else {
-//  meanLine->SetLineStyle(kDotted);
+    meanMarker->SetMarkerStyle(26);
   }
   hMean = h->GetMean();
-  meanLine->SetLineColor(colors[k]);
-  meanMarker->SetMarkerColor(colors[k]);
-  meanLine->DrawLine(hMean, ylow, hMean, yup);
-  meanMarker->SetMarkerStyle(k+20);
-//meanMarker->DrawMarker(hMean, yMarker);
-////if ( k < (nBins-1) ) {
-////  markerBin = k + 1;
-////} else {
-////  markerBin = nBins;
-////}
-//  markerBin = nBins;
-//  meanMarker->DrawMarker(h->GetBinCenter(markerBin), h->GetBinContent(markerBin));
-  yMarker -= 0.02*(yup-ylow);
+  meanMarker->SetMarkerColor(TColor::GetColorTransparent(colors[k], 0.6));
+  meanMarker->DrawMarker(hMean, -0.02*allMax);
   k++;
 }
 can_hcp->RedrawAxis("y");
