@@ -32,7 +32,7 @@ resultsDir.Append("/data/COMPMAIN_RESULTS/ROOT_files");
 gSystem->cd(resultsDir.Data());
 ofstream summaryFile = "summary.txt";
 
-// defint decent legend coordinates
+// define decent legend coordinates
 Double_t legxy[4] = {.10, .60, .40, .90};
 
 // settings for normalization
@@ -50,9 +50,10 @@ TFile *f1 = TFile::Open("COMPMAIN_NULAT_10K_results.root");
 TFile *f2 = TFile::Open("COMPMAIN_NULAT5_10K_results.root");
 TFile *f3 = TFile::Open("COMPMAIN_CHECKERBOARD-3D_10K_results.root");
 TFile *f4 = TFile::Open("COMPMAIN_SANTA_10K_results.root");
-TFile *f5 = TFile::Open("COMPMAIN_SANDD_10K_results.root");
-TFile *f6 = TFile::Open("COMPMAIN_CHECKERBOARD-2D_10K_results.root");
-TFile *f7 = TFile::Open("COMPMAIN_IDEAL_10K_results.root");
+TFile *f5 = TFile::Open("COMPMAIN_IDEAL_10K_results.root");
+TFile *f6 = TFile::Open("COMPMAIN_SANDD_10K_results.root");
+TFile *f7 = TFile::Open("COMPMAIN_CHECKERBOARD-2D_10K_results.root");
+TFile *f8 = TFile::Open("COMPMAIN_PROSPECT_10K_015LI-6_results.root");
 TList *fileList = new TList, *hList = new TList;
 fileList->Add(f0);
 fileList->Add(f1);
@@ -62,15 +63,15 @@ fileList->Add(f4);
 fileList->Add(f5);
 fileList->Add(f6);
 fileList->Add(f7);
+fileList->Add(f8);
 TIter iFile(fileList);
 
 // annotations
 TLegend *leg = new TLegend(legxy[0], legxy[1], legxy[2], legxy[3]);
 Int_t k=0, nFiles=fileList->GetEntries();
-//Color_t colors[8] = {4, 3, 7, 11, 2, 6, 5, 1}; // decent colors if using Fill
-Color_t colors[8] = {4, 3, 7, 11, 2, 6, 9, 1}; // decent colors if not using Fill
+Color_t colors[9] = {4, 3, 7, 11, 2, 1, 6, 9, 8}; // decent colors if not using Fill
 // labeling
-TObjString d0("CHOOZ"), d1("NuLat 3"), d2("NuLat 5"), d3("3D Chk."), d4("SANTA"), d5("SANDD"), d6("2D Chk."), d7("LN3 LIMIT");
+TObjString d0("CHOOZ"), d1("NuLat 3"), d2("NuLat 5"), d3("3D Chk."), d4("SANTA"), d5("LN3 LIMIT"), d6("SANDD"), d7("2D Chk."), d8("PROSPECT");
 TObjArray *detectorNames = new TObjArray;
 detectorNames->Add(&d0);
 detectorNames->Add(&d1);
@@ -80,6 +81,7 @@ detectorNames->Add(&d4);
 detectorNames->Add(&d5);
 detectorNames->Add(&d6);
 detectorNames->Add(&d7);
+detectorNames->Add(&d8);
 TObjString *dName = new TObjString;
 TString dLabel;
 // mean markers
@@ -116,7 +118,7 @@ for ( iFile=fileList->begin(); iFile!=fileList->end(); ++iFile ) {
   h->SetMarkerStyle(22);
   h->SetMarkerSize(2);
   h->SetMarkerColor(h->GetLineColor());
-  if ( dLabel.Contains("SANDD") || dLabel.Contains("2D Chk.") ) {
+  if ( dLabelLower.Contains("sandd") || dLabelLower.Contains("2d chk.") || dLabelLower.Contains("prospect") ) {
     h->SetMarkerStyle(27);
   } else if ( dLabelLower.Contains("lim") ) {
     h->SetMarkerStyle(26);
@@ -167,7 +169,7 @@ for ( iH=hList->begin(); iH!=hList->end(); ++iH ) {
   dLabel = dName->GetString();
   dLabelLower = dLabel;
   dLabelLower.ToLower();
-  if ( dLabel.Contains("SANDD") || dLabel.Contains("2D Chk.") ) {
+  if ( dLabelLower.Contains("sandd") || dLabelLower.Contains("2d chk") || dLabelLower.Contains("prospect") ) {
     h->SetLineStyle(5);
   } else if (dLabelLower.Contains("lim")) {
     h->SetLineStyle(kDashed);
@@ -195,7 +197,7 @@ for ( iH=hList->begin(); iH!=hList->end(); ++iH ) {
       NString.Append("^\\emph{\\dag}");
       cpString.Append("^\\emph{\\dag}");
       cpNString.Append("^\\emph{\\dag}");
-    } else if ( (dLabel.Contains("SANDD")) || (dLabel.Contains("2D")) ) {
+    } else if ( dLabel.Contains("SANDD") || dLabel.Contains("2D") || dLabel.Contains("PROSPECT") ) {
       NString.Append("~\t\t");
       cpString.Append("^\\emph{\\ddag}");
       cpNString.Append("^\\emph{\\ddag}");
@@ -236,7 +238,7 @@ for ( iH = hList->begin(); iH!=hList->end(); ++iH ) {
   dLabel = dName->GetString();
   dLabelLower = dLabel;
   dLabelLower.ToLower();
-  if ( dLabel.Contains("SANDD") || dLabel.Contains("2D Chk.") ) {
+  if ( dLabel.Contains("SANDD") || dLabel.Contains("2D Chk.") || dLabel.Contains("PROSPECT") ) {
     meanMarker->SetMarkerStyle(27);
   } else if ( dLabelLower.Contains("lim") ) {
     meanMarker->SetMarkerStyle(26);
