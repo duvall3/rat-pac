@@ -159,12 +159,10 @@ if (sPositionResolution.Contains('z')) {
 // unique transformations for PROSPECT
 Experiment.ToLower();
 if (Experiment.Contains("prospect")) {
-  T_scint->SetBranchAddress("x_quantized", &x);
-  T_scint->SetBranchAddress("z_quantized", &y);
-  T_scint->SetBranchAddress("y_res", &z);
-  sQuantizedPositions = "xz";
-  sPositionResolution = "y";
-//kAzimuthalOnly = kTRUE;
+  T_scint->SetBranchAddress("x_quantized", &x); // x' = x
+  T_scint->SetBranchAddress("z_quantized", &y); // y' = -z
+  T_scint->SetBranchAddress("y_res", &z);       // z' = y
+  // now, should be able to use same {xyz} parameters as SANDD
 }
 
 // address T2 branches
@@ -201,6 +199,10 @@ T2->Branch("theta_recon", &theta_recon, "theta_recon/D");
 T2->Branch("tmin", &tmin, "tmin/D");
 T2->Branch("longtd", &longtd, "longtd/D");
 T2->Branch("lattd", &lattd, "lattd/D");
+
+// T3 -- same as T2 but for single-volume IBD events
+TTree *T3 = T2->Clone("T3");
+T2->CopyAddresses(T3);
 
 // Copy total number of top-level MC events from T to T2
 // -- NOTE: this method is not especially robust;
@@ -394,7 +396,11 @@ for ( k = 0; k < (num_bursts-1); k++ ) {
     prompt_cand_vol = new TString(vol_name->Data());
 //  cout << prompt_cand_vol.Data() << "  " << vol_name.Data() << endl; //debug
     prompt_cand_x = x;
-    prompt_cand_y = y;
+    if (Experiment.Contains("prospect")) {
+      prompt_cand_y = -y;
+    } else {
+      prompt_cand_y = y;
+    }
     prompt_cand_z = z;
     // look for delayed:
     T_scint->GetEntry(k+1);
@@ -408,7 +414,11 @@ for ( k = 0; k < (num_bursts-1); k++ ) {
       delayed_cand_vol = new TString(vol_name->Data());
 //    cout << prompt_cand_vol.Data() << "  " << delayed_cand_vol.Data() << "  " << vol_name.Data() << endl << endl; //debug
       delayed_cand_x = x;
-      delayed_cand_y = y;
+      if (Experiment.Contains("prospect")) {
+	delayed_cand_y = -y;
+      } else {
+	delayed_cand_y = y;
+      }
       delayed_cand_z = z;
     } //endif -- delayed satisfies neutrino trigger
   } //endif -- prompt satisfies neutrino trigger
@@ -423,8 +433,9 @@ for ( k = 0; k < (num_bursts-1); k++ ) {
     }
   }
 
-  // if candidate burst pair is found, add burst times and energies and reconstructed angle to tree
-  if ( prompt_tf & delayed_tf & kVolumeTest ) {
+  // if candidate burst pair is found, add burst times and energies and reconstructed angle to T3
+//if ( prompt_tf & delayed_tf & kVolumeTest ) {
+  if ( prompt_tf & delayed_tf ) {
 
     // add to TEntryLists
     elPrompt->Enter(k);
@@ -457,8 +468,12 @@ for ( k = 0; k < (num_bursts-1); k++ ) {
     longtd = phi_recon; // aitoff longtd: (-180,+180)
     lattd = 90 - theta_recon; // aitoff lattd: (-90,+90)
 
-    // fill results tree
-    T2->Fill();
+    // add to either reconstruction tree or single-volume tree
+    if (kVolumeTest) {
+      T2->Fill();
+    } else {
+      T3->Fill();
+    }
 
   } //endif -- neutrino trigger
 
@@ -475,7 +490,7 @@ elNeither->SetName("elNeither");
 elNeither->SetTitle("Bursts Not Passing Trigger");
 elNeither->Subtract(elPrompt);
 elNeither->Subtract(elDelayed);
-Long64_t ibd_candidates = T2->GetEntries();
+Long64_t recon_ibds = T2->GetEntries(), singlevol_ibds = T3->GetEntries(), total_ibds = recon_ibds + singlevol_ibds;
 const char* units = "Time (s), Energy (MeVee)";
 
 // save ibd trigger parameters and result
@@ -488,7 +503,10 @@ T_Trig->Branch("prompt_low",&prompt_low,"prompt_low/D");
 T_Trig->Branch("prompt_high",&prompt_high,"prompt_high/D");
 T_Trig->Branch("delayed_low",&delayed_low,"delayed_low/D");
 T_Trig->Branch("delayed_high",&delayed_high,"delayed_high/D");
-T_Trig->Branch("ibd_candidates",&ibd_candidates,"ibd_candidates/L");
+//T_Trig->Branch("ibd_candidates",&ibd_candidates,"ibd_candidates/L");
+T_Trig->Branch("total_ibds",&total_ibds,"total_ibds/L");
+T_Trig->Branch("singlevol_ibds",&singlevol_ibds,"singlevol_ibds/L");
+T_Trig->Branch("recon_ibds",&recon_ibds,"recon_ibds/L");
 T_Trig->Fill();
 
 // print summary to stdout
