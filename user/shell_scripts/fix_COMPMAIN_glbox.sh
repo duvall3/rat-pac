@@ -37,21 +37,22 @@ for LINK in $RESULTS_DIR/*_results.root; do
   XYZ_FILENAME="$DATARUN_NAME"_pd-xyz.png
   XYZ_GEO_FILENAME="$DATARUN_NAME"_pd-xyz-with-geo.png
 
-#  # c3 plots
-#  echo -e "
-#cd $DATARUN_DIR
-#root $FILE_NAME
-#c3->Draw();
-#c3->Print(\"$XYZ_FILENAME\");
-#c3->Close();
-#gFile->Close();" >> $OUTPUT_FILE
-
   # c3 plots
   echo -e "
 cd $DATARUN_DIR
-root rootcommands.cxx" >> $OUTPUT_FILE
+root $FILE_NAME
+c3->Draw();
+c3->Print(\"$XYZ_FILENAME\");
+c3->Close();
+gFile->Close();" >> $OUTPUT_FILE
+
+#  # c3 plots
+#  echo -e "
+#cd $DATARUN_DIR
+#root rootcommands.cxx" >> $OUTPUT_FILE
 
   # c3_with-geo plots
+  ADD_GEO_TF=true
   case $EXPERIMENT in
     chooz)
       echo -e "const char* resultsFilename = \"$FILE_NAME\"\n.x addGeoChooz.cxx" >> $OUTPUT_FILE
@@ -63,25 +64,30 @@ root rootcommands.cxx" >> $OUTPUT_FILE
       echo -e "TList *vols = addGeoNuLat(\"$DATARUN_NAME"_0"/$DATARUN_NAME"_0"/$DATARUN_NAME"_0.root"\", \"$FILE_NAME\");" >> $OUTPUT_FILE
       if [[ $EXPERIMENT =~ checkerboard && ! $EXPERIMENT =~ .*-ref ]]; then echo -e "toggleInertVisAddGeo(vols);" >> $OUTPUT_FILE; fi
       ;;
-    sandd|*-2d*|*-ref)
+    sandd|*-2d*|*-ref|prospect)
       echo -e "TList *vols = addGeoSANDD(\"$DATARUN_NAME"_0"/$DATARUN_NAME"_0"/$DATARUN_NAME"_0.root"\", \"$FILE_NAME\");" >> $OUTPUT_FILE
       if [[ $EXPERIMENT =~ checkerboard && ! $EXPERIMENT =~ .*-ref ]]; then echo -e "toggleInertVisAddGeo(vols, 2);" >> $OUTPUT_FILE; fi
       ;;
     *)
       echo -e "WARNING: Experiment \"$EXPERIMENT\" not recognized among pre-defined types. Proceeding with remaining results files."
+      ADD_GEO_TF=false
       ;;
   esac
+  if $ADD_GEO_TF; then
   echo -e "\
 TView3D *view = gPad->GetView();" >> $OUTPUT_FILE
-if [[ $EXPERIMENT =~ chooz ]]; then echo -n "//" >> $OUTPUT_FILE; fi
-echo -e "view->SetParallel();
+  if [[ $EXPERIMENT =~ chooz ]]; then echo -n "//" >> $OUTPUT_FILE; fi
+    echo -e "view->SetParallel();
 view->ShowAxis();
 view->Draw();
 c3->Print(\"$XYZ_GEO_FILENAME\");
 c3->Close();
-gFile->Close();
-.q" >> $OUTPUT_FILE
-    
+gFile->Close();" >> $OUTPUT_FILE
+  fi
+
+  # close ROOT
+  echo ".q" >> $OUTPUT_FILE
+
   EXIT_STATS=(${EXIT_STATS[*]} $?)
 
 done

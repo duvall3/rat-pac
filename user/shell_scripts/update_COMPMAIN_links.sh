@@ -20,15 +20,16 @@
 ## init
 GREP=$(which grep)
 AWK=$(which awk); AWK=${AWK:-$(which mawk)}; AWK=${AWK:-$(which gawk)}
-#RESULTS_FILE_PATTERN='COMPMAIN*10?_results.root'
-#RESULTS_EXCLUDE_PATTERN='(005LI-6)|(pert)|(shielded)'
-#RESULTS_ORIG_FILES=( $( find $RATROOT/data/*/* -type f -name "$RESULTS_FILE_PATTERN" | $GREP -iEv $RESULTS_EXCLUDE_PATTERN ) )
 RESULTS_ROOT_DIR=$RATROOT/data/COMPMAIN_RESULTS/ROOT_files
 RESULTS_BY_EXP_DIR=$RATROOT/data/COMPMAIN_RESULTS/by_experiment
 RESULTS_BY_PLOT_DIR=$RATROOT/data/COMPMAIN_RESULTS/by_plot_type
 RESULTS_ORIG_FILES=( $(find $RESULTS_ROOT_DIR -type l ! -xtype l -name "*.root") )
 CANVASES=(c{0..3} c3_with-geo c{4..8})
 PLOT_NAMES=("_geo_scale" "_bursts" "_nu-trg" "_pd-xyz" "_pd-xyz-with-geo" "_results-ang-separate" "_results-cos-psi" "_results-skymap" "_cap-prod" "_results-phi-radar")
+
+## clear previous links
+rm $(find $RESULTS_BY_EXP_DIR -type l) > /dev/null
+rm $(find $RESULTS_BY_PLOT_DIR -type l) > /dev/null
 
 ## MAIN
 

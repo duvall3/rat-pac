@@ -60,8 +60,11 @@ for LINK in $RESULTS_DIR/*_results.root; do
     nulat*|*-3d*)
       ANALYSIS_ARGS=(${ANALYSIS_ARGS[*]} "\"xyz\"")
       ;;
-    sandd|*-2d*|*-ref)
+    sandd|*-2d*|*-ref|prospect)
       ANALYSIS_ARGS=(${ANALYSIS_ARGS[*]} "\"xy\"," "\"z\"," "true")
+      ;;
+    ideal)
+      ANALYSIS_ARGS=(${ANALYSIS_ARGS[*]} "\"\"")
       ;;
     *)
       echo "WARNING: Experiment not recognized among pre-defined types. Proceeding with default analysis settings." > >(tee -a $LOGFILE) 2> >(tee -a $LOGFILE >&2)
