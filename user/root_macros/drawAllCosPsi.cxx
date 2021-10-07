@@ -30,7 +30,11 @@ const char* RATROOT = gSystem->ExpandPathName("$RATROOT");
 TString resultsDir(RATROOT);
 resultsDir.Append("/data/COMPMAIN_RESULTS/ROOT_files");
 gSystem->cd(resultsDir.Data());
-ofstream summaryFile = "summary.txt";
+if (kNormalized) {
+  ofstream summaryFile = "/dev/null";
+} else {
+  ofstream summaryFile = "summary.txt";
+}
 
 // define decent legend coordinates
 Double_t legxy[4] = {.10, .60, .40, .90};
@@ -127,7 +131,7 @@ for ( iFile=fileList->begin(); iFile!=fileList->end(); ++iFile ) {
   dLabel.Clear();
 } // end file loop
 
-// hist / legend loop
+// init hist/legend loop
 TString canTitle = "All Cos[psi] COMPMAIN Results";
 if (kNormalized) canTitle.Append(" (Normalized)");
 TCanvas *can_hcp = new TCanvas("can_hcp", canTitle.Data());
@@ -156,12 +160,20 @@ h->SetTitle(hTitle.Data());
 TVectorD binsMax(nFiles);
 Double_t maxSANTA;
 Int_t maxSANTAbin;
-Double_t N, cp, cpN;
-TString NString, cpString, cpNString;
+Double_t N_trg, N_1V, N, cp, cpN;
+TString N_trgString, N_1VString, NString, cpString, cpNString;
+
+// hist/legend loop
 k=0;
 for ( iH=hList->begin(); iH!=hList->end(); ++iH ) {
+
+  // main
   h = (TH1D*)*iH;
+  f = (TFile*)fileList->At(k);
+  f->cd();
+  N_1V = T3->GetEntries();
   N = h->GetEntries();
+  N_trg = N + N_1V;
   cp = h->GetMean();
   cpN = cp / N;
   h->SetStats(0);
@@ -186,29 +198,45 @@ for ( iH=hList->begin(); iH!=hList->end(); ++iH ) {
   }
   h->Draw("same");
   binsMax[k] = h->GetMaximum();
+
   // generate data-dependent portion of LaTeX table
   if ( ! kNormalized ) {
-    NString.Form(" %d", (Long64_t)N);
+    N_trgString.Form(" %d", (Long64_t)N_trg);
+    N_1VString.Form("\t& %d", (Long64_t)N_1V);
+    NString.Form("\t& %d", (Long64_t)N);
     cpString.Form("\t& %.3f", cp);
     cpNString.Form("%1.2e", cpN);
 //  cout << dLabel.Data() << "\t" << NString.Data() << "\t" << cpString.Data() << "\t" << cpNString.Data() << endl; //debug
     cpNString.Form("\t& %.2f", cpNString.Atof()*1.e6);
     if (dLabel.Contains("NuLat 3")) {
+      N_trgString.Append("^\\emph{\\dag}");
+      N_1VString.Append("^\\emph{\\dag}");
       NString.Append("^\\emph{\\dag}");
       cpString.Append("^\\emph{\\dag}");
       cpNString.Append("^\\emph{\\dag}");
     } else if ( dLabel.Contains("SANDD") || dLabel.Contains("2D") || dLabel.Contains("PROSPECT") ) {
+      N_trgString.Append("~\t\t");
+      N_1VString.Append("~\t\t");
       NString.Append("~\t\t");
       cpString.Append("^\\emph{\\ddag}");
       cpNString.Append("^\\emph{\\ddag}");
     } else {
+      N_trgString.Append("~\t\t");
+      N_1VString.Append("~\t\t");
       NString.Append("~\t\t");
       cpString.Append("~\t");
       cpNString.Append("~");
     }
-    if ( ! dLabelLower.Contains("lim") ) summaryFile << NString.Data() << cpString.Data() << cpNString.Data();
-    if ( k < (hList->GetEntries()-1) ) summaryFile << "\\\\";
-    summaryFile << endl;
+    if ( ! dLabelLower.Contains("lim") ) {
+//    summaryFile << NString.Data() << cpString.Data() << cpNString.Data();
+      summaryFile << N_trgString.Data() << N_1VString.Data() << NString.Data() << cpString.Data() << cpNString.Data();
+      if ( k < (hList->GetEntries()-1) ) summaryFile << "\\\\";
+      if ( dLabelLower.Contains("santa") ) {
+        summaryFile << endl << endl;
+      } else {
+	summaryFile << endl;
+      }
+    }
   }
   k++;
 }
