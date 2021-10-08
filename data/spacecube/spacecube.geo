@@ -24,7 +24,7 @@ mother: "world",
 type: "box",
 size: [10000.0, 10000.0, 10000.0], // mm
 material: "air",
-color: [0.8 0.1, 0.1],
+color: [0.8, 0.1, 0.1],
 invisible: 1,
 //position: [] // -- center of "world"
 }
@@ -40,9 +40,11 @@ valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "cave",
 type: "box",
-size: [49.500, 49.500, 49.500], // mm
-material: "air",
+size: [93.500, 93.500, 93.500], // mm
+//material: "air",
+material: "glass",
 invisible: 0,
+color: [0.8, 0.8, 0.8, 0.2],
 position: [0.0, 0.0, 0.0] // mm
 }
 
@@ -58,24 +60,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-44.000, -44.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_0_0_1]
-{
-name: "GEO",
-index: "target_cube_0_0_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, -44.000, -33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -88.000, -88.000] // mm
 }
 
 
@@ -90,24 +76,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-44.000, -44.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_0_0_3]
-{
-name: "GEO",
-index: "target_cube_0_0_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, -44.000, -11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -88.000, -66.000] // mm
 }
 
 
@@ -122,24 +92,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-44.000, -44.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_0_0_5]
-{
-name: "GEO",
-index: "target_cube_0_0_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, -44.000, 11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -88.000, -44.000] // mm
 }
 
 
@@ -154,24 +108,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-44.000, -44.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_0_0_7]
-{
-name: "GEO",
-index: "target_cube_0_0_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, -44.000, 33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -88.000, -22.000] // mm
 }
 
 
@@ -186,152 +124,72 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-44.000, -44.000, 44.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -88.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_0_1_0]
+// -------- GEO[target_cube_0_0_10]
 {
 name: "GEO",
-index: "target_cube_0_1_0",
+index: "target_cube_0_0_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, -33.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -88.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_0_1_1]
+// -------- GEO[target_cube_0_0_12]
 {
 name: "GEO",
-index: "target_cube_0_1_1",
+index: "target_cube_0_0_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, -33.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -88.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_0_1_2]
+// -------- GEO[target_cube_0_0_14]
 {
 name: "GEO",
-index: "target_cube_0_1_2",
+index: "target_cube_0_0_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, -33.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -88.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_0_1_3]
+// -------- GEO[target_cube_0_0_16]
 {
 name: "GEO",
-index: "target_cube_0_1_3",
+index: "target_cube_0_0_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, -33.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_0_1_4]
-{
-name: "GEO",
-index: "target_cube_0_1_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, -33.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_0_1_5]
-{
-name: "GEO",
-index: "target_cube_0_1_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, -33.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_0_1_6]
-{
-name: "GEO",
-index: "target_cube_0_1_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, -33.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_0_1_7]
-{
-name: "GEO",
-index: "target_cube_0_1_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, -33.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_0_1_8]
-{
-name: "GEO",
-index: "target_cube_0_1_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, -33.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -88.000, 88.000] // mm
 }
 
 
@@ -346,24 +204,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-44.000, -22.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_0_2_1]
-{
-name: "GEO",
-index: "target_cube_0_2_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, -22.000, -33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -66.000, -88.000] // mm
 }
 
 
@@ -378,24 +220,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-44.000, -22.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_0_2_3]
-{
-name: "GEO",
-index: "target_cube_0_2_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, -22.000, -11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -66.000, -66.000] // mm
 }
 
 
@@ -410,24 +236,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-44.000, -22.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_0_2_5]
-{
-name: "GEO",
-index: "target_cube_0_2_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, -22.000, 11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -66.000, -44.000] // mm
 }
 
 
@@ -442,24 +252,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-44.000, -22.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_0_2_7]
-{
-name: "GEO",
-index: "target_cube_0_2_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, -22.000, 33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -66.000, -22.000] // mm
 }
 
 
@@ -474,152 +268,72 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-44.000, -22.000, 44.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -66.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_0_3_0]
+// -------- GEO[target_cube_0_2_10]
 {
 name: "GEO",
-index: "target_cube_0_3_0",
+index: "target_cube_0_2_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, -11.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -66.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_0_3_1]
+// -------- GEO[target_cube_0_2_12]
 {
 name: "GEO",
-index: "target_cube_0_3_1",
+index: "target_cube_0_2_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, -11.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -66.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_0_3_2]
+// -------- GEO[target_cube_0_2_14]
 {
 name: "GEO",
-index: "target_cube_0_3_2",
+index: "target_cube_0_2_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, -11.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -66.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_0_3_3]
+// -------- GEO[target_cube_0_2_16]
 {
 name: "GEO",
-index: "target_cube_0_3_3",
+index: "target_cube_0_2_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, -11.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_0_3_4]
-{
-name: "GEO",
-index: "target_cube_0_3_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, -11.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_0_3_5]
-{
-name: "GEO",
-index: "target_cube_0_3_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, -11.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_0_3_6]
-{
-name: "GEO",
-index: "target_cube_0_3_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, -11.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_0_3_7]
-{
-name: "GEO",
-index: "target_cube_0_3_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, -11.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_0_3_8]
-{
-name: "GEO",
-index: "target_cube_0_3_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, -11.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -66.000, 88.000] // mm
 }
 
 
@@ -634,24 +348,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-44.000, 0.0, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_0_4_1]
-{
-name: "GEO",
-index: "target_cube_0_4_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, 0.0, -33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -44.000, -88.000] // mm
 }
 
 
@@ -666,24 +364,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-44.000, 0.0, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_0_4_3]
-{
-name: "GEO",
-index: "target_cube_0_4_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, 0.0, -11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -44.000, -66.000] // mm
 }
 
 
@@ -698,24 +380,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-44.000, 0.0, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_0_4_5]
-{
-name: "GEO",
-index: "target_cube_0_4_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, 0.0, 11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -44.000, -44.000] // mm
 }
 
 
@@ -730,24 +396,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-44.000, 0.0, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_0_4_7]
-{
-name: "GEO",
-index: "target_cube_0_4_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, 0.0, 33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -44.000, -22.000] // mm
 }
 
 
@@ -762,152 +412,72 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-44.000, 0.0, 44.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -44.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_0_5_0]
+// -------- GEO[target_cube_0_4_10]
 {
 name: "GEO",
-index: "target_cube_0_5_0",
+index: "target_cube_0_4_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, 11.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -44.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_0_5_1]
+// -------- GEO[target_cube_0_4_12]
 {
 name: "GEO",
-index: "target_cube_0_5_1",
+index: "target_cube_0_4_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, 11.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -44.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_0_5_2]
+// -------- GEO[target_cube_0_4_14]
 {
 name: "GEO",
-index: "target_cube_0_5_2",
+index: "target_cube_0_4_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, 11.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -44.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_0_5_3]
+// -------- GEO[target_cube_0_4_16]
 {
 name: "GEO",
-index: "target_cube_0_5_3",
+index: "target_cube_0_4_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, 11.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_0_5_4]
-{
-name: "GEO",
-index: "target_cube_0_5_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, 11.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_0_5_5]
-{
-name: "GEO",
-index: "target_cube_0_5_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, 11.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_0_5_6]
-{
-name: "GEO",
-index: "target_cube_0_5_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, 11.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_0_5_7]
-{
-name: "GEO",
-index: "target_cube_0_5_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, 11.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_0_5_8]
-{
-name: "GEO",
-index: "target_cube_0_5_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, 11.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -44.000, 88.000] // mm
 }
 
 
@@ -922,24 +492,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-44.000, 22.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_0_6_1]
-{
-name: "GEO",
-index: "target_cube_0_6_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, 22.000, -33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -22.000, -88.000] // mm
 }
 
 
@@ -954,24 +508,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-44.000, 22.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_0_6_3]
-{
-name: "GEO",
-index: "target_cube_0_6_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, 22.000, -11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -22.000, -66.000] // mm
 }
 
 
@@ -986,24 +524,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-44.000, 22.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_0_6_5]
-{
-name: "GEO",
-index: "target_cube_0_6_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, 22.000, 11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -22.000, -44.000] // mm
 }
 
 
@@ -1018,24 +540,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-44.000, 22.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_0_6_7]
-{
-name: "GEO",
-index: "target_cube_0_6_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, 22.000, 33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -22.000, -22.000] // mm
 }
 
 
@@ -1050,152 +556,72 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-44.000, 22.000, 44.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -22.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_0_7_0]
+// -------- GEO[target_cube_0_6_10]
 {
 name: "GEO",
-index: "target_cube_0_7_0",
+index: "target_cube_0_6_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, 33.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -22.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_0_7_1]
+// -------- GEO[target_cube_0_6_12]
 {
 name: "GEO",
-index: "target_cube_0_7_1",
+index: "target_cube_0_6_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, 33.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -22.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_0_7_2]
+// -------- GEO[target_cube_0_6_14]
 {
 name: "GEO",
-index: "target_cube_0_7_2",
+index: "target_cube_0_6_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, 33.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -22.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_0_7_3]
+// -------- GEO[target_cube_0_6_16]
 {
 name: "GEO",
-index: "target_cube_0_7_3",
+index: "target_cube_0_6_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, 33.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_0_7_4]
-{
-name: "GEO",
-index: "target_cube_0_7_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, 33.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_0_7_5]
-{
-name: "GEO",
-index: "target_cube_0_7_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, 33.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_0_7_6]
-{
-name: "GEO",
-index: "target_cube_0_7_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, 33.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_0_7_7]
-{
-name: "GEO",
-index: "target_cube_0_7_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, 33.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_0_7_8]
-{
-name: "GEO",
-index: "target_cube_0_7_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, 33.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, -22.000, 88.000] // mm
 }
 
 
@@ -1210,24 +636,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-44.000, 44.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_0_8_1]
-{
-name: "GEO",
-index: "target_cube_0_8_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, 44.000, -33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 0.0, -88.000] // mm
 }
 
 
@@ -1242,24 +652,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-44.000, 44.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_0_8_3]
-{
-name: "GEO",
-index: "target_cube_0_8_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, 44.000, -11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 0.0, -66.000] // mm
 }
 
 
@@ -1274,24 +668,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-44.000, 44.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_0_8_5]
-{
-name: "GEO",
-index: "target_cube_0_8_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, 44.000, 11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 0.0, -44.000] // mm
 }
 
 
@@ -1306,24 +684,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-44.000, 44.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_0_8_7]
-{
-name: "GEO",
-index: "target_cube_0_8_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-44.000, 44.000, 33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 0.0, -22.000] // mm
 }
 
 
@@ -1338,1304 +700,648 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-44.000, 44.000, 44.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 0.0, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_1_0_0]
+// -------- GEO[target_cube_0_8_10]
 {
 name: "GEO",
-index: "target_cube_1_0_0",
+index: "target_cube_0_8_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -44.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 0.0, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_0_1]
+// -------- GEO[target_cube_0_8_12]
 {
 name: "GEO",
-index: "target_cube_1_0_1",
+index: "target_cube_0_8_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -44.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 0.0, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_0_2]
+// -------- GEO[target_cube_0_8_14]
 {
 name: "GEO",
-index: "target_cube_1_0_2",
+index: "target_cube_0_8_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -44.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 0.0, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_0_3]
+// -------- GEO[target_cube_0_8_16]
 {
 name: "GEO",
-index: "target_cube_1_0_3",
+index: "target_cube_0_8_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -44.000, -11.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 0.0, 88.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_0_4]
+// -------- GEO[target_cube_0_10_0]
 {
 name: "GEO",
-index: "target_cube_1_0_4",
+index: "target_cube_0_10_0",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -44.000, 0.0] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 22.000, -88.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_0_5]
+// -------- GEO[target_cube_0_10_2]
 {
 name: "GEO",
-index: "target_cube_1_0_5",
+index: "target_cube_0_10_2",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -44.000, 11.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 22.000, -66.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_0_6]
+// -------- GEO[target_cube_0_10_4]
 {
 name: "GEO",
-index: "target_cube_1_0_6",
+index: "target_cube_0_10_4",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -44.000, 22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 22.000, -44.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_0_7]
+// -------- GEO[target_cube_0_10_6]
 {
 name: "GEO",
-index: "target_cube_1_0_7",
+index: "target_cube_0_10_6",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -44.000, 33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 22.000, -22.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_0_8]
+// -------- GEO[target_cube_0_10_8]
 {
 name: "GEO",
-index: "target_cube_1_0_8",
+index: "target_cube_0_10_8",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -44.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 22.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_1_1_0]
+// -------- GEO[target_cube_0_10_10]
 {
 name: "GEO",
-index: "target_cube_1_1_0",
+index: "target_cube_0_10_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -33.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 22.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_1_1]
+// -------- GEO[target_cube_0_10_12]
 {
 name: "GEO",
-index: "target_cube_1_1_1",
+index: "target_cube_0_10_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -33.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 22.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_1_2]
+// -------- GEO[target_cube_0_10_14]
 {
 name: "GEO",
-index: "target_cube_1_1_2",
+index: "target_cube_0_10_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -33.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 22.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_1_3]
+// -------- GEO[target_cube_0_10_16]
 {
 name: "GEO",
-index: "target_cube_1_1_3",
+index: "target_cube_0_10_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -33.000, -11.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 22.000, 88.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_1_4]
+// -------- GEO[target_cube_0_12_0]
 {
 name: "GEO",
-index: "target_cube_1_1_4",
+index: "target_cube_0_12_0",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -33.000, 0.0] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 44.000, -88.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_1_5]
+// -------- GEO[target_cube_0_12_2]
 {
 name: "GEO",
-index: "target_cube_1_1_5",
+index: "target_cube_0_12_2",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -33.000, 11.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 44.000, -66.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_1_6]
+// -------- GEO[target_cube_0_12_4]
 {
 name: "GEO",
-index: "target_cube_1_1_6",
+index: "target_cube_0_12_4",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -33.000, 22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 44.000, -44.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_1_7]
+// -------- GEO[target_cube_0_12_6]
 {
 name: "GEO",
-index: "target_cube_1_1_7",
+index: "target_cube_0_12_6",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -33.000, 33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 44.000, -22.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_1_8]
+// -------- GEO[target_cube_0_12_8]
 {
 name: "GEO",
-index: "target_cube_1_1_8",
+index: "target_cube_0_12_8",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -33.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 44.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_1_2_0]
+// -------- GEO[target_cube_0_12_10]
 {
 name: "GEO",
-index: "target_cube_1_2_0",
+index: "target_cube_0_12_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -22.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 44.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_2_1]
+// -------- GEO[target_cube_0_12_12]
 {
 name: "GEO",
-index: "target_cube_1_2_1",
+index: "target_cube_0_12_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -22.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 44.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_2_2]
+// -------- GEO[target_cube_0_12_14]
 {
 name: "GEO",
-index: "target_cube_1_2_2",
+index: "target_cube_0_12_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -22.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 44.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_2_3]
+// -------- GEO[target_cube_0_12_16]
 {
 name: "GEO",
-index: "target_cube_1_2_3",
+index: "target_cube_0_12_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -22.000, -11.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 44.000, 88.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_2_4]
+// -------- GEO[target_cube_0_14_0]
 {
 name: "GEO",
-index: "target_cube_1_2_4",
+index: "target_cube_0_14_0",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -22.000, 0.0] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 66.000, -88.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_2_5]
+// -------- GEO[target_cube_0_14_2]
 {
 name: "GEO",
-index: "target_cube_1_2_5",
+index: "target_cube_0_14_2",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -22.000, 11.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 66.000, -66.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_2_6]
+// -------- GEO[target_cube_0_14_4]
 {
 name: "GEO",
-index: "target_cube_1_2_6",
+index: "target_cube_0_14_4",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -22.000, 22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 66.000, -44.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_2_7]
+// -------- GEO[target_cube_0_14_6]
 {
 name: "GEO",
-index: "target_cube_1_2_7",
+index: "target_cube_0_14_6",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -22.000, 33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 66.000, -22.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_2_8]
+// -------- GEO[target_cube_0_14_8]
 {
 name: "GEO",
-index: "target_cube_1_2_8",
+index: "target_cube_0_14_8",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -22.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 66.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_1_3_0]
+// -------- GEO[target_cube_0_14_10]
 {
 name: "GEO",
-index: "target_cube_1_3_0",
+index: "target_cube_0_14_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -11.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 66.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_3_1]
+// -------- GEO[target_cube_0_14_12]
 {
 name: "GEO",
-index: "target_cube_1_3_1",
+index: "target_cube_0_14_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -11.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 66.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_3_2]
+// -------- GEO[target_cube_0_14_14]
 {
 name: "GEO",
-index: "target_cube_1_3_2",
+index: "target_cube_0_14_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -11.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 66.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_3_3]
+// -------- GEO[target_cube_0_14_16]
 {
 name: "GEO",
-index: "target_cube_1_3_3",
+index: "target_cube_0_14_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -11.000, -11.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 66.000, 88.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_3_4]
+// -------- GEO[target_cube_0_16_0]
 {
 name: "GEO",
-index: "target_cube_1_3_4",
+index: "target_cube_0_16_0",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -11.000, 0.0] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 88.000, -88.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_3_5]
+// -------- GEO[target_cube_0_16_2]
 {
 name: "GEO",
-index: "target_cube_1_3_5",
+index: "target_cube_0_16_2",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -11.000, 11.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 88.000, -66.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_3_6]
+// -------- GEO[target_cube_0_16_4]
 {
 name: "GEO",
-index: "target_cube_1_3_6",
+index: "target_cube_0_16_4",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -11.000, 22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 88.000, -44.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_3_7]
+// -------- GEO[target_cube_0_16_6]
 {
 name: "GEO",
-index: "target_cube_1_3_7",
+index: "target_cube_0_16_6",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -11.000, 33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 88.000, -22.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_3_8]
+// -------- GEO[target_cube_0_16_8]
 {
 name: "GEO",
-index: "target_cube_1_3_8",
+index: "target_cube_0_16_8",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, -11.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 88.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_1_4_0]
+// -------- GEO[target_cube_0_16_10]
 {
 name: "GEO",
-index: "target_cube_1_4_0",
+index: "target_cube_0_16_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 0.0, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 88.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_4_1]
+// -------- GEO[target_cube_0_16_12]
 {
 name: "GEO",
-index: "target_cube_1_4_1",
+index: "target_cube_0_16_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 0.0, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 88.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_4_2]
+// -------- GEO[target_cube_0_16_14]
 {
 name: "GEO",
-index: "target_cube_1_4_2",
+index: "target_cube_0_16_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 0.0, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 88.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_1_4_3]
+// -------- GEO[target_cube_0_16_16]
 {
 name: "GEO",
-index: "target_cube_1_4_3",
+index: "target_cube_0_16_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 0.0, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_4_4]
-{
-name: "GEO",
-index: "target_cube_1_4_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 0.0, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_1_4_5]
-{
-name: "GEO",
-index: "target_cube_1_4_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 0.0, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_4_6]
-{
-name: "GEO",
-index: "target_cube_1_4_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 0.0, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_4_7]
-{
-name: "GEO",
-index: "target_cube_1_4_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 0.0, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_4_8]
-{
-name: "GEO",
-index: "target_cube_1_4_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 0.0, 44.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_5_0]
-{
-name: "GEO",
-index: "target_cube_1_5_0",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 11.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_5_1]
-{
-name: "GEO",
-index: "target_cube_1_5_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 11.000, -33.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_5_2]
-{
-name: "GEO",
-index: "target_cube_1_5_2",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 11.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_5_3]
-{
-name: "GEO",
-index: "target_cube_1_5_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 11.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_5_4]
-{
-name: "GEO",
-index: "target_cube_1_5_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 11.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_1_5_5]
-{
-name: "GEO",
-index: "target_cube_1_5_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 11.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_5_6]
-{
-name: "GEO",
-index: "target_cube_1_5_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 11.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_5_7]
-{
-name: "GEO",
-index: "target_cube_1_5_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 11.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_5_8]
-{
-name: "GEO",
-index: "target_cube_1_5_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 11.000, 44.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_6_0]
-{
-name: "GEO",
-index: "target_cube_1_6_0",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 22.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_6_1]
-{
-name: "GEO",
-index: "target_cube_1_6_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 22.000, -33.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_6_2]
-{
-name: "GEO",
-index: "target_cube_1_6_2",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 22.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_6_3]
-{
-name: "GEO",
-index: "target_cube_1_6_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 22.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_6_4]
-{
-name: "GEO",
-index: "target_cube_1_6_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 22.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_1_6_5]
-{
-name: "GEO",
-index: "target_cube_1_6_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 22.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_6_6]
-{
-name: "GEO",
-index: "target_cube_1_6_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 22.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_6_7]
-{
-name: "GEO",
-index: "target_cube_1_6_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 22.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_6_8]
-{
-name: "GEO",
-index: "target_cube_1_6_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 22.000, 44.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_7_0]
-{
-name: "GEO",
-index: "target_cube_1_7_0",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 33.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_7_1]
-{
-name: "GEO",
-index: "target_cube_1_7_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 33.000, -33.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_7_2]
-{
-name: "GEO",
-index: "target_cube_1_7_2",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 33.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_7_3]
-{
-name: "GEO",
-index: "target_cube_1_7_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 33.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_7_4]
-{
-name: "GEO",
-index: "target_cube_1_7_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 33.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_1_7_5]
-{
-name: "GEO",
-index: "target_cube_1_7_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 33.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_7_6]
-{
-name: "GEO",
-index: "target_cube_1_7_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 33.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_7_7]
-{
-name: "GEO",
-index: "target_cube_1_7_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 33.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_7_8]
-{
-name: "GEO",
-index: "target_cube_1_7_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 33.000, 44.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_8_0]
-{
-name: "GEO",
-index: "target_cube_1_8_0",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 44.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_8_1]
-{
-name: "GEO",
-index: "target_cube_1_8_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 44.000, -33.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_8_2]
-{
-name: "GEO",
-index: "target_cube_1_8_2",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 44.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_8_3]
-{
-name: "GEO",
-index: "target_cube_1_8_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 44.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_8_4]
-{
-name: "GEO",
-index: "target_cube_1_8_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 44.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_1_8_5]
-{
-name: "GEO",
-index: "target_cube_1_8_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 44.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_8_6]
-{
-name: "GEO",
-index: "target_cube_1_8_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 44.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_8_7]
-{
-name: "GEO",
-index: "target_cube_1_8_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 44.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_1_8_8]
-{
-name: "GEO",
-index: "target_cube_1_8_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-33.000, 44.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-88.000, 88.000, 88.000] // mm
 }
 
 
@@ -2650,24 +1356,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-22.000, -44.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_2_0_1]
-{
-name: "GEO",
-index: "target_cube_2_0_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, -44.000, -33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -88.000, -88.000] // mm
 }
 
 
@@ -2682,24 +1372,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-22.000, -44.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_2_0_3]
-{
-name: "GEO",
-index: "target_cube_2_0_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, -44.000, -11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -88.000, -66.000] // mm
 }
 
 
@@ -2714,24 +1388,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-22.000, -44.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_2_0_5]
-{
-name: "GEO",
-index: "target_cube_2_0_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, -44.000, 11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -88.000, -44.000] // mm
 }
 
 
@@ -2746,24 +1404,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-22.000, -44.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_2_0_7]
-{
-name: "GEO",
-index: "target_cube_2_0_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, -44.000, 33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -88.000, -22.000] // mm
 }
 
 
@@ -2778,152 +1420,72 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-22.000, -44.000, 44.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -88.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_2_1_0]
+// -------- GEO[target_cube_2_0_10]
 {
 name: "GEO",
-index: "target_cube_2_1_0",
+index: "target_cube_2_0_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, -33.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -88.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_2_1_1]
+// -------- GEO[target_cube_2_0_12]
 {
 name: "GEO",
-index: "target_cube_2_1_1",
+index: "target_cube_2_0_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, -33.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -88.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_2_1_2]
+// -------- GEO[target_cube_2_0_14]
 {
 name: "GEO",
-index: "target_cube_2_1_2",
+index: "target_cube_2_0_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, -33.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -88.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_2_1_3]
+// -------- GEO[target_cube_2_0_16]
 {
 name: "GEO",
-index: "target_cube_2_1_3",
+index: "target_cube_2_0_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, -33.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_2_1_4]
-{
-name: "GEO",
-index: "target_cube_2_1_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, -33.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_2_1_5]
-{
-name: "GEO",
-index: "target_cube_2_1_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, -33.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_2_1_6]
-{
-name: "GEO",
-index: "target_cube_2_1_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, -33.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_2_1_7]
-{
-name: "GEO",
-index: "target_cube_2_1_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, -33.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_2_1_8]
-{
-name: "GEO",
-index: "target_cube_2_1_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, -33.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -88.000, 88.000] // mm
 }
 
 
@@ -2938,24 +1500,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-22.000, -22.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_2_2_1]
-{
-name: "GEO",
-index: "target_cube_2_2_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, -22.000, -33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -66.000, -88.000] // mm
 }
 
 
@@ -2970,24 +1516,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-22.000, -22.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_2_2_3]
-{
-name: "GEO",
-index: "target_cube_2_2_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, -22.000, -11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -66.000, -66.000] // mm
 }
 
 
@@ -3002,24 +1532,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-22.000, -22.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_2_2_5]
-{
-name: "GEO",
-index: "target_cube_2_2_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, -22.000, 11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -66.000, -44.000] // mm
 }
 
 
@@ -3034,24 +1548,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-22.000, -22.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_2_2_7]
-{
-name: "GEO",
-index: "target_cube_2_2_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, -22.000, 33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -66.000, -22.000] // mm
 }
 
 
@@ -3066,152 +1564,72 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-22.000, -22.000, 44.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -66.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_2_3_0]
+// -------- GEO[target_cube_2_2_10]
 {
 name: "GEO",
-index: "target_cube_2_3_0",
+index: "target_cube_2_2_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, -11.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -66.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_2_3_1]
+// -------- GEO[target_cube_2_2_12]
 {
 name: "GEO",
-index: "target_cube_2_3_1",
+index: "target_cube_2_2_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, -11.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -66.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_2_3_2]
+// -------- GEO[target_cube_2_2_14]
 {
 name: "GEO",
-index: "target_cube_2_3_2",
+index: "target_cube_2_2_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, -11.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -66.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_2_3_3]
+// -------- GEO[target_cube_2_2_16]
 {
 name: "GEO",
-index: "target_cube_2_3_3",
+index: "target_cube_2_2_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, -11.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_2_3_4]
-{
-name: "GEO",
-index: "target_cube_2_3_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, -11.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_2_3_5]
-{
-name: "GEO",
-index: "target_cube_2_3_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, -11.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_2_3_6]
-{
-name: "GEO",
-index: "target_cube_2_3_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, -11.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_2_3_7]
-{
-name: "GEO",
-index: "target_cube_2_3_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, -11.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_2_3_8]
-{
-name: "GEO",
-index: "target_cube_2_3_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, -11.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -66.000, 88.000] // mm
 }
 
 
@@ -3226,24 +1644,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-22.000, 0.0, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_2_4_1]
-{
-name: "GEO",
-index: "target_cube_2_4_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, 0.0, -33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -44.000, -88.000] // mm
 }
 
 
@@ -3258,24 +1660,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-22.000, 0.0, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_2_4_3]
-{
-name: "GEO",
-index: "target_cube_2_4_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, 0.0, -11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -44.000, -66.000] // mm
 }
 
 
@@ -3290,24 +1676,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-22.000, 0.0, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_2_4_5]
-{
-name: "GEO",
-index: "target_cube_2_4_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, 0.0, 11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -44.000, -44.000] // mm
 }
 
 
@@ -3322,24 +1692,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-22.000, 0.0, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_2_4_7]
-{
-name: "GEO",
-index: "target_cube_2_4_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, 0.0, 33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -44.000, -22.000] // mm
 }
 
 
@@ -3354,152 +1708,72 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-22.000, 0.0, 44.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -44.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_2_5_0]
+// -------- GEO[target_cube_2_4_10]
 {
 name: "GEO",
-index: "target_cube_2_5_0",
+index: "target_cube_2_4_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, 11.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -44.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_2_5_1]
+// -------- GEO[target_cube_2_4_12]
 {
 name: "GEO",
-index: "target_cube_2_5_1",
+index: "target_cube_2_4_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, 11.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -44.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_2_5_2]
+// -------- GEO[target_cube_2_4_14]
 {
 name: "GEO",
-index: "target_cube_2_5_2",
+index: "target_cube_2_4_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, 11.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -44.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_2_5_3]
+// -------- GEO[target_cube_2_4_16]
 {
 name: "GEO",
-index: "target_cube_2_5_3",
+index: "target_cube_2_4_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, 11.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_2_5_4]
-{
-name: "GEO",
-index: "target_cube_2_5_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, 11.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_2_5_5]
-{
-name: "GEO",
-index: "target_cube_2_5_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, 11.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_2_5_6]
-{
-name: "GEO",
-index: "target_cube_2_5_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, 11.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_2_5_7]
-{
-name: "GEO",
-index: "target_cube_2_5_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, 11.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_2_5_8]
-{
-name: "GEO",
-index: "target_cube_2_5_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, 11.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -44.000, 88.000] // mm
 }
 
 
@@ -3514,24 +1788,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-22.000, 22.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_2_6_1]
-{
-name: "GEO",
-index: "target_cube_2_6_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, 22.000, -33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -22.000, -88.000] // mm
 }
 
 
@@ -3546,24 +1804,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-22.000, 22.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_2_6_3]
-{
-name: "GEO",
-index: "target_cube_2_6_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, 22.000, -11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -22.000, -66.000] // mm
 }
 
 
@@ -3578,24 +1820,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-22.000, 22.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_2_6_5]
-{
-name: "GEO",
-index: "target_cube_2_6_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, 22.000, 11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -22.000, -44.000] // mm
 }
 
 
@@ -3610,24 +1836,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-22.000, 22.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_2_6_7]
-{
-name: "GEO",
-index: "target_cube_2_6_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, 22.000, 33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -22.000, -22.000] // mm
 }
 
 
@@ -3642,152 +1852,72 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-22.000, 22.000, 44.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -22.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_2_7_0]
+// -------- GEO[target_cube_2_6_10]
 {
 name: "GEO",
-index: "target_cube_2_7_0",
+index: "target_cube_2_6_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, 33.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -22.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_2_7_1]
+// -------- GEO[target_cube_2_6_12]
 {
 name: "GEO",
-index: "target_cube_2_7_1",
+index: "target_cube_2_6_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, 33.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -22.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_2_7_2]
+// -------- GEO[target_cube_2_6_14]
 {
 name: "GEO",
-index: "target_cube_2_7_2",
+index: "target_cube_2_6_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, 33.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -22.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_2_7_3]
+// -------- GEO[target_cube_2_6_16]
 {
 name: "GEO",
-index: "target_cube_2_7_3",
+index: "target_cube_2_6_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, 33.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_2_7_4]
-{
-name: "GEO",
-index: "target_cube_2_7_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, 33.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_2_7_5]
-{
-name: "GEO",
-index: "target_cube_2_7_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, 33.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_2_7_6]
-{
-name: "GEO",
-index: "target_cube_2_7_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, 33.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_2_7_7]
-{
-name: "GEO",
-index: "target_cube_2_7_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, 33.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_2_7_8]
-{
-name: "GEO",
-index: "target_cube_2_7_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, 33.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, -22.000, 88.000] // mm
 }
 
 
@@ -3802,24 +1932,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-22.000, 44.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_2_8_1]
-{
-name: "GEO",
-index: "target_cube_2_8_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, 44.000, -33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 0.0, -88.000] // mm
 }
 
 
@@ -3834,24 +1948,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-22.000, 44.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_2_8_3]
-{
-name: "GEO",
-index: "target_cube_2_8_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, 44.000, -11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 0.0, -66.000] // mm
 }
 
 
@@ -3866,24 +1964,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-22.000, 44.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_2_8_5]
-{
-name: "GEO",
-index: "target_cube_2_8_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, 44.000, 11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 0.0, -44.000] // mm
 }
 
 
@@ -3898,24 +1980,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-22.000, 44.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_2_8_7]
-{
-name: "GEO",
-index: "target_cube_2_8_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-22.000, 44.000, 33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 0.0, -22.000] // mm
 }
 
 
@@ -3930,1304 +1996,648 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [-22.000, 44.000, 44.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 0.0, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_3_0_0]
+// -------- GEO[target_cube_2_8_10]
 {
 name: "GEO",
-index: "target_cube_3_0_0",
+index: "target_cube_2_8_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -44.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 0.0, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_0_1]
+// -------- GEO[target_cube_2_8_12]
 {
 name: "GEO",
-index: "target_cube_3_0_1",
+index: "target_cube_2_8_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -44.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 0.0, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_0_2]
+// -------- GEO[target_cube_2_8_14]
 {
 name: "GEO",
-index: "target_cube_3_0_2",
+index: "target_cube_2_8_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -44.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 0.0, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_0_3]
+// -------- GEO[target_cube_2_8_16]
 {
 name: "GEO",
-index: "target_cube_3_0_3",
+index: "target_cube_2_8_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -44.000, -11.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 0.0, 88.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_0_4]
+// -------- GEO[target_cube_2_10_0]
 {
 name: "GEO",
-index: "target_cube_3_0_4",
+index: "target_cube_2_10_0",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -44.000, 0.0] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 22.000, -88.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_0_5]
+// -------- GEO[target_cube_2_10_2]
 {
 name: "GEO",
-index: "target_cube_3_0_5",
+index: "target_cube_2_10_2",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -44.000, 11.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 22.000, -66.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_0_6]
+// -------- GEO[target_cube_2_10_4]
 {
 name: "GEO",
-index: "target_cube_3_0_6",
+index: "target_cube_2_10_4",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -44.000, 22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 22.000, -44.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_0_7]
+// -------- GEO[target_cube_2_10_6]
 {
 name: "GEO",
-index: "target_cube_3_0_7",
+index: "target_cube_2_10_6",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -44.000, 33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 22.000, -22.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_0_8]
+// -------- GEO[target_cube_2_10_8]
 {
 name: "GEO",
-index: "target_cube_3_0_8",
+index: "target_cube_2_10_8",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -44.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 22.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_3_1_0]
+// -------- GEO[target_cube_2_10_10]
 {
 name: "GEO",
-index: "target_cube_3_1_0",
+index: "target_cube_2_10_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -33.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 22.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_1_1]
+// -------- GEO[target_cube_2_10_12]
 {
 name: "GEO",
-index: "target_cube_3_1_1",
+index: "target_cube_2_10_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -33.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 22.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_1_2]
+// -------- GEO[target_cube_2_10_14]
 {
 name: "GEO",
-index: "target_cube_3_1_2",
+index: "target_cube_2_10_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -33.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 22.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_1_3]
+// -------- GEO[target_cube_2_10_16]
 {
 name: "GEO",
-index: "target_cube_3_1_3",
+index: "target_cube_2_10_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -33.000, -11.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 22.000, 88.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_1_4]
+// -------- GEO[target_cube_2_12_0]
 {
 name: "GEO",
-index: "target_cube_3_1_4",
+index: "target_cube_2_12_0",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -33.000, 0.0] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 44.000, -88.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_1_5]
+// -------- GEO[target_cube_2_12_2]
 {
 name: "GEO",
-index: "target_cube_3_1_5",
+index: "target_cube_2_12_2",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -33.000, 11.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 44.000, -66.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_1_6]
+// -------- GEO[target_cube_2_12_4]
 {
 name: "GEO",
-index: "target_cube_3_1_6",
+index: "target_cube_2_12_4",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -33.000, 22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 44.000, -44.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_1_7]
+// -------- GEO[target_cube_2_12_6]
 {
 name: "GEO",
-index: "target_cube_3_1_7",
+index: "target_cube_2_12_6",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -33.000, 33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 44.000, -22.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_1_8]
+// -------- GEO[target_cube_2_12_8]
 {
 name: "GEO",
-index: "target_cube_3_1_8",
+index: "target_cube_2_12_8",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -33.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 44.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_3_2_0]
+// -------- GEO[target_cube_2_12_10]
 {
 name: "GEO",
-index: "target_cube_3_2_0",
+index: "target_cube_2_12_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -22.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 44.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_2_1]
+// -------- GEO[target_cube_2_12_12]
 {
 name: "GEO",
-index: "target_cube_3_2_1",
+index: "target_cube_2_12_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -22.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 44.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_2_2]
+// -------- GEO[target_cube_2_12_14]
 {
 name: "GEO",
-index: "target_cube_3_2_2",
+index: "target_cube_2_12_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -22.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 44.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_2_3]
+// -------- GEO[target_cube_2_12_16]
 {
 name: "GEO",
-index: "target_cube_3_2_3",
+index: "target_cube_2_12_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -22.000, -11.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 44.000, 88.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_2_4]
+// -------- GEO[target_cube_2_14_0]
 {
 name: "GEO",
-index: "target_cube_3_2_4",
+index: "target_cube_2_14_0",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -22.000, 0.0] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 66.000, -88.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_2_5]
+// -------- GEO[target_cube_2_14_2]
 {
 name: "GEO",
-index: "target_cube_3_2_5",
+index: "target_cube_2_14_2",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -22.000, 11.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 66.000, -66.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_2_6]
+// -------- GEO[target_cube_2_14_4]
 {
 name: "GEO",
-index: "target_cube_3_2_6",
+index: "target_cube_2_14_4",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -22.000, 22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 66.000, -44.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_2_7]
+// -------- GEO[target_cube_2_14_6]
 {
 name: "GEO",
-index: "target_cube_3_2_7",
+index: "target_cube_2_14_6",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -22.000, 33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 66.000, -22.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_2_8]
+// -------- GEO[target_cube_2_14_8]
 {
 name: "GEO",
-index: "target_cube_3_2_8",
+index: "target_cube_2_14_8",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -22.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 66.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_3_3_0]
+// -------- GEO[target_cube_2_14_10]
 {
 name: "GEO",
-index: "target_cube_3_3_0",
+index: "target_cube_2_14_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -11.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 66.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_3_1]
+// -------- GEO[target_cube_2_14_12]
 {
 name: "GEO",
-index: "target_cube_3_3_1",
+index: "target_cube_2_14_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -11.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 66.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_3_2]
+// -------- GEO[target_cube_2_14_14]
 {
 name: "GEO",
-index: "target_cube_3_3_2",
+index: "target_cube_2_14_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -11.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 66.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_3_3]
+// -------- GEO[target_cube_2_14_16]
 {
 name: "GEO",
-index: "target_cube_3_3_3",
+index: "target_cube_2_14_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -11.000, -11.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 66.000, 88.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_3_4]
+// -------- GEO[target_cube_2_16_0]
 {
 name: "GEO",
-index: "target_cube_3_3_4",
+index: "target_cube_2_16_0",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -11.000, 0.0] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 88.000, -88.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_3_5]
+// -------- GEO[target_cube_2_16_2]
 {
 name: "GEO",
-index: "target_cube_3_3_5",
+index: "target_cube_2_16_2",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -11.000, 11.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 88.000, -66.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_3_6]
+// -------- GEO[target_cube_2_16_4]
 {
 name: "GEO",
-index: "target_cube_3_3_6",
+index: "target_cube_2_16_4",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -11.000, 22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 88.000, -44.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_3_7]
+// -------- GEO[target_cube_2_16_6]
 {
 name: "GEO",
-index: "target_cube_3_3_7",
+index: "target_cube_2_16_6",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -11.000, 33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 88.000, -22.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_3_8]
+// -------- GEO[target_cube_2_16_8]
 {
 name: "GEO",
-index: "target_cube_3_3_8",
+index: "target_cube_2_16_8",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, -11.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 88.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_3_4_0]
+// -------- GEO[target_cube_2_16_10]
 {
 name: "GEO",
-index: "target_cube_3_4_0",
+index: "target_cube_2_16_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 0.0, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 88.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_4_1]
+// -------- GEO[target_cube_2_16_12]
 {
 name: "GEO",
-index: "target_cube_3_4_1",
+index: "target_cube_2_16_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 0.0, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 88.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_4_2]
+// -------- GEO[target_cube_2_16_14]
 {
 name: "GEO",
-index: "target_cube_3_4_2",
+index: "target_cube_2_16_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 0.0, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 88.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_3_4_3]
+// -------- GEO[target_cube_2_16_16]
 {
 name: "GEO",
-index: "target_cube_3_4_3",
+index: "target_cube_2_16_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 0.0, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_4_4]
-{
-name: "GEO",
-index: "target_cube_3_4_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 0.0, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_3_4_5]
-{
-name: "GEO",
-index: "target_cube_3_4_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 0.0, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_4_6]
-{
-name: "GEO",
-index: "target_cube_3_4_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 0.0, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_4_7]
-{
-name: "GEO",
-index: "target_cube_3_4_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 0.0, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_4_8]
-{
-name: "GEO",
-index: "target_cube_3_4_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 0.0, 44.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_5_0]
-{
-name: "GEO",
-index: "target_cube_3_5_0",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 11.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_5_1]
-{
-name: "GEO",
-index: "target_cube_3_5_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 11.000, -33.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_5_2]
-{
-name: "GEO",
-index: "target_cube_3_5_2",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 11.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_5_3]
-{
-name: "GEO",
-index: "target_cube_3_5_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 11.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_5_4]
-{
-name: "GEO",
-index: "target_cube_3_5_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 11.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_3_5_5]
-{
-name: "GEO",
-index: "target_cube_3_5_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 11.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_5_6]
-{
-name: "GEO",
-index: "target_cube_3_5_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 11.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_5_7]
-{
-name: "GEO",
-index: "target_cube_3_5_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 11.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_5_8]
-{
-name: "GEO",
-index: "target_cube_3_5_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 11.000, 44.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_6_0]
-{
-name: "GEO",
-index: "target_cube_3_6_0",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 22.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_6_1]
-{
-name: "GEO",
-index: "target_cube_3_6_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 22.000, -33.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_6_2]
-{
-name: "GEO",
-index: "target_cube_3_6_2",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 22.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_6_3]
-{
-name: "GEO",
-index: "target_cube_3_6_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 22.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_6_4]
-{
-name: "GEO",
-index: "target_cube_3_6_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 22.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_3_6_5]
-{
-name: "GEO",
-index: "target_cube_3_6_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 22.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_6_6]
-{
-name: "GEO",
-index: "target_cube_3_6_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 22.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_6_7]
-{
-name: "GEO",
-index: "target_cube_3_6_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 22.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_6_8]
-{
-name: "GEO",
-index: "target_cube_3_6_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 22.000, 44.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_7_0]
-{
-name: "GEO",
-index: "target_cube_3_7_0",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 33.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_7_1]
-{
-name: "GEO",
-index: "target_cube_3_7_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 33.000, -33.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_7_2]
-{
-name: "GEO",
-index: "target_cube_3_7_2",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 33.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_7_3]
-{
-name: "GEO",
-index: "target_cube_3_7_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 33.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_7_4]
-{
-name: "GEO",
-index: "target_cube_3_7_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 33.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_3_7_5]
-{
-name: "GEO",
-index: "target_cube_3_7_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 33.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_7_6]
-{
-name: "GEO",
-index: "target_cube_3_7_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 33.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_7_7]
-{
-name: "GEO",
-index: "target_cube_3_7_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 33.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_7_8]
-{
-name: "GEO",
-index: "target_cube_3_7_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 33.000, 44.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_8_0]
-{
-name: "GEO",
-index: "target_cube_3_8_0",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 44.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_8_1]
-{
-name: "GEO",
-index: "target_cube_3_8_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 44.000, -33.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_8_2]
-{
-name: "GEO",
-index: "target_cube_3_8_2",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 44.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_8_3]
-{
-name: "GEO",
-index: "target_cube_3_8_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 44.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_8_4]
-{
-name: "GEO",
-index: "target_cube_3_8_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 44.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_3_8_5]
-{
-name: "GEO",
-index: "target_cube_3_8_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 44.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_8_6]
-{
-name: "GEO",
-index: "target_cube_3_8_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 44.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_8_7]
-{
-name: "GEO",
-index: "target_cube_3_8_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 44.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_3_8_8]
-{
-name: "GEO",
-index: "target_cube_3_8_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [-11.000, 44.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-66.000, 88.000, 88.000] // mm
 }
 
 
@@ -5242,24 +2652,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [0.0, -44.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_4_0_1]
-{
-name: "GEO",
-index: "target_cube_4_0_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, -44.000, -33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -88.000, -88.000] // mm
 }
 
 
@@ -5274,24 +2668,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [0.0, -44.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_4_0_3]
-{
-name: "GEO",
-index: "target_cube_4_0_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, -44.000, -11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -88.000, -66.000] // mm
 }
 
 
@@ -5306,24 +2684,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [0.0, -44.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_4_0_5]
-{
-name: "GEO",
-index: "target_cube_4_0_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, -44.000, 11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -88.000, -44.000] // mm
 }
 
 
@@ -5338,24 +2700,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [0.0, -44.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_4_0_7]
-{
-name: "GEO",
-index: "target_cube_4_0_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, -44.000, 33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -88.000, -22.000] // mm
 }
 
 
@@ -5370,152 +2716,72 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [0.0, -44.000, 44.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -88.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_4_1_0]
+// -------- GEO[target_cube_4_0_10]
 {
 name: "GEO",
-index: "target_cube_4_1_0",
+index: "target_cube_4_0_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, -33.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -88.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_4_1_1]
+// -------- GEO[target_cube_4_0_12]
 {
 name: "GEO",
-index: "target_cube_4_1_1",
+index: "target_cube_4_0_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, -33.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -88.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_4_1_2]
+// -------- GEO[target_cube_4_0_14]
 {
 name: "GEO",
-index: "target_cube_4_1_2",
+index: "target_cube_4_0_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, -33.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -88.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_4_1_3]
+// -------- GEO[target_cube_4_0_16]
 {
 name: "GEO",
-index: "target_cube_4_1_3",
+index: "target_cube_4_0_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, -33.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_4_1_4]
-{
-name: "GEO",
-index: "target_cube_4_1_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, -33.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_4_1_5]
-{
-name: "GEO",
-index: "target_cube_4_1_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, -33.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_4_1_6]
-{
-name: "GEO",
-index: "target_cube_4_1_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, -33.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_4_1_7]
-{
-name: "GEO",
-index: "target_cube_4_1_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, -33.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_4_1_8]
-{
-name: "GEO",
-index: "target_cube_4_1_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, -33.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -88.000, 88.000] // mm
 }
 
 
@@ -5530,24 +2796,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [0.0, -22.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_4_2_1]
-{
-name: "GEO",
-index: "target_cube_4_2_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, -22.000, -33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -66.000, -88.000] // mm
 }
 
 
@@ -5562,24 +2812,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [0.0, -22.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_4_2_3]
-{
-name: "GEO",
-index: "target_cube_4_2_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, -22.000, -11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -66.000, -66.000] // mm
 }
 
 
@@ -5594,24 +2828,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [0.0, -22.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_4_2_5]
-{
-name: "GEO",
-index: "target_cube_4_2_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, -22.000, 11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -66.000, -44.000] // mm
 }
 
 
@@ -5626,24 +2844,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [0.0, -22.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_4_2_7]
-{
-name: "GEO",
-index: "target_cube_4_2_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, -22.000, 33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -66.000, -22.000] // mm
 }
 
 
@@ -5658,152 +2860,72 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [0.0, -22.000, 44.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -66.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_4_3_0]
+// -------- GEO[target_cube_4_2_10]
 {
 name: "GEO",
-index: "target_cube_4_3_0",
+index: "target_cube_4_2_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, -11.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -66.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_4_3_1]
+// -------- GEO[target_cube_4_2_12]
 {
 name: "GEO",
-index: "target_cube_4_3_1",
+index: "target_cube_4_2_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, -11.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -66.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_4_3_2]
+// -------- GEO[target_cube_4_2_14]
 {
 name: "GEO",
-index: "target_cube_4_3_2",
+index: "target_cube_4_2_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, -11.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -66.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_4_3_3]
+// -------- GEO[target_cube_4_2_16]
 {
 name: "GEO",
-index: "target_cube_4_3_3",
+index: "target_cube_4_2_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, -11.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_4_3_4]
-{
-name: "GEO",
-index: "target_cube_4_3_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, -11.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_4_3_5]
-{
-name: "GEO",
-index: "target_cube_4_3_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, -11.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_4_3_6]
-{
-name: "GEO",
-index: "target_cube_4_3_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, -11.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_4_3_7]
-{
-name: "GEO",
-index: "target_cube_4_3_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, -11.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_4_3_8]
-{
-name: "GEO",
-index: "target_cube_4_3_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, -11.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -66.000, 88.000] // mm
 }
 
 
@@ -5818,24 +2940,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [0.0, 0.0, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_4_4_1]
-{
-name: "GEO",
-index: "target_cube_4_4_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, 0.0, -33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -44.000, -88.000] // mm
 }
 
 
@@ -5850,24 +2956,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [0.0, 0.0, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_4_4_3]
-{
-name: "GEO",
-index: "target_cube_4_4_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, 0.0, -11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -44.000, -66.000] // mm
 }
 
 
@@ -5882,24 +2972,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [0.0, 0.0, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_4_4_5]
-{
-name: "GEO",
-index: "target_cube_4_4_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, 0.0, 11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -44.000, -44.000] // mm
 }
 
 
@@ -5914,24 +2988,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [0.0, 0.0, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_4_4_7]
-{
-name: "GEO",
-index: "target_cube_4_4_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, 0.0, 33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -44.000, -22.000] // mm
 }
 
 
@@ -5946,152 +3004,72 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [0.0, 0.0, 44.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -44.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_4_5_0]
+// -------- GEO[target_cube_4_4_10]
 {
 name: "GEO",
-index: "target_cube_4_5_0",
+index: "target_cube_4_4_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, 11.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -44.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_4_5_1]
+// -------- GEO[target_cube_4_4_12]
 {
 name: "GEO",
-index: "target_cube_4_5_1",
+index: "target_cube_4_4_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, 11.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -44.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_4_5_2]
+// -------- GEO[target_cube_4_4_14]
 {
 name: "GEO",
-index: "target_cube_4_5_2",
+index: "target_cube_4_4_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, 11.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -44.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_4_5_3]
+// -------- GEO[target_cube_4_4_16]
 {
 name: "GEO",
-index: "target_cube_4_5_3",
+index: "target_cube_4_4_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, 11.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_4_5_4]
-{
-name: "GEO",
-index: "target_cube_4_5_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, 11.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_4_5_5]
-{
-name: "GEO",
-index: "target_cube_4_5_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, 11.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_4_5_6]
-{
-name: "GEO",
-index: "target_cube_4_5_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, 11.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_4_5_7]
-{
-name: "GEO",
-index: "target_cube_4_5_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, 11.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_4_5_8]
-{
-name: "GEO",
-index: "target_cube_4_5_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, 11.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -44.000, 88.000] // mm
 }
 
 
@@ -6106,24 +3084,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [0.0, 22.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_4_6_1]
-{
-name: "GEO",
-index: "target_cube_4_6_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, 22.000, -33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -22.000, -88.000] // mm
 }
 
 
@@ -6138,24 +3100,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [0.0, 22.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_4_6_3]
-{
-name: "GEO",
-index: "target_cube_4_6_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, 22.000, -11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -22.000, -66.000] // mm
 }
 
 
@@ -6170,24 +3116,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [0.0, 22.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_4_6_5]
-{
-name: "GEO",
-index: "target_cube_4_6_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, 22.000, 11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -22.000, -44.000] // mm
 }
 
 
@@ -6202,24 +3132,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [0.0, 22.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_4_6_7]
-{
-name: "GEO",
-index: "target_cube_4_6_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, 22.000, 33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -22.000, -22.000] // mm
 }
 
 
@@ -6234,152 +3148,72 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [0.0, 22.000, 44.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -22.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_4_7_0]
+// -------- GEO[target_cube_4_6_10]
 {
 name: "GEO",
-index: "target_cube_4_7_0",
+index: "target_cube_4_6_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, 33.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -22.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_4_7_1]
+// -------- GEO[target_cube_4_6_12]
 {
 name: "GEO",
-index: "target_cube_4_7_1",
+index: "target_cube_4_6_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, 33.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -22.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_4_7_2]
+// -------- GEO[target_cube_4_6_14]
 {
 name: "GEO",
-index: "target_cube_4_7_2",
+index: "target_cube_4_6_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, 33.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -22.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_4_7_3]
+// -------- GEO[target_cube_4_6_16]
 {
 name: "GEO",
-index: "target_cube_4_7_3",
+index: "target_cube_4_6_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, 33.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_4_7_4]
-{
-name: "GEO",
-index: "target_cube_4_7_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, 33.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_4_7_5]
-{
-name: "GEO",
-index: "target_cube_4_7_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, 33.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_4_7_6]
-{
-name: "GEO",
-index: "target_cube_4_7_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, 33.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_4_7_7]
-{
-name: "GEO",
-index: "target_cube_4_7_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, 33.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_4_7_8]
-{
-name: "GEO",
-index: "target_cube_4_7_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, 33.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, -22.000, 88.000] // mm
 }
 
 
@@ -6394,24 +3228,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [0.0, 44.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_4_8_1]
-{
-name: "GEO",
-index: "target_cube_4_8_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, 44.000, -33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 0.0, -88.000] // mm
 }
 
 
@@ -6426,24 +3244,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [0.0, 44.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_4_8_3]
-{
-name: "GEO",
-index: "target_cube_4_8_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, 44.000, -11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 0.0, -66.000] // mm
 }
 
 
@@ -6458,24 +3260,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [0.0, 44.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_4_8_5]
-{
-name: "GEO",
-index: "target_cube_4_8_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, 44.000, 11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 0.0, -44.000] // mm
 }
 
 
@@ -6490,24 +3276,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [0.0, 44.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_4_8_7]
-{
-name: "GEO",
-index: "target_cube_4_8_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [0.0, 44.000, 33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 0.0, -22.000] // mm
 }
 
 
@@ -6522,1304 +3292,648 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [0.0, 44.000, 44.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 0.0, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_5_0_0]
+// -------- GEO[target_cube_4_8_10]
 {
 name: "GEO",
-index: "target_cube_5_0_0",
+index: "target_cube_4_8_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -44.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 0.0, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_0_1]
+// -------- GEO[target_cube_4_8_12]
 {
 name: "GEO",
-index: "target_cube_5_0_1",
+index: "target_cube_4_8_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -44.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 0.0, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_0_2]
+// -------- GEO[target_cube_4_8_14]
 {
 name: "GEO",
-index: "target_cube_5_0_2",
+index: "target_cube_4_8_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -44.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 0.0, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_0_3]
+// -------- GEO[target_cube_4_8_16]
 {
 name: "GEO",
-index: "target_cube_5_0_3",
+index: "target_cube_4_8_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -44.000, -11.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 0.0, 88.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_0_4]
+// -------- GEO[target_cube_4_10_0]
 {
 name: "GEO",
-index: "target_cube_5_0_4",
+index: "target_cube_4_10_0",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -44.000, 0.0] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 22.000, -88.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_0_5]
+// -------- GEO[target_cube_4_10_2]
 {
 name: "GEO",
-index: "target_cube_5_0_5",
+index: "target_cube_4_10_2",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -44.000, 11.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 22.000, -66.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_0_6]
+// -------- GEO[target_cube_4_10_4]
 {
 name: "GEO",
-index: "target_cube_5_0_6",
+index: "target_cube_4_10_4",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -44.000, 22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 22.000, -44.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_0_7]
+// -------- GEO[target_cube_4_10_6]
 {
 name: "GEO",
-index: "target_cube_5_0_7",
+index: "target_cube_4_10_6",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -44.000, 33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 22.000, -22.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_0_8]
+// -------- GEO[target_cube_4_10_8]
 {
 name: "GEO",
-index: "target_cube_5_0_8",
+index: "target_cube_4_10_8",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -44.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 22.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_5_1_0]
+// -------- GEO[target_cube_4_10_10]
 {
 name: "GEO",
-index: "target_cube_5_1_0",
+index: "target_cube_4_10_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -33.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 22.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_1_1]
+// -------- GEO[target_cube_4_10_12]
 {
 name: "GEO",
-index: "target_cube_5_1_1",
+index: "target_cube_4_10_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -33.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 22.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_1_2]
+// -------- GEO[target_cube_4_10_14]
 {
 name: "GEO",
-index: "target_cube_5_1_2",
+index: "target_cube_4_10_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -33.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 22.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_1_3]
+// -------- GEO[target_cube_4_10_16]
 {
 name: "GEO",
-index: "target_cube_5_1_3",
+index: "target_cube_4_10_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -33.000, -11.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 22.000, 88.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_1_4]
+// -------- GEO[target_cube_4_12_0]
 {
 name: "GEO",
-index: "target_cube_5_1_4",
+index: "target_cube_4_12_0",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -33.000, 0.0] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 44.000, -88.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_1_5]
+// -------- GEO[target_cube_4_12_2]
 {
 name: "GEO",
-index: "target_cube_5_1_5",
+index: "target_cube_4_12_2",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -33.000, 11.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 44.000, -66.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_1_6]
+// -------- GEO[target_cube_4_12_4]
 {
 name: "GEO",
-index: "target_cube_5_1_6",
+index: "target_cube_4_12_4",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -33.000, 22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 44.000, -44.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_1_7]
+// -------- GEO[target_cube_4_12_6]
 {
 name: "GEO",
-index: "target_cube_5_1_7",
+index: "target_cube_4_12_6",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -33.000, 33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 44.000, -22.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_1_8]
+// -------- GEO[target_cube_4_12_8]
 {
 name: "GEO",
-index: "target_cube_5_1_8",
+index: "target_cube_4_12_8",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -33.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 44.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_5_2_0]
+// -------- GEO[target_cube_4_12_10]
 {
 name: "GEO",
-index: "target_cube_5_2_0",
+index: "target_cube_4_12_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -22.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 44.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_2_1]
+// -------- GEO[target_cube_4_12_12]
 {
 name: "GEO",
-index: "target_cube_5_2_1",
+index: "target_cube_4_12_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -22.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 44.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_2_2]
+// -------- GEO[target_cube_4_12_14]
 {
 name: "GEO",
-index: "target_cube_5_2_2",
+index: "target_cube_4_12_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -22.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 44.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_2_3]
+// -------- GEO[target_cube_4_12_16]
 {
 name: "GEO",
-index: "target_cube_5_2_3",
+index: "target_cube_4_12_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -22.000, -11.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 44.000, 88.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_2_4]
+// -------- GEO[target_cube_4_14_0]
 {
 name: "GEO",
-index: "target_cube_5_2_4",
+index: "target_cube_4_14_0",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -22.000, 0.0] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 66.000, -88.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_2_5]
+// -------- GEO[target_cube_4_14_2]
 {
 name: "GEO",
-index: "target_cube_5_2_5",
+index: "target_cube_4_14_2",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -22.000, 11.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 66.000, -66.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_2_6]
+// -------- GEO[target_cube_4_14_4]
 {
 name: "GEO",
-index: "target_cube_5_2_6",
+index: "target_cube_4_14_4",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -22.000, 22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 66.000, -44.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_2_7]
+// -------- GEO[target_cube_4_14_6]
 {
 name: "GEO",
-index: "target_cube_5_2_7",
+index: "target_cube_4_14_6",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -22.000, 33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 66.000, -22.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_2_8]
+// -------- GEO[target_cube_4_14_8]
 {
 name: "GEO",
-index: "target_cube_5_2_8",
+index: "target_cube_4_14_8",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -22.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 66.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_5_3_0]
+// -------- GEO[target_cube_4_14_10]
 {
 name: "GEO",
-index: "target_cube_5_3_0",
+index: "target_cube_4_14_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -11.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 66.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_3_1]
+// -------- GEO[target_cube_4_14_12]
 {
 name: "GEO",
-index: "target_cube_5_3_1",
+index: "target_cube_4_14_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -11.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 66.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_3_2]
+// -------- GEO[target_cube_4_14_14]
 {
 name: "GEO",
-index: "target_cube_5_3_2",
+index: "target_cube_4_14_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -11.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 66.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_3_3]
+// -------- GEO[target_cube_4_14_16]
 {
 name: "GEO",
-index: "target_cube_5_3_3",
+index: "target_cube_4_14_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -11.000, -11.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 66.000, 88.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_3_4]
+// -------- GEO[target_cube_4_16_0]
 {
 name: "GEO",
-index: "target_cube_5_3_4",
+index: "target_cube_4_16_0",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -11.000, 0.0] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 88.000, -88.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_3_5]
+// -------- GEO[target_cube_4_16_2]
 {
 name: "GEO",
-index: "target_cube_5_3_5",
+index: "target_cube_4_16_2",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -11.000, 11.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 88.000, -66.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_3_6]
+// -------- GEO[target_cube_4_16_4]
 {
 name: "GEO",
-index: "target_cube_5_3_6",
+index: "target_cube_4_16_4",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -11.000, 22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 88.000, -44.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_3_7]
+// -------- GEO[target_cube_4_16_6]
 {
 name: "GEO",
-index: "target_cube_5_3_7",
+index: "target_cube_4_16_6",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -11.000, 33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 88.000, -22.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_3_8]
+// -------- GEO[target_cube_4_16_8]
 {
 name: "GEO",
-index: "target_cube_5_3_8",
+index: "target_cube_4_16_8",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, -11.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 88.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_5_4_0]
+// -------- GEO[target_cube_4_16_10]
 {
 name: "GEO",
-index: "target_cube_5_4_0",
+index: "target_cube_4_16_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 0.0, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 88.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_4_1]
+// -------- GEO[target_cube_4_16_12]
 {
 name: "GEO",
-index: "target_cube_5_4_1",
+index: "target_cube_4_16_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 0.0, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 88.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_4_2]
+// -------- GEO[target_cube_4_16_14]
 {
 name: "GEO",
-index: "target_cube_5_4_2",
+index: "target_cube_4_16_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 0.0, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 88.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_5_4_3]
+// -------- GEO[target_cube_4_16_16]
 {
 name: "GEO",
-index: "target_cube_5_4_3",
+index: "target_cube_4_16_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 0.0, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_4_4]
-{
-name: "GEO",
-index: "target_cube_5_4_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 0.0, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_5_4_5]
-{
-name: "GEO",
-index: "target_cube_5_4_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 0.0, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_4_6]
-{
-name: "GEO",
-index: "target_cube_5_4_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 0.0, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_4_7]
-{
-name: "GEO",
-index: "target_cube_5_4_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 0.0, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_4_8]
-{
-name: "GEO",
-index: "target_cube_5_4_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 0.0, 44.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_5_0]
-{
-name: "GEO",
-index: "target_cube_5_5_0",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 11.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_5_1]
-{
-name: "GEO",
-index: "target_cube_5_5_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 11.000, -33.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_5_2]
-{
-name: "GEO",
-index: "target_cube_5_5_2",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 11.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_5_3]
-{
-name: "GEO",
-index: "target_cube_5_5_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 11.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_5_4]
-{
-name: "GEO",
-index: "target_cube_5_5_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 11.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_5_5_5]
-{
-name: "GEO",
-index: "target_cube_5_5_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 11.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_5_6]
-{
-name: "GEO",
-index: "target_cube_5_5_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 11.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_5_7]
-{
-name: "GEO",
-index: "target_cube_5_5_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 11.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_5_8]
-{
-name: "GEO",
-index: "target_cube_5_5_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 11.000, 44.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_6_0]
-{
-name: "GEO",
-index: "target_cube_5_6_0",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 22.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_6_1]
-{
-name: "GEO",
-index: "target_cube_5_6_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 22.000, -33.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_6_2]
-{
-name: "GEO",
-index: "target_cube_5_6_2",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 22.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_6_3]
-{
-name: "GEO",
-index: "target_cube_5_6_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 22.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_6_4]
-{
-name: "GEO",
-index: "target_cube_5_6_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 22.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_5_6_5]
-{
-name: "GEO",
-index: "target_cube_5_6_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 22.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_6_6]
-{
-name: "GEO",
-index: "target_cube_5_6_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 22.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_6_7]
-{
-name: "GEO",
-index: "target_cube_5_6_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 22.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_6_8]
-{
-name: "GEO",
-index: "target_cube_5_6_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 22.000, 44.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_7_0]
-{
-name: "GEO",
-index: "target_cube_5_7_0",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 33.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_7_1]
-{
-name: "GEO",
-index: "target_cube_5_7_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 33.000, -33.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_7_2]
-{
-name: "GEO",
-index: "target_cube_5_7_2",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 33.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_7_3]
-{
-name: "GEO",
-index: "target_cube_5_7_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 33.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_7_4]
-{
-name: "GEO",
-index: "target_cube_5_7_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 33.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_5_7_5]
-{
-name: "GEO",
-index: "target_cube_5_7_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 33.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_7_6]
-{
-name: "GEO",
-index: "target_cube_5_7_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 33.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_7_7]
-{
-name: "GEO",
-index: "target_cube_5_7_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 33.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_7_8]
-{
-name: "GEO",
-index: "target_cube_5_7_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 33.000, 44.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_8_0]
-{
-name: "GEO",
-index: "target_cube_5_8_0",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 44.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_8_1]
-{
-name: "GEO",
-index: "target_cube_5_8_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 44.000, -33.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_8_2]
-{
-name: "GEO",
-index: "target_cube_5_8_2",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 44.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_8_3]
-{
-name: "GEO",
-index: "target_cube_5_8_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 44.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_8_4]
-{
-name: "GEO",
-index: "target_cube_5_8_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 44.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_5_8_5]
-{
-name: "GEO",
-index: "target_cube_5_8_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 44.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_8_6]
-{
-name: "GEO",
-index: "target_cube_5_8_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 44.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_8_7]
-{
-name: "GEO",
-index: "target_cube_5_8_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 44.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_5_8_8]
-{
-name: "GEO",
-index: "target_cube_5_8_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [11.000, 44.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-44.000, 88.000, 88.000] // mm
 }
 
 
@@ -7834,24 +3948,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [22.000, -44.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_6_0_1]
-{
-name: "GEO",
-index: "target_cube_6_0_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, -44.000, -33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -88.000, -88.000] // mm
 }
 
 
@@ -7866,24 +3964,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [22.000, -44.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_6_0_3]
-{
-name: "GEO",
-index: "target_cube_6_0_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, -44.000, -11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -88.000, -66.000] // mm
 }
 
 
@@ -7898,24 +3980,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [22.000, -44.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_6_0_5]
-{
-name: "GEO",
-index: "target_cube_6_0_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, -44.000, 11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -88.000, -44.000] // mm
 }
 
 
@@ -7930,24 +3996,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [22.000, -44.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_6_0_7]
-{
-name: "GEO",
-index: "target_cube_6_0_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, -44.000, 33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -88.000, -22.000] // mm
 }
 
 
@@ -7962,152 +4012,72 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [22.000, -44.000, 44.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -88.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_6_1_0]
+// -------- GEO[target_cube_6_0_10]
 {
 name: "GEO",
-index: "target_cube_6_1_0",
+index: "target_cube_6_0_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, -33.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -88.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_6_1_1]
+// -------- GEO[target_cube_6_0_12]
 {
 name: "GEO",
-index: "target_cube_6_1_1",
+index: "target_cube_6_0_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, -33.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -88.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_6_1_2]
+// -------- GEO[target_cube_6_0_14]
 {
 name: "GEO",
-index: "target_cube_6_1_2",
+index: "target_cube_6_0_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, -33.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -88.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_6_1_3]
+// -------- GEO[target_cube_6_0_16]
 {
 name: "GEO",
-index: "target_cube_6_1_3",
+index: "target_cube_6_0_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, -33.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_6_1_4]
-{
-name: "GEO",
-index: "target_cube_6_1_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, -33.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_6_1_5]
-{
-name: "GEO",
-index: "target_cube_6_1_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, -33.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_6_1_6]
-{
-name: "GEO",
-index: "target_cube_6_1_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, -33.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_6_1_7]
-{
-name: "GEO",
-index: "target_cube_6_1_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, -33.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_6_1_8]
-{
-name: "GEO",
-index: "target_cube_6_1_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, -33.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -88.000, 88.000] // mm
 }
 
 
@@ -8122,24 +4092,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [22.000, -22.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_6_2_1]
-{
-name: "GEO",
-index: "target_cube_6_2_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, -22.000, -33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -66.000, -88.000] // mm
 }
 
 
@@ -8154,24 +4108,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [22.000, -22.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_6_2_3]
-{
-name: "GEO",
-index: "target_cube_6_2_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, -22.000, -11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -66.000, -66.000] // mm
 }
 
 
@@ -8186,24 +4124,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [22.000, -22.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_6_2_5]
-{
-name: "GEO",
-index: "target_cube_6_2_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, -22.000, 11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -66.000, -44.000] // mm
 }
 
 
@@ -8218,24 +4140,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [22.000, -22.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_6_2_7]
-{
-name: "GEO",
-index: "target_cube_6_2_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, -22.000, 33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -66.000, -22.000] // mm
 }
 
 
@@ -8250,152 +4156,72 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [22.000, -22.000, 44.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -66.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_6_3_0]
+// -------- GEO[target_cube_6_2_10]
 {
 name: "GEO",
-index: "target_cube_6_3_0",
+index: "target_cube_6_2_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, -11.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -66.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_6_3_1]
+// -------- GEO[target_cube_6_2_12]
 {
 name: "GEO",
-index: "target_cube_6_3_1",
+index: "target_cube_6_2_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, -11.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -66.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_6_3_2]
+// -------- GEO[target_cube_6_2_14]
 {
 name: "GEO",
-index: "target_cube_6_3_2",
+index: "target_cube_6_2_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, -11.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -66.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_6_3_3]
+// -------- GEO[target_cube_6_2_16]
 {
 name: "GEO",
-index: "target_cube_6_3_3",
+index: "target_cube_6_2_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, -11.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_6_3_4]
-{
-name: "GEO",
-index: "target_cube_6_3_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, -11.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_6_3_5]
-{
-name: "GEO",
-index: "target_cube_6_3_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, -11.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_6_3_6]
-{
-name: "GEO",
-index: "target_cube_6_3_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, -11.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_6_3_7]
-{
-name: "GEO",
-index: "target_cube_6_3_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, -11.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_6_3_8]
-{
-name: "GEO",
-index: "target_cube_6_3_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, -11.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -66.000, 88.000] // mm
 }
 
 
@@ -8410,24 +4236,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [22.000, 0.0, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_6_4_1]
-{
-name: "GEO",
-index: "target_cube_6_4_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, 0.0, -33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -44.000, -88.000] // mm
 }
 
 
@@ -8442,24 +4252,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [22.000, 0.0, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_6_4_3]
-{
-name: "GEO",
-index: "target_cube_6_4_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, 0.0, -11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -44.000, -66.000] // mm
 }
 
 
@@ -8474,24 +4268,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [22.000, 0.0, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_6_4_5]
-{
-name: "GEO",
-index: "target_cube_6_4_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, 0.0, 11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -44.000, -44.000] // mm
 }
 
 
@@ -8506,24 +4284,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [22.000, 0.0, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_6_4_7]
-{
-name: "GEO",
-index: "target_cube_6_4_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, 0.0, 33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -44.000, -22.000] // mm
 }
 
 
@@ -8538,152 +4300,72 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [22.000, 0.0, 44.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -44.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_6_5_0]
+// -------- GEO[target_cube_6_4_10]
 {
 name: "GEO",
-index: "target_cube_6_5_0",
+index: "target_cube_6_4_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, 11.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -44.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_6_5_1]
+// -------- GEO[target_cube_6_4_12]
 {
 name: "GEO",
-index: "target_cube_6_5_1",
+index: "target_cube_6_4_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, 11.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -44.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_6_5_2]
+// -------- GEO[target_cube_6_4_14]
 {
 name: "GEO",
-index: "target_cube_6_5_2",
+index: "target_cube_6_4_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, 11.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -44.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_6_5_3]
+// -------- GEO[target_cube_6_4_16]
 {
 name: "GEO",
-index: "target_cube_6_5_3",
+index: "target_cube_6_4_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, 11.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_6_5_4]
-{
-name: "GEO",
-index: "target_cube_6_5_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, 11.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_6_5_5]
-{
-name: "GEO",
-index: "target_cube_6_5_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, 11.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_6_5_6]
-{
-name: "GEO",
-index: "target_cube_6_5_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, 11.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_6_5_7]
-{
-name: "GEO",
-index: "target_cube_6_5_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, 11.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_6_5_8]
-{
-name: "GEO",
-index: "target_cube_6_5_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, 11.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -44.000, 88.000] // mm
 }
 
 
@@ -8698,24 +4380,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [22.000, 22.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_6_6_1]
-{
-name: "GEO",
-index: "target_cube_6_6_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, 22.000, -33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -22.000, -88.000] // mm
 }
 
 
@@ -8730,24 +4396,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [22.000, 22.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_6_6_3]
-{
-name: "GEO",
-index: "target_cube_6_6_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, 22.000, -11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -22.000, -66.000] // mm
 }
 
 
@@ -8762,24 +4412,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [22.000, 22.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_6_6_5]
-{
-name: "GEO",
-index: "target_cube_6_6_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, 22.000, 11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -22.000, -44.000] // mm
 }
 
 
@@ -8794,24 +4428,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [22.000, 22.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_6_6_7]
-{
-name: "GEO",
-index: "target_cube_6_6_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, 22.000, 33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -22.000, -22.000] // mm
 }
 
 
@@ -8826,152 +4444,72 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [22.000, 22.000, 44.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -22.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_6_7_0]
+// -------- GEO[target_cube_6_6_10]
 {
 name: "GEO",
-index: "target_cube_6_7_0",
+index: "target_cube_6_6_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, 33.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -22.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_6_7_1]
+// -------- GEO[target_cube_6_6_12]
 {
 name: "GEO",
-index: "target_cube_6_7_1",
+index: "target_cube_6_6_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, 33.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -22.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_6_7_2]
+// -------- GEO[target_cube_6_6_14]
 {
 name: "GEO",
-index: "target_cube_6_7_2",
+index: "target_cube_6_6_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, 33.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -22.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_6_7_3]
+// -------- GEO[target_cube_6_6_16]
 {
 name: "GEO",
-index: "target_cube_6_7_3",
+index: "target_cube_6_6_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, 33.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_6_7_4]
-{
-name: "GEO",
-index: "target_cube_6_7_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, 33.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_6_7_5]
-{
-name: "GEO",
-index: "target_cube_6_7_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, 33.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_6_7_6]
-{
-name: "GEO",
-index: "target_cube_6_7_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, 33.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_6_7_7]
-{
-name: "GEO",
-index: "target_cube_6_7_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, 33.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_6_7_8]
-{
-name: "GEO",
-index: "target_cube_6_7_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, 33.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, -22.000, 88.000] // mm
 }
 
 
@@ -8986,24 +4524,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [22.000, 44.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_6_8_1]
-{
-name: "GEO",
-index: "target_cube_6_8_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, 44.000, -33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 0.0, -88.000] // mm
 }
 
 
@@ -9018,24 +4540,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [22.000, 44.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_6_8_3]
-{
-name: "GEO",
-index: "target_cube_6_8_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, 44.000, -11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 0.0, -66.000] // mm
 }
 
 
@@ -9050,24 +4556,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [22.000, 44.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_6_8_5]
-{
-name: "GEO",
-index: "target_cube_6_8_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, 44.000, 11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 0.0, -44.000] // mm
 }
 
 
@@ -9082,24 +4572,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [22.000, 44.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_6_8_7]
-{
-name: "GEO",
-index: "target_cube_6_8_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [22.000, 44.000, 33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 0.0, -22.000] // mm
 }
 
 
@@ -9114,1304 +4588,648 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [22.000, 44.000, 44.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 0.0, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_7_0_0]
+// -------- GEO[target_cube_6_8_10]
 {
 name: "GEO",
-index: "target_cube_7_0_0",
+index: "target_cube_6_8_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -44.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 0.0, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_0_1]
+// -------- GEO[target_cube_6_8_12]
 {
 name: "GEO",
-index: "target_cube_7_0_1",
+index: "target_cube_6_8_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -44.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 0.0, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_0_2]
+// -------- GEO[target_cube_6_8_14]
 {
 name: "GEO",
-index: "target_cube_7_0_2",
+index: "target_cube_6_8_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -44.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 0.0, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_0_3]
+// -------- GEO[target_cube_6_8_16]
 {
 name: "GEO",
-index: "target_cube_7_0_3",
+index: "target_cube_6_8_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -44.000, -11.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 0.0, 88.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_0_4]
+// -------- GEO[target_cube_6_10_0]
 {
 name: "GEO",
-index: "target_cube_7_0_4",
+index: "target_cube_6_10_0",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -44.000, 0.0] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 22.000, -88.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_0_5]
+// -------- GEO[target_cube_6_10_2]
 {
 name: "GEO",
-index: "target_cube_7_0_5",
+index: "target_cube_6_10_2",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -44.000, 11.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 22.000, -66.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_0_6]
+// -------- GEO[target_cube_6_10_4]
 {
 name: "GEO",
-index: "target_cube_7_0_6",
+index: "target_cube_6_10_4",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -44.000, 22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 22.000, -44.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_0_7]
+// -------- GEO[target_cube_6_10_6]
 {
 name: "GEO",
-index: "target_cube_7_0_7",
+index: "target_cube_6_10_6",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -44.000, 33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 22.000, -22.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_0_8]
+// -------- GEO[target_cube_6_10_8]
 {
 name: "GEO",
-index: "target_cube_7_0_8",
+index: "target_cube_6_10_8",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -44.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 22.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_7_1_0]
+// -------- GEO[target_cube_6_10_10]
 {
 name: "GEO",
-index: "target_cube_7_1_0",
+index: "target_cube_6_10_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -33.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 22.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_1_1]
+// -------- GEO[target_cube_6_10_12]
 {
 name: "GEO",
-index: "target_cube_7_1_1",
+index: "target_cube_6_10_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -33.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 22.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_1_2]
+// -------- GEO[target_cube_6_10_14]
 {
 name: "GEO",
-index: "target_cube_7_1_2",
+index: "target_cube_6_10_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -33.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 22.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_1_3]
+// -------- GEO[target_cube_6_10_16]
 {
 name: "GEO",
-index: "target_cube_7_1_3",
+index: "target_cube_6_10_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -33.000, -11.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 22.000, 88.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_1_4]
+// -------- GEO[target_cube_6_12_0]
 {
 name: "GEO",
-index: "target_cube_7_1_4",
+index: "target_cube_6_12_0",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -33.000, 0.0] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 44.000, -88.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_1_5]
+// -------- GEO[target_cube_6_12_2]
 {
 name: "GEO",
-index: "target_cube_7_1_5",
+index: "target_cube_6_12_2",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -33.000, 11.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 44.000, -66.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_1_6]
+// -------- GEO[target_cube_6_12_4]
 {
 name: "GEO",
-index: "target_cube_7_1_6",
+index: "target_cube_6_12_4",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -33.000, 22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 44.000, -44.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_1_7]
+// -------- GEO[target_cube_6_12_6]
 {
 name: "GEO",
-index: "target_cube_7_1_7",
+index: "target_cube_6_12_6",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -33.000, 33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 44.000, -22.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_1_8]
+// -------- GEO[target_cube_6_12_8]
 {
 name: "GEO",
-index: "target_cube_7_1_8",
+index: "target_cube_6_12_8",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -33.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 44.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_7_2_0]
+// -------- GEO[target_cube_6_12_10]
 {
 name: "GEO",
-index: "target_cube_7_2_0",
+index: "target_cube_6_12_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -22.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 44.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_2_1]
+// -------- GEO[target_cube_6_12_12]
 {
 name: "GEO",
-index: "target_cube_7_2_1",
+index: "target_cube_6_12_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -22.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 44.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_2_2]
+// -------- GEO[target_cube_6_12_14]
 {
 name: "GEO",
-index: "target_cube_7_2_2",
+index: "target_cube_6_12_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -22.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 44.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_2_3]
+// -------- GEO[target_cube_6_12_16]
 {
 name: "GEO",
-index: "target_cube_7_2_3",
+index: "target_cube_6_12_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -22.000, -11.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 44.000, 88.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_2_4]
+// -------- GEO[target_cube_6_14_0]
 {
 name: "GEO",
-index: "target_cube_7_2_4",
+index: "target_cube_6_14_0",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -22.000, 0.0] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 66.000, -88.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_2_5]
+// -------- GEO[target_cube_6_14_2]
 {
 name: "GEO",
-index: "target_cube_7_2_5",
+index: "target_cube_6_14_2",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -22.000, 11.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 66.000, -66.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_2_6]
+// -------- GEO[target_cube_6_14_4]
 {
 name: "GEO",
-index: "target_cube_7_2_6",
+index: "target_cube_6_14_4",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -22.000, 22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 66.000, -44.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_2_7]
+// -------- GEO[target_cube_6_14_6]
 {
 name: "GEO",
-index: "target_cube_7_2_7",
+index: "target_cube_6_14_6",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -22.000, 33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 66.000, -22.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_2_8]
+// -------- GEO[target_cube_6_14_8]
 {
 name: "GEO",
-index: "target_cube_7_2_8",
+index: "target_cube_6_14_8",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -22.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 66.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_7_3_0]
+// -------- GEO[target_cube_6_14_10]
 {
 name: "GEO",
-index: "target_cube_7_3_0",
+index: "target_cube_6_14_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -11.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 66.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_3_1]
+// -------- GEO[target_cube_6_14_12]
 {
 name: "GEO",
-index: "target_cube_7_3_1",
+index: "target_cube_6_14_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -11.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 66.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_3_2]
+// -------- GEO[target_cube_6_14_14]
 {
 name: "GEO",
-index: "target_cube_7_3_2",
+index: "target_cube_6_14_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -11.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 66.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_3_3]
+// -------- GEO[target_cube_6_14_16]
 {
 name: "GEO",
-index: "target_cube_7_3_3",
+index: "target_cube_6_14_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -11.000, -11.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 66.000, 88.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_3_4]
+// -------- GEO[target_cube_6_16_0]
 {
 name: "GEO",
-index: "target_cube_7_3_4",
+index: "target_cube_6_16_0",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -11.000, 0.0] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 88.000, -88.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_3_5]
+// -------- GEO[target_cube_6_16_2]
 {
 name: "GEO",
-index: "target_cube_7_3_5",
+index: "target_cube_6_16_2",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -11.000, 11.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 88.000, -66.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_3_6]
+// -------- GEO[target_cube_6_16_4]
 {
 name: "GEO",
-index: "target_cube_7_3_6",
+index: "target_cube_6_16_4",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -11.000, 22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 88.000, -44.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_3_7]
+// -------- GEO[target_cube_6_16_6]
 {
 name: "GEO",
-index: "target_cube_7_3_7",
+index: "target_cube_6_16_6",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -11.000, 33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 88.000, -22.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_3_8]
+// -------- GEO[target_cube_6_16_8]
 {
 name: "GEO",
-index: "target_cube_7_3_8",
+index: "target_cube_6_16_8",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, -11.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 88.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_7_4_0]
+// -------- GEO[target_cube_6_16_10]
 {
 name: "GEO",
-index: "target_cube_7_4_0",
+index: "target_cube_6_16_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 0.0, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 88.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_4_1]
+// -------- GEO[target_cube_6_16_12]
 {
 name: "GEO",
-index: "target_cube_7_4_1",
+index: "target_cube_6_16_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 0.0, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 88.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_4_2]
+// -------- GEO[target_cube_6_16_14]
 {
 name: "GEO",
-index: "target_cube_7_4_2",
+index: "target_cube_6_16_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 0.0, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 88.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_7_4_3]
+// -------- GEO[target_cube_6_16_16]
 {
 name: "GEO",
-index: "target_cube_7_4_3",
+index: "target_cube_6_16_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 0.0, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_4_4]
-{
-name: "GEO",
-index: "target_cube_7_4_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 0.0, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_7_4_5]
-{
-name: "GEO",
-index: "target_cube_7_4_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 0.0, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_4_6]
-{
-name: "GEO",
-index: "target_cube_7_4_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 0.0, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_4_7]
-{
-name: "GEO",
-index: "target_cube_7_4_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 0.0, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_4_8]
-{
-name: "GEO",
-index: "target_cube_7_4_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 0.0, 44.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_5_0]
-{
-name: "GEO",
-index: "target_cube_7_5_0",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 11.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_5_1]
-{
-name: "GEO",
-index: "target_cube_7_5_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 11.000, -33.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_5_2]
-{
-name: "GEO",
-index: "target_cube_7_5_2",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 11.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_5_3]
-{
-name: "GEO",
-index: "target_cube_7_5_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 11.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_5_4]
-{
-name: "GEO",
-index: "target_cube_7_5_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 11.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_7_5_5]
-{
-name: "GEO",
-index: "target_cube_7_5_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 11.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_5_6]
-{
-name: "GEO",
-index: "target_cube_7_5_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 11.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_5_7]
-{
-name: "GEO",
-index: "target_cube_7_5_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 11.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_5_8]
-{
-name: "GEO",
-index: "target_cube_7_5_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 11.000, 44.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_6_0]
-{
-name: "GEO",
-index: "target_cube_7_6_0",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 22.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_6_1]
-{
-name: "GEO",
-index: "target_cube_7_6_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 22.000, -33.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_6_2]
-{
-name: "GEO",
-index: "target_cube_7_6_2",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 22.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_6_3]
-{
-name: "GEO",
-index: "target_cube_7_6_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 22.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_6_4]
-{
-name: "GEO",
-index: "target_cube_7_6_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 22.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_7_6_5]
-{
-name: "GEO",
-index: "target_cube_7_6_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 22.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_6_6]
-{
-name: "GEO",
-index: "target_cube_7_6_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 22.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_6_7]
-{
-name: "GEO",
-index: "target_cube_7_6_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 22.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_6_8]
-{
-name: "GEO",
-index: "target_cube_7_6_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 22.000, 44.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_7_0]
-{
-name: "GEO",
-index: "target_cube_7_7_0",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 33.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_7_1]
-{
-name: "GEO",
-index: "target_cube_7_7_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 33.000, -33.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_7_2]
-{
-name: "GEO",
-index: "target_cube_7_7_2",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 33.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_7_3]
-{
-name: "GEO",
-index: "target_cube_7_7_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 33.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_7_4]
-{
-name: "GEO",
-index: "target_cube_7_7_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 33.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_7_7_5]
-{
-name: "GEO",
-index: "target_cube_7_7_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 33.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_7_6]
-{
-name: "GEO",
-index: "target_cube_7_7_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 33.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_7_7]
-{
-name: "GEO",
-index: "target_cube_7_7_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 33.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_7_8]
-{
-name: "GEO",
-index: "target_cube_7_7_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 33.000, 44.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_8_0]
-{
-name: "GEO",
-index: "target_cube_7_8_0",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 44.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_8_1]
-{
-name: "GEO",
-index: "target_cube_7_8_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 44.000, -33.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_8_2]
-{
-name: "GEO",
-index: "target_cube_7_8_2",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 44.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_8_3]
-{
-name: "GEO",
-index: "target_cube_7_8_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 44.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_8_4]
-{
-name: "GEO",
-index: "target_cube_7_8_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 44.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_7_8_5]
-{
-name: "GEO",
-index: "target_cube_7_8_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 44.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_8_6]
-{
-name: "GEO",
-index: "target_cube_7_8_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 44.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_8_7]
-{
-name: "GEO",
-index: "target_cube_7_8_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 44.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_7_8_8]
-{
-name: "GEO",
-index: "target_cube_7_8_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [33.000, 44.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [-22.000, 88.000, 88.000] // mm
 }
 
 
@@ -10426,24 +5244,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [44.000, -44.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_8_0_1]
-{
-name: "GEO",
-index: "target_cube_8_0_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, -44.000, -33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -88.000, -88.000] // mm
 }
 
 
@@ -10458,24 +5260,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [44.000, -44.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_8_0_3]
-{
-name: "GEO",
-index: "target_cube_8_0_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, -44.000, -11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -88.000, -66.000] // mm
 }
 
 
@@ -10490,24 +5276,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [44.000, -44.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_8_0_5]
-{
-name: "GEO",
-index: "target_cube_8_0_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, -44.000, 11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -88.000, -44.000] // mm
 }
 
 
@@ -10522,24 +5292,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [44.000, -44.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_8_0_7]
-{
-name: "GEO",
-index: "target_cube_8_0_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, -44.000, 33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -88.000, -22.000] // mm
 }
 
 
@@ -10554,152 +5308,72 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [44.000, -44.000, 44.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -88.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_8_1_0]
+// -------- GEO[target_cube_8_0_10]
 {
 name: "GEO",
-index: "target_cube_8_1_0",
+index: "target_cube_8_0_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, -33.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -88.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_8_1_1]
+// -------- GEO[target_cube_8_0_12]
 {
 name: "GEO",
-index: "target_cube_8_1_1",
+index: "target_cube_8_0_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, -33.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -88.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_8_1_2]
+// -------- GEO[target_cube_8_0_14]
 {
 name: "GEO",
-index: "target_cube_8_1_2",
+index: "target_cube_8_0_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, -33.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -88.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_8_1_3]
+// -------- GEO[target_cube_8_0_16]
 {
 name: "GEO",
-index: "target_cube_8_1_3",
+index: "target_cube_8_0_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, -33.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_8_1_4]
-{
-name: "GEO",
-index: "target_cube_8_1_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, -33.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_8_1_5]
-{
-name: "GEO",
-index: "target_cube_8_1_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, -33.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_8_1_6]
-{
-name: "GEO",
-index: "target_cube_8_1_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, -33.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_8_1_7]
-{
-name: "GEO",
-index: "target_cube_8_1_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, -33.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_8_1_8]
-{
-name: "GEO",
-index: "target_cube_8_1_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, -33.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -88.000, 88.000] // mm
 }
 
 
@@ -10714,24 +5388,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [44.000, -22.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_8_2_1]
-{
-name: "GEO",
-index: "target_cube_8_2_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, -22.000, -33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -66.000, -88.000] // mm
 }
 
 
@@ -10746,24 +5404,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [44.000, -22.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_8_2_3]
-{
-name: "GEO",
-index: "target_cube_8_2_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, -22.000, -11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -66.000, -66.000] // mm
 }
 
 
@@ -10778,24 +5420,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [44.000, -22.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_8_2_5]
-{
-name: "GEO",
-index: "target_cube_8_2_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, -22.000, 11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -66.000, -44.000] // mm
 }
 
 
@@ -10810,24 +5436,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [44.000, -22.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_8_2_7]
-{
-name: "GEO",
-index: "target_cube_8_2_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, -22.000, 33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -66.000, -22.000] // mm
 }
 
 
@@ -10842,152 +5452,72 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [44.000, -22.000, 44.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -66.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_8_3_0]
+// -------- GEO[target_cube_8_2_10]
 {
 name: "GEO",
-index: "target_cube_8_3_0",
+index: "target_cube_8_2_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, -11.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -66.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_8_3_1]
+// -------- GEO[target_cube_8_2_12]
 {
 name: "GEO",
-index: "target_cube_8_3_1",
+index: "target_cube_8_2_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, -11.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -66.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_8_3_2]
+// -------- GEO[target_cube_8_2_14]
 {
 name: "GEO",
-index: "target_cube_8_3_2",
+index: "target_cube_8_2_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, -11.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -66.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_8_3_3]
+// -------- GEO[target_cube_8_2_16]
 {
 name: "GEO",
-index: "target_cube_8_3_3",
+index: "target_cube_8_2_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, -11.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_8_3_4]
-{
-name: "GEO",
-index: "target_cube_8_3_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, -11.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_8_3_5]
-{
-name: "GEO",
-index: "target_cube_8_3_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, -11.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_8_3_6]
-{
-name: "GEO",
-index: "target_cube_8_3_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, -11.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_8_3_7]
-{
-name: "GEO",
-index: "target_cube_8_3_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, -11.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_8_3_8]
-{
-name: "GEO",
-index: "target_cube_8_3_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, -11.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -66.000, 88.000] // mm
 }
 
 
@@ -11002,24 +5532,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [44.000, 0.0, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_8_4_1]
-{
-name: "GEO",
-index: "target_cube_8_4_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, 0.0, -33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -44.000, -88.000] // mm
 }
 
 
@@ -11034,24 +5548,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [44.000, 0.0, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_8_4_3]
-{
-name: "GEO",
-index: "target_cube_8_4_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, 0.0, -11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -44.000, -66.000] // mm
 }
 
 
@@ -11066,24 +5564,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [44.000, 0.0, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_8_4_5]
-{
-name: "GEO",
-index: "target_cube_8_4_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, 0.0, 11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -44.000, -44.000] // mm
 }
 
 
@@ -11098,24 +5580,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [44.000, 0.0, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_8_4_7]
-{
-name: "GEO",
-index: "target_cube_8_4_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, 0.0, 33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -44.000, -22.000] // mm
 }
 
 
@@ -11130,152 +5596,72 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [44.000, 0.0, 44.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -44.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_8_5_0]
+// -------- GEO[target_cube_8_4_10]
 {
 name: "GEO",
-index: "target_cube_8_5_0",
+index: "target_cube_8_4_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, 11.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -44.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_8_5_1]
+// -------- GEO[target_cube_8_4_12]
 {
 name: "GEO",
-index: "target_cube_8_5_1",
+index: "target_cube_8_4_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, 11.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -44.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_8_5_2]
+// -------- GEO[target_cube_8_4_14]
 {
 name: "GEO",
-index: "target_cube_8_5_2",
+index: "target_cube_8_4_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, 11.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -44.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_8_5_3]
+// -------- GEO[target_cube_8_4_16]
 {
 name: "GEO",
-index: "target_cube_8_5_3",
+index: "target_cube_8_4_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, 11.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_8_5_4]
-{
-name: "GEO",
-index: "target_cube_8_5_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, 11.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_8_5_5]
-{
-name: "GEO",
-index: "target_cube_8_5_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, 11.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_8_5_6]
-{
-name: "GEO",
-index: "target_cube_8_5_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, 11.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_8_5_7]
-{
-name: "GEO",
-index: "target_cube_8_5_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, 11.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_8_5_8]
-{
-name: "GEO",
-index: "target_cube_8_5_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, 11.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -44.000, 88.000] // mm
 }
 
 
@@ -11290,24 +5676,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [44.000, 22.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_8_6_1]
-{
-name: "GEO",
-index: "target_cube_8_6_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, 22.000, -33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -22.000, -88.000] // mm
 }
 
 
@@ -11322,24 +5692,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [44.000, 22.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_8_6_3]
-{
-name: "GEO",
-index: "target_cube_8_6_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, 22.000, -11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -22.000, -66.000] // mm
 }
 
 
@@ -11354,24 +5708,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [44.000, 22.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_8_6_5]
-{
-name: "GEO",
-index: "target_cube_8_6_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, 22.000, 11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -22.000, -44.000] // mm
 }
 
 
@@ -11386,24 +5724,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [44.000, 22.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_8_6_7]
-{
-name: "GEO",
-index: "target_cube_8_6_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, 22.000, 33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -22.000, -22.000] // mm
 }
 
 
@@ -11418,152 +5740,72 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [44.000, 22.000, 44.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -22.000, 0.0] // mm
 }
 
 
-// -------- GEO[target_cube_8_7_0]
+// -------- GEO[target_cube_8_6_10]
 {
 name: "GEO",
-index: "target_cube_8_7_0",
+index: "target_cube_8_6_10",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, 33.000, -44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -22.000, 22.000] // mm
 }
 
 
-// -------- GEO[target_cube_8_7_1]
+// -------- GEO[target_cube_8_6_12]
 {
 name: "GEO",
-index: "target_cube_8_7_1",
+index: "target_cube_8_6_12",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, 33.000, -33.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -22.000, 44.000] // mm
 }
 
 
-// -------- GEO[target_cube_8_7_2]
+// -------- GEO[target_cube_8_6_14]
 {
 name: "GEO",
-index: "target_cube_8_7_2",
+index: "target_cube_8_6_14",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, 33.000, -22.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -22.000, 66.000] // mm
 }
 
 
-// -------- GEO[target_cube_8_7_3]
+// -------- GEO[target_cube_8_6_16]
 {
 name: "GEO",
-index: "target_cube_8_7_3",
+index: "target_cube_8_6_16",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "target_cube_array",
 type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, 33.000, -11.000] // mm
-}
-
-
-// -------- GEO[target_cube_8_7_4]
-{
-name: "GEO",
-index: "target_cube_8_7_4",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, 33.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_8_7_5]
-{
-name: "GEO",
-index: "target_cube_8_7_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, 33.000, 11.000] // mm
-}
-
-
-// -------- GEO[target_cube_8_7_6]
-{
-name: "GEO",
-index: "target_cube_8_7_6",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, 33.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_8_7_7]
-{
-name: "GEO",
-index: "target_cube_8_7_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, 33.000, 33.000] // mm
-}
-
-
-// -------- GEO[target_cube_8_7_8]
-{
-name: "GEO",
-index: "target_cube_8_7_8",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, 33.000, 44.000] // mm
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, -22.000, 88.000] // mm
 }
 
 
@@ -11578,24 +5820,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [44.000, 44.000, -44.000] // mm
-}
-
-
-// -------- GEO[target_cube_8_8_1]
-{
-name: "GEO",
-index: "target_cube_8_8_1",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, 44.000, -33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 0.0, -88.000] // mm
 }
 
 
@@ -11610,24 +5836,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [44.000, 44.000, -22.000] // mm
-}
-
-
-// -------- GEO[target_cube_8_8_3]
-{
-name: "GEO",
-index: "target_cube_8_8_3",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, 44.000, -11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 0.0, -66.000] // mm
 }
 
 
@@ -11642,24 +5852,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [44.000, 44.000, 0.0] // mm
-}
-
-
-// -------- GEO[target_cube_8_8_5]
-{
-name: "GEO",
-index: "target_cube_8_8_5",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, 44.000, 11.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 0.0, -44.000] // mm
 }
 
 
@@ -11674,24 +5868,8 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
-position: [44.000, 44.000, 22.000] // mm
-}
-
-
-// -------- GEO[target_cube_8_8_7]
-{
-name: "GEO",
-index: "target_cube_8_8_7",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "target_cube_array",
-type: "box",
-size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
-material: "glass",
-invisible: 0, // inert cube
-color: [0.9, 0.9, 0.9, 0.5], // inert cube
-position: [44.000, 44.000, 33.000] // mm
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 0.0, -22.000] // mm
 }
 
 
@@ -11706,8 +5884,5832 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color :[0.0, 1.0, 1.0, 1.0], // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 0.0, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_8_8_10]
+{
+name: "GEO",
+index: "target_cube_8_8_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 0.0, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_8_12]
+{
+name: "GEO",
+index: "target_cube_8_8_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 0.0, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_8_14]
+{
+name: "GEO",
+index: "target_cube_8_8_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 0.0, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_8_16]
+{
+name: "GEO",
+index: "target_cube_8_8_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 0.0, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_10_0]
+{
+name: "GEO",
+index: "target_cube_8_10_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 22.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_10_2]
+{
+name: "GEO",
+index: "target_cube_8_10_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 22.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_10_4]
+{
+name: "GEO",
+index: "target_cube_8_10_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 22.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_10_6]
+{
+name: "GEO",
+index: "target_cube_8_10_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 22.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_10_8]
+{
+name: "GEO",
+index: "target_cube_8_10_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 22.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_8_10_10]
+{
+name: "GEO",
+index: "target_cube_8_10_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 22.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_10_12]
+{
+name: "GEO",
+index: "target_cube_8_10_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 22.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_10_14]
+{
+name: "GEO",
+index: "target_cube_8_10_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 22.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_10_16]
+{
+name: "GEO",
+index: "target_cube_8_10_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 22.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_12_0]
+{
+name: "GEO",
+index: "target_cube_8_12_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 44.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_12_2]
+{
+name: "GEO",
+index: "target_cube_8_12_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 44.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_12_4]
+{
+name: "GEO",
+index: "target_cube_8_12_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 44.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_12_6]
+{
+name: "GEO",
+index: "target_cube_8_12_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 44.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_12_8]
+{
+name: "GEO",
+index: "target_cube_8_12_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 44.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_8_12_10]
+{
+name: "GEO",
+index: "target_cube_8_12_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 44.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_12_12]
+{
+name: "GEO",
+index: "target_cube_8_12_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 44.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_12_14]
+{
+name: "GEO",
+index: "target_cube_8_12_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 44.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_12_16]
+{
+name: "GEO",
+index: "target_cube_8_12_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 44.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_14_0]
+{
+name: "GEO",
+index: "target_cube_8_14_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 66.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_14_2]
+{
+name: "GEO",
+index: "target_cube_8_14_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 66.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_14_4]
+{
+name: "GEO",
+index: "target_cube_8_14_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 66.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_14_6]
+{
+name: "GEO",
+index: "target_cube_8_14_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 66.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_14_8]
+{
+name: "GEO",
+index: "target_cube_8_14_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 66.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_8_14_10]
+{
+name: "GEO",
+index: "target_cube_8_14_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 66.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_14_12]
+{
+name: "GEO",
+index: "target_cube_8_14_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 66.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_14_14]
+{
+name: "GEO",
+index: "target_cube_8_14_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 66.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_14_16]
+{
+name: "GEO",
+index: "target_cube_8_14_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 66.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_16_0]
+{
+name: "GEO",
+index: "target_cube_8_16_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 88.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_16_2]
+{
+name: "GEO",
+index: "target_cube_8_16_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 88.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_16_4]
+{
+name: "GEO",
+index: "target_cube_8_16_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 88.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_16_6]
+{
+name: "GEO",
+index: "target_cube_8_16_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 88.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_16_8]
+{
+name: "GEO",
+index: "target_cube_8_16_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 88.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_8_16_10]
+{
+name: "GEO",
+index: "target_cube_8_16_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 88.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_16_12]
+{
+name: "GEO",
+index: "target_cube_8_16_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 88.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_16_14]
+{
+name: "GEO",
+index: "target_cube_8_16_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 88.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_8_16_16]
+{
+name: "GEO",
+index: "target_cube_8_16_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [0.0, 88.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_0_0]
+{
+name: "GEO",
+index: "target_cube_10_0_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -88.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_0_2]
+{
+name: "GEO",
+index: "target_cube_10_0_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -88.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_0_4]
+{
+name: "GEO",
+index: "target_cube_10_0_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -88.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_0_6]
+{
+name: "GEO",
+index: "target_cube_10_0_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -88.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_0_8]
+{
+name: "GEO",
+index: "target_cube_10_0_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -88.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_10_0_10]
+{
+name: "GEO",
+index: "target_cube_10_0_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -88.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_0_12]
+{
+name: "GEO",
+index: "target_cube_10_0_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -88.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_0_14]
+{
+name: "GEO",
+index: "target_cube_10_0_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -88.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_0_16]
+{
+name: "GEO",
+index: "target_cube_10_0_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -88.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_2_0]
+{
+name: "GEO",
+index: "target_cube_10_2_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -66.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_2_2]
+{
+name: "GEO",
+index: "target_cube_10_2_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -66.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_2_4]
+{
+name: "GEO",
+index: "target_cube_10_2_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -66.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_2_6]
+{
+name: "GEO",
+index: "target_cube_10_2_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -66.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_2_8]
+{
+name: "GEO",
+index: "target_cube_10_2_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -66.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_10_2_10]
+{
+name: "GEO",
+index: "target_cube_10_2_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -66.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_2_12]
+{
+name: "GEO",
+index: "target_cube_10_2_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -66.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_2_14]
+{
+name: "GEO",
+index: "target_cube_10_2_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -66.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_2_16]
+{
+name: "GEO",
+index: "target_cube_10_2_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -66.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_4_0]
+{
+name: "GEO",
+index: "target_cube_10_4_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -44.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_4_2]
+{
+name: "GEO",
+index: "target_cube_10_4_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -44.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_4_4]
+{
+name: "GEO",
+index: "target_cube_10_4_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -44.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_4_6]
+{
+name: "GEO",
+index: "target_cube_10_4_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -44.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_4_8]
+{
+name: "GEO",
+index: "target_cube_10_4_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -44.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_10_4_10]
+{
+name: "GEO",
+index: "target_cube_10_4_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -44.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_4_12]
+{
+name: "GEO",
+index: "target_cube_10_4_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -44.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_4_14]
+{
+name: "GEO",
+index: "target_cube_10_4_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -44.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_4_16]
+{
+name: "GEO",
+index: "target_cube_10_4_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -44.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_6_0]
+{
+name: "GEO",
+index: "target_cube_10_6_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -22.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_6_2]
+{
+name: "GEO",
+index: "target_cube_10_6_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -22.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_6_4]
+{
+name: "GEO",
+index: "target_cube_10_6_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -22.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_6_6]
+{
+name: "GEO",
+index: "target_cube_10_6_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -22.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_6_8]
+{
+name: "GEO",
+index: "target_cube_10_6_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -22.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_10_6_10]
+{
+name: "GEO",
+index: "target_cube_10_6_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -22.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_6_12]
+{
+name: "GEO",
+index: "target_cube_10_6_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -22.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_6_14]
+{
+name: "GEO",
+index: "target_cube_10_6_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -22.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_6_16]
+{
+name: "GEO",
+index: "target_cube_10_6_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, -22.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_8_0]
+{
+name: "GEO",
+index: "target_cube_10_8_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 0.0, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_8_2]
+{
+name: "GEO",
+index: "target_cube_10_8_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 0.0, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_8_4]
+{
+name: "GEO",
+index: "target_cube_10_8_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 0.0, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_8_6]
+{
+name: "GEO",
+index: "target_cube_10_8_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 0.0, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_8_8]
+{
+name: "GEO",
+index: "target_cube_10_8_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 0.0, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_10_8_10]
+{
+name: "GEO",
+index: "target_cube_10_8_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 0.0, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_8_12]
+{
+name: "GEO",
+index: "target_cube_10_8_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 0.0, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_8_14]
+{
+name: "GEO",
+index: "target_cube_10_8_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 0.0, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_8_16]
+{
+name: "GEO",
+index: "target_cube_10_8_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 0.0, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_10_0]
+{
+name: "GEO",
+index: "target_cube_10_10_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 22.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_10_2]
+{
+name: "GEO",
+index: "target_cube_10_10_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 22.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_10_4]
+{
+name: "GEO",
+index: "target_cube_10_10_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 22.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_10_6]
+{
+name: "GEO",
+index: "target_cube_10_10_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 22.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_10_8]
+{
+name: "GEO",
+index: "target_cube_10_10_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 22.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_10_10_10]
+{
+name: "GEO",
+index: "target_cube_10_10_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 22.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_10_12]
+{
+name: "GEO",
+index: "target_cube_10_10_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 22.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_10_14]
+{
+name: "GEO",
+index: "target_cube_10_10_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 22.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_10_16]
+{
+name: "GEO",
+index: "target_cube_10_10_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 22.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_12_0]
+{
+name: "GEO",
+index: "target_cube_10_12_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 44.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_12_2]
+{
+name: "GEO",
+index: "target_cube_10_12_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 44.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_12_4]
+{
+name: "GEO",
+index: "target_cube_10_12_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 44.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_12_6]
+{
+name: "GEO",
+index: "target_cube_10_12_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 44.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_12_8]
+{
+name: "GEO",
+index: "target_cube_10_12_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 44.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_10_12_10]
+{
+name: "GEO",
+index: "target_cube_10_12_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 44.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_12_12]
+{
+name: "GEO",
+index: "target_cube_10_12_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 44.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_12_14]
+{
+name: "GEO",
+index: "target_cube_10_12_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 44.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_12_16]
+{
+name: "GEO",
+index: "target_cube_10_12_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 44.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_14_0]
+{
+name: "GEO",
+index: "target_cube_10_14_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 66.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_14_2]
+{
+name: "GEO",
+index: "target_cube_10_14_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 66.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_14_4]
+{
+name: "GEO",
+index: "target_cube_10_14_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 66.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_14_6]
+{
+name: "GEO",
+index: "target_cube_10_14_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 66.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_14_8]
+{
+name: "GEO",
+index: "target_cube_10_14_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 66.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_10_14_10]
+{
+name: "GEO",
+index: "target_cube_10_14_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 66.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_14_12]
+{
+name: "GEO",
+index: "target_cube_10_14_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 66.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_14_14]
+{
+name: "GEO",
+index: "target_cube_10_14_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 66.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_14_16]
+{
+name: "GEO",
+index: "target_cube_10_14_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 66.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_16_0]
+{
+name: "GEO",
+index: "target_cube_10_16_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 88.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_16_2]
+{
+name: "GEO",
+index: "target_cube_10_16_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 88.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_16_4]
+{
+name: "GEO",
+index: "target_cube_10_16_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 88.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_16_6]
+{
+name: "GEO",
+index: "target_cube_10_16_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 88.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_16_8]
+{
+name: "GEO",
+index: "target_cube_10_16_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 88.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_10_16_10]
+{
+name: "GEO",
+index: "target_cube_10_16_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 88.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_16_12]
+{
+name: "GEO",
+index: "target_cube_10_16_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 88.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_16_14]
+{
+name: "GEO",
+index: "target_cube_10_16_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 88.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_10_16_16]
+{
+name: "GEO",
+index: "target_cube_10_16_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [22.000, 88.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_0_0]
+{
+name: "GEO",
+index: "target_cube_12_0_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -88.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_0_2]
+{
+name: "GEO",
+index: "target_cube_12_0_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -88.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_0_4]
+{
+name: "GEO",
+index: "target_cube_12_0_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -88.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_0_6]
+{
+name: "GEO",
+index: "target_cube_12_0_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -88.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_0_8]
+{
+name: "GEO",
+index: "target_cube_12_0_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -88.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_12_0_10]
+{
+name: "GEO",
+index: "target_cube_12_0_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -88.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_0_12]
+{
+name: "GEO",
+index: "target_cube_12_0_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -88.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_0_14]
+{
+name: "GEO",
+index: "target_cube_12_0_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -88.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_0_16]
+{
+name: "GEO",
+index: "target_cube_12_0_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -88.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_2_0]
+{
+name: "GEO",
+index: "target_cube_12_2_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -66.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_2_2]
+{
+name: "GEO",
+index: "target_cube_12_2_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -66.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_2_4]
+{
+name: "GEO",
+index: "target_cube_12_2_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -66.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_2_6]
+{
+name: "GEO",
+index: "target_cube_12_2_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -66.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_2_8]
+{
+name: "GEO",
+index: "target_cube_12_2_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -66.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_12_2_10]
+{
+name: "GEO",
+index: "target_cube_12_2_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -66.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_2_12]
+{
+name: "GEO",
+index: "target_cube_12_2_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -66.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_2_14]
+{
+name: "GEO",
+index: "target_cube_12_2_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -66.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_2_16]
+{
+name: "GEO",
+index: "target_cube_12_2_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -66.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_4_0]
+{
+name: "GEO",
+index: "target_cube_12_4_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -44.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_4_2]
+{
+name: "GEO",
+index: "target_cube_12_4_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -44.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_4_4]
+{
+name: "GEO",
+index: "target_cube_12_4_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -44.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_4_6]
+{
+name: "GEO",
+index: "target_cube_12_4_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -44.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_4_8]
+{
+name: "GEO",
+index: "target_cube_12_4_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -44.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_12_4_10]
+{
+name: "GEO",
+index: "target_cube_12_4_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -44.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_4_12]
+{
+name: "GEO",
+index: "target_cube_12_4_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -44.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_4_14]
+{
+name: "GEO",
+index: "target_cube_12_4_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -44.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_4_16]
+{
+name: "GEO",
+index: "target_cube_12_4_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -44.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_6_0]
+{
+name: "GEO",
+index: "target_cube_12_6_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -22.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_6_2]
+{
+name: "GEO",
+index: "target_cube_12_6_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -22.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_6_4]
+{
+name: "GEO",
+index: "target_cube_12_6_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -22.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_6_6]
+{
+name: "GEO",
+index: "target_cube_12_6_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -22.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_6_8]
+{
+name: "GEO",
+index: "target_cube_12_6_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -22.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_12_6_10]
+{
+name: "GEO",
+index: "target_cube_12_6_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -22.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_6_12]
+{
+name: "GEO",
+index: "target_cube_12_6_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -22.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_6_14]
+{
+name: "GEO",
+index: "target_cube_12_6_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -22.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_6_16]
+{
+name: "GEO",
+index: "target_cube_12_6_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, -22.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_8_0]
+{
+name: "GEO",
+index: "target_cube_12_8_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 0.0, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_8_2]
+{
+name: "GEO",
+index: "target_cube_12_8_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 0.0, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_8_4]
+{
+name: "GEO",
+index: "target_cube_12_8_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 0.0, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_8_6]
+{
+name: "GEO",
+index: "target_cube_12_8_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 0.0, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_8_8]
+{
+name: "GEO",
+index: "target_cube_12_8_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 0.0, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_12_8_10]
+{
+name: "GEO",
+index: "target_cube_12_8_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 0.0, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_8_12]
+{
+name: "GEO",
+index: "target_cube_12_8_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 0.0, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_8_14]
+{
+name: "GEO",
+index: "target_cube_12_8_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 0.0, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_8_16]
+{
+name: "GEO",
+index: "target_cube_12_8_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 0.0, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_10_0]
+{
+name: "GEO",
+index: "target_cube_12_10_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 22.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_10_2]
+{
+name: "GEO",
+index: "target_cube_12_10_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 22.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_10_4]
+{
+name: "GEO",
+index: "target_cube_12_10_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 22.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_10_6]
+{
+name: "GEO",
+index: "target_cube_12_10_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 22.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_10_8]
+{
+name: "GEO",
+index: "target_cube_12_10_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 22.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_12_10_10]
+{
+name: "GEO",
+index: "target_cube_12_10_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 22.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_10_12]
+{
+name: "GEO",
+index: "target_cube_12_10_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 22.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_10_14]
+{
+name: "GEO",
+index: "target_cube_12_10_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 22.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_10_16]
+{
+name: "GEO",
+index: "target_cube_12_10_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 22.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_12_0]
+{
+name: "GEO",
+index: "target_cube_12_12_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 44.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_12_2]
+{
+name: "GEO",
+index: "target_cube_12_12_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 44.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_12_4]
+{
+name: "GEO",
+index: "target_cube_12_12_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 44.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_12_6]
+{
+name: "GEO",
+index: "target_cube_12_12_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 44.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_12_8]
+{
+name: "GEO",
+index: "target_cube_12_12_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 44.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_12_12_10]
+{
+name: "GEO",
+index: "target_cube_12_12_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 44.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_12_12]
+{
+name: "GEO",
+index: "target_cube_12_12_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
 position: [44.000, 44.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_12_14]
+{
+name: "GEO",
+index: "target_cube_12_12_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 44.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_12_16]
+{
+name: "GEO",
+index: "target_cube_12_12_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 44.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_14_0]
+{
+name: "GEO",
+index: "target_cube_12_14_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 66.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_14_2]
+{
+name: "GEO",
+index: "target_cube_12_14_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 66.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_14_4]
+{
+name: "GEO",
+index: "target_cube_12_14_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 66.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_14_6]
+{
+name: "GEO",
+index: "target_cube_12_14_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 66.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_14_8]
+{
+name: "GEO",
+index: "target_cube_12_14_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 66.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_12_14_10]
+{
+name: "GEO",
+index: "target_cube_12_14_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 66.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_14_12]
+{
+name: "GEO",
+index: "target_cube_12_14_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 66.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_14_14]
+{
+name: "GEO",
+index: "target_cube_12_14_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 66.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_14_16]
+{
+name: "GEO",
+index: "target_cube_12_14_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 66.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_16_0]
+{
+name: "GEO",
+index: "target_cube_12_16_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 88.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_16_2]
+{
+name: "GEO",
+index: "target_cube_12_16_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 88.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_16_4]
+{
+name: "GEO",
+index: "target_cube_12_16_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 88.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_16_6]
+{
+name: "GEO",
+index: "target_cube_12_16_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 88.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_16_8]
+{
+name: "GEO",
+index: "target_cube_12_16_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 88.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_12_16_10]
+{
+name: "GEO",
+index: "target_cube_12_16_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 88.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_16_12]
+{
+name: "GEO",
+index: "target_cube_12_16_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 88.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_16_14]
+{
+name: "GEO",
+index: "target_cube_12_16_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 88.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_12_16_16]
+{
+name: "GEO",
+index: "target_cube_12_16_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [44.000, 88.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_0_0]
+{
+name: "GEO",
+index: "target_cube_14_0_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -88.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_0_2]
+{
+name: "GEO",
+index: "target_cube_14_0_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -88.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_0_4]
+{
+name: "GEO",
+index: "target_cube_14_0_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -88.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_0_6]
+{
+name: "GEO",
+index: "target_cube_14_0_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -88.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_0_8]
+{
+name: "GEO",
+index: "target_cube_14_0_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -88.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_14_0_10]
+{
+name: "GEO",
+index: "target_cube_14_0_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -88.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_0_12]
+{
+name: "GEO",
+index: "target_cube_14_0_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -88.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_0_14]
+{
+name: "GEO",
+index: "target_cube_14_0_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -88.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_0_16]
+{
+name: "GEO",
+index: "target_cube_14_0_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -88.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_2_0]
+{
+name: "GEO",
+index: "target_cube_14_2_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -66.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_2_2]
+{
+name: "GEO",
+index: "target_cube_14_2_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -66.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_2_4]
+{
+name: "GEO",
+index: "target_cube_14_2_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -66.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_2_6]
+{
+name: "GEO",
+index: "target_cube_14_2_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -66.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_2_8]
+{
+name: "GEO",
+index: "target_cube_14_2_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -66.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_14_2_10]
+{
+name: "GEO",
+index: "target_cube_14_2_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -66.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_2_12]
+{
+name: "GEO",
+index: "target_cube_14_2_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -66.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_2_14]
+{
+name: "GEO",
+index: "target_cube_14_2_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -66.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_2_16]
+{
+name: "GEO",
+index: "target_cube_14_2_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -66.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_4_0]
+{
+name: "GEO",
+index: "target_cube_14_4_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -44.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_4_2]
+{
+name: "GEO",
+index: "target_cube_14_4_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -44.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_4_4]
+{
+name: "GEO",
+index: "target_cube_14_4_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -44.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_4_6]
+{
+name: "GEO",
+index: "target_cube_14_4_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -44.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_4_8]
+{
+name: "GEO",
+index: "target_cube_14_4_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -44.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_14_4_10]
+{
+name: "GEO",
+index: "target_cube_14_4_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -44.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_4_12]
+{
+name: "GEO",
+index: "target_cube_14_4_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -44.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_4_14]
+{
+name: "GEO",
+index: "target_cube_14_4_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -44.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_4_16]
+{
+name: "GEO",
+index: "target_cube_14_4_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -44.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_6_0]
+{
+name: "GEO",
+index: "target_cube_14_6_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -22.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_6_2]
+{
+name: "GEO",
+index: "target_cube_14_6_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -22.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_6_4]
+{
+name: "GEO",
+index: "target_cube_14_6_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -22.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_6_6]
+{
+name: "GEO",
+index: "target_cube_14_6_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -22.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_6_8]
+{
+name: "GEO",
+index: "target_cube_14_6_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -22.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_14_6_10]
+{
+name: "GEO",
+index: "target_cube_14_6_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -22.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_6_12]
+{
+name: "GEO",
+index: "target_cube_14_6_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -22.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_6_14]
+{
+name: "GEO",
+index: "target_cube_14_6_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -22.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_6_16]
+{
+name: "GEO",
+index: "target_cube_14_6_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, -22.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_8_0]
+{
+name: "GEO",
+index: "target_cube_14_8_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 0.0, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_8_2]
+{
+name: "GEO",
+index: "target_cube_14_8_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 0.0, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_8_4]
+{
+name: "GEO",
+index: "target_cube_14_8_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 0.0, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_8_6]
+{
+name: "GEO",
+index: "target_cube_14_8_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 0.0, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_8_8]
+{
+name: "GEO",
+index: "target_cube_14_8_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 0.0, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_14_8_10]
+{
+name: "GEO",
+index: "target_cube_14_8_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 0.0, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_8_12]
+{
+name: "GEO",
+index: "target_cube_14_8_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 0.0, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_8_14]
+{
+name: "GEO",
+index: "target_cube_14_8_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 0.0, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_8_16]
+{
+name: "GEO",
+index: "target_cube_14_8_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 0.0, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_10_0]
+{
+name: "GEO",
+index: "target_cube_14_10_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 22.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_10_2]
+{
+name: "GEO",
+index: "target_cube_14_10_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 22.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_10_4]
+{
+name: "GEO",
+index: "target_cube_14_10_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 22.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_10_6]
+{
+name: "GEO",
+index: "target_cube_14_10_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 22.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_10_8]
+{
+name: "GEO",
+index: "target_cube_14_10_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 22.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_14_10_10]
+{
+name: "GEO",
+index: "target_cube_14_10_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 22.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_10_12]
+{
+name: "GEO",
+index: "target_cube_14_10_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 22.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_10_14]
+{
+name: "GEO",
+index: "target_cube_14_10_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 22.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_10_16]
+{
+name: "GEO",
+index: "target_cube_14_10_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 22.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_12_0]
+{
+name: "GEO",
+index: "target_cube_14_12_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 44.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_12_2]
+{
+name: "GEO",
+index: "target_cube_14_12_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 44.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_12_4]
+{
+name: "GEO",
+index: "target_cube_14_12_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 44.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_12_6]
+{
+name: "GEO",
+index: "target_cube_14_12_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 44.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_12_8]
+{
+name: "GEO",
+index: "target_cube_14_12_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 44.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_14_12_10]
+{
+name: "GEO",
+index: "target_cube_14_12_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 44.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_12_12]
+{
+name: "GEO",
+index: "target_cube_14_12_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 44.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_12_14]
+{
+name: "GEO",
+index: "target_cube_14_12_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 44.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_12_16]
+{
+name: "GEO",
+index: "target_cube_14_12_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 44.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_14_0]
+{
+name: "GEO",
+index: "target_cube_14_14_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 66.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_14_2]
+{
+name: "GEO",
+index: "target_cube_14_14_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 66.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_14_4]
+{
+name: "GEO",
+index: "target_cube_14_14_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 66.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_14_6]
+{
+name: "GEO",
+index: "target_cube_14_14_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 66.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_14_8]
+{
+name: "GEO",
+index: "target_cube_14_14_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 66.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_14_14_10]
+{
+name: "GEO",
+index: "target_cube_14_14_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 66.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_14_12]
+{
+name: "GEO",
+index: "target_cube_14_14_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 66.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_14_14]
+{
+name: "GEO",
+index: "target_cube_14_14_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 66.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_14_16]
+{
+name: "GEO",
+index: "target_cube_14_14_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 66.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_16_0]
+{
+name: "GEO",
+index: "target_cube_14_16_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 88.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_16_2]
+{
+name: "GEO",
+index: "target_cube_14_16_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 88.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_16_4]
+{
+name: "GEO",
+index: "target_cube_14_16_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 88.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_16_6]
+{
+name: "GEO",
+index: "target_cube_14_16_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 88.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_16_8]
+{
+name: "GEO",
+index: "target_cube_14_16_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 88.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_14_16_10]
+{
+name: "GEO",
+index: "target_cube_14_16_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 88.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_16_12]
+{
+name: "GEO",
+index: "target_cube_14_16_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 88.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_16_14]
+{
+name: "GEO",
+index: "target_cube_14_16_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 88.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_14_16_16]
+{
+name: "GEO",
+index: "target_cube_14_16_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [66.000, 88.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_0_0]
+{
+name: "GEO",
+index: "target_cube_16_0_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -88.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_0_2]
+{
+name: "GEO",
+index: "target_cube_16_0_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -88.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_0_4]
+{
+name: "GEO",
+index: "target_cube_16_0_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -88.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_0_6]
+{
+name: "GEO",
+index: "target_cube_16_0_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -88.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_0_8]
+{
+name: "GEO",
+index: "target_cube_16_0_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -88.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_16_0_10]
+{
+name: "GEO",
+index: "target_cube_16_0_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -88.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_0_12]
+{
+name: "GEO",
+index: "target_cube_16_0_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -88.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_0_14]
+{
+name: "GEO",
+index: "target_cube_16_0_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -88.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_0_16]
+{
+name: "GEO",
+index: "target_cube_16_0_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -88.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_2_0]
+{
+name: "GEO",
+index: "target_cube_16_2_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -66.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_2_2]
+{
+name: "GEO",
+index: "target_cube_16_2_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -66.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_2_4]
+{
+name: "GEO",
+index: "target_cube_16_2_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -66.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_2_6]
+{
+name: "GEO",
+index: "target_cube_16_2_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -66.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_2_8]
+{
+name: "GEO",
+index: "target_cube_16_2_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -66.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_16_2_10]
+{
+name: "GEO",
+index: "target_cube_16_2_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -66.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_2_12]
+{
+name: "GEO",
+index: "target_cube_16_2_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -66.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_2_14]
+{
+name: "GEO",
+index: "target_cube_16_2_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -66.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_2_16]
+{
+name: "GEO",
+index: "target_cube_16_2_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -66.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_4_0]
+{
+name: "GEO",
+index: "target_cube_16_4_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -44.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_4_2]
+{
+name: "GEO",
+index: "target_cube_16_4_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -44.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_4_4]
+{
+name: "GEO",
+index: "target_cube_16_4_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -44.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_4_6]
+{
+name: "GEO",
+index: "target_cube_16_4_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -44.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_4_8]
+{
+name: "GEO",
+index: "target_cube_16_4_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -44.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_16_4_10]
+{
+name: "GEO",
+index: "target_cube_16_4_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -44.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_4_12]
+{
+name: "GEO",
+index: "target_cube_16_4_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -44.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_4_14]
+{
+name: "GEO",
+index: "target_cube_16_4_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -44.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_4_16]
+{
+name: "GEO",
+index: "target_cube_16_4_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -44.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_6_0]
+{
+name: "GEO",
+index: "target_cube_16_6_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -22.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_6_2]
+{
+name: "GEO",
+index: "target_cube_16_6_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -22.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_6_4]
+{
+name: "GEO",
+index: "target_cube_16_6_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -22.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_6_6]
+{
+name: "GEO",
+index: "target_cube_16_6_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -22.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_6_8]
+{
+name: "GEO",
+index: "target_cube_16_6_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -22.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_16_6_10]
+{
+name: "GEO",
+index: "target_cube_16_6_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -22.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_6_12]
+{
+name: "GEO",
+index: "target_cube_16_6_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -22.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_6_14]
+{
+name: "GEO",
+index: "target_cube_16_6_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -22.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_6_16]
+{
+name: "GEO",
+index: "target_cube_16_6_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, -22.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_8_0]
+{
+name: "GEO",
+index: "target_cube_16_8_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 0.0, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_8_2]
+{
+name: "GEO",
+index: "target_cube_16_8_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 0.0, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_8_4]
+{
+name: "GEO",
+index: "target_cube_16_8_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 0.0, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_8_6]
+{
+name: "GEO",
+index: "target_cube_16_8_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 0.0, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_8_8]
+{
+name: "GEO",
+index: "target_cube_16_8_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 0.0, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_16_8_10]
+{
+name: "GEO",
+index: "target_cube_16_8_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 0.0, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_8_12]
+{
+name: "GEO",
+index: "target_cube_16_8_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 0.0, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_8_14]
+{
+name: "GEO",
+index: "target_cube_16_8_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 0.0, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_8_16]
+{
+name: "GEO",
+index: "target_cube_16_8_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 0.0, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_10_0]
+{
+name: "GEO",
+index: "target_cube_16_10_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 22.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_10_2]
+{
+name: "GEO",
+index: "target_cube_16_10_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 22.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_10_4]
+{
+name: "GEO",
+index: "target_cube_16_10_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 22.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_10_6]
+{
+name: "GEO",
+index: "target_cube_16_10_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 22.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_10_8]
+{
+name: "GEO",
+index: "target_cube_16_10_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 22.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_16_10_10]
+{
+name: "GEO",
+index: "target_cube_16_10_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 22.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_10_12]
+{
+name: "GEO",
+index: "target_cube_16_10_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 22.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_10_14]
+{
+name: "GEO",
+index: "target_cube_16_10_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 22.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_10_16]
+{
+name: "GEO",
+index: "target_cube_16_10_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 22.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_12_0]
+{
+name: "GEO",
+index: "target_cube_16_12_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 44.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_12_2]
+{
+name: "GEO",
+index: "target_cube_16_12_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 44.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_12_4]
+{
+name: "GEO",
+index: "target_cube_16_12_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 44.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_12_6]
+{
+name: "GEO",
+index: "target_cube_16_12_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 44.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_12_8]
+{
+name: "GEO",
+index: "target_cube_16_12_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 44.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_16_12_10]
+{
+name: "GEO",
+index: "target_cube_16_12_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 44.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_12_12]
+{
+name: "GEO",
+index: "target_cube_16_12_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 44.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_12_14]
+{
+name: "GEO",
+index: "target_cube_16_12_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 44.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_12_16]
+{
+name: "GEO",
+index: "target_cube_16_12_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 44.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_14_0]
+{
+name: "GEO",
+index: "target_cube_16_14_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 66.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_14_2]
+{
+name: "GEO",
+index: "target_cube_16_14_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 66.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_14_4]
+{
+name: "GEO",
+index: "target_cube_16_14_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 66.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_14_6]
+{
+name: "GEO",
+index: "target_cube_16_14_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 66.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_14_8]
+{
+name: "GEO",
+index: "target_cube_16_14_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 66.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_16_14_10]
+{
+name: "GEO",
+index: "target_cube_16_14_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 66.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_14_12]
+{
+name: "GEO",
+index: "target_cube_16_14_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 66.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_14_14]
+{
+name: "GEO",
+index: "target_cube_16_14_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 66.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_14_16]
+{
+name: "GEO",
+index: "target_cube_16_14_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 66.000, 88.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_16_0]
+{
+name: "GEO",
+index: "target_cube_16_16_0",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 88.000, -88.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_16_2]
+{
+name: "GEO",
+index: "target_cube_16_16_2",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 88.000, -66.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_16_4]
+{
+name: "GEO",
+index: "target_cube_16_16_4",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 88.000, -44.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_16_6]
+{
+name: "GEO",
+index: "target_cube_16_16_6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 88.000, -22.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_16_8]
+{
+name: "GEO",
+index: "target_cube_16_16_8",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 88.000, 0.0] // mm
+}
+
+
+// -------- GEO[target_cube_16_16_10]
+{
+name: "GEO",
+index: "target_cube_16_16_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 88.000, 22.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_16_12]
+{
+name: "GEO",
+index: "target_cube_16_16_12",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 88.000, 44.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_16_14]
+{
+name: "GEO",
+index: "target_cube_16_16_14",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 88.000, 66.000] // mm
+}
+
+
+// -------- GEO[target_cube_16_16_16]
+{
+name: "GEO",
+index: "target_cube_16_16_16",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cube_array",
+type: "box",
+size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_015li6",
+invisible: 0, // active cube
+color: [0.0, 1.0, 1.0, 1.0], // active cube
+position: [88.000, 88.000, 88.000] // mm
 }
 
 

@@ -24,7 +24,7 @@ mother: "world",
 type: "box",
 size: [10000.0, 10000.0, 10000.0], // mm
 material: "air",
-color: [0.8 0.1, 0.1],
+color: [0.8, 0.1, 0.1],
 invisible: 1,
 //position: [] // -- center of "world"
 }

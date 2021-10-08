@@ -48,7 +48,8 @@
 /vis/geometry/set/visibility cave 0 0
 #/vis/geometry/set/colour cave 0 0 0 0 .2
 #/vis/geometry/set/colour target_cube_array 1 .2 .8 .8
-/vis/geometry/set/visibility target_cube_array 0 0
+/vis/geometry/set/visibility target_cube_array 0 1
+#/vis/geometry/set/colour target_cube_array 0 .8 .8 .8 .2
 
 /vis/viewer/set/hiddenMarker true
 /vis/viewer/set/targetPoint 0 0 0 m
