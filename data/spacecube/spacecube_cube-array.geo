@@ -24,7 +24,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-44.000, -44.000, -44.000] // mm
 }
 
@@ -40,7 +40,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, -44.000, -33.000] // mm
 }
 
@@ -56,7 +56,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-44.000, -44.000, -22.000] // mm
 }
 
@@ -72,7 +72,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, -44.000, -11.000] // mm
 }
 
@@ -88,7 +88,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-44.000, -44.000, 0.0] // mm
 }
 
@@ -104,7 +104,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, -44.000, 11.000] // mm
 }
 
@@ -120,7 +120,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-44.000, -44.000, 22.000] // mm
 }
 
@@ -136,7 +136,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, -44.000, 33.000] // mm
 }
 
@@ -152,7 +152,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-44.000, -44.000, 44.000] // mm
 }
 
@@ -168,7 +168,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, -33.000, -44.000] // mm
 }
 
@@ -184,7 +184,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, -33.000, -33.000] // mm
 }
 
@@ -200,7 +200,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, -33.000, -22.000] // mm
 }
 
@@ -216,7 +216,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, -33.000, -11.000] // mm
 }
 
@@ -232,7 +232,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, -33.000, 0.0] // mm
 }
 
@@ -248,7 +248,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, -33.000, 11.000] // mm
 }
 
@@ -264,7 +264,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, -33.000, 22.000] // mm
 }
 
@@ -280,7 +280,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, -33.000, 33.000] // mm
 }
 
@@ -296,7 +296,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, -33.000, 44.000] // mm
 }
 
@@ -312,7 +312,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-44.000, -22.000, -44.000] // mm
 }
 
@@ -328,7 +328,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, -22.000, -33.000] // mm
 }
 
@@ -344,7 +344,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-44.000, -22.000, -22.000] // mm
 }
 
@@ -360,7 +360,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, -22.000, -11.000] // mm
 }
 
@@ -376,7 +376,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-44.000, -22.000, 0.0] // mm
 }
 
@@ -392,7 +392,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, -22.000, 11.000] // mm
 }
 
@@ -408,7 +408,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-44.000, -22.000, 22.000] // mm
 }
 
@@ -424,7 +424,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, -22.000, 33.000] // mm
 }
 
@@ -440,7 +440,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-44.000, -22.000, 44.000] // mm
 }
 
@@ -456,7 +456,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, -11.000, -44.000] // mm
 }
 
@@ -472,7 +472,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, -11.000, -33.000] // mm
 }
 
@@ -488,7 +488,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, -11.000, -22.000] // mm
 }
 
@@ -504,7 +504,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, -11.000, -11.000] // mm
 }
 
@@ -520,7 +520,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, -11.000, 0.0] // mm
 }
 
@@ -536,7 +536,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, -11.000, 11.000] // mm
 }
 
@@ -552,7 +552,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, -11.000, 22.000] // mm
 }
 
@@ -568,7 +568,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, -11.000, 33.000] // mm
 }
 
@@ -584,7 +584,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, -11.000, 44.000] // mm
 }
 
@@ -600,7 +600,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-44.000, 0.0, -44.000] // mm
 }
 
@@ -616,7 +616,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, 0.0, -33.000] // mm
 }
 
@@ -632,7 +632,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-44.000, 0.0, -22.000] // mm
 }
 
@@ -648,7 +648,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, 0.0, -11.000] // mm
 }
 
@@ -664,7 +664,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-44.000, 0.0, 0.0] // mm
 }
 
@@ -680,7 +680,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, 0.0, 11.000] // mm
 }
 
@@ -696,7 +696,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-44.000, 0.0, 22.000] // mm
 }
 
@@ -712,7 +712,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, 0.0, 33.000] // mm
 }
 
@@ -728,7 +728,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-44.000, 0.0, 44.000] // mm
 }
 
@@ -744,7 +744,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, 11.000, -44.000] // mm
 }
 
@@ -760,7 +760,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, 11.000, -33.000] // mm
 }
 
@@ -776,7 +776,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, 11.000, -22.000] // mm
 }
 
@@ -792,7 +792,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, 11.000, -11.000] // mm
 }
 
@@ -808,7 +808,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, 11.000, 0.0] // mm
 }
 
@@ -824,7 +824,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, 11.000, 11.000] // mm
 }
 
@@ -840,7 +840,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, 11.000, 22.000] // mm
 }
 
@@ -856,7 +856,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, 11.000, 33.000] // mm
 }
 
@@ -872,7 +872,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, 11.000, 44.000] // mm
 }
 
@@ -888,7 +888,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-44.000, 22.000, -44.000] // mm
 }
 
@@ -904,7 +904,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, 22.000, -33.000] // mm
 }
 
@@ -920,7 +920,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-44.000, 22.000, -22.000] // mm
 }
 
@@ -936,7 +936,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, 22.000, -11.000] // mm
 }
 
@@ -952,7 +952,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-44.000, 22.000, 0.0] // mm
 }
 
@@ -968,7 +968,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, 22.000, 11.000] // mm
 }
 
@@ -984,7 +984,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-44.000, 22.000, 22.000] // mm
 }
 
@@ -1000,7 +1000,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, 22.000, 33.000] // mm
 }
 
@@ -1016,7 +1016,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-44.000, 22.000, 44.000] // mm
 }
 
@@ -1032,7 +1032,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, 33.000, -44.000] // mm
 }
 
@@ -1048,7 +1048,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, 33.000, -33.000] // mm
 }
 
@@ -1064,7 +1064,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, 33.000, -22.000] // mm
 }
 
@@ -1080,7 +1080,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, 33.000, -11.000] // mm
 }
 
@@ -1096,7 +1096,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, 33.000, 0.0] // mm
 }
 
@@ -1112,7 +1112,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, 33.000, 11.000] // mm
 }
 
@@ -1128,7 +1128,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, 33.000, 22.000] // mm
 }
 
@@ -1144,7 +1144,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, 33.000, 33.000] // mm
 }
 
@@ -1160,7 +1160,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, 33.000, 44.000] // mm
 }
 
@@ -1176,7 +1176,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-44.000, 44.000, -44.000] // mm
 }
 
@@ -1192,7 +1192,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, 44.000, -33.000] // mm
 }
 
@@ -1208,7 +1208,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-44.000, 44.000, -22.000] // mm
 }
 
@@ -1224,7 +1224,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, 44.000, -11.000] // mm
 }
 
@@ -1240,7 +1240,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-44.000, 44.000, 0.0] // mm
 }
 
@@ -1256,7 +1256,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, 44.000, 11.000] // mm
 }
 
@@ -1272,7 +1272,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-44.000, 44.000, 22.000] // mm
 }
 
@@ -1288,7 +1288,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-44.000, 44.000, 33.000] // mm
 }
 
@@ -1304,7 +1304,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-44.000, 44.000, 44.000] // mm
 }
 
@@ -1320,7 +1320,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -44.000, -44.000] // mm
 }
 
@@ -1336,7 +1336,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -44.000, -33.000] // mm
 }
 
@@ -1352,7 +1352,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -44.000, -22.000] // mm
 }
 
@@ -1368,7 +1368,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -44.000, -11.000] // mm
 }
 
@@ -1384,7 +1384,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -44.000, 0.0] // mm
 }
 
@@ -1400,7 +1400,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -44.000, 11.000] // mm
 }
 
@@ -1416,7 +1416,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -44.000, 22.000] // mm
 }
 
@@ -1432,7 +1432,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -44.000, 33.000] // mm
 }
 
@@ -1448,7 +1448,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -44.000, 44.000] // mm
 }
 
@@ -1464,7 +1464,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -33.000, -44.000] // mm
 }
 
@@ -1480,7 +1480,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -33.000, -33.000] // mm
 }
 
@@ -1496,7 +1496,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -33.000, -22.000] // mm
 }
 
@@ -1512,7 +1512,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -33.000, -11.000] // mm
 }
 
@@ -1528,7 +1528,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -33.000, 0.0] // mm
 }
 
@@ -1544,7 +1544,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -33.000, 11.000] // mm
 }
 
@@ -1560,7 +1560,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -33.000, 22.000] // mm
 }
 
@@ -1576,7 +1576,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -33.000, 33.000] // mm
 }
 
@@ -1592,7 +1592,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -33.000, 44.000] // mm
 }
 
@@ -1608,7 +1608,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -22.000, -44.000] // mm
 }
 
@@ -1624,7 +1624,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -22.000, -33.000] // mm
 }
 
@@ -1640,7 +1640,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -22.000, -22.000] // mm
 }
 
@@ -1656,7 +1656,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -22.000, -11.000] // mm
 }
 
@@ -1672,7 +1672,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -22.000, 0.0] // mm
 }
 
@@ -1688,7 +1688,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -22.000, 11.000] // mm
 }
 
@@ -1704,7 +1704,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -22.000, 22.000] // mm
 }
 
@@ -1720,7 +1720,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -22.000, 33.000] // mm
 }
 
@@ -1736,7 +1736,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -22.000, 44.000] // mm
 }
 
@@ -1752,7 +1752,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -11.000, -44.000] // mm
 }
 
@@ -1768,7 +1768,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -11.000, -33.000] // mm
 }
 
@@ -1784,7 +1784,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -11.000, -22.000] // mm
 }
 
@@ -1800,7 +1800,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -11.000, -11.000] // mm
 }
 
@@ -1816,7 +1816,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -11.000, 0.0] // mm
 }
 
@@ -1832,7 +1832,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -11.000, 11.000] // mm
 }
 
@@ -1848,7 +1848,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -11.000, 22.000] // mm
 }
 
@@ -1864,7 +1864,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -11.000, 33.000] // mm
 }
 
@@ -1880,7 +1880,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, -11.000, 44.000] // mm
 }
 
@@ -1896,7 +1896,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 0.0, -44.000] // mm
 }
 
@@ -1912,7 +1912,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 0.0, -33.000] // mm
 }
 
@@ -1928,7 +1928,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 0.0, -22.000] // mm
 }
 
@@ -1944,7 +1944,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 0.0, -11.000] // mm
 }
 
@@ -1960,7 +1960,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 0.0, 0.0] // mm
 }
 
@@ -1976,7 +1976,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 0.0, 11.000] // mm
 }
 
@@ -1992,7 +1992,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 0.0, 22.000] // mm
 }
 
@@ -2008,7 +2008,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 0.0, 33.000] // mm
 }
 
@@ -2024,7 +2024,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 0.0, 44.000] // mm
 }
 
@@ -2040,7 +2040,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 11.000, -44.000] // mm
 }
 
@@ -2056,7 +2056,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 11.000, -33.000] // mm
 }
 
@@ -2072,7 +2072,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 11.000, -22.000] // mm
 }
 
@@ -2088,7 +2088,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 11.000, -11.000] // mm
 }
 
@@ -2104,7 +2104,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 11.000, 0.0] // mm
 }
 
@@ -2120,7 +2120,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 11.000, 11.000] // mm
 }
 
@@ -2136,7 +2136,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 11.000, 22.000] // mm
 }
 
@@ -2152,7 +2152,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 11.000, 33.000] // mm
 }
 
@@ -2168,7 +2168,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 11.000, 44.000] // mm
 }
 
@@ -2184,7 +2184,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 22.000, -44.000] // mm
 }
 
@@ -2200,7 +2200,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 22.000, -33.000] // mm
 }
 
@@ -2216,7 +2216,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 22.000, -22.000] // mm
 }
 
@@ -2232,7 +2232,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 22.000, -11.000] // mm
 }
 
@@ -2248,7 +2248,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 22.000, 0.0] // mm
 }
 
@@ -2264,7 +2264,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 22.000, 11.000] // mm
 }
 
@@ -2280,7 +2280,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 22.000, 22.000] // mm
 }
 
@@ -2296,7 +2296,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 22.000, 33.000] // mm
 }
 
@@ -2312,7 +2312,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 22.000, 44.000] // mm
 }
 
@@ -2328,7 +2328,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 33.000, -44.000] // mm
 }
 
@@ -2344,7 +2344,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 33.000, -33.000] // mm
 }
 
@@ -2360,7 +2360,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 33.000, -22.000] // mm
 }
 
@@ -2376,7 +2376,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 33.000, -11.000] // mm
 }
 
@@ -2392,7 +2392,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 33.000, 0.0] // mm
 }
 
@@ -2408,7 +2408,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 33.000, 11.000] // mm
 }
 
@@ -2424,7 +2424,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 33.000, 22.000] // mm
 }
 
@@ -2440,7 +2440,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 33.000, 33.000] // mm
 }
 
@@ -2456,7 +2456,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 33.000, 44.000] // mm
 }
 
@@ -2472,7 +2472,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 44.000, -44.000] // mm
 }
 
@@ -2488,7 +2488,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 44.000, -33.000] // mm
 }
 
@@ -2504,7 +2504,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 44.000, -22.000] // mm
 }
 
@@ -2520,7 +2520,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 44.000, -11.000] // mm
 }
 
@@ -2536,7 +2536,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 44.000, 0.0] // mm
 }
 
@@ -2552,7 +2552,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 44.000, 11.000] // mm
 }
 
@@ -2568,7 +2568,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 44.000, 22.000] // mm
 }
 
@@ -2584,7 +2584,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 44.000, 33.000] // mm
 }
 
@@ -2600,7 +2600,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-33.000, 44.000, 44.000] // mm
 }
 
@@ -2616,7 +2616,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-22.000, -44.000, -44.000] // mm
 }
 
@@ -2632,7 +2632,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, -44.000, -33.000] // mm
 }
 
@@ -2648,7 +2648,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-22.000, -44.000, -22.000] // mm
 }
 
@@ -2664,7 +2664,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, -44.000, -11.000] // mm
 }
 
@@ -2680,7 +2680,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-22.000, -44.000, 0.0] // mm
 }
 
@@ -2696,7 +2696,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, -44.000, 11.000] // mm
 }
 
@@ -2712,7 +2712,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-22.000, -44.000, 22.000] // mm
 }
 
@@ -2728,7 +2728,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, -44.000, 33.000] // mm
 }
 
@@ -2744,7 +2744,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-22.000, -44.000, 44.000] // mm
 }
 
@@ -2760,7 +2760,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, -33.000, -44.000] // mm
 }
 
@@ -2776,7 +2776,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, -33.000, -33.000] // mm
 }
 
@@ -2792,7 +2792,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, -33.000, -22.000] // mm
 }
 
@@ -2808,7 +2808,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, -33.000, -11.000] // mm
 }
 
@@ -2824,7 +2824,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, -33.000, 0.0] // mm
 }
 
@@ -2840,7 +2840,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, -33.000, 11.000] // mm
 }
 
@@ -2856,7 +2856,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, -33.000, 22.000] // mm
 }
 
@@ -2872,7 +2872,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, -33.000, 33.000] // mm
 }
 
@@ -2888,7 +2888,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, -33.000, 44.000] // mm
 }
 
@@ -2904,7 +2904,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-22.000, -22.000, -44.000] // mm
 }
 
@@ -2920,7 +2920,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, -22.000, -33.000] // mm
 }
 
@@ -2936,7 +2936,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-22.000, -22.000, -22.000] // mm
 }
 
@@ -2952,7 +2952,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, -22.000, -11.000] // mm
 }
 
@@ -2968,7 +2968,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-22.000, -22.000, 0.0] // mm
 }
 
@@ -2984,7 +2984,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, -22.000, 11.000] // mm
 }
 
@@ -3000,7 +3000,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-22.000, -22.000, 22.000] // mm
 }
 
@@ -3016,7 +3016,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, -22.000, 33.000] // mm
 }
 
@@ -3032,7 +3032,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-22.000, -22.000, 44.000] // mm
 }
 
@@ -3048,7 +3048,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, -11.000, -44.000] // mm
 }
 
@@ -3064,7 +3064,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, -11.000, -33.000] // mm
 }
 
@@ -3080,7 +3080,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, -11.000, -22.000] // mm
 }
 
@@ -3096,7 +3096,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, -11.000, -11.000] // mm
 }
 
@@ -3112,7 +3112,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, -11.000, 0.0] // mm
 }
 
@@ -3128,7 +3128,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, -11.000, 11.000] // mm
 }
 
@@ -3144,7 +3144,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, -11.000, 22.000] // mm
 }
 
@@ -3160,7 +3160,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, -11.000, 33.000] // mm
 }
 
@@ -3176,7 +3176,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, -11.000, 44.000] // mm
 }
 
@@ -3192,7 +3192,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-22.000, 0.0, -44.000] // mm
 }
 
@@ -3208,7 +3208,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, 0.0, -33.000] // mm
 }
 
@@ -3224,7 +3224,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-22.000, 0.0, -22.000] // mm
 }
 
@@ -3240,7 +3240,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, 0.0, -11.000] // mm
 }
 
@@ -3256,7 +3256,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-22.000, 0.0, 0.0] // mm
 }
 
@@ -3272,7 +3272,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, 0.0, 11.000] // mm
 }
 
@@ -3288,7 +3288,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-22.000, 0.0, 22.000] // mm
 }
 
@@ -3304,7 +3304,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, 0.0, 33.000] // mm
 }
 
@@ -3320,7 +3320,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-22.000, 0.0, 44.000] // mm
 }
 
@@ -3336,7 +3336,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, 11.000, -44.000] // mm
 }
 
@@ -3352,7 +3352,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, 11.000, -33.000] // mm
 }
 
@@ -3368,7 +3368,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, 11.000, -22.000] // mm
 }
 
@@ -3384,7 +3384,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, 11.000, -11.000] // mm
 }
 
@@ -3400,7 +3400,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, 11.000, 0.0] // mm
 }
 
@@ -3416,7 +3416,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, 11.000, 11.000] // mm
 }
 
@@ -3432,7 +3432,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, 11.000, 22.000] // mm
 }
 
@@ -3448,7 +3448,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, 11.000, 33.000] // mm
 }
 
@@ -3464,7 +3464,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, 11.000, 44.000] // mm
 }
 
@@ -3480,7 +3480,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-22.000, 22.000, -44.000] // mm
 }
 
@@ -3496,7 +3496,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, 22.000, -33.000] // mm
 }
 
@@ -3512,7 +3512,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-22.000, 22.000, -22.000] // mm
 }
 
@@ -3528,7 +3528,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, 22.000, -11.000] // mm
 }
 
@@ -3544,7 +3544,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-22.000, 22.000, 0.0] // mm
 }
 
@@ -3560,7 +3560,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, 22.000, 11.000] // mm
 }
 
@@ -3576,7 +3576,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-22.000, 22.000, 22.000] // mm
 }
 
@@ -3592,7 +3592,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, 22.000, 33.000] // mm
 }
 
@@ -3608,7 +3608,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-22.000, 22.000, 44.000] // mm
 }
 
@@ -3624,7 +3624,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, 33.000, -44.000] // mm
 }
 
@@ -3640,7 +3640,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, 33.000, -33.000] // mm
 }
 
@@ -3656,7 +3656,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, 33.000, -22.000] // mm
 }
 
@@ -3672,7 +3672,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, 33.000, -11.000] // mm
 }
 
@@ -3688,7 +3688,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, 33.000, 0.0] // mm
 }
 
@@ -3704,7 +3704,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, 33.000, 11.000] // mm
 }
 
@@ -3720,7 +3720,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, 33.000, 22.000] // mm
 }
 
@@ -3736,7 +3736,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, 33.000, 33.000] // mm
 }
 
@@ -3752,7 +3752,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, 33.000, 44.000] // mm
 }
 
@@ -3768,7 +3768,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-22.000, 44.000, -44.000] // mm
 }
 
@@ -3784,7 +3784,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, 44.000, -33.000] // mm
 }
 
@@ -3800,7 +3800,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-22.000, 44.000, -22.000] // mm
 }
 
@@ -3816,7 +3816,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, 44.000, -11.000] // mm
 }
 
@@ -3832,7 +3832,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-22.000, 44.000, 0.0] // mm
 }
 
@@ -3848,7 +3848,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, 44.000, 11.000] // mm
 }
 
@@ -3864,7 +3864,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-22.000, 44.000, 22.000] // mm
 }
 
@@ -3880,7 +3880,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-22.000, 44.000, 33.000] // mm
 }
 
@@ -3896,7 +3896,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [-22.000, 44.000, 44.000] // mm
 }
 
@@ -3912,7 +3912,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -44.000, -44.000] // mm
 }
 
@@ -3928,7 +3928,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -44.000, -33.000] // mm
 }
 
@@ -3944,7 +3944,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -44.000, -22.000] // mm
 }
 
@@ -3960,7 +3960,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -44.000, -11.000] // mm
 }
 
@@ -3976,7 +3976,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -44.000, 0.0] // mm
 }
 
@@ -3992,7 +3992,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -44.000, 11.000] // mm
 }
 
@@ -4008,7 +4008,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -44.000, 22.000] // mm
 }
 
@@ -4024,7 +4024,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -44.000, 33.000] // mm
 }
 
@@ -4040,7 +4040,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -44.000, 44.000] // mm
 }
 
@@ -4056,7 +4056,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -33.000, -44.000] // mm
 }
 
@@ -4072,7 +4072,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -33.000, -33.000] // mm
 }
 
@@ -4088,7 +4088,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -33.000, -22.000] // mm
 }
 
@@ -4104,7 +4104,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -33.000, -11.000] // mm
 }
 
@@ -4120,7 +4120,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -33.000, 0.0] // mm
 }
 
@@ -4136,7 +4136,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -33.000, 11.000] // mm
 }
 
@@ -4152,7 +4152,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -33.000, 22.000] // mm
 }
 
@@ -4168,7 +4168,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -33.000, 33.000] // mm
 }
 
@@ -4184,7 +4184,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -33.000, 44.000] // mm
 }
 
@@ -4200,7 +4200,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -22.000, -44.000] // mm
 }
 
@@ -4216,7 +4216,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -22.000, -33.000] // mm
 }
 
@@ -4232,7 +4232,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -22.000, -22.000] // mm
 }
 
@@ -4248,7 +4248,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -22.000, -11.000] // mm
 }
 
@@ -4264,7 +4264,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -22.000, 0.0] // mm
 }
 
@@ -4280,7 +4280,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -22.000, 11.000] // mm
 }
 
@@ -4296,7 +4296,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -22.000, 22.000] // mm
 }
 
@@ -4312,7 +4312,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -22.000, 33.000] // mm
 }
 
@@ -4328,7 +4328,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -22.000, 44.000] // mm
 }
 
@@ -4344,7 +4344,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -11.000, -44.000] // mm
 }
 
@@ -4360,7 +4360,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -11.000, -33.000] // mm
 }
 
@@ -4376,7 +4376,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -11.000, -22.000] // mm
 }
 
@@ -4392,7 +4392,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -11.000, -11.000] // mm
 }
 
@@ -4408,7 +4408,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -11.000, 0.0] // mm
 }
 
@@ -4424,7 +4424,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -11.000, 11.000] // mm
 }
 
@@ -4440,7 +4440,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -11.000, 22.000] // mm
 }
 
@@ -4456,7 +4456,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -11.000, 33.000] // mm
 }
 
@@ -4472,7 +4472,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, -11.000, 44.000] // mm
 }
 
@@ -4488,7 +4488,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 0.0, -44.000] // mm
 }
 
@@ -4504,7 +4504,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 0.0, -33.000] // mm
 }
 
@@ -4520,7 +4520,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 0.0, -22.000] // mm
 }
 
@@ -4536,7 +4536,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 0.0, -11.000] // mm
 }
 
@@ -4552,7 +4552,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 0.0, 0.0] // mm
 }
 
@@ -4568,7 +4568,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 0.0, 11.000] // mm
 }
 
@@ -4584,7 +4584,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 0.0, 22.000] // mm
 }
 
@@ -4600,7 +4600,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 0.0, 33.000] // mm
 }
 
@@ -4616,7 +4616,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 0.0, 44.000] // mm
 }
 
@@ -4632,7 +4632,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 11.000, -44.000] // mm
 }
 
@@ -4648,7 +4648,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 11.000, -33.000] // mm
 }
 
@@ -4664,7 +4664,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 11.000, -22.000] // mm
 }
 
@@ -4680,7 +4680,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 11.000, -11.000] // mm
 }
 
@@ -4696,7 +4696,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 11.000, 0.0] // mm
 }
 
@@ -4712,7 +4712,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 11.000, 11.000] // mm
 }
 
@@ -4728,7 +4728,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 11.000, 22.000] // mm
 }
 
@@ -4744,7 +4744,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 11.000, 33.000] // mm
 }
 
@@ -4760,7 +4760,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 11.000, 44.000] // mm
 }
 
@@ -4776,7 +4776,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 22.000, -44.000] // mm
 }
 
@@ -4792,7 +4792,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 22.000, -33.000] // mm
 }
 
@@ -4808,7 +4808,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 22.000, -22.000] // mm
 }
 
@@ -4824,7 +4824,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 22.000, -11.000] // mm
 }
 
@@ -4840,7 +4840,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 22.000, 0.0] // mm
 }
 
@@ -4856,7 +4856,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 22.000, 11.000] // mm
 }
 
@@ -4872,7 +4872,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 22.000, 22.000] // mm
 }
 
@@ -4888,7 +4888,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 22.000, 33.000] // mm
 }
 
@@ -4904,7 +4904,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 22.000, 44.000] // mm
 }
 
@@ -4920,7 +4920,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 33.000, -44.000] // mm
 }
 
@@ -4936,7 +4936,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 33.000, -33.000] // mm
 }
 
@@ -4952,7 +4952,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 33.000, -22.000] // mm
 }
 
@@ -4968,7 +4968,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 33.000, -11.000] // mm
 }
 
@@ -4984,7 +4984,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 33.000, 0.0] // mm
 }
 
@@ -5000,7 +5000,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 33.000, 11.000] // mm
 }
 
@@ -5016,7 +5016,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 33.000, 22.000] // mm
 }
 
@@ -5032,7 +5032,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 33.000, 33.000] // mm
 }
 
@@ -5048,7 +5048,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 33.000, 44.000] // mm
 }
 
@@ -5064,7 +5064,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 44.000, -44.000] // mm
 }
 
@@ -5080,7 +5080,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 44.000, -33.000] // mm
 }
 
@@ -5096,7 +5096,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 44.000, -22.000] // mm
 }
 
@@ -5112,7 +5112,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 44.000, -11.000] // mm
 }
 
@@ -5128,7 +5128,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 44.000, 0.0] // mm
 }
 
@@ -5144,7 +5144,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 44.000, 11.000] // mm
 }
 
@@ -5160,7 +5160,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 44.000, 22.000] // mm
 }
 
@@ -5176,7 +5176,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 44.000, 33.000] // mm
 }
 
@@ -5192,7 +5192,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [-11.000, 44.000, 44.000] // mm
 }
 
@@ -5208,7 +5208,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [0.0, -44.000, -44.000] // mm
 }
 
@@ -5224,7 +5224,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, -44.000, -33.000] // mm
 }
 
@@ -5240,7 +5240,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [0.0, -44.000, -22.000] // mm
 }
 
@@ -5256,7 +5256,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, -44.000, -11.000] // mm
 }
 
@@ -5272,7 +5272,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [0.0, -44.000, 0.0] // mm
 }
 
@@ -5288,7 +5288,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, -44.000, 11.000] // mm
 }
 
@@ -5304,7 +5304,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [0.0, -44.000, 22.000] // mm
 }
 
@@ -5320,7 +5320,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, -44.000, 33.000] // mm
 }
 
@@ -5336,7 +5336,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [0.0, -44.000, 44.000] // mm
 }
 
@@ -5352,7 +5352,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, -33.000, -44.000] // mm
 }
 
@@ -5368,7 +5368,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, -33.000, -33.000] // mm
 }
 
@@ -5384,7 +5384,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, -33.000, -22.000] // mm
 }
 
@@ -5400,7 +5400,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, -33.000, -11.000] // mm
 }
 
@@ -5416,7 +5416,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, -33.000, 0.0] // mm
 }
 
@@ -5432,7 +5432,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, -33.000, 11.000] // mm
 }
 
@@ -5448,7 +5448,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, -33.000, 22.000] // mm
 }
 
@@ -5464,7 +5464,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, -33.000, 33.000] // mm
 }
 
@@ -5480,7 +5480,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, -33.000, 44.000] // mm
 }
 
@@ -5496,7 +5496,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [0.0, -22.000, -44.000] // mm
 }
 
@@ -5512,7 +5512,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, -22.000, -33.000] // mm
 }
 
@@ -5528,7 +5528,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [0.0, -22.000, -22.000] // mm
 }
 
@@ -5544,7 +5544,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, -22.000, -11.000] // mm
 }
 
@@ -5560,7 +5560,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [0.0, -22.000, 0.0] // mm
 }
 
@@ -5576,7 +5576,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, -22.000, 11.000] // mm
 }
 
@@ -5592,7 +5592,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [0.0, -22.000, 22.000] // mm
 }
 
@@ -5608,7 +5608,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, -22.000, 33.000] // mm
 }
 
@@ -5624,7 +5624,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [0.0, -22.000, 44.000] // mm
 }
 
@@ -5640,7 +5640,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, -11.000, -44.000] // mm
 }
 
@@ -5656,7 +5656,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, -11.000, -33.000] // mm
 }
 
@@ -5672,7 +5672,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, -11.000, -22.000] // mm
 }
 
@@ -5688,7 +5688,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, -11.000, -11.000] // mm
 }
 
@@ -5704,7 +5704,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, -11.000, 0.0] // mm
 }
 
@@ -5720,7 +5720,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, -11.000, 11.000] // mm
 }
 
@@ -5736,7 +5736,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, -11.000, 22.000] // mm
 }
 
@@ -5752,7 +5752,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, -11.000, 33.000] // mm
 }
 
@@ -5768,7 +5768,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, -11.000, 44.000] // mm
 }
 
@@ -5784,7 +5784,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [0.0, 0.0, -44.000] // mm
 }
 
@@ -5800,7 +5800,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, 0.0, -33.000] // mm
 }
 
@@ -5816,7 +5816,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [0.0, 0.0, -22.000] // mm
 }
 
@@ -5832,7 +5832,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, 0.0, -11.000] // mm
 }
 
@@ -5848,7 +5848,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [0.0, 0.0, 0.0] // mm
 }
 
@@ -5864,7 +5864,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, 0.0, 11.000] // mm
 }
 
@@ -5880,7 +5880,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [0.0, 0.0, 22.000] // mm
 }
 
@@ -5896,7 +5896,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, 0.0, 33.000] // mm
 }
 
@@ -5912,7 +5912,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [0.0, 0.0, 44.000] // mm
 }
 
@@ -5928,7 +5928,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, 11.000, -44.000] // mm
 }
 
@@ -5944,7 +5944,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, 11.000, -33.000] // mm
 }
 
@@ -5960,7 +5960,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, 11.000, -22.000] // mm
 }
 
@@ -5976,7 +5976,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, 11.000, -11.000] // mm
 }
 
@@ -5992,7 +5992,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, 11.000, 0.0] // mm
 }
 
@@ -6008,7 +6008,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, 11.000, 11.000] // mm
 }
 
@@ -6024,7 +6024,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, 11.000, 22.000] // mm
 }
 
@@ -6040,7 +6040,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, 11.000, 33.000] // mm
 }
 
@@ -6056,7 +6056,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, 11.000, 44.000] // mm
 }
 
@@ -6072,7 +6072,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [0.0, 22.000, -44.000] // mm
 }
 
@@ -6088,7 +6088,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, 22.000, -33.000] // mm
 }
 
@@ -6104,7 +6104,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [0.0, 22.000, -22.000] // mm
 }
 
@@ -6120,7 +6120,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, 22.000, -11.000] // mm
 }
 
@@ -6136,7 +6136,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [0.0, 22.000, 0.0] // mm
 }
 
@@ -6152,7 +6152,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, 22.000, 11.000] // mm
 }
 
@@ -6168,7 +6168,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [0.0, 22.000, 22.000] // mm
 }
 
@@ -6184,7 +6184,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, 22.000, 33.000] // mm
 }
 
@@ -6200,7 +6200,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [0.0, 22.000, 44.000] // mm
 }
 
@@ -6216,7 +6216,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, 33.000, -44.000] // mm
 }
 
@@ -6232,7 +6232,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, 33.000, -33.000] // mm
 }
 
@@ -6248,7 +6248,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, 33.000, -22.000] // mm
 }
 
@@ -6264,7 +6264,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, 33.000, -11.000] // mm
 }
 
@@ -6280,7 +6280,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, 33.000, 0.0] // mm
 }
 
@@ -6296,7 +6296,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, 33.000, 11.000] // mm
 }
 
@@ -6312,7 +6312,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, 33.000, 22.000] // mm
 }
 
@@ -6328,7 +6328,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, 33.000, 33.000] // mm
 }
 
@@ -6344,7 +6344,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, 33.000, 44.000] // mm
 }
 
@@ -6360,7 +6360,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [0.0, 44.000, -44.000] // mm
 }
 
@@ -6376,7 +6376,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, 44.000, -33.000] // mm
 }
 
@@ -6392,7 +6392,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [0.0, 44.000, -22.000] // mm
 }
 
@@ -6408,7 +6408,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, 44.000, -11.000] // mm
 }
 
@@ -6424,7 +6424,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [0.0, 44.000, 0.0] // mm
 }
 
@@ -6440,7 +6440,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, 44.000, 11.000] // mm
 }
 
@@ -6456,7 +6456,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [0.0, 44.000, 22.000] // mm
 }
 
@@ -6472,7 +6472,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [0.0, 44.000, 33.000] // mm
 }
 
@@ -6488,7 +6488,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [0.0, 44.000, 44.000] // mm
 }
 
@@ -6504,7 +6504,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -44.000, -44.000] // mm
 }
 
@@ -6520,7 +6520,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -44.000, -33.000] // mm
 }
 
@@ -6536,7 +6536,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -44.000, -22.000] // mm
 }
 
@@ -6552,7 +6552,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -44.000, -11.000] // mm
 }
 
@@ -6568,7 +6568,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -44.000, 0.0] // mm
 }
 
@@ -6584,7 +6584,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -44.000, 11.000] // mm
 }
 
@@ -6600,7 +6600,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -44.000, 22.000] // mm
 }
 
@@ -6616,7 +6616,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -44.000, 33.000] // mm
 }
 
@@ -6632,7 +6632,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -44.000, 44.000] // mm
 }
 
@@ -6648,7 +6648,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -33.000, -44.000] // mm
 }
 
@@ -6664,7 +6664,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -33.000, -33.000] // mm
 }
 
@@ -6680,7 +6680,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -33.000, -22.000] // mm
 }
 
@@ -6696,7 +6696,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -33.000, -11.000] // mm
 }
 
@@ -6712,7 +6712,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -33.000, 0.0] // mm
 }
 
@@ -6728,7 +6728,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -33.000, 11.000] // mm
 }
 
@@ -6744,7 +6744,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -33.000, 22.000] // mm
 }
 
@@ -6760,7 +6760,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -33.000, 33.000] // mm
 }
 
@@ -6776,7 +6776,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -33.000, 44.000] // mm
 }
 
@@ -6792,7 +6792,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -22.000, -44.000] // mm
 }
 
@@ -6808,7 +6808,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -22.000, -33.000] // mm
 }
 
@@ -6824,7 +6824,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -22.000, -22.000] // mm
 }
 
@@ -6840,7 +6840,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -22.000, -11.000] // mm
 }
 
@@ -6856,7 +6856,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -22.000, 0.0] // mm
 }
 
@@ -6872,7 +6872,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -22.000, 11.000] // mm
 }
 
@@ -6888,7 +6888,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -22.000, 22.000] // mm
 }
 
@@ -6904,7 +6904,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -22.000, 33.000] // mm
 }
 
@@ -6920,7 +6920,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -22.000, 44.000] // mm
 }
 
@@ -6936,7 +6936,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -11.000, -44.000] // mm
 }
 
@@ -6952,7 +6952,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -11.000, -33.000] // mm
 }
 
@@ -6968,7 +6968,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -11.000, -22.000] // mm
 }
 
@@ -6984,7 +6984,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -11.000, -11.000] // mm
 }
 
@@ -7000,7 +7000,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -11.000, 0.0] // mm
 }
 
@@ -7016,7 +7016,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -11.000, 11.000] // mm
 }
 
@@ -7032,7 +7032,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -11.000, 22.000] // mm
 }
 
@@ -7048,7 +7048,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -11.000, 33.000] // mm
 }
 
@@ -7064,7 +7064,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, -11.000, 44.000] // mm
 }
 
@@ -7080,7 +7080,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 0.0, -44.000] // mm
 }
 
@@ -7096,7 +7096,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 0.0, -33.000] // mm
 }
 
@@ -7112,7 +7112,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 0.0, -22.000] // mm
 }
 
@@ -7128,7 +7128,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 0.0, -11.000] // mm
 }
 
@@ -7144,7 +7144,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 0.0, 0.0] // mm
 }
 
@@ -7160,7 +7160,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 0.0, 11.000] // mm
 }
 
@@ -7176,7 +7176,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 0.0, 22.000] // mm
 }
 
@@ -7192,7 +7192,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 0.0, 33.000] // mm
 }
 
@@ -7208,7 +7208,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 0.0, 44.000] // mm
 }
 
@@ -7224,7 +7224,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 11.000, -44.000] // mm
 }
 
@@ -7240,7 +7240,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 11.000, -33.000] // mm
 }
 
@@ -7256,7 +7256,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 11.000, -22.000] // mm
 }
 
@@ -7272,7 +7272,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 11.000, -11.000] // mm
 }
 
@@ -7288,7 +7288,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 11.000, 0.0] // mm
 }
 
@@ -7304,7 +7304,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 11.000, 11.000] // mm
 }
 
@@ -7320,7 +7320,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 11.000, 22.000] // mm
 }
 
@@ -7336,7 +7336,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 11.000, 33.000] // mm
 }
 
@@ -7352,7 +7352,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 11.000, 44.000] // mm
 }
 
@@ -7368,7 +7368,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 22.000, -44.000] // mm
 }
 
@@ -7384,7 +7384,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 22.000, -33.000] // mm
 }
 
@@ -7400,7 +7400,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 22.000, -22.000] // mm
 }
 
@@ -7416,7 +7416,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 22.000, -11.000] // mm
 }
 
@@ -7432,7 +7432,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 22.000, 0.0] // mm
 }
 
@@ -7448,7 +7448,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 22.000, 11.000] // mm
 }
 
@@ -7464,7 +7464,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 22.000, 22.000] // mm
 }
 
@@ -7480,7 +7480,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 22.000, 33.000] // mm
 }
 
@@ -7496,7 +7496,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 22.000, 44.000] // mm
 }
 
@@ -7512,7 +7512,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 33.000, -44.000] // mm
 }
 
@@ -7528,7 +7528,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 33.000, -33.000] // mm
 }
 
@@ -7544,7 +7544,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 33.000, -22.000] // mm
 }
 
@@ -7560,7 +7560,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 33.000, -11.000] // mm
 }
 
@@ -7576,7 +7576,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 33.000, 0.0] // mm
 }
 
@@ -7592,7 +7592,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 33.000, 11.000] // mm
 }
 
@@ -7608,7 +7608,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 33.000, 22.000] // mm
 }
 
@@ -7624,7 +7624,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 33.000, 33.000] // mm
 }
 
@@ -7640,7 +7640,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 33.000, 44.000] // mm
 }
 
@@ -7656,7 +7656,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 44.000, -44.000] // mm
 }
 
@@ -7672,7 +7672,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 44.000, -33.000] // mm
 }
 
@@ -7688,7 +7688,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 44.000, -22.000] // mm
 }
 
@@ -7704,7 +7704,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 44.000, -11.000] // mm
 }
 
@@ -7720,7 +7720,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 44.000, 0.0] // mm
 }
 
@@ -7736,7 +7736,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 44.000, 11.000] // mm
 }
 
@@ -7752,7 +7752,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 44.000, 22.000] // mm
 }
 
@@ -7768,7 +7768,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 44.000, 33.000] // mm
 }
 
@@ -7784,7 +7784,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [11.000, 44.000, 44.000] // mm
 }
 
@@ -7800,7 +7800,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [22.000, -44.000, -44.000] // mm
 }
 
@@ -7816,7 +7816,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, -44.000, -33.000] // mm
 }
 
@@ -7832,7 +7832,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [22.000, -44.000, -22.000] // mm
 }
 
@@ -7848,7 +7848,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, -44.000, -11.000] // mm
 }
 
@@ -7864,7 +7864,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [22.000, -44.000, 0.0] // mm
 }
 
@@ -7880,7 +7880,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, -44.000, 11.000] // mm
 }
 
@@ -7896,7 +7896,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [22.000, -44.000, 22.000] // mm
 }
 
@@ -7912,7 +7912,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, -44.000, 33.000] // mm
 }
 
@@ -7928,7 +7928,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [22.000, -44.000, 44.000] // mm
 }
 
@@ -7944,7 +7944,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, -33.000, -44.000] // mm
 }
 
@@ -7960,7 +7960,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, -33.000, -33.000] // mm
 }
 
@@ -7976,7 +7976,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, -33.000, -22.000] // mm
 }
 
@@ -7992,7 +7992,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, -33.000, -11.000] // mm
 }
 
@@ -8008,7 +8008,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, -33.000, 0.0] // mm
 }
 
@@ -8024,7 +8024,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, -33.000, 11.000] // mm
 }
 
@@ -8040,7 +8040,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, -33.000, 22.000] // mm
 }
 
@@ -8056,7 +8056,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, -33.000, 33.000] // mm
 }
 
@@ -8072,7 +8072,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, -33.000, 44.000] // mm
 }
 
@@ -8088,7 +8088,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [22.000, -22.000, -44.000] // mm
 }
 
@@ -8104,7 +8104,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, -22.000, -33.000] // mm
 }
 
@@ -8120,7 +8120,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [22.000, -22.000, -22.000] // mm
 }
 
@@ -8136,7 +8136,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, -22.000, -11.000] // mm
 }
 
@@ -8152,7 +8152,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [22.000, -22.000, 0.0] // mm
 }
 
@@ -8168,7 +8168,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, -22.000, 11.000] // mm
 }
 
@@ -8184,7 +8184,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [22.000, -22.000, 22.000] // mm
 }
 
@@ -8200,7 +8200,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, -22.000, 33.000] // mm
 }
 
@@ -8216,7 +8216,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [22.000, -22.000, 44.000] // mm
 }
 
@@ -8232,7 +8232,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, -11.000, -44.000] // mm
 }
 
@@ -8248,7 +8248,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, -11.000, -33.000] // mm
 }
 
@@ -8264,7 +8264,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, -11.000, -22.000] // mm
 }
 
@@ -8280,7 +8280,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, -11.000, -11.000] // mm
 }
 
@@ -8296,7 +8296,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, -11.000, 0.0] // mm
 }
 
@@ -8312,7 +8312,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, -11.000, 11.000] // mm
 }
 
@@ -8328,7 +8328,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, -11.000, 22.000] // mm
 }
 
@@ -8344,7 +8344,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, -11.000, 33.000] // mm
 }
 
@@ -8360,7 +8360,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, -11.000, 44.000] // mm
 }
 
@@ -8376,7 +8376,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [22.000, 0.0, -44.000] // mm
 }
 
@@ -8392,7 +8392,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, 0.0, -33.000] // mm
 }
 
@@ -8408,7 +8408,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [22.000, 0.0, -22.000] // mm
 }
 
@@ -8424,7 +8424,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, 0.0, -11.000] // mm
 }
 
@@ -8440,7 +8440,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [22.000, 0.0, 0.0] // mm
 }
 
@@ -8456,7 +8456,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, 0.0, 11.000] // mm
 }
 
@@ -8472,7 +8472,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [22.000, 0.0, 22.000] // mm
 }
 
@@ -8488,7 +8488,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, 0.0, 33.000] // mm
 }
 
@@ -8504,7 +8504,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [22.000, 0.0, 44.000] // mm
 }
 
@@ -8520,7 +8520,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, 11.000, -44.000] // mm
 }
 
@@ -8536,7 +8536,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, 11.000, -33.000] // mm
 }
 
@@ -8552,7 +8552,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, 11.000, -22.000] // mm
 }
 
@@ -8568,7 +8568,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, 11.000, -11.000] // mm
 }
 
@@ -8584,7 +8584,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, 11.000, 0.0] // mm
 }
 
@@ -8600,7 +8600,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, 11.000, 11.000] // mm
 }
 
@@ -8616,7 +8616,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, 11.000, 22.000] // mm
 }
 
@@ -8632,7 +8632,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, 11.000, 33.000] // mm
 }
 
@@ -8648,7 +8648,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, 11.000, 44.000] // mm
 }
 
@@ -8664,7 +8664,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [22.000, 22.000, -44.000] // mm
 }
 
@@ -8680,7 +8680,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, 22.000, -33.000] // mm
 }
 
@@ -8696,7 +8696,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [22.000, 22.000, -22.000] // mm
 }
 
@@ -8712,7 +8712,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, 22.000, -11.000] // mm
 }
 
@@ -8728,7 +8728,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [22.000, 22.000, 0.0] // mm
 }
 
@@ -8744,7 +8744,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, 22.000, 11.000] // mm
 }
 
@@ -8760,7 +8760,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [22.000, 22.000, 22.000] // mm
 }
 
@@ -8776,7 +8776,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, 22.000, 33.000] // mm
 }
 
@@ -8792,7 +8792,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [22.000, 22.000, 44.000] // mm
 }
 
@@ -8808,7 +8808,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, 33.000, -44.000] // mm
 }
 
@@ -8824,7 +8824,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, 33.000, -33.000] // mm
 }
 
@@ -8840,7 +8840,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, 33.000, -22.000] // mm
 }
 
@@ -8856,7 +8856,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, 33.000, -11.000] // mm
 }
 
@@ -8872,7 +8872,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, 33.000, 0.0] // mm
 }
 
@@ -8888,7 +8888,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, 33.000, 11.000] // mm
 }
 
@@ -8904,7 +8904,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, 33.000, 22.000] // mm
 }
 
@@ -8920,7 +8920,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, 33.000, 33.000] // mm
 }
 
@@ -8936,7 +8936,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, 33.000, 44.000] // mm
 }
 
@@ -8952,7 +8952,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [22.000, 44.000, -44.000] // mm
 }
 
@@ -8968,7 +8968,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, 44.000, -33.000] // mm
 }
 
@@ -8984,7 +8984,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [22.000, 44.000, -22.000] // mm
 }
 
@@ -9000,7 +9000,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, 44.000, -11.000] // mm
 }
 
@@ -9016,7 +9016,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [22.000, 44.000, 0.0] // mm
 }
 
@@ -9032,7 +9032,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, 44.000, 11.000] // mm
 }
 
@@ -9048,7 +9048,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [22.000, 44.000, 22.000] // mm
 }
 
@@ -9064,7 +9064,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [22.000, 44.000, 33.000] // mm
 }
 
@@ -9080,7 +9080,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [22.000, 44.000, 44.000] // mm
 }
 
@@ -9096,7 +9096,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -44.000, -44.000] // mm
 }
 
@@ -9112,7 +9112,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -44.000, -33.000] // mm
 }
 
@@ -9128,7 +9128,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -44.000, -22.000] // mm
 }
 
@@ -9144,7 +9144,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -44.000, -11.000] // mm
 }
 
@@ -9160,7 +9160,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -44.000, 0.0] // mm
 }
 
@@ -9176,7 +9176,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -44.000, 11.000] // mm
 }
 
@@ -9192,7 +9192,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -44.000, 22.000] // mm
 }
 
@@ -9208,7 +9208,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -44.000, 33.000] // mm
 }
 
@@ -9224,7 +9224,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -44.000, 44.000] // mm
 }
 
@@ -9240,7 +9240,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -33.000, -44.000] // mm
 }
 
@@ -9256,7 +9256,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -33.000, -33.000] // mm
 }
 
@@ -9272,7 +9272,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -33.000, -22.000] // mm
 }
 
@@ -9288,7 +9288,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -33.000, -11.000] // mm
 }
 
@@ -9304,7 +9304,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -33.000, 0.0] // mm
 }
 
@@ -9320,7 +9320,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -33.000, 11.000] // mm
 }
 
@@ -9336,7 +9336,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -33.000, 22.000] // mm
 }
 
@@ -9352,7 +9352,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -33.000, 33.000] // mm
 }
 
@@ -9368,7 +9368,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -33.000, 44.000] // mm
 }
 
@@ -9384,7 +9384,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -22.000, -44.000] // mm
 }
 
@@ -9400,7 +9400,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -22.000, -33.000] // mm
 }
 
@@ -9416,7 +9416,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -22.000, -22.000] // mm
 }
 
@@ -9432,7 +9432,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -22.000, -11.000] // mm
 }
 
@@ -9448,7 +9448,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -22.000, 0.0] // mm
 }
 
@@ -9464,7 +9464,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -22.000, 11.000] // mm
 }
 
@@ -9480,7 +9480,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -22.000, 22.000] // mm
 }
 
@@ -9496,7 +9496,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -22.000, 33.000] // mm
 }
 
@@ -9512,7 +9512,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -22.000, 44.000] // mm
 }
 
@@ -9528,7 +9528,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -11.000, -44.000] // mm
 }
 
@@ -9544,7 +9544,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -11.000, -33.000] // mm
 }
 
@@ -9560,7 +9560,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -11.000, -22.000] // mm
 }
 
@@ -9576,7 +9576,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -11.000, -11.000] // mm
 }
 
@@ -9592,7 +9592,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -11.000, 0.0] // mm
 }
 
@@ -9608,7 +9608,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -11.000, 11.000] // mm
 }
 
@@ -9624,7 +9624,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -11.000, 22.000] // mm
 }
 
@@ -9640,7 +9640,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -11.000, 33.000] // mm
 }
 
@@ -9656,7 +9656,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, -11.000, 44.000] // mm
 }
 
@@ -9672,7 +9672,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 0.0, -44.000] // mm
 }
 
@@ -9688,7 +9688,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 0.0, -33.000] // mm
 }
 
@@ -9704,7 +9704,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 0.0, -22.000] // mm
 }
 
@@ -9720,7 +9720,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 0.0, -11.000] // mm
 }
 
@@ -9736,7 +9736,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 0.0, 0.0] // mm
 }
 
@@ -9752,7 +9752,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 0.0, 11.000] // mm
 }
 
@@ -9768,7 +9768,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 0.0, 22.000] // mm
 }
 
@@ -9784,7 +9784,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 0.0, 33.000] // mm
 }
 
@@ -9800,7 +9800,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 0.0, 44.000] // mm
 }
 
@@ -9816,7 +9816,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 11.000, -44.000] // mm
 }
 
@@ -9832,7 +9832,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 11.000, -33.000] // mm
 }
 
@@ -9848,7 +9848,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 11.000, -22.000] // mm
 }
 
@@ -9864,7 +9864,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 11.000, -11.000] // mm
 }
 
@@ -9880,7 +9880,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 11.000, 0.0] // mm
 }
 
@@ -9896,7 +9896,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 11.000, 11.000] // mm
 }
 
@@ -9912,7 +9912,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 11.000, 22.000] // mm
 }
 
@@ -9928,7 +9928,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 11.000, 33.000] // mm
 }
 
@@ -9944,7 +9944,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 11.000, 44.000] // mm
 }
 
@@ -9960,7 +9960,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 22.000, -44.000] // mm
 }
 
@@ -9976,7 +9976,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 22.000, -33.000] // mm
 }
 
@@ -9992,7 +9992,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 22.000, -22.000] // mm
 }
 
@@ -10008,7 +10008,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 22.000, -11.000] // mm
 }
 
@@ -10024,7 +10024,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 22.000, 0.0] // mm
 }
 
@@ -10040,7 +10040,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 22.000, 11.000] // mm
 }
 
@@ -10056,7 +10056,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 22.000, 22.000] // mm
 }
 
@@ -10072,7 +10072,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 22.000, 33.000] // mm
 }
 
@@ -10088,7 +10088,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 22.000, 44.000] // mm
 }
 
@@ -10104,7 +10104,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 33.000, -44.000] // mm
 }
 
@@ -10120,7 +10120,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 33.000, -33.000] // mm
 }
 
@@ -10136,7 +10136,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 33.000, -22.000] // mm
 }
 
@@ -10152,7 +10152,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 33.000, -11.000] // mm
 }
 
@@ -10168,7 +10168,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 33.000, 0.0] // mm
 }
 
@@ -10184,7 +10184,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 33.000, 11.000] // mm
 }
 
@@ -10200,7 +10200,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 33.000, 22.000] // mm
 }
 
@@ -10216,7 +10216,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 33.000, 33.000] // mm
 }
 
@@ -10232,7 +10232,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 33.000, 44.000] // mm
 }
 
@@ -10248,7 +10248,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 44.000, -44.000] // mm
 }
 
@@ -10264,7 +10264,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 44.000, -33.000] // mm
 }
 
@@ -10280,7 +10280,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 44.000, -22.000] // mm
 }
 
@@ -10296,7 +10296,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 44.000, -11.000] // mm
 }
 
@@ -10312,7 +10312,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 44.000, 0.0] // mm
 }
 
@@ -10328,7 +10328,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 44.000, 11.000] // mm
 }
 
@@ -10344,7 +10344,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 44.000, 22.000] // mm
 }
 
@@ -10360,7 +10360,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 44.000, 33.000] // mm
 }
 
@@ -10376,7 +10376,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [33.000, 44.000, 44.000] // mm
 }
 
@@ -10392,7 +10392,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [44.000, -44.000, -44.000] // mm
 }
 
@@ -10408,7 +10408,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, -44.000, -33.000] // mm
 }
 
@@ -10424,7 +10424,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [44.000, -44.000, -22.000] // mm
 }
 
@@ -10440,7 +10440,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, -44.000, -11.000] // mm
 }
 
@@ -10456,7 +10456,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [44.000, -44.000, 0.0] // mm
 }
 
@@ -10472,7 +10472,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, -44.000, 11.000] // mm
 }
 
@@ -10488,7 +10488,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [44.000, -44.000, 22.000] // mm
 }
 
@@ -10504,7 +10504,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, -44.000, 33.000] // mm
 }
 
@@ -10520,7 +10520,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [44.000, -44.000, 44.000] // mm
 }
 
@@ -10536,7 +10536,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, -33.000, -44.000] // mm
 }
 
@@ -10552,7 +10552,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, -33.000, -33.000] // mm
 }
 
@@ -10568,7 +10568,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, -33.000, -22.000] // mm
 }
 
@@ -10584,7 +10584,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, -33.000, -11.000] // mm
 }
 
@@ -10600,7 +10600,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, -33.000, 0.0] // mm
 }
 
@@ -10616,7 +10616,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, -33.000, 11.000] // mm
 }
 
@@ -10632,7 +10632,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, -33.000, 22.000] // mm
 }
 
@@ -10648,7 +10648,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, -33.000, 33.000] // mm
 }
 
@@ -10664,7 +10664,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, -33.000, 44.000] // mm
 }
 
@@ -10680,7 +10680,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [44.000, -22.000, -44.000] // mm
 }
 
@@ -10696,7 +10696,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, -22.000, -33.000] // mm
 }
 
@@ -10712,7 +10712,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [44.000, -22.000, -22.000] // mm
 }
 
@@ -10728,7 +10728,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, -22.000, -11.000] // mm
 }
 
@@ -10744,7 +10744,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [44.000, -22.000, 0.0] // mm
 }
 
@@ -10760,7 +10760,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, -22.000, 11.000] // mm
 }
 
@@ -10776,7 +10776,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [44.000, -22.000, 22.000] // mm
 }
 
@@ -10792,7 +10792,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, -22.000, 33.000] // mm
 }
 
@@ -10808,7 +10808,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [44.000, -22.000, 44.000] // mm
 }
 
@@ -10824,7 +10824,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, -11.000, -44.000] // mm
 }
 
@@ -10840,7 +10840,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, -11.000, -33.000] // mm
 }
 
@@ -10856,7 +10856,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, -11.000, -22.000] // mm
 }
 
@@ -10872,7 +10872,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, -11.000, -11.000] // mm
 }
 
@@ -10888,7 +10888,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, -11.000, 0.0] // mm
 }
 
@@ -10904,7 +10904,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, -11.000, 11.000] // mm
 }
 
@@ -10920,7 +10920,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, -11.000, 22.000] // mm
 }
 
@@ -10936,7 +10936,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, -11.000, 33.000] // mm
 }
 
@@ -10952,7 +10952,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, -11.000, 44.000] // mm
 }
 
@@ -10968,7 +10968,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [44.000, 0.0, -44.000] // mm
 }
 
@@ -10984,7 +10984,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, 0.0, -33.000] // mm
 }
 
@@ -11000,7 +11000,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [44.000, 0.0, -22.000] // mm
 }
 
@@ -11016,7 +11016,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, 0.0, -11.000] // mm
 }
 
@@ -11032,7 +11032,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [44.000, 0.0, 0.0] // mm
 }
 
@@ -11048,7 +11048,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, 0.0, 11.000] // mm
 }
 
@@ -11064,7 +11064,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [44.000, 0.0, 22.000] // mm
 }
 
@@ -11080,7 +11080,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, 0.0, 33.000] // mm
 }
 
@@ -11096,7 +11096,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [44.000, 0.0, 44.000] // mm
 }
 
@@ -11112,7 +11112,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, 11.000, -44.000] // mm
 }
 
@@ -11128,7 +11128,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, 11.000, -33.000] // mm
 }
 
@@ -11144,7 +11144,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, 11.000, -22.000] // mm
 }
 
@@ -11160,7 +11160,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, 11.000, -11.000] // mm
 }
 
@@ -11176,7 +11176,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, 11.000, 0.0] // mm
 }
 
@@ -11192,7 +11192,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, 11.000, 11.000] // mm
 }
 
@@ -11208,7 +11208,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, 11.000, 22.000] // mm
 }
 
@@ -11224,7 +11224,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, 11.000, 33.000] // mm
 }
 
@@ -11240,7 +11240,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, 11.000, 44.000] // mm
 }
 
@@ -11256,7 +11256,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [44.000, 22.000, -44.000] // mm
 }
 
@@ -11272,7 +11272,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, 22.000, -33.000] // mm
 }
 
@@ -11288,7 +11288,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [44.000, 22.000, -22.000] // mm
 }
 
@@ -11304,7 +11304,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, 22.000, -11.000] // mm
 }
 
@@ -11320,7 +11320,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [44.000, 22.000, 0.0] // mm
 }
 
@@ -11336,7 +11336,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, 22.000, 11.000] // mm
 }
 
@@ -11352,7 +11352,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [44.000, 22.000, 22.000] // mm
 }
 
@@ -11368,7 +11368,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, 22.000, 33.000] // mm
 }
 
@@ -11384,7 +11384,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [44.000, 22.000, 44.000] // mm
 }
 
@@ -11400,7 +11400,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, 33.000, -44.000] // mm
 }
 
@@ -11416,7 +11416,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, 33.000, -33.000] // mm
 }
 
@@ -11432,7 +11432,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, 33.000, -22.000] // mm
 }
 
@@ -11448,7 +11448,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, 33.000, -11.000] // mm
 }
 
@@ -11464,7 +11464,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, 33.000, 0.0] // mm
 }
 
@@ -11480,7 +11480,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, 33.000, 11.000] // mm
 }
 
@@ -11496,7 +11496,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, 33.000, 22.000] // mm
 }
 
@@ -11512,7 +11512,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, 33.000, 33.000] // mm
 }
 
@@ -11528,7 +11528,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, 33.000, 44.000] // mm
 }
 
@@ -11544,7 +11544,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [44.000, 44.000, -44.000] // mm
 }
 
@@ -11560,7 +11560,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, 44.000, -33.000] // mm
 }
 
@@ -11576,7 +11576,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [44.000, 44.000, -22.000] // mm
 }
 
@@ -11592,7 +11592,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, 44.000, -11.000] // mm
 }
 
@@ -11608,7 +11608,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [44.000, 44.000, 0.0] // mm
 }
 
@@ -11624,7 +11624,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, 44.000, 11.000] // mm
 }
 
@@ -11640,7 +11640,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [44.000, 44.000, 22.000] // mm
 }
 
@@ -11656,7 +11656,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "glass",
 invisible: 0, // inert cube
-color: [0.5, 0.5, 0.5],
+color: [0.9, 0.9, 0.9, 1.0], // inert cube
 position: [44.000, 44.000, 33.000] // mm
 }
 
@@ -11672,7 +11672,7 @@ type: "box",
 size: [5.0, 5.0, 5.0], // mm  // for sphere, change size to single-value r_max
 material: "ej254_015li6",
 invisible: 0, // active cube
-color: [0.0, 1.0, 1.0],
+color :[0.0, 1.0, 1.0, 1.0], // active cube
 position: [44.000, 44.000, 44.000] // mm
 }
 

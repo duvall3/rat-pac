@@ -12,9 +12,6 @@
 /vis/viewer/set/autoRefresh false
 /vis/verbose errors
 
-# set transparency:
-/vis/set/colour 1 1 1 0.5
-
 # Draw geometry:
 /vis/drawVolume
 
