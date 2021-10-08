@@ -41,9 +41,11 @@ Double_t legxy[4] = {.10, .60, .40, .90};
 
 // settings for normalization
 if (kNormalized) {
-  const char *savename = "cos_psi_all_norm.png";
+  const char *savename1 = "cos_psi_all_norm_3d.png";
+  const char *savename2 = "cos_psi_all_norm_2d.png";
 } else {
-  const char *savename = "cos_psi_all.png";
+  const char *savename1 = "cos_psi_all_3d.png";
+  const char *savename2 = "cos_psi_all_2d.png";
 }
 
 // file and hist operations
@@ -57,7 +59,8 @@ TFile *f4 = TFile::Open("COMPMAIN_SANTA_10K_results.root");
 TFile *f5 = TFile::Open("COMPMAIN_IDEAL_10K_results.root");
 TFile *f6 = TFile::Open("COMPMAIN_SANDD_10K_results.root");
 TFile *f7 = TFile::Open("COMPMAIN_CHECKERBOARD-2D_10K_results.root");
-TFile *f8 = TFile::Open("COMPMAIN_PROSPECT_10K_015LI-6_results.root");
+//TFile *f8 = TFile::Open("COMPMAIN_PROSPECT_10K_015LI-6_results.root");
+TFile *f8 = TFile::Open("COMPMAIN_PROSPECT_10K_results.root");
 TList *fileList = new TList, *hList = new TList;
 fileList->Add(f0);
 fileList->Add(f1);
@@ -71,7 +74,8 @@ fileList->Add(f8);
 TIter iFile(fileList);
 
 // annotations
-TLegend *leg = new TLegend(legxy[0], legxy[1], legxy[2], legxy[3]);
+TLegend *leg3 = new TLegend(legxy[0], legxy[1], legxy[2], legxy[3]);
+TLegend *leg2 = new TLegend(legxy[0], legxy[1], legxy[2], legxy[3]);
 Int_t k=0, nFiles=fileList->GetEntries();
 Color_t colors[9] = {4, 3, 7, 11, 2, 1, 6, 9, 8}; // decent colors if not using Fill
 // labeling
@@ -97,6 +101,7 @@ TMarker *meanMarker = new TMarker;
 //// MAIN
 
 // file loop
+Int_t nDims = 3;
 TString labSANTA, dLabelLower;
 for ( iFile=fileList->begin(); iFile!=fileList->end(); ++iFile ) {
   f = (TFile*)*iFile;
@@ -122,48 +127,67 @@ for ( iFile=fileList->begin(); iFile!=fileList->end(); ++iFile ) {
   h->SetMarkerStyle(22);
   h->SetMarkerSize(2);
   h->SetMarkerColor(h->GetLineColor());
-  if ( dLabelLower.Contains("sandd") || dLabelLower.Contains("2d chk.") || dLabelLower.Contains("prospect") ) {
-    h->SetMarkerStyle(27);
-  } else if ( dLabelLower.Contains("lim") ) {
-    h->SetMarkerStyle(26);
+//if ( dLabelLower.Contains("sandd") || dLabelLower.Contains("2d chk.") || dLabelLower.Contains("prospect") ) {
+//  h->SetMarkerStyle(27);
+//} else if ( dLabelLower.Contains("lim") ) {
+//  h->SetMarkerStyle(26);
+//}
+  if (dLabelLower.Contains("lim")) h->SetMarkerStyle(26);
+  if (nDims==3) {
+    leg3->AddEntry(h, dLabel.Data());
+  } else { // nDims = 2
+    leg2->AddEntry(h, dLabel.Data());
   }
-  leg->AddEntry(h, dLabel.Data());
   dLabel.Clear();
+  if (dLabelLower.Contains("lim")) nDims = 2;
 } // end file loop
 
 // init hist/legend loop
 TString canTitle = "All Cos[psi] COMPMAIN Results";
 if (kNormalized) canTitle.Append(" (Normalized)");
-TCanvas *can_hcp = new TCanvas("can_hcp", canTitle.Data());
-can_hcp->cd();
+TCanvas *can_hcp_1 = new TCanvas("can_hcp_1", canTitle.Data());
+TCanvas *can_hcp_2 = new TCanvas("can_hcp_2", canTitle.Data());
+//can_hcp->Divide(1,2);
 TIter iH(hList);
-h = (TH1D*)hList->At(0);
-h->SetStats(0);
-TString hTitle = "All Cos[#psi] Distributions";
-//h->GetXaxis()->SetLabelOffset(.001);
-h->GetXaxis()->SetLabelOffset(.03);
-h->GetXaxis()->SetTitleOffset(1.2);
-h->GetXaxis()->SetTitle("cos[#psi] ");
-h->SetLineColor(TColor::GetColorTransparent(h->GetLineColor(), 0.5));
-h->Draw();
-//can_hcp->SetTicks(2,1);
-if (kNormalized) {
-  hTitle.Append(" (Normalized)");
-  TText *ylabel = new TText(1.1, 0., "Relative Frequency (arb.)");
-} else {
-  TText *ylabel = new TText(1.1, 0., "Entries");
+can_hcp_1->cd();
+for ( Int_t j=0; j<7; j++ ) {
+  h = (TH1D*)hList->At(j);
+  h->SetStats(0);
+  TString hTitle = "All Cos[#psi] Distributions";
+  h->GetXaxis()->SetLabelOffset(.03);
+  h->GetXaxis()->SetTitleOffset(1.2);
+  h->GetXaxis()->SetTitle("cos[#psi] ");
+  h->SetLineColor(TColor::GetColorTransparent(h->GetLineColor(), 0.5));
+  h->Draw();
+  if (j==0) { // nDims = 3
+    hTitle.Append(" -- 3D Experiments");
+  } else { // nDims = 2
+    hTitle.Append(" -- 2D Experiments");
+  }
+  if (kNormalized) {
+    hTitle.Append(" (Normalized)");
+ // TText *ylabel = new TText(1.1, 0., "Relative Frequency (arb.)");
+ // else {
+ // TText *ylabel = new TText(1.1, 0., "Entries");
+  }
+//  ylabel->SetTextSize(.035);
+//  ylabel->SetTextAngle(-90);
+////ylabel->SetNDC(kTRUE);
+//  ylabel->SetY(0.9);
+//  ylabel->Draw("same");
+  h->SetTitle(hTitle.Data());
+  can_hcp_2->cd();
+  j += 5;
 }
-ylabel->SetTextSize(.035);
-ylabel->SetTextAngle(-90);
-ylabel->Draw("same");
-h->SetTitle(hTitle.Data());
-TVectorD binsMax(nFiles);
+TVectorD binsMax3(nFiles), binsMax2(nFiles);
 Double_t maxSANTA;
 Int_t maxSANTAbin;
 Double_t N_trg, N_1V, N, cp, cpN;
 TString N_trgString, N_1VString, NString, cpString, cpNString;
 
 // hist/legend loop
+nDims = 3;
+can_hcp_1->cd();
 k=0;
 for ( iH=hList->begin(); iH!=hList->end(); ++iH ) {
 
@@ -181,11 +205,12 @@ for ( iH=hList->begin(); iH!=hList->end(); ++iH ) {
   dLabel = dName->GetString();
   dLabelLower = dLabel;
   dLabelLower.ToLower();
-  if ( dLabelLower.Contains("sandd") || dLabelLower.Contains("2d chk") || dLabelLower.Contains("prospect") ) {
-    h->SetLineStyle(5);
-  } else if (dLabelLower.Contains("lim")) {
-    h->SetLineStyle(kDashed);
-  }
+//  if ( dLabelLower.Contains("sandd") || dLabelLower.Contains("2d chk") || dLabelLower.Contains("prospect") ) {
+//    h->SetLineStyle(5);
+//  } else if (dLabelLower.Contains("lim")) {
+//    h->SetLineStyle(kDashed);
+//  }
+  if (dLabelLower.Contains("lim")) h->SetLineStyle(kDashed);
   if (kNormalized) {
     h->Scale(1/N);
     if (dLabel.Contains("SANTA")) {
@@ -197,12 +222,28 @@ for ( iH=hList->begin(); iH!=hList->end(); ++iH ) {
     }
   }
   h->Draw("same");
-  binsMax[k] = h->GetMaximum();
+  if (nDims==3) {
+    binsMax3[k] = h->GetMaximum();
+  } else { // nDims = 2
+    binsMax2[k] = h->GetMaximum();
+  }
+  if (dLabelLower.Contains("lim")) {
+    leg3->Draw();
+    can_hcp_2->cd();
+    nDims = 2;
+  }
 
-  // generate data-dependent portion of LaTeX table
+  // draw 2D legend
+  leg2->Draw();
+
+  // generate datarun-dependent portion of LaTeX table
   if ( ! kNormalized ) {
     N_trgString.Form(" %d", (Long64_t)N_trg);
-    N_1VString.Form("\t& %d", (Long64_t)N_1V);
+    if ( dLabelLower.Contains("chooz") ) {
+      N_1VString.Form("\t&\\textbf{---}");
+    } else {
+      N_1VString.Form("\t& %d", (Long64_t)N_1V);
+    }
     NString.Form("\t& %d", (Long64_t)N);
     cpString.Form("\t& %.3f", cp);
     cpNString.Form("%1.2e", cpN);
@@ -214,12 +255,12 @@ for ( iH=hList->begin(); iH!=hList->end(); ++iH ) {
       NString.Append("^\\emph{\\dag}");
       cpString.Append("^\\emph{\\dag}");
       cpNString.Append("^\\emph{\\dag}");
-    } else if ( dLabel.Contains("SANDD") || dLabel.Contains("2D") || dLabel.Contains("PROSPECT") ) {
-      N_trgString.Append("~\t\t");
-      N_1VString.Append("~\t\t");
-      NString.Append("~\t\t");
-      cpString.Append("^\\emph{\\ddag}");
-      cpNString.Append("^\\emph{\\ddag}");
+//  } else if ( dLabel.Contains("SANDD") || dLabel.Contains("2D") || dLabel.Contains("PROSPECT") ) {
+//    N_trgString.Append("~\t\t");
+//    N_1VString.Append("~\t\t");
+//    NString.Append("~\t\t");
+//    cpString.Append("^\\emph{\\ddag}");
+//    cpNString.Append("^\\emph{\\ddag}");
     } else {
       N_trgString.Append("~\t\t");
       N_1VString.Append("~\t\t");
@@ -232,7 +273,7 @@ for ( iH=hList->begin(); iH!=hList->end(); ++iH ) {
       summaryFile << N_trgString.Data() << N_1VString.Data() << NString.Data() << cpString.Data() << cpNString.Data();
       if ( k < (hList->GetEntries()-1) ) summaryFile << "\\\\";
       if ( dLabelLower.Contains("santa") ) {
-        summaryFile << endl << endl;
+        summaryFile << " \\hline" << endl << endl;
       } else {
 	summaryFile << endl;
       }
@@ -247,54 +288,88 @@ if ( ! kNormalized ) {
   gSystem->Exec(shellCmd.Data());
 }
 
-// axis limits
-Double_t allMax = binsMax.Max();
+// axis limits and y-labels
+if (kNormalized) {
+  TText *ylabel3 = new TText(1.1, 0., "Relative Frequency (arb.)");
+  TText *ylabel2 = new TText(1.1, 0., "Relative Frequency (arb.)");
+} else {
+  TText *ylabel3 = new TText(1.1, 0., "Entries");
+  TText *ylabel2 = new TText(1.1, 0., "Entries");
+}
+ylabel3->SetTextSize(.035);
+ylabel2->SetTextSize(.035);
+ylabel3->SetTextAngle(-90);
+ylabel2->SetTextAngle(-90);
+// 3D plot
+can_hcp_1->cd();
+Double_t allMax3 = binsMax3.Max();
 h = (TH1D*)hList->At(0);
-h->SetAxisRange(0., allMax, "y");
-ylabel->SetY(allMax);
-
-// draw completed legend
-leg->Draw();
+h->SetAxisRange(0., allMax3, "y");
+ylabel3->SetY(allMax3);
+ylabel3->Draw("same");
+// 2D plot
+can_hcp_2->cd();
+Double_t allMax2 = binsMax2.Max();
+h = (TH1D*)hList->At(6);
+h->SetAxisRange(0., allMax2, "y");
+ylabel2->SetY(allMax2);
+ylabel2->Draw("same");
 
 // mean indicators
 meanMarker->SetMarkerSize(3.);
-meanMarker->SetMarkerStyle(22);
 k = 0;
+nDims = 3;
+can_hcp_1->cd();
 for ( iH = hList->begin(); iH!=hList->end(); ++iH ) {
   h = (TH1D*)(*iH);
   dName = (TObjString*)detectorNames->At(k);
   dLabel = dName->GetString();
   dLabelLower = dLabel;
   dLabelLower.ToLower();
-  if ( dLabel.Contains("SANDD") || dLabel.Contains("2D Chk.") || dLabel.Contains("PROSPECT") ) {
-    meanMarker->SetMarkerStyle(27);
-  } else if ( dLabelLower.Contains("lim") ) {
+//if ( dLabel.Contains("SANDD") || dLabel.Contains("2D Chk.") || dLabel.Contains("PROSPECT") ) {
+//  meanMarker->SetMarkerStyle(27);
+//} else if ( dLabelLower.Contains("lim") ) {
+//  meanMarker->SetMarkerStyle(26);
+//}
+  if (dLabelLower.Contains("lim")) {
     meanMarker->SetMarkerStyle(26);
+  } else {
+    meanMarker->SetMarkerStyle(22);
   }
   hMean = h->GetMean();
   meanMarker->SetMarkerColor(TColor::GetColorTransparent(colors[k], 0.6));
-  meanMarker->DrawMarker(hMean, -0.02*allMax);
+  if (nDims == 3) {
+    meanMarker->DrawMarker(hMean, -0.02*allMax3);
+  } else { // nDims = 2
+    meanMarker->DrawMarker(hMean, -0.02*allMax2);
+  }
   k++;
+  if (dLabelLower.Contains("lim")) {
+    nDims = 2;
+    can_hcp_2->cd();
+  }
 }
-can_hcp->RedrawAxis("y");
+can_hcp_1->RedrawAxis("y");
+can_hcp_2->RedrawAxis("y");
 
 // SANTA indicator
 Double_t santArrowX = h->GetBinCenter(maxSANTAbin);
 if (kNormalized) {
-  TLine *santaLine = new TLine(0.81, allMax, 0.81, 1.2*allMax);
+  can_hcp_1->cd();
+  TLine *santaLine = new TLine(0.81, allMax3, 0.81, 1.2*allMax3);
 //santaLine->SetLineStyle(kDashDotted);
   santaLine->SetLineStyle(kSolid);
   santaLine->SetLineColor(kRed);
   santaLine->SetLineWidth(3);
   santaLine->Draw();
-  santaLine->DrawLine(1.01, allMax, 1.01, 1.2*allMax);
-  TArrow * santArrow = new TArrow(santArrowX, 1.02*allMax, santArrowX, 1.10*allMax, 0.025);
+  santaLine->DrawLine(1.01, allMax3, 1.01, 1.2*allMax3);
+  TArrow * santArrow = new TArrow(santArrowX, 1.02*allMax3, santArrowX, 1.10*allMax3, 0.025);
   santArrow->SetLineColor(kRed);
   santArrow->SetLineWidth(3);
   santArrow->Draw();
   TString santArrowLabel;
   santArrowLabel.Form("to SANTA at %1.2f", maxSANTA);
-  TText *santaLabel = new TText(0.23, 1.01*allMax, santArrowLabel.Data());
+  TText *santaLabel = new TText(0.23, 1.01*allMax3, santArrowLabel.Data());
   santaLabel->SetTextColor(kRed);
   santaLabel->SetTextSize(.03);
   santaLabel->SetTextFont(52);
@@ -305,7 +380,8 @@ if (kNormalized) {
 
 // export and close
 if (! kInteractive) {
-  can_hcp->Print(savename);
+  can_hcp_1->Print(savename1);
+  can_hcp_2->Print(savename2);
   for ( iFile=fileList->begin(); iFile!=fileList->end(); ++iFile ) {
     f = (TFile*)*iFile;
     f->Close();

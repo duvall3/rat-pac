@@ -68,42 +68,42 @@ if [[ $CMD = "reset" ]]; then
   fi
 fi
 
-# inert-visibility switching commands
-if [[ $CMD = "inert_vis_on" ]]; then
-  echo "Setting inert-cube visibility on..."
-  cp $OUTFILE "$OUTFILE"_tmp
-  cat "$OUTFILE"_tmp | sed s/'invisible: 1, \/\/ inert cube'/'invisible: 0, \/\/ inert cube'/ > $OUTFILE
-  /usr/bin/rm "$OUTFILE"_tmp
-  echo "Done." && exit 0
-elif [[ $CMD = "inert_vis_off" ]]; then
-  echo "Setting inert-cube visibility off..."
-  cp $OUTFILE "$OUTFILE"_tmp
-  cat "$OUTFILE"_tmp | sed s/'invisible: 0, \/\/ inert cube'/'invisible: 1, \/\/ inert cube'/ > $OUTFILE
-  /usr/bin/rm "$OUTFILE"_tmp
-  echo "Done." && exit 0
-fi
+## inert-visibility switching commands
+#if [[ $CMD = "inert_vis_on" ]]; then
+#  echo "Setting inert-cube visibility on..."
+#  cp $OUTFILE "$OUTFILE"_tmp
+#  cat "$OUTFILE"_tmp | sed s/'invisible: 1, \/\/ inert cube'/'invisible: 0, \/\/ inert cube'/ > $OUTFILE
+#  /usr/bin/rm "$OUTFILE"_tmp
+#  echo "Done." && exit 0
+#elif [[ $CMD = "inert_vis_off" ]]; then
+#  echo "Setting inert-cube visibility off..."
+#  cp $OUTFILE "$OUTFILE"_tmp
+#  cat "$OUTFILE"_tmp | sed s/'invisible: 0, \/\/ inert cube'/'invisible: 1, \/\/ inert cube'/ > $OUTFILE
+#  /usr/bin/rm "$OUTFILE"_tmp
+#  echo "Done." && exit 0
+#fi
 
-# inert alpha setting
-if [[ $CMD = "inert_alpha" ]]; then
-  INERT_ALPHA=${2:-1.0}
-  echo "Setting inert alpha to $INERT_ALPHA..."
-  cp $OUTFILE "$OUTFILE"_tmp
-  cat "$OUTFILE"_tmp | awk -v A=$INERT_ALPHA '$0 ~ /^color:.*inert/ {$5=A"],"}; {print}' > $OUTFILE
-  /usr/bin/rm "$OUTFILE"_tmp
-  echo "Done." && exit 0
-fi
+## inert alpha setting
+#if [[ $CMD = "inert_alpha" ]]; then
+#  INERT_ALPHA=${2:-1.0}
+#  echo "Setting inert alpha to $INERT_ALPHA..."
+#  cp $OUTFILE "$OUTFILE"_tmp
+#  cat "$OUTFILE"_tmp | awk -v A=$INERT_ALPHA '$0 ~ /^color:.*inert/ {$5=A"],"}; {print}' > $OUTFILE
+#  /usr/bin/rm "$OUTFILE"_tmp
+#  echo "Done." && exit 0
+#fi
 
-# inert cube visibility during generation
-if [[ $CMD ]]; then
-  INERT_CUBE_VISIBLE=$CMD
-else
-  INERT_CUBE_VISIBLE=true
-fi
-if $INERT_CUBE_VISIBLE; then
-  INERT_CUBE_INVISIBLE="0"
-else
-  INERT_CUBE_INVISIBLE="1"
-fi
+## inert cube visibility during generation
+#if [[ $CMD ]]; then
+#  INERT_CUBE_VISIBLE=$CMD
+#else
+#  INERT_CUBE_VISIBLE=true
+#fi
+#if $INERT_CUBE_VISIBLE; then
+#  INERT_CUBE_INVISIBLE="0"
+#else
+#  INERT_CUBE_INVISIBLE="1"
+#fi
 
 # don't overwrite
 if [ -e $ARRFILE ]; then
@@ -201,8 +201,10 @@ valid_end: [0, 0],
 mother: \"cave\",
 type: \"box\",
 size: [$ca_length, $ca_width, $ca_height], // mm
-material: \"air\",
+//material: \"air\",
+material: \"glass\",
 invisible: 0,
+color: [0.8, 0.8, 0.8, 0.2],
 position: [0.0, 0.0, 0.0] // mm
 }\n\n" >> $ARRFILE
 
@@ -240,17 +242,17 @@ for (( k_lr=0; k_lr<$ROWS; k_lr++ )); do
       if [[ ($ROW_EVEN -eq 0) && ($COL_EVEN -eq 0) && ($LYR_EVEN -eq 0) ]]; then
         # ACTIVE CUBE
         MATERIAL=$ACTIVE_CUBE_MATERIAL
-	COLOR_LINE="color :[0.0, 1.0, 1.0, 1.0], // active cube"
+	COLOR_LINE="color: [0.0, 1.0, 1.0, 1.0], // active cube"
 	INVISIBLE_LINE="invisible: 0, // active cube"
-      else
-        # INERT CUBE
-        MATERIAL=$INERT_CUBE_MATERIAL
-	COLOR_LINE="color: [0.9, 0.9, 0.9, 1.0], // inert cube"
-	INVISIBLE_LINE="invisible: $INERT_CUBE_INVISIBLE, // inert cube"
-      fi
+#     else
+#       # INERT CUBE
+#       MATERIAL=$INERT_CUBE_MATERIAL
+#       COLOR_LINE="color: [0.9, 0.9, 0.9, 1.0], // inert cube"
+#       INVISIBLE_LINE="invisible: $INERT_CUBE_INVISIBLE, // inert cube"
+#     fi
 
-      # print results for this cube  
-      echo -e "\
+	# print results for this cube  
+	echo -e "\
 // -------- GEO[$index_name]
 {
 name: \"GEO\",
@@ -265,6 +267,8 @@ $INVISIBLE_LINE
 $COLOR_LINE
 position: [$x, $y, $z] // mm
 }\n\n" >> $ARRFILE
+
+      fi # end if -- active cube
       
     done #k_fb
   
