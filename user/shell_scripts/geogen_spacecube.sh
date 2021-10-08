@@ -1,30 +1,30 @@
 #!/bin/bash
-# geogen_checkerboard -- generate a *checkerboarded* segmented, rectangular-lattice detector .geo file
+# geogen_spacecube -- generate a *spacecubeed* segmented, rectangular-lattice detector .geo file
 #
 # -- this script expects to be run in a directory such as $RATROOT/data/foo-experiment,
-#      which is expected to contain a base geometry file (i.e., without cell array)
+#      which is expected to contain a base geometry file (i.e., without cube array)
 #      called "foo-experiment_base.geo"
 #
 # -- for an example base file, see:
 #      https://github.com/duvall3/rat-pac/blob/comparison/data/general-segmented/general-segmented_base.geo
 #
-# USAGES: geogen_general-segmented.sh [INERT_CELL_VISIBLE]
+# USAGES: geogen_general-segmented.sh [INERT_CUBE_VISIBLE]
 #         geogen_general-segmented.sh <COMMAND>
 #           where:
-#           INERT_CELL_VISIBLE = true | false
+#           INERT_CUBE_VISIBLE = true | false
 #           COMMAND = reset | inert_vis_on | inert_vis_off
 #
-# -- the optional Boolean argument INERT_CELL_VISIBLE determines the default visibility
-#      of the inert cells during geometry generation
+# -- the optional Boolean argument INERT_CUBE_VISIBLE determines the default visibility
+#      of the inert cubes during geometry generation
 #    -- if omitted, defaults to "true"
 #    -- reminder: in BASH, 0 is "true" and nonzero is "false"
 #
-# -- the "reset" command will clear the cell array and the main .geo file,
+# -- the "reset" command will clear the cube array and the main .geo file,
 #      leaving only the "_base.geo" file, in preparation for generating a new detector
 #  *!!!* WARNING: THIS DELETES THE DETECTOR GEOMETRY *!!!*
 #
 # -- the "inert_vis" commands modify the main .geo file (after generation)
-#      to set the inert-cell visibility on or of
+#      to set the inert-cube visibility on or of
 
 
 ##Copyright (C) 2021 Mark J. Duvall
@@ -53,7 +53,7 @@ fi
 # check / create filenames
 PROJ=$(pwd | sed s_/_\ _g | awk '{print $NF}')
 BASEFILE="$PROJ"_base.geo
-ARRFILE="$PROJ"_cell-array.geo
+ARRFILE="$PROJ"_cube-array.geo
 OUTFILE="$PROJ".geo
 
 # reset command
@@ -70,29 +70,39 @@ fi
 
 # inert-visibility switching commands
 if [[ $CMD = "inert_vis_on" ]]; then
-  echo "Setting inert-cell visibility on..."
+  echo "Setting inert-cube visibility on..."
   cp $OUTFILE "$OUTFILE"_tmp
-  cat "$OUTFILE"_tmp | sed s/'invisible: 1, \/\/ inert cell'/'invisible: 0, \/\/ inert cell'/ > $OUTFILE
+  cat "$OUTFILE"_tmp | sed s/'invisible: 1, \/\/ inert cube'/'invisible: 0, \/\/ inert cube'/ > $OUTFILE
   /usr/bin/rm "$OUTFILE"_tmp
   echo "Done." && exit 0
 elif [[ $CMD = "inert_vis_off" ]]; then
-  echo "Setting inert-cell visibility off..."
+  echo "Setting inert-cube visibility off..."
   cp $OUTFILE "$OUTFILE"_tmp
-  cat "$OUTFILE"_tmp | sed s/'invisible: 0, \/\/ inert cell'/'invisible: 1, \/\/ inert cell'/ > $OUTFILE
+  cat "$OUTFILE"_tmp | sed s/'invisible: 0, \/\/ inert cube'/'invisible: 1, \/\/ inert cube'/ > $OUTFILE
   /usr/bin/rm "$OUTFILE"_tmp
   echo "Done." && exit 0
 fi
 
-# inert cell visibility during generation
-if [[ $CMD ]]; then
-  INERT_CELL_VISIBLE=$CMD
-else
-  INERT_CELL_VISIBLE=true
+# inert alpha setting
+if [[ $CMD = "inert_alpha" ]]; then
+  INERT_ALPHA=${2:-1.0}
+  echo "Setting inert alpha to $INERT_ALPHA..."
+  cp $OUTFILE "$OUTFILE"_tmp
+  cat "$OUTFILE"_tmp | awk -v A=$INERT_ALPHA '$0 ~ /^color:.*inert/ {$5=A"],"}; {print}' > $OUTFILE
+  /usr/bin/rm "$OUTFILE"_tmp
+  echo "Done." && exit 0
 fi
-if $INERT_CELL_VISIBLE; then
-  INERT_CELL_INVISIBLE="0"
+
+# inert cube visibility during generation
+if [[ $CMD ]]; then
+  INERT_CUBE_VISIBLE=$CMD
 else
-  INERT_CELL_INVISIBLE="1"
+  INERT_CUBE_VISIBLE=true
+fi
+if $INERT_CUBE_VISIBLE; then
+  INERT_CUBE_INVISIBLE="0"
+else
+  INERT_CUBE_INVISIBLE="1"
 fi
 
 # don't overwrite
@@ -104,7 +114,7 @@ if [ -e $OUTFILE ]; then
 fi
 
 # proceed
-echo -e "\n### Starting checkerboard geometry generator ###\n"
+echo -e "\n### Starting spacecube geometry generator ###\n"
 
 # check for bc
 echo "Checking for bc..."
@@ -137,30 +147,26 @@ fi
 
 ## configure geometry
 
-# prompt for number of dimensions
-echo "Enter \"2\" or \"3\" for 2-D or 3-D checkerboarding: " && read DIMS
-echo
-
 # prompt for configuration
 echo "Enter number of rows: " && read ROWS
 echo "Enter number of columns: " && read COLS
 echo "Enter number of layers: " && read LYRS
 echo
 
-# prompt for cell dimensions
-echo "Enter cell half-length (mm): " && read L
-echo "Enter cell half-width (mm): " && read W
-echo "Enter cell half-height (mm): " && read H
-echo "Enter cell half-spacing (mm): " && read S
+# prompt for cube dimensions
+echo "Enter cube half-length (mm): " && read L
+echo "Enter cube half-width (mm): " && read W
+echo "Enter cube half-height (mm): " && read H
+echo "Enter cube half-spacing (mm): " && read S
 echo
 
 # prompt for materials
-echo "Enter material for active cells (default: ej254_015li6 -- PVT @ 1.5%wt. Li-6): " && read ACTIVE_CELL_MATERIAL
-echo "Enter material for inactive cells (default: glass -- SiO2): " && read ACTIVE_CELL_MATERIAL
+echo "Enter material for active cubes (default: ej254_015li6 -- PVT @ 1.5%wt. Li-6): " && read ACTIVE_CUBE_MATERIAL
+echo "Enter material for inactive cubes (default: glass -- SiO2): " && read ACTIVE_CUBE_MATERIAL
 echo
 # defaults
-if [[ -z $ACTIVE_CELL_MATERIAL ]]; then ACTIVE_CELL_MATERIAL="ej254_015li6"; fi
-if [[ -z $INERT_CELL_MATERIAL ]]; then INERT_CELL_MATERIAL="glass"; fi
+if [[ -z $ACTIVE_CUBE_MATERIAL ]]; then ACTIVE_CUBE_MATERIAL="ej254_015li6"; fi
+if [[ -z $INERT_CUBE_MATERIAL ]]; then INERT_CUBE_MATERIAL="glass"; fi
 
 # force float format for RAT-PAC
 L=$( echo "$L*1.0" | bc -l )
@@ -168,7 +174,7 @@ W=$( echo "$W*1.0" | bc -l )
 H=$( echo "$H*1.0" | bc -l )
 S=$( echo "$S*1.0" | bc -l )
 
-# double cell half-dimensions for summary
+# double cube half-dimensions for summary
 FL=$( echo "$L*2.0" | bc -l )
 FW=$( echo "$W*2.0" | bc -l )
 FH=$( echo "$H*2.0" | bc -l )
@@ -176,20 +182,20 @@ FS=$( echo "$S*2.0" | bc -l )
 
 # print config
 printf "\n\nRows: %i\nColumns: %i\nLayers: %i\n" $ROWS $COLS $LYRS
-printf "\nCell Length: \t%f mm\nCell Width: \t%f mm\nCell Height: \t%f mm\nCell Spacing: \t%f mm\n" $FL $FW $FH $FS
+printf "\ncube Length: \t%f mm\ncube Width: \t%f mm\ncube Height: \t%f mm\ncube Spacing: \t%f mm\n" $FL $FW $FH $FS
 
 
-## create cell array
+## create cube array
 # calculate total size
 ca_length=$(echo "$ROWS*($L+$S)*1.0" | bc -l)
 ca_width=$(echo "$COLS*($W+$S)*1.0" | bc -l)
 ca_height=$(echo "$LYRS*($H+$S)*1.0" | bc -l)
 # write result
 echo -e "\
-// -------- GEO[target_cell_array]
+// -------- GEO[target_cube_array]
 {
 name: \"GEO\",
-index: \"target_cell_array\",
+index: \"target_cube_array\",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: \"cave\",
@@ -203,9 +209,9 @@ position: [0.0, 0.0, 0.0] // mm
 
 ## MAIN
 
-# generate cells
+# generate cubes
 
-echo -e "\nGenerating cells..."
+echo -e "\nGenerating cubes..."
 
 for (( k_lr=0; k_lr<$ROWS; k_lr++ )); do
 
@@ -213,12 +219,12 @@ for (( k_lr=0; k_lr<$ROWS; k_lr++ )); do
   
     for (( k_fb=0; k_fb<$LYRS; k_fb++ )); do
   
-      # cell names
-      index_name_lr=target_cell_$k_lr
+      # cube names
+      index_name_lr=target_cube_$k_lr
       index_name_fb="$index_name_lr"_$k_ud
       index_name="$index_name_fb"_$k_fb
 
-      # cell coordinates
+      # cube coordinates
       x=$( echo "2.0*($L+$S)*$k_lr - ($L+$S)*($ROWS-1)" | bc -l )
       y=$( echo "2.0*($W+$S)*$k_ud - ($W+$S)*($COLS-1)" | bc -l )
       z=$( echo "2.0*($H+$S)*$k_fb - ($H+$S)*($LYRS-1)" | bc -l )
@@ -227,36 +233,23 @@ for (( k_lr=0; k_lr<$ROWS; k_lr++ )); do
       if [ $y = 0 ]; then y="0.0"; fi
       if [ $z = 0 ]; then z="0.0"; fi
 
-      # checkerboarding test
-      CHK_TEST=false
+      # spacecubeing test
       ROW_EVEN=$((k_lr % 2))
       COL_EVEN=$((k_ud % 2))
       LYR_EVEN=$((k_fb % 2))
-      if [[ $DIMS -eq 2 ]]; then
-	if [[ $ROW_EVEN -eq $COL_EVEN ]]; then
-	  CHK_TEST=true #CELL=ACTIVE
-	fi
-      elif [[ $DIMS -eq 3 ]]; then
-	if [[ $ROW_EVEN -eq $COL_EVEN && $COL_EVEN -eq $LYR_EVEN ]]; then
-	  CHK_TEST=true #CELL=ACTIVE
-	fi
+      if [[ ($ROW_EVEN -eq 0) && ($COL_EVEN -eq 0) && ($LYR_EVEN -eq 0) ]]; then
+        # ACTIVE CUBE
+        MATERIAL=$ACTIVE_CUBE_MATERIAL
+	COLOR_LINE="color :[0.0, 1.0, 1.0, 1.0], // active cube"
+	INVISIBLE_LINE="invisible: 0, // active cube"
       else
-        echo "Error: Invalid number of checkerboarding dimensions (must be either 2 or 3)."
-	exit 3
-      fi
-      if $CHK_TEST; then
-        MATERIAL=$ACTIVE_CELL_MATERIAL
-	COLOR="[0.0, 1.0, 1.0]"
-#	INVISIBLE="0"
-	INVISIBLE_LINE="invisible: 0, // active cell"
-      else								#CELL=INERT
-        MATERIAL=$INERT_CELL_MATERIAL
-	COLOR="[0.5, 0.5, 0.5]"
-#	INVISIBLE=$INERT_CELL_INVISIBLE
-	INVISIBLE_LINE="invisible: $INERT_CELL_INVISIBLE, // inert cell"
+        # INERT CUBE
+        MATERIAL=$INERT_CUBE_MATERIAL
+	COLOR_LINE="color: [0.9, 0.9, 0.9, 1.0], // inert cube"
+	INVISIBLE_LINE="invisible: $INERT_CUBE_INVISIBLE, // inert cube"
       fi
 
-      # print results for this cell  
+      # print results for this cube  
       echo -e "\
 // -------- GEO[$index_name]
 {
@@ -264,12 +257,12 @@ name: \"GEO\",
 index: \"$index_name\",
 valid_begin: [0, 0],
 valid_end: [0, 0],
-mother: \"target_cell_array\",
+mother: \"target_cube_array\",
 type: \"box\",
 size: [$L, $W, $H], // mm  // for sphere, change size to single-value r_max
 material: \"$MATERIAL\",
 $INVISIBLE_LINE
-color: $COLOR,
+$COLOR_LINE
 position: [$x, $y, $z] // mm
 }\n\n" >> $ARRFILE
       
@@ -289,5 +282,5 @@ printf "\nRAT-PAC .GEO FILE WRITTEN TO: %s\n\n" $OUTFILE
 
 
 ## all pau!   )
-echo -e "### Checkerboard geometry generator finished. ###\n\n\n"
+echo -e "### spacecube geometry generator finished. ###\n\n\n"
 exit 0
