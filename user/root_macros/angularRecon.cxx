@@ -156,7 +156,7 @@ phi_true = (-nu_hat).Phi() * 180/pi;
 theta_true = (-nu_hat).Theta() * 180/pi;
 
 // report results and save summary
-TString ts1, ts2, ts3, ts4, ts5, ts6, ts7, ts8, ts9, ts_summary;
+TString ts1, ts2, ts3, ts4, ts5, ts6, ts7, ts8, ts9, ts10, ts_summary;
 ts1.Form( "\n\nIBD Angular Reconstruction:\n* datafile = \"%s\"\n* Note: SDM = SD/sqrt(N)\n\n", fileName.Data() );
 ts2.Form( "Azimuthal Angle (deg):\n  phi_mean\t%2.2f\n  phi_sd\t%2.2f\n  phi_sdm\t%2.2f\n\n", phi_mean, phi_std, phi_sdm );
 ts3.Form( "Polar Angle (deg):\n  theta_mean\t%2.2f\n  theta_sd\t%2.2f\n  theta_sdm\t%2.2f\n\n", theta_mean, theta_std, theta_sdm );
@@ -165,11 +165,13 @@ ts5.Form( "  phi   = %2.2f   +/- %2.2f deg (SD)\t%2.2f sigma from true value,  o
 ts6.Form( "                 +/-  %2.2f deg (SDM)\t%2.2f sigma from true value\n", phi_sdm, TMath::Abs((phi_mean-phi_true))/phi_sdm );
 ts7.Form( "  theta = %2.2f   +/- %2.2f deg (SD)\t%2.2f sigma from true value,  or\n", theta_mean, theta_std, TMath::Abs((theta_mean-theta_true))/theta_std );
 ts8.Form( "                 +/-  %2.2f deg (SDM)\t%2.2f sigma from true value\n", theta_sdm, TMath::Abs((theta_mean-theta_true))/theta_sdm );
-ts9.Form( "  <cos[psi]> = %1.3f\n\n", h_cos_psi->GetMean() );
-ts_summary = ts1+ts2+ts3+ts4+ts5+ts6+ts7+ts8+ts9;
+ts9.Form( "  <cos[psi]> = %1.3f\n", h_cos_psi->GetMean() );
+ts10.Form( "  <cos[psi]>/N x 10^6 = %.2f\n\n", 1.e6 * h_cos_psi->GetMean() / h_cos_psi->GetEntries() );
+ts_summary = ts1+ts2+ts3+ts4+ts5+ts6+ts7+ts8+ts9+ts10;
 printf("\n%s", ts_summary.Data());
 TObjString angular_summary = ts_summary;
 angular_summary.Write("angular_summary");
+angular_summary.Write("as");
 
 // save plots
 if ( graphics_tf ) {
