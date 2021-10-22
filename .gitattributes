@@ -1,2 +1,3 @@
 tools/**	linguist-vendored
-**/*.geo	linguist-generated
+#**/*.geo	linguist-generated
+**/*.geo	linguist-language=json
