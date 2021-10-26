@@ -70,7 +70,7 @@ TCanvas* c5 = new TCanvas("c5", "Actual vs. Reconstructed Angle (#psi)", 820, 12
 TCanvas* c6 = new TCanvas("c6", "Sky Heatmap Pointing to Antineutrino Source", 820, 120, 1100, 900);
 
 // set up histograms
-TH1D* h_phi = new TH1D("h_phi", "Azimuthal Angle (deg) #minus #phi^{o}", 36, -180, 180);
+TH1D* h_phi = new TH1D("h_phi", "Azimuthal Angle (deg) #minus #varphi^{o}", 36, -180, 180);
 TH1D* h_theta = new TH1D("h_theta", "Polar Angle (deg) #minus #theta^{o}", 36, 0, 180);
 TH1D* h_cos_psi = new TH1D("h_cos_psi", "Cos[#psi]", 10, -1.01, 1.01);
 TH2D* h_phi_radar = new TH2D; // filled by radarPlot below
