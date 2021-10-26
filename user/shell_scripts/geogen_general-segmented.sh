@@ -39,8 +39,8 @@ LOGFILE=geogen_"$PROJ".log
 if [[ $1 = "reset" ]]; then
   if [[ -f $BASEFILE ]]; then
     echo "Resetting experiment to base; clearing detector..."
-      if [[ -f $ARRFILE ]]; then rm $ARRFILE; fi
-      if [[ -f $OUTFILE ]]; then rm $OUTFILE; fi
+      if [[ -f $ARRFILE ]]; then /usr/bin/rm $ARRFILE; fi
+      if [[ -f $OUTFILE ]]; then /usr/bin/rm $OUTFILE; fi
 #     if [[ -f $OUTFILE"~" ]]; then rm $OUTFILE"~"; fi
     echo "Detector geometry cleared." && exit 0
   else
@@ -106,8 +106,10 @@ echo
 # prompt for materials
 echo "Enter material for target cells (default: ej254_015li6 -- PVT @ 1.5%wt. Li-6): " && read TARGET_CELL_MATERIAL
 echo
+echo "Enter material for array / matrix (default: air): " && read ARRAY_MATERIAL
 # defaults
-if [[ -z $TARGET_CELL_MATERIAL ]]; then TARGET_CELL_MATERIAL="ej254_015li6"; fi
+TARGET_CELL_MATERIAL=${TARGET_CELL_MATERIAL:-"ej254_015li6"}
+ARRAY_MATERIAL=${ARRAY_MATERIAL:-"air"}
 
 # force float format for RAT-PAC
 L=$( echo "$L*1.0" | bc -l )
@@ -121,17 +123,21 @@ FW=$( echo "$W*2.0" | bc -l )
 FH=$( echo "$H*2.0" | bc -l )
 FS=$( echo "$S*2.0" | bc -l )
 
+## create cell array
+# calculate total size
+ca_length=$(echo "($ROWS*($L+$S)-$S)*1.0" | bc -l)
+ca_width=$(echo "($COLS*($W+$S)-$S)*1.0" | bc -l)
+ca_height=$(echo "($LYRS*($H+$S)-$S)*1.0" | bc -l)
+ca_Flength=$(echo "2*$ca_length" | bc -l)
+ca_Fwidth=$(echo "2*$ca_width" | bc -l)
+ca_Fheight=$(echo "2*$ca_height" | bc -l)
+
 # print config
 printf "\n\nRows: %i\nColumns: %i\nLayers: %i\n" $ROWS $COLS $LYRS | tee $LOGFILE
 printf "\nCell Length: \t%f mm\nCell Width: \t%f mm\nCell Height: \t%f mm\nCell Spacing: \t%f mm\n" $FL $FW $FH $FS | tee -a $LOGFILE
+printf "\nArray Length: \t%f mm\nArray Width: \t%f mm\nArray Height: %f mm\n\n" $ca_Flength $ca_Fwidth $ca_Fheight | tee -a $LOGFILE
 
-
-## create cell array
-# calculate total size
-ca_length=$(echo "$ROWS*($L+$S)*1.0" | bc -l)
-ca_width=$(echo "$COLS*($W+$S)*1.0" | bc -l)
-ca_height=$(echo "$LYRS*($H+$S)*1.0" | bc -l)
-# write result
+# write array
 echo -e "\
 // -------- GEO[target_cell_array]
 {
@@ -142,7 +148,7 @@ valid_end: [0, 0],
 mother: \"cave\",
 type: \"box\",
 size: [$ca_length, $ca_width, $ca_height], // mm
-material: \"air\",
+material: \"$ARRAY_MATERIAL\",
 invisible: 0,
 position: [0.0, 0.0, 0.0] // mm
 }\n\n" >> $ARRFILE

@@ -44,14 +44,20 @@ SEDAQ2( scintfile.Data(), kGraphics, kQuantizedPositions, kPositionResolution, k
 angularRecon( resultsfile.Data(), kGraphics );
 
 //// fix trouble plots
-//printf("Attempting to fix c3 plot...\n");
-//if (! origBatch) gROOT->SetBatch(kTRUE);
-//TFile *f = TFile::Open(resultsfile.Data());
-////c3->Draw();
-//c3->Print(pdxyzfile.Data());
-////c3->Close();
-//f->Close();
-//if (! origBatch) gROOT->SetBatch(kFALSE);
+//ofstream fixc3 = "fixc3.cxx";
+//TString fixc3String = TString::Format( "{
+//  // fixc3 -- simple macro to fix c3 plot
+//  printf(\"Attempting to fix c3 plot...\\n\");
+//  gROOT->SetBatch(kTRUE);
+//  TFile *f = TFile::Open(\"%s\");
+//  c3->Draw();
+//  c3->Print(\"%s\");
+//  c3->Close();
+//  f->Close();
+//}",resultsfile.Data(), pdxyzfile.Data() );
+//fixc3 << fixc3String.Data();
+//fixc3.close();
+//gSystem->Exec("root -q -l fixc3.cxx");
 
 // fix trouble plots // TODO: automate
 printf("If the c3 plot (%s_pd-xyz.png) did not save correctly, try:", basename.Data());

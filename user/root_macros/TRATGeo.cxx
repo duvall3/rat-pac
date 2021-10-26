@@ -172,13 +172,14 @@ TRATGeo::FindCheckerboardInert( const Int_t kDims ) // = 3
 }
 
 //______________________________________________________________________________
-// Build
-TRATGeo::Build()
+// Build(const char* tcRegexp)
+TRATGeo::Build(const char* tcRegexp)
 {
   Int_t volCount; //debug
   Init();
   // Build init
-  TRegexp dbIndexPattern("GEO.*size");
+  TString tcrString = TString::Format("GEO\\[.*%s.*\\].size", tcRegexp);
+  TRegexp dbIndexPattern(tcrString.Data());
   Long64_t N = fDB->GetEntries();
   TPair *tp;
   TObjString *keyTOS;
@@ -193,7 +194,7 @@ TRATGeo::Build()
     tp = (TPair*)*i;
     keyTOS = (TObjString*)tp->Key();
     keyStr = keyTOS->GetString();
-    if ( keyStr.Contains(dbIndexPattern) ) { // relevant entry
+    if ( (keyStr.Contains(dbIndexPattern)) || (keyStr.Contains("world")) || (keyStr.Contains("cave")) ) { // relevant entry
       keyStr.ReplaceAll("GEO[","");
       keyStr = keyStr(0, keyStr.Index(']'));
 //    infoMsg.Form("Found relevant entry: %s", keyStr.Data()); //debug
@@ -208,6 +209,13 @@ TRATGeo::Build()
   } // end db entry loop
 infoMsg.Form("Done.\n");
 this->Info(infoLoc.Data(), infoMsg.Data());
+}
+
+//______________________________________________________________________________
+// Build()
+TRATGeo::Build()
+{
+  Build("");
 }
 
 //______________________________________________________________________________

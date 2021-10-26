@@ -105,7 +105,7 @@ for (( k=0; k<$NINSTS; k++ )) {
   # prepare simulation, post-processing, and combination commands
   RATCMD="rat -l $INST_DIR.log run.mac" # assume IBD run
   PROCCMD="$RATROOT/user/shell_scripts/process_rat_run.sh $INST_DIR $NEVENTS false $QUANTIZED_POSITIONS $POSITION_RESOLUTIONS"
-  ECHOCMD="echo -e \"\n$INST_DIR complete.\n\""
+  ECHOCMD="echo -e \"\\n$INST_DIR complete.\\n\""
   FULLCMD="eval $RATCMD && eval $PROCCMD && eval $ECHOCMD"
 
   # RUN
@@ -136,7 +136,7 @@ ANCMD2=$(echo -e "root -q -l -b 'angularRecon.cxx(\"$RES_FILE\", true)'")
 #echo -e "\n$ANCMD1\n$ANCMD2\n" #debug
 eval $ANCMD1 && eval $ANCMD2
 #eval $ANCMD1 #debug
-#if [[ $? == 0 ]]; then eval $ANCMD2; fi #debug
+#if [[ $? -eq 0 ]]; then eval $ANCMD2; fi #debug
 
 ## all pau!   )
 if [[ $? == 0 ]]; then

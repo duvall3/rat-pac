@@ -45,7 +45,8 @@ private:
 
 public:
   TRATGeo();
-  void			Build();		// construct TRATVolume list
+  void			Build();				    // construct TRATVolume list
+  void			Build(const char* tcRegexp);  		    // construct TRATVolume list
   void			BuildCheckerboard( const Int_t kDims = 3 ); // construct active/inert checkerboard lists
   TFile*                GetFile() const { return fFile; }
   virtual const char*   GetFileName() const { return fFileName; }

@@ -82,7 +82,7 @@ TString filename = FileName;
 TRegexp tcregex = tcs;
 TFile* f = TFile::Open(filename);
 TRATGeo* g = new TRATGeo;
-g->Build();
+g->Build(tcs);
 TRATGeo *G = &g;
 TMap* db = g->GetDB();
 TString experiment = g->GetExperiment();

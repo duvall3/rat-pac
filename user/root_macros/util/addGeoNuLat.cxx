@@ -62,6 +62,7 @@ TList *nodeList = new TList;
 // cube array
 vol = (TRATVolume*)g.GetVolume("cube_array");
 if (vol==0) vol = (TRATVolume*)g.GetVolume("target_cell_array");
+if (vol==0) vol = (TRATVolume*)g.GetVolume("target_cube_array");
 TBRIK *cubeArrayShape = new TBRIK("cubeArrayShape", "prototype shape for cube array", "vacuum", vol->GetSize()->X(), vol->GetSize()->Y(), vol->GetSize()->Z());
 TNode *nCubeArray = new TNode("cubeArray", "node for cubeArray", "cubeArrayShape", vol->GetAbsolutePosition()->X(), vol->GetAbsolutePosition()->Y(), vol->GetAbsolutePosition()->Z());
 nodeList->Add(nCubeArray);

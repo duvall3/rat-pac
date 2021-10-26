@@ -162,7 +162,7 @@ echo
 
 # prompt for materials
 echo "Enter material for active cubes (default: ej254_015li6 -- PVT @ 1.5%wt. Li-6): " && read ACTIVE_CUBE_MATERIAL
-echo "Enter material for inactive cubes (default: glass -- SiO2): " && read ACTIVE_CUBE_MATERIAL
+echo "Enter material for inactive cubes (default: glass -- SiO2): " && read INERT_CUBE_MATERIAL
 echo
 # defaults
 if [[ -z $ACTIVE_CUBE_MATERIAL ]]; then ACTIVE_CUBE_MATERIAL="ej254_015li6"; fi
@@ -202,7 +202,7 @@ mother: \"cave\",
 type: \"box\",
 size: [$ca_length, $ca_width, $ca_height], // mm
 //material: \"air\",
-material: \"glass\",
+material: \"$INERT_CUBE_MATERIAL\",
 invisible: 0,
 color: [0.8, 0.8, 0.8, 0.2],
 position: [0.0, 0.0, 0.0] // mm
