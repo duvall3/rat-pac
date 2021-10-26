@@ -37,7 +37,7 @@ newCanTitle = newName;
 // copy bin contents into new histogram
 TH2D *h_out = new TH2D( newName.Data(), newTitle.Data(), N, xlow, xup, 1, 0., 1. );
 h_out->SetLineColor(h_in->GetLineColor());
-h_out->SetLineWidth(3.);
+h_out->SetLineWidth(5.);
 h_out->SetStats(0);
 for ( k=0; k<=N; k++ ) {
   h_out->SetBinContent( k, 1, h_in->GetBinContent(k) ); //KEEPME
@@ -51,12 +51,29 @@ Int_t j = 0, nScaleRings = 5, scaleStep = TMath::Nint(1.*hinMax/nScaleRings);
 //Int_t scaleMax = 10**(pow10);
 //Int_t j = 0, nScaleRings = 5, scaleStep = TMath::Nint(TMath::Ceil(scaleMax/nScaleRings));
 TH2D *h_scale = new TH2D( "h_scale", "scale for radar plot", N, xlow, xup, nScaleRings, 0., scaleMax );
-h_scale->SetLineColor(kGray);
+h_scale->SetLineColor(TColor::GetColorDark(kGray));
 h_scale->SetLineWidth(2.);
 h_scale->SetStats(0);
 for ( k=0; k<=N; k++ ) {
   for ( j=0; j<=nScaleRings; j++ ) h_scale->SetBinContent( k, j, (nScaleRings-j)*scaleStep );
 }
+
+// scale "axis indicators"
+Double_t markerR = 1.;
+TPolyMarker3D *p0 = new TPolyMarker3D(1);
+p0->SetMarkerColor(kBlack);
+p0->SetMarkerSize(2.5);
+TPolyMarker3D *p90 = p0->Clone("p90");
+TPolyMarker3D *p180 = p0->Clone("p180");
+TPolyMarker3D *p270 = p0->Clone("p270");
+p0->SetMarkerStyle(8);
+p90->SetMarkerStyle(22);
+p180->SetMarkerStyle(21);
+p270->SetMarkerStyle(23);
+p0->SetPoint(0, -markerR, 0., 0.);
+p90->SetPoint(0, 0., -markerR, 0.);
+p180->SetPoint(0, markerR, 0., 0.);
+p270->SetPoint(0, 0., markerR, 0.);
 
 // draw radar plot
 if (kNewCanvas) TCanvas *can_out = new TCanvas(newCanName.Data(), newCanTitle.Data());
@@ -69,13 +86,53 @@ h_scale->Draw("samecyllego");
 h_out->Draw(hopt);
 
 // annotations
-TLegend *l_radar = new TLegend(.01, .01, .3, .1);
+
+// radial legend
+//TLegend *l_radial = new TLegend(.01, .01, .3, .1);
+TLegend *l_radial = new TLegend(.05, .01, .65, .1);
+l_radial->SetName("leg_radial");
+l_radial->SetNColumns(2);
+l_radial->SetTextSize(.024);
 TString gridRings, gridMax;
-gridRings.Form("Grid Scale: %d entries / ring", scaleStep);
-gridMax.Form("Grid Maximum = %d entries", scaleMax);
-l_radar->AddEntry( h_scale, gridRings.Data() );
-l_radar->AddEntry( h_scale, gridMax.Data() );
-l_radar->Draw();
+//gridRings.Form("Grid Scale: %d entries / ring", scaleStep);
+//gridMax.Form("Grid Maximum = %d entries", scaleMax);
+gridRings.Form( "Grid Scale = %d entries / ring     Grid Maximum = %d entries", scaleStep, scaleMax );
+l_radial->AddEntry( h_scale, gridRings.Data() );
+//TLegendEntry *le = l_radial->GetEntry();
+//le->SetLineColor(TColor::GetColorDark(kGray));
+//l_radial->AddEntry( h_scale, gridMax.Data() );
+l_radial->Draw();
+
+// angular legend
+TLegend *l_angular = new TLegend(.65, .01, .95, .1);
+l_angular->SetName("leg_angular");
+l_angular->SetNColumns(2);
+//Double_t xdelta = xup - xlow;
+//TString angMark0, angMark90, angMark180, angMark270;
+//angMark0.Form(" = %.f", xlow);
+//angMark90.Form(" = %.f", xlow + xdelta/4);
+//angMark180.Form(" = %.f", xlow + 2*xdelta/4);
+//angMark270.Form(" = %.f", xlow + 3*xdelta/4);
+TString angMark0("0^{o}"), angMark90("+90^{o}"), angMark180("#pm180^{o}"), angMark270("-90^{o}");
+l_angular->AddEntry(p0, angMark0.Data(), "P");
+l_angular->AddEntry(p90, angMark90.Data(), "P");
+l_angular->AddEntry(p180, angMark180.Data(), "P");
+l_angular->AddEntry(p270, angMark270.Data(), "P");
+l_angular->Draw();
+
+// paint over the weird extra lines ROOT keeps wanting to draw
+TPave *boxL = new TPave(0., 0.49, 0.099, 0.51, 0., "blNDC");
+TPave *boxR = new TPave(0.901, 0.49, 1., 0.51, 0., "blNDC");
+boxL->SetFillColor(0);
+boxR->SetFillColor(0);
+boxL->Draw();
+boxR->Draw();
+
+// draw angular markers
+p0->Draw();
+p90->Draw();
+p180->Draw();
+p270->Draw();
 
 // all pau!   )
 return h_out;
