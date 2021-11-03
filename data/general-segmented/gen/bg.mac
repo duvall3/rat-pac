@@ -5,9 +5,17 @@
 #/generator/pos/set ^target_strip[0-9]+$
 #/generator/pos/set target_strip
 
-
 # using the "external" generator
-/generator/add external paint:poisson:"backgrounds_1.dat"
-/generator/pos/set 0.0 0.0 -700. # paint the walls of the cave
-/generator/rate/set 173.35
+#/generator/add external paint:poisson:"backgrounds_1.dat"
+#/generator/pos/set 0.0 0.0 -700. # paint the walls of the cave
+#/generator/rate/set 173.35
 
+# vertexfile generator
+#/generator/add vertexfile bgNeutrons.root
+#/generator/add vertexfile bgNeutrons.root:paint:poisson
+#/generator/add vertexfile bgNeutrons.root:point:poisson
+#/generator/pos/set 0.0 0.0 -3000. # paint the walls of the cave
+/generator/add combo spectrum:paint:poisson
+/generator/vtx/set neutron nbg
+/generator/pos/set 3000. 3000. 3000. # paint the walls of the cave
+/generator/rate/set 173.35
