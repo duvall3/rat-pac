@@ -32,16 +32,18 @@ private:
   Double_t		fNeutronMass;			// neutron mass in MeV/c^2
   TF1			fNeutronSpectrum;		// TF1 containing the function and parameters from JEDEC
   TH1D			fSpecHist;			// automatic histogram created by fNeutronSpectrum
-  TString		fOutFilename;			// name of ASCII outfile (for feeding into RAT-PAC)
-  ofstream		fOutStream;			// where to write ASCII outfile
+  TString		fOutFilename;			// name of ROOT outfile (for feeding into RAT-PAC)
+  TTree			fTree;				// TTree holding neutron data
 
 public:
   TRATNeutronGen();
-  void			Generate(Long64_t numNeutrons);	// MAIN
+  TVector3*		KEtoMom(Double_t KE);
+  void			Generate(Long64_t numNeutrons);
+  Double_t		GetNeutronMass() const { return fNeutronMass; }
   TF1*			GetSpectrum() const { return &fNeutronSpectrum; }
   TH1D*			GetSpecHist() const { return &fSpecHist; }
+  TTree*		GetTree() const { return &fTree; }
   char*			GetOutFilename() const { return fOutFilename.Data(); }
-  ofstream*		GetOFStream() const { return &fOutStream; }
   void			SetOutFile( const char* newOutFile );
   void			DrawSpectrum();
 

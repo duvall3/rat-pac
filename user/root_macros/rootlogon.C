@@ -20,6 +20,7 @@
   #include <TRATVolume.cxx>
 //#include <TReconVectors.cxx>
   #include <TRATGeo.cxx>
+  #include <TRATNeutronGen.cxx>
   #include <TMath.h>
 
   // make pi, e

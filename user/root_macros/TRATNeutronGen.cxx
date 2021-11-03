@@ -34,9 +34,10 @@ TRATNeutronGen::TRATNeutronGen()
   // neutron mass in MeV/c^2
   fNeutronMass = 939.5654133;
   // set output
-  const char* outFile = "bgNeutrons";
-  fOutFilename.Form("%s.dat", outFile);
-  fOutStream.open(fOutFilename.Data());
+  const char* outFile = "bgNeutronSpec";
+//fOutFilename.Form("%s.dat", outFile);
+//fOutStream.open(fOutFilename.Data());
+  fOutFilename.Form("%s.root", outFile);
   // pulling the functions and parameters from the JEDEC standard
   Double_t A1 = 1.006e-6, b1 = 0.35, c1 = 2.1451;
   Double_t A2 = 1.011e-3, b2 = 0.4106, c2 = -0.667;
@@ -69,57 +70,64 @@ TRATNeutronGen::TRATNeutronGen()
 //  fNeutronSpectrum.Draw("same");
 }
 
+////______________________________________________________________________________
+//// set outfile
+//TRATNeutronGen::SetOutFile( const char* newOutFile )
+//{
+//  if (fOutStream.is_open()) fOutStream.close();
+//  fOutFilename.Form("%s", newOutFile);
+//  fOutStream.open(newOutFile);
+//}
+
 //______________________________________________________________________________
 // set outfile
 TRATNeutronGen::SetOutFile( const char* newOutFile )
 {
-  if (fOutStream.is_open()) fOutStream.close();
-  fOutFilename.Form("%s", newOutFile);
-  fOutStream.open(newOutFile);
+  fOutFilename.Form("%s.root", newOutFile);
 }
 
-//______________________________________________________________________________
-// Generate
-TRATNeutronGen::Generate(Long64_t numNeutrons)
-{
-//TString startMsg = TString::Format("Generating and writing neutrons to %s...", fOutFilename.Data());
-  TString startMsg = TString::Format("Generating and writing neutrons to %s...", "TTree* TN");
-  TString endMsg("Done.");
-  Double_t nEnergy;
-  Long64_t k(0);
-  this->Info("TRATNeutronGen", startMsg.Data());
-  TTree *TN = new TTree("TN", "Muogenic Fast Neutrons");
-  TN->Branch("nEnergy", &nEnergy, "nEnergy/D");
-//// prepare hist (testing)
-//const Int_t nBinsEBP = 100;
-//Double_t xmin(1.e-1), xmax(2.e3);
-//Double_t logxmin = TMath::Log10(xmin);
-//Double_t logxmax = TMath::Log10(xmax);
-//Double_t binwidth = (logxmax-logxmin)/nBinsEBP;
-//Double_t xbinsEBP[nBinsEBP+1];
-//xbinsEBP[0] = xmin;
-//for (Int_t m=1;m<=nBinsEBP;m++) {
-// xbinsEBP[m] = TMath::Power(10,logxmin+m*binwidth);
+////______________________________________________________________________________
+//// Generate
+//TRATNeutronGen::Generate(Long64_t numNeutrons)
+//{
+////TString startMsg = TString::Format("Generating and writing neutrons to %s...", fOutFilename.Data());
+//  TString startMsg = TString::Format("Generating and writing neutrons to %s...", "TTree* TN");
+//  TString endMsg("Done.");
+//  Double_t nEnergy;
+//  Long64_t k(0);
+//  this->Info("TRATNeutronGen", startMsg.Data());
+//  TTree *TN = new TTree("TN", "Muogenic Fast Neutrons");
+//  TN->Branch("nEnergy", &nEnergy, "nEnergy/D");
+////// prepare hist (testing)
+////const Int_t nBinsEBP = 100;
+////Double_t xmin(1.e-1), xmax(2.e3);
+////Double_t logxmin = TMath::Log10(xmin);
+////Double_t logxmax = TMath::Log10(xmax);
+////Double_t binwidth = (logxmax-logxmin)/nBinsEBP;
+////Double_t xbinsEBP[nBinsEBP+1];
+////xbinsEBP[0] = xmin;
+////for (Int_t m=1;m<=nBinsEBP;m++) {
+//// xbinsEBP[m] = TMath::Power(10,logxmin+m*binwidth);
+////}
+////TH1D *hgen = new TH1D("hgen", "hgen", nBinsEBP, xbinsEBP);
+//  // GENERATE
+//  for ( k=0; k<numNeutrons; k++ ) {
+////  fOutStream << "Neutron_number: " << k << "\tNeutron_energy: " << fSpecHist.GetRandom() << endl;
+////  fOutStream << k << "\t" << fSpecHist.GetRandom() << endl;
+////  hgen->Fill( fSpecHist.GetRandom() );
+//    nEnergy = fSpecHist.GetRandom();
+//    TN->Fill();
+//  }
+//  this->Info("TRATNeutronGen", endMsg.Data());
+////// plot results (testing)
+////TCanvas *c_hgen = new TCanvas("c_hgen", "c_hgen");
+////c_hgen->cd();
+////hgen->SetAxisRange(0.5, hgen->GetMaximum(), "y");
+////c_hgen->SetLogx(1);
+////c_hgen->SetLogy(1);
+////hgen->Draw();
+////fOutStream.close();
 //}
-//TH1D *hgen = new TH1D("hgen", "hgen", nBinsEBP, xbinsEBP);
-  // GENERATE
-  for ( k=0; k<numNeutrons; k++ ) {
-//  fOutStream << "Neutron_number: " << k << "\tNeutron_energy: " << fSpecHist.GetRandom() << endl;
-//  fOutStream << k << "\t" << fSpecHist.GetRandom() << endl;
-//  hgen->Fill( fSpecHist.GetRandom() );
-    nEnergy = fSpecHist.GetRandom();
-    TN->Fill();
-  }
-  this->Info("TRATNeutronGen", endMsg.Data());
-//// plot results (testing)
-//TCanvas *c_hgen = new TCanvas("c_hgen", "c_hgen");
-//c_hgen->cd();
-//hgen->SetAxisRange(0.5, hgen->GetMaximum(), "y");
-//c_hgen->SetLogx(1);
-//c_hgen->SetLogy(1);
-//hgen->Draw();
-//fOutStream.close();
-}
 
 // from OCTAVE version:
 //% generate energies from spectrum
@@ -135,15 +143,53 @@ TRATNeutronGen::Generate(Long64_t numNeutrons)
 //end %for
 
 //______________________________________________________________________________
-// Generate
-TRATNeutronGen::
+// KEtoMom -- convert KE scalar to random (isotropic) Mom vector
+TRATNeutronGen::KEtoMom(Double_t KE)
 {
+  TVector3 *Mom = new TVector3;
+  Double_t P, M = fNeutronMass;
+  // get random direction
+  Mom->SetXYZ( gRandom->Uniform(-1.,1.), gRandom->Uniform(-1.,1.), gRandom->Uniform(-1.,1.) );
+  // using p^2 = K^2 - m^2  -->  p = sqrt( K*(K+2m) )
+  P = TMath::Sqrt( KE * ( KE + 2*M ) );
+  Mom = P * (Mom->Unit());
+  return Mom;
 }
 
-////______________________________________________________________________________
-//TRATNeutronGen::
-//{
-//}
+//______________________________________________________________________________
+// Generate
+TRATNeutronGen::Generate(Long64_t numNeutrons)
+{
+  TString startMsg = TString::Format("Generating and writing neutrons to %s...", "TTree* TN");
+  TString endMsg("Done.");
+  Double_t nEnergy;
+  TVector3 *nMom = new TVector3;
+  Long64_t k;
+//TTree *T = new TTree("T_BGN", "Muogenic Fast Neutrons");
+  fTree = TTree("T_BGN", "Muogenic Fast Neutrons");
+  fTree.Branch("nEnergy", &nEnergy);
+  fTree.Branch("nMom", &nMom);
+  this->Info("TRATNeutronGen", startMsg.Data());
+  // GENERATE
+  for ( k=0; k<numNeutrons; k++ ) {
+    nEnergy = fSpecHist.GetRandom();
+//  nEnergy = (Double_t)k + 10.; //debug
+    nMom = (TVector3*)KEtoMom(nEnergy);
+//  cout << k << "\t" << nEnergy << "\t" << nMom->X() << " " << nMom->Y() << " " << nMom->Z() << endl; //debug
+    fTree.Fill();
+  }
+  this->Info("TRATNeutronGen", endMsg.Data());
+}
+
+//______________________________________________________________________________
+// SaveROOT
+TRATNeutronGen::SaveROOT()
+{
+  TFile *f = TFile::Open(fOutFilename.Data(), "recreate");
+  fTree.Write("T_BGN");
+  f->Write();
+  f->Close();
+}
 
 //______________________________________________________________________________
 // DrawSpectrum
