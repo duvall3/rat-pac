@@ -51,7 +51,7 @@ Int_t j = 0, nScaleRings = 5, scaleStep = TMath::Nint(1.*hinMax/nScaleRings);
 //Int_t scaleMax = 10**(pow10);
 //Int_t j = 0, nScaleRings = 5, scaleStep = TMath::Nint(TMath::Ceil(scaleMax/nScaleRings));
 TH2D *h_scale = new TH2D( "h_scale", "scale for radar plot", N, xlow, xup, nScaleRings, 0., scaleMax );
-h_scale->SetLineColor(TColor::GetColorDark(kGray));
+h_scale->SetLineColor(16);
 h_scale->SetLineWidth(2.);
 h_scale->SetStats(0);
 for ( k=0; k<=N; k++ ) {
