@@ -45,8 +45,23 @@ c_ke->SetLogy(1);
 h->GetXaxis()->SetTitle("KE (MeV)");
 h->GetYaxis()->SetTitle("Entries");
 h->GetXaxis()->SetTitleOffset(1.2);
+h->GetYaxis()->SetTitleOffset(1.2);
 c_ke->SetGridx(1);
 c_ke->SetGridy(1);
+
+//// for use fitting muogenic fast-neutron spectrum (at or near sea level):
+//.L TRATNeutronGen.cxx
+//TRATNeutronGen n;
+//TF1 *fNS = n.GetSpectrum();
+//TF1 *f = fNS->Clone("f");
+//TH1D *h = plotKElog(T);
+//Double_t N = h->GetEntries();
+//Double_t A1 = N/25., A2 = A1/100.;
+//f->SetParameter(0, A1);
+//f->SetParameter(3, A2);
+//TFitResultPtr F = h->Fit(f, "SR");
+//TFitResult *r = F.Get();
+////r->Print();
 
 // all pau!   )
 return h;
