@@ -51,6 +51,7 @@ private:
   void			FindExperiment();	// set experiment name, path, etc.
   void			FindVolumeType();	// set volume type (i.e., shape)
   void			FindMaterial();		// set volume material
+  void			FindDensity();		// set volume density
   void			FindMother();		// set mother volume name
   void			FindRelativePosition();	// set volume relative position
   void			FindSize();		// set dimensions (*box-type only*)
@@ -75,6 +76,8 @@ public:
   TVector3*		GetSize() const { return &fSize; }
   TVector3*		GetRelativePosition() const { return &fRelativePosition; }
   TVector3*		GetAbsolutePosition() const { return &fAbsolutePosition; }
+  // derived quantities:
+  // NOTE: currently only working after TRATGeo::ShowAll() has been called
   Double_t		Area(); // m^2		// currently box-type only
   Double_t		AreaCM() { return Area()*(1.e2)**2; }
   Double_t		AreaMM() { return Area()*(1.e3)**2; }
@@ -82,7 +85,7 @@ public:
   Double_t		VolumeCM() { return Volume()*(1.e2)**3; }
   Double_t		VolumeMM() { return Volume()*(1.e3)**3; }
   Double_t		VolumeL() { return VolumeCM()*1.e-3; }
-  Double_t		Mass() { return GetDensity() * VolumeL(); }  // kg
+  Double_t		Mass() { return fDensity * VolumeL(); }  // kg
   Double_t		MassG() { return GetDensity() * VolumeCM(); }
   Double_t		MassTons() { return GetDensity() * Volume(); }
   void			CheckDerivedQuantities(); //debug

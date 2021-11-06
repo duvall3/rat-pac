@@ -187,7 +187,7 @@ TRATGeo::Build(const char* tcRegexp)
   TIter i(db);
   // db entry loop
   infoLoc.Form("%s::Build()", defaultName.Data());
-  infoMsg.Form("Generating volumes...");
+  infoMsg.Form("Generating volumes...\n");
   this->Info(infoLoc.Data(), infoMsg.Data());
   // db entry loop
   for ( i=db->begin(); i!=db->end(); ++i ) {
@@ -207,8 +207,9 @@ TRATGeo::Build(const char* tcRegexp)
       fVolumeList->Add(v);
     } // end if -- relevant entry
   } // end db entry loop
-infoMsg.Form("Done.");
-this->Info(infoLoc.Data(), infoMsg.Data());
+  ShowAll(); //KEEPME -- workaround for filling derived quantities
+  infoMsg.Form("Done.\n");
+  this->Info(infoLoc.Data(), infoMsg.Data());
 }
 
 //______________________________________________________________________________

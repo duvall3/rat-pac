@@ -104,6 +104,8 @@ TRATVolume::TRATVolume( const char* name, const TMap *db )
   delete errLoc;
   delete dbKey;
   delete titStr;
+//// possible fix for derived quantities (honestly no idea why)
+//Print(kTRUE);
 }
 
 //______________________________________________________________________________
@@ -123,19 +125,6 @@ TRATVolume::SetVolume(const char* newNameChr)
   fVolName = TString(newNameChr);
   FindAll();
   FindAbsolutePosition();
-}
-
-//______________________________________________________________________________
-// FindDensity
-TRATVolume::FindDensity()
-{
-  TString keyStr = TString::Format("MATERIAL[%s].density", fMaterial.Data());
-  TObjString *dos = (TObjString*)fDB->GetValue(keyStr.Data());
-  TString dStr = dos->GetString();
-  dStr.ReplaceAll("d","");
-  Double_t d = dStr.Atof();
-  Double_t D = (Double_t)d;
-  fDensity = d;
 }
 
 //______________________________________________________________________________
@@ -181,6 +170,18 @@ TRATVolume::FindMaterial()
   TString volMaterial = typeTOS->GetString();
   volMaterial.ReplaceAll("\"","");
   fMaterial = volMaterial;
+}
+
+//______________________________________________________________________________
+// FindDensity
+TRATVolume::FindDensity()
+{
+  TString keyStr = TString::Format("MATERIAL[%s].density", fMaterial.Data());
+  TObjString *dos = (TObjString*)fDB->GetValue(keyStr.Data());
+  TString dStr = dos->GetString();
+  dStr.ReplaceAll("d","");
+  Double_t density = dStr.Atof();
+  fDensity = density;
 }
 
 //______________________________________________________________________________
@@ -313,37 +314,49 @@ TRATVolume::Volume()
   }
 }
 
+////______________________________________________________________________________
+//// Mass
+//TRATVolume::Mass()
+//{
+//  Doub
+//}
+
 //______________________________________________________________________________
 // override Print
+//TRATVolume::Print(Bool_t kPrint = kTRUE)
 TRATVolume::Print()
 {
-  printf("\n");
-  printf("%s\t%s\t%s\n", Class_Name(), GetName(), GetTitle());
-  printf("Volume Name: %s\n", fVolNameChr);
-  printf("ROOT File: "); cout << fFile << endl;
-  printf("ROOT Filename:\t%s\n", fFileName);
-  printf("Experiment:\t\t%s\n", fExperiment.Data());
-  printf("Experiment Path:\t%s\n", fExperimentPath.Data());
-  printf("RAT-PAC Database TMap: "); cout << fDB << endl;
-  printf("Volume Type: %s\n", fVolumeType.Data());
-  printf("Material: %s\n", fMaterial.Data());
-  printf("Mother Volume: %s\n", fMother.Data());
-  printf("Volume Half-Size (mm): %f  %f  %f\n", fSize.X(), fSize.Y(), fSize.Z());
-  printf("Relative Position (mm): %f  %f  %f\n", fRelativePosition.X(), fRelativePosition.Y(), fRelativePosition.Z());
-  printf("Absolute Position (mm): %f  %f  %f\n", fAbsolutePosition.X(), fAbsolutePosition.Y(), fAbsolutePosition.Z());
-  printf("Box Area (m^2): %e\n", Area());
-  printf("Box Volume (L): %e\n", VolumeL());
-  printf("Box Mass (kg): %e\n", Mass());
-  printf("\n");
+//if (kPrint) {
+    printf("\n");
+    printf("%s\t%s\t%s\n", Class_Name(), GetName(), GetTitle());
+    printf("Volume Name: %s\n", fVolNameChr);
+    printf("ROOT File: "); cout << fFile << endl;
+    printf("ROOT Filename:\t%s\n", fFileName);
+    printf("Experiment:\t\t%s\n", fExperiment.Data());
+    printf("Experiment Path:\t%s\n", fExperimentPath.Data());
+    printf("RAT-PAC Database TMap: "); cout << fDB << endl;
+    printf("Volume Type: %s\n", fVolumeType.Data());
+    printf("Material: %s\n", fMaterial.Data());
+    printf("Mother Volume: %s\n", fMother.Data());
+    printf("Volume Half-Size (mm): %f  %f  %f\n", fSize.X(), fSize.Y(), fSize.Z());
+    printf("Relative Position (mm): %f  %f  %f\n", fRelativePosition.X(), fRelativePosition.Y(), fRelativePosition.Z());
+    printf("Absolute Position (mm): %f  %f  %f\n", fAbsolutePosition.X(), fAbsolutePosition.Y(), fAbsolutePosition.Z());
+    printf("Box Area (m^2): %e\n", Area());
+    printf("Box Volume (L): %e\n", VolumeL());
+    printf("Box Mass (kg): %e\n", Mass());
+    printf("\n");
+//}
 }
 
 //______________________________________________________________________________
 // CheckDerivedQuantities
 TRATVolume::CheckDerivedQuantities()
 {
+  printf("\n");
   printf("Area:\t%e m^2\t%e cm^2\t%e mm^2\n", Area(), AreaCM(), AreaMM());
   printf("Volume:\t%e m^3\t%e cm^3\t%e mm^3\t%e L\n", Volume(), VolumeCM(), VolumeMM(), VolumeL());
   printf("Mass:\t%e kg\t\t%e g\t\t%e t\n", Mass(), MassG(), MassTons());
+  printf("\n");
 }
 
 ////______________________________________________________________________________
