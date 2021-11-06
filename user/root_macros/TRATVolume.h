@@ -41,6 +41,7 @@ private:
   const TMap*		fDB;			// RAT-PAC database TMap
   TString		fVolumeType;		// name of volume type (i.e., shape)
   TString		fMaterial;		// volume material
+  Double_t		fDensity;		// volume density
   TString		fMother;		// name of mother volume
   TVector3		fSize;			// half-lengths in {x,y,z} (*box-type only*)
   TVector3		fRelativePosition;	// volume position, *relative to mother volume*
@@ -69,13 +70,25 @@ public:
   TMap*			GetDB() const { return fDB; }
   TString		GetVolumeType() const { return fVolumeType; }
   TString		GetMaterial() const { return fMaterial; }
+  Double_t		GetDensity() const { return fDensity; }
   TString		GetMother() const { return fMother; }
   TVector3*		GetSize() const { return &fSize; }
   TVector3*		GetRelativePosition() const { return &fRelativePosition; }
   TVector3*		GetAbsolutePosition() const { return &fAbsolutePosition; }
+  Double_t		Area(); // m^2		// currently box-type only
+  Double_t		AreaCM() { return Area()*(1.e2)**2; }
+  Double_t		AreaMM() { return Area()*(1.e3)**2; }
+  Double_t		Volume(); // m^3;	// currently box-type only
+  Double_t		VolumeCM() { return Volume()*(1.e2)**3; }
+  Double_t		VolumeMM() { return Volume()*(1.e3)**3; }
+  Double_t		VolumeL() { return VolumeCM()*1.e-3; }
+  Double_t		Mass() { return GetDensity() * VolumeL(); }  // kg
+  Double_t		MassG() { return GetDensity() * VolumeCM(); }
+  Double_t		MassTons() { return GetDensity() * Volume(); }
+  void			CheckDerivedQuantities(); //debug
 
 //Integrating the TRATVolume class to ROOT.
-ClassDef(TRATVolume,3)
+ClassDef(TRATVolume,4)
 
 }; //end class
 

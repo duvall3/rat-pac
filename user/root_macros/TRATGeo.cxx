@@ -207,7 +207,7 @@ TRATGeo::Build(const char* tcRegexp)
       fVolumeList->Add(v);
     } // end if -- relevant entry
   } // end db entry loop
-infoMsg.Form("Done.\n");
+infoMsg.Form("Done.");
 this->Info(infoLoc.Data(), infoMsg.Data());
 }
 
@@ -232,7 +232,12 @@ TRATGeo::BuildCheckerboard( const Int_t kDims ) // = 3
 // -- Example: TRATGeo g; g.Build(); TRATVolume *v = (TRATVolume*)g.GetVolume("water_shield");
 TRATGeo::GetVolume(const char* volumeName)
 {
-  return fVolumeList->FindObject(volumeName);
+  TRATVolume *v = (TRATVolume*)fVolumeList->FindObject(volumeName);
+  if (v == 0) {
+    TString errMsg = TString::Format("Volume \"%s\" not found in current TRATGeo::GetListOfVolumes().", volumeName);// in RAT-PAC database (TMap*)db located at 0x%x.", volumeName, fDB);
+    this->Error("GetVolume", errMsg.Data());
+  }
+  return v;
 }
 
 //______________________________________________________________________________

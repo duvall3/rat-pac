@@ -50,6 +50,7 @@ TRATVolume::TRATVolume()
   fExperimentPath = "";
   fDB = 0;
   fVolumeType = "";
+  fMaterial = "";
   fMother = "";
   fSize = TVector3(0.0,0.0,0.0);
   fRelativePosition = TVector3(0.0,0.0,0.0);
@@ -125,12 +126,26 @@ TRATVolume::SetVolume(const char* newNameChr)
 }
 
 //______________________________________________________________________________
+// FindDensity
+TRATVolume::FindDensity()
+{
+  TString keyStr = TString::Format("MATERIAL[%s].density", fMaterial.Data());
+  TObjString *dos = (TObjString*)fDB->GetValue(keyStr.Data());
+  TString dStr = dos->GetString();
+  dStr.ReplaceAll("d","");
+  Double_t d = dStr.Atof();
+  Double_t D = (Double_t)d;
+  fDensity = d;
+}
+
+//______________________________________________________________________________
 // FindAll
 TRATVolume::FindAll()
 {
   FindExperiment();
   FindVolumeType();
   FindMaterial();
+  FindDensity();
   FindMother();
   FindSize();
   FindRelativePosition();
@@ -270,15 +285,33 @@ TRATVolume::FindAbsolutePosition()
   }
 }
 
-////______________________________________________________________________________
-//TRATVolume::
-//{
-//}
+//______________________________________________________________________________
+// Area	// m^2	// currently box-type only
+TRATVolume::Area()
+{
+  if ( fVolumeType == "box" ) {
+    Double_t l = 2*fSize.X()*1.e-3, w = 2*fSize.Y()*1.e-3, h = 2*fSize.Z()*1.e-3;
+    Double_t A = 2 * (l*w + w*h + h*l);
+    return A;
+  } else {
+    this->Warning("TRATVolume::Area", "currently implemented for \"box\"-type volumes only\n");
+    return 0.;
+  }
+}
 
-////______________________________________________________________________________
-//TRATVolume::
-//{
-//}
+//______________________________________________________________________________
+// Volume // m^3  // currently box-type only
+TRATVolume::Volume()
+{
+  if ( fVolumeType == "box" ) {
+    Double_t l = 2*fSize.X()*1.e-3, w = 2*fSize.Y()*1.e-3, h = 2*fSize.Z()*1.e-3;
+    Double_t V = l * w * h;
+    return V;
+  } else {
+    this->Warning("TRATVolume::Volume", "currently implemented for \"box\"-type volumes only\n");
+    return 0.;
+  }
+}
 
 //______________________________________________________________________________
 // override Print
@@ -295,11 +328,33 @@ TRATVolume::Print()
   printf("Volume Type: %s\n", fVolumeType.Data());
   printf("Material: %s\n", fMaterial.Data());
   printf("Mother Volume: %s\n", fMother.Data());
-  printf("Volume Size: %f  %f  %f\n", fSize.X(), fSize.Y(), fSize.Z());
-  printf("Relative Position: %f  %f  %f\n", fRelativePosition.X(), fRelativePosition.Y(), fRelativePosition.Z());
-  printf("Absolute Position: %f  %f  %f\n", fAbsolutePosition.X(), fAbsolutePosition.Y(), fAbsolutePosition.Z());
+  printf("Volume Half-Size (mm): %f  %f  %f\n", fSize.X(), fSize.Y(), fSize.Z());
+  printf("Relative Position (mm): %f  %f  %f\n", fRelativePosition.X(), fRelativePosition.Y(), fRelativePosition.Z());
+  printf("Absolute Position (mm): %f  %f  %f\n", fAbsolutePosition.X(), fAbsolutePosition.Y(), fAbsolutePosition.Z());
+  printf("Box Area (m^2): %e\n", Area());
+  printf("Box Volume (L): %e\n", VolumeL());
+  printf("Box Mass (kg): %e\n", Mass());
   printf("\n");
 }
+
+//______________________________________________________________________________
+// CheckDerivedQuantities
+TRATVolume::CheckDerivedQuantities()
+{
+  printf("Area:\t%e m^2\t%e cm^2\t%e mm^2\n", Area(), AreaCM(), AreaMM());
+  printf("Volume:\t%e m^3\t%e cm^3\t%e mm^3\t%e L\n", Volume(), VolumeCM(), VolumeMM(), VolumeL());
+  printf("Mass:\t%e kg\t\t%e g\t\t%e t\n", Mass(), MassG(), MassTons());
+}
+
+////______________________________________________________________________________
+//TRATVolume::
+//{
+//}
+
+////______________________________________________________________________________
+//TRATVolume::
+//{
+//}
 
 //} // namespace TRV
 
