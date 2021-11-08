@@ -150,7 +150,7 @@ TGeoVolume* mother = new TGeoVolume; // mother volume
 Int_t k_volume(0); // volume counter
 // loop over creted TGeoVolumes
 TGeoVolume *vol, *volMother;
-TString volname, volMotherName;
+TString volname, volMotherName, warnLoc, warnMsg;
 TGeoTranslation *trans;
 TIter iv = vols->begin();
 //vols->ls(); //debug
@@ -163,7 +163,7 @@ for ( iv = vols->begin(); iv != vols->end(); ++iv ) {
   rvol = (TRATVolume*)g->GetVolume(volname.Data());
   volPosition = rvol->GetAbsolutePosition();
 
-  if (vol->IsTopVolume()) continue; // skip world (already positioned when made top volume)
+  if ( (vol->IsTopVolume()) || (volname=="world") ) continue; // skip world (already positioned when made top volume)
 
   trans = new TGeoTranslation( volPosition->X(), volPosition->Y(), volPosition->Z() );
 //trans->Print(); //debug
@@ -171,10 +171,14 @@ for ( iv = vols->begin(); iv != vols->end(); ++iv ) {
   // find mother and add node
   volMotherName = rvol->GetMother();
   volMother = (TGeoVolume*)vols->FindObject(volMotherName.Data());
-  if (volname.Contains(tcregex)) volMother->AddNode(vol, k_volume, trans);
+  if ( volMother == 0 ) {
+    warnLoc.Form("RATPACEventViewer");
+    warnMsg.Form("volMother \"%s\" of volume \"%s\" not found in list at 0x%x.", volMotherName.Data(), volname.Data(); vols);
+    g->Warning(warnLoc.Data(), warnMsg.Data());
+  } else {
+    if (volname.Contains(tcregex)) volMother->AddNode(vol, k_volume, trans);
+  }
   k_volume++;
-
-//delete trans;
 
 } // end mother/node db loop
 
