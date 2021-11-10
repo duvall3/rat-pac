@@ -26,6 +26,7 @@ gROOT->LoadMacro("angularRecon.cxx");
 //gROOT->LoadMacro("neutronInitialMomenta.cxx");
 //gROOT->LoadMacro("neutronCaptures.cxx");
 gROOT->LoadMacro("ibdTracksToScint.cxx");
+gROOT->LoadMacro("particleTracksToScint.cxx");
 //gROOT->LoadMacro("findCellScintTotal.cxx");
 //gROOT->LoadMacro("findCellScintTotalQuenched.cxx");
 gROOT->LoadMacro("shiftStats.cxx");
@@ -46,6 +47,8 @@ gROOT->LoadMacro("radarPlot.cxx");
 gROOT->LoadMacro("drawAllCosPsi.cxx");
 //gROOT->LoadMacro("backgroundNeutrons.cxx");
 gROOT->LoadMacro("logBins.cxx");
+gROOT->LoadMacro("plotKElog.cxx");
+gROOT->LoadMacro("TIBDParams.cxx");
 
 // all pau!   )
 }
