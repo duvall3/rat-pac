@@ -16,11 +16,10 @@
 //
 {
 
-//#include <TDuvallAnalyze.cxx>
+  #include <TIBDParams.cxx>
   #include <TRATVolume.cxx>
-//#include <TReconVectors.cxx>
   #include <TRATGeo.cxx>
-  #include <TRATNeutronGen.cxx>
+//#include <TRATNeutronGen.cxx>
   #include <TMath.h>
 
   // make pi, e
@@ -29,6 +28,9 @@
 
   // define decent legend coordinates
   Double_t legx1(.01), legy1(.83), legx2(.12), legy2(.93);
+
+  // define convenient zoom function
+  gROOT->LoadMacro("Zoom.cxx");
 
   // load RAT-PAC macros
   gROOT->LoadMacro("duvall3Macros.cxx");

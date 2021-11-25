@@ -1,5 +1,5 @@
-// ratfileInit -- because typing this a few thousand times has been enough
-// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 7/2021 ~ //
+// findVarsOfType -- list global variables of a specified type
+// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 11/2021 ~ //
 
 //Copyright (C) 2021 Mark J. Duvall / T. Rocks Science
 //
@@ -16,22 +16,28 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-{
+void findVarsOfType( const char* varType = "" ) {
 
-  // filename stuff
-  const char* dirname = gSystem->pwd();
-  TString FN = dirname;
-  FN = FN(FN.Last('/')+1, FN.Length()-1);
-  FN.Append(".root");
-  const char* filename = FN.Data();
+// init
+TRegexp varRE(varType);
+Int_t varCount;
+TString gvarType;
+TCollection *glist = gROOT->GetListOfGlobals(kTRUE);
+TGlobal *gvar;
+TIter i(glist);
 
-  // MAIN
-  RAT::DSReader r(filename);
-  RAT::DS::Root* ds = r.GetEvent(0);
-  RAT::DS::MC *mc = ds->GetMC();
-  RAT::TrackNav nav(ds);
-  RAT::TrackCursor c = nav.Cursor(kFALSE);
-  RAT::TrackNode* n = c.Here();
+// loop over list
+for ( i=glist->begin(); i!=glist->end(); ++i ) {
+  gvar = (TGlobal*)*i;
+  gvarType.Form("%s", gvar->GetTypeName());
+  if ( gvarType.Contains(varRE) ) {
+    varCount++;
+    printf("%s\t%s\n", gvar->GetTypeName(), gvar->GetName());
+  }
+}
+if (varCount>5) printf("Found %d global variables matching type \"%s\".\n", varCount, varType);
 
 // all pau!   )
+return;
 }
+

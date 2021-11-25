@@ -293,6 +293,7 @@ TRATVolume::Area()
   if ( fVolumeType == "box" ) {
     Double_t l = 2*fSize.X()*1.e-3, w = 2*fSize.Y()*1.e-3, h = 2*fSize.Z()*1.e-3;
     Double_t A = 2 * (l*w + w*h + h*l);
+//  printf("%f %f %f\t%e\n", fSize.X(), fSize.Y(), fSize.Z(), A); //debug
     return A;
   } else {
     this->Warning("TRATVolume::Area", "currently implemented for \"box\"-type volumes only\n");
@@ -308,6 +309,7 @@ TRATVolume::Volume()
     Double_t l = 2*fSize.X()*1.e-3, w = 2*fSize.Y()*1.e-3, h = 2*fSize.Z()*1.e-3;
     Double_t V = l * w * h;
     return V;
+//  return 2.5; //debug
   } else {
     this->Warning("TRATVolume::Volume", "currently implemented for \"box\"-type volumes only\n");
     return 0.;
@@ -315,47 +317,70 @@ TRATVolume::Volume()
 }
 
 ////______________________________________________________________________________
-//// Mass
-//TRATVolume::Mass()
+//// NuFlux
+//TRATVolume::NuFlux( Double_t standoff, Double_t reactorNuRate )
 //{
-//  Doub
+//  Double_t nuFlux = reactorNuRate / ( 4 * TMath::Pi() * standoff**2 );
+//  TString s = TString::Format("%e", nuFlux);
+//  TObjString *os = new TObjString(s.Data());
+//  return os;
+//}
+//
+////______________________________________________________________________________
+//// IBDVolRate
+//TRATVolume::IBDVolRate( Double_t standoff, Double_t reactorNuRate, Double_t nH )
+//{
+//  TObjString *os = (TObjString*)NuFlux(standoff, reactorNuRate);
+//  Double_t nuFlux = os->GetString().Atof();
+//  Double_t volRate = nH * 5.e-43 * nuFlux; // IBD cross-section ~ 5x10^-43 cm^2 at E_nu ~ 2 MeV (mTC Invited Article)
+//  TString svr = TString::Format("%e", volRate);
+//  TObjString *osvr  = new TObjString(svr.Data());
+//  return osvr;
+//}
+//
+////______________________________________________________________________________
+//// IBDRate
+//TRATVolume::IBDRate()
+//{
+//  TObjString* osvr = (TObjString*)IBDVolRate( 500., 4.e18, 5.16e22 );
+//  Double_t ibdvr = osvr->GetString().Atof();
+//  Double_t ibdr = ibdvr * VolumeCM();
+//  TString sr = TString::Format("%e", ibdr);
+//  TObjString *osr = new TObjString(sr.Data());
+//  return osr;
 //}
 
 //______________________________________________________________________________
 // override Print
-//TRATVolume::Print(Bool_t kPrint = kTRUE)
 TRATVolume::Print()
 {
-//if (kPrint) {
-    printf("\n");
-    printf("%s\t%s\t%s\n", Class_Name(), GetName(), GetTitle());
-    printf("Volume Name: %s\n", fVolNameChr);
-    printf("ROOT File: "); cout << fFile << endl;
-    printf("ROOT Filename:\t%s\n", fFileName);
-    printf("Experiment:\t\t%s\n", fExperiment.Data());
-    printf("Experiment Path:\t%s\n", fExperimentPath.Data());
-    printf("RAT-PAC Database TMap: "); cout << fDB << endl;
-    printf("Volume Type: %s\n", fVolumeType.Data());
-    printf("Material: %s\n", fMaterial.Data());
-    printf("Mother Volume: %s\n", fMother.Data());
-    printf("Volume Half-Size (mm): %f  %f  %f\n", fSize.X(), fSize.Y(), fSize.Z());
-    printf("Relative Position (mm): %f  %f  %f\n", fRelativePosition.X(), fRelativePosition.Y(), fRelativePosition.Z());
-    printf("Absolute Position (mm): %f  %f  %f\n", fAbsolutePosition.X(), fAbsolutePosition.Y(), fAbsolutePosition.Z());
-    printf("Box Area (m^2): %e\n", Area());
-    printf("Box Volume (L): %e\n", VolumeL());
-    printf("Box Mass (kg): %e\n", Mass());
-    printf("\n");
-//}
+  printf("\n");
+  printf("%s at 0x%x\n", Class_Name(), this);
+  printf("Volume Name: %s\n", GetName());
+  printf("ROOT File: "); cout << fFile << endl;
+  printf("ROOT Filename: %s\n", fFileName);
+  printf("Experiment:  %s\n", fExperiment.Data());
+  printf("Experiment Path: %s\n", fExperimentPath.Data());
+  printf("RAT-PAC Database TMap: "); cout << fDB << endl;
+  printf("Volume Type: %s\n", fVolumeType.Data());
+  printf("Material: %s\n", fMaterial.Data());
+  printf("Mother Volume: %s\n", fMother.Data());
+  printf("Volume Half-Size (mm): %f  %f  %f\n", fSize.X(), fSize.Y(), fSize.Z());
+  printf("Relative Position (mm): %f  %f  %f\n", fRelativePosition.X(), fRelativePosition.Y(), fRelativePosition.Z());
+  printf("Absolute Position (mm): %f  %f  %f\n", fAbsolutePosition.X(), fAbsolutePosition.Y(), fAbsolutePosition.Z());
+  printf("\n");
 }
 
 //______________________________________________________________________________
-// CheckDerivedQuantities
-TRATVolume::CheckDerivedQuantities()
+// PrintDerivedQuantities
+TRATVolume::PrintDerivedQuantities()
 {
   printf("\n");
+  printf("Volume Name: %s\n", GetName());
   printf("Area:\t%e m^2\t%e cm^2\t%e mm^2\n", Area(), AreaCM(), AreaMM());
   printf("Volume:\t%e m^3\t%e cm^3\t%e mm^3\t%e L\n", Volume(), VolumeCM(), VolumeMM(), VolumeL());
   printf("Mass:\t%e kg\t\t%e g\t\t%e t\n", Mass(), MassG(), MassTons());
+  printf("Muogenic Neutron Rate at Sea Level (cps): %e\n", MuNeutronRate());
   printf("\n");
 }
 

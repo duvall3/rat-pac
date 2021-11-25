@@ -177,6 +177,9 @@ for ( iv = vols->begin(); iv != vols->end(); ++iv ) {
     g->Warning(warnLoc.Data(), warnMsg.Data());
   } else {
     if (volname.Contains(tcregex)) volMother->AddNode(vol, k_volume, trans);
+    if (volname.Contains(waterregex)) {
+      volMother->AddNode(vol, k_volume, trans);
+    }
   }
   k_volume++;
 
@@ -194,6 +197,7 @@ TString can_name = experiment+", \""+filename+"\"";
 TCanvas* can = new TCanvas("can", can_name, 1000, 100, 850, 700);
 //can->SetFillColor(kCyan);
 world->Draw();
+
 // draw desired volumes
 //for ( iv = vols->begin(); iv != vols->end(); ++iv ) {
 //  vol = (TGeoVolume*)*iv;
@@ -207,8 +211,22 @@ TLegend *gleg = new TLegend(0.01, 0.01, 0.25, 0.15);
 gleg->SetName("Geometry Legend");
 gleg->AddEntry(volume, "Detector Volume(s)", "lf");
 //gleg->AddEntry(target_cell, "Target Cells", "lf");
-gleg->AddEntry(world, "Cave Walls", "lf");
+gleg->AddEntry(world, "World", "lf");
 gleg->Draw();
+
+// special volumes
+TGeoVolume *wat = geo->GetVolume("water_shield");
+if ( wat != 0 ) {
+  wat->SetLineColor(kBlue);
+  gleg->AddEntry(wat, "Water Shield", "lf");
+  wat->Draw("same");
+}
+TGeoVolume *cave = geo->GetVolume("cave");
+if ( cave != 0 ) {
+  cave->SetLineColor(kOrange+2);
+  gleg->AddEntry(cave, "Cave Walls", "lf");
+  cave->Draw("same");
+}
 
 // all pau!   )
 return g;

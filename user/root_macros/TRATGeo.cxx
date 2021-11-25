@@ -194,9 +194,10 @@ TRATGeo::Build(const char* tcRegexp)
     tp = (TPair*)*i;
     keyTOS = (TObjString*)tp->Key();
     keyStr = keyTOS->GetString();
-    if ( (keyStr.Contains(dbIndexPattern)) || (keyStr.Contains("world")) || (keyStr.Contains("cave")) ) { // relevant entry
+    if ( (keyStr.Contains(dbIndexPattern)) || (keyStr.Contains("world")) || (keyStr.Contains("cave")) || (keyStr.Contains("shield")) ) { // relevant entry
       keyStr.ReplaceAll("GEO[","");
       keyStr = keyStr(0, keyStr.Index(']'));
+      if ( fVolumeList->FindObject(keyStr.Data()) != 0 ) continue; // avoid duplication
 //    infoMsg.Form("Found relevant entry: %s", keyStr.Data()); //debug
 //    this->Info("Build()", infoMsg.Data()); //debug
       // create TRATVolume* and add to list
@@ -207,7 +208,7 @@ TRATGeo::Build(const char* tcRegexp)
       fVolumeList->Add(v);
     } // end if -- relevant entry
   } // end db entry loop
-  ShowAll(); //KEEPME -- workaround for filling derived quantities
+//ShowAll(); //KEEPME -- workaround for filling derived quantities
   infoMsg.Form("Done.\n");
   this->Info(infoLoc.Data(), infoMsg.Data());
 }
@@ -326,6 +327,20 @@ TRATGeo::ShowAll()
   for ( i=fVolumeList->begin(); i!=fVolumeList->end(); ++i ) {
     v = (TRATVolume*)*i;
     v->Print();
+  }
+}
+
+//______________________________________________________________________________
+// Names
+TRATGeo::Names()
+{
+  TString volName;
+  TRATVolume* vol;
+  Int_t k, N(fVolumeList->GetEntries());
+  for ( k=0; k<(N-1); k++ ) {
+    vol = (TRATVolume*)fVolumeList->At(k);
+    volName = vol->GetName();
+    printf( "%s\n", volName.Data() );
   }
 }
 

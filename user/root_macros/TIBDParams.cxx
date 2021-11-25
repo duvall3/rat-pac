@@ -91,7 +91,9 @@ TIBDParams::NuFlux()
 // IBDVolRate
 TIBDParams::IBDVolRate()
 {
-  Double_t volRate = fnH * GetXS() * NuFlux();
+//Double_t volRate = fnH * GetXS() * NuFlux();
+  Double_t volRate = GetHydrogenDensity() * GetXS() * NuFlux();
+//printf("IBDVolRate = %e IBD/cm^3/s\n", volRate); //debug
   return volRate;
 }
 
@@ -135,17 +137,17 @@ TIBDParams::Print()
   Bool_t reqParams(kFALSE);
   printf("\n");
 //printf("%s\t%s\t%s\n", Class_Name(), GetName(), GetTitle());
-  printf("%s at 0x%x\n", Class_Name(), this);
-  printf("CONSTANTS:\nIBD_XS\t\t%e\tcm^2\nIBD_XSBarns\t%e\tbarns\nIBD_Threshold\t%e\tMeV\nMuNeutron_Flux\t%e\tn0/cm^2/s\n", GetXS(), GetXSBarns(), GetThreshold(), GetMuNeutronFlux());
-//printf("DERIVED QUANTITES, GENERAL:\nNuFlux\t\t%e\tnu_e_bar/cm^2/s\nIBDVolRate\t%e\tIBD/cm^3/s\n", NuFlux(), IBDVolRate());
+  printf("%s for \"%s\" at: 0x%x\n", Class_Name(), fTRV->GetName(), this);
+  printf("CONSTANTS:\n  IBD_XS\t\t%e\tcm^2\n  IBD_XSBarns\t\t%e\tbarns\n  IBD_Threshold\t\t%e\tMeV\n  MuNeutron_Flux\t%e\tn0 / cm^2 / s\n", GetXS(), GetXSBarns(), GetThreshold(), GetMuNeutronFlux());
+//printf("DERIVED QUANTITES, GENERAL:\n  NuFlux\t\t%e\tnu_e_bar/cm^2/s\n  IBDVolRate\t%e\tIBD/cm^3/s\n", NuFlux(), IBDVolRate());
 //printf("DERIVED QUANTITES, GENERAL:\n");
   if ( (fReactorNuRate!=0) || (fStandoff!=0) ) printf("DERIVED QUANTITES, GENERAL:\n");
-  if (fReactorNuRate!=0) printf("ReactorNuRate\t%e\tnu_e_bar/s\n", GetReactorNuRate());
-  if (fStandoff!=0) printf("Standoff\t%e\tcm\n", GetStandoff());
-  if ( (fReactorNuRate!=0) && (fStandoff!=0) ) printf("NuFlux\t\t%e\tnu_e_bar/cm^2/s\n", NuFlux());
-  if ( (fReactorNuRate!=0) && (fStandoff!=0) && (fnH!=0) ) printf( "IBDVolRate\t%e\tIBD/cm^3/s\n", IBDVolRate());
+  if (fReactorNuRate!=0) printf("  ReactorNuRate\t\t%e\tnu_e_bar  /  s\n", GetReactorNuRate());
+  if (fStandoff!=0) printf("  Standoff\t\t%e\tcm\n", GetStandoff());
+  if ( (fReactorNuRate!=0) && (fStandoff!=0) ) printf("  NuFlux\t\t%e\tnu_e_bar / cm^2 / s\n", NuFlux());
+  if ( (fReactorNuRate!=0) && (fStandoff!=0) && (fnH!=0) ) printf("  IBDVolRate\t\t%e\tIBD / cm^3 / s\n", IBDVolRate());
   if ( (fReactorNuRate!=0) && (fStandoff!=0) && (fnH!=0) && (fTRV!=0) ) reqParams = kTRUE;
-  if (reqParams) printf("DERIVED QUANTITES, VOLUME-SPECIFIC:\nMuNeutronRate\t%e\tn0/cm^2/s\nIBDRate\t\t%e\tIBD/s\n", MuNeutronRate(), IBDRate());
+  if (reqParams) printf("DERIVED QUANTITES, VOLUME-SPECIFIC:\n  MuNeutronRate\t\t%e\tn0 / cm^2 / s\n  IBDRate\t\t%e\tIBD / s\n", MuNeutronRate(), IBDRate());
   printf("\n");
 }
 

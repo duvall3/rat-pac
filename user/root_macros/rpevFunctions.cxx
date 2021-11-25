@@ -19,9 +19,10 @@
 
 
 // define function to draw e+ and n0 tracks for a given top-level MC event
-int drawTracks( Int_t event = 0, Bool_t ibd_TF = kTRUE, Bool_t highlight_TF = kTRUE ) {
+int drawTracks( Int_t event = 0, Bool_t highlight_TF = kTRUE ) {
 
   // init
+  Bool_t kIBD = kFALSE;
   TTree* tree = (TTree*)gDirectory->FindObjectAny("T");
   Int_t last_event = tree->GetEntries()-1;
   if ( event < 0 || event > last_event ) {
@@ -36,78 +37,69 @@ int drawTracks( Int_t event = 0, Bool_t ibd_TF = kTRUE, Bool_t highlight_TF = kT
   RAT::TrackNav nav(ds);
   RAT::TrackCursor c = nav.Cursor(kFALSE);
   RAT::TrackNode *n;
+  RAT::DS::MC *mc = ds->GetMC();
+  Int_t mcCount = mc->GetMCParticleCount();
   TGeoManager* geo = gGeoManager;
   geo->ClearTracks();
   TObjArray* track_list = geo->GetListOfTracks();
   Int_t track_no;
 
-  // positron (if IBD; otherwise, single primary particle)
-  n = c.GoChild(0);
-  parname = n->GetParticleName();
-  stepcount = c.StepCount();
-  track_no++;
-  geo->AddTrack( track_no, n->GetPDGCode() );
-  TGeoTrack* e_track = track_list->At(track_no-1);
-  for ( step = 0; step < stepcount; step++ ) {
-    n = c.GoStep(step);
-  //e_track->AddPoint( n->GetEndpoint().x()/10., n->GetEndpoint().y()/10., n->GetEndpoint().z()/10., n->GetGlobalTime() ); //cm
-    e_track->AddPoint( n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z(), n->GetGlobalTime() );
-  }
-  e_track->SetName(parname);
-  e_track->SetLineColor(kRed);
-  e_track->SetLineWidth(3);
-  e_track->SetLineStyle(0);
+  // MCParticle loop
+  Int_t mcp;
+  for ( mcp=0; mcp<mcCount; mcp++ ) {
 
-  // for IBD, now process neutron
-
-  if ( ibd_TF == kTRUE ) {
-
-    // back to top-level MC event
-    c.GoParent();
-
-    // neutron
-    n = c.GoChild(1);
+    n = c.GoChild(mcp);
     parname = n->GetParticleName();
     stepcount = c.StepCount();
     track_no++;
     geo->AddTrack( track_no, n->GetPDGCode() );
-    TGeoTrack* n_track = track_list->At(track_no-1);
+    TGeoTrack* mcp_track = track_list->At(track_no-1);
     for ( step = 0; step < stepcount; step++ ) {
       n = c.GoStep(step);
-  //  n_track->AddPoint( n->GetEndpoint().x()/10., n->GetEndpoint().y()/10., n->GetEndpoint().z()/10., n->GetGlobalTime() ); //cm
-      n_track->AddPoint( n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z(), n->GetGlobalTime() );
+      mcp_track->AddPoint( n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z(), n->GetGlobalTime() );
     }
-    n_track->SetName(parname);
-    n_track->SetLineColor(kBlue);
-    n_track->SetLineWidth(3);
-    n_track->SetLineStyle(0);
+    mcp_track->SetName(parname);
+//  mcp_track->SetLineColor(kRed);
+    mcp_track->SetLineWidth(3);
+    mcp_track->SetLineStyle(0);
+    if (parname == "neutron") {
+      mcp_track->SetLineColor(kBlue);
+    } else {
+      mcp_track->SetLineColor(kRed);
+    }
 
     // capture products
-    Int_t cap_prod_count = c.ChildCount();
-    Int_t cap_prod_no;
-    for ( cap_prod_no=0; cap_prod_no<cap_prod_count; cap_prod_no++ ) {
-      n = c.GoChild(cap_prod_no);
-      parname = n->GetParticleName();
-      stepcount = c.StepCount();
-      track_no++;
-      geo->AddTrack( track_no, n->GetPDGCode() );
-      TGeoTrack* cap_prod_track = track_list->At(track_no-1);
-      for ( step = 0; step < stepcount; step++ ) {
-	n = c.GoStep(step);
-       //ap_prod_track->AddPoint( n->GetEndpoint().x()/10., n->GetEndpoint().y()/10., n->GetEndpoint().z()/10., n->GetGlobalTime() ); //cm
-	cap_prod_track->AddPoint( n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z(), n->GetGlobalTime() );
-      }
-      cap_prod_track->SetName(parname);
-      cap_prod_track->SetLineColor(5+cap_prod_no);
-      cap_prod_track->SetLineWidth(3);
-      cap_prod_track->SetLineStyle(0);
-      c.GoParent();
-    } //end for
+    if (parname == "neutron") {
+      Int_t cap_prod_count = c.ChildCount();
+      Int_t cap_prod_no;
+      for ( cap_prod_no=0; cap_prod_no<cap_prod_count; cap_prod_no++ ) {
+	n = c.GoChild(cap_prod_no);
+	parname = n->GetParticleName();
+	stepcount = c.StepCount();
+	track_no++;
+	geo->AddTrack( track_no, n->GetPDGCode() );
+	TGeoTrack* cap_prod_track = track_list->At(track_no-1);
+	for ( step = 0; step < stepcount; step++ ) {
+	  n = c.GoStep(step);
+	  cap_prod_track->AddPoint( n->GetEndpoint().x(), n->GetEndpoint().y(), n->GetEndpoint().z(), n->GetGlobalTime() );
+	}
+	cap_prod_track->SetName(parname);
+	cap_prod_track->SetLineColor(5+cap_prod_no);
+	cap_prod_track->SetLineWidth(3);
+	cap_prod_track->SetLineStyle(0);
+	c.GoParent();
+      } //end for
+    } // end if -- neutron
 
-  } //end if -- ibd_TF
+    // draw
+    geo->DrawTracks();
+
+    // back to top-level MC event
+    c.GoParent();
+
+  } // MCParticle loop
 
   // draw tracks and print summary
-  geo->DrawTracks();
   Printf( "\nTrack Summary for Event %i:\n", event);
   track_list->Print();
 
@@ -118,14 +110,12 @@ int drawTracks( Int_t event = 0, Bool_t ibd_TF = kTRUE, Bool_t highlight_TF = kT
   if ( tleg != 0x0 )  { tleg->Delete(); }
   TLegend* tleg = new TLegend(0.85, 0.01, 0.99, 0.30);
   tleg->SetName("Track Legend");
-  tleg->AddEntry(e_track, e_track->GetName());
-  if ( ibd_TF == kTRUE )  { tleg->AddEntry(n_track, n_track->GetName()); }
-  Int_t total_tracks = track_list->GetEntries();
-  if ( total_tracks > 2 ) {
-    for ( k=2; k<total_tracks; k++ ) {
-      TGeoTrack* cap_track = (TGeoTrack*)track_list->At(k);
-      tleg->AddEntry(cap_track, cap_track->GetName());
-    }
+  TGeoTrack *leg_track;
+  track_list = geo->GetListOfTracks();
+  TIter iT(track_list);
+  for ( iT=track_list->begin(); iT!=track_list->end(); ++iT ) {
+    leg_track = (TGeoTrack*)*iT;
+    tleg->AddEntry(leg_track, leg_track->GetName(), "lp");
   }
   tleg->Draw();
 
@@ -142,8 +132,12 @@ int drawTracks( Int_t event = 0, Bool_t ibd_TF = kTRUE, Bool_t highlight_TF = kT
   label->AddText(evname);
   label->Draw();
 
-  // highlight cells if desired
-  if ( highlight_TF == kTRUE ) { highlightCells(); }
+  // if IBD and if requested, highlight cells
+  if ( mc->GetMCParticleCount() == 2 ) {
+    Bool_t t0positron = ( mc->GetMCParticle(0)->GetParticleName() == "e+" );
+    Bool_t t1neutron = ( mc->GetMCParticle(1)->GetParticleName() == "neutron" );
+    if (t0positron && t1neutron && highlight_TF) highlightCells();
+  } // end if
 
   // return event number for possible additional use
   return event;
@@ -164,21 +158,22 @@ void drawNextEvent() {
   TRegexp tr = "[0-9]";
   evname.Remove( 0, evname.Index(tr) );
   Int_t ev = evname.Atoi();
-  // retrieve ibd_TF
-  Bool_t ibd_TF;
-  TLegend* tl = c->GetListOfPrimitives()->FindObject("Track Legend");
-  Int_t num_tracks = tl->GetListOfPrimitives()->LastIndex() + 1;
-  if ( num_tracks < 2  ) {
-    ibd_TF = kFALSE;
-  } else if ( num_tracks == 2 ) {
-    ibd_TF = kTRUE;
-  } else {
-    ibd_TF = kTRUE;
-    cout << "WARNING: Only the first two top-level tracks will be drawn." << endl;
-  }
+//// retrieve ibd_TF
+//Bool_t ibd_TF;
+//TLegend* tl = c->GetListOfPrimitives()->FindObject("Track Legend");
+//Int_t num_tracks = tl->GetListOfPrimitives()->LastIndex() + 1;
+//if ( num_tracks < 2  ) {
+//  ibd_TF = kFALSE;
+//} else if ( num_tracks == 2 ) {
+//  ibd_TF = kTRUE;
+//} else {
+//  ibd_TF = kTRUE;
+//  cout << "WARNING: Only the first two top-level tracks will be drawn." << endl;
+//}
   // increment event and draw
   ev++;
-  drawTracks(ev, ibd_TF);
+//drawTracks(ev, ibd_TF);
+  drawTracks(ev);
 }
 
 
@@ -195,18 +190,18 @@ void drawPrevEvent() {
   TRegexp tr = "[0-9]";
   evname.Remove( 0, evname.Index(tr) );
   Int_t ev = evname.Atoi();
-  // retrieve ibd_TF
-  Bool_t ibd_TF;
-  TLegend* tl = c->GetListOfPrimitives()->FindObject("Track Legend");
-  Int_t num_tracks = tl->GetListOfPrimitives()->LastIndex() + 1;
-  if ( num_tracks < 2  ) {
-    ibd_TF = kFALSE;
-  } else if ( num_tracks == 2 ) {
-    ibd_TF = kTRUE;
-  } else {
-    ibd_TF = kTRUE;
-    cout << "WARNING: Only the first two top-level tracks will be drawn." << endl;
-  }
+//// retrieve ibd_TF
+//Bool_t ibd_TF;
+//TLegend* tl = c->GetListOfPrimitives()->FindObject("Track Legend");
+//Int_t num_tracks = tl->GetListOfPrimitives()->LastIndex() + 1;
+//if ( num_tracks < 2  ) {
+//  ibd_TF = kFALSE;
+//} else if ( num_tracks == 2 ) {
+//  ibd_TF = kTRUE;
+//} else {
+//  ibd_TF = kTRUE;
+//  cout << "WARNING: Only the first two top-level tracks will be drawn." << endl;
+//}
   // increment event and draw
   ev--;
   drawTracks(ev);

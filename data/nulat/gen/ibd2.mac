@@ -1,4 +1,4 @@
-# ibd.mac -- IBD generator macro -- CENTRAL CUBE ONLY
+# ibd.mac -- IBD generator macro -- ALL CUBES
 
 /generator/add combo ibd:regexfill:poisson
 #/generator/vtx/set 0 0 1
@@ -6,5 +6,5 @@
 #/generator/pos/set 0 -9924 0
 #/generator/pos/set 0 0 -9924
 #/generator/pos/set target_cube
-/generator/pos/set target_cube_mid_mid_mid
+/generator/pos/set target_cube_
 /generator/rate/set 1

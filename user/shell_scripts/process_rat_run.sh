@@ -35,7 +35,10 @@ eval "root -q -l -b $ROOTCOMMAND"
 # make output directory & move all the new output files there
 mkdir $BASENAME
 mv -t $BASENAME $BASENAME?*
-if [ -f geogen*.log ]; then cp -t $BASENAME geogen*.log; fi
+#if [ -f geogen*.log ]; then cp -t $BASENAME geogen*.log; fi
+for GEOLOG in geogen*.log; do
+  if [ -f $GEOLOG ]; then cp -t $BASENAME "$BASENAME_"$GEOLOG; fi
+done
 
 # all pau!  )
 exit 0

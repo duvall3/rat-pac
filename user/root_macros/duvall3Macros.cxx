@@ -48,7 +48,9 @@ gROOT->LoadMacro("drawAllCosPsi.cxx");
 //gROOT->LoadMacro("backgroundNeutrons.cxx");
 gROOT->LoadMacro("logBins.cxx");
 gROOT->LoadMacro("plotKElog.cxx");
-gROOT->LoadMacro("TIBDParams.cxx");
+//gROOT->LoadMacro("TIBDParams.cxx");
+gROOT->LoadMacro("findVarsOfType.cxx");
+
+}
 
 // all pau!   )
-}

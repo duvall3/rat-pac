@@ -33,9 +33,6 @@ private:
   Double_t		fnH;			// H-atom density of target material (atoms / cm^3)
   TRATVolume*		fTRV;			// pointer to TRATVolume object being analyzed
 
-//private:
-//  void			Update();		// update calculations
-
 public:
   TIBDParams();
   TIBDParams( TRATVolume *vol );
@@ -57,8 +54,6 @@ public:
   Double_t		NuFlux(); // predicted antineutrino flux (nu_e_bar / cm^2 / s)
   Double_t		IBDVolRate(); // predicted volumetric IBD rate (IBDs / cm^3 / s)
   // derived quantites for a given TRATVolume
-//Double_t		MuNeutronRate() { return GetMuNeutronFlux()*(fTRV->GetAreaCM()); } // predicted muogenic fast-neutron rate
-//Double_t		IBDRate() { return IBDVolRate()*(fTRV->GetVolumeCM()); } // predicted IBD rate for this volume (IBDs / s)
   Double_t		MuNeutronRate(); // predicted muogenic fast-neutron rate (n0/s)
   Double_t		IBDRate(); // predicted IBD rate (IBD/s)
 

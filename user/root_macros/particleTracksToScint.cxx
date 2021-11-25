@@ -107,7 +107,7 @@ for ( k=0; k<N; k++ ) { // event loop
   event = k;
   ds = r.GetEvent(k);
   RAT::TrackNav nav(ds);
-//c = nav.Cursor(0);
+//c = nav.Cursor(0); // moved inside MCParticle loop
   mc = ds->GetMC();
   mcChildren = mc->GetMCParticleCount();
   event_time = mc->GetUTC().AsDouble();
@@ -128,10 +128,10 @@ for ( k=0; k<N; k++ ) { // event loop
     isLepton = (TMath::Abs(pdgcode) < leptonLower ? kFALSE : TMath::Abs(pdgcode) > leptonUpper ? kFALSE : kTRUE);
     isNeutron = (pdgcode==2112);
 
-    //debug
-    cout << "kMCP: " << kMCP << endl;
-    printf("Event: %d\nPDGCode: %d\t Particle: %s\nTrack: %d\nParent: 0x%x\n", k, pdgcode, pclName.Data(), n->GetTrackID(), c.Parent());
-    if (kMCP == mcChildren-1) cout << endl;
+//    //debug
+//    cout << "kMCP: " << kMCP << endl;
+//    printf("Event: %d\nPDGCode: %d\t Particle: %s\nTrack: %d\nParent: 0x%x\n", k, pdgcode, pclName.Data(), n->GetTrackID(), c.Parent());
+//    if (kMCP == mcChildren-1) cout << endl;
 
     // for leptons:
     if (isLepton) {
@@ -229,6 +229,9 @@ for ( k=0; k<N; k++ ) { // event loop
 
   // keep memory from blowing up
   nav.Clear();
+
+  // update user
+  if ( (k%1000==0) ) printf("  Processed %d events...\n", k );
 
 } // event loop
 

@@ -63,7 +63,8 @@ public:
   TRATVolume*		FindLowestVolumeContaining( TVector3 location, Bool_t kPrint = kFALSE );
   TRATVolume*		FindLowestVolumeContaining( Double_t x, Double_t y, Double_t z, Bool_t kPrint = kFALSE );
   void			ShowVolume(const char* volumeName);
-  void			ShowAll();
+  void			ShowAll();		// call TRATVolume::Print() on all volumes
+  void			Names();		// print volume names
   void			Types();		// print volume types
   void			Materials();		// print volume materials
   void			Mothers();		// print volume mother-volumes

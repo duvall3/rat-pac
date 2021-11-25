@@ -1,5 +1,5 @@
-// ratfileInit -- because typing this a few thousand times has been enough
-// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 7/2021 ~ //
+// nextRATEvent -- see ratfileInit.cxx
+// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 11/2021 ~ //
 
 //Copyright (C) 2021 Mark J. Duvall / T. Rocks Science
 //
@@ -18,20 +18,12 @@
 
 {
 
-  // filename stuff
-  const char* dirname = gSystem->pwd();
-  TString FN = dirname;
-  FN = FN(FN.Last('/')+1, FN.Length()-1);
-  FN.Append(".root");
-  const char* filename = FN.Data();
-
-  // MAIN
-  RAT::DSReader r(filename);
-  RAT::DS::Root* ds = r.GetEvent(0);
-  RAT::DS::MC *mc = ds->GetMC();
-  RAT::TrackNav nav(ds);
-  RAT::TrackCursor c = nav.Cursor(kFALSE);
-  RAT::TrackNode* n = c.Here();
+bool kVerboseCursor = c.GetVerbose();
+nav.Clear();
+ds = r.NextEvent();
+mc = ds->GetMC();
+RAT::TrackNav nav(ds);
+c = nav.Cursor(kVerboseCursor);
 
 // all pau!   )
 }

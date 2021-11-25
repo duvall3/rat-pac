@@ -368,6 +368,7 @@ nu_hat.Print();
 
 // set cut parameters //thresholds
 trigger_reset = 800.e-6;
+//trigger_reset = 1.e-9;  //TESTING ONLY
 //deltaT_low = 10.e-6;
 //deltaT_high = 100.e-6;
 //prompt_low = 0.00;

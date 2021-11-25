@@ -87,7 +87,11 @@ for ( k=0; k<N; k++ ) {
   // match-finding / tolerance tests
   T2->Draw(">>eList", totalCut, "entrylist");
   eList = (TEntryList*)gDirectory->FindObjectAny("eList");
-  N_list = eList->GetN();
+  if (eList == 0) {
+    N_list = 0;
+  } else {
+    N_list = eList->GetN();
+  }
   if ( N_list == 0 ) {
     match_count_0++;
   } else if ( N_list == 1 ) {

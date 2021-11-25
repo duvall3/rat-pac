@@ -32,7 +32,8 @@ resultsfile = basename + "_results.root";
 
 // check / load macros
 if ( ! gInterpreter->IsLoaded("rt_to_root.cxx") ) gROOT->LoadMacro("rt_to_root.cxx");
-if ( ! gInterpreter->IsLoaded("ibdTracksToScint.cxx") ) gROOT->LoadMacro("ibdTracksToScint.cxx");
+//if ( ! gInterpreter->IsLoaded("ibdTracksToScint.cxx") ) gROOT->LoadMacro("ibdTracksToScint.cxx");
+if ( ! gInterpreter->IsLoaded("particleTracksToScint.cxx") ) gROOT->LoadMacro("particleTracksToScint.cxx");
 if ( ! gInterpreter->IsLoaded("correctEnergies.cxx") ) gROOT->LoadMacro("correctEnergies.cxx");
 if ( ! gInterpreter->IsLoaded("SEDAQ2.cxx") ) gROOT->LoadMacro("SEDAQ2.cxx");
 if ( ! gInterpreter->IsLoaded("angularRecon.cxx") ) gROOT->LoadMacro("angularRecon.cxx");
@@ -40,7 +41,8 @@ if ( ! gInterpreter->IsLoaded("angularRecon.cxx") ) gROOT->LoadMacro("angularRec
 // MAIN
 printf( "\n\n//// Preparing datarun \"%s\"... ////\n\n\n", basename.Data() );
 rt_to_root( rtfile.Data() );
-ibdTracksToScint( rootfile.Data() );
+//ibdTracksToScint( rootfile.Data() );
+particleTracksToScint( rootfile.Data() );
 correctEnergies( scintfile.Data(), energiesfile.Data() );
 printf( "//// Preparation Complete ////\n\n\n" );
 //printf( "\n\n//// Analyzing datarun \"%s\"... ////\n\n\n", basename.Data() );
