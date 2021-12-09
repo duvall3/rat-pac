@@ -22,13 +22,28 @@ valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "world",
 type: "box",
-size: [10000.0, 10000.0, 10000.0], // mm
+//size: [10000.0, 10000.0, 10000.0], // mm
+size: [1600.0, 1600.0, 1600.0], // mm
 material: "air",
 color: [0.8 0.1, 0.1],
-invisible: 1,
+invisible: 0,
 //position: [] -- center of "world"
 }
 
+
+// -------- GEO[water_shield]
+{
+name: "GEO",
+index: "water_shield",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "cave",
+type: "box",
+size: [1557.000, 1000.500, 1330.500], // mm
+material: "water",
+invisible: 0,
+position: [0.0, 0.0, 0.0] // mm
+}
 
 // CELLS
 
@@ -38,9 +53,10 @@ name: "GEO",
 index: "target_cell_array",
 valid_begin: [0, 0],
 valid_end: [0, 0],
-mother: "cave",
+//mother: "cave",
+mother: "water_shield",
 type: "box",
-size: [1057.000, 500.500, 755.000], // mm
+size: [1057.000, 500.500, 830.500], // mm
 material: "air",
 invisible: 0,
 position: [0.0, 0.0, 0.0] // mm
@@ -56,9 +72,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-981.500, 0.0, -679.500] // mm
+position: [-981.500, 0.0, -755.000] // mm
 }
 
 
@@ -71,9 +87,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-981.500, 0.0, -528.500] // mm
+position: [-981.500, 0.0, -604.000] // mm
 }
 
 
@@ -86,9 +102,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-981.500, 0.0, -377.500] // mm
+position: [-981.500, 0.0, -453.000] // mm
 }
 
 
@@ -101,9 +117,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-981.500, 0.0, -226.500] // mm
+position: [-981.500, 0.0, -302.000] // mm
 }
 
 
@@ -116,9 +132,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-981.500, 0.0, -75.500] // mm
+position: [-981.500, 0.0, -151.000] // mm
 }
 
 
@@ -131,9 +147,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-981.500, 0.0, 75.500] // mm
+position: [-981.500, 0.0, 0.0] // mm
 }
 
 
@@ -146,9 +162,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-981.500, 0.0, 226.500] // mm
+position: [-981.500, 0.0, 151.000] // mm
 }
 
 
@@ -161,9 +177,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-981.500, 0.0, 377.500] // mm
+position: [-981.500, 0.0, 302.000] // mm
 }
 
 
@@ -176,9 +192,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-981.500, 0.0, 528.500] // mm
+position: [-981.500, 0.0, 453.000] // mm
 }
 
 
@@ -191,9 +207,24 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-981.500, 0.0, 679.500] // mm
+position: [-981.500, 0.0, 604.000] // mm
+}
+
+
+// -------- GEO[target_cell_0_0_10]
+{
+name: "GEO",
+index: "target_cell_0_0_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cell_array",
+type: "box",
+size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_0008li6",
+invisible: 0,
+position: [-981.500, 0.0, 755.000] // mm
 }
 
 
@@ -206,9 +237,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-830.500, 0.0, -679.500] // mm
+position: [-830.500, 0.0, -755.000] // mm
 }
 
 
@@ -221,9 +252,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-830.500, 0.0, -528.500] // mm
+position: [-830.500, 0.0, -604.000] // mm
 }
 
 
@@ -236,9 +267,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-830.500, 0.0, -377.500] // mm
+position: [-830.500, 0.0, -453.000] // mm
 }
 
 
@@ -251,9 +282,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-830.500, 0.0, -226.500] // mm
+position: [-830.500, 0.0, -302.000] // mm
 }
 
 
@@ -266,9 +297,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-830.500, 0.0, -75.500] // mm
+position: [-830.500, 0.0, -151.000] // mm
 }
 
 
@@ -281,9 +312,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-830.500, 0.0, 75.500] // mm
+position: [-830.500, 0.0, 0.0] // mm
 }
 
 
@@ -296,9 +327,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-830.500, 0.0, 226.500] // mm
+position: [-830.500, 0.0, 151.000] // mm
 }
 
 
@@ -311,9 +342,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-830.500, 0.0, 377.500] // mm
+position: [-830.500, 0.0, 302.000] // mm
 }
 
 
@@ -326,9 +357,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-830.500, 0.0, 528.500] // mm
+position: [-830.500, 0.0, 453.000] // mm
 }
 
 
@@ -341,9 +372,24 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-830.500, 0.0, 679.500] // mm
+position: [-830.500, 0.0, 604.000] // mm
+}
+
+
+// -------- GEO[target_cell_1_0_10]
+{
+name: "GEO",
+index: "target_cell_1_0_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cell_array",
+type: "box",
+size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_0008li6",
+invisible: 0,
+position: [-830.500, 0.0, 755.000] // mm
 }
 
 
@@ -356,9 +402,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-679.500, 0.0, -679.500] // mm
+position: [-679.500, 0.0, -755.000] // mm
 }
 
 
@@ -371,9 +417,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-679.500, 0.0, -528.500] // mm
+position: [-679.500, 0.0, -604.000] // mm
 }
 
 
@@ -386,9 +432,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-679.500, 0.0, -377.500] // mm
+position: [-679.500, 0.0, -453.000] // mm
 }
 
 
@@ -401,9 +447,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-679.500, 0.0, -226.500] // mm
+position: [-679.500, 0.0, -302.000] // mm
 }
 
 
@@ -416,9 +462,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-679.500, 0.0, -75.500] // mm
+position: [-679.500, 0.0, -151.000] // mm
 }
 
 
@@ -431,9 +477,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-679.500, 0.0, 75.500] // mm
+position: [-679.500, 0.0, 0.0] // mm
 }
 
 
@@ -446,9 +492,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-679.500, 0.0, 226.500] // mm
+position: [-679.500, 0.0, 151.000] // mm
 }
 
 
@@ -461,9 +507,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-679.500, 0.0, 377.500] // mm
+position: [-679.500, 0.0, 302.000] // mm
 }
 
 
@@ -476,9 +522,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-679.500, 0.0, 528.500] // mm
+position: [-679.500, 0.0, 453.000] // mm
 }
 
 
@@ -491,9 +537,24 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-679.500, 0.0, 679.500] // mm
+position: [-679.500, 0.0, 604.000] // mm
+}
+
+
+// -------- GEO[target_cell_2_0_10]
+{
+name: "GEO",
+index: "target_cell_2_0_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cell_array",
+type: "box",
+size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_0008li6",
+invisible: 0,
+position: [-679.500, 0.0, 755.000] // mm
 }
 
 
@@ -506,9 +567,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-528.500, 0.0, -679.500] // mm
+position: [-528.500, 0.0, -755.000] // mm
 }
 
 
@@ -521,9 +582,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-528.500, 0.0, -528.500] // mm
+position: [-528.500, 0.0, -604.000] // mm
 }
 
 
@@ -536,9 +597,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-528.500, 0.0, -377.500] // mm
+position: [-528.500, 0.0, -453.000] // mm
 }
 
 
@@ -551,9 +612,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-528.500, 0.0, -226.500] // mm
+position: [-528.500, 0.0, -302.000] // mm
 }
 
 
@@ -566,9 +627,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-528.500, 0.0, -75.500] // mm
+position: [-528.500, 0.0, -151.000] // mm
 }
 
 
@@ -581,9 +642,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-528.500, 0.0, 75.500] // mm
+position: [-528.500, 0.0, 0.0] // mm
 }
 
 
@@ -596,9 +657,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-528.500, 0.0, 226.500] // mm
+position: [-528.500, 0.0, 151.000] // mm
 }
 
 
@@ -611,9 +672,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-528.500, 0.0, 377.500] // mm
+position: [-528.500, 0.0, 302.000] // mm
 }
 
 
@@ -626,9 +687,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-528.500, 0.0, 528.500] // mm
+position: [-528.500, 0.0, 453.000] // mm
 }
 
 
@@ -641,9 +702,24 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-528.500, 0.0, 679.500] // mm
+position: [-528.500, 0.0, 604.000] // mm
+}
+
+
+// -------- GEO[target_cell_3_0_10]
+{
+name: "GEO",
+index: "target_cell_3_0_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cell_array",
+type: "box",
+size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_0008li6",
+invisible: 0,
+position: [-528.500, 0.0, 755.000] // mm
 }
 
 
@@ -656,9 +732,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-377.500, 0.0, -679.500] // mm
+position: [-377.500, 0.0, -755.000] // mm
 }
 
 
@@ -671,9 +747,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-377.500, 0.0, -528.500] // mm
+position: [-377.500, 0.0, -604.000] // mm
 }
 
 
@@ -686,9 +762,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-377.500, 0.0, -377.500] // mm
+position: [-377.500, 0.0, -453.000] // mm
 }
 
 
@@ -701,9 +777,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-377.500, 0.0, -226.500] // mm
+position: [-377.500, 0.0, -302.000] // mm
 }
 
 
@@ -716,9 +792,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-377.500, 0.0, -75.500] // mm
+position: [-377.500, 0.0, -151.000] // mm
 }
 
 
@@ -731,9 +807,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-377.500, 0.0, 75.500] // mm
+position: [-377.500, 0.0, 0.0] // mm
 }
 
 
@@ -746,9 +822,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-377.500, 0.0, 226.500] // mm
+position: [-377.500, 0.0, 151.000] // mm
 }
 
 
@@ -761,9 +837,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-377.500, 0.0, 377.500] // mm
+position: [-377.500, 0.0, 302.000] // mm
 }
 
 
@@ -776,9 +852,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-377.500, 0.0, 528.500] // mm
+position: [-377.500, 0.0, 453.000] // mm
 }
 
 
@@ -791,9 +867,24 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-377.500, 0.0, 679.500] // mm
+position: [-377.500, 0.0, 604.000] // mm
+}
+
+
+// -------- GEO[target_cell_4_0_10]
+{
+name: "GEO",
+index: "target_cell_4_0_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cell_array",
+type: "box",
+size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_0008li6",
+invisible: 0,
+position: [-377.500, 0.0, 755.000] // mm
 }
 
 
@@ -806,9 +897,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-226.500, 0.0, -679.500] // mm
+position: [-226.500, 0.0, -755.000] // mm
 }
 
 
@@ -821,9 +912,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-226.500, 0.0, -528.500] // mm
+position: [-226.500, 0.0, -604.000] // mm
 }
 
 
@@ -836,9 +927,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-226.500, 0.0, -377.500] // mm
+position: [-226.500, 0.0, -453.000] // mm
 }
 
 
@@ -851,9 +942,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-226.500, 0.0, -226.500] // mm
+position: [-226.500, 0.0, -302.000] // mm
 }
 
 
@@ -866,9 +957,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-226.500, 0.0, -75.500] // mm
+position: [-226.500, 0.0, -151.000] // mm
 }
 
 
@@ -881,9 +972,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-226.500, 0.0, 75.500] // mm
+position: [-226.500, 0.0, 0.0] // mm
 }
 
 
@@ -896,9 +987,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-226.500, 0.0, 226.500] // mm
+position: [-226.500, 0.0, 151.000] // mm
 }
 
 
@@ -911,9 +1002,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-226.500, 0.0, 377.500] // mm
+position: [-226.500, 0.0, 302.000] // mm
 }
 
 
@@ -926,9 +1017,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-226.500, 0.0, 528.500] // mm
+position: [-226.500, 0.0, 453.000] // mm
 }
 
 
@@ -941,9 +1032,24 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-226.500, 0.0, 679.500] // mm
+position: [-226.500, 0.0, 604.000] // mm
+}
+
+
+// -------- GEO[target_cell_5_0_10]
+{
+name: "GEO",
+index: "target_cell_5_0_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cell_array",
+type: "box",
+size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_0008li6",
+invisible: 0,
+position: [-226.500, 0.0, 755.000] // mm
 }
 
 
@@ -956,9 +1062,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-75.500, 0.0, -679.500] // mm
+position: [-75.500, 0.0, -755.000] // mm
 }
 
 
@@ -971,9 +1077,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-75.500, 0.0, -528.500] // mm
+position: [-75.500, 0.0, -604.000] // mm
 }
 
 
@@ -986,9 +1092,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-75.500, 0.0, -377.500] // mm
+position: [-75.500, 0.0, -453.000] // mm
 }
 
 
@@ -1001,9 +1107,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-75.500, 0.0, -226.500] // mm
+position: [-75.500, 0.0, -302.000] // mm
 }
 
 
@@ -1016,9 +1122,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-75.500, 0.0, -75.500] // mm
+position: [-75.500, 0.0, -151.000] // mm
 }
 
 
@@ -1031,9 +1137,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-75.500, 0.0, 75.500] // mm
+position: [-75.500, 0.0, 0.0] // mm
 }
 
 
@@ -1046,9 +1152,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-75.500, 0.0, 226.500] // mm
+position: [-75.500, 0.0, 151.000] // mm
 }
 
 
@@ -1061,9 +1167,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-75.500, 0.0, 377.500] // mm
+position: [-75.500, 0.0, 302.000] // mm
 }
 
 
@@ -1076,9 +1182,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-75.500, 0.0, 528.500] // mm
+position: [-75.500, 0.0, 453.000] // mm
 }
 
 
@@ -1091,9 +1197,24 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [-75.500, 0.0, 679.500] // mm
+position: [-75.500, 0.0, 604.000] // mm
+}
+
+
+// -------- GEO[target_cell_6_0_10]
+{
+name: "GEO",
+index: "target_cell_6_0_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cell_array",
+type: "box",
+size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_0008li6",
+invisible: 0,
+position: [-75.500, 0.0, 755.000] // mm
 }
 
 
@@ -1106,9 +1227,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [75.500, 0.0, -679.500] // mm
+position: [75.500, 0.0, -755.000] // mm
 }
 
 
@@ -1121,9 +1242,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [75.500, 0.0, -528.500] // mm
+position: [75.500, 0.0, -604.000] // mm
 }
 
 
@@ -1136,9 +1257,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [75.500, 0.0, -377.500] // mm
+position: [75.500, 0.0, -453.000] // mm
 }
 
 
@@ -1151,9 +1272,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [75.500, 0.0, -226.500] // mm
+position: [75.500, 0.0, -302.000] // mm
 }
 
 
@@ -1166,9 +1287,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [75.500, 0.0, -75.500] // mm
+position: [75.500, 0.0, -151.000] // mm
 }
 
 
@@ -1181,9 +1302,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [75.500, 0.0, 75.500] // mm
+position: [75.500, 0.0, 0.0] // mm
 }
 
 
@@ -1196,9 +1317,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [75.500, 0.0, 226.500] // mm
+position: [75.500, 0.0, 151.000] // mm
 }
 
 
@@ -1211,9 +1332,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [75.500, 0.0, 377.500] // mm
+position: [75.500, 0.0, 302.000] // mm
 }
 
 
@@ -1226,9 +1347,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [75.500, 0.0, 528.500] // mm
+position: [75.500, 0.0, 453.000] // mm
 }
 
 
@@ -1241,9 +1362,24 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [75.500, 0.0, 679.500] // mm
+position: [75.500, 0.0, 604.000] // mm
+}
+
+
+// -------- GEO[target_cell_7_0_10]
+{
+name: "GEO",
+index: "target_cell_7_0_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cell_array",
+type: "box",
+size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_0008li6",
+invisible: 0,
+position: [75.500, 0.0, 755.000] // mm
 }
 
 
@@ -1256,9 +1392,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [226.500, 0.0, -679.500] // mm
+position: [226.500, 0.0, -755.000] // mm
 }
 
 
@@ -1271,9 +1407,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [226.500, 0.0, -528.500] // mm
+position: [226.500, 0.0, -604.000] // mm
 }
 
 
@@ -1286,9 +1422,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [226.500, 0.0, -377.500] // mm
+position: [226.500, 0.0, -453.000] // mm
 }
 
 
@@ -1301,9 +1437,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [226.500, 0.0, -226.500] // mm
+position: [226.500, 0.0, -302.000] // mm
 }
 
 
@@ -1316,9 +1452,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [226.500, 0.0, -75.500] // mm
+position: [226.500, 0.0, -151.000] // mm
 }
 
 
@@ -1331,9 +1467,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [226.500, 0.0, 75.500] // mm
+position: [226.500, 0.0, 0.0] // mm
 }
 
 
@@ -1346,9 +1482,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [226.500, 0.0, 226.500] // mm
+position: [226.500, 0.0, 151.000] // mm
 }
 
 
@@ -1361,9 +1497,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [226.500, 0.0, 377.500] // mm
+position: [226.500, 0.0, 302.000] // mm
 }
 
 
@@ -1376,9 +1512,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [226.500, 0.0, 528.500] // mm
+position: [226.500, 0.0, 453.000] // mm
 }
 
 
@@ -1391,9 +1527,24 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [226.500, 0.0, 679.500] // mm
+position: [226.500, 0.0, 604.000] // mm
+}
+
+
+// -------- GEO[target_cell_8_0_10]
+{
+name: "GEO",
+index: "target_cell_8_0_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cell_array",
+type: "box",
+size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_0008li6",
+invisible: 0,
+position: [226.500, 0.0, 755.000] // mm
 }
 
 
@@ -1406,9 +1557,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [377.500, 0.0, -679.500] // mm
+position: [377.500, 0.0, -755.000] // mm
 }
 
 
@@ -1421,9 +1572,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [377.500, 0.0, -528.500] // mm
+position: [377.500, 0.0, -604.000] // mm
 }
 
 
@@ -1436,9 +1587,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [377.500, 0.0, -377.500] // mm
+position: [377.500, 0.0, -453.000] // mm
 }
 
 
@@ -1451,9 +1602,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [377.500, 0.0, -226.500] // mm
+position: [377.500, 0.0, -302.000] // mm
 }
 
 
@@ -1466,9 +1617,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [377.500, 0.0, -75.500] // mm
+position: [377.500, 0.0, -151.000] // mm
 }
 
 
@@ -1481,9 +1632,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [377.500, 0.0, 75.500] // mm
+position: [377.500, 0.0, 0.0] // mm
 }
 
 
@@ -1496,9 +1647,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [377.500, 0.0, 226.500] // mm
+position: [377.500, 0.0, 151.000] // mm
 }
 
 
@@ -1511,9 +1662,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [377.500, 0.0, 377.500] // mm
+position: [377.500, 0.0, 302.000] // mm
 }
 
 
@@ -1526,9 +1677,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [377.500, 0.0, 528.500] // mm
+position: [377.500, 0.0, 453.000] // mm
 }
 
 
@@ -1541,9 +1692,24 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [377.500, 0.0, 679.500] // mm
+position: [377.500, 0.0, 604.000] // mm
+}
+
+
+// -------- GEO[target_cell_9_0_10]
+{
+name: "GEO",
+index: "target_cell_9_0_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cell_array",
+type: "box",
+size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_0008li6",
+invisible: 0,
+position: [377.500, 0.0, 755.000] // mm
 }
 
 
@@ -1556,9 +1722,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [528.500, 0.0, -679.500] // mm
+position: [528.500, 0.0, -755.000] // mm
 }
 
 
@@ -1571,9 +1737,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [528.500, 0.0, -528.500] // mm
+position: [528.500, 0.0, -604.000] // mm
 }
 
 
@@ -1586,9 +1752,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [528.500, 0.0, -377.500] // mm
+position: [528.500, 0.0, -453.000] // mm
 }
 
 
@@ -1601,9 +1767,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [528.500, 0.0, -226.500] // mm
+position: [528.500, 0.0, -302.000] // mm
 }
 
 
@@ -1616,9 +1782,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [528.500, 0.0, -75.500] // mm
+position: [528.500, 0.0, -151.000] // mm
 }
 
 
@@ -1631,9 +1797,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [528.500, 0.0, 75.500] // mm
+position: [528.500, 0.0, 0.0] // mm
 }
 
 
@@ -1646,9 +1812,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [528.500, 0.0, 226.500] // mm
+position: [528.500, 0.0, 151.000] // mm
 }
 
 
@@ -1661,9 +1827,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [528.500, 0.0, 377.500] // mm
+position: [528.500, 0.0, 302.000] // mm
 }
 
 
@@ -1676,9 +1842,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [528.500, 0.0, 528.500] // mm
+position: [528.500, 0.0, 453.000] // mm
 }
 
 
@@ -1691,9 +1857,24 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [528.500, 0.0, 679.500] // mm
+position: [528.500, 0.0, 604.000] // mm
+}
+
+
+// -------- GEO[target_cell_10_0_10]
+{
+name: "GEO",
+index: "target_cell_10_0_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cell_array",
+type: "box",
+size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_0008li6",
+invisible: 0,
+position: [528.500, 0.0, 755.000] // mm
 }
 
 
@@ -1706,9 +1887,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [679.500, 0.0, -679.500] // mm
+position: [679.500, 0.0, -755.000] // mm
 }
 
 
@@ -1721,9 +1902,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [679.500, 0.0, -528.500] // mm
+position: [679.500, 0.0, -604.000] // mm
 }
 
 
@@ -1736,9 +1917,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [679.500, 0.0, -377.500] // mm
+position: [679.500, 0.0, -453.000] // mm
 }
 
 
@@ -1751,9 +1932,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [679.500, 0.0, -226.500] // mm
+position: [679.500, 0.0, -302.000] // mm
 }
 
 
@@ -1766,9 +1947,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [679.500, 0.0, -75.500] // mm
+position: [679.500, 0.0, -151.000] // mm
 }
 
 
@@ -1781,9 +1962,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [679.500, 0.0, 75.500] // mm
+position: [679.500, 0.0, 0.0] // mm
 }
 
 
@@ -1796,9 +1977,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [679.500, 0.0, 226.500] // mm
+position: [679.500, 0.0, 151.000] // mm
 }
 
 
@@ -1811,9 +1992,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [679.500, 0.0, 377.500] // mm
+position: [679.500, 0.0, 302.000] // mm
 }
 
 
@@ -1826,9 +2007,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [679.500, 0.0, 528.500] // mm
+position: [679.500, 0.0, 453.000] // mm
 }
 
 
@@ -1841,9 +2022,24 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [679.500, 0.0, 679.500] // mm
+position: [679.500, 0.0, 604.000] // mm
+}
+
+
+// -------- GEO[target_cell_11_0_10]
+{
+name: "GEO",
+index: "target_cell_11_0_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cell_array",
+type: "box",
+size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_0008li6",
+invisible: 0,
+position: [679.500, 0.0, 755.000] // mm
 }
 
 
@@ -1856,9 +2052,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [830.500, 0.0, -679.500] // mm
+position: [830.500, 0.0, -755.000] // mm
 }
 
 
@@ -1871,9 +2067,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [830.500, 0.0, -528.500] // mm
+position: [830.500, 0.0, -604.000] // mm
 }
 
 
@@ -1886,9 +2082,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [830.500, 0.0, -377.500] // mm
+position: [830.500, 0.0, -453.000] // mm
 }
 
 
@@ -1901,9 +2097,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [830.500, 0.0, -226.500] // mm
+position: [830.500, 0.0, -302.000] // mm
 }
 
 
@@ -1916,9 +2112,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [830.500, 0.0, -75.500] // mm
+position: [830.500, 0.0, -151.000] // mm
 }
 
 
@@ -1931,9 +2127,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [830.500, 0.0, 75.500] // mm
+position: [830.500, 0.0, 0.0] // mm
 }
 
 
@@ -1946,9 +2142,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [830.500, 0.0, 226.500] // mm
+position: [830.500, 0.0, 151.000] // mm
 }
 
 
@@ -1961,9 +2157,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [830.500, 0.0, 377.500] // mm
+position: [830.500, 0.0, 302.000] // mm
 }
 
 
@@ -1976,9 +2172,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [830.500, 0.0, 528.500] // mm
+position: [830.500, 0.0, 453.000] // mm
 }
 
 
@@ -1991,9 +2187,24 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [830.500, 0.0, 679.500] // mm
+position: [830.500, 0.0, 604.000] // mm
+}
+
+
+// -------- GEO[target_cell_12_0_10]
+{
+name: "GEO",
+index: "target_cell_12_0_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cell_array",
+type: "box",
+size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_0008li6",
+invisible: 0,
+position: [830.500, 0.0, 755.000] // mm
 }
 
 
@@ -2006,9 +2217,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [981.500, 0.0, -679.500] // mm
+position: [981.500, 0.0, -755.000] // mm
 }
 
 
@@ -2021,9 +2232,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [981.500, 0.0, -528.500] // mm
+position: [981.500, 0.0, -604.000] // mm
 }
 
 
@@ -2036,9 +2247,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [981.500, 0.0, -377.500] // mm
+position: [981.500, 0.0, -453.000] // mm
 }
 
 
@@ -2051,9 +2262,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [981.500, 0.0, -226.500] // mm
+position: [981.500, 0.0, -302.000] // mm
 }
 
 
@@ -2066,9 +2277,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [981.500, 0.0, -75.500] // mm
+position: [981.500, 0.0, -151.000] // mm
 }
 
 
@@ -2081,9 +2292,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [981.500, 0.0, 75.500] // mm
+position: [981.500, 0.0, 0.0] // mm
 }
 
 
@@ -2096,9 +2307,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [981.500, 0.0, 226.500] // mm
+position: [981.500, 0.0, 151.000] // mm
 }
 
 
@@ -2111,9 +2322,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [981.500, 0.0, 377.500] // mm
+position: [981.500, 0.0, 302.000] // mm
 }
 
 
@@ -2126,9 +2337,9 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [981.500, 0.0, 528.500] // mm
+position: [981.500, 0.0, 453.000] // mm
 }
 
 
@@ -2141,9 +2352,24 @@ valid_end: [0, 0],
 mother: "target_cell_array",
 type: "box",
 size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
-material: "ej254_015li6",
+material: "ej254_0008li6",
 invisible: 0,
-position: [981.500, 0.0, 679.500] // mm
+position: [981.500, 0.0, 604.000] // mm
+}
+
+
+// -------- GEO[target_cell_13_0_10]
+{
+name: "GEO",
+index: "target_cell_13_0_10",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "target_cell_array",
+type: "box",
+size: [75.0, 500.0, 75.0], // mm  // for sphere, change size to single-value r_max
+material: "ej254_0008li6",
+invisible: 0,
+position: [981.500, 0.0, 755.000] // mm
 }
 
 

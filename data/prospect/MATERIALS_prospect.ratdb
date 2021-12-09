@@ -141,5 +141,19 @@ materials: ["pvt", "lithium"],
 matprop: [0.80237, 0.19763], // so that (lithium fraction) * (Li-6 abundance) = 0.015
 }
 
+// ej254_0008li6 -- EJ-254 doped at 0.08% Li-6 by wt. (PROSPECT)
+{
+name: "MATERIAL",
+index: "ej254_0008li6",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+density: 1.026, // copied from ej254_5b: @ 20 C (eljentechnology.com)
+nelements: 0,
+nmaterials: 2,
+materials: ["pvt", "lithium"],
+//matprop: [0.80237, 0.19763], // so that (lithium fraction) * (Li-6 abundance) = 0.015
+matprop: [0.01054, 0.98946], // so that (lithium fraction) * (Li-6 abundance) = 0.0008
+}
+
 
 

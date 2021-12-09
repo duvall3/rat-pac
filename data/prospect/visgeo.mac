@@ -19,7 +19,8 @@
 /vis/viewer/set/upVector 0 0 1
 #
 # Specify view angle:
-/vis/viewer/set/viewpointVector .5 .1 .3
+#/vis/viewer/set/viewpointVector .5 .1 .3
+/vis/viewer/set/viewpointThetaPhi 75. -30.
 /vis/viewer/set/lightsVector .4 .9 .6
 #
 # Specify style (surface, wireframe, auxiliary edges,...)
@@ -34,28 +35,31 @@
 /vis/set/textSize 18.0
 #/vis/scene/add/axes/g 0 -9.45 -2 1 m grey false # Simple axes: x=red, y=green, z=blue.
 #/vis/scene/add/date    # Date stamp
-/vis/scene/add/scale 254 mm x 0. 0. 0. manual 0. 150. 150. mm
-/vis/scene/add/scale 254 mm y 0. 0. 0. manual -150. 0. 150. mm
-/vis/scene/add/scale 254 mm z 0. 0. 0. manual 150. 150. 0. mm
+#/vis/scene/add/scale 2113 mm x 0. 0. 0. manual 0. 2000. 2000. mm
+#/vis/scene/add/scale 1000 mm y 0. 0. 0. manual -2000. 0. 2000. mm
+#/vis/scene/add/scale 1509 mm z 0. 0. 0. manual 2000. 2000. 0. mm
+/vis/scene/add/scale 2100 mm x 0. 0. 0. manual 0. 650. 850. mm
+/vis/scene/add/scale 1000 mm y 0. 0. 0. manual -1100. 0. 850. mm
+/vis/scene/add/scale 1500 mm z 0. 0. 0. manual 1100. 650. 0. mm
 
 # To get nice view
 #/vis/geometry/set/visibility world 0 false
 /vis/viewer/set/background white
-/vis/viewer/zoom 1
+/vis/viewer/zoom 1.3
 #/vis/viewer/pan 0 -9 m
 
 # set or correct volume properties:
 #/vis/geometry/set/colour world 0 .6 .2 .1 .1
 /vis/geometry/set/visibility world 1 0
-/vis/geometry/set/visibility target_cube_array 1 1
+/vis/geometry/set/visibility target_cell_array 1 1
 #/vis/geometry/set/colour cave 0 0 0 0 .2
 #/vis/geometry/set/colour cave_floor 0 .6 .2 .1 .3
 #/vis/geometry/set/colour cave_ceiling 0 .6 .2 .1 .3
 #/vis/geometry/set/colour cave_back 0 .6 .2 .1 .3
 #/vis/geometry/set/colour cave_lwall 0 .6 .2 .1 .3
 #/vis/geometry/set/colour cave_rwall 0 .6 .2 .1 .3
-#/vis/geometry/set/colour target_cube_array 1 .2 0 1
-/vis/geometry/set/colour target_cube_array 1 grey
+#/vis/geometry/set/colour target_cell_array 1 .2 0 1
+/vis/geometry/set/colour target_cell_array 1 black
 
 /vis/viewer/set/hiddenMarker true
 #/vis/viewer/set/targetPoint 0 -9 0 m
@@ -79,3 +83,6 @@
 
 # accumulate event:
 /vis/scene/endOfEventAction accumulate
+
+# export
+#/vis/ogl/export prospect_geo.png
