@@ -89,7 +89,7 @@ fi
 ## MAIN
 
 # prepare super-directory
-mkdir $DATARUN && cd $DATARUN
+mkdir -p output/$DATARUN && cd output/$DATARUN
 
 # loop over instance subdirectories
 for (( k=0; k<$NINSTS; k++ )) {
