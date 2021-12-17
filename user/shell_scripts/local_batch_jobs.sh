@@ -111,7 +111,7 @@ for (( k=0; k<$NINSTS; k++ )) {
   # RUN
   eval "$FULLCMD &"
   sleep 2s
-  cd $EXPDIR/$DATARUN
+  cd $EXPDIR/output/$DATARUN
 
 } # end datarun / dir loop
 
