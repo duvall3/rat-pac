@@ -4,7 +4,7 @@
 #/control/execute vis.mac
 #/control/execute gen/ibd.mac
 /control/execute gen/bg.mac
-/control/execute gen/ibd2.mac
+/control/execute gen/ibd.mac
 #/control/execute gen/nugun.mac
 #/control/execute gen/erica.mac
 #/control/execute gen/mugun.mac
