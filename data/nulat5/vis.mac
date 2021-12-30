@@ -44,14 +44,17 @@
 
 # set or correct volume properties:
 /vis/geometry/set/colour world 0 .6 .2 .1 .1
-/vis/geometry/set/visibility world 0 1
-#/vis/geometry/set/colour cave 0 0 0 0 .2
+#/vis/geometry/set/visibility world 0 1
+/vis/geometry/set/visibility world 5 1
+#/vis/geometry/set/visibility cave 0 1
+/vis/geometry/set/colour cave 0 0 0 0 .3
 #/vis/geometry/set/colour cave_floor 0 .6 .2 .1 .3
 #/vis/geometry/set/colour cave_ceiling 0 .6 .2 .1 .3
 #/vis/geometry/set/colour cave_back 0 .6 .2 .1 .3
 #/vis/geometry/set/colour cave_lwall 0 .6 .2 .1 .3
 #/vis/geometry/set/colour cave_rwall 0 .6 .2 .1 .3
-/vis/geometry/set/colour target_cell_array 1 .2 .8 .8
+/vis/geometry/set/colour target_cube_array 1 .2 .8 .8
+/vis/geometry/set/colour water_shield 0 0. 0. 1. .8
 
 /vis/viewer/set/hiddenMarker true
 #/vis/viewer/set/targetPoint 0 -9 0 m
