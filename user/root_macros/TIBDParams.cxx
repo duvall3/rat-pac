@@ -2,6 +2,25 @@
 // -- NOTE: Default units are as follows, though some alternatives are provided:
 //      * {Length,Area,Volume} (cm^{1,2,3})    * Energy (MeV)    * Time (s)
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 11/2021 ~ //
+// -- NOTE: Due to currently-unsolved output issues, the best way to calculate
+//      an IBD rate at present is as follows:
+//      1) Create and build an instance of TRATGeo as normal
+//      2) Create and initialize an instance of TRATVolume*
+//           from the TRATGeo as normal
+//      3) Create and initialize an instance of TIBDParams
+//           from the TRATVolume* as normal
+//      4) Create a TVector3 and set/initialize it to TRATVolume::GetSize()
+//      5) Call TIBDParams::IBDVolRate()
+//      6) Multiply the result by the TRATVolume::{X,Y,Z}()
+//    Example:
+//      TRATGeo g; g.Build();
+//      TRATVolume *v = (TRATVolume*)g.GetVolume("target_cube_array");
+//      TIBDParams p(v);
+//      TVector3 s = v->GetSize();
+//      p.IBDVolRate();
+//      Double_t ibdvr = /* copy-paste printed output from previous command */
+//      Double_t ibdRate = ibdvr * s->X() * s->Y() * s->Z();
+//      printf("IBDRate = %e\n", ibdRate);
 
 //Copyright (C) 2021 Mark J. Duvall
 //
@@ -93,7 +112,7 @@ TIBDParams::IBDVolRate()
 {
 //Double_t volRate = fnH * GetXS() * NuFlux();
   Double_t volRate = GetHydrogenDensity() * GetXS() * NuFlux();
-//printf("IBDVolRate = %e IBD/cm^3/s\n", volRate); //debug
+  printf("  IBDVolRate = %e IBD/cm^3/s\n", volRate); //debug
   return volRate;
 }
 
@@ -109,6 +128,7 @@ TIBDParams::MuNeutronRate()
     return 0;
   } else {
     Double_t muNR = GetMuNeutronFlux() * (fTRV->AreaCM());
+    printf("  MuNeutronRate = %e Hz\n", muNR); //debug
     return muNR;
   }
 }
@@ -124,8 +144,9 @@ TIBDParams::IBDRate()
     this->Error(errLoc.Data(), errMsg.Data());
     return 0;
   } else {
-    Double_t muNR = IBDVolRate() * (fTRV->VolumeCM());
-    return muNR;
+    Double_t IBDR = IBDVolRate() * (fTRV->VolumeCM());
+    printf("  IBD Rate = %e Hz\n", IBDR);
+    return IBDR;
   }
 }
 
@@ -145,9 +166,14 @@ TIBDParams::Print()
   if (fReactorNuRate!=0) printf("  ReactorNuRate\t\t%e\tnu_e_bar  /  s\n", GetReactorNuRate());
   if (fStandoff!=0) printf("  Standoff\t\t%e\tcm\n", GetStandoff());
   if ( (fReactorNuRate!=0) && (fStandoff!=0) ) printf("  NuFlux\t\t%e\tnu_e_bar / cm^2 / s\n", NuFlux());
-  if ( (fReactorNuRate!=0) && (fStandoff!=0) && (fnH!=0) ) printf("  IBDVolRate\t\t%e\tIBD / cm^3 / s\n", IBDVolRate());
+  if ( (fReactorNuRate!=0) && (fStandoff!=0) && (fnH!=0) ) IBDVolRate(); //printf("  IBDVolRate\t\t%e\tIBD / cm^3 / s\n", IBDVolRate());
   if ( (fReactorNuRate!=0) && (fStandoff!=0) && (fnH!=0) && (fTRV!=0) ) reqParams = kTRUE;
-  if (reqParams) printf("DERIVED QUANTITES, VOLUME-SPECIFIC:\n  MuNeutronRate\t\t%e\tn0 / cm^2 / s\n  IBDRate\t\t%e\tIBD / s\n", MuNeutronRate(), IBDRate());
+  if (reqParams) {
+    printf("DERIVED QUANTITES, VOLUME-SPECIFIC:\n");
+    MuNeutronRate();
+    IBDRate();
+    //MuNeutronRate\t\t%e\tn0 / cm^2 / s\n  IBDRate\t\t%e\tIBD / s\n", MuNeutronRate(), IBDRate());
+  }
   printf("\n");
 }
 

@@ -24,6 +24,11 @@
  *   Name,0.0,1.3,10.7,200.3
  *   Event0neutronX,0.0,3.4,12.6,-22.7
  *   Event0neutronY,0.0,-3.4,-223.8,-345.6
+ *
+ * To achieve this format, run 'csvtool transpose' on the output
+ *   of this macro. For example:
+ * ~$ root -q -c 'ue4_export.cxx("SomeDataFile.root")'
+ * ~$ csvtool transpose SomeDataFile_raw.csv > SomeDataFile.csv
 */
 
 
@@ -40,7 +45,7 @@ RAT::TrackNode* n = c.Here();
 Long64_t totalRATEvents = r.GetTotal();
 Long64_t eventsPerFile = 1;
 TString pclName, headerName, headerX, headerY, headerZ;
-TString fullHeaderLine("Name"), dataLine;
+TString fullHeaderLine, dataLine;
 Long64_t event, totalEvents;
 Double_t t, x, y, z;
 Long64_t k(0), kMCP(0), N(totalRATEvents);
@@ -72,8 +77,6 @@ if (fileName == "") {
 }
 TString baseName = fileName(0, fileName.Index('.root'));
 TString saveName;// = baseName;// + ".csv"; //TEMP TODO
-/* cout << fileName.Data() << "\t" << baseName.Data() << "\t" << dirName.Data() << "\t" << saveName.Data() << endl; //debug */
-/* ofstream outfile(saveName.Data()); */
 
 
 // MAIN
@@ -84,7 +87,7 @@ cout << "Processing particle tracks..." << endl << endl;
 /* for ( k=0; k<N; k++ ) { // event loop */
 /* for ( k=0; k<eventsPerFile; k++ ) { // event loop -- //temp */
 /* for ( k=0; k<1; k++ ) { // event loop */
-for ( k=7; k<10; k++ ) {
+for ( k=7; k<11; k++ ) {
 
   //TEMP create individual track file
   saveName.Form("Event%dNeutron_raw.csv", k);
@@ -97,6 +100,7 @@ for ( k=7; k<10; k++ ) {
   mc = ds->GetMC();
   mcChildren = mc->GetMCParticleCount();
   event_time = mc->GetUTC().AsDouble();
+  fullHeaderLine.Form("Name");
 
   // MCParticle loop
   for ( kMCP=0; kMCP<mcChildren; kMCP++ ) {
@@ -122,13 +126,7 @@ for ( k=7; k<10; k++ ) {
     headerY = headerName + "Y";
     headerZ = headerName + "Z";
     fullHeaderLine.Append(headerX+headerY+headerZ);
-    /* printf("%s\t%s\t%s\n", headerX.Data(), headerY.Data(), headerZ.Data()); //debug */
     outfile << fullHeaderLine.Data() << endl;
-
-//    //debug
-//    cout << "kMCP: " << kMCP << endl;
-//    printf("Event: %d\nPDGCode: %d\t Particle: %s\nTrack: %d\nParent: 0x%x\n", k, pdgcode, pclName.Data(), n->GetTrackID(), c.Parent());
-//    if (kMCP == mcChildren-1) cout << endl;
 
     // process track
     coords = n->GetEndpoint();
@@ -137,7 +135,6 @@ for ( k=7; k<10; k++ ) {
     z = coords.Z();
     t = n->GetGlobalTime()*1.e-9;
     wall_time = event_time + t;
-    /* printf("\nEvent: %d\nPDGCode: %d\t Particle: %s\nTrack: %d\nParent: 0x%x\n", k, pdgcode, pclName.Data(), n->GetTrackID(), c.Parent()); //debug */
     for ( i=0; i<c.StepCount(); i++ ) { // step loop
       n = c.GoStep(i);
       /* tStep = event_time + n->GetGlobalTime()*1.e-9; */
@@ -145,18 +142,11 @@ for ( k=7; k<10; k++ ) {
       xStep = n->GetEndpoint().X();
       yStep = n->GetEndpoint().Y();
       zStep = n->GetEndpoint().Z();
-      /* printf("\t%.25f\t%f\t%f\t%f\n", tStep, xStep, yStep, zStep); //debug */
       dataLine.Form("%f,%f,%f,%f\n", tStep, xStep, yStep, zStep);
       outfile << dataLine.Data();
     } // step loop
 
-    // for outfile format-checking
-    /* printf("\n"); //debug */
-
   } // MCParticle loop
-
-  // for outfile format-checking
-  /* printf("\n"); //debug */
 
   // keep memory from blowing up
   nav.Clear();
@@ -169,8 +159,6 @@ for ( k=7; k<10; k++ ) {
 
 } // event loop
 
-/* cout << endl << fullHeaderLine.Data() << endl; //debug */
-/* printf("\n\n"); */
 
 // all pau!   )
 return;
