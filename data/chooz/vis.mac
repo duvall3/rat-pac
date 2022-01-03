@@ -38,6 +38,7 @@
 
 # To get nice view
 #/vis/geometry/set/visibility world 0 false
+#/vis/viewer/set/background black
 /vis/viewer/set/background black
 /vis/viewer/zoom 8
 #/vis/viewer/pan 0 -9 m

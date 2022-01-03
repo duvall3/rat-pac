@@ -1,0 +1,40 @@
+# bg.mac -- generator for backgrounds
+# sea-level rate: 0.00648312 /s /cm^2
+
+# testing rat-pac doc example
+#/generator/add decaychain 222Rn:regexfill
+#/generator/pos/set ^target_strip[0-9]+$
+#/generator/pos/set target_strip
+
+# using the "external" generator
+#/generator/add external paint:poisson:"backgrounds_1.dat"
+#/generator/pos/set 0.0 0.0 -700. # paint the walls of the cave
+#/generator/rate/set 173.35
+
+# vertexfile generator
+#/generator/add vertexfile bgNeutrons.root
+#/generator/add vertexfile bgNeutrons.root:point:poisson
+#/generator/add vertexfile bgNeutrons.root:paint:poisson
+#/generator/pos/set 3000. 3000. 3000. # paint the walls of the cave
+#/generator/pos/set 1100. 1100. 1100. # paint the walls of the cave
+#/generator/rate/set 1.56e5 # sea level
+#/generator/rate/set 2.22e4 # 20mwe
+#/generator/rate/set 2.22e2 # 20mwe (smaller cave)
+
+# spectrum generator(s)
+#/generator/add combo spectrum:paint:poisson
+#/generator/vtx/set neutron nbg
+#/generator/vtx/set neutron nbglog
+#/generator/vtx/set neutron nbglin
+#/generator/pos/set 3000. 3000. 3000. # paint the walls of the cave
+#/generator/rate/set 173.35
+
+# gun generator (for testing)
+/generator/add combo gun:paint:poisson
+/generator/vtx/set neutron 0 0 0 10 # isotropic 10-keV neutrons
+/generator/pos/set 1550. 1550. 1550. # paint the walls of the cave
+#/generator/rate/set 5.00e2 # 20mwe (smaller cave)
+#/generator/rate/set 3.50e3 # 0mwe (smaller cave, no overburden)
+/generator/rate/set 4.24992987615704313e-03 # 140mwe
+#/generator/rate/set 1.0 # for testing w/ ibds
+
