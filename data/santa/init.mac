@@ -3,7 +3,9 @@
 
 /rat/db/set DETECTOR experiment "santa"
 /rat/db/set DETECTOR geo_file "santa/santa.geo"
-/rat/db/load ./IBD.ratdb
+#/rat/db/load ./IBD.ratdb
+/rat/db/load santa/MATERIALS_SANTA.ratdb
+/rat/db/load santa/OPTICS_santa.ratdb
 
 /run/numberOfThreads 4
 /run/initialize
