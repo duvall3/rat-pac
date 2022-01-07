@@ -3,9 +3,13 @@
 
 #/generator/add combo ibd:fill:poisson
 /generator/add combo ibd:regexfill:poisson
+#/generator/add combo ibd:point:poisson
 /generator/vtx/set -1 0 0 # neutrinos directed along -x direction
 #/generator/vtx/set 0 0 1
 #/generator/pos/set 0 -9000 -500
 #/generator/pos/set target_plane
 /generator/pos/set target_bar
-/generator/rate/set 1
+#/generator/pos/set capture_bar #debug
+#/generator/pos/set 500 0 0
+#/generator/rate/set 1
+/generator/rate/set 1.23e-6	// mTC@NIST parameters

@@ -22,13 +22,10 @@ valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "world",
 type: "box",
-//size: [10000.0, 10000.0, 10000.0], // mm
-//size: [1600.0, 1600.0, 1600.0], // mm
 size: [2100.0, 2100.0, 2100.0], // mm
 material: "air",
 color: [0.8, 0.1, 0.1],
 invisible: 0,
-//position: [] -- center of "world"
 }
 
 
@@ -54,8 +51,9 @@ index: "detector_space",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "water_shield",
+//mother: "cave",
 type: "box",
-size: [510.0, 1001.0, 1001.0] // mm
+size: [540.0, 1010.0, 1100.0] // mm
 position: [0.0, 0.0, 0.0] // mm
 material: "air",
 color: [0.8, 0.8, 0.8],
@@ -71,30 +69,29 @@ valid_end: [0, 0],
 /* mother: "cave", */
 mother: "detector_space",
 type: "box",
-//size: [1000.0, 1020.0, 2.5] // mm
 size: [3.0, 1005.0, 1025.0] // mm
-//position: [0.0, -8980.0, -500.0] // mm
-//position: [-500.0, 0.0, -8980.0] // mm
-//position: [500.0, 0.0, -8980.0] // mm
 position: [500.0, 0.0, 0.0] // mm
-material: "air",   // this volume will contain scintillator bars
+//material: "air",   // this volume will contain scintillator bars
+material: "ej254_undoped",   // this volume will contain scintillator bars
 color: [0, 0, 1],
 }
 
 
-//// -------- GEO[ibd_vertex]
-//{
-//name: "GEO",
-//index: "ibd_vertex",
-//valid_begin: [0, 0],
-//valid_end: [0, 0],
-//mother: "target_bar_21", // just above center (even number of bars)
-//type: "box",
-////size: [.125, 25.0, 2.5] // mm
-//size: [2.5, .125, 25.0] // mm
-//material: "air",
-//color: [0, 0, 1],
-//}
+// -------- GEO[capture_plane]
+{
+name: "GEO",
+index: "capture_plane",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+/* mother: "cave", */
+mother: "detector_space",
+type: "box",
+size: [35.0, 1005.0, 1025.0], // mm
+position: [-500.0, 0.0, 0.0] // mm
+//material: "air", // this volume will contain the bar stack
+material: "ej254_5b", // this volume will contain the bar stack
+color: [0, .1, 0],
+}
 
 
 // -------- GEO[capture_plane]
@@ -115,6 +112,21 @@ position: [-500.0, 0.0, 0.0] // mm
 material: "air", // this volume will contain the bar stack
 color: [0, .1, 0],
 }
+
+
+//// -------- GEO[ibd_vertex]
+//{
+//name: "GEO",
+//index: "ibd_vertex",
+//valid_begin: [0, 0],
+//valid_end: [0, 0],
+//mother: "target_bar_21", // just above center (even number of bars)
+//type: "box",
+////size: [.125, 25.0, 2.5] // mm
+//size: [2.5, .125, 25.0] // mm
+//material: "air",
+//color: [0, 0, 1],
+//}
 
 
 // -------- GEO[target_bar_1]
