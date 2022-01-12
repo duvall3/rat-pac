@@ -16,6 +16,8 @@ done
 
 void duvall3Macros() {
 
+#define C() gSystem->Exec("clear");
+
 gROOT->LoadMacro("rt_to_root.cxx");
 gROOT->LoadMacro("dumpHist.cxx");
 //gROOT->LoadMacro("SEDAQ.cxx");
@@ -52,6 +54,7 @@ gROOT->LoadMacro("plotKElog.cxx");
 gROOT->LoadMacro("findVarsOfType.cxx");
 gROOT->LoadMacro("loadAllKeys.cxx");
 gROOT->LoadMacro("ue4_export.cxx");
+gROOT->LoadMacro("plotEQvDT.cxx");
 
 }
 
