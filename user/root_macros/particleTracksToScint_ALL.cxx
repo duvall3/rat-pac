@@ -1,11 +1,11 @@
-// particleTracksToScint -- macro to translae prompt-to-delayed displacement vectors
+// particleTracksToScint_ALL -- macro to translae prompt-to-delayed displacement vectors
 //   from IBD candidate events to "_T.root" scint-data format
 // -- for use with the macros in https://github.com/duvall3/rat-pac/tree/collab/user/root-macros/
 // -- runs on original RAT-PAC .root file
 //
-// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 11/2021 ~ //
+// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 01/2022 ~ //
 
-//Copyright (C) 2021 Mark J. Duvall
+//Copyright (C) 2022 Mark J. Duvall
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-void particleTracksToScint ( const char* filename ) {
+void particleTracksToScint_ALL ( const char* filename ) {
 
 // load utility macros if needed
 if (! gInterpreter->IsLoaded("findCellScintTotal.cxx")) gROOT->LoadMacro("findCellScintTotal.cxx");
@@ -113,15 +113,16 @@ for ( k=0; k<N; k++ ) { // event loop
   event_time = mc->GetUTC().AsDouble();
 
   // MCParticle loop
-  for ( kMCP=0; kMCP<mcChildren; kMCP++ ) {
+  /* for ( kMCP=0; kMCP<mcChildren; kMCP++ ) { // OLD, for reference */
+  while ( n = c.FindNextTrack() ) {
 
     // reset lepton and neutron tests
     isLepton = kFALSE;
     isNeutron = kFALSE;
 
     // enter track
-    c = nav.Cursor(0);
-    n = c.GoChild(kMCP);
+    /* c = nav.Cursor(0); */
+    /* n = c.GoChild(kMCP); */
     pdgcode = n->GetPDGCode();
     pclName = n->GetParticleName();
     // lepton and neutron tests
