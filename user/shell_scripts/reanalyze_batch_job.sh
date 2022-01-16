@@ -31,6 +31,7 @@ DATARUN_NAME=$1
 EVENTS_PER_JOB=$2
 # default to no graphics for batch subsets
 GRAPHICS_TF=${3:-false}
+BATCH_PIDS=()
 
 # MAIN
 echo -e "\n/// Reanalyzing batch jobs in $DATARUN_NAME... ///\n"
@@ -38,8 +39,21 @@ for DIR in $DATARUN_NAME_*/; do
   cd $DIR
   mv -t . $DIR/*
   rmdir ./$DIR/
-  prepare_rat_run.sh $(basename $(pwd)) $EVENTS_PER_JOB $GRAPHICS_TF
+  prepare_rat_run.sh $(basename $(pwd)) $EVENTS_PER_JOB $GRAPHICS_TF &
+  BATCH_PIDS=(${BATCH_PIDS[*]} $!)
   cd ..
+  sleep 2s
+done
+
+# wait for jobs to finish
+#echo ${BATCH_PIDS[*]} #debug
+PSCHECK=0
+#while [[ $(ps -p ${BATCH_PIDS[*]}) -eq 0 ]]; do
+while [ $PSCHECK -eq 0 ]; do
+# echo "Waiting for jobs to finish..." #debug
+  sleep 5s
+  ps ${BATCH_PIDS[*]} 2>&1 > /dev/null
+  PSCHECK=$?
 done
 
 # remake TChain
