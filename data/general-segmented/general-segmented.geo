@@ -121,19 +121,19 @@ invisible: 1,
 
 // DETECTOR ELEMENTS
 
-// -------- GEO[water_shield]
-{
-name: "GEO",
-index: "water_shield",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "cave",
-type: "box",
-size: [1000.000, 1000.000, 1000.000], // mm
-material: "water",
-invisible: 0,
-position: [0.0, 0.0, 0.0] // mm
-}
+//// -------- GEO[water_shield]
+//{
+//name: "GEO",
+//index: "water_shield",
+//valid_begin: [0, 0],
+//valid_end: [0, 0],
+//mother: "cave",
+//type: "box",
+//size: [1000.000, 1000.000, 1000.000], // mm
+//material: "water",
+//invisible: 0,
+//position: [0.0, 0.0, 0.0] // mm
+//}
 
 // -------- GEO[target_cell_array]
 {
@@ -141,7 +141,8 @@ name: "GEO",
 index: "target_cell_array",
 valid_begin: [0, 0],
 valid_end: [0, 0],
-mother: "water_shield",
+//mother: "water_shield",
+mother: "cave",
 type: "box",
 size: [501.000, 501.000, 501.000], // mm
 material: "air",
