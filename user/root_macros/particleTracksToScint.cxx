@@ -1,4 +1,4 @@
-// particleTracksToScint_ALL -- macro to translae prompt-to-delayed displacement vectors
+// particleTracksToScint -- macro to translae prompt-to-delayed displacement vectors
 //   from IBD candidate events to "_T.root" scint-data format
 // -- for use with the macros in https://github.com/duvall3/rat-pac/tree/collab/user/root-macros/
 // -- runs on original RAT-PAC .root file
@@ -20,7 +20,7 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-void particleTracksToScint_ALL ( const char* filename ) {
+void particleTracksToScint ( const char* filename ) {
 
 // load utility macros if needed
 if (! gInterpreter->IsLoaded("findCellScintTotal.cxx")) gROOT->LoadMacro("findCellScintTotal.cxx");
