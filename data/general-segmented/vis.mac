@@ -24,7 +24,7 @@
 /vis/viewer/set/lightsVector .4 .9 .6
 #
 # Specify style (surface, wireframe, auxiliary edges,...)
-/vis/viewer/set/style w
+/vis/viewer/set/style s
 /vis/viewer/set/auxiliaryEdge true
 /vis/viewer/set/lineSegmentsPerCircle 100
 #
@@ -33,34 +33,37 @@
 /vis/set/textSize 18.0
 #/vis/scene/add/axes/g 0 -9.45 -2 1 m grey false # Simple axes: x=red, y=green, z=blue.
 #/vis/scene/add/date    # Date stamp
+/vis/scene/add/axes -.1 .1 0 .1 m
 
 
 # To get nice view
 #/vis/geometry/set/visibility world 0 false
 /vis/viewer/set/background white
-/vis/viewer/zoom 8
-/vis/viewer/pan 0 9 m
+/vis/viewer/zoom 1
+#/vis/viewer/pan 0 9 m
 
 # reenable autoRefresh
 /vis/viewer/set/autoRefresh 1
 
 # set or correct volume properties:
-/vis/geometry/set/colour world 0 .6 .2 .1 .1
-/vis/geometry/set/visibility world 0 1
-/vis/geometry/set/colour cave 0 0 0 0 .2
-/vis/geometry/set/colour cave_floor 0 .6 .2 .1 .3
-/vis/geometry/set/colour cave_ceiling 0 .6 .2 .1 .3
-/vis/geometry/set/colour cave_back 0 .6 .2 .1 .3
-/vis/geometry/set/colour cave_lwall 0 .6 .2 .1 .3
-/vis/geometry/set/colour cave_rwall 0 .6 .2 .1 .3
+#/vis/geometry/set/colour world 0 .6 .2 .1 .1
+/vis/geometry/set/visibility world 0 0
+/vis/geometry/set/colour cave 0 .8 .2 .2 .1
+#/vis/geometry/set/colour cave_floor 0 .6 .2 .1 .3
+#/vis/geometry/set/colour cave_ceiling 0 .6 .2 .1 .3
+#/vis/geometry/set/colour cave_back 0 .6 .2 .1 .3
+#/vis/geometry/set/colour cave_lwall 0 .6 .2 .1 .3
+#/vis/geometry/set/colour cave_rwall 0 .6 .2 .1 .3
+/vis/geometry/set/visibility cave 0 1
 #/vis/geometry/set/colour water_shield 0 blue
-/vis/geometry/set/colour target_cell_array 1 black
-/vis/geometry/set/colour target_cell_array 0 blue
-/vis/geometry/set/colour source 0 magenta
-/vis/viewer/set/style w
-# or surface:
-#/vis/geometry/set/colour
-#/vis/geometry/set/colour
+#/vis/geometry/set/colour target_cell_array 1 black
+/vis/geometry/set/colour target_cell_array 2 cyan
+/vis/geometry/set/visibility target_cell_array 0 0
+#/vis/geometry/set/colour target_cell_array 0 blue
+#/vis/geometry/set/colour source 0 magenta
+#/vis/geometry/set/visibility source 0 0
+#/vis/geometry/set/visibility target_cell_array 1 1
+/vis/geometry/set/colour water_shield 0 0. 0. 1. .2
 
 /vis/viewer/set/hiddenMarker true
 /vis/viewer/set/targetPoint 0 0 0 m

@@ -16,10 +16,8 @@
 #/generator/add vertexfile bgNeutrons.root:point:poisson
 #/generator/add vertexfile bgNeutrons.root:paint:poisson
 #/generator/pos/set 3000. 3000. 3000. # paint the walls of the cave
-#/generator/pos/set 1100. 1100. 1100. # paint the walls of the cave
 #/generator/rate/set 1.56e5 # sea level
 #/generator/rate/set 2.22e4 # 20mwe
-#/generator/rate/set 2.22e2 # 20mwe (smaller cave)
 
 # spectrum generator(s)
 #/generator/add combo spectrum:paint:poisson
@@ -29,10 +27,9 @@
 #/generator/pos/set 3000. 3000. 3000. # paint the walls of the cave
 #/generator/rate/set 173.35
 
-# gun generator (for testing)
+## gun generator (for testing)
 /generator/add combo gun:paint:poisson
 /generator/vtx/set neutron 0 0 0 10 # isotropic 10-keV neutrons
-/generator/pos/set 1100. 1100. 1100. # paint the walls of the cave
-/generator/rate/set 5.00e2 # 20mwe (smaller cave)
-#/generator/rate/set 1.0 # for testing w/ ibds
+/generator/pos/set 3000. 3000. 3000. # paint the walls of the cave
+/generator/rate/set 1.e5
 
