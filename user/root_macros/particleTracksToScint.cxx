@@ -135,7 +135,8 @@ for ( k=0; k<N; k++ ) { // event loop
 //    if (kMCP == mcChildren-1) cout << endl;
 
     // for leptons:
-    if (isLepton) {
+//  if (isLepton) {
+    if (! isNeutron) {
       // current: use *starting volume* of e+ track for quantized position
       // -- also using raw MC-truth starting position for regular coordinates
       // TODO: instead, use volume with greatest scint. energy deposit
