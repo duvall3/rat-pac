@@ -1,0 +1,21 @@
+
+
+Rows: 1
+Columns: 1
+Layers: 1
+
+Cube Side Length: 	1000.000000 mm
+Cube Spacing: 		1.000000 mm
+
+Array Length: 	1000.000000 mm
+Array Width: 	1000.000000 mm
+Array Height: 1000.000000 mm
+
+Generating cubes...
+Done.
+
+Array written to: cubictest_cube-array.geo
+
+RAT-PAC .GEO FILE WRITTEN TO: cubictest.geo
+
+

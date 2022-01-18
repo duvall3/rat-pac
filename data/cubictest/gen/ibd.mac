@@ -1,0 +1,12 @@
+# ibd.mac -- IBD generator macro -- CENTRAL cell ONLY
+
+/generator/add combo ibd:regexfill:poisson
+#/generator/vtx/set 0 0 1
+/generator/vtx/set -1 0 0 # neutrinos directed along -x direction
+#/generator/pos/set 0 -9924 0
+#/generator/pos/set 0 0 -9924
+#/generator/pos/set target_cell
+/generator/pos/set target_cell_0
+#/generator/rate/set 1
+/generator/rate/set 1.11e-4 # using 27 * (1.e-1)**3 *( 2*cell->GetSize().X() * 2*cell->GetSize().Y() * 2*cell->GetSize().Z() ) * cell->IBDVolRate()
+
