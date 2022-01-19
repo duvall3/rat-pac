@@ -55,6 +55,8 @@ gROOT->LoadMacro("findVarsOfType.cxx");
 gROOT->LoadMacro("loadAllKeys.cxx");
 gROOT->LoadMacro("ue4_export.cxx");
 gROOT->LoadMacro("plotEQvDT.cxx");
+gROOT->LoadMacro("scatteringPositions.cxx");
+gROOT->LoadMacro("scatteringPlots.cxx");
 
 }
 
