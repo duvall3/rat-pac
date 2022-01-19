@@ -126,8 +126,8 @@ for ( kCan=1; kCan<5; kCan++ ) {
   /* hxL->At(kCan-1)->Draw("glbox1FbBb"); */
   ((TH3D*)hxL->At(kCan-1))->Project3D("xy")->Draw();
   hOrigin_xy->Draw("same");
-  ((TH2D*)gPad->GetListOfPrimitives()->At(0))->SetXTitle("x (mm)");
-  ((TH2D*)gPad->GetListOfPrimitives()->At(0))->SetYTitle("y (mm)");
+  ((TH2D*)gPad->GetListOfPrimitives()->At(0))->SetXTitle("y (mm)");
+  ((TH2D*)gPad->GetListOfPrimitives()->At(0))->SetYTitle("x (mm)");
   ((TH2D*)gPad->GetListOfPrimitives()->At(0))->SetAxisColor(kWhite, "xy");
   ((TH2D*)gPad->GetListOfPrimitives()->At(0))->GetXaxis()->SetTitleColor(kWhite);
   ((TH2D*)gPad->GetListOfPrimitives()->At(0))->GetYaxis()->SetTitleColor(kWhite);
