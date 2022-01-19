@@ -38,16 +38,16 @@ TCanvas *can;
 Double_t xlim(150.), ylim(150.), zlim(150.);
 Int_t xNumBins(100), yNumBins(100), zNumBins(100);
 /* Int_t xNumBins(30), yNumBins(30), zNumBins(30); */
-/* TH3D *hx1 = new TH3D("hx1", "R at 1 scatter", xNumBins, -xlim, xlim, yNumBins, -ylim, ylim, zNumBins, -zlim, zlim); */
-TH3D *hx1 = new TH3D("hx1", "R at 2nd scatter", xNumBins, -xlim, xlim, yNumBins, -ylim, ylim, zNumBins, -zlim, zlim);
-TH3D *hx5 = new TH3D("hx5", "R at 5th scatter", xNumBins, -xlim, xlim, yNumBins, -ylim, ylim, zNumBins, -zlim, zlim);
-TH3D *hx10 = new TH3D("hx10", "R at 10th scatter", xNumBins, -xlim, xlim, yNumBins, -ylim, ylim, zNumBins, -zlim, zlim);
-TH3D *hx20 = new TH3D("hx20", "R at 20th scatter", xNumBins, -xlim, xlim, yNumBins, -ylim, ylim, zNumBins, -zlim, zlim);
-/* TH1D *hcp1 = new TH1D("hcp1", "Cos[#psi] at 1 scatter", 10, -1.01, 1.01); */
-TH1D *hcp1 = new TH1D("hcp1", "Cos[#psi] at 2nd scatter", 10, -1.01, 1.01);
-TH1D *hcp5 = new TH1D("hcp5", "Cos[#psi] at 5th scatter", 10, -1.01, 1.01);
-TH1D *hcp10 = new TH1D("hcp10", "Cos[#psi] at 10th scatter", 10, -1.01, 1.01);
-TH1D *hcp20 = new TH1D("hcp20", "Cos[#psi] at 20th scatter", 10, -1.01, 1.01);
+/* TH3D *hx1 = new TH3D("hx1", "R at 1 Scatter", xNumBins, -xlim, xlim, yNumBins, -ylim, ylim, zNumBins, -zlim, zlim); */
+TH3D *hx1 = new TH3D("hx1", "R at 2nd Scatter", xNumBins, -xlim, xlim, yNumBins, -ylim, ylim, zNumBins, -zlim, zlim);
+TH3D *hx5 = new TH3D("hx5", "R at 5th Scatter", xNumBins, -xlim, xlim, yNumBins, -ylim, ylim, zNumBins, -zlim, zlim);
+TH3D *hx10 = new TH3D("hx10", "R at 10th Scatter", xNumBins, -xlim, xlim, yNumBins, -ylim, ylim, zNumBins, -zlim, zlim);
+TH3D *hx20 = new TH3D("hx20", "R at 20th Scatter", xNumBins, -xlim, xlim, yNumBins, -ylim, ylim, zNumBins, -zlim, zlim);
+/* TH1D *hcp1 = new TH1D("hcp1", "Cos[#psi] at 1 Scatter", 10, -1.01, 1.01); */
+TH1D *hcp1 = new TH1D("hcp1", "Cos[#psi] at 2nd Scatter", 10, -1.01, 1.01);
+TH1D *hcp5 = new TH1D("hcp5", "Cos[#psi] at 5th Scatter", 10, -1.01, 1.01);
+TH1D *hcp10 = new TH1D("hcp10", "Cos[#psi] at 10th Scatter", 10, -1.01, 1.01);
+TH1D *hcp20 = new TH1D("hcp20", "Cos[#psi] at 20th Scatter", 10, -1.01, 1.01);
 
 // lists
 TList *hxL = new TList, *hcpL = new TList;
@@ -72,7 +72,8 @@ Double_t cpLineWidth = 5.;
 /* const enum EColor posBGColor = TColor::GetColorDark(kAzure); */
 const enum EColor posBGColor = kBlue + 4;
 /* const enum EColor cpBGColor = kGray; */
-const enum EColor cpBGColor = kWhite;
+/* const enum EColor cpBGColor = kWhite; */
+const enum EColor cpBGColor = posBGColor;
 /* for ( Int_t j=0; j<4; j++ ) ((TH3D*)hxL->At(j))->SetMarkerStyle(6); */
 /* const enum EColor cpBGColor = TColor::GetColorDark(kGray); */
 ((TH3D*)hxL->At(0))->SetFillColorAlpha(kGreen, 0.5);
@@ -126,6 +127,7 @@ for ( kCan=1; kCan<5; kCan++ ) {
   /* hxL->At(kCan-1)->Draw("glbox1FbBb"); */
   ((TH3D*)hxL->At(kCan-1))->Project3D("xy")->Draw();
   hOrigin_xy->Draw("same");
+  ((TH2D*)gPad->GetListOfPrimitives()->At(0))->SetTitle(((TH3D*)hxL->At(kCan-1))->GetTitle());
   ((TH2D*)gPad->GetListOfPrimitives()->At(0))->SetXTitle("y (mm)");
   ((TH2D*)gPad->GetListOfPrimitives()->At(0))->SetYTitle("x (mm)");
   ((TH2D*)gPad->GetListOfPrimitives()->At(0))->SetAxisColor(kWhite, "xy");
@@ -146,9 +148,15 @@ for ( kCan=1; kCan<5; kCan++ ) {
   cC->GetPad(kCan)->cd();
   gPad->SetFillColor(cpBGColor);
   gPad->SetFrameFillColor(cpBGColor);
+  gPad->SetFrameLineColor(kWhite);
   ((TH1D*)hcpL->At(kCan-1))->SetLineWidth(cpLineWidth);
   hcpL->At(kCan-1)->Draw();
   ((TH1D*)hcpL->At(kCan-1))->SetAxisRange(0., 1.2*hcpMax, "Y");
+  ((TH1D*)gPad->GetListOfPrimitives()->At(0))->SetAxisColor(kWhite, "xy");
+  ((TH1D*)gPad->GetListOfPrimitives()->At(0))->GetXaxis()->SetTitleColor(kWhite);
+  ((TH1D*)gPad->GetListOfPrimitives()->At(0))->GetYaxis()->SetTitleColor(kWhite);
+  ((TH1D*)gPad->GetListOfPrimitives()->At(0))->GetXaxis()->SetLabelColor(kWhite);
+  ((TH1D*)gPad->GetListOfPrimitives()->At(0))->GetYaxis()->SetLabelColor(kWhite);
 }
 
 // results
