@@ -28,6 +28,7 @@
 class TIBDParams : public TClass {
 
 private:
+  Double_t		fReactorPower;		// reactor thermal power (MW_Th)
   Double_t		fReactorNuRate;		// total antineutrino flux from reactor (nu_e_bar / s)
   Double_t		fStandoff;		// detector distance to reactor core (cm)
   Double_t		fnH;			// H-atom density of target material (atoms / cm^3)
@@ -41,11 +42,14 @@ public:
   Double_t		GetXS() { return 5.e-43; } // IBD cross-section (cm^2)
   Double_t		GetXSBarns() { return 5.e-19; } // IBD cross-section (barns)
   Double_t		GetThreshold() { return 1.85; } // IBD threshold (MeV)
+  Double_t		GetFluxPowerRatio() { return 2.e17; } // neutrino-flux scaling factor ( nu_e_bar / s / MW_Th )
   Double_t              GetMuNeutronFlux() { return 0.00648312; } // (muogenic_neutrons / cm^2 / s) at sea level
   // data members
-  void			SetReactorNuRate( Double_t reactorNuRate ) { fReactorNuRate = reactorNuRate; }
+  void			SetReactorPower( Double_t reactorPower );
+  void			SetReactorNuRate( Double_t reactorNuRate );
   void			SetStandoff( Double_t standoff ) { fStandoff = standoff; }
   void			SetHydrogenDensity( Double_t nH ) { fnH = nH; }
+  Double_t		GetReactorPower() const { return fReactorPower; }
   Double_t		GetReactorNuRate() const { return fReactorNuRate; }
   Double_t		GetStandoff() const { return fStandoff; }
   Double_t		GetHydrogenDensity() const { return fnH; }

@@ -47,7 +47,7 @@ TString stepProc;
 
 // MAIN
 for ( k=0; k<N_in; k++ ) { // event loop
-
+                                  
   // enter event
   nScatters = 0;
   kChosenScatter = kFALSE;

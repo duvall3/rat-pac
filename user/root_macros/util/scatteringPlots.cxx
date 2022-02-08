@@ -83,7 +83,7 @@ const enum EColor cpBGColor = posBGColor;
 ((TH3D*)hxL->At(0))->SetMarkerColor(kGreen);
 ((TH3D*)hxL->At(1))->SetMarkerColor(kYellow);
 ((TH3D*)hxL->At(2))->SetMarkerColor(kOrange);
-((TH3D*)hxL->At(3))->SetMarkerColor(kRed);
+((TH3D*)hxL->At(3))->SetMarkerColor(TColor::GetColorBright(kRed));
 ((TH1D*)hcpL->At(0))->SetLineColor(kGreen);
 ((TH1D*)hcpL->At(1))->SetLineColor(kYellow);
 ((TH1D*)hcpL->At(2))->SetLineColor(kOrange);

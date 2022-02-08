@@ -51,6 +51,7 @@ TIBDParams::TIBDParams()
   SetName("TIBDParams");
   SetTitle("class for basic IBD parameters");
   fReactorNuRate = 0.; // nu_e_bar / s
+  fReactorPower = 0.; // MW_Th
   fStandoff = 0.; // cm
   fnH = 0.; // H_atoms / cm^3
   fTRV = 0; // default TRATVolume empty
@@ -65,6 +66,7 @@ TIBDParams::TIBDParams( TRATVolume *TRV )
   SetName(name.Data());
   SetTitle("class for basic IBD parameters");
   fReactorNuRate = 4.e18; // nu_e_bar / s
+  fReactorPower = 20.; // MW_Th
   fStandoff = 500.; // cm
   fnH = 5.16e22; // H_atoms / cm^3
   fTRV = TRV;
@@ -81,6 +83,22 @@ TIBDParams::TIBDParams( Double_t reactorNuRate, Double_t standoff, Double_t nH, 
   fStandoff = standoff;
   fnH = nH;
   fTRV = TRV;
+}
+
+//______________________________________________________________________________
+// SetReactorPower
+TIBDParams::SetReactorPower( Double_t newPower )
+{
+  fReactorPower = newPower;
+  fReactorNuRate =  newPower * GetFluxPowerRatio();
+}
+
+//______________________________________________________________________________
+// SetReactorNuRate
+TIBDParams::SetReactorNuRate( Double_t newNuRate )
+{
+  fReactorNuRate = newNuRate;
+  fReactorPower =  newNuRate * GetFluxNuRateRatio();
 }
 
 //______________________________________________________________________________
@@ -163,7 +181,8 @@ TIBDParams::Print()
 //printf("DERIVED QUANTITES, GENERAL:\n  NuFlux\t\t%e\tnu_e_bar/cm^2/s\n  IBDVolRate\t%e\tIBD/cm^3/s\n", NuFlux(), IBDVolRate());
 //printf("DERIVED QUANTITES, GENERAL:\n");
   if ( (fReactorNuRate!=0) || (fStandoff!=0) ) printf("DERIVED QUANTITES, GENERAL:\n");
-  if (fReactorNuRate!=0) printf("  ReactorNuRate\t\t%e\tnu_e_bar  /  s\n", GetReactorNuRate());
+  if (fReactorPower!=0) printf("  ReactorPower\t\t%e\tMW_Th\n", GetReactorPower());
+  if (fReactorNuRate!=0) printf("  ReactorNuRate\t\t%e\tnu_e_bar / s\n", GetReactorNuRate());
   if (fStandoff!=0) printf("  Standoff\t\t%e\tcm\n", GetStandoff());
   if ( (fReactorNuRate!=0) && (fStandoff!=0) ) printf("  NuFlux\t\t%e\tnu_e_bar / cm^2 / s\n", NuFlux());
   if ( (fReactorNuRate!=0) && (fStandoff!=0) && (fnH!=0) ) IBDVolRate(); //printf("  IBDVolRate\t\t%e\tIBD / cm^3 / s\n", IBDVolRate());
