@@ -61,7 +61,7 @@ if (! $HFILE_TF) && (! $CFILE_TF); then
 fi
 
 # open for reading only
-vim -R -c ":set filetype+=.root" -c ":au BufNewFile,BufRead * set filetype+=.root" $HFILE $CFILE
+vim -R -c ":set filetype+=.root" -c ":au BufNewFile,BufRead * set filetype+=.root" -p $HFILE $CFILE
 
 # all pau!   )
 exit 0

@@ -1,8 +1,8 @@
 #!/bin/bash
 # RPEV_Installer.sh -- simple installer script for Mark Duvall's RATPACEventViewer
 # -- USAGE: RPEV_Installer.sh [PREFERRED_ROOTSYS]
-# -- see https://github.com/duvall3/rat-pac/blob/collab/user/README_RATPACEventViewer.md
-# ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 3/2020 ~ Updated 6/21 #
+# -- see https://github.com/duvall3/rat-pac/blob/collab/user/doc/README_RATPACEventViewer.md
+# ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 3/2020 ~ Updated 3/22 #
 
 
 ##Copyright (C) 2021 Mark J. Duvall
@@ -27,11 +27,12 @@ if [ -z $ROOTSYS ]; then
   echo -e '\nError: No $ROOTSYS found or given. Please either set this environment variable or provide it on the command line.\n'
   exit 10
 fi
-INSTALL_DIR=$ROOTSYS/macros
+# INSTALL_DIR=$ROOTSYS/macros
+INSTALL_DIR=testdir
 
 # download files
-wget -P $INSTALL_DIR https://github.com/duvall3/rat-pac/raw/collab/user/README_RATPACEventViewer.md
-FILE_LIST=(RATPACEventViewer.cxx rpevFunctions.cxx)
+wget -P $INSTALL_DIR https://github.com/duvall3/rat-pac/raw/collab/user/doc/README_RATPACEventViewer.md
+FILE_LIST=(RATPACEventViewer2.cxx rpevFunctions.cxx TRATVolume.h TRATVolume.cxx TRATGeo.h TRATGeo.cxx)
 for FILE in ${FILE_LIST[*]}; do
   wget -P $INSTALL_DIR https://github.com/duvall3/rat-pac/raw/collab/user/root_macros/$FILE
 done
