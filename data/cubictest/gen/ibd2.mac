@@ -1,4 +1,4 @@
-# ibd.mac -- IBD generator macro -- ALL cellS
+# ibd.mac -- IBD generator macro -- ALL cells
 
 /generator/add combo ibd:regexfill:poisson
 #/generator/vtx/set 0 0 1
