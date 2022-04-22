@@ -23,6 +23,7 @@ TFile *f5 = TFile::Open("../nulat/COMPMAIN_NULAT_10K/COMPMAIN_NULAT_10K_3/COMPMA
 gStyle->SetHistLineWidth(3.);
 TCanvas *can = new TCanvas("can", "1st-Scatter Comparison");
 can->SetLogy(kTRUE);
+can->SetLogx(kTRUE);
 TRegexp targetRE("target.*"); // will match "target_{cell,array,cube,etc.}"
 /* TH1D *hdr = new TH1D; */
 TFile *f;
@@ -86,7 +87,6 @@ h0->SetTitle("Neutron Total Displacement at 1 Scatter");
 h0->GetXaxis()->SetTitle("||#vec{#Deltar}|| (mm)");
 h0->GetXaxis()->SetTitleOffset(1.1);
 h0->GetYaxis()->SetTitle("Entries");
-can->SetLogx(kTRUE);
 
 // all pau!   )
 
