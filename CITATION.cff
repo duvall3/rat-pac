@@ -1,0 +1,21 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Tools for Reactor-Antineutrino Studies in RAT-PAC
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Mark
+    family-names: Duvall
+    email: duvall3@github.com
+identifiers:
+  - type: url
+    value: >-
+      https://github.com/duvall3/rat-pac/tree/collab/user
+    description: >-
+      Relevant branch of this author's RAT-PAC fork
+      on GitHub
+license: GPL-3.0-or-later
