@@ -11,11 +11,18 @@ authors:
   - given-names: Mark
     family-names: Duvall
     email: duvall3@github.com
+    affiliation: T. Rocks Science / University of Hawai`i
 identifiers:
   - type: url
     value: >-
       https://github.com/duvall3/rat-pac/tree/collab/user
     description: >-
-      Relevant branch of this author's RAT-PAC fork
-      on GitHub
-license: GPL-3.0-or-later
+      Location of relevant code within this project's
+      GitHub repository
+repository-code: 'https://github.com/duvall3/rat-pac'
+keywords:
+  - physics
+  - neutrino
+  - inverse beta decay
+  - detector
+license: GPL-3.0+
