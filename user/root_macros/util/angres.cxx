@@ -5,38 +5,51 @@
 {
 
 // init
+TObjString *experiment = (TObjString*)gDirectory->Get("experiment");
+TString exper = experiment->GetString();
+exper.ReplaceAll("\"","");
+if (exper.Contains("/")) exper = exper( exper.Last('/')+1, exper.Length()-1 );
 TTree *T_r = (TTree*)gDirectory->Get("T_r");
 Long64_t N = T_r->GetEntries();
-/* Double_t l, lx, ly, lz, dp; */
-Double_t l, dp;
+Double_t l, dp, P;
 TVector3 mu;
-/* Double_t P = 150.; // Double CHOOZ */
-/* Double_t P = 25.; // NuLat and 3D-Chkbd. */
-/* Double_t P = (1./3.) * (2.5 + 50. + (1./2.)*(25.+30.)); // SANTA */
-/* Double_t P = (1./3.) * (2.5 + 2.5 + 25.); // SANDD, 2D-Chkbd. */
-Double_t P = 150.; // PROSPECT
 TCanvas *c_angres = new TCanvas("c_angres", "c_angres");
+
+// detector-specific position resolutions (mm)
+// -- yes, this should be a 'switch/case' statement; no, I don't currently care (TString switches are weird)
+if ( exper.Contains("chooz") ) { // Double CHOOZ
+  P = 150.;
+} else if ( exper.Contains("nulat") || exper.Contains("rboard-3d") ) { // NuLat and 3D-Chkbd.
+  P = 25.;
+} else if ( exper.Contains("santa") ) { // SANTA
+  P = (1./3.) * (2.5 + 50. + (1./2.)*(25.+30.));
+} else if ( exper.Contains("sandd") || exper.Contains("rboard-2d") ) { // SANDD, 2D-Chkbd.
+  P = (1./3.) * (2.5 + 2.5 + 25.);
+} else if ( exper.Contains("prospect") ) { // PROSPECT
+  P = 150.;
+}
 
 // main
 
 // get means
-/* T_r->Draw("r.fX>>hx", "abs(r.fX)<500."); // DC ONLY */
-/* T_r->Draw("r.fY>>hy", "abs(r.fY)<500."); // DC ONLY */
-/* T_r->Draw("r.fZ>>hz", "abs(r.fZ)<500."); // DC ONLY */
-T_r->Draw("r.fX>>hx");
-T_r->Draw("r.fY>>hy");
-T_r->Draw("r.fZ>>hz");
+if ( exper.Contains("chooz") ) { // Double CHOOZ
+  T_r->Draw("r.fX>>hx", "abs(r.fX)<500."); // DC ONLY
+  T_r->Draw("r.fY>>hy", "abs(r.fY)<500."); // DC ONLY
+  T_r->Draw("r.fZ>>hz", "abs(r.fZ)<500."); // DC ONLY
+} else {
+  T_r->Draw("r.fX>>hx");
+  T_r->Draw("r.fY>>hy");
+  T_r->Draw("r.fZ>>hz");
+}
 c_angres->Close();
-mu.SetX(hx->GetMean()};
-mu.SetY(hy->GetMean()};
-mu.SetZ(hz->GetMean()};
+mu.SetXYZ(hx->GetMean(), hy->GetMean(), hz->GetMean());
 
 // calculate angular resolution via (Delta phi)_{1#sigma} = #arctan( (P/l) / #sqrt{N} )
 /* l = sqrt( lx**2 + ly**2 + lz**2 ); */
 l = mu.Mag();
 dp = TMath::ATan( (P/l) / sqrt(N) ) * TMath::RadToDeg();
 /* printf( "\nFilename = %s\nN = %d\nDeltaPhi = %3.2f deg\n\n", gFile->GetName(), N, dp ); */
-printf( "\nFilename = %s\nN = %d\nP = %e\nl = %e\nDeltaPhi = %3.4f deg\n\n", gFile->GetName(), N, P, l, dp );
+printf( "\nExperiment = %s\nFilename = %s\nN = %d\nP = %e\nl = %e\nDeltaPhi = %3.4f deg\n\n", exper.Data(), gFile->GetName(), N, P, l, dp );
 
 // all pau!   )
 }
