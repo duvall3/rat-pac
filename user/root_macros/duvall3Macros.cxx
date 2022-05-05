@@ -57,6 +57,7 @@ gROOT->LoadMacro("ue4_export.cxx");
 gROOT->LoadMacro("plotEQvDT.cxx");
 gROOT->LoadMacro("scatteringPositions.cxx");
 gROOT->LoadMacro("scatteringPlots.cxx");
+gROOT->LoadMacro("AngRes.cxx");
 gROOT->LoadMacro("processListedFiles.cxx");
 gROOT->LoadMacro("subsetMeans.cxx");
 
