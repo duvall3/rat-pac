@@ -23,8 +23,6 @@ Remember that the macro (or a link to it) must be located in your `$ROOTSYS/macr
 As of the current version, several other files are also required.
 These files must also be located (or linked) in `$ROOTSYS/macros`, as with the main file itself.
 Their names and locations can be found in the installer script mentioned above.
-/* They can be found at the following locations: */
-/* * [rpevFunctions.cxx](https://github.com/duvall3/rat-pac/blob/collab/user/root_macros/rpevFunctions.cxx) ([file](https://github.com/duvall3/rat-pac/raw/collab/user/root_macros/rpevFunctions.cxx)) */
 
 
 Usage
