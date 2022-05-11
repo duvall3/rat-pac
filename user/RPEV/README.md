@@ -13,7 +13,7 @@ Installation
 
 ### Automatic
 
-For users running a BASH-type shell, there is an installer script on GitHub at *duvall3 --> rat-pac --> branch collab --> user --> shell_scripts --> [RPEV_Installer.sh](https://github.com/duvall3/rat-pac/blob/collab/user/shell_scripts/RPEV_Installer.sh) ([file](https://github.com/duvall3/rat-pac/raw/collab/user/shell_scripts/RPEV_Installer.sh))*.
+For users running a BASH-type shell, there is an installer script on GitHub at *duvall3 --> rat-pac --> branch collab --> user --> shell_scripts --> [RPEV_Installer.sh](https://github.com/duvall3/rat-pac/blob/collab/user/RPEV/RPEV_Installer.sh) ([file](https://github.com/duvall3/rat-pac/raw/collab/user/RPEV/RPEV_Installer.sh))*.
 
 
 ### Manual
