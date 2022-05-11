@@ -27,8 +27,7 @@ if [ -z $ROOTSYS ]; then
   echo -e '\nError: No $ROOTSYS found or given. Please either set this environment variable or provide it on the command line.\n'
   exit 10
 fi
-# INSTALL_DIR=$ROOTSYS/macros
-INSTALL_DIR=testdir
+INSTALL_DIR=$ROOTSYS/macros
 
 # download files
 wget -P $INSTALL_DIR https://github.com/duvall3/rat-pac/raw/collab/user/doc/README_RATPACEventViewer.md
