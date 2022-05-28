@@ -28,8 +28,8 @@ L = 1000/2.54; % tube height / tube diameter
 % L = 10; %debug % for development
 
 % array size
-maxrows = 32;
-maxcols = 32;
+maxrows = 16;
+maxcols = 16;
 
 % dummy column
 [x y z] = cylinder(r);
