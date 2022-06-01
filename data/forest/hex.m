@@ -66,7 +66,6 @@ xlim([0 (row+1)*S])
 ylim([0 (col+1)*S])
 zlim([0 L+1])
 set(ax, 'dataaspectratio', [1 1 1])
-% set(s, 'facecolor', 'magenta')
 set(s, 'facealpha', 0.5)
 set(s, 'linestyle', 'none')
 whitebg;
