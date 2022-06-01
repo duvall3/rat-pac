@@ -1,8 +1,8 @@
-function [ H ] = human3( S = 1 )
+function translate( H, DELTA )
 
-% [ H ] = human3( S ) -- generate / draw a "human for scale" stick figure
-% -- [ H ] is a vector of graphics handles
-% -- S is a float value for the number of Octave units equal to 1 meter
+% translate( H, DELTA ) -- simple function to translate graphics objects
+% -- H is an array of the graphics-object handles to be translated
+% -- DELTA is a 3-vector [x y z] describing the translation
 % ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 05/2022 ~ %
 
 %Copyright (C) 2022 Mark J. Duvall / T. Rocks Science
@@ -20,28 +20,11 @@ function [ H ] = human3( S = 1 )
 %    You should have received a copy of the GNU General Public License
 %    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-% init
-currentfig = gcf;
-currentax = gca;
-hold on
-
-% draw and transform 2D human
-H = human2(S);
-view(3)
-rotate(H, [1 0 0], 90.0, [0 0 0]);
 for k = 1:length(H)
-  set( H(k), 'xdata', get(H(k),'xdata')-S )
+  set( H(k), 'xdata', get(H(k),'xdata') + DELTA(1) )
+  set( H(k), 'ydata', get(H(k),'ydata') + DELTA(2) )
+  set( H(k), 'zdata', get(H(k),'zdata') + DELTA(3) )
 end
 
-% adjust axis if necessary
-leftlim = -1.5*S;
-XLIM = xlim;
-if ( XLIM(1) > leftlim )
-  xlim([leftlim XLIM(2)])
-endif
-
-% enable camera rotation for mouse
-rotate3d on
-
 %% all pau!   )
-%% endfunction
+% end function

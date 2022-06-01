@@ -24,12 +24,13 @@ function [ H ] = human2( S = 1 )
 currentfig = gcf;
 currentax = gca;
 hold on
+S = S * 1/(14/3+1/1.5) * 1.7; % rescale to 1.7-m average human adult
 
 % main
 H = zeros(1,6);
 H(1) = circle(S/1.5,0,(14/3)*S);
-bodx = S * [0 0 0 -1 0 1 0 -1 0 1];
-body = S * ( [-1 -3 -3 -5 -3 -5 -1 -2 -1 -2] + 5 );
+bodx = S * [0 0 0 -0.5 0 0.5 0 -0.5 0 0.5];
+body = S * ( [-1 -3 -3 -5 -3 -5 -1 -2.5 -1 -2.5] + 5 );
 for k = [1:5]
   H(k+1) = line( bodx((2*k-1):(2*k)), body((2*k-1):(2*k)) );
 end
@@ -40,17 +41,3 @@ set(H, 'color', 'blue')
 
 %% all pau!   )
 %% endfunction
-
-% main
-% H(1) = circle(1,0,5);
-% bodx = [0 0];
-% body = [-1 -3];
-% H(2) = line(bodx, body+5);
-% legx = [0 -1];
-% legy = [-3 -5];
-% H(3) = line(legx, legy+5);
-% H(4) = line(-legx, legy+5);
-% armx = [0 -1];
-% army = [-1 -2];
-% H(5) = line(armx, army+5);
-% H(6) = line(-armx, army+5);
