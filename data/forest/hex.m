@@ -1,4 +1,4 @@
-% hexes -- base script for hex grid
+% hex -- base script for hex grid
 % ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 05/2022 ~ %
 
 %Copyright (C) 2022 Mark J. Duvall / T. Rocks Science
@@ -19,17 +19,26 @@
 % general init
 f = figure;
 ax = axes;
-phi0 = deg2rad(60);
-S = 2; % spacing
-r = [1 1] * 0.5; % tube radius
+% D = 25.4; %% SET SCALE: diameter in mm (for RAT-PAC compatibility)
+D = .0254; %% SET SCALE: diameter in m
+S = 2 * D; % spacing
+r = [1 1] * 0.5 * D; % tube radius
 X = zeros(1,6);
 Y = X;
-L = 1000/2.54; % tube height / tube diameter
-% L = 10; %debug % for development
+L = 1000/2.54 * D; % tube height / tube diameter
+% L = 10; % for development
 
 % array size
-maxrows = 16;
-maxcols = 16;
+maxrc_default = 16;
+b_maxrc = exist('maxrc');
+if b_maxrc ~= 0
+  maxrows = maxrc;
+  maxcols = maxrc;
+else
+  maxrows = maxrc_default;
+  maxcols = maxrc_default;
+endif
+
 
 % dummy column
 [x y z] = cylinder(r);
@@ -52,22 +61,28 @@ end
 
 % adjust plot
 view(3)
+grid on
 % xlim([-1 1.5*row*S])
 % ylim([-1 1.1*col*S])
-xlim([-1 (row+1)*S])
-ylim([-1 (col+1)*S])
-zlim([-1 L+1])
+xlim([0 (row+1)*S])
+ylim([0 (col+1)*S])
+zlim([0 L+1])
 set(ax, 'dataaspectratio', [1 1 1])
 % set(s, 'facecolor', 'magenta')
 set(s, 'facealpha', 0.5)
 set(s, 'linestyle', 'none')
+whitebg;
 
 % annotations
+set(gca, 'fontsize', 18)
 titstr = sprintf("FOREST Array (%dx%d)", maxrows, maxcols);
 T = title(titstr);
-xlabel 'x (diameters)'
-ylabel 'y (diameters)'
-zlabel 'z (diameters)'
+set(T, 'color', 'w')
+xlabel 'x (m)'
+ylabel 'y (m)'
+zlabel 'z (m)'
 
+% enable camera rotation for mouse
+rotate3d on
 
 % all pau!   )
