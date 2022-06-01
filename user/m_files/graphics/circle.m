@@ -1,8 +1,8 @@
-function [ humx, humy, humz ] = human( S )
+function [ H ] = circle( R = 1, X = 0, Y = 0 )
 
-% [ humx, humy, humz ] = human( S ) -- generate / draw a "human for scale" stick figure
-% -- S is a float value for the number of Octave units equal to 1 meter
-% -- [humx, humy, humz] are coordinate matrices for the graphics object
+% [ H ] = circle( R=1, X=0, Y=0 ) -- wrapper for drawing a circle using
+%  the rather inconvenient "rectangle" builtin
+
 % ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 05/2022 ~ %
 
 %Copyright (C) 2022 Mark J. Duvall / T. Rocks Science
@@ -20,6 +20,17 @@ function [ humx, humy, humz ] = human( S )
 %    You should have received a copy of the GNU General Public License
 %    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+% H = rectangle( "Position", [X-R Y-R 2*R 2*R], "Curvature", 1 );
+
+% init
+N = 24; % line segments
+t = linspace(0, 2*pi, N);
+x = X + R*cos(t);
+y = Y + R*sin(t);
+
+% main
+H = line(x, y);
+set(gca, 'dataaspectratio', [1 1 1])
 
 %% all pau!   )
-%% endfunction
+% end function

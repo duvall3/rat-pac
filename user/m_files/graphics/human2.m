@@ -1,0 +1,56 @@
+function [ H ] = human2( S = 1 )
+
+% [ H ] = human2( S ) -- generate / draw a "human for scale" stick figure
+% -- [ H ] is a vector of graphics handles
+% -- S is a float value for the number of Octave units equal to 1 meter
+% ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 05/2022 ~ %
+
+%Copyright (C) 2022 Mark J. Duvall / T. Rocks Science
+%
+%    This program is free software: you can redistribute it and/or modify
+%    it under the terms of the GNU General Public License as published by
+%    the Free Software Foundation, either version 3 of the License, or
+%    (at your option) any later version.
+%
+%    This program is distributed in the hope that it will be useful,
+%    but WITHOUT ANY WARRANTY; without even the implied warranty of
+%    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%    GNU General Public License for more details.
+%
+%    You should have received a copy of the GNU General Public License
+%    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+% init
+currentfig = gcf;
+currentax = gca;
+hold on
+
+% main
+H = zeros(1,6);
+H(1) = circle(S/1.5,0,(14/3)*S);
+bodx = S * [0 0 0 -1 0 1 0 -1 0 1];
+body = S * ( [-1 -3 -3 -5 -3 -5 -1 -2 -1 -2] + 5 );
+for k = [1:5]
+  H(k+1) = line( bodx((2*k-1):(2*k)), body((2*k-1):(2*k)) );
+end
+
+% adjust
+set(H, 'linewidth', 2)
+set(H, 'color', 'blue')
+
+%% all pau!   )
+%% endfunction
+
+% main
+% H(1) = circle(1,0,5);
+% bodx = [0 0];
+% body = [-1 -3];
+% H(2) = line(bodx, body+5);
+% legx = [0 -1];
+% legy = [-3 -5];
+% H(3) = line(legx, legy+5);
+% H(4) = line(-legx, legy+5);
+% armx = [0 -1];
+% army = [-1 -2];
+% H(5) = line(armx, army+5);
+% H(6) = line(-armx, army+5);
