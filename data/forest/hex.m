@@ -62,8 +62,6 @@ end
 % adjust plot
 view(3)
 grid on
-% xlim([-1 1.5*row*S])
-% ylim([-1 1.1*col*S])
 xlim([0 (row+1)*S])
 ylim([0 (col+1)*S])
 zlim([0 L+1])
