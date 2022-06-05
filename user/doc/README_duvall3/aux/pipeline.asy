@@ -17,37 +17,82 @@
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // // setup
+// settings
 size(1000,1000);
 import flowchart;
 import fontsize;
-/* settings.outformat="eps"; */
 settings.outformat="pdf";
+/* settings.outformat="eps"; */
 settings.render=0;
 currentpen = linewidth(1.0);
+// init:
+// origin and unit vectors
+pair O = (0,0);
+pair X = (1,0), Y = (0,1);
+// for title and hrules
+pair titr = (-2., 6.5);
+real[] hrx = {-8.0, 4.0};
+real[] hry = {5.8, 3.1};
+// for key blocks and lines
+int n_keyblocks = 5;
+real ky = 4.5;
+real kx_low = -7.0, kx_high= 2.8;
+real[] kx = uniform(kx_low, kx_high, n_keyblocks-1);
+pair[] K = new pair[n_keyblocks];
+for ( int i=0; i<kx.length; ++i ) {
+  K[i] = (kx[i], ky);
+}
+real karrlen = 1.00;
+transform karrl = shift(-karrlen,-0.3);
+transform karrr = shift(karrlen,-0.3);
+
+
+// // top matter
+// title
+label("Simulation and Analysis Pipeline", titr, currentpen+fontsize(48pt));
+// hrule
+draw( (hrx[0],hry[0]) -- (hrx[1],hry[0]), currentpen+linewidth(3.0));
+// key
+block krr = parallelogram("\texttt{PROGRAM}", K[0]);
+block ksh = diamond(pack(Label("\texttt{master}"), Label("\texttt{script}")), K[1]);
+block kdir = circle("directory/", K[2]);
+block kasc = bevel("ASCII file", K[3]+0.6Y);
+block kroot = rectangle("ROOT file", K[3]);
+block kpng = roundrectangle("PNG file", K[3]-0.6Y);
+path ksc = karrl*K[4]+0.5Y -- karrr*K[4]+0.5Y;
+path krm = karrl*K[4]-0.5Y -- karrr*K[4]-0.5Y;
+draw(krr);
+draw(ksh);
+draw(kdir);
+draw(kasc);
+draw(kroot);
+draw(kpng);
+draw(ksc, arrow=Arrow(TeXHead,3.));
+draw(krm, arrow=Arrow(TeXHead,3.));
+label("\texttt{shell command}", ksc, 4N+0.3W);
+label("\textit{ROOT macro}", krm, 4N+0.3W);
+// hrule
+draw( (hrx[0],hry[1]) -- (hrx[1],hry[1]) );
 
 
 // // definitions
 
-// origin and unit vectors
-pair O = (0,0);
-pair X = (1,0), Y = (0,1);
-
 // blocks
 block ratrun = diamond("\texttt{ratrun.sh}", O);
-block dir = circle("DAT/", O-X+1.5Y);
-block runmac = bevel("run.mac", O+1.15X+1.5Y);
-block conf = bevel("DAT.conf", O-1.5Y);
-block root = rectangle("DAT.root", O+2X-1.5Y);
-block log = bevel("DAT.log", O-2X-Y);
-block enrt = bevel("DAT\_energies.rt", O-2X-2Y);
-block enT = rectangle("DAT\_energies\_T.root", O-2X-3Y);
-block T = rectangle("DAT\_T.root", O+2X-3Y);
-block T2 = rectangle("DAT\_T.root", O-4Y);
-block png1 = roundrectangle("Plots 1-3", O+3X-5Y);
-block res = rectangle("DAT\_results.root", O-6Y);
-block png2 = roundrectangle("Plots 4-6", O+3X-7Y);
-block res2 = rectangle("DAT\_results.root", O-8Y);
-block ratrun2 = parallelogram("\texttt{ RATRUN }", O-7.5X-0.15Y);
+block dir = circle("DAT/", -X+1.5Y);
+block runmac = bevel("run.mac", +1.15X+1.5Y);
+block conf = bevel("DAT.conf", -1.5Y);
+block root = rectangle("DAT.root", +2X-1.5Y);
+block log = bevel("DAT.log", -2X-Y);
+block enrt = bevel("DAT\_energies.rt", -2X-2Y);
+block enT = rectangle("DAT\_energies\_T.root", -2X-3Y);
+block T = rectangle("DAT\_T.root", +2X-3Y);
+block T2 = rectangle("DAT\_T.root", -4Y);
+block png1 = roundrectangle("Plots 1-3", +3X-5Y);
+block res = rectangle("DAT\_results.root", -6Y);
+block png2 = roundrectangle("Plots 4-6", +3X-7Y);
+block res2 = rectangle("DAT\_results.root", -8Y);
+block ratrun2 = parallelogram("\texttt{ RATRUN }", -7.5X-0.15Y);
 
 // groupings
 // bash
@@ -109,32 +154,6 @@ draw(inbash, dashed, arrow=Arrow(TeXHead,3.));
 draw(inroot, dashed, arrow=Arrow(TeXHead,3.));
 label("within \texttt{BASH}", inbash, 2N);
 label("calling \texttt{ROOT}", inroot, 2W);
-
-
-// // top matter
-// title
-label("Simulation and Analysis Pipeline", -2X+7Y, currentpen+fontsize(48pt));
-// hrule
-draw(-8X+6.3Y -- 4X+6.3Y, currentpen+linewidth(3.0));
-// key
-block krr = parallelogram("\texttt{PROGRAM}", -7.5X+5Y);
-block ksh = diamond("\texttt{shell script}", -5.6X+5Y);
-block kdir = circle("directory/", -3.6X+5Y);
-block kasc = bevel("ASCII file", -2.3X+5Y);
-block kroot = rectangle("ROOT file", -1.0X+5Y);
-draw(krr);
-draw(ksh);
-draw(kdir);
-draw(kasc);
-draw(kroot);
-path ksc = -0.2X+4.7Y -- 1.6X+4.7Y;
-draw(ksc, arrow=Arrow(TeXHead,3.));
-label("\texttt{shell command}", ksc, 4N+0.3W);
-path krm = 1.9X+4.7Y -- 3.5X+4.7Y;
-draw(krm, arrow=Arrow(TeXHead,3.));
-label("\textit{ROOT macro}", krm, 4N+0.3W);
-// hrule
-draw(-8X+3.8Y -- 4X+3.8Y);
 
 
 // // chart

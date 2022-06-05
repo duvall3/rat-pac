@@ -3,6 +3,9 @@
 ---
 
 ## Simulation and Analysis Pipeline
+**NOTE: See *pipeline.pdf* in `user/doc/README_duvall3/` for a graphical representation.**
+
+---
 
 ### Master Shell Script: `ratrun.sh`
 
