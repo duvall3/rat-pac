@@ -17,8 +17,9 @@
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // // setup
-size(800,800);
+size(1000,1000);
 import flowchart;
+import fontsize;
 /* settings.outformat="eps"; */
 settings.outformat="pdf";
 settings.render=0;
@@ -110,7 +111,33 @@ label("within \texttt{BASH}", inbash, 2N);
 label("calling \texttt{ROOT}", inroot, 2W);
 
 
-// chart
+// // top matter
+// title
+label("Simulation and Analysis Pipeline", -2X+7Y, currentpen+fontsize(48pt));
+// hrule
+draw(-8X+6.3Y -- 4X+6.3Y, currentpen+linewidth(3.0));
+// key
+block krr = parallelogram("\texttt{PROGRAM}", -7.5X+5Y);
+block ksh = diamond("\texttt{shell script}", -5.6X+5Y);
+block kdir = circle("directory/", -3.6X+5Y);
+block kasc = bevel("ASCII file", -2.3X+5Y);
+block kroot = rectangle("ROOT file", -1.0X+5Y);
+draw(krr);
+draw(ksh);
+draw(kdir);
+draw(kasc);
+draw(kroot);
+path ksc = -0.2X+4.7Y -- 1.6X+4.7Y;
+draw(ksc, arrow=Arrow(TeXHead,3.));
+label("\texttt{shell command}", ksc, 4N+0.3W);
+path krm = 1.9X+4.7Y -- 3.5X+4.7Y;
+draw(krm, arrow=Arrow(TeXHead,3.));
+label("\textit{ROOT macro}", krm, 4N+0.3W);
+// hrule
+draw(-8X+3.8Y -- 4X+3.8Y);
+
+
+// // chart
 add(new void(picture pic, transform t) {
     blockconnector operator --=blockconnector(pic,t);
   ratrun--Up--Left--Label("\texttt{mkdir}",.5,2W)--Arrow--dir;
@@ -130,5 +157,5 @@ add(new void(picture pic, transform t) {
 });
 
 
-// all pau!   )
-shipout(bbox(1cm));
+// // all pau!   )
+shipout(bbox(2cm));
