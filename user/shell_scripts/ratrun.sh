@@ -7,7 +7,25 @@
 #		if you want to run in batch mode
 #	-- SEDAQ_GRAPHICS_TF is a flag passed to SEDAQ.cxx for whether to create plots
 #		-- this defaults to false (for batch-mode operation)
-# ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ July 2015 ~ Updated 5/21 ~ v2.0.0 ~ #
+#	-- QUANTIZED_POSITIONS is a string (no quotes) consisting of some combination of {x,y,z}
+#			that specifies the axes along which the detector is segmented
+#		-- for non-segmented detectors, simply enter two double-quotes ("")
+#		-- for partially- or fully-segmented detectors that use the center-position of a cell to determine
+#	   	   scintillation position, enter the segmentation axes
+#		-- segmented detectors with sub-cell position resolution are not yet supported
+#	-- POSITION_RESOLUTIONS is a string (no quotes) consisting of some combination of {x,y,z}
+#			that specifies the axes along which to apply Gaussian noise to emulate
+#			realistic position (see the parameter "positionResolution"
+#			in user/root_macros/particleTracksToScint.cxx)
+#		-- this parameter should contain any {x,y,z} not specified in QUANTIZED_POSITIONS
+#	-- Example 1: To simulate and analyze a datarun: 1) called "test_1", 2) with 1000 events, 3) with graphics output,
+#		for a detector 4) segmented in x & y but 5) not in z, invoke the script as follows:
+#			user@host:~$ ratrun.sh test_1 1000 true xy z
+#	-- Example 2: Same as the above, but for a fully-segmented detector:
+#			user@host:~$ ratrun.sh test_1 1000 true xyz
+#	-- Example 3: Same as the above, but for a non-segmented detector:
+#			user@host:~$ ratrun.sh test_1 1000 true "" xyz
+# ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ July 2015 ~ Updated 6/22 ~ v2.0.1 ~ #
 
 
 ##Copyright (C) 2021 Mark J. Duvall

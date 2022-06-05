@@ -105,7 +105,9 @@ for (( k=0; k<$NINSTS; k++ )) {
   # prepare simulation, post-processing, and combination commands
   RATCMD="rat -l $INST_DIR.log run.mac" # assume IBD run
   PROCCMD="$RATROOT/user/shell_scripts/process_rat_run.sh $INST_DIR $NEVENTS false $QUANTIZED_POSITIONS $POSITION_RESOLUTIONS"
-  ECHOCMD="echo -e \"\\n$INST_DIR complete.\\n\""
+# ECHOCMD="echo -e \"\\n$INST_DIR complete.\\n\""
+  ECHOSTR="\n$INST_DIR complete.\n"
+  ECHOCMD="echo -e $ECHOSTR"
   FULLCMD="eval $RATCMD && eval $PROCCMD && eval $ECHOCMD"
 
   # RUN

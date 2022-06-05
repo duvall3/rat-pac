@@ -1,11 +1,11 @@
 #!/bin/bash
-# geogen_general-segmented -- generate a segmented, rectangular-lattice detector .geo file
+# geogen_forest -- generate a segmented, rectangular-lattice detector .geo file
 # -- this script expects to be run in a directory such as $RATROOT/data/foo-experiment,
 #      which is expected to contain a base geometry file (i.e., without cell array)
 #      called "foo-experiment_base.geo"
-# -- for an example, see https://github.com/duvall3/rat-pac/blob/comparison/data/general-segmented/general-segmented_base.geo
+# -- for an example, see https://github.com/duvall3/rat-pac/blob/comparison/data/forest/forest_base.geo
 #
-# USAGE: geogen_general-segmented.sh [reset]
+# USAGE: geogen_forest.sh [reset]
 #
 # ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ Updated 5/21 ~ #
 

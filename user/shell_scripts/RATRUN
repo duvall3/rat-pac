@@ -1,0 +1,59 @@
+#!/bin/bash
+# RATRUN -- very simple interface to ratrun.sh
+# -- For full documentation (including description of arguments),
+#      see ratrun.sh in this directory
+# -- NOTE: Adjust your PATH below if necessary
+# ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 06/2022 ~ #
+
+#Copyright (C) 2022 Mark J. Duvall / T. Rocks Science
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+# PATH
+REPO_SHELLSCR_PATH=$RATROOT/user/shell_scripts
+
+# init
+if [[ ($1 == "-h") || ($1 == "--help") ]]; then
+  echo -e "\nUsage: RATRUN [FILENAME] [NUM_EVENTS] [SEDAQ_GRAPHICS_TF] [QUANTIZED_POSITIONS] [POSITION_RESOLUTIONS]\n"
+  exit 100
+fi
+echo -e '\n\n### Welcome to RATRUN! ###\n'
+PROMPTED_DATARUN=
+PROMPTED_NUM=
+
+# arg check
+if [ $# -lt 2 ]; then
+  if [ $# -eq 0 ]; then
+    echo -e "Enter datarun name: "
+    read PROMPTED_DATARUN
+    echo
+  fi
+  if [ $# -eq 1 ]; then
+    PROMPTED_DATARUN=$1
+    shift
+  fi
+  echo -e "Enter number of events: "
+  read PROMPTED_NUM
+  echo
+fi
+
+# MAIN
+PROMPTED_ARGS=($PROMPTED_DATARUN $PROMPTED_NUM)
+RATRUNCMD="$REPO_SHELLSCR_PATH/ratrun.sh ${PROMPTED_ARGS[*]} $*"
+# echo -e "$RATRUNCMD" #debug
+eval $RATRUNCMD
+
+# all pau!   )
+echo
+# no 'exit 0' -- don't overwrite exit status
