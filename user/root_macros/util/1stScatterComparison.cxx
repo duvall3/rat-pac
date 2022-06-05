@@ -83,7 +83,7 @@ h0->Draw();
 TH1F* h4 = (TH1F*)gROOT->FindObjectAnyFile("h4");
 h4->Draw("same");
 leg->Draw();
-h0->SetTitle("Neutron Total Displacement at 1 Scatter");
+h0->SetTitle("Neutron Total Displacement at 1st Scatter");
 h0->GetXaxis()->SetTitle("||#vec{#Deltar}|| (mm)");
 h0->GetXaxis()->SetTitleOffset(1.1);
 h0->GetYaxis()->SetTitle("Entries");

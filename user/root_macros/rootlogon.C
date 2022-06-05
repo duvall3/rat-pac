@@ -1,7 +1,7 @@
 // rootlogon.C -- just what it says
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 4/2020 ~ //
 //
-// NOTE: The following gStyle defaults have been moved to RATROOT/rootinit.C
+// NOTE: The following gStyle defaults have been moved to $RATROOT/rootinit.C
 //  // custom
 //  gStyle->SetHistLineWidth(2);
 //  gStyle->SetHistLineColor(kBlue);
