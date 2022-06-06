@@ -16,7 +16,7 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-void findVarsOfType( const char* varType = "" ) {
+void findVarsOfType( const char* varType = "", Bool_t kCaseSensitive = kFALSE ) {
 
 // init
 TRegexp varRE(varType);
@@ -30,6 +30,7 @@ TIter i(glist);
 for ( i=glist->begin(); i!=glist->end(); ++i ) {
   gvar = (TGlobal*)*i;
   gvarType.Form("%s", gvar->GetTypeName());
+  if (! kCaseSensitive) gvarType.ToLower();
   if ( gvarType.Contains(varRE) ) {
     varCount++;
     printf("%s\t%s\n", gvar->GetTypeName(), gvar->GetName());
