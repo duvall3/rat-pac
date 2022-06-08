@@ -6,19 +6,17 @@ Instructions for using the (most useful) macros in
 
 ### Installation
 
-After git-cloning this repository (or downloading the individual files),
-  run the following commands at your BASH prompt
-  from the directory containing the macros:
+_Note: These are written for *nix systems (Mac/Linux)_
 
-```sh
-ln -s $(pwd)/duvall3Include.cxx "$ROOTSYS"/macros
-FILE_LIST=(rt_to_root dumpHist SEDAQ RATPACEventViewer angularRecon applyCuts)
-for FILE in ${FILE_LIST[*]}; do
-  ln -s $(pwd)/"$FILE".cxx "$ROOTSYS"/macros
-done
-```
+1) After git-cloning this repository (or downloading the individual files),
+  run the `macro_paths.sh` script located in this directory
+  and follow the instructions it provides.
+2) If you are using the `rootlogon.C` provided in this directory,
+  then everything should now be ready.
+  If you are using your own `rootlogon.C` elsewhere, simply append the contents
+  of this directory's version to yours. 
 
 ### Usage
 
-Simply open ROOT and run ```.x duvall3Include.cxx``` to load the macros.
+Open ROOT and run ```.x duvall3Include.cxx``` to load the macros.
 See comments in individual macro files for details.
