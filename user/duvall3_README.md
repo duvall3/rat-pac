@@ -1,1 +1,1 @@
-/home/mark/rat-pac/user/doc/README_duvall3/README_duvall3.md
+./doc/README_duvall3/README.md
