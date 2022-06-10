@@ -23,7 +23,8 @@ valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "world",
 type: "box",
-size: [882.0, 882.0, 882.0], // mm
+//size: [882.0, 882.0, 882.0], // mm
+size: [1500., 1500., 1500.], //mm
 material: "air",
 color: [0.8 0.1, 0.1],
 invisible: 0,
@@ -43,24 +44,26 @@ type: "box",
 size: [680., 680., 740.], // mm
 material: "water",
 invisible: 0,
+position: [0., 0., -500.] //mm
+//position: [0., 0., 0.] //mm
 }
 
 
-// DETECTOR SPACE -- to be shared by all detectors
-// -------- GEO[detector_space]
-{
-name: "GEO",
-index: "detector_space",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: "water_shield",
-type: "box",
-//size: [430., 490., 430.]
-size: [430., 430., 490.]
-material: "air"
-invisible: 0,
-position: [0., 0., 0.]
-}
+//// DETECTOR SPACE -- to be shared by all detectors
+//// -------- GEO[detector_space]
+//{
+//name: "GEO",
+//index: "detector_space",
+//valid_begin: [0, 0],
+//valid_end: [0, 0],
+//mother: "water_shield",
+//type: "box",
+////size: [430., 490., 430.]
+//size: [430., 430., 490.]
+//material: "air"
+//invisible: 0,
+//position: [0., 0., -500.] //mm
+//}
 
 
 // CELL ARRAY
@@ -70,12 +73,13 @@ name: "GEO",
 index: "cell_array",
 valid_begin: [0, 0],
 valid_end: [0, 0],
-mother: "detector_space",
+//mother: "detector_space",
+mother: "water_shield",
 type: "box",
 size: [430., 430., 490.]
 material: "air"
 invisible: 0,
-position: [0., 0., 0.]
+//position: [0., 0., 0.]
 }
 
 

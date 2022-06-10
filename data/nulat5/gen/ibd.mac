@@ -1,12 +1,19 @@
 # ibd.mac -- IBD generator macro
 
-/generator/add combo ibd:regexfill:poisson
+#/generator/add combo ibd:regexfill:poisson
+/generator/add combo ibd:point:poisson
 #/generator/vtx/set 0 0 1
 /generator/vtx/set -1 0 0 # neutrinos directed along -x direction
 #/generator/pos/set 0 -9924 0
 #/generator/pos/set 0 0 -9924
 #/generator/pos/set target_cube
-/generator/pos/set target_cube_[[:digit:]].*
-#/generator/rate/set 1
-/generator/rate/set 1.01956235925830004e-04
+#/generator/pos/set target_cube_[[:digit:]].*
+/generator/pos/set target_cube_2_2_2
+/generator/rate/set 1
+#/generator/rate/set 1.01956235925830004e-04
 
+
+# off-axis tests, such that phi_source_true = {15,30,45} deg
+#/generator/vtx/set -0.9659258262890683 -0.2588190451025207 0 # neutrinos angled 15 deg from the -x direction
+#/generator/vtx/set -0.8660254037844387 -0.4999999999999999 0 # neutrinos angled 30 deg from the -x direction
+#/generator/vtx/set -0.7071067811865476 -0.7071067811865475 0 # neutrinos angled 45 deg from the -x direction

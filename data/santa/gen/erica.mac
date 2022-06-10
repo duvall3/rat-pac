@@ -3,7 +3,9 @@
 /generator/add combo gun:regexfill:poisson
 #/generator/vtx/set neutron 0 0 1 0.010  # 10keV neutrons directed along the +z axis
 #/generator/vtx/set neutron 0 0 1 0.004  # 4keV neutrons directed along the +z axis
-/generator/vtx/set neutron 0 0 1 0.001  # 1keV neutrons directed along the +z axis
+#/generator/vtx/set neutron 0 0 1 0.001  # 1keV neutrons directed along the +z axis
+#/generator/vtx/set neutron -1 0 0 0.001  # 1keV neutrons directed along the -x axis
+/generator/vtx/set neutron 0 0 0 0.001  # 1keV neutrons, isotropic
 
 # angle tests
 #/generator/vtx/set neutron 0.17633 0 1 0.01  # 10keV neutrons directed at +10deg. to the +z axis
@@ -17,5 +19,6 @@
 #/generator/vtx/set neutron 57.289 0 1 0.01  # 10keV neutrons directed at +89deg. to the +z axis
 
 #/generator/pos/set 0 -9000 -500
-/generator/pos/set target_plane
+#/generator/pos/set target_plane
+/generator/pos/set capture_bar
 /generator/rate/set 1

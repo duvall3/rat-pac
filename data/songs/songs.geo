@@ -58,6 +58,8 @@ type: "box",
 //size: [76.0, 76.0, 76.0], // mm
 size: [382.0,382.0,382.0]
 material: "gd_scintillator",
+//material: "pvt",
+//material: "glass",
 invisible: 0,
 //position: [0.0, -9924.0, 0.0], // mm
 //position: [0.0, -5000.0, 0.0]

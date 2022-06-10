@@ -10,3 +10,8 @@
 # SONGS prediction:  407 +/- 75 / day --> 4.44e-3 / s
 # SONGS measurement: 459 +/- 16 / day --> 5.28e-3 / s
 # SONGS prediction for perfect efficiency: 3800 +/- 440 / day --> 4.39e-2 / s
+
+# off-axis tests, such that phi_source_true = {15,30,45} deg
+#/generator/vtx/set -0.9659258262890683 -0.2588190451025207 0 # neutrinos angled 15 deg from the -x direction
+#/generator/vtx/set -0.8660254037844387 -0.4999999999999999 0 # neutrinos angled 30 deg from the -x direction
+#/generator/vtx/set -0.7071067811865476 -0.7071067811865475 0 # neutrinos angled 45 deg from the -x direction

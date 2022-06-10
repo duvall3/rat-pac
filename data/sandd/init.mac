@@ -1,0 +1,29 @@
+# init -- set & initialize experiment
+
+/glg4debug/glg4param omit_muon_processes 0
+/glg4debug/glg4param omit_hadronic_processes 0
+
+#/rat/db/set DETECTOR experiment "/home/mark/rat-pac/data/sandd"
+#/rat/db/set DETECTOR geo_file "/home/mark/rat-pac/data/sandd/sandd.geo"
+/rat/db/set DETECTOR experiment "sandd"
+/rat/db/set DETECTOR geo_file "sandd.geo"
+#/rat/db/load ./IBD.ratdb
+#/rat/db/load ./MATERIALS_Watchman.ratdb
+#/rat/db/load ./MATERIALS_test.ratdb
+#/rat/db/load ./OPTICS_test.ratdb
+#/rat/db/load /home/mark/rat-pac/data/sandd/MATERIALS_sandd.ratdb
+#/rat/db/load /home/mark/rat-pac/data/sandd/OPTICS_sandd.ratdb
+/rat/db/load sandd/MATERIALS_sandd.ratdb
+/rat/db/load sandd/OPTICS_sandd.ratdb
+
+/run/numberOfThreads 4
+/run/initialize
+
+/rat/proc fitcentroid
+#/rat/proc fitpath
+/rat/proc count
+/rat/procset update 1000
+/rat/proclast outroot
+
+#/rat/proc prune
+#/rat/procset prune "mc.track:opticalphoton"

@@ -27,6 +27,8 @@
 /vis/viewer/set/auxiliaryEdge true
 /vis/viewer/set/lineSegmentsPerCircle 100
 #
+# or surface:
+#/vis/viewer/set/style s
 
 # Axes, scale, etc.
 /vis/set/textSize 18.0
@@ -36,24 +38,24 @@
 
 # To get nice view
 #/vis/geometry/set/visibility world 0 false
-/vis/viewer/set/background black
-/vis/viewer/zoom 8
+/vis/viewer/set/background white
+/vis/viewer/zoom 500
 #/vis/viewer/pan 0 -9 m
 
 # set or correct volume properties:
 /vis/geometry/set/colour world 0 .6 .2 .1 .1
 /vis/geometry/set/visibility world 0 1
+/vis/geometry/set/visibility cave 0 1
 #/vis/geometry/set/colour cave 0 0 0 0 .2
+/vis/geometry/set/colour cave 0 0 0 0 1
 #/vis/geometry/set/colour cave_floor 0 .6 .2 .1 .3
 #/vis/geometry/set/colour cave_ceiling 0 .6 .2 .1 .3
 #/vis/geometry/set/colour cave_back 0 .6 .2 .1 .3
 #/vis/geometry/set/colour cave_lwall 0 .6 .2 .1 .3
 #/vis/geometry/set/colour cave_rwall 0 .6 .2 .1 .3
-/vis/geometry/
-/vis/viewer/set/style s
-# or surface:
-#/vis/geometry/set/colour
-#/vis/geometry/set/colour
+#/vis/geometry/set/colour cube_array 1 .2 0 1
+/vis/geometry/set/colour cube_array 1 0. 1. 1.
+/vis/geometry/set/colour cube_array 0 0. 1. 1. .1
 
 /vis/viewer/set/hiddenMarker true
 #/vis/viewer/set/targetPoint 0 -9 0 m

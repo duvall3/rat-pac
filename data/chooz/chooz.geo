@@ -51,20 +51,20 @@ invisible: 0,
 //}
 
 
-//// -------- GEO[water_shield]
-//{
-//name: "GEO",
-//index: "water_shield",
-//valid_begin: [0, 0],
-//valid_end: [0, 0],
-//mother: "cave",
-//type: "tube",
-//r_max: 1250.0, // mm
-//size_z: 1250.0, // mm
-//material: "water",
-//color: [0., 0.2, 1.0],
-//invisible: 0,
-//}
+// -------- GEO[water_shield]
+{
+name: "GEO",
+index: "water_shield",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: "cave",
+type: "tube",
+r_max: 1250.0, // mm
+size_z: 1250.0, // mm
+material: "water",
+color: [0., 0.2, 1.0],
+invisible: 0,
+}
 
 
 
@@ -75,8 +75,8 @@ index: "target",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 //mother: "tank",
-mother: "cave",
-//mother: "water_shield",
+//mother: "cave",
+mother: "water_shield",
 type: "tube",
 //r_max: 500.0, // mm -- small
 //r_max: 5000.0, // mm -- large

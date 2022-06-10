@@ -34,9 +34,9 @@
 /vis/set/textSize 18.0
 #/vis/scene/add/axes/g 0 -9.45 -2 1 m grey false # Simple axes: x=red, y=green, z=blue.
 #/vis/scene/add/date    # Date stamp
-/vis/scene/add/scale 152 mm x 0. 0. 0. manual 0. 85. 85. mm
-/vis/scene/add/scale 152 mm y 0. 0. 0. manual -85. 0. 85. mm
-/vis/scene/add/scale 152 mm z 0. 0. 0. manual 85. 85. 0. mm
+#/vis/scene/add/scale 152 mm x 0. 0. 0. manual 0. 85. 85. mm
+#/vis/scene/add/scale 152 mm y 0. 0. 0. manual -85. 0. 85. mm
+#/vis/scene/add/scale 152 mm z 0. 0. 0. manual 85. 85. 0. mm
 
 # To get nice view
 #/vis/geometry/set/visibility world 0 false

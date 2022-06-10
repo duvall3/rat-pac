@@ -1,0 +1,5 @@
+/control/execute setup.mac
+/rat/procset file "scat_dist_test_1.root"
+/rat/proc count
+/rat/procset update 1000
+/run/beamOn 1000

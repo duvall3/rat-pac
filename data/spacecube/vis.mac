@@ -33,7 +33,7 @@
 # Axes, scale, etc.
 /vis/set/textSize 18.0
 #/vis/scene/add/axes/g 0 -9.45 -2 1 m grey false # Simple axes: x=red, y=green, z=blue.
-/vis/scene/add/date    # Date stamp
+#/vis/scene/add/date    # Date stamp
 
 
 # To get nice view
@@ -50,6 +50,8 @@
 #/vis/geometry/set/colour target_cube_array 1 .2 .8 .8
 /vis/geometry/set/visibility target_cube_array 0 1
 #/vis/geometry/set/colour target_cube_array 0 .8 .8 .8 .2
+/vis/geometry/set/colour target_cube_array 1 0.0 1.0 1.0
+/vis/geometry/set/colour target_cube_array 0 .8 .8 .8 .2
 
 /vis/viewer/set/hiddenMarker true
 /vis/viewer/set/targetPoint 0 0 0 m

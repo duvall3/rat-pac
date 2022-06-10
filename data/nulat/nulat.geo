@@ -14,6 +14,22 @@ color: [0.67, 0.29, 0.0],
 invisible: 1,
 }
 
+//// -------- GEO[cave]
+//{
+//name: "GEO",
+//index: "cave",
+//valid_begin: [0, 0],
+//valid_end: [0, 0],
+//mother: "world",
+//type: "box",
+//size: [10000.0, 10000.0, 10000.0], // mm
+//material: "air",
+//color: [0.8 0.1, 0.1],
+//invisible: 1,
+////position: [] -- center of "world"
+//}
+
+// smaller cave
 // -------- GEO[cave]
 {
 name: "GEO",
@@ -22,7 +38,7 @@ valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "world",
 type: "box",
-size: [10000.0, 10000.0, 10000.0], // mm
+size: [1500.0, 1500.0, 1500.0], // mm
 material: "air",
 color: [0.8 0.1, 0.1],
 invisible: 1,
@@ -116,6 +132,7 @@ mother: "world",
 type: "box",
 size: [326.0, 326.0, 326.0], // mm
 material: "water",
+color: [0., 0.3, 1.0],
 invisible: 0,
 //position: [0.0, -9924.0, 0.0], // mm
 //position: [0.0, 0.0, -9924.0], // mm
@@ -130,9 +147,12 @@ index: "cube_array",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 mother: "water_shield",
+//mother: "cave",
 type: "box",
-size: [76.0, 76.0, 76.0], // mm
+//size: [76.0, 76.0, 76.0], // mm
+size: [80.0, 80.0, 80.0], // mm
 material: "air",
+color: [0.0, 1.0, 1.0]
 invisible: 0,
 //position: [0.0, -9924.0, 0.0], // mm
 //position: [0.0, 0.0, -9924.0], // mm

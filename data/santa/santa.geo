@@ -40,6 +40,7 @@ type: "box",
 size: [1010.0, 1500.0, 1500.0] // mm
 position: [0.0, 0.0, 0.0] // mm
 material: "water",
+//material: "air", //debug
 color: [0, 0.0, 1],
 }
 
