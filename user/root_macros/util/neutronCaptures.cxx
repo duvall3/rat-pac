@@ -118,63 +118,68 @@ for ( k=0; k<N; k++ ) {
   }
 }
 
-// draw skymap
-TCanvas* can_skymap = new TCanvas("can_skymap", detector+" | "+filename, 820, 120, 800, 700);
-T_ncap->Draw("lattd:longtd>>hmap", "", "aitoff");
-hmap->SetTitle(T_ncap->GetTitle());
-hmap->GetXaxis()->SetLimits(-180., 180.);
-hmap->GetYaxis()->SetLimits(-90., 90);
-hmap->GetXaxis()->SetTitle("Longitude (^{o})");
-hmap->GetYaxis()->SetTitle("Lattitude (^{o})");
-can_skymap->Draw();
+// plots
+if (kPrint) {
 
-// draw capture-distance plot
-TCanvas* can_capdist = new TCanvas("can_capdist", detector+" | "+filename, 820, 120, 800, 700);
-T_ncap->Draw("R>>hdis", "R<1000");
-hdis->SetTitle(T_ncap->GetTitle());
-hdis->GetXaxis()->SetTitle("Neutron-Capture Distance (mm)");
-hdis->SetLineWidth(2);
-hdis->SetLineColor(kBlue);
-can_capdist->SetLogy(kTRUE);
-can_capdist->Draw();
+  // draw skymap
+  TCanvas* can_skymap = new TCanvas("can_skymap", detector+" | "+filename, 820, 120, 800, 700);
+  T_ncap->Draw("lattd:longtd>>hmap", "", "aitoff");
+  hmap->SetTitle(T_ncap->GetTitle());
+  hmap->GetXaxis()->SetLimits(-180., 180.);
+  hmap->GetYaxis()->SetLimits(-90., 90);
+  hmap->GetXaxis()->SetTitle("Longitude (^{o})");
+  hmap->GetYaxis()->SetTitle("Lattitude (^{o})");
+  can_skymap->Draw();
 
-// draw cos_psi plot
-TCanvas* can_cospsi = new TCanvas("can_cospsi", detector+" | "+filename, 820, 120, 800, 700);
-TH1D* hcospsi = new TH1D("hcospsi", T_ncap->GetTitle(), 10, -1., 1.);
-T_ncap->Draw("cos_psi>>hcospsi");
-hcospsi->GetXaxis()->SetTitle("cos[#psi]");
-hcospsi->GetYaxis()->SetRangeUser(0., 1.2*hcospsi->GetMaximum());
-hcospsi->SetLineWidth(2);
-hcospsi->SetLineColor(kRed);
-//TPaveStats* st_cospsi = (TPaveStats*)can_cospsi->GetPrimitive("stats");
-//st_cospsi->SetX1(-1.);
-//st_cospsi->SetX2(2.5);
-can_cospsi->Draw();
+  // draw capture-distance plot
+  TCanvas* can_capdist = new TCanvas("can_capdist", detector+" | "+filename, 820, 120, 800, 700);
+  T_ncap->Draw("R>>hdis", "R<1000");
+  hdis->SetTitle(T_ncap->GetTitle());
+  hdis->GetXaxis()->SetTitle("Neutron-Capture Distance (mm)");
+  hdis->SetLineWidth(2);
+  hdis->SetLineColor(kBlue);
+  can_capdist->SetLogy(kTRUE);
+  can_capdist->Draw();
 
-// draw zeta plot
-TCanvas* can_zeta = new TCanvas("can_zeta", detector+" | "+filename, 820, 120, 800, 700);
-TH1D* hzeta = new TH1D("hzeta", T_ncap->GetTitle(), 100, -180., 180.);
-T_ncap->Draw("zeta>>hzeta");
-Double_t zeta_maxcount = hzeta->GetMaximum();
-hzeta->GetYaxis()->SetRangeUser(0., 1.2*zeta_maxcount);
-hzeta->GetXaxis()->SetTitle("#zeta (^{o})");
-hzeta->SetLineWidth(2);
-hzeta->SetLineColor(kMagenta);
-can_zeta->Draw();
+  // draw cos_psi plot
+  TCanvas* can_cospsi = new TCanvas("can_cospsi", detector+" | "+filename, 820, 120, 800, 700);
+  TH1D* hcospsi = new TH1D("hcospsi", T_ncap->GetTitle(), 10, -1., 1.);
+  T_ncap->Draw("cos_psi>>hcospsi");
+  hcospsi->GetXaxis()->SetTitle("cos[#psi]");
+  hcospsi->GetYaxis()->SetRangeUser(0., 1.2*hcospsi->GetMaximum());
+  hcospsi->SetLineWidth(2);
+  hcospsi->SetLineColor(kRed);
+  //TPaveStats* st_cospsi = (TPaveStats*)can_cospsi->GetPrimitive("stats");
+  //st_cospsi->SetX1(-1.);
+  //st_cospsi->SetX2(2.5);
+  can_cospsi->Draw();
 
-// draw capture products
-TCanvas* can_prod_h = new TCanvas("can_prod", detector+" | "+filename, 820, 120, 800, 800);
-T_ncap->Draw("capProduct>>hprod", "", "PIE");
-hprod->SetTitle("Neutron-Capture Products");
-TPie* pprod = new TPie(hprod);
-can_prod_h->Close();
-pprod->SetName("pprod");
-pprod->SetLabelFormat("%txt %perc");
-pprod->SetAngularOffset(35.);
-Int_t fillColors [ ] = {2, 3, 4, 5, 6, 7, 8, 9};
-pprod->SetFillColors(fillColors);
-TCanvas* can_prod = new TCanvas("can_prod", detector+" | "+filename, 820, 120, 800, 800);
-pprod->Draw();
+  // draw zeta plot
+  TCanvas* can_zeta = new TCanvas("can_zeta", detector+" | "+filename, 820, 120, 800, 700);
+  TH1D* hzeta = new TH1D("hzeta", T_ncap->GetTitle(), 100, -180., 180.);
+  T_ncap->Draw("zeta>>hzeta");
+  Double_t zeta_maxcount = hzeta->GetMaximum();
+  hzeta->GetYaxis()->SetRangeUser(0., 1.2*zeta_maxcount);
+  hzeta->GetXaxis()->SetTitle("#zeta (^{o})");
+  hzeta->SetLineWidth(2);
+  hzeta->SetLineColor(kMagenta);
+  can_zeta->Draw();
+
+  // draw capture products
+  TCanvas* can_prod_h = new TCanvas("can_prod", detector+" | "+filename, 820, 120, 800, 800);
+  T_ncap->Draw("capProduct>>hprod", "", "PIE");
+  hprod->SetTitle("Neutron-Capture Products");
+  TPie* pprod = new TPie(hprod);
+  can_prod_h->Close();
+  pprod->SetName("pprod");
+  pprod->SetLabelFormat("%txt %perc");
+  pprod->SetAngularOffset(35.);
+  Int_t fillColors [ ] = {2, 3, 4, 5, 6, 7, 8, 9};
+  pprod->SetFillColors(fillColors);
+  TCanvas* can_prod = new TCanvas("can_prod", detector+" | "+filename, 820, 120, 800, 800);
+  pprod->Draw();
+
+}
 
 // new angle plot
 TCanvas *czeta = new TCanvas("czeta", "czeta");
