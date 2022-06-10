@@ -21,8 +21,9 @@
 #include <TMath.h>
 
 
-//TTree* neutronCaptures(const char* fileName = "", bool save_tf = kFALSE, int neutron_child = 0) {
-TTree* neutronCaptures(const char* fileName = "", bool save_tf = kTRUE, int neutron_child = 1) {
+//TTree* neutronCaptures(const char* fileName = "", bool kPrint = kFALSE, int neutron_child = 0) {
+/* TTree* neutronCaptures(const char* fileName = "", bool kPrint = kFALSE, int neutron_child = 1) { */
+void neutronCaptures(const char* fileName = "", bool kPrint = kFALSE, int neutron_child = 1) {
 
 // filename stuff
 if (fileName == "") {
@@ -59,52 +60,68 @@ RAT::TrackNode* n = c.Here();
 // general init
 Int_t k, N = r.GetTotal();
 Double_t lattd, longtd;
-TVector3 dr, pi_hat = TVector3(-1,0,0);
+TVector3 dr, ri, rf, p0_hat = TVector3(-1,0,0);
 Double_t xi, yi, zi, xf, yf, zf;
 Double_t R, cos_psi, zeta;
 const Double_t pi = TMath::Pi();
-TString capProduct;
+TString capProduct, volName;
+Bool_t volCheck = kFALSE;
+TRegexp capRE = "capture_bar";
 
 // prepare new TTree
-TTree* T = new TTree("T", "Neutron-Capture Displacements");
-T->Branch("lattd", &lattd);
-T->Branch("longtd", &longtd);
-T->Branch("R", &R);
-T->Branch("cos_psi", &cos_psi);
-T->Branch("zeta", &zeta);
-T->Branch("capProduct", &capProduct);
+TTree* T_ncap = new TTree("T_ncap", "Neutron-Capture Displacements");
+T_ncap->Branch("lattd", &lattd);
+T_ncap->Branch("longtd", &longtd);
+T_ncap->Branch("R", &R);
+T_ncap->Branch("ri", &ri);
+T_ncap->Branch("rf", &rf);
+T_ncap->Branch("dr", &dr);
+T_ncap->Branch("cos_psi", &cos_psi);
+T_ncap->Branch("zeta", &zeta);
+T_ncap->Branch("capProduct", &capProduct);
+T_ncap->Branch("volName", &volName);
+T_ncap->Branch("volCheck", &volCheck);
 
 // MAIN
 for ( k=0; k<N; k++ ) {
   ds = r.GetEvent(k);
   RAT::TrackNav nav(ds);
   c = nav.Cursor(0);
+  volName.Clear();
+  volCheck = kFALSE;
 //n = c.GoChild(0); // neutron-only run
 //n = c.GoChild(1); // IBD run
   n = c.GoChild(neutron_child);
+  ri = n->GetEndpoint();
   xi = n->GetEndpoint().X(); yi = n->GetEndpoint().Y(); zi = n->GetEndpoint().Z();
   n = c.GoTrackEnd();
   if ( (n->GetProcess() == "nCapture") | (n->GetProcess() == "neutronInelastic") ) {
+    volName = n->GetVolume();
+    if ( volName.Contains(capRE) ) volCheck = kTRUE;
+    rf = n->GetEndpoint();
     xf = n->GetEndpoint().X(); yf = n->GetEndpoint().Y(); zf = n->GetEndpoint().Z();
-    dr = TVector3(xf-xi, yf-yi, zf-zi);
+    /* dr = TVector3(xf-xi, yf-yi, zf-zi); */
+    dr = rf - ri;
     R = dr.Mag();
-//  cos_psi = pi_hat.Dot(dr.Unit());
+//  cos_psi = p0_hat.Dot(dr.Unit());
     cos_psi = -dr.X() / R; // for p_hat_init = {-1,0,0}
-    zeta = TMath::ATan2( dr.Z(), dr.Y() ) * 180/pi;
     dr = -dr; // for nicer view if initial direction was {-1,0,0}
+    /* zeta = TMath::ATan2( dr.Z(), dr.Y() ) * 180/pi; */
+    /* zeta = TMath::ATan2( dr.X(), dr.Y() ) * 180/pi; */
+    zeta = dr.Phi() * TMath::RadToDeg();
     longtd = dr.Phi()*180/pi;
     lattd = 90 - (dr.Theta()*180/pi);
     n = c.GoChild( c.ChildCount() - 1 );
     capProduct = n->GetParticleName();
-    T->Fill();
+    T_ncap->Fill();
     nav.Clear();
   }
 }
 
 // draw skymap
 TCanvas* can_skymap = new TCanvas("can_skymap", detector+" | "+filename, 820, 120, 800, 700);
-T->Draw("lattd:longtd>>hmap", "", "aitoff");
-hmap->SetTitle(T->GetTitle());
+T_ncap->Draw("lattd:longtd>>hmap", "", "aitoff");
+hmap->SetTitle(T_ncap->GetTitle());
 hmap->GetXaxis()->SetLimits(-180., 180.);
 hmap->GetYaxis()->SetLimits(-90., 90);
 hmap->GetXaxis()->SetTitle("Longitude (^{o})");
@@ -113,8 +130,8 @@ can_skymap->Draw();
 
 // draw capture-distance plot
 TCanvas* can_capdist = new TCanvas("can_capdist", detector+" | "+filename, 820, 120, 800, 700);
-T->Draw("R>>hdis", "R<1000");
-hdis->SetTitle(T->GetTitle());
+T_ncap->Draw("R>>hdis", "R<1000");
+hdis->SetTitle(T_ncap->GetTitle());
 hdis->GetXaxis()->SetTitle("Neutron-Capture Distance (mm)");
 hdis->SetLineWidth(2);
 hdis->SetLineColor(kBlue);
@@ -123,8 +140,8 @@ can_capdist->Draw();
 
 // draw cos_psi plot
 TCanvas* can_cospsi = new TCanvas("can_cospsi", detector+" | "+filename, 820, 120, 800, 700);
-TH1D* hcospsi = new TH1D("hcospsi", T->GetTitle(), 10, -1., 1.);
-T->Draw("cos_psi>>hcospsi");
+TH1D* hcospsi = new TH1D("hcospsi", T_ncap->GetTitle(), 10, -1., 1.);
+T_ncap->Draw("cos_psi>>hcospsi");
 hcospsi->GetXaxis()->SetTitle("cos[#psi]");
 hcospsi->GetYaxis()->SetRangeUser(0., 1.2*hcospsi->GetMaximum());
 hcospsi->SetLineWidth(2);
@@ -136,8 +153,8 @@ can_cospsi->Draw();
 
 // draw zeta plot
 TCanvas* can_zeta = new TCanvas("can_zeta", detector+" | "+filename, 820, 120, 800, 700);
-TH1D* hzeta = new TH1D("hzeta", T->GetTitle(), 100, -180., 180.);
-T->Draw("zeta>>hzeta");
+TH1D* hzeta = new TH1D("hzeta", T_ncap->GetTitle(), 100, -180., 180.);
+T_ncap->Draw("zeta>>hzeta");
 Double_t zeta_maxcount = hzeta->GetMaximum();
 hzeta->GetYaxis()->SetRangeUser(0., 1.2*zeta_maxcount);
 hzeta->GetXaxis()->SetTitle("#zeta (^{o})");
@@ -147,7 +164,7 @@ can_zeta->Draw();
 
 // draw capture products
 TCanvas* can_prod_h = new TCanvas("can_prod", detector+" | "+filename, 820, 120, 800, 800);
-T->Draw("capProduct>>hprod", "", "PIE");
+T_ncap->Draw("capProduct>>hprod", "", "PIE");
 hprod->SetTitle("Neutron-Capture Products");
 TPie* pprod = new TPie(hprod);
 can_prod_h->Close();
@@ -159,8 +176,14 @@ pprod->SetFillColors(fillColors);
 TCanvas* can_prod = new TCanvas("can_prod", detector+" | "+filename, 820, 120, 800, 800);
 pprod->Draw();
 
-// save if desired
-if (save_tf == kTRUE) {
+// new angle plot
+TCanvas *czeta = new TCanvas("czeta", "czeta");
+T_ncap->Draw("zeta>>hzeta", "volCheck==1");
+hzeta->SetTitle(filename);
+hzeta->Fit("gaus");
+
+// print if desired
+if (kPrint) {
   TString savename_skymap = datarun+"_nCapDirections.png";
   TString savename_capdist = datarun+"_nCapDistances.png";
   TString savename_cospsi = datarun+"_nCapCosPsi.png";
@@ -169,7 +192,8 @@ if (save_tf == kTRUE) {
   can_skymap->SaveAs(savename_skymap);
   can_capdist->SaveAs(savename_capdist);
   can_cospsi->SaveAs(savename_cospsi);
-  can_zeta->SaveAs(savename_zeta);
+  /* can_zeta->SaveAs(savename_zeta); */
+  czeta->SaveAs(savename_zeta);
   can_prod->SaveAs(savename_prod);
 }
 
@@ -179,7 +203,18 @@ can_capdist->Close();
 can_cospsi->Close();
 can_zeta->Close();
 can_prod->Close();
+czeta->Close();
+
+// save
+TString savename = datarun+"_nCap.root";
+TFile *fn = TFile::Open(savename, "recreate");
+fn->cd();
+T_ncap->Write("T_ncap");
+hzeta->Write("hzeta");
+fn->Write();
 
 // all pau!   )
-return T;
+f->Close();
+fn->Close();
+/* return T_ncap; */
 }

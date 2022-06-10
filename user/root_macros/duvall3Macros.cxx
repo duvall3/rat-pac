@@ -26,7 +26,7 @@ gROOT->LoadMacro("SEDAQ2.cxx");
 gROOT->LoadMacro("RATPACEventViewer2.cxx");
 gROOT->LoadMacro("angularRecon.cxx");
 //gROOT->LoadMacro("neutronInitialMomenta.cxx");
-//gROOT->LoadMacro("neutronCaptures.cxx");
+gROOT->LoadMacro("neutronCaptures.cxx");
 gROOT->LoadMacro("ibdTracksToScint.cxx");
 gROOT->LoadMacro("particleTracksToScint.cxx");
 //gROOT->LoadMacro("findCellScintTotal.cxx");
