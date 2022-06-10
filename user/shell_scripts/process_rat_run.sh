@@ -27,9 +27,12 @@ ROOTFILE="$BASENAME".root
 RTFILE="$BASENAME"_energies.rt
 
 ## main
+# FIXME: Temporarily adding "NCAP" --> use neutronCaptures.cxx to perform some rudimentary analysis while the main code is undergoing repair
 awk '$1 ~ /EVENT/ && ( $6>0 || $8>0 || $10>0 ) {print $2"\t"$4"\t"$6"\t"$8"\t"$10"\t"$12"\t"$14"\t"$16}' $LOGFILE > $RTFILE
 ROOTCOMMAND=$(echo -e "'$RATROOT/user/root_macros/duvallAnalyzeFull.cxx(\"$BASENAME\", $GRAPHICS_TF, \"$QUANTIZED_POSITIONS\", \"$POSITION_RESOLUTIONS\")'")
+ROOTCOMMAND_NCAP=$(echo -e "'$RATROOT/user/root_macros/util/neutronCaptures.cxx(\"$BASENAME.root\")'")
 eval "root -q -l -b $ROOTCOMMAND"
+eval "root -q -l -b $ROOTCOMMAND_NCAP"
 
 ## tidying up
 # make output directory & move all the new output files there
