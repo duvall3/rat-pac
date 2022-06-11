@@ -18,13 +18,31 @@
 
 void neutronCapturesFinal( const char* filename ) {
 
+// for graphics output:
+// switch default rendering engine
+const Bool_t origOGL = gStyle->GetCanvasPreferGL();
+if (! origOGL) gStyle->SetCanvasPreferGL(kTRUE);
+// set to batch mode if needed
+const Bool_t origBatch = gROOT->IsBatch();
+if (! origBatch) gROOT->SetBatch(kTRUE);
+
+// MAIN
 TFile *fnc = TFile::Open(filename, "update");
 TTree *T_ncap = (TTree*)gDirectory->Get("T_ncap");
 TCanvas *c_zeta = new TCanvas("c_zeta", "c_zeta");
+TString savename = filename;
+savename.ReplaceAll("_ncap.root","_zeta.png");
 T_ncap->Draw("zeta>>h_zeta", "volCheck==1");
+h_zeta->Fit("gaus");
+c_zeta->Print(savename.Data());
 c_zeta->Write("c_zeta");
+c_zeta->Close();
 fnc->Write();
 fnc->Close();
+
+// reset graphics settings if applicable
+if (! origOGL) gStyle->SetCanvasPreferGL(kFALSE);
+if (! origBatch) gROOT->SetBatch(kFALSE);
 
 // all pau!   )
 }

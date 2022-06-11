@@ -23,7 +23,7 @@
 
 //TTree* neutronCaptures(const char* fileName = "", bool kPrint = kFALSE, int neutron_child = 0) {
 /* TTree* neutronCaptures(const char* fileName = "", bool kPrint = kFALSE, int neutron_child = 1) { */
-void neutronCaptures(const char* fileName = "", bool kPrint = kFALSE, int neutron_child = 1) {
+void neutronCaptures(const char* fileName = "", TString targetRegexStr = ".*target.*", bool kPrint = kFALSE, int neutron_child = 1) {
 
 // filename stuff
 if (fileName == "") {
@@ -49,6 +49,8 @@ if ( db != 0x0 ) {
   tos = (TObjString*)toa->At(toa->GetEntries()-1);
   detector = tos->GetString();
 }
+// experiment-specific parameters
+if ( (targetRegexStr == ".*target.*") & (detector.Contains("santa")) ) targetRegexStr = ".*capture_bar.*";
 
 // RAT-PAC object init
 RAT::DSReader r(filename.Data());
@@ -65,8 +67,8 @@ Double_t xi, yi, zi, xf, yf, zf;
 Double_t R, cos_psi, zeta;
 const Double_t pi = TMath::Pi();
 TString capProduct, volName;
+TRegexp capRE(targetRegexStr);
 Bool_t volCheck = kFALSE;
-TRegexp capRE = "capture_bar";
 
 // open new file
 TString savename = datarun+"_ncap.root";
@@ -189,7 +191,7 @@ if (kPrint) {
 TCanvas *czeta = new TCanvas("czeta", "czeta");
 T_ncap->Draw("zeta>>hzeta", "volCheck==1");
 hzeta->SetTitle(filename);
-hzeta->Fit("gaus");
+/* hzeta->Fit("gaus"); */
 
 // print if desired
 if (kPrint) {
