@@ -37,13 +37,13 @@ if (fileName == "") {
   TFile* f = TFile::Open(filename);
 }
 TString datarun = filename(0,filename.Index(".root"));
-TPair* tp = db->FindObject("DETECTOR[].experiment");
-TObjString* tos = tp->Value();
-TString detectorpath = tos->GetString();
-detectorpath.ReplaceAll("\"", "");
-TObjArray* toa = detectorpath.Tokenize("/");
-tos = (TObjString*)toa->At(toa->GetEntries()-1);
-TString detector = tos->GetString();
+/* TPair* tp = db->FindObject("DETECTOR[].experiment"); */
+/* TObjString* tos = tp->Value(); */
+/* TString detectorpath = tos->GetString(); */
+/* detectorpath.ReplaceAll("\"", ""); */
+/* TObjArray* toa = detectorpath.Tokenize("/"); */
+/* tos = (TObjString*)toa->At(toa->GetEntries()-1); */
+/* TString detector = tos->GetString(); */
 
 // RAT-PAC object init
 //RAT::DSReader r(gFile->GetName());
@@ -60,9 +60,9 @@ TVector3 p;
 const Double_t pi = TMath::Pi();
 
 // prepare new TTree
-TTree* T3 = new TTree("T3", "Initial Neutron Momenta");
-T3->Branch("lattd", &lattd);
-T3->Branch("longtd", &longtd);
+TTree* T_p0 = new TTree("T_p0", "Initial Neutron Momenta");
+T_p0->Branch("lattd", &lattd);
+T_p0->Branch("longtd", &longtd);
 
 // MAIN
 for ( k=0; k<N-1; k++ ) {
@@ -74,15 +74,16 @@ for ( k=0; k<N-1; k++ ) {
   p = -p; // for a nicer view if neutrinos had momenta parallel to {-1,0,0}
   longtd = p.Phi()*180/pi;
   lattd = 90 - (p.Theta()*180/pi);
-  T3->Fill();
+  T_p0->Fill();
   nav.Clear();
 }
 
 // draw skymap
-TCanvas* can = new TCanvas("can", detector+"\t|\t"+filename, 820, 120, 800, 700);
-T3->Draw("lattd:longtd", "", "aitoff");
+/* TCanvas* can = new TCanvas("can", detector+"\t|\t"+filename, 820, 120, 800, 700); */
+TCanvas* can = new TCanvas("can", filename, 820, 120, 800, 700);
+T_p0->Draw("lattd:longtd", "", "aitoff");
 TH2D* hmap = (TH2D*)htemp;
-hmap->SetTitle(T3->GetTitle());
+hmap->SetTitle(T_p0->GetTitle());
 hmap->GetXaxis()->SetLimits(-180., 180.);
 hmap->GetYaxis()->SetLimits(-90., 90);
 hmap->GetXaxis()->SetTitle("Longitude (^{o})");
@@ -90,5 +91,5 @@ hmap->GetYaxis()->SetTitle("Lattitude (^{o})");
 can->Draw();
 
 // all pau!   )
-return T3;
+return T_p0;
 }

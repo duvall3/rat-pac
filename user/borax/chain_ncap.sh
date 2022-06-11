@@ -45,9 +45,7 @@ for DIR in $DATARUN*/; do
   FILE_PREFIX="$FILE_BASE/$FILE_BASE"
   FILENAME=$FILE_PREFIX"_ncap.root"
   echo "\
-ch.Add(\"$FILE_BASE/$FILENAME\");
-TTree* t = (TTree*)ch.GetFile()->FindObjectAny(\"T_ncap\");
-"  >> chain_ncap.cxx
+ch.Add(\"$FILE_BASE/$FILENAME\");"  >> chain_ncap.cxx
 done
 
 # prepare merging and saving
