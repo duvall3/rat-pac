@@ -68,6 +68,10 @@ TString capProduct, volName;
 Bool_t volCheck = kFALSE;
 TRegexp capRE = "capture_bar";
 
+// open new file
+TString savename = datarun+"_ncap.root";
+TFile *fn = TFile::Open(savename, "recreate");
+
 // prepare new TTree
 TTree* T_ncap = new TTree("T_ncap", "Neutron-Capture Displacements");
 T_ncap->Branch("lattd", &lattd);
@@ -200,22 +204,18 @@ if (kPrint) {
   /* can_zeta->SaveAs(savename_zeta); */
   czeta->SaveAs(savename_zeta);
   can_prod->SaveAs(savename_prod);
+  // clean up
+  can_skymap->Close();
+  can_capdist->Close();
+  can_cospsi->Close();
+  can_zeta->Close();
+  can_prod->Close();
 }
 
-// clean up
-can_skymap->Close();
-can_capdist->Close();
-can_cospsi->Close();
-can_zeta->Close();
-can_prod->Close();
-czeta->Close();
-
 // save
-TString savename = datarun+"_nCap.root";
-TFile *fn = TFile::Open(savename, "recreate");
-fn->cd();
+czeta->Write("czeta");
+czeta->Close();
 T_ncap->Write("T_ncap");
-hzeta->Write("hzeta");
 fn->Write();
 
 // all pau!   )

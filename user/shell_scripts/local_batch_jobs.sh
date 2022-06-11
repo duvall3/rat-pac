@@ -128,15 +128,20 @@ echo -e "\nBatch jobs complete.\n"
 # combine dataruns into a single _T file for use with SEDAQ2.cxx
 echo -e "\nCombining scintillation data...\n"
 chain.sh && echo -e "\nTChain complete.\n"
+#FIXME TEMP NCAP -- see process_rat_run.sh
+chain_ncap.sh && echo -e "\nnCap TChain complete.\n"
 
 # analyze master datafile
 echo -e "\nAnalyzing combined data...\n"
 T_FILE=$DATARUN"_T.root"
 RES_FILE=$DATARUN"_results.root"
+NCAP_FILE=$DATARUN"_ncap.root"
 ANCMD1=$(echo -e "root -q -l -b 'SEDAQ2.cxx(\"$T_FILE\", true, \"$QUANTIZED_POSITIONS\", \"$POSITION_RESOLUTIONS\")'")
 ANCMD2=$(echo -e "root -q -l -b 'angularRecon.cxx(\"$RES_FILE\", true)'")
+ANCMD3=$(echo -e "root -q -l -b 'neutronCapturesFinal.cxx(\"$NCAP_FILE\")'") #FIXME TEMP -- see process_rat_run.sh
 #echo -e "\n$ANCMD1\n$ANCMD2\n" #debug
 eval $ANCMD1 && eval $ANCMD2
+eval $ANCMD3 #FIXME TEMP -- see process_rat_run.sh
 #eval $ANCMD1 #debug
 #if [[ $? -eq 0 ]]; then eval $ANCMD2; fi #debug
 
