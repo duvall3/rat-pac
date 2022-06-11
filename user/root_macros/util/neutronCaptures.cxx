@@ -63,6 +63,7 @@ RAT::TrackNode* n = c.Here();
 Int_t k, N = r.GetTotal();
 Double_t lattd, longtd;
 TVector3 dr, ri, rf, p0_hat = TVector3(-1,0,0);
+Double_t dt;
 Double_t xi, yi, zi, xf, yf, zf;
 Double_t R, cos_psi, zeta;
 const Double_t pi = TMath::Pi();
@@ -82,6 +83,7 @@ T_ncap->Branch("R", &R);
 T_ncap->Branch("ri", &ri);
 T_ncap->Branch("rf", &rf);
 T_ncap->Branch("dr", &dr);
+T_ncap->Branch("dt", &dt);
 T_ncap->Branch("cos_psi", &cos_psi);
 T_ncap->Branch("zeta", &zeta);
 T_ncap->Branch("capProduct", &capProduct);
@@ -104,6 +106,7 @@ for ( k=0; k<N; k++ ) {
   if ( (n->GetProcess() == "nCapture") | (n->GetProcess() == "neutronInelastic") ) {
     volName = n->GetVolume();
     if ( volName.Contains(capRE) ) volCheck = kTRUE;
+    dt = n->GetGlobalTime()*1.e-9; // capture time
     rf = n->GetEndpoint();
     xf = n->GetEndpoint().X(); yf = n->GetEndpoint().Y(); zf = n->GetEndpoint().Z();
     /* dr = TVector3(xf-xi, yf-yi, zf-zi); */

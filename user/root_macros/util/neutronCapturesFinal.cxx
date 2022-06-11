@@ -26,14 +26,18 @@ if (! origOGL) gStyle->SetCanvasPreferGL(kTRUE);
 const Bool_t origBatch = gROOT->IsBatch();
 if (! origBatch) gROOT->SetBatch(kTRUE);
 
-// MAIN
+// init
 TFile *fnc = TFile::Open(filename, "update");
 TTree *T_ncap = (TTree*)gDirectory->Get("T_ncap");
 TCanvas *c_zeta = new TCanvas("c_zeta", "c_zeta");
 TString savename = filename;
 savename.ReplaceAll("_ncap.root","_zeta.png");
+
+// MAIN
 T_ncap->Draw("zeta>>h_zeta", "volCheck==1");
 h_zeta->Fit("gaus");
+
+// save and print
 c_zeta->Print(savename.Data());
 c_zeta->Write("c_zeta");
 c_zeta->Close();
