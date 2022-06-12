@@ -72,7 +72,7 @@ h_zeta->GetXaxis()->SetTitle("#varphi (^{o})");
 TFitResultPtr frp_zeta = h_zeta->Fit("gaus", "S");
 TFitResult *fr_zeta = frp_zeta.Get();
 TPaveStats *st_zeta = (TPaveStats*)c_zeta->GetPrimitive("stats");
-st_zeta->SetOptFit(kTRUE);
+if (st_zeta != 0) st_zeta->SetOptFit(kTRUE);
 
 // dt
 TCanvas *c_dt = new TCanvas("c_dt", "c_dt");
@@ -103,7 +103,7 @@ c_all->Divide(2,2);
 c_all_1->cd();
 h_zeta->DrawCopy();
 TPaveStats *st_zeta_all = (TPaveStats*)c_all_1->GetPrimitive("stats");
-st_zeta_all->SetOptFit(kFALSE);
+if (st_zeta_all != 0) st_zeta_all->SetOptFit(kFALSE);
 c_all_2->cd();
 c_all_2->SetLogx(kTRUE);
 h_dt->Draw();
