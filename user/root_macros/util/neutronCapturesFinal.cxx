@@ -16,7 +16,8 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-void neutronCapturesFinal( const char* filename, TVector3 nu_dirn = TVector3(-1.,0.,0.) ) {
+/* void neutronCapturesFinal( const char* filename, TVector3 nu_dirn = TVector3(-1.,0.,0.) ) { */
+void neutronCapturesFinal( const char* filename, Double_t phi_source_deg = 0. ) {
 
 // for graphics output:
 // switch default rendering engine
@@ -30,10 +31,11 @@ if (! origBatch) gROOT->SetBatch(kTRUE);
 TFile *fnc = TFile::Open(filename, "update");
 TTree *T_ncap = (TTree*)gDirectory->Get("T_ncap");
 Long64_t k = 0, N = T_ncap->GetEntries();
-nu_dirn = -1*nu_dirn.Unit();
+Double_t phi_source = phi_source_deg * TMath::DegToRad();
+TVector3 nu_dirn(TMath::Cos(phi_source), TMath::Sin(phi_source), 0.);
 // zeta (neutron-reconstructed source direction)
 TString savename = filename;
-savename.ReplaceAll("_ncap.root","_zeta.png");
+savename.ReplaceAll("_ncap.root","");
 // capture/interevent time
 Double_t *tbins = logBins(1.e-10, 1.e3);
 TH1D *h_dt = new TH1D("h_dt", "Capture Time", 100, tbins);
@@ -61,48 +63,82 @@ for ( k=0; k<N; k++ ) {
 }
 
 // plots
-//TODO: add plot annotations
+
 // zeta
 TCanvas *c_zeta = new TCanvas("c_zeta", "c_zeta");
 T_ncap->Draw("zeta>>h_zeta", "volCheck==1");
-h_zeta->Fit("gaus");
+h_zeta->SetTitle("Reconstructed Azimuthal Angle to Source");
+h_zeta->GetXaxis()->SetTitle("#varphi (^{o})");
+TFitResultPtr frp_zeta = h_zeta->Fit("gaus", "S");
+TFitResult *fr_zeta = frp_zeta.Get();
+TPaveStats *st_zeta = (TPaveStats*)c_zeta->GetPrimitive("stats");
+st_zeta->SetOptFit(kTRUE);
+
 // dt
 TCanvas *c_dt = new TCanvas("c_dt", "c_dt");
-c_dt->SetLogy(kTRUE);
+/* c_dt->SetLogy(kTRUE); */
 c_dt->SetLogx(kTRUE);
 h_dt->Draw();
+h_dt->GetXaxis()->SetTitle("#Deltat (s)");
+h_dt->GetXaxis()->SetTitleOffset(1.15);
+
 // cos[psi]
 TCanvas *c_cp = new TCanvas("c_cp", "c_cp");
 h_cospsi->Draw();
 h_cospsi->SetAxisRange(0., 1.4 * h_cospsi->GetMaximum(), "Y");
+h_cospsi->GetXaxis()->SetTitle("cos(#psi)");
+
 // skymap
 TCanvas *c_map = new TCanvas("c_map", "c_map");
 T_ncap->Draw("lattd:longtd>>h_map", "volCheck==1", "aitoff");
+h_map->SetTitle("Skymap to Reconstructed Source Direction");
 h_map->GetXaxis()->SetLimits(-180., 180.);
 h_map->GetYaxis()->SetLimits(-90., 90.);
-// list
-TList *plotList = new TList;
-plotList->Add(c_zeta);
-plotList->Add(c_dt);
-plotList->Add(c_cp);
-plotList->Add(c_map);
+h_map->GetXaxis()->SetTitle("lattitude (^{o})");
+h_map->GetYaxis()->SetTitle("longitude (^{o})");
+
+// all
+TCanvas *c_all = new TCanvas("c_all", "c_all");
+c_all->Divide(2,2);
+c_all_1->cd();
+h_zeta->DrawCopy();
+TPaveStats *st_zeta_all = (TPaveStats*)c_all_1->GetPrimitive("stats");
+st_zeta_all->SetOptFit(kFALSE);
+c_all_2->cd();
+c_all_2->SetLogx(kTRUE);
+h_dt->Draw();
+c_all_3->cd();
+h_cospsi->Draw();
+c_all_4->cd();
+h_map->Draw("aitoff");
+
+/* // list */
+/* TList *plotList = new TList; */
+/* plotList->Add(c_zeta); */
+/* plotList->Add(c_dt); */
+/* plotList->Add(c_cp); */
+/* plotList->Add(c_map); */
 
 // save, print, close
-// plots
-/* c_zeta->Print(savename.Data()); */
-/* c_dt->Print */
-/* c_cp->Print */
-/* c_map->Print */
+// canvases
+c_zeta->Print(savename+"_zeta.png");
+c_dt->Print(savename+"_dt.png");
+c_cp->Print(savename+"_cp.png");
+c_map->Print(savename+"_map.png");
+c_all->Print(savename+"_all.png");
 c_zeta->Write("c_zeta");
 c_dt->Write("c_dt");
 c_cp->Write("c_cp");
 c_map->Write("c_map");
+c_all->Write("c_all");
 c_zeta->Close();
 c_dt->Close();
 c_cp->Close();
 c_map->Close();
+c_all->Close();
 /* plotList->Write();//"plotList"); */
-// file
+// file &c.
+fr_zeta->Write("fr_zeta");
 fnc->Write();
 fnc->Close();
 
