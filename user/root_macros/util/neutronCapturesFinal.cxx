@@ -69,10 +69,6 @@ TCanvas *c_zeta = new TCanvas("c_zeta", "c_zeta");
 T_ncap->Draw("zeta>>h_zeta", "volCheck==1");
 h_zeta->SetTitle("Reconstructed Azimuthal Angle to Source");
 h_zeta->GetXaxis()->SetTitle("#varphi (^{o})");
-TFitResultPtr frp_zeta = h_zeta->Fit("gaus", "S");
-TFitResult *fr_zeta = frp_zeta.Get();
-TPaveStats *st_zeta = (TPaveStats*)c_zeta->GetPrimitive("stats");
-if (st_zeta != 0) st_zeta->SetOptFit(kTRUE);
 
 // dt
 TCanvas *c_dt = new TCanvas("c_dt", "c_dt");
@@ -96,6 +92,32 @@ h_map->GetXaxis()->SetLimits(-180., 180.);
 h_map->GetYaxis()->SetLimits(-90., 90.);
 h_map->GetXaxis()->SetTitle("lattitude (^{o})");
 h_map->GetYaxis()->SetTitle("longitude (^{o})");
+
+// fit phi
+c_zeta->cd();
+// init
+Double_t N_phi = h_zeta->GetEntries();
+Double_t phiLower, phiUpper, phiTrue = phi_source_deg;
+Double_t phiBinWidth = h_zeta->GetBinWidth(0);
+Int_t lbin, ubin;
+lbin = h_zeta->FindFirstBinAbove(0);
+ubin = h_zeta->FindLastBinAbove(0);
+phiLower = h_zeta->GetBinLowEdge(lbin);
+phiUpper = h_zeta->GetBinLowEdge(ubin) + phiBinWidth;
+// fitting function with generic starting guesses for fit parameters
+TF1 *phi_phit = new TF1("phi_phit", "[0] + [1]*TMath::Gaus(x,[2],[3])", phiLower, phiUpper); // "[ph]it = fit" because I'm a dork
+Double_t sigma_guess = 20.;	// param [3]: guess width ~ few*10^1 degrees
+Double_t phi_guess = phiTrue;	// param [2]: guess actual source direction
+Double_t A_guess = N_phi / ( sigma_guess * TMath::Sqrt(2*TMath::Pi()) ); // param [1]: usual Gaussian normalization
+Double_t noise_guess = TMath::Mean(h_zeta->GetNbinsX(), h_zeta->GetArray()); // param [0]: mean histogram level ~ baseline offset
+phi_phit->SetParameters(noise_guess, A_guess, phi_guess, sigma_guess);
+phi_phit->SetLineColor(kRed);
+// now perform fit
+TFitResultPtr phiFRP = h_zeta->Fit(phi_phit, "SR");
+TFitResult *phiFR = phiFRP.Get();
+// turn on full stats
+TPaveStats *phiStats = (TPaveStats*)c_zeta->GetPrimitive("stats");
+if (phiStats != 0) phiStats->SetOptFit(kTRUE);
 
 // all
 TCanvas *c_all = new TCanvas("c_all", "c_all");
@@ -138,7 +160,7 @@ c_map->Close();
 c_all->Close();
 /* plotList->Write();//"plotList"); */
 // file &c.
-fr_zeta->Write("fr_zeta");
+phiFR->Write("phiFR");
 fnc->Write();
 fnc->Close();
 
