@@ -1,6 +1,6 @@
 function [ pxl ] = drawpixel ( P, N, S, C )
 
-% draw a square on the current axes, centered at P, normal to direction N, having size S & color C
+% [ pxl ] = drawpixel ( P, N, S, C ) -- draw a square on the current axes, centered at P, normal to direction N, having size S & color C
 
 % Details:
 % -- P is a 3-element vector, [ X Y Z ]

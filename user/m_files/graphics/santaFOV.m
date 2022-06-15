@@ -86,6 +86,7 @@ leg_obj = [taro1 cap fov_i fov_f];
 leg_lab = {'Target Plane', 'Capture Plane', 'Original FOV', 'Expanded FOV'};
 leg = legend(leg_obj, 'location', 'northeast');
 set(leg, 'string', leg_lab)
+set(leg, 'position', get(leg,'position').*[.9 .9 2 1.5])
 
 % color inversion
 if (INVCOL)
@@ -96,6 +97,7 @@ if (INVCOL)
   set(a, 'zcolor', 'w')
   set(leg, 'color', 'k')
   set(leg, 'textcolor', 'w')
+  set(leg, 'edgecolor', 'w')
   set(T, 'color', 'w')
 endif
 
