@@ -19,24 +19,32 @@
 void findVarsOfType( const char* varType = "", Bool_t kCaseSensitive = kFALSE ) {
 
 // init
-TRegexp varRE(varType);
+TString varTypeStr(varType);
 Int_t varCount;
 TString gvarType;
 TCollection *glist = gROOT->GetListOfGlobals(kTRUE);
 TGlobal *gvar;
 TIter i(glist);
 
+// check option and set regex
+if (! kCaseSensitive) {
+  varTypeStr.ToLower();
+}
+TRegexp varRE(varTypeStr.Data());
+
 // loop over list
 for ( i=glist->begin(); i!=glist->end(); ++i ) {
   gvar = (TGlobal*)*i;
   gvarType.Form("%s", gvar->GetTypeName());
-  if (! kCaseSensitive) gvarType.ToLower();
+  if (! kCaseSensitive) {
+    gvarType.ToLower();
+  }
   if ( gvarType.Contains(varRE) ) {
     varCount++;
     printf("%s\t%s\n", gvar->GetTypeName(), gvar->GetName());
   }
 }
-if (varCount>5) printf("Found %d global variables matching type \"%s\".\n", varCount, varType);
+if (varCount>5) printf("Found %d global variables matching TypeName.Contains(\"%s\").\n", varCount, varType);
 
 // all pau!   )
 return;
