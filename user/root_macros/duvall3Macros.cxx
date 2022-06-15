@@ -63,7 +63,7 @@ gROOT->LoadMacro("AngRes.cxx");
 gROOT->LoadMacro("processListedFiles.cxx");
 gROOT->LoadMacro("subsetMeans.cxx");
 gROOT->LoadMacro("dispTree.cxx");
-
+gROOT->LoadMacro("santaFrame.cxx");
 
 }
 
