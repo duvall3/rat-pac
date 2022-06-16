@@ -2,6 +2,25 @@
 
 ---
 
+Copyright (C) 2015 Mark J. Duvall
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+**A copy of the GPL is provided at `rat-pac/user/doc/README_duvall3/gpl-3.0.txt`**
+
+---
+
 ## Simulation and Analysis Pipeline
 **NOTE: See *pipeline.pdf* in `user/doc/README_duvall3/` for a graphical representation.**
 
@@ -42,5 +61,5 @@ For a datarun named DATARUN, `user/shell_scripts/ratrun.sh` will:
 
 ---
 
-_NOTE: This document presupposes that a working installation of RAT-PAC and its accompanying build of ROOT are active on the machine in use. In other words, the version of ROOT used MUST be one compiled against RAT-PAC, as described in the RAT-PAC documentation [here](https://rat.readthedocs.io/en/latest/installation.html)._
+_NOTE: This document assumes that a working installation of RAT-PAC and its accompanying build of ROOT are active on the machine in use. In other words, the version of ROOT used MUST be one compiled against RAT-PAC, as described in the RAT-PAC documentation [here](https://rat.readthedocs.io/en/latest/installation.html)._
 
