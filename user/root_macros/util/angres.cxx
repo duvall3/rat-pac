@@ -1,10 +1,11 @@
 // angres -- EWISotT
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 05/2022 ~ //
 
-/* void angres() { */
-{
+void angres( const char* filename ) {
+/* { */
 
 // init
+TFile *f = TFile::Open(filename, "update");
 TObjString *experiment = (TObjString*)gDirectory->Get("experiment");
 TString exper = experiment->GetString();
 exper.ReplaceAll("\"","");
@@ -48,8 +49,15 @@ mu.SetXYZ(hx->GetMean(), hy->GetMean(), hz->GetMean());
 /* l = sqrt( lx**2 + ly**2 + lz**2 ); */
 l = mu.Mag();
 dp = TMath::ATan( (P/l) / sqrt(N) ) * TMath::RadToDeg();
-/* printf( "\nFilename = %s\nN = %d\nDeltaPhi = %3.2f deg\n\n", gFile->GetName(), N, dp ); */
-printf( "\nExperiment = %s\nFilename = %s\nN = %d\nP = %e\nl = %e\nDeltaPhi = %3.4f deg\n\n", exper.Data(), gFile->GetName(), N, P, l, dp );
+
+// report and save results
+/* printf( "\nExperiment = %s\nFilename = %s\nN = %d\nP = %e\nl = %e\nDeltaPhi = %3.4f deg\n\n", exper.Data(), gFile->GetName(), N, P, l, dp ); */
+TString deltaPhiReportStr;
+deltaPhiReportStr.Form( "\n\nExperiment = %s\nFilename = %s\nN = %d\nP = %e\nl = %e\nDeltaPhi_{1sigma} = %3.4f deg,\n\t from DeltaPhi_{1sigma} = arctan( (P/l) / sqrt(N) )\n\n", exper.Data(), gFile->GetName(), N, P, l, dp );
+printf( "%s\n", deltaPhiReportStr.Data() );
+TObjString *deltaPhiReport = new TObjString(deltaPhiReportStr);
+deltaPhiReport->Write("deltaPhiReport");
+f->Close();
 
 // all pau!   )
 }

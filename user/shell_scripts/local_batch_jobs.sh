@@ -12,14 +12,22 @@
 #         of RAT-PAC containing 200 events each, all under an umbrella
 #         directory named "some_datarun"
 #
-# -- NOTE: This script depends on the following companion scripts from GitHub at:
-#      https://github.com/duvall3/rat-pac/tree/comparison/ :
-#      -- 
-#      -- 
-#      -- 
-#
-# ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 9/2019 ~ Updated 9/21 ~ #
+# ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 9/2019 ~ Updated 5/22 ~ #
 
+#Copyright (C) 2019 Mark J. Duvall
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ## KILL option: kill all instances of RAT-PAC belonging to the current user
 
@@ -56,7 +64,8 @@ fi
 ## INIT
 
 if [[ $# -lt 3 ]]; then
-  echo -e "\nUSAGE: local_batch_jobs.sh <DATARUN_NAME> <EVENTS_PER_INSTANCE> <NUM_INSTANCES> [QUANTIZED_POSITIONS] [POSITION_RESOLUTIONS]\n  OR   local_batch_jobs.sh <kill>\n" && exit 10
+  echo -e "\nUSAGE: local_batch_jobs.sh <DATARUN_NAME> <EVENTS_PER_INSTANCE> <NUM_INSTANCES> [QUANTIZED_POSITIONS] [POSITION_RESOLUTIONS]\n  OR   local_batch_jobs.sh <kill>\n"
+  exit 10
 fi
 DATARUN=$1
 NEVENTS=$2
@@ -144,7 +153,7 @@ eval $ANCMD1 && eval $ANCMD2
 eval $ANCMD3 #FIXME TEMP -- see process_rat_run.sh
 
 ## all pau!   )
-if [[ $? == 0 ]]; then
+if [[ $? -eq  0 ]]; then
   echo -e "\nDone.\n"
   echo -e "\nBatch run complete!\n\n"
   exit 0
