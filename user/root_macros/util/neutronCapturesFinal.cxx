@@ -16,8 +16,12 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+#include <TRATGeo.h>
+
 /* void neutronCapturesFinal( const char* filename, TVector3 nu_dirn = TVector3(-1.,0.,0.) ) { */
 void neutronCapturesFinal( const char* filename, Double_t phi_source_deg = 0. ) {
+
+// TODO: implement position quantization in // MAIN
 
 // for graphics output:
 // switch default rendering engine
@@ -28,7 +32,13 @@ const Bool_t origBatch = gROOT->IsBatch();
 if (! origBatch) gROOT->SetBatch(kTRUE);
 
 // init
-TFile *fnc = TFile::Open(filename, "update");
+// file operations
+TString inFileName(filename);
+TString outFileName = inFileName;
+outFileName.ReplaceAll("\.root", "_res.root");
+gSystem->CopyFile(inFileName.Data(), outFileName.Data(), kTRUE);
+TFile *fnc = TFile::Open(outFileName, "update");
+// general
 TTree *T_ncap = (TTree*)gDirectory->Get("T_ncap");
 Long64_t k = 0, N = T_ncap->GetEntries();
 Double_t phi_source = phi_source_deg * TMath::DegToRad();

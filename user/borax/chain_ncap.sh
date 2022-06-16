@@ -49,14 +49,21 @@ ch.Add(\"$FILE_BASE/$FILENAME\");"  >> chain_ncap.cxx
 done
 
 # prepare merging and saving
-echo -e "\
+echo -e "\n\
 // merge trees
-ch.Merge(\"$OUTFILE\");
+ch.Merge(\"$OUTFILE\");\n
 //all pau!   )
 }" >> chain_ncap.cxx
 
 # run the newly-created macro
 root -q -l -b 'chain_ncap.cxx()'
+
+# copy database into output file (can use last datarun file)
+FILENAME=$FILE_PREFIX".root"
+CPCMD="rootcp $FILE_BASE/$FILENAME:db $OUTFILE:db"
+# echo $CPCMD #debug
+eval $CPCMD
+# echo -e "rootcp exit status: $?" #debug
 
 # all pau!  )
 exit 0
