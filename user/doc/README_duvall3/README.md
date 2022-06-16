@@ -24,8 +24,6 @@ Copyright (C) 2015 Mark J. Duvall
 ## Simulation and Analysis Pipeline
 **NOTE: See *pipeline.pdf* in `user/doc/README_duvall3/` for a graphical representation.**
 
----
-
 ### Master Shell Script: `ratrun.sh`
 
 For a datarun named DATARUN, `user/shell_scripts/ratrun.sh` will:
