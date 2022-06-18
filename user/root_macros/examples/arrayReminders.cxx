@@ -49,9 +49,37 @@ printf( "Final Name: %s\n", phiNames[3].Data() );
 int nx = sizeof(x) / sizeof(x[0]);
 // arrays like y
 /* int ny = ?? */
+// NOTE: It seems these may need to be saved separately (preferably at creation); e.g.,
+int ny = h->GetNbinsX();
 
 // Frigging PRINT:
+int k = 0;
+for (k=0; k<nx; k++) cout << x[k] << "\t"; cout << endl;
+for (k=0; k<ny; k++) cout << y[k] << "\t"; cout << endl;
 
+
+//// TMath -- example: mean
+Double_t xbar = TMath::Mean(nx, x);
+Double_t ybar = TMath::Mean(ny, y);
+printf("\nMean x:\t%f\nMean y:\t%f\n", xbar, ybar);
+
+
+//// TArrays:
+// create
+TArrayD X(nx, x);
+TArrayD Y(ny, y);
+TArrayI PHI(4, phi);
+// get size
+Int_t NX = X.GetSize();
+Int_t NY = Y.GetSize();
+Int_t NPHI = PHI.GetSize();
+// print (3 ways)
+for (k=0; k<NX; k++) cout << x[k] << "\t"; cout << endl;
+for (k=0; k<Y.fN; k++) cout << Y[k] << "\t"; cout << endl;
+for (k=0; k<PHI.GetSize(); k++) cout << PHI[k] << "\t"; cout << endl;
+// mean
+Double_t XBAR = X.GetSum() / X.GetSize();
+Double_t YBAR = TMath::Mean(NY, Y.GetArray());
 
 
 //// all pau!   )
