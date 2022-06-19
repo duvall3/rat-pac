@@ -45,12 +45,15 @@ cout << 1.5 * phi[1] << endl;
 printf( "Final Name: %s\n", phiNames[3].Data() );
 
 // Determine length:
-// arrays like x
+// arrays like x, phi
 int nx = sizeof(x) / sizeof(x[0]);
+int nphi = sizeof(phi) / sizeof(phi[0]);
 // arrays like y
 /* int ny = ?? */
 // NOTE: It seems these may need to be saved separately (preferably at creation); e.g.,
 int ny = h->GetNbinsX();
+// arrays like phiNames -- elements are different sizes!
+/* int nphiNames = ?? */
 
 // Frigging PRINT:
 int k = 0;

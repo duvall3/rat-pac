@@ -40,45 +40,78 @@ gSystem->CopyFile(inFileName.Data(), outFileName.Data(), kTRUE);
 TFile *fnc = TFile::Open(outFileName, "update");
 // general
 TTree *T_ncap = (TTree*)gDirectory->Get("T_ncap");
+TRATGeo g;
+g.Build();
+TRATVolume *startVolume, *endVolume;
 Long64_t k = 0, N = T_ncap->GetEntries();
 Double_t phi_source = phi_source_deg * TMath::DegToRad();
 TVector3 nu_dirn(TMath::Cos(phi_source), TMath::Sin(phi_source), 0.);
-// zeta (neutron-reconstructed source direction)
 TString savename = filename;
 savename.ReplaceAll("_ncap.root","");
+
+// histograms
 // capture/interevent time
 Double_t *tbins = logBins(1.e-10, 1.e3);
 TH1D *h_dt = new TH1D("h_dt", "Capture Time", 100, tbins);
+// phi
+TH1D *h_phi = new TH1D("h_phi", "#varphi (Quant.)", 100, -180.01, 180.01);
 // cos[psi]
 TH1D *h_cospsi = new TH1D("h_cospsi", "Cos[#psi]", 100, -1.01, 1.01);
+// map
+TH2D *h_map = new TH2D("h_map", "Skymap", 100, -180., 180., 100, -90., 90.);
 
 // tree
-Double_t dt, cospsi;
+Double_t dt, cospsi, phi;
+TString *startVol, *volName;
 Bool_t volCheck;
-TVector3 *dr;
+TVector3 *dr, dr_q;//, *dr_r;
+TVector3 *startPos, *endPos;
 T_ncap->SetBranchAddress("dt", &dt);
+T_ncap->SetBranchAddress("startVol", &startVol);
+T_ncap->SetBranchAddress("volName", &volName);
 T_ncap->SetBranchAddress("volCheck", &volCheck);
 T_ncap->SetBranchAddress("dr", &dr);
+TBranch* br_phi = T_ncap->Branch("phi", &phi);
+TBranch* br_drq = T_ncap->Branch("dr_q", &dr_q);
 TBranch* br_cp = T_ncap->Branch("cospsi", &cospsi);
 
 // MAIN
 for ( k=0; k<N; k++ ) {
   T_ncap->GetEntry(k);
-  cospsi = nu_dirn.Dot( dr->Unit() );
+  startVolume = (TRATVolume*)g.GetVolume(startVol->Data());
+  endVolume = (TRATVolume*)g.GetVolume(volName->Data());
+  startPos = startVolume->GetAbsolutePosition();
+  endPos = endVolume->GetAbsolutePosition();
+  dr_q = *startPos - *endPos;
+  phi = dr_q.Phi() * TMath::RadToDeg();
+  /* cospsi = nu_dirn.Dot( dr->Unit() ); //FIXME -- update for quant/resn */
+  cospsi = nu_dirn.Dot( dr_q.Unit() ); //FIXME -- update for quant/resn
   if (volCheck) {
+    h_phi->Fill(phi);
     h_dt->Fill(dt);
     h_cospsi->Fill(cospsi);
+    /* h_map->Fill( dr_q.Theta()*TMath::RadToDeg(), 90. - dr_q.Phi()*TMath::RadToDeg() ); */
+    h_map->Fill( 90. - dr_q.Phi()*TMath::RadToDeg(),  dr_q.Theta()*TMath::RadToDeg()); // FIXME: need to add wiggles!
+    br_phi->Fill();
+    br_drq->Fill();
     br_cp->Fill();
   }
 }
 
 // plots
 
-// zeta
+// phi
+TCanvas *c_phi = new TCanvas("c_phi", "c_phi");
+/* T_ncap->Draw("phi>>h_phi", "volCheck==1"); */
+h_phi->Draw();
+/* h_phi->SetTitle("Reconstructed Azimuthal Angle to Source"); */
+h_phi->GetXaxis()->SetTitle("#varphi (^{o})");
+
+// zeta (neutron-reconstructed source direction)
 TCanvas *c_zeta = new TCanvas("c_zeta", "c_zeta");
 T_ncap->Draw("zeta>>h_zeta", "volCheck==1");
 h_zeta->SetTitle("Reconstructed Azimuthal Angle to Source");
-h_zeta->GetXaxis()->SetTitle("#varphi (^{o})");
+h_zeta->GetXaxis()->SetTitle("#zeta (^{o})");
 
 // dt
 TCanvas *c_dt = new TCanvas("c_dt", "c_dt");
@@ -96,14 +129,18 @@ h_cospsi->GetXaxis()->SetTitle("cos(#psi)");
 
 // skymap
 TCanvas *c_map = new TCanvas("c_map", "c_map");
-T_ncap->Draw("lattd:longtd>>h_map", "volCheck==1", "aitoff");
+/* T_ncap->Draw("lattd:longtd>>h_map", "volCheck==1", "aitoff"); */
+/* T_ncap->Draw( "dr_q.Theta()*TMath::RadToDeg() : 90. - dr_q.Phi()*TMath::RadToDeg()>>h_map", "", "aitoff"); */
+h_map->Draw("aitoff");
 h_map->SetTitle("Skymap to Reconstructed Source Direction");
-h_map->GetXaxis()->SetLimits(-180., 180.);
-h_map->GetYaxis()->SetLimits(-90., 90.);
-h_map->GetXaxis()->SetTitle("lattitude (^{o})");
-h_map->GetYaxis()->SetTitle("longitude (^{o})");
+/* h_map->GetXaxis()->SetLimits(-180., 180.); */
+/* h_map->GetYaxis()->SetLimits(-90., 90.); */
+h_map->SetAxisRange(-180., 180., "X");
+h_map->SetAxisRange(-90., 90., "Y");
+h_map->GetXaxis()->SetTitle("longitude (^{o})");
+h_map->GetYaxis()->SetTitle("lattitude (^{o})");
 
-// fit phi
+// fit zeta //FIXME -- you may phi when ready
 c_zeta->cd();
 // init
 Double_t N_phi = h_zeta->GetEntries();
@@ -152,17 +189,23 @@ h_map->Draw("aitoff");
 /* plotList->Add(c_map); */
 
 // save, print, close
+// plots/ dir
+gSystem->MakeDirectory("plots");
+savename.Prepend("plots/");
 // canvases
+c_phi->Print(savename+"_phi.png");
 c_zeta->Print(savename+"_zeta.png");
 c_dt->Print(savename+"_dt.png");
 c_cp->Print(savename+"_cp.png");
 c_map->Print(savename+"_map.png");
 c_all->Print(savename+"_all.png");
+c_phi->Write("c_phi");
 c_zeta->Write("c_zeta");
 c_dt->Write("c_dt");
 c_cp->Write("c_cp");
 c_map->Write("c_map");
 c_all->Write("c_all");
+c_phi->Close();
 c_zeta->Close();
 c_dt->Close();
 c_cp->Close();

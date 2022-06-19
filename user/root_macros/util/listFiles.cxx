@@ -1,4 +1,4 @@
-// fileList -- function to return a TList of TSystemFiles
+// listFiles -- function to return a TList of TSystemFiles
 //   in the current (system) directory whose names
 //   match a pattern
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 06/2022 ~ //
@@ -18,7 +18,7 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-TList* fileList( const char* pattern = ".*\.root" ) {
+TList* listFiles( const char* pattern = ".*\.root" ) {
 
 // init
 TRegexp patRE(pattern);

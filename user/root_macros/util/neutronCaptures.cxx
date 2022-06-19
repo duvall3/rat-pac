@@ -64,10 +64,10 @@ Int_t k, N = r.GetTotal();
 Double_t lattd, longtd;
 TVector3 dr, ri, rf, p0_hat = TVector3(-1,0,0);
 Double_t dt;
-Double_t xi, yi, zi, xf, yf, zf;
+/* Double_t xi, yi, zi, xf, yf, zf; */
 Double_t R, cos_psi, zeta;
 const Double_t pi = TMath::Pi();
-TString capProduct, volName;
+TString capProduct, volName, startVol;
 TRegexp capRE(targetRegexStr);
 Bool_t volCheck = kFALSE;
 
@@ -86,29 +86,32 @@ T_ncap->Branch("dr", &dr);
 T_ncap->Branch("dt", &dt);
 T_ncap->Branch("cos_psi", &cos_psi);
 T_ncap->Branch("zeta", &zeta);
-T_ncap->Branch("capProduct", &capProduct);
+T_ncap->Branch("startVol", &startVol);
 T_ncap->Branch("volName", &volName);
 T_ncap->Branch("volCheck", &volCheck);
+T_ncap->Branch("capProduct", &capProduct);
 
 // MAIN
 for ( k=0; k<N; k++ ) {
   ds = r.GetEvent(k);
   RAT::TrackNav nav(ds);
   c = nav.Cursor(0);
+  startVol.Clear();
   volName.Clear();
   volCheck = kFALSE;
 //n = c.GoChild(0); // neutron-only run
 //n = c.GoChild(1); // IBD run
   n = c.GoChild(neutron_child);
+  startVol = n->GetVolume();
   ri = n->GetEndpoint();
-  xi = n->GetEndpoint().X(); yi = n->GetEndpoint().Y(); zi = n->GetEndpoint().Z();
+  /* xi = n->GetEndpoint().X(); yi = n->GetEndpoint().Y(); zi = n->GetEndpoint().Z(); */
   n = c.GoTrackEnd();
   if ( (n->GetProcess() == "nCapture") | (n->GetProcess() == "neutronInelastic") ) {
     volName = n->GetVolume();
     if ( volName.Contains(capRE) ) volCheck = kTRUE;
     dt = n->GetGlobalTime()*1.e-9; // capture time
     rf = n->GetEndpoint();
-    xf = n->GetEndpoint().X(); yf = n->GetEndpoint().Y(); zf = n->GetEndpoint().Z();
+    /* xf = n->GetEndpoint().X(); yf = n->GetEndpoint().Y(); zf = n->GetEndpoint().Z(); */
     /* dr = TVector3(xf-xi, yf-yi, zf-zi); */
     dr = rf - ri;
     R = dr.Mag();
