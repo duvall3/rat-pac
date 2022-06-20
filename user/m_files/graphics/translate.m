@@ -2,7 +2,7 @@ function translate( H, DELTA )
 
 % translate( H, DELTA ) -- simple function to translate graphics objects
 % -- H is an array of the graphics-object handles to be translated
-% -- DELTA is a 3-vector [x y z] describing the translation
+% -- DELTA is a 1x3 vector [x y z] describing the translation
 % ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 05/2022 ~ %
 
 %Copyright (C) 2022 Mark J. Duvall / T. Rocks Science

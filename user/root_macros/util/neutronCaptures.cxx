@@ -117,7 +117,7 @@ for ( k=0; k<N; k++ ) {
     R = dr.Mag();
 //  cos_psi = p0_hat.Dot(dr.Unit());
     cos_psi = -dr.X() / R; // for p_hat_init = {-1,0,0}
-    dr = -dr; // for nicer view if initial direction was {-1,0,0}
+    dr = -dr; // reverse direction to point to source
     /* zeta = TMath::ATan2( dr.Z(), dr.Y() ) * 180/pi; */
     /* zeta = TMath::ATan2( dr.X(), dr.Y() ) * 180/pi; */
     zeta = dr.Phi() * TMath::RadToDeg();

@@ -16,6 +16,7 @@
   gSystem->AddIncludePath(" -I$RATROOT/include");
 
   // custom
+  gStyle->SetOptFit(kTRUE);
   gStyle->SetPalette(54);
   gStyle->SetHistLineWidth(2);
   gStyle->SetHistLineColor(kBlue);

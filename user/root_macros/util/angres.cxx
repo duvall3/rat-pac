@@ -10,7 +10,23 @@ TObjString *experiment = (TObjString*)gDirectory->Get("experiment");
 TString exper = experiment->GetString();
 exper.ReplaceAll("\"","");
 if (exper.Contains("/")) exper = exper( exper.Last('/')+1, exper.Length()-1 );
-TTree *T_r = (TTree*)gDirectory->Get("T_r");
+
+// scint system vs nCap
+TString fileName(filename);
+if (fileName.Contains("_results.root")) {
+  TTree *T_r = (TTree*)gDirectory->Get("T_r");
+  TString dispVectorName = "r";
+  TCut vc("");
+} else if (fileName.Contains("_ncap_res.root")) {
+  TTree *T_r = (TTree*)gDirectory->Get("T_ncap");
+  TString dispVectorName = "dr_q";
+  TCut vc("volCheck==1");
+} else {
+  TString errLoc = "::angres.cxx";
+  TString errMsg = "Filetype error: Expecting a scint \"_results.root\" or an nCap \"_ncap_res.root\" file.";
+  gROOT->Error(errLoc.Data(), errMsg.Data());
+  return;
+}
 Long64_t N = T_r->GetEntries();
 Double_t l, dp, P;
 TVector3 mu;
@@ -38,9 +54,12 @@ if ( exper.Contains("chooz") ) { // Double CHOOZ
   T_r->Draw("r.fY>>hy", "abs(r.fY)<500."); // DC ONLY
   T_r->Draw("r.fZ>>hz", "abs(r.fZ)<500."); // DC ONLY
 } else {
-  T_r->Draw("r.fX>>hx");
-  T_r->Draw("r.fY>>hy");
-  T_r->Draw("r.fZ>>hz");
+  /* T_r->Draw("r.fX>>hx"); */
+  /* T_r->Draw("r.fY>>hy"); */
+  /* T_r->Draw("r.fZ>>hz"); */
+  T_r->Draw(dispVectorName+".fX>>hx", vc);
+  T_r->Draw(dispVectorName+".fY>>hy", vc);
+  T_r->Draw(dispVectorName+".fZ>>hz", vc);
 }
 c_angres->Close();
 mu.SetXYZ(hx->GetMean(), hy->GetMean(), hz->GetMean());
@@ -51,6 +70,11 @@ l = mu.Mag();
 dp = TMath::ATan( (P/l) / sqrt(N) ) * TMath::RadToDeg();
 
 // report and save results
+// result
+TVectorD deltaPhi(1);
+deltaPhi[0] = dp;
+deltaPhi.Write("deltaPhi");
+// details
 /* printf( "\nExperiment = %s\nFilename = %s\nN = %d\nP = %e\nl = %e\nDeltaPhi = %3.4f deg\n\n", exper.Data(), gFile->GetName(), N, P, l, dp ); */
 TString deltaPhiReportStr;
 deltaPhiReportStr.Form( "\n\nExperiment = %s\nFilename = %s\nN = %d\nP = %e\nl = %e\nDeltaPhi_{1sigma} = %3.4f deg,\n\t from DeltaPhi_{1sigma} = arctan( (P/l) / sqrt(N) )\n\n", exper.Data(), gFile->GetName(), N, P, l, dp );

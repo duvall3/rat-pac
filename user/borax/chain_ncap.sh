@@ -51,19 +51,31 @@ done
 # prepare merging and saving
 echo -e "\n\
 // merge trees
-ch.Merge(\"$OUTFILE\");\n
+ch.Merge(\"$OUTFILE\");\n" >> chain_ncap.cxx
+
+# copy database and write experiment name
+echo -e "\n\
+// copy needed objects into ncap file
+TFile *f_source = TFile::Open(\"$FILE_BASE/$FILENAME\");
+TMap *DB = (TMap*)gDirectory->Get(\"db\");
+TObjString *exper = (TObjString*)DB->GetValue(\"DETECTOR[].experiment\");
+TFile *f = TFile::Open(\"$OUTFILE\", \"update\");
+DB->Write(\"db\", TObject::kSingleKey);
+exper->Write(\"experiment\");
+f->Close();
+f_source->Close();\n
 //all pau!   )
 }" >> chain_ncap.cxx
 
 # run the newly-created macro
 root -q -l -b 'chain_ncap.cxx()'
 
-# copy database into output file (can use last datarun file)
-FILENAME=$FILE_PREFIX".root"
-CPCMD="rootcp $FILE_BASE/$FILENAME:db $OUTFILE:db"
-# echo $CPCMD #debug
-eval $CPCMD
-# echo -e "rootcp exit status: $?" #debug
+# # copy database into output file (can use last datarun file)
+# FILENAME=$FILE_PREFIX".root"
+# CPCMD="rootcp $FILE_BASE/$FILENAME:db $OUTFILE:db"
+# # echo $CPCMD #debug
+# eval $CPCMD
+# # echo -e "rootcp exit status: $?" #debug
 
 # all pau!  )
 exit 0

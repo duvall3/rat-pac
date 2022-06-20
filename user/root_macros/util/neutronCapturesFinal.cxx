@@ -58,10 +58,10 @@ TH1D *h_phi = new TH1D("h_phi", "#varphi (Quant.)", 100, -180.01, 180.01);
 // cos[psi]
 TH1D *h_cospsi = new TH1D("h_cospsi", "Cos[#psi]", 100, -1.01, 1.01);
 // map
-TH2D *h_map = new TH2D("h_map", "Skymap", 100, -180., 180., 100, -90., 90.);
+TH2D *h_map = new TH2D("h_map", "Skymap", 40, -180., 180., 40, -90., 90.);
 
 // tree
-Double_t dt, cospsi, phi;
+Double_t dt, cospsi, phi, theta;
 TString *startVol, *volName;
 Bool_t volCheck;
 TVector3 *dr, dr_q;//, *dr_r;
@@ -72,8 +72,13 @@ T_ncap->SetBranchAddress("volName", &volName);
 T_ncap->SetBranchAddress("volCheck", &volCheck);
 T_ncap->SetBranchAddress("dr", &dr);
 TBranch* br_phi = T_ncap->Branch("phi", &phi);
-TBranch* br_drq = T_ncap->Branch("dr_q", &dr_q);
+TBranch* br_theta = T_ncap->Branch("theta", &theta);
+TBranch* br_dr_q = T_ncap->Branch("dr_q", &dr_q);
 TBranch* br_cp = T_ncap->Branch("cospsi", &cospsi);
+
+// prepare tiny perturbation to avoid zero-difference problems in segmented detectors
+Double_t pertSigma = 1.e-6; // mm
+
 
 // MAIN
 for ( k=0; k<N; k++ ) {
@@ -82,23 +87,32 @@ for ( k=0; k<N; k++ ) {
   endVolume = (TRATVolume*)g.GetVolume(volName->Data());
   startPos = startVolume->GetAbsolutePosition();
   endPos = endVolume->GetAbsolutePosition();
-  dr_q = *startPos - *endPos;
+  dr_q = *endPos - *startPos;
+  // apply tiny perturbation to avoid zero-difference problems in segmented detectors (see "init" above")
+  dr_q.SetX( gRandom->Gaus(dr_q.X(), pertSigma) );
+  dr_q.SetY( gRandom->Gaus(dr_q.Y(), pertSigma) );
+  dr_q.SetZ( gRandom->Gaus(dr_q.Z(), pertSigma) );
+  // reverse direction to point to source
+  dr_q = -dr_q;
   phi = dr_q.Phi() * TMath::RadToDeg();
+  theta = dr_q.Theta() * TMath::RadToDeg();
   /* cospsi = nu_dirn.Dot( dr->Unit() ); //FIXME -- update for quant/resn */
   cospsi = nu_dirn.Dot( dr_q.Unit() ); //FIXME -- update for quant/resn
   if (volCheck) {
-    h_phi->Fill(phi);
+    if ( dr_q.Mag() > 1.0 ) h_phi->Fill(phi); // exclude single-volume events from reconstr. //TODO -- generalization needed?
     h_dt->Fill(dt);
     h_cospsi->Fill(cospsi);
-    /* h_map->Fill( dr_q.Theta()*TMath::RadToDeg(), 90. - dr_q.Phi()*TMath::RadToDeg() ); */
-    h_map->Fill( 90. - dr_q.Phi()*TMath::RadToDeg(),  dr_q.Theta()*TMath::RadToDeg()); // FIXME: need to add wiggles!
+    /* h_map->Fill( dr_q.Phi()*TMath::RadToDeg(), 90. - dr_q.Theta()*TMath::RadToDeg() ); */
+    h_map->Fill( phi, 90. - theta );
     br_phi->Fill();
-    br_drq->Fill();
+    br_theta->Fill();
+    br_dr_q->Fill();
     br_cp->Fill();
   }
 }
 
-// plots
+
+//// plots
 
 // phi
 TCanvas *c_phi = new TCanvas("c_phi", "c_phi");
@@ -214,8 +228,15 @@ c_all->Close();
 /* plotList->Write();//"plotList"); */
 // file &c.
 phiFR->Write("phiFR");
+// final
 fnc->Write();
 fnc->Close();
+
+// run angres.cxx if available
+Int_t kangres = gROOT->LoadMacro("angres.cxx");
+if (kangres == 0) { // reminder: 0 = success for LoadMacro
+  angres(outFileName.Data());
+}
 
 // reset graphics settings if applicable
 if (! origOGL) gStyle->SetCanvasPreferGL(kFALSE);
