@@ -54,6 +54,7 @@ echo -e "\n\
 ch.Merge(\"$OUTFILE\");\n" >> chain_ncap.cxx
 
 # copy database and write experiment name
+FILENAME=$FILE_PREFIX".root"
 echo -e "\n\
 // copy needed objects into ncap file
 TFile *f_source = TFile::Open(\"$FILE_BASE/$FILENAME\");
