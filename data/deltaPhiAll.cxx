@@ -1,5 +1,5 @@
-// neutronCapturesAll -- re-run neutronCapturesFinal
-//   on all OFFAXIS datasets (except SANTA)
+// deltaPhiAll -- extract angular resolutions
+// Suggested Usage: .x deltaPhiAll.cxx > deltaPhiAll.txt
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 06/2022 ~ //
 
 //Copyright (C) 2022 Mark J. Duvall / T. Rocks Science
@@ -20,11 +20,19 @@
 {
 
 // init
+TRegexp nCapRE(".*_ncap_res\.root");
 TList *dirList = new TList, *nCapFiles = new TList;
-TSystemFile *f;
-TString dirName, phiStr;
+TIter i_dirList(dirList);
+TIter j_dataDir(dirList);
+TString dirName, phiStr, sfStr;
+TSystemFile *f, *sf;
+TFile *rf;
 Double_t phi;
+TObjString *experiment;
+TString experimentStr;
+TVectorD *deltaPhi;
 
+// the list
 TSystemDirectory *dir0  = new TSystemDirectory;
 TSystemDirectory *dir1  = new TSystemDirectory;
 TSystemDirectory *dir2  = new TSystemDirectory;
@@ -62,11 +70,7 @@ dir15->SetDirectory("/home/mark/rat-pac/data/sandd/OFFAXIS/45DEG");     dirList-
 
 // MAIN
 cout << endl;
-TRegexp nCapRE(".*_ncap\.root");
-TIter i_dirList(dirList);
-TIter j_dataDir(dirList);
-TSystemFile *sf;
-TString sfStr;
+printf("\texperiment\tphi\tdeltaPhi_{1sigma}\n\n");
 for ( i_dirList = dirList->begin(); i_dirList != dirList->end(); ++i_dirList ) {
   dir = (TSystemDirectory*)*i_dirList;
   dirName = dir->GetName();
@@ -80,8 +84,23 @@ for ( i_dirList = dirList->begin(); i_dirList != dirList->end(); ++i_dirList ) {
   phiStr = dirName( TRegexp("[0-9]+DEG") );
   phiStr = phiStr( TRegexp("[0-9]+") );
   phi = phiStr.Atof();
-  printf( "Processing neutronCapturesFinal(\"%s\", %2.2f)...\n", f->GetName(), phi );
-  neutronCapturesFinal( f->GetName(), phi );
+  rf = TFile::Open( f->GetName() );
+  experiment = (TObjString*)gDirectory->Get("experiment");
+  experimentStr = experiment->GetString();
+  experimentStr.ReplaceAll("\"","");
+  deltaPhi = (TVectorD*)gDirectory->Get("deltaPhi");
+  if (deltaPhi==0x0) {
+    gDirectory->Error("deltaPhiAll", "TVectorD* deltaPhi not found; exiting...");
+    continue;
+  }
+  if (phi==0.) {
+    printf( "\t%s", experimentStr.Data() );
+    if (experimentStr.Length()<8) printf("\t");
+  } else {
+    printf("\t\t");
+  }
+  printf( "\t%02d°\t%02.2f°\n", phi, deltaPhi[0][0] );
+  if (phi==45.) printf("\n");
 }
 cout << endl << endl;
 
