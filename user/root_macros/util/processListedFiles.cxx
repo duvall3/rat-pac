@@ -1,5 +1,14 @@
 // processListedFiles -- one possible way to loop over a set of ROOT files read in from a text-only list
-// -- USAGE: processListedFiles("LISTFILE");
+// -- USAGE: void processListedFiles(const char* listfileName, const char* macroName = "", const char* macroArgsExtra = "");
+// -- Provide macroName WITHOUT its file extension (e.g., "someMacro", NOT "someMacro.cxx")
+// -- Provide ALL additional macro arguments in a single string
+// -- Example: To execute a macro someMacro(const char* filename, Bool_t kFlag, const char* optionString)
+//    on every file named in filelist.txt = file0.root, file1.root, etc.,
+//    with arguments kFlag = kTRUE and optionString = "abc", use the following line:
+//      processListedFiles("filelist.txt", "someMacro", "kTRUE, \"abc\"");
+//        \-->  someMacro("file0.root", kTRUE, "abc");  // processListedFiles will then generate and run these lines
+//              someMacro("file1.root", kTRUE, "abc");  // ...
+//              someMacro("file2.root", kTRUE, "abc");  // ... etc.
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 04/2022 ~ //
 
 //Copyright (C) 2022 Mark J. Duvall / T. Rocks Science
@@ -17,62 +26,51 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-void processListedFiles( const char* LISTFILE ) {
+void processListedFiles( const char* listfileName, const char* macroName, const char* macroArgsExtra = "" ) {
 
-// init
+//// init
+// file list
 TTree *T_filenames = new TTree("T_filenames", "Filenames to Process");
-T_filenames->ReadFile(LISTFILE, "filename/C");
+T_filenames->ReadFile(listfileName, "filename/C");
 char fn[1024] = "";
 T_filenames->SetBranchAddress("filename", &fn);
 Int_t file_num(0), total_files(T_filenames->GetEntries());
 TFile *f;
 TString dir0 = gSystem->pwd();
-TString dir, fileStr;
-
-/* // for subsetMeans: */
-/* TTree *T_sub = (TTree*)gDirectory->FindObjectAnyFile("T_sub"); */
-/* TTree *T2; */
-
-gROOT->LoadMacro("AngRes.cxx");
+TString dir, filenameStr;
+// macro
+TString macroArgList;
+TMacro mac(macroName);
 
 // main
+printf("\n/// Processing files from %s:\n\n", listfileName);
 for ( file_num = 0; file_num < total_files; file_num++ ) {
 
-  // open file
-  T_filenames->GetEntry(file_num);
-  f = TFile::Open(fn);
-  /* fileStr = TString(fn); */
+  // get filename from list
+  T_filenames->GetEntry(file_num); // this sets "fn" to the current filename
+  /* f = TFile::Open(fn); // optional, depending on desired macro */
 
   // PROCESS YOUR FILE HERE
-  printf( "%s\n\n", gFile->GetName() );
+  // The default body of this loop (provided below)
+  //   will execute the specified macro on each
+  //   of the files in the list, using any
+  //   specified additional parameters;
+  //   but feel free to copy or modify this loop
 
-  // AngRes
-  AngRes(fn);
+  // parameter prep
+  printf("Processing %s...\n", fn);
+  macroArgList.Form("\"%s\"", fn);
+  if (macroArgsExtra != "") {
+    macroArgList += ", ";
+    macroArgList.Append(macroArgsExtra);
+  }
 
-  /* // subsetMeans */
-  /* /1* printf("%s\n", gFile->GetName()); *1/ */
-  /* dir = fileStr( 0, fileStr.Last('/') ); */
-  /* gSystem->cd( dir.Data() ); */
-  /* /1* cerr << gSystem->pwd() << endl; //debug *1/ */
-  /* T2 = (TTree*)gDirectory->Get("T2"); */
-  /* /1* subsetMeans(T_sub); // for subsetMeans *1/ */
-  /* cout << T2->GetEntries() << endl; */
-  /* /1* T2->ls(); //debug *1/ */
-  /* /1* T2->Scan(); //debug *1/ */
-  /* gSystem->cd( dir0.Data() ); */
-  /* /1* cerr << gSystem->pwd() << endl; //debug *1/ */
-
-  /* // close current file */
-  f->Close();
-  /* fileStr.Clear(); */
-  /* dir.Clear(); */
-
+  // execution
+  printf("Executing macro %s with arguments (%s):\n", mac.GetName(), macroArgList.Data());
+  mac.Exec(macroArgList.Data());
+    
 }
 
-/* // for subsetMeans: */
-/* f_sub->cd(); */
-/* T_sub->Write(); */
-/* f_sub->Close(); */
-
 // all pau!   )
+printf("/// processListedFiles complete!\n\n");
 }

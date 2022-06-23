@@ -66,6 +66,8 @@ gROOT->LoadMacro("subsetMeans.cxx");
 gROOT->LoadMacro("dispTree.cxx");
 gROOT->LoadMacro("santaFrame.cxx");
 gROOT->LoadMacro("listFiles.cxx");
+/* gROOT->LoadMacro("fitPhiSegmented.cxx"); */
+gROOT->LoadMacro("debugBuddy.cxx");
 
 }
 

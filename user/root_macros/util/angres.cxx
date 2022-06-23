@@ -16,18 +16,20 @@ TString fileName(filename);
 if (fileName.Contains("_results.root")) {
   TTree *T_r = (TTree*)gDirectory->Get("T_r");
   TString dispVectorName = "r";
-  TCut vc("");
+  TCut cuts("");
 } else if (fileName.Contains("_ncap_res.root")) {
   TTree *T_r = (TTree*)gDirectory->Get("T_ncap");
   TString dispVectorName = "dr_q";
-  TCut vc("volCheck==1");
+  TCut rcut("dr_q.Mag()>1.0");
+  TCut vcut("volCheck==1");
+  TCut cuts = rcut+vcut;
 } else {
   TString errLoc = "::angres.cxx";
   TString errMsg = "Filetype error: Expecting a scint \"_results.root\" or an nCap \"_ncap_res.root\" file.";
   gROOT->Error(errLoc.Data(), errMsg.Data());
   return;
 }
-Long64_t N = T_r->GetEntries();
+Long64_t N = T_r->GetEntries(cuts);
 Double_t l, dp, P;
 TVector3 mu;
 TCanvas *c_angres = new TCanvas("c_angres", "c_angres");
@@ -57,9 +59,9 @@ if ( exper.Contains("chooz") ) { // Double CHOOZ
   /* T_r->Draw("r.fX>>hx"); */
   /* T_r->Draw("r.fY>>hy"); */
   /* T_r->Draw("r.fZ>>hz"); */
-  T_r->Draw(dispVectorName+".fX>>hx", vc);
-  T_r->Draw(dispVectorName+".fY>>hy", vc);
-  T_r->Draw(dispVectorName+".fZ>>hz", vc);
+  T_r->Draw(dispVectorName+".fX>>hx", cuts);
+  T_r->Draw(dispVectorName+".fY>>hy", cuts);
+  T_r->Draw(dispVectorName+".fZ>>hz", cuts);
 }
 c_angres->Close();
 mu.SetXYZ(hx->GetMean(), hy->GetMean(), hz->GetMean());

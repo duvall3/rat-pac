@@ -119,6 +119,9 @@ TCanvas *c_phi = new TCanvas("c_phi", "c_phi");
 /* T_ncap->Draw("phi>>h_phi", "volCheck==1"); */
 h_phi->Draw();
 /* h_phi->SetTitle("Reconstructed Azimuthal Angle to Source"); */
+/* TODO NOTE: T_ncap->Draw("phi", rcut+vcut) PRODUCES SIMILAR (identical?) RESULTS
+ * Relatedly: TODO Switch t->Draw("phi") to t->Draw("TMath::Nint(phi)") for segmented dtrs.!
+ * ^ NOTE: Will need to account for shift in results! */
 h_phi->GetXaxis()->SetTitle("#varphi (^{o})");
 
 // zeta (neutron-reconstructed source direction)

@@ -1,6 +1,6 @@
 // neutronCaptures -- analyze simulation datarun based on neutron-capture displacements
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 6/21 ~ //
-
+// Updated 06/22
 
 //Copyright (C) 2021 Mark J. Duvall
 //
