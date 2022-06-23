@@ -42,18 +42,18 @@ dir15->SetDirectory("/home/mark/rat-pac/data/sandd/OFFAXIS/45DEG");     dirList-
 /* dirList->Print(); //debug */
 
 // MAIN
+cout << endl;
 TRegexp nCapRE(".*_ncap\.root");
-TIter i(dirList);
-TIter j(dirList);
+TIter i_dirList(dirList);
+TIter j_dataDir(dirList);
 TSystemFile *sf;
 TString sfStr;
-for ( i = dirList->begin(); i != dirList->end(); ++i ) {
-  dir = (TSystemDirectory*)*i;
-  cout << dir->GetName() << endl; //debug
+for ( i_dirList = dirList->begin(); i_dirList != dirList->end(); ++i_dirList ) {
+  dir = (TSystemDirectory*)*i_dirList;
   dirName = dir->GetName();
   gSystem->cd(dirName.Data());
-  for ( j = dir->GetListOfFiles()->begin(); j != dir->GetListOfFiles()->end(); ++j ) {
-    sf = (TSystemFile*)*j;
+  for ( j_dataDir = dir->GetListOfFiles()->begin(); j_dataDir != dir->GetListOfFiles()->end(); ++j_dataDir ) {
+    sf = (TSystemFile*)*j_dataDir;
     sfStr = sf->GetName();
     if (sfStr.Contains(nCapRE)) f = sf; // note: there *should* only be 1 match
   }
@@ -61,11 +61,10 @@ for ( i = dirList->begin(); i != dirList->end(); ++i ) {
   phiStr = dirName( TRegexp("[0-9]+DEG") );
   phiStr = phiStr( TRegexp("[0-9]+") );
   phi = phiStr.Atof();
-  /* gSystem->WorkingDirectory(); //debug */
-  /* cout << f->GetName() << "\t"; //debug */
-  /* printf("%f\n", phi); //debug */
+  printf( "Processing neutronCapturesFinal(\"%s\", %2.2f)...\n", f->GetName(), phi );
   neutronCapturesFinal( f->GetName(), phi );
 }
+cout << endl << endl;
 
 // all pau!   )
 }
