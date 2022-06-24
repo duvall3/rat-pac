@@ -7,10 +7,10 @@
 #
 # USAGE: geogen_forest.sh [reset]
 #
-# ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ Updated 5/21 ~ #
+# ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ Updated 6/22 ~ #
 
 
-##Copyright (C) 2021 Mark J. Duvall
+##Copyright (C) 2022 Mark J. Duvall
 ##
 ##    This program is free software: you can redistribute it and/or modify
 ##    it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@
 ## init
 
 # check / create filenames
-PROJ=$(pwd | sed s_/_\ _g | awk '{print $NF}')
+PROJ=$(basename $PWD)
 BASEFILE="$PROJ"_base.geo
 ARRFILE="$PROJ"_cell-array.geo
 OUTFILE="$PROJ".geo

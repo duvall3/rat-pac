@@ -19,7 +19,7 @@
 #include <TRATGeo.h>
 
 /* void neutronCapturesFinal( const char* filename, TVector3 nu_dirn = TVector3(-1.,0.,0.) ) { */
-void neutronCapturesFinal( const char* filename, Double_t phi_source_deg = 0. ) {
+void neutronCapturesFinal( const char* filename, Double_t phi_source_deg = TMath::QuietNaN() ) {
 
 // TODO: implement position quantization in // MAIN
 
@@ -48,6 +48,20 @@ Double_t phi_source = phi_source_deg * TMath::DegToRad();
 TVector3 nu_dirn(TMath::Cos(phi_source), TMath::Sin(phi_source), 0.);
 TString savename = filename;
 savename.ReplaceAll("_ncap.root","");
+
+// if phi is not provided, attempt to extract it from the filename
+if ( TMath::IsNaN(phi_source_deg) ) {
+  TString phiStr(filename);
+  phiStr.ToUpper();
+  phiStr = phiStr( TRegexp("[0-9]+DEG") );
+  phiStr = phiStr( TRegexp("[0-9]+") );
+  if (phiStr.Length()==0) {
+    gROOT->Error("neutronCapturesFinal", "Could not determine angle phi_source_deg; please provide as argument or include, e.g., \"15DEG\" in filename. Exiting.\n");
+    return;
+  } else {
+    phi_source_deg = phiStr.Atof();
+  }
+}
 
 // histograms
 // capture/interevent time
