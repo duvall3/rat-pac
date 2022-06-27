@@ -1,8 +1,8 @@
-% import_labeled_data -- script to create vectors from a numerical ASCII table
+% import_labeled_data -- script to create vectors/structs from a numerical ASCII table
 %   with a header row of column labels
 % -- NOTE: *Numerical data only* -- for string data, see 'textscan' or 'importdata'
 % -- Imported variables can be listed at any time using 'whos(vars_imported{:})'
-% -- The fields of a 'struct'-type variable can be queried using 'fieldnames(VARIABLE)'
+% -- The fields of a 'struct'-type variable can be printed using 'fieldnames(VARIABLE)'
 % ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 06/2022 ~ %
 
 %Copyright (C) 2022 Mark J. Duvall / T. Rocks Science
@@ -52,7 +52,7 @@ for k = 1:length(vars_imported)
   endif
 end
 vars_imported = unique(vars_imported);
-printf("\n\nData imported successfully and stored in the following variables:\n");
+printf("\n\nData imported successfully! Contents stored in the variables below.\n\n");
 whos(vars_imported{:});
 
 % all pau!   )

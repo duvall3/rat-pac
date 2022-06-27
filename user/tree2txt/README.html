@@ -1,0 +1,25 @@
+<h1 id="tree2txt">tree2txt</h1>
+<p>Instructions for using the ‘tree2txt’ utility from <a href="https://github.com/duvall3/rat-pac/">this repository</a>.</p>
+<p>This utility includes the following files: - <code>tree2txt.sh</code> – master shell script - <code>tree2txt.cxx</code> – ROOT macro - <code>import_labeled_data.m</code> – Octave/MATLAB script</p>
+<h3 id="installation">Installation</h3>
+<p>_Note: These are written for *nix systems (Mac/Linux)_</p>
+<p>Place each file (or a link to it) in a directory within the relevant program’s path, or place it wherever you like and add that directory to the corresponding path.</p>
+<p>You can view the paths for each program by running the following commands within each program’s prompt: - BASH/shell:<br />
+<code>echo $PATH</code> or, for easier readability,<br />
+<code>echo $PATH | tr ':' '\n'</code><br />
+- ROOT:<br />
+<code>gROOT-&gt;GetMacroPath()</code> or<br />
+<code>TString path(gROOT-&gt;GetMacroPath());</code><br />
+<code>printf("%s\n", path.ReplaceAll(":","\n").Data());</code><br />
+- Octave/MATLAB: <code>path</code></p>
+<p>You can add directories to each program’s path as follows: - During a session: - BASH/shell:<br />
+<code>export PATH=$PATH:/directory/to/add</code><br />
+- ROOT:<br />
+<code>TString path(gROOT-&gt;GetMacroPath());</code><br />
+<code>path.Append(":/directory/to/add");</code><br />
+<code>gROOT-&gt;SetMacroPath(path.Data());</code> - Octave/MATLAB: <code>addpath("/directory/to/add");</code> - Permanently (assuming default settings): - BASH/shell and Octave/MATLAB: Simply add the lines given above to your <code>~/.bashrc</code> or <code>~/.bash_profile</code> and your <code>~/.octaverc</code>, respectively - ROOT: Open your <code>~/.rootrc</code>, find the line containing <code>Unix.*.Root.MacroPath</code>, and append <code>:/directory/to/add</code></p>
+<p>Example: 1) Place <code>tree2txt.sh</code> and <code>import_labeled_data.m</code> in <code>~/bin</code>, and place <code>tree2txt.cxx</code> in <code>$ROOTSYS/macros</code><br />
+2) Add the line <code>export PATH=$PATH:~/bin</code> to your <code>~/.bashrc</code> or <code>~/.bash_profile</code><br />
+3) Open your <code>~/.rootrc</code> (create it if necessary) and ensure that there is a line similar to the following: <code>Unix.*.Root.MacroPath  .:$(ROOTSYS)/macros</code><br />
+4) Add the line <code>addpath("~/bin");</code> to your <code>~/.octaverc</code> (again, create it if necessary)</p>
+<h3 id="usage">Usage</h3>
