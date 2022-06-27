@@ -16,15 +16,19 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-void findVarsOfType( const char* varType = "", Bool_t kCaseSensitive = kFALSE ) {
+TList* findVarsOfType( const char* varType = "", Bool_t kCaseSensitive = kFALSE ) {
 
 // init
+// input
 TString varTypeStr(varType);
 Int_t varCount;
 TString gvarType;
-TCollection *glist = gROOT->GetListOfGlobals(kTRUE);
+// gROOT list
+TCollection *gList = gROOT->GetListOfGlobals(kTRUE);
 TGlobal *gvar;
-TIter i(glist);
+TIter i(gList);
+// output list
+TList *oList = new TList;
 
 // check option and set regex
 if (! kCaseSensitive) {
@@ -33,7 +37,7 @@ if (! kCaseSensitive) {
 TRegexp varRE(varTypeStr.Data());
 
 // loop over list
-for ( i=glist->begin(); i!=glist->end(); ++i ) {
+for ( i=gList->begin(); i!=gList->end(); ++i ) {
   gvar = (TGlobal*)*i;
   gvarType.Form("%s", gvar->GetTypeName());
   if (! kCaseSensitive) {
@@ -41,12 +45,13 @@ for ( i=glist->begin(); i!=glist->end(); ++i ) {
   }
   if ( gvarType.Contains(varRE) ) {
     varCount++;
+    oList->Add(gvar);
     printf("%s\t%s\n", gvar->GetTypeName(), gvar->GetName());
   }
 }
 if (varCount>5) printf("Found %d global variables matching TypeName.Contains(\"%s\").\n", varCount, varType);
 
 // all pau!   )
-return;
+return oList;
 }
 
