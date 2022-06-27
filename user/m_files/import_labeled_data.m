@@ -1,4 +1,8 @@
-function import_labeled_data( FILENAME )
+% import_labeled_data -- script to create vectors from a numerical ASCII table
+%   with a header row of column labels
+% -- NOTE: *Numerical data only* -- for string data, see 'textscan' or 'importdata'
+% -- Imported variables can be listed at any time using 'whos(vars_imported{:})'
+% -- The fields of a 'struct'-type variable can be queried using 'fieldnames(VARIABLE)'
 % ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 06/2022 ~ %
 
 %Copyright (C) 2022 Mark J. Duvall / T. Rocks Science
@@ -17,6 +21,9 @@ function import_labeled_data( FILENAME )
 %    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 % init
+fflush(stdout);
+FILENAME = input("Enter filename: ", "s");
+FILENAME = deblank(FILENAME);
 f_import = fopen(FILENAME);
 header_line = textscan( f_import, "%s", 1, "Delimiter", "\n" );
 headers = textscan(header_line{1}{1}, "%s");
@@ -31,11 +38,22 @@ data_import = dlmread(FILENAME, "", 1, 0);
 N_import = length(headers);
 for k = 1:N_import
   cmdstr = sprintf( "%s = data_import(:,%d);", headers{k}, k );
-  eval cmdstr
+  eval(cmdstr);
 end
 
 % cleanup
 clear data_import
+
+% display results
+vars_imported = headers;
+for k = 1:length(vars_imported)
+  if any( strfind( vars_imported{k}, "." ) )
+    vars_imported{k} = vars_imported{k}( 1 : index(vars_imported{k},".")-1 );
+  endif
+end
+vars_imported = unique(vars_imported);
+printf("\n\nData imported successfully and stored in the following variables:\n");
+whos(vars_imported{:});
 
 % all pau!   )
 
