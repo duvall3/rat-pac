@@ -46,13 +46,28 @@ else
   MDIR=$HOME/bin
 fi
 
+# # get/set directories -- DEBUG VERSION
+# if [ ! -d $HOME/bin ]; then mkdir $HOME/bin; fi
+# INSTALL_DIR=$HOME/bin/tree2txt
+# mkdir $INSTALL_DIR
+# SHDIR=$HOME/bin
+# ROOTDIR=$HOME/bin
+# MDIR=$HOME/bin
+
 # debug
 # echo -e "$INSTALL_DIR\t$SHDIR\t$ROOTDIR\t$MDIR\n"
 
 # download files
 GHPREFIX=https://github.com/duvall3/rat-pac/raw/collab/user/
 cd $INSTALL_DIR
+# doc
 wget $GHPREFIX/tree2txt/README.md
+wget $GHPREFIX/tree2txt/README.html
+mkdir README.html_files
+mkdir README.html_files/images
+wget -P README.html_files $GHPREFIX/tree2txt/README.html_files/github-markdown.css
+wget -P README.html_files $GHPREFIX/tree2txt/README.html_files/styles.css
+# code
 wget $GHPREFIX/shell_scripts/tree2txt.sh
 wget $GHPREFIX/root_macros/util/tree2txt.cxx
 wget $GHPREFIX/m_files/import_labeled_data.m

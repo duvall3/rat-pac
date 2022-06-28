@@ -1,20 +1,43 @@
 tree2txt
 ===================
 
----
+Instructions for using the `tree2txt` utility from [duvall3's fork of RAT-PAC on GitHub](https://github.com/duvall3/rat-pac/).
 
-Instructions for using the 'tree2txt' utility from [this repository](https://github.com/duvall3/rat-pac/).
-
-_Note: These are written for *nix systems (Mac/Linux)_
-
-This utility includes the following files:
+This utility includes the following code files:
 - [`tree2txt.sh`](https://github.com/duvall3/rat-pac/raw/collab/user/shell_scripts/tree2txt.sh) -- master shell script
 - [`tree2txt.cxx`](https://github.com/duvall3/rat-pac/raw/collab/user/root_macros/util/tree2txt.cxx) -- ROOT macro
 - [`import_labeled_data.m`](https://github.com/duvall3/rat-pac/raw/collab/user/m_files/import_labeled_data.m) -- Octave/MATLAB script
 
 ---
 
-### Installation
+```text
+Copyright (C) 2022 Mark J. Duvall
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+```
+
+---
+
+## Installation
+
+_Note: These are written for *nix systems (Mac/Linux)_
+
+### Automatic
+
+Download and run the shell-script installer: [`tree2txt_Installer.sh`](https://github.com/duvall3/rat-pac/raw/collab/user/tree2txt/tree2txt_Installer.sh)
+
+### Manual
 
 Place each file (or a link to it) in a directory within the relevant program's path,
 or place it wherever you like and add that directory to the corresponding path.
@@ -22,25 +45,38 @@ or place it wherever you like and add that directory to the corresponding path.
 You can view the paths for each program by running the following commands
 within each program's prompt:  
 - BASH/shell:  
-    `echo $PATH` or, for easier readability,  
-    `echo $PATH | tr ':' '\n'`  
+    ```sh
+    echo $PATH # or, for easier readability,  
+    echo $PATH | tr ':' '\n'  
+    ```
 - ROOT:  
-    `gROOT->GetMacroPath()` or  
-    `TString path(gROOT->GetMacroPath());`  
-    `printf("%s\n", path.ReplaceAll(":","\n").Data());`  
+    ```cpp
+    gROOT->GetMacroPath() // Note: DO omit the semicolon here. Or, use:  
+    TString path(gROOT->GetMacroPath());  
+    printf("%s\n", path.ReplaceAll(":","\n").Data());  
+    ```
 - Octave/MATLAB:
-    `path`
+    ```matlab
+    path
+    ```
 
-You can add directories to each program's path as follows:  
+You can add directories to each program's path as follows,  
+replacing `directory/to/add` with your desired directory:  
 - During a session:  
   - BASH/shell:  
-      `export PATH=$PATH:/directory/to/add`  
+      ```sh
+      export PATH=$PATH:/directory/to/add  
+      ```
   - ROOT:  
-      `TString path(gROOT->GetMacroPath());`  
-      `path.Append(":/directory/to/add");`  
-      `gROOT->SetMacroPath(path.Data());`  
+      ```cpp
+      TString path(gROOT->GetMacroPath());  
+      path.Append(":/directory/to/add");  
+      gROOT->SetMacroPath(path.Data());  
+      ```
   - Octave/MATLAB:  
-      `addpath("/directory/to/add");`  
+      ```matlab
+      addpath("/directory/to/add");  
+      ```
 - Permanently (assuming default settings):  
   - BASH/shell and Octave/MATLAB: Simply add the lines given above to your `~/.bashrc` or `~/.bash_profile` and
     your `~/.octaverc`, respectively  
@@ -54,15 +90,21 @@ You can add directories to each program's path as follows:
 
 ---
 
-### Usage
+## Usage
 
 Usage lines for each file are below; see the individual code files for details.  
 - BASH/shell script:  
-    `tree2txt.sh <INFILENAME> [TREENAME] [OUTFILENAME]`  
+    ```sh
+    tree2txt.sh <INFILENAME> [TREENAME] [OUTFILENAME]  
+    ```
 - ROOT macro:  
-    `void tree2txt( const char* filename, const char* treename = "T", const char* outfilename = "" )`  
+    ```cpp
+    void tree2txt( const char* filename, const char* treename = "T", const char* outfilename = "" )  
+    ```
 - Octave/MATLAB script:  
-    `run import_labeled_data`  
+    ```matlab
+    run import_labeled_data  
+    ```
 
 **Example 1:**  
 Suppose we have a ROOT file `datarun.root` containing a TTree named `T`,  
@@ -95,5 +137,5 @@ script the same as above, replacing `datarun_T.txt` with `T_neutrons_extracted.t
 
 ---
 
-### All Pau!   )
+## All Pau!   )
 

@@ -36,35 +36,75 @@
     <body>
         <article class="markdown-body">
             <h1 id="tree2txt">tree2txt</h1>
-<hr>
-<p>Instructions for using the &#39;tree2txt&#39; utility from <a href="https://github.com/duvall3/rat-pac/">this repository</a>.</p>
-<p><em>Note: These are written for *nix systems (Mac/Linux)</em></p>
-<p>This utility includes the following files:</p>
+<p>Instructions for using the <code>tree2txt</code> utility from <a href="https://github.com/duvall3/rat-pac/">duvall3&#39;s fork of RAT-PAC on GitHub</a>.</p>
+<p>This utility includes the following code files:</p>
 <ul>
 <li><a href="https://github.com/duvall3/rat-pac/raw/collab/user/shell_scripts/tree2txt.sh"><code>tree2txt.sh</code></a> -- master shell script</li><li><a href="https://github.com/duvall3/rat-pac/raw/collab/user/root_macros/util/tree2txt.cxx"><code>tree2txt.cxx</code></a> -- ROOT macro</li><li><a href="https://github.com/duvall3/rat-pac/raw/collab/user/m_files/import_labeled_data.m"><code>import_labeled_data.m</code></a> -- Octave/MATLAB script</li></ul>
 <hr>
-<h3 id="installation">Installation</h3>
+<pre><code class="lang-text">Copyright (C) 2022 Mark J. Duvall
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+</code></pre>
+<hr>
+<h2 id="installation">Installation</h2>
+<p><em>Note: These are written for *nix systems (Mac/Linux)</em></p>
+<h3 id="automatic">Automatic</h3>
+<p>Download and run the shell-script installer: <a href="https://github.com/duvall3/rat-pac/raw/collab/user/tree2txt/tree2txt_Installer.sh"><code>tree2txt_Installer.sh</code></a></p>
+<h3 id="manual">Manual</h3>
 <p>Place each file (or a link to it) in a directory within the relevant program&#39;s path,
 or place it wherever you like and add that directory to the corresponding path.</p>
 <p>You can view the paths for each program by running the following commands
 within each program&#39;s prompt:  </p>
 <ul>
-<li>BASH/shell:<br>  <code>echo $PATH</code> or, for easier readability,<br>  <code>echo $PATH | tr &#39;:&#39; &#39;\n&#39;</code>  </li><li>ROOT:<br>  <code>gROOT-&gt;GetMacroPath()</code> or<br>  <code>TString path(gROOT-&gt;GetMacroPath());</code><br>  <code>printf(&quot;%s\n&quot;, path.ReplaceAll(&quot;:&quot;,&quot;\n&quot;).Data());</code>  </li><li>Octave/MATLAB:
-  <code>path</code></li></ul>
-<p>You can add directories to each program&#39;s path as follows:  </p>
+<li>BASH/shell:  <pre><code class="lang-sh">  echo $PATH # or, for easier readability,  
+  echo $PATH | tr &#39;:&#39; &#39;\n&#39;
+</code></pre>
+</li><li>ROOT:  <pre><code class="lang-cpp">  gROOT-&gt;GetMacroPath() // Note: DO omit the semicolon here. Or, use:  
+  TString path(gROOT-&gt;GetMacroPath());  
+  printf(&quot;%s\n&quot;, path.ReplaceAll(&quot;:&quot;,&quot;\n&quot;).Data());
+</code></pre>
+</li><li>Octave/MATLAB:<pre><code class="lang-matlab">  path
+</code></pre>
+</li></ul>
+<p>You can add directories to each program&#39;s path as follows,<br>replacing <code>directory/to/add</code> with your desired directory:  </p>
 <ul>
 <li>During a session:  <ul>
-<li>BASH/shell:<br>  <code>export PATH=$PATH:/directory/to/add</code>  </li><li>ROOT:<br>  <code>TString path(gROOT-&gt;GetMacroPath());</code><br>  <code>path.Append(&quot;:/directory/to/add&quot;);</code><br>  <code>gROOT-&gt;SetMacroPath(path.Data());</code>  </li><li>Octave/MATLAB:<br>  <code>addpath(&quot;/directory/to/add&quot;);</code>  </li></ul>
+<li>BASH/shell:  <pre><code class="lang-sh">  export PATH=$PATH:/directory/to/add
+</code></pre>
+</li><li>ROOT:  <pre><code class="lang-cpp">  TString path(gROOT-&gt;GetMacroPath());  
+  path.Append(&quot;:/directory/to/add&quot;);  
+  gROOT-&gt;SetMacroPath(path.Data());
+</code></pre>
+</li><li>Octave/MATLAB:  <pre><code class="lang-matlab">  addpath(&quot;/directory/to/add&quot;);
+</code></pre>
+</li></ul>
 </li><li>Permanently (assuming default settings):  <ul>
 <li>BASH/shell and Octave/MATLAB: Simply add the lines given above to your <code>~/.bashrc</code> or <code>~/.bash_profile</code> and
 your <code>~/.octaverc</code>, respectively  </li><li>ROOT: Open your <code>~/.rootrc</code>, find the line containing <code>Unix.*.Root.MacroPath</code>, and append <code>:/directory/to/add</code></li></ul>
 </li></ul>
 <p><strong>Example:</strong><br>1) Place <code>tree2txt.sh</code> and <code>import_labeled_data.m</code> in <code>~/bin</code>, and place <code>tree2txt.cxx</code> in <code>$ROOTSYS/macros</code><br>2) Add the line <code>export PATH=$PATH:~/bin</code> to your <code>~/.bashrc</code> or <code>~/.bash_profile</code><br>3) Open your <code>~/.rootrc</code> (create it if necessary) and ensure that there is a line similar to the following: <code>Unix.*.Root.MacroPath    .:$(ROOTSYS)/macros</code><br>4) Add the line <code>addpath(&quot;~/bin&quot;);</code> to your <code>~/.octaverc</code> (again, create it if necessary)  </p>
 <hr>
-<h3 id="usage">Usage</h3>
+<h2 id="usage">Usage</h2>
 <p>Usage lines for each file are below; see the individual code files for details.  </p>
 <ul>
-<li>BASH/shell script:<br>  <code>tree2txt.sh &lt;INFILENAME&gt; [TREENAME] [OUTFILENAME]</code>  </li><li>ROOT macro:<br>  <code>void tree2txt( const char* filename, const char* treename = &quot;T&quot;, const char* outfilename = &quot;&quot; )</code>  </li><li>Octave/MATLAB script:<br>  <code>run import_labeled_data</code>  </li></ul>
+<li>BASH/shell script:  <pre><code class="lang-sh">  tree2txt.sh &lt;INFILENAME&gt; [TREENAME] [OUTFILENAME]
+</code></pre>
+</li><li>ROOT macro:  <pre><code class="lang-cpp">  void tree2txt( const char* filename, const char* treename = &quot;T&quot;, const char* outfilename = &quot;&quot; )
+</code></pre>
+</li><li>Octave/MATLAB script:  <pre><code class="lang-matlab">  run import_labeled_data
+</code></pre>
+</li></ul>
 <p><strong>Example 1:</strong><br>Suppose we have a ROOT file <code>datarun.root</code> containing a TTree named <code>T</code>,<br>which we want to export to text and open for analysis in Octave.<br>We would then run the following:</p>
 <p><code>user@host:~$ tree2txt datarun.root</code></p>
 <p>This will generate the file <code>datarun_T.txt</code>. Then we simply open Octave<br>and run the script:</p>
@@ -75,7 +115,7 @@ your <code>~/.octaverc</code>, respectively  </li><li>ROOT: Open your <code>~/.r
 <p><code>user@host:~$ tree2txt datarun.root T_neutrons T_neutrons_extracted.txt</code></p>
 <p>This will generate the file <code>T_neutrons_extracted.txt</code>.<br>We would then simply open Octave and run the <code>import_labaled_data</code><br>script the same as above, replacing <code>datarun_T.txt</code> with <code>T_neutrons_extracted.txt</code>.</p>
 <hr>
-<h3 id="all-pau">All Pau!   )</h3>
+<h2 id="all-pau">All Pau!   )</h2>
 
         </article>
     </body>
