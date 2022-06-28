@@ -78,7 +78,10 @@ ln -s $(pwd -P)/import_labeled_data.m $MDIR
 
 # finish up
 cd -
-echo -e "\n\n# # # Installer script finished.\n\n"
+echo -e "\n\n# # # Installer script finished.
+If the utility doesn't work as described in the 'Usage'
+section of the README, then check your paths as described
+in the 'Installation > Manual' section.\n\n"
 
 # all pau!   )
 exit 0
