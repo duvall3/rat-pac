@@ -1,5 +1,4 @@
-tree2txt
-===================
+# tree2txt
 
 Instructions for using the `tree2txt` utility from [duvall3's fork of RAT-PAC on GitHub](https://github.com/duvall3/rat-pac/).
 

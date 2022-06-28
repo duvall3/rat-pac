@@ -64,7 +64,6 @@ cd $INSTALL_DIR
 wget $GHPREFIX/tree2txt/README.md
 wget $GHPREFIX/tree2txt/README.html
 mkdir README.html_files
-mkdir README.html_files/images
 wget -P README.html_files $GHPREFIX/tree2txt/README.html_files/github-markdown.css
 wget -P README.html_files $GHPREFIX/tree2txt/README.html_files/styles.css
 # code
