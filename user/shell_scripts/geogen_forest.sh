@@ -35,7 +35,7 @@ ARRFILE="$PROJ"_cell-array.geo
 OUTFILE="$PROJ".geo
 LOGFILE=geogen_"$PROJ".log
 
-# clear command
+# reset command
 if [[ $1 = "reset" ]]; then
   if [[ -f $BASEFILE ]]; then
     echo "Resetting experiment to base; clearing detector..."
@@ -93,14 +93,16 @@ printf "\n\n"
 # determine configuration
 echo "Enter number of rows: " && read ROWS
 echo "Enter number of columns: " && read COLS
-echo "Enter number of layers: " && read LYRS
+# echo "Enter number of layers: " && read LYRS
+LYRS=1 # forest is a 2D array
 echo
 
-# determine cell dimensions
-echo "Enter cell half-length (mm): " && read L
-echo "Enter cell half-width (mm): " && read W
-echo "Enter cell half-height (mm): " && read H
-echo "Enter cell half-spacing (mm): " && read S
+# determine dimensions
+echo "Enter outer radius of glass tube (mm): " && read RG
+echo "Enter radius of scintillator tube (mm): " && read RS
+echo "Enter height of scintillator tube (mm): " && read H
+echo "Enter spacing between tube centers (mm) (default: 3 x r_glass_outer): " && read S
+S=${S:-$(echo "3*$RG" | bc -l)}
 echo
 
 # prompt for materials
@@ -112,103 +114,101 @@ TARGET_CELL_MATERIAL=${TARGET_CELL_MATERIAL:-"ej254_015li6"}
 ARRAY_MATERIAL=${ARRAY_MATERIAL:-"air"}
 
 # force float format for RAT-PAC
-L=$( echo "$L*1.0" | bc -l )
-W=$( echo "$W*1.0" | bc -l )
-H=$( echo "$H*1.0" | bc -l )
-S=$( echo "$S*1.0" | bc -l )
-
-# double cell half-dimensions for summary
-FL=$( echo "$L*2.0" | bc -l )
-FW=$( echo "$W*2.0" | bc -l )
-FH=$( echo "$H*2.0" | bc -l )
-FS=$( echo "$S*2.0" | bc -l )
+RG=$( printf "%.1f" $RG )
+RS=$( printf "%.1f" $RS )
+H=$( printf "%.1f" $H )
 
 ## create cell array
 # calculate total size
-ca_length=$(echo "($ROWS*($L+$S)-$S)*1.0" | bc -l)
-ca_width=$(echo "($COLS*($W+$S)-$S)*1.0" | bc -l)
-ca_height=$(echo "($LYRS*($H+$S)-$S)*1.0" | bc -l)
-ca_Flength=$(echo "2*$ca_length" | bc -l)
-ca_Fwidth=$(echo "2*$ca_width" | bc -l)
-ca_Fheight=$(echo "2*$ca_height" | bc -l)
+ca_Flength=$(echo "($ROWS*$S+2*$RG)*1.0" | bc -l)
+ca_Fwidth=$(echo "$ca_Flength * sqrt(3)/2" | bc -l)
+ca_Fheight=$H
+# prepare half-sizes for box
+ca_length=$(echo "$ca_Flength*0.51" | bc -l)
+ca_width=$(echo "$ca_Fwidth*0.51" | bc -l)
+ca_height=$(echo "$ca_Fheight*0.51" | bc -l)
 
-# print config
-printf "\n\nRows: %i\nColumns: %i\nLayers: %i\n" $ROWS $COLS $LYRS | tee $LOGFILE
-printf "\nCell Length: \t%f mm\nCell Width: \t%f mm\nCell Height: \t%f mm\nCell Spacing: \t%f mm\n" $FL $FW $FH $FS | tee -a $LOGFILE
-printf "\nArray Length: \t%f mm\nArray Width: \t%f mm\nArray Height: %f mm\n\n" $ca_Flength $ca_Fwidth $ca_Fheight | tee -a $LOGFILE
+# debug
+printf "\nRG = %f\tRS = %f\tH = %f\tS = %f\tca_Flength = %f\tca_Fwidth = %f\n" $RG $RS $H $S $ca_Flength $ca_Fwidth
+printf "ca_length = %f\tca_width = %f\tca_height = %f\n" $ca_length $ca_width $ca_height
 
-# write array
-echo -e "\
-// -------- GEO[target_cell_array]
-{
-name: \"GEO\",
-index: \"target_cell_array\",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: \"cave\",
-type: \"box\",
-size: [$ca_length, $ca_width, $ca_height], // mm
-material: \"$ARRAY_MATERIAL\",
-invisible: 0,
-position: [0.0, 0.0, 0.0] // mm
-}\n\n" >> $ARRFILE
+# # print config
+# printf "\n\nRows: %i\nColumns: %i\nLayers: %i\n" $ROWS $COLS $LYRS | tee $LOGFILE
+# printf "\nCell Length: \t%f mm\nCell Width: \t%f mm\nCell Height: \t%f mm\nCell Spacing: \t%f mm\n" $FL $FW $FH $FS | tee -a $LOGFILE
+# printf "\nArray Length: \t%f mm\nArray Width: \t%f mm\nArray Height: %f mm\n\n" $ca_Flength $ca_Fwidth $ca_Fheight | tee -a $LOGFILE
+
+# # write array
+# echo -e "\
+# // -------- GEO[target_cell_array]
+# {
+# name: \"GEO\",
+# index: \"target_cell_array\",
+# valid_begin: [0, 0],
+# valid_end: [0, 0],
+# mother: \"cave\",
+# type: \"box\",
+# size: [$ca_length, $ca_width, $ca_height], // mm
+# material: \"$ARRAY_MATERIAL\",
+# invisible: 0,
+# position: [0.0, 0.0, 0.0] // mm
+# }\n\n" >> $ARRFILE
 
 
-## MAIN
+# ## MAIN
 
-# generate cells
+# # generate cells
 
-echo -e "\nGenerating cells..." | tee -a $LOGFILE
+# echo -e "\nGenerating cells..." | tee -a $LOGFILE
 
-for (( k_lr=0; k_lr<$ROWS; k_lr++ )); do
+# for (( k_lr=0; k_lr<$ROWS; k_lr++ )); do
 
-  for (( k_ud=0; k_ud<$COLS; k_ud++ )); do
+#   for (( k_ud=0; k_ud<$COLS; k_ud++ )); do
   
-    for (( k_fb=0; k_fb<$LYRS; k_fb++ )); do
+#     for (( k_fb=0; k_fb<$LYRS; k_fb++ )); do
   
-      # cell names
-      index_name_lr=target_cell_$k_lr
-      index_name_fb="$index_name_lr"_$k_ud
-      index_name="$index_name_fb"_$k_fb
+#       # cell names
+#       index_name_lr=target_cell_$k_lr
+#       index_name_fb="$index_name_lr"_$k_ud
+#       index_name="$index_name_fb"_$k_fb
 
-      # cell coordinates
-      x=$( echo "2.0*($L+$S)*$k_lr - ($L+$S)*($ROWS-1)" | bc -l )
-      y=$( echo "2.0*($W+$S)*$k_ud - ($W+$S)*($COLS-1)" | bc -l )
-      z=$( echo "2.0*($H+$S)*$k_fb - ($H+$S)*($LYRS-1)" | bc -l )
-      # fix float format just for zero values
-      if [ $x = 0 ]; then x="0.0"; fi
-      if [ $y = 0 ]; then y="0.0"; fi
-      if [ $z = 0 ]; then z="0.0"; fi
+#       # cell coordinates
+#       x=$( echo "2.0*($L+$S)*$k_lr - ($L+$S)*($ROWS-1)" | bc -l )
+#       y=$( echo "2.0*($W+$S)*$k_ud - ($W+$S)*($COLS-1)" | bc -l )
+#       z=$( echo "2.0*($H+$S)*$k_fb - ($H+$S)*($LYRS-1)" | bc -l )
+#       # fix float format just for zero values
+#       if [ $x = 0 ]; then x="0.0"; fi
+#       if [ $y = 0 ]; then y="0.0"; fi
+#       if [ $z = 0 ]; then z="0.0"; fi
 
-      # print results for this cell  
-      echo -e "\
-// -------- GEO[$index_name]
-{
-name: \"GEO\",
-index: \"$index_name\",
-valid_begin: [0, 0],
-valid_end: [0, 0],
-mother: \"target_cell_array\",
-type: \"box\",
-size: [$L, $W, $H], // mm  // for sphere, change size to single-value r_max
-material: \"$TARGET_CELL_MATERIAL\",
-invisible: 0,
-position: [$x, $y, $z] // mm
-}\n\n" >> $ARRFILE
+#       # print results for this cell  
+#       echo -e "\
+# // -------- GEO[$index_name]
+# {
+# name: \"GEO\",
+# index: \"$index_name\",
+# valid_begin: [0, 0],
+# valid_end: [0, 0],
+# mother: \"target_cell_array\",
+# type: \"box\",
+# size: [$L, $W, $H], // mm  // for sphere, change size to single-value r_max
+# material: \"$TARGET_CELL_MATERIAL\",
+# invisible: 0,
+# position: [$x, $y, $z] // mm
+# }\n\n" >> $ARRFILE
       
-    done #k_fb
+#     done #k_fb
   
-  done #k_ud
+#   done #k_ud
 
-done #k_lr
+# done #k_lr
 
-echo "Done." | tee -a $LOGFILE
-printf "Array written to: %s\n" $ARRFILE | tee -a $LOGFILE
+# echo "Done." | tee -a $LOGFILE
+# printf "Array written to: %s\n" $ARRFILE | tee -a $LOGFILE
 
 
-## finalize by combining base .geo file with array .geo file
-cat $BASEFILE $ARRFILE > $OUTFILE
-printf "\nRAT-PAC .GEO FILE WRITTEN TO: %s\n\n\n" $OUTFILE | tee -a $LOGFILE
+# ## finalize by combining base .geo file with array .geo file
+# cat $BASEFILE $ARRFILE > $OUTFILE
+# printf "\nRAT-PAC .GEO FILE WRITTEN TO: %s\n\n\n" $OUTFILE | tee -a $LOGFILE
 
 
 ## all pau!   )
