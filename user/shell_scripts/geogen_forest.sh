@@ -93,17 +93,25 @@ printf "\n\n"
 # determine configuration
 echo "Enter number of rows: " && read ROWS
 echo "Enter number of columns: " && read COLS
-# echo "Enter number of layers: " && read LYRS
+# # echo "Enter number of layers: " && read LYRS
 LYRS=1 # forest is a 2D array
 echo
 
-# determine dimensions
-echo "Enter outer radius of glass tube (mm): " && read RG
-echo "Enter radius of scintillator tube (mm): " && read RS
-echo "Enter height of scintillator tube (mm): " && read H
-echo "Enter spacing between tube centers (mm) (default: 3 x r_glass_outer): " && read S
-S=${S:-$(echo "3*$RG" | bc -l)}
-echo
+# # determine dimensions
+# echo "Enter outer radius of glass tube (mm): " && read RG
+# echo "Enter radius of scintillator tube (mm): " && read RS
+# echo "Enter half-height of scintillator tube (mm): " && read H
+# echo "Enter spacing between tube centers (mm) (default: 3 x r_glass_outer): " && read S
+# S=${S:-$(echo "3*$RG" | bc -l)}
+# echo
+
+# DEBUG
+# ROWS=5
+# COLS=4
+RG=30
+RS=25
+H=50
+S=$((3*RG))
 
 # prompt for materials
 echo "Enter material for target cells (default: ej254_015li6 -- PVT @ 1.5%wt. Li-6): " && read TARGET_CELL_MATERIAL
@@ -114,101 +122,113 @@ TARGET_CELL_MATERIAL=${TARGET_CELL_MATERIAL:-"ej254_015li6"}
 ARRAY_MATERIAL=${ARRAY_MATERIAL:-"air"}
 
 # force float format for RAT-PAC
-RG=$( printf "%.1f" $RG )
-RS=$( printf "%.1f" $RS )
-H=$( printf "%.1f" $H )
+RG=$( printf "%f" $RG )
+RS=$( printf "%f" $RS )
+H=$( printf "%f" $H )
+S=$( printf "%f" $S )
 
-## create cell array
-# calculate total size
-ca_Flength=$(echo "($ROWS*$S+2*$RG)*1.0" | bc -l)
-ca_Fwidth=$(echo "$ca_Flength * sqrt(3)/2" | bc -l)
-ca_Fheight=$H
-# prepare half-sizes for box
-ca_length=$(echo "$ca_Flength*0.51" | bc -l)
-ca_width=$(echo "$ca_Fwidth*0.51" | bc -l)
-ca_height=$(echo "$ca_Fheight*0.51" | bc -l)
+# calculate dimensions
+# individual tube-replica entry, aka 'row' (replication is along 'x')
+row_length=$(echo "($COLS*$S + 2*$RG) / 2.0" | bc -l)
+row_width=$RG
+row_height=$H
+# array half-sizes
+array_length=$(echo "($row_length + $S/2) * 1.01" | bc -l) # offset adjustment
+array_width=$(echo "($ROWS*$S*sqrt(3)/2 + 2*$RG) / 2 * 1.01" | bc -l)
+array_height=$(echo "$row_height * 1.01" | bc -l)
+# array full-sizes
+array_Flength=$(echo "$array_length*2.0" | bc -l)
+array_Fwidth=$(echo "$array_width*2.0" | bc -l)
+array_Fheight=$(echo "$array_height*2.0" | bc -l)
 
-# debug
-printf "\nRG = %f\tRS = %f\tH = %f\tS = %f\tca_Flength = %f\tca_Fwidth = %f\n" $RG $RS $H $S $ca_Flength $ca_Fwidth
-printf "ca_length = %f\tca_width = %f\tca_height = %f\n" $ca_length $ca_width $ca_height
+# print config
+printf "\n\nGeometry Summary:\n"
+printf "\nRows: %i\nColumns: %i\nTotal: %i\n" $ROWS $COLS $((ROWS*COLS)) | tee $LOGFILE
+printf "\nR_glass_outer = %f\tR_scintillator = %f\tH = %f\tSpacing = %f\n" $RG $RS $H $S | tee $LOGFILE
+printf "\nArray Length = %f\tArray Width = %f\tArray Height = %f\n" $array_Flength $array_Fwidth $array_Fheight | tee $LOGFILE
 
-# # print config
-# printf "\n\nRows: %i\nColumns: %i\nLayers: %i\n" $ROWS $COLS $LYRS | tee $LOGFILE
-# printf "\nCell Length: \t%f mm\nCell Width: \t%f mm\nCell Height: \t%f mm\nCell Spacing: \t%f mm\n" $FL $FW $FH $FS | tee -a $LOGFILE
-# printf "\nArray Length: \t%f mm\nArray Width: \t%f mm\nArray Height: %f mm\n\n" $ca_Flength $ca_Fwidth $ca_Fheight | tee -a $LOGFILE
-
-# # write array
-# echo -e "\
-# // -------- GEO[target_cell_array]
-# {
-# name: \"GEO\",
-# index: \"target_cell_array\",
-# valid_begin: [0, 0],
-# valid_end: [0, 0],
-# mother: \"cave\",
-# type: \"box\",
-# size: [$ca_length, $ca_width, $ca_height], // mm
-# material: \"$ARRAY_MATERIAL\",
-# invisible: 0,
-# position: [0.0, 0.0, 0.0] // mm
-# }\n\n" >> $ARRFILE
-
-
-# ## MAIN
-
-# # generate cells
-
-# echo -e "\nGenerating cells..." | tee -a $LOGFILE
-
-# for (( k_lr=0; k_lr<$ROWS; k_lr++ )); do
-
-#   for (( k_ud=0; k_ud<$COLS; k_ud++ )); do
-  
-#     for (( k_fb=0; k_fb<$LYRS; k_fb++ )); do
-  
-#       # cell names
-#       index_name_lr=target_cell_$k_lr
-#       index_name_fb="$index_name_lr"_$k_ud
-#       index_name="$index_name_fb"_$k_fb
-
-#       # cell coordinates
-#       x=$( echo "2.0*($L+$S)*$k_lr - ($L+$S)*($ROWS-1)" | bc -l )
-#       y=$( echo "2.0*($W+$S)*$k_ud - ($W+$S)*($COLS-1)" | bc -l )
-#       z=$( echo "2.0*($H+$S)*$k_fb - ($H+$S)*($LYRS-1)" | bc -l )
-#       # fix float format just for zero values
-#       if [ $x = 0 ]; then x="0.0"; fi
-#       if [ $y = 0 ]; then y="0.0"; fi
-#       if [ $z = 0 ]; then z="0.0"; fi
-
-#       # print results for this cell  
-#       echo -e "\
-# // -------- GEO[$index_name]
-# {
-# name: \"GEO\",
-# index: \"$index_name\",
-# valid_begin: [0, 0],
-# valid_end: [0, 0],
-# mother: \"target_cell_array\",
-# type: \"box\",
-# size: [$L, $W, $H], // mm  // for sphere, change size to single-value r_max
-# material: \"$TARGET_CELL_MATERIAL\",
-# invisible: 0,
-# position: [$x, $y, $z] // mm
-# }\n\n" >> $ARRFILE
-      
-#     done #k_fb
-  
-#   done #k_ud
-
-# done #k_lr
-
-# echo "Done." | tee -a $LOGFILE
-# printf "Array written to: %s\n" $ARRFILE | tee -a $LOGFILE
+# write array
+echo -e "\
+// -------- GEO[target_cell_array]
+{
+name: \"GEO\",
+index: \"target_cell_array\",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: \"cave\",
+type: \"box\",
+size: [$array_length, $array_width, $array_height], // mm
+material: \"$ARRAY_MATERIAL\",
+invisible: 0,
+position: [0.0, 0.0, 0.0], // mm
+color: [0.8 0.8 0.1],
+}\n\n" >> $ARRFILE
 
 
-# ## finalize by combining base .geo file with array .geo file
-# cat $BASEFILE $ARRFILE > $OUTFILE
-# printf "\nRAT-PAC .GEO FILE WRITTEN TO: %s\n\n\n" $OUTFILE | tee -a $LOGFILE
+## MAIN
+
+# generate cells
+echo -e "\nGenerating cells..." | tee -a $LOGFILE
+
+y=$(echo "-(sqrt(3)/2)*$S*($ROWS-1)/2" | bc -l)
+
+for (( k_row=0; k_row<$ROWS; k_row++ )); do
+
+  # row coordinates
+  x=$(echo "$((k_row % 2)) * ($S*0.5) - ($S*0.25)" | bc -l)
+  x=$(printf "%f" $x) # force float format
+  # echo -e "$x\t$y" #debug
+
+  # print row array
+  row_name=target_row_inner_$k_row
+  echo -e "\
+// -------- GEO[$row_name]
+{
+name: \"GEO\",
+index: \"$row_name\",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: \"target_cell_array\",
+type: \"box\",
+size: [$row_length, $row_width, $row_height],
+position: [$x, $y, 0.0],
+material: \"$TARGET_CELL_MATERIAL\",
+invisible: 0,
+color: [0.3 0.8 0.3],
+}\n\n" >> $ARRFILE
+
+  # print scintillator cells
+  index_name=target_cell_inner_$k_row
+  echo -e "\
+// -------- GEO[$index_name]
+{
+name: \"GEO\",
+index: \"$index_name\",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: \"$row_name\",
+type: \"tube\",
+r_max: $RS,
+size_z: $H,
+replicas: $COLS,
+replica_axis: \"x\",
+replica_spacing: $S,
+material: \"$TARGET_CELL_MATERIAL\",
+invisible: 0,
+color: [0.5 0.1 0.8],
+}\n\n" >> $ARRFILE
+
+  y=$(echo "$y+($S*sqrt(3)/2)" | bc -l)
+
+done #k_row
+
+echo "Done." | tee -a $LOGFILE
+printf "Array written to: %s\n" $ARRFILE | tee -a $LOGFILE
+
+
+## finalize by combining base .geo file with array .geo file
+cat $BASEFILE $ARRFILE > $OUTFILE
+printf "\nRAT-PAC .GEO FILE WRITTEN TO: %s\n\n\n" $OUTFILE | tee -a $LOGFILE
 
 
 ## all pau!   )
