@@ -1,6 +1,6 @@
 function [ H ] = human3( S = 1 )
 
-% [ H ] = human3( S ) -- generate / draw a "human for scale" stick figure
+% [ H ] = human3( S = 1 ) -- generate / draw a "human for scale" stick figure
 % -- [ H ] is a vector of graphics handles
 % -- S is a float value for the number of Octave units equal to 1 meter
 % ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 05/2022 ~ %

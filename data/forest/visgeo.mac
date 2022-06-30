@@ -57,6 +57,9 @@
 #/vis/geometry/set/colour _array 1 .2 0 1
 /vis/geometry/set/colour _array 1 grey
 
+# for testing
+
+
 /vis/viewer/set/hiddenMarker true
 #/vis/viewer/set/targetPoint 0 -9 0 m
 

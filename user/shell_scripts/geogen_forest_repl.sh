@@ -97,21 +97,21 @@ echo "Enter number of columns: " && read COLS
 LYRS=1 # forest is a 2D array
 echo
 
-# determine dimensions
-echo "Enter outer radius of glass tube (mm): " && read RG
-echo "Enter radius of scintillator tube (mm): " && read RS
-echo "Enter half-height of scintillator tube (mm): " && read H
-echo "Enter spacing between tube centers (mm) (default: 3 x r_glass_outer): " && read S
-S=${S:-$(echo "3*$RG" | bc -l)}
-echo
+# # determine dimensions
+# echo "Enter outer radius of glass tube (mm): " && read RG
+# echo "Enter radius of scintillator tube (mm): " && read RS
+# echo "Enter half-height of scintillator tube (mm): " && read H
+# echo "Enter spacing between tube centers (mm) (default: 3 x r_glass_outer): " && read S
+# S=${S:-$(echo "3*$RG" | bc -l)}
+# echo
 
 # DEBUG
 # ROWS=5
 # COLS=4
-# RG=30
-# RS=25
-# H=50
-# S=$((3*RG))
+RG=30
+RS=25
+H=50
+S=$((3*RG))
 
 # prompt for materials
 echo "Enter material for target cells (default: ej254_015li6 -- PVT @ 1.5%wt. Li-6): " && read TARGET_CELL_MATERIAL
@@ -170,62 +170,54 @@ color: [0.8 0.8 0.1],
 # generate cells
 echo -e "\nGenerating cells..." | tee -a $LOGFILE
 
-# array start
-x_offset=$(echo "-$S*($COLS-1)/2.0" | bc -l)
 y=$(echo "-(sqrt(3)/2)*$S*($ROWS-1)/2" | bc -l)
 
 for (( k_row=0; k_row<$ROWS; k_row++ )); do
 
-  for (( k_col=0; k_col<$COLS; k_col++ )); do
+  # row coordinates
+  x=$(echo "$((k_row % 2)) * ($S*0.5) - ($S*0.25)" | bc -l)
+  x=$(printf "%f" $x) # force float format
+  # echo -e "$x\t$y" #debug
 
-    # row coordinates
-    # x=$(echo "($k_row % 2) * ($S*0.5) - ($S*0.25) + $S*$k_col + $x_offset" | bc -l)
-    x_no_shift=$(echo "$S*$k_col - ($S*0.25) + $x_offset" | bc -l)
-    x_shifted=$(echo "$x_no_shift + $(($k_row % 2)) * ($S*0.5)" | bc -l)
-    # x=$(printf "%f" $x) # force float format
-    x=$(printf "%f" $x_shifted) # force float format
-    # echo -e "$x\t$y" #debug
+  # print row array
+  row_name=target_row_inner_$k_row
+  echo -e "\
+// -------- GEO[$row_name]
+{
+name: \"GEO\",
+index: \"$row_name\",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+mother: \"target_cell_array\",
+type: \"box\",
+size: [$row_length, $row_width, $row_height],
+position: [$x, $y, 0.0],
+material: \"$TARGET_CELL_MATERIAL\",
+invisible: 0,
+color: [0.3 0.8 0.3],
+}\n\n" >> $ARRFILE
 
-#     # print row array
-#     row_name=target_row_inner_$k_row
-#     echo -e "\
-# // -------- GEO[$row_name]
-# {
-# name: \"GEO\",
-# index: \"$row_name\",
-# valid_begin: [0, 0],
-# valid_end: [0, 0],
-# mother: \"target_cell_array\",
-# type: \"box\",
-# size: [$row_length, $row_width, $row_height],
-# position: [$x, $y, 0.0],
-# material: \"$TARGET_CELL_MATERIAL\",
-# invisible: 0,
-# color: [0.3 0.8 0.3],
-# }\n\n" >> $ARRFILE
-
-    # print scintillator cells
-    index_name=target_cell_$k_row
-    index_name="$index_name"_$k_col
-    echo -e "\
+  # print scintillator cells
+  #index_name=target_cell_inner_$k_row
+  index_name=target_cell_$k_row
+  echo -e "\
 // -------- GEO[$index_name]
 {
 name: \"GEO\",
 index: \"$index_name\",
 valid_begin: [0, 0],
 valid_end: [0, 0],
-//mother: \"$row_name\",
-mother: \"target_cell_array\",
+mother: \"$row_name\",
 type: \"tube\",
 r_max: $RS,
 size_z: $H,
-position: [$x, $y, 0.0],
+replicas: $COLS,
+replica_axis: \"x\",
+replica_spacing: $S,
 material: \"$TARGET_CELL_MATERIAL\",
 invisible: 0,
 color: [0.5 0.1 0.8],
 }\n\n" >> $ARRFILE
-
-  done #k_col
 
   y=$(echo "$y+($S*sqrt(3)/2)" | bc -l)
 

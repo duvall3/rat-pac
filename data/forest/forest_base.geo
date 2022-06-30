@@ -44,7 +44,7 @@ invisible: 1,
 /* invisible: 1, */
 /* position: [0.0, -10000.0, 0.0] // mm */
 /* } */
-
+//
 /* // -------- GEO[cave_ceiling] */
 /* { */
 /* name: "GEO", */
@@ -58,8 +58,8 @@ invisible: 1,
 /* invisible: 1, */
 /* position: [0.0, 10000.0, 0.0] // mm */
 /* } */
-
-
+//
+//
 /* // -------- GEO[cave_back] */
 /* { */
 /* name: "GEO", */
@@ -73,8 +73,8 @@ invisible: 1,
 /* invisible: 1, */
 /* position: [0.0, 0.0, 10000.0] // mm */
 /* } */
-
-
+//
+//
 /* // -------- GEO[cave_lwall] */
 /* { */
 /* name: "GEO", */
@@ -88,8 +88,8 @@ invisible: 1,
 /* invisible: 1, */
 /* position: [-10000.0, 0.0, 0.0] // mm */
 /* } */
-
-
+//
+//
 /* // -------- GEO[cave_rwall] */
 /* { */
 /* name: "GEO", */
@@ -103,7 +103,7 @@ invisible: 1,
 /* invisible: 1, */
 /* position: [10000.0, 0.0, 0.0] // mm */
 /* } */
-
+//
 /* // -------- GEO[source] */
 /* { */
 /* name: "GEO", */
@@ -117,6 +117,7 @@ invisible: 1,
 /* invisible: 1, */
 /* position: [-100.0, 0.0, 0.0] // mm */
 /* } */
+
 
 // DETECTOR ELEMENTS
 

@@ -33,29 +33,32 @@
 # Axes, scale, etc.
 /vis/set/textSize 18.0
 #/vis/scene/add/axes/g 0 -9.45 -2 1 m grey false # Simple axes: x=red, y=green, z=blue.
-/vis/scene/add/date    # Date stamp
-
+#/vis/scene/add/date    # Date stamp
+#/vis/scene/add/scale 152 mm x 0. 0. 0. manual 0. 85. 85. mm
+#/vis/scene/add/scale 152 mm y 0. 0. 0. manual -85. 0. 85. mm
+#/vis/scene/add/scale 152 mm z 0. 0. 0. manual 85. 85. 0. mm
 
 # To get nice view
 #/vis/geometry/set/visibility world 0 false
 /vis/viewer/set/background white
-/vis/viewer/zoom 500
+/vis/viewer/zoom 1.5
 #/vis/viewer/pan 0 -9 m
 
 # set or correct volume properties:
-/vis/geometry/set/colour world 0 .6 .2 .1 .1
-/vis/geometry/set/visibility world 0 1
-/vis/geometry/set/visibility cave 0 1
+#/vis/geometry/set/colour world 0 .6 .2 .1 .1
+/vis/geometry/set/visibility world 1 0
+/vis/geometry/set/visibility _array 1 1
 #/vis/geometry/set/colour cave 0 0 0 0 .2
-/vis/geometry/set/colour cave 0 0 0 0 1
 #/vis/geometry/set/colour cave_floor 0 .6 .2 .1 .3
 #/vis/geometry/set/colour cave_ceiling 0 .6 .2 .1 .3
 #/vis/geometry/set/colour cave_back 0 .6 .2 .1 .3
 #/vis/geometry/set/colour cave_lwall 0 .6 .2 .1 .3
 #/vis/geometry/set/colour cave_rwall 0 .6 .2 .1 .3
 #/vis/geometry/set/colour _array 1 .2 0 1
-/vis/geometry/set/colour _array 1 0. 1. 1.
-/vis/geometry/set/colour _array 0 0. 1. 1. .1
+/vis/geometry/set/colour _array 1 grey
+
+# for testing
+
 
 /vis/viewer/set/hiddenMarker true
 #/vis/viewer/set/targetPoint 0 -9 0 m
