@@ -70,6 +70,8 @@ gROOT->LoadMacro("listFiles.cxx");
 gROOT->LoadMacro("debugBuddy.cxx");
 gROOT->LoadMacro("findMatchingObject.cxx");
 gROOT->LoadMacro("chi2ProbSigma.cxx");
+gROOT->LoadMacro("prob2sig.cxx");
+gROOT->LoadMacro("sig2prob.cxx");
 
 }
 
