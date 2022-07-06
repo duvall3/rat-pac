@@ -68,6 +68,8 @@ gROOT->LoadMacro("santaFrame.cxx");
 gROOT->LoadMacro("listFiles.cxx");
 /* gROOT->LoadMacro("fitPhiSegmented.cxx"); */
 gROOT->LoadMacro("debugBuddy.cxx");
+gROOT->LoadMacro("findMatchingObject.cxx");
+gROOT->LoadMacro("chi2ProbSigma.cxx");
 
 }
 

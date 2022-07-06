@@ -31,7 +31,10 @@ Double_t x[10];
 TH1D *h = new TH1D("h", "h", 100, -2.5, 2.5);
 h->FillRandom("gausn");
 h->Draw();
+Long64_t N = (Long64_t)h->GetEntries();
+Int_t nBins = h->GetNbinsX();
 Double_t *y = (Double_t*)h->GetArray(); // TH1::GetArray returns Float_t*
+TArrayD *xBins = h->GetXaxis()->GetXbins();
 
 // Explicit assignment at creation:
 Int_t phi[4] = {0, 15, 30, 45};
@@ -83,6 +86,18 @@ for (k=0; k<PHI.GetSize(); k++) cout << PHI[k] << "\t"; cout << endl;
 // mean
 Double_t XBAR = X.GetSum() / X.GetSize();
 Double_t YBAR = TMath::Mean(NY, Y.GetArray());
+
+
+// TMatrices and TVectors:
+/* // Use TVectors to create a TMatrix from arrays xBins and y */
+// Use TVectors to create a TMatrix from arrays / TArrays / TVectors
+TVectorD vX, vY;
+vX.Use(nBins, X.GetArray());
+vY.Use(nBins, Y.GetArray());
+TMatrixD M(nBins, 2);
+TMatrixDColumn(M, 0) = vX;
+TMatrixDColumn(M, 1) = vY;
+M.Print();
 
 
 //// all pau!   )
