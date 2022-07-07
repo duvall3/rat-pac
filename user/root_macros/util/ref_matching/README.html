@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+    <head>
+        <title>General</title>
+        <meta charset='utf-8'/>
+        <link rel="stylesheet" type="text/css" href="./README.html_files/github-markdown.css">
+        <style>
+            .markdown-body {
+                box-sizing: border-box;
+                min-width: 200px;
+                max-width: 980px;
+                margin: 0 auto;
+                padding: 45px;
+            }
+        </style>
+        <script>
+            window.onload = function() {
+                if (document.querySelector("script[type=\"math/tex; mode=display\"]") !== null) {
+                    var mathjax = document.createElement("script");
+                    mathjax.src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML";
+                    document.head.appendChild(mathjax);
+                }
+                if (document.getElementsByTagName("code").length !== 0) {
+                    var highlight = document.createElement("script");
+                    var highlightcss = document.createElement("link");
+                    highlight.src = "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js";
+                    highlightcss.rel = "stylesheet";
+                    highlightcss.href = "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/github.min.css";
+                    highlight.onload = function() {hljs.initHighlighting();};
+                    document.head.appendChild(highlight);
+                    document.head.appendChild(highlightcss);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <article class="markdown-body">
+            <h2 id="reference-matching-system-for-angular-reconstruction-remstar">REFERENCE-MATCHING SYSTEM for Angular Reconstruction (ReMStAR)</h2>
+<blockquote>
+<p>~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 07/2022 ~</p>
+<p>Copyright (C) 2022 Mark J. Duvall / T. Rocks Science</p>
+<pre><code>This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+</code></pre></blockquote>
+<hr>
+<h2 id="general">General</h2>
+<p>This is a test implementation of ReMStAR, which is a procedure for reconstructing the incident direction of an electron-antineutrino undergoing inverse beta decay (IBD) in a scintillation detector -- though the method itself is applicable to a much broader range of problems in statistical analysis.</p>
+<p>The current version aims to reconstruct the azimuthal angle <em>only</em>, given the assumption that the neutrino source (namely, a fission reactor) is located on the detector&#39;s horizon.
+This assumption is valid for all immediately-plausible deployment scenarios.</p>
+<hr>
+<h2 id="test-system-parameters">Test-System Parameters</h2>
+<h3 id="detector-0">Detector 0</h3>
+<p>General-purpose detector archetype</p>
+<ul>
+<li><em>Azimuthal Periodicity:</em> <code>n * (2π/6)</code>, or Every 60°</li><li><em>References Needed:</em> <strong>φ =  0°--30°</strong></li><li><em>Nominal Angular Width:</em> <strong>σ = 50°</strong></li><li><em>Reference Sample Size:</em> <strong>N = 100 000</strong></li></ul>
+<hr>
+<h2 id="bookkeeping">Bookkeeping</h2>
+<h3 id="filename-structure-2ddeg-ref-root-phi">Filename Structure: <code>%2dDEG_ref.root | phi</code></h3>
+<h3 id="file-contents">File Contents</h3>
+<ul>
+<li>TTree <code>T</code> |-&gt;</li><li>TBranch <code>phi</code> |-&gt;</li><li><code>N</code> = 1x10^5 samples, normally-distributed about <code>phi</code> (°), with a spread of <code>sigma = 50</code> (°)</li></ul>
+
+        </article>
+    </body>
+</html>
