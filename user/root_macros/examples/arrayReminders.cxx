@@ -70,6 +70,12 @@ Double_t ybar = TMath::Mean(ny, y);
 printf("\nMean x:\t%f\nMean y:\t%f\n", xbar, ybar);
 
 
+//// Sort
+Int_t *ind = new Int_t[nx];
+TMath::Sort(nx, x, ind, kFALSE); // kFALSE --> ascending order
+for (k=0; k<nx; k++) cout << x[ind[k]] << "\t"; cout << endl;
+
+
 //// TArrays:
 // create
 TArrayD X(nx, x);

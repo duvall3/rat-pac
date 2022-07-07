@@ -21,6 +21,7 @@
 Double_t prob2sig(Double_t prob) {
 
 // convert, accounting for special values
+Double_t sigma;
 if ( prob == 1. ) {
   sigma = TMath::Infinity();
 } else if ( prob == 0. ) {
