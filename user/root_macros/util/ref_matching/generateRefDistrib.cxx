@@ -54,7 +54,6 @@ for ( Int_t i=0; i<6; i++ ) {
   params->Add( &(keynames[i]), values->At(i) );
 }
 
-
 // TTree init
 Double_t phi;
 TTree *T = new TTree("T", "Reference Distribution");
@@ -67,9 +66,28 @@ for ( k = 0; k < N; k++ ) {
   T->Fill();
 }
 
+// draw and fit, just for luck
+if (gROOT->GetListOfCanvases()->FindObject("c_genref")) delete c_genref;
+TCanvas *c_genref = new TCanvas("c_genref", "c_genref");
+c_genref->cd();
+T->Draw("phi >> h_phi");
+TString hTit;
+hTit.Form("Reference Distribution for #phi = %2d^{o}", (Int_t)phiTrue);
+h_phi->SetLineColor(kBlue);
+h_phi->SetAxisRange(phiMin, phiMax, "X");
+h_phi->SetTitle(hTit.Data());
+h_phi->GetXaxis()->SetTitle("#phi (^{o})");
+TFitResultPtr phiFRP = h_phi->Fit("gaus", "S"); // expected to include the R(ange) option here, but results seem better without it
+TFitResult *phiFR = phiFRP.Get();
+
 // save
 params->Write("params", TObject::kSingleKey);
 T->Write();
+phiFR->Write();
+c_genref->Write();
+
+// close out
+c_genref->Close();
 f->Close();
 
 // all pau!   )
