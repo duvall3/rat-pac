@@ -18,7 +18,18 @@ function [ h ] = rhist( Q, X = 100, kGraphics = true )
 %    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 % init and arg check
-h = struct('handle', [], 'binContents', [], 'xBins', [], 'N', [], 'Mean', [], 'StDev', []);
+% check data dimensions
+if ~isvector(Q)
+  error('Input Q must be a vector; currently only 1-D histograms are suppoerted.');
+endif
+% init struct
+h = struct('handle', [], ...
+  'binContents', [], ...
+  'xBins', [], ...
+  'Entries', [], ...
+  'Mean', [], ...
+  'RMS', []);
+% check bin dimensions
 if isscalar(X)
   h.xBins = linspace(min(Q), max(Q), X);
 elseif isvector(X)
@@ -28,9 +39,9 @@ else
 endif
 
 % main
-h.N = length(Q);
+h.Entries = length(Q);
 h.Mean = mean(Q);
-h.StDev = std(Q);
+h.RMS = std(Q);
 h.binContents = hist( Q, h.xBins );
 
 % graphics
@@ -47,10 +58,11 @@ if kGraphics
   ylim([0 1.1*max(h.binContents)])
   title 'htemp';
   statPos = [.8 .825 .9 .9];
-  statStr = sprintf('\n N   %d \n Mean   %f \n StDev   %f \n', h.N, h.Mean, h.StDev);
+  statStr = sprintf("\n Entries   %d \n Mean   %f \n RMS   %f \n", h.Entries, h.Mean, h.RMS);
   stats = annotation('textbox', statPos);
   set(stats, 'string', statStr)
   set(stats, 'fontsize', 18)
+  set(stats, 'fontweight', 'bold')
   set(stats, 'fitboxtotext', 'on')
   set(stats, 'horizontalalignment', 'center')
   set(stats, 'backgroundcolor', get(gca, 'color'))
