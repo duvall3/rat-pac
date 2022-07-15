@@ -37,7 +37,7 @@ This assumption is valid for all immediately-plausible deployment scenarios.
 
 General-purpose detector archetype
 
-- *Azimuthal Periodicity:* `n * (2π/6)`, or Every 60°
+- *Azimuthal Periodicity:* **n * (2π/6)**, or Every 60°
 - *References Needed:* **φ =  0°--30°**
 - *Nominal Angular Width:* **σ = 50°**
 - *Reference Sample Size:* **N = 100 000**
@@ -46,13 +46,14 @@ General-purpose detector archetype
 
 ## Bookkeeping
 
-### Filename Structure: `%2dDEG_ref.root | phi`
+### Filename Structure: `phi --> %2dDEG_ref.root`
 
 ### File Contents
 
-- TTree `T` |->
-- TBranch `phi` |->
-- `N` = 1x10^5 samples, normally-distributed about `phi` (°), with a spread of `sigma = 50` (°)
+- `TMap params` discribing how the distribution was generated
+- `TTree T` --> `TBranch phi` containing the actual data, distributed according to the Gaussian described in `params`
+- `TH1F h_phi` showing the distribution of `phi` along with a Gaussian fit
+- `TCanvas c_genref` containing `h_phi`
 
 
 

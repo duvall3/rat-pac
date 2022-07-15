@@ -62,13 +62,13 @@ This assumption is valid for all immediately-plausible deployment scenarios.</p>
 <h3 id="detector-0">Detector 0</h3>
 <p>General-purpose detector archetype</p>
 <ul>
-<li><em>Azimuthal Periodicity:</em> <code>n * (2π/6)</code>, or Every 60°</li><li><em>References Needed:</em> <strong>φ =  0°--30°</strong></li><li><em>Nominal Angular Width:</em> <strong>σ = 50°</strong></li><li><em>Reference Sample Size:</em> <strong>N = 100 000</strong></li></ul>
+<li><em>Azimuthal Periodicity:</em> <strong>n * (2π/6)</strong>, or Every 60°</li><li><em>References Needed:</em> <strong>φ =  0°--30°</strong></li><li><em>Nominal Angular Width:</em> <strong>σ = 50°</strong></li><li><em>Reference Sample Size:</em> <strong>N = 100 000</strong></li></ul>
 <hr>
 <h2 id="bookkeeping">Bookkeeping</h2>
-<h3 id="filename-structure-2ddeg-ref-root-phi">Filename Structure: <code>%2dDEG_ref.root | phi</code></h3>
+<h3 id="filename-structure-phi-2ddeg-ref-root">Filename Structure: <code>phi --&gt; %2dDEG_ref.root</code></h3>
 <h3 id="file-contents">File Contents</h3>
 <ul>
-<li>TTree <code>T</code> |-&gt;</li><li>TBranch <code>phi</code> |-&gt;</li><li><code>N</code> = 1x10^5 samples, normally-distributed about <code>phi</code> (°), with a spread of <code>sigma = 50</code> (°)</li></ul>
+<li><code>TMap params</code> discribing how the distribution was generated</li><li><code>TTree T</code> --&gt; <code>TBranch phi</code> containing the actual data, distributed according to the Gaussian described in <code>params</code></li><li><code>TH1F h_phi</code> showing the distribution of <code>phi</code> along with a Gaussian fit</li><li><code>TCanvas c_genref</code> containing <code>h_phi</code></li></ul>
 
         </article>
     </body>
