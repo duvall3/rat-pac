@@ -30,12 +30,6 @@
 
 //namespace TRV {
 
-const TString defaultName = "TRATVolume";
-const TString defaultTitle = "class for analyzing geometry from RAT-PAC ROOT file";
-const char* defaultVolNameChr = "volume_name";
-const TString defaultVolName = TString("volume_name");
-TString keyStrVol;
-
 //______________________________________________________________________________
 // default ctor
 TRATVolume::TRATVolume()
@@ -53,6 +47,9 @@ TRATVolume::TRATVolume()
   fMaterial = "";
   fMother = "";
   fSize = TVector3(0.0,0.0,0.0);
+  fRMin = 0.0;
+  fRMax = 0.0;
+  fSizeZ = 0.0;
   fRelativePosition = TVector3(0.0,0.0,0.0);
   fAbsolutePosition = TVector3(0.0,0.0,0.0);
 }

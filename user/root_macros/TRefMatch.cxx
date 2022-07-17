@@ -60,10 +60,57 @@ TRefMatch::TRefMatch( const char* fileName, const char* treeName, const char* br
     fTestSampleBranch = 0x0;
   }
   fReferenceFileList = new TList;
+  fOutFile = 0x0;
+}
+
+//______________________________________________________________________________
+// initialize: validate and fill members
+TRefMatch::Init()
+{
+  // checks
+  if (fTestSampleFile==0x0) {
+    this->Error("Init()", "Requested file not found.");
+    return;
+  }
+  if (fTestSampleTree==0x0){
+    this->Error("Init()", "Requested TTree not found.");
+    return;
+  }
+  if (fTestSampleBranch==0x0){
+    this->Error("Init()", "Requested TBranch not found.");
+    return;
+  }
+  // if all of the above check out okay, create outfile
+  TSystemDirectory *wd = new TSystemDirectory;
+  wd->SetDirectory(gSystem->WorkingDirectory());
+  TString outFileName(fTestSampleFile->GetName());
+  outFileName.ReplaceAll("\.root", "_RefMatch.root");
+  /* cout << "outFileName = " << outFileName.Data() << endl; //debug */
+  fOutFile = TFile::Open( outFileName.Data(), "recreate" );
+  printf( "Created output file %s at %#lx.\n", fOutFile->GetName(), fOutFile);
+  /* FillReferenceList(); */
+  /* printf("Init complete.\n"); */
+}
+
+//______________________________________________________________________________
+// Init -- setter version
+TRefMatch::Init( const char* fileName, const char* treeName , const char* branchVarName )
+{
+  fTestFileName = fileName;
+  fTestTreeName = treeName;
+  fTestVarName = branchVarName;
+  fTestSampleFile = TFile::Open( fTestFileName );
+  fTestSampleTree = (TTree*)gDirectory->Get(fTestTreeName);
+  if (fTestSampleTree) {
+    fTestSampleBranch = fTestSampleTree->GetBranch(fTestVarName);
+  } else {
+    fTestSampleBranch = 0x0;
+  }
+  Init();
 }
 
 /* //______________________________________________________________________________ */
-/* // initialize: validate and fill members */
+/* // initialize: validate and fill members -- don't overwrite output file */
 /* TRefMatch::Init() */
 /* { */
 /*   // if all of the above succeed, create outfile (don't overwrite) */
@@ -83,19 +130,6 @@ TRefMatch::TRefMatch( const char* fileName, const char* treeName, const char* br
 /*   } */
 /*   fOutFile = TFile::Open( outFileName.Data(), "create" ); */
 /* } */
-
-//______________________________________________________________________________
-// initialize: validate and fill members
-TRefMatch::Init()
-{
-  // if all of the above succeed, create outfile
-  TSystemDirectory *wd = new TSystemDirectory;
-  wd->SetDirectory(gSystem->WorkingDirectory());
-  TString outFileName(fTestSampleFile->GetName());
-  outFileName.ReplaceAll("\.root$", "_RefMatch.root");
-  fOutFile = TFile::Open( outFileName.Data(), "recreate" );
-  printf( "Init complete. Created output file %s at %#lx.\n", fOutFile->GetName(), fOutFile);
-}
 
 ////______________________________________________________________________________
 //TRefMatch::

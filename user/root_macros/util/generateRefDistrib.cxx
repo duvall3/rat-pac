@@ -1,4 +1,8 @@
 // generateRefDistrib -- simple function for generating test reference arrays
+// -- Note: This macro can easily generate a set of reference distributions.
+//    For example, to generate a distribution for every degree from 0 through 30
+//    with a width of 50 deg, run the following line:
+//      for ( Int_t k=0; k<31; k++ ) generateRefDistrib( (Double_t)k, 50. );
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 07/2022 ~ //
 
 //Copyright (C) 2022 Mark J. Duvall / T. Rocks Science
@@ -77,13 +81,14 @@ h_phi->SetLineColor(kBlue);
 h_phi->SetAxisRange(phiMin, phiMax, "X");
 h_phi->SetTitle(hTit.Data());
 h_phi->GetXaxis()->SetTitle("#phi (^{o})");
-TFitResultPtr phiFRP = h_phi->Fit("gaus", "S"); // expected to include the R(ange) option here, but results seem better without it
-TFitResult *phiFR = phiFRP.Get();
+h_phi->Fit("gaus", "S"); // expected to include the R(ange) option here, but results seem better without it
 
-// save
+// save, print
+savename.ReplaceAll(".root", ".png");
+c_genref->Print(savename.Data());
 params->Write("params", TObject::kSingleKey);
 T->Write();
-phiFR->Write();
+h_phi->Write();
 c_genref->Write();
 
 // close out

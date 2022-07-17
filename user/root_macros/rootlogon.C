@@ -19,6 +19,7 @@
   #include <TIBDParams.cxx>
   #include <TRATVolume.cxx>
   #include <TRATGeo.cxx>
+  #include <TRefMatch.cxx>
 //#include <TRATNeutronGen.cxx>
   #include <TMath.h>
 

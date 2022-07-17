@@ -45,10 +45,11 @@ private:
 
 public:
   // methods
+  // ctors and inits
   TRefMatch();
-  TRefMatch( const char* fileName, const char* treeName, const char* branchVarName );
-  // TEMP PUBLIC:
-  void			Init();			// initialize: validate and fill members
+  TRefMatch( const char* fileName, const char* treeName = "T", const char* branchVarName = "phi" );
+  void			Init();			// initialize: validate and fill members // TEMP PUBLIC
+  void			Init( const char* fileName, const char* treeName, const char* branchVarName );
   // getters:
   const char* GetFileName() { return fTestFileName; }
   const char* GetTreeName() { return fTestTreeName; }

@@ -32,6 +32,14 @@
 class TRATVolume : public TClass {
 
 private:
+  // define defaults
+  const TString defaultName = "TRATVolume";
+  const TString defaultTitle = "class for analyzing geometry from RAT-PAC ROOT file";
+  const char* defaultVolNameChr = "volume_name";
+  const TString defaultVolName = TString("volume_name");
+  TString keyStrVol;
+
+  // members
   const char*		fVolNameChr;		// volume name
   TString		fVolName;		// volume name (TString)
   TFile*		fFile;			// current ROOT datafile
@@ -44,10 +52,14 @@ private:
   Double_t		fDensity;		// volume density
   TString		fMother;		// name of mother volume
   TVector3		fSize;			// half-lengths in {x,y,z} (*box-type only*)
+  Double_t		fRMin;			// tube minimum radius
+  Double_t		fRMax;			// tube maximum radius
+  Double_t		fSizeZ;			// tube half-height
   TVector3		fRelativePosition;	// volume position, *relative to mother volume*
   TVector3		fAbsolutePosition;	// volume position, *relative to overall coordinate system*
 
 private:
+  // methods
   void			FindExperiment();	// set experiment name, path, etc.
   void			FindVolumeType();	// set volume type (i.e., shape)
   void			FindMaterial();		// set volume material
@@ -58,6 +70,7 @@ private:
   void			FindAll();		// set all members not individually set in ctor
 
 public:
+  // methods
   TRATVolume();
   TRATVolume( const char* volNameChr, const TMap *db );
   void			SetVolume( const char* newNameChr ); // switch to a different volume and re-fill
