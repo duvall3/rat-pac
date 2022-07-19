@@ -336,9 +336,10 @@ TRefMatch::RefCompare( Bool_t kDraw )
   }
 
   // general init
-  Int_t k = 0, N = fReferenceFileList->GetEntries();
+  Int_t k = 0, j = 0, N = fReferenceFileList->GetEntries();
   TSystemFile *sf;
   TString currentFileName;
+  TString currentDirName;
   TFile *f;
   TTree *T;
   TMap *params; //TODO: generalize *params
@@ -351,7 +352,9 @@ TRefMatch::RefCompare( Bool_t kDraw )
   for ( k=0; k<N; k++ ) {
     /* f = TFile::Open( fReferenceFileList->At(k)->GetName() ); */
     sf = (TSystemFile*)fReferenceFileList->At(k);
-    currentFileName.Form("%s%s", sf->GetTitle(), sf->GetName());
+    currentDirName.Form("%s", sf->GetTitle());
+    if (currentDirName(currentDirName.Length()-1) != '/') currentDirName.Append('/');
+    currentFileName.Form("%s%s", currentDirName.Data(), sf->GetName());
     f = TFile::Open( currentFileName.Data() );
     f->cd();
     T = (TTree*)gDirectory->Get("T");
@@ -365,18 +368,37 @@ TRefMatch::RefCompare( Bool_t kDraw )
     f->Close();
   }
 
-  // matrix bookkeeping
-  TMatrixDColumn mPhi(M,0);
-  TMatrixDColumn mProb(M,1);
-  TMatrixDColumn mSig(M,2);
+  /* // matrix bookkeeping */
+  /* TMatrixDColumn mPhi(M,0); */
+  /* TMatrixDColumn mProb(M,1); */
+  /* TMatrixDColumn mSig(M,2); */
+
+  // sort
+  TMatrixD MS(N,3);
+  Int_t *ind = new Int_t[N];
+  TMath::Sort( N, M.GetSub(0,N-1,1,1).GetMatrixArray(), ind );
+  for ( k=0; k<N; k++ ) {
+    for ( j=0; j<3; j++ ) {
+      MS[k][j] = M[ind[k]][j];
+    }
+  }
 
   // show results
-  M.Print(); //debug? //TODO: first, sort by prob/sig
+  printf("\n/// Comparison Results ///\n\tPhi (°)\t\tProbability (%%)\t\tSignificance (σ)\n");
+  printf("\t"); for ( k=0; k<60; k++ ) printf("~"); printf("\n");
+  for ( k=0; k<N; k++ ) {
+    printf("\t%3d\t\t", MS[k][0]);
+    if (MS[k][1]<0.1) printf(" "); // because printf %2.1f doens't want to work for me
+    printf("%.1f\t\t\t%.3e\n", 100.*MS[k][1], MS[k][2]);
+  }
+  printf("///\n\n");
+
+  // store results
+  fResults.ResizeTo(N,3);
+  SetResults(MS);
 
   // all pau!   )
-  fResults.ResizeTo(N,3);
-  SetResults(M);
-  return M;
+  return MS;
 }
 
 ////______________________________________________________________________________
