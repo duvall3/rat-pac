@@ -21,9 +21,9 @@
 #ifndef TRefMatch
 #define TRefMatch
 
-#include "TFile.h"
-#include "TClass.h"
-#include "TList.h"
+#pragma "TFile.h"
+#pragma "TClass.h"
+#pragma "TList.h"
 
 class TRefMatch : public TClass {
 
@@ -35,20 +35,27 @@ private:
   TFile*		fTestSampleFile;	// address of test-sample file 
   TTree*		fTestSampleTree;	// address of test-sample tree
   TBranch*		fTestSampleBranch;	// address of test-sample branch
+  const char*		fReferenceTreeName;	// name of tree in reference files
   TList*		fReferenceFileList;	// list of files containing reference distributions
   TFile*		fOutFile;		// output file
+  TRegexp		fReferenceFilePattern;	// regex describing reference files
+  TSystemDirectory*	fReferenceFileDir;	// directory containing reference files
+  Double_t		fProb;			// FIXME: temporary workaround
+  Double_t		fSig;			// FIXME: temporary workaround
+  TMatrixD		fResults;		// matrix of comparison results
 
 private:
   // methods
-  /* void			Init();			// initialize: validate and fill members */
-  // setters:
+  void			Init();			// initialize: validate and fill members
+  void			SetProb( Double_t prob ) { fProb = prob; }
+  void			SetSig( Double_t sig ) { fSig = sig; }
+  void			SetResults( TMatrixD res ) { fResults = res; }
 
 public:
   // methods
   // ctors and inits
   TRefMatch();
   TRefMatch( const char* fileName, const char* treeName = "T", const char* branchVarName = "phi" );
-  void			Init();			// initialize: validate and fill members // TEMP PUBLIC
   void			Init( const char* fileName, const char* treeName, const char* branchVarName );
   // getters:
   const char* GetFileName() { return fTestFileName; }
@@ -57,8 +64,29 @@ public:
   TFile* GetFile() { return fTestSampleFile; }
   TTree* GetTree() { return fTestSampleTree; }
   TBranch* GetBranch() { return fTestSampleBranch; }
+  const char* GetReferenceTreeName() { return fReferenceTreeName; }
   TList* GetReferenceFileList() { return fReferenceFileList; }
   const char* GetOutFile() { return fOutFile; }
+  TRegexp GetReferenceFilePattern() { return fReferenceFilePattern; }
+  TSystemDirectory* GetReferenceFileDir() { return fReferenceFileDir; }
+  Double_t GetProb() { return fProb; }
+  Double_t GetSig() { return fSig; }
+  TMatrixD GetResults() { return fResults; }
+  // print info
+  void PrintVerbose();
+  // setters:
+  void			SetReferenceFileDir( TSystemDirectory* refFileDir);
+  void			SetReferenceFileDir( const char* refFileDirName);
+  void			SetReferenceFilePattern( TRegexp patternRE );
+  void			SetReferenceFilePattern( const char* pattern );
+  void			SetReferenceTreeName( const char* treeName ) { fReferenceTreeName = treeName; }
+  void			FillReferenceFileList(); // TEMP PUBLIC
+  // utility:
+  Double_t		prob2sig( Double_t prob );				// convert probability to significance
+  Double_t		sig2prob( Double_t sig );				// convert significance to probability
+  // MAIN:
+  Double_t UnbinnedKSTest( TTree *T1, TTree *T2, const char* branchName1, const char* branchName2 = "" );	// apply unbinned Kolmogorov-Smirnov test
+  TMatrixD RefCompare( Bool_t kDraw = kTRUE );
 
 
 
