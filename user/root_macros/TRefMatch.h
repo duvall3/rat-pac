@@ -42,14 +42,17 @@ private:
   TSystemDirectory*	fReferenceFileDir;	// directory containing reference files
   Double_t		fProb;			// FIXME: temporary workaround
   Double_t		fSig;			// FIXME: temporary workaround
-  TMatrixD		fResults;		// matrix of comparison results
+  TMatrixD		fResultsMatrix;		// matrix of comparison results
+  TVectorD		fResults;		// 3x1 vector containing best match value and corresponding probability and significance
+  Bool_t		fkHasRun(kFALSE);	// status indicator for whether RefComp has been called yet
 
 private:
   // methods
   void			Init();			// initialize: validate and fill members
   void			SetProb( Double_t prob ) { fProb = prob; }
   void			SetSig( Double_t sig ) { fSig = sig; }
-  void			SetResults( TMatrixD res ) { fResults = res; }
+  void			SetResultsMatrix( TMatrixD resmat ) { fResultsMatrix = resmat; }
+  void			SetResults( TVectorD res ) { fResults = res; }
 
 public:
   // methods
@@ -58,36 +61,37 @@ public:
   TRefMatch( const char* fileName, const char* treeName = "T", const char* branchVarName = "phi" );
   void			Init( const char* fileName, const char* treeName, const char* branchVarName );
   // getters:
-  const char* GetFileName() { return fTestFileName; }
-  const char* GetTreeName() { return fTestTreeName; }
-  const char* GetVarName() { return fTestVarName; }
-  TFile* GetFile() { return fTestSampleFile; }
-  TTree* GetTree() { return fTestSampleTree; }
-  TBranch* GetBranch() { return fTestSampleBranch; }
-  const char* GetReferenceTreeName() { return fReferenceTreeName; }
-  TList* GetReferenceFileList() { return fReferenceFileList; }
-  const char* GetOutFile() { return fOutFile; }
-  TRegexp GetReferenceFilePattern() { return fReferenceFilePattern; }
-  TSystemDirectory* GetReferenceFileDir() { return fReferenceFileDir; }
-  Double_t GetProb() { return fProb; }
-  Double_t GetSig() { return fSig; }
-  TMatrixD GetResults() { return fResults; }
-  // print info
-  void PrintVerbose();
+  const char*		GetTestFileName() { return fTestFileName; }
+  const char*		GetTestTreeName() { return fTestTreeName; }
+  const char*		GetTestVarName() { return fTestVarName; }
+  TFile*		GetFile() { return fTestSampleFile; }
+  TTree*		GetTree() { return fTestSampleTree; }
+  TBranch*		GetBranch() { return fTestSampleBranch; }
+  const char*		GetReferenceTreeName() { return fReferenceTreeName; }
+  TList*		GetReferenceFileList() { return fReferenceFileList; }
+  TFile*		GetOutFile() { return fOutFile; }
+  TRegexp		GetReferenceFilePattern() { return fReferenceFilePattern; }
+  TSystemDirectory*	GetReferenceFileDir() { return fReferenceFileDir; }
+  Double_t		GetProb() { return fProb; }
+  Double_t		GetSig() { return fSig; }
+  TMatrixD		GetResultsMatrix() { return fResultsMatrix; }
+  TVectorD		GetResults() { return fResults; }
   // setters:
   void			SetReferenceFileDir( TSystemDirectory* refFileDir);
   void			SetReferenceFileDir( const char* refFileDirName);
   void			SetReferenceFilePattern( TRegexp patternRE );
   void			SetReferenceFilePattern( const char* pattern );
   void			SetReferenceTreeName( const char* treeName ) { fReferenceTreeName = treeName; }
-  void			FillReferenceFileList(); // TEMP PUBLIC
+  void			FillReferenceFileList();
   // utility:
-  Double_t		prob2sig( Double_t prob );				// convert probability to significance
-  Double_t		sig2prob( Double_t sig );				// convert significance to probability
+  Double_t		prob2sig( Double_t prob );		// convert probability to significance
+  Double_t		sig2prob( Double_t sig );		// convert significance to probability
   // MAIN:
-  Double_t UnbinnedKSTest( TTree *T1, TTree *T2, const char* branchName1, const char* branchName2 = "" );	// apply unbinned Kolmogorov-Smirnov test
-  TMatrixD RefCompare( Bool_t kDraw = kTRUE );
-
+  Double_t		UnbinnedKSTest( TTree *T1, TTree *T2, const char* branchName1, const char* branchName2 = "" );	// apply unbinned Kolmogorov-Smirnov test
+  void			RefCompare();				// perform reference-comparison algorithm
+  // print info
+  void			PrintVerbose();				// mostly settings
+  void			PrintResults();				// results summary
 
 
 //Integrating the TRefMatch class to ROOT.

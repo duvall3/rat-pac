@@ -49,7 +49,7 @@ TDuvallUtils::DumpHist( TH1* h )
 
 //______________________________________________________________________________
 // EntryList -- shortcut for creating a TEntryList from a TTree and a selection string
-TDuvallUtils::EntryList( const char* selection, TTree *T );
+TDuvallUtils::EntryList( const char* selection, TTree *T )
 {
   // init
   if (T == 0) T = (TTree*)gDirectory->FindObjectAny("T");

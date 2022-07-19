@@ -3,8 +3,8 @@
 // NOTE: UnbinnedKSTest can be called on *any* pair of TTrees; creating
 //   an instance of TRefMatch is not necessary
 // Standard Usage:
-//   1) Instantiate
-//   2) Init
+//   1) Instantiate (NOTE: must construct with "new")
+//   2) Call Init
 //   3) Set reference directory / pattern if needed
 //   4) Fill reference list
 //   5) Set tree and branch names if needed
@@ -55,8 +55,9 @@ TRefMatch::TRefMatch()
   fReferenceFileDir = 0x0;
   fProb = 0.;
   fSig = 0.;
-  /* fResults = 0x0; */
-  /* TMatrixD fResults; */
+  fResults.ResizeTo(3);
+  /* fResultsMatrix = 0x0; */
+  /* TMatrixD fResultsMatrix; */
 }
 
 //______________________________________________________________________________
@@ -83,6 +84,7 @@ TRefMatch::TRefMatch( const char* fileName, const char* treeName, const char* br
   fReferenceFileDir->SetDirectory( TString::Format("%s/../", gSystem->WorkingDirectory()) );
   fProb = 0.;
   fSig = 0.;
+  fResults.ResizeTo(3);
   /* Init(); */
 }
 
@@ -114,7 +116,7 @@ TRefMatch::Init()
   fReferenceFilePattern = TRegexp("[0-9]+DEG.*\.root");
   fReferenceFileDir = new TSystemDirectory;
   fReferenceFileDir->SetDirectory( TString::Format("%s/../", gSystem->WorkingDirectory()) );
-  fResults = new TMatrixD;
+  fResultsMatrix = new TMatrixD;
   printf("Init complete.\n");
 }
 
@@ -316,8 +318,8 @@ TRefMatch::UnbinnedKSTest( TTree *T1, TTree *T2, const char* branchName1, const 
 }
 
 //______________________________________________________________________________
-// refCompare
-TRefMatch::RefCompare( Bool_t kDraw )
+// RefCompare
+TRefMatch::RefCompare()
 {
   // refCompare -- function to compare test sample to reference distributions
   // -- Usage: TMatrixD * refCompare( TList *refFileList, TTree *testSample, const char* branchName = "phi", const char* treeName = "T" )
@@ -368,11 +370,6 @@ TRefMatch::RefCompare( Bool_t kDraw )
     f->Close();
   }
 
-  /* // matrix bookkeeping */
-  /* TMatrixDColumn mPhi(M,0); */
-  /* TMatrixDColumn mProb(M,1); */
-  /* TMatrixDColumn mSig(M,2); */
-
   // sort
   TMatrixD MS(N,3);
   Int_t *ind = new Int_t[N];
@@ -394,11 +391,17 @@ TRefMatch::RefCompare( Bool_t kDraw )
   printf("///\n\n");
 
   // store results
-  fResults.ResizeTo(N,3);
-  SetResults(MS);
+  fResultsMatrix.ResizeTo(N,3);
+  SetResultsMatrix(MS);
+  TVectorD res(3);
+  res[0] = MS[0][0];
+  res[1] = MS[0][1];
+  res[2] = MS[0][2];
+  SetResults( res );
 
   // all pau!   )
-  return MS;
+  fkHasRun = kTRUE;
+  return;
 }
 
 ////______________________________________________________________________________
@@ -462,4 +465,14 @@ TRefMatch::PrintVerbose()
   printf("\n");
 }
 
+//______________________________________________________________________________
+// PrintResults -- summary
+TRefMatch::PrintResults()
+{
+  if (fkHasRun) {
+    printf( "\n/// Results Summary ///\nBest Match: %.2f °\nMatch Probability: %2.2f %%\nMatch Significance: %.3e\n///\n\n", fResults[0], 100.*fResults[1], fResults[2] );
+  } else {
+    this->Info("PrintResults", "Please run RefCompare first to get results.");
+  }
+}
 
