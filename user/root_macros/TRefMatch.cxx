@@ -2,13 +2,17 @@
 //   described in this repository at $RATROOT/user/ref_matching/README.{md,html}
 // NOTE: UnbinnedKSTest can be called on *any* pair of TTrees; creating
 //   an instance of TRefMatch is not necessary
-// Standard Usage:
-//   1) Instantiate (NOTE: must construct with "new")
+// Standard Usage (* = always required):
+// * 1) Instantiate (NOTE: must construct with "new")
 //   2) Call Init ("setter version") if used default ctor
 //   3) Set reference directory / pattern if needed
-//   4) Fill reference list
+// * 4) Call FillReferenceFileList
 //   5) Set tree and branch names if needed
-//   6) Call RefCompare
+//   6) Set number of events to use from {test-sample, reference-distrib} if desired
+// * 7) Call RefCompare
+//   8) Call DrawResults if desired
+//   9) Call Save if desired
+//  10) Call Close when finished
 
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 07/2022 ~ //
 
@@ -91,7 +95,7 @@ void TRefMatch::Init()
     return;
   }
   if (fnTestSampleEvents==0) SetnEvents((Long64_t)(GetTree()->GetEntries()));
-  printf("fnTestSampleEvents = %d\n", fnTestSampleEvents); //debug
+  /* printf("fnTestSampleEvents = %d\n", fnTestSampleEvents); //debug */
   // if all of the above check out okay, create outfile
   TSystemDirectory *wd = new TSystemDirectory;
   wd->SetDirectory(gSystem->WorkingDirectory());
@@ -330,6 +334,7 @@ void TRefMatch::RefCompare()
     T_ts->Error("RefCompare", "Specified branch not found.");
     return;
   }
+  if (fnTestSampleEvents==0) SetnEvents((Long64_t)(GetTree()->GetEntries()));
 
   // general init
   Int_t k = 0, j = 0, N = fReferenceFileList->GetEntries();
