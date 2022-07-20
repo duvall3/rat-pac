@@ -26,7 +26,7 @@
 // 	TH1D* h = new TH1D("h", "h", 30, -3.5, 3.5);
 // 	h->FillRandom("gaus");
 // 	TDuvallUtils::DumpHist(h);
-TDuvallUtils::DumpHist( TH1* h )
+void TDuvallUtils::DumpHist( TH1* h )
 {
   Int_t asciiGradations = 20;
   Int_t k = 0, j = 0, nBins = h->GetNbinsX();
@@ -49,7 +49,7 @@ TDuvallUtils::DumpHist( TH1* h )
 
 //______________________________________________________________________________
 // EntryList -- shortcut for creating a TEntryList from a TTree and a selection string
-TDuvallUtils::EntryList( const char* selection, TTree *T )
+TEntryList* TDuvallUtils::EntryList( const char* selection, TTree *T )
 {
   // init
   if (T == 0) T = (TTree*)gDirectory->FindObjectAny("T");
@@ -67,7 +67,7 @@ TDuvallUtils::EntryList( const char* selection, TTree *T )
 
 //______________________________________________________________________________
 // ExportPlots
-TDuvallUtils::ExportPlots( const char* filename, const TString kGraphicsSaveFormat )
+void TDuvallUtils::ExportPlots( const char* filename, const TString kGraphicsSaveFormat )
 {
   // for OpenGL:
   // switch default rendering engine
@@ -127,10 +127,37 @@ TDuvallUtils::ExportPlots( const char* filename, const TString kGraphicsSaveForm
 //{
 //}
 
-////______________________________________________________________________________
-//TDuvallUtils::
-//{
-//}
+//______________________________________________________________________________
+// Prob2Sig
+Double_t TDuvallUtils::Prob2Sig( Double_t prob )
+{
+  // convert, accounting for special values
+  Double_t sigma;
+  if ( prob == 1. ) {
+    sigma = TMath::Infinity();
+  } else if ( prob == 0. ) {
+    sigma = 0.;
+  } else {
+    sigma = TMath::Sqrt2() * TMath::ErfInverse(prob);
+  }
+  return sigma;
+}
+
+//______________________________________________________________________________
+// Sig2Prob
+Double_t TDuvallUtils::Sig2Prob( Double_t sig )
+{
+// convert, accounting for special values
+  Double_t prob;
+  if (sigma == TMath::Infinity()) {
+    prob = 1.;
+  } else if ( sigma == 0. ) {
+    prob = 0.;
+  } else {
+    prob = TMath::Erf( sigma / TMath::Sqrt2() );
+  }
+  return prob;
+}
 
 ////______________________________________________________________________________
 //TDuvallUtils::
@@ -139,7 +166,7 @@ TDuvallUtils::ExportPlots( const char* filename, const TString kGraphicsSaveForm
 
 //______________________________________________________________________________
 // PrintArrayD
-TDuvallUtils::PrintArrayD( Int_t N, Double_t* x )
+void TDuvallUtils::PrintArrayD( Int_t N, Double_t* x )
 {
   for (Int_t k=0; k<N; k++) cout << x[k] << endl;
 }

@@ -56,6 +56,7 @@ TRefMatch::TRefMatch()
   fProb = 0.;
   fSig = 0.;
   fResults.ResizeTo(3);
+  fkHasRun = kFALSE;
   fCanvas = 0x0;
   fTestSampleHist = 0x0;
   fResultsGraph = 0x0;
@@ -86,6 +87,7 @@ TRefMatch::TRefMatch( const char* fileName, const char* treeName, const char* br
   fProb = 0.;
   fSig = 0.;
   fResults.ResizeTo(3);
+  fkHasRun = kFALSE;
   fCanvas = 0x0;
   fTestSampleHist = 0x0;
   fResultsGraph = 0x0;
@@ -93,7 +95,7 @@ TRefMatch::TRefMatch( const char* fileName, const char* treeName, const char* br
 
 //______________________________________________________________________________
 // initialize: validate and fill members
-TRefMatch::Init()
+void TRefMatch::Init()
 {
   // checks
   if (fTestSampleFile==0x0) {
@@ -122,7 +124,7 @@ TRefMatch::Init()
 
 //______________________________________________________________________________
 // Init -- setter version
-TRefMatch::Init( const char* fileName, const char* treeName , const char* branchVarName )
+void TRefMatch::Init( const char* fileName, const char* treeName , const char* branchVarName )
 {
   fTestFileName = fileName;
   fTestTreeName = treeName;
@@ -139,7 +141,7 @@ TRefMatch::Init( const char* fileName, const char* treeName , const char* branch
 
 //______________________________________________________________________________
 // SetReferenceFileDir
-TRefMatch::SetReferenceFileDir( TSystemDirectory* refFileDir )
+void TRefMatch::SetReferenceFileDir( TSystemDirectory* refFileDir )
 {
   if (refFileDir!=0x0) {
     fReferenceFileDir = refFileDir;
@@ -150,7 +152,7 @@ TRefMatch::SetReferenceFileDir( TSystemDirectory* refFileDir )
 
 //______________________________________________________________________________
 // SetReferenceFileDir
-TRefMatch::SetReferenceFileDir( const char* refFileDirName )
+void TRefMatch::SetReferenceFileDir( const char* refFileDirName )
 {
   TSystemDirectory* sd = new TSystemDirectory;
   sd->SetDirectory(refFileDirName);
@@ -159,14 +161,14 @@ TRefMatch::SetReferenceFileDir( const char* refFileDirName )
 
 //______________________________________________________________________________
 // SetReferenceFilePattern
-TRefMatch::SetReferenceFilePattern( TRegexp patternRE )
+void TRefMatch::SetReferenceFilePattern( TRegexp patternRE )
 {
   fReferenceFilePattern = patternRE;
 }
 
 //______________________________________________________________________________
 // SetReferenceFilePattern
-TRefMatch::SetReferenceFilePattern( const char* pattern )
+void TRefMatch::SetReferenceFilePattern( const char* pattern )
 {
   TRegexp patternRE(pattern);
   SetReferenceFilePattern(patternRE);
@@ -174,7 +176,7 @@ TRefMatch::SetReferenceFilePattern( const char* pattern )
 
 //______________________________________________________________________________
 // FillReferenceFileList
-TRefMatch::FillReferenceFileList()
+void TRefMatch::FillReferenceFileList()
 {
 
   // check
@@ -205,7 +207,7 @@ TRefMatch::FillReferenceFileList()
 
 //______________________________________________________________________________
 // Prob2Sig
-TRefMatch::Prob2Sig( Double_t prob )
+Double_t TRefMatch::Prob2Sig( Double_t prob )
 {
   // convert, accounting for special values
   Double_t sigma;
@@ -222,7 +224,7 @@ TRefMatch::Prob2Sig( Double_t prob )
 
 //______________________________________________________________________________
 // Sig2Prob
-TRefMatch::Sig2Prob( Double_t sig )
+Double_t TRefMatch::Sig2Prob( Double_t sig )
 {
   // convert, accounting for special values
   Double_t prob;
@@ -239,7 +241,7 @@ TRefMatch::Sig2Prob( Double_t sig )
 
 //______________________________________________________________________________
 // UnbinnedKSTest
-TRefMatch::UnbinnedKSTest( TTree *T1, TTree *T2, const char* branchName1, const char* branchName2 ) 
+Double_t TRefMatch::UnbinnedKSTest( TTree *T1, TTree *T2, const char* branchName1, const char* branchName2 ) 
 {
   // unbinnedKSTest -- function to execute *unbinned* TMath::KolmogorovTest on a pair of TTrees
   //   containing TBranches with matching names
@@ -307,12 +309,8 @@ TRefMatch::UnbinnedKSTest( TTree *T1, TTree *T2, const char* branchName1, const 
   // NOTE: THE "OPTION" ARGUMENT IS (ironically) NOT OPTIONAL, EVEN IF EMPTY!
   P = TMath::KolmogorovTest( N1, arr1S, N2, arr2S, "" );
 
-  // store and report results
-  /* cout << P << endl; //FIXME: keeps returning int(0) */
-  /* return P; */
   SetProb(P);
   SetSig( Prob2Sig(P) );
-  cout << fProb << endl; //FIXME: keeps returning int(0) */
 
   // all pau!   )
   return fProb;
@@ -321,16 +319,16 @@ TRefMatch::UnbinnedKSTest( TTree *T1, TTree *T2, const char* branchName1, const 
 
 //______________________________________________________________________________
 // RefCompare
-TRefMatch::RefCompare()
+void TRefMatch::RefCompare()
 {
   // refCompare -- function to compare test sample to reference distributions
-  // -- returned matrix has the following rows:    phi (°) | probability (%) | significance (σ)
+  // -- results matrix has the following rows:    phi (°) | probability (%) | significance (σ)
   // -- see the README at $RATROOT/user/root_macros/ref_matching/ in this repository for more details
 
   // file check
   if (fReferenceFileList->GetEntries()==0) {
     this->Error("RefCompare", "Reference-file list is empty; please FillReferenceFileList before running comparison.");
-    return 0x0;
+    return;
   }
 
   // file init
@@ -340,7 +338,7 @@ TRefMatch::RefCompare()
   // branch check on "test sample" T_ts
   if (T_ts->GetBranch(fTestVarName)==0x0) {
     T_ts->Error("RefCompare", "Specified branch not found.");
-    return 0x0;
+    return;
   }
 
   // general init
@@ -358,7 +356,6 @@ TRefMatch::RefCompare()
 
   // MAIN
   for ( k=0; k<N; k++ ) {
-    /* f = TFile::Open( fReferenceFileList->At(k)->GetName() ); */
     sf = (TSystemFile*)fReferenceFileList->At(k);
     currentDirName.Form("%s", sf->GetTitle());
     if (currentDirName(currentDirName.Length()-1) != '/') currentDirName.Append('/');
@@ -366,13 +363,13 @@ TRefMatch::RefCompare()
     f = TFile::Open( currentFileName.Data() );
     f->cd();
     T = (TTree*)gDirectory->Get("T");
-    params = (TMap*)gDirectory->Get("params");
-    v = (TVectorD*)params->GetValue("phiTrue");
+    params = (TMap*)gDirectory->Get("params");	// TODO: either generalize or eliminate the need for params
+    v = (TVectorD*)params->GetValue("phiTrue");	// TODO: either generalize or eliminate the need for params
     V.SetElements( v->GetMatrixArray() );
     phiRef = V[0];
     M(k,0) = phiRef;
-    M(k,1) = unbinnedKSTest( T, T_ts, fTestVarName );
-    M(k,2) = prob2sig( M(k,1) );
+    M(k,1) = UnbinnedKSTest( T, T_ts, fTestVarName );
+    M(k,2) = Prob2Sig( M(k,1) );
     f->Close();
   }
 
@@ -391,7 +388,7 @@ TRefMatch::RefCompare()
   printf("\t"); for ( k=0; k<60; k++ ) printf("~"); printf("\n");
   for ( k=0; k<N; k++ ) {
     printf("\t%3d\t\t", MS[k][0]);
-    if (MS[k][1]<0.1) printf(" "); // because printf %2.1f doens't want to work for me
+    if (MS[k][1]<0.1) printf(" "); // because printf %2.1f doens't want to work for me today
     printf("%.2f\t\t\t%.3e\n", 100.*MS[k][1], MS[k][2]);
   }
   printf("///\n\n");
@@ -412,7 +409,7 @@ TRefMatch::RefCompare()
 
 //______________________________________________________________________________
 // DrawResults
-TRefMatch::DrawResults()
+void TRefMatch::DrawResults()
 {
   // run check
   if (!fkHasRun) {
@@ -465,7 +462,7 @@ TRefMatch::DrawResults()
 
 //______________________________________________________________________________
 // Save
-TRefMatch::Save(const char* saveName)
+void TRefMatch::Save(const char* saveName)
 {
   TString outFileName(fTestSampleFile->GetName());
   outFileName.ReplaceAll("\.root", "_RefMatch.root");
@@ -479,7 +476,7 @@ TRefMatch::Save(const char* saveName)
 
 //______________________________________________________________________________
 // override ls
-TRefMatch::ls()
+void TRefMatch::ls()
 {
   if (fTestSampleFile!=0x0) {
     cout << IsA()->GetName() << " " << GetName() << " for file " << fTestSampleFile->GetName();
@@ -491,7 +488,7 @@ TRefMatch::ls()
 
 //______________________________________________________________________________
 // override print
-TRefMatch::Print()
+void TRefMatch::Print()
 {
   printf("%s:\t%s:\t%s\n", IsA()->GetName(), GetName(), GetTitle());
   if (fTestSampleFile==0x0) {
@@ -507,7 +504,7 @@ TRefMatch::Print()
 
 //______________________________________________________________________________
 // PrintVerbose
-TRefMatch::PrintVerbose()
+void TRefMatch::PrintVerbose()
 {
   Print();
   if (fTestSampleFile==0x0) return;
@@ -520,7 +517,7 @@ TRefMatch::PrintVerbose()
 
 //______________________________________________________________________________
 // PrintResults -- summary
-TRefMatch::PrintResults()
+void TRefMatch::PrintResults()
 {
   if (!fkHasRun) {
     this->Info("TRefMatch::PrintResults", "Please run RefCompare first to get results.");

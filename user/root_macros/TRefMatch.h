@@ -40,11 +40,11 @@ private:
   TFile*		fOutFile;		// output file
   TRegexp		fReferenceFilePattern;	// regex describing reference files
   TSystemDirectory*	fReferenceFileDir;	// directory containing reference files
-  Double_t		fProb;			// FIXME: temporary workaround
-  Double_t		fSig;			// FIXME: temporary workaround
+  Double_t		fProb;			// match probability (current entry)
+  Double_t		fSig;			// match significance (current entry)
   TMatrixD		fResultsMatrix;		// matrix of comparison results
   TVectorD		fResults;		// 3x1 vector containing best match value and corresponding probability and significance
-  Bool_t		fkHasRun(kFALSE);	// status indicator for whether RefComp has been called yet
+  Bool_t		fkHasRun;	// status indicator for whether RefComp has been called yet
   TCanvas*		fCanvas;		// canvas for drawing results
   TH1D*			fTestSampleHist;	// TH1 for test-sample data
   TGraph*		fResultsGraph;		// TGraph for algorithm results
@@ -93,8 +93,8 @@ public:
   void			SetReferenceTreeName( const char* treeName ) { fReferenceTreeName = treeName; }
   void			FillReferenceFileList();
   // utility:
-  Double_t		prob2sig( Double_t prob );		// convert probability to significance
-  Double_t		sig2prob( Double_t sig );		// convert significance to probability
+  Double_t		Prob2Sig( Double_t prob );		// convert probability to significance
+  Double_t		Sig2Prob( Double_t sig );		// convert significance to probability
   // MAIN:
   Double_t		UnbinnedKSTest( TTree *T1, TTree *T2, const char* branchName1, const char* branchName2 = "" );	// apply unbinned Kolmogorov-Smirnov test
   void			RefCompare();				// perform reference-comparison algorithm
