@@ -90,7 +90,7 @@ void TRefMatch::Init()
     this->Error("TRefMatch::Init", "Requested TBranch not found.");
     return;
   }
-  if (fnTestSampleEvents==0) SetnEvents(GetTree()->GetEntries());
+  if (fnTestSampleEvents==0) SetnEvents((Long64_t)(GetTree()->GetEntries()));
   printf("fnTestSampleEvents = %d\n", fnTestSampleEvents); //debug
   // if all of the above check out okay, create outfile
   TSystemDirectory *wd = new TSystemDirectory;
@@ -245,10 +245,8 @@ Double_t TRefMatch::UnbinnedKSTest( TTree *T1, TTree *T2, const char* branchName
   Double_t P;
   Double_t q1, q2; // quantity1, quantity2
   Long64_t k;
-  /* Int_t N1 = (Int_t)T1->GetEntries(); */
-  /* Int_t N2 = (Int_t)T2->GetEntries(); */
-  if (nEvents1==0) nEvents1 = T1->GetEntries();
-  if (nEvents2==0) nEvents2 = T2->GetEntries();
+  if (nEvents1==0) nEvents1 = (Long64_t)T1->GetEntries();
+  if (nEvents2==0) nEvents2 = (Long64_t)T2->GetEntries();
   // TBranches
   TBranch *br1 = T1->GetBranch(branchName1);
   TBranch *br2 = T2->GetBranch(branchName2);
@@ -486,6 +484,18 @@ void TRefMatch::Save(const char* saveName)
   // close
   fTestSampleFile->Close();
   fOutFile->Close();
+}
+
+//______________________________________________________________________________
+// Close
+TRefMatch::Close()
+{
+  // graphics first
+  if (fTestSampleHist!=0x0) delete fTestSampleHist;
+  if (fResultsGraph!=0x0) delete fResultsGraph;
+  if (fCanvas!=0x0) delete fCanvas;
+  // then file(s)
+  GetFile()->Close();
 }
 
 //______________________________________________________________________________

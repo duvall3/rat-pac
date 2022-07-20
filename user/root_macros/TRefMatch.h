@@ -105,8 +105,9 @@ public:
   // print info:
   void			PrintVerbose();				// mostly settings
   void			PrintResults();				// results summary
-  // save
+  // save and / or close
   void			Save(const char* saveName);		// save object
+  void			Close();				// close pads, files, etc.
 
 
 //Integrating the TRefMatch class to ROOT.
