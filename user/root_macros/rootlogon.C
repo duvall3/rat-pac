@@ -17,9 +17,9 @@
 {
 
   #include "TIBDParams.cxx"
-  #include "TRATVolume.cxx"
-  #include "TRATGeo.cxx"
-  #include "TMath.h"
+  /* #include "TRATVolume.cxx" */
+  /* #include "TRATGeo.cxx" */
+  /* #include "TMath.h" */
 
   // make pi, e
   const Double_t pi = TMath::Pi();
@@ -36,6 +36,9 @@
   duvall3Macros();
 
   // load user classes and libraries
+  /* gROOT->LoadMacro("TRATVolume.cxx"); */
+  /* gROOT->LoadMacro("TRATGeo.cxx"); */
+  /* gROOT->LoadMacro("TIBDParams.cxx"); */
   gROOT->LoadMacro("TDuvallUtils.cxx");
   gROOT->LoadMacro("TRefMatch.cxx");
 
