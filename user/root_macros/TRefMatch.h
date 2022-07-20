@@ -21,10 +21,6 @@
 #ifndef TRefMatch
 #define TRefMatch
 
-#pragma "TFile.h"
-#pragma "TClass.h"
-#pragma "TList.h"
-
 class TRefMatch : public TClass {
 
 private:
@@ -40,11 +36,14 @@ private:
   TFile*		fOutFile;		// output file
   TRegexp		fReferenceFilePattern;	// regex describing reference files
   TSystemDirectory*	fReferenceFileDir;	// directory containing reference files
+  Long64_t		fnTestSampleEvents;		// number of events to use from test-sample tree (default value 0 will use all events)
+  Long64_t		fnReferenceEvents;		// number of events to use from reference trees (default value 0 will use all events)
   Double_t		fProb;			// match probability (current entry)
   Double_t		fSig;			// match significance (current entry)
   TMatrixD		fResultsMatrix;		// matrix of comparison results
   TVectorD		fResults;		// 3x1 vector containing best match value and corresponding probability and significance
-  Bool_t		fkHasRun;	// status indicator for whether RefComp has been called yet
+  Bool_t		fkHasInit;		// status indicator for whether Init has been called yet
+  Bool_t		fkHasRun;		// status indicator for whether RefComp has been called yet
   TCanvas*		fCanvas;		// canvas for drawing results
   TH1D*			fTestSampleHist;	// TH1 for test-sample data
   TGraph*		fResultsGraph;		// TGraph for algorithm results
@@ -78,6 +77,8 @@ public:
   TFile*		GetOutFile() { return fOutFile; }
   TRegexp		GetReferenceFilePattern() { return fReferenceFilePattern; }
   TSystemDirectory*	GetReferenceFileDir() { return fReferenceFileDir; }
+  Long64_t		GetnTestSampleEvents() { return fnTestSampleEvents; }
+  Long64_t		GetnReferenceEvents() { return fnReferenceEvents; }
   Double_t		GetProb() { return fProb; }
   Double_t		GetSig() { return fSig; }
   TMatrixD		GetResultsMatrix() { return fResultsMatrix; }
@@ -92,11 +93,12 @@ public:
   void			SetReferenceFilePattern( const char* pattern );
   void			SetReferenceTreeName( const char* treeName ) { fReferenceTreeName = treeName; }
   void			FillReferenceFileList();
+  void			SetnEvents(Long64_t nTestSampleEvents=0, Long64_t nReferenceEvents=0) { fnTestSampleEvents=nTestSampleEvents; fnReferenceEvents=nReferenceEvents; }
   // utility:
   Double_t		Prob2Sig( Double_t prob );		// convert probability to significance
   Double_t		Sig2Prob( Double_t sig );		// convert significance to probability
   // MAIN:
-  Double_t		UnbinnedKSTest(TTree *T1, TTree *T2, const char* branchName1, const char* branchName2 = "");	// apply unbinned Kolmogorov-Smirnov test
+  Double_t		UnbinnedKSTest(TTree *T1, TTree *T2, const char* branchName1, const char* branchName2="", Long64_t nEvents1=0, Long64_t nEvents2=0 );	// apply unbinned Kolmogorov-Smirnov test
   void			RefCompare();				// perform reference-comparison algorithm
   // plots:
   void			DrawResults(Bool_t kDrawFit=kTRUE);		// plot sample distribution and algorithm results

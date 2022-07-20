@@ -28,7 +28,6 @@
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <TRefMatch.h>
-#pragma "TMath.h"
 
 // Call the ClassImp() macro to give the TRefMatch class RTTI and full I/O capabilities.
 #if !defined(__CLING__)
@@ -41,24 +40,10 @@ TRefMatch::TRefMatch()
 {
   SetName("TRefMatch");
   SetTitle("class for implementing KS-test reference-matching algorithm");
-  fTestFileName = "";
-  fTestTreeName = "";
-  fTestVarName = "";
-  fTestSampleFile = 0x0;
-  fTestSampleTree = 0x0;
-  fTestSampleBranch = 0x0;
-  fReferenceTreeName = "";
   fReferenceFileList = new TList;
-  fOutFile = 0x0;
-  fReferenceFilePattern = TRegexp("");
-  fReferenceFileDir = 0x0;
-  fProb = 0.;
-  fSig = 0.;
   fResults.ResizeTo(3);
+  fkHasInit = kFALSE;
   fkHasRun = kFALSE;
-  fCanvas = 0x0;
-  fTestSampleHist = 0x0;
-  fResultsGraph = 0x0;
 }
 
 //______________________________________________________________________________
@@ -81,15 +66,11 @@ TRefMatch::TRefMatch( const char* fileName, const char* treeName, const char* br
   }
   fReferenceTreeName = "T";
   fReferenceFileList = new TList;
-  fOutFile = 0x0;
   fReferenceFilePattern = TRegexp("[0-9]+DEG.*\.root");
-  fProb = 0.;
-  fSig = 0.;
   fResults.ResizeTo(3);
+  fkHasInit = kFALSE;
   fkHasRun = kFALSE;
-  fCanvas = 0x0;
-  fTestSampleHist = 0x0;
-  fResultsGraph = 0x0;
+  Init();
 }
 
 //______________________________________________________________________________
@@ -109,16 +90,18 @@ void TRefMatch::Init()
     this->Error("TRefMatch::Init", "Requested TBranch not found.");
     return;
   }
+  if (fnTestSampleEvents==0) SetnEvents(GetTree()->GetEntries());
+  printf("fnTestSampleEvents = %d\n", fnTestSampleEvents); //debug
   // if all of the above check out okay, create outfile
   TSystemDirectory *wd = new TSystemDirectory;
   wd->SetDirectory(gSystem->WorkingDirectory());
   fReferenceFilePattern = TRegexp("[0-9]+DEG.*\.root");
   fReferenceFileDir = new TSystemDirectory;
   fReferenceFileDir->SetDirectory( gSystem->WorkingDirectory() );
-  fResultsMatrix = new TMatrixD;
   fTestSampleHist = 0x0;
   fResultsGraph = 0x0;
   printf("Init complete.\n");
+  fkHasInit = kTRUE;
 }
 
 //______________________________________________________________________________
@@ -240,7 +223,7 @@ Double_t TRefMatch::Sig2Prob( Double_t sig )
 
 //______________________________________________________________________________
 // UnbinnedKSTest
-Double_t TRefMatch::UnbinnedKSTest( TTree *T1, TTree *T2, const char* branchName1, const char* branchName2 ) 
+Double_t TRefMatch::UnbinnedKSTest( TTree *T1, TTree *T2, const char* branchName1, const char* branchName2, Long64_t nEvents1, Long64_t nEvents2 ) 
 {
   // unbinnedKSTest -- function to execute *unbinned* TMath::KolmogorovTest on a pair of TTrees
   //   containing TBranches with matching names
@@ -248,6 +231,8 @@ Double_t TRefMatch::UnbinnedKSTest( TTree *T1, TTree *T2, const char* branchName
   // -- Branches must be of type Double_t
   // -- P is the probability for match
   // -- *T1 and *T2 are pointers to the two input trees
+  // -- branchName{1,2} are the branch/variable names in the respective trees
+  // -- nEvents{1,2} are the number of entries to use from each tree (default value 0 will use all entries)
   // -- See the notes in TMath::KolmogorovTest and TH1::KolmogorovTest for details
   // Note: Arrays must be sorted before they can be
   //   fed to TMath::KolmogorovTest!
@@ -259,9 +244,11 @@ Double_t TRefMatch::UnbinnedKSTest( TTree *T1, TTree *T2, const char* branchName
   // basics
   Double_t P;
   Double_t q1, q2; // quantity1, quantity2
-  Int_t k;
-  Int_t N1 = (Int_t)T1->GetEntries();
-  Int_t N2 = (Int_t)T2->GetEntries();
+  Long64_t k;
+  /* Int_t N1 = (Int_t)T1->GetEntries(); */
+  /* Int_t N2 = (Int_t)T2->GetEntries(); */
+  if (nEvents1==0) nEvents1 = T1->GetEntries();
+  if (nEvents2==0) nEvents2 = T2->GetEntries();
   // TBranches
   TBranch *br1 = T1->GetBranch(branchName1);
   TBranch *br2 = T2->GetBranch(branchName2);
@@ -272,41 +259,41 @@ Double_t TRefMatch::UnbinnedKSTest( TTree *T1, TTree *T2, const char* branchName
   T1->SetBranchAddress(branchName1, &q1);
   T2->SetBranchAddress(branchName2, &q2);
   // raw arrays
-  Double_t *arr1 = new Double_t[N1];
-  Double_t *arr2 = new Double_t[N2];
+  Double_t *arr1 = new Double_t[nEvents1];
+  Double_t *arr2 = new Double_t[nEvents2];
   // index arrays
-  Int_t *ind1 = new Int_t[N1];
-  Int_t *ind2 = new Int_t[N2];
+  Long64_t *ind1 = new Long64_t[nEvents1];
+  Long64_t *ind2 = new Long64_t[nEvents2];
   // sorted arrays
-  Double_t *arr1S = new Double_t[N1];
-  Double_t *arr2S = new Double_t[N2];
+  Double_t *arr1S = new Double_t[nEvents1];
+  Double_t *arr2S = new Double_t[nEvents2];
 
   // fill, sort, re-fill (use kFALSE to sort ascending)
-  // Note on N1,N2 loops: Yes, there is a more-efficient (single-loop) way to do this;
+  // Note on nEvents1,nEvents2 loops: Yes, there is a more-efficient (single-loop) way to do this;
   // but the switching is non-trivial and code running today is better than code in debug tomorrow, right? (Right?)
   // first fill
-  for ( k=0; k<N1; k++ ) {
+  for ( k=0; k<nEvents1; k++ ) {
     T1->GetEntry(k);
     arr1[k] = q1;
   }
-  for ( k=0; k<N2; k++ ) {
+  for ( k=0; k<nEvents2; k++ ) {
     T2->GetEntry(k);
     arr2[k] = q2;
   }
   // sort
-  TMath::Sort(N1, arr1, ind1, kFALSE);
-  TMath::Sort(N2, arr2, ind2, kFALSE);
+  TMath::Sort(nEvents1, arr1, ind1, kFALSE);
+  TMath::Sort(nEvents2, arr2, ind2, kFALSE);
   // second fill
-  for ( k=0; k<N1; k++ ) {
+  for ( k=0; k<nEvents1; k++ ) {
     arr1S[k] = arr1[ind1[k]];
   }
-  for ( k=0; k<N2; k++ ) {
+  for ( k=0; k<nEvents2; k++ ) {
     arr2S[k] = arr2[ind2[k]];
   }
 
   // MAIN: Finally ready to calculate the K-S probability
   // NOTE: THE "OPTION" ARGUMENT IS (ironically) NOT OPTIONAL, EVEN IF EMPTY!
-  P = TMath::KolmogorovTest( N1, arr1S, N2, arr2S, "" );
+  P = TMath::KolmogorovTest( nEvents1, arr1S, nEvents2, arr2S, "" );
 
   SetProb(P);
   SetSig( Prob2Sig(P) );
@@ -323,6 +310,12 @@ void TRefMatch::RefCompare()
   // refCompare -- function to compare test sample to reference distributions
   // -- results matrix has the following rows:    phi (°) | probability (%) | significance (σ)
   // -- see the README at $RATROOT/user/root_macros/ref_matching/ in this repository for more details
+
+  // Init() check
+  if (!fkHasInit) {
+    this->Info("RefCompare", "Please initialize before running comparison.");
+    return;
+  }
 
   // file check
   if (fReferenceFileList->GetEntries()==0) {
@@ -367,7 +360,8 @@ void TRefMatch::RefCompare()
     V.SetElements( v->GetMatrixArray() );
     phiRef = V[0];
     M(k,0) = phiRef;
-    M(k,1) = UnbinnedKSTest( T, T_ts, fTestVarName );
+    /* M(k,1) = UnbinnedKSTest( T, T_ts, fTestVarName ); */
+    M(k,1) = UnbinnedKSTest( T_ts, T, fTestVarName, "", fnTestSampleEvents, fnReferenceEvents );
     M(k,2) = Prob2Sig( M(k,1) );
     f->Close();
   }
@@ -417,6 +411,9 @@ void TRefMatch::DrawResults( Bool_t kDrawFit )
     this->Info("TRefMatch::DrawResults", "Please run RefCompare first to get results.");
     return;
   }
+  // clear previous graphics, if any
+  if (gROOT->GetListOfCanvases()->FindObject("c_RefMatch")!=0) delete c_RefMatch;
+  if (gDirectory->FindObject("h_TestSample")!=0) delete h_TestSample;
   // init
   TTree *T = GetTree();
   const char* varName = GetTestVarName();
@@ -429,7 +426,8 @@ void TRefMatch::DrawResults( Bool_t kDrawFit )
   // fill
   Double_t q;
   T->SetBranchAddress(varName, &q);
-  for (Int_t kT=0; kT<T->GetEntries(); kT++) {
+  /* for (Int_t kT=0; kT<T->GetEntries(); kT++) { */
+  for (Int_t kT=0; kT<fnTestSampleEvents; kT++) {
     T->GetEntry(kT);
     h->Fill(q);
   }
