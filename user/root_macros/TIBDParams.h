@@ -23,7 +23,7 @@
 
 #include "TFile.h"
 #include "TClass.h"
-#include <TRATVolume.cxx>
+#include <TRATGeo.cxx>
 
 class TIBDParams : public TClass {
 

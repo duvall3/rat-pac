@@ -1,8 +1,8 @@
-// generateRefDistrib -- simple function for generating test reference arrays
-// -- Note: This macro can easily generate a set of reference distributions.
+// generateTestSampleDistrib -- simple function for generating test-sample arrays
+// -- Note: This macro can easily generate a set of test-sample distributions.
 //    For example, to generate a distribution for every degree from 0 through 30
 //    with a width of 50 deg, run the following line:
-//      for ( Int_t k=0; k<31; k++ ) generateRefDistrib( (Double_t)k, 50. );
+//      for ( Int_t k=0; k<31; k++ ) generateTestSampleDistrib( (Double_t)k, 50. );
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 07/2022 ~ //
 
 //Copyright (C) 2022 Mark J. Duvall / T. Rocks Science
@@ -20,13 +20,13 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-void generateRefDistrib( Double_t phiTrue, Double_t sigma ) { // phi, sigma both in degrees
+void generateTestSampleDistrib( Double_t phiTrue, Double_t sigma ) { // phi, sigma both in degrees
 
 // general init
-Long64_t N = 1e5;
+Long64_t N = 1e3;
 Double_t phiMin = -180., phiMax = 180.;
 TString savename;
-savename.Form("%02dDEG_ref.root", (Int_t)phiTrue);
+savename.Form("%02dDEG_testsample.root", (Int_t)phiTrue);
 TObjString *savenameOS = new TObjString(savename);
 TFile *f = TFile::Open(savename.Data(), "recreate");
 TF1 *f_gen = new TF1( "f_gen", "Gaus(x, [0], [1])", phiMin, phiMax );
@@ -60,7 +60,7 @@ for ( Int_t i=0; i<6; i++ ) {
 
 // TTree init
 Double_t phi;
-TTree *T = new TTree("T", "Reference Distribution");
+TTree *T = new TTree("T_ts", "Test-Sample Distribution");
 T->Branch("phi", &phi);
 
 // MAIN: fill
@@ -71,28 +71,28 @@ for ( k = 0; k < N; k++ ) {
 }
 
 // draw and fit, just for luck
-if (gROOT->GetListOfCanvases()->FindObject("c_genref")) delete c_genref;
-TCanvas *c_genref = new TCanvas("c_genref", "c_genref");
-c_genref->cd();
+if (gROOT->GetListOfCanvases()->FindObject("c_testsample")) delete c_testsample;
+TCanvas *c_testsample = new TCanvas("c_testsample", "c_testsample");
+c_testsample->cd();
 T->Draw("phi >> h_phi");
 TString hTit;
-hTit.Form("Reference Distribution for #phi = %2d^{o}", (Int_t)phiTrue);
+hTit.Form("Test Sample for #varphi = %2d^{o}", (Int_t)phiTrue);
 h_phi->SetLineColor(kBlue);
 h_phi->SetAxisRange(phiMin, phiMax, "X");
 h_phi->SetTitle(hTit.Data());
-h_phi->GetXaxis()->SetTitle("#phi (^{o})");
+h_phi->GetXaxis()->SetTitle("#varphi (^{o})");
 h_phi->Fit("gaus", "S"); // expected to include the R(ange) option here, but results seem better without it
 
 // save, print
 savename.ReplaceAll(".root", ".png");
-c_genref->Print(savename.Data());
+c_testsample->Print(savename.Data());
 params->Write("params", TObject::kSingleKey);
 T->Write();
 h_phi->Write();
-c_genref->Write();
+c_testsample->Write();
 
 // close out
-c_genref->Close();
+c_testsample->Close();
 f->Close();
 
 // all pau!   )

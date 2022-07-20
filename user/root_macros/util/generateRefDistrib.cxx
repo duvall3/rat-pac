@@ -76,11 +76,11 @@ TCanvas *c_genref = new TCanvas("c_genref", "c_genref");
 c_genref->cd();
 T->Draw("phi >> h_phi");
 TString hTit;
-hTit.Form("Reference Distribution for #phi = %2d^{o}", (Int_t)phiTrue);
-h_phi->SetLineColor(kBlue);
+hTit.Form("Reference Distribution for #varphi = %2d^{o}", (Int_t)phiTrue);
+h_phi->SetLineColor(kRed);
 h_phi->SetAxisRange(phiMin, phiMax, "X");
 h_phi->SetTitle(hTit.Data());
-h_phi->GetXaxis()->SetTitle("#phi (^{o})");
+h_phi->GetXaxis()->SetTitle("#varphi (^{o})");
 h_phi->Fit("gaus", "S"); // expected to include the R(ange) option here, but results seem better without it
 
 // save, print
