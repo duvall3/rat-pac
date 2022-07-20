@@ -29,7 +29,6 @@
 
 #include <TRefMatch.h>
 #pragma "TMath.h"
-#pragma "TH1D.h"
 
 // Call the ClassImp() macro to give the TRefMatch class RTTI and full I/O capabilities.
 #if !defined(__CLING__)
@@ -384,9 +383,10 @@ void TRefMatch::RefCompare()
   }
 
   // show results
-  printf("\n/// Comparison Results ///\n\tPhi (°)\t\tProbability (%%)\t\tSignificance (σ)\n");
+  printf("\n/// Comparison Results for P > 0.1 %% ///\n\tPhi (°)\t\tProbability (%%)\t\tSignificance (σ)\n");
   printf("\t"); for ( k=0; k<60; k++ ) printf("~"); printf("\n");
   for ( k=0; k<N; k++ ) {
+    if (MS[k]1<0.001) continue;
     printf("\t%3d\t\t", MS[k][0]);
     if (MS[k][1]<0.1) printf(" "); // because printf %2.1f doens't want to work for me today
     printf("%.2f\t\t\t%.3e\n", 100.*MS[k][1], MS[k][2]);
@@ -404,6 +404,7 @@ void TRefMatch::RefCompare()
 
   // all pau!   )
   fkHasRun = kTRUE;
+  PrintResults();
   return;
 }
 
@@ -438,8 +439,9 @@ void TRefMatch::DrawResults()
   g->SetLineWidth(3.);
   g->SetLineColor(kRed);
   g->SetMarkerColor(kRed);
-  g->SetMarkerSize(2.5);
-  g->Draw("A*");
+  g->SetMarkerSize(1.25);
+  g->SetMarkerStyle(kFullDotLarge);
+  g->Draw("AP");
   g->SetTitle("Reference-Matching Results");
   g->GetXaxis()->SetTitle("phi (^{o})");
   g->GetYaxis()->SetTitle("Match Probability");

@@ -16,13 +16,10 @@
 //
 {
 
-  #include <TIBDParams.cxx>
-  #include <TRATVolume.cxx>
-  #include <TRATGeo.cxx>
-//#include <TRefMatch.cxx>
-  #include <TDuvallUtils.cxx>
-//#include <TRATNeutronGen.cxx>
-  #include <TMath.h>
+  #include "TIBDParams.cxx"
+  #include "TRATVolume.cxx"
+  #include "TRATGeo.cxx"
+  #include "TMath.h"
 
   // make pi, e
   const Double_t pi = TMath::Pi();
@@ -37,5 +34,9 @@
   // load RAT-PAC macros
   gROOT->LoadMacro("duvall3Macros.cxx");
   duvall3Macros();
+
+  // load user classes and libraries
+  gROOT->LoadMacro("TDuvallUtils.cxx");
+  gROOT->LoadMacro("TRefMatch.cxx");
 
 }

@@ -51,7 +51,7 @@ private:
 
 private:
   // methods
-  void			Init();			// initialize: validate and fill members
+  void			Init();
   void			SetProb( Double_t prob ) { fProb = prob; }
   void			SetSig( Double_t sig ) { fSig = sig; }
   void			SetResultsMatrix( TMatrixD resmat ) { fResultsMatrix = resmat; }
@@ -82,7 +82,7 @@ public:
   Double_t		GetSig() { return fSig; }
   TMatrixD		GetResultsMatrix() { return fResultsMatrix; }
   TVectorD		GetResults() { return fResults; }
-  /* TCanvas*		GetCanvas() { return fCanvas; } */
+  TCanvas*		GetCanvas() { return fCanvas; }
   TH1D*			GetTestSampleHist() { return fTestSampleHist; }
   TGraph*		GetResultsGraph() { return fResultsGraph; }
   // setters:

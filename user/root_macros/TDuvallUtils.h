@@ -16,14 +16,13 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#ifndef ROOT_Rtypes
-#include "Rtypes.h"
-#endif
-#ifndef ROOT_TMathBase
-#include "TMathBase.h"
-#endif
-
 #pragma "TMath.h"
+/* #pragma "TH2D.h" */
+/* #pragma "TTree.h" */
+/* #pragma "TCanvas.h" */
+/* #pragma "TEntryList.h" */
+/* #pragma <string.h> */
+/* #pragma "TString.h" */
 
 namespace TDuvallUtils {
 
