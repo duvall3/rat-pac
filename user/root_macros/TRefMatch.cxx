@@ -410,7 +410,7 @@ void TRefMatch::RefCompare()
 
 //______________________________________________________________________________
 // DrawResults
-void TRefMatch::DrawResults()
+void TRefMatch::DrawResults( Bool_t kDrawFit )
 {
   // run check
   if (!fkHasRun) {
@@ -426,13 +426,20 @@ void TRefMatch::DrawResults()
   const Double_t *x = GetResultsMatrix().GetSub(0,N-1,0,0).GetMatrixArray();
   const Double_t *y = GetResultsMatrix().GetSub(0,N-1,1,1).GetMatrixArray();
   TGraph *g = new TGraph(N, x, y);
-  TString varExp = TString::Format("%s >> h", varName);
+  // fill
+  Double_t q;
+  T->SetBranchAddress(varName, &q);
+  for (Int_t kT=0; kT<T->GetEntries(); kT++) {
+    T->GetEntry(kT);
+    h->Fill(q);
+  }
   // draw
   c_RefMatch->Divide(1,2);
   c_RefMatch->GetPad(1)->cd();
-  T->Draw(varExp.Data());
+  h->Draw();
   h->SetTitle("Test Sample");
   h->GetXaxis()->SetTitle("phi (^{o})");
+  if (kDrawFit) h->Fit("gaus", "Q"); // Q(uiet mode)
   c_RefMatch->GetPad(2)->cd();
   gPad->SetLogy(kTRUE);
   gPad->SetGrid(1,1);
@@ -466,12 +473,19 @@ void TRefMatch::DrawResults()
 // Save
 void TRefMatch::Save(const char* saveName)
 {
+  // init
   TString outFileName(fTestSampleFile->GetName());
   outFileName.ReplaceAll("\.root", "_RefMatch.root");
-  fOutFile = TFile::Open( outFileName.Data(), "recreate" );
-  printf( "Created output file %s at %#lx.\n", fOutFile->GetName(), fOutFile);
-  fOutFile->cd();
-  this->Write(saveName);
+  TString outCanvasName(outFileName);
+  outCanvasName.ReplaceAll("\.root",".png");
+  /* // create outfile */
+  /* fOutFile = TFile::Open( outFileName.Data(), "recreate" ); */
+  /* printf( "Created output file %s at %#lx.\n", fOutFile->GetName(), fOutFile); */
+  // write
+  fCanvas->Print(outCanvasName.Data());
+  /* fOutFile->cd(); */
+  /* this->Write(saveName); */
+  // close
   fTestSampleFile->Close();
   fOutFile->Close();
 }
@@ -525,6 +539,6 @@ void TRefMatch::PrintResults()
     this->Info("TRefMatch::PrintResults", "Please run RefCompare first to get results.");
     return;
   }
-  printf( "\n/// Results Summary ///\nBest Match: %.2f °\nMatch Probability: %2.2f %%\nMatch Significance: %.3e\n///\n\n", fResults[0], 100.*fResults[1], fResults[2] );
+  printf( "\n/// Results Summary ///\n\tBest Match: %.2f °\n\tMatch Probability: %2.2f %%\n\tMatch Significance: %.3e σ\n///\n\n", fResults[0], 100.*fResults[1], fResults[2] );
 }
 
