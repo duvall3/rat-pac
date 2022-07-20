@@ -69,12 +69,13 @@ gROOT->LoadMacro("listFiles.cxx");
 /* gROOT->LoadMacro("fitPhiSegmented.cxx"); */
 gROOT->LoadMacro("debugBuddy.cxx");
 gROOT->LoadMacro("findMatchingObject.cxx");
-gROOT->LoadMacro("chi2ProbSigma.cxx");
-gROOT->LoadMacro("prob2sig.cxx");
-gROOT->LoadMacro("sig2prob.cxx");
+/* gROOT->LoadMacro("chi2ProbSigma.cxx"); */
+/* gROOT->LoadMacro("prob2sig.cxx"); */
+/* gROOT->LoadMacro("sig2prob.cxx"); */
 gROOT->LoadMacro("generateRefDistrib.cxx");
-gROOT->LoadMacro("unbinnedKSTest.cxx");
-gROOT->LoadMacro("refCompare.cxx");
+gROOT->LoadMacro("generateTestSampleDistrib.cxx");
+/* gROOT->LoadMacro("unbinnedKSTest.cxx"); */
+/* gROOT->LoadMacro("refCompare.cxx"); */
 
 }
 
