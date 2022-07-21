@@ -139,5 +139,5 @@ return h_out;
 }
 
 // overload for other TH1 types
-TH2D* radarPlot( TH1F *h_in, Option_t *ho = "cyllego", const Bool_t kNewCanvas = kTRUE  ) { radarPlot( (TH1D*)h_in, ho ); }
-TH2D* radarPlot( TH1I *h_in, Option_t *ho = "cyllego", const Bool_t kNewCanvas = kTRUE  ) { radarPlot( (TH1D*)h_in, ho ); }
+TH2D* radarPlot( TH1F *h_in, Option_t *ho = "cyllego", const Bool_t kNewCanvas = kTRUE  ) { return radarPlot( (TH1D*)h_in, ho ); }
+TH2D* radarPlot( TH1I *h_in, Option_t *ho = "cyllego", const Bool_t kNewCanvas = kTRUE  ) { return radarPlot( (TH1D*)h_in, ho ); }

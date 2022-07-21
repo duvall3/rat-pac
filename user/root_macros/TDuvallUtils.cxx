@@ -122,10 +122,130 @@ void TDuvallUtils::ExportPlots( const char* filename, const TString kGraphicsSav
   f->Close();
 }
 
-////______________________________________________________________________________
-//TDuvallUtils::
-//{
-//}
+//______________________________________________________________________________
+// FindMatchingObject
+TObject* TDuvallUtils::FindMatchingObject( TCollection* colxn, TRegexp patternRE )
+{
+  // init
+  TIter i(colxn);
+  TObject *foundObj;
+  TNamed *obj;
+  TString objName;
+  TList *matchingObjs = new TList;
+  // main
+  for ( i=colxn->begin(); i!=colxn->end(); ++i ) {
+    obj = (TNamed*)*i;
+    objName = obj->GetName();
+    if (objName.Contains(patternRE)) matchingObjs->Add(obj);
+  }
+  // main
+  for ( i=colxn->begin(); i!=colxn->end(); ++i ) {
+    obj = (TNamed*)*i;
+    objName = obj->GetName();
+    if (objName.Contains(patternRE)) matchingObjs->Add(obj);
+  }
+}
+
+//______________________________________________________________________________
+// FindVarsOfType
+TList* TDuvallUtils::FindVarsOfType( const char* varType, Bool_t kCaseSensitive )
+{
+  // init
+  // input
+  TString varTypeStr(varType);
+  Int_t varCount;
+  TString gvarType;
+  // gROOT list
+  TCollection *gList = gROOT->GetListOfGlobals(kTRUE);
+  TGlobal *gvar;
+  TIter i(gList);
+  // output list
+  TList *oList = new TList;
+  // check option and set regex
+  if (! kCaseSensitive) {
+    varTypeStr.ToLower();
+  }
+  TRegexp varRE(varTypeStr.Data());
+  // loop over list
+  for ( i=gList->begin(); i!=gList->end(); ++i ) {
+    gvar = (TGlobal*)*i;
+    gvarType.Form("%s", gvar->GetTypeName());
+    if (! kCaseSensitive) {
+      gvarType.ToLower();
+    }
+    if ( gvarType.Contains(varRE) ) {
+      varCount++;
+      oList->Add(gvar);
+      printf("%s\t%s\n", gvar->GetTypeName(), gvar->GetName());
+    }
+  }
+  if (varCount>5) printf("Found %d global variables matching TypeName.Contains(\"%s\").\n", varCount, varType);
+  return oList;
+}
+
+//______________________________________________________________________________
+// ListFiles
+TList* TDuvallUtils::ListFiles( const char* pattern )
+{
+  // init
+  TRegexp patRE(pattern);
+  TSystemDirectory *dir = new TSystemDirectory;
+  TSystemFile *sf = new TSystemFile;
+  TString  sfName;
+  TList *fL = new TList;
+  // MAIN
+  dir->SetDirectory( gSystem->WorkingDirectory() );
+  TList *dirFiles = dir->GetListOfFiles();
+  TIter i(dirFiles);
+  for ( i = dirFiles->begin(); i != dirFiles->end(); ++i ) {
+    sf = (TSystemFile*)*i;
+    sfName.Form( sf->GetName() );
+    if ( sfName.Contains(patRE) ) fL->Add(sf);
+  }
+  return fL;
+}
+
+//______________________________________________________________________________
+// LoadAllKeys
+void TDuvallUtils::LoadAllKeys()
+{
+  TKey *key;
+  TList *keyList = gDirectory->GetListOfKeys();
+  TIter i(keyList);
+  // main
+  for ( i=keyList->begin(); i!=keyList->end(); ++i ) {
+    key = (TKey*)*i;
+    key->ReadObj();
+  }
+  return;
+}
+
+//______________________________________________________________________________
+// LogBins
+// Lightly adapted from code generously provided by Marc F. Bergevin
+Double_t* TDuvallUtils::LogBins( Double_t xmin, Double_t xmax )
+{
+  // array size is currently hard-coded at 100 //HC//
+  const Int_t N = 100;
+  static Double_t xBins[N];
+  Double_t logxmin = TMath::Log10(xmin);
+  Double_t logxmax = TMath::Log10(xmax);
+  Double_t binwidth = (logxmax-logxmin)/N;
+  Double_t xBins[N+1];
+  xBins[0] = xmin;
+  for (Int_t m=1;m<=N;m++) {
+    xBins[m] = TMath::Power(10,logxmin+m*binwidth);
+  }
+  return xBins;
+}
+
+/* // for reference to recreate as templated function */
+/* //______________________________________________________________________________ */
+/* // PrintArrayD */
+/* void TDuvallUtils::PrintArrayD( Int_t N, Double_t* x ) */
+/* { */
+/*   for (Int_t k=0; k<N; k++) cout << x[k] << endl; */
+/* } */
 
 //______________________________________________________________________________
 // Prob2Sig
@@ -143,33 +263,125 @@ Double_t TDuvallUtils::Prob2Sig( Double_t prob )
   return sigma;
 }
 
-////______________________________________________________________________________
-//TDuvallUtils::
-//{
-//}
+//______________________________________________________________________________
+// RadarPlot
+TH2D* TDuvallUtils::RadarPlot( TH1D *h_in, Option_t *ho, const Bool_t kNewCanvas )
+{
+  // force proportional scaling
+  gStyle->SetHistMinimumZero(kTRUE);
+  // init
+  TString hoptString = TString::Format("same%s", ho);
+  Option_t *hopt(hoptString);
+  Int_t k = 0, N = h_in->GetNbinsX();
+  Double_t xlow = h_in->GetBinLowEdge(0);
+  Double_t xup = h_in->GetBinLowEdge(N) + h_in->GetBinWidth(N);
+  TString newName(h_in->GetName()), newTitle(h_in->GetTitle()), newCanName, newCanTitle;
+  newName.Append("_radar");
+  newCanName.Form("can_%s", newName.Data());
+  newCanTitle = newName;
+  // copy bin contents into new histogram
+  TH2D *h_out = new TH2D( newName.Data(), newTitle.Data(), N, xlow, xup, 1, 0., 1. );
+  h_out->SetLineColor(h_in->GetLineColor());
+  h_out->SetLineWidth(5.);
+  h_out->SetStats(0);
+  for ( k=0; k<=N; k++ ) {
+    h_out->SetBinContent( k, 1, h_in->GetBinContent(k) ); //KEEPME
+  }
+  // set up scale
+  Double_t hinMax = h_in->GetMaximum();
+  Int_t pow10 = TMath::Nint(TMath::Ceil(TMath::Log10(hinMax)));
+  Int_t scaleMax = TMath::Nint(hinMax);
+  Int_t j = 0, nScaleRings = 5, scaleStep = TMath::Nint(1.*hinMax/nScaleRings);
+  TH2D *h_scale = new TH2D( "h_scale", "scale for radar plot", N, xlow, xup, nScaleRings, 0., scaleMax );
+  h_scale->SetLineColor(16);
+  h_scale->SetLineWidth(2.);
+  h_scale->SetStats(0);
+  for ( k=0; k<=N; k++ ) {
+    for ( j=0; j<=nScaleRings; j++ ) h_scale->SetBinContent( k, j, (nScaleRings-j)*scaleStep );
+  }
+  // scale "axis indicators"
+  Double_t markerR = 1.;
+  TPolyMarker3D *p0 = new TPolyMarker3D(1);
+  p0->SetMarkerColor(kBlack);
+  p0->SetMarkerSize(2.5);
+  TPolyMarker3D *p90 = p0->Clone("p90");
+  TPolyMarker3D *p180 = p0->Clone("p180");
+  TPolyMarker3D *p270 = p0->Clone("p270");
+  p0->SetMarkerStyle(8);
+  p90->SetMarkerStyle(22);
+  p180->SetMarkerStyle(21);
+  p270->SetMarkerStyle(23);
+  p0->SetPoint(0, -markerR, 0., 0.);
+  p90->SetPoint(0, 0., -markerR, 0.);
+  p180->SetPoint(0, markerR, 0., 0.);
+  p270->SetPoint(0, 0., markerR, 0.);
+  // draw radar plot
+  if (kNewCanvas) TCanvas *can_out = new TCanvas(newCanName.Data(), newCanTitle.Data());
+  gPad->SetLogx(kFALSE);
+  gPad->SetLogy(kFALSE);
+  h_in->Draw("A");
+  TView3D *view = new TView3D;
+  view->RotateView(.001, .001);
+  h_scale->Draw("samecyllego");
+  h_out->Draw(hopt);
+  // annotations
+  // radial legend
+  TLegend *l_radial = new TLegend(.05, .01, .65, .1);
+  l_radial->SetName("leg_radial");
+  l_radial->SetNColumns(2);
+  l_radial->SetTextSize(.024);
+  TString gridRings, gridMax;
+  gridRings.Form( "Grid Scale = %d entries / ring     Grid Maximum = %d entries", scaleStep, scaleMax );
+  l_radial->AddEntry( h_scale, gridRings.Data() );
+  l_radial->Draw();
+  // angular legend
+  TLegend *l_angular = new TLegend(.65, .01, .95, .1);
+  l_angular->SetName("leg_angular");
+  l_angular->SetNColumns(2);
+  TString angMark0("0^{o}"), angMark90("+90^{o}"), angMark180("#pm180^{o}"), angMark270("-90^{o}");
+  l_angular->AddEntry(p0, angMark0.Data(), "P");
+  l_angular->AddEntry(p90, angMark90.Data(), "P");
+  l_angular->AddEntry(p180, angMark180.Data(), "P");
+  l_angular->AddEntry(p270, angMark270.Data(), "P");
+  l_angular->Draw();
+  // paint over the weird extra lines ROOT keeps wanting to draw
+  TPave *boxL = new TPave(0., 0.49, 0.099, 0.51, 0., "blNDC");
+  TPave *boxR = new TPave(0.901, 0.49, 1., 0.51, 0., "blNDC");
+  boxL->SetFillColor(0);
+  boxR->SetFillColor(0);
+  boxL->Draw();
+  boxR->Draw();
+  // draw angular markers
+  p0->Draw();
+  p90->Draw();
+  p180->Draw();
+  p270->Draw();
+  // all pau!   )
+  return h_out;
+}
 
-////______________________________________________________________________________
-//TDuvallUtils::
-//{
-//}
-
-////______________________________________________________________________________
-//TDuvallUtils::
-//{
-//}
-
-////______________________________________________________________________________
-//TDuvallUtils::
-//{
-//}
-
-/* // for reference to recreate as templated function */
-/* //______________________________________________________________________________ */
-/* // PrintArrayD */
-/* void TDuvallUtils::PrintArrayD( Int_t N, Double_t* x ) */
-/* { */
-/*   for (Int_t k=0; k<N; k++) cout << x[k] << endl; */
-/* } */
+//______________________________________________________________________________
+// ShiftStats
+void TDuvallUtils::ShiftStats( TVirtualPad* p, Double_t deltaX, Double_t deltaY )
+{
+  // init
+  TPaveStats* s = p->GetPrimitive("stats");
+  if (s == 0x0) return;
+  Double_t x1, x2, y1, y2;
+  // get current position
+  x1 = s->GetX1NDC();
+  x2 = s->GetX2NDC();
+  y1 = s->GetY1NDC();
+  y2 = s->GetY2NDC();
+  // set new position
+  s->SetX1NDC(x1 + deltaX);
+  s->SetX2NDC(x2 + deltaX);
+  s->SetY1NDC(y1 + deltaY);
+  s->SetY2NDC(y2 + deltaY);
+  // draw
+  s->Draw();
+  return;
+}
 
 //______________________________________________________________________________
 // Sig2Prob
@@ -185,6 +397,77 @@ Double_t TDuvallUtils::Sig2Prob( Double_t sig )
     prob = TMath::Erf( sigma / TMath::Sqrt2() );
   }
   return prob;
+}
+
+//______________________________________________________________________________
+// UnbinnedKSTest
+Double_t TDuvallUtils::UnbinnedKSTest( TTree *T1, TTree *T2, const char* branchName )
+{
+  // Note: Arrays must be sorted before they can be
+  //   fed to TMath::KolmogorovTest!
+  // init
+  // basics
+  Double_t P;
+  Double_t q1, q2; // quantity1, quantity2
+  Int_t k;
+  Int_t N1 = (Int_t)T1->GetEntries();
+  Int_t N2 = (Int_t)T2->GetEntries();
+  // TBranches
+  TBranch *br1 = T1->GetBranch(branchName);
+  TBranch *br2 = T2->GetBranch(branchName);
+  if ( (br1==0x0) | (br2==0x0) ) {
+    gFile->Error("unbinnedKSTest", "Specified branch missing from one or both TTrees.");
+    return TMath::QuietNaN();
+  }
+  T1->SetBranchAddress(branchName, &q1);
+  T2->SetBranchAddress(branchName, &q2);
+  // raw arrays
+  Double_t *arr1 = new Double_t[N1];
+  Double_t *arr2 = new Double_t[N2];
+  // index arrays
+  Int_t *ind1 = new Int_t[N1];
+  Int_t *ind2 = new Int_t[N2];
+  // sorted arrays
+  Double_t *arr1S = new Double_t[N1];
+  Double_t *arr2S = new Double_t[N2];
+  // fill, sort, re-fill (use kFALSE to sort ascending)
+  // Note on N1,N2 loops: Yes, there is a more-efficient (single-loop) way to do this;
+  // but the switching is non-trivial and code running today is better than code in debug tomorrow, right? (Right?)
+  // first fill
+  for ( k=0; k<N1; k++ ) {
+    T1->GetEntry(k);
+    arr1[k] = q1;
+  }
+  for ( k=0; k<N2; k++ ) {
+    T2->GetEntry(k);
+    arr2[k] = q2;
+  }
+  // sort
+  TMath::Sort(N1, arr1, ind1, kFALSE);
+  TMath::Sort(N2, arr2, ind2, kFALSE);
+  // second fill
+  for ( k=0; k<N1; k++ ) {
+    arr1S[k] = arr1[ind1[k]];
+  }
+  for ( k=0; k<N2; k++ ) {
+    arr2S[k] = arr2[ind2[k]];
+  }
+  // MAIN: Finally ready to calculate the K-S probability
+  // NOTE: THE "OPTION" ARGUMENT IS (ironically) NOT OPTIONAL, EVEN IF EMPTY!
+  P = TMath::KolmogorovTest( N1, arr1S, N2, arr2S, "" );
+  // all pau!   )
+  return P;
+}
+
+//______________________________________________________________________________
+// Zoom
+void TDuvallUtils::( Double_t zoomFactor )
+{
+  TString zoomCmd1 = "TView *view = gPad->GetView(); ";
+  TString zoomCmd2 = TString::Format("view->ZoomView(gPad, %f)", zoomFactor);
+  gInterpreter->ProcessLine(zoomCmd1.Data());
+  gInterpreter->ProcessLine(zoomCmd2.Data());
+  return;
 }
 
 ////______________________________________________________________________________

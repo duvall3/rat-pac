@@ -21,7 +21,6 @@
 void loadAllKeys() {
 
 // init
-TString cintLine;
 TKey *key;
 TList *keyList = gDirectory->GetListOfKeys();
 TIter i(keyList);
@@ -29,8 +28,7 @@ TIter i(keyList);
 // main
 for ( i=keyList->begin(); i!=keyList->end(); ++i ) {
   key = (TKey*)*i;
-  cintLine.Form("%s;", key->GetName());
-  gInterpreter->ProcessLine(cintLine.Data());
+  key->ReadObj();
 }
 
 // all pau!   )
