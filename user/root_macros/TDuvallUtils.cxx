@@ -66,7 +66,8 @@ TEntryList* TDuvallUtils::EntryList( const char* selection, TTree *T )
 }
 
 //______________________________________________________________________________
-// ExportPlots
+// ExportPlots -- simple macro to extract all the TCanvas objects
+//   from a ROOT file and save them in the desired graphics format
 void TDuvallUtils::ExportPlots( const char* filename, const TString kGraphicsSaveFormat )
 {
   // for OpenGL:
@@ -123,7 +124,12 @@ void TDuvallUtils::ExportPlots( const char* filename, const TString kGraphicsSav
 }
 
 //______________________________________________________________________________
-// FindMatchingObject
+// FindMatchingObject -- scan a TCollection for an object whose name matches a regex
+// -- Usage: TObject* findMatchingObject( TRegexp regex )
+//           TObject* findMatchingObject( const char* pattern )
+// -- Note: It's hard to believe this isn't already a builtin function
+//      for all classes inheriting from TCollection;
+//      but if it exists, I haven't found it.
 TObject* TDuvallUtils::FindMatchingObject( TCollection* colxn, TRegexp patternRE )
 {
   // init
@@ -147,7 +153,8 @@ TObject* TDuvallUtils::FindMatchingObject( TCollection* colxn, TRegexp patternRE
 }
 
 //______________________________________________________________________________
-// FindVarsOfType
+// FindVarsOfType -- list global variables of a specified type
+// -- e.g., 'FindVarsOfType("canvas");' or 'FindVarsOfType("TObjArray");'
 TList* TDuvallUtils::FindVarsOfType( const char* varType, Bool_t kCaseSensitive )
 {
   // init
@@ -184,7 +191,10 @@ TList* TDuvallUtils::FindVarsOfType( const char* varType, Bool_t kCaseSensitive 
 }
 
 //______________________________________________________________________________
-// ListFiles
+// ListFiles -- function to return a TList of TSystemFiles
+//   in the current (system) directory whose names
+//   match a pattern
+
 TList* TDuvallUtils::ListFiles( const char* pattern )
 {
   // init
@@ -206,7 +216,8 @@ TList* TDuvallUtils::ListFiles( const char* pattern )
 }
 
 //______________________________________________________________________________
-// LoadAllKeys
+// LoadAllKeys-- load all keys in current directory into memory
+// !!! USE WITH CAUTION !!! -- large files will overload memory and crash
 void TDuvallUtils::LoadAllKeys()
 {
   TKey *key;
@@ -221,8 +232,9 @@ void TDuvallUtils::LoadAllKeys()
 }
 
 //______________________________________________________________________________
-// LogBins
-// Lightly adapted from code generously provided by Marc F. Bergevin
+// LogBins -- simple macro to get an array of logarithmically-spaced values,
+//   e.g., for use in logarithmically-binned histograms
+// -- Lightly adapted from code graciously provided by Marc F. Bergevin
 Double_t* TDuvallUtils::LogBins( Double_t xmin, Double_t xmax )
 {
   // array size is currently hard-coded at 100 //HC//
@@ -248,7 +260,9 @@ Double_t* TDuvallUtils::LogBins( Double_t xmin, Double_t xmax )
 /* } */
 
 //______________________________________________________________________________
-// Prob2Sig
+// Prob2Sig -- simple function to convert a probability to a significance level
+// -- This probably already exists as a built-in function somewhere,
+//      but I'm adding it here for convenience
 Double_t TDuvallUtils::Prob2Sig( Double_t prob )
 {
   // convert, accounting for special values
@@ -264,7 +278,7 @@ Double_t TDuvallUtils::Prob2Sig( Double_t prob )
 }
 
 //______________________________________________________________________________
-// RadarPlot
+// RadarPlot -- simple macro to redraw any 1-D histogram as a radar plot
 TH2D* TDuvallUtils::RadarPlot( TH1D *h_in, Option_t *ho, const Bool_t kNewCanvas )
 {
   // force proportional scaling
@@ -361,7 +375,10 @@ TH2D* TDuvallUtils::RadarPlot( TH1D *h_in, Option_t *ho, const Bool_t kNewCanvas
 }
 
 //______________________________________________________________________________
-// ShiftStats
+// ShiftStats -- helper macro to translate stats box horizontally
+// -- primarily intended for keeping the stats box from blocking
+//    the top of the color scale when histograms are drawn
+//    with "colz" and similar options
 void TDuvallUtils::ShiftStats( TVirtualPad* p, Double_t deltaX, Double_t deltaY )
 {
   // init
@@ -384,7 +401,9 @@ void TDuvallUtils::ShiftStats( TVirtualPad* p, Double_t deltaX, Double_t deltaY 
 }
 
 //______________________________________________________________________________
-// Sig2Prob
+// Sig2Prob -- simple function to convert significance level to probability
+// -- This probably already exists as a built-in function somewhere,
+//      but I'm adding it here for convenience
 Double_t TDuvallUtils::Sig2Prob( Double_t sig )
 {
 // convert, accounting for special values
@@ -400,7 +419,13 @@ Double_t TDuvallUtils::Sig2Prob( Double_t sig )
 }
 
 //______________________________________________________________________________
-// UnbinnedKSTest
+// UnbinnedKSTest -- function to execute *unbinned* TMath::KolmogorovTest on a pair of TTrees
+//   containing TBranches  with matching names
+// -- Usage: Double_t P = unbinnedKSTest( TTree *T1, TTree *T2, const char* branchName )
+// -- Branches must be of type Double_t
+// -- P is the probability for match
+// -- *T1 and *T2 are pointers to the two input trees
+// -- See the notes in TMath::KolmogorovTest and TH1::KolmogorovTest for details
 Double_t TDuvallUtils::UnbinnedKSTest( TTree *T1, TTree *T2, const char* branchName )
 {
   // Note: Arrays must be sorted before they can be
@@ -460,7 +485,7 @@ Double_t TDuvallUtils::UnbinnedKSTest( TTree *T1, TTree *T2, const char* branchN
 }
 
 //______________________________________________________________________________
-// Zoom
+// Zoom -- simple shortcut for adjusting zoom when running interactively
 void TDuvallUtils::( Double_t zoomFactor )
 {
   TString zoomCmd1 = "TView *view = gPad->GetView(); ";

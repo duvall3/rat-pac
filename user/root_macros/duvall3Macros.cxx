@@ -76,6 +76,7 @@ gROOT->LoadMacro("generateRefDistrib.cxx");
 gROOT->LoadMacro("generateTestSampleDistrib.cxx");
 /* gROOT->LoadMacro("unbinnedKSTest.cxx"); */
 /* gROOT->LoadMacro("refCompare.cxx"); */
+gROOT->LoadMacro("KSComparison.cxx");
 
 }
 

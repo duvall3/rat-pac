@@ -1,5 +1,4 @@
-// loadAllKeys -- crude method to load all keys in current directory into memory
-//   -- current implementation works in CINT interpreter *only*
+// loadAllKeys -- load all keys in current directory into memory
 // !!! USE WITH CAUTION !!! -- large files will overload memory and crash
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 12/2021 ~ //
 

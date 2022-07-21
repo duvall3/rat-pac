@@ -27,7 +27,7 @@ namespace TDuvallUtils {
   TList*		ListFiles(const char* pattern=".*\.root");			// builtin returns void, this returns the list
   void			LoadAllKeys();							// shortcut to load all keys from the current file into memory -- *! USE WITH CAUTION !*
   Double_t*		LogBins(Double_t xmin=1.e-1, Double_t xmax=1.e2); 		// wonderful shortcut for setting up log-scaled histograms (courtesy Marc F. Bergevin)
-  /* void		PrintArrayT(Int_t N, type T* x);				// coming once I get the hang of templated functions */
+  /* void		PrintArrayT(Int_t N, type T x);					// coming once I get the hang of templated functions */
   Double_t		Prob2Sig(Double_t prob);					// convert probability to significance
   TH2D*			RadarPlot(TH1D *h_in, Option_t *ho="cyllego", const Bool_t kNewCanvas=kTRUE);	// convert TH1D* to radar plot
   TH2D*			RadarPlot(TH1F *h_in,Option_t *ho="cyllego", const Bool_t kNewCanvas=kTRUE ) { return radarPlot((TH1D*)h_in,ho); }	// overload RadarPlot for TH1F
