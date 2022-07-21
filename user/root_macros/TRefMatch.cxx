@@ -363,7 +363,6 @@ void TRefMatch::RefCompare()
     V.SetElements( v->GetMatrixArray() );
     phiRef = V[0];
     M(k,0) = phiRef;
-    /* M(k,1) = UnbinnedKSTest( T, T_ts, fTestVarName ); */
     M(k,1) = UnbinnedKSTest( T_ts, T, fTestVarName, "", fnTestSampleEvents, fnReferenceEvents );
     M(k,2) = Prob2Sig( M(k,1) );
     f->Close();
