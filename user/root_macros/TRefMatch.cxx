@@ -350,6 +350,7 @@ void TRefMatch::RefCompare()
   Double_t phiRef;
 
   // MAIN
+  printf("Processing Kolmogorov-Smirnov tests...\n");
   for ( k=0; k<N; k++ ) {
     sf = (TSystemFile*)fReferenceFileList->At(k);
     currentDirName.Form("%s", sf->GetTitle());
@@ -358,8 +359,8 @@ void TRefMatch::RefCompare()
     f = TFile::Open( currentFileName.Data() );
     f->cd();
     T = (TTree*)gDirectory->Get("T");
-    params = (TMap*)gDirectory->Get("params");	// TODO: either generalize or eliminate the need for params
-    v = (TVectorD*)params->GetValue("phiTrue");	// TODO: either generalize or eliminate the need for params
+    params = (TMap*)gDirectory->Get("params");
+    v = (TVectorD*)params->GetValue("phiTrue");
     V.SetElements( v->GetMatrixArray() );
     phiRef = V[0];
     M(k,0) = phiRef;
@@ -367,6 +368,7 @@ void TRefMatch::RefCompare()
     M(k,2) = Prob2Sig( M(k,1) );
     f->Close();
   }
+  printf("Done.\n");
 
   // sort
   TMatrixD MS(N,3);
@@ -387,7 +389,7 @@ void TRefMatch::RefCompare()
     if (MS[k][1]<0.1) printf(" "); // because printf %2.1f doens't want to work for me today
     printf("%.2f\t\t\t%.3e\n", 100.*MS[k][1], MS[k][2]);
   }
-  printf("///\n\n");
+  printf("###\n\n");
 
   // store results
   fResultsMatrix.ResizeTo(N,3);
@@ -551,6 +553,6 @@ void TRefMatch::PrintResults()
     this->Info("TRefMatch::PrintResults", "Please run RefCompare first to get results.");
     return;
   }
-  printf( "\n/// Results Summary ///\n\tBest Match: %.2f °\n\tMatch Probability: %2.2f %%\n\tMatch Significance: %.3e σ\n///\n\n", fResults[0], 100.*fResults[1], fResults[2] );
+  printf( "\n/// Results Summary ///\n\tBest Match: %.2f °\n\tMatch Probability: %2.2f %%   <--->   Match Significance: %.3e σ\n###\n\n", fResults[0], 100.*fResults[1], fResults[2] );
 }
 
