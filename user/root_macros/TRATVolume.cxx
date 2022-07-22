@@ -5,6 +5,7 @@
 //    -- This does *not* need to be done manually if TRATVolume objects
 //         are created by TRATGeo::Build()
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 8/2021 ~ //
+// Updated 07/2022
 
 //Copyright (C) 2021 Mark J. Duvall
 //
@@ -27,8 +28,6 @@
 #if !defined(__CLING__)
   ClassImp(TRATVolume);
 #endif
-
-//namespace TRV {
 
 //______________________________________________________________________________
 // default ctor
@@ -107,7 +106,7 @@ TRATVolume::TRATVolume( const char* name, const TMap *db )
 
 //______________________________________________________________________________
 // SetVolume
-TRATVolume::SetVolume(const char* newNameChr)
+void TRATVolume::SetVolume(const char* newNameChr)
 {
   TString errLoc = TString::Format("%s::TRATVolume(const char* name)", defaultName.Data());
   if (newNameChr == "") {
@@ -122,11 +121,12 @@ TRATVolume::SetVolume(const char* newNameChr)
   fVolName = TString(newNameChr);
   FindAll();
   FindAbsolutePosition();
+  return;
 }
 
 //______________________________________________________________________________
 // FindAll
-TRATVolume::FindAll()
+void TRATVolume::FindAll()
 {
   FindExperiment();
   FindVolumeType();
@@ -135,11 +135,12 @@ TRATVolume::FindAll()
   FindMother();
   FindSize();
   FindRelativePosition();
+  return;
 }
 
 //______________________________________________________________________________
 // FindExperiment
-TRATVolume::FindExperiment()
+void TRATVolume::FindExperiment()
 {
   if ( fDB == 0x0 ) {
     TString warnLoc = "TRATVolume::FindExperiment()";
@@ -156,22 +157,24 @@ TRATVolume::FindExperiment()
     tos = (TObjString*)toa->At(toa->GetEntries()-1);
     fExperiment = tos->GetString();
   }
+  return;
 }
 
 //______________________________________________________________________________
 // FindMaterial
-TRATVolume::FindMaterial()
+void TRATVolume::FindMaterial()
 {
   keyStrVol.Form("GEO[%s].material", fVolNameChr);
   TObjString* typeTOS = fDB->GetValue(keyStrVol.Data());
   TString volMaterial = typeTOS->GetString();
   volMaterial.ReplaceAll("\"","");
   fMaterial = volMaterial;
+  return;
 }
 
 //______________________________________________________________________________
 // FindDensity
-TRATVolume::FindDensity()
+void TRATVolume::FindDensity()
 {
   TString keyStr = TString::Format("MATERIAL[%s].density", fMaterial.Data());
   TObjString *dos = (TObjString*)fDB->GetValue(keyStr.Data());
@@ -179,33 +182,36 @@ TRATVolume::FindDensity()
   dStr.ReplaceAll("d","");
   Double_t density = dStr.Atof();
   fDensity = density;
+  return;
 }
 
 //______________________________________________________________________________
 // FindVolumeType
-TRATVolume::FindVolumeType()
+void TRATVolume::FindVolumeType()
 {
   keyStrVol.Form("GEO[%s].type", fVolNameChr);
   TObjString* typeTOS = fDB->GetValue(keyStrVol.Data());
   TString volumeType = typeTOS->GetString();
   volumeType.ReplaceAll("\"","");
   fVolumeType = volumeType;
+  return;
 }
 
 //______________________________________________________________________________
 // FindMother
-TRATVolume::FindMother()
+void TRATVolume::FindMother()
 {
   keyStrVol.Form("GEO[%s].mother", fVolNameChr);
   TObjString* motherTOS = fDB->GetValue(keyStrVol.Data());
   TString mother = motherTOS->GetString();
   mother.ReplaceAll("\"","");
   fMother = mother;
+  return;
 }
 
 //______________________________________________________________________________
 // FindSize
-TRATVolume::FindSize()
+void TRATVolume::FindSize()
 {
   TString valStrRelative;
   TObjString* valTOS, dxTOS, dyTOS, dzTOS;
@@ -224,11 +230,12 @@ TRATVolume::FindSize()
     dzTOS = (TObjString*)sizeArr->At(2);
     fSize = TVector3( dxTOS.GetString().Atoll(), dyTOS.GetString().Atoll(), dzTOS.GetString().Atoll() ); // ROOT wanted "." member access operators
   }
+  return;
 }
 
 //______________________________________________________________________________
 // FindRelativePosition
-TRATVolume::FindRelativePosition()
+void TRATVolume::FindRelativePosition()
 {
   TString valStrRelative;
   TObjString* valTOS, xTOS, yTOS, zTOS;
@@ -249,11 +256,12 @@ TRATVolume::FindRelativePosition()
   } else { // no position given ==> use default at (0,0,0)
     fRelativePosition = TVector3(0.0,0.0,0.0);
   }
+  return;
 }
 
 //______________________________________________________________________________
 // FindAbsolutePosition
-TRATVolume::FindAbsolutePosition()
+void TRATVolume::FindAbsolutePosition()
 {
   TRATVolume *motherVol;
   if (fMother == "") {
@@ -281,11 +289,12 @@ TRATVolume::FindAbsolutePosition()
   fAbsolutePosition = fRelativePosition + volTrans;
   delete motherVol;
   }
+  return;
 }
 
 //______________________________________________________________________________
 // Area	// m^2	// currently box-type only
-TRATVolume::Area()
+Double_t TRATVolume::Area()
 {
   if ( fVolumeType == "box" ) {
     Double_t l = 2*fSize.X()*1.e-3, w = 2*fSize.Y()*1.e-3, h = 2*fSize.Z()*1.e-3;
@@ -300,7 +309,7 @@ TRATVolume::Area()
 
 //______________________________________________________________________________
 // Volume // m^3  // currently box-type only
-TRATVolume::Volume()
+Double_t TRATVolume::Volume()
 {
   if ( fVolumeType == "box" ) {
     Double_t l = 2*fSize.X()*1.e-3, w = 2*fSize.Y()*1.e-3, h = 2*fSize.Z()*1.e-3;
@@ -313,43 +322,27 @@ TRATVolume::Volume()
   }
 }
 
-////______________________________________________________________________________
-//// NuFlux
-//TRATVolume::NuFlux( Double_t standoff, Double_t reactorNuRate )
-//{
-//  Double_t nuFlux = reactorNuRate / ( 4 * TMath::Pi() * standoff**2 );
-//  TString s = TString::Format("%e", nuFlux);
-//  TObjString *os = new TObjString(s.Data());
-//  return os;
-//}
-//
-////______________________________________________________________________________
-//// IBDVolRate
-//TRATVolume::IBDVolRate( Double_t standoff, Double_t reactorNuRate, Double_t nH )
-//{
-//  TObjString *os = (TObjString*)NuFlux(standoff, reactorNuRate);
-//  Double_t nuFlux = os->GetString().Atof();
-//  Double_t volRate = nH * 5.e-43 * nuFlux; // IBD cross-section ~ 5x10^-43 cm^2 at E_nu ~ 2 MeV (mTC Invited Article)
-//  TString svr = TString::Format("%e", volRate);
-//  TObjString *osvr  = new TObjString(svr.Data());
-//  return osvr;
-//}
-//
-////______________________________________________________________________________
-//// IBDRate
-//TRATVolume::IBDRate()
-//{
-//  TObjString* osvr = (TObjString*)IBDVolRate( 500., 4.e18, 5.16e22 );
-//  Double_t ibdvr = osvr->GetString().Atof();
-//  Double_t ibdr = ibdvr * VolumeCM();
-//  TString sr = TString::Format("%e", ibdr);
-//  TObjString *osr = new TObjString(sr.Data());
-//  return osr;
-//}
+//______________________________________________________________________________
+// NuFlux
+Double_t TRATVolume::NuFlux( Double_t standoff, Double_t reactorNuRate )
+{
+  Double_t nuFlux = reactorNuRate / ( 4 * TMath::Pi() * standoff**2 );
+  return nuFlux;
+}
+
+//______________________________________________________________________________
+// IBDVolRate
+// some typical values: standoff = 500 cm, reactorNuRate = 4e18 nu_e_bar/s, nH = 5.16e22 hydrogens/cm^3
+Double_t TRATVolume::IBDVolRate( Double_t standoff, Double_t reactorNuRate, Double_t nH )
+{
+  Double_t nuFlux = NuFlux(standoff, reactorNuRate);
+  Double_t volRate = nH * 5.e-43 * nuFlux; // IBD cross-section ~ 5x10^-43 cm^2 at E_nu ~ 2 MeV (mTC Invited Article)
+  return volRate;
+}
 
 //______________________________________________________________________________
 // override Print
-TRATVolume::Print()
+void TRATVolume::Print()
 {
   printf("\n");
   printf("%s at 0x%x\n", Class_Name(), this);
@@ -366,31 +359,39 @@ TRATVolume::Print()
   printf("Relative Position (mm): %f  %f  %f\n", fRelativePosition.X(), fRelativePosition.Y(), fRelativePosition.Z());
   printf("Absolute Position (mm): %f  %f  %f\n", fAbsolutePosition.X(), fAbsolutePosition.Y(), fAbsolutePosition.Z());
   printf("\n");
+  return;
 }
 
 //______________________________________________________________________________
-// PrintDerivedQuantities
-TRATVolume::PrintDerivedQuantities()
+// PrintDerived
+void TRATVolume::PrintDerived()
 {
   printf("\n");
   printf("Volume Name: %s\n", GetName());
   printf("Area:\t%e m^2\t%e cm^2\t%e mm^2\n", Area(), AreaCM(), AreaMM());
   printf("Volume:\t%e m^3\t%e cm^3\t%e mm^3\t%e L\n", Volume(), VolumeCM(), VolumeMM(), VolumeL());
   printf("Mass:\t%e kg\t\t%e g\t\t%e t\n", Mass(), MassG(), MassTons());
-  printf("Muogenic Neutron Rate at Sea Level (cps): %e\n", MuNeutronRate());
+  /* printf("Muogenic Neutron Rate at Sea Level (cps): %e\n", MuNeutronRate()); */
   printf("\n");
+  return;
 }
 
-////______________________________________________________________________________
-//TRATVolume::
-//{
-//}
+// TODO: HOLD until args converted to data members (see header file)
+/* //______________________________________________________________________________ */
+/* // PrintIBD */
+/* void TRATVolume::PrintIBD() */
+/* { */
+/*   printf("\n"); */
+/*   printf("Volume Name: %s\n", GetName()); */
+/*   printf("Reactor-Antineutrino Flux: %e nu_e_bar / cm^2 / s\n", NuFlux(...); */
+/*   printf("Volumetric IBD Rate: %e IBD / cm^3 / s\n", IBDVolRate(...); */
+/*   printf("IBD Rate for this volume: %e IBD / s\n", IBDRate(...); */
+/*   printf("\n"); */
+/* } */
 
 ////______________________________________________________________________________
 //TRATVolume::
 //{
 //}
-
-//} // namespace TRV
 
 // all pau!   )

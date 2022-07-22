@@ -5,6 +5,7 @@
 //    -- This does *not* need to be done manually if TRATVolume objects
 //         are created by TRATGeo::Build()
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 9/2021 ~ //
+// Updated 07/2022
 
 //Copyright (C) 2021 Mark J. Duvall
 //
@@ -23,11 +24,6 @@
 
 #ifndef TRATVolume
 #define TRATVolume
-
-#include "TFile.h"
-#include "TClass.h"
-
-//namespace TRV {
 
 class TRATVolume : public TClass {
 
@@ -89,8 +85,7 @@ public:
   TVector3*		GetSize() const { return &fSize; }
   TVector3*		GetRelativePosition() const { return &fRelativePosition; }
   TVector3*		GetAbsolutePosition() const { return &fAbsolutePosition; }
-  // derived quantities:
-  // NOTE: currently only working after TRATGeo::ShowAll() has been called
+  // general derived quantities:
   Double_t		Area(); // m^2		// currently box-type only
   Double_t		AreaCM() { return Area()*(1.e2)**2; }
   Double_t		AreaMM() { return Area()*(1.e3)**2; }
@@ -101,14 +96,18 @@ public:
   Double_t		Mass() { return fDensity * VolumeL(); }  // kg
   Double_t		MassG() { return GetDensity() * VolumeCM(); }
   Double_t		MassTons() { return GetDensity() * Volume(); }
-  void			CheckDerivedQuantities(); //debug
+  // IBD-specific derived quantities: //TODO: convert some or all of these input arguments into data members
+  Double_t		NuFlux(Double_t standoff, Double_t reactorNuRate);			// nu_e_bar flux (nu_e_bar/cm^2/s) at detector location
+  Double_t		IBDVolRate(Double_t standoff, Double_t reactorNuRate, Double_t nH);	// volumetric IBD rate (IBD/cm^3/s) for this volume
+  Double_t		IBDRate(Double_t standoff, Double_t reactorNuRate, Double_t nH) { return VolumeCM()*IBDVolRate(standoff, reactorNuRate, nH); }	// total IBD rate (IBD/s) for this volume
+  // print summaries:
+  void			PrintDerived();			// print area, volume, mass in all units
+  /* void		PrintIBD();			// print IBD parameters // TODO: hold until args converted to members as specified above */
 
 //Integrating the TRATVolume class to ROOT.
-ClassDef(TRATVolume,4)
+ClassDef(TRATVolume,5)
 
 }; //end class
-
-//} // namespace TRV
 
 // all pau!   )
 #endif

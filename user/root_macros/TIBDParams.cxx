@@ -2,25 +2,7 @@
 // -- NOTE: Default units are as follows, though some alternatives are provided:
 //      * {Length,Area,Volume} (cm^{1,2,3})    * Energy (MeV)    * Time (s)
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 11/2021 ~ //
-// -- NOTE: Due to currently-unsolved output issues, the best way to calculate
-//      an IBD rate at present is as follows:
-//      1) Create and build an instance of TRATGeo as normal
-//      2) Create and initialize an instance of TRATVolume*
-//           from the TRATGeo as normal
-//      3) Create and initialize an instance of TIBDParams
-//           from the TRATVolume* as normal
-//      4) Create a TVector3 and set/initialize it to TRATVolume::GetSize()
-//      5) Call TIBDParams::IBDVolRate()
-//      6) Multiply the result by the TRATVolume::{X,Y,Z}()
-//    Example:
-//      TRATGeo g; g.Build();
-//      TRATVolume *v = (TRATVolume*)g.GetVolume("target_cube_array");
-//      TIBDParams p(v);
-//      TVector3 s = v->GetSize();
-//      p.IBDVolRate();
-//      Double_t ibdvr = /* copy-paste printed output from previous command */
-//      Double_t ibdRate = ibdvr * s->X() * s->Y() * s->Z();
-//      printf("IBDRate = %e\n", ibdRate);
+// Updated 07/2022
 
 //Copyright (C) 2021 Mark J. Duvall
 //
@@ -87,37 +69,41 @@ TIBDParams::TIBDParams( Double_t reactorNuRate, Double_t standoff, Double_t nH, 
 
 //______________________________________________________________________________
 // SetReactorPower
-TIBDParams::SetReactorPower( Double_t newPower )
+void TIBDParams::SetReactorPower( Double_t newPower )
 {
   fReactorPower = newPower;
   fReactorNuRate =  newPower * GetFluxPowerRatio();
+  return;
 }
 
 //______________________________________________________________________________
 // SetReactorNuRate
-TIBDParams::SetReactorNuRate( Double_t newNuRate )
+void TIBDParams::SetReactorNuRate( Double_t newNuRate )
 {
   fReactorNuRate = newNuRate;
   fReactorPower =  newNuRate * GetFluxNuRateRatio();
+  return;
 }
 
 //______________________________________________________________________________
 // SetVolume
-TIBDParams::SetVolume( TRATVolume *TRV )
+void TIBDParams::SetVolume( TRATVolume *TRV )
 {
   TString errLoc, errMsg;
   if (TRV == 0) {
     errLoc.Form("TIBDParams::SetVolume");
     errMsg.Form("Invalid TRATVolume 0x%x.", TRV);
     this->Error(errLoc.Data(), errMsg.Data());
+    return;
   } else {
     fTRV = TRV;
+    return;
   }
 }
 
 //______________________________________________________________________________
 // NuFlux
-TIBDParams::NuFlux()
+Double_t TIBDParams::NuFlux()
 {
   Double_t sphArea = 4. * TMath::Pi() * fStandoff**2;
   Double_t nuFlux = fReactorNuRate / sphArea;
@@ -126,17 +112,17 @@ TIBDParams::NuFlux()
 
 //______________________________________________________________________________
 // IBDVolRate
-TIBDParams::IBDVolRate()
+Double_t TIBDParams::IBDVolRate()
 {
 //Double_t volRate = fnH * GetXS() * NuFlux();
   Double_t volRate = GetHydrogenDensity() * GetXS() * NuFlux();
-  printf("  IBDVolRate = %e IBD/cm^3/s\n", volRate); //debug
+  /* printf("  IBDVolRate = %e IBD/cm^3/s\n", volRate); //debug */
   return volRate;
 }
 
 //______________________________________________________________________________
 // MuNeutronRate
-TIBDParams::MuNeutronRate()
+Double_t TIBDParams::MuNeutronRate()
 {
   TString errLoc, errMsg;
   errLoc.Form("TIBDParams::MuNeutronRate()");
@@ -146,14 +132,15 @@ TIBDParams::MuNeutronRate()
     return 0;
   } else {
     Double_t muNR = GetMuNeutronFlux() * (fTRV->AreaCM());
-    printf("  MuNeutronRate = %e Hz\n", muNR); //debug
+    /* printf("  MuNeutronRate = %e Hz\n", muNR); //debug */
+    return;
     return muNR;
   }
 }
 
 //______________________________________________________________________________
 // IBDRate
-TIBDParams::IBDRate()
+Double_t TIBDParams::IBDRate()
 {
   TString errLoc, errMsg;
   errLoc.Form("TIBDParams::IBDRate()");
@@ -171,7 +158,7 @@ TIBDParams::IBDRate()
 //______________________________________________________________________________
 // override Print
 //TIBDParams::Print(Bool_t kPrint = kTRUE)
-TIBDParams::Print()
+void TIBDParams::Print()
 {
   Bool_t reqParams(kFALSE);
   printf("\n");
@@ -194,6 +181,7 @@ TIBDParams::Print()
     //MuNeutronRate\t\t%e\tn0 / cm^2 / s\n  IBDRate\t\t%e\tIBD / s\n", MuNeutronRate(), IBDRate());
   }
   printf("\n");
+  return;
 }
 
 ////______________________________________________________________________________

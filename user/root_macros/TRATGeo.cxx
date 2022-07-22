@@ -23,8 +23,6 @@
   ClassImp(TRATGeo);
 #endif
 
-//namespace TRG {
-
 const TString defaultName = "TRATGeo";
 const TString defaultTitle = "class for assembling geometry from RAT-PAC ROOT file";
 
@@ -46,7 +44,7 @@ TRATGeo::TRATGeo()
 
 //______________________________________________________________________________
 // FindExperiment
-TRATGeo::FindExperiment()
+void TRATGeo::FindExperiment()
 {
   if ( fDB == 0x0 ) {
     TString warnLoc = TString::Format("%s::FindExperiment", defaultName.Data());
@@ -65,11 +63,12 @@ TRATGeo::FindExperiment()
     tos = (TObjString*)toa->At(toa->GetEntries()-1);
     fExperiment = tos->GetString();
   }
+  return;
 }
 
 //______________________________________________________________________________
 // Init
-TRATGeo::Init()
+void TRATGeo::Init()
 {
   TString errLoc = "TRATGeo::Init()";
   if (gFile) {
@@ -87,11 +86,12 @@ TRATGeo::Init()
     return;
   }
   FindExperiment();
+  return;
 }
 
 //______________________________________________________________________________
 // FindCheckerboardActive
-TRATGeo::FindCheckerboardActive( const Int_t kDims ) // = 3
+void TRATGeo::FindCheckerboardActive( const Int_t kDims ) // = 3
 {
   // build check
   TString errLoc = "TRATGeo::GetCheckerboardActive()";
@@ -138,12 +138,12 @@ TRATGeo::FindCheckerboardActive( const Int_t kDims ) // = 3
       if (chkTest) fActiveCells->Add(v);
     } // end if -- target-cell regex
   } // end volume-list loop
-  return fActiveCells;
+  return;
 }
 
 //______________________________________________________________________________
 // FindCheckerboardInert
-TRATGeo::FindCheckerboardInert( const Int_t kDims ) // = 3
+void TRATGeo::FindCheckerboardInert( const Int_t kDims ) // = 3
 {
   // build check
   TString errLoc = "TRATGeo::GetCheckerboardActive()";
@@ -168,12 +168,12 @@ TRATGeo::FindCheckerboardInert( const Int_t kDims ) // = 3
       if ( fActiveCells->FindObject(v) == 0 ) fInertCells->Add(v);
     } // end if -- target-cell regex
   } // end volume-list loop
-  return fInertCells;
+  return;
 }
 
 //______________________________________________________________________________
 // Build(const char* tcRegexp)
-TRATGeo::Build(const char* tcRegexp)
+void TRATGeo::Build(const char* tcRegexp)
 {
   Int_t volCount; //debug
   Init();
@@ -208,31 +208,25 @@ TRATGeo::Build(const char* tcRegexp)
       fVolumeList->Add(v);
     } // end if -- relevant entry
   } // end db entry loop
-//ShowAll(); //KEEPME -- workaround for filling derived quantities
   infoMsg.Form("Done.\n");
   this->Info(infoLoc.Data(), infoMsg.Data());
-}
-
-//______________________________________________________________________________
-// Build()
-TRATGeo::Build()
-{
-  Build("");
+  return;
 }
 
 //______________________________________________________________________________
 // BuildCheckerboard
-TRATGeo::BuildCheckerboard( const Int_t kDims ) // = 3
+void TRATGeo::BuildCheckerboard( const Int_t kDims ) // = 3
 {
   FindCheckerboardActive(kDims);
   FindCheckerboardInert(kDims);
+  return;
 }
 
 //______________________________________________________________________________
 // GetVolume
 // -- Note: Result must be cast back to correct type
 // -- Example: TRATGeo g; g.Build(); TRATVolume *v = (TRATVolume*)g.GetVolume("water_shield");
-TRATGeo::GetVolume(const char* volumeName)
+TRATVolume* TRATGeo::GetVolume(const char* volumeName)
 {
   TRATVolume *v = (TRATVolume*)fVolumeList->FindObject(volumeName);
   if (v == 0) {
@@ -244,7 +238,7 @@ TRATGeo::GetVolume(const char* volumeName)
 
 //______________________________________________________________________________
 // FindVolumesContaining (TVector3)
-TRATGeo::FindVolumesContaining( TVector3 location, Bool_t kPrint )
+TList* TRATGeo::FindVolumesContaining( TVector3 location, Bool_t kPrint )
 {
   TList *volList = new TList;
   Double_t x = location.X(), y = location.Y(), z = location.Z();
@@ -263,12 +257,11 @@ TRATGeo::FindVolumesContaining( TVector3 location, Bool_t kPrint )
   }
   if (kPrint) volList->Print();
   return volList;
-  delete volList;
 }
 
 //______________________________________________________________________________
 // FindVolumesContaining (Double_t...)
-TRATGeo::FindVolumesContaining(Double_t x, Double_t y, Double_t z, Bool_t kPrint)
+TList* TRATGeo::FindVolumesContaining(Double_t x, Double_t y, Double_t z, Bool_t kPrint)
 {
   TList *volList = (TList*)FindVolumesContaining( TVector3(x,y,z), kPrint );
   return volList;
@@ -276,7 +269,7 @@ TRATGeo::FindVolumesContaining(Double_t x, Double_t y, Double_t z, Bool_t kPrint
 
 //______________________________________________________________________________
 // FindLowestVolumeContaining (TVector3)
-TRATGeo::FindLowestVolumeContaining( TVector3 location, Bool_t kPrint )
+TRATVolume* TRATGeo::FindLowestVolumeContaining( TVector3 location, Bool_t kPrint )
 {
   TRATVolume *v0, *v1;
   TList *volList = (TList*)FindVolumesContaining(location);
@@ -304,7 +297,7 @@ TRATGeo::FindLowestVolumeContaining( TVector3 location, Bool_t kPrint )
 
 //______________________________________________________________________________
 // FindLowestVolumeContaining (Double_t...)
-TRATGeo::FindLowestVolumeContaining( Double_t x, Double_t y, Double_t z, Bool_t kPrint )
+TRATVolume* TRATGeo::FindLowestVolumeContaining( Double_t x, Double_t y, Double_t z, Bool_t kPrint )
 {
   TRATVolume *v = (TRATVolume*)g.FindLowestVolumeContaining( TVector3(x,y,z), kPrint );
   return v;
@@ -312,15 +305,16 @@ TRATGeo::FindLowestVolumeContaining( Double_t x, Double_t y, Double_t z, Bool_t 
 
 //______________________________________________________________________________
 // ShowVolume
-TRATGeo::ShowVolume(const char* volumeName)
+void TRATGeo::ShowVolume(const char* volumeName)
 {
   TRATVolume* v = (TRATVolume*)fVolumeList->FindObject(volumeName);
   v->Print();
+  return;
 }
 
 //______________________________________________________________________________
 // ShowAll
-TRATGeo::ShowAll()
+void TRATGeo::ShowAll()
 {
   TRATVolume* v;
   TIter i(fVolumeList);
@@ -328,11 +322,12 @@ TRATGeo::ShowAll()
     v = (TRATVolume*)*i;
     v->Print();
   }
+  return;
 }
 
 //______________________________________________________________________________
 // Names
-TRATGeo::Names()
+void TRATGeo::Names()
 {
   TString volName;
   TRATVolume* vol;
@@ -342,11 +337,12 @@ TRATGeo::Names()
     volName = vol->GetName();
     printf( "%s\n", volName.Data() );
   }
+  return;
 }
 
 //______________________________________________________________________________
 // Types
-TRATGeo::Types()
+void TRATGeo::Types()
 {
   TString volName, volType;
   TRATVolume* vol;
@@ -357,11 +353,12 @@ TRATGeo::Types()
     volType = vol->GetVolumeType();
     printf( "%s\t\t%s\n", volName.Data(), volType.Data() );
   }
+  return;
 }
 
 //______________________________________________________________________________
 // Materials
-TRATGeo::Materials()
+void TRATGeo::Materials()
 {
   TString volName, volMaterial;
   TRATVolume* vol;
@@ -372,11 +369,12 @@ TRATGeo::Materials()
     volMaterial = vol->GetMaterial();
     printf( "%s\t\t%s\n", volName.Data(), volMaterial.Data() );
   }
+  return;
 }
 
 //______________________________________________________________________________
 // Mothers
-TRATGeo::Mothers()
+void TRATGeo::Mothers()
 {
   TString volName, volMother;
   TRATVolume* vol;
@@ -387,11 +385,12 @@ TRATGeo::Mothers()
     volMother = vol->GetMother();
     printf( "%s\t\t%s\n", volName.Data(), volMother.Data() );
   }
+  return;
 }
 
 //______________________________________________________________________________
 // Sizes
-TRATGeo::Sizes()
+void TRATGeo::Sizes()
 {
   TString volName;
   TVector3 *volSize;
@@ -403,11 +402,12 @@ TRATGeo::Sizes()
     volSize = vol->GetSize();
     printf( "%s\t\t%f  %f  %f\n", volName.Data(), volSize->X(), volSize->Y(), volSize->Z() );
   }
+  return;
 }
 
 //______________________________________________________________________________
 // Positions
-TRATGeo::Positions()
+void TRATGeo::Positions()
 {
   TString volName;
   TVector3 volPosition;
@@ -419,6 +419,7 @@ TRATGeo::Positions()
     volPosition = vol->GetAbsolutePosition();
     printf( "%s\t\t%f  %f  %f\n", volName.Data(), volPosition.X(), volPosition.Y(), volPosition.Z() );
   }
+  return;
 }
 
 ////______________________________________________________________________________
@@ -433,7 +434,7 @@ TRATGeo::Positions()
 
 //______________________________________________________________________________
 // override Print
-TRATGeo::Print()
+void TRATGeo::Print()
 {
   printf("\n");
   printf("%s\t%s\t%s\n", Class_Name(), GetName(), GetTitle());
@@ -445,8 +446,7 @@ TRATGeo::Print()
   printf("Volume List:  "); cout << fVolumeList << endl;
 //fVolumeList->Print();
   printf("\n");
+  return;
 }
-
-//} // namespace TRG
 
 // all pau!   )

@@ -2,6 +2,7 @@
 // -- NOTE: Default units are as follows, though some alternatives are provided:
 //      * {Length,Area,Volume} (cm^{1,2,3})    * Energy (MeV)    * Time (s)
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 11/2021 ~ //
+// Updated 07/2022
 
 //Copyright (C) 2021 Mark J. Duvall
 //
@@ -21,8 +22,6 @@
 #ifndef TIBDParams
 #define TIBDParams
 
-#include "TFile.h"
-#include "TClass.h"
 #include <TRATGeo.cxx>
 
 class TIBDParams : public TClass {
@@ -49,6 +48,7 @@ public:
   void			SetReactorNuRate( Double_t reactorNuRate );
   void			SetStandoff( Double_t standoff ) { fStandoff = standoff; }
   void			SetHydrogenDensity( Double_t nH ) { fnH = nH; }
+  void			SetVolume( TRATVolume* TRV );
   Double_t		GetReactorPower() const { return fReactorPower; }
   Double_t		GetReactorNuRate() const { return fReactorNuRate; }
   Double_t		GetStandoff() const { return fStandoff; }
@@ -62,7 +62,7 @@ public:
   Double_t		IBDRate(); // predicted IBD rate (IBD/s)
 
 //Integrating the TIBDParams class to ROOT.
-ClassDef(TIBDParams,1)
+ClassDef(TIBDParams,4)
 
 }; //end class
 

@@ -19,11 +19,7 @@
 #ifndef TRATGeo
 #define TRATGeo
 
-#include "TFile.h"
-#include "TClass.h"
 #include <TRATVolume.cxx>
-
-//namespace TRG {
 
 class TRATGeo : public TClass {
 
@@ -45,8 +41,8 @@ private:
 
 public:
   TRATGeo();
-  void			Build();				    // construct TRATVolume list
   void			Build(const char* tcRegexp);  		    // construct TRATVolume list
+  void			Build() { return Build(""); }		    // construct TRATVolume list
   void			BuildCheckerboard( const Int_t kDims = 3 ); // construct active/inert checkerboard lists
   TFile*                GetFile() const { return fFile; }
   virtual const char*   GetFileName() const { return fFileName; }
@@ -72,11 +68,9 @@ public:
   void			Positions();		// print absolute positions
 
 //Integrating the TRATGeo class to ROOT.
-ClassDef(TRATGeo,4)
+ClassDef(TRATGeo,5)
 
 }; //endclass
-
-//} // namespace TRG
 
 // all pau!   )
 #endif
