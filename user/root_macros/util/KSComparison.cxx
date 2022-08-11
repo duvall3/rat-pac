@@ -1,6 +1,20 @@
 // KSComparison -- small function to simplify use of TRefMatch class
 //   (from github.com/duvall3/rat-pac/tree/collab/user/root_macros)
 //   for a particular collection of datasets
+//
+// -- To use as simply as possible, run in a directory (e.g., "REF_DISTRIBS") containing:
+//    * All the reference ROOT files, named as "%2dDEG_ref.root"|phiTrue
+//    + A subdirectory named "TEST_SAMPLES", which contains:
+//      * The desired test-sample ROOT file(s), named as "%2dDEG_testsample.root"|phiTrue
+//
+// -- Example:   REF_DISTRIBS	<-- run here
+// 		 |
+// 		 |-- *DEG_ref.root
+// 		 |
+// 		 |--+ TEST_SAMPLES
+// 		    |
+// 		    |-- *DEG_testsample.root
+//
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 07/2022 ~ //
 
 //Copyright (C) 2022 Mark J. Duvall / T. Rocks Science
@@ -18,12 +32,11 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-/* void KSComparison( Double_t phiTrue = TMath::QuietNaN(), Long64_t nTestSampleEvents = 0, Long64_t nReferenceEvents = 0 ) { */
-TRefMatch* KSComparison( Double_t phiTrue = TMath::QuietNaN(), Long64_t nTestSampleEvents = 0, Long64_t nReferenceEvents = 0 ) {
+TRefMatch* KSComparison( Double_t phiTrue = TMath::QuietNaN(), const char* branchName = "phiSeg", Long64_t nTestSampleEvents = 0, Long64_t nReferenceEvents = 0 ) {
 
 // dependency check
-const char* refMatchClass = "TRefMatch.cxx";
-if (! gInterpreter->IsLoaded(refMatchClass) ) gROOT->LoadMacro(refMatchClass);
+const char* refMatchClassName = "TRefMatch.cxx";
+if (! gInterpreter->IsLoaded(refMatchClassName) ) gROOT->LoadMacro(refMatchClassName);
 
 // usage info
 TString MsgLoc("KSComparison");
@@ -50,12 +63,17 @@ Int_t phiInt = TMath::Nint(phiTrue);
 TString testFileName;
 testFileName.Form("TEST_SAMPLES/%02dDEG_testsample.root", phiInt);
 // create TRefMatch object
-TRefMatch *r = new TRefMatch( testFileName.Data(), "T_ts", "phi" );
+TRefMatch *r = new TRefMatch( testFileName.Data(), "T_ts", branchName );
 r->FillReferenceFileList();
 r->SetnEvents( nTestSampleEvents, nReferenceEvents );
 r->RefCompare();
 r->DrawResults();
+r->SaveResults();
+r->Close();
 
 // all pau!   )
 return r;
 }
+
+// overload for Int_t phiTrue input
+TRefMatch* KSComparison( Int_t phiTrue = TMath::QuietNaN(), const char* branchName = "phiSeg", Long64_t nTestSampleEvents = 0, Long64_t nReferenceEvents = 0 ) { return KSComparison( (Double_t)phiTrue, branchName, nTestSampleEvents, nReferenceEvents ); }

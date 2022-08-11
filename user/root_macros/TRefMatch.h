@@ -36,12 +36,13 @@ private:
   TFile*		fOutFile;		// output file
   TRegexp		fReferenceFilePattern;	// regex describing reference files
   TSystemDirectory*	fReferenceFileDir;	// directory containing reference files
-  Long64_t		fnTestSampleEvents;		// number of events to use from test-sample tree (default value 0 will use all events)
-  Long64_t		fnReferenceEvents;		// number of events to use from reference trees (default value 0 will use all events)
+  Long64_t		fnTestSampleEvents;	// number of events to use from test-sample tree (default value 0 will use all events)
+  Long64_t		fnReferenceEvents;	// number of events to use from reference trees (default value 0 will use all events)
   Double_t		fProb;			// match probability (current entry)
   Double_t		fSig;			// match significance (current entry)
   TMatrixD		fResultsMatrix;		// matrix of comparison results
   TVectorD		fResults;		// 3x1 vector containing best match value and corresponding probability and significance
+  TFile*		fBestMatchFile;		// address of best-match reference file
   Bool_t		fkHasInit;		// status indicator for whether Init has been called yet
   Bool_t		fkHasRun;		// status indicator for whether RefComp has been called yet
   TCanvas*		fCanvas;		// canvas for drawing results
@@ -55,6 +56,7 @@ private:
   void			SetSig( Double_t sig ) { fSig = sig; }
   void			SetResultsMatrix( TMatrixD resmat ) { fResultsMatrix = resmat; }
   void			SetResults( TVectorD res ) { fResults = res; }
+  void			SetBestMatchFile( TFile* bestMatchFile ) { fBestMatchFile = bestMatchFile; }
   void			SetCanvas( TCanvas *c ) { fCanvas = c; }
   void			SetTestSampleHist( TH1D* h ) { fTestSampleHist = h; }
   void			SetResultsGraph( TGraph *g ) { fResultsGraph = g; }
@@ -83,6 +85,7 @@ public:
   Double_t		GetSig() { return fSig; }
   TMatrixD		GetResultsMatrix() { return fResultsMatrix; }
   TVectorD		GetResults() { return fResults; }
+  TFile*		GetBestMatchFile() { return fBestMatchFile; }
   TCanvas*		GetCanvas() { return fCanvas; }
   TH1D*			GetTestSampleHist() { return fTestSampleHist; }
   TGraph*		GetResultsGraph() { return fResultsGraph; }
@@ -106,12 +109,12 @@ public:
   void			PrintVerbose();				// mostly settings
   void			PrintResults();				// results summary
   // save and / or close
-  void			Save(const char* saveName);		// save object
+  void			SaveResults();				// print canvas and save object
   void			Close();				// close pads, files, etc.
 
 
 //Integrating the TRefMatch class to ROOT.
-ClassDef(TRefMatch,1)
+ClassDef(TRefMatch,2)
 
 }; //end class
 

@@ -1,7 +1,8 @@
 // TRefMatch -- class for implementing the reference-matching algorithm
 //   described in this repository at $RATROOT/user/ref_matching/README.{md,html}
-// NOTE: UnbinnedKSTest can be called on *any* pair of TTrees; creating
-//   an instance of TRefMatch is not necessary
+// NOTE: To run an Unbinned Komogorov-Smirnov Test on *any* pair of TTrees
+//   (i.e., without using this class), see the standalone version UnbinnedKSTest
+//   in the the TDuvallUtils library at $RATROOT/user/root_macros/TDuvallUtils.{h,cxx}
 // Standard Usage (* = always required):
 // * 1) Instantiate (NOTE: must construct with "new")
 //   2) Call Init ("setter version") if used default ctor
@@ -106,6 +107,7 @@ void TRefMatch::Init()
   fResultsGraph = 0x0;
   printf("Init complete.\n");
   fkHasInit = kTRUE;
+  return;
 }
 
 //______________________________________________________________________________
@@ -123,6 +125,7 @@ void TRefMatch::Init( const char* fileName, const char* treeName , const char* b
     fTestSampleBranch = 0x0;
   }
   Init();
+  return;
 }
 
 //______________________________________________________________________________
@@ -134,6 +137,7 @@ void TRefMatch::SetReferenceFileDir( TSystemDirectory* refFileDir )
   } else {
     this->Error("TRefMatch::SetReferenceFileDir", "Invalid directory.");
   }
+  return;
 }
 
 //______________________________________________________________________________
@@ -143,6 +147,7 @@ void TRefMatch::SetReferenceFileDir( const char* refFileDirName )
   TSystemDirectory* sd = new TSystemDirectory;
   sd->SetDirectory(refFileDirName);
   SetReferenceFileDir(sd);
+  return;
 }
 
 //______________________________________________________________________________
@@ -150,6 +155,7 @@ void TRefMatch::SetReferenceFileDir( const char* refFileDirName )
 void TRefMatch::SetReferenceFilePattern( TRegexp patternRE )
 {
   fReferenceFilePattern = patternRE;
+  return;
 }
 
 //______________________________________________________________________________
@@ -158,6 +164,7 @@ void TRefMatch::SetReferenceFilePattern( const char* pattern )
 {
   TRegexp patternRE(pattern);
   SetReferenceFilePattern(patternRE);
+  return;
 }
 
 //______________________________________________________________________________
@@ -379,6 +386,7 @@ void TRefMatch::RefCompare()
       MS[k][j] = M[ind[k]][j];
     }
   }
+  SetBestMatchFile( (TFile*)fReferenceFileList->At(ind[0]) );
 
   // show results
   printf("\n/// Comparison Results for P > 0.1 %% ///\n\tPhi (°)\t\tProbability (%%)\t\tSignificance (σ)\n");
@@ -389,6 +397,7 @@ void TRefMatch::RefCompare()
     if (MS[k][1]<0.1) printf(" "); // because printf %2.1f doens't want to work for me today
     printf("%.2f\t\t\t%.3e\n", 100.*MS[k][1], MS[k][2]);
   }
+  if (fBestMatchFile!=0x0) printf("Best match found in file \"%s\"\n", fBestMatchFile->GetName());
   printf("###\n\n");
 
   // store results
@@ -418,6 +427,9 @@ void TRefMatch::DrawResults( Bool_t kDrawFit )
   // clear previous graphics, if any
   if (gROOT->GetListOfCanvases()->FindObject("c_RefMatch")!=0) delete c_RefMatch;
   if (gDirectory->FindObject("h_TestSample")!=0) delete h_TestSample;
+  // retrieve best-match reference tree
+  TFile *refFile = TFile::Open( fBestMatchFile->GetName() );
+  TTree* TRef = (TTree*)refFile->Get("T");
   // init
   TTree *T = GetTree();
   const char* varName = GetTestVarName();
@@ -428,7 +440,7 @@ void TRefMatch::DrawResults( Bool_t kDrawFit )
   const Double_t *y = GetResultsMatrix().GetSub(0,N-1,1,1).GetMatrixArray();
   TGraph *g = new TGraph(N, x, y);
   // fill
-  Double_t q;
+  Double_t q, qRef;
   T->SetBranchAddress(varName, &q);
   /* for (Int_t kT=0; kT<T->GetEntries(); kT++) { */
   for (Int_t kT=0; kT<fnTestSampleEvents; kT++) {
@@ -438,10 +450,37 @@ void TRefMatch::DrawResults( Bool_t kDrawFit )
   // draw
   c_RefMatch->Divide(1,2);
   c_RefMatch->GetPad(1)->cd();
+  // fit line
+  if (kDrawFit) {
+    h->Fit("gaus", "Q"); // Q(uiet mode)
+    ((TF1*)(h->GetListOfFunctions()->At(0)))->SetLineColor(kGray);
+  }
+  // reference plot
+  Int_t nBinsX = h->GetNbinsX();
+  TH1D *hRef = new TH1D("hRef", "best-match reference plot", nBinsX, h->GetBinLowEdge(0), h->GetBinLowEdge(nBinsX)+h->GetBinWidth(nBinsX));
+  TRef->SetBranchAddress(varName, &qRef);
+  for ( Int_t kTRef=0; kTRef<TRef->GetEntries(); kTRef++ ) {
+    TRef->GetEntry(kTRef);
+    hRef->Fill(qRef);
+  }
+  // main plot
   h->Draw();
-  h->SetTitle("Test Sample");
+  h->SetTitle("Test Sample with Best-Match Ref. Distrib.");
   h->GetXaxis()->SetTitle("phi (^{o})");
-  if (kDrawFit) h->Fit("gaus", "Q"); // Q(uiet mode)
+  // scaled reference plot
+  hRef->Scale( h->GetMaximum() / hRef->GetMaximum() );
+  hRef->SetLineColor(kRed);
+  /* hRef->SetFillColor(kRed); */
+  hRef->SetMarkerColor(kRed);
+  hRef->SetMarkerStyle(kStar);
+  hRef->SetMarkerSize(3);
+  hRef->Draw("Psame");
+  // histogram legend
+  TLegend *hLeg = new TLegend(.75, .5, .98, .6);
+  hLeg->AddEntry(h, "Datarun");
+  hLeg->AddEntry(hRef, "Best Reference Match (scaled)");
+  hLeg->Draw();
+  // KS results
   c_RefMatch->GetPad(2)->cd();
   gPad->SetLogy(kTRUE);
   gPad->SetGrid(1,1);
@@ -454,6 +493,7 @@ void TRefMatch::DrawResults( Bool_t kDrawFit )
   g->SetTitle("Reference-Matching Results");
   g->GetXaxis()->SetTitle("phi (^{o})");
   g->GetYaxis()->SetTitle("Match Probability");
+  g->GetYaxis()->SetRangeUser(1.e-3, 1.e0.3);
   // store results
   SetCanvas(c_RefMatch);
   SetTestSampleHist(h);
@@ -472,36 +512,47 @@ void TRefMatch::DrawResults( Bool_t kDrawFit )
 //}
 
 //______________________________________________________________________________
-// Save
-void TRefMatch::Save(const char* saveName)
+// SaveResults
+void TRefMatch::SaveResults()
 {
+  // run check
+  if (!fkHasRun) {
+    this->Info("TRefMatch::SaveResults", "Please run RefCompare first to get results.");
+    return;
+  }
   // init
   TString outFileName(fTestSampleFile->GetName());
   outFileName.ReplaceAll("\.root", "_RefMatch.root");
   TString outCanvasName(outFileName);
   outCanvasName.ReplaceAll("\.root",".png");
-  /* // create outfile */
-  /* fOutFile = TFile::Open( outFileName.Data(), "recreate" ); */
-  /* printf( "Created output file %s at %#lx.\n", fOutFile->GetName(), fOutFile); */
+  // create outfile
+  fOutFile = TFile::Open( outFileName.Data(), "recreate" );
+  printf( "Created output file %s at %#lx.\n", fOutFile->GetName(), fOutFile);
   // write
   fCanvas->Print(outCanvasName.Data());
-  /* fOutFile->cd(); */
-  /* this->Write(saveName); */
+  fOutFile->cd();
+  /* this->Write("refMatch", TObject::kSingleKey); */
+  fCanvas->Write();
+  fResultsMatrix.Write("resultsMatrix");
+  fResults.Write("resultsVector");
   // close
   fTestSampleFile->Close();
   fOutFile->Close();
+  return;
 }
 
 //______________________________________________________________________________
 // Close
-TRefMatch::Close()
+void TRefMatch::Close()
 {
   // graphics first
   if (fTestSampleHist!=0x0) delete fTestSampleHist;
   if (fResultsGraph!=0x0) delete fResultsGraph;
   if (fCanvas!=0x0) delete fCanvas;
   // then file(s)
+  if (fBestMatchFile->IsOpen()) fBestMatchFile->Close();
   GetFile()->Close();
+  return;
 }
 
 //______________________________________________________________________________
@@ -514,6 +565,7 @@ void TRefMatch::ls()
     cout << "Uninitialized " << IsA()->GetName();
   }
   cout << "\tat: " << this << endl;
+  return;
 }
 
 //______________________________________________________________________________
@@ -530,6 +582,7 @@ void TRefMatch::Print()
   if (fTestSampleBranch!=0x0) printf("Test Branch: %s at: %#lx\n", fTestSampleBranch->GetName(), fTestSampleBranch);
   if (fOutFile!=0x0) printf("Output File: %s at: %#lx\n", fOutFile->GetName(), fOutFile);
   printf("\n");
+  return;
 }
 
 //______________________________________________________________________________
@@ -543,6 +596,7 @@ void TRefMatch::PrintVerbose()
   printf("Test Branch/Var Name: \"%s\"\n", fTestVarName);
   printf("Reference File List: TList* at: %#lx\n", fReferenceFileList);
   printf("\n");
+  return;
 }
 
 //______________________________________________________________________________
@@ -554,5 +608,6 @@ void TRefMatch::PrintResults()
     return;
   }
   printf( "\n/// Results Summary ///\n\tBest Match: %.2f °\n\tMatch Probability: %2.2f %%   <--->   Match Significance: %.3e σ\n###\n\n", fResults[0], 100.*fResults[1], fResults[2] );
+  return;
 }
 

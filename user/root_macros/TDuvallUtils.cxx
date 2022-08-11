@@ -23,7 +23,7 @@
 //   along with a rough ASCII representation of the graph
 // -- Note: Developed for use with TH1D and TH1F only
 // -- Example:
-// 	TH1D* h = new TH1D("h", "h", 30, -3.5, 3.5);
+// 	TH1D* h = new TH1D("h", "h", 24, -3.5, 3.5);
 // 	h->FillRandom("gaus");
 // 	TDuvallUtils::DumpHist(h);
 void TDuvallUtils::DumpHist( TH1* h )
@@ -150,6 +150,15 @@ TObject* TDuvallUtils::FindMatchingObject( TCollection* colxn, TRegexp patternRE
     objName = obj->GetName();
     if (objName.Contains(patternRE)) matchingObjs->Add(obj);
   }
+  if ( matchingObjs->GetEntries() == 0 ) {
+    printf("No matching objects found.\n");
+    return 0x0;
+  } else if ( matchingObjs->GetEntries() == 1 ) {
+    return matchingObjs->At(0);
+  } else {
+    printf("Multiple matches found; returning first match.\n");
+    return matchingObjs->At(0);
+  }
 }
 
 //______________________________________________________________________________
@@ -186,7 +195,11 @@ TList* TDuvallUtils::FindVarsOfType( const char* varType, Bool_t kCaseSensitive 
       printf("%s\t%s\n", gvar->GetTypeName(), gvar->GetName());
     }
   }
-  if (varCount>5) printf("Found %d global variables matching TypeName.Contains(\"%s\").\n", varCount, varType);
+  if (varCount==0) {
+    printf("No variables matching TypeName.Contains(\"%s\") found.\n", varType);
+  } else if (varCount>5) {
+    printf("Found %d global variables matching TypeName.Contains(\"%s\").\n", varCount, varType);
+  }
   return oList;
 }
 

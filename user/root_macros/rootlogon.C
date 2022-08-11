@@ -26,7 +26,7 @@
   const Double_t e = TMath::E();
 
   // define decent legend coordinates
-  Double_t legx1(.01), legy1(.83), legx2(.12), legy2(.93);
+  Double_t legxy[4] = {.01, .83, .12, .93};
 
   // define convenient zoom function
   gROOT->LoadMacro("Zoom.cxx");

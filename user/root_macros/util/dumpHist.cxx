@@ -3,7 +3,7 @@
 // -- Note: Developed for use with TH1D and TH1F only
 // -- Example:
 //    TH1D *h = new TH1D("h", "h", 12, -2.5, 2.5);
-//    for (Int_t k=0; k<10000; k++ ) h->Fill( gRandom->Gaus() );
+//    h->FillRandom("gaus");
 //    dumpHist(h);
 //    -2.708e+00	56	| |
 //    -2.292e+00	122	| |

@@ -1,8 +1,8 @@
-// generateRefDistribSeg -- simple function for generating test reference arrays
-// -- Note: This macro can easily generate a set of reference distributions.
+// generateTestSampleDistribSeg -- simple function for generating test-sample arrays
+// -- Note: This macro can easily generate a set of test-sample distributions.
 //    For example, to generate a distribution for every degree from 0 through 30
 //    with a width of 50 deg, run the following line:
-//      for ( Int_t k=0; k<31; k++ ) generateRefDistribSeg( (Double_t)k, 50. );
+//      for ( Int_t k=0; k<31; k++ ) generateTestSampleDistribSeg( (Double_t)k, 50. );
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 07/2022 ~ //
 
 //Copyright (C) 2022 Mark J. Duvall / T. Rocks Science
@@ -20,13 +20,13 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-void generateRefDistribSeg( Double_t phiTrue, Double_t sigma, Int_t periods = 6 ) { // phi, sigma both in degrees
+void generateTestSampleDistribSeg( Double_t phiTrue, Double_t sigma, Int_t periods = 6 ) { // phi, sigma both in degrees
 
 // general init
-Long64_t N = 1e5;
+Long64_t N = 1e3;
 Double_t phiMin = -180., phiMax = 180.;
 TString savename;
-savename.Form("%02dDEG_ref.root", (Int_t)phiTrue);
+savename.Form("%02dDEG_testsample.root", (Int_t)phiTrue);
 TObjString *savenameOS = new TObjString(savename);
 TFile *f = TFile::Open(savename.Data(), "recreate");
 TF1 *f_gen = new TF1( "f_gen", "Gaus(x, [0], [1])", 2*phiMin, 2*phiMax );
@@ -60,7 +60,7 @@ for ( Int_t i=0; i<6; i++ ) {
 
 // TTree init
 Double_t phi;
-TTree *T = new TTree("T", "Reference Distribution");
+TTree *T = new TTree("T_ts", "Test-Sample Distribution");
 T->Branch("phi", &phi);
 
 // SEGMENTATION
@@ -81,16 +81,16 @@ for ( k = 0; k < N; k++ ) {
 }
 
 // draw and fit, just for luck
-if (gROOT->GetListOfCanvases()->FindObject("c_genref")) delete c_genref;
-TCanvas *c_genref = new TCanvas("c_genref", "c_genref");
-c_genref->cd();
+if (gROOT->GetListOfCanvases()->FindObject("c_testsample")) delete c_testsample;
+TCanvas *c_testsample = new TCanvas("c_testsample", "c_testsample");
+c_testsample->cd();
 T->Draw("phi >> h_phi");
 T->Draw("phiSeg >> h_phiSeg");
 // settings for h_phi
 h_phi->Draw();
 TString hTit;
-hTit.Form("Reference Distribution for #varphi = %2d^{o}", (Int_t)phiTrue);
-/* h_phi->SetLineColor(kRed); */
+hTit.Form("Test Sample for #varphi = %2d^{o}", (Int_t)phiTrue);
+/* h_phi->SetLineColor(kBlue); */
 h_phi->SetLineColor(kGray);
 h_phi->SetAxisRange(phiMin, phiMax, "X");
 h_phi->SetTitle(hTit.Data());
@@ -101,22 +101,22 @@ f_phiFit->SetLineColor(kGray);
 // settings for h_phiSeg
 Double_t hScale = h_phiSeg->GetMaximum() / f_phiFit->GetMaximum();
 h_phiSeg->Scale(1./hScale);
-h_phiSeg->SetLineColor(kRed);
+h_phiSeg->SetLineColor(kBlue);
 h_phiSeg->Draw("same");
 
 // save, print
 savename.ReplaceAll(".root", ".png");
-c_genref->Print(savename.Data());
+c_testsample->Print(savename.Data());
 params->Write("params", TObject::kSingleKey);
 f_gen->Write("f_gen");
 T->Write();
 h_phi->Write();
 f_phiFit->Write("f_phiFit");
 h_phiSeg->Write();
-c_genref->Write();
+c_testsample->Write();
 
 // close out
-c_genref->Close();
+c_testsample->Close();
 f->Close();
 
 // all pau!   )
