@@ -97,9 +97,16 @@ void TRefMatch::Init()
   }
   if (fnTestSampleEvents==0) SetnEvents((Long64_t)(GetTree()->GetEntries()));
   // get true source angle for test sample
-  TMap* testSampleParams = (TMap*)fTestSampleFile->Get("params");
-  TVectorD* tsPhiTrueVector = (TVectorD*)testSampleParams->GetValue("phiTrue");
-  SetTestSamplePhiTrue( (*tsPhiTrueVector)[0] );
+  if ( fTestSampleFile->Get("params"!=0) ) { // RNG pseudo-data run
+    TMap* testSampleParams = (TMap*)fTestSampleFile->Get("params");
+    TVectorD* tsPhiTrueVector = (TVectorD*)testSampleParams->GetValue("phiTrue");
+    SetTestSamplePhiTrue( (*tsPhiTrueVector)[0] );
+  } else if ( fTestSampleFile->Get("phiTrue"!=0) ) { // regular RATRUN
+    TVectorD* tsPhiTrueVector = (TVectorD*)fTestSampleFile->Get("phiTrue");
+    SetTestSamplePhiTrue( (*tsPhiTrueVector)[0] );
+  } else {
+    this->Info("Init", "Could not find either \"params\" or \"phiTrue\" in current ROOT directory.\n");
+  }
   // if all of the above check out okay, create outfile
   TSystemDirectory *wd = new TSystemDirectory;
   wd->SetDirectory(gSystem->WorkingDirectory());

@@ -220,12 +220,24 @@ if (kPrint) {
   can_prod->Close();
 }
 
+// if off-axis run, get phiTrue (for now, from filename) // TODO: find a way to get RAT to store the generator parameters directly
+Bool_t kOffAxis(kFALSE);
+TRegexp degRE("[0-9]+DEG");
+if (filename.Contains(degRE)) {
+  kOffAxis = kTRUE;
+  TString phiTrueString = filename(degRE);
+  phiTrueString.ReplaceAll("DEG","");
+  TVectorD phiTrue(1);
+  phiTrue[0] = phiTrueString.Atof();
+}
+
 // save
 czeta->Write("czeta");
 czeta->Close();
 if ( db != 0x0 ) db->Write("db", TObject::kSingleKey);
 T_ncap->Write("T_ncap");
 tos->Write("experiment");
+if (kOffAxis) phiTrue.Write("phiTrue");
 fn->Write();
 
 // all pau!   )
