@@ -25,6 +25,7 @@ class TRefMatch : public TClass {
 
 private:
   // members
+  // NOTE: There is no individual datamember for the best-match angle; it is stored in fResults[0]
   const char*		fTestFileName;		// name of file containing data sample to be tested
   const char*		fTestTreeName;		// name of tree containing data sample to be tested
   const char*		fTestVarName;		// name of branch/variable containing data sample to be tested
@@ -38,6 +39,7 @@ private:
   TSystemDirectory*	fReferenceFileDir;	// directory containing reference files
   Long64_t		fnTestSampleEvents;	// number of events to use from test-sample tree (default value 0 will use all events)
   Long64_t		fnReferenceEvents;	// number of events to use from reference trees (default value 0 will use all events)
+  Double_t		fTestSamplePhiTrue;	// the true value of phi for the test sample
   Double_t		fProb;			// match probability (current entry)
   Double_t		fSig;			// match significance (current entry)
   TMatrixD		fResultsMatrix;		// matrix of comparison results
@@ -52,6 +54,7 @@ private:
 private:
   // methods
   void			Init();
+  void			SetTestSamplePhiTrue( Double_t phi ) { fTestSamplePhiTrue = phi; }
   void			SetProb( Double_t prob ) { fProb = prob; }
   void			SetSig( Double_t sig ) { fSig = sig; }
   void			SetResultsMatrix( TMatrixD resmat ) { fResultsMatrix = resmat; }
@@ -81,6 +84,7 @@ public:
   TSystemDirectory*	GetReferenceFileDir() { return fReferenceFileDir; }
   Long64_t		GetnTestSampleEvents() { return fnTestSampleEvents; }
   Long64_t		GetnReferenceEvents() { return fnReferenceEvents; }
+  Double_t		GetTestSamplePhiTrue() { return fTestSamplePhiTrue; }
   Double_t		GetProb() { return fProb; }
   Double_t		GetSig() { return fSig; }
   TMatrixD		GetResultsMatrix() { return fResultsMatrix; }
@@ -114,7 +118,7 @@ public:
 
 
 //Integrating the TRefMatch class to ROOT.
-ClassDef(TRefMatch,2)
+ClassDef(TRefMatch,3)
 
 }; //end class
 

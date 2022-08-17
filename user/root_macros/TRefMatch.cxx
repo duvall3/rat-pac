@@ -46,7 +46,7 @@ TRefMatch::TRefMatch()
   SetName("TRefMatch");
   SetTitle("class for implementing KS-test reference-matching algorithm");
   fReferenceFileList = new TList;
-  fResults.ResizeTo(3);
+  fResults.ResizeTo(4);
   fkHasInit = kFALSE;
   fkHasRun = kFALSE;
 }
@@ -72,7 +72,7 @@ TRefMatch::TRefMatch( const char* fileName, const char* treeName, const char* br
   fReferenceTreeName = "T";
   fReferenceFileList = new TList;
   fReferenceFilePattern = TRegexp("[0-9]+DEG.*\.root");
-  fResults.ResizeTo(3);
+  fResults.ResizeTo(4);
   fkHasInit = kFALSE;
   fkHasRun = kFALSE;
   Init();
@@ -96,7 +96,10 @@ void TRefMatch::Init()
     return;
   }
   if (fnTestSampleEvents==0) SetnEvents((Long64_t)(GetTree()->GetEntries()));
-  /* printf("fnTestSampleEvents = %d\n", fnTestSampleEvents); //debug */
+  // get true source angle for test sample
+  TMap* testSampleParams = (TMap*)fTestSampleFile->Get("params");
+  TVectorD* tsPhiTrueVector = (TVectorD*)testSampleParams->GetValue("phiTrue");
+  SetTestSamplePhiTrue( (*tsPhiTrueVector)[0] );
   // if all of the above check out okay, create outfile
   TSystemDirectory *wd = new TSystemDirectory;
   wd->SetDirectory(gSystem->WorkingDirectory());
@@ -403,10 +406,11 @@ void TRefMatch::RefCompare()
   // store results
   fResultsMatrix.ResizeTo(N,3);
   SetResultsMatrix(MS);
-  TVectorD res(3);
+  TVectorD res(4);
   res[0] = MS[0][0];
   res[1] = MS[0][1];
   res[2] = MS[0][2];
+  res[3] = GetTestSamplePhiTrue();
   SetResults( res );
 
   // all pau!   )
@@ -448,8 +452,11 @@ void TRefMatch::DrawResults( Bool_t kDrawFit )
     h->Fill(q);
   }
   // draw
+  c_RefMatch->SetWindowPosition(500, 137);
+  c_RefMatch->SetWindowSize(1000, 800);
   c_RefMatch->Divide(1,2);
-  c_RefMatch->GetPad(1)->cd();
+  TVirtualPad *p1 = c_RefMatch->GetPad(1);
+  p1->cd();
   // fit line
   if (kDrawFit) {
     h->Fit("gaus", "Q"); // Q(uiet mode)
@@ -465,7 +472,9 @@ void TRefMatch::DrawResults( Bool_t kDrawFit )
   }
   // main plot
   h->Draw();
-  h->SetTitle("Test Sample with Best-Match Ref. Distrib.");
+  TString hTitStr("Test Sample with Ref. Distrib.  |  BEST-MATCH VALUE: ");
+  hTitStr.Append( hTitStr.Format("%.1f",fResults[0]) );
+  h->SetTitle(hTitStr.Data());
   h->GetXaxis()->SetTitle("phi (^{o})");
   // scaled reference plot
   hRef->Scale( h->GetMaximum() / hRef->GetMaximum() );
@@ -476,14 +485,19 @@ void TRefMatch::DrawResults( Bool_t kDrawFit )
   hRef->SetMarkerSize(3);
   hRef->Draw("Psame");
   // histogram legend
-  TLegend *hLeg = new TLegend(.75, .5, .98, .6);
+  TLegend *hLeg = new TLegend(.75, .45, .98, .6);
   hLeg->AddEntry(h, "Datarun");
   hLeg->AddEntry(hRef, "Best Reference Match (scaled)");
   hLeg->Draw();
   // KS results
-  c_RefMatch->GetPad(2)->cd();
-  gPad->SetLogy(kTRUE);
-  gPad->SetGrid(1,1);
+  // log plot from 0.1% to ~100%
+  TVirtualPad *p2 = c_RefMatch->GetPad(2);
+  p2->cd();
+  p2->Divide(2,1);
+  TVirtualPad *p2_1 = p2->GetPad(1);
+  p2_1->cd();
+  p2_1->SetLogy(kTRUE);
+  p2_1->SetGrid(1,1);
   g->SetLineWidth(3.);
   g->SetLineColor(kRed);
   g->SetMarkerColor(kRed);
@@ -493,7 +507,18 @@ void TRefMatch::DrawResults( Bool_t kDrawFit )
   g->SetTitle("Reference-Matching Results");
   g->GetXaxis()->SetTitle("phi (^{o})");
   g->GetYaxis()->SetTitle("Match Probability");
+  g->GetYaxis()->SetTitleOffset(1.25);
   g->GetYaxis()->SetRangeUser(1.e-3, 1.e0.3);
+  // linear plot from 90% to ~100%
+  TVirtualPad *p2_2 = p2->GetPad(2);
+  p2_2->cd();
+  TGraph *g2 = g->Clone("g2");
+  /* p2_2->SetLogy(kTRUE); */
+  p2_2->SetGrid(1,1);
+  g2->GetYaxis()->SetRangeUser(0.9, 1.01);
+  g2->GetYaxis()->SetTitleOffset(1.25);
+  g2->GetXaxis()->SetRangeUser(fResults[0]-2.5, fResults[0]+2.5); // TODO: generalize by, e.g., finding first/last indices for p > 90%
+  g2->Draw("AP");
   // store results
   SetCanvas(c_RefMatch);
   SetTestSampleHist(h);
@@ -531,6 +556,7 @@ void TRefMatch::SaveResults()
   // write
   fCanvas->Print(outCanvasName.Data());
   fOutFile->cd();
+  /* this->Write("refMatch"); */
   /* this->Write("refMatch", TObject::kSingleKey); */
   fCanvas->Write();
   fResultsMatrix.Write("resultsMatrix");
