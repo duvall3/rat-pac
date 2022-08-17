@@ -97,11 +97,11 @@ void TRefMatch::Init()
   }
   if (fnTestSampleEvents==0) SetnEvents((Long64_t)(GetTree()->GetEntries()));
   // get true source angle for test sample
-  if ( fTestSampleFile->Get("params"!=0) ) { // RNG pseudo-data run
+  if ( fTestSampleFile->Get("params") != 0x0 ) { // RNG pseudo-data run
     TMap* testSampleParams = (TMap*)fTestSampleFile->Get("params");
     TVectorD* tsPhiTrueVector = (TVectorD*)testSampleParams->GetValue("phiTrue");
     SetTestSamplePhiTrue( (*tsPhiTrueVector)[0] );
-  } else if ( fTestSampleFile->Get("phiTrue"!=0) ) { // regular RATRUN
+  } else if ( fTestSampleFile->Get("phiTrue") != 0x0 ) { // regular RATRUN
     TVectorD* tsPhiTrueVector = (TVectorD*)fTestSampleFile->Get("phiTrue");
     SetTestSamplePhiTrue( (*tsPhiTrueVector)[0] );
   } else {
