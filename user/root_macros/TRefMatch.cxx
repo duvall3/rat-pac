@@ -640,7 +640,7 @@ void TRefMatch::PrintResults()
     this->Info("TRefMatch::PrintResults", "Please run RefCompare first to get results.");
     return;
   }
-  printf( "\n/// Results Summary ///\n\tBest Match: %.2f °\n\tMatch Probability: %2.2f %%   <--->   Match Significance: %.3e σ\n###\n\n", fResults[0], 100.*fResults[1], fResults[2] );
+  printf( "\n/// Results Summary ///\n\tTrue Angle: %.2f °\n\tBest Match: %.2f °\n\tMatch Probability: %2.2f %%   <--->   Match Significance: %.3e σ\n###\n\n", fResults[3], fResults[0], 100.*fResults[1], fResults[2] );
   return;
 }
 
