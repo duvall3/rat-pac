@@ -23,6 +23,7 @@
 void generateTestSampleDistribSeg( Double_t phiTrue, Double_t sigma, Int_t periods = 6 ) { // phi, sigma both in degrees
 
 // general init
+gRandom->SetSeed(0);
 Long64_t N = 1e3;
 Double_t phiMin = -180., phiMax = 180.;
 TString savename;

@@ -23,6 +23,7 @@
 void generateRefDistrib( Double_t phiTrue, Double_t sigma ) { // phi, sigma both in degrees
 
 // general init
+gRandom->SetSeed(0);
 Long64_t N = 1e5;
 Double_t phiMin = -180., phiMax = 180.;
 TString savename;

@@ -19,7 +19,7 @@ void duvall3Macros() {
 #define C() gSystem->Exec("clear");
 
 gROOT->LoadMacro("rt_to_root.cxx");
-gROOT->LoadMacro("dumpHist.cxx");
+/* gROOT->LoadMacro("dumpHist.cxx"); */
 //gROOT->LoadMacro("SEDAQ.cxx");
 gROOT->LoadMacro("SEDAQ2.cxx");
 //gROOT->LoadMacro("RATPACEventViewer.cxx");
@@ -32,7 +32,7 @@ gROOT->LoadMacro("ibdTracksToScint.cxx");
 gROOT->LoadMacro("particleTracksToScint.cxx");
 //gROOT->LoadMacro("findCellScintTotal.cxx");
 //gROOT->LoadMacro("findCellScintTotalQuenched.cxx");
-gROOT->LoadMacro("shiftStats.cxx");
+/* gROOT->LoadMacro("shiftStats.cxx"); */
 gROOT->LoadMacro("nCapEQ.cxx");
 gROOT->LoadMacro("findScintBursts.cxx");
 //gROOT->LoadMacro("ratfileInit.cxx");
@@ -46,15 +46,15 @@ gROOT->LoadMacro("addGeoNuLat.cxx");
 //gROOT->LoadMacro("addGeoChooz.cxx");
 gROOT->LoadMacro("addGeoSANTA.cxx");
 gROOT->LoadMacro("addGeoSANDD.cxx");
-gROOT->LoadMacro("exportPlots.cxx");
-gROOT->LoadMacro("radarPlot.cxx");
+/* gROOT->LoadMacro("exportPlots.cxx"); */
+/* gROOT->LoadMacro("radarPlot.cxx"); */
 gROOT->LoadMacro("drawAllCosPsi.cxx");
 //gROOT->LoadMacro("backgroundNeutrons.cxx");
-gROOT->LoadMacro("logBins.cxx");
+/* gROOT->LoadMacro("logBins.cxx"); */
 gROOT->LoadMacro("plotKElog.cxx");
 //gROOT->LoadMacro("TIBDParams.cxx");
-gROOT->LoadMacro("findVarsOfType.cxx");
-gROOT->LoadMacro("loadAllKeys.cxx");
+/* gROOT->LoadMacro("findVarsOfType.cxx"); */
+/* gROOT->LoadMacro("loadAllKeys.cxx"); */
 gROOT->LoadMacro("ue4_export.cxx");
 gROOT->LoadMacro("plotEQvDT.cxx");
 gROOT->LoadMacro("scatteringPositions.cxx");
@@ -65,10 +65,10 @@ gROOT->LoadMacro("processListedFiles.cxx");
 gROOT->LoadMacro("subsetMeans.cxx");
 gROOT->LoadMacro("dispTree.cxx");
 gROOT->LoadMacro("santaFrame.cxx");
-gROOT->LoadMacro("listFiles.cxx");
+/* gROOT->LoadMacro("listFiles.cxx"); */
 /* gROOT->LoadMacro("fitPhiSegmented.cxx"); */
 gROOT->LoadMacro("debugBuddy.cxx");
-gROOT->LoadMacro("findMatchingObject.cxx");
+/* gROOT->LoadMacro("findMatchingObject.cxx"); */
 /* gROOT->LoadMacro("chi2ProbSigma.cxx"); */
 /* gROOT->LoadMacro("prob2sig.cxx"); */
 /* gROOT->LoadMacro("sig2prob.cxx"); */
@@ -77,6 +77,7 @@ gROOT->LoadMacro("generateTestSampleDistrib.cxx");
 /* gROOT->LoadMacro("unbinnedKSTest.cxx"); */
 /* gROOT->LoadMacro("refCompare.cxx"); */
 gROOT->LoadMacro("KSComparison.cxx");
+gROOT->LoadMacro("KSSummary.cxx");
 
 }
 
