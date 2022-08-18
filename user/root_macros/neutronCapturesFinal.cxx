@@ -31,6 +31,10 @@ if (! origOGL) gStyle->SetCanvasPreferGL(kTRUE);
 const Bool_t origBatch = gROOT->IsBatch();
 if (! origBatch) gROOT->SetBatch(kTRUE);
 
+// load TDuvallUtils
+const char* utilsFile = "TDuvallUtils.cxx";
+if ( ! gInterpreter->IsLoaded(utilsFile) ) gROOT->LoadMacro(utilsFile);
+
 // init
 // file operations
 TString inFileName(filename);
@@ -65,7 +69,8 @@ if ( TMath::IsNaN(phi_source_deg) ) {
 
 // histograms
 // capture/interevent time
-Double_t *tbins = logBins(1.e-10, 1.e3);
+/* Double_t *tbins = logBins(1.e-10, 1.e3); */
+Double_t *tbins = TDuvallUtils::LogBins(1.e-10, 1.e3);
 TH1D *h_dt = new TH1D("h_dt", "Capture Time", 100, tbins);
 // phi
 TH1D *h_phi = new TH1D("h_phi", "#varphi (Quant.)", 100, -180.01, 180.01);
