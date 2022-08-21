@@ -16,13 +16,45 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-TMatrixD KSSummary( const char* filenamePattern = ".*_RefMatch\.root" ) {
+// function to print results in a nice format
+void printKSResults(TMatrixD resultsMatrix) {
+  printf("\nphiTrue\t1st(°)\t1st(\%)\t1st(σ)\t2nd(°)\t2nd(\%)\t2nd(σ)\t3rd(°)\t3rd(\%)\t3rd(σ)\tΔ1st(°)\n");
+  Int_t k(0), j(0);
+  Double_t DeltaBest;
+  for ( k=0; k<resultsMatrix.GetNrows(); k++ ) {
+    for ( j=0; j<9; j++ ) {
+      printf("%.2f\t", resultsMatrix[k][j]);
+    }
+    printf("%.2f\t", resultsMatrix[k][9]);
+    if (resultsMatrix[k][10]>0) printf("+");
+    printf("%.2f\n", resultsMatrix[k][10]);
+  }
+  printf("\n\n");
+  return;
+}
+// overload to accept pointer for convenience
+void printKSResults(TMatrixD *resultsMatrixPtr) {
+  TMatrixD resultsMatrix = *resultsMatrixPtr;
+  printKSResults(resultsMatrix);
+  return;
+}
+
+/* TMatrixD KSSummary( const char* filenamePattern = ".*_RefMatch\.root" ) { */
+// The documentation strongly recommends not using matrices as return values
+//   due to multiple calls to the ctor and dtor, so we'll save the matrix
+//   to a file instead.
+void KSSummary( const char* datarunName = gSystem->WorkingDirectory(), const char* filenamePattern = ".*_RefMatch\.root" ) {
 
 // include
 const char* utilFilename("TDuvallUtils.cxx");
 if ( ! gInterpreter->IsLoaded(utilFilename) ) gROOT->LoadMacro(utilFilename);
 
 // init
+// datarun name
+TString datarun(datarunName);
+if ( datarun.Contains('/') ) {
+  datarun = datarun( datarun.Last('/')+1, datarun.Length()-1 );
+}
 // list-level init
 TList *fileList = TDuvallUtils::ListFiles(filenamePattern);
 if (fileList==0x0) {
@@ -76,22 +108,50 @@ for ( i=fileList->begin(); i!=fileList->end(); ++i ) {
 }
 
 // print results
-printf("\nphiTrue\t1st(°)\t1st(\%)\t1st(σ)\t2nd(°)\t2nd(\%)\t2nd(σ)\t3rd(°)\t3rd(\%)\t3rd(σ)\tΔ1st(°)\n");
-Int_t j(0);
-Double_t DeltaBest;
-for ( k=0; k<N; k++ ) {
-  for ( j=0; j<9; j++ ) {
-    printf("%.2f\t", allResultsSummary[k][j]);
-  }
-  printf("%.2f\t", allResultsSummary[k][9]);
-  if (allResultsSummary[k][10]>0) printf("+");
-  printf("%.2f\n", allResultsSummary[k][10]);
-}
-printf("\n\n");
+printKSResults(allResultsSummary);
 
 // save results
-// TODO
+TFile *outFile = TFile::Open("KSSummary.root", "recreate");
+allResultsSummary.Write("allResultsMatrix");
+
+// plot results
+TCanvas *c_kss = new TCanvas("c_kss", "KS Best-Match Summary");
+c_kss->SetGrid(1,1);
+TMatrixDColumn phiTrueC(allResultsSummary, 0);
+TMatrixDColumn phiDeltaC(allResultsSummary, allResultsSummary.GetNcols()-1);
+TArrayD phiTrueArr(N);
+TArrayD phiDeltaArr(N), baseLine(N);
+for ( Int_t j=0; j<N; j++ ) {
+  phiTrueArr[j] = phiTrueC[j];
+  phiDeltaArr[j] = phiDeltaC[j];
+  baseLine[j] = 0.;
+}
+TGraph *g = new TGraph(N, phiTrueArr.GetArray(), phiDeltaArr.GetArray());
+Double_t dY = TMath::Max( TMath::Abs(TMath::MinElement(N,phiDeltaArr.GetArray())), TMath::Abs(TMath::MaxElement(N,phiDeltaArr.GetArray())) );
+TString gTitle("Best-Match Difference from True Value");
+gTitle.Append( TString::Format(" | \"%s\"", datarun.Data()) );
+g->SetTitle(gTitle);
+g->SetMarkerStyle(kFullSquare);
+g->SetMarkerColor(kMagenta);
+g->SetMarkerSize(1.5);
+g->SetFillColor(0); // for legend if needed
+g->GetXaxis()->SetRangeUser( TMath::MinElement(N,phiTrueArr.GetArray()), TMath::MaxElement(N,phiTrueArr.GetArray()) );
+g->GetYaxis()->SetRangeUser( -2*dY, 2*dY );
+g->GetXaxis()->SetTitle("#varphi_{True} (^{o})");
+g->GetYaxis()->SetTitle("#varphi_{Best} - #varphi_{True} (^{o})");
+g->Draw("AP");
+TGraph *gBaseLine = new TGraph(N, phiTrueArr.GetArray(), baseLine.GetArray());
+gBaseLine->SetLineWidth(3.);
+gBaseLine->SetLineColor(kBlack);
+gBaseLine->Draw("same");
+// save plots
+gBaseLine->Write("gBaseLine");
+g->Write("gResults");
+c_kss->Print("KSSummary.png");
+c_kss->Write("c_kss");
 
 // all pau!   )
-return allResultsSummary;
+outFile->Write();
+outFile->Close();
+return;
 }

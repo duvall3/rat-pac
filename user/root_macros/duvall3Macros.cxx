@@ -74,6 +74,8 @@ gROOT->LoadMacro("debugBuddy.cxx");
 /* gROOT->LoadMacro("sig2prob.cxx"); */
 gROOT->LoadMacro("generateRefDistrib.cxx");
 gROOT->LoadMacro("generateTestSampleDistrib.cxx");
+gROOT->LoadMacro("generateRefDistribSeg.cxx");
+gROOT->LoadMacro("generateTestSampleDistribSeg.cxx");
 /* gROOT->LoadMacro("unbinnedKSTest.cxx"); */
 /* gROOT->LoadMacro("refCompare.cxx"); */
 gROOT->LoadMacro("KSComparison.cxx");
