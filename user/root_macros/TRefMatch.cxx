@@ -364,6 +364,7 @@ void TRefMatch::RefCompare()
   TVectorD V(1), *v = &V;
   TMatrixD *m = new TMatrixD(N,3);
   TMatrixD M = *m;
+  /* cout << M.GetNrows() << "\t" << M.GetNcols() << endl; //debug */
   Double_t phiRef;
 
   // MAIN

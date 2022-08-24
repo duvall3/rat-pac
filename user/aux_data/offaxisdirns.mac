@@ -1,5 +1,37 @@
-
 # off-axis tests, such that phi_source_true = {15,30,45} deg
 #/generator/vtx/set -0.9659258262890683 -0.2588190451025207 0 # neutrinos angled 15 deg from the -x direction
 #/generator/vtx/set -0.8660254037844387 -0.4999999999999999 0 # neutrinos angled 30 deg from the -x direction
 #/generator/vtx/set -0.7071067811865476 -0.7071067811865475 0 # neutrinos angled 45 deg from the -x direction
+
+# off-axis reference sets: phi_source_true = {0,1,2,...,30} deg
+#/generator/vtx/set -1.0000000000000000 -0.0000000000000000 0 # neutrinos angled 0 deg from the -x direction
+#/generator/vtx/set -0.9998476951563913 -0.0174524064372835 0 # neutrinos angled 1 deg from the -x direction
+#/generator/vtx/set -0.9993908270190958 -0.0348994967025010 0 # neutrinos angled 2 deg from the -x direction
+#/generator/vtx/set -0.9986295347545738 -0.0523359562429438 0 # neutrinos angled 3 deg from the -x direction
+#/generator/vtx/set -0.9975640502598242 -0.0697564737441253 0 # neutrinos angled 4 deg from the -x direction
+#/generator/vtx/set -0.9961946980917455 -0.0871557427476582 0 # neutrinos angled 5 deg from the -x direction
+#/generator/vtx/set -0.9945218953682733 -0.1045284632676535 0 # neutrinos angled 6 deg from the -x direction
+#/generator/vtx/set -0.9925461516413220 -0.1218693434051475 0 # neutrinos angled 7 deg from the -x direction
+#/generator/vtx/set -0.9902680687415704 -0.1391731009600654 0 # neutrinos angled 8 deg from the -x direction
+#/generator/vtx/set -0.9876883405951378 -0.1564344650402309 0 # neutrinos angled 9 deg from the -x direction
+#/generator/vtx/set -0.9848077530122080 -0.1736481776669303 0 # neutrinos angled 10 deg from the -x direction
+#/generator/vtx/set -0.9816271834476640 -0.1908089953765448 0 # neutrinos angled 11 deg from the -x direction
+#/generator/vtx/set -0.9781476007338057 -0.2079116908177593 0 # neutrinos angled 12 deg from the -x direction
+#/generator/vtx/set -0.9743700647852352 -0.2249510543438650 0 # neutrinos angled 13 deg from the -x direction
+#/generator/vtx/set -0.9702957262759965 -0.2419218955996677 0 # neutrinos angled 14 deg from the -x direction
+#/generator/vtx/set -0.9659258262890683 -0.2588190451025207 0 # neutrinos angled 15 deg from the -x direction
+#/generator/vtx/set -0.9612616959383189 -0.2756373558169992 0 # neutrinos angled 16 deg from the -x direction
+#/generator/vtx/set -0.9563047559630355 -0.2923717047227367 0 # neutrinos angled 17 deg from the -x direction
+#/generator/vtx/set -0.9510565162951535 -0.3090169943749474 0 # neutrinos angled 18 deg from the -x direction
+#/generator/vtx/set -0.9455185755993168 -0.3255681544571567 0 # neutrinos angled 19 deg from the -x direction
+#/generator/vtx/set -0.9396926207859084 -0.3420201433256687 0 # neutrinos angled 20 deg from the -x direction
+#/generator/vtx/set -0.9335804264972017 -0.3583679495453003 0 # neutrinos angled 21 deg from the -x direction
+#/generator/vtx/set -0.9271838545667874 -0.3746065934159120 0 # neutrinos angled 22 deg from the -x direction
+#/generator/vtx/set -0.9205048534524404 -0.3907311284892737 0 # neutrinos angled 23 deg from the -x direction
+#/generator/vtx/set -0.9135454576426009 -0.4067366430758002 0 # neutrinos angled 24 deg from the -x direction
+#/generator/vtx/set -0.9063077870366499 -0.4226182617406994 0 # neutrinos angled 25 deg from the -x direction
+#/generator/vtx/set -0.8987940462991670 -0.4383711467890774 0 # neutrinos angled 26 deg from the -x direction
+#/generator/vtx/set -0.8910065241883679 -0.4539904997395467 0 # neutrinos angled 27 deg from the -x direction
+#/generator/vtx/set -0.8829475928589270 -0.4694715627858908 0 # neutrinos angled 28 deg from the -x direction
+#/generator/vtx/set -0.8746197071393957 -0.4848096202463371 0 # neutrinos angled 29 deg from the -x direction
+#/generator/vtx/set -0.8660254037844387 -0.4999999999999999 0 # neutrinos angled 30 deg from the -x direction
