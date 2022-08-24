@@ -273,6 +273,35 @@ Double_t* TDuvallUtils::LogBins( Double_t xmin, Double_t xmax )
 /* } */
 
 //______________________________________________________________________________
+// PrintBranches -- print a TTree's branches in a format that is
+//   easier to scan visually than TTree::GetListOfBranches()->ls()
+void TDuvallUtils::PrintBranches(TTree *T)
+{
+  // init
+  TObjArray *branches = T->GetListOfBranches();
+  TIter i(branches);
+  TBranch *br;
+  TString brTit, brType;
+  TString header = TString::Format("%24s%4s%12s%4s%12s", "Name", " ", "Simple Type", " ", "Entries");
+  TString separator('=',56);
+  Ssiz_t delim;
+  // main
+  printf("%s\n%s\n", header.Data(), separator.Data());
+  for ( i=branches->begin(); i!=branches->end(); ++i ) {
+    br = (TBranch*)*i;
+    brTit = br->GetTitle();
+    delim = brTit.Index('/');
+    if ( delim == -1 ) {
+      brType = "--";
+    } else {
+      brType = brTit( delim+1, brTit.Length()-1 );
+    }
+    printf("%24s%4s%12s%4s%12d\n", br->GetName(), " ", brType.Data(), " ", br->GetEntries());
+  }
+  printf("\n");
+}
+
+//______________________________________________________________________________
 // Prob2Sig -- simple function to convert a probability to a significance level
 // -- This probably already exists as a built-in function somewhere,
 //      but I'm adding it here for convenience
@@ -434,31 +463,32 @@ Double_t TDuvallUtils::Sig2Prob( Double_t sig )
 //______________________________________________________________________________
 // UnbinnedKSTest -- function to execute *unbinned* TMath::KolmogorovTest on a pair of TTrees
 //   containing TBranches  with matching names
-// -- Usage: Double_t P = unbinnedKSTest( TTree *T1, TTree *T2, const char* branchName )
+// -- Usage: Double_t P = unbinnedKSTest( TTree *T1, TTree *T2, const char* branchName1, const char* branchName2 = "" )
 // -- Branches must be of type Double_t
 // -- P is the probability for match
 // -- *T1 and *T2 are pointers to the two input trees
 // -- See the notes in TMath::KolmogorovTest and TH1::KolmogorovTest for details
-Double_t TDuvallUtils::UnbinnedKSTest( TTree *T1, TTree *T2, const char* branchName )
+Double_t TDuvallUtils::UnbinnedKSTest( TTree *T1, TTree *T2, const char* branchName1, const char* branchName2)
 {
   // Note: Arrays must be sorted before they can be
   //   fed to TMath::KolmogorovTest!
   // init
   // basics
+  if (branchName2 = "") branchName2 = branchName1;
   Double_t P;
   Double_t q1, q2; // quantity1, quantity2
   Int_t k;
   Int_t N1 = (Int_t)T1->GetEntries();
   Int_t N2 = (Int_t)T2->GetEntries();
   // TBranches
-  TBranch *br1 = T1->GetBranch(branchName);
-  TBranch *br2 = T2->GetBranch(branchName);
+  TBranch *br1 = T1->GetBranch(branchName1);
+  TBranch *br2 = T2->GetBranch(branchName2);
   if ( (br1==0x0) | (br2==0x0) ) {
     gFile->Error("unbinnedKSTest", "Specified branch missing from one or both TTrees.");
     return TMath::QuietNaN();
   }
-  T1->SetBranchAddress(branchName, &q1);
-  T2->SetBranchAddress(branchName, &q2);
+  T1->SetBranchAddress(branchName1, &q1);
+  T2->SetBranchAddress(branchName2, &q2);
   // raw arrays
   Double_t *arr1 = new Double_t[N1];
   Double_t *arr2 = new Double_t[N2];
