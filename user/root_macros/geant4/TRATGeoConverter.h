@@ -28,7 +28,7 @@ private:
   // members
   const char*		fInFileName;							// input filename
   const char*		fOutFileName;							// output filename
-  Bool_t		fkOverwrite;							// overwrite y/n
+  /* Bool_t		fkOverwrite;							// overwrite y/n */
   TFile*		fInFile;							// input file
   FILE*			fOutFile;							// output file
   TRATGeo*		fRATGeo;							// geometry manager
@@ -48,11 +48,11 @@ public:
   // setters
   /* void			SetInFileName( const char* inFileName ) { fInFileName = inFileName; } */
   void			SetOutFileName( const char* outFileName ) { fOutFileName = outFileName; }
-  void			SetOverwrite( Bool_t overWrite ) { fkOverwrite = overWrite; }
+  /* void			SetOverwrite( Bool_t overWrite ) { fkOverwrite = overWrite; } */
   // getters
   const char*		GetInFileName() { return fInFileName; }
   const char*		GetOutFileName() { return fOutFileName; }
-  Bool_t		GetOverwrite() { return fkOverwrite; }
+  /* Bool_t		GetOverwrite() { return fkOverwrite; } */
   TFile*		GetInFile() { return fInFile; }
   FILE*			GetOutFile() { return fOutFile; }
   TRATGeo*		GetGeo() { return fRATGeo; }

@@ -193,7 +193,7 @@ void TRATGeoConverter::Print()
   printf("%s: %s\tat: %#lx\n", GetName(), GetTitle(), this);
   printf("InFile: %s\tat: %#lx\n", fInFileName, fInFile);
   printf("OutFile: %s\tat: %#lx\n", fOutFileName, fOutFile);
-  printf("Overwrite: %d\n", fkOverwrite);
+  /* printf("Overwrite: %d\n", fkOverwrite); */
   printf("TRATGeo at: %#lx\n", fRATGeo);
 }
 
