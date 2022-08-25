@@ -34,26 +34,6 @@
 /*   fOutFileName = ""; */
 /* } */
 
-/* //______________________________________________________________________________ */
-/* // normal ctor */
-/* TRATGeoConverter::TRATGeoConverter( const char* inFileName, const char* outFileName ) */
-/* { */
-/*   SetName("TRATGeoConverter"); */
-/*   SetTitle("Class for converting RAT-PAC geometry to GEANT4 format"); */
-/*   fInFileName = inFileName; */
-/*   if ( outFileName == "" ) { */
-/*     TString fileName(inFileName); */
-/*     cout << fileName.Data() << endl; //debug */
-/*     fileName.ReplaceAll( "\.root", "_geo.cc" ); */
-/*     cout << fileName.Data() << endl; //debug */
-/*     const char* oFN = fileName.Data(); */
-/*     fOutFileName = oFN; */
-/*   } else { */
-/*     fOutFileName = outFileName; */
-/*   } */
-/*   /1* cout << fOutFileName << endl; //debug *1/ */
-/* } */
-
 //______________________________________________________________________________
 // normal ctor
 TRATGeoConverter::TRATGeoConverter( const char* inFileName )
@@ -75,20 +55,6 @@ void TRATGeoConverter::SetInFile()
   fInFile = TFile::Open(fInFileName);
   return;
 }
-
-/* //______________________________________________________________________________ */
-/* // SetOutFile */
-/* void TRATGeoConverter::SetOutFile() */
-/* { */
-/*   Option_t* mode; */
-/*   if (fkOverwrite) { */
-/*     mode = "recreate"; */
-/*   } else { */
-/*     mode = "create"; */
-/*   } */
-/*   fOutFile = TFile::Open( fOutFileName, mode ); */
-/*   return; */
-/* } */
 
 //______________________________________________________________________________
 // SetOutFile
@@ -124,7 +90,6 @@ void TRATGeoConverter::SetFiles()
 void TRATGeoConverter::BuildGeometry()
 {
   SetFiles();
-  /* fOutFileName = fOutFile->GetName(); //FIXME */
   fInFile->cd();
   fRATGeo = new TRATGeo;
   GetGeo()->Build();

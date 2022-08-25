@@ -30,7 +30,6 @@ private:
   const char*		fOutFileName;							// output filename
   Bool_t		fkOverwrite;							// overwrite y/n
   TFile*		fInFile;							// input file
-  /* TFile*		fOutFile;							// output file */
   FILE*			fOutFile;							// output file
   TRATGeo*		fRATGeo;							// geometry manager
 
@@ -39,7 +38,7 @@ private:
   void			SetInFile();							// set input file
   void			SetOutFile();							// set output file
   void			SetFiles();							// set both
-  /* void			BuildGeometry();						// set up TRATGeo // TEMP PUBLIC */
+  void			BuildGeometry();						// set up TRATGeo // TEMP PUBLIC
 
 public:
   // public methods
@@ -55,13 +54,11 @@ public:
   const char*		GetOutFileName() { return fOutFileName; }
   Bool_t		GetOverwrite() { return fkOverwrite; }
   TFile*		GetInFile() { return fInFile; }
-  /* TFile*		GetOutFile() { return fOutFile; } */
   FILE*			GetOutFile() { return fOutFile; }
   TRATGeo*		GetGeo() { return fRATGeo; }
   // util
   void			CloseOutFile() { fclose(fOutFile); }
   // main
-  void			BuildGeometry();						// set up TRATGeo // TEMP PUBLIC
   void			Convert();							// MAIN
 
 // Integrating the TRATGeoConverter class into ROOT
