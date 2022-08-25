@@ -43,6 +43,7 @@ TClassTemplate::TClassTemplate( const char* someArg1, Double_t someArg2 )
 void TClassTemplate::SomePrivateMethod()
 {
   // define here
+  return;
 }
 
 //______________________________________________________________________________
@@ -50,6 +51,7 @@ void TClassTemplate::SomePrivateMethod()
 Double_t TClassTemplate::SomeCalculation( Int_t someArg1 )
 {
   // define here
+  return retVal;
 }
 
 ////______________________________________________________________________________
