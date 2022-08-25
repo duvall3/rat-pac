@@ -377,8 +377,11 @@ void TRefMatch::RefCompare()
     f = TFile::Open( currentFileName.Data() );
     f->cd();
     T = (TTree*)gDirectory->Get("T");
-    params = (TMap*)gDirectory->Get("params");
-    v = (TVectorD*)params->GetValue("phiTrue");
+    v = (TVectorD*)gDirectory->Get("phiTrue");
+    if (v == 0x0) {
+      params = (TMap*)gDirectory->Get("params");
+      v = (TVectorD*)params->GetValue("phiTrue");
+    }
     V.SetElements( v->GetMatrixArray() );
     phiRef = V[0];
     M(k,0) = phiRef;
