@@ -199,7 +199,7 @@ void TRATGeoConverter::Convert()
     fprintf( f, "G4LogicalVolume *%s = new G4LogicalVolume(%s, %s, \"%s\");\n", volLogicName.Data(), volSolidName.Data(), volMatName.Data(), volName.Data() );
     // placement
     volMother = vol->GetMother();
-    volMother.Prepend("logic");
+    volMother.Prepend("logic_");
     fprintf( f, "new G4PVPlacement(0, %s, %s, \"%s\", %s, false, 0, checkOverlaps);\n", volPosName.Data(), volLogicName.Data(), volName.Data(), volMother.Data() );
     fprintf( f, "\n" );
   }
