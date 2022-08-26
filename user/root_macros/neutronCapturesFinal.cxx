@@ -123,11 +123,16 @@ for ( k=0; k<N; k++ ) {
     h_cospsi->Fill(cospsi);
     /* h_map->Fill( dr_q.Phi()*TMath::RadToDeg(), 90. - dr_q.Theta()*TMath::RadToDeg() ); */
     h_map->Fill( phi, 90. - theta );
-    br_phi->Fill();
-    br_theta->Fill();
-    br_dr_q->Fill();
-    br_cp->Fill();
+  } else {
+    phi = TMath::QuietNaN();
+    theta = TMath::QuietNaN();
+    dr_q.SetXYZ(TMath::QuietNaN(), TMath::QuietNaN(), TMath::QuietNaN());
+    cospsi = TMath::QuietNaN();
   }
+  br_phi->Fill();
+  br_theta->Fill();
+  br_dr_q->Fill();
+  br_cp->Fill();
 }
 
 
