@@ -77,6 +77,7 @@ TFile *fn = TFile::Open(savename, "recreate");
 
 // prepare new TTree
 TTree* T_ncap = new TTree("T_ncap", "Neutron-Capture Displacements");
+T_ncap->Branch("event", &k);
 T_ncap->Branch("lattd", &lattd);
 T_ncap->Branch("longtd", &longtd);
 T_ncap->Branch("R", &R);
