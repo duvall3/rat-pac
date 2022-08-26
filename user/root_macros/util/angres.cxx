@@ -30,7 +30,7 @@ if (fileName.Contains("_results.root")) {
   return;
 }
 Long64_t N = T_r->GetEntries(cuts);
-Double_t l, dp, P;
+Double_t l, dp, P = TMath::QuietNaN();
 TVector3 mu;
 TCanvas *c_angres = new TCanvas("c_angres", "c_angres");
 

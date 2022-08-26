@@ -66,6 +66,8 @@ if ( TMath::IsNaN(phi_source_deg) ) {
     phi_source_deg = phiStr.Atof();
   }
 }
+TVectorD phiTrue(1);
+phiTrue[0] = phi_source_deg;
 
 // histograms
 // capture/interevent time
@@ -185,7 +187,7 @@ h_map->GetYaxis()->SetTitle("lattitude (^{o})");
 c_zeta->cd();
 // init
 Double_t N_phi = h_zeta->GetEntries();
-Double_t phiLower, phiUpper, phiTrue = phi_source_deg;
+Double_t phiLower, phiUpper;
 Double_t phiBinWidth = h_zeta->GetBinWidth(0);
 Int_t lbin, ubin;
 lbin = h_zeta->FindFirstBinAbove(0);
@@ -194,8 +196,8 @@ phiLower = h_zeta->GetBinLowEdge(lbin);
 phiUpper = h_zeta->GetBinLowEdge(ubin) + phiBinWidth;
 // fitting function with generic starting guesses for fit parameters
 TF1 *phi_phit = new TF1("phi_phit", "[0] + [1]*TMath::Gaus(x,[2],[3])", phiLower, phiUpper); // "[ph]it = fit" because I'm a dork
-Double_t sigma_guess = 20.;	// param [3]: guess width ~ few*10^1 degrees
-Double_t phi_guess = phiTrue;	// param [2]: guess actual source direction
+Double_t sigma_guess = 20.;		// param [3]: guess width ~ few*10^1 degrees
+Double_t phi_guess = phiTrue[0];	// param [2]: guess actual source direction
 Double_t A_guess = N_phi / ( sigma_guess * TMath::Sqrt(2*TMath::Pi()) ); // param [1]: usual Gaussian normalization
 Double_t noise_guess = TMath::Mean(h_zeta->GetNbinsX(), h_zeta->GetArray()); // param [0]: mean histogram level ~ baseline offset
 phi_phit->SetParameters(noise_guess, A_guess, phi_guess, sigma_guess);
@@ -230,6 +232,8 @@ h_map->Draw("aitoff");
 /* plotList->Add(c_map); */
 
 // save, print, close
+// true source direction
+phiTrue.Write("phiTrue");
 // plots/ dir
 gSystem->MakeDirectory("plots");
 savename.Prepend("plots/");
