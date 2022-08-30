@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Geometry</title>
+        <meta charset='utf-8'/>
+        <link rel="stylesheet" type="text/css" href="./notes.html_files/github-markdown.css">
+        <style>
+            .markdown-body {
+                box-sizing: border-box;
+                min-width: 200px;
+                max-width: 980px;
+                margin: 0 auto;
+                padding: 45px;
+            }
+        </style>
+        <script>
+            window.onload = function() {
+                if (document.querySelector("script[type=\"math/tex; mode=display\"]") !== null) {
+                    var mathjax = document.createElement("script");
+                    mathjax.src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML";
+                    document.head.appendChild(mathjax);
+                }
+                if (document.getElementsByTagName("code").length !== 0) {
+                    var highlight = document.createElement("script");
+                    var highlightcss = document.createElement("link");
+                    highlight.src = "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js";
+                    highlightcss.rel = "stylesheet";
+                    highlightcss.href = "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/github.min.css";
+                    highlight.onload = function() {hljs.initHighlighting();};
+                    document.head.appendChild(highlight);
+                    document.head.appendChild(highlightcss);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <article class="markdown-body">
+            <h1 id="development-notes">Development Notes</h1>
+<p><code>~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 08/2022 ~</code></p>
+<h1 id="geometry">Geometry</h1>
+<h2 id="individual-volumes">Individual Volumes</h2>
+<p>Required Steps:</p>
+<ul>
+<li>Material</li><li>Position</li><li>Shape</li><li>Logical Volume</li><li>Placement</li></ul>
+<p>Example -- <code>Vol1</code> in mother <code>world</code></p>
+<ul>
+<li>Material = air</li><li>Position = origin</li><li>Shape = 100-cm cube</li><li>Logical Volume = logicVol1</li><li>Placement = plain / default</li></ul>
+<pre><code class="lang-cpp">// example volume &quot;Vol1&quot;:
+
+// material
+G4Material *Vol1_mat = nist-&gt;FindOrBuildMaterial(&quot;G4_AIR&quot;);
+
+// position
+G4ThreeVector pos1 = G4ThreeVector(0,0,0);
+
+// shape and size
+G4Double vol1_length = 100.0*cm;
+G4Box * solidVol1 = new G4Box( &quot;Vol1&quot;, vol1_length, vol1_length, vol1_length );
+
+// logical volume
+G4LogicalVolume *logicVol1 = new G4LogicalVolume( solidVol1, Vol1_mat, &quot;Vol1&quot; );
+
+// placement
+new G4PVPlacement( 0, pos1, logicVol1, &quot;Vol1&quot;, logicWorld, false, 0, checkOverlaps );
+
+// all pau!   )
+</code></pre>
+
+        </article>
+    </body>
+</html>

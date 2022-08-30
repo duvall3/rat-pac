@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Description</title>
+        <meta charset='utf-8'/>
+        <link rel="stylesheet" type="text/css" href="./README.html_files/github-markdown.css">
+        <style>
+            .markdown-body {
+                box-sizing: border-box;
+                min-width: 200px;
+                max-width: 980px;
+                margin: 0 auto;
+                padding: 45px;
+            }
+        </style>
+        <script>
+            window.onload = function() {
+                if (document.querySelector("script[type=\"math/tex; mode=display\"]") !== null) {
+                    var mathjax = document.createElement("script");
+                    mathjax.src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML";
+                    document.head.appendChild(mathjax);
+                }
+                if (document.getElementsByTagName("code").length !== 0) {
+                    var highlight = document.createElement("script");
+                    var highlightcss = document.createElement("link");
+                    highlight.src = "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js";
+                    highlightcss.rel = "stylesheet";
+                    highlightcss.href = "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/github.min.css";
+                    highlight.onload = function() {hljs.initHighlighting();};
+                    document.head.appendChild(highlight);
+                    document.head.appendChild(highlightcss);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <article class="markdown-body">
+            <h1 id="geant4-utils-for-rat-pac-tratgeoconverter">GEANT4 Utils for RAT-PAC | TRATGeoConverter</h1>
+<p><code>~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 08/2022 ~</code></p>
+<blockquote>
+<p>Part of <a href="github.com/duvall3/rat-pac/"><em>Tools for Reactor-Antineutrino Studies in RAT-PAC</em></a></p>
+<p>Copyright (C) 2022 Mark J. Duvall / T. Rocks Science</p>
+<pre><code>This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+</code></pre></blockquote>
+<hr>
+<h1 id="description">Description</h1>
+<p>This class is designed to convert experiment geometries from RAT-PAC to GEANT4.</p>
+<ul>
+<li>It is developed for ROOT v5 and may not work in ROOT6.</li><li>It operates on the ROOT files that RAT-PAC generates as its default type of output.</li></ul>
+<p>It is currently quite basic. As of this writing, the following are <em>not</em> yet implemented:</p>
+<ul>
+<li>volumes types other than <code>box</code> / <code>G4Box</code></li><li>volume rotations</li><li>volume repetitions -- each item gets its own entry</li></ul>
+<h1 id="usage">Usage</h1>
+<h2 id="basic-usage">Basic Usage</h2>
+<p>The most basic usage is to simply create an instance of TRATGeoConverter using your desired input filename and then call the <em>::Convert()</em> method, as illustrated below:</p>
+<h3 id="example-using-datafile-ratoutput-root">Example Using Datafile <code>RAToutput.root</code></h3>
+<pre><code class="lang-cpp">TRATGeoConverter gc(&quot;RAToutput.root&quot;);
+gc.Convert();
+</code></pre>
+<h2 id="advanced-usage">Advanced Usage</h2>
+<p>The only other features currently available are the querying and setting of the input and output filenames.
+See the methods listed in the header file <code>TRATGeoConverter.h</code> for more information.
+Beyond that, users are quite welcome to modify the source file <code>TRATGeoConverter.cxx</code> as they see fit (in accordance with the above license).
+Other features will be documented here if and when they are added.</p>
+<hr>
+<p><code>~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 08/2022 ~</code></p>
+
+        </article>
+    </body>
+</html>
