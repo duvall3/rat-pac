@@ -41,15 +41,10 @@ if ( ! gInterpreter->IsLoaded("angularRecon.cxx") ) gROOT->LoadMacro("angularRec
 // MAIN
 printf( "\n\n//// Preparing datarun \"%s\"... ////\n\n\n", basename.Data() );
 rt_to_root( rtfile.Data() );
-//ibdTracksToScint( rootfile.Data() );
 particleTracksToScint( rootfile.Data() );
 correctEnergies( scintfile.Data(), energiesfile.Data() );
 printf( "//// Preparation Complete ////\n\n\n" );
-//printf( "\n\n//// Analyzing datarun \"%s\"... ////\n\n\n", basename.Data() );
-//SEDAQ2( scintfile.Data(), kGraphics, kQuantizedPositions, kPositionResolution, kAzimuthalOnly );
-//angularRecon( resultsfile.Data(), kGraphics );
 duvallAnalyze( basename, kGraphics, kQuantizedPositions, kPositionResolution, kAzimuthalOnly );
-//printf( "//// Analysis Complete ////\n\n\n" );
 
 // all pau!   )
 return;

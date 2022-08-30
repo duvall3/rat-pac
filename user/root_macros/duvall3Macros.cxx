@@ -80,6 +80,7 @@ gROOT->LoadMacro("generateTestSampleDistribSeg.cxx");
 /* gROOT->LoadMacro("refCompare.cxx"); */
 gROOT->LoadMacro("KSComparison.cxx");
 gROOT->LoadMacro("KSSummary.cxx");
+gROOT->LoadMacro("KSComparisonSingleAngle.cxx");
 
 }
 

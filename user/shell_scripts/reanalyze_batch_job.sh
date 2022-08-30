@@ -59,6 +59,12 @@ done
 # remake TChain
 chain.sh
 
+# if run has neutronCaptures files, remake that TChain as well
+NUMNCAP=$(find -name "*_ncap.root" | wc -l)
+if [ $NUMNCAP -gt 1 ]; then
+  chain_ncap.sh
+fi
+
 # all pau!   )
-echo -e "\n/// Batch job reanalysis complete. You are now ready to run duvallAnalyze.cxx on the new $DATARUN_NAME TChain. ///\n\n"
+echo -e "\n/// Batch job reanalysis complete. You are now ready to run duvallAnalyze.cxx (and / or neutronCapturesFinal.cxx) on the new $DATARUN_NAME TChain(s). ///\n\n"
 exit 0

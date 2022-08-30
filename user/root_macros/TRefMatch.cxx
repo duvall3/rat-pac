@@ -199,11 +199,11 @@ void TRefMatch::FillReferenceFileList()
   for ( i = dirFiles->begin(); i != dirFiles->end(); ++i ) {
     sf = (TSystemFile*)*i;
     sfName.Form( sf->GetName() );
-    /* cout << sfName.Data(); //debug */
     if ( sfName.Contains(fReferenceFilePattern) ) fReferenceFileList->Add(sf);
   }
 
   // all pau!   )
+  printf("Reference-file fill complete.\n");
   return;
 
 }
@@ -458,10 +458,11 @@ void TRefMatch::DrawResults( Bool_t kDrawFit )
   TFile *refFile = TFile::Open( fBestMatchFile->GetName() );
   TTree* TRef = (TTree*)refFile->Get("T");
   // init
-  TTree *T = GetTree();
+  TTree *T = GetTree(); // test-sample tree
   const char* varName = GetTestVarName();
   TCanvas *c_RefMatch = new TCanvas("c_RefMatch", "Reference-Comparison Results");
-  TH1D *h = new TH1D( "h_TestSample", "Test Sample", 100, T->GetMinimum(varName), T->GetMaximum(varName) );
+  /* TH1D *h = new TH1D( "h_TestSample", "Test Sample", 100, T->GetMinimum(varName), T->GetMaximum(varName) ); */
+  TH1D *h = new TH1D( "h_TestSample", "Test Sample", 100, -180., 180. );
   Int_t N = GetResultsMatrix().GetNrows();
   const Double_t *x = GetResultsMatrix().GetSub(0,N-1,0,0).GetMatrixArray();
   const Double_t *y = GetResultsMatrix().GetSub(0,N-1,1,1).GetMatrixArray();
@@ -487,7 +488,9 @@ void TRefMatch::DrawResults( Bool_t kDrawFit )
   }
   // reference plot
   Int_t nBinsX = h->GetNbinsX();
-  TH1D *hRef = new TH1D("hRef", "best-match reference plot", nBinsX, h->GetBinLowEdge(0), h->GetBinLowEdge(nBinsX)+h->GetBinWidth(nBinsX));
+  /* TH1D *hRef = new TH1D("hRef", "best-match reference plot", nBinsX, h->GetBinLowEdge(0), h->GetBinLowEdge(nBinsX)+h->GetBinWidth(nBinsX)); */
+  /* TH1D *hRef = new TH1D("hRef", "best-match reference plot", nBinsX, T->GetMinimum(varName), T->GetMaximum(varName) ); */
+  TH1D *hRef = new TH1D("hRef", "best-match reference plot", 100, -180., 180. );
   TRef->SetBranchAddress(varName, &qRef);
   for ( Int_t kTRef=0; kTRef<TRef->GetEntries(); kTRef++ ) {
     TRef->GetEntry(kTRef);
@@ -499,19 +502,22 @@ void TRefMatch::DrawResults( Bool_t kDrawFit )
   hTitStr.Append( hTitStr.Format("%.1f",fResults[0]) );
   h->SetTitle(hTitStr.Data());
   h->GetXaxis()->SetTitle("phi (^{o})");
-  // scaled reference plot
+  h->SetLineWidth(3.);
+  // scaled reference plot -- draw, add to legend, then set attributes
   hRef->Scale( h->GetMaximum() / hRef->GetMaximum() );
-  hRef->SetLineColor(kRed);
-  /* hRef->SetFillColor(kRed); */
-  hRef->SetMarkerColor(kRed);
-  hRef->SetMarkerStyle(kStar);
-  hRef->SetMarkerSize(3);
-  hRef->Draw("Psame");
+  const enum EColor refColor = kRed;
+  hRef->SetLineColor(refColor);
+  hRef->SetFillColor(refColor);
+  hRef->Draw("same");
   // histogram legend
-  TLegend *hLeg = new TLegend(.75, .45, .98, .6);
+  TLegend *hLeg = new TLegend(.75, .55, .98, .70);
   hLeg->AddEntry(h, "Datarun");
-  hLeg->AddEntry(hRef, "Best Reference Match (scaled)");
+  hLeg->AddEntry(hRef, "Best Reference Match (scaled)", "l");
   hLeg->Draw();
+  // final (i.e., post-legend) attributes for hRef
+  Double_t refAlpha = 0.3;
+  hRef->SetLineColorAlpha(refColor, refAlpha);
+  hRef->SetFillColorAlpha(refColor, refAlpha);
   // KS results
   // log plot from 0.1% to ~100%
   TVirtualPad *p2 = c_RefMatch->GetPad(2);

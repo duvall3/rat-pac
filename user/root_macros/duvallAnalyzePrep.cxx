@@ -30,16 +30,15 @@ resultsfile = basename + "_results.root";
 
 // check / load macros
 if ( ! gInterpreter->IsLoaded("rt_to_root.cxx") ) gROOT->LoadMacro("rt_to_root.cxx");
-//if ( ! gInterpreter->IsLoaded("ibdTracksToScint.cxx") ) gROOT->LoadMacro("ibdTracksToScint.cxx");
 if ( ! gInterpreter->IsLoaded("particleTracksToScint.cxx") ) gROOT->LoadMacro("particleTracksToScint.cxx");
 if ( ! gInterpreter->IsLoaded("correctEnergies.cxx") ) gROOT->LoadMacro("correctEnergies.cxx");
 
 // MAIN
 printf( "\n\n//// Preparing datarun \"%s\"... ////\n\n\n", basename.Data() );
 rt_to_root( rtfile.Data() );
-//ibdTracksToScint( rootfile.Data() );
 particleTracksToScint( rootfile.Data() );
 correctEnergies( scintfile.Data(), energiesfile.Data() );
+neutronCaptures( rootfile.Data() );
 printf( "//// Preparation Complete ////\n\n\n" );
 
 // all pau!   )
