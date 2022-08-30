@@ -36,7 +36,7 @@ public:
   TClassTemplate( const char* someArg1, Double_t someArg2 );				// normal ctor
   // setters and getters
   void			SetData( Double_t someArg ) { fSomeData = someArg; }		// setter
-  Double_t		GetData() { return fData; }					// getter
+  Double_t		GetData() { return fSomeData; }					// getter
   // general
   Double_t		SomeCalculation( Int_t someArg1 = 0 );				// regular function with default argument
 

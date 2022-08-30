@@ -17,7 +17,8 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#include <TClassTemplate.h>
+// #include <TClassTemplate.h>
+#include "TClassTemplate.h"
 
 // Call the ClassImp() macro to give the TClassTemplate class RTTI and full I/O capabilities
 #if !defined(__CLING__)
@@ -29,6 +30,7 @@
 TClassTemplate::TClassTemplate()
 {
   // define here
+  fSomeData = 0.;
 }
 
 //______________________________________________________________________________
@@ -36,6 +38,7 @@ TClassTemplate::TClassTemplate()
 TClassTemplate::TClassTemplate( const char* someArg1, Double_t someArg2 )
 {
   // define here
+  fSomeData = 0.;
 }
 
 //______________________________________________________________________________

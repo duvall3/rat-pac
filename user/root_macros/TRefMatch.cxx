@@ -266,8 +266,20 @@ Double_t TRefMatch::UnbinnedKSTest( TTree *T1, TTree *T2, const char* branchName
   Double_t P;
   Double_t q1, q2; // quantity1, quantity2
   Long64_t k;
-  if (nEvents1==0) nEvents1 = (Long64_t)T1->GetEntries();
-  if (nEvents2==0) nEvents2 = (Long64_t)T2->GetEntries();
+  /* if (nEvents1==0) nEvents1 = (Long64_t)T1->GetEntries(); */
+  /* if (nEvents2==0) nEvents2 = (Long64_t)T2->GetEntries(); */
+  // need to account for possible NaNs in input data
+  TString cutStr;
+  if (nEvents1==0) {
+    cutStr.Form("! TMath::IsNaN(%s)", branchName1);
+    TCut cut1(cutStr.Data());
+    nEvents1 = T1->GetEntries(cut1);
+  }
+  if (nEvents2==0) {
+    cutStr.Form("! TMath::IsNaN(%s)", branchName2);
+    TCut cut2(cutStr.Data());
+    nEvents2 = T2->GetEntries(cut2);
+  }
   // TBranches
   TBranch *br1 = T1->GetBranch(branchName1);
   TBranch *br2 = T2->GetBranch(branchName2);
@@ -293,11 +305,11 @@ Double_t TRefMatch::UnbinnedKSTest( TTree *T1, TTree *T2, const char* branchName
   // first fill
   for ( k=0; k<nEvents1; k++ ) {
     T1->GetEntry(k);
-    arr1[k] = q1;
+    if ( ! TMath::IsNaN(q1) ) arr1[k] = q1;
   }
   for ( k=0; k<nEvents2; k++ ) {
     T2->GetEntry(k);
-    arr2[k] = q2;
+    if ( ! TMath::IsNaN(q2) ) arr2[k] = q2;
   }
   // sort
   TMath::Sort(nEvents1, arr1, ind1, kFALSE);
@@ -534,6 +546,57 @@ void TRefMatch::DrawResults( Bool_t kDrawFit )
   SetCanvas(c_RefMatch);
   SetTestSampleHist(h);
   SetResultsGraph(g);
+  return;
+}
+
+//______________________________________________________________________________
+// ExtractRef
+void TRefMatch::ExtractRef( const char* runName, const char* treeName, const char* branchName )
+{
+  // init
+  // datarun file
+  TFile *fRun = TFile::Open(runName);
+  Double_t qRun;
+  TTree *TRun = (TTree*)gDirectory->Get(treeName);
+  TRun->SetBranchAddress(branchName, &qRun);
+  Long64_t k = 0, N = TRun->GetEntries();
+  // for angular runs
+  Bool_t kPhiTest(kFALSE);
+  TVectorD *phiTrue = (TVectorD*)gDirectory->Get("phiTrue");
+  if (phiTrue!=0x0) {
+    kPhiTest = kTRUE;
+    TVectorD phiTrueV = *phiTrue;
+    Double_t phiTrueDouble = phiTrueV[0];
+  }
+  // new Ref file
+  TString refName;
+  if (kPhiTest) {
+    refName.Form( "%02dDEG_ref.root", TMath::Nint(phiTrueDouble) );
+  } else {
+    refName = runName;
+    Ssiz_t slash = refName.Last('/');
+    refName = refName( slash+1, refName.Length()-1 );
+    refName.Append("_ref.root");
+  }
+  TFile *fRef = TFile::Open( refName.Data(), "recreate" );
+  fRef->cd();
+  /* TTree *TRef = new TTree("TRef", "TTree to hold reference distribution"); */
+  TTree *TRef = new TTree("T", "TTree to hold reference distribution");
+  Double_t qRef;
+  TRef->Branch(branchName, &qRef);
+  // MAIN
+  for ( k=0; k<N; k++ ) {
+    TRun->GetEntry(k);
+    qRef = qRun;
+    if( ! TMath::IsNaN(qRef) ) TRef->Fill();
+  }
+  // save and close
+  fRef->cd();
+  /* TRef->Write(treeName); */
+  TRef->Write("T");
+  if (kPhiTest) phiTrueV.Write("phiTrue");
+  fRef->Close();
+  fRun->Close();
   return;
 }
 
