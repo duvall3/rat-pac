@@ -1,0 +1,64 @@
+#!/bin/bash
+# cvim -- conveniently open C++ classes in vim tabs
+# -- USAGE: cvim <NAME>, where NAME is either a filename
+#      or the name of the class
+# ~ Mark J. Duvall ~ duvall3@github.com ~ 06/2022 ~ #
+
+#Copyright (C) 2022 Mark J. Duvall / T. Rocks Science
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+# arg check / help message
+HELP_MSG="USAGE: cvim <NAME> , where NAME is either a filename or the name of a class."
+if [[ ($# -lt 1) || ($1 =~ -h) ]]; then
+  echo $HELP_MSG
+  exit 3
+fi
+
+# dir check
+if [[ $(pwd) =~ [Pp](ublic|rivate) ]]; then
+  FIND_PATH=".."
+else
+  FIND_PATH="."
+fi
+
+# locate header and source files
+CLASS=$(basename ${1%.*})
+HEADER=$(find $FIND_PATH -name "$CLASS.h*")
+SOURCE=$(find $FIND_PATH -name "$CLASS.c*")
+# echo -e "Class:\t$CLASS\nHeader:\t$HEADER\nSource:\t$SOURCE" #debug
+
+# confirm
+HEADER_MISSING=false
+SOURCE_MISSING=false
+if [[ ! -e $HEADER ]]; then
+  HEADER_MISSING=true
+  echo "Warning: Header for $1 not found."
+fi
+if [[ ! -e $SOURCE ]]; then
+  SOURCE_MISSING=true
+  echo "Warning: Source for $1 not found."
+fi
+if ( $HEADER_MISSING && $SOURCE_MISSING ); then
+  echo "Error in cvim: No files for $1 found. Exiting."
+  exit 1
+fi
+
+# main
+# echo -e "Class:\t$CLASS\nHeader:\t$HEADER\nSource:\t$SOURCE" #debug
+vim -p $HEADER $SOURCE
+
+# all pau!   )
+exit $?
+
