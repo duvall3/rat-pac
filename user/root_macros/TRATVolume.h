@@ -82,7 +82,10 @@ public:
   TString		GetMaterial() const { return fMaterial; }
   Double_t		GetDensity() const { return fDensity; }
   TString		GetMother() const { return fMother; }
-  TVector3*		GetSize() const { return &fSize; }
+  TVector3*		GetSize() const { return &fSize; } // *box-type only*
+  Double_t		GetRMin() const { return fRMin; } // *tube-type only*
+  Double_t		GetRMax() const { return fRMax; } // *tube-type only*
+  Double_t		GetSizeZ() const { return fSizeZ; } // *tube-type only*
   TVector3*		GetRelativePosition() const { return &fRelativePosition; }
   TVector3*		GetAbsolutePosition() const { return &fAbsolutePosition; }
   // general derived quantities:

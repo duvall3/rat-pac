@@ -95,8 +95,7 @@ TGeoMaterial *mat = new TGeoMaterial("vacuum", 0, 0, 0);
 TGeoMedium *med = new TGeoMedium("vacuum", 1, mat);
 TGeoMedium *ej254_005li6 = new TGeoMedium("vacuum", 1, mat);
 TGeoMedium *glass = new TGeoMedium("vacuum", 1, mat);
-TString waterstr = "water";
-TRegexp waterregex = waterstr;
+TRegexp waterregex("water");
 // top volume //HC//
 //TGeoVolume* world = geo->MakeBox("world", med, 1.e3, 1.e3, 1.e3); //cm
 //geo->SetTopVolume(world);
@@ -122,16 +121,28 @@ TList *rvols = g->GetListOfVolumes();
 //cout << "rvols Entries: " << rvols->GetEntries() << endl; //debug
 TIter i(rvols);
 TRATVolume *rvol;
-TString volumeName, volumeMother; //, volumeType;
+TString volumeName, volumeMother, volumeType;
+Double_t volumeRMin, volumeRMax, volumeSizeZ;
 TVector3 *volumeSize, *volumePosition;
 for ( i=rvols->begin(); i!=rvols->end(); ++i ) {
   rvol = (TRATVolume*)*i;
   volumeName = rvol->GetVolName();
   volumeMother = rvol->GetMother();
+  volumeType = rvol->GetVolumeType();
   volumeSize = rvol->GetSize();
+  volumeRMin = rvol->GetRMin();
+  volumeRMax = rvol->GetRMax();
+  volumeSizeZ = rvol->GetSizeZ();
   volumePosition = rvol->GetAbsolutePosition();
   // create volume
-  TGeoVolume* volume = geo->MakeBox(volumeName.Data(), med, volumeSize->X(), volumeSize->Y(), volumeSize->Z() );
+  if (volumeType == "box") {
+    TGeoVolume* volume = geo->MakeBox(volumeName.Data(), med, volumeSize->X(), volumeSize->Y(), volumeSize->Z());
+  } else if (volumeType == "tube") {
+    /* TGeoVolume* volume = geo->MakeTube(volumeName.Data(), med, volumeRMin, volumeRMax, volumeSizeZ); //FIXME -- tube positions also */
+    TGeoVolume* volume = geo->MakeTube(volumeName.Data(), med, 0., 12.7, 5000.); //debug
+  } else {
+    continue;
+  }
   if ( volumeName == "world" ) { // top volume //HC//
     if ( ! volume->IsTopVolume() ) {
     geo->SetTopVolume(volume);
@@ -163,6 +174,7 @@ for ( iv = vols->begin(); iv != vols->end(); ++iv ) {
   rvol = (TRATVolume*)g->GetVolume(volname.Data());
   volPosition = rvol->GetAbsolutePosition();
 
+  // volume checks
   if ( (vol->IsTopVolume()) || (volname=="world") ) continue; // skip world (already positioned when made top volume)
 
   trans = new TGeoTranslation( volPosition->X(), volPosition->Y(), volPosition->Z() );
@@ -176,9 +188,9 @@ for ( iv = vols->begin(); iv != vols->end(); ++iv ) {
     warnMsg.Form("volMother \"%s\" of volume \"%s\" not found in list at 0x%x.", volMotherName.Data(), volname.Data(); vols);
     g->Warning(warnLoc.Data(), warnMsg.Data());
   } else {
-    if (volname.Contains(tcregex)) volMother->AddNode(vol, k_volume, trans);
-    if (volname.Contains(waterregex)) {
-      volMother->AddNode(vol, k_volume, trans);
+    if (! vols->Contains(volname) ) { // avoid duplicating volumes
+      if (volname.Contains(tcregex)) volMother->AddNode(vol, k_volume, trans);
+      if (volname.Contains(waterregex)) volMother->AddNode(vol, k_volume, trans);
     }
   }
   k_volume++;
@@ -196,7 +208,7 @@ geo->SetTopVisible(kTRUE);
 TString can_name = experiment+", \""+filename+"\"";
 TCanvas* can = new TCanvas("can", can_name, 1000, 100, 850, 700);
 //can->SetFillColor(kCyan);
-world->Draw();
+//world->Draw();
 
 // draw desired volumes
 //for ( iv = vols->begin(); iv != vols->end(); ++iv ) {
@@ -205,6 +217,9 @@ world->Draw();
 //  if (volname.Contains(tcregex)) vol->Draw("SAME");
 //}
 //vol->Draw();
+
+// draw
+vols->Draw("same");
 
 // annotations
 TLegend *gleg = new TLegend(0.01, 0.01, 0.25, 0.15);

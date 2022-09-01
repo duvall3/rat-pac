@@ -165,8 +165,8 @@ void TRATVolume::FindExperiment()
 void TRATVolume::FindMaterial()
 {
   keyStrVol.Form("GEO[%s].material", fVolNameChr);
-  TObjString* typeTOS = fDB->GetValue(keyStrVol.Data());
-  TString volMaterial = typeTOS->GetString();
+  TObjString* matTOS = fDB->GetValue(keyStrVol.Data());
+  TString volMaterial = matTOS->GetString();
   volMaterial.ReplaceAll("\"","");
   fMaterial = volMaterial;
   return;
@@ -214,22 +214,41 @@ void TRATVolume::FindMother()
 void TRATVolume::FindSize()
 {
   TString valStrRelative;
-  TObjString* valTOS, dxTOS, dyTOS, dzTOS;
-  TObjArray* sizeArr;
-  keyStrVol.Form("GEO[%s].size", fVolNameChr);
-  if (fDB->GetValue(keyStrVol.Data())) {
-    valTOS = (TObjString*)fDB->GetValue(keyStrVol.Data());
-    valStrRelative = valTOS->GetString();
-    valStrRelative.ReplaceAll("[","");
-    valStrRelative.ReplaceAll("d","");
-    valStrRelative.ReplaceAll("]","");
-    valStrRelative.Replace(valStrRelative.Last(','), 1, "");
-    sizeArr = valStrRelative.Tokenize(",");
-    dxTOS = (TObjString*)sizeArr->At(0);
-    dyTOS = (TObjString*)sizeArr->At(1);
-    dzTOS = (TObjString*)sizeArr->At(2);
-    fSize = TVector3( dxTOS.GetString().Atoll(), dyTOS.GetString().Atoll(), dzTOS.GetString().Atoll() ); // ROOT wanted "." member access operators
-  }
+  if ( fVolumeType.Contains("box") ) { 			//TODO: change this 'if' to a 'switch' using Enums for the volume types
+    TObjString* valTOS, dxTOS, dyTOS, dzTOS;
+    TObjArray* sizeArr;
+    keyStrVol.Form("GEO[%s].size", fVolNameChr);
+    if (fDB->GetValue(keyStrVol.Data())) {
+      valTOS = (TObjString*)fDB->GetValue(keyStrVol.Data());
+      valStrRelative = valTOS->GetString();
+      valStrRelative.ReplaceAll("[","");
+      valStrRelative.ReplaceAll("d","");
+      valStrRelative.ReplaceAll("]","");
+      valStrRelative.Replace(valStrRelative.Last(','), 1, "");
+      sizeArr = valStrRelative.Tokenize(",");
+      dxTOS = (TObjString*)sizeArr->At(0);
+      dyTOS = (TObjString*)sizeArr->At(1);
+      dzTOS = (TObjString*)sizeArr->At(2);
+      fSize = TVector3( dxTOS.GetString().Atoll(), dyTOS.GetString().Atoll(), dzTOS.GetString().Atoll() ); // ROOT wanted "." member access operators
+    }
+  } else if ( fVolumeType.Contains("tube") ) {
+    TObjString *valTOS;
+    TString r_maxStr, size_zStr;
+    keyStrVol.Form("GEO[%s].r_max", fVolNameChr);
+    if (fDB->GetValue(keyStrVol.Data())) {
+      valTOS = (TObjString*)fDB->GetValue(keyStrVol.Data());
+      r_maxStr = valTOS->GetString();
+      r_maxStr.ReplaceAll("d","");
+      fRMax = r_maxStr.Atof();
+    }
+    keyStrVol.Form("GEO[%s].size_z", fVolNameChr);
+    if (fDB->GetValue(keyStrVol.Data())) {
+      valTOS = (TObjString*)fDB->GetValue(keyStrVol.Data());
+      size_zStr = valTOS->GetString();
+      size_zStr.ReplaceAll("d","");
+      fSizeZ = size_zStr.Atof();
+    }
+  } // end "tube"
   return;
 }
 
@@ -355,7 +374,11 @@ void TRATVolume::Print()
   printf("Volume Type: %s\n", fVolumeType.Data());
   printf("Material: %s\n", fMaterial.Data());
   printf("Mother Volume: %s\n", fMother.Data());
-  printf("Volume Half-Size (mm): %f  %f  %f\n", fSize.X(), fSize.Y(), fSize.Z());
+  if (fVolumeType.Contains("box")) {
+    printf("Volume Half-Size (mm): %f  %f  %f\n", fSize.X(), fSize.Y(), fSize.Z());
+  } else if (fVolumeType.Contains("tube")) {
+    printf("Minimum Radius (mm): %f\nMaximum Radius (mm): %f\nHalf-height (mm): %f\n", fRMin, fRMax, fSizeZ);
+  }
   printf("Relative Position (mm): %f  %f  %f\n", fRelativePosition.X(), fRelativePosition.Y(), fRelativePosition.Z());
   printf("Absolute Position (mm): %f  %f  %f\n", fAbsolutePosition.X(), fAbsolutePosition.Y(), fAbsolutePosition.Z());
   printf("\n");
