@@ -94,11 +94,12 @@ public:
   TH1D*			GetTestSampleHist() { return fTestSampleHist; }
   TGraph*		GetResultsGraph() { return fResultsGraph; }
   // setters:
-  void			SetReferenceFileDir( TSystemDirectory* refFileDir);
-  void			SetReferenceFileDir( const char* refFileDirName);
-  void			SetReferenceFilePattern( TRegexp patternRE );
-  void			SetReferenceFilePattern( const char* pattern );
-  void			SetReferenceTreeName( const char* treeName ) { fReferenceTreeName = treeName; }
+  void			SetReferenceFileDir(TSystemDirectory* refFileDir);
+  void			SetReferenceFileDir(const char* refFileDirName);
+  void			SetReferenceFilePattern(TRegexp patternRE);
+  void			SetReferenceFilePattern(const char* pattern);
+  void			SetReferenceFileList(TList *fileList) { fReferenceFileList = fileList; }
+  void			SetReferenceTreeName(const char* treeName) { fReferenceTreeName = treeName; }
   void			FillReferenceFileList();
   void			SetnEvents(Long64_t nTestSampleEvents=0, Long64_t nReferenceEvents=0) { fnTestSampleEvents=nTestSampleEvents; fnReferenceEvents=nReferenceEvents; }
   // utility:
@@ -109,13 +110,15 @@ public:
   Double_t		UnbinnedKSTest(TTree *T1, TTree *T2, const char* branchName1, const char* branchName2="", Long64_t nEvents1=0, Long64_t nEvents2=0 );	// apply unbinned Kolmogorov-Smirnov test
   void			RefCompare();				// perform reference-comparison algorithm
   // plots:
-  void			DrawResults(Bool_t kDrawFit=kTRUE);	// plot sample distribution and algorithm results
+  void			DrawResults(Bool_t kDrawFit=kFALSE);	// plot sample distribution and algorithm results
   // print info:
   void			PrintVerbose();				// mostly settings
   void			PrintResults();				// results summary
   // save and / or close
   void			SaveResults();				// print canvas and save object
   void			Close();				// close pads, files, etc.
+  // do everything
+  void			Run(Long64_t nTestSampleEvents=0);	// execute a typical analysis
 
 
 //Integrating the TRefMatch class to ROOT.

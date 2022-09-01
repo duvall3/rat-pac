@@ -95,7 +95,7 @@ void TRefMatch::Init()
     this->Error("TRefMatch::Init", "Requested TBranch not found.");
     return;
   }
-  if (fnTestSampleEvents==0) SetnEvents((Long64_t)(GetTree()->GetEntries()));
+  /* if (fnTestSampleEvents==0) SetnEvents((Long64_t)(GetTree()->GetEntries())); */
   // get true source angle for test sample
   if ( fTestSampleFile->Get("params") != 0x0 ) { // RNG pseudo-data run
     TMap* testSampleParams = (TMap*)fTestSampleFile->Get("params");
@@ -266,6 +266,7 @@ Double_t TRefMatch::UnbinnedKSTest( TTree *T1, TTree *T2, const char* branchName
   Double_t P;
   Double_t q1, q2; // quantity1, quantity2
   Long64_t k;
+  /* cout << nEvents1 << " " << nEvents2 << endl; //debug */
   /* if (nEvents1==0) nEvents1 = (Long64_t)T1->GetEntries(); */
   /* if (nEvents2==0) nEvents2 = (Long64_t)T2->GetEntries(); */
   // need to account for possible NaNs in input data
@@ -280,6 +281,7 @@ Double_t TRefMatch::UnbinnedKSTest( TTree *T1, TTree *T2, const char* branchName
     TCut cut2(cutStr.Data());
     nEvents2 = T2->GetEntries(cut2);
   }
+  /* cout << nEvents1 << " " << nEvents2 << endl; //debug */
   // TBranches
   TBranch *br1 = T1->GetBranch(branchName1);
   TBranch *br2 = T2->GetBranch(branchName2);
@@ -374,8 +376,7 @@ void TRefMatch::RefCompare()
   TTree *T;
   TMap *params; //TODO: generalize *params
   TVectorD V(1), *v = &V;
-  TMatrixD *m = new TMatrixD(N,3);
-  TMatrixD M = *m;
+  TMatrixD *m = new TMatrixD(N,3), M = *m;
   /* cout << M.GetNrows() << "\t" << M.GetNcols() << endl; //debug */
   Double_t phiRef;
 
@@ -458,6 +459,7 @@ void TRefMatch::DrawResults( Bool_t kDrawFit )
   TFile *refFile = TFile::Open( fBestMatchFile->GetName() );
   TTree* TRef = (TTree*)refFile->Get("T");
   // init
+  /* gStyle->SetTextSize(0.5); */
   TTree *T = GetTree(); // test-sample tree
   const char* varName = GetTestVarName();
   TCanvas *c_RefMatch = new TCanvas("c_RefMatch", "Reference-Comparison Results");
@@ -477,7 +479,7 @@ void TRefMatch::DrawResults( Bool_t kDrawFit )
   }
   // draw
   c_RefMatch->SetWindowPosition(500, 137);
-  c_RefMatch->SetWindowSize(1000, 800);
+  c_RefMatch->SetWindowSize(1400, 800);
   c_RefMatch->Divide(1,2);
   TVirtualPad *p1 = c_RefMatch->GetPad(1);
   p1->cd();
@@ -499,25 +501,30 @@ void TRefMatch::DrawResults( Bool_t kDrawFit )
   // main plot
   h->Draw();
   TString hTitStr("Test Sample with Ref. Distrib.  |  BEST-MATCH VALUE: ");
-  hTitStr.Append( hTitStr.Format("%.1f",fResults[0]) );
+  hTitStr.Append( hTitStr.Format("%.1f @ %3.3f %%",fResults[0], 100.*fResults[1]) );
   h->SetTitle(hTitStr.Data());
+  /* h->GetXaxis()->SetTitle("#varphi (^{o})"); */
   h->GetXaxis()->SetTitle("phi (^{o})");
   h->SetLineWidth(3.);
-  // scaled reference plot -- draw, add to legend, then set attributes
+  // scaled reference plot
   hRef->Scale( h->GetMaximum() / hRef->GetMaximum() );
+  hRef->SetLineWidth(3.);
   const enum EColor refColor = kRed;
-  hRef->SetLineColor(refColor);
-  hRef->SetFillColor(refColor);
+  Double_t refAlpha = 0.25;
+  hRef->SetLineColorAlpha(refColor,1.25*refAlpha);
+  hRef->SetFillColorAlpha(refColor, refAlpha);
   hRef->Draw("same");
   // histogram legend
-  TLegend *hLeg = new TLegend(.75, .55, .98, .70);
+  /* TLegend *hLeg = new TLegend(.75, .45, .98, .65); */
+  TLegend *hLeg = new TLegend(.10, .70, .35, .90);
   hLeg->AddEntry(h, "Datarun");
   hLeg->AddEntry(hRef, "Best Reference Match (scaled)", "l");
   hLeg->Draw();
-  // final (i.e., post-legend) attributes for hRef
-  Double_t refAlpha = 0.3;
-  hRef->SetLineColorAlpha(refColor, refAlpha);
-  hRef->SetFillColorAlpha(refColor, refAlpha);
+  // redraw over legend
+  hRef->Draw("same");
+  h->Draw("same");
+  // turn on grid
+  p1->SetGrid(1,1);
   // KS results
   // log plot from 0.1% to ~100%
   TVirtualPad *p2 = c_RefMatch->GetPad(2);
@@ -534,6 +541,7 @@ void TRefMatch::DrawResults( Bool_t kDrawFit )
   g->SetMarkerStyle(kFullDotLarge);
   g->Draw("AP");
   g->SetTitle("Reference-Matching Results");
+  /* g->GetXaxis()->SetTitle("#varphi (^{o})"); */
   g->GetXaxis()->SetTitle("phi (^{o})");
   g->GetYaxis()->SetTitle("Match Probability");
   g->GetYaxis()->SetTitleOffset(1.25);
@@ -603,6 +611,27 @@ void TRefMatch::ExtractRef( const char* runName, const char* treeName, const cha
   if (kPhiTest) phiTrueV.Write("phiTrue");
   fRef->Close();
   fRun->Close();
+  return;
+}
+
+//______________________________________________________________________________
+// Run
+void TRefMatch::Run( Long64_t nTestSampleEvents )
+{
+  // execute a typical analysis:
+  //   fill list, set nEvents, run comparison, draw results, save and close
+  // batch mode for graphics
+  Bool_t kBatchOrig = gROOT->IsBatch();
+  if (! kBatchOrig) gROOT->SetBatch(kTRUE);
+  // do all the things
+  FillReferenceFileList();
+  SetnEvents(nTestSampleEvents);
+  RefCompare();
+  DrawResults();
+  SaveResults();
+  // reset batch mode if applicable
+  if (! kBatchOrig) gROOT->SetBatch(kFALSE);
+  // all pau!   )
   return;
 }
 
