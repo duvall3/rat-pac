@@ -177,6 +177,7 @@ for ( iv = vols->begin(); iv != vols->end(); ++iv ) {
   // volume checks
   if ( (vol->IsTopVolume()) || (volname=="world") ) continue; // skip world (already positioned when made top volume)
 
+  // create translation
   trans = new TGeoTranslation( volPosition->X(), volPosition->Y(), volPosition->Z() );
 //trans->Print(); //debug
 
@@ -188,12 +189,18 @@ for ( iv = vols->begin(); iv != vols->end(); ++iv ) {
     warnMsg.Form("volMother \"%s\" of volume \"%s\" not found in list at 0x%x.", volMotherName.Data(), volname.Data(); vols);
     g->Warning(warnLoc.Data(), warnMsg.Data());
   } else {
-    if (! vols->Contains(volname) ) { // avoid duplicating volumes
-      if (volname.Contains(tcregex)) volMother->AddNode(vol, k_volume, trans);
-      if (volname.Contains(waterregex)) volMother->AddNode(vol, k_volume, trans);
-    }
-  }
+    if (volname.Contains(tcregex)) {
+      /* printf("Adding target volume \"%s\", copy no. %d, at (%f, %f, %f)\n", volname.Data(), k_volume, volPosition->X(), volPosition->Y(), volPosition->Z()); //debug */
+      volMother->AddNode(vol, k_volume, trans);
+    } else if (volname.Contains(waterregex)) {
+      /* printf("Adding water volume \"%s\", copy no. %d, at (%f, %f, %f)\n", volname.Data(), k_volume, volPosition->X(), volPosition->Y(), volPosition->Z()); //debug */
+      volMother->AddNode(vol, k_volume, trans);
+    } else {
+      /* printf("Adding other volume \"%s\", copy no. %d, at (%f, %f, %f)\n", volname.Data(), k_volume, volPosition->X(), volPosition->Y(), volPosition->Z()); //debug */
+      volMother->AddNode(vol, k_volume, trans);
+    } // end volume-type check
   k_volume++;
+  } // end volMother check
 
 } // end mother/node db loop
 
