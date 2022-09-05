@@ -39,11 +39,10 @@
 //    - name of top & world volumes
 //    - shape of top & world volumes
 //    - dimensions of top & world volumes
-//    - shapes of target cells (currently "box")
 //    - material of target cells (currently Eljen EJ-254 doped at 1.5%wt Li-6)
 //
-// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ Written 9/2021 ~ Updated 9/2021 ~ //
-// ~ RATPACEventViewer2 v0.5.0 ~ //
+// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ Written 9/2021 ~ Updated 9/2022 ~ //
+// ~ RATPACEventViewer2 v1.0.0 ~ //
 
 
 //Copyright (C) 2021 Mark J. Duvall
@@ -133,7 +132,7 @@ for ( i=rvols->begin(); i!=rvols->end(); ++i ) {
   volumeRMin = rvol->GetRMin();
   volumeRMax = rvol->GetRMax();
   volumeSizeZ = rvol->GetSizeZ();
-  volumePosition = rvol->GetAbsolutePosition();
+  volumePosition = rvol->GetRelativePosition();
   // create volume
   if (volumeType == "box") {
     TGeoVolume* volume = geo->MakeBox(volumeName.Data(), med, volumeSize->X(), volumeSize->Y(), volumeSize->Z());
@@ -150,6 +149,7 @@ for ( i=rvols->begin(); i!=rvols->end(); ++i ) {
   } else { // all other volumes
     volume->SetLineWidth(1);
     volume->SetLineColor(kBlack);
+    /* volume->SetLineColorAlpha(kBlack, 0.5); */
   } // endif -- world (top)
 } // end volume loop
 
@@ -158,7 +158,6 @@ TObjArray* vols = geo->GetListOfVolumes();
 TGeoVolume* world = (TGeoVolume*)vols->FindObject("world");
 geo->SetTopVolume(world);
 TGeoVolume* mother = new TGeoVolume; // mother volume
-Int_t k_volume(0); // volume counter
 // loop over creted TGeoVolumes
 TGeoVolume *vol, *volMother;
 TString volname, volMotherName, warnLoc, warnMsg;
@@ -169,10 +168,9 @@ for ( iv = vols->begin(); iv != vols->end(); ++iv ) {
 
   // get volume
   vol = (TGeoVolume*)*iv;
-//vol = (TGeoVolume*)vols->FindObject("target_bar_9");
   volname = vol->GetName();
   rvol = (TRATVolume*)g->GetVolume(volname.Data());
-  volPosition = rvol->GetAbsolutePosition();
+  volPosition = rvol->GetRelativePosition();
 
   // volume checks
   if ( (vol->IsTopVolume()) || (volname=="world") ) continue; // skip world (already positioned when made top volume)
@@ -191,15 +189,14 @@ for ( iv = vols->begin(); iv != vols->end(); ++iv ) {
   } else {
     if (volname.Contains(tcregex)) {
       /* printf("Adding target volume \"%s\", copy no. %d, at (%f, %f, %f)\n", volname.Data(), k_volume, volPosition->X(), volPosition->Y(), volPosition->Z()); //debug */
-      volMother->AddNode(vol, k_volume, trans);
+      volMother->AddNode(vol, 0, trans);
     } else if (volname.Contains(waterregex)) {
       /* printf("Adding water volume \"%s\", copy no. %d, at (%f, %f, %f)\n", volname.Data(), k_volume, volPosition->X(), volPosition->Y(), volPosition->Z()); //debug */
-      volMother->AddNode(vol, k_volume, trans);
+      volMother->AddNode(vol, 0, trans);
     } else {
       /* printf("Adding other volume \"%s\", copy no. %d, at (%f, %f, %f)\n", volname.Data(), k_volume, volPosition->X(), volPosition->Y(), volPosition->Z()); //debug */
-      volMother->AddNode(vol, k_volume, trans);
+      volMother->AddNode(vol, 0, trans);
     } // end volume-type check
-  k_volume++;
   } // end volMother check
 
 } // end mother/node db loop
@@ -212,8 +209,8 @@ world->SetLineColor(kGray);
 world->SetLineWidth(1);
 //geo->SetTopVisible(kFALSE);
 geo->SetTopVisible(kTRUE);
-TString can_name = experiment+", \""+filename+"\"";
-TCanvas* can = new TCanvas("can", can_name, 1000, 100, 850, 700);
+TString can_title = experiment+", \""+filename+"\"";
+TCanvas* can = new TCanvas("can", can_title, 1000, 100, 850, 700);
 //can->SetFillColor(kCyan);
 //world->Draw();
 
@@ -226,7 +223,9 @@ TCanvas* can = new TCanvas("can", can_name, 1000, 100, 850, 700);
 //vol->Draw();
 
 // draw
-vols->Draw("same");
+geo->SetVisOption(1);
+geo->SetVisLevel(); // default 3
+world->Draw();
 
 // annotations
 TLegend *gleg = new TLegend(0.01, 0.01, 0.25, 0.15);
