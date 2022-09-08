@@ -42,5 +42,6 @@
   gROOT->LoadMacro("TDuvallUtils.cxx");
   gROOT->LoadMacro("TRefMatch.cxx");
   gROOT->LoadMacro("TRATGeoConverter.cxx");
+  gROOT->LoadMacro("TRATPACEventViewer.cxx");
 
 }

@@ -529,12 +529,18 @@ Double_t TDuvallUtils::UnbinnedKSTest( TTree *T1, TTree *T2, const char* branchN
 
 //______________________________________________________________________________
 // Zoom -- simple shortcut for adjusting zoom when running interactively
-void TDuvallUtils::( Double_t zoomFactor )
+void TDuvallUtils::Zoom( Double_t zoomFactor )
 {
-  TString zoomCmd1 = "TView *view = gPad->GetView(); ";
-  TString zoomCmd2 = TString::Format("view->ZoomView(gPad, %f)", zoomFactor);
-  gInterpreter->ProcessLine(zoomCmd1.Data());
-  gInterpreter->ProcessLine(zoomCmd2.Data());
+  if (gPad==0x0) {
+    gROOT->Error("TDuvallUtils::Zoom", "gPad not found.");
+    return;
+  }
+  TView3D *view = gPad->GetView();
+  if (view==0x0) {
+    gPad->Error("TDuvallUtils::Zoom", "TView not found; this function is for zooming 3D views only.");
+    return;
+  }
+  view->ZoomView(gPad, zoomFactor);
   return;
 }
 
