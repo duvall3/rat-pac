@@ -21,8 +21,10 @@ namespace TDuvallUtils {
   void			DumpHist(TH1* h);						// for non-graphical sessions
   TEntryList*		EntryList(const char* selection, TTree* T=0);			// shortcut for creating TEntryLists
   void			ExportPlots(const char* filename, const TString kGraphicsSaveFormat=".png"); // shortcut for printing all canvases in a file
-  TObject*		FindMatchingObject(TCollection* colxn, TRegexp patternRE);	// builtins can't search by PATTERN
-  TObject*		FindMatchingObject(TCollection* colxn, const char* pattern) { return FindMatchingObject(colxn, TRegexp(pattern)); } // overload FindMatchingObject for char* input
+  /* TObject*		FindMatchingObject(TCollection* colxn, TRegexp patternRE);	// builtins can't search by PATTERN */
+  /* TObject*		FindMatchingObject(TCollection* colxn, const char* pattern) { return FindMatchingObject(colxn, TRegexp(pattern)); } // overload FindMatchingObject for char* input */
+  TList*		FindMatchingObjects(TCollection* colxn, TRegexp patternRE);	// builtins can't search by PATTERN
+  TList*		FindMatchingObjects(TCollection* colxn, const char* pattern) { return FindMatchingObjects(colxn, TRegexp(pattern)); } // overload FindMatchingObject for char* input
   TList*		FindVarsOfType(const char* varType="", Bool_t kCaseSensitive=kFALSE);	// builtins can't search by PATTERN
   TList*		ListFiles(const char* pattern=".*\.root");			// builtin returns void, this returns the list
   void			LoadAllKeys();							// shortcut to load all keys from the current file into memory -- *! USE WITH CAUTION !*

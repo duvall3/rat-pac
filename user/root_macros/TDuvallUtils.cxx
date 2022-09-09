@@ -124,13 +124,14 @@ void TDuvallUtils::ExportPlots( const char* filename, const TString kGraphicsSav
 }
 
 //______________________________________________________________________________
-// FindMatchingObject -- scan a TCollection for an object whose name matches a regex
-// -- Usage: TObject* findMatchingObject( TRegexp regex )
-//           TObject* findMatchingObject( const char* pattern )
+// FindMatchingObjects -- scan a TCollection for an object whose name matches a regex
+// -- Usage: TObject* FindMatchingObjects( TRegexp regex )
+//           TObject* FindMatchingObjects( const char* pattern )
 // -- Note: It's hard to believe this isn't already a builtin function
 //      for all classes inheriting from TCollection;
 //      but if it exists, I haven't found it.
-TObject* TDuvallUtils::FindMatchingObject( TCollection* colxn, TRegexp patternRE )
+/* TObject* TDuvallUtils::FindMatchingObject( TCollection* colxn, TRegexp patternRE ) */
+TList* TDuvallUtils::FindMatchingObjects( TCollection* colxn, TRegexp patternRE )
 {
   // init
   TIter i(colxn);
@@ -154,11 +155,11 @@ TObject* TDuvallUtils::FindMatchingObject( TCollection* colxn, TRegexp patternRE
     printf("No matching objects found.\n");
     return 0x0;
   } else if ( matchingObjs->GetEntries() == 1 ) {
-    return matchingObjs->At(0);
+    printf("Single match found.\n");
   } else {
-    printf("Multiple matches found; returning first match.\n");
-    return matchingObjs->At(0);
+    printf("Multiple matches found.\n");
   }
+  return matchingObjs;
 }
 
 //______________________________________________________________________________

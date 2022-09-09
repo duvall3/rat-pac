@@ -143,7 +143,7 @@ TRATPACEventViewer::DrawGeometry()
     } else { // all other volumes
       volume->SetLineWidth(1);
       volume->SetLineColor(kBlack);
-      /* volume->SetLineColorAlpha(kBlack, 0.5); */
+      /* volume->SetLineColorAlpha(kGray, 0.3); */
     } // endif -- world (top)
   } // end volume loop
 
@@ -427,9 +427,10 @@ void TRATPACEventViewer::HighlightCells()
   for (( vi = vol_list->begin(); vi != vol_list->end(); ++vi )) {
     TGeoVolume* vol_vi = (TGeoVolume*)*vi;
     TString vol_vi_name = vol_vi->GetName();
-    if ( vol_vi_name.Contains(tcr) && vol_vi->GetLineColor() != kBlack ) {
+    /* if ( vol_vi_name.Contains(tcr) && vol_vi->GetLineColor() != kBlack ) { */
+    /* if ( vol_vi_name.Contains(tcr) && (vol_vi->GetLineColor() != kBlack) && (vol_vi->GetLineColor() != kGray) ) { */
       vol_colors->Add(vol_vi);
-    }
+    /* } */
   }
 
   // clear current highlights, if any
@@ -437,7 +438,8 @@ void TRATPACEventViewer::HighlightCells()
     TIter vci = vol_colors->begin();
     for ( vci = vol_colors->begin(); vci != vol_colors->end(); ++vci ) {
       TGeoVolume* vol_vci = (TGeoVolume*)*vci;
-      vol_vci->SetLineColor(kBlack);
+      /* vol_vci->SetLineColor(kBlack); */
+      vol_vci->SetLineColorAlpha(kGray, 0.3);
       vol_vci->SetLineWidth(1);
     }
   }
