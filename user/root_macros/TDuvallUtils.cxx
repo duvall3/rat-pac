@@ -1,4 +1,5 @@
-// TDuvallUtils -- library of most useful general-purpose functions
+// TDuvallUtils -- library of useful general-purpose functions
+//   for working with ROOT / RAT-PAC
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 07/2022 ~ //
 
 //Copyright (C) 2022 Mark J. Duvall / T. Rocks Science
