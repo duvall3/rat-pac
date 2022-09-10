@@ -312,31 +312,39 @@ void TRATVolume::FindAbsolutePosition()
 }
 
 //______________________________________________________________________________
-// Area	// m^2	// currently box-type only
+// Area	// m^2	// currently box- and tube-type only
 Double_t TRATVolume::Area()
 {
+  Double_t A;
   if ( fVolumeType == "box" ) {
     Double_t l = 2*fSize.X()*1.e-3, w = 2*fSize.Y()*1.e-3, h = 2*fSize.Z()*1.e-3;
-    Double_t A = 2 * (l*w + w*h + h*l);
-//  printf("%f %f %f\t%e\n", fSize.X(), fSize.Y(), fSize.Z(), A); //debug
+    A = 2 * (l*w + w*h + h*l);
+    return A;
+  } else if ( fVolumeType == "tube" ) {
+    Double_t r = fRMax*1.e-3, h = 2*fSizeZ*1.e-3;
+    A = 2*TMath::Pi()*r**2 + TMath::Pi()*r*h;
     return A;
   } else {
-    this->Warning("TRATVolume::Area", "currently implemented for \"box\"-type volumes only\n");
+    this->Warning("TRATVolume::Area", "currently implemented for \"box\"- and \"tube\"-type volumes only\n");
     return 0.;
   }
 }
 
 //______________________________________________________________________________
-// Volume // m^3  // currently box-type only
+// Volume // m^3  // currently box- and tube-type only
 Double_t TRATVolume::Volume()
 {
+  Double_t V;
   if ( fVolumeType == "box" ) {
     Double_t l = 2*fSize.X()*1.e-3, w = 2*fSize.Y()*1.e-3, h = 2*fSize.Z()*1.e-3;
-    Double_t V = l * w * h;
+    V = l * w * h;
     return V;
-//  return 2.5; //debug
+  } else if ( fVolumeType == "tube" ) {
+    Double_t r = fRMax*1.e-3, h = 2*fSizeZ*1.e-3;
+    V = TMath::Pi() * r**2 * h;
+    return V;
   } else {
-    this->Warning("TRATVolume::Volume", "currently implemented for \"box\"-type volumes only\n");
+    this->Warning("TRATVolume::Volume", "currently implemented for \"box\"- and \"tube\"-type volumes only\n");
     return 0.;
   }
 }

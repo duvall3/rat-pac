@@ -377,6 +377,44 @@ void TRATPACEventViewer::DrawTracks( Long64_t event )
   // apply (or remove) cell highlighting
   HighlightCells();
 
+/*   // if IBD, add markers for the 3 important vertices */
+/*   if ( mc->GetMCParticleCount() == 2 ) { */
+/*     Bool_t t0positron = ( mc->GetMCParticle(0)->GetParticleName() == "e+" ); */
+/*     Bool_t t1neutron = ( mc->GetMCParticle(1)->GetParticleName() == "neutron" ); */
+/*     if (t0positron && t1neutron && fkHighlight) { // then is (almost certainly) IBD event */
+/*       printf("\n IBD Event = true\n\n"); //debug */
+/*       // IBD vertex */
+/*       mcp_track = (TGeoTrack*)track_list->At(0); */
+/*       Double_t *rIBD = mcp_track->GetPoint(0); */
+/*       // e+ annihilation vertex */
+/*       Double_t *rPositron = mcp_track->GetPoint( mcp_track->GetNpoints()-1 ); */
+/*       // neutron capture vertex */
+/*       mcp_track = (TGeoTrack*)track_list->At(1); */
+/*       Double_t *rNeutron = mcp_track->GetPoint( mcp_track->GetNpoints()-1 ); */
+/*       // markers */
+/*       TPolyMarker3D mIBD(1), mPositron(1), mNeutron(1); */
+/*       mIBD.SetPoint(0, rIBD[0], rIBD[1], rIBD[2]); */
+/*       mIBD.SetMarkerStyle(kFullCircle); */
+/*       mIBD.SetMarkerSize(1.5); */
+/*       mIBD.SetMarkerColorAlpha(kMagenta, 0.5); */
+/*       mPositron.SetPoint(0, rPositron[0], rPositron[1], rPositron[2]); */
+/*       mPositron.SetMarkerStyle(kFullCircle); */
+/*       mPositron.SetMarkerSize(1.5); */
+/*       mPositron.SetMarkerColorAlpha(kRed, 0.5); */
+/*       mNeutron.SetPoint(0, rNeutron[0], rNeutron[1], rNeutron[2]); */
+/*       mNeutron.SetMarkerStyle(kFullCircle); */
+/*       mNeutron.SetMarkerSize(1.5); */
+/*       mNeutron.SetMarkerColorAlpha(kBlue, 0.5); */
+/*       mIBD.Draw(); */
+/*       mPositron.Draw(); */
+/*       mNeutron.Draw(); */
+/*       // legend */
+/*       tleg->AddEntry(&mIBD, "IBD Vertex"); */
+/*       tleg->AddEntry(&mPositron, "e+ Annihilation"); */
+/*       tleg->AddEntry(&mNeutron, "n Capture"); */
+/*     } // end if */
+/*   } // end if */
+
   // all pau!   )
   return;
 }
@@ -428,9 +466,7 @@ void TRATPACEventViewer::HighlightCells()
     TGeoVolume* vol_vi = (TGeoVolume*)*vi;
     TString vol_vi_name = vol_vi->GetName();
     /* if ( vol_vi_name.Contains(tcr) && vol_vi->GetLineColor() != kBlack ) { */
-    /* if ( vol_vi_name.Contains(tcr) && (vol_vi->GetLineColor() != kBlack) && (vol_vi->GetLineColor() != kGray) ) { */
-      vol_colors->Add(vol_vi);
-    /* } */
+    if ( vol_vi_name.Contains(tcr) ) vol_colors->Add(vol_vi);
   }
 
   // clear current highlights, if any
