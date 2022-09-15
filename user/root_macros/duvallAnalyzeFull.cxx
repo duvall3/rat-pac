@@ -37,6 +37,7 @@ if ( ! gInterpreter->IsLoaded("particleTracksToScint.cxx") ) gROOT->LoadMacro("p
 if ( ! gInterpreter->IsLoaded("correctEnergies.cxx") ) gROOT->LoadMacro("correctEnergies.cxx");
 if ( ! gInterpreter->IsLoaded("SEDAQ2.cxx") ) gROOT->LoadMacro("SEDAQ2.cxx");
 if ( ! gInterpreter->IsLoaded("angularRecon.cxx") ) gROOT->LoadMacro("angularRecon.cxx");
+if ( ! gInterpreter->IsLoaded("duvallAnalyze.cxx") ) gROOT->LoadMacro("duvallAnalyze.cxx");
 
 // MAIN
 printf( "\n\n//// Preparing datarun \"%s\"... ////\n\n\n", basename.Data() );
