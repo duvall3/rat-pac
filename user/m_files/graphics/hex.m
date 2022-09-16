@@ -20,14 +20,14 @@
 f = figure;
 ax = axes;
 % D = 25.4; %% SET SCALE: diameter in mm (for RAT-PAC compatibility)
-% D = .0254; %% SET SCALE: diameter in m
-D = .3; %% SET SCALE: diameter in m
+D = .0254; %% SET SCALE: diameter in m
+% D = .3; %% SET SCALE: diameter in m
 S = 2 * D; % spacing
 r = [1 1] * 0.5 * D; % tube radius
 X = zeros(1,6);
 Y = X;
-% L = 1000/2.54 * D; % tube height / tube diameter
-L = 10/2.54 * D; % tube height / tube diameter
+L = 1000/2.54 * D; % tube height / tube diameter
+% L = 10/2.54 * D; % tube height / tube diameter
 % L = 10; % for development
 
 % array size
