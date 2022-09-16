@@ -1,0 +1,75 @@
+" #!/usr/bin/vim -Es
+" #!/usr/bin/vim -Esc:source%
+" set IBD source angle in gen/ibd.mac
+" -- call using the following command:
+"    set_angle.vim <FILE> <ANGLE>
+" ~ Mark J. Duvall ~ duvall3@github.com ~ 09/2022 ~ "
+
+"Copyright (C) 2022 Mark J. Duvall
+"
+"    This program is free software: you can redistribute it and/or modify
+"    it under the terms of the GNU General Public License as published by
+"    the Free Software Foundation, either version 3 of the License, or
+"    (at your option) any later version.
+"
+"    This program is distributed in the hope that it will be useful,
+"    but WITHOUT ANY WARRANTY; without even the implied warranty of
+"    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+"    GNU General Public License for more details.
+"
+"    You should have received a copy of the GNU General Public License
+"    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+" " arg check
+" let s:usage = 'Usage: set_angle.vim \<FILE\> \<ANGLE\>'
+" let s:shellusg = printf("!echo %s 1>&2", s:usage)
+" if ( argc() != 3 )
+"   echon s:usage
+"   exe s:shellusg
+"   " exe printf("!echo argc: %d", argc())
+"   " exe printf("!echo %s", argv(2))
+"   qall!
+" else
+"   let s:filename = argv(1)
+"   let s:phi = str2nr(argv(2))
+" endif
+
+
+" define function
+function SetAngle( file = "gen/ibd.mac", phi = 0 )
+
+  " init
+  let l:re_new = printf("neutrinos angled 0*%d deg", a:phi)
+  let l:errstr = "ERROR: Parameters for requested angle not found. Exiting without changes."
+  let l:errcmd = printf("!echo %s 1>&2", l:errstr)
+
+  " debug
+  " exe printf("!echo -e args: %s %02d", a:file, a:phi)
+  " exe printf("!echo -e regex: %s", l:re_new)
+  " echo printf("args: %s %d", a:file, a:phi)
+  " echom printf("regex: %s", l:re_new)
+
+  " main
+  exe printf("edit %s", a:file)
+  %s_^\(\s*\/generator\/vtx\/set\)_#\1_
+  let l:N_new = search(l:re_new)
+  if l:N_new == 0
+    echoerr l:errstr
+    " echo l:errstr
+    exe l:errcmd
+    q!
+  else
+    s_^\s*#\+\s*__
+  endif
+
+  wq
+
+endfunction
+
+
+" call function
+" call SetAngle( s:filename, s:phi )
+
+
+" all pau!   )
