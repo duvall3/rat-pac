@@ -1,5 +1,4 @@
 #!/usr/bin/vim -Esc:source%
-" #!/usr/bin/vim -Es
 " set IBD source angle in gen/ibd.mac
 " -- call using the following command:
 "    set_angle.vim <FILE> <ANGLE>
@@ -26,12 +25,19 @@ let s:shellusg = printf("!echo %s 1>&2", s:usage)
 if ( argc() != 3 )
   echon s:usage
   exe s:shellusg
-  " exe printf("!echo argc: %d", argc())
-  " exe printf("!echo %s", argv(2))
   qall!
 else
   let s:filename = argv(1)
   let s:phi = str2nr(argv(2))
+endif
+
+" file check
+let s:FileWriteCheck = filewritable(printf("%s", s:filename))
+if ( s:FileWriteCheck != 1 )
+  let s:NotFoundMsg = printf("Error: File \"%s\" not found.", s:filename)
+  echoerr s:NotFoundMsg
+  exe printf("!echo '%s' 1>&2", s:NotFoundMsg)
+  q!
 endif
 
 " define function
@@ -50,7 +56,6 @@ function SetAngle( file = "gen/ibd.mac", phi = 0 )
   " if desired line is not found, exit without modifying file:
   if l:N_new == 0
     echoerr l:errstr
-    " echo l:errstr
     exe l:errcmd
     q!
   " if desired line is found, uncomment it:
