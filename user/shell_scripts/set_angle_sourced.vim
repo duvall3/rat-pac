@@ -1,5 +1,6 @@
-" #!/usr/bin/vim
-" set IBD source angle in gen/ibd.mac
+" set_angle_sourced -- set IBD source angle in gen/ibd.mac
+" -- call using the following command:
+"    vim -Es <FILE> -c "let phi = <ANGLE>" -c ":source $RATROOT/user/shell_scripts/set_angle_sourced.vim"
 " ~ Mark J. Duvall ~ duvall3@github.com ~ 09/2022 ~ "
 
 "Copyright (C) 2022 Mark J. Duvall
