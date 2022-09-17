@@ -41,7 +41,9 @@ if ( s:FileWriteCheck != 1 )
 endif
 
 " define function
-function SetAngle( file = "gen/ibd.mac", phi = 0 )
+" function SetAngle( file = "gen/ibd.mac", phi = 0 )
+" ^ removing default arguments for compatibility with the mtc server
+function SetAngle( file, phi )
   " init
   let l:re_new = printf("neutrinos angled 0*%d deg", a:phi)
   let l:errstr = "ERROR: Parameters for requested angle not found. Exiting without changes."
