@@ -23,7 +23,9 @@
 /vis/viewer/set/lightsVector .4 .9 .6
 #
 # Specify style (surface, wireframe, auxiliary edges,...)
-/vis/viewer/set/style w
+#/vis/viewer/set/style w
+/vis/viewer/set/style s
+/vis/viewer/set/hiddenEdge false
 /vis/viewer/set/auxiliaryEdge true
 /vis/viewer/set/lineSegmentsPerCircle 100
 #
@@ -47,17 +49,23 @@
 # set or correct volume properties:
 #/vis/geometry/set/colour world 0 .6 .2 .1 .1
 /vis/geometry/set/visibility world 1 0
-/vis/geometry/set/visibility _array 1 1
+#/vis/geometry/set/visibility target_cell_array 1 1
+/vis/geometry/set/visibility target_cell_array 1 1
+/vis/geometry/set/visibility target_cell_array 0 0
 #/vis/geometry/set/colour cave 0 0 0 0 .2
 #/vis/geometry/set/colour cave_floor 0 .6 .2 .1 .3
 #/vis/geometry/set/colour cave_ceiling 0 .6 .2 .1 .3
 #/vis/geometry/set/colour cave_back 0 .6 .2 .1 .3
 #/vis/geometry/set/colour cave_lwall 0 .6 .2 .1 .3
 #/vis/geometry/set/colour cave_rwall 0 .6 .2 .1 .3
-#/vis/geometry/set/colour _array 1 .2 0 1
-/vis/geometry/set/colour _array 1 grey
+#/vis/geometry/set/colour target_cell_array 1 .2 0 1
+/* /vis/geometry/set/colour target_cell_array 1 grey */
+/vis/geometry/set/colour target_cell_array 1 0.8 0.0 1.0
 
-# for testing
+
+/* # cutaway: */
+/* /vis/viewer/addCutawayPlane 0 0 0 m 0 0 -1 */
+/* /vis/viewer/flush */
 
 
 /vis/viewer/set/hiddenMarker true

@@ -1,7 +1,7 @@
 #!/usr/bin/vim -Esc:source%
 " set IBD source angle in gen/ibd.mac
-" -- call using the following command:
-"    set_angle.vim <FILE> <ANGLE>
+" -- Call directly from the shell prompt as follows:
+"      set_angle.vim <FILE> <ANGLE>
 " ~ Mark J. Duvall ~ duvall3@github.com ~ 09/2022 ~ "
 
 "Copyright (C) 2022 Mark J. Duvall
