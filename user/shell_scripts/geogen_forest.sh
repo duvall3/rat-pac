@@ -98,10 +98,10 @@ LYRS=1 # forest is a 2D array
 echo
 
 # determine dimensions
-echo "Enter outer radius of glass tube (mm): " && read RG
-echo "Enter radius of scintillator tube (mm): " && read RS
-echo "Enter half-height of scintillator tube (mm): " && read H
-echo "Enter spacing between tube centers (mm) (default: 3 x r_glass_outer): " && read S
+echo "Enter inner radius of container tube (mm): " && read RS
+echo "Enter outer radius of container tube (mm): " && read RG
+echo "Enter half-height of container tube (mm): " && read H
+echo "Enter spacing between tube centers (mm) (default: 3 * r_tube_outer): " && read S
 S=${S:-$(echo "3*$RG" | bc -l)}
 echo
 
@@ -115,11 +115,15 @@ echo
 
 # prompt for materials
 echo "Enter material for target cells (default: ej254_015li6 -- PVT @ 1.5%wt. Li-6): " && read TARGET_CELL_MATERIAL
-echo
 echo "Enter material for array / matrix (default: air): " && read ARRAY_MATERIAL
+echo "Enter material for tubes (default: glass): " && read TUBE_MATERIAL
 # defaults
 TARGET_CELL_MATERIAL=${TARGET_CELL_MATERIAL:-"ej254_015li6"}
 ARRAY_MATERIAL=${ARRAY_MATERIAL:-"air"}
+TUBE_MATERIAL=${TUBE_MATERIAL:-"glass"}
+
+# # extend tube 1mm past scintillator
+# RG=$( printf "%f" $RG+1 )
 
 # force float format for RAT-PAC
 RG=$( printf "%f" $RG )
@@ -142,10 +146,12 @@ array_Fwidth=$(echo "$array_width*2.0" | bc -l)
 array_Fheight=$(echo "$array_height*2.0" | bc -l)
 
 # print config
-printf "\n\nGeometry Summary:\n"
-printf "\nRows: %i\nColumns: %i\nTotal: %i\n" $ROWS $COLS $((ROWS*COLS)) | tee $LOGFILE
-printf "\nR_glass_outer = %f\tR_scintillator = %f\tH = %f\tSpacing = %f\n" $RG $RS $H $S | tee $LOGFILE
-printf "\nArray Length = %f\tArray Width = %f\tArray Height = %f\n" $array_Flength $array_Fwidth $array_Fheight | tee $LOGFILE
+printf "\n\nGeometry Summary:\n" | tee $LOGFILE
+printf "\nRows: %i\nColumns: %i\nTotal: %i\n" $ROWS $COLS $((ROWS*COLS)) | tee -a $LOGFILE
+# printf "\nR_glass_outer = %f\tR_scintillator = %f\tH = %f\tSpacing = %f\n" $RG $RS $H $S | tee -a $LOGFILE
+printf "\nR_tube_inner = %f\tR_tube_outer = %f\tH = %f\tSpacing = %f\n" $RG $RS $H $S | tee -a $LOGFILE
+printf "\nArray Length = %f\tArray Width = %f\tArray Height = %f\n" $array_Flength $array_Fwidth $array_Fheight | tee -a $LOGFILE
+printf "\nMaterials:\n\tTarget:\t\t\t%s\n\tTube:\t\t\t%s\n\tInter-segment Medium:\t%s\n" $TARGET_CELL_MATERIAL $TUBE_MATERIAL $ARRAY_MATERIAL | tee -a $LOGFILE
 
 # write array
 echo -e "\
@@ -203,6 +209,27 @@ for (( k_row=0; k_row<$ROWS; k_row++ )); do
 # invisible: 0,
 # color: [0.3 0.8 0.3],
 # }\n\n" >> $ARRFILE
+
+    # print glass tubes
+    index_name=target_tube_$k_row
+    index_name="$index_name"_$k_col
+    echo -e "\
+// -------- GEO[$index_name]
+{
+name: \"GEO\",
+index: \"$index_name\",
+valid_begin: [0, 0],
+valid_end: [0, 0],
+//mother: \"$row_name\",
+mother: \"target_cell_array\",
+type: \"tube\",
+r_max: $RG,
+size_z: $H,
+position: [$x, $y, 0.0],
+material: \"$TARGET_CELL_MATERIAL\",
+invisible: 0,
+color: [0.6 0.6 0.8],
+}\n\n" >> $ARRFILE
 
     # print scintillator cells
     index_name=target_cell_$k_row
