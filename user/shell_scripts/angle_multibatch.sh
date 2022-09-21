@@ -1,7 +1,8 @@
 #!/bin/bash
 # angle_multibatch.sh -- start a series of local_batch_jobs
 #   batch runs at 1-degree increments
-# Usage: angle_multibatch.sh <NAME_PREFIX> <MAX_ANGLE_DEG> [NUM_INSTANCES]
+# Usage: angle_multibatch.sh <NAME_PREFIX> <MAX_ANGLE_DEG> [EVENTS_PER_ANGLE] [NUM_INSTANCES]
+# -- EVENTS_PER_ANGLE defaults to 10^4
 # -- NUM_INSTANCES defaults to 30
 # ~ Mark J. Duvall ~ duvall3@github.com ~ 09/2022 ~ #
 
@@ -21,7 +22,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # arg check
-USE_MSG='Usage: angle_multibatch.sh <NAME_PREFIX> <MAX_ANGLE_DEG> [NUM_INSTANCES]'
+USE_MSG='Usage: angle_multibatch.sh <NAME_PREFIX> <MAX_ANGLE_DEG> [EVENTS_PER_ANGLE] [NUM_INSTANCES]'
 if [[ ($# -lt 2) || ($1 =~ -h) ]]; then
   echo -e $USE_MSG
   exit 10
@@ -30,12 +31,11 @@ fi
 # init
 NAME_PREFIX=$1
 MAX_ANGLE_DEG=$2
-NUM_INSTANCES=${3:-25}
-# echo -e "$NAME_PREFIX\t$MAX_ANGLE_DEG\t$NUM_INSTANCES" #debug
+EVENTS_PER_ANGLE=${3:-10000}
+NUM_INSTANCES=${4:-25}
+EVENTS_PER_INSTANCE=$(( EVENTS_PER_ANGLE / NUM_INSTANCES ))
+# echo -e "$NAME_PREFIX\t$MAX_ANGLE_DEG\t$NUM_INSTANCES\t$EVENTS_PER_INSTANCE" #debug
 # TODO: hard-coded for now
-# EVENTS_PER_INSTANCE=1 #debug
-EVENTS_PER_INSTANCE=40 #testing
-# EVENTS_PER_INSTANCE=400
 QUANTIZED_POSITIONS="xy"
 POSITION_RESOLUTIONS="z"
 
