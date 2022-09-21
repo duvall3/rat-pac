@@ -226,7 +226,7 @@ type: \"tube\",
 r_max: $RG,
 size_z: $H,
 position: [$x, $y, 0.0],
-material: \"$TARGET_CELL_MATERIAL\",
+material: \"$TUBE_MATERIAL\",
 invisible: 0,
 color: [0.6 0.6 0.8],
 }\n\n" >> $ARRFILE

@@ -1,5 +1,19 @@
 
-Array Length = 790.602750	Array Width = 646.872200	Array Height = 10150.500000
+
+Geometry Summary:
+
+Rows: 16
+Columns: 16
+Total: 256
+
+R_tube_inner = 25.000000	R_tube_outer = 22.000000	H = 5000.000000	Spacing = 75.000000
+
+Array Length = 1344.562500	Array Width = 1100.122789	Array Height = 10150.500000
+
+Materials:
+	Target:			ej254_015li6
+	Tube:			glass
+	Inter-segment Medium:	air
 
 Generating cells...
 Done.
