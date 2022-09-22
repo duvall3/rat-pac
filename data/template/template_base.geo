@@ -30,19 +30,5 @@ invisible: 1,
 }
 
 
-/* // -------- GEO[source] */
-/* { */
-/* name: "GEO", */
-/* index: "source", */
-/* valid_begin: [0, 0], */
-/* valid_end: [0, 0], */
-/* mother: "world", */
-/* type: "box", */
-/* size: [1.0, 27.0, 200.0], // mm */
-/* material: "air", */
-/* invisible: 1, */
-/* position: [-100.0, 0.0, 0.0] // mm */
-/* } */
-
 // DETECTOR ELEMENTS
 

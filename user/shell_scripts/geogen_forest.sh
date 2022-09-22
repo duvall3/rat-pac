@@ -211,13 +211,13 @@ for (( k_row=0; k_row<$ROWS; k_row++ )); do
 # }\n\n" >> $ARRFILE
 
     # print glass tubes
-    index_name=target_tube_$k_row
-    index_name="$index_name"_$k_col
+    tube_index_name=target_tube_$k_row
+    tube_index_name="$tube_index_name"_$k_col
     echo -e "\
-// -------- GEO[$index_name]
+// -------- GEO[$tube_index_name]
 {
 name: \"GEO\",
-index: \"$index_name\",
+index: \"$tube_index_name\",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 //mother: \"$row_name\",
@@ -232,21 +232,22 @@ color: [0.6 0.6 0.8],
 }\n\n" >> $ARRFILE
 
     # print scintillator cells
-    index_name=target_cell_$k_row
-    index_name="$index_name"_$k_col
+    cell_index_name=target_cell_$k_row
+    cell_index_name="$cell_index_name"_$k_col
     echo -e "\
-// -------- GEO[$index_name]
+// -------- GEO[$cell_index_name]
 {
 name: \"GEO\",
-index: \"$index_name\",
+index: \"$cell_index_name\",
 valid_begin: [0, 0],
 valid_end: [0, 0],
 //mother: \"$row_name\",
-mother: \"target_cell_array\",
+mother: \"$tube_index_name\",
 type: \"tube\",
 r_max: $RS,
 size_z: $H,
-position: [$x, $y, 0.0],
+//position: [$x, $y, 0.0], // if mother == target_cell_array
+position: [0.0, 0.0, 0.0], // if mother == target_tube_#_#
 material: \"$TARGET_CELL_MATERIAL\",
 invisible: 0,
 color: [0.5 0.1 0.8],
