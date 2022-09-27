@@ -275,13 +275,17 @@ Double_t TRefMatch::UnbinnedKSTest( TTree *T1, TTree *T2, const char* branchName
     cutStr.Form("! TMath::IsNaN(%s)", branchName1);
     TCut cut1(cutStr.Data());
     nEvents1 = T1->GetEntries(cut1);
+    /* cut1.ls(); //debug */
+    /* cout << nEvents1 << endl; //debug */
   }
   if (nEvents2==0) {
     cutStr.Form("! TMath::IsNaN(%s)", branchName2);
     TCut cut2(cutStr.Data());
     nEvents2 = T2->GetEntries(cut2);
   }
+  SetnEvents(nEvents1, nEvents2);
   /* cout << nEvents1 << " " << nEvents2 << endl; //debug */
+  /* cout << GetnTestSampleEvents() << " " << GetnReferenceEvents() << endl; //debug */
   // TBranches
   TBranch *br1 = T1->GetBranch(branchName1);
   TBranch *br2 = T2->GetBranch(branchName2);
@@ -301,9 +305,14 @@ Double_t TRefMatch::UnbinnedKSTest( TTree *T1, TTree *T2, const char* branchName
   Double_t *arr1S = new Double_t[nEvents1];
   Double_t *arr2S = new Double_t[nEvents2];
 
+  /* cout << nEvents1 << " " << nEvents2 << endl; //debug */
   // fill, sort, re-fill (use kFALSE to sort ascending)
   // Note on nEvents1,nEvents2 loops: Yes, there is a more-efficient (single-loop) way to do this;
   // but the switching is non-trivial and code running today is better than code in debug tomorrow, right? (Right?)
+
+  /* // track number of NaNs */
+  /* Long64_t nNaN1(0), nNaN2(0); */
+
   // first fill
   for ( k=0; k<nEvents1; k++ ) {
     T1->GetEntry(k);
@@ -313,20 +322,31 @@ Double_t TRefMatch::UnbinnedKSTest( TTree *T1, TTree *T2, const char* branchName
     T2->GetEntry(k);
     if ( ! TMath::IsNaN(q2) ) arr2[k] = q2;
   }
+  /* printf("Last angles (unsorted):\t\t%f\t\t%f\n", arr1[nEvents1], arr2[nEvents2]); //debug */
+  /* printf("Last indices (unsorted):\t\t%f\t\t%f\n", ind1[nEvents1], ind2[nEvents2]); //debug */
   // sort
   TMath::Sort(nEvents1, arr1, ind1, kFALSE);
   TMath::Sort(nEvents2, arr2, ind2, kFALSE);
   // second fill
   for ( k=0; k<nEvents1; k++ ) {
+    /* if ( arr1[ind1[k]] > 181. ) { //debug */
+    /*   this->Error("TRefMatch::UnbinnedKSTest", "Invalid angle."); */
+    /*   continue; */
+    /* } */
     arr1S[k] = arr1[ind1[k]];
+    /* cout << arr1S[k] << "\t"; //debug */
   }
+  /* cout << endl; //debug */
   for ( k=0; k<nEvents2; k++ ) {
     arr2S[k] = arr2[ind2[k]];
+    /* cout << arr2S[k] << "\t"; //debug */
   }
+  /* cout << endl; //debug */
 
   // MAIN: Finally ready to calculate the K-S probability
   // NOTE: THE "OPTION" ARGUMENT IS (ironically) NOT OPTIONAL, EVEN IF EMPTY!
   P = TMath::KolmogorovTest( nEvents1, arr1S, nEvents2, arr2S, "" );
+  /* P = TMath::KolmogorovTest( nEvents2, arr2S, nEvents1, arr1S, "" ); */
 
   SetProb(P);
   SetSig( Prob2Sig(P) );
@@ -365,7 +385,7 @@ void TRefMatch::RefCompare()
     T_ts->Error("RefCompare", "Specified branch not found.");
     return;
   }
-  if (fnTestSampleEvents==0) SetnEvents((Long64_t)(GetTree()->GetEntries()));
+  /* if (fnTestSampleEvents==0) SetnEvents((Long64_t)(GetTree()->GetEntries())); */
 
   // general init
   Int_t k = 0, j = 0, N = fReferenceFileList->GetEntries();
@@ -398,7 +418,9 @@ void TRefMatch::RefCompare()
     V.SetElements( v->GetMatrixArray() );
     phiRef = V[0];
     M(k,0) = phiRef;
-    M(k,1) = UnbinnedKSTest( T_ts, T, fTestVarName, "", fnTestSampleEvents, fnReferenceEvents );
+    /* cout << fnTestSampleEvents << " " << fnReferenceEvents << endl; //debug */
+    /* M(k,1) = UnbinnedKSTest( T_ts, T, fTestVarName, "", fnTestSampleEvents, fnReferenceEvents ); */
+    M(k,1) = UnbinnedKSTest( T_ts, T, fTestVarName, "", GetnTestSampleEvents(), GetnReferenceEvents() );
     M(k,2) = Prob2Sig( M(k,1) );
     f->Close();
   }
@@ -472,10 +494,12 @@ void TRefMatch::DrawResults( Bool_t kDrawFit )
   // fill
   Double_t q, qRef;
   T->SetBranchAddress(varName, &q);
-  /* for (Int_t kT=0; kT<T->GetEntries(); kT++) { */
-  for (Int_t kT=0; kT<fnTestSampleEvents; kT++) {
+  for (Int_t kT=0; kT<T->GetEntries(); kT++) {
+  /* for (Int_t kT=0; kT<fnTestSampleEvents; kT++) { */
+  /* for (Int_t kT=0; kT<GetnTestSampleEvents(); kT++) { */
     T->GetEntry(kT);
-    h->Fill(q);
+    /* h->Fill(q); */
+    if ( ! TMath::IsNaN(q) ) h->Fill(q);
   }
   // draw
   c_RefMatch->SetWindowPosition(500, 137);
@@ -500,11 +524,12 @@ void TRefMatch::DrawResults( Bool_t kDrawFit )
   }
   // main plot
   h->Draw();
-  TString hTitStr("Test Sample with Ref. Distrib.  |  BEST-MATCH VALUE: ");
+  TString hTitStr;
+  hTitStr.Form("Quantity \"%s\"  |  True Value = %.1f  |  BEST-MATCH VALUE = ", GetTestVarName(), GetTestSamplePhiTrue());
   hTitStr.Append( hTitStr.Format("%.1f @ %3.3f %%",fResults[0], 100.*fResults[1]) );
   h->SetTitle(hTitStr.Data());
-  /* h->GetXaxis()->SetTitle("#varphi (^{o})"); */
   h->GetXaxis()->SetTitle("phi (^{o})");
+  h->GetXaxis()->SetNdivisions(12, kFALSE);
   h->SetLineWidth(3.);
   // scaled reference plot
   hRef->Scale( h->GetMaximum() / hRef->GetMaximum() );
@@ -515,10 +540,10 @@ void TRefMatch::DrawResults( Bool_t kDrawFit )
   hRef->SetFillColorAlpha(refColor, refAlpha);
   hRef->Draw("same");
   // histogram legend
-  /* TLegend *hLeg = new TLegend(.75, .45, .98, .65); */
   TLegend *hLeg = new TLegend(.10, .70, .35, .90);
   hLeg->AddEntry(h, "Datarun");
-  hLeg->AddEntry(hRef, "Best Reference Match (scaled)", "l");
+  /* hLeg->AddEntry(hRef, "Best Reference Match (scaled)", "l"); */
+  hLeg->AddEntry(hRef, "Best Match (scaled)", "l");
   hLeg->Draw();
   // redraw over legend
   hRef->Draw("same");
@@ -540,20 +565,23 @@ void TRefMatch::DrawResults( Bool_t kDrawFit )
   g->SetMarkerSize(1.25);
   g->SetMarkerStyle(kFullDotLarge);
   g->Draw("AP");
-  g->SetTitle("Reference-Matching Results");
+  g->SetTitle("Reference-Matching Results (log, all)");
   /* g->GetXaxis()->SetTitle("#varphi (^{o})"); */
   g->GetXaxis()->SetTitle("phi (^{o})");
   g->GetYaxis()->SetTitle("Match Probability");
   g->GetYaxis()->SetTitleOffset(1.25);
   g->GetYaxis()->SetRangeUser(1.e-3, 1.e0.3);
   // linear plot from 90% to ~100%
+  // linear plot from 80% to ~100%
   TVirtualPad *p2_2 = p2->GetPad(2);
   p2_2->cd();
   TGraph *g2 = g->Clone("g2");
+  g2->SetTitle("Reference-Matching Results (linear, near peak)");
   /* p2_2->SetLogy(kTRUE); */
   p2_2->SetGrid(1,1);
-  g2->GetYaxis()->SetRangeUser(0.9, 1.01);
-  g2->GetYaxis()->SetTitleOffset(1.25);
+  /* g2->GetYaxis()->SetRangeUser(0.9, 1.01); */
+  g2->GetYaxis()->SetRangeUser(0.8, 1.01);
+  g2->GetYaxis()->SetTitleOffset(1.35);
   g2->GetXaxis()->SetRangeUser(fResults[0]-2.5, fResults[0]+2.5); // TODO: generalize by, e.g., finding first/last indices for p > 90%
   g2->Draw("AP");
   // store results
@@ -615,6 +643,62 @@ void TRefMatch::ExtractRef( const char* runName, const char* treeName, const cha
 }
 
 //______________________________________________________________________________
+// ExtractTest
+void TRefMatch::ExtractTest( const char* runName, const char* treeName, const char* branchName )
+{
+  // init
+  // datarun file
+  TFile *fRun = TFile::Open(runName);
+  Double_t qRun;
+  TTree *TRun = (TTree*)gDirectory->Get(treeName);
+  TRun->SetBranchAddress(branchName, &qRun);
+  Long64_t k = 0, N = TRun->GetEntries();
+  // for angular runs
+  Bool_t kPhiTest(kFALSE);
+  TVectorD *phiTrue = (TVectorD*)gDirectory->Get("phiTrue");
+  if (phiTrue!=0x0) {
+    kPhiTest = kTRUE;
+    TVectorD phiTrueV = *phiTrue;
+    Double_t phiTrueDouble = phiTrueV[0];
+  }
+  // new Test file
+  /* TString testName; */
+  TString testName;
+  if (kPhiTest) {
+    /* testName.Form( "%02dDEG_phi.root", TMath::Nint(phiTrueDouble) ); */
+    testName = runName;
+    testName.ReplaceAll("_ncap_res", "");
+    testName.ReplaceAll("\.root", "_phi.root");
+  } else {
+    testName = runName;
+    Ssiz_t slash = testName.Last('/');
+    testName = testName( slash+1, testName.Length()-1 );
+    /* testName.Append("_test.root"); */
+    testName.Append(testName.Format("_%s.root",fTestVarName));
+  }
+  TFile *fTest = TFile::Open( testName.Data(), "recreate" );
+  fTest->cd();
+  /* TTree *TTest = new TTree("TTest", "TTree to hold test distribution"); */
+  TTree *TTest = new TTree("T", "TTree to hold test distribution");
+  Double_t qTest;
+  TTest->Branch(branchName, &qTest);
+  // MAIN
+  for ( k=0; k<N; k++ ) {
+    TRun->GetEntry(k);
+    qTest = qRun;
+    if( ! TMath::IsNaN(qTest) ) TTest->Fill();
+  }
+  // save and close
+  fTest->cd();
+  /* TTest->Write(treeName); */
+  TTest->Write("T");
+  if (kPhiTest) phiTrueV.Write("phiTrue");
+  fTest->Close();
+  fRun->Close();
+  return;
+}
+
+//______________________________________________________________________________
 // Run
 void TRefMatch::Run( Long64_t nTestSampleEvents )
 {
@@ -625,7 +709,7 @@ void TRefMatch::Run( Long64_t nTestSampleEvents )
   if (! kBatchOrig) gROOT->SetBatch(kTRUE);
   // do all the things
   FillReferenceFileList();
-  SetnEvents(nTestSampleEvents);
+  /* SetnEvents(nTestSampleEvents); */
   RefCompare();
   DrawResults();
   SaveResults();
@@ -657,6 +741,7 @@ void TRefMatch::SaveResults()
   // init
   TString outFileName(fTestSampleFile->GetName());
   outFileName.ReplaceAll("\.root", "_RefMatch.root");
+  outFileName.ReplaceAll(outFileName.Format("_%s",fTestVarName), "");
   TString outCanvasName(outFileName);
   outCanvasName.ReplaceAll("\.root",".png");
   // create outfile

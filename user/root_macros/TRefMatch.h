@@ -106,6 +106,7 @@ public:
   Double_t		Prob2Sig( Double_t prob );		// convert probability to significance
   Double_t		Sig2Prob( Double_t sig );		// convert significance to probability
   void			ExtractRef( const char* runName, const char* treeName = "T", const char* branchName = "phi" );	// extract distribution from reference run
+  void			ExtractTest( const char* runName, const char* treeName = "T_ncap", const char* branchName = "phi" );	// extract distribution from experimental run
   // MAIN:
   Double_t		UnbinnedKSTest(TTree *T1, TTree *T2, const char* branchName1, const char* branchName2="", Long64_t nEvents1=0, Long64_t nEvents2=0 );	// apply unbinned Kolmogorov-Smirnov test
   void			RefCompare();				// perform reference-comparison algorithm
