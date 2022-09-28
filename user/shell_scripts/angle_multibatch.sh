@@ -3,7 +3,7 @@
 #   batch runs at 1-degree increments
 # Usage: angle_multibatch.sh <NAME_PREFIX> <MAX_ANGLE_DEG> [EVENTS_PER_ANGLE] [NUM_INSTANCES]
 # -- EVENTS_PER_ANGLE defaults to 10^4
-# -- NUM_INSTANCES defaults to 30
+# -- NUM_INSTANCES defaults to 25
 # ~ Mark J. Duvall ~ duvall3@github.com ~ 09/2022 ~ #
 
 #Copyright (C) 2022 Mark J. Duvall
