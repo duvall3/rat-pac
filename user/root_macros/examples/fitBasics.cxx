@@ -75,7 +75,8 @@ printf("\n\n");
 printf("/// Test on Poisson-distributed RAT-PAC Data ///\n");
 
 // import data and prepare TTree, etc.
-TFile *_file0 = TFile::Open("particleTracks_n0gun_test1_T.root");
+/* TFile *f0 = TFile::Open("particleTracks_n0gun_test1_T.root"); */
+TFile *f0 = TFile::Open("fitBasics_data.root");
 TTree *T = T_scint;
 Long64_t ev = 0, N = T->GetEntries();
 Double_t dt, dtmin(1.e-2), dtmax(1.e2);
@@ -136,5 +137,7 @@ printf("\n\n");
 //printf("\n* * *\nChi^2 / NDF:\n");
 //printf( "Poisson\t\t%e\n", rf3->Chi2() / rf3->Ndf() );
 //printf("\n\n");
+
+// all pau!   )
 
 }

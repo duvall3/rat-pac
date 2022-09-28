@@ -30,8 +30,12 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-TMatrixD* chi2ProbSigma( Double_t mu2 = 1., Bool_t kDraw = kFALSE, Long64_t nFill = 1e3, Double_t sig2 = 1., Double_t mu1 = 0., Double_t sig1 = 1. ) {
+TMatrixD* chi2ProbSigma( Double_t mu2 = 0.1, Bool_t kDraw = kTRUE, Long64_t nFill = 1e3, Double_t sig2 = 1., Double_t mu1 = 0., Double_t sig1 = 1. ) {
 /* { */
+
+// check for prob2sig
+const char* p2sfile = "prob2sig.cxx";
+if (! gInterpreter->IsLoaded(p2sfile) ) gROOT->LoadMacro(p2sfile);
 
 // init
 Double_t xmin(-5.), xmax(5.);

@@ -34,9 +34,11 @@ for ( row=0; row<nRows; row++ ) {
   for ( col=0; col<nCols; col++ ) {
     for ( lyr=0; lyr<nLyrs; lyr+=2 ) {
       if ( row%2 == col%2 ) {
-	h_chklat->Fill(row, col, lyr+1);
-      } else {
+	/* h_chklat->Fill(row, col, lyr+1); */
 	h_chklat->Fill(row, col, lyr);
+      } else {
+	/* h_chklat->Fill(row, col, lyr); */
+	h_chklat->Fill(row, col, lyr+1);
       }
     }
   }
