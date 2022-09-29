@@ -49,6 +49,10 @@ void KSSummary( const char* datarunName = gSystem->WorkingDirectory(), const cha
 const char* utilFilename("TDuvallUtils.cxx");
 if ( ! gInterpreter->IsLoaded(utilFilename) ) gROOT->LoadMacro(utilFilename);
 
+// graphics / batch check
+Bool_t kBatchOrig = gROOT->IsBatch();
+if (! kBatchOrig) gROOT->SetBatch(kTRUE);
+
 // init
 // datarun name
 TString datarun(datarunName);
@@ -139,6 +143,7 @@ g->GetXaxis()->SetRangeUser( TMath::MinElement(N,phiTrueArr.GetArray()), TMath::
 g->GetYaxis()->SetRangeUser( -2*dY, 2*dY );
 g->GetXaxis()->SetTitle("#varphi_{True} (^{o})");
 g->GetYaxis()->SetTitle("#varphi_{Best} - #varphi_{True} (^{o})");
+g->GetYaxis()->SetTitleOffset(1.15);
 g->Draw("AP");
 TGraph *gBaseLine = new TGraph(N, phiTrueArr.GetArray(), baseLine.GetArray());
 gBaseLine->SetLineWidth(3.);
@@ -149,6 +154,9 @@ gBaseLine->Write("gBaseLine");
 g->Write("gResults");
 c_kss->Print("KSSummary.png");
 c_kss->Write("c_kss");
+
+// graphics / batch reset
+if (! kBatchOrig) gROOT->SetBatch(kFALSE);
 
 // all pau!   )
 outFile->Write();

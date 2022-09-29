@@ -1,6 +1,8 @@
 #!/bin/bash
 # chain_ref -- generate a ROOT macro to combine multiple reference runs
 # -- intended for use with the TRefMatch system in this repository
+# -- REMINDER: Clear outfiles BEFORE RUNNING or their entries
+#      will be duplicated
 # Usage:
 # 1) Run this script in the umbrella directory of your datarun
 # ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 09/2022 ~ #
@@ -87,7 +89,7 @@ for (( k=$MINVAL; k<=$MAXVAL; k++ )) {
 }
 
 # clean up
-CHAINDIR="chains"
+CHAINDIR="chain_ref_macros"
 mkdir $CHAINDIR
 mv -t $CHAINDIR chain_ref*.cxx
 
