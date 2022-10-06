@@ -243,6 +243,99 @@ Double_t TRefMatch::Sig2Prob( Double_t sig )
 }
 
 //______________________________________________________________________________
+// AndersonDarlingTest
+Double_t TRefMatch::AndersonDarlingTest( TTree *T1, TTree *T2, const char* branchName1, const char* branchName2, Long64_t nEvents1, Long64_t nEvents2 ) 
+{
+  // AndersonDarlingTest -- function to execute *unbinned* TMath::KolmogorovTest on a pair of TTrees
+  //   containing TBranches with matching names
+  // -- Usage: Double_t P = AndersonDarlingTest( TTree *T1, TTree *T2, const char* branchName )
+  // -- Branches must be of type Double_t
+  // -- P is the probability for match
+  // -- *T1 and *T2 are pointers to the two input trees
+  // -- branchName{1,2} are the branch/variable names in the respective trees
+  // -- nEvents{1,2} are the number of entries to use from each tree (default value 0 will use all entries)
+  // -- See the notes in ROOT::Math::GoFTest for details
+
+  // arg check
+  if (branchName2 == "") branchName2 = branchName1;
+
+  // init
+  // basics
+  Double_t P;
+  Double_t q1, q2; // quantity1, quantity2
+  Long64_t k;
+  /* cout << nEvents1 << " " << nEvents2 << endl; //debug */
+  /* if (nEvents1==0) nEvents1 = (Long64_t)T1->GetEntries(); */
+  /* if (nEvents2==0) nEvents2 = (Long64_t)T2->GetEntries(); */
+  // need to account for possible NaNs in input data
+  TString cutStr;
+  if (nEvents1==0) {
+    cutStr.Form("! TMath::IsNaN(%s)", branchName1);
+    TCut cut1(cutStr.Data());
+    nEvents1 = T1->GetEntries(cut1);
+    /* cut1.ls(); //debug */
+    /* cout << nEvents1 << endl; //debug */
+  }
+  if (nEvents2==0) {
+    cutStr.Form("! TMath::IsNaN(%s)", branchName2);
+    TCut cut2(cutStr.Data());
+    nEvents2 = T2->GetEntries(cut2);
+  }
+  SetnEvents(nEvents1, nEvents2);
+  /* cout << nEvents1 << " " << nEvents2 << endl; //debug */
+  /* cout << GetnTestSampleEvents() << " " << GetnReferenceEvents() << endl; //debug */
+  // TBranches
+  TBranch *br1 = T1->GetBranch(branchName1);
+  TBranch *br2 = T2->GetBranch(branchName2);
+  if ( (br1==0x0) | (br2==0x0) ) {
+    gFile->Error("TRefMatch::AndersonDarlingTest", "Specified branch missing from one or both TTrees.");
+    return TMath::QuietNaN();
+  }
+  T1->SetBranchAddress(branchName1, &q1);
+  T2->SetBranchAddress(branchName2, &q2);
+  // raw arrays
+  Double_t *arr1 = new Double_t[nEvents1];
+  Double_t *arr2 = new Double_t[nEvents2];
+  /* // index arrays */
+  /* Long64_t *ind1 = new Long64_t[nEvents1]; */
+  /* Long64_t *ind2 = new Long64_t[nEvents2]; */
+  /* // sorted arrays */
+  /* Double_t *arr1S = new Double_t[nEvents1]; */
+  /* Double_t *arr2S = new Double_t[nEvents2]; */
+
+  /* cout << nEvents1 << " " << nEvents2 << endl; //debug */
+  // fill, sort, re-fill (use kFALSE to sort ascending)
+  // Note on nEvents1,nEvents2 loops: Yes, there is a more-efficient (single-loop) way to do this;
+  // but the switching is non-trivial and code running today is better than code in debug tomorrow, right? (Right?)
+
+  /* // track number of NaNs */
+  /* Long64_t nNaN1(0), nNaN2(0); */
+
+  // fill
+  for ( k=0; k<nEvents1; k++ ) {
+    T1->GetEntry(k);
+    if ( ! TMath::IsNaN(q1) ) arr1[k] = q1;
+  }
+  for ( k=0; k<nEvents2; k++ ) {
+    T2->GetEntry(k);
+    if ( ! TMath::IsNaN(q2) ) arr2[k] = q2;
+  }
+
+  // MAIN: Finally ready to calculate the Anderson-Darling probability
+  ROOT::Math::GoFTest *gof = new ROOT::Math::GoFTest( nEvents1, arr1, nEvents2, arr2 );
+  P = gof->AndersonDarling2SamplesTest();
+  /* P = gof->KolmogorovSmirnov2SamplesTest(); */
+
+  SetProb(P);
+  SetSig( Prob2Sig(P) );
+
+  // all pau!   )
+  return fProb;
+
+}
+
+
+//______________________________________________________________________________
 // UnbinnedKSTest
 Double_t TRefMatch::UnbinnedKSTest( TTree *T1, TTree *T2, const char* branchName1, const char* branchName2, Long64_t nEvents1, Long64_t nEvents2 ) 
 {
@@ -402,6 +495,7 @@ void TRefMatch::RefCompare()
 
   // MAIN
   printf("Processing Kolmogorov-Smirnov tests...\n");
+  /* printf("Processing Anderson-Darling tests...\n"); */
   for ( k=0; k<N; k++ ) {
     sf = (TSystemFile*)fReferenceFileList->At(k);
     currentDirName.Form("%s", sf->GetTitle());
@@ -418,9 +512,8 @@ void TRefMatch::RefCompare()
     V.SetElements( v->GetMatrixArray() );
     phiRef = V[0];
     M(k,0) = phiRef;
-    /* cout << fnTestSampleEvents << " " << fnReferenceEvents << endl; //debug */
-    /* M(k,1) = UnbinnedKSTest( T_ts, T, fTestVarName, "", fnTestSampleEvents, fnReferenceEvents ); */
     M(k,1) = UnbinnedKSTest( T_ts, T, fTestVarName, "", GetnTestSampleEvents(), GetnReferenceEvents() );
+    /* M(k,1) = AndersonDarlingTest( T_ts, T, fTestVarName, "", GetnTestSampleEvents(), GetnReferenceEvents() ); */
     M(k,2) = Prob2Sig( M(k,1) );
     f->Close();
   }

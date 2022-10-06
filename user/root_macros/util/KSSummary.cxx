@@ -120,7 +120,10 @@ allResultsSummary.Write("allResultsMatrix");
 
 // plot results
 TCanvas *c_kss = new TCanvas("c_kss", "KS Best-Match Summary");
-c_kss->SetGrid(1,1);
+c_kss->Divide(1,2);
+TVirtualPad *p1 = c_kss->GetPad(1), *p2 = c_kss->GetPad(2);
+p1->SetGrid(1,1);
+p2->SetGrid(1,1);
 TMatrixDColumn phiTrueC(allResultsSummary, 0);
 TMatrixDColumn phiDeltaC(allResultsSummary, allResultsSummary.GetNcols()-1);
 TArrayD phiTrueArr(N);
@@ -130,7 +133,9 @@ for ( Int_t j=0; j<N; j++ ) {
   phiDeltaArr[j] = phiDeltaC[j];
   baseLine[j] = 0.;
 }
-TGraph *g = new TGraph(N, phiTrueArr.GetArray(), phiDeltaArr.GetArray());
+// differences
+p1->cd();
+TGraph *g = new TGraph(N, phiDeltaArr.GetArray(), phiTrueArr.GetArray());
 Double_t dY = TMath::Max( TMath::Abs(TMath::MinElement(N,phiDeltaArr.GetArray())), TMath::Abs(TMath::MaxElement(N,phiDeltaArr.GetArray())) );
 TString gTitle("Best-Match Difference from True Value");
 gTitle.Append( TString::Format(" | \"%s\"", datarun.Data()) );
@@ -139,19 +144,29 @@ g->SetMarkerStyle(kFullSquare);
 g->SetMarkerColor(kMagenta);
 g->SetMarkerSize(1.5);
 g->SetFillColor(0); // for legend if needed
-g->GetXaxis()->SetRangeUser( TMath::MinElement(N,phiTrueArr.GetArray()), TMath::MaxElement(N,phiTrueArr.GetArray()) );
-g->GetYaxis()->SetRangeUser( -2*dY, 2*dY );
-g->GetXaxis()->SetTitle("#varphi_{True} (^{o})");
-g->GetYaxis()->SetTitle("#varphi_{Best} - #varphi_{True} (^{o})");
-g->GetYaxis()->SetTitleOffset(1.15);
+g->GetYaxis()->SetRangeUser( TMath::MinElement(N,phiTrueArr.GetArray()), TMath::MaxElement(N,phiTrueArr.GetArray()) );
+g->GetXaxis()->SetLimits( -1.25*dY, 1.25*dY );
+g->GetYaxis()->SetTitle("#varphi_{True} (^{o})");
+g->GetXaxis()->SetTitle("#varphi_{Best} - #varphi_{True} (^{o})");
+g->GetXaxis()->SetTitleOffset(1.15);
 g->Draw("AP");
-TGraph *gBaseLine = new TGraph(N, phiTrueArr.GetArray(), baseLine.GetArray());
+TGraph *gBaseLine = new TGraph(N, baseLine.GetArray(), phiTrueArr.GetArray());
 gBaseLine->SetLineWidth(3.);
 gBaseLine->SetLineColor(kBlack);
 gBaseLine->Draw("same");
+// difference distribution
+p2->cd();
+TH1D *hd = new TH1D("hd", "Difference Distribution", 10, -1.25*dY, 1.25*dY);
+for (Int_t k_hd=0; k_hd<N; k_hd++) hd->Fill( phiDeltaArr.GetArray()[k_hd] );
+hd->SetLineColor(kMagenta);
+hd->SetLineWidth(3);
+hd->Draw();
+hd->Fit("gaus");
+hd->GetFunction("gaus")->SetLineColor(kGreen);
 // save plots
 gBaseLine->Write("gBaseLine");
 g->Write("gResults");
+hd->Write("hDiffs");
 c_kss->Print("KSSummary.png");
 c_kss->Write("c_kss");
 

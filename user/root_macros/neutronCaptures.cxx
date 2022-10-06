@@ -100,27 +100,19 @@ for ( k=0; k<N; k++ ) {
   startVol.Clear();
   volName.Clear();
   volCheck = kFALSE;
-//n = c.GoChild(0); // neutron-only run
-//n = c.GoChild(1); // IBD run
   n = c.GoChild(neutron_child);
   startVol = n->GetVolume();
   ri = n->GetEndpoint();
-  /* xi = n->GetEndpoint().X(); yi = n->GetEndpoint().Y(); zi = n->GetEndpoint().Z(); */
   n = c.GoTrackEnd();
   if ( (n->GetProcess() == "nCapture") | (n->GetProcess() == "neutronInelastic") ) {
     volName = n->GetVolume();
     if ( volName.Contains(capRE) ) volCheck = kTRUE;
     dt = n->GetGlobalTime()*1.e-9; // capture time
     rf = n->GetEndpoint();
-    /* xf = n->GetEndpoint().X(); yf = n->GetEndpoint().Y(); zf = n->GetEndpoint().Z(); */
-    /* dr = TVector3(xf-xi, yf-yi, zf-zi); */
     dr = rf - ri;
     R = dr.Mag();
-//  cos_psi = p0_hat.Dot(dr.Unit());
     cos_psi = -dr.X() / R; // for p_hat_init = {-1,0,0}
     dr = -dr; // reverse direction to point to source
-    /* zeta = TMath::ATan2( dr.Z(), dr.Y() ) * 180/pi; */
-    /* zeta = TMath::ATan2( dr.X(), dr.Y() ) * 180/pi; */
     zeta = dr.Phi() * TMath::RadToDeg();
     longtd = dr.Phi()*180/pi;
     lattd = 90 - (dr.Theta()*180/pi);

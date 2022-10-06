@@ -109,6 +109,7 @@ public:
   void			ExtractTest( const char* runName, const char* treeName = "T_ncap", const char* branchName = "phi" );	// extract distribution from experimental run
   // MAIN:
   Double_t		UnbinnedKSTest(TTree *T1, TTree *T2, const char* branchName1, const char* branchName2="", Long64_t nEvents1=0, Long64_t nEvents2=0 );	// apply unbinned Kolmogorov-Smirnov test
+  Double_t		AndersonDarlingTest(TTree *T1, TTree *T2, const char* branchName1, const char* branchName2="", Long64_t nEvents1=0, Long64_t nEvents2=0 );	// apply (unbinned) Anderson-Darling test
   void			RefCompare();				// perform reference-comparison algorithm
   // plots:
   void			DrawResults(Bool_t kDrawFit=kFALSE);	// plot sample distribution and algorithm results

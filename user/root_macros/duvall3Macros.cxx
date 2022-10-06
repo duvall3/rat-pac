@@ -82,6 +82,9 @@ gROOT->LoadMacro("KSComparison.cxx");
 gROOT->LoadMacro("KSSummary.cxx");
 gROOT->LoadMacro("KSComparisonSingleAngle.cxx");
 gROOT->LoadMacro("refMatchDemo.cxx");
+gROOT->LoadMacro("extractRef.cxx");
+gROOT->LoadMacro("extractTest.cxx");
+gROOT->LoadMacro("runRefComp.cxx");
 
 }
 
