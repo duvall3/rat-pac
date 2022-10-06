@@ -160,6 +160,7 @@ TH1D *hd = new TH1D("hd", "Difference Distribution", 10, -1.25*dY, 1.25*dY);
 for (Int_t k_hd=0; k_hd<N; k_hd++) hd->Fill( phiDeltaArr.GetArray()[k_hd] );
 hd->SetLineColor(kMagenta);
 hd->SetLineWidth(3);
+hd->GetXaxis()->SetTitle("#varphi_{Best} - #varphi_{True} (^{o})");
 hd->Draw();
 hd->Fit("gaus");
 hd->GetFunction("gaus")->SetLineColor(kGreen);
