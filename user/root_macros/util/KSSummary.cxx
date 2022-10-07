@@ -145,7 +145,8 @@ g->SetMarkerColor(kMagenta);
 g->SetMarkerSize(1.5);
 g->SetFillColor(0); // for legend if needed
 g->GetYaxis()->SetRangeUser( TMath::MinElement(N,phiTrueArr.GetArray()), TMath::MaxElement(N,phiTrueArr.GetArray()) );
-g->GetXaxis()->SetLimits( -1.25*dY, 1.25*dY );
+/* g->GetXaxis()->SetLimits( -1.25*dY, 1.25*dY ); */
+g->GetXaxis()->SetLimits( -20., 20. );
 g->GetYaxis()->SetTitle("#varphi_{True} (^{o})");
 g->GetXaxis()->SetTitle("#varphi_{Best} - #varphi_{True} (^{o})");
 g->GetXaxis()->SetTitleOffset(1.15);
@@ -156,7 +157,8 @@ gBaseLine->SetLineColor(kBlack);
 gBaseLine->Draw("same");
 // difference distribution
 p2->cd();
-TH1D *hd = new TH1D("hd", "Difference Distribution", 10, -1.25*dY, 1.25*dY);
+/* TH1D *hd = new TH1D("hd", "Difference Distribution", 10, -1.25*dY, 1.25*dY); */
+TH1D *hd = new TH1D("hd", "Difference Distribution", 10, -20., 20.);
 for (Int_t k_hd=0; k_hd<N; k_hd++) hd->Fill( phiDeltaArr.GetArray()[k_hd] );
 hd->SetLineColor(kMagenta);
 hd->SetLineWidth(3);

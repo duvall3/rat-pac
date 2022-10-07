@@ -39,6 +39,7 @@ private:
   TSystemDirectory*	fReferenceFileDir;	// directory containing reference files
   Long64_t		fnTestSampleEvents;	// number of events to use from test-sample tree (default value 0 will use all events)
   Long64_t		fnReferenceEvents;	// number of events to use from reference trees (default value 0 will use all events)
+  Bool_t		fkAnderson;		// if true, use Anderson-Darling rather than Kolmogorov-Smirnov
   Double_t		fTestSamplePhiTrue;	// the true value of phi for the test sample
   Double_t		fProb;			// match probability (current entry)
   Double_t		fSig;			// match significance (current entry)
@@ -84,6 +85,7 @@ public:
   TSystemDirectory*	GetReferenceFileDir() { return fReferenceFileDir; }
   Long64_t		GetnTestSampleEvents() { return fnTestSampleEvents; }
   Long64_t		GetnReferenceEvents() { return fnReferenceEvents; }
+  Bool_t		GetAnderson() { return fkAnderson; }
   Double_t		GetTestSamplePhiTrue() { return fTestSamplePhiTrue; }
   Double_t		GetProb() { return fProb; }
   Double_t		GetSig() { return fSig; }
@@ -99,6 +101,7 @@ public:
   void			SetReferenceFilePattern(TRegexp patternRE);
   void			SetReferenceFilePattern(const char* pattern);
   void			SetReferenceFileList(TList *fileList) { fReferenceFileList = fileList; }
+  void			SetAnderson(Bool_t bAnderson) { fkAnderson = bAnderson; }
   void			SetReferenceTreeName(const char* treeName) { fReferenceTreeName = treeName; }
   void			FillReferenceFileList();
   void			SetnEvents(Long64_t nTestSampleEvents=0, Long64_t nReferenceEvents=0) { fnTestSampleEvents=nTestSampleEvents; fnReferenceEvents=nReferenceEvents; }
@@ -124,7 +127,7 @@ public:
 
 
 //Integrating the TRefMatch class to ROOT.
-ClassDef(TRefMatch,3)
+ClassDef(TRefMatch,4)
 
 }; //end class
 

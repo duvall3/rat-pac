@@ -494,8 +494,13 @@ void TRefMatch::RefCompare()
   Double_t phiRef;
 
   // MAIN
-  printf("Processing Kolmogorov-Smirnov tests...\n");
-  /* printf("Processing Anderson-Darling tests...\n"); */
+  TString ksMsg = "Processing Kolmogorov-Smirnov tests...\n";
+  TString adMsg = "Processing Anderson-Darling tests...\n";
+  if (fkAnderson) {
+    printf("%s", adMsg.Data());
+  } else {
+    printf("%s", ksMsg.Data());
+  }
   for ( k=0; k<N; k++ ) {
     sf = (TSystemFile*)fReferenceFileList->At(k);
     currentDirName.Form("%s", sf->GetTitle());
@@ -512,8 +517,11 @@ void TRefMatch::RefCompare()
     V.SetElements( v->GetMatrixArray() );
     phiRef = V[0];
     M(k,0) = phiRef;
-    M(k,1) = UnbinnedKSTest( T_ts, T, fTestVarName, "", GetnTestSampleEvents(), GetnReferenceEvents() );
-    /* M(k,1) = AndersonDarlingTest( T_ts, T, fTestVarName, "", GetnTestSampleEvents(), GetnReferenceEvents() ); */
+    if (fkAnderson) {
+      M(k,1) = AndersonDarlingTest( T_ts, T, fTestVarName, "", GetnTestSampleEvents(), GetnReferenceEvents() );
+    } else {
+      M(k,1) = UnbinnedKSTest( T_ts, T, fTestVarName, "", GetnTestSampleEvents(), GetnReferenceEvents() );
+    }
     M(k,2) = Prob2Sig( M(k,1) );
     f->Close();
   }
