@@ -43,6 +43,7 @@ r->Run();
 .q
 " >> $OUTFILE
 done
+echo >> $OUTFILE
 
 # all pau!   )
 echo -e "Commands-file written to $OUTFILE\nPaste the contents into a terminal in the REF_DISTRIBS directory."
