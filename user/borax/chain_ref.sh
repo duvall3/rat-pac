@@ -3,8 +3,8 @@
 # -- intended for use with the TRefMatch system in this repository
 # -- REMINDER: Clear outfiles BEFORE RUNNING or their entries
 #      will be duplicated
-# Usage:
-# 1) Run this script in the umbrella directory of your datarun
+# -- Run this script in the umbrella directory of your datarun
+# Usage: chain_ref.sh <MAXVAL> [MINVAL] [PATTERN]
 # ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 09/2022 ~ #
 
 #Copyright (C) 2022 Mark J. Duvall / T. Rocks Science
@@ -90,7 +90,11 @@ for (( k=$MINVAL; k<=$MAXVAL; k++ )) {
 
 # clean up
 CHAINDIR="chain_ref_macros"
-mkdir $CHAINDIR
+if [ -d $CHAINDIR ]; then
+  /usr/bin/rm $CHAINDIR/*.cxx
+else
+  mkdir $CHAINDIR
+fi
 mv -t $CHAINDIR chain_ref*.cxx
 
 # all pau!  )
