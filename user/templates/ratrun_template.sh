@@ -1,7 +1,7 @@
 #!/bin/bash
-# ratrun_template -- master script to configure & execute macros for a RAT-PAC run (incl. data extraction from ROOT tree)
-# usage:  ratrun <FILENAME> [NUM_EVENTS] [EXAMPLE_TF]
-#	-- FILENAME is the *base* name (i.e., no extension) for the output folder/files
+# ratrun_template -- TEMPLATE FOR: master script to configure & execute macros for a RAT-PAC run (incl. data extraction from ROOT tree)
+# usage:  ratrun_template <DATARUN_NAME> [NUM_EVENTS] [EXAMPLE_TF]
+#	-- DATARUN_NAME is the *base* name (i.e., no extension) for the output folder/files
 #	-- NUM_EVENTS is the number of events to be run (i.e., passed to the '/run/beamOn' command)
 #	-- if either of these is unspecified, the user will be prompted, so make sure to specify these on the command line
 #		if you want to run in batch mode
@@ -23,6 +23,49 @@
 ##    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
+### FOR TEMPLATE VERION ONLY ###
+
+# argument check / get info:
+if [ $# -lt 1 ]; then
+  echo -e "\nUsage: ratrun_template.sh <DATARUN_NAME> [NUM_EVENTS] [EXAMPLE_TF]\n"
+  exit 100
+fi
+echo
+echo -e "\n### RAT RUN (Template Version) ###\n"
+DATARUN_NAME=$1
+if [ $2 ]; then
+  NUM_EVENTS=$2
+  else
+    echo -e "\nEnter number of events: "
+    read NUM_EVENTS
+fi
+EXAMPLE_TF=${3:-false} # default false
+ROOTFILE="$DATARUN_NAME".root
+export EXAMPLE_TF
+
+# template-only code
+echo -e "### ratrun_template.sh ###\n"
+echo -e "DATARUN_NAME: $DATARUN_NAME\nNUM_EVENTS: $NUM_EVENTS\nEXAMPLE_TF: $EXAMPLE_TF\nROOTFILE: $ROOTFILE\n"
+echo "\
+/control/execute setup.mac
+/rat/procset file \"$ROOTFILE\"
+/rat/proc count
+/rat/procset update 1000
+/run/beamOn $NUM_EVENTS\
+" > run_template.mac
+RATCMD="rat -l $DATARUN_NAME.log run_template.mac"
+echo -e "RATCMD: $RATCMD\n"
+process_rat_run_template.sh $DATARUN_NAME $NUM_EVENTS
+
+# all pau!   )
+exit 0
+
+### END TEMPLATE-ONLY SECTION ###
+
+
+### ACTUAL CODE STARTS HERE ###
+
+
 ## init
 
 # set photon evaporation flag
@@ -30,12 +73,12 @@ export G4NEUTRONHP_USE_ONLY_PHOTONEVAPORATION=1
 
 # argument check / get info:
 if [ $# -lt 1 ]; then
-  echo -e "\nUsage: ratrun_template.sh <FILENAME> [NUM_EVENTS] [EXAMPLE_TF]\n"
+  echo -e "\nUsage: ratrun.sh <DATARUN_NAME> [NUM_EVENTS] [EXAMPLE_TF]\n"
   exit 100
 fi
 echo
 echo -e "\n### RAT RUN ###\n\n"
-FILENAME=$1
+DATARUN_NAME=$1
 if [ $2 ]; then
   NUM_EVENTS=$2
   else
@@ -48,7 +91,7 @@ EXAMPLE_TF=${3:-false} # default false
 ## configure
 
 # create new run.mac
-ROOTFILE="$FILENAME".root
+ROOTFILE="$DATARUN_NAME".root
 echo "\
 /control/execute setup.mac
 /rat/procset file \"$ROOTFILE\"
@@ -62,13 +105,13 @@ echo "\
 echo -e "\n\n### Beginning RAT-PAC run...\n\n"
 
 # run rat
-rat -l "$FILENAME".log run.mac
+rat -l "$DATARUN_NAME".log run.mac
 
 # export any desired setting to environment for other scripts
 export EXAMPLE_TF
 
 # process run data
-process_rat_run_template.sh $FILENAME $NUM_EVENTS
+process_rat_run.sh $DATARUN_NAME $NUM_EVENTS
 
 # reminder
 echo -e "Reminder: Move output to long-term storage if desired.\n"

@@ -1,5 +1,5 @@
 #!/bin/bash
-# chain_template -- generate a ROOT macro to combine the result TTrees from a local batch run
+# chain_template -- TEMPLATE FOR: generate a ROOT macro to combine the result TTrees from a local batch run
 # Usage: chain_template.sh
 # -- Run this script in the umbrella directory of your datarun
 # ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2022 ~ #

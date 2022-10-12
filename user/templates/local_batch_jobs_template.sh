@@ -1,5 +1,5 @@
 #!/bin/bash
-# local_batch_jobs_template -- script to create and run a set of RAT-PAC simulations
+# local_batch_jobs_template -- TEMPLATE FOR: script to create and run a set of RAT-PAC simulations
 #	using multiple cores on the same machine
 #
 # -- should be run in the relevant $RATROOT/data/<EXPERIMENT> directory
