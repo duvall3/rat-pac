@@ -1,32 +1,11 @@
 #!/bin/bash
-# ratrun -- master script to configure & execute macros for a RAT-PAC run (incl. data extraction from ROOT tree)
-# usage:  ratrun [FILENAME] [NUM_EVENTS] [SEDAQ_GRAPHICS_TF] [QUANTIZED_POSITIONS] [POSITION_RESOLUTIONS]"
+# ratrun_template -- master script to configure & execute macros for a RAT-PAC run (incl. data extraction from ROOT tree)
+# usage:  ratrun <FILENAME> [NUM_EVENTS] [EXAMPLE_TF]
 #	-- FILENAME is the *base* name (i.e., no extension) for the output folder/files
 #	-- NUM_EVENTS is the number of events to be run (i.e., passed to the '/run/beamOn' command)
 #	-- if either of these is unspecified, the user will be prompted, so make sure to specify these on the command line
 #		if you want to run in batch mode
-#	-- SEDAQ_GRAPHICS_TF is a flag passed to SEDAQ.cxx for whether to create plots
-#		-- this defaults to false (for batch-mode operation)
-#	-- QUANTIZED_POSITIONS is a string (no quotes) consisting of some combination of {x,y,z}
-#			that specifies the axes along which the detector is segmented
-#		-- for non-segmented detectors, simply enter two double-quotes ("")
-#		-- for partially- or fully-segmented detectors that use the center-position of a cell to determine
-#	   	   scintillation position, enter the segmentation axes
-#		-- segmented detectors with sub-cell position resolution are not yet supported
-#	-- POSITION_RESOLUTIONS is a string (no quotes) consisting of some combination of {x,y,z}
-#			that specifies the axes along which to apply Gaussian noise to emulate
-#			realistic position (see the parameter "positionResolution"
-#			in user/root_macros/particleTracksToScint.cxx)
-#		-- this parameter should contain any {x,y,z} not specified in QUANTIZED_POSITIONS
-#	-- Example 1: To simulate and analyze a datarun: 1) called "test_1", 2) with 1000 events, 3) with graphics output,
-#		for a detector 4) segmented in x & y but 5) not in z, invoke the script as follows:
-#			user@host:~$ ratrun.sh test_1 1000 true xy z
-#	-- Example 2: Same as the above, but for a fully-segmented detector:
-#			user@host:~$ ratrun.sh test_1 1000 true xyz
-#	-- Example 3: Same as the above, but for a non-segmented detector:
-#			user@host:~$ ratrun.sh test_1 1000 true "" xyz
-# ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ July 2015 ~ Updated 6/22 ~ v2.0.1 ~ #
-
+# ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2022 ~ #
 
 ##Copyright (C) 2021 Mark J. Duvall
 ##
@@ -63,21 +42,7 @@ if [ $2 ]; then
     echo -e "\nEnter number of events: "
     read NUM_EVENTS
 fi
-if [ $3 ]; then
-  SEDAQ_GRAPHICS_TF=$3
-else
-  SEDAQ_GRAPHICS_TF=false
-fi
-if [ $4 ]; then
-  QUANTIZED_POSITIONS=$4
-else
-  QUANTIZED_POSITIONS=""
-fi
-if [ $5 ]; then
-  POSITION_RESOLUTIONS=$5
-else
-  POSITION_RESOLUTIONS=""
-fi
+EXAMPLE_TF=${3:-false} # default false
 
 
 ## configure
@@ -94,13 +59,13 @@ echo "\
 
 
 ## MAIN
-
-# create conflog && run rat
 echo -e "\n\n### Beginning RAT-PAC run...\n\n"
-conflog.sh > "$FILENAME".conf && rat -l "$FILENAME".log run.mac
 
-# export settings
-export SEDAQ_GRAPHICS_TF QUANTIZED_POSITIONS POSITION_RESOLUTIONS
+# run rat
+rat -l "$FILENAME".log run.mac
+
+# export setting(s) to environment for other scripts
+export EXAMPLE_TF
 
 # process run data
 process_rat_run.sh $FILENAME $NUM_EVENTS

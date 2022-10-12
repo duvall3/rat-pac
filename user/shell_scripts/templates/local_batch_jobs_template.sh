@@ -1,10 +1,10 @@
 #!/bin/bash
-# local_batch_jobs -- script to create and run a set of RAT-PAC simulations
+# local_batch_jobs_template -- script to create and run a set of RAT-PAC simulations
 #	using multiple cores on the same machine
 #
 # -- should be run in the relevant $RATROOT/data/<EXPERIMENT> directory
 #
-# -- Usage: local_batch_jobs.sh <DATARUN_NAME> <EVENTS_PER_INSTANCE> <NUM_INSTANCES> [QUANTIZED_POSITIONS] [POSITION_RESOLUTIONS]
+# -- Usage: local_batch_jobs.sh <DATARUN_NAME> <EVENTS_PER_INSTANCE> <NUM_INSTANCES> [OTHER_PARAMS]...
 #      OR   local_batch_jobs.sh <kill>
 #
 # -- Example: local_batch_jobs.sh some_datarun 200 5
@@ -12,7 +12,7 @@
 #         of RAT-PAC containing 200 events each, all under an umbrella
 #         directory named "some_datarun"
 #
-# ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 9/2019 ~ Updated 5/22 ~ #
+# ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2022 ~ #
 
 #Copyright (C) 2019 Mark J. Duvall
 #
@@ -63,35 +63,24 @@ fi
 
 ## INIT
 
+# process args and get directory
 if [[ $# -lt 3 ]]; then
-  echo -e "\nUSAGE: local_batch_jobs.sh <DATARUN_NAME> <EVENTS_PER_INSTANCE> <NUM_INSTANCES> [QUANTIZED_POSITIONS] [POSITION_RESOLUTIONS]\n  OR   local_batch_jobs.sh <kill>\n"
+  echo -e "\nUSAGE: local_batch_jobs.sh <DATARUN_NAME> <EVENTS_PER_INSTANCE> <NUM_INSTANCES> [OTHER_PARAMS]...\n"
   exit 10
 fi
 DATARUN=$1
 NEVENTS=$2
 NINSTS=$3
-if [[ $# -lt 4 ]]; then
-  QUANTIZED_POSITIONS=""
-else
-  QUANTIZED_POSITIONS=$4
-fi
-if [[ $# -lt 5 ]]; then
-  POSITION_RESOLUTIONS=""
-else
-  POSITION_RESOLUTIONS=$5
-fi
-#if [[ $# -lt 6 ]]; then #deprecated
-   EXPDIR=$RATROOT/data/$(basename $(pwd) /) #KEEPME
-#else
-#  EXPDIR=$(basename $6 /)
-#fi
+EXAMPLE_TF=${4:-$EXAMPLE_TF}	# first try argument, then environment
+EXAMPLE_TF=${EXAMPLE_TF:-false}	# if still empty, use default
+EXPDIR=$RATROOT/data/$(basename $(pwd) /)
 
 ##debug
 #echo $DATARUN
 #echo $NEVENTS
 #echo $NINSTS
+#echo $EXAMPLE_TF
 #echo $RATROOT
-#echo $EXPDIR
 #echo
 
 
@@ -109,11 +98,11 @@ for (( k=0; k<$NINSTS; k++ )) {
   cd $INST_DIR
 
   # create run.mac
-  echo -e "/control/macroPath $EXPDIR\n/control/execute setup.mac\n/rat/procset file \"$INST_DIR.root\"\n/run/beamOn $NEVENTS" > run.mac # assume IBD run
+  echo -e "/control/macroPath $EXPDIR\n/control/execute setup.mac\n/rat/procset file \"$INST_DIR.root\"\n/run/beamOn $NEVENTS" > run.mac
 
   # prepare simulation, post-processing, and combination commands
   RATCMD="rat -l $INST_DIR.log run.mac"
-  PROCCMD="$RATROOT/user/shell_scripts/process_rat_run.sh $INST_DIR $NEVENTS false $QUANTIZED_POSITIONS $POSITION_RESOLUTIONS"
+  PROCCMD="$RATROOT/user/shell_scripts/process_rat_run_template.sh $INST_DIR $NEVENTS $EXAMPLE_TF"
   ECHOSTR='\n$INST_DIR complete.\n'
   ECHOCMD="echo -e $ECHOSTR"
   FULLCMD="eval $RATCMD && eval $PROCCMD && eval $ECHOCMD"
@@ -133,26 +122,18 @@ done
 # simulations and conversions should be finished here
 echo -e "\nBatch jobs complete.\n"
 
-# combine dataruns into a single _T file for use with SEDAQ2.cxx
-echo -e "\nCombining scintillation data...\n"
-chain.sh && echo -e "\nTChain complete.\n"
-#FIXME TEMP NCAP -- see process_rat_run.sh
-chain_ncap.sh && echo -e "\nnCap TChain complete.\n"
+# combine dataruns into a single ROOT file
+echo -e "\nCombining data...\n"
+chain_template.sh && echo -e "\nTChain complete.\n"
 
 # analyze master datafile
 echo -e "\nAnalyzing combined data...\n"
-T_FILE=$DATARUN"_T.root"
 RES_FILE=$DATARUN"_results.root"
-NCAP_FILE=$DATARUN"_ncap.root"
-ANCMD1=$(echo -e "root -q -l -b 'SEDAQ2.cxx(\"$T_FILE\", true, \"$QUANTIZED_POSITIONS\", \"$POSITION_RESOLUTIONS\")'")
-ANCMD2=$(echo -e "root -q -l -b 'angularRecon.cxx(\"$RES_FILE\", true)'")
-ANCMD3=$(echo -e "root -q -l -b 'neutronCapturesFinal.cxx(\"$NCAP_FILE\")'") #FIXME TEMP -- see process_rat_run.sh
-#echo -e "\n$ANCMD1\n$ANCMD2\n" #debug
-eval $ANCMD1 && eval $ANCMD2
-eval $ANCMD3 #FIXME TEMP -- see process_rat_run.sh
+ANCMD="root -q -l -b someAnalysisMacro(\"$RES_FILE\", $NUM_EVENTS, $EXAMPLE_TF)'"
+eval $ANCMD
 
 ## all pau!   )
-if [[ $? -eq  0 ]]; then
+if [ $? -eq  0 ]; then
   echo -e "\nDone.\n"
   echo -e "\nBatch run complete!\n\n"
   exit 0
