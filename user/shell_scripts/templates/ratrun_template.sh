@@ -30,7 +30,7 @@ export G4NEUTRONHP_USE_ONLY_PHOTONEVAPORATION=1
 
 # argument check / get info:
 if [ $# -lt 1 ]; then
-  echo -e "\nUsage: ratrun.sh <FILENAME> [NUM_EVENTS] [SEDAQ_GRAPHICS_TF] [QUANTIZED_POSITIONS] [POSITION_RESOLUTIONS]\n"
+  echo -e "\nUsage: ratrun_template.sh <FILENAME> [NUM_EVENTS] [EXAMPLE_TF]\n"
   exit 100
 fi
 echo
@@ -64,11 +64,11 @@ echo -e "\n\n### Beginning RAT-PAC run...\n\n"
 # run rat
 rat -l "$FILENAME".log run.mac
 
-# export setting(s) to environment for other scripts
+# export any desired setting to environment for other scripts
 export EXAMPLE_TF
 
 # process run data
-process_rat_run.sh $FILENAME $NUM_EVENTS
+process_rat_run_template.sh $FILENAME $NUM_EVENTS
 
 # reminder
 echo -e "Reminder: Move output to long-term storage if desired.\n"

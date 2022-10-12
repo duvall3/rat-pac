@@ -4,10 +4,10 @@
 #
 # -- should be run in the relevant $RATROOT/data/<EXPERIMENT> directory
 #
-# -- Usage: local_batch_jobs.sh <DATARUN_NAME> <EVENTS_PER_INSTANCE> <NUM_INSTANCES> [OTHER_PARAMS]...
-#      OR   local_batch_jobs.sh <kill>
+# -- Usage: local_batch_jobs_template.sh <DATARUN_NAME> <EVENTS_PER_INSTANCE> <NUM_INSTANCES> [OTHER_PARAMS]...
+#      OR   local_batch_jobs_template.sh <kill>
 #
-# -- Example: local_batch_jobs.sh some_datarun 200 5
+# -- Example: local_batch_jobs_template.sh some_datarun 200 5
 #      -- this would run a combined total of 1000 events split over 5 instances
 #         of RAT-PAC containing 200 events each, all under an umbrella
 #         directory named "some_datarun"
@@ -55,7 +55,7 @@ if [[ $ARG1 = "kill" ]]; then
     echo -e "\nKill canceled.\n" && exit 2
   else
     # user entered something other than y(es) or n(o)
-    echo -e "\nInput not recognized; please try again.\n" && local_batch_jobs.sh kill
+    echo -e "\nInput not recognized; please try again.\n" && local_batch_jobs_template.sh kill
   fi
 
 fi
@@ -65,7 +65,7 @@ fi
 
 # process args and get directory
 if [[ $# -lt 3 ]]; then
-  echo -e "\nUSAGE: local_batch_jobs.sh <DATARUN_NAME> <EVENTS_PER_INSTANCE> <NUM_INSTANCES> [OTHER_PARAMS]...\n"
+  echo -e "\nUSAGE: local_batch_jobs_template.sh <DATARUN_NAME> <EVENTS_PER_INSTANCE> <NUM_INSTANCES> [OTHER_PARAMS]...\n"
   exit 10
 fi
 DATARUN=$1
@@ -102,7 +102,7 @@ for (( k=0; k<$NINSTS; k++ )) {
 
   # prepare simulation, post-processing, and combination commands
   RATCMD="rat -l $INST_DIR.log run.mac"
-  PROCCMD="$RATROOT/user/shell_scripts/process_rat_run_template.sh $INST_DIR $NEVENTS $EXAMPLE_TF"
+  PROCCMD="$RATROOT/user/shell_scripts/process_rat_run_template_template.sh $INST_DIR $NEVENTS $EXAMPLE_TF"
   ECHOSTR='\n$INST_DIR complete.\n'
   ECHOCMD="echo -e $ECHOSTR"
   FULLCMD="eval $RATCMD && eval $PROCCMD && eval $ECHOCMD"

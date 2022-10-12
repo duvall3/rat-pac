@@ -19,7 +19,7 @@
 
 ## usage
 if [ $# -lt 2 ]; then
-  echo -e "\nUSAGE: process_rat_run.sh <DATARUN_NAME> <NUM_EVENTS>\n" && exit 10
+  echo -e "\nUSAGE: process_rat_run_template.sh <DATARUN_NAME> <NUM_EVENTS>\n" && exit 10
 fi
 
 ## init
@@ -30,8 +30,10 @@ LOGFILE="$BASENAME".log
 ROOTFILE="$BASENAME".root
 
 ## main
-ROOTCMD="root -q -l -b 'analysisMacro.cxx(\"$ROOTFILE\", $NUM_EVENTS, $EXAMPLE_TF)'"
-eval $ROOTCOMMAND
+# root 'analysisMacro.cxx("$ROOTFILE", $NUM_EVENTS, $EXAMPLE_TF)' # do not do
+ROOTCMD="root -q -l -b 'analysisMacro.cxx(\"$ROOTFILE\", $NUM_EVENTS, $EXAMPLE_TF)'" # do
+echo $ROOTCMD #debug
+eval $ROOTCMD # do
 
 ## tidying up: make output directory & move all the new output files there
 mkdir $BASENAME
