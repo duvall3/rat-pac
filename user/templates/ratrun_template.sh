@@ -1,6 +1,6 @@
 #!/bin/bash
 # ratrun_template -- TEMPLATE FOR: master script to configure & execute macros for a RAT-PAC run (incl. data extraction from ROOT tree)
-# usage:  ratrun_template <DATARUN_NAME> [NUM_EVENTS] [EXAMPLE_TF]
+# usage:  ratrun_template <DATARUN_NAME> [NUM_EVENTS] [EXAMPLE_FLAG]
 #	-- DATARUN_NAME is the *base* name (i.e., no extension) for the output folder/files
 #	-- NUM_EVENTS is the number of events to be run (i.e., passed to the '/run/beamOn' command)
 #	-- if either of these is unspecified, the user will be prompted, so make sure to specify these on the command line
@@ -27,7 +27,7 @@
 
 # argument check / get info:
 if [ $# -lt 1 ]; then
-  echo -e "\nUsage: ratrun_template.sh <DATARUN_NAME> [NUM_EVENTS] [EXAMPLE_TF]\n"
+  echo -e "\nUsage: ratrun_template.sh <DATARUN_NAME> [NUM_EVENTS] [EXAMPLE_FLAG]\n"
   exit 100
 fi
 echo
@@ -45,7 +45,7 @@ export EXAMPLE_TF
 
 # template-only code
 echo -e "### ratrun_template.sh ###\n"
-echo -e "DATARUN_NAME: $DATARUN_NAME\nNUM_EVENTS: $NUM_EVENTS\nEXAMPLE_TF: $EXAMPLE_TF\nROOTFILE: $ROOTFILE\n"
+echo -e "DATARUN_NAME: $DATARUN_NAME\nNUM_EVENTS: $NUM_EVENTS\nEXAMPLE_FLAG: $EXAMPLE_TF\nROOTFILE: $ROOTFILE\n"
 echo "\
 /control/execute setup.mac
 /rat/procset file \"$ROOTFILE\"
@@ -73,7 +73,7 @@ export G4NEUTRONHP_USE_ONLY_PHOTONEVAPORATION=1
 
 # argument check / get info:
 if [ $# -lt 1 ]; then
-  echo -e "\nUsage: ratrun.sh <DATARUN_NAME> [NUM_EVENTS] [EXAMPLE_TF]\n"
+  echo -e "\nUsage: ratrun.sh <DATARUN_NAME> [NUM_EVENTS] [EXAMPLE_FLAG]\n"
   exit 100
 fi
 echo

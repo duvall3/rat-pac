@@ -166,6 +166,7 @@ hd->GetXaxis()->SetTitle("#varphi_{Best} - #varphi_{True} (^{o})");
 hd->Draw();
 hd->Fit("gaus");
 hd->GetFunction("gaus")->SetLineColor(kGreen);
+hd->SetAxisRange(0., 1.1*hd->GetFunction("gaus")->GetMaximum(), "Y");
 // save plots
 gBaseLine->Write("gBaseLine");
 g->Write("gResults");

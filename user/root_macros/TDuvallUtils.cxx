@@ -277,10 +277,19 @@ Double_t* TDuvallUtils::LogBins( Double_t xmin, Double_t xmax )
 //______________________________________________________________________________
 // PrintBranches -- print a TTree's branches in a format that is
 //   easier to scan visually than TTree::GetListOfBranches()->ls()
-void TDuvallUtils::PrintBranches(TTree *T)
+void TDuvallUtils::PrintBranches(TObject *obj)
 {
+  // arg check
+  if ( obj->InheritsFrom("TTree") ) {
+    TTree *Obj = (TTree*)obj;
+  } else if ( obj->InheritsFrom("TBranch") ) {
+    TBranch *Obj = (TBranch*)obj;
+  } else {
+    gROOT->Error("TDuvallUtils::PrintBranches", "Argument type must be either TTree* or TBranch*.");
+    return;
+  }
   // init
-  TObjArray *branches = T->GetListOfBranches();
+  TObjArray *branches = Obj->GetListOfBranches();
   TIter i(branches);
   TBranch *br;
   TString brTit, brType;
