@@ -1,20 +1,3 @@
-<style>
-  mark {
-    color: white;
-    background-color: #1D2127;
-  }
-  mark.command {
-    color: #33EE33;
-    background-color: #1D2127;
-  }
-  mark.pad {
-    width: 60em;
-    white-space: pre-wrap;
-    padding-left: 2em;
-    display: inline-block;
-  }
-</style>
-
 # tree2txt
 
 Instructions for using the `tree2txt` utility from [duvall3's fork of RAT-PAC on GitHub](https://github.com/duvall3/rat-pac/).
@@ -61,38 +44,38 @@ or place it wherever you like and add that directory to the corresponding path.
 You can view the paths for each program by running the following commands
 within each program's prompt:  
 - BASH/shell:  
-```bash
+    ```sh
     echo $PATH # or, for easier readability,  
     echo $PATH | tr ':' '\n'  
-```
+    ```
 - ROOT:  
-```cpp
+    ```cpp
     gROOT->GetMacroPath() // Note: DO omit the semicolon here. Or, use:  
     TString path(gROOT->GetMacroPath());  
     printf("%s\n", path.ReplaceAll(":","\n").Data());  
-```
+    ```
 - Octave/MATLAB:
-```matlab
+    ```matlab
     path
-```
+    ```
 
 You can add directories to each program's path as follows,  
 replacing `directory/to/add` with your desired directory:  
 - During a session:  
   - BASH/shell:  
-```bash
+      ```sh
       export PATH=$PATH:/directory/to/add  
-```
+      ```
   - ROOT:  
-```cpp
+      ```cpp
       TString path(gROOT->GetMacroPath());  
       path.Append(":/directory/to/add");  
       gROOT->SetMacroPath(path.Data());  
-```
+      ```
   - Octave/MATLAB:  
-```matlab
+      ```matlab
       addpath("/directory/to/add");  
-```
+      ```
 - Permanently (assuming default settings):  
   - BASH/shell and Octave/MATLAB: Simply add the lines given above to your `~/.bashrc` or `~/.bash_profile` and
     your `~/.octaverc`, respectively  
@@ -110,34 +93,32 @@ replacing `directory/to/add` with your desired directory:
 
 Usage lines for each file are below; see the individual code files for details.  
 - BASH/shell script:  
-```bash
+    ```sh
     tree2txt.sh <INFILENAME> [TREENAME] [OUTFILENAME]  
-```
+    ```
 - ROOT macro:  
-```cpp
+    ```cpp
     void tree2txt( const char* filename, const char* treename = "T", const char* outfilename = "" )  
-```
+    ```
 - Octave/MATLAB script:  
-```matlab
+    ```matlab
     run import_labeled_data  
-```
+    ```
 
 **Example 1:**  
 Suppose we have a ROOT file `datarun.root` containing a TTree named `T`,  
 which we want to export to text and open for analysis in Octave.  
 We would then run the following:
 
-<mark class="pad">`user@host:$`<mark class="command"> `tree2txt.sh` </mark>`datarun.root`</mark>
+`user@host:~$ tree2txt datarun.root`
 
 This will generate the file `datarun_T.txt`. Then we simply open Octave  
 and run the script:
 
-<mark class="pad">`user@host:~$`<mark class="command"> `octave`</mark></mark>
+`user@host:~$ octave`  
 
-```txt
-    octave:1> run import_labeled_data
-    Enter filename: datarun_T.txt
-```
+`octave:1> run import_labeled_data`  
+`Enter filename: datarun_T.txt`
 
 Octave will then load the data and display the newly-created variables.
 
@@ -147,7 +128,7 @@ a tree named `T_neutrons`. Furthermore, suppose we want
 the output filename to be `T_neutrons_extracted.txt`.  
 Then we would run the following:
 
-<mark class="pad">`user@host:~$`<mark class="command"> `tree2txt.sh` </mark> `datarun.root T_neutrons T_neutrons_extracted.txt`</mark>
+`user@host:~$ tree2txt datarun.root T_neutrons T_neutrons_extracted.txt`
 
 This will generate the file `T_neutrons_extracted.txt`.  
 We would then simply open Octave and run the `import_labaled_data`  

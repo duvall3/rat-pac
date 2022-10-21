@@ -1,47 +1,119 @@
-<!doctype html>
-<html>
-    <head>
-        <title>tree2txt</title>
-        <meta charset='utf-8'/>
-        <link rel="stylesheet" type="text/css" href="./README.html_files/github-markdown.css">
-        <style>
-            .markdown-body {
-                box-sizing: border-box;
-                min-width: 200px;
-                max-width: 980px;
-                margin: 0 auto;
-                padding: 45px;
-            }
-        </style>
-        <script>
-            window.onload = function() {
-                if (document.querySelector("script[type=\"math/tex; mode=display\"]") !== null) {
-                    var mathjax = document.createElement("script");
-                    mathjax.src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML";
-                    document.head.appendChild(mathjax);
-                }
-                if (document.getElementsByTagName("code").length !== 0) {
-                    var highlight = document.createElement("script");
-                    var highlightcss = document.createElement("link");
-                    highlight.src = "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js";
-                    highlightcss.rel = "stylesheet";
-                    highlightcss.href = "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/github.min.css";
-                    highlight.onload = function() {hljs.initHighlighting();};
-                    document.head.appendChild(highlight);
-                    document.head.appendChild(highlightcss);
-                }
-            }
-        </script>
-    </head>
-    <body>
-        <article class="markdown-body">
-            <h1 id="tree2txt">tree2txt</h1>
-<p>Instructions for using the <code>tree2txt</code> utility from <a href="https://github.com/duvall3/rat-pac/">duvall3&#39;s fork of RAT-PAC on GitHub</a>.</p>
-<p>This utility includes the following code files:</p>
-<ul>
-<li><a href="https://github.com/duvall3/rat-pac/raw/collab/user/shell_scripts/tree2txt.sh"><code>tree2txt.sh</code></a> -- master shell script</li><li><a href="https://github.com/duvall3/rat-pac/raw/collab/user/root_macros/util/tree2txt.cxx"><code>tree2txt.cxx</code></a> -- ROOT macro</li><li><a href="https://github.com/duvall3/rat-pac/raw/collab/user/m_files/import_labeled_data.m"><code>import_labeled_data.m</code></a> -- Octave/MATLAB script</li></ul>
-<hr>
-<pre><code class="lang-text">Copyright (C) 2022 Mark J. Duvall
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- Modified by Mark J. Duvall ~ github.com/duvall3 -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>README</title>
+  <style type="text/css">
+      body {
+	color: #d9e1e9;
+	background-color: #0d1117;
+	font-size: larger;
+	box-sizing: border-box;
+	min-width: 200px;
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 45px;
+      }
+      a {
+	color: #44DDAA;
+      }
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+    a.sourceLine { display: inline-block; line-height: 1.25; }
+    a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+    a.sourceLine:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode { white-space: pre; position: relative; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    code.sourceCode { white-space: pre-wrap; }
+    a.sourceLine { text-indent: -1em; padding-left: 1em; }
+    }
+    pre.numberSource a.sourceLine
+      { position: relative; left: -4em; }
+    pre.numberSource a.sourceLine::before
+      { content: attr(title);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; pointer-events: all; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        background-color: #232629;
+        color: #7a7c7d;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #7a7c7d;  padding-left: 4px; }
+    div.sourceCode
+      { color: #ffffff; background-color: #1d2127; }
+    @media screen {
+    a.sourceLine::before { text-decoration: underline; }
+    }
+    code span. { color: #ffffff; } /* Normal */
+    code span.al { color: #95da4c; } /* Alert */
+    code span.an { color: #3f8058; } /* Annotation */
+    code span.at { color: #33dddd; } /* Attribute */
+    code span.bn { color: #79c0ff; } /* BaseN */
+    code span.bu { color: #33ee33; } /* BuiltIn */
+    code span.cf { color: #fdbc4b; } /* ControlFlow */
+    code span.ch { color: #a5d6ff; } /* Char */
+    code span.cn { color: #79c0ff; } /* Constant */
+    code span.co { color: #339999; font-style: italic; } /* Comment */
+    code span.cv { color: #339999; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #44ddaa; } /* Documentation */
+    code span.dt { color: #ff7b72; } /* DataType */
+    code span.dv { color: #79c0ff; } /* DecVal */
+    code span.er { color: #dd2222; font-weight: bold; } /* Error */
+    code span.ex { color: #33ee33; } /* Extension */
+    code span.fl { color: #79c0ff; } /* Float */
+    code span.fu { color: #33ee33; } /* Function */
+    code span.im { color: #c9d1d9; } /* Import */
+    code span.in { color: #c45b00; } /* Information */
+    code span.kw { color: #ff7b72; } /* Keyword */
+    code span.op { color: #eeee22; } /* Operator */
+    code span.ot { color: #27ae60; } /* Other */
+    code span.pp { color: #27ae60; } /* Preprocessor */
+    code span.re { color: #2980b9; } /* RegionMarker */
+    code span.sc { color: #a5d6ff; } /* SpecialChar */
+    code span.ss { color: #c53bcf; } /* SpecialString */
+    code span.st { color: #c53bcf; } /* String */
+    code span.va { color: #ffa657; } /* Variable */
+    code span.vs { color: #c53bcf; } /* VerbatimString */
+    code span.wa { color: #dddd33; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<style>
+  mark {
+    color: white;
+    background-color: #1D2127;
+  }
+  mark.command {
+    color: #33EE33;
+    background-color: #1D2127;
+  }
+  mark.pad {
+    width: 60em;
+    white-space: pre-wrap;
+    padding-left: 2em;
+    display: inline-block;
+  }
+</style>
+<h1 id="tree2txt">tree2txt</h1>
+<p>Instructions for using the <code>tree2txt</code> utility from <a href="https://github.com/duvall3/rat-pac/">duvall3’s fork of RAT-PAC on GitHub</a>.</p>
+<p>This utility includes the following code files: - <a href="https://github.com/duvall3/rat-pac/raw/collab/user/shell_scripts/tree2txt.sh"><code>tree2txt.sh</code></a> – master shell script - <a href="https://github.com/duvall3/rat-pac/raw/collab/user/root_macros/util/tree2txt.cxx"><code>tree2txt.cxx</code></a> – ROOT macro - <a href="https://github.com/duvall3/rat-pac/raw/collab/user/m_files/import_labeled_data.m"><code>import_labeled_data.m</code></a> – Octave/MATLAB script</p>
+<hr />
+<pre class="text"><code>Copyright (C) 2022 Mark J. Duvall
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -54,69 +126,95 @@
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
-</code></pre>
-<hr>
+    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</code></pre>
+<hr />
 <h2 id="installation">Installation</h2>
-<p><em>Note: These are written for *nix systems (Mac/Linux)</em></p>
+<p>_Note: These are written for *nix systems (Mac/Linux)_</p>
 <h3 id="automatic">Automatic</h3>
 <p>Download and run the shell-script installer: <a href="https://github.com/duvall3/rat-pac/raw/collab/user/tree2txt/tree2txt_Installer.sh"><code>tree2txt_Installer.sh</code></a></p>
 <h3 id="manual">Manual</h3>
-<p>Place each file (or a link to it) in a directory within the relevant program&#39;s path,
-or place it wherever you like and add that directory to the corresponding path.</p>
-<p>You can view the paths for each program by running the following commands
-within each program&#39;s prompt:  </p>
+<p>Place each file (or a link to it) in a directory within the relevant program’s path, or place it wherever you like and add that directory to the corresponding path.</p>
+<p>You can view the paths for each program by running the following commands within each program’s prompt:<br />
+- BASH/shell:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1">    <span class="bu">echo</span> <span class="va">$PATH</span> <span class="co"># or, for easier readability,  </span></a>
+<a class="sourceLine" id="cb2-2" title="2">    <span class="bu">echo</span> <span class="va">$PATH</span> <span class="kw">|</span> <span class="fu">tr</span> <span class="st">&#39;:&#39;</span> <span class="st">&#39;\n&#39;</span>  </a></code></pre></div>
 <ul>
-<li>BASH/shell:  <pre><code class="lang-sh">  echo $PATH # or, for easier readability,  
-  echo $PATH | tr &#39;:&#39; &#39;\n&#39;
-</code></pre>
-</li><li>ROOT:  <pre><code class="lang-cpp">  gROOT-&gt;GetMacroPath() // Note: DO omit the semicolon here. Or, use:  
-  TString path(gROOT-&gt;GetMacroPath());  
-  printf(&quot;%s\n&quot;, path.ReplaceAll(&quot;:&quot;,&quot;\n&quot;).Data());
-</code></pre>
-</li><li>Octave/MATLAB:<pre><code class="lang-matlab">  path
-</code></pre>
-</li></ul>
-<p>You can add directories to each program&#39;s path as follows,<br>replacing <code>directory/to/add</code> with your desired directory:  </p>
+<li>ROOT:<br />
+</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb3-1" title="1">    gROOT-&gt;GetMacroPath() <span class="co">// Note: DO omit the semicolon here. Or, use:  </span></a>
+<a class="sourceLine" id="cb3-2" title="2">    TString path(gROOT-&gt;GetMacroPath());  </a>
+<a class="sourceLine" id="cb3-3" title="3">    printf(<span class="st">&quot;</span><span class="sc">%s\n</span><span class="st">&quot;</span>, path.ReplaceAll(<span class="st">&quot;:&quot;</span>,<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>).Data());  </a></code></pre></div>
 <ul>
-<li>During a session:  <ul>
-<li>BASH/shell:  <pre><code class="lang-sh">  export PATH=$PATH:/directory/to/add
-</code></pre>
-</li><li>ROOT:  <pre><code class="lang-cpp">  TString path(gROOT-&gt;GetMacroPath());  
-  path.Append(&quot;:/directory/to/add&quot;);  
-  gROOT-&gt;SetMacroPath(path.Data());
-</code></pre>
-</li><li>Octave/MATLAB:  <pre><code class="lang-matlab">  addpath(&quot;/directory/to/add&quot;);
-</code></pre>
-</li></ul>
-</li><li>Permanently (assuming default settings):  <ul>
-<li>BASH/shell and Octave/MATLAB: Simply add the lines given above to your <code>~/.bashrc</code> or <code>~/.bash_profile</code> and
-your <code>~/.octaverc</code>, respectively  </li><li>ROOT: Open your <code>~/.rootrc</code>, find the line containing <code>Unix.*.Root.MacroPath</code>, and append <code>:/directory/to/add</code></li></ul>
-</li></ul>
-<p><strong>Example:</strong><br>1) Place <code>tree2txt.sh</code> and <code>import_labeled_data.m</code> in <code>~/bin</code>, and place <code>tree2txt.cxx</code> in <code>$ROOTSYS/macros</code><br>2) Add the line <code>export PATH=$PATH:~/bin</code> to your <code>~/.bashrc</code> or <code>~/.bash_profile</code><br>3) Open your <code>~/.rootrc</code> (create it if necessary) and ensure that there is a line similar to the following: <code>Unix.*.Root.MacroPath    .:$(ROOTSYS)/macros</code><br>4) Add the line <code>addpath(&quot;~/bin&quot;);</code> to your <code>~/.octaverc</code> (again, create it if necessary)  </p>
-<hr>
+<li>Octave/MATLAB:</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode matlab"><code class="sourceCode matlab"><a class="sourceLine" id="cb4-1" title="1">    path</a></code></pre></div>
+<p>You can add directories to each program’s path as follows,<br />
+replacing <code>directory/to/add</code> with your desired directory:<br />
+- During a session:<br />
+- BASH/shell:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1">      <span class="bu">export</span> <span class="va">PATH=$PATH</span>:/directory/to/add  </a></code></pre></div>
+<ul>
+<li>ROOT:<br />
+</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb6-1" title="1">      TString path(gROOT-&gt;GetMacroPath());  </a>
+<a class="sourceLine" id="cb6-2" title="2">      path.Append(<span class="st">&quot;:/directory/to/add&quot;</span>);  </a>
+<a class="sourceLine" id="cb6-3" title="3">      gROOT-&gt;SetMacroPath(path.Data());  </a></code></pre></div>
+<ul>
+<li>Octave/MATLAB:<br />
+</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode matlab"><code class="sourceCode matlab"><a class="sourceLine" id="cb7-1" title="1">      addpath(&quot;/directory/to/add&quot;);  </a></code></pre></div>
+<ul>
+<li>Permanently (assuming default settings):
+<ul>
+<li>BASH/shell and Octave/MATLAB: Simply add the lines given above to your <code>~/.bashrc</code> or <code>~/.bash_profile</code> and your <code>~/.octaverc</code>, respectively<br />
+</li>
+<li>ROOT: Open your <code>~/.rootrc</code>, find the line containing <code>Unix.*.Root.MacroPath</code>, and append <code>:/directory/to/add</code></li>
+</ul></li>
+</ul>
+<p><strong>Example:</strong><br />
+1) Place <code>tree2txt.sh</code> and <code>import_labeled_data.m</code> in <code>~/bin</code>, and place <code>tree2txt.cxx</code> in <code>$ROOTSYS/macros</code><br />
+2) Add the line <code>export PATH=$PATH:~/bin</code> to your <code>~/.bashrc</code> or <code>~/.bash_profile</code><br />
+3) Open your <code>~/.rootrc</code> (create it if necessary) and ensure that there is a line similar to the following: <code>Unix.*.Root.MacroPath  .:$(ROOTSYS)/macros</code><br />
+4) Add the line <code>addpath("~/bin");</code> to your <code>~/.octaverc</code> (again, create it if necessary)</p>
+<hr />
 <h2 id="usage">Usage</h2>
-<p>Usage lines for each file are below; see the individual code files for details.  </p>
+<p>Usage lines for each file are below; see the individual code files for details.<br />
+- BASH/shell script:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1">    <span class="ex">tree2txt.sh</span> <span class="op">&lt;</span>INFILENAME<span class="op">&gt;</span> [TREENAME] [OUTFILENAME]  </a></code></pre></div>
 <ul>
-<li>BASH/shell script:  <pre><code class="lang-sh">  tree2txt.sh &lt;INFILENAME&gt; [TREENAME] [OUTFILENAME]
-</code></pre>
-</li><li>ROOT macro:  <pre><code class="lang-cpp">  void tree2txt( const char* filename, const char* treename = &quot;T&quot;, const char* outfilename = &quot;&quot; )
-</code></pre>
-</li><li>Octave/MATLAB script:  <pre><code class="lang-matlab">  run import_labeled_data
-</code></pre>
-</li></ul>
-<p><strong>Example 1:</strong><br>Suppose we have a ROOT file <code>datarun.root</code> containing a TTree named <code>T</code>,<br>which we want to export to text and open for analysis in Octave.<br>We would then run the following:</p>
-<p><code>user@host:~$ tree2txt datarun.root</code></p>
-<p>This will generate the file <code>datarun_T.txt</code>. Then we simply open Octave<br>and run the script:</p>
-<p><code>user@host:~$ octave</code>  </p>
-<p><code>octave:1&gt; run import_labeled_data</code><br><code>Enter filename: datarun_T.txt</code></p>
+<li>ROOT macro:<br />
+</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb9-1" title="1">    <span class="dt">void</span> tree2txt( <span class="at">const</span> <span class="dt">char</span>* filename, <span class="at">const</span> <span class="dt">char</span>* treename = <span class="st">&quot;T&quot;</span>, <span class="at">const</span> <span class="dt">char</span>* outfilename = <span class="st">&quot;&quot;</span> )  </a></code></pre></div>
+<ul>
+<li>Octave/MATLAB script:<br />
+</li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode matlab"><code class="sourceCode matlab"><a class="sourceLine" id="cb10-1" title="1">    run import_labeled_data  </a></code></pre></div>
+<p><strong>Example 1:</strong><br />
+Suppose we have a ROOT file <code>datarun.root</code> containing a TTree named <code>T</code>,<br />
+which we want to export to text and open for analysis in Octave.<br />
+We would then run the following:</p>
+<p><mark class="pad"><code>user@host:$</code><mark class="command"> <code>tree2txt.sh</code> </mark><code>datarun.root</code></mark></p>
+<p>This will generate the file <code>datarun_T.txt</code>. Then we simply open Octave<br />
+and run the script:</p>
+<p><mark class="pad"><code>user@host:~$</code><mark class="command"> <code>octave</code></mark></mark></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode txt"><code class="sourceCode default"><a class="sourceLine" id="cb11-1" title="1">    octave:1&gt; run import_labeled_data</a>
+<a class="sourceLine" id="cb11-2" title="2">    Enter filename: datarun_T.txt</a></code></pre></div>
 <p>Octave will then load the data and display the newly-created variables.</p>
-<p><strong>Example 2:</strong><br>Now suppose instead of the tree <code>T</code>, we want to extract<br>a tree named <code>T_neutrons</code>. Furthermore, suppose we want<br>the output filename to be <code>T_neutrons_extracted.txt</code>.<br>Then we would run the following:</p>
-<p><code>user@host:~$ tree2txt datarun.root T_neutrons T_neutrons_extracted.txt</code></p>
-<p>This will generate the file <code>T_neutrons_extracted.txt</code>.<br>We would then simply open Octave and run the <code>import_labaled_data</code><br>script the same as above, replacing <code>datarun_T.txt</code> with <code>T_neutrons_extracted.txt</code>.</p>
-<hr>
-<h2 id="all-pau">All Pau!   )</h2>
-
-        </article>
-    </body>
+<p><strong>Example 2:</strong><br />
+Now suppose instead of the tree <code>T</code>, we want to extract<br />
+a tree named <code>T_neutrons</code>. Furthermore, suppose we want<br />
+the output filename to be <code>T_neutrons_extracted.txt</code>.<br />
+Then we would run the following:</p>
+<p><mark class="pad"><code>user@host:~$</code><mark class="command"> <code>tree2txt.sh</code> </mark> <code>datarun.root T_neutrons T_neutrons_extracted.txt</code></mark></p>
+<p>This will generate the file <code>T_neutrons_extracted.txt</code>.<br />
+We would then simply open Octave and run the <code>import_labaled_data</code><br />
+script the same as above, replacing <code>datarun_T.txt</code> with <code>T_neutrons_extracted.txt</code>.</p>
+<hr />
+<h2 id="all-pau">All Pau! )</h2>
+</body>
 </html>
