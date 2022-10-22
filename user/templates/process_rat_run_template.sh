@@ -36,6 +36,8 @@ echo -e "### process_rat_run_template.sh ###\n"
 echo -e "DATARUN_NAME: $BASENAME\nNUM_EVENTS: $NUM_EVENTS\nEXAMPLE_FLAG: $EXAMPLE_TF\nROOTFILE: $ROOTFILE\n"
 ROOTCMD="root -q -l -b 'analysisMacroTemplate.cxx(\"$ROOTFILE\", $NUM_EVENTS, $EXAMPLE_TF)'" # do
 echo -e "ROOTCMD: $ROOTCMD\n"
+# echo $ROOTCMD
+# eval $ROOTCMD
 
 # all pau!   )
 exit 0

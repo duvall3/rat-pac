@@ -55,6 +55,7 @@ echo "\
 " > run_template.mac
 RATCMD="rat -l $DATARUN_NAME.log run_template.mac"
 echo -e "RATCMD: $RATCMD\n"
+# eval $RATCMD
 process_rat_run_template.sh $DATARUN_NAME $NUM_EVENTS
 
 # all pau!   )

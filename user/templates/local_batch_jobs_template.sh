@@ -76,11 +76,11 @@ EXAMPLE_TF=${EXAMPLE_TF:-false}	# if still empty, use default
 EXPDIR=$RATROOT/data/$(basename $(pwd) /)
 
 ##debug
-#echo $DATARUN
-#echo $NEVENTS
-#echo $NINSTS
-#echo $EXAMPLE_TF
-#echo $RATROOT
+#echo -e "DATARUN:\t$DATARUN"
+#echo -e "NEVENTS:\t$NEVENTS"
+#echo -e "NINSTS:\t$NINSTS"
+#echo -e "EXAMPLE_TF\t$EXAMPLE_TF"
+#echo -e "RATROOT:\t$RATROOT"
 #echo
 
 
@@ -101,21 +101,34 @@ for (( k=0; k<$NINSTS; k++ )) {
   echo -e "/control/macroPath $EXPDIR\n/control/execute setup.mac\n/rat/procset file \"$INST_DIR.root\"\n/run/beamOn $NEVENTS" > run.mac
 
   # prepare simulation, post-processing, and combination commands
+  # NOTE: the process_rat_run_template_template.sh script produces an output file (in each thread) called $DATARUN_ex.root
   RATCMD="rat -l $INST_DIR.log run.mac"
   PROCCMD="$RATROOT/user/shell_scripts/process_rat_run_template_template.sh $INST_DIR $NEVENTS $EXAMPLE_TF"
   ECHOSTR='\n$INST_DIR complete.\n'
   ECHOCMD="echo -e $ECHOSTR"
   FULLCMD="eval $RATCMD && eval $PROCCMD && eval $ECHOCMD"
 
+  # prepare a delay between jobs so they are not all launched simultaneously, which helps to avoid:
+  #   1) clashes in the experiment directory, and
+  #   2) using the same Monte Carlo seed in multiples runs (since RAT-PAC uses the system clock to set the seed
+  # use 'which' to avoid any user aliases on 'sleep'
+  SLEEP=$(which sleep)
+  SLEEPTIME_INT=2
+  # for programs that might repeat seeds for jobs launched an integer number of seconds apart,
+  #   we can add a small PSEUDO-random variation;
+  #   the following code adds a pseudorandom number of milliseconds between 0 and 999
+  SLEEPTIME_DECIMAL=$((RANDOM % 1000))
+  SLEEPTIME=$(printf "%i.%is" $SLEEPTIME_INT $SLEEPTIME_DECIMAL)
+
   # RUN
   eval "$FULLCMD &"
-  sleep 2s
+  $SLEEP $SLEEPTIME
   cd $EXPDIR/output/$DATARUN
 
 } # end datarun / dir loop
 
 # wait for RAT and ROOT to finish
-while pgrep -t $(tty | sed s_/dev/__) "rat|root" > /dev/null; do
+while pgrep -u $USER -t $(tty | sed s_/dev/__) "rat|root" > /dev/null; do
   sleep 1s
 done
 
