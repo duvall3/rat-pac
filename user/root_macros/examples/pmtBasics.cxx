@@ -73,7 +73,17 @@ T_qt->Draw("pmtCount>>hc");
 hc->GetXaxis()->SetTitle("\# PMTs Hit");
 hc->SetLineColor(kRed);
 p4->cd();
-T->Draw("centPos.Z():centPos.X():centPos.Y()>>hr", "", "glbox1FbBb");
+T->Draw("centPos.fZ:centPos.fY:centPos.fX>>hr", "", "glbox1FbBb");
+hr->GetXaxis()->SetTitle("x (mm)");
+hr->GetYaxis()->SetTitle("y (mm)");
+hr->GetZaxis()->SetTitle("z (mm)");
+
+// prepare hist list
+TList *l_h = new TList;
+l_h->Add("ht");
+l_h->Add("hq");
+l_h->Add("hc");
+l_h->Add("hr");
 
 // write output file
 TString saveName(filename);
@@ -82,6 +92,7 @@ TFile *f = TFile::Open(saveName.Data(), "recreate");
 T_qt->Write("T_qt");
 gROOT->SetBatch(kTRUE);
 c_qt->Write("c_qt");
+l_h->Write("l_h", TObject::kSingleKey);
 gROOT->SetBatch(kBatchOrig);
 f->Close();
 
