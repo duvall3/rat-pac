@@ -18,9 +18,6 @@
 
 void pmtBasics(const char* filename) {
 
-// check for batch mode
-Bool_t kBatchOrig = gROOT->IsBatch();
-
 // init
 RAT::DSReader r(filename);
 Long64_t k(0), N = r.GetTotal();
@@ -56,11 +53,10 @@ for ( k=0; k<N; k++ ) {			// event loop
 
 // plot results
 TCanvas *c_qt = new TCanvas("c_qt", "c_qt");
-c_qt->Divide(2,2);
+c_qt->Divide(1,3);
 TVirtualPad *p1 = c_qt->GetPad(1);
 TVirtualPad *p2 = c_qt->GetPad(2);
 TVirtualPad *p3 = c_qt->GetPad(3);
-TVirtualPad *p4 = c_qt->GetPad(4);
 p1->cd();
 T_qt->Draw("evTime>>ht");
 ht->GetXaxis()->SetTitle("Event Time (s)");
@@ -72,29 +68,21 @@ p3->cd();
 T_qt->Draw("pmtCount>>hc");
 hc->GetXaxis()->SetTitle("\# PMTs Hit");
 hc->SetLineColor(kRed);
-p4->cd();
-T->Draw("centPos.fZ:centPos.fY:centPos.fX>>hr", "", "glbox1FbBb");
-hr->GetXaxis()->SetTitle("x (mm)");
-hr->GetYaxis()->SetTitle("y (mm)");
-hr->GetZaxis()->SetTitle("z (mm)");
-
-// prepare hist list
-TList *l_h = new TList;
-l_h->Add("ht");
-l_h->Add("hq");
-l_h->Add("hc");
-l_h->Add("hr");
 
 // write output file
 TString saveName(filename);
 saveName.ReplaceAll("\.root", "_pmtBasics.root");
 TFile *f = TFile::Open(saveName.Data(), "recreate");
 T_qt->Write("T_qt");
-gROOT->SetBatch(kTRUE);
 c_qt->Write("c_qt");
-l_h->Write("l_h", TObject::kSingleKey);
-gROOT->SetBatch(kBatchOrig);
+ht->Write("ht");
+hq->Write("hq");
+hc->Write("hc");
 f->Close();
+
+// workaround for drawing error
+gROOT->LoadMacro("drawCentroid.cxx");
+drawCentroid(saveName.Data());
 
 // all pau!   )
 return;
