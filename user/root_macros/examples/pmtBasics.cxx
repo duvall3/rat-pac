@@ -19,19 +19,19 @@
 void pmtBasics(const char* filename) {
 
 // init
-RAT::DSReader r(filename);
-Long64_t k(0), N = r.GetTotal();
-RAT::DS::Root *ds = r.GetEvent(0);
-RAT::DS::EV *ev = ds->GetEV(0);
-TTimeStamp TS = ev->GetUTC();
-Double_t runStartTime = TS.AsDouble();
-RAT::DS::Centroid *cent;
+RAT::DSReader r(filename);			// init RAT data-structure reader
+Long64_t k(0), N = r.GetTotal();		// get number of events
+RAT::DS::Root *ds = r.GetEvent(0);		// set up RAT data-structure object
+RAT::DS::EV *ev = ds->GetEV(0);			// set up RAT PMT-event object
+TTimeStamp TS = ev->GetUTC();			// get timestamp for run start
+Double_t runStartTime = TS.AsDouble();		// convert timestamp to double
+RAT::DS::Centroid *cent;			// prepare RAT object describing PMT centroids
 
 // set up TTree
-Double_t t;
-Double_t q;
-Int_t p;
-TVector3 R;
+Double_t t;					// for the event time
+Double_t q;					// for the event total charge
+Int_t p;					// for the event PMT count
+TVector3 R;					// for the event PMT centroid
 TTree *T_qt = new TTree("T_qt", "Tree to hold charge/time and other PMT data");
 T_qt->Branch("evTime", &t);
 T_qt->Branch("qTotal", &q);
