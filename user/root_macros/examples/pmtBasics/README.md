@@ -73,9 +73,9 @@ pmtBasics("example.root");
 The macro will create an output file called <mark class="str">`example_pmtBasics.root`</mark>.
 If it fails to run properly, you can still examine the intended output by opening the file <mark class="str">`example_pmtBasics_default.root`</mark>.
 It should contain the following:  
-- a TTree called `T_qt` containing the extracted data  
-- two TCanvases, `c_qt, c_r`  
-- four histograms (three TH1F and one TH3F), `ht, hq, hc, hr`  
+- a TTree called <mark class="const">`T_qt`</mark> containing the extracted data  
+- two TCanvases, <mark class="const">`c_qt, c_r`</mark>  
+- four histograms (three TH1F and one TH3F), <mark class="const">`ht, hq, hc, hr`</mark>  
 See the comments in <mark class="str">`pmtBasics.cxx`</mark> and <mark class="str">`drawCentroid.cxx`</mark> for details on the histograms and TTree branches.
 
 

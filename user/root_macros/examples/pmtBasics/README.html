@@ -150,9 +150,9 @@ along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</cod
 <a class="sourceLine" id="cb3-2" title="2">pmtBasics(<span class="st">&quot;example.root&quot;</span>);</a></code></pre></div>
 <h3 id="output">Output</h3>
 <p>The macro will create an output file called <mark class="str"><code>example_pmtBasics.root</code></mark>. If it fails to run properly, you can still examine the intended output by opening the file <mark class="str"><code>example_pmtBasics_default.root</code></mark>. It should contain the following:<br />
-- a TTree called <code>T_qt</code> containing the extracted data<br />
-- two TCanvases, <code>c_qt, c_r</code><br />
-- four histograms (three TH1F and one TH3F), <code>ht, hq, hc, hr</code><br />
+- a TTree called <mark class="const"><code>T_qt</code></mark> containing the extracted data<br />
+- two TCanvases, <mark class="const"><code>c_qt, c_r</code></mark><br />
+- four histograms (three TH1F and one TH3F), <mark class="const"><code>ht, hq, hc, hr</code></mark><br />
 See the comments in <mark class="str"><code>pmtBasics.cxx</code></mark> and <mark class="str"><code>drawCentroid.cxx</code></mark> for details on the histograms and TTree branches.</p>
 <h2 id="further-details">FURTHER DETAILS</h2>
 <p>Beyond the comments in these macros, you can find more general information in <a href="https://rat.readthedocs.io/en/latest/">the <code>RAT-PAC</code> documentation</a>. For specific information on the <mark><code>EV</code></mark> structure that <code>RAT-PAC</code> uses to store data about triggered-PMT events, see <mark class="var"><code>$RATROOT/src/ds/</code></mark>, especially the files <mark class="str"><code>EV.hh</code></mark> and <mark class="str"><code>MCPMT.hh</code></mark>.</p>
