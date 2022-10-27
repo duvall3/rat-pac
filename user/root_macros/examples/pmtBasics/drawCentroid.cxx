@@ -5,7 +5,7 @@ void drawCentroid(const char* filename) {
 TFile *f = TFile::Open(filename, "update");
 TTree *T_qt = (TTree*)gDirectory->Get("T_qt");
 TCanvas *c_r = new TCanvas("c_r", "c_r");
-T_qt->Draw("centPos.fZ:centPos.fY:centPos.fX>>hr", "", "glbox1FbBb");
+T_qt->Draw("centPos.fZ:centPos.fY:centPos.fX>>hr", "", "glbox1FbBb");	// PMT-centroid histogram
 hr->SetTitle("Event PMT Centroids");
 hr->SetFillColor(kBlue);
 hr->GetXaxis()->SetTitle("x (mm)");

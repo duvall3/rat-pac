@@ -58,14 +58,14 @@ TVirtualPad *p1 = c_qt->GetPad(1);
 TVirtualPad *p2 = c_qt->GetPad(2);
 TVirtualPad *p3 = c_qt->GetPad(3);
 p1->cd();
-T_qt->Draw("evTime>>ht");
+T_qt->Draw("evTime>>ht");				// event-time histogram, "ht"
 ht->GetXaxis()->SetTitle("Event Time (s)");
 p2->cd();
-T_qt->Draw("qTotal>>hq");
+T_qt->Draw("qTotal>>hq");				// total-charge histogram, "hq"
 hq->GetXaxis()->SetTitle("Event Total Charge (pC)");
 hq->SetLineColor(kMagenta);
 p3->cd();
-T_qt->Draw("pmtCount>>hc");
+T_qt->Draw("pmtCount>>hc");				// PMT-count histogram, "hc"
 hc->GetXaxis()->SetTitle("\# PMTs Hit");
 hc->SetLineColor(kRed);
 
