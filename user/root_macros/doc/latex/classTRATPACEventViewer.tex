@@ -1,0 +1,328 @@
+\hypertarget{classTRATPACEventViewer}{}\doxysection{T\+R\+A\+T\+P\+A\+C\+Event\+Viewer Class Reference}
+\label{classTRATPACEventViewer}\index{TRATPACEventViewer@{TRATPACEventViewer}}
+
+
+{\ttfamily \#include $<$T\+R\+A\+T\+P\+A\+C\+Event\+Viewer.\+h$>$}
+
+
+
+Inheritance diagram for T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classTRATPACEventViewer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classTRATPACEventViewer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTRATPACEventViewer_a4c3db64c664f51d589df8593bc680b3f}{T\+R\+A\+T\+P\+A\+C\+Event\+Viewer}} ()
+\item 
+\mbox{\hyperlink{classTRATPACEventViewer_a50ded392c3376a4fd6a836a6eb0d1b85}{T\+R\+A\+T\+P\+A\+C\+Event\+Viewer}} (const char $\ast$file\+Name, const char $\ast$volume\+Pattern=\char`\"{}.$\ast$\char`\"{})
+\item 
+\mbox{\hyperlink{classTRATPACEventViewer_abce2ba70242a4c9ecb485d821274a524}{Init}} (const char $\ast$file\+Name, const char $\ast$volume\+Pattern=\char`\"{}.$\ast$\char`\"{})
+\item 
+T\+String \mbox{\hyperlink{classTRATPACEventViewer_a5e3b1034fcc51dbf1121136c4d2ac22f}{Get\+File\+Name}} ()
+\item 
+T\+File $\ast$ \mbox{\hyperlink{classTRATPACEventViewer_a19c7760f8c04f29fce13abd88162a9e7}{Get\+Data\+File}} ()
+\item 
+T\+Tree $\ast$ \mbox{\hyperlink{classTRATPACEventViewer_a87d70c2d46088c79f5cc89a7b4ae63a8}{Get\+Tree}} ()
+\item 
+T\+String \mbox{\hyperlink{classTRATPACEventViewer_a515919a502ef549136b745e4f7afdbba}{Get\+Volume\+Pattern}} ()
+\item 
+\mbox{\hyperlink{classTRATGeo}{T\+R\+A\+T\+Geo}} $\ast$ \mbox{\hyperlink{classTRATPACEventViewer_af88b310d35e1a5d971c8b128ea1c4a38}{Get\+R\+A\+T\+Geo}} ()
+\item 
+T\+Geo\+Manager $\ast$ \mbox{\hyperlink{classTRATPACEventViewer_a8b881f8a7be6c9ec7215f654ad48d4db}{Get\+Geo\+Manager}} ()
+\item 
+Bool\+\_\+t \mbox{\hyperlink{classTRATPACEventViewer_a5448a4d51486276dcd29f3c02fa713ef}{Get\+Highlight\+Mode}} ()
+\item 
+T\+Canvas $\ast$ \mbox{\hyperlink{classTRATPACEventViewer_abce384606346074b30645c47db1c5668}{Get\+Canvas}} ()
+\item 
+Long64\+\_\+t \mbox{\hyperlink{classTRATPACEventViewer_aeee1aaef56816678ea9f00e0a2642f5e}{Get\+Total\+Events}} ()
+\item 
+Long64\+\_\+t \mbox{\hyperlink{classTRATPACEventViewer_a500c027da8bb5dbade61e87a59e57316}{Get\+Current\+Event}} ()
+\item 
+void \mbox{\hyperlink{classTRATPACEventViewer_a02c5e8887989ea64ad6889617693dfc1}{Set\+Data}} (Double\+\_\+t some\+Arg)
+\item 
+void \mbox{\hyperlink{classTRATPACEventViewer_a83c995567ebca9a63c0faac4c76a5355}{Set\+Volume\+Pattern}} (const char $\ast$pattern)
+\item 
+void \mbox{\hyperlink{classTRATPACEventViewer_a47463f5b65d9c6e871876b391ba561ee}{Set\+Highlight\+Mode}} (Bool\+\_\+t b\+Value=k\+T\+R\+UE)
+\item 
+void \mbox{\hyperlink{classTRATPACEventViewer_a64ea4bb14741b3c8e5778f1ca4993e27}{Draw\+Geometry}} ()
+\item 
+void \mbox{\hyperlink{classTRATPACEventViewer_aa7ed0bc0a9f8861e21ad31999bf450b0}{Draw\+Tracks}} (Long64\+\_\+t event=0)
+\item 
+void \mbox{\hyperlink{classTRATPACEventViewer_a220eb5589484e59b59a903cf96486300}{Draw\+Next\+Event}} ()
+\item 
+void \mbox{\hyperlink{classTRATPACEventViewer_a2bcdae7b7f340f5469c9b20c54c938e8}{Draw\+Prev\+Event}} ()
+\item 
+void \mbox{\hyperlink{classTRATPACEventViewer_a42bc6f7ea0792b7a0c124bcd435a11c1}{Redraw\+Current\+Event}} ()
+\item 
+void \mbox{\hyperlink{classTRATPACEventViewer_a3386c1543eafad37d10e9a583e003453}{Zoom}} (Double\+\_\+t zoom\+Factor=2)
+\item 
+void \mbox{\hyperlink{classTRATPACEventViewer_aa01866faf1e616f093739df18a7f9415}{Toggle\+Inert\+Vis}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classTRATPACEventViewer_a8eb099cf9201fca758a22ca41a1105d5}{Set\+Current\+Event}} (Long64\+\_\+t event\+ID=0)
+\item 
+void \mbox{\hyperlink{classTRATPACEventViewer_a98d2bc9ebfdf22db81de70bc8d890180}{Highlight\+Cells}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T\+String \mbox{\hyperlink{classTRATPACEventViewer_a7c14d4c66dd58bdc0a33bf2b2a669190}{f\+File\+Name}}
+\item 
+T\+File $\ast$ \mbox{\hyperlink{classTRATPACEventViewer_af3d84f9ec0bfafc100dbfeaed988b910}{f\+Data\+File}}
+\item 
+T\+Tree $\ast$ \mbox{\hyperlink{classTRATPACEventViewer_a59f644ee558583218beff5b89c90eac3}{f\+Tree}}
+\item 
+T\+String \mbox{\hyperlink{classTRATPACEventViewer_a339894d8cc9781d964bd8f698ecc62f4}{f\+Volume\+Pattern}}
+\item 
+\mbox{\hyperlink{classTRATGeo}{T\+R\+A\+T\+Geo}} $\ast$ \mbox{\hyperlink{classTRATPACEventViewer_afd75be75236cc5aa8b351686b6876e1c}{f\+R\+A\+T\+Geo}}
+\item 
+T\+Geo\+Manager $\ast$ \mbox{\hyperlink{classTRATPACEventViewer_a13d26ae84c3683d1e8ad2abcb4a8a480}{f\+Geo\+Manager}}
+\item 
+Bool\+\_\+t \mbox{\hyperlink{classTRATPACEventViewer_a09585f4fe16b1b3154a021890ad129df}{fk\+Highlight}}
+\item 
+T\+Canvas $\ast$ \mbox{\hyperlink{classTRATPACEventViewer_a0a94b0df784603bae81ddb9f06632553}{f\+Canvas}}
+\item 
+Long64\+\_\+t \mbox{\hyperlink{classTRATPACEventViewer_a8269d87a4346e8c251f41b7e7bdc8433}{f\+Total\+Events}}
+\item 
+Long64\+\_\+t \mbox{\hyperlink{classTRATPACEventViewer_a27709d825fd21bec3c9448375a319d00}{f\+Current\+Event}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTRATPACEventViewer_a4c3db64c664f51d589df8593bc680b3f}\label{classTRATPACEventViewer_a4c3db64c664f51d589df8593bc680b3f}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!TRATPACEventViewer@{TRATPACEventViewer}}
+\index{TRATPACEventViewer@{TRATPACEventViewer}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{TRATPACEventViewer()}{TRATPACEventViewer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+T\+R\+A\+T\+P\+A\+C\+Event\+Viewer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTRATPACEventViewer_a50ded392c3376a4fd6a836a6eb0d1b85}\label{classTRATPACEventViewer_a50ded392c3376a4fd6a836a6eb0d1b85}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!TRATPACEventViewer@{TRATPACEventViewer}}
+\index{TRATPACEventViewer@{TRATPACEventViewer}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{TRATPACEventViewer()}{TRATPACEventViewer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+T\+R\+A\+T\+P\+A\+C\+Event\+Viewer (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name,  }\item[{const char $\ast$}]{volume\+Pattern = {\ttfamily \char`\"{}.$\ast$\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTRATPACEventViewer_a64ea4bb14741b3c8e5778f1ca4993e27}\label{classTRATPACEventViewer_a64ea4bb14741b3c8e5778f1ca4993e27}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!DrawGeometry@{DrawGeometry}}
+\index{DrawGeometry@{DrawGeometry}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{DrawGeometry()}{DrawGeometry()}}
+{\footnotesize\ttfamily T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+Draw\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTRATPACEventViewer_a220eb5589484e59b59a903cf96486300}\label{classTRATPACEventViewer_a220eb5589484e59b59a903cf96486300}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!DrawNextEvent@{DrawNextEvent}}
+\index{DrawNextEvent@{DrawNextEvent}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{DrawNextEvent()}{DrawNextEvent()}}
+{\footnotesize\ttfamily void T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+Draw\+Next\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTRATPACEventViewer_a2bcdae7b7f340f5469c9b20c54c938e8}\label{classTRATPACEventViewer_a2bcdae7b7f340f5469c9b20c54c938e8}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!DrawPrevEvent@{DrawPrevEvent}}
+\index{DrawPrevEvent@{DrawPrevEvent}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{DrawPrevEvent()}{DrawPrevEvent()}}
+{\footnotesize\ttfamily void T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+Draw\+Prev\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTRATPACEventViewer_aa7ed0bc0a9f8861e21ad31999bf450b0}\label{classTRATPACEventViewer_aa7ed0bc0a9f8861e21ad31999bf450b0}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!DrawTracks@{DrawTracks}}
+\index{DrawTracks@{DrawTracks}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{DrawTracks()}{DrawTracks()}}
+{\footnotesize\ttfamily void T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+Draw\+Tracks (\begin{DoxyParamCaption}\item[{Long64\+\_\+t}]{event = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTRATPACEventViewer_abce384606346074b30645c47db1c5668}\label{classTRATPACEventViewer_abce384606346074b30645c47db1c5668}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!GetCanvas@{GetCanvas}}
+\index{GetCanvas@{GetCanvas}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{GetCanvas()}{GetCanvas()}}
+{\footnotesize\ttfamily T\+Canvas$\ast$ T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+Get\+Canvas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRATPACEventViewer_a500c027da8bb5dbade61e87a59e57316}\label{classTRATPACEventViewer_a500c027da8bb5dbade61e87a59e57316}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!GetCurrentEvent@{GetCurrentEvent}}
+\index{GetCurrentEvent@{GetCurrentEvent}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{GetCurrentEvent()}{GetCurrentEvent()}}
+{\footnotesize\ttfamily Long64\+\_\+t T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+Get\+Current\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRATPACEventViewer_a19c7760f8c04f29fce13abd88162a9e7}\label{classTRATPACEventViewer_a19c7760f8c04f29fce13abd88162a9e7}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!GetDataFile@{GetDataFile}}
+\index{GetDataFile@{GetDataFile}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{GetDataFile()}{GetDataFile()}}
+{\footnotesize\ttfamily T\+File$\ast$ T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+Get\+Data\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRATPACEventViewer_a5e3b1034fcc51dbf1121136c4d2ac22f}\label{classTRATPACEventViewer_a5e3b1034fcc51dbf1121136c4d2ac22f}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!GetFileName@{GetFileName}}
+\index{GetFileName@{GetFileName}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{GetFileName()}{GetFileName()}}
+{\footnotesize\ttfamily T\+String T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+Get\+File\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRATPACEventViewer_a8b881f8a7be6c9ec7215f654ad48d4db}\label{classTRATPACEventViewer_a8b881f8a7be6c9ec7215f654ad48d4db}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!GetGeoManager@{GetGeoManager}}
+\index{GetGeoManager@{GetGeoManager}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{GetGeoManager()}{GetGeoManager()}}
+{\footnotesize\ttfamily T\+Geo\+Manager$\ast$ T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+Get\+Geo\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRATPACEventViewer_a5448a4d51486276dcd29f3c02fa713ef}\label{classTRATPACEventViewer_a5448a4d51486276dcd29f3c02fa713ef}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!GetHighlightMode@{GetHighlightMode}}
+\index{GetHighlightMode@{GetHighlightMode}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{GetHighlightMode()}{GetHighlightMode()}}
+{\footnotesize\ttfamily Bool\+\_\+t T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+Get\+Highlight\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRATPACEventViewer_af88b310d35e1a5d971c8b128ea1c4a38}\label{classTRATPACEventViewer_af88b310d35e1a5d971c8b128ea1c4a38}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!GetRATGeo@{GetRATGeo}}
+\index{GetRATGeo@{GetRATGeo}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{GetRATGeo()}{GetRATGeo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTRATGeo}{T\+R\+A\+T\+Geo}}$\ast$ T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+Get\+R\+A\+T\+Geo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRATPACEventViewer_aeee1aaef56816678ea9f00e0a2642f5e}\label{classTRATPACEventViewer_aeee1aaef56816678ea9f00e0a2642f5e}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!GetTotalEvents@{GetTotalEvents}}
+\index{GetTotalEvents@{GetTotalEvents}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{GetTotalEvents()}{GetTotalEvents()}}
+{\footnotesize\ttfamily Long64\+\_\+t T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+Get\+Total\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRATPACEventViewer_a87d70c2d46088c79f5cc89a7b4ae63a8}\label{classTRATPACEventViewer_a87d70c2d46088c79f5cc89a7b4ae63a8}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!GetTree@{GetTree}}
+\index{GetTree@{GetTree}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{GetTree()}{GetTree()}}
+{\footnotesize\ttfamily T\+Tree$\ast$ T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+Get\+Tree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRATPACEventViewer_a515919a502ef549136b745e4f7afdbba}\label{classTRATPACEventViewer_a515919a502ef549136b745e4f7afdbba}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!GetVolumePattern@{GetVolumePattern}}
+\index{GetVolumePattern@{GetVolumePattern}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{GetVolumePattern()}{GetVolumePattern()}}
+{\footnotesize\ttfamily T\+String T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+Get\+Volume\+Pattern (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRATPACEventViewer_a98d2bc9ebfdf22db81de70bc8d890180}\label{classTRATPACEventViewer_a98d2bc9ebfdf22db81de70bc8d890180}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!HighlightCells@{HighlightCells}}
+\index{HighlightCells@{HighlightCells}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{HighlightCells()}{HighlightCells()}}
+{\footnotesize\ttfamily void T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+Highlight\+Cells (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTRATPACEventViewer_abce2ba70242a4c9ecb485d821274a524}\label{classTRATPACEventViewer_abce2ba70242a4c9ecb485d821274a524}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!Init@{Init}}
+\index{Init@{Init}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+Init (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name,  }\item[{const char $\ast$}]{volume\+Pattern = {\ttfamily \char`\"{}.$\ast$\char`\"{}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTRATPACEventViewer_a42bc6f7ea0792b7a0c124bcd435a11c1}\label{classTRATPACEventViewer_a42bc6f7ea0792b7a0c124bcd435a11c1}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!RedrawCurrentEvent@{RedrawCurrentEvent}}
+\index{RedrawCurrentEvent@{RedrawCurrentEvent}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{RedrawCurrentEvent()}{RedrawCurrentEvent()}}
+{\footnotesize\ttfamily void T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+Redraw\+Current\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRATPACEventViewer_a8eb099cf9201fca758a22ca41a1105d5}\label{classTRATPACEventViewer_a8eb099cf9201fca758a22ca41a1105d5}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!SetCurrentEvent@{SetCurrentEvent}}
+\index{SetCurrentEvent@{SetCurrentEvent}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{SetCurrentEvent()}{SetCurrentEvent()}}
+{\footnotesize\ttfamily void T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+Set\+Current\+Event (\begin{DoxyParamCaption}\item[{Long64\+\_\+t}]{event\+ID = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTRATPACEventViewer_a02c5e8887989ea64ad6889617693dfc1}\label{classTRATPACEventViewer_a02c5e8887989ea64ad6889617693dfc1}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!SetData@{SetData}}
+\index{SetData@{SetData}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{SetData()}{SetData()}}
+{\footnotesize\ttfamily void T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+Set\+Data (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{some\+Arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRATPACEventViewer_a47463f5b65d9c6e871876b391ba561ee}\label{classTRATPACEventViewer_a47463f5b65d9c6e871876b391ba561ee}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!SetHighlightMode@{SetHighlightMode}}
+\index{SetHighlightMode@{SetHighlightMode}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{SetHighlightMode()}{SetHighlightMode()}}
+{\footnotesize\ttfamily void T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+Set\+Highlight\+Mode (\begin{DoxyParamCaption}\item[{Bool\+\_\+t}]{b\+Value = {\ttfamily kTRUE} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRATPACEventViewer_a83c995567ebca9a63c0faac4c76a5355}\label{classTRATPACEventViewer_a83c995567ebca9a63c0faac4c76a5355}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!SetVolumePattern@{SetVolumePattern}}
+\index{SetVolumePattern@{SetVolumePattern}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{SetVolumePattern()}{SetVolumePattern()}}
+{\footnotesize\ttfamily void T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+Set\+Volume\+Pattern (\begin{DoxyParamCaption}\item[{const char $\ast$}]{pattern }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRATPACEventViewer_aa01866faf1e616f093739df18a7f9415}\label{classTRATPACEventViewer_aa01866faf1e616f093739df18a7f9415}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!ToggleInertVis@{ToggleInertVis}}
+\index{ToggleInertVis@{ToggleInertVis}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{ToggleInertVis()}{ToggleInertVis()}}
+{\footnotesize\ttfamily void T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+Toggle\+Inert\+Vis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTRATPACEventViewer_a3386c1543eafad37d10e9a583e003453}\label{classTRATPACEventViewer_a3386c1543eafad37d10e9a583e003453}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!Zoom@{Zoom}}
+\index{Zoom@{Zoom}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{Zoom()}{Zoom()}}
+{\footnotesize\ttfamily void T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+Zoom (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{zoom\+Factor = {\ttfamily 2} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classTRATPACEventViewer_a0a94b0df784603bae81ddb9f06632553}\label{classTRATPACEventViewer_a0a94b0df784603bae81ddb9f06632553}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!fCanvas@{fCanvas}}
+\index{fCanvas@{fCanvas}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{fCanvas}{fCanvas}}
+{\footnotesize\ttfamily T\+Canvas$\ast$ T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::f\+Canvas\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTRATPACEventViewer_a27709d825fd21bec3c9448375a319d00}\label{classTRATPACEventViewer_a27709d825fd21bec3c9448375a319d00}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!fCurrentEvent@{fCurrentEvent}}
+\index{fCurrentEvent@{fCurrentEvent}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{fCurrentEvent}{fCurrentEvent}}
+{\footnotesize\ttfamily Long64\+\_\+t T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::f\+Current\+Event\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTRATPACEventViewer_af3d84f9ec0bfafc100dbfeaed988b910}\label{classTRATPACEventViewer_af3d84f9ec0bfafc100dbfeaed988b910}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!fDataFile@{fDataFile}}
+\index{fDataFile@{fDataFile}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{fDataFile}{fDataFile}}
+{\footnotesize\ttfamily T\+File$\ast$ T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::f\+Data\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTRATPACEventViewer_a7c14d4c66dd58bdc0a33bf2b2a669190}\label{classTRATPACEventViewer_a7c14d4c66dd58bdc0a33bf2b2a669190}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!fFileName@{fFileName}}
+\index{fFileName@{fFileName}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{fFileName}{fFileName}}
+{\footnotesize\ttfamily T\+String T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::f\+File\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTRATPACEventViewer_a13d26ae84c3683d1e8ad2abcb4a8a480}\label{classTRATPACEventViewer_a13d26ae84c3683d1e8ad2abcb4a8a480}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!fGeoManager@{fGeoManager}}
+\index{fGeoManager@{fGeoManager}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{fGeoManager}{fGeoManager}}
+{\footnotesize\ttfamily T\+Geo\+Manager$\ast$ T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::f\+Geo\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTRATPACEventViewer_a09585f4fe16b1b3154a021890ad129df}\label{classTRATPACEventViewer_a09585f4fe16b1b3154a021890ad129df}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!fkHighlight@{fkHighlight}}
+\index{fkHighlight@{fkHighlight}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{fkHighlight}{fkHighlight}}
+{\footnotesize\ttfamily Bool\+\_\+t T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::fk\+Highlight\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTRATPACEventViewer_afd75be75236cc5aa8b351686b6876e1c}\label{classTRATPACEventViewer_afd75be75236cc5aa8b351686b6876e1c}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!fRATGeo@{fRATGeo}}
+\index{fRATGeo@{fRATGeo}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{fRATGeo}{fRATGeo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTRATGeo}{T\+R\+A\+T\+Geo}}$\ast$ T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::f\+R\+A\+T\+Geo\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTRATPACEventViewer_a8269d87a4346e8c251f41b7e7bdc8433}\label{classTRATPACEventViewer_a8269d87a4346e8c251f41b7e7bdc8433}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!fTotalEvents@{fTotalEvents}}
+\index{fTotalEvents@{fTotalEvents}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{fTotalEvents}{fTotalEvents}}
+{\footnotesize\ttfamily Long64\+\_\+t T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::f\+Total\+Events\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTRATPACEventViewer_a59f644ee558583218beff5b89c90eac3}\label{classTRATPACEventViewer_a59f644ee558583218beff5b89c90eac3}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!fTree@{fTree}}
+\index{fTree@{fTree}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{fTree}{fTree}}
+{\footnotesize\ttfamily T\+Tree$\ast$ T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::f\+Tree\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTRATPACEventViewer_a339894d8cc9781d964bd8f698ecc62f4}\label{classTRATPACEventViewer_a339894d8cc9781d964bd8f698ecc62f4}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!fVolumePattern@{fVolumePattern}}
+\index{fVolumePattern@{fVolumePattern}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{fVolumePattern}{fVolumePattern}}
+{\footnotesize\ttfamily T\+String T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::f\+Volume\+Pattern\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{TRATPACEventViewer_8h}{T\+R\+A\+T\+P\+A\+C\+Event\+Viewer.\+h}}\item 
+\mbox{\hyperlink{TRATPACEventViewer_8cxx}{T\+R\+A\+T\+P\+A\+C\+Event\+Viewer.\+cxx}}\end{DoxyCompactItemize}

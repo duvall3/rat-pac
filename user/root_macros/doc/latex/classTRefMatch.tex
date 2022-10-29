@@ -1,0 +1,912 @@
+\hypertarget{classTRefMatch}{}\doxysection{T\+Ref\+Match Class Reference}
+\label{classTRefMatch}\index{TRefMatch@{TRefMatch}}
+
+
+Implements K\+S/\+A\+D-\/test reference-\/matching algorithm.  
+
+
+
+
+{\ttfamily \#include $<$T\+Ref\+Match.\+h$>$}
+
+
+
+Inheritance diagram for T\+Ref\+Match\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=149pt]{classTRefMatch__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for T\+Ref\+Match\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=149pt]{classTRefMatch__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTRefMatch_a48bb5176ba5833611236b76a1b07b7f7}{T\+Ref\+Match}} ()
+\begin{DoxyCompactList}\small\item\em Default ctor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTRefMatch_abb18f918fb9326bf8f7435bff4045d04}{T\+Ref\+Match}} (const char $\ast$file\+Name, const char $\ast$tree\+Name=\char`\"{}T\char`\"{}, const char $\ast$branch\+Var\+Name=\char`\"{}phi\char`\"{})
+\begin{DoxyCompactList}\small\item\em Regular ctor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTRefMatch_a11c28a10b43c340d6540f6b36708fa4b}{Init}} (const char $\ast$file\+Name, const char $\ast$tree\+Name, const char $\ast$branch\+Var\+Name)
+\begin{DoxyCompactList}\small\item\em Setter version of \mbox{\hyperlink{classTRefMatch_a786772925eacb8fb35d0f39d739f34e6}{Init()}} \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{classTRefMatch_a711385b46234dd31a2d0171a4c6e1294}{Get\+Test\+File\+Name}} ()
+\item 
+const char $\ast$ \mbox{\hyperlink{classTRefMatch_ac85fcd73a1db3e621805260ec528593e}{Get\+Test\+Tree\+Name}} ()
+\item 
+const char $\ast$ \mbox{\hyperlink{classTRefMatch_ab68da2037e51dcb81f428ac3eedf00c7}{Get\+Test\+Var\+Name}} ()
+\item 
+T\+File $\ast$ \mbox{\hyperlink{classTRefMatch_af3c74e7156499765a065d233f031b46b}{Get\+File}} ()
+\item 
+T\+Tree $\ast$ \mbox{\hyperlink{classTRefMatch_a3e817bf5e671473b0a7b40ee6b8dce1b}{Get\+Tree}} ()
+\item 
+T\+Branch $\ast$ \mbox{\hyperlink{classTRefMatch_af1843317f16f9689f062574e999e8a00}{Get\+Branch}} ()
+\item 
+const char $\ast$ \mbox{\hyperlink{classTRefMatch_acc6b5a72bb831fc070ee3a0af6d84314}{Get\+Reference\+Tree\+Name}} ()
+\item 
+T\+List $\ast$ \mbox{\hyperlink{classTRefMatch_aa411ed8d070e3aaf5fe725df93df00a6}{Get\+Reference\+File\+List}} ()
+\item 
+T\+File $\ast$ \mbox{\hyperlink{classTRefMatch_aa235816a6b3418b765b451c6106f3c5b}{Get\+Out\+File}} ()
+\item 
+T\+Regexp \mbox{\hyperlink{classTRefMatch_a1488bcc08362e0bab3fec8f02a5a9a49}{Get\+Reference\+File\+Pattern}} ()
+\item 
+T\+System\+Directory $\ast$ \mbox{\hyperlink{classTRefMatch_a7f59f23a25e1d5d61c0ddcc906d48b45}{Get\+Reference\+File\+Dir}} ()
+\item 
+Long64\+\_\+t \mbox{\hyperlink{classTRefMatch_a4f1b713343bbb8b61ad95af63cf163b8}{Getn\+Test\+Sample\+Events}} ()
+\item 
+Long64\+\_\+t \mbox{\hyperlink{classTRefMatch_a42df2ada0bc3ca52053ff47ac6f608a0}{Getn\+Reference\+Events}} ()
+\item 
+Bool\+\_\+t \mbox{\hyperlink{classTRefMatch_abf376cb2147662969cc2b44148cb2665}{Get\+Anderson}} ()
+\item 
+Double\+\_\+t \mbox{\hyperlink{classTRefMatch_a0e49adccfd7ecf6c6f63924f2e9ff257}{Get\+Test\+Sample\+Phi\+True}} ()
+\item 
+Double\+\_\+t \mbox{\hyperlink{classTRefMatch_acda6ca9e248da332e13eaa5f400053b2}{Get\+Prob}} ()
+\item 
+Double\+\_\+t \mbox{\hyperlink{classTRefMatch_a10209d19ab023d72cc80faadf2f62640}{Get\+Sig}} ()
+\item 
+T\+MatrixD \mbox{\hyperlink{classTRefMatch_aa8faec3fbbcac020eb8609919c6e13f2}{Get\+Results\+Matrix}} ()
+\item 
+T\+VectorD \mbox{\hyperlink{classTRefMatch_aef31fc1419c4f725248702df25e8ff7c}{Get\+Results}} ()
+\item 
+T\+File $\ast$ \mbox{\hyperlink{classTRefMatch_af2f9f7494596d3122ee48ff1da3147ac}{Get\+Best\+Match\+File}} ()
+\item 
+T\+Canvas $\ast$ \mbox{\hyperlink{classTRefMatch_ae5420e33f80ebee71957f3e7ef735623}{Get\+Canvas}} ()
+\item 
+T\+H1D $\ast$ \mbox{\hyperlink{classTRefMatch_a9a427a3c457e02ae21f9543ca849e2bd}{Get\+Test\+Sample\+Hist}} ()
+\item 
+T\+Graph $\ast$ \mbox{\hyperlink{classTRefMatch_a7cbb444f7b35ec4328d942170a559d05}{Get\+Results\+Graph}} ()
+\item 
+void \mbox{\hyperlink{classTRefMatch_a6cdc403d1c18f99736eb07dcd3327a02}{Set\+Reference\+File\+Dir}} (T\+System\+Directory $\ast$ref\+File\+Dir)
+\item 
+void \mbox{\hyperlink{classTRefMatch_a1dab3a16947e44e705dc2b2383c175b3}{Set\+Reference\+File\+Dir}} (const char $\ast$ref\+File\+Dir\+Name)
+\item 
+void \mbox{\hyperlink{classTRefMatch_a098164ff64fecd9edefe8a1481898be6}{Set\+Reference\+File\+Pattern}} (T\+Regexp pattern\+RE)
+\item 
+void \mbox{\hyperlink{classTRefMatch_adf950852ae62a3c829a73c2a7be14f1e}{Set\+Reference\+File\+Pattern}} (const char $\ast$pattern)
+\item 
+void \mbox{\hyperlink{classTRefMatch_a4b5850d59c424cc83733406ff64387dc}{Set\+Reference\+File\+List}} (T\+List $\ast$file\+List)
+\item 
+void \mbox{\hyperlink{classTRefMatch_a5c8ea7f558b7166cf23730cec9a51875}{Set\+Anderson}} (Bool\+\_\+t b\+Anderson)
+\item 
+void \mbox{\hyperlink{classTRefMatch_a3e7e72f7c77df531d5afe6f77276c511}{Set\+Reference\+Tree\+Name}} (const char $\ast$tree\+Name)
+\item 
+void \mbox{\hyperlink{classTRefMatch_a92fdc56ba1162db73a33589abad05705}{Fill\+Reference\+File\+List}} ()
+\item 
+void \mbox{\hyperlink{classTRefMatch_a0f31415b8fd045e164426c52ecaee0ee}{Setn\+Events}} (Long64\+\_\+t n\+Test\+Sample\+Events=0, Long64\+\_\+t n\+Reference\+Events=0)
+\item 
+Double\+\_\+t \mbox{\hyperlink{classTRefMatch_a57c7a08146436d9e39e84ad8544591e1}{Prob2\+Sig}} (Double\+\_\+t prob)
+\begin{DoxyCompactList}\small\item\em Convert probability to significance. \end{DoxyCompactList}\item 
+Double\+\_\+t \mbox{\hyperlink{classTRefMatch_a04bc51ebc6a2fca75f402eeb82a99a53}{Sig2\+Prob}} (Double\+\_\+t sig)
+\begin{DoxyCompactList}\small\item\em Convert significance to probability. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTRefMatch_a94631e851a8c2bdb27f04a0b45278592}{Extract\+Ref}} (const char $\ast$run\+Name, const char $\ast$tree\+Name=\char`\"{}T\char`\"{}, const char $\ast$branch\+Name=\char`\"{}phi\char`\"{})
+\begin{DoxyCompactList}\small\item\em Extract distribution from reference run. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTRefMatch_aa761bf0d2227dc02a93d7b55fa15cfca}{Extract\+Test}} (const char $\ast$run\+Name, const char $\ast$tree\+Name=\char`\"{}T\+\_\+ncap\char`\"{}, const char $\ast$branch\+Name=\char`\"{}phi\char`\"{})
+\begin{DoxyCompactList}\small\item\em Extract distribution from experimental run. \end{DoxyCompactList}\item 
+Double\+\_\+t \mbox{\hyperlink{classTRefMatch_aff377844639dbc036fa03ee16099c825}{Unbinned\+K\+S\+Test}} (T\+Tree $\ast$T1, T\+Tree $\ast$T2, const char $\ast$branch\+Name1, const char $\ast$branch\+Name2=\char`\"{}\char`\"{}, Long64\+\_\+t n\+Events1=0, Long64\+\_\+t n\+Events2=0)
+\begin{DoxyCompactList}\small\item\em Apply unbinned Kolmogorov-\/\+Smirnov test. \end{DoxyCompactList}\item 
+Double\+\_\+t \mbox{\hyperlink{classTRefMatch_ad518cb68edce1ab8ba2ab401de91b394}{Anderson\+Darling\+Test}} (T\+Tree $\ast$T1, T\+Tree $\ast$T2, const char $\ast$branch\+Name1, const char $\ast$branch\+Name2=\char`\"{}\char`\"{}, Long64\+\_\+t n\+Events1=0, Long64\+\_\+t n\+Events2=0)
+\begin{DoxyCompactList}\small\item\em Apply (unbinned) Anderson-\/\+Darling test. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTRefMatch_afbafaf2c5baa5b593c824d56c2725d59}{Ref\+Compare}} ()
+\begin{DoxyCompactList}\small\item\em Perform reference-\/comparison algorithm. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTRefMatch_ab80ada588334f90e9d045b4012aa6adc}{Draw\+Results}} (Bool\+\_\+t k\+Draw\+Fit=k\+F\+A\+L\+SE)
+\begin{DoxyCompactList}\small\item\em Plot sample distribution and algorithm results. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTRefMatch_ab1ae50356d40240192e05bc3b12a8203}{Print\+Verbose}} ()
+\begin{DoxyCompactList}\small\item\em Mostly settings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTRefMatch_ad8132f5dfcaf7edcfe04911dd4b06a65}{Print\+Results}} ()
+\begin{DoxyCompactList}\small\item\em Results summary. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTRefMatch_a11e9fb7feef284e0579b464503c751c0}{Save\+Results}} ()
+\begin{DoxyCompactList}\small\item\em Print canvas and save object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTRefMatch_ad52a03a714695690762370e535f559fa}{Close}} ()
+\begin{DoxyCompactList}\small\item\em Close pads, files, etc. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTRefMatch_a708325fb9b4a8993fda4d1085174fd0d}{Run}} (Long64\+\_\+t n\+Test\+Sample\+Events=0)
+\begin{DoxyCompactList}\small\item\em Execute a typical analysis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classTRefMatch_a786772925eacb8fb35d0f39d739f34e6}{Init}} ()
+\begin{DoxyCompactList}\small\item\em Initialize\+: validate and fill members. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTRefMatch_a183d5a48272a6b3111795b72ca3b3d3e}{Set\+Test\+Sample\+Phi\+True}} (Double\+\_\+t phi)
+\item 
+void \mbox{\hyperlink{classTRefMatch_a316413c7926285c1929a19fc684097dc}{Set\+Prob}} (Double\+\_\+t prob)
+\item 
+void \mbox{\hyperlink{classTRefMatch_ac1d6a9b0a9a41f43c0ae0d25399f7a7d}{Set\+Sig}} (Double\+\_\+t sig)
+\item 
+void \mbox{\hyperlink{classTRefMatch_aa452540c3af77252faed019aa1a7f189}{Set\+Results\+Matrix}} (T\+MatrixD resmat)
+\item 
+void \mbox{\hyperlink{classTRefMatch_a0419b164ef4363d38a0d20a2de96f9d2}{Set\+Results}} (T\+VectorD res)
+\item 
+void \mbox{\hyperlink{classTRefMatch_a4a6f5605906668ea169a0d8087f6473c}{Set\+Best\+Match\+File}} (T\+File $\ast$best\+Match\+File)
+\item 
+void \mbox{\hyperlink{classTRefMatch_aa5a827297444d24c6d4ea8db4365b930}{Set\+Canvas}} (T\+Canvas $\ast$c)
+\item 
+void \mbox{\hyperlink{classTRefMatch_a31bed67f3e915d181651328e99b10210}{Set\+Test\+Sample\+Hist}} (T\+H1D $\ast$h)
+\item 
+void \mbox{\hyperlink{classTRefMatch_a359b04605e588137e56779c165105d4a}{Set\+Results\+Graph}} (T\+Graph $\ast$g)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \mbox{\hyperlink{classTRefMatch_a2695565d77979de20b440811c6a9dbd9}{f\+Test\+File\+Name}}
+\begin{DoxyCompactList}\small\item\em Name of file containing data sample to be tested. \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{classTRefMatch_a9f3781297eead05535f356bfc8396fa2}{f\+Test\+Tree\+Name}}
+\begin{DoxyCompactList}\small\item\em Name of tree containing data sample to be tested. \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{classTRefMatch_a345320e0013c72ecc32ae8ba051961cf}{f\+Test\+Var\+Name}}
+\begin{DoxyCompactList}\small\item\em Name of branch/variable containing data sample to be tested. \end{DoxyCompactList}\item 
+T\+File $\ast$ \mbox{\hyperlink{classTRefMatch_ab12bf851bf5cf487295f16554ee24de4}{f\+Test\+Sample\+File}}
+\begin{DoxyCompactList}\small\item\em Address of test-\/sample file. \end{DoxyCompactList}\item 
+T\+Tree $\ast$ \mbox{\hyperlink{classTRefMatch_a0a2bdaa8755af6c8d438c35bedbbf283}{f\+Test\+Sample\+Tree}}
+\begin{DoxyCompactList}\small\item\em Address of test-\/sample tree. \end{DoxyCompactList}\item 
+T\+Branch $\ast$ \mbox{\hyperlink{classTRefMatch_a6e997f7e6743df33a3e3e559465f4706}{f\+Test\+Sample\+Branch}}
+\begin{DoxyCompactList}\small\item\em Address of test-\/sample branch. \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{classTRefMatch_a04042aa38bc519e49a7c72eeb0c0a049}{f\+Reference\+Tree\+Name}}
+\begin{DoxyCompactList}\small\item\em Name of tree in reference files. \end{DoxyCompactList}\item 
+T\+List $\ast$ \mbox{\hyperlink{classTRefMatch_affe9485a4fa5e496182619f770505ccd}{f\+Reference\+File\+List}}
+\begin{DoxyCompactList}\small\item\em List of files containing reference distributions. \end{DoxyCompactList}\item 
+T\+File $\ast$ \mbox{\hyperlink{classTRefMatch_a41beec08b1936dbadebc08c83d2cb9b3}{f\+Out\+File}}
+\begin{DoxyCompactList}\small\item\em Output file. \end{DoxyCompactList}\item 
+T\+Regexp \mbox{\hyperlink{classTRefMatch_aff80e46d414828551a7a3a3563aaa6b1}{f\+Reference\+File\+Pattern}}
+\begin{DoxyCompactList}\small\item\em Regex describing reference files. \end{DoxyCompactList}\item 
+T\+System\+Directory $\ast$ \mbox{\hyperlink{classTRefMatch_ad72d5b96a1477ffcd4dd61385f03dbbf}{f\+Reference\+File\+Dir}}
+\begin{DoxyCompactList}\small\item\em Directory containing reference files. \end{DoxyCompactList}\item 
+Long64\+\_\+t \mbox{\hyperlink{classTRefMatch_a332a85c759a0137f96bffe82b21c518c}{fn\+Test\+Sample\+Events}}
+\begin{DoxyCompactList}\small\item\em Number of events to use from test-\/sample tree (default value 0 will use all events) \end{DoxyCompactList}\item 
+Long64\+\_\+t \mbox{\hyperlink{classTRefMatch_a4bec6a79d536c0b44837362c3579bc62}{fn\+Reference\+Events}}
+\begin{DoxyCompactList}\small\item\em Number of events to use from reference trees (default value 0 will use all events) \end{DoxyCompactList}\item 
+Bool\+\_\+t \mbox{\hyperlink{classTRefMatch_a598a4f1361236dffe2665a9ba639ccec}{fk\+Anderson}}
+\begin{DoxyCompactList}\small\item\em If true, use Anderson-\/\+Darling rather than Kolmogorov-\/\+Smirnov. \end{DoxyCompactList}\item 
+Double\+\_\+t \mbox{\hyperlink{classTRefMatch_ac2c64ef6115f20eb31083580463da315}{f\+Test\+Sample\+Phi\+True}}
+\begin{DoxyCompactList}\small\item\em The true value of phi for the test sample. \end{DoxyCompactList}\item 
+Double\+\_\+t \mbox{\hyperlink{classTRefMatch_a9bc49272efebb946080ba803c40de078}{f\+Prob}}
+\begin{DoxyCompactList}\small\item\em Match probability (current entry) \end{DoxyCompactList}\item 
+Double\+\_\+t \mbox{\hyperlink{classTRefMatch_ab2d5c08dd1ee14812bb5756387849815}{f\+Sig}}
+\begin{DoxyCompactList}\small\item\em Match significance (current entry) \end{DoxyCompactList}\item 
+T\+MatrixD \mbox{\hyperlink{classTRefMatch_a786edd83efe9aa44a6d9efada5e36d37}{f\+Results\+Matrix}}
+\begin{DoxyCompactList}\small\item\em Matrix of comparison results. \end{DoxyCompactList}\item 
+T\+VectorD \mbox{\hyperlink{classTRefMatch_a1dd35c03db80b3b06236ad15bb29396f}{f\+Results}}
+\begin{DoxyCompactList}\small\item\em 3x1 vector containing best match value and corresponding probability and significance \end{DoxyCompactList}\item 
+T\+File $\ast$ \mbox{\hyperlink{classTRefMatch_a05defb89b9b96d49d5da7a941d169ab8}{f\+Best\+Match\+File}}
+\begin{DoxyCompactList}\small\item\em Address of best-\/match reference file. \end{DoxyCompactList}\item 
+Bool\+\_\+t \mbox{\hyperlink{classTRefMatch_ac57e568cfaba8b069f37273fba91b55c}{fk\+Has\+Init}}
+\begin{DoxyCompactList}\small\item\em Status indicator for whether Init has been called yet. \end{DoxyCompactList}\item 
+Bool\+\_\+t \mbox{\hyperlink{classTRefMatch_a478b772cafd660a0fe804111166a67ce}{fk\+Has\+Run}}
+\begin{DoxyCompactList}\small\item\em Status indicator for whether Ref\+Comp has been called yet. \end{DoxyCompactList}\item 
+T\+Canvas $\ast$ \mbox{\hyperlink{classTRefMatch_a0c2ac7db3b05449781567c46b508d373}{f\+Canvas}}
+\begin{DoxyCompactList}\small\item\em Canvas for drawing results. \end{DoxyCompactList}\item 
+T\+H1D $\ast$ \mbox{\hyperlink{classTRefMatch_a0b17a9a99d76ade2bac29912216dab85}{f\+Test\+Sample\+Hist}}
+\begin{DoxyCompactList}\small\item\em T\+H1 for test-\/sample data. \end{DoxyCompactList}\item 
+T\+Graph $\ast$ \mbox{\hyperlink{classTRefMatch_afbc4acd2a1c2bc97657f802a859d6e83}{f\+Results\+Graph}}
+\begin{DoxyCompactList}\small\item\em T\+Graph for algorithm results. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements K\+S/\+A\+D-\/test reference-\/matching algorithm. 
+
+\mbox{\hyperlink{classTRefMatch}{T\+Ref\+Match}} -- class for implementing the reference-\/matching algorithm described in this repository at \$\+R\+A\+T\+R\+O\+OT/user/ref\+\_\+matching/\+R\+E\+A\+D\+ME.\{md,html\} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTRefMatch_a48bb5176ba5833611236b76a1b07b7f7}\label{classTRefMatch_a48bb5176ba5833611236b76a1b07b7f7}} 
+\index{TRefMatch@{TRefMatch}!TRefMatch@{TRefMatch}}
+\index{TRefMatch@{TRefMatch}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{TRefMatch()}{TRefMatch()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily T\+Ref\+Match\+::\+T\+Ref\+Match (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default ctor. 
+
+\mbox{\Hypertarget{classTRefMatch_abb18f918fb9326bf8f7435bff4045d04}\label{classTRefMatch_abb18f918fb9326bf8f7435bff4045d04}} 
+\index{TRefMatch@{TRefMatch}!TRefMatch@{TRefMatch}}
+\index{TRefMatch@{TRefMatch}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{TRefMatch()}{TRefMatch()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily T\+Ref\+Match\+::\+T\+Ref\+Match (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name,  }\item[{const char $\ast$}]{tree\+Name = {\ttfamily \char`\"{}T\char`\"{}},  }\item[{const char $\ast$}]{branch\+Var\+Name = {\ttfamily \char`\"{}phi\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Regular ctor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTRefMatch_ad518cb68edce1ab8ba2ab401de91b394}\label{classTRefMatch_ad518cb68edce1ab8ba2ab401de91b394}} 
+\index{TRefMatch@{TRefMatch}!AndersonDarlingTest@{AndersonDarlingTest}}
+\index{AndersonDarlingTest@{AndersonDarlingTest}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{AndersonDarlingTest()}{AndersonDarlingTest()}}
+{\footnotesize\ttfamily Double\+\_\+t T\+Ref\+Match\+::\+Anderson\+Darling\+Test (\begin{DoxyParamCaption}\item[{T\+Tree $\ast$}]{T1,  }\item[{T\+Tree $\ast$}]{T2,  }\item[{const char $\ast$}]{branch\+Name1,  }\item[{const char $\ast$}]{branch\+Name2 = {\ttfamily \char`\"{}\char`\"{}},  }\item[{Long64\+\_\+t}]{n\+Events1 = {\ttfamily 0},  }\item[{Long64\+\_\+t}]{n\+Events2 = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Apply (unbinned) Anderson-\/\+Darling test. 
+
+\mbox{\Hypertarget{classTRefMatch_ad52a03a714695690762370e535f559fa}\label{classTRefMatch_ad52a03a714695690762370e535f559fa}} 
+\index{TRefMatch@{TRefMatch}!Close@{Close}}
+\index{Close@{Close}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{Close()}{Close()}}
+{\footnotesize\ttfamily void T\+Ref\+Match\+::\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Close pads, files, etc. 
+
+\mbox{\Hypertarget{classTRefMatch_ab80ada588334f90e9d045b4012aa6adc}\label{classTRefMatch_ab80ada588334f90e9d045b4012aa6adc}} 
+\index{TRefMatch@{TRefMatch}!DrawResults@{DrawResults}}
+\index{DrawResults@{DrawResults}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{DrawResults()}{DrawResults()}}
+{\footnotesize\ttfamily void T\+Ref\+Match\+::\+Draw\+Results (\begin{DoxyParamCaption}\item[{Bool\+\_\+t}]{k\+Draw\+Fit = {\ttfamily kFALSE} }\end{DoxyParamCaption})}
+
+
+
+Plot sample distribution and algorithm results. 
+
+\mbox{\Hypertarget{classTRefMatch_a94631e851a8c2bdb27f04a0b45278592}\label{classTRefMatch_a94631e851a8c2bdb27f04a0b45278592}} 
+\index{TRefMatch@{TRefMatch}!ExtractRef@{ExtractRef}}
+\index{ExtractRef@{ExtractRef}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{ExtractRef()}{ExtractRef()}}
+{\footnotesize\ttfamily void T\+Ref\+Match\+::\+Extract\+Ref (\begin{DoxyParamCaption}\item[{const char $\ast$}]{run\+Name,  }\item[{const char $\ast$}]{tree\+Name = {\ttfamily \char`\"{}T\char`\"{}},  }\item[{const char $\ast$}]{branch\+Name = {\ttfamily \char`\"{}phi\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Extract distribution from reference run. 
+
+\mbox{\Hypertarget{classTRefMatch_aa761bf0d2227dc02a93d7b55fa15cfca}\label{classTRefMatch_aa761bf0d2227dc02a93d7b55fa15cfca}} 
+\index{TRefMatch@{TRefMatch}!ExtractTest@{ExtractTest}}
+\index{ExtractTest@{ExtractTest}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{ExtractTest()}{ExtractTest()}}
+{\footnotesize\ttfamily void T\+Ref\+Match\+::\+Extract\+Test (\begin{DoxyParamCaption}\item[{const char $\ast$}]{run\+Name,  }\item[{const char $\ast$}]{tree\+Name = {\ttfamily \char`\"{}T\+\_\+ncap\char`\"{}},  }\item[{const char $\ast$}]{branch\+Name = {\ttfamily \char`\"{}phi\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Extract distribution from experimental run. 
+
+\mbox{\Hypertarget{classTRefMatch_a92fdc56ba1162db73a33589abad05705}\label{classTRefMatch_a92fdc56ba1162db73a33589abad05705}} 
+\index{TRefMatch@{TRefMatch}!FillReferenceFileList@{FillReferenceFileList}}
+\index{FillReferenceFileList@{FillReferenceFileList}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{FillReferenceFileList()}{FillReferenceFileList()}}
+{\footnotesize\ttfamily void T\+Ref\+Match\+::\+Fill\+Reference\+File\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTRefMatch_abf376cb2147662969cc2b44148cb2665}\label{classTRefMatch_abf376cb2147662969cc2b44148cb2665}} 
+\index{TRefMatch@{TRefMatch}!GetAnderson@{GetAnderson}}
+\index{GetAnderson@{GetAnderson}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{GetAnderson()}{GetAnderson()}}
+{\footnotesize\ttfamily Bool\+\_\+t T\+Ref\+Match\+::\+Get\+Anderson (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRefMatch_af2f9f7494596d3122ee48ff1da3147ac}\label{classTRefMatch_af2f9f7494596d3122ee48ff1da3147ac}} 
+\index{TRefMatch@{TRefMatch}!GetBestMatchFile@{GetBestMatchFile}}
+\index{GetBestMatchFile@{GetBestMatchFile}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{GetBestMatchFile()}{GetBestMatchFile()}}
+{\footnotesize\ttfamily T\+File$\ast$ T\+Ref\+Match\+::\+Get\+Best\+Match\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRefMatch_af1843317f16f9689f062574e999e8a00}\label{classTRefMatch_af1843317f16f9689f062574e999e8a00}} 
+\index{TRefMatch@{TRefMatch}!GetBranch@{GetBranch}}
+\index{GetBranch@{GetBranch}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{GetBranch()}{GetBranch()}}
+{\footnotesize\ttfamily T\+Branch$\ast$ T\+Ref\+Match\+::\+Get\+Branch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRefMatch_ae5420e33f80ebee71957f3e7ef735623}\label{classTRefMatch_ae5420e33f80ebee71957f3e7ef735623}} 
+\index{TRefMatch@{TRefMatch}!GetCanvas@{GetCanvas}}
+\index{GetCanvas@{GetCanvas}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{GetCanvas()}{GetCanvas()}}
+{\footnotesize\ttfamily T\+Canvas$\ast$ T\+Ref\+Match\+::\+Get\+Canvas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRefMatch_af3c74e7156499765a065d233f031b46b}\label{classTRefMatch_af3c74e7156499765a065d233f031b46b}} 
+\index{TRefMatch@{TRefMatch}!GetFile@{GetFile}}
+\index{GetFile@{GetFile}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{GetFile()}{GetFile()}}
+{\footnotesize\ttfamily T\+File$\ast$ T\+Ref\+Match\+::\+Get\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRefMatch_a42df2ada0bc3ca52053ff47ac6f608a0}\label{classTRefMatch_a42df2ada0bc3ca52053ff47ac6f608a0}} 
+\index{TRefMatch@{TRefMatch}!GetnReferenceEvents@{GetnReferenceEvents}}
+\index{GetnReferenceEvents@{GetnReferenceEvents}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{GetnReferenceEvents()}{GetnReferenceEvents()}}
+{\footnotesize\ttfamily Long64\+\_\+t T\+Ref\+Match\+::\+Getn\+Reference\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRefMatch_a4f1b713343bbb8b61ad95af63cf163b8}\label{classTRefMatch_a4f1b713343bbb8b61ad95af63cf163b8}} 
+\index{TRefMatch@{TRefMatch}!GetnTestSampleEvents@{GetnTestSampleEvents}}
+\index{GetnTestSampleEvents@{GetnTestSampleEvents}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{GetnTestSampleEvents()}{GetnTestSampleEvents()}}
+{\footnotesize\ttfamily Long64\+\_\+t T\+Ref\+Match\+::\+Getn\+Test\+Sample\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRefMatch_aa235816a6b3418b765b451c6106f3c5b}\label{classTRefMatch_aa235816a6b3418b765b451c6106f3c5b}} 
+\index{TRefMatch@{TRefMatch}!GetOutFile@{GetOutFile}}
+\index{GetOutFile@{GetOutFile}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{GetOutFile()}{GetOutFile()}}
+{\footnotesize\ttfamily T\+File$\ast$ T\+Ref\+Match\+::\+Get\+Out\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRefMatch_acda6ca9e248da332e13eaa5f400053b2}\label{classTRefMatch_acda6ca9e248da332e13eaa5f400053b2}} 
+\index{TRefMatch@{TRefMatch}!GetProb@{GetProb}}
+\index{GetProb@{GetProb}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{GetProb()}{GetProb()}}
+{\footnotesize\ttfamily Double\+\_\+t T\+Ref\+Match\+::\+Get\+Prob (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRefMatch_a7f59f23a25e1d5d61c0ddcc906d48b45}\label{classTRefMatch_a7f59f23a25e1d5d61c0ddcc906d48b45}} 
+\index{TRefMatch@{TRefMatch}!GetReferenceFileDir@{GetReferenceFileDir}}
+\index{GetReferenceFileDir@{GetReferenceFileDir}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{GetReferenceFileDir()}{GetReferenceFileDir()}}
+{\footnotesize\ttfamily T\+System\+Directory$\ast$ T\+Ref\+Match\+::\+Get\+Reference\+File\+Dir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRefMatch_aa411ed8d070e3aaf5fe725df93df00a6}\label{classTRefMatch_aa411ed8d070e3aaf5fe725df93df00a6}} 
+\index{TRefMatch@{TRefMatch}!GetReferenceFileList@{GetReferenceFileList}}
+\index{GetReferenceFileList@{GetReferenceFileList}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{GetReferenceFileList()}{GetReferenceFileList()}}
+{\footnotesize\ttfamily T\+List$\ast$ T\+Ref\+Match\+::\+Get\+Reference\+File\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRefMatch_a1488bcc08362e0bab3fec8f02a5a9a49}\label{classTRefMatch_a1488bcc08362e0bab3fec8f02a5a9a49}} 
+\index{TRefMatch@{TRefMatch}!GetReferenceFilePattern@{GetReferenceFilePattern}}
+\index{GetReferenceFilePattern@{GetReferenceFilePattern}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{GetReferenceFilePattern()}{GetReferenceFilePattern()}}
+{\footnotesize\ttfamily T\+Regexp T\+Ref\+Match\+::\+Get\+Reference\+File\+Pattern (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRefMatch_acc6b5a72bb831fc070ee3a0af6d84314}\label{classTRefMatch_acc6b5a72bb831fc070ee3a0af6d84314}} 
+\index{TRefMatch@{TRefMatch}!GetReferenceTreeName@{GetReferenceTreeName}}
+\index{GetReferenceTreeName@{GetReferenceTreeName}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{GetReferenceTreeName()}{GetReferenceTreeName()}}
+{\footnotesize\ttfamily const char$\ast$ T\+Ref\+Match\+::\+Get\+Reference\+Tree\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRefMatch_aef31fc1419c4f725248702df25e8ff7c}\label{classTRefMatch_aef31fc1419c4f725248702df25e8ff7c}} 
+\index{TRefMatch@{TRefMatch}!GetResults@{GetResults}}
+\index{GetResults@{GetResults}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{GetResults()}{GetResults()}}
+{\footnotesize\ttfamily T\+VectorD T\+Ref\+Match\+::\+Get\+Results (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRefMatch_a7cbb444f7b35ec4328d942170a559d05}\label{classTRefMatch_a7cbb444f7b35ec4328d942170a559d05}} 
+\index{TRefMatch@{TRefMatch}!GetResultsGraph@{GetResultsGraph}}
+\index{GetResultsGraph@{GetResultsGraph}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{GetResultsGraph()}{GetResultsGraph()}}
+{\footnotesize\ttfamily T\+Graph$\ast$ T\+Ref\+Match\+::\+Get\+Results\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRefMatch_aa8faec3fbbcac020eb8609919c6e13f2}\label{classTRefMatch_aa8faec3fbbcac020eb8609919c6e13f2}} 
+\index{TRefMatch@{TRefMatch}!GetResultsMatrix@{GetResultsMatrix}}
+\index{GetResultsMatrix@{GetResultsMatrix}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{GetResultsMatrix()}{GetResultsMatrix()}}
+{\footnotesize\ttfamily T\+MatrixD T\+Ref\+Match\+::\+Get\+Results\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRefMatch_a10209d19ab023d72cc80faadf2f62640}\label{classTRefMatch_a10209d19ab023d72cc80faadf2f62640}} 
+\index{TRefMatch@{TRefMatch}!GetSig@{GetSig}}
+\index{GetSig@{GetSig}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{GetSig()}{GetSig()}}
+{\footnotesize\ttfamily Double\+\_\+t T\+Ref\+Match\+::\+Get\+Sig (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRefMatch_a711385b46234dd31a2d0171a4c6e1294}\label{classTRefMatch_a711385b46234dd31a2d0171a4c6e1294}} 
+\index{TRefMatch@{TRefMatch}!GetTestFileName@{GetTestFileName}}
+\index{GetTestFileName@{GetTestFileName}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{GetTestFileName()}{GetTestFileName()}}
+{\footnotesize\ttfamily const char$\ast$ T\+Ref\+Match\+::\+Get\+Test\+File\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRefMatch_a9a427a3c457e02ae21f9543ca849e2bd}\label{classTRefMatch_a9a427a3c457e02ae21f9543ca849e2bd}} 
+\index{TRefMatch@{TRefMatch}!GetTestSampleHist@{GetTestSampleHist}}
+\index{GetTestSampleHist@{GetTestSampleHist}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{GetTestSampleHist()}{GetTestSampleHist()}}
+{\footnotesize\ttfamily T\+H1D$\ast$ T\+Ref\+Match\+::\+Get\+Test\+Sample\+Hist (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRefMatch_a0e49adccfd7ecf6c6f63924f2e9ff257}\label{classTRefMatch_a0e49adccfd7ecf6c6f63924f2e9ff257}} 
+\index{TRefMatch@{TRefMatch}!GetTestSamplePhiTrue@{GetTestSamplePhiTrue}}
+\index{GetTestSamplePhiTrue@{GetTestSamplePhiTrue}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{GetTestSamplePhiTrue()}{GetTestSamplePhiTrue()}}
+{\footnotesize\ttfamily Double\+\_\+t T\+Ref\+Match\+::\+Get\+Test\+Sample\+Phi\+True (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRefMatch_ac85fcd73a1db3e621805260ec528593e}\label{classTRefMatch_ac85fcd73a1db3e621805260ec528593e}} 
+\index{TRefMatch@{TRefMatch}!GetTestTreeName@{GetTestTreeName}}
+\index{GetTestTreeName@{GetTestTreeName}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{GetTestTreeName()}{GetTestTreeName()}}
+{\footnotesize\ttfamily const char$\ast$ T\+Ref\+Match\+::\+Get\+Test\+Tree\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRefMatch_ab68da2037e51dcb81f428ac3eedf00c7}\label{classTRefMatch_ab68da2037e51dcb81f428ac3eedf00c7}} 
+\index{TRefMatch@{TRefMatch}!GetTestVarName@{GetTestVarName}}
+\index{GetTestVarName@{GetTestVarName}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{GetTestVarName()}{GetTestVarName()}}
+{\footnotesize\ttfamily const char$\ast$ T\+Ref\+Match\+::\+Get\+Test\+Var\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRefMatch_a3e817bf5e671473b0a7b40ee6b8dce1b}\label{classTRefMatch_a3e817bf5e671473b0a7b40ee6b8dce1b}} 
+\index{TRefMatch@{TRefMatch}!GetTree@{GetTree}}
+\index{GetTree@{GetTree}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{GetTree()}{GetTree()}}
+{\footnotesize\ttfamily T\+Tree$\ast$ T\+Ref\+Match\+::\+Get\+Tree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRefMatch_a786772925eacb8fb35d0f39d739f34e6}\label{classTRefMatch_a786772925eacb8fb35d0f39d739f34e6}} 
+\index{TRefMatch@{TRefMatch}!Init@{Init}}
+\index{Init@{Init}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void T\+Ref\+Match\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialize\+: validate and fill members. 
+
+\mbox{\Hypertarget{classTRefMatch_a11c28a10b43c340d6540f6b36708fa4b}\label{classTRefMatch_a11c28a10b43c340d6540f6b36708fa4b}} 
+\index{TRefMatch@{TRefMatch}!Init@{Init}}
+\index{Init@{Init}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void T\+Ref\+Match\+::\+Init (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name,  }\item[{const char $\ast$}]{tree\+Name,  }\item[{const char $\ast$}]{branch\+Var\+Name }\end{DoxyParamCaption})}
+
+
+
+Setter version of \mbox{\hyperlink{classTRefMatch_a786772925eacb8fb35d0f39d739f34e6}{Init()}} 
+
+\mbox{\Hypertarget{classTRefMatch_ad8132f5dfcaf7edcfe04911dd4b06a65}\label{classTRefMatch_ad8132f5dfcaf7edcfe04911dd4b06a65}} 
+\index{TRefMatch@{TRefMatch}!PrintResults@{PrintResults}}
+\index{PrintResults@{PrintResults}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{PrintResults()}{PrintResults()}}
+{\footnotesize\ttfamily void T\+Ref\+Match\+::\+Print\+Results (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Results summary. 
+
+\mbox{\Hypertarget{classTRefMatch_ab1ae50356d40240192e05bc3b12a8203}\label{classTRefMatch_ab1ae50356d40240192e05bc3b12a8203}} 
+\index{TRefMatch@{TRefMatch}!PrintVerbose@{PrintVerbose}}
+\index{PrintVerbose@{PrintVerbose}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{PrintVerbose()}{PrintVerbose()}}
+{\footnotesize\ttfamily void T\+Ref\+Match\+::\+Print\+Verbose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Mostly settings. 
+
+\mbox{\Hypertarget{classTRefMatch_a57c7a08146436d9e39e84ad8544591e1}\label{classTRefMatch_a57c7a08146436d9e39e84ad8544591e1}} 
+\index{TRefMatch@{TRefMatch}!Prob2Sig@{Prob2Sig}}
+\index{Prob2Sig@{Prob2Sig}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{Prob2Sig()}{Prob2Sig()}}
+{\footnotesize\ttfamily Double\+\_\+t T\+Ref\+Match\+::\+Prob2\+Sig (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{prob }\end{DoxyParamCaption})}
+
+
+
+Convert probability to significance. 
+
+Convert a probability on (0,1) to its corresponding Gaussian significance. 
+\begin{DoxyParams}{Parameters}
+{\em prob} & -- decimal probability on (0,1) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sig -- decimal significance on (0,inf) 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classTRefMatch_a04bc51ebc6a2fca75f402eeb82a99a53}{Sig2\+Prob()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classTRefMatch_afbafaf2c5baa5b593c824d56c2725d59}\label{classTRefMatch_afbafaf2c5baa5b593c824d56c2725d59}} 
+\index{TRefMatch@{TRefMatch}!RefCompare@{RefCompare}}
+\index{RefCompare@{RefCompare}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{RefCompare()}{RefCompare()}}
+{\footnotesize\ttfamily void T\+Ref\+Match\+::\+Ref\+Compare (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Perform reference-\/comparison algorithm. 
+
+\mbox{\Hypertarget{classTRefMatch_a708325fb9b4a8993fda4d1085174fd0d}\label{classTRefMatch_a708325fb9b4a8993fda4d1085174fd0d}} 
+\index{TRefMatch@{TRefMatch}!Run@{Run}}
+\index{Run@{Run}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily void T\+Ref\+Match\+::\+Run (\begin{DoxyParamCaption}\item[{Long64\+\_\+t}]{n\+Test\+Sample\+Events = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Execute a typical analysis. 
+
+\mbox{\Hypertarget{classTRefMatch_a11e9fb7feef284e0579b464503c751c0}\label{classTRefMatch_a11e9fb7feef284e0579b464503c751c0}} 
+\index{TRefMatch@{TRefMatch}!SaveResults@{SaveResults}}
+\index{SaveResults@{SaveResults}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{SaveResults()}{SaveResults()}}
+{\footnotesize\ttfamily void T\+Ref\+Match\+::\+Save\+Results (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Print canvas and save object. 
+
+\mbox{\Hypertarget{classTRefMatch_a5c8ea7f558b7166cf23730cec9a51875}\label{classTRefMatch_a5c8ea7f558b7166cf23730cec9a51875}} 
+\index{TRefMatch@{TRefMatch}!SetAnderson@{SetAnderson}}
+\index{SetAnderson@{SetAnderson}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{SetAnderson()}{SetAnderson()}}
+{\footnotesize\ttfamily void T\+Ref\+Match\+::\+Set\+Anderson (\begin{DoxyParamCaption}\item[{Bool\+\_\+t}]{b\+Anderson }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRefMatch_a4a6f5605906668ea169a0d8087f6473c}\label{classTRefMatch_a4a6f5605906668ea169a0d8087f6473c}} 
+\index{TRefMatch@{TRefMatch}!SetBestMatchFile@{SetBestMatchFile}}
+\index{SetBestMatchFile@{SetBestMatchFile}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{SetBestMatchFile()}{SetBestMatchFile()}}
+{\footnotesize\ttfamily void T\+Ref\+Match\+::\+Set\+Best\+Match\+File (\begin{DoxyParamCaption}\item[{T\+File $\ast$}]{best\+Match\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTRefMatch_aa5a827297444d24c6d4ea8db4365b930}\label{classTRefMatch_aa5a827297444d24c6d4ea8db4365b930}} 
+\index{TRefMatch@{TRefMatch}!SetCanvas@{SetCanvas}}
+\index{SetCanvas@{SetCanvas}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{SetCanvas()}{SetCanvas()}}
+{\footnotesize\ttfamily void T\+Ref\+Match\+::\+Set\+Canvas (\begin{DoxyParamCaption}\item[{T\+Canvas $\ast$}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTRefMatch_a0f31415b8fd045e164426c52ecaee0ee}\label{classTRefMatch_a0f31415b8fd045e164426c52ecaee0ee}} 
+\index{TRefMatch@{TRefMatch}!SetnEvents@{SetnEvents}}
+\index{SetnEvents@{SetnEvents}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{SetnEvents()}{SetnEvents()}}
+{\footnotesize\ttfamily void T\+Ref\+Match\+::\+Setn\+Events (\begin{DoxyParamCaption}\item[{Long64\+\_\+t}]{n\+Test\+Sample\+Events = {\ttfamily 0},  }\item[{Long64\+\_\+t}]{n\+Reference\+Events = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRefMatch_a316413c7926285c1929a19fc684097dc}\label{classTRefMatch_a316413c7926285c1929a19fc684097dc}} 
+\index{TRefMatch@{TRefMatch}!SetProb@{SetProb}}
+\index{SetProb@{SetProb}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{SetProb()}{SetProb()}}
+{\footnotesize\ttfamily void T\+Ref\+Match\+::\+Set\+Prob (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{prob }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTRefMatch_a1dab3a16947e44e705dc2b2383c175b3}\label{classTRefMatch_a1dab3a16947e44e705dc2b2383c175b3}} 
+\index{TRefMatch@{TRefMatch}!SetReferenceFileDir@{SetReferenceFileDir}}
+\index{SetReferenceFileDir@{SetReferenceFileDir}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{SetReferenceFileDir()}{SetReferenceFileDir()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void T\+Ref\+Match\+::\+Set\+Reference\+File\+Dir (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ref\+File\+Dir\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTRefMatch_a6cdc403d1c18f99736eb07dcd3327a02}\label{classTRefMatch_a6cdc403d1c18f99736eb07dcd3327a02}} 
+\index{TRefMatch@{TRefMatch}!SetReferenceFileDir@{SetReferenceFileDir}}
+\index{SetReferenceFileDir@{SetReferenceFileDir}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{SetReferenceFileDir()}{SetReferenceFileDir()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void T\+Ref\+Match\+::\+Set\+Reference\+File\+Dir (\begin{DoxyParamCaption}\item[{T\+System\+Directory $\ast$}]{ref\+File\+Dir }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTRefMatch_a4b5850d59c424cc83733406ff64387dc}\label{classTRefMatch_a4b5850d59c424cc83733406ff64387dc}} 
+\index{TRefMatch@{TRefMatch}!SetReferenceFileList@{SetReferenceFileList}}
+\index{SetReferenceFileList@{SetReferenceFileList}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{SetReferenceFileList()}{SetReferenceFileList()}}
+{\footnotesize\ttfamily void T\+Ref\+Match\+::\+Set\+Reference\+File\+List (\begin{DoxyParamCaption}\item[{T\+List $\ast$}]{file\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRefMatch_adf950852ae62a3c829a73c2a7be14f1e}\label{classTRefMatch_adf950852ae62a3c829a73c2a7be14f1e}} 
+\index{TRefMatch@{TRefMatch}!SetReferenceFilePattern@{SetReferenceFilePattern}}
+\index{SetReferenceFilePattern@{SetReferenceFilePattern}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{SetReferenceFilePattern()}{SetReferenceFilePattern()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void T\+Ref\+Match\+::\+Set\+Reference\+File\+Pattern (\begin{DoxyParamCaption}\item[{const char $\ast$}]{pattern }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTRefMatch_a098164ff64fecd9edefe8a1481898be6}\label{classTRefMatch_a098164ff64fecd9edefe8a1481898be6}} 
+\index{TRefMatch@{TRefMatch}!SetReferenceFilePattern@{SetReferenceFilePattern}}
+\index{SetReferenceFilePattern@{SetReferenceFilePattern}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{SetReferenceFilePattern()}{SetReferenceFilePattern()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void T\+Ref\+Match\+::\+Set\+Reference\+File\+Pattern (\begin{DoxyParamCaption}\item[{T\+Regexp}]{pattern\+RE }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTRefMatch_a3e7e72f7c77df531d5afe6f77276c511}\label{classTRefMatch_a3e7e72f7c77df531d5afe6f77276c511}} 
+\index{TRefMatch@{TRefMatch}!SetReferenceTreeName@{SetReferenceTreeName}}
+\index{SetReferenceTreeName@{SetReferenceTreeName}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{SetReferenceTreeName()}{SetReferenceTreeName()}}
+{\footnotesize\ttfamily void T\+Ref\+Match\+::\+Set\+Reference\+Tree\+Name (\begin{DoxyParamCaption}\item[{const char $\ast$}]{tree\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTRefMatch_a0419b164ef4363d38a0d20a2de96f9d2}\label{classTRefMatch_a0419b164ef4363d38a0d20a2de96f9d2}} 
+\index{TRefMatch@{TRefMatch}!SetResults@{SetResults}}
+\index{SetResults@{SetResults}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{SetResults()}{SetResults()}}
+{\footnotesize\ttfamily void T\+Ref\+Match\+::\+Set\+Results (\begin{DoxyParamCaption}\item[{T\+VectorD}]{res }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTRefMatch_a359b04605e588137e56779c165105d4a}\label{classTRefMatch_a359b04605e588137e56779c165105d4a}} 
+\index{TRefMatch@{TRefMatch}!SetResultsGraph@{SetResultsGraph}}
+\index{SetResultsGraph@{SetResultsGraph}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{SetResultsGraph()}{SetResultsGraph()}}
+{\footnotesize\ttfamily void T\+Ref\+Match\+::\+Set\+Results\+Graph (\begin{DoxyParamCaption}\item[{T\+Graph $\ast$}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTRefMatch_aa452540c3af77252faed019aa1a7f189}\label{classTRefMatch_aa452540c3af77252faed019aa1a7f189}} 
+\index{TRefMatch@{TRefMatch}!SetResultsMatrix@{SetResultsMatrix}}
+\index{SetResultsMatrix@{SetResultsMatrix}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{SetResultsMatrix()}{SetResultsMatrix()}}
+{\footnotesize\ttfamily void T\+Ref\+Match\+::\+Set\+Results\+Matrix (\begin{DoxyParamCaption}\item[{T\+MatrixD}]{resmat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTRefMatch_ac1d6a9b0a9a41f43c0ae0d25399f7a7d}\label{classTRefMatch_ac1d6a9b0a9a41f43c0ae0d25399f7a7d}} 
+\index{TRefMatch@{TRefMatch}!SetSig@{SetSig}}
+\index{SetSig@{SetSig}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{SetSig()}{SetSig()}}
+{\footnotesize\ttfamily void T\+Ref\+Match\+::\+Set\+Sig (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{sig }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTRefMatch_a31bed67f3e915d181651328e99b10210}\label{classTRefMatch_a31bed67f3e915d181651328e99b10210}} 
+\index{TRefMatch@{TRefMatch}!SetTestSampleHist@{SetTestSampleHist}}
+\index{SetTestSampleHist@{SetTestSampleHist}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{SetTestSampleHist()}{SetTestSampleHist()}}
+{\footnotesize\ttfamily void T\+Ref\+Match\+::\+Set\+Test\+Sample\+Hist (\begin{DoxyParamCaption}\item[{T\+H1D $\ast$}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTRefMatch_a183d5a48272a6b3111795b72ca3b3d3e}\label{classTRefMatch_a183d5a48272a6b3111795b72ca3b3d3e}} 
+\index{TRefMatch@{TRefMatch}!SetTestSamplePhiTrue@{SetTestSamplePhiTrue}}
+\index{SetTestSamplePhiTrue@{SetTestSamplePhiTrue}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{SetTestSamplePhiTrue()}{SetTestSamplePhiTrue()}}
+{\footnotesize\ttfamily void T\+Ref\+Match\+::\+Set\+Test\+Sample\+Phi\+True (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{phi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTRefMatch_a04bc51ebc6a2fca75f402eeb82a99a53}\label{classTRefMatch_a04bc51ebc6a2fca75f402eeb82a99a53}} 
+\index{TRefMatch@{TRefMatch}!Sig2Prob@{Sig2Prob}}
+\index{Sig2Prob@{Sig2Prob}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{Sig2Prob()}{Sig2Prob()}}
+{\footnotesize\ttfamily Double\+\_\+t T\+Ref\+Match\+::\+Sig2\+Prob (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{sig }\end{DoxyParamCaption})}
+
+
+
+Convert significance to probability. 
+
+Convert a significance to its corresponding Gaussian probability. 
+\begin{DoxyParams}{Parameters}
+{\em sig} & -- decimal significance on (0,inf) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+prob -- decimal probability on (0,1) 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+Prog2\+Sig() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classTRefMatch_aff377844639dbc036fa03ee16099c825}\label{classTRefMatch_aff377844639dbc036fa03ee16099c825}} 
+\index{TRefMatch@{TRefMatch}!UnbinnedKSTest@{UnbinnedKSTest}}
+\index{UnbinnedKSTest@{UnbinnedKSTest}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{UnbinnedKSTest()}{UnbinnedKSTest()}}
+{\footnotesize\ttfamily Double\+\_\+t T\+Ref\+Match\+::\+Unbinned\+K\+S\+Test (\begin{DoxyParamCaption}\item[{T\+Tree $\ast$}]{T1,  }\item[{T\+Tree $\ast$}]{T2,  }\item[{const char $\ast$}]{branch\+Name1,  }\item[{const char $\ast$}]{branch\+Name2 = {\ttfamily \char`\"{}\char`\"{}},  }\item[{Long64\+\_\+t}]{n\+Events1 = {\ttfamily 0},  }\item[{Long64\+\_\+t}]{n\+Events2 = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Apply unbinned Kolmogorov-\/\+Smirnov test. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classTRefMatch_a05defb89b9b96d49d5da7a941d169ab8}\label{classTRefMatch_a05defb89b9b96d49d5da7a941d169ab8}} 
+\index{TRefMatch@{TRefMatch}!fBestMatchFile@{fBestMatchFile}}
+\index{fBestMatchFile@{fBestMatchFile}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{fBestMatchFile}{fBestMatchFile}}
+{\footnotesize\ttfamily T\+File$\ast$ T\+Ref\+Match\+::f\+Best\+Match\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Address of best-\/match reference file. 
+
+\mbox{\Hypertarget{classTRefMatch_a0c2ac7db3b05449781567c46b508d373}\label{classTRefMatch_a0c2ac7db3b05449781567c46b508d373}} 
+\index{TRefMatch@{TRefMatch}!fCanvas@{fCanvas}}
+\index{fCanvas@{fCanvas}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{fCanvas}{fCanvas}}
+{\footnotesize\ttfamily T\+Canvas$\ast$ T\+Ref\+Match\+::f\+Canvas\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Canvas for drawing results. 
+
+\mbox{\Hypertarget{classTRefMatch_a598a4f1361236dffe2665a9ba639ccec}\label{classTRefMatch_a598a4f1361236dffe2665a9ba639ccec}} 
+\index{TRefMatch@{TRefMatch}!fkAnderson@{fkAnderson}}
+\index{fkAnderson@{fkAnderson}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{fkAnderson}{fkAnderson}}
+{\footnotesize\ttfamily Bool\+\_\+t T\+Ref\+Match\+::fk\+Anderson\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+If true, use Anderson-\/\+Darling rather than Kolmogorov-\/\+Smirnov. 
+
+\mbox{\Hypertarget{classTRefMatch_ac57e568cfaba8b069f37273fba91b55c}\label{classTRefMatch_ac57e568cfaba8b069f37273fba91b55c}} 
+\index{TRefMatch@{TRefMatch}!fkHasInit@{fkHasInit}}
+\index{fkHasInit@{fkHasInit}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{fkHasInit}{fkHasInit}}
+{\footnotesize\ttfamily Bool\+\_\+t T\+Ref\+Match\+::fk\+Has\+Init\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Status indicator for whether Init has been called yet. 
+
+\mbox{\Hypertarget{classTRefMatch_a478b772cafd660a0fe804111166a67ce}\label{classTRefMatch_a478b772cafd660a0fe804111166a67ce}} 
+\index{TRefMatch@{TRefMatch}!fkHasRun@{fkHasRun}}
+\index{fkHasRun@{fkHasRun}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{fkHasRun}{fkHasRun}}
+{\footnotesize\ttfamily Bool\+\_\+t T\+Ref\+Match\+::fk\+Has\+Run\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Status indicator for whether Ref\+Comp has been called yet. 
+
+\mbox{\Hypertarget{classTRefMatch_a4bec6a79d536c0b44837362c3579bc62}\label{classTRefMatch_a4bec6a79d536c0b44837362c3579bc62}} 
+\index{TRefMatch@{TRefMatch}!fnReferenceEvents@{fnReferenceEvents}}
+\index{fnReferenceEvents@{fnReferenceEvents}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{fnReferenceEvents}{fnReferenceEvents}}
+{\footnotesize\ttfamily Long64\+\_\+t T\+Ref\+Match\+::fn\+Reference\+Events\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of events to use from reference trees (default value 0 will use all events) 
+
+\mbox{\Hypertarget{classTRefMatch_a332a85c759a0137f96bffe82b21c518c}\label{classTRefMatch_a332a85c759a0137f96bffe82b21c518c}} 
+\index{TRefMatch@{TRefMatch}!fnTestSampleEvents@{fnTestSampleEvents}}
+\index{fnTestSampleEvents@{fnTestSampleEvents}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{fnTestSampleEvents}{fnTestSampleEvents}}
+{\footnotesize\ttfamily Long64\+\_\+t T\+Ref\+Match\+::fn\+Test\+Sample\+Events\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of events to use from test-\/sample tree (default value 0 will use all events) 
+
+\mbox{\Hypertarget{classTRefMatch_a41beec08b1936dbadebc08c83d2cb9b3}\label{classTRefMatch_a41beec08b1936dbadebc08c83d2cb9b3}} 
+\index{TRefMatch@{TRefMatch}!fOutFile@{fOutFile}}
+\index{fOutFile@{fOutFile}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{fOutFile}{fOutFile}}
+{\footnotesize\ttfamily T\+File$\ast$ T\+Ref\+Match\+::f\+Out\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Output file. 
+
+\mbox{\Hypertarget{classTRefMatch_a9bc49272efebb946080ba803c40de078}\label{classTRefMatch_a9bc49272efebb946080ba803c40de078}} 
+\index{TRefMatch@{TRefMatch}!fProb@{fProb}}
+\index{fProb@{fProb}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{fProb}{fProb}}
+{\footnotesize\ttfamily Double\+\_\+t T\+Ref\+Match\+::f\+Prob\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Match probability (current entry) 
+
+\mbox{\Hypertarget{classTRefMatch_ad72d5b96a1477ffcd4dd61385f03dbbf}\label{classTRefMatch_ad72d5b96a1477ffcd4dd61385f03dbbf}} 
+\index{TRefMatch@{TRefMatch}!fReferenceFileDir@{fReferenceFileDir}}
+\index{fReferenceFileDir@{fReferenceFileDir}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{fReferenceFileDir}{fReferenceFileDir}}
+{\footnotesize\ttfamily T\+System\+Directory$\ast$ T\+Ref\+Match\+::f\+Reference\+File\+Dir\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Directory containing reference files. 
+
+\mbox{\Hypertarget{classTRefMatch_affe9485a4fa5e496182619f770505ccd}\label{classTRefMatch_affe9485a4fa5e496182619f770505ccd}} 
+\index{TRefMatch@{TRefMatch}!fReferenceFileList@{fReferenceFileList}}
+\index{fReferenceFileList@{fReferenceFileList}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{fReferenceFileList}{fReferenceFileList}}
+{\footnotesize\ttfamily T\+List$\ast$ T\+Ref\+Match\+::f\+Reference\+File\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+List of files containing reference distributions. 
+
+\mbox{\Hypertarget{classTRefMatch_aff80e46d414828551a7a3a3563aaa6b1}\label{classTRefMatch_aff80e46d414828551a7a3a3563aaa6b1}} 
+\index{TRefMatch@{TRefMatch}!fReferenceFilePattern@{fReferenceFilePattern}}
+\index{fReferenceFilePattern@{fReferenceFilePattern}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{fReferenceFilePattern}{fReferenceFilePattern}}
+{\footnotesize\ttfamily T\+Regexp T\+Ref\+Match\+::f\+Reference\+File\+Pattern\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Regex describing reference files. 
+
+\mbox{\Hypertarget{classTRefMatch_a04042aa38bc519e49a7c72eeb0c0a049}\label{classTRefMatch_a04042aa38bc519e49a7c72eeb0c0a049}} 
+\index{TRefMatch@{TRefMatch}!fReferenceTreeName@{fReferenceTreeName}}
+\index{fReferenceTreeName@{fReferenceTreeName}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{fReferenceTreeName}{fReferenceTreeName}}
+{\footnotesize\ttfamily const char$\ast$ T\+Ref\+Match\+::f\+Reference\+Tree\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Name of tree in reference files. 
+
+\mbox{\Hypertarget{classTRefMatch_a1dd35c03db80b3b06236ad15bb29396f}\label{classTRefMatch_a1dd35c03db80b3b06236ad15bb29396f}} 
+\index{TRefMatch@{TRefMatch}!fResults@{fResults}}
+\index{fResults@{fResults}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{fResults}{fResults}}
+{\footnotesize\ttfamily T\+VectorD T\+Ref\+Match\+::f\+Results\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+3x1 vector containing best match value and corresponding probability and significance 
+
+\mbox{\Hypertarget{classTRefMatch_afbc4acd2a1c2bc97657f802a859d6e83}\label{classTRefMatch_afbc4acd2a1c2bc97657f802a859d6e83}} 
+\index{TRefMatch@{TRefMatch}!fResultsGraph@{fResultsGraph}}
+\index{fResultsGraph@{fResultsGraph}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{fResultsGraph}{fResultsGraph}}
+{\footnotesize\ttfamily T\+Graph$\ast$ T\+Ref\+Match\+::f\+Results\+Graph\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+T\+Graph for algorithm results. 
+
+\mbox{\Hypertarget{classTRefMatch_a786edd83efe9aa44a6d9efada5e36d37}\label{classTRefMatch_a786edd83efe9aa44a6d9efada5e36d37}} 
+\index{TRefMatch@{TRefMatch}!fResultsMatrix@{fResultsMatrix}}
+\index{fResultsMatrix@{fResultsMatrix}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{fResultsMatrix}{fResultsMatrix}}
+{\footnotesize\ttfamily T\+MatrixD T\+Ref\+Match\+::f\+Results\+Matrix\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Matrix of comparison results. 
+
+\mbox{\Hypertarget{classTRefMatch_ab2d5c08dd1ee14812bb5756387849815}\label{classTRefMatch_ab2d5c08dd1ee14812bb5756387849815}} 
+\index{TRefMatch@{TRefMatch}!fSig@{fSig}}
+\index{fSig@{fSig}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{fSig}{fSig}}
+{\footnotesize\ttfamily Double\+\_\+t T\+Ref\+Match\+::f\+Sig\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Match significance (current entry) 
+
+\mbox{\Hypertarget{classTRefMatch_a2695565d77979de20b440811c6a9dbd9}\label{classTRefMatch_a2695565d77979de20b440811c6a9dbd9}} 
+\index{TRefMatch@{TRefMatch}!fTestFileName@{fTestFileName}}
+\index{fTestFileName@{fTestFileName}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{fTestFileName}{fTestFileName}}
+{\footnotesize\ttfamily const char$\ast$ T\+Ref\+Match\+::f\+Test\+File\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Name of file containing data sample to be tested. 
+
+\mbox{\Hypertarget{classTRefMatch_a6e997f7e6743df33a3e3e559465f4706}\label{classTRefMatch_a6e997f7e6743df33a3e3e559465f4706}} 
+\index{TRefMatch@{TRefMatch}!fTestSampleBranch@{fTestSampleBranch}}
+\index{fTestSampleBranch@{fTestSampleBranch}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{fTestSampleBranch}{fTestSampleBranch}}
+{\footnotesize\ttfamily T\+Branch$\ast$ T\+Ref\+Match\+::f\+Test\+Sample\+Branch\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Address of test-\/sample branch. 
+
+\mbox{\Hypertarget{classTRefMatch_ab12bf851bf5cf487295f16554ee24de4}\label{classTRefMatch_ab12bf851bf5cf487295f16554ee24de4}} 
+\index{TRefMatch@{TRefMatch}!fTestSampleFile@{fTestSampleFile}}
+\index{fTestSampleFile@{fTestSampleFile}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{fTestSampleFile}{fTestSampleFile}}
+{\footnotesize\ttfamily T\+File$\ast$ T\+Ref\+Match\+::f\+Test\+Sample\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Address of test-\/sample file. 
+
+\mbox{\Hypertarget{classTRefMatch_a0b17a9a99d76ade2bac29912216dab85}\label{classTRefMatch_a0b17a9a99d76ade2bac29912216dab85}} 
+\index{TRefMatch@{TRefMatch}!fTestSampleHist@{fTestSampleHist}}
+\index{fTestSampleHist@{fTestSampleHist}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{fTestSampleHist}{fTestSampleHist}}
+{\footnotesize\ttfamily T\+H1D$\ast$ T\+Ref\+Match\+::f\+Test\+Sample\+Hist\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+T\+H1 for test-\/sample data. 
+
+\mbox{\Hypertarget{classTRefMatch_ac2c64ef6115f20eb31083580463da315}\label{classTRefMatch_ac2c64ef6115f20eb31083580463da315}} 
+\index{TRefMatch@{TRefMatch}!fTestSamplePhiTrue@{fTestSamplePhiTrue}}
+\index{fTestSamplePhiTrue@{fTestSamplePhiTrue}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{fTestSamplePhiTrue}{fTestSamplePhiTrue}}
+{\footnotesize\ttfamily Double\+\_\+t T\+Ref\+Match\+::f\+Test\+Sample\+Phi\+True\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The true value of phi for the test sample. 
+
+\mbox{\Hypertarget{classTRefMatch_a0a2bdaa8755af6c8d438c35bedbbf283}\label{classTRefMatch_a0a2bdaa8755af6c8d438c35bedbbf283}} 
+\index{TRefMatch@{TRefMatch}!fTestSampleTree@{fTestSampleTree}}
+\index{fTestSampleTree@{fTestSampleTree}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{fTestSampleTree}{fTestSampleTree}}
+{\footnotesize\ttfamily T\+Tree$\ast$ T\+Ref\+Match\+::f\+Test\+Sample\+Tree\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Address of test-\/sample tree. 
+
+\mbox{\Hypertarget{classTRefMatch_a9f3781297eead05535f356bfc8396fa2}\label{classTRefMatch_a9f3781297eead05535f356bfc8396fa2}} 
+\index{TRefMatch@{TRefMatch}!fTestTreeName@{fTestTreeName}}
+\index{fTestTreeName@{fTestTreeName}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{fTestTreeName}{fTestTreeName}}
+{\footnotesize\ttfamily const char$\ast$ T\+Ref\+Match\+::f\+Test\+Tree\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Name of tree containing data sample to be tested. 
+
+\mbox{\Hypertarget{classTRefMatch_a345320e0013c72ecc32ae8ba051961cf}\label{classTRefMatch_a345320e0013c72ecc32ae8ba051961cf}} 
+\index{TRefMatch@{TRefMatch}!fTestVarName@{fTestVarName}}
+\index{fTestVarName@{fTestVarName}!TRefMatch@{TRefMatch}}
+\doxysubsubsection{\texorpdfstring{fTestVarName}{fTestVarName}}
+{\footnotesize\ttfamily const char$\ast$ T\+Ref\+Match\+::f\+Test\+Var\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Name of branch/variable containing data sample to be tested. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{TRefMatch_8h}{T\+Ref\+Match.\+h}}\item 
+\mbox{\hyperlink{TRefMatch_8cxx}{T\+Ref\+Match.\+cxx}}\end{DoxyCompactItemize}

@@ -40,7 +40,7 @@
 #endif
 
 //______________________________________________________________________________
-// default ctor
+/// Default ctor
 TRefMatch::TRefMatch()
 {
   SetName("TRefMatch");
@@ -52,7 +52,7 @@ TRefMatch::TRefMatch()
 }
 
 //______________________________________________________________________________
-// regular ctor
+/// Regular ctor
 TRefMatch::TRefMatch( const char* fileName, const char* treeName, const char* branchVarName )
 {
   SetName("TRefMatch");
@@ -79,7 +79,7 @@ TRefMatch::TRefMatch( const char* fileName, const char* treeName, const char* br
 }
 
 //______________________________________________________________________________
-// initialize: validate and fill members
+/// Initialize: validate and fill members
 void TRefMatch::Init()
 {
   // checks
@@ -121,7 +121,7 @@ void TRefMatch::Init()
 }
 
 //______________________________________________________________________________
-// Init -- setter version
+/// Setter version of Init()
 void TRefMatch::Init( const char* fileName, const char* treeName , const char* branchVarName )
 {
   fTestFileName = fileName;
@@ -210,6 +210,12 @@ void TRefMatch::FillReferenceFileList()
 
 //______________________________________________________________________________
 // Prob2Sig
+/**
+ * Convert a probability on (0,1) to its corresponding Gaussian significance.
+ * \param prob -- decimal probability on (0,1)
+ * \return sig -- decimal significance on (0,inf)
+ * \see Sig2Prob()
+ */
 Double_t TRefMatch::Prob2Sig( Double_t prob )
 {
   // convert, accounting for special values
@@ -227,6 +233,12 @@ Double_t TRefMatch::Prob2Sig( Double_t prob )
 
 //______________________________________________________________________________
 // Sig2Prob
+/**
+ * Convert a  significance to its corresponding Gaussian probability.
+ * \param sig -- decimal significance on (0,inf)
+ * \return prob -- decimal probability on (0,1)
+ * \see Prog2Sig()
+ */
 Double_t TRefMatch::Sig2Prob( Double_t sig )
 {
   // convert, accounting for special values
@@ -877,7 +889,7 @@ void TRefMatch::Close()
 }
 
 //______________________________________________________________________________
-// override ls
+// Override ls
 void TRefMatch::ls()
 {
   if (fTestSampleFile!=0x0) {
@@ -890,7 +902,7 @@ void TRefMatch::ls()
 }
 
 //______________________________________________________________________________
-// override print
+// Override print
 void TRefMatch::Print()
 {
   printf("%s:\t%s:\t%s\n", IsA()->GetName(), GetName(), GetTitle());

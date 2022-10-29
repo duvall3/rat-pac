@@ -1,5 +1,7 @@
-// TRefMatch -- class for implementing the reference-matching algorithm
-//   described in this repository at $RATROOT/user/ref_matching/README.{md,html}
+/// Implements KS/AD-test reference-matching algorithm.
+/** TRefMatch -- class for implementing the reference-matching algorithm
+ *   described in this repository at $RATROOT/user/ref_matching/README.{md,html}
+ */
 
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 07/2022 ~ //
 
@@ -26,31 +28,31 @@ class TRefMatch : public TClass {
 private:
   // members
   // NOTE: There is no individual datamember for the best-match angle; it is stored in fResults[0]
-  const char*		fTestFileName;		// name of file containing data sample to be tested
-  const char*		fTestTreeName;		// name of tree containing data sample to be tested
-  const char*		fTestVarName;		// name of branch/variable containing data sample to be tested
-  TFile*		fTestSampleFile;	// address of test-sample file 
-  TTree*		fTestSampleTree;	// address of test-sample tree
-  TBranch*		fTestSampleBranch;	// address of test-sample branch
-  const char*		fReferenceTreeName;	// name of tree in reference files
-  TList*		fReferenceFileList;	// list of files containing reference distributions
-  TFile*		fOutFile;		// output file
-  TRegexp		fReferenceFilePattern;	// regex describing reference files
-  TSystemDirectory*	fReferenceFileDir;	// directory containing reference files
-  Long64_t		fnTestSampleEvents;	// number of events to use from test-sample tree (default value 0 will use all events)
-  Long64_t		fnReferenceEvents;	// number of events to use from reference trees (default value 0 will use all events)
-  Bool_t		fkAnderson;		// if true, use Anderson-Darling rather than Kolmogorov-Smirnov
-  Double_t		fTestSamplePhiTrue;	// the true value of phi for the test sample
-  Double_t		fProb;			// match probability (current entry)
-  Double_t		fSig;			// match significance (current entry)
-  TMatrixD		fResultsMatrix;		// matrix of comparison results
-  TVectorD		fResults;		// 3x1 vector containing best match value and corresponding probability and significance
-  TFile*		fBestMatchFile;		// address of best-match reference file
-  Bool_t		fkHasInit;		// status indicator for whether Init has been called yet
-  Bool_t		fkHasRun;		// status indicator for whether RefComp has been called yet
-  TCanvas*		fCanvas;		// canvas for drawing results
-  TH1D*			fTestSampleHist;	// TH1 for test-sample data
-  TGraph*		fResultsGraph;		// TGraph for algorithm results
+  const char*		fTestFileName;		///< Name of file containing data sample to be tested
+  const char*		fTestTreeName;		///< Name of tree containing data sample to be tested
+  const char*		fTestVarName;		///< Name of branch/variable containing data sample to be tested
+  TFile*		fTestSampleFile;	///< Address of test-sample file 
+  TTree*		fTestSampleTree;	///< Address of test-sample tree
+  TBranch*		fTestSampleBranch;	///< Address of test-sample branch
+  const char*		fReferenceTreeName;	///< Name of tree in reference files
+  TList*		fReferenceFileList;	///< List of files containing reference distributions
+  TFile*		fOutFile;		///< Output file
+  TRegexp		fReferenceFilePattern;	///< Regex describing reference files
+  TSystemDirectory*	fReferenceFileDir;	///< Directory containing reference files
+  Long64_t		fnTestSampleEvents;	///< Number of events to use from test-sample tree (default value 0 will use all events)
+  Long64_t		fnReferenceEvents;	///< Number of events to use from reference trees (default value 0 will use all events)
+  Bool_t		fkAnderson;		///< If true, use Anderson-Darling rather than Kolmogorov-Smirnov
+  Double_t		fTestSamplePhiTrue;	///< The true value of phi for the test sample
+  Double_t		fProb;			///< Match probability (current entry)
+  Double_t		fSig;			///< Match significance (current entry)
+  TMatrixD		fResultsMatrix;		///< Matrix of comparison results
+  TVectorD		fResults;		///< 3x1 vector containing best match value and corresponding probability and significance
+  TFile*		fBestMatchFile;		///< Address of best-match reference file
+  Bool_t		fkHasInit;		///< Status indicator for whether Init has been called yet
+  Bool_t		fkHasRun;		///< Status indicator for whether RefComp has been called yet
+  TCanvas*		fCanvas;		///< Canvas for drawing results
+  TH1D*			fTestSampleHist;	///< TH1 for test-sample data
+  TGraph*		fResultsGraph;		///< TGraph for algorithm results
 
 private:
   // methods
@@ -106,24 +108,24 @@ public:
   void			FillReferenceFileList();
   void			SetnEvents(Long64_t nTestSampleEvents=0, Long64_t nReferenceEvents=0) { fnTestSampleEvents=nTestSampleEvents; fnReferenceEvents=nReferenceEvents; }
   // utility:
-  Double_t		Prob2Sig( Double_t prob );		// convert probability to significance
-  Double_t		Sig2Prob( Double_t sig );		// convert significance to probability
-  void			ExtractRef( const char* runName, const char* treeName = "T", const char* branchName = "phi" );	// extract distribution from reference run
-  void			ExtractTest( const char* runName, const char* treeName = "T_ncap", const char* branchName = "phi" );	// extract distribution from experimental run
+  Double_t		Prob2Sig( Double_t prob );		///< Convert probability to significance
+  Double_t		Sig2Prob( Double_t sig );		///< Convert significance to probability
+  void			ExtractRef( const char* runName, const char* treeName = "T", const char* branchName = "phi" );	///< Extract distribution from reference run
+  void			ExtractTest( const char* runName, const char* treeName = "T_ncap", const char* branchName = "phi" );	///< Extract distribution from experimental run
   // MAIN:
-  Double_t		UnbinnedKSTest(TTree *T1, TTree *T2, const char* branchName1, const char* branchName2="", Long64_t nEvents1=0, Long64_t nEvents2=0 );	// apply unbinned Kolmogorov-Smirnov test
-  Double_t		AndersonDarlingTest(TTree *T1, TTree *T2, const char* branchName1, const char* branchName2="", Long64_t nEvents1=0, Long64_t nEvents2=0 );	// apply (unbinned) Anderson-Darling test
-  void			RefCompare();				// perform reference-comparison algorithm
+  Double_t		UnbinnedKSTest(TTree *T1, TTree *T2, const char* branchName1, const char* branchName2="", Long64_t nEvents1=0, Long64_t nEvents2=0 );	///< Apply unbinned Kolmogorov-Smirnov test
+  Double_t		AndersonDarlingTest(TTree *T1, TTree *T2, const char* branchName1, const char* branchName2="", Long64_t nEvents1=0, Long64_t nEvents2=0 );	///< Apply (unbinned) Anderson-Darling test
+  void			RefCompare();				///< Perform reference-comparison algorithm
   // plots:
-  void			DrawResults(Bool_t kDrawFit=kFALSE);	// plot sample distribution and algorithm results
+  void			DrawResults(Bool_t kDrawFit=kFALSE);	///< Plot sample distribution and algorithm results
   // print info:
-  void			PrintVerbose();				// mostly settings
-  void			PrintResults();				// results summary
+  void			PrintVerbose();				///< Mostly settings
+  void			PrintResults();				///< Results summary
   // save and / or close
-  void			SaveResults();				// print canvas and save object
-  void			Close();				// close pads, files, etc.
+  void			SaveResults();				///< Print canvas and save object
+  void			Close();				///< Close pads, files, etc.
   // do everything
-  void			Run(Long64_t nTestSampleEvents=0);	// execute a typical analysis
+  void			Run(Long64_t nTestSampleEvents=0);	///< Execute a typical analysis
 
 
 //Integrating the TRefMatch class to ROOT.
