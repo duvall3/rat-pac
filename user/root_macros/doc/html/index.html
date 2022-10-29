@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Tools for Reactor-Antineutrino Studies in RAT-PAC: Main Page</title>
+<title>Tools for Reactor-Antineutrino Studies in RAT-PAC: ROOT MACROS</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -20,6 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="t-rocks_logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Tools for Reactor-Antineutrino Studies in RAT-PAC
    </div>
@@ -60,11 +61,23 @@ $(function() {
 </iframe>
 </div>
 
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Tools for Reactor-Antineutrino Studies in RAT-PAC Documentation</div>  </div>
+<div class="title">ROOT MACROS </div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p>Instructions for using the (most useful) macros in <em>duvall3 --&gt; rat-pac --&gt; branch collab --&gt; user --&gt; <a href="https://github.com/duvall3/rat-pac/blob/collab/user/root_macros">root_macros</a></em>.</p>
+<h2><a class="anchor" id="autotoc_md0"></a>
+Installation</h2>
+<p><em>Note: These are written for *nix systems (Mac/Linux)</em></p>
+<ol type="1">
+<li>After git-cloning this repository (or downloading the individual files), run the <code>macro_paths.sh</code> script located in this directory and follow the instructions it provides.</li>
+<li>If you are using the <code>rootlogon.C</code> provided in this directory, then everything should now be ready. If you are using your own <code>rootlogon.C</code> elsewhere, simply append the contents of this directory's version to yours.</li>
+</ol>
+<h2><a class="anchor" id="autotoc_md1"></a>
+Usage</h2>
+<p>Open ROOT and run <code>.x duvall3Include.cxx</code> to load the macros. See comments in individual macro files for details. </p>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
