@@ -1,4 +1,4 @@
-// TClassTemplate -- basic template for writing ROOT classes
+/// Basic template for writing ROOT classes
 // -- Note: For CINT, load using gROOT->LoadMacro("TClassTemplate.cxx");
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 08/2022 ~ //
 
@@ -24,24 +24,24 @@ class TClassTemplate : public TClass {
 
 private:
   // members
-  Double_t		fSomeData;							// data member
+  Double_t		fSomeData;							///< Data member
 
 private:
   // internal methods
-  void			SomePrivateMethod();						// private method
+  void			SomePrivateMethod();						///< Private method
 
 public:
   // public methods
-  TClassTemplate();									// default ctor
-  TClassTemplate( const char* someArg1, Double_t someArg2 );				// normal ctor
+  TClassTemplate();									///< Default ctor
+  TClassTemplate( const char* someArg1, Double_t someArg2 );				///< Normal ctor
   // setters and getters
-  void			SetData( Double_t someArg ) { fSomeData = someArg; }		// setter
-  Double_t		GetData() { return fSomeData; }					// getter
+  void			SetData( Double_t someArg ) { fSomeData = someArg; }		///< Setter
+  Double_t		GetData() { return fSomeData; }					///< Getter
   // general
-  Double_t		SomeCalculation( Int_t someArg1 = 0 );				// regular function with default argument
+  Double_t		SomeCalculation( Int_t someArg1 = 0 );				///< Regular function with default argument
 
 // Integrating the TClassTemplate class into ROOT
-ClassDef(TClassTemplate,1) // with class version number
+ClassDef(TClassTemplate,1) ///< with class version number
 
 }; //end class
 

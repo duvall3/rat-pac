@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['names_213',['Names',['../classTRATGeo.html#aae6622a6e9365cb686b4ba7bb30d1d0c',1,'TRATGeo']]],
-  ['neutroncaptures_214',['neutronCaptures',['../neutronCaptures_8cxx.html#aff5df96162ebd6ea3ecf23997f4c33d4',1,'neutronCaptures(const char *fileName=&quot;&quot;, TString targetRegexStr=&quot;.*target.*&quot;, bool kPrint=kFALSE, int neutron_child=1):&#160;neutronCaptures.cxx'],['../NeutronCaptures_8cxx.html#a24326a58d9e3e00446e5b09b6e80ffa6',1,'NeutronCaptures(const char *inputfile, int number_of_events, bool ibd_tf=kFALSE):&#160;NeutronCaptures.cxx']]],
-  ['neutroncaptures_2ecxx_215',['neutronCaptures.cxx',['../neutronCaptures_8cxx.html',1,'(Global Namespace)'],['../NeutronCaptures_8cxx.html',1,'(Global Namespace)']]],
-  ['neutroncapturesfinal_216',['neutronCapturesFinal',['../neutronCapturesFinal_8cxx.html#a363b8545ce059e46485a7da836603a2a',1,'neutronCapturesFinal.cxx']]],
-  ['neutroncapturesfinal_2ecxx_217',['neutronCapturesFinal.cxx',['../neutronCapturesFinal_8cxx.html',1,'']]],
-  ['nuflux_218',['NuFlux',['../classTIBDParams.html#ae4e0e4591526cc1477625cc38014cedf',1,'TIBDParams::NuFlux()'],['../classTRATVolume.html#af722df5ca4a50c83fb6e1b01c13ec960',1,'TRATVolume::NuFlux()']]]
+  ['names_212',['Names',['../classTRATGeo.html#aae6622a6e9365cb686b4ba7bb30d1d0c',1,'TRATGeo']]],
+  ['neutroncaptures_213',['neutronCaptures',['../neutronCaptures_8cxx.html#aff5df96162ebd6ea3ecf23997f4c33d4',1,'neutronCaptures(const char *fileName=&quot;&quot;, TString targetRegexStr=&quot;.*target.*&quot;, bool kPrint=kFALSE, int neutron_child=1):&#160;neutronCaptures.cxx'],['../NeutronCaptures_8cxx.html#a24326a58d9e3e00446e5b09b6e80ffa6',1,'NeutronCaptures(const char *inputfile, int number_of_events, bool ibd_tf=kFALSE):&#160;NeutronCaptures.cxx']]],
+  ['neutroncaptures_2ecxx_214',['neutronCaptures.cxx',['../neutronCaptures_8cxx.html',1,'(Global Namespace)'],['../NeutronCaptures_8cxx.html',1,'(Global Namespace)']]],
+  ['neutroncapturesfinal_215',['neutronCapturesFinal',['../neutronCapturesFinal_8cxx.html#a363b8545ce059e46485a7da836603a2a',1,'neutronCapturesFinal.cxx']]],
+  ['neutroncapturesfinal_2ecxx_216',['neutronCapturesFinal.cxx',['../neutronCapturesFinal_8cxx.html',1,'']]],
+  ['nuflux_217',['NuFlux',['../classTIBDParams.html#ae4e0e4591526cc1477625cc38014cedf',1,'TIBDParams::NuFlux()'],['../classTRATVolume.html#af722df5ca4a50c83fb6e1b01c13ec960',1,'TRATVolume::NuFlux()']]]
 ];

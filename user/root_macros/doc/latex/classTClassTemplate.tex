@@ -2,6 +2,11 @@
 \label{classTClassTemplate}\index{TClassTemplate@{TClassTemplate}}
 
 
+Basic template for writing R\+O\+OT classes.  
+
+
+
+
 {\ttfamily \#include $<$T\+Class\+Template.\+h$>$}
 
 
@@ -26,26 +31,25 @@ Collaboration diagram for T\+Class\+Template\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classTClassTemplate_aac100cbf991c7d28ee891f1c192c3a4b}{T\+Class\+Template}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Default ctor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTClassTemplate_a46391e9761e6468ba3fdc866cd360735}{T\+Class\+Template}} (const char $\ast$some\+Arg1, Double\+\_\+t some\+Arg2)
-\item 
-void \mbox{\hyperlink{classTClassTemplate_a2786cf9d617009b10b9c74be5d6eb532}{Set\+Data}} (Double\+\_\+t some\+Arg)
-\item 
-Double\+\_\+t \mbox{\hyperlink{classTClassTemplate_a73f568bdf9f9593f0b7d8d0bbfeb74ed}{Get\+Data}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Normal ctor. \end{DoxyCompactList}\item 
 Double\+\_\+t \mbox{\hyperlink{classTClassTemplate_a236d8ef733223b10b8ef9ed4e70d3c65}{Some\+Calculation}} (Int\+\_\+t some\+Arg1=0)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Regular function with default argument. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{classTClassTemplate_a7f0c5a24d32083408ba319c73f512120}{Some\+Private\+Method}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Private method. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 Double\+\_\+t \mbox{\hyperlink{classTClassTemplate_a97676f3096283f54d4faf7d3242e9219}{f\+Some\+Data}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Data member. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Basic template for writing R\+O\+OT classes. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classTClassTemplate_aac100cbf991c7d28ee891f1c192c3a4b}\label{classTClassTemplate_aac100cbf991c7d28ee891f1c192c3a4b}} 
@@ -53,6 +57,10 @@ Double\+\_\+t \mbox{\hyperlink{classTClassTemplate_a97676f3096283f54d4faf7d3242e
 \index{TClassTemplate@{TClassTemplate}!TClassTemplate@{TClassTemplate}}
 \doxysubsubsection{\texorpdfstring{TClassTemplate()}{TClassTemplate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily T\+Class\+Template\+::\+T\+Class\+Template (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default ctor. 
 
 \mbox{\Hypertarget{classTClassTemplate_a46391e9761e6468ba3fdc866cd360735}\label{classTClassTemplate_a46391e9761e6468ba3fdc866cd360735}} 
 \index{TClassTemplate@{TClassTemplate}!TClassTemplate@{TClassTemplate}}
@@ -62,24 +70,27 @@ Double\+\_\+t \mbox{\hyperlink{classTClassTemplate_a97676f3096283f54d4faf7d3242e
 
 
 
+Normal ctor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em some\+Arg1} & -- e.\+g., a filename \\
+\hline
+{\em some\+Arg2} & -- e.\+g., a track ID \\
+\hline
+\end{DoxyParams}
+
+
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classTClassTemplate_a73f568bdf9f9593f0b7d8d0bbfeb74ed}\label{classTClassTemplate_a73f568bdf9f9593f0b7d8d0bbfeb74ed}} 
-\index{TClassTemplate@{TClassTemplate}!GetData@{GetData}}
-\index{GetData@{GetData}!TClassTemplate@{TClassTemplate}}
-\doxysubsubsection{\texorpdfstring{GetData()}{GetData()}}
-{\footnotesize\ttfamily Double\+\_\+t T\+Class\+Template\+::\+Get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-\mbox{\Hypertarget{classTClassTemplate_a2786cf9d617009b10b9c74be5d6eb532}\label{classTClassTemplate_a2786cf9d617009b10b9c74be5d6eb532}} 
-\index{TClassTemplate@{TClassTemplate}!SetData@{SetData}}
-\index{SetData@{SetData}!TClassTemplate@{TClassTemplate}}
-\doxysubsubsection{\texorpdfstring{SetData()}{SetData()}}
-{\footnotesize\ttfamily void T\+Class\+Template\+::\+Set\+Data (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{some\+Arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
 \mbox{\Hypertarget{classTClassTemplate_a236d8ef733223b10b8ef9ed4e70d3c65}\label{classTClassTemplate_a236d8ef733223b10b8ef9ed4e70d3c65}} 
 \index{TClassTemplate@{TClassTemplate}!SomeCalculation@{SomeCalculation}}
 \index{SomeCalculation@{SomeCalculation}!TClassTemplate@{TClassTemplate}}
 \doxysubsubsection{\texorpdfstring{SomeCalculation()}{SomeCalculation()}}
 {\footnotesize\ttfamily Double\+\_\+t T\+Class\+Template\+::\+Some\+Calculation (\begin{DoxyParamCaption}\item[{Int\+\_\+t}]{some\+Arg1 = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Regular function with default argument. 
 
 \mbox{\Hypertarget{classTClassTemplate_a7f0c5a24d32083408ba319c73f512120}\label{classTClassTemplate_a7f0c5a24d32083408ba319c73f512120}} 
 \index{TClassTemplate@{TClassTemplate}!SomePrivateMethod@{SomePrivateMethod}}
@@ -89,12 +100,20 @@ Double\+\_\+t \mbox{\hyperlink{classTClassTemplate_a97676f3096283f54d4faf7d3242e
 
 
 
+Private method. 
+
+
+
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{classTClassTemplate_a97676f3096283f54d4faf7d3242e9219}\label{classTClassTemplate_a97676f3096283f54d4faf7d3242e9219}} 
 \index{TClassTemplate@{TClassTemplate}!fSomeData@{fSomeData}}
 \index{fSomeData@{fSomeData}!TClassTemplate@{TClassTemplate}}
 \doxysubsubsection{\texorpdfstring{fSomeData}{fSomeData}}
 {\footnotesize\ttfamily Double\+\_\+t T\+Class\+Template\+::f\+Some\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Data member. 
 
 
 

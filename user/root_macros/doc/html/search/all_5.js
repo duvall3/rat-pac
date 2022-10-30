@@ -21,7 +21,7 @@ var searchData=
   ['finddensity_65',['FindDensity',['../classTRATVolume.html#af6d52c8cf165e4be9a229f11f10892d6',1,'TRATVolume']]],
   ['findexperiment_66',['FindExperiment',['../classTRATGeo.html#adf76bd164a369930f554fd916b4a21d2',1,'TRATGeo::FindExperiment()'],['../classTRATVolume.html#a3a29fe9fc14973e0955bccb0377d2f7a',1,'TRATVolume::FindExperiment()']]],
   ['findlowestvolumecontaining_67',['FindLowestVolumeContaining',['../classTRATGeo.html#a44d41e7b30535f7aad6b228f1c529c76',1,'TRATGeo::FindLowestVolumeContaining(TVector3 location, Bool_t kPrint=kFALSE)'],['../classTRATGeo.html#a452b59dd65a272d42f419a5c2232a457',1,'TRATGeo::FindLowestVolumeContaining(Double_t x, Double_t y, Double_t z, Bool_t kPrint=kFALSE)']]],
-  ['findmatchingobjects_68',['FindMatchingObjects',['../namespaceTDuvallUtils.html#a913fd86508e84b86af27086a8d89fde3',1,'TDuvallUtils::FindMatchingObjects(TCollection *colxn, TRegexp patternRE)'],['../namespaceTDuvallUtils.html#a7242528f45e9d634d0fc1a79ac9c0446',1,'TDuvallUtils::FindMatchingObjects(TCollection *colxn, const char *pattern)']]],
+  ['findmatchingobjects_68',['FindMatchingObjects',['../namespaceTDuvallUtils.html#a913fd86508e84b86af27086a8d89fde3',1,'TDuvallUtils']]],
   ['findmaterial_69',['FindMaterial',['../classTRATVolume.html#a989db89a659365199964a0916192c6f8',1,'TRATVolume']]],
   ['findmother_70',['FindMother',['../classTRATVolume.html#ae113a23d57a7a2b9a9f51c70cd9d0d56',1,'TRATVolume']]],
   ['findrelativeposition_71',['FindRelativePosition',['../classTRATVolume.html#a810d5b47e827ffd43f0f986c388dc5d2',1,'TRATVolume']]],

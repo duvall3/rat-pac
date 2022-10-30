@@ -83,13 +83,13 @@ T\+H1D $\ast$ \mbox{\hyperlink{classTRefMatch_a9a427a3c457e02ae21f9543ca849e2bd}
 T\+Graph $\ast$ \mbox{\hyperlink{classTRefMatch_a7cbb444f7b35ec4328d942170a559d05}{Get\+Results\+Graph}} ()
 \item 
 void \mbox{\hyperlink{classTRefMatch_a6cdc403d1c18f99736eb07dcd3327a02}{Set\+Reference\+File\+Dir}} (T\+System\+Directory $\ast$ref\+File\+Dir)
-\item 
+\begin{DoxyCompactList}\small\item\em Set directory (by pointer) to search for reference files. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classTRefMatch_a1dab3a16947e44e705dc2b2383c175b3}{Set\+Reference\+File\+Dir}} (const char $\ast$ref\+File\+Dir\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em Set directory (by name) to search for reference files. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classTRefMatch_a098164ff64fecd9edefe8a1481898be6}{Set\+Reference\+File\+Pattern}} (T\+Regexp pattern\+RE)
-\item 
+\begin{DoxyCompactList}\small\item\em Set search pattern (by T\+Regexp object) for reference filenames. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classTRefMatch_adf950852ae62a3c829a73c2a7be14f1e}{Set\+Reference\+File\+Pattern}} (const char $\ast$pattern)
-\item 
+\begin{DoxyCompactList}\small\item\em Set search pattern (by string) for reference filenames. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classTRefMatch_a4b5850d59c424cc83733406ff64387dc}{Set\+Reference\+File\+List}} (T\+List $\ast$file\+List)
 \item 
 void \mbox{\hyperlink{classTRefMatch_a5c8ea7f558b7166cf23730cec9a51875}{Set\+Anderson}} (Bool\+\_\+t b\+Anderson)
@@ -97,7 +97,7 @@ void \mbox{\hyperlink{classTRefMatch_a5c8ea7f558b7166cf23730cec9a51875}{Set\+And
 void \mbox{\hyperlink{classTRefMatch_a3e7e72f7c77df531d5afe6f77276c511}{Set\+Reference\+Tree\+Name}} (const char $\ast$tree\+Name)
 \item 
 void \mbox{\hyperlink{classTRefMatch_a92fdc56ba1162db73a33589abad05705}{Fill\+Reference\+File\+List}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Populate the reference-\/file list based on the current reference-\/file directory and pattern. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classTRefMatch_a0f31415b8fd045e164426c52ecaee0ee}{Setn\+Events}} (Long64\+\_\+t n\+Test\+Sample\+Events=0, Long64\+\_\+t n\+Reference\+Events=0)
 \item 
 Double\+\_\+t \mbox{\hyperlink{classTRefMatch_a57c7a08146436d9e39e84ad8544591e1}{Prob2\+Sig}} (Double\+\_\+t prob)
@@ -207,7 +207,19 @@ T\+Graph $\ast$ \mbox{\hyperlink{classTRefMatch_afbc4acd2a1c2bc97657f802a859d6e8
 \doxysubsection{Detailed Description}
 Implements K\+S/\+A\+D-\/test reference-\/matching algorithm. 
 
-\mbox{\hyperlink{classTRefMatch}{T\+Ref\+Match}} -- class for implementing the reference-\/matching algorithm described in this repository at \$\+R\+A\+T\+R\+O\+OT/user/ref\+\_\+matching/\+R\+E\+A\+D\+ME.\{md,html\} 
+Standard Usage ( \mbox{[}R\mbox{]} = always required )\+:
+\begin{DoxyEnumerate}
+\item Instantiate (N\+O\+TE\+: must construct with \char`\"{}new\char`\"{}) \mbox{[}R\mbox{]}
+\item Call Init (\char`\"{}setter version\char`\"{}) if used default ctor
+\item Set reference directory / pattern if needed
+\item Call Fill\+Reference\+File\+List \mbox{[}R\mbox{]}
+\item Set tree and branch names if needed
+\item Set number of events to use from \{test-\/sample, reference-\/distrib\} if desired
+\item Call Ref\+Compare \mbox{[}R\mbox{]}
+\item Call Draw\+Results if desired
+\item Call Save if desired
+\item Call Close when finished 
+\end{DoxyEnumerate}
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classTRefMatch_a48bb5176ba5833611236b76a1b07b7f7}\label{classTRefMatch_a48bb5176ba5833611236b76a1b07b7f7}} 
@@ -231,6 +243,15 @@ Default ctor.
 Regular ctor. 
 
 
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & -- name of file containing experimental/test data \\
+\hline
+{\em tree\+Name} & -- name of relevant T\+Tree in input file \\
+\hline
+{\em branch\+Var\+Name} & -- shared variable name (b/t input and ref. files) \\
+\hline
+\end{DoxyParams}
+
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classTRefMatch_ad518cb68edce1ab8ba2ab401de91b394}\label{classTRefMatch_ad518cb68edce1ab8ba2ab401de91b394}} 
@@ -243,7 +264,7 @@ Regular ctor.
 
 Apply (unbinned) Anderson-\/\+Darling test. 
 
-\mbox{\Hypertarget{classTRefMatch_ad52a03a714695690762370e535f559fa}\label{classTRefMatch_ad52a03a714695690762370e535f559fa}} 
+Function to execute {\itshape unbinned} T\+Math\+::\+Kolmogorov\+Test on a pair of T\+Trees containing T\+Branches with matching names -- Usage\+: Double\+\_\+t P = Anderson\+Darling\+Test( T\+Tree {\itshape T1, T\+Tree $\ast$\+T2, const char} branch\+Name ) -- Branches must be of type Double\+\_\+t -- P is the probability for match -- $\ast$\+T1 and $\ast$\+T2 are pointers to the two input trees -- branch\+Name\{1,2\} are the branch/variable names in the respective trees -- n\+Events\{1,2\} are the number of entries to use from each tree (default value 0 will use all entries) -- See the notes in R\+O\+O\+T\+::\+Math\+::\+Go\+F\+Test for details \mbox{\Hypertarget{classTRefMatch_ad52a03a714695690762370e535f559fa}\label{classTRefMatch_ad52a03a714695690762370e535f559fa}} 
 \index{TRefMatch@{TRefMatch}!Close@{Close}}
 \index{Close@{Close}!TRefMatch@{TRefMatch}}
 \doxysubsubsection{\texorpdfstring{Close()}{Close()}}
@@ -288,6 +309,10 @@ Extract distribution from experimental run.
 \index{FillReferenceFileList@{FillReferenceFileList}!TRefMatch@{TRefMatch}}
 \doxysubsubsection{\texorpdfstring{FillReferenceFileList()}{FillReferenceFileList()}}
 {\footnotesize\ttfamily void T\+Ref\+Match\+::\+Fill\+Reference\+File\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Populate the reference-\/file list based on the current reference-\/file directory and pattern. 
 
 \mbox{\Hypertarget{classTRefMatch_abf376cb2147662969cc2b44148cb2665}\label{classTRefMatch_abf376cb2147662969cc2b44148cb2665}} 
 \index{TRefMatch@{TRefMatch}!GetAnderson@{GetAnderson}}
@@ -447,6 +472,9 @@ Initialize\+: validate and fill members.
 
 Setter version of \mbox{\hyperlink{classTRefMatch_a786772925eacb8fb35d0f39d739f34e6}{Init()}} 
 
+Same parameters as Regular ctor. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classTRefMatch_abb18f918fb9326bf8f7435bff4045d04}{T\+Ref\+Match( const char$\ast$ file\+Name, const char$\ast$ tree\+Name, const char$\ast$ branch\+Var\+Name )}} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{classTRefMatch_ad8132f5dfcaf7edcfe04911dd4b06a65}\label{classTRefMatch_ad8132f5dfcaf7edcfe04911dd4b06a65}} 
 \index{TRefMatch@{TRefMatch}!PrintResults@{PrintResults}}
 \index{PrintResults@{PrintResults}!TRefMatch@{TRefMatch}}
@@ -554,12 +582,30 @@ Print canvas and save object.
 \doxysubsubsection{\texorpdfstring{SetReferenceFileDir()}{SetReferenceFileDir()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void T\+Ref\+Match\+::\+Set\+Reference\+File\+Dir (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ref\+File\+Dir\+Name }\end{DoxyParamCaption})}
 
+
+
+Set directory (by name) to search for reference files. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ref\+File\+Dir\+Name} & -- name of directory to search \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classTRefMatch_a6cdc403d1c18f99736eb07dcd3327a02}\label{classTRefMatch_a6cdc403d1c18f99736eb07dcd3327a02}} 
 \index{TRefMatch@{TRefMatch}!SetReferenceFileDir@{SetReferenceFileDir}}
 \index{SetReferenceFileDir@{SetReferenceFileDir}!TRefMatch@{TRefMatch}}
 \doxysubsubsection{\texorpdfstring{SetReferenceFileDir()}{SetReferenceFileDir()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily void T\+Ref\+Match\+::\+Set\+Reference\+File\+Dir (\begin{DoxyParamCaption}\item[{T\+System\+Directory $\ast$}]{ref\+File\+Dir }\end{DoxyParamCaption})}
 
+
+
+Set directory (by pointer) to search for reference files. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ref\+File\+Dir} & -- directory to search \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classTRefMatch_a4b5850d59c424cc83733406ff64387dc}\label{classTRefMatch_a4b5850d59c424cc83733406ff64387dc}} 
 \index{TRefMatch@{TRefMatch}!SetReferenceFileList@{SetReferenceFileList}}
 \index{SetReferenceFileList@{SetReferenceFileList}!TRefMatch@{TRefMatch}}
@@ -572,12 +618,30 @@ Print canvas and save object.
 \doxysubsubsection{\texorpdfstring{SetReferenceFilePattern()}{SetReferenceFilePattern()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void T\+Ref\+Match\+::\+Set\+Reference\+File\+Pattern (\begin{DoxyParamCaption}\item[{const char $\ast$}]{pattern }\end{DoxyParamCaption})}
 
+
+
+Set search pattern (by string) for reference filenames. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pattern} & -- string to use for regex for filenames \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classTRefMatch_a098164ff64fecd9edefe8a1481898be6}\label{classTRefMatch_a098164ff64fecd9edefe8a1481898be6}} 
 \index{TRefMatch@{TRefMatch}!SetReferenceFilePattern@{SetReferenceFilePattern}}
 \index{SetReferenceFilePattern@{SetReferenceFilePattern}!TRefMatch@{TRefMatch}}
 \doxysubsubsection{\texorpdfstring{SetReferenceFilePattern()}{SetReferenceFilePattern()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily void T\+Ref\+Match\+::\+Set\+Reference\+File\+Pattern (\begin{DoxyParamCaption}\item[{T\+Regexp}]{pattern\+RE }\end{DoxyParamCaption})}
 
+
+
+Set search pattern (by T\+Regexp object) for reference filenames. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pattern\+RE} & -- regex for filenames \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classTRefMatch_a3e7e72f7c77df531d5afe6f77276c511}\label{classTRefMatch_a3e7e72f7c77df531d5afe6f77276c511}} 
 \index{TRefMatch@{TRefMatch}!SetReferenceTreeName@{SetReferenceTreeName}}
 \index{SetReferenceTreeName@{SetReferenceTreeName}!TRefMatch@{TRefMatch}}
@@ -639,7 +703,7 @@ Convert a significance to its corresponding Gaussian probability.
 prob -- decimal probability on (0,1) 
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
-Prog2\+Sig() 
+\mbox{\hyperlink{classTRefMatch_a57c7a08146436d9e39e84ad8544591e1}{Prob2\+Sig()}} 
 \end{DoxySeeAlso}
 \mbox{\Hypertarget{classTRefMatch_aff377844639dbc036fa03ee16099c825}\label{classTRefMatch_aff377844639dbc036fa03ee16099c825}} 
 \index{TRefMatch@{TRefMatch}!UnbinnedKSTest@{UnbinnedKSTest}}

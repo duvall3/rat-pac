@@ -3,17 +3,6 @@
 // NOTE: To run an Unbinned Komogorov-Smirnov Test on *any* pair of TTrees
 //   (i.e., without using this class), see the standalone version UnbinnedKSTest
 //   in the the TDuvallUtils library at $RATROOT/user/root_macros/TDuvallUtils.{h,cxx}
-// Standard Usage (* = always required):
-// * 1) Instantiate (NOTE: must construct with "new")
-//   2) Call Init ("setter version") if used default ctor
-//   3) Set reference directory / pattern if needed
-// * 4) Call FillReferenceFileList
-//   5) Set tree and branch names if needed
-//   6) Set number of events to use from {test-sample, reference-distrib} if desired
-// * 7) Call RefCompare
-//   8) Call DrawResults if desired
-//   9) Call Save if desired
-//  10) Call Close when finished
 
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 07/2022 ~ //
 
@@ -53,6 +42,11 @@ TRefMatch::TRefMatch()
 
 //______________________________________________________________________________
 /// Regular ctor
+/** 
+ * \param fileName -- name of file containing experimental/test data
+ * \param treeName -- name of relevant TTree in input file
+ * \param branchVarName -- shared variable name (b/t input and ref. files)
+ */
 TRefMatch::TRefMatch( const char* fileName, const char* treeName, const char* branchVarName )
 {
   SetName("TRefMatch");
@@ -122,6 +116,9 @@ void TRefMatch::Init()
 
 //______________________________________________________________________________
 /// Setter version of Init()
+/** Same parameters as Regular ctor.
+ *  \see TRefMatch( const char* fileName, const char* treeName, const char* branchVarName )
+ */
 void TRefMatch::Init( const char* fileName, const char* treeName , const char* branchVarName )
 {
   fTestFileName = fileName;
@@ -140,6 +137,9 @@ void TRefMatch::Init( const char* fileName, const char* treeName , const char* b
 
 //______________________________________________________________________________
 // SetReferenceFileDir
+/// Set directory (by pointer) to search for reference files.
+/** \param refFileDir -- directory to search
+ */
 void TRefMatch::SetReferenceFileDir( TSystemDirectory* refFileDir )
 {
   if (refFileDir!=0x0) {
@@ -152,6 +152,9 @@ void TRefMatch::SetReferenceFileDir( TSystemDirectory* refFileDir )
 
 //______________________________________________________________________________
 // SetReferenceFileDir
+/// Set directory (by name) to search for reference files.
+/** \param refFileDirName -- name of directory to search
+ */
 void TRefMatch::SetReferenceFileDir( const char* refFileDirName )
 {
   TSystemDirectory* sd = new TSystemDirectory;
@@ -162,6 +165,9 @@ void TRefMatch::SetReferenceFileDir( const char* refFileDirName )
 
 //______________________________________________________________________________
 // SetReferenceFilePattern
+/// Set search pattern (by TRegexp object) for reference filenames.
+/** \param patternRE -- regex for filenames
+ */
 void TRefMatch::SetReferenceFilePattern( TRegexp patternRE )
 {
   fReferenceFilePattern = patternRE;
@@ -170,6 +176,9 @@ void TRefMatch::SetReferenceFilePattern( TRegexp patternRE )
 
 //______________________________________________________________________________
 // SetReferenceFilePattern
+/// Set search pattern (by string) for reference filenames.
+/** \param pattern -- string to use for regex for filenames
+ */
 void TRefMatch::SetReferenceFilePattern( const char* pattern )
 {
   TRegexp patternRE(pattern);
@@ -179,6 +188,7 @@ void TRefMatch::SetReferenceFilePattern( const char* pattern )
 
 //______________________________________________________________________________
 // FillReferenceFileList
+/// Populate the reference-file list based on the current reference-file directory and pattern.
 void TRefMatch::FillReferenceFileList()
 {
 
@@ -237,7 +247,7 @@ Double_t TRefMatch::Prob2Sig( Double_t prob )
  * Convert a  significance to its corresponding Gaussian probability.
  * \param sig -- decimal significance on (0,inf)
  * \return prob -- decimal probability on (0,1)
- * \see Prog2Sig()
+ * \see Prob2Sig()
  */
 Double_t TRefMatch::Sig2Prob( Double_t sig )
 {
@@ -256,17 +266,18 @@ Double_t TRefMatch::Sig2Prob( Double_t sig )
 
 //______________________________________________________________________________
 // AndersonDarlingTest
+/** Function to execute *unbinned* TMath::KolmogorovTest on a pair of TTrees
+ *    containing TBranches with matching names
+ * -- Usage: Double_t P = AndersonDarlingTest( TTree *T1, TTree *T2, const char* branchName )
+ * -- Branches must be of type Double_t
+ * -- P is the probability for match
+ * -- *T1 and *T2 are pointers to the two input trees
+ * -- branchName{1,2} are the branch/variable names in the respective trees
+ * -- nEvents{1,2} are the number of entries to use from each tree (default value 0 will use all entries)
+ * -- See the notes in ROOT::Math::GoFTest for details
+ */
 Double_t TRefMatch::AndersonDarlingTest( TTree *T1, TTree *T2, const char* branchName1, const char* branchName2, Long64_t nEvents1, Long64_t nEvents2 ) 
 {
-  // AndersonDarlingTest -- function to execute *unbinned* TMath::KolmogorovTest on a pair of TTrees
-  //   containing TBranches with matching names
-  // -- Usage: Double_t P = AndersonDarlingTest( TTree *T1, TTree *T2, const char* branchName )
-  // -- Branches must be of type Double_t
-  // -- P is the probability for match
-  // -- *T1 and *T2 are pointers to the two input trees
-  // -- branchName{1,2} are the branch/variable names in the respective trees
-  // -- nEvents{1,2} are the number of entries to use from each tree (default value 0 will use all entries)
-  // -- See the notes in ROOT::Math::GoFTest for details
 
   // arg check
   if (branchName2 == "") branchName2 = branchName1;

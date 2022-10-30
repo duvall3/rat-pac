@@ -1,9 +1,18 @@
 /// Implements KS/AD-test reference-matching algorithm.
-/** TRefMatch -- class for implementing the reference-matching algorithm
- *   described in this repository at $RATROOT/user/ref_matching/README.{md,html}
- */
+/** Standard Usage ( [R] = always required ):
+ *  1. Instantiate (NOTE: must construct with "new") [R]
+ *  2. Call Init ("setter version") if used default ctor
+ *  3. Set reference directory / pattern if needed
+ *  4. Call FillReferenceFileList [R]
+ *  5. Set tree and branch names if needed
+ *  6. Set number of events to use from {test-sample, reference-distrib} if desired
+ *  7. Call RefCompare [R]
+ *  8. Call DrawResults if desired
+ *  9. Call Save if desired
+ *  10. Call Close when finished
+*/
 
-// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 07/2022 ~ //
+// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2022 ~ //
 
 //Copyright (C) 2022 Mark J. Duvall / T. Rocks Science
 //
