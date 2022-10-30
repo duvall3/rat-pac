@@ -1,0 +1,53 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}R\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}O\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}OT M\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}R\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}OS A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ND C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}L\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ES}{1}{chapter.1}%
+\contentsline {subsection}{\numberline {1.0.1}Installation}{1}{subsection.1.0.1}%
+\contentsline {subsection}{\numberline {1.0.2}Usage}{1}{subsection.1.0.2}%
+\contentsline {chapter}{\numberline {2}Namespace Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Namespace List}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Hierarchical Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Class Hierarchy}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Class Index}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Class List}{7}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Namespace Documentation}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}T\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Duvall\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Utils Namespace Reference}{9}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Detailed Description}{10}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Function Documentation}{10}{subsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.1}DumpHist()}{11}{subsubsection.5.1.2.1}%
+\contentsline {subsubsection}{\numberline {5.1.2.2}EntryList()}{11}{subsubsection.5.1.2.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.3}ExportPlots()}{11}{subsubsection.5.1.2.3}%
+\contentsline {subsubsection}{\numberline {5.1.2.4}FindMatchingObjects()}{12}{subsubsection.5.1.2.4}%
+\contentsline {subsubsection}{\numberline {5.1.2.5}FindVarsOfType()}{12}{subsubsection.5.1.2.5}%
+\contentsline {subsubsection}{\numberline {5.1.2.6}ListFiles()}{13}{subsubsection.5.1.2.6}%
+\contentsline {subsubsection}{\numberline {5.1.2.7}LoadAllKeys()}{13}{subsubsection.5.1.2.7}%
+\contentsline {subsubsection}{\numberline {5.1.2.8}LogBins()}{13}{subsubsection.5.1.2.8}%
+\contentsline {subsubsection}{\numberline {5.1.2.9}PrintBranches()}{13}{subsubsection.5.1.2.9}%
+\contentsline {subsubsection}{\numberline {5.1.2.10}Prob2Sig()}{14}{subsubsection.5.1.2.10}%
+\contentsline {subsubsection}{\numberline {5.1.2.11}RadarPlot()}{14}{subsubsection.5.1.2.11}%
+\contentsline {subsubsection}{\numberline {5.1.2.12}ShiftStats()}{15}{subsubsection.5.1.2.12}%
+\contentsline {subsubsection}{\numberline {5.1.2.13}Sig2Prob()}{15}{subsubsection.5.1.2.13}%
+\contentsline {subsubsection}{\numberline {5.1.2.14}UnbinnedKSTest()}{15}{subsubsection.5.1.2.14}%
+\contentsline {subsubsection}{\numberline {5.1.2.15}Zoom()}{16}{subsubsection.5.1.2.15}%
+\contentsline {chapter}{\numberline {6}Class Documentation}{17}{chapter.6}%
+\contentsline {section}{\numberline {6.1}T\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Class\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Template Class Reference}{17}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Detailed Description}{18}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Constructor \& Destructor Documentation}{18}{subsection.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.2.1}TClassTemplate()}{18}{subsubsection.6.1.2.1}%
+\contentsline {section}{\numberline {6.2}T\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}I\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}B\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Params Class Reference}{19}{section.6.2}%
+\contentsline {section}{\numberline {6.3}T\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}R\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}T\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Geo Class Reference}{20}{section.6.3}%
+\contentsline {section}{\numberline {6.4}T\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}R\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}T\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Neutron\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Gen Class Reference}{22}{section.6.4}%
+\contentsline {section}{\numberline {6.5}T\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}R\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}T\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Event\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Viewer Class Reference}{23}{section.6.5}%
+\contentsline {section}{\numberline {6.6}T\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}R\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}T\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Volume Class Reference}{25}{section.6.6}%
+\contentsline {section}{\numberline {6.7}T\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Ref\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Match Class Reference}{27}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Detailed Description}{31}{subsection.6.7.1}%
+\contentsline {subsection}{\numberline {6.7.2}Constructor \& Destructor Documentation}{31}{subsection.6.7.2}%
+\contentsline {subsubsection}{\numberline {6.7.2.1}TRefMatch()}{31}{subsubsection.6.7.2.1}%
+\contentsline {subsection}{\numberline {6.7.3}Member Function Documentation}{31}{subsection.6.7.3}%
+\contentsline {subsubsection}{\numberline {6.7.3.1}AndersonDarlingTest()}{31}{subsubsection.6.7.3.1}%
+\contentsline {subsubsection}{\numberline {6.7.3.2}Init()}{32}{subsubsection.6.7.3.2}%
+\contentsline {subsubsection}{\numberline {6.7.3.3}Prob2Sig()}{32}{subsubsection.6.7.3.3}%
+\contentsline {subsubsection}{\numberline {6.7.3.4}SetReferenceFileDir()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{33}{subsubsection.6.7.3.4}%
+\contentsline {subsubsection}{\numberline {6.7.3.5}SetReferenceFileDir()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{33}{subsubsection.6.7.3.5}%
+\contentsline {subsubsection}{\numberline {6.7.3.6}SetReferenceFilePattern()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{33}{subsubsection.6.7.3.6}%
+\contentsline {subsubsection}{\numberline {6.7.3.7}SetReferenceFilePattern()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{33}{subsubsection.6.7.3.7}%
+\contentsline {subsubsection}{\numberline {6.7.3.8}Sig2Prob()}{34}{subsubsection.6.7.3.8}%
+\contentsline {chapter}{Index}{35}{section*.35}%

@@ -71,25 +71,33 @@ $(function() {
 <div class="title">TRefMatch.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
-<div class="dyncontent">
-<div class="center"><img src="TRefMatch_8h__dep__incl.png" border="0" usemap="#TRefMatch_8hdep" alt=""/></div>
-<map name="TRefMatch_8hdep" id="TRefMatch_8hdep">
-<area shape="rect" title=" " alt="" coords="13,5,117,32"/>
-<area shape="rect" href="TRefMatch_8cxx.html" title=" " alt="" coords="5,80,124,107"/>
-</map>
-</div>
-</div>
+
+<p>Implements KS/AD-test reference-matching algorithm.  
+<a href="#details">More...</a></p>
+
 <p><a href="TRefMatch_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTRefMatch.html">TRefMatch</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements KS/AD-test reference-matching algorithm.  <a href="classTRefMatch.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implements KS/AD-test reference-matching algorithm. </p>
+<p>Standard Usage ( [R] = always required ):</p><ol type="1">
+<li>Instantiate (NOTE: must construct with "new") [R]</li>
+<li>Call Init ("setter version") if used default ctor</li>
+<li>Set reference directory / pattern if needed</li>
+<li>Call FillReferenceFileList [R]</li>
+<li>Set tree and branch names if needed</li>
+<li>Set number of events to use from {test-sample, reference-distrib} if desired</li>
+<li>Call RefCompare [R]</li>
+<li>Call DrawResults if desired</li>
+<li>Call Save if desired</li>
+<li>Call Close when finished</li>
+</ol>
+<p>Header | Class </p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>
 	</body>

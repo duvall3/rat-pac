@@ -1,3 +1,4 @@
+// TDuvallUtils
 /// Library of useful general-purpose functions for working with ROOT / RAT-PAC.
 /** **Math:**
  *  - EntryList()
@@ -23,7 +24,7 @@
  *  - ListFiles()
  *  - LoadAllKeys()
  *  
-*/
+ */
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 07/2022 ~ //
 
 //Copyright (C) 2022 Mark J. Duvall / T. Rocks Science

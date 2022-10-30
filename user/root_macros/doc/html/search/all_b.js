@@ -1,4 +1,12 @@
 var searchData=
 [
-  ['unbinnedkstest_64',['UnbinnedKSTest',['../classTRefMatch.html#aff377844639dbc036fa03ee16099c825',1,'TRefMatch::UnbinnedKSTest()'],['../namespaceTDuvallUtils.html#a02cb2de86c13d3878ac21693fd59f598',1,'TDuvallUtils::UnbinnedKSTest()']]]
+  ['tclasstemplate_59',['TClassTemplate',['../classTClassTemplate.html',1,'TClassTemplate'],['../classTClassTemplate.html#aac100cbf991c7d28ee891f1c192c3a4b',1,'TClassTemplate::TClassTemplate()'],['../classTClassTemplate.html#a46391e9761e6468ba3fdc866cd360735',1,'TClassTemplate::TClassTemplate(const char *someArg1, Double_t someArg2)']]],
+  ['tduvallutils_60',['TDuvallUtils',['../namespaceTDuvallUtils.html',1,'']]],
+  ['tibdparams_61',['TIBDParams',['../classTIBDParams.html',1,'']]],
+  ['tratgeo_62',['TRATGeo',['../classTRATGeo.html',1,'']]],
+  ['tratgeoconverter_63',['TRATGeoConverter',['../classTRATGeoConverter.html',1,'']]],
+  ['tratneutrongen_64',['TRATNeutronGen',['../classTRATNeutronGen.html',1,'']]],
+  ['tratpaceventviewer_65',['TRATPACEventViewer',['../classTRATPACEventViewer.html',1,'']]],
+  ['tratvolume_66',['TRATVolume',['../classTRATVolume.html',1,'']]],
+  ['trefmatch_67',['TRefMatch',['../classTRefMatch.html',1,'TRefMatch'],['../classTRefMatch.html#a48bb5176ba5833611236b76a1b07b7f7',1,'TRefMatch::TRefMatch()'],['../classTRefMatch.html#abb18f918fb9326bf8f7435bff4045d04',1,'TRefMatch::TRefMatch(const char *fileName, const char *treeName=&quot;T&quot;, const char *branchVarName=&quot;phi&quot;)']]]
 ];

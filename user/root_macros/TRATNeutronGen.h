@@ -1,4 +1,5 @@
-// TRATNeutronGen -- class for preparing sea-level muogenic fast neutrons:
+// TRATNeutronGen
+/// Class for preparing sea-level muogenic fast neutrons:
 //   - as described in JEDEC standard JESD89a
 //   - in HEPEVT-style format
 //   - for use in RAT-Pac

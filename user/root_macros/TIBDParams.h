@@ -1,4 +1,5 @@
-// TIBDParams -- class for storing and calculating basic IBD parameters
+// TIBDParams
+/// Class for storing and calculating basic IBD parameters
 // -- NOTE: Default units are as follows, though some alternatives are provided:
 //      * {Length,Area,Volume} (cm^{1,2,3})    * Energy (MeV)    * Time (s)
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 11/2021 ~ //

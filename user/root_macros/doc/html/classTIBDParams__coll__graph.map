@@ -1,5 +1,5 @@
 <map id="TIBDParams" name="TIBDParams">
-<area shape="rect" id="node1" title=" " alt="" coords="5,171,107,197"/>
+<area shape="rect" id="node1" title="Class for storing and calculating basic IBD parameters." alt="" coords="5,171,107,197"/>
 <area shape="rect" id="node2" title=" " alt="" coords="19,5,83,32"/>
-<area shape="rect" id="node3" href="$classTRATVolume.html" title=" " alt="" coords="72,81,176,108"/>
+<area shape="rect" id="node3" href="$classTRATVolume.html" title="Class for analyzing geometry from RAT&#45;PAC ROOT file." alt="" coords="72,81,176,108"/>
 </map>

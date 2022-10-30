@@ -1,0 +1,108 @@
+\begin{theindex}
+
+  \item {AndersonDarlingTest}
+    \subitem {TRefMatch}, \hyperpage{31}
+
+  \indexspace
+
+  \item {DumpHist}
+    \subitem {TDuvallUtils}, \hyperpage{10}
+
+  \indexspace
+
+  \item {EntryList}
+    \subitem {TDuvallUtils}, \hyperpage{11}
+  \item {ExportPlots}
+    \subitem {TDuvallUtils}, \hyperpage{11}
+
+  \indexspace
+
+  \item {FindMatchingObjects}
+    \subitem {TDuvallUtils}, \hyperpage{12}
+  \item {FindVarsOfType}
+    \subitem {TDuvallUtils}, \hyperpage{12}
+
+  \indexspace
+
+  \item {Init}
+    \subitem {TRefMatch}, \hyperpage{32}
+
+  \indexspace
+
+  \item {ListFiles}
+    \subitem {TDuvallUtils}, \hyperpage{13}
+  \item {LoadAllKeys}
+    \subitem {TDuvallUtils}, \hyperpage{13}
+  \item {LogBins}
+    \subitem {TDuvallUtils}, \hyperpage{13}
+
+  \indexspace
+
+  \item {PrintBranches}
+    \subitem {TDuvallUtils}, \hyperpage{13}
+  \item {Prob2Sig}
+    \subitem {TDuvallUtils}, \hyperpage{14}
+    \subitem {TRefMatch}, \hyperpage{32}
+
+  \indexspace
+
+  \item {RadarPlot}
+    \subitem {TDuvallUtils}, \hyperpage{14}
+
+  \indexspace
+
+  \item {SetReferenceFileDir}
+    \subitem {TRefMatch}, \hyperpage{32, 33}
+  \item {SetReferenceFilePattern}
+    \subitem {TRefMatch}, \hyperpage{33}
+  \item {ShiftStats}
+    \subitem {TDuvallUtils}, \hyperpage{15}
+  \item {Sig2Prob}
+    \subitem {TDuvallUtils}, \hyperpage{15}
+    \subitem {TRefMatch}, \hyperpage{34}
+
+  \indexspace
+
+  \item {TClassTemplate}, \hyperpage{17}
+    \subitem {TClassTemplate}, \hyperpage{18}
+  \item {TDuvallUtils}, \hyperpage{9}
+    \subitem {DumpHist}, \hyperpage{10}
+    \subitem {EntryList}, \hyperpage{11}
+    \subitem {ExportPlots}, \hyperpage{11}
+    \subitem {FindMatchingObjects}, \hyperpage{12}
+    \subitem {FindVarsOfType}, \hyperpage{12}
+    \subitem {ListFiles}, \hyperpage{13}
+    \subitem {LoadAllKeys}, \hyperpage{13}
+    \subitem {LogBins}, \hyperpage{13}
+    \subitem {PrintBranches}, \hyperpage{13}
+    \subitem {Prob2Sig}, \hyperpage{14}
+    \subitem {RadarPlot}, \hyperpage{14}
+    \subitem {ShiftStats}, \hyperpage{15}
+    \subitem {Sig2Prob}, \hyperpage{15}
+    \subitem {UnbinnedKSTest}, \hyperpage{15}
+    \subitem {Zoom}, \hyperpage{16}
+  \item {TIBDParams}, \hyperpage{19}
+  \item {TRATGeo}, \hyperpage{20}
+  \item {TRATNeutronGen}, \hyperpage{22}
+  \item {TRATPACEventViewer}, \hyperpage{23}
+  \item {TRATVolume}, \hyperpage{25}
+  \item {TRefMatch}, \hyperpage{27}
+    \subitem {AndersonDarlingTest}, \hyperpage{31}
+    \subitem {Init}, \hyperpage{32}
+    \subitem {Prob2Sig}, \hyperpage{32}
+    \subitem {SetReferenceFileDir}, \hyperpage{32, 33}
+    \subitem {SetReferenceFilePattern}, \hyperpage{33}
+    \subitem {Sig2Prob}, \hyperpage{34}
+    \subitem {TRefMatch}, \hyperpage{31}
+
+  \indexspace
+
+  \item {UnbinnedKSTest}
+    \subitem {TDuvallUtils}, \hyperpage{15}
+
+  \indexspace
+
+  \item {Zoom}
+    \subitem {TDuvallUtils}, \hyperpage{16}
+
+\end{theindex}

@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['listfiles_38',['ListFiles',['../namespaceTDuvallUtils.html#a0397718fcd2627a314522a9c65269536',1,'TDuvallUtils']]],
-  ['loadallkeys_39',['LoadAllKeys',['../namespaceTDuvallUtils.html#abd641659d7dfb06fe87f0cc66edbe47e',1,'TDuvallUtils']]],
-  ['logbins_40',['LogBins',['../namespaceTDuvallUtils.html#a87fe2f8028da1318876d6c427745adea',1,'TDuvallUtils']]]
+  ['init_40',['Init',['../classTRefMatch.html#a786772925eacb8fb35d0f39d739f34e6',1,'TRefMatch::Init()'],['../classTRefMatch.html#a11c28a10b43c340d6540f6b36708fa4b',1,'TRefMatch::Init(const char *fileName, const char *treeName, const char *branchVarName)']]]
 ];

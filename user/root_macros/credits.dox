@@ -1,0 +1,9 @@
+/*!
+ *  \file
+ *  \brief		"ROOT Macros and Classes"  
+ *  \details		The ROOT/C++ portion of [*Tools for Reactor-Antineutrino Studies in RAT-PAC*](github.com/duvall3/rat-pac).
+ *  \author		Mark J. Duvall
+ *  \version		1.0.0
+ *  \date		2022
+ *  \copyright		@ref gpl.md "GPL v3+"
+ */

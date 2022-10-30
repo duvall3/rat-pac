@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['analyzebackgroundrun_2ecxx_317',['analyzeBackgroundRun.cxx',['../analyzeBackgroundRun_8cxx.html',1,'']]],
-  ['angularrecon_2ecxx_318',['angularRecon.cxx',['../angularRecon_8cxx.html',1,'']]]
+  ['credits_2edox_79',['credits.dox',['../credits_8dox.html',1,'']]]
 ];

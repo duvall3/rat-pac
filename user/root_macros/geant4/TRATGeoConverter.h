@@ -1,4 +1,5 @@
-// TRATGeoConverter -- basic template for writing ROOT classes
+// TRATGeoConverter
+/// Class for converting geometry descriptions from RAT-PAC to GEANT4
 // -- Note: For CINT, load using gROOT->LoadMacro("TRATGeoConverter.cxx");
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 08/2022 ~ //
 

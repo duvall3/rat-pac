@@ -1,4 +1,5 @@
-// TRATGeo -- class for assembling geometry in a RAT-PAC ROOT file
+// TRATGeo
+/// class for assembling geometry in a RAT-PAC ROOT file
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 8/2021 ~ //
 
 //Copyright (C) 2021 Mark J. Duvall

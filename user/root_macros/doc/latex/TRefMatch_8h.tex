@@ -1,14 +1,32 @@
 \hypertarget{TRefMatch_8h}{}\doxysection{T\+Ref\+Match.\+h File Reference}
 \label{TRefMatch_8h}\index{TRefMatch.h@{TRefMatch.h}}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=169pt]{TRefMatch_8h__dep__incl}
-\end{center}
-\end{figure}
+
+
+Implements K\+S/\+A\+D-\/test reference-\/matching algorithm.  
+
+
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classTRefMatch}{T\+Ref\+Match}}
-\begin{DoxyCompactList}\small\item\em Implements K\+S/\+A\+D-\/test reference-\/matching algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements K\+S/\+A\+D-\/test reference-\/matching algorithm. 
+
+Standard Usage ( \mbox{[}R\mbox{]} = always required )\+:
+\begin{DoxyEnumerate}
+\item Instantiate (N\+O\+TE\+: must construct with \char`\"{}new\char`\"{}) \mbox{[}R\mbox{]}
+\item Call Init (\char`\"{}setter version\char`\"{}) if used default ctor
+\item Set reference directory / pattern if needed
+\item Call Fill\+Reference\+File\+List \mbox{[}R\mbox{]}
+\item Set tree and branch names if needed
+\item Set number of events to use from \{test-\/sample, reference-\/distrib\} if desired
+\item Call Ref\+Compare \mbox{[}R\mbox{]}
+\item Call Draw\+Results if desired
+\item Call Save if desired
+\item Call Close when finished
+\end{DoxyEnumerate}
+
+Header $\vert$ Class 

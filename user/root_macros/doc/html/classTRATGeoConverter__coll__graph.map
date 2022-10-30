@@ -1,0 +1,5 @@
+<map id="TRATGeoConverter" name="TRATGeoConverter">
+<area shape="rect" id="node1" title="Class for converting geometry descriptions from RAT&#45;PAC to GEANT4." alt="" coords="5,171,151,197"/>
+<area shape="rect" id="node2" title=" " alt="" coords="41,5,105,32"/>
+<area shape="rect" id="node3" href="$classTRATGeo.html" title="class for assembling geometry in a RAT&#45;PAC ROOT file" alt="" coords="95,81,176,108"/>
+</map>

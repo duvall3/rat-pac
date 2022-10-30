@@ -1,4 +1,5 @@
-// TRATPACEventViewer -- class for viewing RAT-PAC detector geometries
+// TRATPACEventViewer
+/// Class for viewing RAT-PAC detector geometries
 //   and particle tracks in ROOT
 // -- Note: For CINT, load using gROOT->LoadMacro("TRATPACEventViewer.cxx");
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 09/2022 ~ //

@@ -69,85 +69,85 @@ $(function() {
 <div class="title">TRATGeo.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// TRATGeo -- class for assembling geometry in a RAT-PAC ROOT file</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 8/2021 ~ //</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//Copyright (C) 2021 Mark J. Duvall</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//    This program is free software: you can redistribute it and/or modify</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//    it under the terms of the GNU General Public License as published by</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//    the Free Software Foundation, either version 3 of the License, or</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//    (at your option) any later version.</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">//    This program is distributed in the hope that it will be useful,</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">//    but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//    GNU General Public License for more details.</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//    You should have received a copy of the GNU General Public License</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#ifndef TRATGeo</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#define TRATGeo</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;TRATVolume.cxx&gt;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classTRATGeo.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTRATGeo.html">TRATGeo</a> : <span class="keyword">public</span> TClass {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  TFile*        fFile;          <span class="comment">// current ROOT datafile</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>*       fFileName;      <span class="comment">// name of current ROOT datafile</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  TString       fExperiment;        <span class="comment">// name of RAT-PAC experiment</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  TString       fExperimentPath;    <span class="comment">// path to directory defining fExperiment, usually either absolute or relative to $RATROOT/data</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">const</span> TMap*       fDB;            <span class="comment">// RAT-PAC database TMap*</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  TList*        fVolumeList;        <span class="comment">// list of TRATVolume objects</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  TList*        fActiveCells;       <span class="comment">// list of active cells for checkerboard detectors</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  TList*        fInertCells;        <span class="comment">// list of inert cells for checkerboard detectors</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">void</span>          Init();         <span class="comment">// initialize</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">void</span>          FindExperiment();   <span class="comment">// fill experiment name, path, etc.</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordtype">void</span>          FindCheckerboardActive( Int_t kDims ); <span class="comment">// fill list of active checkerboard cells</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordtype">void</span>          FindCheckerboardInert( Int_t kDims ); <span class="comment">// fill list of inert checkerboard cells</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="classTRATGeo.html">TRATGeo</a>();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">void</span>          Build(<span class="keyword">const</span> <span class="keywordtype">char</span>* tcRegexp);            <span class="comment">// construct TRATVolume list</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordtype">void</span>          Build() { <span class="keywordflow">return</span> Build(<span class="stringliteral">&quot;&quot;</span>); }           <span class="comment">// construct TRATVolume list</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">void</span>          BuildCheckerboard( <span class="keyword">const</span> Int_t kDims = 3 ); <span class="comment">// construct active/inert checkerboard lists</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  TFile*                GetFile()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fFile; }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>*   GetFileName()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fFileName; }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  TString               GetExperiment()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fExperiment; }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  TString               GetExperimentPath()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fExperimentPath; }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  TMap*                 GetDB()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fDB; }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  TList*        GetListOfVolumes()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fVolumeList; }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="classTRATVolume.html">TRATVolume</a>*       GetVolume(<span class="keyword">const</span> <span class="keywordtype">char</span>* volumeName);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  Int_t         GetEntries()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fVolumeList-&gt;GetEntries(); }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  TList*        GetCheckerboardActive()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fActiveCells; }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  TList*        GetCheckerboardInert()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fInertCells; }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  TList*        FindVolumesContaining( TVector3 location, Bool_t kPrint = kFALSE );</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  TList*        FindVolumesContaining( Double_t x, Double_t y, Double_t z, Bool_t kPrint = kFALSE );</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="classTRATVolume.html">TRATVolume</a>*       FindLowestVolumeContaining( TVector3 location, Bool_t kPrint = kFALSE );</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <a class="code" href="classTRATVolume.html">TRATVolume</a>*       FindLowestVolumeContaining( Double_t x, Double_t y, Double_t z, Bool_t kPrint = kFALSE );</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">void</span>          ShowVolume(<span class="keyword">const</span> <span class="keywordtype">char</span>* volumeName);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">void</span>          ShowAll();      <span class="comment">// call TRATVolume::Print() on all volumes</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">void</span>          Names();        <span class="comment">// print volume names</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">void</span>          Types();        <span class="comment">// print volume types</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">void</span>          Materials();        <span class="comment">// print volume materials</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">void</span>          Mothers();      <span class="comment">// print volume mother-volumes</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">void</span>          Sizes();        <span class="comment">// print volume (half-)sizes</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">void</span>          Positions();        <span class="comment">// print absolute positions</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">//Integrating the TRATGeo class to ROOT.</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;ClassDef(<a class="code" href="classTRATGeo.html">TRATGeo</a>,5)</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}; <span class="comment">//endclass</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">// all pau!   )</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// TRATGeo</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"></span><span class="comment">// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 8/2021 ~ //</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//Copyright (C) 2021 Mark J. Duvall</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//    This program is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//    it under the terms of the GNU General Public License as published by</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//    the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//    (at your option) any later version.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">//    This program is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">//    but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//    GNU General Public License for more details.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//    You should have received a copy of the GNU General Public License</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">//    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef TRATGeo</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define TRATGeo</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;TRATVolume.cxx&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classTRATGeo.html">   25</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTRATGeo.html">TRATGeo</a> : <span class="keyword">public</span> TClass {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  TFile*        fFile;          <span class="comment">// current ROOT datafile</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>*       fFileName;      <span class="comment">// name of current ROOT datafile</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  TString       fExperiment;        <span class="comment">// name of RAT-PAC experiment</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  TString       fExperimentPath;    <span class="comment">// path to directory defining fExperiment, usually either absolute or relative to $RATROOT/data</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">const</span> TMap*       fDB;            <span class="comment">// RAT-PAC database TMap*</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  TList*        fVolumeList;        <span class="comment">// list of TRATVolume objects</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  TList*        fActiveCells;       <span class="comment">// list of active cells for checkerboard detectors</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  TList*        fInertCells;        <span class="comment">// list of inert cells for checkerboard detectors</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">void</span>          Init();         <span class="comment">// initialize</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordtype">void</span>          FindExperiment();   <span class="comment">// fill experiment name, path, etc.</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordtype">void</span>          FindCheckerboardActive( Int_t kDims ); <span class="comment">// fill list of active checkerboard cells</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordtype">void</span>          FindCheckerboardInert( Int_t kDims ); <span class="comment">// fill list of inert checkerboard cells</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="classTRATGeo.html">TRATGeo</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordtype">void</span>          Build(<span class="keyword">const</span> <span class="keywordtype">char</span>* tcRegexp);            <span class="comment">// construct TRATVolume list</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">void</span>          Build() { <span class="keywordflow">return</span> Build(<span class="stringliteral">&quot;&quot;</span>); }           <span class="comment">// construct TRATVolume list</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">void</span>          BuildCheckerboard( <span class="keyword">const</span> Int_t kDims = 3 ); <span class="comment">// construct active/inert checkerboard lists</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  TFile*                GetFile()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fFile; }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>*   GetFileName()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fFileName; }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  TString               GetExperiment()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fExperiment; }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  TString               GetExperimentPath()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fExperimentPath; }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  TMap*                 GetDB()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fDB; }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  TList*        GetListOfVolumes()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fVolumeList; }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="classTRATVolume.html">TRATVolume</a>*       GetVolume(<span class="keyword">const</span> <span class="keywordtype">char</span>* volumeName);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  Int_t         GetEntries()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fVolumeList-&gt;GetEntries(); }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  TList*        GetCheckerboardActive()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fActiveCells; }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  TList*        GetCheckerboardInert()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fInertCells; }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  TList*        FindVolumesContaining( TVector3 location, Bool_t kPrint = kFALSE );</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  TList*        FindVolumesContaining( Double_t x, Double_t y, Double_t z, Bool_t kPrint = kFALSE );</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <a class="code" href="classTRATVolume.html">TRATVolume</a>*       FindLowestVolumeContaining( TVector3 location, Bool_t kPrint = kFALSE );</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="classTRATVolume.html">TRATVolume</a>*       FindLowestVolumeContaining( Double_t x, Double_t y, Double_t z, Bool_t kPrint = kFALSE );</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">void</span>          ShowVolume(<span class="keyword">const</span> <span class="keywordtype">char</span>* volumeName);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">void</span>          ShowAll();      <span class="comment">// call TRATVolume::Print() on all volumes</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">void</span>          Names();        <span class="comment">// print volume names</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">void</span>          Types();        <span class="comment">// print volume types</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">void</span>          Materials();        <span class="comment">// print volume materials</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">void</span>          Mothers();      <span class="comment">// print volume mother-volumes</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">void</span>          Sizes();        <span class="comment">// print volume (half-)sizes</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">void</span>          Positions();        <span class="comment">// print absolute positions</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">//Integrating the TRATGeo class to ROOT.</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;ClassDef(<a class="code" href="classTRATGeo.html">TRATGeo</a>,5)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}; <span class="comment">//endclass</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">// all pau!   )</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassTRATGeo_html"><div class="ttname"><a href="classTRATGeo.html">TRATGeo</a></div><div class="ttdef"><b>Definition:</b> TRATGeo.h:24</div></div>
-<div class="ttc" id="aclassTRATVolume_html"><div class="ttname"><a href="classTRATVolume.html">TRATVolume</a></div><div class="ttdef"><b>Definition:</b> TRATVolume.h:28</div></div>
+<div class="ttc" id="aclassTRATGeo_html"><div class="ttname"><a href="classTRATGeo.html">TRATGeo</a></div><div class="ttdoc">class for assembling geometry in a RAT-PAC ROOT file</div><div class="ttdef"><b>Definition:</b> TRATGeo.h:25</div></div>
+<div class="ttc" id="aclassTRATVolume_html"><div class="ttname"><a href="classTRATVolume.html">TRATVolume</a></div><div class="ttdoc">Class for analyzing geometry from RAT-PAC ROOT file.</div><div class="ttdef"><b>Definition:</b> TRATVolume.h:29</div></div>
 <!-- start footer part -->
 		<script src="custom.js"></script>
 	</body>

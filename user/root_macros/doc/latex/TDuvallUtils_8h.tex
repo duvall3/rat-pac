@@ -1,47 +1,378 @@
 \hypertarget{TDuvallUtils_8h}{}\doxysection{T\+Duvall\+Utils.\+h File Reference}
 \label{TDuvallUtils_8h}\index{TDuvallUtils.h@{TDuvallUtils.h}}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=177pt]{TDuvallUtils_8h__dep__incl}
-\end{center}
-\end{figure}
-\doxysubsection*{Namespaces}
-\begin{DoxyCompactItemize}
-\item 
- \mbox{\hyperlink{namespaceTDuvallUtils}{T\+Duvall\+Utils}}
-\begin{DoxyCompactList}\small\item\em Library of useful general-\/purpose functions for working with R\+O\+OT / R\+A\+T-\/\+P\+AC. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+Library of useful general-\/purpose functions for working with R\+O\+OT / R\+A\+T-\/\+P\+AC.  
+
+
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{namespaceTDuvallUtils_a14741cba93d7e366d04b44f141612df1}{T\+Duvall\+Utils\+::\+Dump\+Hist}} (T\+H1 $\ast$h)
+void \mbox{\hyperlink{TDuvallUtils_8h_a14741cba93d7e366d04b44f141612df1}{T\+Duvall\+Utils\+::\+Dump\+Hist}} (T\+H1 $\ast$h)
 \begin{DoxyCompactList}\small\item\em Dump histogram to terminal. \end{DoxyCompactList}\item 
-T\+Entry\+List $\ast$ \mbox{\hyperlink{namespaceTDuvallUtils_a3f0fd37a1b28c9cf5c02cbefa1f48711}{T\+Duvall\+Utils\+::\+Entry\+List}} (const char $\ast$selection, T\+Tree $\ast$T=0)
+T\+Entry\+List $\ast$ \mbox{\hyperlink{TDuvallUtils_8h_a3f0fd37a1b28c9cf5c02cbefa1f48711}{T\+Duvall\+Utils\+::\+Entry\+List}} (const char $\ast$selection, T\+Tree $\ast$T=0)
 \begin{DoxyCompactList}\small\item\em Shortcut for creating T\+Entry\+Lists. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{namespaceTDuvallUtils_af647925c9820067541e19861a6f30bd4}{T\+Duvall\+Utils\+::\+Export\+Plots}} (const char $\ast$filename, const T\+String k\+Graphics\+Save\+Format=\char`\"{}.png\char`\"{})
+void \mbox{\hyperlink{TDuvallUtils_8h_af647925c9820067541e19861a6f30bd4}{T\+Duvall\+Utils\+::\+Export\+Plots}} (const char $\ast$filename, const T\+String k\+Graphics\+Save\+Format=\char`\"{}.png\char`\"{})
 \begin{DoxyCompactList}\small\item\em Shortcut for printing all canvases in a file. \end{DoxyCompactList}\item 
-T\+List $\ast$ \mbox{\hyperlink{namespaceTDuvallUtils_a913fd86508e84b86af27086a8d89fde3}{T\+Duvall\+Utils\+::\+Find\+Matching\+Objects}} (T\+Collection $\ast$colxn, T\+Regexp pattern\+RE)
-\begin{DoxyCompactList}\small\item\em Builtins can\textquotesingle{}t search by P\+A\+T\+T\+E\+RN. \end{DoxyCompactList}\item 
-T\+List $\ast$ \mbox{\hyperlink{namespaceTDuvallUtils_a0a6780f1deaf21b2caab327bf93926b3}{T\+Duvall\+Utils\+::\+Find\+Vars\+Of\+Type}} (const char $\ast$var\+Type=\char`\"{}\char`\"{}, Bool\+\_\+t k\+Case\+Sensitive=k\+F\+A\+L\+SE)
-\begin{DoxyCompactList}\small\item\em Builtins can\textquotesingle{}t search by P\+A\+T\+T\+E\+RN. \end{DoxyCompactList}\item 
-T\+List $\ast$ \mbox{\hyperlink{namespaceTDuvallUtils_a0397718fcd2627a314522a9c65269536}{T\+Duvall\+Utils\+::\+List\+Files}} (const char $\ast$pattern=\char`\"{}.$\ast$\textbackslash{}.root\char`\"{})
-\begin{DoxyCompactList}\small\item\em Builtin returns void, this returns the list. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{namespaceTDuvallUtils_abd641659d7dfb06fe87f0cc66edbe47e}{T\+Duvall\+Utils\+::\+Load\+All\+Keys}} ()
-\begin{DoxyCompactList}\small\item\em Shortcut to load all keys from the current file into memory -- {\itshape ! U\+SE W\+I\+TH C\+A\+U\+T\+I\+ON !} \end{DoxyCompactList}\item 
-Double\+\_\+t $\ast$ \mbox{\hyperlink{namespaceTDuvallUtils_a87fe2f8028da1318876d6c427745adea}{T\+Duvall\+Utils\+::\+Log\+Bins}} (Double\+\_\+t xmin=1.e-\/1, Double\+\_\+t xmax=1.e2)
-\begin{DoxyCompactList}\small\item\em Wonderful shortcut for setting up log-\/scaled histograms (courtesy Marc F. Bergevin) \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{namespaceTDuvallUtils_a02319b2f5f0477b46e4211d70d6c85c5}{T\+Duvall\+Utils\+::\+Print\+Branches}} (T\+Object $\ast$obj)
-\begin{DoxyCompactList}\small\item\em Print nicely-\/formatted summary of object\textquotesingle{}s T\+Branches // accepts (T\+Tree$\ast$ obj) or (T\+Branch$\ast$ obj) \end{DoxyCompactList}\item 
-Double\+\_\+t \mbox{\hyperlink{namespaceTDuvallUtils_aebfbb014b8f13cb1df197138169164fa}{T\+Duvall\+Utils\+::\+Prob2\+Sig}} (Double\+\_\+t prob)
+T\+List $\ast$ \mbox{\hyperlink{TDuvallUtils_8h_a913fd86508e84b86af27086a8d89fde3}{T\+Duvall\+Utils\+::\+Find\+Matching\+Objects}} (T\+Collection $\ast$colxn, T\+Regexp pattern\+RE)
+\begin{DoxyCompactList}\small\item\em Scan a T\+Collection for an object whose name matches a regex. \end{DoxyCompactList}\item 
+T\+List $\ast$ \mbox{\hyperlink{TDuvallUtils_8h_a0a6780f1deaf21b2caab327bf93926b3}{T\+Duvall\+Utils\+::\+Find\+Vars\+Of\+Type}} (const char $\ast$var\+Type=\char`\"{}\char`\"{}, Bool\+\_\+t k\+Case\+Sensitive=k\+F\+A\+L\+SE)
+\begin{DoxyCompactList}\small\item\em List global variables matching a specified type. \end{DoxyCompactList}\item 
+T\+List $\ast$ \mbox{\hyperlink{TDuvallUtils_8h_a0397718fcd2627a314522a9c65269536}{T\+Duvall\+Utils\+::\+List\+Files}} (const char $\ast$pattern=\char`\"{}.$\ast$\textbackslash{}.root\char`\"{})
+\begin{DoxyCompactList}\small\item\em Return a list of files matching a pattern. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{TDuvallUtils_8h_abd641659d7dfb06fe87f0cc66edbe47e}{T\+Duvall\+Utils\+::\+Load\+All\+Keys}} ()
+\begin{DoxyCompactList}\small\item\em Shortcut to load all keys from the current file into memory {\itshape ! U\+SE W\+I\+TH C\+A\+U\+T\+I\+ON !} \end{DoxyCompactList}\item 
+Double\+\_\+t $\ast$ \mbox{\hyperlink{TDuvallUtils_8h_a87fe2f8028da1318876d6c427745adea}{T\+Duvall\+Utils\+::\+Log\+Bins}} (Double\+\_\+t xmin=1.e-\/1, Double\+\_\+t xmax=1.e2)
+\begin{DoxyCompactList}\small\item\em Return an array of logarithmically-\/spaced values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{TDuvallUtils_8h_a02319b2f5f0477b46e4211d70d6c85c5}{T\+Duvall\+Utils\+::\+Print\+Branches}} (T\+Object $\ast$obj)
+\begin{DoxyCompactList}\small\item\em Print nicely-\/formatted summary of object\textquotesingle{}s T\+Branches. \end{DoxyCompactList}\item 
+Double\+\_\+t \mbox{\hyperlink{TDuvallUtils_8h_aebfbb014b8f13cb1df197138169164fa}{T\+Duvall\+Utils\+::\+Prob2\+Sig}} (Double\+\_\+t prob)
 \begin{DoxyCompactList}\small\item\em Convert probability to significance. \end{DoxyCompactList}\item 
-T\+H2D $\ast$ \mbox{\hyperlink{namespaceTDuvallUtils_af7d9728a4345831814789bd42e272c1e}{T\+Duvall\+Utils\+::\+Radar\+Plot}} (T\+H1D $\ast$h\+\_\+in, Option\+\_\+t $\ast$ho=\char`\"{}cyllego\char`\"{}, const Bool\+\_\+t k\+New\+Canvas=k\+T\+R\+UE)
+T\+H2D $\ast$ \mbox{\hyperlink{TDuvallUtils_8h_af7d9728a4345831814789bd42e272c1e}{T\+Duvall\+Utils\+::\+Radar\+Plot}} (T\+H1D $\ast$h\+\_\+in, Option\+\_\+t $\ast$ho=\char`\"{}cyllego\char`\"{}, const Bool\+\_\+t k\+New\+Canvas=k\+T\+R\+UE)
 \begin{DoxyCompactList}\small\item\em Convert T\+H1\+D$\ast$ to radar plot. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{namespaceTDuvallUtils_ae295802fce9c0643c06d92a7e204e2e5}{T\+Duvall\+Utils\+::\+Shift\+Stats}} (T\+Virtual\+Pad $\ast$p, Double\+\_\+t deltaX=-\/.\+1, Double\+\_\+t deltaY=0.)
-\begin{DoxyCompactList}\small\item\em Move the \&\#\$ stats box out of the way. \end{DoxyCompactList}\item 
-Double\+\_\+t \mbox{\hyperlink{namespaceTDuvallUtils_a433a3b0d780050b888ea91384c26bf70}{T\+Duvall\+Utils\+::\+Sig2\+Prob}} (Double\+\_\+t sig)
+void \mbox{\hyperlink{TDuvallUtils_8h_ad204b00910652611f7a0086da34a7e62}{T\+Duvall\+Utils\+::\+Shift\+Stats}} (T\+Virtual\+Pad $\ast$p=g\+Pad, Double\+\_\+t deltaX=-\/.\+1, Double\+\_\+t deltaY=0.)
+\begin{DoxyCompactList}\small\item\em Move the \&\#\$ing stats box out of the way. \end{DoxyCompactList}\item 
+Double\+\_\+t \mbox{\hyperlink{TDuvallUtils_8h_a433a3b0d780050b888ea91384c26bf70}{T\+Duvall\+Utils\+::\+Sig2\+Prob}} (Double\+\_\+t sig)
 \begin{DoxyCompactList}\small\item\em Convert significance to probability. \end{DoxyCompactList}\item 
-Double\+\_\+t \mbox{\hyperlink{namespaceTDuvallUtils_a02cb2de86c13d3878ac21693fd59f598}{T\+Duvall\+Utils\+::\+Unbinned\+K\+S\+Test}} (T\+Tree $\ast$T1, T\+Tree $\ast$T2, const char $\ast$branch\+Name1, const char $\ast$branch\+Name2=\char`\"{}\char`\"{})
+Double\+\_\+t \mbox{\hyperlink{TDuvallUtils_8h_a02cb2de86c13d3878ac21693fd59f598}{T\+Duvall\+Utils\+::\+Unbinned\+K\+S\+Test}} (T\+Tree $\ast$T1, T\+Tree $\ast$T2, const char $\ast$branch\+Name1, const char $\ast$branch\+Name2=\char`\"{}\char`\"{})
 \begin{DoxyCompactList}\small\item\em Apply unbinned KS test to a pair of T\+Branches. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{namespaceTDuvallUtils_abfb15cb3873984530a294ebb085a9054}{T\+Duvall\+Utils\+::\+Zoom}} (Double\+\_\+t zoom\+Factor=2.)
+void \mbox{\hyperlink{TDuvallUtils_8h_abfb15cb3873984530a294ebb085a9054}{T\+Duvall\+Utils\+::\+Zoom}} (Double\+\_\+t zoom\+Factor=2.)
 \begin{DoxyCompactList}\small\item\em Shortcut to set relative zoom. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Library of useful general-\/purpose functions for working with R\+O\+OT / R\+A\+T-\/\+P\+AC. 
+
+{\bfseries{Math\+:}}
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{TDuvallUtils_8h_a3f0fd37a1b28c9cf5c02cbefa1f48711}{Entry\+List()}}
+\item \mbox{\hyperlink{TDuvallUtils_8h_a87fe2f8028da1318876d6c427745adea}{Log\+Bins()}}
+\item \mbox{\hyperlink{TDuvallUtils_8h_aebfbb014b8f13cb1df197138169164fa}{Prob2\+Sig()}}
+\item \mbox{\hyperlink{TDuvallUtils_8h_a433a3b0d780050b888ea91384c26bf70}{Sig2\+Prob()}}
+\item \mbox{\hyperlink{TDuvallUtils_8h_a02cb2de86c13d3878ac21693fd59f598}{Unbinned\+K\+S\+Test()}}
+\end{DoxyItemize}
+
+{\bfseries{Plotting\+:}}
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{TDuvallUtils_8h_a14741cba93d7e366d04b44f141612df1}{Dump\+Hist()}}
+\item \mbox{\hyperlink{TDuvallUtils_8h_af7d9728a4345831814789bd42e272c1e}{Radar\+Plot()}}
+\item \mbox{\hyperlink{TDuvallUtils_8h_ad204b00910652611f7a0086da34a7e62}{Shift\+Stats()}}
+\item \mbox{\hyperlink{TDuvallUtils_8h_abfb15cb3873984530a294ebb085a9054}{Zoom()}}
+\end{DoxyItemize}
+
+{\bfseries{Finding Things\+:}}
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{TDuvallUtils_8h_a913fd86508e84b86af27086a8d89fde3}{Find\+Matching\+Objects()}}
+\item \mbox{\hyperlink{TDuvallUtils_8h_a0a6780f1deaf21b2caab327bf93926b3}{Find\+Vars\+Of\+Type()}}
+\item \mbox{\hyperlink{TDuvallUtils_8h_a0397718fcd2627a314522a9c65269536}{List\+Files()}}
+\item \mbox{\hyperlink{TDuvallUtils_8h_a02319b2f5f0477b46e4211d70d6c85c5}{Print\+Branches()}}
+\end{DoxyItemize}
+
+{\bfseries{File Operations}}\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{TDuvallUtils_8h_af647925c9820067541e19861a6f30bd4}{Export\+Plots()}}
+\item \mbox{\hyperlink{TDuvallUtils_8h_a0397718fcd2627a314522a9c65269536}{List\+Files()}}
+\item \mbox{\hyperlink{TDuvallUtils_8h_abd641659d7dfb06fe87f0cc66edbe47e}{Load\+All\+Keys()}}
+\end{DoxyItemize}
+
+Header $\vert$ Namespace 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TDuvallUtils_8h_a14741cba93d7e366d04b44f141612df1}\label{TDuvallUtils_8h_a14741cba93d7e366d04b44f141612df1}} 
+\index{TDuvallUtils.h@{TDuvallUtils.h}!DumpHist@{DumpHist}}
+\index{DumpHist@{DumpHist}!TDuvallUtils.h@{TDuvallUtils.h}}
+\doxysubsubsection{\texorpdfstring{DumpHist()}{DumpHist()}}
+{\footnotesize\ttfamily void T\+Duvall\+Utils\+::\+Dump\+Hist (\begin{DoxyParamCaption}\item[{T\+H1 $\ast$}]{h }\end{DoxyParamCaption})}
+
+
+
+Dump histogram to terminal. 
+
+Dump histogram data as (x,y) pairs to stdout, along with a rough A\+S\+C\+II representation of the graph. ~\newline
+ -- Primarily for use in non-\/graphical sessions ~\newline
+ -- Note\+: Developed for use with {\itshape T\+H1\+D$\ast$} and {\itshape T\+H1\+F$\ast$} only ~\newline
+ -- Example\+: ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{TH1D* h = \textcolor{keyword}{new} TH1D(\textcolor{stringliteral}{"h"}, \textcolor{stringliteral}{"h"}, 24, -\/3.5, 3.5);  }
+\DoxyCodeLine{h-\/>FillRandom(\textcolor{stringliteral}{"gaus"});  }
+\DoxyCodeLine{\mbox{\hyperlink{TDuvallUtils_8h_a14741cba93d7e366d04b44f141612df1}{TDuvallUtils::DumpHist}}(h);}
+\end{DoxyCode}
+ \mbox{\Hypertarget{TDuvallUtils_8h_a3f0fd37a1b28c9cf5c02cbefa1f48711}\label{TDuvallUtils_8h_a3f0fd37a1b28c9cf5c02cbefa1f48711}} 
+\index{TDuvallUtils.h@{TDuvallUtils.h}!EntryList@{EntryList}}
+\index{EntryList@{EntryList}!TDuvallUtils.h@{TDuvallUtils.h}}
+\doxysubsubsection{\texorpdfstring{EntryList()}{EntryList()}}
+{\footnotesize\ttfamily T\+Entry\+List $\ast$ T\+Duvall\+Utils\+::\+Entry\+List (\begin{DoxyParamCaption}\item[{const char $\ast$}]{selection,  }\item[{T\+Tree $\ast$}]{T = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Shortcut for creating T\+Entry\+Lists. 
+
+Shortcut for creating a T\+Entry\+List from a T\+Tree and a selection string. ~\newline
+ 
+\begin{DoxyParams}{Parameters}
+{\em selection} & -- same as for T\+Tree\+:Draw() \\
+\hline
+{\em T} & -- pointer to the desired {\itshape T\+Tree} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em e\+List} & -- the resulting {\itshape T\+Entry\+List$\ast$} \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{TDuvallUtils_8h_af647925c9820067541e19861a6f30bd4}\label{TDuvallUtils_8h_af647925c9820067541e19861a6f30bd4}} 
+\index{TDuvallUtils.h@{TDuvallUtils.h}!ExportPlots@{ExportPlots}}
+\index{ExportPlots@{ExportPlots}!TDuvallUtils.h@{TDuvallUtils.h}}
+\doxysubsubsection{\texorpdfstring{ExportPlots()}{ExportPlots()}}
+{\footnotesize\ttfamily void T\+Duvall\+Utils\+::\+Export\+Plots (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filename,  }\item[{const T\+String}]{k\+Graphics\+Save\+Format = {\ttfamily \char`\"{}.png\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Shortcut for printing all canvases in a file. 
+
+Extract all the T\+Canvas objects from a R\+O\+OT file and save them in the desired graphics format. ~\newline
+ 
+\begin{DoxyParams}{Parameters}
+{\em filename} & -- desired R\+O\+OT file \\
+\hline
+{\em k\+Graphics\+Save\+Format} & -- .png, .eps, etc. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{TDuvallUtils_8h_a913fd86508e84b86af27086a8d89fde3}\label{TDuvallUtils_8h_a913fd86508e84b86af27086a8d89fde3}} 
+\index{TDuvallUtils.h@{TDuvallUtils.h}!FindMatchingObjects@{FindMatchingObjects}}
+\index{FindMatchingObjects@{FindMatchingObjects}!TDuvallUtils.h@{TDuvallUtils.h}}
+\doxysubsubsection{\texorpdfstring{FindMatchingObjects()}{FindMatchingObjects()}}
+{\footnotesize\ttfamily T\+List $\ast$ T\+Duvall\+Utils\+::\+Find\+Matching\+Objects (\begin{DoxyParamCaption}\item[{T\+Collection $\ast$}]{colxn,  }\item[{T\+Regexp}]{pattern\+RE }\end{DoxyParamCaption})}
+
+
+
+Scan a T\+Collection for an object whose name matches a regex. 
+
+Scan a T\+Collection ({\itshape T\+List, T\+Obj\+Array, etc.}) for an object whose name matches a regex. ~\newline
+ R\+O\+OT\textquotesingle{}s builtins can\textquotesingle{}t search by P\+A\+T\+T\+E\+RN. ~\newline
+ {\itshape Note\+: It\textquotesingle{}s hard to believe this isn\textquotesingle{}t already a builtin function for all classes inheriting from T\+Collection; but if it exists, I haven\textquotesingle{}t found it.} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{TObject* \mbox{\hyperlink{TDuvallUtils_8h_a913fd86508e84b86af27086a8d89fde3}{FindMatchingObjects}}( TRegexp regex )         \textcolor{comment}{// or}}
+\DoxyCodeLine{TObject* \mbox{\hyperlink{TDuvallUtils_8h_a913fd86508e84b86af27086a8d89fde3}{FindMatchingObjects}}( \textcolor{keyword}{const} \textcolor{keywordtype}{char}* pattern )  }
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em colxn} & -- pointer to the desired {\itshape T\+Collection} object \\
+\hline
+{\em pattern(\+R\+E)} & -- {\itshape char$\ast$} or {\itshape T\+Regexp} describing search pattern \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em matching\+Objs} & -- {\itshape T\+List$\ast$} of matching objects \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{TDuvallUtils_8h_a0a6780f1deaf21b2caab327bf93926b3}\label{TDuvallUtils_8h_a0a6780f1deaf21b2caab327bf93926b3}} 
+\index{TDuvallUtils.h@{TDuvallUtils.h}!FindVarsOfType@{FindVarsOfType}}
+\index{FindVarsOfType@{FindVarsOfType}!TDuvallUtils.h@{TDuvallUtils.h}}
+\doxysubsubsection{\texorpdfstring{FindVarsOfType()}{FindVarsOfType()}}
+{\footnotesize\ttfamily T\+List $\ast$ T\+Duvall\+Utils\+::\+Find\+Vars\+Of\+Type (\begin{DoxyParamCaption}\item[{const char $\ast$}]{var\+Type = {\ttfamily \char`\"{}\char`\"{}},  }\item[{Bool\+\_\+t}]{k\+Case\+Sensitive = {\ttfamily kFALSE} }\end{DoxyParamCaption})}
+
+
+
+List global variables matching a specified type. 
+
+List global variables whose type matches a specified pattern. ~\newline
+ R\+O\+OT\textquotesingle{}s builtins can\textquotesingle{}t search by P\+A\+T\+T\+E\+RN. ~\newline
+ Examples\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{TDuvallUtils_8h_a0a6780f1deaf21b2caab327bf93926b3}{FindVarsOfType}}(\textcolor{stringliteral}{"canvas"});           \textcolor{comment}{// or}}
+\DoxyCodeLine{TList *objarrList = \mbox{\hyperlink{TDuvallUtils_8h_a0a6780f1deaf21b2caab327bf93926b3}{FindVarsOfType}}(\textcolor{stringliteral}{"TObjArray"});}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em var\+Type} & -- search string ~\newline
+ \\
+\hline
+{\em k\+Case\+Sensitive} & -- whether search is case-\/sensitive \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em o\+List} & -- list of matching objects ~\newline
+ \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{TDuvallUtils_8h_a0397718fcd2627a314522a9c65269536}\label{TDuvallUtils_8h_a0397718fcd2627a314522a9c65269536}} 
+\index{TDuvallUtils.h@{TDuvallUtils.h}!ListFiles@{ListFiles}}
+\index{ListFiles@{ListFiles}!TDuvallUtils.h@{TDuvallUtils.h}}
+\doxysubsubsection{\texorpdfstring{ListFiles()}{ListFiles()}}
+{\footnotesize\ttfamily T\+List $\ast$ T\+Duvall\+Utils\+::\+List\+Files (\begin{DoxyParamCaption}\item[{const char $\ast$}]{pattern = {\ttfamily \char`\"{}.$\ast$\textbackslash{}.root\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Return a list of files matching a pattern. 
+
+Return a T\+List of T\+System\+Files in the current (system) directory whose names match a pattern. \mbox{\Hypertarget{TDuvallUtils_8h_abd641659d7dfb06fe87f0cc66edbe47e}\label{TDuvallUtils_8h_abd641659d7dfb06fe87f0cc66edbe47e}} 
+\index{TDuvallUtils.h@{TDuvallUtils.h}!LoadAllKeys@{LoadAllKeys}}
+\index{LoadAllKeys@{LoadAllKeys}!TDuvallUtils.h@{TDuvallUtils.h}}
+\doxysubsubsection{\texorpdfstring{LoadAllKeys()}{LoadAllKeys()}}
+{\footnotesize\ttfamily void T\+Duvall\+Utils\+::\+Load\+All\+Keys (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Shortcut to load all keys from the current file into memory {\itshape ! U\+SE W\+I\+TH C\+A\+U\+T\+I\+ON !} 
+
+Load all keys in current directory into memory ~\newline
+ {\bfseries{!!! U\+SE W\+I\+TH C\+A\+U\+T\+I\+ON !!!}} ~\newline
+ {\bfseries{Large files will overload memory and crash}} \mbox{\Hypertarget{TDuvallUtils_8h_a87fe2f8028da1318876d6c427745adea}\label{TDuvallUtils_8h_a87fe2f8028da1318876d6c427745adea}} 
+\index{TDuvallUtils.h@{TDuvallUtils.h}!LogBins@{LogBins}}
+\index{LogBins@{LogBins}!TDuvallUtils.h@{TDuvallUtils.h}}
+\doxysubsubsection{\texorpdfstring{LogBins()}{LogBins()}}
+{\footnotesize\ttfamily Double\+\_\+t $\ast$ T\+Duvall\+Utils\+::\+Log\+Bins (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{xmin = {\ttfamily 1.e-\/1},  }\item[{Double\+\_\+t}]{xmax = {\ttfamily 1.e2} }\end{DoxyParamCaption})}
+
+
+
+Return an array of logarithmically-\/spaced values. 
+
+Wonderful shortcut for setting up log-\/binned histograms. ~\newline
+ Lightly adapted from code graciously provided by Marc F. Bergevin. ~\newline
+ Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Double\_t *xBins = \mbox{\hyperlink{TDuvallUtils_8h_a87fe2f8028da1318876d6c427745adea}{LogBins}}(1.e-\/1, 1.e5);}
+\DoxyCodeLine{TH1D *h = \textcolor{keyword}{new} TH1D(\textcolor{stringliteral}{"h"}, \textcolor{stringliteral}{"h"}, xBins);}
+\DoxyCodeLine{h-\/>FillRandom(\textcolor{stringliteral}{"landau"});}
+\DoxyCodeLine{h-\/>Draw();}
+\DoxyCodeLine{gPad-\/>SetLogx(kTRUE);}
+\end{DoxyCode}
+ \mbox{\Hypertarget{TDuvallUtils_8h_a02319b2f5f0477b46e4211d70d6c85c5}\label{TDuvallUtils_8h_a02319b2f5f0477b46e4211d70d6c85c5}} 
+\index{TDuvallUtils.h@{TDuvallUtils.h}!PrintBranches@{PrintBranches}}
+\index{PrintBranches@{PrintBranches}!TDuvallUtils.h@{TDuvallUtils.h}}
+\doxysubsubsection{\texorpdfstring{PrintBranches()}{PrintBranches()}}
+{\footnotesize\ttfamily void T\+Duvall\+Utils\+::\+Print\+Branches (\begin{DoxyParamCaption}\item[{T\+Object $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+Print nicely-\/formatted summary of object\textquotesingle{}s T\+Branches. 
+
+Print a T\+Tree\textquotesingle{}s branches in a format that is easier to scan visually than T\+Tree\+::\+Get\+List\+Of\+Branches()-\/$>$ls(). 
+\begin{DoxyParams}{Parameters}
+{\em obj} & -- {\itshape T\+Tree$\ast$} or {\itshape T\+Branch$\ast$} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{TDuvallUtils_8h_aebfbb014b8f13cb1df197138169164fa}\label{TDuvallUtils_8h_aebfbb014b8f13cb1df197138169164fa}} 
+\index{TDuvallUtils.h@{TDuvallUtils.h}!Prob2Sig@{Prob2Sig}}
+\index{Prob2Sig@{Prob2Sig}!TDuvallUtils.h@{TDuvallUtils.h}}
+\doxysubsubsection{\texorpdfstring{Prob2Sig()}{Prob2Sig()}}
+{\footnotesize\ttfamily Double\+\_\+t T\+Duvall\+Utils\+::\+Prob2\+Sig (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{prob }\end{DoxyParamCaption})}
+
+
+
+Convert probability to significance. 
+
+Simple function to convert a probability to a corresponding Gaussian significance level. ~\newline
+ This probably already exists as a built-\/in function somewhere, but I\textquotesingle{}m adding it here for convenience. 
+\begin{DoxyParams}{Parameters}
+{\em prob} & -- decimal probability on \mbox{[}0,1\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em sigma} & -- significance \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{TDuvallUtils_8h_af7d9728a4345831814789bd42e272c1e}\label{TDuvallUtils_8h_af7d9728a4345831814789bd42e272c1e}} 
+\index{TDuvallUtils.h@{TDuvallUtils.h}!RadarPlot@{RadarPlot}}
+\index{RadarPlot@{RadarPlot}!TDuvallUtils.h@{TDuvallUtils.h}}
+\doxysubsubsection{\texorpdfstring{RadarPlot()}{RadarPlot()}}
+{\footnotesize\ttfamily T\+H2D $\ast$ T\+Duvall\+Utils\+::\+Radar\+Plot (\begin{DoxyParamCaption}\item[{T\+H1D $\ast$}]{h\+\_\+in,  }\item[{Option\+\_\+t $\ast$}]{ho = {\ttfamily \char`\"{}cyllego\char`\"{}},  }\item[{const Bool\+\_\+t}]{k\+New\+Canvas = {\ttfamily kTRUE} }\end{DoxyParamCaption})}
+
+
+
+Convert T\+H1\+D$\ast$ to radar plot. 
+
+Simple macro to redraw any 1-\/D histogram as a radar plot. ~\newline
+ 
+\begin{DoxyParams}{Parameters}
+{\em h\+\_\+in} & -- input histogram ({\itshape T\+H1\+D$\ast$}) \\
+\hline
+{\em ho} & -- drawing option(s) \\
+\hline
+{\em k\+New\+Canvas} & -- when {\itshape k\+T\+R\+UE}, creates a new {\itshape T\+Canvas} rather than drawing over the current graphics pad \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em h\+\_\+out} & -- new \char`\"{}radar\char`\"{} plot ($\ast$\+T\+H2\+D$\ast$) \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{TDuvallUtils_8h_ad204b00910652611f7a0086da34a7e62}\label{TDuvallUtils_8h_ad204b00910652611f7a0086da34a7e62}} 
+\index{TDuvallUtils.h@{TDuvallUtils.h}!ShiftStats@{ShiftStats}}
+\index{ShiftStats@{ShiftStats}!TDuvallUtils.h@{TDuvallUtils.h}}
+\doxysubsubsection{\texorpdfstring{ShiftStats()}{ShiftStats()}}
+{\footnotesize\ttfamily void T\+Duvall\+Utils\+::\+Shift\+Stats (\begin{DoxyParamCaption}\item[{T\+Virtual\+Pad $\ast$}]{p = {\ttfamily gPad},  }\item[{Double\+\_\+t}]{deltaX = {\ttfamily -\/.1},  }\item[{Double\+\_\+t}]{deltaY = {\ttfamily 0.} }\end{DoxyParamCaption})}
+
+
+
+Move the \&\#\$ing stats box out of the way. 
+
+Convenience function to translate the stats box. ~\newline
+ Primarily intended for keeping the stats box from blocking the top of the color scale when histograms are drawn with \char`\"{}colz\char`\"{} and similar options. \mbox{\Hypertarget{TDuvallUtils_8h_a433a3b0d780050b888ea91384c26bf70}\label{TDuvallUtils_8h_a433a3b0d780050b888ea91384c26bf70}} 
+\index{TDuvallUtils.h@{TDuvallUtils.h}!Sig2Prob@{Sig2Prob}}
+\index{Sig2Prob@{Sig2Prob}!TDuvallUtils.h@{TDuvallUtils.h}}
+\doxysubsubsection{\texorpdfstring{Sig2Prob()}{Sig2Prob()}}
+{\footnotesize\ttfamily Double\+\_\+t T\+Duvall\+Utils\+::\+Sig2\+Prob (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{sig }\end{DoxyParamCaption})}
+
+
+
+Convert significance to probability. 
+
+Simple function to a Gaussian convert significance level to its corresponding probability. ~\newline
+ This probably already exists as a built-\/in function somewhere, but I\textquotesingle{}m adding it here for convenience. 
+\begin{DoxyParams}{Parameters}
+{\em sig} & -- significance \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em prob} & -- decimal probability on \mbox{[}0,1\mbox{]} \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{TDuvallUtils_8h_a02cb2de86c13d3878ac21693fd59f598}\label{TDuvallUtils_8h_a02cb2de86c13d3878ac21693fd59f598}} 
+\index{TDuvallUtils.h@{TDuvallUtils.h}!UnbinnedKSTest@{UnbinnedKSTest}}
+\index{UnbinnedKSTest@{UnbinnedKSTest}!TDuvallUtils.h@{TDuvallUtils.h}}
+\doxysubsubsection{\texorpdfstring{UnbinnedKSTest()}{UnbinnedKSTest()}}
+{\footnotesize\ttfamily Double\+\_\+t T\+Duvall\+Utils\+::\+Unbinned\+K\+S\+Test (\begin{DoxyParamCaption}\item[{T\+Tree $\ast$}]{T1,  }\item[{T\+Tree $\ast$}]{T2,  }\item[{const char $\ast$}]{branch\+Name1,  }\item[{const char $\ast$}]{branch\+Name2 = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Apply unbinned KS test to a pair of T\+Branches. 
+
+Function to execute {\itshape unbinned} Kolmogorov-\/\+Smirnov Test on a pair of T\+Trees. ~\newline
+ {\itshape Note\+: Branches must be of type Double\+\_\+t.} ~\newline
+ See the notes in T\+Math\+::\+Kolmogorov\+Test() and T\+H1\+::\+Kolmogorov\+Test() for further details. ~\newline
+ 
+\begin{DoxyParams}{Parameters}
+{\em T1,T2} & -- input trees \\
+\hline
+{\em branch\+Name1} & -- name of variable in {\itshape T1} \\
+\hline
+{\em branch\+Name2} & -- name of variable in {\itshape T2} (if different from {\itshape branch\+Name1}) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em P} & -- probability that the distributions were drawn from the same parent distribution, according to the K-\/S Test \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{TDuvallUtils_8h_abfb15cb3873984530a294ebb085a9054}\label{TDuvallUtils_8h_abfb15cb3873984530a294ebb085a9054}} 
+\index{TDuvallUtils.h@{TDuvallUtils.h}!Zoom@{Zoom}}
+\index{Zoom@{Zoom}!TDuvallUtils.h@{TDuvallUtils.h}}
+\doxysubsubsection{\texorpdfstring{Zoom()}{Zoom()}}
+{\footnotesize\ttfamily void T\+Duvall\+Utils\+::\+Zoom (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{zoom\+Factor = {\ttfamily 2.} }\end{DoxyParamCaption})}
+
+
+
+Shortcut to set relative zoom. 
+
+Simple shortcut for adjusting zoom when running interactively. 

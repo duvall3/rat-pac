@@ -1,3 +1,4 @@
+// TClassTemplate
 /// Basic template for writing ROOT classes
 // -- Note: For CINT, load using gROOT->LoadMacro("TClassTemplate.cxx");
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 08/2022 ~ //

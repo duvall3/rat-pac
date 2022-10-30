@@ -69,124 +69,124 @@ $(function() {
 <div class="title">TRATVolume.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// TRATVolume -- class for analyzing geometry from RAT-PAC ROOT file</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// -- NOTE: To be set properly, TRATVolume::FindAbsolutePosition() *MUST* be run</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//         after an object is created</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//    -- Example: TRATVolume v(&quot;water_shield&quot;); v.FindAbsolutePosition();</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//    -- This does *not* need to be done manually if TRATVolume objects</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//         are created by TRATGeo::Build()</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 9/2021 ~ //</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Updated 07/2022</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//Copyright (C) 2021 Mark J. Duvall</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">//    This program is free software: you can redistribute it and/or modify</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">//    it under the terms of the GNU General Public License as published by</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//    the Free Software Foundation, either version 3 of the License, or</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//    (at your option) any later version.</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//    This program is distributed in the hope that it will be useful,</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">//    but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//    GNU General Public License for more details.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">//    You should have received a copy of the GNU General Public License</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">//    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#ifndef TRATVolume</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define TRATVolume</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classTRATVolume.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTRATVolume.html">TRATVolume</a> : <span class="keyword">public</span> TClass {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="comment">// define defaults</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">const</span> TString defaultName = <span class="stringliteral">&quot;TRATVolume&quot;</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">const</span> TString defaultTitle = <span class="stringliteral">&quot;class for analyzing geometry from RAT-PAC ROOT file&quot;</span>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* defaultVolNameChr = <span class="stringliteral">&quot;volume_name&quot;</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">const</span> TString defaultVolName = TString(<span class="stringliteral">&quot;volume_name&quot;</span>);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  TString keyStrVol;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="comment">// members</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>*       fVolNameChr;        <span class="comment">// volume name</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  TString       fVolName;       <span class="comment">// volume name (TString)</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  TFile*        fFile;          <span class="comment">// current ROOT datafile</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>*       fFileName;      <span class="comment">// name of current ROOT datafile</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  TString       fExperiment;        <span class="comment">// name of RAT-PAC experiment</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  TString       fExperimentPath;    <span class="comment">// path to directory defining fExperiment, usually either absolute or relative to $RATROOT/data</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">const</span> TMap*       fDB;            <span class="comment">// RAT-PAC database TMap</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  TString       fVolumeType;        <span class="comment">// name of volume type (i.e., shape)</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  TString       fMaterial;      <span class="comment">// volume material</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  Double_t      fDensity;       <span class="comment">// volume density</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  TString       fMother;        <span class="comment">// name of mother volume</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  TVector3      fSize;          <span class="comment">// half-lengths in {x,y,z} (*box-type only*)</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  Double_t      fRMin;          <span class="comment">// tube minimum radius</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  Double_t      fRMax;          <span class="comment">// tube maximum radius</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  Double_t      fSizeZ;         <span class="comment">// tube half-height</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  TVector3      fRelativePosition;  <span class="comment">// volume position, *relative to mother volume*</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  TVector3      fAbsolutePosition;  <span class="comment">// volume position, *relative to overall coordinate system*</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="comment">// methods</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">void</span>          FindExperiment();   <span class="comment">// set experiment name, path, etc.</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">void</span>          FindVolumeType();   <span class="comment">// set volume type (i.e., shape)</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">void</span>          FindMaterial();     <span class="comment">// set volume material</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">void</span>          FindDensity();      <span class="comment">// set volume density</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">void</span>          FindMother();       <span class="comment">// set mother volume name</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">void</span>          FindRelativePosition(); <span class="comment">// set volume relative position</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">void</span>          FindSize();     <span class="comment">// set dimensions (*box-type only*)</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">void</span>          FindAll();      <span class="comment">// set all members not individually set in ctor</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="comment">// methods</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="classTRATVolume.html">TRATVolume</a>();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="classTRATVolume.html">TRATVolume</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* volNameChr, <span class="keyword">const</span> TMap *db );</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">void</span>          SetVolume( <span class="keyword">const</span> <span class="keywordtype">char</span>* newNameChr ); <span class="comment">// switch to a different volume and re-fill</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">void</span>          FindAbsolutePosition(); <span class="comment">// set volume absolute position</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>*   GetVolNameChr()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fVolNameChr; }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keyword">const</span> TString*    GetVolName()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> &amp;fVolName; }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  TFile*        GetFile()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fFile; }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>*   GetFileName()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fFileName; }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  TString       GetExperiment()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fExperiment; }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  TString       GetExperimentPath()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fExperimentPath; }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  TMap*         GetDB()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fDB; }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  TString       GetVolumeType()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fVolumeType; }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  TString       GetMaterial()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fMaterial; }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  Double_t      GetDensity()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fDensity; }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  TString       GetMother()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fMother; }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  TVector3*     GetSize()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> &amp;fSize; } <span class="comment">// *box-type only*</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  Double_t      GetRMin()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fRMin; } <span class="comment">// *tube-type only*</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  Double_t      GetRMax()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fRMax; } <span class="comment">// *tube-type only*</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  Double_t      GetSizeZ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fSizeZ; } <span class="comment">// *tube-type only*</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  TVector3*     GetRelativePosition()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> &amp;fRelativePosition; }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  TVector3*     GetAbsolutePosition()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> &amp;fAbsolutePosition; }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="comment">// general derived quantities:</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  Double_t      Area(); <span class="comment">// m^2      // currently box-type only</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  Double_t      AreaCM() { <span class="keywordflow">return</span> Area()*(1.e2)**2; }</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  Double_t      AreaMM() { <span class="keywordflow">return</span> Area()*(1.e3)**2; }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  Double_t      Volume(); <span class="comment">// m^3;   // currently box-type only</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  Double_t      VolumeCM() { <span class="keywordflow">return</span> Volume()*(1.e2)**3; }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  Double_t      VolumeMM() { <span class="keywordflow">return</span> Volume()*(1.e3)**3; }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  Double_t      VolumeL() { <span class="keywordflow">return</span> VolumeCM()*1.e-3; }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  Double_t      Mass() { <span class="keywordflow">return</span> fDensity * VolumeL(); }  <span class="comment">// kg</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  Double_t      MassG() { <span class="keywordflow">return</span> GetDensity() * VolumeCM(); }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  Double_t      MassTons() { <span class="keywordflow">return</span> GetDensity() * Volume(); }</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="comment">// IBD-specific derived quantities: //TODO: convert some or all of these input arguments into data members</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  Double_t      NuFlux(Double_t standoff, Double_t reactorNuRate);          <span class="comment">// nu_e_bar flux (nu_e_bar/cm^2/s) at detector location</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  Double_t      IBDVolRate(Double_t standoff, Double_t reactorNuRate, Double_t nH); <span class="comment">// volumetric IBD rate (IBD/cm^3/s) for this volume</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  Double_t      IBDRate(Double_t standoff, Double_t reactorNuRate, Double_t nH) { <span class="keywordflow">return</span> VolumeCM()*IBDVolRate(standoff, reactorNuRate, nH); }  <span class="comment">// total IBD rate (IBD/s) for this volume</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="comment">// print summaries:</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="keywordtype">void</span>          PrintDerived();         <span class="comment">// print area, volume, mass in all units</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="comment">/* void       PrintIBD();         // print IBD parameters // TODO: hold until args converted to members as specified above */</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">//Integrating the TRATVolume class to ROOT.</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;ClassDef(<a class="code" href="classTRATVolume.html">TRATVolume</a>,5)</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}; <span class="comment">//end class</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">// all pau!   )</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// TRATVolume</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"></span><span class="comment">// -- NOTE: To be set properly, TRATVolume::FindAbsolutePosition() *MUST* be run</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//         after an object is created</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//    -- Example: TRATVolume v(&quot;water_shield&quot;); v.FindAbsolutePosition();</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//    -- This does *not* need to be done manually if TRATVolume objects</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//         are created by TRATGeo::Build()</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 9/2021 ~ //</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// Updated 07/2022</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">//Copyright (C) 2021 Mark J. Duvall</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">//    This program is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//    it under the terms of the GNU General Public License as published by</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//    the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//    (at your option) any later version.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">//    This program is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//    but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//    GNU General Public License for more details.</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">//    You should have received a copy of the GNU General Public License</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">//    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifndef TRATVolume</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define TRATVolume</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classTRATVolume.html">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTRATVolume.html">TRATVolume</a> : <span class="keyword">public</span> TClass {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="comment">// define defaults</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">const</span> TString defaultName = <span class="stringliteral">&quot;TRATVolume&quot;</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">const</span> TString defaultTitle = <span class="stringliteral">&quot;class for analyzing geometry from RAT-PAC ROOT file&quot;</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* defaultVolNameChr = <span class="stringliteral">&quot;volume_name&quot;</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">const</span> TString defaultVolName = TString(<span class="stringliteral">&quot;volume_name&quot;</span>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  TString keyStrVol;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="comment">// members</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>*       fVolNameChr;        <span class="comment">// volume name</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  TString       fVolName;       <span class="comment">// volume name (TString)</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  TFile*        fFile;          <span class="comment">// current ROOT datafile</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>*       fFileName;      <span class="comment">// name of current ROOT datafile</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  TString       fExperiment;        <span class="comment">// name of RAT-PAC experiment</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  TString       fExperimentPath;    <span class="comment">// path to directory defining fExperiment, usually either absolute or relative to $RATROOT/data</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keyword">const</span> TMap*       fDB;            <span class="comment">// RAT-PAC database TMap</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  TString       fVolumeType;        <span class="comment">// name of volume type (i.e., shape)</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  TString       fMaterial;      <span class="comment">// volume material</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  Double_t      fDensity;       <span class="comment">// volume density</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  TString       fMother;        <span class="comment">// name of mother volume</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  TVector3      fSize;          <span class="comment">// half-lengths in {x,y,z} (*box-type only*)</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  Double_t      fRMin;          <span class="comment">// tube minimum radius</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  Double_t      fRMax;          <span class="comment">// tube maximum radius</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  Double_t      fSizeZ;         <span class="comment">// tube half-height</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  TVector3      fRelativePosition;  <span class="comment">// volume position, *relative to mother volume*</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  TVector3      fAbsolutePosition;  <span class="comment">// volume position, *relative to overall coordinate system*</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="comment">// methods</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">void</span>          FindExperiment();   <span class="comment">// set experiment name, path, etc.</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">void</span>          FindVolumeType();   <span class="comment">// set volume type (i.e., shape)</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">void</span>          FindMaterial();     <span class="comment">// set volume material</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">void</span>          FindDensity();      <span class="comment">// set volume density</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">void</span>          FindMother();       <span class="comment">// set mother volume name</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">void</span>          FindRelativePosition(); <span class="comment">// set volume relative position</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">void</span>          FindSize();     <span class="comment">// set dimensions (*box-type only*)</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">void</span>          FindAll();      <span class="comment">// set all members not individually set in ctor</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="comment">// methods</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="classTRATVolume.html">TRATVolume</a>();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <a class="code" href="classTRATVolume.html">TRATVolume</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* volNameChr, <span class="keyword">const</span> TMap *db );</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">void</span>          SetVolume( <span class="keyword">const</span> <span class="keywordtype">char</span>* newNameChr ); <span class="comment">// switch to a different volume and re-fill</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordtype">void</span>          FindAbsolutePosition(); <span class="comment">// set volume absolute position</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>*   GetVolNameChr()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fVolNameChr; }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keyword">const</span> TString*    GetVolName()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> &amp;fVolName; }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  TFile*        GetFile()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fFile; }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>*   GetFileName()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fFileName; }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  TString       GetExperiment()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fExperiment; }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  TString       GetExperimentPath()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fExperimentPath; }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  TMap*         GetDB()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fDB; }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  TString       GetVolumeType()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fVolumeType; }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  TString       GetMaterial()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fMaterial; }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  Double_t      GetDensity()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fDensity; }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  TString       GetMother()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fMother; }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  TVector3*     GetSize()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> &amp;fSize; } <span class="comment">// *box-type only*</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  Double_t      GetRMin()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fRMin; } <span class="comment">// *tube-type only*</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  Double_t      GetRMax()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fRMax; } <span class="comment">// *tube-type only*</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  Double_t      GetSizeZ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fSizeZ; } <span class="comment">// *tube-type only*</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  TVector3*     GetRelativePosition()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> &amp;fRelativePosition; }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  TVector3*     GetAbsolutePosition()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> &amp;fAbsolutePosition; }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="comment">// general derived quantities:</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  Double_t      Area(); <span class="comment">// m^2      // currently box-type only</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  Double_t      AreaCM() { <span class="keywordflow">return</span> Area()*(1.e2)**2; }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  Double_t      AreaMM() { <span class="keywordflow">return</span> Area()*(1.e3)**2; }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  Double_t      Volume(); <span class="comment">// m^3;   // currently box-type only</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  Double_t      VolumeCM() { <span class="keywordflow">return</span> Volume()*(1.e2)**3; }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  Double_t      VolumeMM() { <span class="keywordflow">return</span> Volume()*(1.e3)**3; }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  Double_t      VolumeL() { <span class="keywordflow">return</span> VolumeCM()*1.e-3; }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  Double_t      Mass() { <span class="keywordflow">return</span> fDensity * VolumeL(); }  <span class="comment">// kg</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  Double_t      MassG() { <span class="keywordflow">return</span> GetDensity() * VolumeCM(); }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  Double_t      MassTons() { <span class="keywordflow">return</span> GetDensity() * Volume(); }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="comment">// IBD-specific derived quantities: //TODO: convert some or all of these input arguments into data members</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  Double_t      NuFlux(Double_t standoff, Double_t reactorNuRate);          <span class="comment">// nu_e_bar flux (nu_e_bar/cm^2/s) at detector location</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  Double_t      IBDVolRate(Double_t standoff, Double_t reactorNuRate, Double_t nH); <span class="comment">// volumetric IBD rate (IBD/cm^3/s) for this volume</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  Double_t      IBDRate(Double_t standoff, Double_t reactorNuRate, Double_t nH) { <span class="keywordflow">return</span> VolumeCM()*IBDVolRate(standoff, reactorNuRate, nH); }  <span class="comment">// total IBD rate (IBD/s) for this volume</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="comment">// print summaries:</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keywordtype">void</span>          PrintDerived();         <span class="comment">// print area, volume, mass in all units</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="comment">/* void       PrintIBD();         // print IBD parameters // TODO: hold until args converted to members as specified above */</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">//Integrating the TRATVolume class to ROOT.</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;ClassDef(<a class="code" href="classTRATVolume.html">TRATVolume</a>,5)</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}; <span class="comment">//end class</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment">// all pau!   )</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassTRATVolume_html"><div class="ttname"><a href="classTRATVolume.html">TRATVolume</a></div><div class="ttdef"><b>Definition:</b> TRATVolume.h:28</div></div>
+<div class="ttc" id="aclassTRATVolume_html"><div class="ttname"><a href="classTRATVolume.html">TRATVolume</a></div><div class="ttdoc">Class for analyzing geometry from RAT-PAC ROOT file.</div><div class="ttdef"><b>Definition:</b> TRATVolume.h:29</div></div>
 <!-- start footer part -->
 		<script src="custom.js"></script>
 	</body>

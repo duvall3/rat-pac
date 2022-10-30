@@ -1,0 +1,43 @@
+{\ttfamily $\sim$ Mark J. Duvall $\sim$ mjduvall@hawaii.\+edu $\sim$ 08/2022 $\sim$}\hypertarget{md_geant4_notes_autotoc_md29}{}\doxysection{Geometry}\label{md_geant4_notes_autotoc_md29}
+\hypertarget{md_geant4_notes_autotoc_md30}{}\doxysubsection{Individual Volumes}\label{md_geant4_notes_autotoc_md30}
+Required Steps\+:
+\begin{DoxyItemize}
+\item Material
+\item Position
+\item Shape
+\item Logical Volume
+\item Placement
+\end{DoxyItemize}
+
+Example -- {\ttfamily Vol1} in mother {\ttfamily world}
+\begin{DoxyItemize}
+\item Material = air
+\item Position = origin
+\item Shape = 100-\/cm cube
+\item Logical Volume = logic\+Vol1
+\item Placement = plain / default
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// example volume "Vol1":}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// material}}
+\DoxyCodeLine{G4Material *Vol1\_mat = nist-\/>FindOrBuildMaterial(\textcolor{stringliteral}{"G4\_AIR"});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// position}}
+\DoxyCodeLine{G4ThreeVector pos1 = G4ThreeVector(0,0,0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// shape and size}}
+\DoxyCodeLine{G4Double vol1\_length = 100.0*cm;}
+\DoxyCodeLine{G4Box * solidVol1 = \textcolor{keyword}{new} G4Box( \textcolor{stringliteral}{"Vol1"}, vol1\_length, vol1\_length, vol1\_length );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// logical volume}}
+\DoxyCodeLine{G4LogicalVolume *logicVol1 = \textcolor{keyword}{new} G4LogicalVolume( solidVol1, Vol1\_mat, \textcolor{stringliteral}{"Vol1"} );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// placement}}
+\DoxyCodeLine{\textcolor{keyword}{new} G4PVPlacement( 0, pos1, logicVol1, \textcolor{stringliteral}{"Vol1"}, logicWorld, \textcolor{keyword}{false}, 0, checkOverlaps );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// all pau!   )}}
+\end{DoxyCode}
+ 

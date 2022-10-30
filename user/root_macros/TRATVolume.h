@@ -1,4 +1,5 @@
-// TRATVolume -- class for analyzing geometry from RAT-PAC ROOT file
+// TRATVolume
+/// Class for analyzing geometry from RAT-PAC ROOT file
 // -- NOTE: To be set properly, TRATVolume::FindAbsolutePosition() *MUST* be run
 //         after an object is created
 //    -- Example: TRATVolume v("water_shield"); v.FindAbsolutePosition();
