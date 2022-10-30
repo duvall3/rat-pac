@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['entrylist_385',['EntryList',['../namespaceTDuvallUtils.html#a3f0fd37a1b28c9cf5c02cbefa1f48711',1,'TDuvallUtils']]],
-  ['exportplots_386',['ExportPlots',['../namespaceTDuvallUtils.html#af647925c9820067541e19861a6f30bd4',1,'TDuvallUtils']]],
-  ['extractref_387',['ExtractRef',['../classTRefMatch.html#a94631e851a8c2bdb27f04a0b45278592',1,'TRefMatch']]],
-  ['extracttest_388',['ExtractTest',['../classTRefMatch.html#aa761bf0d2227dc02a93d7b55fa15cfca',1,'TRefMatch']]]
+  ['fillreferencefilelist_82',['FillReferenceFileList',['../classTRefMatch.html#a92fdc56ba1162db73a33589abad05705',1,'TRefMatch']]],
+  ['findmatchingobjects_83',['FindMatchingObjects',['../namespaceTDuvallUtils.html#a913fd86508e84b86af27086a8d89fde3',1,'TDuvallUtils']]],
+  ['findvarsoftype_84',['FindVarsOfType',['../namespaceTDuvallUtils.html#a0a6780f1deaf21b2caab327bf93926b3',1,'TDuvallUtils']]]
 ];

@@ -20,13 +20,18 @@
 #include <TDuvallUtils.h>
 
 //______________________________________________________________________________
-// DumpHist -- simple function to dump TH1 data as (x,y) pairs to stdout,
-//   along with a rough ASCII representation of the graph
-// -- Note: Developed for use with TH1D and TH1F only
-// -- Example:
-// 	TH1D* h = new TH1D("h", "h", 24, -3.5, 3.5);
-// 	h->FillRandom("gaus");
-// 	TDuvallUtils::DumpHist(h);
+// DumpHist
+/**
+ * Dump histogram data as (x,y) pairs to stdout, along with a rough ASCII representation of the graph.  
+ *  -- Primarily for use in non-graphical sessions  
+ *  -- Note: Developed for use with *TH1D\** and *TH1F\** only  
+ *  -- Example:  
+ *  ```cpp
+ *  	TH1D* h = new TH1D("h", "h", 24, -3.5, 3.5);  
+ *  	h->FillRandom("gaus");  
+ *  	TDuvallUtils::DumpHist(h);
+ *  ```
+ */
 void TDuvallUtils::DumpHist( TH1* h )
 {
   Int_t asciiGradations = 20;
@@ -49,7 +54,13 @@ void TDuvallUtils::DumpHist( TH1* h )
 }
 
 //______________________________________________________________________________
-// EntryList -- shortcut for creating a TEntryList from a TTree and a selection string
+// EntryList
+/** 
+ * Shortcut for creating a TEntryList from a TTree and a selection string.  
+ * \param selection -- same as for TTree:Draw()
+ * \param T -- pointer to the desired *TTree*
+ * \retval eList -- the resulting *TEntryList\**
+ */
 TEntryList* TDuvallUtils::EntryList( const char* selection, TTree *T )
 {
   // init
@@ -67,8 +78,12 @@ TEntryList* TDuvallUtils::EntryList( const char* selection, TTree *T )
 }
 
 //______________________________________________________________________________
-// ExportPlots -- simple macro to extract all the TCanvas objects
-//   from a ROOT file and save them in the desired graphics format
+// ExportPlots
+/**
+ * Extract all the TCanvas objects from a ROOT file and save them in the desired graphics format.  
+ * \param filename -- desired ROOT file
+ * \param kGraphicsSaveFormat -- .png, .eps, etc.
+ */
 void TDuvallUtils::ExportPlots( const char* filename, const TString kGraphicsSaveFormat )
 {
   // for OpenGL:
@@ -125,12 +140,21 @@ void TDuvallUtils::ExportPlots( const char* filename, const TString kGraphicsSav
 }
 
 //______________________________________________________________________________
-// FindMatchingObjects -- scan a TCollection for an object whose name matches a regex
-// -- Usage: TObject* FindMatchingObjects( TRegexp regex )
-//           TObject* FindMatchingObjects( const char* pattern )
-// -- Note: It's hard to believe this isn't already a builtin function
-//      for all classes inheriting from TCollection;
-//      but if it exists, I haven't found it.
+// FindMatchingObjects
+/**
+ *  Scan a TCollection (*TList, TObjArray, etc.*) for an object whose name matches a regex.  
+ *  ROOT's builtins can't search by PATTERN.  
+ * *Note: It's hard to believe this isn't already a builtin function
+ *      for all classes inheriting from TCollection;
+ *      but if it exists, I haven't found it.*
+ * ```cpp
+ * TObject* FindMatchingObjects( TRegexp regex )         // or
+ * TObject* FindMatchingObjects( const char* pattern )  
+ * ```
+ * \param colxn -- pointer to the desired *TCollection* object
+ * \param pattern(RE) -- *char\** or *TRegexp* describing search pattern 
+ * \retval matchingObjs -- *TList\** of matching objects 
+ */
 /* TObject* TDuvallUtils::FindMatchingObject( TCollection* colxn, TRegexp patternRE ) */
 TList* TDuvallUtils::FindMatchingObjects( TCollection* colxn, TRegexp patternRE )
 {
@@ -164,8 +188,19 @@ TList* TDuvallUtils::FindMatchingObjects( TCollection* colxn, TRegexp patternRE 
 }
 
 //______________________________________________________________________________
-// FindVarsOfType -- list global variables of a specified type
-// -- e.g., 'FindVarsOfType("canvas");' or 'FindVarsOfType("TObjArray");'
+// FindVarsOfType
+/**
+ * List global variables whose type matches a specified pattern.  
+ * ROOT's builtins can't search by PATTERN.  
+ * Examples:
+ * ```cpp
+ * FindVarsOfType("canvas");           // or
+ * TList *objarrList = FindVarsOfType("TObjArray");
+ * ```
+ * \param varType -- search string  
+ * \param kCaseSensitive -- whether search is case-sensitive
+ * \retval oList -- list of matching objects  
+ */
 TList* TDuvallUtils::FindVarsOfType( const char* varType, Bool_t kCaseSensitive )
 {
   // init
@@ -206,10 +241,12 @@ TList* TDuvallUtils::FindVarsOfType( const char* varType, Bool_t kCaseSensitive 
 }
 
 //______________________________________________________________________________
-// ListFiles -- function to return a TList of TSystemFiles
-//   in the current (system) directory whose names
-//   match a pattern
-
+// ListFiles
+/**
+ * Return a TList of TSystemFiles
+ *   in the current (system) directory whose names
+ *   match a pattern.
+ */
 TList* TDuvallUtils::ListFiles( const char* pattern )
 {
   // init
@@ -231,8 +268,12 @@ TList* TDuvallUtils::ListFiles( const char* pattern )
 }
 
 //______________________________________________________________________________
-// LoadAllKeys-- load all keys in current directory into memory
-// !!! USE WITH CAUTION !!! -- large files will overload memory and crash
+// LoadAllKeys
+/**
+ * Load all keys in current directory into memory  
+ * **!!! USE WITH CAUTION !!!**  
+ * **Large files will overload memory and crash**
+ */
 void TDuvallUtils::LoadAllKeys()
 {
   TKey *key;
@@ -247,9 +288,19 @@ void TDuvallUtils::LoadAllKeys()
 }
 
 //______________________________________________________________________________
-// LogBins -- simple macro to get an array of logarithmically-spaced values,
-//   e.g., for use in logarithmically-binned histograms
-// -- Lightly adapted from code graciously provided by Marc F. Bergevin
+// LogBins
+/** 
+ * Wonderful shortcut for setting up log-binned histograms.  
+ * Lightly adapted from code graciously provided by Marc F. Bergevin.  
+ * Example:
+ * ```cpp
+ * Double_t *xBins = LogBins(1.e-1, 1.e5);
+ * TH1D *h = new TH1D("h", "h", xBins);
+ * h->FillRandom("landau");
+ * h->Draw();
+ * gPad->SetLogx(kTRUE);
+ * ```
+ */
 Double_t* TDuvallUtils::LogBins( Double_t xmin, Double_t xmax )
 {
   // array size is currently hard-coded at 100 //HC//
@@ -275,8 +326,12 @@ Double_t* TDuvallUtils::LogBins( Double_t xmin, Double_t xmax )
 /* } */
 
 //______________________________________________________________________________
-// PrintBranches -- print a TTree's branches in a format that is
-//   easier to scan visually than TTree::GetListOfBranches()->ls()
+// PrintBranches
+/**
+ * Print a TTree's branches in a format that is
+ *   easier to scan visually than TTree::GetListOfBranches()->ls().
+ * \param obj -- *TTree\** or *TBranch\** 
+ */
 void TDuvallUtils::PrintBranches(TObject *obj)
 {
   // arg check
@@ -313,9 +368,15 @@ void TDuvallUtils::PrintBranches(TObject *obj)
 }
 
 //______________________________________________________________________________
-// Prob2Sig -- simple function to convert a probability to a significance level
-// -- This probably already exists as a built-in function somewhere,
-//      but I'm adding it here for convenience
+// Prob2Sig
+/**
+ * Simple function to convert a probability to a corresponding
+ *   Gaussian significance level.  
+ * This probably already exists as a built-in function somewhere,
+ *      but I'm adding it here for convenience.
+ * \param prob -- decimal probability on [0,1]
+ * \retval sigma -- significance
+ */
 Double_t TDuvallUtils::Prob2Sig( Double_t prob )
 {
   // convert, accounting for special values
@@ -331,7 +392,15 @@ Double_t TDuvallUtils::Prob2Sig( Double_t prob )
 }
 
 //______________________________________________________________________________
-// RadarPlot -- simple macro to redraw any 1-D histogram as a radar plot
+// RadarPlot
+/**
+ * Simple macro to redraw any 1-D histogram as a radar plot.  
+ * \param h_in -- input histogram (*TH1D\**)
+ * \param ho -- drawing option(s)
+ * \param kNewCanvas -- when *kTRUE*, creates a new *TCanvas* rather than
+ *   drawing over the current graphics pad
+ * \retval h_out -- new "radar" plot (*TH2D\*)
+ */
 TH2D* TDuvallUtils::RadarPlot( TH1D *h_in, Option_t *ho, const Bool_t kNewCanvas )
 {
   // force proportional scaling
@@ -428,10 +497,13 @@ TH2D* TDuvallUtils::RadarPlot( TH1D *h_in, Option_t *ho, const Bool_t kNewCanvas
 }
 
 //______________________________________________________________________________
-// ShiftStats -- helper macro to translate stats box horizontally
-// -- primarily intended for keeping the stats box from blocking
-//    the top of the color scale when histograms are drawn
-//    with "colz" and similar options
+// ShiftStats
+/**
+ * Convenience function to translate the stats box.  
+ * Primarily intended for keeping the stats box from blocking
+ *    the top of the color scale when histograms are drawn
+ *    with "colz" and similar options.
+ */
 void TDuvallUtils::ShiftStats( TVirtualPad* p, Double_t deltaX, Double_t deltaY )
 {
   // init
@@ -454,9 +526,14 @@ void TDuvallUtils::ShiftStats( TVirtualPad* p, Double_t deltaX, Double_t deltaY 
 }
 
 //______________________________________________________________________________
-// Sig2Prob -- simple function to convert significance level to probability
-// -- This probably already exists as a built-in function somewhere,
-//      but I'm adding it here for convenience
+// Sig2Prob
+/** Simple function to a Gaussian convert significance level
+ *    to its corresponding probability.  
+ * This probably already exists as a built-in function somewhere,
+ *      but I'm adding it here for convenience.
+ * \param sig -- significance
+ * \retval prob -- decimal probability on [0,1]
+ */
 Double_t TDuvallUtils::Sig2Prob( Double_t sig )
 {
 // convert, accounting for special values
@@ -472,13 +549,17 @@ Double_t TDuvallUtils::Sig2Prob( Double_t sig )
 }
 
 //______________________________________________________________________________
-// UnbinnedKSTest -- function to execute *unbinned* TMath::KolmogorovTest on a pair of TTrees
-//   containing TBranches  with matching names
-// -- Usage: Double_t P = unbinnedKSTest( TTree *T1, TTree *T2, const char* branchName1, const char* branchName2 = "" )
-// -- Branches must be of type Double_t
-// -- P is the probability for match
-// -- *T1 and *T2 are pointers to the two input trees
-// -- See the notes in TMath::KolmogorovTest and TH1::KolmogorovTest for details
+// UnbinnedKSTest
+/**
+ * Function to execute *unbinned* Kolmogorov-Smirnov Test on a pair of TTrees.  
+ * *Note: Branches must be of type Double_t.*  
+ * See the notes in TMath::KolmogorovTest() and TH1::KolmogorovTest() for further details.  
+ * \param T1, T2 -- input trees
+ * \param branchName1 -- name of variable in *T1*
+ * \param branchName2 -- name of variable in *T2* (if different from *branchName1*)
+ * \retval P -- probability that the distributions were drawn from the same parent distribution,
+ *   according to the K-S Test
+ */
 Double_t TDuvallUtils::UnbinnedKSTest( TTree *T1, TTree *T2, const char* branchName1, const char* branchName2)
 {
   // Note: Arrays must be sorted before they can be
@@ -539,7 +620,10 @@ Double_t TDuvallUtils::UnbinnedKSTest( TTree *T1, TTree *T2, const char* branchN
 }
 
 //______________________________________________________________________________
-// Zoom -- simple shortcut for adjusting zoom when running interactively
+// Zoom
+/**
+ * Simple shortcut for adjusting zoom when running interactively.
+ */
 void TDuvallUtils::Zoom( Double_t zoomFactor )
 {
   if (gPad==0x0) {

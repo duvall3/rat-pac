@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['ibdrate_196',['IBDRate',['../classTIBDParams.html#a37409149479ae908c0691d3f8b560b7a',1,'TIBDParams::IBDRate()'],['../classTRATVolume.html#aa6d5893680c1b0ff86c499df12c1628b',1,'TRATVolume::IBDRate()']]],
-  ['ibdtrackstoscint_197',['ibdTracksToScint',['../ibdTracksToScint_8cxx.html#afa4d670946696feb5754b11650a47954',1,'ibdTracksToScint.cxx']]],
-  ['ibdtrackstoscint_2ecxx_198',['ibdTracksToScint.cxx',['../ibdTracksToScint_8cxx.html',1,'']]],
-  ['ibdvolrate_199',['IBDVolRate',['../classTIBDParams.html#aca9d59e373c3f382ef76846dbb92a384',1,'TIBDParams::IBDVolRate()'],['../classTRATVolume.html#ae1ea0cce4378f87e23a8d26e4c461709',1,'TRATVolume::IBDVolRate()']]],
-  ['init_200',['Init',['../classTRATGeo.html#a43182f826ee6545fe719acab0981f270',1,'TRATGeo::Init()'],['../classTRATPACEventViewer.html#abce2ba70242a4c9ecb485d821274a524',1,'TRATPACEventViewer::Init()'],['../classTRefMatch.html#a786772925eacb8fb35d0f39d739f34e6',1,'TRefMatch::Init()'],['../classTRefMatch.html#a11c28a10b43c340d6540f6b36708fa4b',1,'TRefMatch::Init(const char *fileName, const char *treeName, const char *branchVarName)']]]
+  ['root_20macros_20and_20classes_45',['ROOT MACROS AND CLASSES',['../index.html',1,'']]],
+  ['radarplot_46',['RadarPlot',['../namespaceTDuvallUtils.html#af7d9728a4345831814789bd42e272c1e',1,'TDuvallUtils']]],
+  ['refcompare_47',['RefCompare',['../classTRefMatch.html#afbafaf2c5baa5b593c824d56c2725d59',1,'TRefMatch']]],
+  ['run_48',['Run',['../classTRefMatch.html#a708325fb9b4a8993fda4d1085174fd0d',1,'TRefMatch']]]
 ];

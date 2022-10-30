@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['root_20macros_228',['ROOT MACROS',['../index.html',1,'']]],
+  ['root_20macros_20and_20classes_228',['ROOT MACROS AND CLASSES',['../index.html',1,'']]],
   ['radarplot_229',['RadarPlot',['../namespaceTDuvallUtils.html#af7d9728a4345831814789bd42e272c1e',1,'TDuvallUtils']]],
   ['ratpaceventviewer2_230',['RATPACEventViewer2',['../RATPACEventViewer2_8cxx.html#affd7cf5db15c214ab4e8a0c079562e14',1,'RATPACEventViewer2.cxx']]],
   ['ratpaceventviewer2_2ecxx_231',['RATPACEventViewer2.cxx',['../RATPACEventViewer2_8cxx.html',1,'']]],

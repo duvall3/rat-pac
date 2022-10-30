@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['highlightcells_194',['HighlightCells',['../classTRATPACEventViewer.html#a98d2bc9ebfdf22db81de70bc8d890180',1,'TRATPACEventViewer::HighlightCells()'],['../highlightCells_8cxx.html#a893143b7dbac6f18159bb5b496b1b76d',1,'highlightCells():&#160;highlightCells.cxx'],['../rpevFunctions_8cxx.html#a893143b7dbac6f18159bb5b496b1b76d',1,'highlightCells():&#160;rpevFunctions.cxx']]],
-  ['highlightcells_2ecxx_195',['highlightCells.cxx',['../highlightCells_8cxx.html',1,'']]]
+  ['printbranches_41',['PrintBranches',['../namespaceTDuvallUtils.html#a02319b2f5f0477b46e4211d70d6c85c5',1,'TDuvallUtils']]],
+  ['printresults_42',['PrintResults',['../classTRefMatch.html#ad8132f5dfcaf7edcfe04911dd4b06a65',1,'TRefMatch']]],
+  ['printverbose_43',['PrintVerbose',['../classTRefMatch.html#ab1ae50356d40240192e05bc3b12a8203',1,'TRefMatch']]],
+  ['prob2sig_44',['Prob2Sig',['../classTRefMatch.html#a57c7a08146436d9e39e84ad8544591e1',1,'TRefMatch::Prob2Sig()'],['../namespaceTDuvallUtils.html#aebfbb014b8f13cb1df197138169164fa',1,'TDuvallUtils::Prob2Sig()']]]
 ];
