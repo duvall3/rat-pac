@@ -22,7 +22,7 @@ void mcBasics(const char* filename) {
 RAT::DSReader r(filename);			// init RAT data-structure reader
 Long64_t k(0), N = r.GetTotal();		// get number of events
 RAT::DS::Root *ds = r.GetEvent(0);		// set up RAT data-structure object
-RAT::DS::MC *mc = ds->GetMC(0);			// set up RAT MC object
+RAT::DS::MC *mc = ds->GetMC();			// set up RAT MC object
 RAT::DS::MCSummary *mcs = mc->GetMCSummary();	// set up RAT MCSummary object
 TTimeStamp TS = mc->GetUTC();			// get timestamp for run start
 Double_t runStartTime = TS.AsDouble();		// convert timestamp to double
@@ -37,7 +37,7 @@ T_mc->Branch("numScintPhoton", &p);
 // MAIN
 for ( k=0; k<N; k++ ) {			// event loop
   ds = r.GetEvent(k);			// load event
-  mc = ds->GetMC(0);			// get Monte Carlo data
+  mc = ds->GetMC();			// get Monte Carlo data
   TS = mc->GetUTC();			// get timestamp at event start
   t = TS.AsDouble() - runStartTime;	// get time since run start (s)
   mcs = mc->GetMCSummary();		// get MCSummary data
@@ -55,8 +55,8 @@ T_mc->Draw("evTime>>ht");				// event-time histogram, "ht"
 ht->GetXaxis()->SetTitle("Event Time (s)");
 p2->cd();
 T_mc->Draw("numScintPhoton>>hp");			// scintillation-photon histogram, "hp"
-hq->GetXaxis()->SetTitle("Number of Scintillation Photons");
-hq->SetLineColor(kMagenta);
+hp->GetXaxis()->SetTitle("Number of Scintillation Photons");
+hp->SetLineColor(kMagenta);
 
 // write output file
 TString saveName(filename);
