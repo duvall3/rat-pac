@@ -66,8 +66,16 @@ T_mc->Write("T_mc");
 c_mc->Write("c_mc");
 ht->Write("ht");
 hp->Write("hp");
-f->Close();
+
+// save plots as image (requires batch-mode to work properly on some systems)
+Bool_t kBatchOrig = gROOT->IsBatch();
+gROOT->SetBatch(kTRUE);
+saveName.ReplaceAll("\.root", "");
+c_mc->Print(saveName.Data(), "png");
+c_mc->Close();
+gROOT->SetBatch(kBatchOrig);
 
 // all pau!   )
+f->Close();
 return;
 }
