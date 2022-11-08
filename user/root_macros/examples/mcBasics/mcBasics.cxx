@@ -16,7 +16,7 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-void mcBasics(const char* filename) {
+void mcBasics(const char* filename, const char* outputPrefix = "mcBasics") {
 
 // init
 RAT::DSReader r(filename);			// init RAT data-structure reader
@@ -59,8 +59,11 @@ hp->GetXaxis()->SetTitle("Number of Scintillation Photons");
 hp->SetLineColor(kMagenta);
 
 // write output file
+TString outPrefix = outputPrefix;
+outPrefix.Prepend("_");
 TString saveName(filename);
-saveName.ReplaceAll("\.root", "_mcBasics.root");
+saveName.ReplaceAll("\.root", outPrefix.Data());
+saveName.Append(".root");
 TFile *f = TFile::Open(saveName.Data(), "recreate");
 T_mc->Write("T_mc");
 c_mc->Write("c_mc");
@@ -70,8 +73,8 @@ hp->Write("hp");
 // save plots as image (requires batch-mode to work properly on some systems)
 Bool_t kBatchOrig = gROOT->IsBatch();
 gROOT->SetBatch(kTRUE);
-saveName.ReplaceAll("\.root", "");
-c_mc->Print(saveName.Data(), "png");
+saveName.ReplaceAll("\.root", ".png");
+c_mc->Print(saveName.Data());
 c_mc->Close();
 gROOT->SetBatch(kBatchOrig);
 
