@@ -27,6 +27,12 @@ RAT::DS::MCSummary *mcs = mc->GetMCSummary();	// set up RAT MCSummary object
 TTimeStamp TS = mc->GetUTC();			// get timestamp for run start
 Double_t runStartTime = TS.AsDouble();		// convert timestamp to double
 
+// particle-track objects
+RAT::TrackNav nav(ds);				// navigation object
+RAT::TrackCursor c = nav.Cursor(kFALSE);	// cursor (printing OFF)
+RAT::TrackNode *n;				// track node
+nav.Clear();					// until needed again below
+
 // set up TTree
 Double_t t;					// for the event time
 Double_t p;					// for the number of scintillation photons
@@ -35,14 +41,30 @@ T_mc->Branch("evTime", &t);
 T_mc->Branch("numScintPhoton", &p);
 
 // MAIN
+
 for ( k=0; k<N; k++ ) {			// event loop
+
+  // general items
   ds = r.GetEvent(k);			// load event
   mc = ds->GetMC();			// get Monte Carlo data
   TS = mc->GetUTC();			// get timestamp at event start
   t = TS.AsDouble() - runStartTime;	// get time since run start (s)
+
+  // simple MCSummary items
   mcs = mc->GetMCSummary();		// get MCSummary data
   p = mcs->GetNumScintPhoton();		// get number of scintillation photons
+
+  // particle-track items
+  RAT::TrackNav nav(ds);		// create TrackNav object (must be done every event)
+  c = nav.Cursor(kFALSE);		// get cursor for this event
+//n = c.GoChild(.....			// enter particle tracks
+
+  // TTree items
   T_mc->Fill();				// store values to tree
+
+  // prevent memory leak
+  nav.Clear();
+
 }
 
 // plot results
