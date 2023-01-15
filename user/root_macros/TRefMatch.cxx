@@ -618,8 +618,6 @@ void TRefMatch::DrawResults( Bool_t kDrawFit )
   // fill
   Double_t q, qRef;
   T->SetBranchAddress(varName, &q);
-  /* for (Int_t kT=0; kT<T->GetEntries(); kT++) { */
-  /* for (Int_t kT=0; kT<fnTestSampleEvents; kT++) { */
   for (Int_t kT=0; kT<GetnTestSampleEvents(); kT++) {
     T->GetEntry(kT);
     /* h->Fill(q); */

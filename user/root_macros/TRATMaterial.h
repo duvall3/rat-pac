@@ -1,9 +1,9 @@
-// TMFPMaterial
+// TRATMaterial
 // Class for calculating certain properties of materials
 // Primarily intended for:
 // -- use with RAT-PAC
 // -- calculating the MFP for neutron elastic scattering
-// Note: For CINT, load using gROOT->LoadMacro("TMFPMaterial.cxx");
+// Note: For CINT, load using gROOT->LoadMacro("TRATMaterial.cxx");
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 08/2022 ~ //
 
 //Copyright (C) 2022 Mark J. Duvall / T. Rocks Science
@@ -21,12 +21,12 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#ifndef TMFPMaterial
-#define TMFPMaterial
+#ifndef TRATMaterial
+#define TRATMaterial
 
 #include <TIBDParams.h>
 
-class TMFPMaterial : public TClass {
+class TRATMaterial : public TClass {
 
 private:
   // members
@@ -59,10 +59,10 @@ private:
   /* Bool_t		CheckComplete(); */
 public:
   // public methods
-  TMFPMaterial();									///< Default ctor
-  TMFPMaterial(const char* matName, Double_t targetDensity=0., Double_t ES_XS_B=0.);	///< Normal ctor
+  TRATMaterial();									///< Default ctor
+  TRATMaterial(const char* matName, Double_t targetDensity=0., Double_t ES_XS_B=0.);	///< Normal ctor
   // setters and getters
-  void			SetMatName(TString newMatName) {fMatName=newMatName; SetName(TString::Format("TMFPMaterial for %s",newMatName.Data()));}
+  void			SetMatName(TString newMatName) {fMatName=newMatName; SetName(TString::Format("TRATMaterial for %s",newMatName.Data()));}
   void			SetParent(TObject* newParent) {fParent=newParent;}
   void			SetComplete(Bool_t newComplete) {fkComplete=newComplete;}
   void			SetNComp(Int_t newNComp) {fNComp=newNComp;}
@@ -94,8 +94,8 @@ public:
   Bool_t		CheckComplete();						///< check if ready to run MFP calculation
   Double_t		Evaluate();							///< calculate MFP
 
-// Integrating the TMFPMaterial class into ROOT
-ClassDef(TMFPMaterial,1) ///< with class version number
+// Integrating the TRATMaterial class into ROOT
+ClassDef(TRATMaterial,1) ///< with class version number
 
 }; //end class
 

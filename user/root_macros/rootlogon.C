@@ -16,6 +16,7 @@
 //
 {
 
+  #include "TRATMaterial.cxx"
   #include "TIBDParams.cxx"
   /* #include "TRATVolume.cxx" */
   /* #include "TRATGeo.cxx" */

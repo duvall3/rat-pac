@@ -26,7 +26,7 @@
   Int_t k(0);
   TFile *ff;
   TH1D *hh;
-  TH1D *h = new TH1D("h_ksm", "Combined Trad Difference Distributions", 10, -diffLimit, diffLimit);
+  TH1D *h = new TH1D("h_trad", "Combined Trad Difference Distributions", 10, -diffLimit, diffLimit);
   h->SetLineWidth(3);
   h->SetLineColor(kBlue);
   h->GetXaxis()->SetTitle("#varphi_{Best} - #varphi_{True} (^{o})");
@@ -54,14 +54,14 @@
   TFitResult *hFR = hFRP.Get();
 
   // save
-  /* gROOT->SetBatch(kTRUE); */
-  /* c->Print("Trad_Multi.png"); */
+  gROOT->SetBatch(kTRUE);
+  c->Print("Trad_Multi.png");
   c->Write();
   h->Write();
   fh->Write();
   hFR->Write();
   f->Write();
-  /* f->Close(); */
+  f->Close();
 
   //   all pau!   )
 

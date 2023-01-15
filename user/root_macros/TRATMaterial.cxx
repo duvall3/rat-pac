@@ -1,28 +1,28 @@
-// TMFPMaterial -- Class for calculating certain properties of materials
+// TRATMaterial -- Class for calculating certain properties of materials
 
-#include "TMFPMaterial.h"
+#include "TRATMaterial.h"
 
-// Call the ClassImp() macro to give the TMFPMaterial class RTTI and full I/O capabilities
+// Call the ClassImp() macro to give the TRATMaterial class RTTI and full I/O capabilities
 #if !defined(__CLING__)
-  ClassImp(TMFPMaterial);
+  ClassImp(TRATMaterial);
 #endif
 
 //______________________________________________________________________________
 // default ctor
-TMFPMaterial::TMFPMaterial()
+TRATMaterial::TRATMaterial()
 {
   // define here
-  SetName("TMFPMaterial");
+  SetName("TRATMaterial");
   SetTitle("class for calculating neutron-ES MFP");
   /* Init(); */
 }
 
 //______________________________________________________________________________
 // normal ctor
-TMFPMaterial::TMFPMaterial( const char* matName, Double_t targetDensity, Double_t ES_XS_B )
+TRATMaterial::TRATMaterial( const char* matName, Double_t targetDensity, Double_t ES_XS_B )
 {
   // define here
-  SetName(TString::Format("TMFPMaterial for %s",matName));
+  SetName(TString::Format("TRATMaterial for %s",matName));
   SetTitle("class for calculating neutron-ES MFP");
   /* Init(); */
   fMatName = TString(matName);
@@ -32,7 +32,7 @@ TMFPMaterial::TMFPMaterial( const char* matName, Double_t targetDensity, Double_
 
 /* //______________________________________________________________________________ */
 /* // Init */
-/* void TMFPMaterial::Init() */
+/* void TRATMaterial::Init() */
 /* { */
 /*   fDensity = 1.; */
 /*   fTargetDensity = 1.; */
@@ -41,7 +41,7 @@ TMFPMaterial::TMFPMaterial( const char* matName, Double_t targetDensity, Double_
 
 /* //______________________________________________________________________________ */
 /* // SomePrivateMethod */
-/* void TMFPMaterial::SomePrivateMethod() */
+/* void TRATMaterial::SomePrivateMethod() */
 /* { */
 /*   // define here */
 /*   return; */
@@ -49,7 +49,7 @@ TMFPMaterial::TMFPMaterial( const char* matName, Double_t targetDensity, Double_
 
 /* //______________________________________________________________________________ */
 /* // SomeCalculation */
-/* Double_t TMFPMaterial::SomeCalculation( Int_t someArg1 ) */
+/* Double_t TRATMaterial::SomeCalculation( Int_t someArg1 ) */
 /* { */
 /*   // define here */
 /*   return retVal; */
@@ -57,7 +57,7 @@ TMFPMaterial::TMFPMaterial( const char* matName, Double_t targetDensity, Double_
 
 //______________________________________________________________________________
 // SetES_XS_B
-void TMFPMaterial::SetES_XS_B(Double_t newES_XS_B)
+void TRATMaterial::SetES_XS_B(Double_t newES_XS_B)
 {
   fES_XS_B = newES_XS_B;
   fES_XS_C = newES_XS_B * 1.e-24;
@@ -66,7 +66,7 @@ void TMFPMaterial::SetES_XS_B(Double_t newES_XS_B)
 
 //______________________________________________________________________________
 // SetES_XS_C
-void TMFPMaterial::SetES_XS_C(Double_t newES_XS_C)
+void TRATMaterial::SetES_XS_C(Double_t newES_XS_C)
 {
   fES_XS_C = newES_XS_C;
   fES_XS_B = newES_XS_C * 1.e24;
@@ -75,9 +75,9 @@ void TMFPMaterial::SetES_XS_C(Double_t newES_XS_C)
 
 //______________________________________________________________________________
 // CalculateTargetDensity
-Double_t TMFPMaterial::CalculateTargetDensity()
+Double_t TRATMaterial::CalculateTargetDensity()
 {
-  TString errLoc("TMFPMaterial::CalculateTargetDensity");
+  TString errLoc("TRATMaterial::CalculateTargetDensity");
   if (GetDensity()==0) {
     this->Error(errLoc.Data(), "Material density is missing; use SetDensity.\n");
     return 0;
@@ -86,9 +86,7 @@ Double_t TMFPMaterial::CalculateTargetDensity()
     this->Error(errLoc.Data(), "Molecular mass is missing; use SetAMU.\n");
     return 0;
   }
-  /* Double_t targetDensity = GetPctWt() * GetDensity() / GetAMU(); */
-  /* Double_t targetDensity = TMath::Na() * GetDensity() / GetAMU(); */
-  Double_t numberRatio = GetAMU() / GetDensity();
+  Double_t numberRatio = GetPctWt() * GetAMU() / GetDensity();
   Double_t targetDensity = TMath::Na() * numberRatio;
   SetTargetDensity(targetDensity);
   return targetDensity;
@@ -96,7 +94,7 @@ Double_t TMFPMaterial::CalculateTargetDensity()
 
 //______________________________________________________________________________
 // CheckComplete
-Bool_t TMFPMaterial::CheckComplete()
+Bool_t TRATMaterial::CheckComplete()
 {
   if ( ( GetES_XS_C() != 0 ) \
     && ( GetTargetDensity() != 0 ) ) {
@@ -109,11 +107,11 @@ Bool_t TMFPMaterial::CheckComplete()
 
 //______________________________________________________________________________
 // Evaluate
-Double_t TMFPMaterial::Evaluate()
+Double_t TRATMaterial::Evaluate()
 {
   // calculate MFP
   Double_t mfp;
-  TString errLoc("TMFPMaterial::Evaluate");
+  TString errLoc("TRATMaterial::Evaluate");
   if (GetES_XS_C()==0) {
     this->Error(errLoc.Data(), "Cross-Section is missing; use SetES_XS_{B,C}.\n");
     return 0;
@@ -140,18 +138,18 @@ Double_t TMFPMaterial::Evaluate()
 }
 
 ////______________________________________________________________________________
-//TMFPMaterial::
+//TRATMaterial::
 //{
 //}
 
 ////______________________________________________________________________________
-//TMFPMaterial::
+//TRATMaterial::
 //{
 //}
 
 //______________________________________________________________________________
 // override ls
-void TMFPMaterial::ls()
+void TRATMaterial::ls()
 {
   this->TObject::ls();
   printf("%s\t%f\n", fMatName.Data(), fMFP);
@@ -160,7 +158,7 @@ void TMFPMaterial::ls()
 
 //______________________________________________________________________________
 // override Print
-TMFPMaterial::Print()
+TRATMaterial::Print()
 {
   this->TObject::Print();
   printf("MatName: %s\t\tMFP: %f cm\n", fMatName.Data(), fMFP);

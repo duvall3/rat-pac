@@ -54,14 +54,14 @@
   TFitResult *hFR = hFRP.Get();
 
   // save
-  /* gROOT->SetBatch(kTRUE); */
-  /* c->Print("KS_Multi.png"); */
+  gROOT->SetBatch(kTRUE);
+  c->Print("KS_Multi.png");
   c->Write();
   h->Write();
   fh->Write();
   hFR->Write();
   f->Write();
-  /* f->Close(); */
+  f->Close();
 
   //   all pau!   )
 
