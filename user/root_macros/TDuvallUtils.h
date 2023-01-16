@@ -49,6 +49,8 @@ namespace TDuvallUtils {
   void			ExportPlots(const char* filename, const TString kGraphicsSaveFormat=".png"); ///< Shortcut for printing all canvases in a file
   /* TObject*		FindMatchingObject(TCollection* colxn, TRegexp patternRE);	///< Builtins can't search by PATTERN */
   /* TObject*		FindMatchingObject(TCollection* colxn, const char* pattern) { return FindMatchingObject(colxn, TRegexp(pattern)); } // overload FindMatchingObject for char* input */
+  /* TList*		FindMatchingObjects(TCollection* colxn, TRegexp patternRE, Bool_t caseSensitive=kTRUE);	///< Scan a TCollection for an object whose name matches a regex */
+  /* TList*		FindMatchingObjects(TCollection* colxn, const char* pattern, Bool_t caseSensitive=kTRUE) { return FindMatchingObjects(colxn, TRegexp(pattern), caseSensitive); } ///< Overload FindMatchingObjects for char* input */
   TList*		FindMatchingObjects(TCollection* colxn, TRegexp patternRE);	///< Scan a TCollection for an object whose name matches a regex
   TList*		FindMatchingObjects(TCollection* colxn, const char* pattern) { return FindMatchingObjects(colxn, TRegexp(pattern)); } ///< Overload FindMatchingObjects for char* input
   TList*		FindVarsOfType(const char* varType="", Bool_t kCaseSensitive=kFALSE);	///< List global variables matching a specified type

@@ -24,7 +24,12 @@
 #ifndef TRATMaterial
 #define TRATMaterial
 
+/* # if __has_include("TIBDParams.h") */
+/* #  include <TIBDParams.h> */
+/* #endif */
 #include <TIBDParams.h>
+
+class TRATElement;
 
 class TRATMaterial : public TClass {
 
@@ -33,7 +38,7 @@ private:
   TString		fMatName;							///< name of material
   TObject*		fParent;							///< pointer to parent material
   Bool_t		fkEval;								///< whether Evaluate() has been called on this object
-  Bool_t		fkComplete;							///< whether material is an element
+  Bool_t		fkComplete;							///< whether values needed to calculate MFP are all present
   Int_t			fNComp;								///< number of component materials
   TList*		fCompList;							///< list of component materials
   /* Double_t		fDensityCGS;							///< material density in g/cm^3 */
@@ -99,6 +104,50 @@ ClassDef(TRATMaterial,1) ///< with class version number
 
 }; //end class
 
-// all pau!   )
 #endif
 
+
+// Subclass: TRATElement
+#ifndef TRATElement
+#define TRATElement
+
+class TRATElement : public TRATMaterial {
+
+private:
+  // members
+  TString		fElName;							///< name of element
+  Int_t			fAtomicNumber;							///< atomic number
+  Double_t		fAtomicMass;							///< atomic mass in AMU
+  Int_t			fTargetIsotope;							///< e.g., "252" for Cf-252
+  Double_t		fTargetAbundance;						///< isotopic abundance of target isotope
+
+private:
+  // internal methods
+
+public:
+  // public methods
+  TRATElement();									///< Default ctor
+  TRATElement(const char* elName);							///< Normal ctor
+  // setters and getters
+  void			SetElName(TString newElName) {fElName=newElName;}
+  void			SetAtomicNumber(Int_t newAtomicNumber) {fAtomicNumber=newAtomicNumber;}
+  void			SetAtomicMass(Double_t newAtomicMass) {fAtomicMass=newAtomicMass;}
+  void			SetTargetIsotope(Int_t newTargetIsotope) {fTargetIsotope=newTargetIsotope;}
+  void			SetTargetAbundance(Double_t newTargetAbundance) {fTargetAbundance=newTargetAbundance;}
+  TString		GetElName() {return fElName;}
+  Int_t			GetAtomicNumber() {return fAtomicNumber;}
+  Double_t		GetAtomicMass() {return fAtomicMass;}
+  Int_t			GetTargetIsotope() {return fTargetIsotope;}
+  Double_t		GetTargetAbundance() {return fTargetAbundance;}
+
+  // general
+  /* void			FillFromRATDB(TString elName=fElName);			///< fill data from RATDB */
+  void			FillFromRATDB(TString elName);					///< fill data from RATDB
+
+// Integrating the TRATElement class into ROOT
+ClassDef(TRATElement,1) ///< with class version number
+
+}; //end class
+
+#endif
+// all pau!   )

@@ -142,23 +142,30 @@ void TDuvallUtils::ExportPlots( const char* filename, const TString kGraphicsSav
 //______________________________________________________________________________
 // FindMatchingObjects
 /**
- *  Scan a TCollection (*TList, TObjArray, etc.*) for an object whose name matches a regex.  
+ *  Scan a TCollection (*TList, *TObjArray, etc.*) for an object whose name matches a regex.  
  *  ROOT's builtins can't search by PATTERN.  
  * *Note: It's hard to believe this isn't already a builtin function
  *      for all classes inheriting from TCollection;
  *      but if it exists, I haven't found it.*
  * ```cpp
- * TObject* FindMatchingObjects( TRegexp regex )         // or
- * TObject* FindMatchingObjects( const char* pattern )  
+ * TObject* FindMatchingObjects( TCollection *clxn, TRegexp regex, Bool_t caseSensitive=KFALSE )         // or
+ * TObject* FindMatchingObjects( TCollection *clxn, const char* patter, Bool_t caseSensitive=KFALSEn )  
  * ```
  * \param colxn -- pointer to the desired *TCollection* object
  * \param pattern(RE) -- *char\** or *TRegexp* describing search pattern 
+ * \param caseSensitive -- *Bool_t* indicating whether the search should be case-sensitive
  * \retval matchingObjs -- *TList\** of matching objects 
  */
-/* TObject* TDuvallUtils::FindMatchingObject( TCollection* colxn, TRegexp patternRE ) */
+/* TObject* TDuvallUtils::FindMatchingObject( TCollection* colxn, TRegexp patternRE, Bool_t caseSensitive ) */
+/* TList* TDuvallUtils::FindMatchingObjects( TCollection* colxn, TRegexp patternRE, Bool_t caseSensitive ) */
 TList* TDuvallUtils::FindMatchingObjects( TCollection* colxn, TRegexp patternRE )
 {
   // init
+  /* if (caseSensitive) { */
+  /*   enum TString::ECaseCompare exactCase = TString::kExact; */
+  /* } else { */
+  /*   enum TString::ECaseCompare exactCase = TString::kIgnoreCase; */
+  /* } */
   TIter i(colxn);
   TObject *foundObj;
   TNamed *obj;
@@ -170,12 +177,12 @@ TList* TDuvallUtils::FindMatchingObjects( TCollection* colxn, TRegexp patternRE 
     objName = obj->GetName();
     if (objName.Contains(patternRE)) matchingObjs->Add(obj);
   }
-  // main
-  for ( i=colxn->begin(); i!=colxn->end(); ++i ) {
-    obj = (TNamed*)*i;
-    objName = obj->GetName();
-    if (objName.Contains(patternRE)) matchingObjs->Add(obj);
-  }
+  /* // main */
+  /* for ( i=colxn->begin(); i!=colxn->end(); ++i ) { */
+  /*   obj = (TNamed*)*i; */
+  /*   objName = obj->GetName(); */
+  /*   if (objName.Contains(patternRE), exactCase) matchingObjs->Add(obj); */
+  /* } */
   if ( matchingObjs->GetEntries() == 0 ) {
     printf("No matching objects found.\n");
     return 0x0;
