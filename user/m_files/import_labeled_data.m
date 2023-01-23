@@ -22,7 +22,7 @@
 
 % init
 fflush(stdout);
-FILENAME = input("Enter filename: ", "s");
+if ~exist(FILENAME) FILENAME = input("Enter filename: ", "s"); endif
 FILENAME = deblank(FILENAME);
 f_import = fopen(FILENAME);
 header_line = textscan( f_import, "%s", 1, "Delimiter", "\n" );
