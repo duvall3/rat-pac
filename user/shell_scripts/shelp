@@ -1,0 +1,35 @@
+#!/bin/bash
+# shelp -- script help; print the first block of a script file (i.e., the description)
+# ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 04/2023 ~ #
+
+# shelp help
+USAGE='Usage: shelp <SCRIPTNAME>...'
+if [[ -z $1 || $1 =~ -h ]]; then
+  echo $USAGE
+  exit 10
+fi
+
+# awk check
+if [[ ! $(type awk 2> /dev/null) ]]; then
+  if [[ ! $(type gawk 2> /dev/null) ]]; then
+    echo "ERROR: No AWK program (awk or gawk) found. Do yourself a favor and go install AWK."
+    exit 10
+  else
+    AWK=$(which gawk)
+  fi
+else
+  AWK=$(which awk)
+fi
+
+# main
+for COMMAND in $@; do
+  SCRIPT=$(which $COMMAND)
+  if $( file $SCRIPT | grep -q script ); then
+    echo "$COMMAND:"
+    cat $SCRIPT | awk -v RS='\n\n' 'NR==1'
+    echo
+  fi
+done
+
+# all pau!   )
+exit 0

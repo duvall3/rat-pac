@@ -38,14 +38,14 @@ L = 1000/2.54 * D; % tube height / tube diameter
 
 % array size
 maxrc_default = 16;
-b_maxrc = exist('maxrc');
-if b_maxrc ~= 0
-  maxrows = maxrc;
-  maxcols = maxrc;
-else
+% b_maxrc = exist('maxrc');
+% if b_maxrc ~= 0
+%   maxrows = maxrc;
+%   maxcols = maxrc;
+% else
   maxrows = maxrc_default;
   maxcols = maxrc_default;
-endif
+% endif
 
 
 % dummy column
@@ -80,12 +80,27 @@ whitebg;
 
 % annotations
 set(gca, 'fontsize', 18)
-titstr = sprintf("FROST Array | %dx%d ", maxrows, maxcols);
+titstr = sprintf("FROST Array | %dx%d | Total Target Mass ~ 1.4 T", maxrows, maxcols);
 T = title(titstr);
-set(T, 'color', 'w')
+set(T, 'color', 'k')
+set(T, 'fontsize', 24)
 xlabel 'x (m)'
 ylabel 'y (m)'
 zlabel 'z (m)'
+
+% add human for scale
+H = human3();
+
+% final adjustments
+xlim([-1.5 1.0])
+ylim([0 1])
+% set(gca, 'xtick', [-1.5:0.5:1.0])
+set(gca, 'xtick', [-1.0:1.0:1.0])
+set(gca, 'ytick', [0:0.5:1.0])
+% set(H, 'linewidth', 3.0)
+disp("Recommend running the following line:\nset(f, 'position', [1240 70 660 870])")
+set(T, 'fontsize', 18)
+set(gca, 'fontsize', 12)
 
 % enable camera rotation for mouse
 rotate3d on

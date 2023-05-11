@@ -19,6 +19,13 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+# help check
+USAGE="USAGE: tree2txt.sh <INFILENAME> [TREENAME] [OUTFILENAME]\n--Defaults: TREENAME = \"T\", OUTFILENAME = INFILENAME - \".root\" + \"_TREENAME.txt\""
+if [[ $1 =~ "-h" ]]; then
+  echo -e $USAGE
+  exit 10
+fi
+
 # arg and awk check
 if [ $# -lt 1 ]; then
   echo "USAGE: tree2txt.sh <INFILENAME> [TREENAME] [OUTFILENAME]"

@@ -46,6 +46,8 @@ if ( exper.Contains("chooz") ) { // Double CHOOZ
   P = (1./3.) * (2.5 + 2.5 + 25.);
 } else if ( exper.Contains("prospect") ) { // PROSPECT
   P = 150.;
+} else if ( exper.Contains("forest") ) { // FOREST
+  P = (1./3.) * (4*25.4 + 4*25.4 + 100.);
 }
 
 // main

@@ -35,46 +35,64 @@ if isempty(datadir)
 endif
 [status2, datadir_basename] = system("basename $G4NEUTRONXSDATA");
 
+% check for element names
+el_filename = 'element_names.txt';
+if isfile(el_filename)
+  ELNAMES = fopen(el_filename);
+  el_names = textscan(ELNAMES, '%d %s %s\n');
+  fclose(ELNAMES);
+endif
+
+% choose units
+to_barns = 1.;
+% to_barns = 1.e24;
+to_barns = 1.e22;
+
 % prepare axis items
 en_lim = [1e-9 1e5];
-en_label = 'Neutron Energy (MeV)';
+en_label = 'Neutron Kinetic Energy, K_n (MeV)';
 en_therm = (1/40)*1e-6;
 en_reactor_low = 1e-3; % K_n ~ 10^1 keV
 en_reactor_high = 1e-1; % K_n ~ 10^2 keV
 xs_lim = [1e-30 1e-18];
 % switch to keV
 en_lim = en_lim * 1e3;
-en_label = 'Neutron Energy (keV)';
+en_label = 'Neutron Kinetic Energy, K_n (keV)';
 en_therm = en_therm*1e3;
 en_reactor_low = en_reactor_low*1e3;
 en_reactor_high = en_reactor_high*1e3;
 % switch to barns
-xs_lim = xs_lim*1e24;
+xs_lim = xs_lim * to_barns;
 
 % plot prep
-f = figure('position', [720 240 1200 720]);
+% f = figure('position', [720 240 1200 720], 'color', 'w');
+f = figure('position', [720 240 1200 720], 'color', 'k');
 ax = axes('xscale', 'log', 'yscale', 'log');
 set(ax, 'fontsize', 20, 'titlefontsizemultiplier', 1.3)
 set(gcf, 'name', 'GEANT4 Neutron Cross-Section Data')
 hold on
-l_es = line( [en_lim(1) en_lim(1)], [xs_lim(1) xs_lim(1)], 'color', 'black' );
-l_is = line( [en_lim(1) en_lim(1)], [xs_lim(1) xs_lim(1)], 'linestyle', ':', 'color', 'black' );
-l_cap = line( [en_lim(1) en_lim(1)], [xs_lim(1) xs_lim(1)], 'linestyle', '--', 'color', 'black' );
+l_color = 'w';
+% l_color = 'k';
+l_es = line( [en_lim(1) en_lim(1)], [xs_lim(1) xs_lim(1)], 'color', l_color );
+l_is = line( [en_lim(1) en_lim(1)], [xs_lim(1) xs_lim(1)], 'linestyle', ':', 'color', l_color );
+l_cap = line( [en_lim(1) en_lim(1)], [xs_lim(1) xs_lim(1)], 'linestyle', '--', 'color', l_color );
 l_none = line( [en_lim(1) en_lim(1)], [xs_lim(1) xs_lim(1)], 'color', 'none' );
 set( [l_es l_is l_cap l_none], 'visible', 'off')
 l_therm = line([en_therm en_therm], [xs_lim(1)*.1 xs_lim(2)*10], 'color', [.5 .5 .5], 'linewidth', 2, 'linestyle', '-.');
-p = patch( [en_reactor_low en_reactor_high en_reactor_high en_reactor_low], [xs_lim(2)*10 xs_lim(2)*10 xs_lim(1)*.1 xs_lim(1)*.1], 'facecolor', [.5 .5 .5], 'facealpha', 0.2, 'edgecolor', 'none');
+p = patch( [en_reactor_low en_reactor_high en_reactor_high en_reactor_low], [xs_lim(2)*10 xs_lim(2)*10 xs_lim(1)*.1 xs_lim(1)*.1], 'facecolor', [.7 .7 .7], 'facealpha', 0.5, 'edgecolor', 'none');
 legend_items = [ l_therm p l_none l_none l_es l_is l_cap l_none ];
-legend_names = {'Thermal Energy', 'Reactor Region', '', 'For Each Z:', 'Elastic Scattering', 'Inelastic Scattering', 'Capture', '' };
+% legend_names = {'Thermal Energy', 'Reactor Region', '', 'For Each Z:', 'Elastic Scattering', 'Inelastic Scattering', 'Capture', '' };
+legend_names = {'Thermal K_n', 'Typical Reactor-IBD K_n', '', 'For Each Z:', 'Elastic Scattering', 'Inelastic Scattering', 'Capture', '' };
 
 % labels
-Tstr = sprintf("Neutron Cross Sections from %s", datadir_basename);
-T = title(Tstr);
-xlabel(en_label)
+Tstr = sprintf("Neutron Cross-Sections from %s", datadir_basename);
+T = title(Tstr, 'color', 'w');
+xlabel(en_label, 'color', 'w');
 %ylabel 'Cross Section (cm^{2})'
-ylabel 'Cross Section (barns)'
-set(ax, 'fontsize', 16)
+ylabel('Cross-Section (barns)', 'color', 'w');
+set(ax, 'fontsize', 16, 'color', 'w')
 colorlist = 'rbgmc';
+% colorlist = 'cymgr';
 
 % MAIN
 icolor = 1;
@@ -91,7 +109,7 @@ for z = Z
   % process el-scat data
   if any( el(:,2) > 0 )
     el(:,1) = el(:,1)*1e3; % switch to keV
-    el(:,2) = el(:,2)*1e24; % switch to barns
+    el(:,2) = el(:,2)*to_barns; % switch to barns
     el(isnan(el(:,2)),:) = []; % remove non-plottable data
     el(el(:,2)<=0,:) = []; % " "
     pes = plot(el(:,1), el(:,2), 'linewidth', 2); % make plot
@@ -101,7 +119,7 @@ for z = Z
   % process inel-scat data
   if any( inel(:,2) > 0 )
     inel(:,1) = inel(:,1)*1e3;
-    inel(:,2) = inel(:,2)*1e24; % switch to barns
+    inel(:,2) = inel(:,2)*to_barns; % switch to barns
     inel(isnan(inel(:,2)),:) = [];
     inel(inel(:,2)<=0,:) = [];
     pis = plot(inel(:,1), inel(:,2), 'linewidth', 2, 'linestyle', ':');
@@ -111,7 +129,7 @@ for z = Z
   % process cap data
   if any( cap(:,2) > 0 )
     cap(:,1) = cap(:,1)*1e3;
-    cap(:,2) = cap(:,2)*1e24; % switch to barns
+    cap(:,2) = cap(:,2)*to_barns; % switch to barns
     cap(isnan(cap(:,2)),:) = [];
     cap(cap(:,2)<=0,:) = [];
     pc = plot(cap(:,1), cap(:,2), 'linewidth', 2, 'linestyle', '--');
@@ -123,7 +141,11 @@ for z = Z
   if any( handles ~= 0 )
     current_color = sprintf('%s', colorlist(icolor));
     lZ = line( [en_lim(1) en_lim(1)], [xs_lim(1) xs_lim(1)], 'linewidth', 2, 'color', current_color );
-    lZ_label = sprintf('Z = %d', z);
+    if exist('el_names')
+      lZ_label = el_names{2}(z){1};
+    else
+      lZ_label = sprintf('Z = %d', z);
+    endif
     set( lZ, 'visible', 'off' )
     set( handles(handles~=0), 'color', current_color )
     legend_items(end+1) = lZ;
@@ -136,14 +158,14 @@ end % Z loop
 % legend
 l = legend( legend_items, legend_names, 'location', 'northeastoutside' );
 set(l, 'fontsize', 18)
+set(l, 'color', 'k', 'textcolor', 'w', 'edgecolor', 'w')
 
 % adjust axes
-set(gca, 'xlim', en_lim)
-set(gca, 'ylim', xs_lim)
-
-% workaround -- possibly no longer needed?
-%printf("Finished plotting data for %d nuclei. To fix the bug in the axes limits, run the following command:\n  set(gca, 'ylim', [1e-30 1e-18])\n", length(Z));
-%printf("Finished plotting data for %d nuclei. To fix the bug in the axes limits, run the following command:\n  set(gca, 'ylim', [1e-6 1e6])\n", length(Z));
+grid on
+grid minor on
+set(gca, 'xlim', en_lim, 'ylim', xs_lim, 'color', 'k')
+set(gca, 'xcolor', .85*[1 1 1])
+set(gca, 'ycolor', .85*[1 1 1])
 
 % all pau!   )
-%endfunction
+endfunction
