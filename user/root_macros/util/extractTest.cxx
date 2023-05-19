@@ -11,7 +11,7 @@ if (kIsDirectory) { // is directory name
   TString filename(name);
   filename.ReplaceAll("/","");
   filename.Append("_ncap_res.root");
-  TString fullname = dirname + filename;
+  TString fullname = name + filename;
 
   // main
   TRefMatch *r = new TRefMatch();
