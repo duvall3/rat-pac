@@ -221,6 +221,8 @@ void TRATElement::FillFromRATDB( TString elName )
     this->Error(errLoc.Data(), "Requested element not found in RATDB. Try searching the element's full name.");
     return;
   }
+  // set (official) name
+  SetElName(elName.Data());
   // process parameter list
   TIter il(l);
   TPair *tp;
@@ -247,9 +249,17 @@ void TRATElement::FillFromRATDB( TString elName )
       /* cout << "Found atomic number: " << valStr.Data() << endl; //debug */
       SetAtomicNumber(valStr.Atoi());
     }
+    // atomic mass
+    keyMatch.Form("%s\.a", searchStr.Data());
+    if (keyStr.Contains(TRegexp(keyMatch.Data()))) {
+      valStr.ReplaceAll('d',"");
+      cout << "Found atomic mass: " << valStr.Data() << endl; //debug
+      SetAtomicMass(valStr.Atof());
+    }
+    // isotopes
     keyMatch.Form("%s\.isotopes$", searchStr.Data());
     if (keyStr.Contains(TRegexp(keyMatch.Data()))) {
-      /* cout << "Found isotopes: " << valStr.Data() << endl; //debug */
+      cout << "Found isotopes: " << valStr.Data() << endl; //debug
       TRegexp RE("[0-9]+");
       ind = valStr.Index(RE);
       isoCount = 0;
@@ -263,10 +273,13 @@ void TRATElement::FillFromRATDB( TString elName )
 	ind = valStr.Index(RE,ind);
       }
       isoMass.Print(); //debug
+      /* SetIsoMasses(isoMass); */
+      fIsoMasses = isoMass;
     }
+    // isotoptic abundances
     keyMatch.Form("%s\.isotopes_frac", searchStr.Data());
     if (keyStr.Contains(TRegexp(keyMatch.Data()))) {
-      cout << "Found isotope fracs: " << valStr.Data() << endl; //debug
+      /* cout << "Found isotope fracs: " << valStr.Data() << endl; //debug */
       TRegexp RE("[0-9]*\.[0-9]*");
       ind = valStr.Index(RE);
       isoCount = 0;
@@ -279,7 +292,8 @@ void TRATElement::FillFromRATDB( TString elName )
 	ind++;
 	ind = valStr.Index(RE,ind);
       }
-      isoAbundance.Print(); //debug
+      /* isoAbundance.Print(); //debug */
+      /* SetIsoAbundances(isoAbundance); */
     }
   }
   return;
@@ -290,15 +304,24 @@ void TRATElement::FillFromRATDB( TString elName )
 //{
 //}
 
-////______________________________________________________________________________
-//TRATElement::
-//{
-//}
+//______________________________________________________________________________
+// override ls
+TRATElement::ls()
+{
+  this->TObject::ls();
+  printf("Element parameters for %s\n", GetElName().Data());
+}
 
-////______________________________________________________________________________
-//TRATElement::
-//{
-//}
+//______________________________________________________________________________
+// override Print
+TRATElement::Print()
+{
+  printf("Element parameters for %s\n", GetElName().Data());
+  printf("Atomic Number:\t\t%d\n", GetAtomicNumber());
+  printf("Atomic Mass:\t\t%f\n", GetAtomicMass());
+  printf("Target Isotope:\t\t%d\n", GetTargetIsotope());
+  printf("Target Abundance:\t%f\n", GetTargetAbundance());
+}
 
 ////______________________________________________________________________________
 //TRATElement::

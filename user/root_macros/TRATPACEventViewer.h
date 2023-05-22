@@ -67,7 +67,6 @@ public:
   Long64_t		GetTotalEvents() { return fTotalEvents; }
   Long64_t		GetCurrentEvent() { return fCurrentEvent; }
   // setters
-  void			SetData( Double_t someArg ) { fSomeData = someArg; }
   void			SetVolumePattern(const char* pattern) { fVolumePattern = pattern; }
   /* void			SetTopChildID(Int_t index=1) { fTopChildID = index; } */
   void			SetHighlightMode(Bool_t bValue=kTRUE) { fkHighlight = bValue; }

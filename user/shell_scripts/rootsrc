@@ -20,12 +20,38 @@
 ##    You should have received a copy of the GNU General Public License
 ##    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+# help
+usage() {
+  echo -e "\nUSAGE: rootsrc [-h|-d] <ROOTclass>"
+  echo -e "  -h\t\tShow this help message and exit"
+  echo -e "  -d\t\tprint filenames and exit"
+  echo
+}
 
 # arg check
 if [[ ! $1 ]]; then
-  echo -e "\nUSAGE: rootsrc <ROOTclass>\n"
+  usage
   exit 10
 fi
+
+# option(s)
+PRINT_ONLY=false
+while getopts ":hp" OPTIONS; do
+  case $OPTIONS in
+    h)
+      usage
+      exit 5
+      ;;
+    p)
+      PRINT_ONLY=true
+      ;;
+    *)
+      usage
+      exit 10
+      ;;
+  esac
+done
+shift $((OPTIND-1))
 
 # init
 HFILE_NAME="$1".h
@@ -60,8 +86,15 @@ if (! $HFILE_TF) && (! $CFILE_TF); then
   fi
 fi
 
-# open for reading only
-vim -R -c ":set filetype+=.root" -c ":au BufNewFile,BufRead * set filetype+=.root" -p $HFILE $CFILE
+# main
+# echo -e "<$1> Files:\n$HFILE\n$CFILE"
+echo -e "$HFILE\n$CFILE"
+if $PRINT_ONLY; then
+  exit 0
+else
+  # open for reading only
+  vim -R -c ":set filetype+=.root" -c ":au BufNewFile,BufRead * set filetype+=.root" -p $HFILE $CFILE
+fi
 
 # all pau!   )
 exit 0

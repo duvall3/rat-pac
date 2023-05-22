@@ -72,7 +72,7 @@ TH1D* KSMultiRes( TObjArray* fileList ) {
   c->Write();
   h->Write();
   fh->Write();
-  hFR->Write();
+  hFR->Write("hFR");
   f->Write();
   f->Close();
 
