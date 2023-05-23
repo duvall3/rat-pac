@@ -120,9 +120,13 @@ private:
   Double_t		fAtomicMass;							///< atomic mass in AMU
   Int_t			fTargetIsotope;							///< e.g., "252" for Cf-252
   Double_t		fTargetAbundance;						///< isotopic abundance of target isotope
+  TVectorD		fIsoMasses;							///< vector of isotopic masses
+  TVectorD		fIsoAbundances;							///< vector of isotopic abundances
 
 private:
   // internal methods
+  /* void			SetIsoMasses(TVectorD *newIsoMasses) {fIsoMasses=&newIsoMasses;} */
+  /* void			SetIsoAbundancees(TVectorD *newIsoAbundances) {fIsoAbundancees=&newIsoAbundances;} */
 
 public:
   // public methods
@@ -139,6 +143,11 @@ public:
   Double_t		GetAtomicMass() {return fAtomicMass;}
   Int_t			GetTargetIsotope() {return fTargetIsotope;}
   Double_t		GetTargetAbundance() {return fTargetAbundance;}
+  TVectorD		GetIsoMasses() {return fIsoMasses;}
+  TVectorD		GetIsoAbundances() {return fIsoAbundances;}
+  //TEMP public:
+  void			SetIsoMasses(TVectorD newIsoMasses) {fIsoMasses = newIsoMasses;}
+  void			SetIsoAbundances(TVectorD newIsoAbundances) {fIsoAbundances = newIsoAbundances;}
 
   // general
   /* void			FillFromRATDB(TString elName=fElName);			///< fill data from RATDB */
