@@ -16,7 +16,7 @@
 //
 {
 
-  #include "TRATMaterial.cxx"
+  /* #include "TRATMaterial.cxx" */
   #include "TIBDParams.cxx"
   /* #include "TRATVolume.cxx" */
   /* #include "TRATGeo.cxx" */
@@ -44,5 +44,6 @@
   gROOT->LoadMacro("TRefMatch.cxx");
   gROOT->LoadMacro("TRATGeoConverter.cxx");
   gROOT->LoadMacro("TRATPACEventViewer.cxx");
+  gROOT->LoadMacro("TKSMultiRes.cxx");
 
 }

@@ -567,7 +567,7 @@ void TRefMatch::RefCompare()
   for ( k=0; k<N; k++ ) {
     if (MS[k]1<0.001) continue;
     printf("\t%3d\t\t", MS[k][0]);
-    if (MS[k][1]<0.1) printf(" "); // because printf %2.1f doens't want to work for me today
+    if (MS[k][1]<0.1) printf(" "); // because printf %2.1f doesn't want to work for me today
     printf("%.2f\t\t\t%.3e\n", 100.*MS[k][1], MS[k][2]);
   }
   if (fBestMatchFile!=0x0) printf("Best match found in file \"%s\"\n", fBestMatchFile->GetName());
@@ -787,10 +787,10 @@ void TRefMatch::ExtractTest( const char* runName, const char* treeName, const ch
   /* TString testName; */
   TString testName;
   if (kPhiTest) {
-    /* testName.Form( "%02dDEG_phi.root", TMath::Nint(phiTrueDouble) ); */
-    testName = runName;
-    testName.ReplaceAll("_ncap_res", "");
-    testName.ReplaceAll("\.root", "_phi.root");
+    testName.Form( "%02dDEG_phi.root", TMath::Nint(phiTrueDouble) );
+    /* testName = runName; */
+    /* testName.ReplaceAll("_ncap_res", ""); */
+    /* testName.ReplaceAll("\.root", "_phi.root"); */
   } else {
     testName = runName;
     Ssiz_t slash = testName.Last('/');
