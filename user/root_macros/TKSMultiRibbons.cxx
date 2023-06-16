@@ -16,25 +16,14 @@ TKSMultiRibbons::TKSMultiRibbons()
   SetName("TKSMultiRibbons");
   SetTitle("class for analyzing DeltaPhi for each individual angle alongside TKSMultiRes");
   // necessary init
+  fPlotTypes = kBoth;
   fFileList = new TObjArray;
   fOutFileName = "KS_Multi.root";
   fRibbonList = new TList;
   fCutList = new TList;
-  /* TMatrixD fDeltas(0,0); // use ResizeTo in Init() //TODO */
-  fDeltas = new TMatrixD(31,4); // HC/debug
+  // just to be sure
+  SetInit(kFALSE);
 }
-
-////______________________________________________________________________________
-//// normal ctor
-///**
-// * \param someArg1 -- e.g., a filename
-// * \param someArg2 -- e.g., a track ID
-// */
-//TKSMultiRibbons::TKSMultiRibbons( const char* someArg1, Double_t someArg2 )
-//{
-//  // define here
-//  fSomeData = 0.;
-//}
 
 //______________________________________________________________________________
 // FillFileList
@@ -67,32 +56,84 @@ void TKSMultiRibbons::FillFileList()
 void TKSMultiRibbons::Init()
 {
   if (fFileList->GetEntries()==0) FillFileList();
-  /* fDeltas->ResizeTo(fFileList->GetEntries(), 4); //TODO: N_cols */
+  SetNFiles(fFileList->GetEntries());
+  TFile *_f = TFile::Open(fFileList->At(0)->GetName());
+  TMatrixD *arm = (TMatrixD*)gDirectory->Get("allResultsMatrix");
+  Int_t nAngles = arm->GetNrows();
+  _f->Close();
+  SetNAngles(nAngles);
+  FillData();
+  SetInit(kTRUE);
   return;
 }
 
 //______________________________________________________________________________
 // RetrieveData
-void TKSMultiRibbons::RetrieveData()
+TMatrixD TKSMultiRibbons::RetrieveData()
 {
-  //TODO
-  cout << endl;
+  // init
+  Int_t nRows, nCols, nFiles = GetNFiles(), nAngles = GetNAngles();
+  TFile *ff;
+  TSystemFile *sf;
+  TMatrixD *arm;
+  TMatrixD ARM;
+  TMatrixD Deltas(nAngles, nFiles);
+  // loop over files to fill Deltas using TMatrixDColumn(allResultsMatrix, Ncols-1)
+  Int_t k;
+  TIter i(fFileList);
+  for ( i=fFileList->begin(); i!=fFileList->end(); ++i ) {
+    sf = (TSystemFile*)*i;
+    f = TFile::Open(sf->GetName());
+    arm = (TMatrixD*)gDirectory->Get("allResultsMatrix");
+    nRows = arm->GetNrows();
+    nCols = arm->GetNcols();
+    ARM.ResizeTo(nRows, nCols);
+    ARM = *arm;
+    nCols = ARM.GetNcols();
+    TMatrixDColumn deltaCol(ARM, nCols-1);
+    for ( Int_t j=0; j<nRows; j++ ) {
+      Deltas[j][k] = deltaCol[j];
+    }
+    f->Close();
+    k++;
+  }
+  /* Deltas.Print(); //debug */
+  TMatrixD newDeltas( nAngles, nFiles );
+  for ( Int_t row=0; row<nAngles; row++ ) {
+    for ( Int_t col=0; col<nFiles; col++ ) {
+      newDeltas[row][col] = Deltas[row][col];
+    }
+  }
+  return newDeltas;
+}
+
+//______________________________________________________________________________
+// SetDeltas
+void TKSMultiRibbons::SetDeltas(TMatrixD *newDeltas)
+{
+  fDeltas = new TMatrixD( newDeltas->GetNrows(), newDeltas->GetNcols() );
+  fDeltas->SetMatrixArray( newDeltas->GetMatrixArray() );
   return;
 }
 
 //______________________________________________________________________________
-// Ribbons
-void TKSMultiRibbons::Ribbons()
+// FillData
+void TKSMultiRibbons::FillData()
+{
+  SetDeltas( &(RetrieveData()) );
+}
+
+//______________________________________________________________________________
+// DrawPlots
+void TKSMultiRibbons::DrawPlots()
 {
   //init
   Int_t k(0), kFile(0);
-  /* Int_t N = fFileList->GetEntries(); */
-  Int_t N = 31; //debug
-  Int_t Nphi = 4; //debug
-  TIter i(fFileList);
+  Int_t N = GetNAngles();
+  Int_t Nphi = GetNFiles();
   TArrayD deltArr(Nphi);
   Double_t delta(1.0);
-  Double_t angleLow(-1.), angleHigh(31.);
+  Double_t angleLow(0.), angleHigh(31.);
   Double_t diffLim(20.);
   TF2 *g;
   TString ribbonName, cutName;
@@ -100,63 +141,30 @@ void TKSMultiRibbons::Ribbons()
   TCutG *cut0;
   Double_t A_guess(1.), mu_guess(1.), sigma_guess(5.);
   Double_t A, mu, sigma;
+  switch (GetCurrentPlotType()) {
+    case kRibbons:
+      TString rhOption("surf2");
+      /* cout << "Current Plot Type: kRibbons" << endl; //debug */
+      /* cout << "rhOption: " << rhOption.Data() << endl; //debug */
+      break;
+    case kHeatmap:
+      TString rhOption("colz");
+      /* cout << "Current Plot Type: kHeatmap" << endl; //debug */
+      /* cout << "rhOption: " << rhOption.Data() << endl; //debug */
+      break;
+    default:
+      this->Error("TKSMultiRibbons", "PlotTypes selection not recognized.\n");
+  }
+  /* cout << GetCurrentPlotType() << endl; //debug */
+  /* cout << rhOption.Data() << endl; //debug */
   TString drawCmd, drawCmd2;
-  /* fDeltas->Print(); //debug */
-  TMatrixD deltas = *fDeltas;
-  // retrieve data from files //TODO
-  /* RetrieveData(); */
-  deltas[0][0] =  2.; deltas[0][1] =  0.; deltas[0][2] = -3.; deltas[0][3] =  1; //debug
-  deltas[1][0] = -1.; deltas[1][1] =  1.; deltas[1][2] = -2.; deltas[1][3] =  5; //debug
-  deltas[2][0] =  3.; deltas[2][1] =  2.; deltas[2][2] = -1.; deltas[2][3] = -2; //debug
-  deltas[3][0] =  2.; deltas[3][1] =  0.; deltas[3][2] = -3.; deltas[3][3] =  1; //debug
-  deltas[4][0] =  2.; deltas[4][1] =  0.; deltas[4][2] = -3.; deltas[4][3] =  1; //debug
-  deltas[5][0] = -1.; deltas[5][1] =  1.; deltas[5][2] = -2.; deltas[5][3] =  5; //debug
-  deltas[6][0] =  3.; deltas[6][1] =  2.; deltas[6][2] = -1.; deltas[6][3] = -2; //debug
-  deltas[7][0] =  2.; deltas[7][1] =  0.; deltas[7][2] = -3.; deltas[7][3] =  1; //debug
-  deltas[8][0] =  2.; deltas[8][1] =  0.; deltas[8][2] = -3.; deltas[8][3] =  1; //debug
-  deltas[9][0] = -1.; deltas[9][1] =  1.; deltas[9][2] = -2.; deltas[9][3] =  5; //debug
-  deltas[10][0] =  3.; deltas[10][1] =  2.; deltas[10][2] = -1.; deltas[10][3] = -2; //debug
-  deltas[11][0] =  2.; deltas[11][1] =  0.; deltas[11][2] = -3.; deltas[11][3] =  1; //debug
-  deltas[12][0] =  2.; deltas[12][1] =  0.; deltas[12][2] = -3.; deltas[12][3] =  1; //debug
-  deltas[13][0] = -1.; deltas[13][1] =  1.; deltas[13][2] = -2.; deltas[13][3] =  5; //debug
-  deltas[14][0] =  3.; deltas[14][1] =  2.; deltas[14][2] = -1.; deltas[14][3] = -2; //debug
-  deltas[15][0] =  2.; deltas[15][1] =  0.; deltas[15][2] = -3.; deltas[15][3] =  1; //debug
-  deltas[16][0] =  2.; deltas[16][1] =  0.; deltas[16][2] = -3.; deltas[16][3] =  1; //debug
-  deltas[17][0] = -1.; deltas[17][1] =  1.; deltas[17][2] = -2.; deltas[17][3] =  5; //debug
-  deltas[18][0] =  3.; deltas[18][1] =  2.; deltas[18][2] = -1.; deltas[18][3] = -2; //debug
-  deltas[19][0] =  2.; deltas[19][1] =  0.; deltas[19][2] = -3.; deltas[19][3] =  1; //debug
-  deltas[20][0] =  2.; deltas[20][1] =  0.; deltas[20][2] = -3.; deltas[20][3] =  1; //debug
-  deltas[21][0] = -1.; deltas[21][1] =  1.; deltas[21][2] = -2.; deltas[21][3] =  5; //debug
-  deltas[22][0] =  3.; deltas[22][1] =  2.; deltas[22][2] = -1.; deltas[22][3] = -2; //debug
-  deltas[23][0] =  2.; deltas[23][1] =  0.; deltas[23][2] = -3.; deltas[23][3] =  1; //debug
-  /* cout << "Sample Data:" << endl; //debug */
-  /* deltas.Print(); //debug */
+  TMatrixD deltas = *(GetDeltas());
   // plot
-  fRibbonCanvas = new TCanvas("fRibbonCanvas", "Ribbon Plots", 1000, 100, 800, 800);
-  fRibbonCanvas->SetGrid(1,1); //move me?
   // loop over angles (matrix rows)
-  /* for (k=0; k<N; k++) { */
-  for (k=0; k<23; k++) { //debug
-    /* cout << "Beginning iteration k = " << k << endl; //debug */
+  for (k=0; k<N; k++) {
     // set up cut
     cutName.Form("cut_%02dDEG", k);
-    /* cout << "fCutList: " << fCutList << endl; //debug */
-    /* if (fCutList) { */
-    /*   /1* fCutList->ls(); //debug *1/ */
-    /*   cout << "fCutList: " << fCutList << endl; */
-    /* } else { */
-    /*   cout << "Could not print fCutList = " << fCutList << endl; //debug */
-    /* } */
-    /* fCutList->Add( new TCutG(cutName.Data(),5) ); */
-    /* cut0 = (TCutG*)fCutList->At(k); */
     cut0 = new TCutG(cutName.Data(), 5);
-    /* cout << "created new cut" << endl; //debug */
-    /* if (fCutList) { */
-    /*   fCutList->Add(cut0); */
-    /*   cout << "Added cut " << cut0->GetName() << endl; */
-    /* } else { */
-    /*   cout << "Error: fCutList = " << fCutList << endl; */
-    /* } */
     cut0->SetVarX("x");
     cut0->SetVarY("y");
     cut0->SetPoint(0, -diffLim, k);
@@ -164,28 +172,19 @@ void TKSMultiRibbons::Ribbons()
     cut0->SetPoint(2,  diffLim, k+delta);
     cut0->SetPoint(3,  diffLim, k);
     cut0->SetPoint(4, -diffLim, k);
-    /* cout << "finished " << cut0->GetName() << endl; //debug */
     // calculate parameters
-    /* cout << "getting data..." << endl; //debug */
-    TMatrixDRow R(deltas, k);
-    /* cout << "data got" << endl; //debug */
-    for (Int_t j=0; j<Nphi; j++) deltArr[j] = R[j];
+    TMatrixDRow deltaRow(deltas, k);
+    for (Int_t j=0; j<Nphi; j++) deltArr[j] = deltaRow[j];
     A = 1.; // each angle has the same number of entries, so they're effectively already normalized (relative to one another)
     mu = TMath::Mean(Nphi,deltArr.GetArray());
     sigma = TMath::RMS(Nphi,deltArr.GetArray());
-    /* cout << "finished fit stats for k = " << k << endl; //debug */
     ribbonName.Form("g_%02dDEG", k);
     // create and adjust ribbon plot
-    /* cout << "creating ribbon plot " << ribbonName.Data() << endl; //debug */
-    /* fRibbonList->ls(); //debug */
-    /* fRibbonList->Add( new TF2(ribbonName.Data(), "gaus(0)", -diffLim, diffLim, angleLow, angleHigh) ); */
+    gSystem->RedirectOutput("/dev/null"); // discard the error about number of parameters when creating the next 'new TF2'
     g = new TF2(ribbonName.Data(), "gaus(0)", -diffLim, diffLim, angleLow, angleHigh);
-    /* cout << ribbonName.Data() << " created" << endl; //debug */
-    /* cout << g << "\t" << fRibbonList << endl; //debug */
+    gSystem->RedirectOutput(0); // reset stderr,stdout
     /* fRibbonList->Add(g); */
-    /* cout << ribbonName.Data() << " added" << endl; //debug */
     /* fRibbonList->ls(); //debug */
-    /* g = (TF2*)fRibbonList->At(k); */
     g->SetLineWidth(1);
     g->SetLineColor(kCyan);
     g->SetNpx(90);
@@ -194,24 +193,47 @@ void TKSMultiRibbons::Ribbons()
     // set annotations (first iteration only)
     if (k==0) {
       g->SetTitle("#Delta#varphi Distributions at Individual Angles");
-      g->GetXaxis()->SetTitle("#varphi_{Recon}-#varphi_{True} (^{o})");
+      g->GetXaxis()->SetTitle("#varphi_{Recon} - #varphi_{True} (^{o})");
       g->GetYaxis()->SetTitle("#varphi_{True} (^{o})");
       g->GetXaxis()->SetTitleOffset(2.0);
       g->GetYaxis()->SetTitleOffset(2.0);
-      drawCmd.Form("surf1 [%s]", cutName.Data());
-      drawCmd2.Form("same surf3 [%s]", cutName.Data());
+      drawCmd.Form("%s [%s]", rhOption.Data(), cutName.Data());
     } else {
-      drawCmd.Form("same surf1 [%s]", cutName.Data());
+      drawCmd.Form("same %s [%s]", rhOption.Data(), cutName.Data()); // default
     }
-    drawCmd2.Form("same surf3 [%s]", cutName.Data());
     // draw
     /* cout << "finished k = " << k << endl << endl; //debug */
+    /* cout << drawCmd.Data() << endl; //debug */
     g->Draw(drawCmd.Data());
-    /* if (k==0)  g->GetZaxis()->SetLimits(0.0, 2.0); //debug //HC //TODO */
-    if (k==0)  g->GetZaxis()->SetRangeUser(0.0, 2.0); //debug //HC //TODO
-    /* g->Draw(drawCmd2.Data()); // turn off to disable projected heatmap */
   }
   return;
+}
+
+//______________________________________________________________________________
+// Ribbons
+void TKSMultiRibbons::Ribbons()
+{
+  if (! IsInit()) Init();
+  SetCurrentPlotType(kRibbons);
+  gSystem->RedirectOutput("/dev/null"); // suppress warning if replacing canvas
+  fRibbonCanvas = new TCanvas("fRibbonCanvas", "Ribbon Plots", 1000, 100, 800, 800);
+  gSystem->RedirectOutput(0); // reset stderr,stdout
+  fRibbonCanvas->SetGrid(1,1);
+  fRibbonCanvas->cd();
+  DrawPlots();
+}
+
+//______________________________________________________________________________
+// Heatmap
+void TKSMultiRibbons::Heatmap()
+{
+  if (! IsInit()) Init();
+  SetCurrentPlotType(kHeatmap);
+  gSystem->RedirectOutput("/dev/null"); // suppress warning if replacing canvas
+  fHeatmapCanvas = new TCanvas("fHeatmapCanvas", "Heatmap Plot", 1000, 100, 800, 800);
+  gSystem->RedirectOutput(0); // reset stderr,stdout
+  fHeatmapCanvas->cd();
+  DrawPlots();
 }
 
 //______________________________________________________________________________
@@ -219,17 +241,44 @@ void TKSMultiRibbons::Ribbons()
 void TKSMultiRibbons::Save()
 {
   // save
-  if (! fOutFile) fOutFile = TFile::Open(fOutFileName.Data(), "recreate");
   Bool_t kBatchOrig = gROOT->IsBatch();
   gROOT->SetBatch(kTRUE);
-  TString outImageName(fOutFileName);
-  outImageName.ReplaceAll("\.root$", "_ribbons.png");
-  fHistoCanvas->Print(outImageName.Data());
-  fOutFile->cd();
-  fRibbonCanvas->Write();
-  fOutFile->Write();
-  /* fOutFile->Close(); */
+  /* cout << GetOutFile() << endl; //debug */
+  /* cout << GetOutFileName().Data() << endl; //debug */
+  /* if ( GetOutFile() == 0x0 ) { */
+  /*   printf("Creating file \"%s\"...\n", GetOutFileName().Data()); */
+  /*   TFile *_f = TFile::Open(fOutFileName.Data(), "recreate"); */
+  /*   SetOutFile(_f); */
+  /* } else { */
+  /*   printf("Using OutFile \"%s\"...\n", GetOutFile()->GetName()); */
+  /* } */
+  /* cout << gFile << endl; //debug */
+  /* GetOutFile()->cd(); */
+  /* cout << "Current file: " << gFile << endl; //debug */
+  /* if (! GetOutFile()->IsOpen()) SetOutFile( TFile::Open(fOutFileName.Data(), "update") ); */
+  if (fRibbonCanvas) {
+    TString outRibbonName(fOutFileName);
+    outRibbonName.ReplaceAll("\.root", "_Ribbons.png");
+    /* cout << outRibbonName.Data() << endl;  //debug */
+    fRibbonCanvas->Print(outRibbonName.Data());
+    /* fRibbonCanvas->Write("c_rib"); */
+    /* fRibbonCanvas->Close(); */
+  }
+  if (fHeatmapCanvas) {
+    TString outHeatmapName(fOutFileName);
+    outHeatmapName.ReplaceAll("\.root", "_Heatmap.png");
+    /* cout << outHeatmapName.Data() << endl;  //debug */
+    fHeatmapCanvas->Print(outHeatmapName.Data());
+    /* fHeatmapCanvas->Write("c_heat"); */
+    /* fHeatmapCanvas->Close(); */
+  }
+  /* this->Write("MultiRibbons"); */
+  /* this->Write("MultiRibbons", TObject::kSingleKey); */
+  /* GetOutFile()->Write(); */
+  /* GetOutFile()->Close(); */
   gROOT->SetBatch(kBatchOrig);
+  if (fHeatmapCanvas) Heatmap();
+  if (fRibbonCanvas) Ribbons();
   return;
 }
 
@@ -238,9 +287,59 @@ void TKSMultiRibbons::Save()
 void TKSMultiRibbons::Run()
 {
   Init();
-  Ribbons();
-  Save();
+  switch(GetPlotTypes()) {
+  /* switch(fPlotTypes) { */
+    case kRibbons:
+      cout << "Plotting ribbons only..." << endl; //debug
+      Ribbons();
+      break;
+    case kHeatmap:
+      cout << "Plotting heatmap only..." << endl; //debug
+      Heatmap();
+      break;
+    case kBoth:
+      /* cout << "Plotting ribbons and heatmap..." << endl; //debug */
+      cout << "Plotting heatmap..." << endl; //debug
+      Heatmap();
+      cout << "Plotting ribbons..." << endl; //debug
+      Ribbons();
+      break;
+    default:
+      this->Error("TKSMultiRibbons", "PlotTypes selection not recognized.\n");
+  }
+  /* Save(); */
   return;
+}
+
+/* //______________________________________________________________________________ */
+/* // override ls // ? */
+/* TKSMultiRibbons::ls() */
+/* { */
+/* } */
+
+//______________________________________________________________________________
+// override Print
+void TKSMultiRibbons::Print()
+{
+  printf( "%s: %s\n", GetName(), GetTitle() );
+  printf( "Name\t\t\tAddress/Value\t\tEntries (if TCollection)\n" );
+  printf( "fFileList\t\t0x%x\t\t%d\n", GetFileList(), GetFileList()->GetEntries() );
+  printf( "fOutFileName\t\t%s\n", GetOutFileName().Data() );
+  printf( "fOutFile\t\t0x%x\n", GetOutFile() );
+  printf( "fRibbonCanvas\t\t0x%x\n", GetRibbonCanvas() );
+  printf( "fRibbonList\t\t0x%x\t\t%d\n", GetRibbonList(), GetRibbonList()->GetEntries() );
+  printf( "fCutList\t\t0x%x\t\t%d\n", GetCutList(), GetCutList()->GetEntries() );
+  printf( "fDeltas\t\t\t0x%x\t\t%dx%d\n", GetDeltas(), GetDeltas()->GetNrows(), GetDeltas()->GetNcols() );
+  printf( "\n" );
+}
+
+//______________________________________________________________________________
+// PrintEnums
+void TKSMultiRibbons::PrintEnums()
+{
+  printf("Enums for class %s:\n", Class_Name());
+  printf("EPlotTypes:\n");
+  printf("  0:\tkRibbons\n  1:\tkHeatmap\n  2:\tkBoth\n");
 }
 
 ////______________________________________________________________________________

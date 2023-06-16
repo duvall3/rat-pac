@@ -22,13 +22,55 @@
 #ifndef TKSMultiRibbons
 #define TKSMultiRibbons
 
+/** TKSMultiRibbons
+ *
+ * Class for making ribbon and heatmap plots, specifically from KSSummary data.
+ *
+ *   To use:
+ *    - Call constructor
+ *    - Use SetPlotTypes(0|1|2) to select desired plot(s) *[optional]*
+ *    - Call Run()
+ *    - Use SetOutFileName to change output filenames *[optional]*
+ *    - Call Save() *[optional]*
+ *    - *Note: You can ajust the camera in the ribbon plot before saving if desired*
+ *
+ *   Plot-type enum options are:
+ *    - 0 = kRibbons: ribbon plot only
+ *    - 1 = kHeatmap: heatmap plot only
+ *    - 2 = kBoth: both plots *[default]*
+ *
+ * Example:
+ * ```cpp
+ *   TKSMultiRibbons R;
+ *   R.SetPlotTypes(TKSMultiRibbons::kHeatmap);
+ *   R.Run();
+ *   R.SetOutFileName("MultiRibbons.root");
+ *   R.Save();
+ * ```
+ */
+
 class TKSMultiRibbons : public TClass {
+
+public:
+  // graph-selection enum
+  enum EPlotTypes									/// Which plots to make:
+  {
+    kRibbons,										///< Ribbon plot only
+    kHeatmap,										///< Heatmap plot only
+    kBoth										///< Both plots
+  };
 
 private:
   // members
+  Bool_t		fkInit;								///< Whether Init() has been run yet
+  Int_t			fkNFiles;							///< Number of 'KSSummary.root' files found
+  Int_t			fkNAngles;							///< Number of angles in each file
+  EPlotTypes		fPlotTypes;							///< Which plots to make
+  EPlotTypes		fCurrentPlotType;						///< Currently-active plot type
   TObjArray*		fFileList;							///< List of KSSummary files to analyze
   TString		fOutFileName;							///< Output filename
   TFile*		fOutFile;							///< Output TFile*
+  TCanvas*		fHeatmapCanvas;							///< Canvas for heatmap plot
   TCanvas*		fRibbonCanvas;							///< Canvas for ribbon plots
   TList*		fRibbonList;							///< List of ribbon plots
   TList*		fCutList;							///< List of xy cuts for ribbon plots
@@ -36,30 +78,45 @@ private:
 
 private:
   // internal methods
+  void			SetInit(Bool_t newInit) { fkInit=newInit; }
   void			FillFileList();							///< Scan for KSSummary files and store in fFileList
+  void			SetNFiles(Int_t newNFiles) { fkNFiles=newNFiles; }
+  void			SetNAngles(Int_t newNAngles) { fkNAngles=newNAngles; }
+  void			SetDeltas(TMatrixD *newDeltas);					///< Fill difference matrix
+  TMatrixD		RetrieveData();							///< Fetch data from files
+  void			FillData();							///< Fill difference data
 
 public:
   // public methods
   TKSMultiRibbons();									///< Default ctor
-  /* TKSMultiRibbons( const char* someArg1, Double_t someArg2 );				///< Normal ctor */
+  Bool_t		IsInit() { return fkInit; }					///< Whether Init() has been run yet
   // setters and getters
+  void			SetPlotTypes(EPlotTypes plotSelection) { fPlotTypes=plotSelection; }
+  void			SetCurrentPlotType(EPlotTypes plotSelection) { fCurrentPlotType=plotSelection; }
   void			SetFileList(TObjArray* newFileList) { fFileList=newFileList; }
   void			SetOutFileName(TString fileName) { fOutFileName=fileName; }
   void			SetOutFileName(const char* filename) { fOutFileName=TString(filename); }
   void			SetOutFile(TFile *fNew) { fOutFile=fNew; }
+  Int_t			GetNFiles() { return fkNFiles; }
+  Int_t			GetNAngles() { return fkNAngles; }
+  EPlotTypes		GetPlotTypes() { return fPlotTypes; }
+  EPlotTypes		GetCurrentPlotType() { return fCurrentPlotType; }
   TObjArray*		GetFileList() { return fFileList; }
   TString		GetOutFileName() { return fOutFileName; }
   TFile*		GetOutFile() { return fOutFile; }
+  TCanvas*		GetHeatmapCanvas() { return fHeatmapCanvas; }
   TCanvas*		GetRibbonCanvas() { return fRibbonCanvas; }
   TList*		GetRibbonList() { return fRibbonList; }
   TList*		GetCutList() { return fCutList; }
   TMatrixD*		GetDeltas() { return fDeltas; }
   // general
   void			Init();								///< Initialize
-  void			RetrieveData();							///< Fetch data from files
-  TH2D*			Ribbons();							///< Fit distributions for each angle and draw as ribbon plot
+  void			DrawPlots();							///< Draw specified plots
+  void			Ribbons();							///< Fit distributions for each angle and draw as ribbon plot
+  void			Heatmap();							///< Fit distributions for each angle and draw as heatmap
   void			Save();								///< Save results
-  void			Run();								///< Perform and save all selected analyses
+  void			Run();								///< Perform all selected analyses
+  void			PrintEnums();							///< Display this class' enums
 
 // Integrating the TKSMultiRibbons class into ROOT
 ClassDef(TKSMultiRibbons,1) ///< with class version number
