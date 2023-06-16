@@ -15,6 +15,7 @@
 		<link href="doxygen.css" rel="stylesheet" type="text/css" />
 		<link href="custom.css" rel="stylesheet" type="text/css"/>
 <link href="custom_dark_theme.css" rel="stylesheet" type="text/css"/>
+<link href="highlightstyle.css" rel="stylesheet" type="text/css"/>
 	</head>
 	<body>
 	<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -25,7 +26,7 @@
 						<td id="projectlogo"><img alt="Logo" src="t-rocks_logo.png"/></td>
 						<td id="projectalign" style="padding-left: 0.5em;">
 							<div id="projectname">Tools for Reactor-Antineutrino Studies in RAT-PAC
-								&#160;<span id="projectnumber">1.0.0</span>
+								&#160;<span id="projectnumber">1.2.0</span>
 							</div>
 							<div id="projectbrief">Code for running and analyzing reactor-IBD simulations</div>
 						</td>
@@ -100,13 +101,12 @@ $(function() {
   <tr bgcolor="#f0f0f0"><td class="entry"><b>Init</b>(const char *fileName, const char *volumePattern=&quot;.*&quot;) (defined in <a class="el" href="classTRATPACEventViewer.html">TRATPACEventViewer</a>)</td><td class="entry"><a class="el" href="classTRATPACEventViewer.html">TRATPACEventViewer</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>RedrawCurrentEvent</b>() (defined in <a class="el" href="classTRATPACEventViewer.html">TRATPACEventViewer</a>)</td><td class="entry"><a class="el" href="classTRATPACEventViewer.html">TRATPACEventViewer</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr bgcolor="#f0f0f0"><td class="entry"><b>SetCurrentEvent</b>(Long64_t eventID=0) (defined in <a class="el" href="classTRATPACEventViewer.html">TRATPACEventViewer</a>)</td><td class="entry"><a class="el" href="classTRATPACEventViewer.html">TRATPACEventViewer</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">private</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>SetData</b>(Double_t someArg) (defined in <a class="el" href="classTRATPACEventViewer.html">TRATPACEventViewer</a>)</td><td class="entry"><a class="el" href="classTRATPACEventViewer.html">TRATPACEventViewer</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>SetHighlightMode</b>(Bool_t bValue=kTRUE) (defined in <a class="el" href="classTRATPACEventViewer.html">TRATPACEventViewer</a>)</td><td class="entry"><a class="el" href="classTRATPACEventViewer.html">TRATPACEventViewer</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>SetVolumePattern</b>(const char *pattern) (defined in <a class="el" href="classTRATPACEventViewer.html">TRATPACEventViewer</a>)</td><td class="entry"><a class="el" href="classTRATPACEventViewer.html">TRATPACEventViewer</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>ToggleInertVis</b>() (defined in <a class="el" href="classTRATPACEventViewer.html">TRATPACEventViewer</a>)</td><td class="entry"><a class="el" href="classTRATPACEventViewer.html">TRATPACEventViewer</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>TRATPACEventViewer</b>() (defined in <a class="el" href="classTRATPACEventViewer.html">TRATPACEventViewer</a>)</td><td class="entry"><a class="el" href="classTRATPACEventViewer.html">TRATPACEventViewer</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>TRATPACEventViewer</b>(const char *fileName, const char *volumePattern=&quot;.*&quot;) (defined in <a class="el" href="classTRATPACEventViewer.html">TRATPACEventViewer</a>)</td><td class="entry"><a class="el" href="classTRATPACEventViewer.html">TRATPACEventViewer</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Zoom</b>(Double_t zoomFactor=2) (defined in <a class="el" href="classTRATPACEventViewer.html">TRATPACEventViewer</a>)</td><td class="entry"><a class="el" href="classTRATPACEventViewer.html">TRATPACEventViewer</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>SetHighlightMode</b>(Bool_t bValue=kTRUE) (defined in <a class="el" href="classTRATPACEventViewer.html">TRATPACEventViewer</a>)</td><td class="entry"><a class="el" href="classTRATPACEventViewer.html">TRATPACEventViewer</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>SetVolumePattern</b>(const char *pattern) (defined in <a class="el" href="classTRATPACEventViewer.html">TRATPACEventViewer</a>)</td><td class="entry"><a class="el" href="classTRATPACEventViewer.html">TRATPACEventViewer</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>ToggleInertVis</b>() (defined in <a class="el" href="classTRATPACEventViewer.html">TRATPACEventViewer</a>)</td><td class="entry"><a class="el" href="classTRATPACEventViewer.html">TRATPACEventViewer</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>TRATPACEventViewer</b>() (defined in <a class="el" href="classTRATPACEventViewer.html">TRATPACEventViewer</a>)</td><td class="entry"><a class="el" href="classTRATPACEventViewer.html">TRATPACEventViewer</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>TRATPACEventViewer</b>(const char *fileName, const char *volumePattern=&quot;.*&quot;) (defined in <a class="el" href="classTRATPACEventViewer.html">TRATPACEventViewer</a>)</td><td class="entry"><a class="el" href="classTRATPACEventViewer.html">TRATPACEventViewer</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>Zoom</b>(Double_t zoomFactor=2) (defined in <a class="el" href="classTRATPACEventViewer.html">TRATPACEventViewer</a>)</td><td class="entry"><a class="el" href="classTRATPACEventViewer.html">TRATPACEventViewer</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>

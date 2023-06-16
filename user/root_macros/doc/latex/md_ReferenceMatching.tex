@@ -1,0 +1,216 @@
+\doxysection*{Reference-\/\+Matching User’s Guide}
+
+{\ttfamily $\sim$ Mark J. Duvall $\sim$ \href{mailto:mjduvall@hawaii.edu}{\texttt{ mjduvall@hawaii.\+edu}} $\sim$ 05/2023 $\sim$}
+
+\DoxyHorRuler{0}
+ \doxysubsection*{Description}
+
+This is a user’s guide for the set of software within {\itshape Tools for Reactor-\/\+Neutrino Studies in R\+A\+T-\/\+P\+AC} (\href{github.com/duvall3/rat-pac}{\texttt{ github.\+com/duvall3/rat-\/pac}}) that implements our algorithm for matching experimental datasets to reference distributions. See \href{index.html}{\texttt{ user/root\+\_\+macros/doc/html/index.\+html}} in this repository for more information on the entire toolset.
+
+\DoxyHorRuler{0}
+ \doxysubsection*{Procedure}
+
+{\bfseries{Parameters}}
+
+These instructions will make the following assumptions\+:~\newline
+
+\begin{DoxyItemize}
+\item You have already completed the {\itshape Installation} instructions given on \href{index.html}{\texttt{ the main page}}.~\newline
+
+\item This repository is located in the directory {\ttfamily \$\+R\+A\+T\+D\+IR} – often simply {\ttfamily \$\+H\+O\+ME/rat-\/pac}, for example.~\newline
+
+\item Your {\ttfamily R\+A\+T-\/\+P\+AC} experiment is located in the directory {\ttfamily \$\+D\+E\+T\+E\+C\+T\+OR} – for example, {\ttfamily D\+E\+T\+E\+C\+T\+OR=\$\+R\+A\+T\+D\+IR/some\+\_\+experiment}~\newline
+
+\item Your reference and test dataruns are located in the directories {\ttfamily \$\+R\+E\+F\+D\+A\+TA} and {\ttfamily \$\+T\+E\+S\+T\+D\+A\+TA}, respectively. For example\+:~\newline
+ – {\ttfamily R\+E\+F\+D\+A\+TA=\$\+D\+E\+T\+E\+C\+T\+OR/\+R\+EF}~\newline
+ – {\ttfamily T\+E\+S\+T\+D\+A\+TA=\$\+R\+E\+F\+D\+A\+TA/\+T\+E\+ST}~\newline
+ – {\itshape Note\+: Placing {\ttfamily \$\+T\+E\+S\+T\+D\+A\+TA} directly inside {\ttfamily \$\+R\+E\+F\+D\+A\+TA} is recommended}~\newline
+
+\item You are using a cluster or large server with at least 64 cores. If not, you will need to adjust the arguments of {\ttfamily angle\+\_\+multibatch.\+sh} (run it without arguments for details).
+\end{DoxyItemize}
+
+{\bfseries{Summary}}
+
+
+\begin{DoxyEnumerate}
+\item \href{\#runref}{\texttt{ Run your reference simulation set}} – {\ttfamily angle\+\_\+multibatch.\+sh}~\newline
+  
+\item \href{\#exref}{\texttt{ Extract the reference distributions}} – {\ttfamily extract\+Ref.\+cxx}~\newline
+  
+\item \href{\#runtest}{\texttt{ Run your test simulation set}} – {\ttfamily angle\+\_\+multibatch.\+sh}~\newline
+  
+\item \href{\#extest}{\texttt{ Extract the test distributions}} – {\ttfamily extract\+Test.\+cxx}~\newline
+  
+\item \href{\#gencomp}{\texttt{ Generate the comparison commands}} – {\ttfamily ref\+\_\+compare.\+sh}~\newline
+  
+\item \href{\#excomp}{\texttt{ Execute the comparison commands}} – {\bfseries{{\itshape shell}}}~\newline
+  
+\item \href{\#procres}{\texttt{ Process the results}} – {\ttfamily K\+S\+Summary.\+cxx} 
+\end{DoxyEnumerate}\DoxyHorRuler{0}
+ \doxysubsection*{Details}
+
+\doxysubsection*{1\+: Run Reference Set }
+
+
+\begin{DoxyItemize}
+\item Run your reference simulation set in {\ttfamily \$\+D\+E\+T\+E\+C\+T\+OR}.~\newline
+ 
+\item Create a directory for the reference data, and move the output there.~\newline
+ 
+\end{DoxyItemize}
+
+{\bfseries{{\itshape Example\+:}}}
+
+
+\begin{DoxyPre}{\ttfamily \label{_cb1-1}%
+cd \$DETECTOR
+\label{_cb1-2}%
+angle\_multibatch.sh ReferenceRun0 30 10000 50
+\label{_cb1-3}%
+\# wait for runs to finish
+\label{_cb1-4}%
+mkdir REF
+\label{_cb1-5}%
+mv -\/t REF/ ReferenceRun0*
+\label{_cb1-6}%
+cd REF
+\label{_cb1-7}%
+REFDATA=\$PWD}\end{DoxyPre}
+ \doxysubsection*{2\+: Extract Reference Distributions }
+
+
+\begin{DoxyItemize}
+\item Navigate to {\ttfamily \$\+R\+E\+F\+D\+A\+TA}, open {\ttfamily R\+O\+OT}, and execute the macro {\ttfamily extract\+Ref.\+cxx}~\newline
+ 
+\end{DoxyItemize}
+
+{\bfseries{{\itshape Example\+:}}}
+
+
+\begin{DoxyPre}{\ttfamily \label{_cb2-1}%
+cd \$REFDATA
+\label{_cb2-2}%
+root}\end{DoxyPre}
+ 
+\begin{DoxyPre}{\ttfamily \label{_cb3-1}%
+extractRef("ReferenceRun0");}\end{DoxyPre}
+ \doxysubsection*{3\+: Run Test Set }
+
+
+\begin{DoxyItemize}
+\item Run your test simulation set in {\ttfamily \$\+D\+E\+T\+E\+C\+T\+OR}.~\newline
+ 
+\item Create a directory for the test data, and move the output there.~\newline
+ 
+\end{DoxyItemize}
+
+{\bfseries{{\itshape Example\+:}}}
+
+
+\begin{DoxyPre}{\ttfamily \label{_cb4-1}%
+cd \$DETECTOR
+\label{_cb4-2}%
+angle\_multibatch.sh TestRun0 30 1000 50
+\label{_cb4-3}%
+mkdir TEST
+\label{_cb4-4}%
+mv -\/t TEST/ TestRun0*
+\label{_cb4-5}%
+mv -\/t REF/ TEST/
+\label{_cb4-6}%
+cd REF/TEST
+\label{_cb4-7}%
+TESTDATA=\$PWD}\end{DoxyPre}
+ \doxysubsection*{4\+: Extract Test Distributions }
+
+
+\begin{DoxyItemize}
+\item Navigate to {\ttfamily \$\+T\+E\+S\+T\+D\+A\+TA} and open {\ttfamily R\+O\+OT}.~\newline
+ 
+\item Loop the macro {\ttfamily extract\+Test.\+cxx} over the subdirectories.~\newline
+ 
+\end{DoxyItemize}
+
+{\bfseries{{\itshape Example\+:}}}
+
+
+\begin{DoxyPre}{\ttfamily \label{_cb5-1}%
+cd \$TESTDATA
+\label{_cb5-2}%
+for DIR in TestRun0*/; do
+\label{_cb5-3}%
+  ROOTCMD="root -\/q -\/l -\/b \&\#39;extractTest.cxx(\&quot;\$DIR\&quot;, kTRUE)\&\#39;"
+\label{_cb5-4}%
+  eval \$ROOTCMD
+\label{_cb5-5}%
+done}\end{DoxyPre}
+ \doxysubsection*{5\+: Generate Comparison Commands }
+
+
+\begin{DoxyItemize}
+\item Navigate to {\ttfamily \$\+R\+E\+F\+D\+A\+TA} and run {\ttfamily ref\+\_\+compare.\+sh} on {\ttfamily \$\+T\+E\+S\+T\+D\+A\+TA}.~\newline
+ 
+\item This will create a file called {\ttfamily ref\+\_\+compare.\+txt} in {\ttfamily \$\+T\+E\+S\+T\+D\+A\+TA}.~\newline
+ 
+\item {\itshape Note\+: Use the {\bfseries{relative}} path for {\ttfamily \$\+T\+E\+S\+T\+D\+A\+TA} in the arguments to {\ttfamily ref\+\_\+compare.\+sh}.}~\newline
+ 
+\end{DoxyItemize}
+
+{\bfseries{{\itshape Example\+:}}}
+
+
+\begin{DoxyPre}{\ttfamily \label{_cb6-1}%
+cd \$REFDATA
+\label{_cb6-2}%
+ref\_compare.sh TEST}\end{DoxyPre}
+ \doxysubsection*{6\+: Execute Comparison Commands }
+
+
+\begin{DoxyItemize}
+\item {\itshape Note\+: This part of the procedure is a rough placeholder hack while an improved solution is under development.}~\newline
+ 
+\item Open the file {\ttfamily \$\+T\+E\+S\+T\+D\+A\+TA/ref\+\_\+compare.txt} in a G\+UI text editor. {\itshape Note\+: This may require you to transfer the file to your local system (via, e.\+g., {\ttfamily scp}) if the remote server is not G\+U\+I-\/capable.}~\newline
+ 
+\item Select all, then copy, then close the editor.~\newline
+ 
+\item Navigate back to {\ttfamily \$\+R\+E\+F\+D\+A\+TA} if you are not still there.~\newline
+ 
+\item Paste the copied text into the terminal.~\newline
+ 
+\end{DoxyItemize}\doxysubsection*{7\+: Compile Summary }
+
+
+\begin{DoxyItemize}
+\item Navigate to {\ttfamily \$\+T\+E\+S\+T\+D\+A\+TA}.~\newline
+ 
+\item Open {\ttfamily R\+O\+OT} and run the macro {\ttfamily K\+S\+Summary.\+cxx}; the default parameters should work, so you can run it without arguments.~\newline
+ 
+\item Copy the output files {\ttfamily K\+S\+Summary.\+root} and {\ttfamily K\+S\+Summary.\+png} to your system (via, {\itshape e.\+g.,} {\ttfamily scp}).~\newline
+ 
+\item Open the results and get ready to publish!~\newline
+ 
+\end{DoxyItemize}
+
+{\bfseries{{\itshape Example\+:}}}
+
+
+\begin{DoxyPre}{\ttfamily \label{_cb7-1}%
+cd \$TESTDATA
+\label{_cb7-2}%
+root}\end{DoxyPre}
+ 
+\begin{DoxyPre}{\ttfamily \label{_cb8-1}%
+KSSummary();
+\label{_cb8-2}%
+.q}\end{DoxyPre}
+ 
+\begin{DoxyPre}{\ttfamily \label{_cb9-1}%
+\# on your local machine, in whatever output directory you like:
+\label{_cb9-2}%
+scp mtc-\/b:\$TESTDATA/KSSummary.root .
+\label{_cb9-3}%
+scp mtc-\/b:\$TESTDATA/KSSummary.png .}\end{DoxyPre}
+ \DoxyHorRuler{0}
+ \doxysubsection*{All Pau! )}
+
+{\itshape -\/$\sim$-\/ Last Updated 05/20/2023 -\/$\sim$-\/}

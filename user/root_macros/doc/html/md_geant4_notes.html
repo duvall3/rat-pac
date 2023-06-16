@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
 		<meta name="generator" content="Doxygen 1.8.17"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<title>Tools for Reactor-Antineutrino Studies in RAT-PAC: Development Notes</title>
+		<title>Tools for Reactor-Antineutrino Studies in RAT-PAC: notes</title>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
@@ -15,6 +15,7 @@
 		<link href="doxygen.css" rel="stylesheet" type="text/css" />
 		<link href="custom.css" rel="stylesheet" type="text/css"/>
 <link href="custom_dark_theme.css" rel="stylesheet" type="text/css"/>
+<link href="highlightstyle.css" rel="stylesheet" type="text/css"/>
 	</head>
 	<body>
 	<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -25,7 +26,7 @@
 						<td id="projectlogo"><img alt="Logo" src="t-rocks_logo.png"/></td>
 						<td id="projectalign" style="padding-left: 0.5em;">
 							<div id="projectname">Tools for Reactor-Antineutrino Studies in RAT-PAC
-								&#160;<span id="projectnumber">1.0.0</span>
+								&#160;<span id="projectnumber">1.2.0</span>
 							</div>
 							<div id="projectbrief">Code for running and analyzing reactor-IBD simulations</div>
 						</td>
@@ -66,48 +67,34 @@ $(function() {
 </div><!-- top -->
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Development Notes </div>  </div>
+<div class="title">notes </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><code>~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 08/2022 ~</code></p>
-<h1><a class="anchor" id="autotoc_md29"></a>
-Geometry</h1>
-<h2><a class="anchor" id="autotoc_md30"></a>
-Individual Volumes</h2>
-<p>Required Steps:</p><ul>
-<li>Material</li>
-<li>Position</li>
-<li>Shape</li>
-<li>Logical Volume</li>
-<li>Placement</li>
-</ul>
-<p>Example &ndash; <code>Vol1</code> in mother <code>world</code></p><ul>
-<li>Material = air</li>
-<li>Position = origin</li>
-<li>Shape = 100-cm cube</li>
-<li>Logical Volume = logicVol1</li>
-<li>Placement = plain / default</li>
-</ul>
-<div class="fragment"><div class="line"><span class="comment">// example volume &quot;Vol1&quot;:</span></div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// material</span></div>
-<div class="line">G4Material *Vol1_mat = nist-&gt;FindOrBuildMaterial(<span class="stringliteral">&quot;G4_AIR&quot;</span>);</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// position</span></div>
-<div class="line">G4ThreeVector pos1 = G4ThreeVector(0,0,0);</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// shape and size</span></div>
-<div class="line">G4Double vol1_length = 100.0*cm;</div>
-<div class="line">G4Box * solidVol1 = <span class="keyword">new</span> G4Box( <span class="stringliteral">&quot;Vol1&quot;</span>, vol1_length, vol1_length, vol1_length );</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// logical volume</span></div>
-<div class="line">G4LogicalVolume *logicVol1 = <span class="keyword">new</span> G4LogicalVolume( solidVol1, Vol1_mat, <span class="stringliteral">&quot;Vol1&quot;</span> );</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// placement</span></div>
-<div class="line"><span class="keyword">new</span> G4PVPlacement( 0, pos1, logicVol1, <span class="stringliteral">&quot;Vol1&quot;</span>, logicWorld, <span class="keyword">false</span>, 0, checkOverlaps );</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// all pau!   )</span></div>
-</div><!-- fragment --> </div></div><!-- contents -->
+<div class="textblock"><h1 id="development-notes-for-tratgeoconverter">Development Notes for <a class="el" href="classTRATGeoConverter.html" title="Class for converting geometry descriptions from RAT-PAC to GEANT4.">TRATGeoConverter</a></h1>
+<p><code>~ Mark J. Duvall ~ <a href="#" onclick="location.href='mai'+'lto:'+'mjd'+'uv'+'all'+'@h'+'awa'+'ii'+'.ed'+'u'; return false;">mjduv<span style="display: none;">.nosp@m.</span>all@<span style="display: none;">.nosp@m.</span>hawai<span style="display: none;">.nosp@m.</span>i.ed<span style="display: none;">.nosp@m.</span>u</a> ~ 08/2022 ~</code></p>
+<h1 id="geometry">Geometry</h1>
+<h2 id="individual-volumes">Individual Volumes</h2>
+<p>Required Steps: - Material - Position - Shape - Logical Volume - Placement</p>
+<p>Example – <code>Vol1</code> in mother <code>world</code> - Material = air - Position = origin - Shape = 100-cm cube - Logical Volume = logicVol1 - Placement = plain / default</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="anchor" id="cb1-1"></a><span class="co">// example volume &quot;Vol1&quot;:</span>
+<a class="anchor" id="cb1-2"></a>
+<a class="anchor" id="cb1-3"></a><span class="co">// material</span>
+<a class="anchor" id="cb1-4"></a>G4Material *Vol1_mat = nist-&gt;FindOrBuildMaterial(<span class="st">&quot;G4_AIR&quot;</span>);
+<a class="anchor" id="cb1-5"></a>
+<a class="anchor" id="cb1-6"></a><span class="co">// position</span>
+<a class="anchor" id="cb1-7"></a>G4ThreeVector pos1 = G4ThreeVector(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>);
+<a class="anchor" id="cb1-8"></a>
+<a class="anchor" id="cb1-9"></a><span class="co">// shape and size</span>
+<a class="anchor" id="cb1-10"></a>G4Double vol1_length = <span class="fl">100.0</span>*cm;
+<a class="anchor" id="cb1-11"></a>G4Box * solidVol1 = <span class="kw">new</span> G4Box( <span class="st">&quot;Vol1&quot;</span>, vol1_length, vol1_length, vol1_length );
+<a class="anchor" id="cb1-12"></a>
+<a class="anchor" id="cb1-13"></a><span class="co">// logical volume</span>
+<a class="anchor" id="cb1-14"></a>G4LogicalVolume *logicVol1 = <span class="kw">new</span> G4LogicalVolume( solidVol1, Vol1_mat, <span class="st">&quot;Vol1&quot;</span> );
+<a class="anchor" id="cb1-15"></a>
+<a class="anchor" id="cb1-16"></a><span class="co">// placement</span>
+<a class="anchor" id="cb1-17"></a><span class="kw">new</span> G4PVPlacement( <span class="dv">0</span>, pos1, logicVol1, <span class="st">&quot;Vol1&quot;</span>, logicWorld, <span class="kw">false</span>, <span class="dv">0</span>, checkOverlaps );
+<a class="anchor" id="cb1-18"></a>
+<a class="anchor" id="cb1-19"></a><span class="co">// all pau!   )</span></code></pre></div> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
 		<script src="custom.js"></script>

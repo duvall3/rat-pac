@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
 		<meta name="generator" content="Doxygen 1.8.17"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<title>Tools for Reactor-Antineutrino Studies in RAT-PAC: ROOT MACROS AND CLASSES</title>
+		<title>Tools for Reactor-Antineutrino Studies in RAT-PAC: Main Page</title>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
@@ -15,6 +15,7 @@
 		<link href="doxygen.css" rel="stylesheet" type="text/css" />
 		<link href="custom.css" rel="stylesheet" type="text/css"/>
 <link href="custom_dark_theme.css" rel="stylesheet" type="text/css"/>
+<link href="highlightstyle.css" rel="stylesheet" type="text/css"/>
 	</head>
 	<body>
 	<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -25,7 +26,7 @@
 						<td id="projectlogo"><img alt="Logo" src="t-rocks_logo.png"/></td>
 						<td id="projectalign" style="padding-left: 0.5em;">
 							<div id="projectname">Tools for Reactor-Antineutrino Studies in RAT-PAC
-								&#160;<span id="projectnumber">1.0.0</span>
+								&#160;<span id="projectnumber">1.2.0</span>
 							</div>
 							<div id="projectbrief">Code for running and analyzing reactor-IBD simulations</div>
 						</td>
@@ -66,35 +67,46 @@ $(function() {
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">ROOT MACROS AND CLASSES </div>  </div>
+<div class="title">Tools for Reactor-Antineutrino Studies in RAT-PAC Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Instructions for using the (most useful) macros and classes in <em>github --&gt; duvall3 --&gt; rat-pac --&gt; branch collab --&gt; user --&gt; <a href="https://github.com/duvall3/rat-pac/blob/collab/user/root_macros">root_macros</a></em>.</p>
+<div class="textblock"><h1 id="root-macros-and-classes">ROOT MACROS AND CLASSES</h1>
+<p>Instructions for using the (most useful) macros and classes in <em>github –&gt; duvall3 –&gt; rat-pac –&gt; branch collab –&gt; user –&gt; <a href="https://github.com/duvall3/rat-pac/blob/collab/user/root_macros">root_macros</a></em>.</p>
 <hr  />
-<h2><a class="anchor" id="autotoc_md23"></a>
-Installation</h2>
-<p><em>Note: These are written for *nix systems (Mac/Linux)</em></p>
+ <h3 id="installation">Installation</h3>
+<p>_Note: These are written for *nix systems (Mac/Linux)_</p>
 <ol type="1">
-<li>After git-cloning this repository (or downloading the individual files), run the <code>macro_paths.sh</code> script located in this directory and follow the instructions it provides.</li>
-<li>If you are using the <code>rootlogon.C</code> provided in this directory, then everything should now be ready. If you are using your own <code>rootlogon.C</code> elsewhere, simply append the contents of this directory's version to yours.</li>
+<li>
+After git-cloning this repository (or downloading the individual files), run the <code>macro_paths.sh</code> script located in this directory and follow the instructions it provides. </li>
+<li>
+If you are using the <code>rootlogon.C</code> provided in this directory, then everything should now be ready. If you are using your own <code>rootlogon.C</code> elsewhere, simply append the contents of this directory’s version to yours. </li>
 </ol>
 <hr  />
-<h2><a class="anchor" id="autotoc_md25"></a>
-Usage</h2>
-<p>Open ROOT and run <code>.x duvall3Include.cxx</code> to load the macros and classes. <br  />
- For further information:</p><ol type="1">
-<li>Start with the rest of this documentation; <br  />
+ <h3 id="usage">Usage</h3>
+<p>Open ROOT and run <code>.x duvall3Include.cxx</code> to load the macros and classes.<br  />
+ For further information:<br  />
+</p><ol type="1">
+<li>If you’re currently only viewing the file <code>README.md</code>, then start with the rest of this documentation, located at <code>doc</code> &gt; <code>html</code> &gt; <a href="index.html"><code>index.html</code></a>;<br  />
 </li>
-<li>If you don't find what you need, see the comments in the individual files; and finally, <br  />
+<li>For documentation on the reference-matching algorithm, see the <a href="md_ReferenceMatching.html">Reference-Matching User’s Guide</a>.<br  />
+</li>
+<li>If you don’t find what you need, see the comments in the individual files; and finally,<br  />
 </li>
 <li>If you still need assisstance after that, feel free to contact me at <a href="#" onclick="location.href='mai'+'lto:'+'duv'+'al'+'l3.'+'gi'+'t@g'+'ma'+'il.'+'co'+'m'; return false;">duvall3 dot git at gmail dot com</a>.</li>
 </ol>
 <hr  />
-<h2><a class="anchor" id="autotoc_md27"></a>
-Credits</h2>
+ <h3 id="credits">Credits</h3>
 <p>For full info on authorship, license, etc., see <a class="el" href="credits_8dox.html" title="&quot;ROOT Macros and Classes&quot;">credits.dox</a>.</p>
-<hr  />
-<p><em>Updated 10/2022</em> </p>
+<p>To cite this software, use the following BibTeX entry:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bib"><code class="sourceCode bibtex"><a class="anchor" id="cb1-1"></a><span class="va">@misc</span>{<span class="ot">Duvall:2022</span>,
+<a class="anchor" id="cb1-2"></a>      <span class="dt">author</span> = {Duvall, Mark},
+<a class="anchor" id="cb1-3"></a>      <span class="dt">license</span> = {GPL-3.0+},
+<a class="anchor" id="cb1-4"></a>      <span class="dt">title</span> = {{Tools for Reactor-Antineutrino Studies in RAT-PAC}},
+<a class="anchor" id="cb1-5"></a>      <span class="dt">url</span> = {<a href="https://github.com/duvall3/rat-pac">https://github.com/duvall3/rat-pac</a>},
+<a class="anchor" id="cb1-6"></a>      <span class="dt">note</span> = {v1.2.0 / RAT v6c50cc3},
+<a class="anchor" id="cb1-7"></a>      <span class="dt">year</span> = {2022}
+<a class="anchor" id="cb1-8"></a>}</code></pre></div> <hr  />
+ <p><em>Updated 10/2022</em></p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->

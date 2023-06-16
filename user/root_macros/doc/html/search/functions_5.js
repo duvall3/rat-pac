@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['init_91',['Init',['../classTRefMatch.html#a786772925eacb8fb35d0f39d739f34e6',1,'TRefMatch::Init()'],['../classTRefMatch.html#a11c28a10b43c340d6540f6b36708fa4b',1,'TRefMatch::Init(const char *fileName, const char *treeName, const char *branchVarName)']]]
+  ['heatmap_164',['Heatmap',['../classTKSMultiRibbons.html#ad126f88167a2747cfc28f0ef1b4367a4',1,'TKSMultiRibbons']]],
+  ['histos_165',['Histos',['../classTKSMultiRes.html#a4f780cc1de2e502f11d8c9d6801fc52b',1,'TKSMultiRes']]]
 ];

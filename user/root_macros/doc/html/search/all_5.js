@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gnu_20general_20public_20license_39',['GNU GENERAL PUBLIC LICENSE',['../md_gpl.html',1,'']]]
+  ['gpl_86',['gpl',['../md_gpl.html',1,'']]]
 ];

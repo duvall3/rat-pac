@@ -116,6 +116,7 @@ BRIEF_MEMBER_DESC      = YES
 # The default value is: YES.
 
 REPEAT_BRIEF           = YES
+# REPEAT_BRIEF           = NO
 
 # This tag implements a quasi-intelligent brief description abbreviator that is
 # used to form the text in various listings. Each string in this list, if found
@@ -1004,7 +1005,8 @@ INPUT_FILTER           =
 # need to set EXTENSION_MAPPING for the extension otherwise the files are not
 # properly processed by doxygen.
 
-FILTER_PATTERNS        =
+# FILTER_PATTERNS        =
+FILTER_PATTERNS        = *.md="pandoc -f markdown -t html"
 
 # If the FILTER_SOURCE_FILES tag is set to YES, the input filter (if set using
 # INPUT_FILTER) will also be used to filter the input files that are used for
@@ -1250,8 +1252,19 @@ HTML_STYLESHEET        =
 # list). For an example see the documentation.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_EXTRA_STYLESHEET  = "doc/config/custom.css" \
-                         "doc/config/custom_dark_theme.css"
+# HTML_EXTRA_STYLESHEET  = "doc/config/custom.css" \
+                         # "doc/config/custom_dark_theme.css"
+# PANDOC_TEMPLATE_DIR=/usr/share/pandoc/data/templates
+# TEMPLATE=github-darkdown
+# HSSTYLE="$PANDOC_TEMPLATE_DIR/$TEMPLATE.theme"
+# CSSSTYLE="$PANDOC_TEMPLATE_DIR/$TEMPLATE-additional.css"
+HTML_EXTRA_STYLESHEET = "doc/config/custom.css" \
+			"doc/config/custom_dark_theme.css" \
+			"doc/config/highlightstyle.css" \
+			# "$HSSTYLE" \
+			# "$CSSSTYLE"\
+                        # "$PANDOC_TEMPLATE_DIR/$TEMPLATE.css" \
+
 
 # The HTML_EXTRA_FILES tag can be used to specify one or more extra images or
 # other source files which should be copied to the HTML output directory. Note

@@ -15,6 +15,7 @@
 		<link href="doxygen.css" rel="stylesheet" type="text/css" />
 		<link href="custom.css" rel="stylesheet" type="text/css"/>
 <link href="custom_dark_theme.css" rel="stylesheet" type="text/css"/>
+<link href="highlightstyle.css" rel="stylesheet" type="text/css"/>
 	</head>
 	<body>
 	<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -25,7 +26,7 @@
 						<td id="projectlogo"><img alt="Logo" src="t-rocks_logo.png"/></td>
 						<td id="projectalign" style="padding-left: 0.5em;">
 							<div id="projectname">Tools for Reactor-Antineutrino Studies in RAT-PAC
-								&#160;<span id="projectnumber">1.0.0</span>
+								&#160;<span id="projectnumber">1.2.0</span>
 							</div>
 							<div id="projectbrief">Code for running and analyzing reactor-IBD simulations</div>
 						</td>
@@ -137,27 +138,26 @@ $(function() {
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  Long64_t      GetTotalEvents() { <span class="keywordflow">return</span> fTotalEvents; }</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  Long64_t      GetCurrentEvent() { <span class="keywordflow">return</span> fCurrentEvent; }</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="comment">// setters</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">void</span>          SetData( Double_t someArg ) { fSomeData = someArg; }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">void</span>          SetVolumePattern(<span class="keyword">const</span> <span class="keywordtype">char</span>* pattern) { fVolumePattern = pattern; }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="comment">/* void           SetTopChildID(Int_t index=1) { fTopChildID = index; } */</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">void</span>          SetHighlightMode(Bool_t bValue=kTRUE) { fkHighlight = bValue; }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="comment">// MAIN</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">void</span>          DrawGeometry();                         <span class="comment">// build and draw detector geometry</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">void</span>          DrawTracks(Long64_t event=0);                   <span class="comment">// draw particle tracks for a given event</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordtype">void</span>          DrawNextEvent();</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordtype">void</span>          DrawPrevEvent();</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordtype">void</span>          RedrawCurrentEvent() { DrawTracks(GetCurrentEvent()); }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordtype">void</span>          Zoom(Double_t zoomFactor=2);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordtype">void</span>          ToggleInertVis();                       <span class="comment">// toggle inert cells on/off (checkerboards only)</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">// Integrating the TRATPACEventViewer class into ROOT</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;ClassDef(<a class="code" href="classTRATPACEventViewer.html">TRATPACEventViewer</a>,1) <span class="comment">// with class version number</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}; <span class="comment">//end class</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">// all pau!   )</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">void</span>          SetVolumePattern(<span class="keyword">const</span> <span class="keywordtype">char</span>* pattern) { fVolumePattern = pattern; }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="comment">/* void           SetTopChildID(Int_t index=1) { fTopChildID = index; } */</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">void</span>          SetHighlightMode(Bool_t bValue=kTRUE) { fkHighlight = bValue; }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="comment">// MAIN</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordtype">void</span>          DrawGeometry();                         <span class="comment">// build and draw detector geometry</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">void</span>          DrawTracks(Long64_t event=0);                   <span class="comment">// draw particle tracks for a given event</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">void</span>          DrawNextEvent();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordtype">void</span>          DrawPrevEvent();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordtype">void</span>          RedrawCurrentEvent() { DrawTracks(GetCurrentEvent()); }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordtype">void</span>          Zoom(Double_t zoomFactor=2);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordtype">void</span>          ToggleInertVis();                       <span class="comment">// toggle inert cells on/off (checkerboards only)</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">// Integrating the TRATPACEventViewer class into ROOT</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;ClassDef(<a class="code" href="classTRATPACEventViewer.html">TRATPACEventViewer</a>,1) <span class="comment">// with class version number</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}; <span class="comment">//end class</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">// all pau!   )</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassTRATGeo_html"><div class="ttname"><a href="classTRATGeo.html">TRATGeo</a></div><div class="ttdoc">class for assembling geometry in a RAT-PAC ROOT file</div><div class="ttdef"><b>Definition:</b> TRATGeo.h:25</div></div>
 <div class="ttc" id="aclassTRATPACEventViewer_html"><div class="ttname"><a href="classTRATPACEventViewer.html">TRATPACEventViewer</a></div><div class="ttdoc">Class for viewing RAT-PAC detector geometries.</div><div class="ttdef"><b>Definition:</b> TRATPACEventViewer.h:27</div></div>

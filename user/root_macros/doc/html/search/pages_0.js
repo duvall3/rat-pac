@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['development_20notes_139',['Development Notes',['../md_geant4_notes.html',1,'']]]
+  ['gpl_267',['gpl',['../md_gpl.html',1,'']]]
 ];

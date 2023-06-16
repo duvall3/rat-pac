@@ -1,12 +1,8 @@
 var searchData=
 [
-  ['tclasstemplate_59',['TClassTemplate',['../classTClassTemplate.html',1,'TClassTemplate'],['../classTClassTemplate.html#aac100cbf991c7d28ee891f1c192c3a4b',1,'TClassTemplate::TClassTemplate()'],['../classTClassTemplate.html#a46391e9761e6468ba3fdc866cd360735',1,'TClassTemplate::TClassTemplate(const char *someArg1, Double_t someArg2)']]],
-  ['tduvallutils_60',['TDuvallUtils',['../namespaceTDuvallUtils.html',1,'']]],
-  ['tibdparams_61',['TIBDParams',['../classTIBDParams.html',1,'']]],
-  ['tratgeo_62',['TRATGeo',['../classTRATGeo.html',1,'']]],
-  ['tratgeoconverter_63',['TRATGeoConverter',['../classTRATGeoConverter.html',1,'']]],
-  ['tratneutrongen_64',['TRATNeutronGen',['../classTRATNeutronGen.html',1,'']]],
-  ['tratpaceventviewer_65',['TRATPACEventViewer',['../classTRATPACEventViewer.html',1,'']]],
-  ['tratvolume_66',['TRATVolume',['../classTRATVolume.html',1,'']]],
-  ['trefmatch_67',['TRefMatch',['../classTRefMatch.html',1,'TRefMatch'],['../classTRefMatch.html#a48bb5176ba5833611236b76a1b07b7f7',1,'TRefMatch::TRefMatch()'],['../classTRefMatch.html#abb18f918fb9326bf8f7435bff4045d04',1,'TRefMatch::TRefMatch(const char *fileName, const char *treeName=&quot;T&quot;, const char *branchVarName=&quot;phi&quot;)']]]
+  ['printbranches_97',['PrintBranches',['../namespaceTDuvallUtils.html#a02319b2f5f0477b46e4211d70d6c85c5',1,'TDuvallUtils']]],
+  ['printenums_98',['PrintEnums',['../classTKSMultiRibbons.html#acb4e3c8a9241739d48a0892ecec8ce92',1,'TKSMultiRibbons']]],
+  ['printresults_99',['PrintResults',['../classTRefMatch.html#ad8132f5dfcaf7edcfe04911dd4b06a65',1,'TRefMatch']]],
+  ['printverbose_100',['PrintVerbose',['../classTRefMatch.html#ab1ae50356d40240192e05bc3b12a8203',1,'TRefMatch']]],
+  ['prob2sig_101',['Prob2Sig',['../classTRefMatch.html#a57c7a08146436d9e39e84ad8544591e1',1,'TRefMatch::Prob2Sig()'],['../namespaceTDuvallUtils.html#aebfbb014b8f13cb1df197138169164fa',1,'TDuvallUtils::Prob2Sig()']]]
 ];

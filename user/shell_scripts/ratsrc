@@ -1,9 +1,8 @@
 #!/bin/bash
 # ratsrc -- simple script to view the source files for a given RAT-PAC class
+# USAGE: ratsrc [-h|-p] <RATClassName>
 # ~ Mark J. Duvall ~ duvall3@github.com ~ 7/2021 ~ #
 #
-# USAGE: ratsrc <RATclass>
-
 
 ##Copyright (C) 2021 Mark J. Duvall
 ##
@@ -20,34 +19,60 @@
 ##    You should have received a copy of the GNU General Public License
 ##    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+# help
+usage() {
+  echo -e "USAGE: ratsrc [-h|-p] <RATClassName>"
+  echo -e "  -h\t\tShow this help message and exit"
+  echo -e "  -p\t\tprint filenames and exit"
+}
 
 # arg check
 if [[ ! $1 ]]; then
-  echo -e "\nUSAGE: ratsrc <RATclass>\n"
+  usage
   exit 10
 fi
 
+# option(s)
+PRINT_ONLY=false
+while getopts ":hp" OPTIONS; do
+  case $OPTIONS in
+    h)
+      usage
+      exit 5
+      ;;
+    p)
+      PRINT_ONLY=true
+      ;;
+    *)
+      usage
+      exit 10
+      ;;
+  esac
+done
+shift $((OPTIND-1))
+
 # init
+ERR=/dev/stderr
 HFILE_NAME="$1".hh
 CFILE_NAME="$1".cc
 
 # locate files
-HFILE=$(find $RATROOT -name $HFILE_NAME | head -1)
-CFILE=$(find $RATROOT -name $CFILE_NAME | head -1)
+HFILE=$(find $RATROOT -name $HFILE_NAME | head -n 1)
+CFILE=$(find $RATROOT -name $CFILE_NAME | head -n 1)
 if [[ $HFILE ]]; then
   HFILE_TF=true
 else
   HFILE_TF=false
-  echo "Warning: Header file $HFILE_NAME not found."
+  echo "Warning: Header file $HFILE_NAME not found." > $ERR
 fi
 if [[ $CFILE ]]; then
   CFILE_TF=true
 else
   CFILE_TF=false
-  echo "Warning: Source file $CFILE_NAME not found."
+  echo "Warning: Source file $CFILE_NAME not found." > $ERR
 fi
 if (! $HFILE_TF) && (! $CFILE_TF); then
-  echo "No .h or .cxx files for class \"$1\" found under $RATROOT. Searching src/..."
+  echo "Error: No .h or .cxx files for class \"$1\" found under $RATROOT. Searching for mentions..." > $ERR
   GREPLIST=$(grep -iE -IRl $1 "$RATROOT"/src 2> /dev/null)
   if [[ $GREPLIST ]]; then
     echo -e "\nMentions of \"$1\" found in the following files:\n"
@@ -60,8 +85,14 @@ if (! $HFILE_TF) && (! $CFILE_TF); then
   fi
 fi
 
-# open for reading only
-vim -R -c ":set filetype+=.root" -c ":au BufNewFile,BufRead * set filetype+=.root" -p $HFILE $CFILE
+# main
+echo -e "$HFILE\n$CFILE"
+if $PRINT_ONLY; then
+  exit 0
+else
+  # open for reading only
+  vim -R -c ":set filetype+=.root" -c ":au BufNewFile,BufRead * set filetype+=.root" -p $HFILE $CFILE
+fi
 
 # all pau!   )
 exit 0

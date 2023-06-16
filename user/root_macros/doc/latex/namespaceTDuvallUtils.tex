@@ -147,12 +147,12 @@ Extract all the T\+Canvas objects from a R\+O\+OT file and save them in the desi
 
 Scan a T\+Collection for an object whose name matches a regex. 
 
-Scan a T\+Collection ({\itshape T\+List, T\+Obj\+Array, etc.}) for an object whose name matches a regex. ~\newline
+Scan a T\+Collection ({\itshape T\+List, $\ast$\+T\+Obj\+Array, etc.}) for an object whose name matches a regex. ~\newline
  R\+O\+OT\textquotesingle{}s builtins can\textquotesingle{}t search by P\+A\+T\+T\+E\+RN. ~\newline
  {\itshape Note\+: It\textquotesingle{}s hard to believe this isn\textquotesingle{}t already a builtin function for all classes inheriting from T\+Collection; but if it exists, I haven\textquotesingle{}t found it.} 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{TObject* \mbox{\hyperlink{namespaceTDuvallUtils_a913fd86508e84b86af27086a8d89fde3}{FindMatchingObjects}}( TRegexp regex )         \textcolor{comment}{// or}}
-\DoxyCodeLine{TObject* \mbox{\hyperlink{namespaceTDuvallUtils_a913fd86508e84b86af27086a8d89fde3}{FindMatchingObjects}}( \textcolor{keyword}{const} \textcolor{keywordtype}{char}* pattern )  }
+\DoxyCodeLine{TObject* \mbox{\hyperlink{namespaceTDuvallUtils_a913fd86508e84b86af27086a8d89fde3}{FindMatchingObjects}}( TCollection *clxn, TRegexp regex, Bool\_t caseSensitive=KFALSE )         \textcolor{comment}{// or}}
+\DoxyCodeLine{TObject* \mbox{\hyperlink{namespaceTDuvallUtils_a913fd86508e84b86af27086a8d89fde3}{FindMatchingObjects}}( TCollection *clxn, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* patter, Bool\_t caseSensitive=KFALSEn )  }
 \end{DoxyCode}
 
 
@@ -161,6 +161,8 @@ Scan a T\+Collection ({\itshape T\+List, T\+Obj\+Array, etc.}) for an object who
 {\em colxn} & -- pointer to the desired {\itshape T\+Collection} object \\
 \hline
 {\em pattern(\+R\+E)} & -- {\itshape char$\ast$} or {\itshape T\+Regexp} describing search pattern \\
+\hline
+{\em case\+Sensitive} & -- {\itshape Bool\+\_\+t} indicating whether the search should be case-\/sensitive \\
 \hline
 \end{DoxyParams}
 

@@ -1,15 +1,16 @@
 var searchData=
 [
-  ['root_20macros_20and_20classes_228',['ROOT MACROS AND CLASSES',['../index.html',1,'']]],
-  ['radarplot_229',['RadarPlot',['../namespaceTDuvallUtils.html#af7d9728a4345831814789bd42e272c1e',1,'TDuvallUtils']]],
-  ['ratpaceventviewer2_230',['RATPACEventViewer2',['../RATPACEventViewer2_8cxx.html#affd7cf5db15c214ab4e8a0c079562e14',1,'RATPACEventViewer2.cxx']]],
-  ['ratpaceventviewer2_2ecxx_231',['RATPACEventViewer2.cxx',['../RATPACEventViewer2_8cxx.html',1,'']]],
-  ['readme_2emd_232',['README.md',['../README_8md.html',1,'']]],
-  ['redrawcurrentevent_233',['RedrawCurrentEvent',['../classTRATPACEventViewer.html#a42bc6f7ea0792b7a0c124bcd435a11c1',1,'TRATPACEventViewer']]],
-  ['refcompare_234',['RefCompare',['../classTRefMatch.html#afbafaf2c5baa5b593c824d56c2725d59',1,'TRefMatch::RefCompare()'],['../refCompare_8cxx.html#aff68a72a2147c7503aa440c7e89648b1',1,'refCompare():&#160;refCompare.cxx']]],
-  ['refcompare_2ecxx_235',['refCompare.cxx',['../refCompare_8cxx.html',1,'']]],
-  ['rpevfunctions_2ecxx_236',['rpevFunctions.cxx',['../rpevFunctions_8cxx.html',1,'']]],
-  ['rt_5fto_5froot_237',['rt_to_root',['../rt__to__root_8cxx.html#a39275396a4093d61cce1bd89aca51ca4',1,'rt_to_root.cxx']]],
-  ['rt_5fto_5froot_2ecxx_238',['rt_to_root.cxx',['../rt__to__root_8cxx.html',1,'']]],
-  ['run_239',['Run',['../classTRefMatch.html#a708325fb9b4a8993fda4d1085174fd0d',1,'TRefMatch']]]
+  ['tclasstemplate_117',['TClassTemplate',['../classTClassTemplate.html',1,'TClassTemplate'],['../classTClassTemplate.html#aac100cbf991c7d28ee891f1c192c3a4b',1,'TClassTemplate::TClassTemplate()'],['../classTClassTemplate.html#a46391e9761e6468ba3fdc866cd360735',1,'TClassTemplate::TClassTemplate(const char *someArg1, Double_t someArg2)']]],
+  ['tduvallutils_118',['TDuvallUtils',['../namespaceTDuvallUtils.html',1,'']]],
+  ['tibdparams_119',['TIBDParams',['../classTIBDParams.html',1,'']]],
+  ['tksmultires_120',['TKSMultiRes',['../classTKSMultiRes.html',1,'TKSMultiRes'],['../classTKSMultiRes.html#af89a0a3f431bd85378bd63b484efce93',1,'TKSMultiRes::TKSMultiRes()']]],
+  ['tksmultiribbons_121',['TKSMultiRibbons',['../classTKSMultiRibbons.html',1,'TKSMultiRibbons'],['../classTKSMultiRibbons.html#a61be38a5d58d7274d9e2dbcb8103cd4f',1,'TKSMultiRibbons::TKSMultiRibbons()']]],
+  ['tratelement_122',['TRATElement',['../classTRATElement.html',1,'TRATElement'],['../classTRATElement.html#aad795662de8fd93eb1e31421bd538481',1,'TRATElement::TRATElement()'],['../classTRATElement.html#a18c64a794b696c3ebd9f98374c94e605',1,'TRATElement::TRATElement(const char *elName)']]],
+  ['tratgeo_123',['TRATGeo',['../classTRATGeo.html',1,'']]],
+  ['tratgeoconverter_124',['TRATGeoConverter',['../classTRATGeoConverter.html',1,'']]],
+  ['tratmaterial_125',['TRATMaterial',['../classTRATMaterial.html',1,'TRATMaterial'],['../classTRATMaterial.html#a80100b622194a16d2633ffc472a19085',1,'TRATMaterial::TRATMaterial()'],['../classTRATMaterial.html#a926e52ed4d35bb71c08a65c5f237e200',1,'TRATMaterial::TRATMaterial(const char *matName, Double_t targetDensity=0., Double_t ES_XS_B=0.)']]],
+  ['tratneutrongen_126',['TRATNeutronGen',['../classTRATNeutronGen.html',1,'']]],
+  ['tratpaceventviewer_127',['TRATPACEventViewer',['../classTRATPACEventViewer.html',1,'']]],
+  ['tratvolume_128',['TRATVolume',['../classTRATVolume.html',1,'']]],
+  ['trefmatch_129',['TRefMatch',['../classTRefMatch.html',1,'TRefMatch'],['../classTRefMatch.html#a48bb5176ba5833611236b76a1b07b7f7',1,'TRefMatch::TRefMatch()'],['../classTRefMatch.html#abb18f918fb9326bf8f7435bff4045d04',1,'TRefMatch::TRefMatch(const char *fileName, const char *treeName=&quot;T&quot;, const char *branchVarName=&quot;phi&quot;)']]]
 ];

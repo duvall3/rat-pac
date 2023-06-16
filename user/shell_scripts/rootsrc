@@ -1,9 +1,8 @@
 #!/bin/bash
 # rootsrc -- simple script to view the source files for a given ROOT class
+# USAGE: rootsrc [-h|-p] <ROOTClassName>
 # ~ Mark J. Duvall ~ duvall3@github.com ~ 7/2021 ~ #
 #
-# USAGE: rootsrc <ROOTclass>
-
 
 ##Copyright (C) 2021 Mark J. Duvall
 ##
@@ -22,10 +21,9 @@
 
 # help
 usage() {
-  echo -e "\nUSAGE: rootsrc [-h|-d] <ROOTclass>"
+  echo -e "USAGE: rootsrc [-h|-p] <ROOTClassName>"
   echo -e "  -h\t\tShow this help message and exit"
-  echo -e "  -d\t\tprint filenames and exit"
-  echo
+  echo -e "  -p\t\tprint filenames and exit"
 }
 
 # arg check
@@ -54,26 +52,27 @@ done
 shift $((OPTIND-1))
 
 # init
+ERR=/dev/stderr
 HFILE_NAME="$1".h
 CFILE_NAME="$1".cxx
 
 # locate files
-HFILE=$(find $ROOTSYS -name $HFILE_NAME | head -1)
-CFILE=$(find $ROOTSYS -name $CFILE_NAME | head -1)
+HFILE=$(find $ROOTSYS -name $HFILE_NAME | head -n 1)
+CFILE=$(find $ROOTSYS -name $CFILE_NAME | head -n 1)
 if [[ $HFILE ]]; then
   HFILE_TF=true
 else
   HFILE_TF=false
-  echo "Warning: Header file $HFILE_NAME not found."
+  echo "Warning: Header file $HFILE_NAME not found." > $ERR
 fi
 if [[ $CFILE ]]; then
   CFILE_TF=true
 else
   CFILE_TF=false
-  echo "Warning: Source file $CFILE_NAME not found."
+  echo "Warning: Source file $CFILE_NAME not found." > $ERR
 fi
 if (! $HFILE_TF) && (! $CFILE_TF); then
-  echo "Error: No .h or .cxx files for class \"$1\" found under $ROOTSYS. Searching for mentions..."
+  echo "Error: No .h or .cxx files for class \"$1\" found under $ROOTSYS. Searching for mentions..." > $ERR
   GREPLIST=$(grep -iE -IRl $1 "$ROOTSYS" 2> /dev/null)
   if [[ $GREPLIST ]]; then
     echo -e "\nMentions of \"$1\" found in the following files:\n"
@@ -87,7 +86,6 @@ if (! $HFILE_TF) && (! $CFILE_TF); then
 fi
 
 # main
-# echo -e "<$1> Files:\n$HFILE\n$CFILE"
 echo -e "$HFILE\n$CFILE"
 if $PRINT_ONLY; then
   exit 0

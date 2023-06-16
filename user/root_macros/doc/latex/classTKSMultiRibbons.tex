@@ -1,0 +1,251 @@
+\hypertarget{classTKSMultiRibbons}{}\doxysection{T\+K\+S\+Multi\+Ribbons Class Reference}
+\label{classTKSMultiRibbons}\index{TKSMultiRibbons@{TKSMultiRibbons}}
+
+
+Class for analyzing Delta\+Phi for each individual angle alongside \mbox{\hyperlink{classTKSMultiRes}{T\+K\+S\+Multi\+Res}}.  
+
+
+
+
+{\ttfamily \#include $<$T\+K\+S\+Multi\+Ribbons.\+h$>$}
+
+
+
+Inheritance diagram for T\+K\+S\+Multi\+Ribbons\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=179pt]{classTKSMultiRibbons__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for T\+K\+S\+Multi\+Ribbons\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=179pt]{classTKSMultiRibbons__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classTKSMultiRibbons_a442ff40d993ed8527c427ae8dfecfd7a}{E\+Plot\+Types}} \{ \mbox{\hyperlink{classTKSMultiRibbons_a442ff40d993ed8527c427ae8dfecfd7aa0c088e6c843d89045cf5e9e9e0e06c26}{k\+Ribbons}}, 
+\mbox{\hyperlink{classTKSMultiRibbons_a442ff40d993ed8527c427ae8dfecfd7aa6c5c586911176ae17074c928c0e7563d}{k\+Heatmap}}, 
+\mbox{\hyperlink{classTKSMultiRibbons_a442ff40d993ed8527c427ae8dfecfd7aa32dfe91c507f11c1f684b0162dcc57b6}{k\+Both}}
+ \}
+\begin{DoxyCompactList}\small\item\em Which plots to make\+: \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_a61be38a5d58d7274d9e2dbcb8103cd4f}\label{classTKSMultiRibbons_a61be38a5d58d7274d9e2dbcb8103cd4f}} 
+\mbox{\hyperlink{classTKSMultiRibbons_a61be38a5d58d7274d9e2dbcb8103cd4f}{T\+K\+S\+Multi\+Ribbons}} ()
+\begin{DoxyCompactList}\small\item\em Default ctor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_ae0f9682bbb39a6d227557ccfa2ebbf37}\label{classTKSMultiRibbons_ae0f9682bbb39a6d227557ccfa2ebbf37}} 
+void {\bfseries Set\+Plot\+Types} (\mbox{\hyperlink{classTKSMultiRibbons_a442ff40d993ed8527c427ae8dfecfd7a}{E\+Plot\+Types}} plot\+Selection)
+\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_aed7a78c49147912ba03c264fa567ad9b}\label{classTKSMultiRibbons_aed7a78c49147912ba03c264fa567ad9b}} 
+void {\bfseries Set\+Current\+Plot\+Type} (\mbox{\hyperlink{classTKSMultiRibbons_a442ff40d993ed8527c427ae8dfecfd7a}{E\+Plot\+Types}} plot\+Selection)
+\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_a9cc9d3976fde50b10bbae56feeeb53cd}\label{classTKSMultiRibbons_a9cc9d3976fde50b10bbae56feeeb53cd}} 
+void {\bfseries Set\+File\+List} (T\+Obj\+Array $\ast$new\+File\+List)
+\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_adeca2e7405469ecc4dea053ece14b612}\label{classTKSMultiRibbons_adeca2e7405469ecc4dea053ece14b612}} 
+void {\bfseries Set\+Out\+File\+Name} (T\+String file\+Name)
+\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_a997c8f70b60077077949e3b260bc8b03}\label{classTKSMultiRibbons_a997c8f70b60077077949e3b260bc8b03}} 
+void {\bfseries Set\+Out\+File\+Name} (const char $\ast$filename)
+\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_aa101b5e139758e0be7610871072364b0}\label{classTKSMultiRibbons_aa101b5e139758e0be7610871072364b0}} 
+void {\bfseries Set\+Out\+File} (T\+File $\ast$f\+New)
+\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_a80147ee276dc5af6c295e06d68150717}\label{classTKSMultiRibbons_a80147ee276dc5af6c295e06d68150717}} 
+Int\+\_\+t {\bfseries Get\+N\+Files} ()
+\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_ae44db83ee8f73cfd098c7de4a584fad6}\label{classTKSMultiRibbons_ae44db83ee8f73cfd098c7de4a584fad6}} 
+Int\+\_\+t {\bfseries Get\+N\+Angles} ()
+\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_a1171a6d8291255d8a13a1d532cd395c5}\label{classTKSMultiRibbons_a1171a6d8291255d8a13a1d532cd395c5}} 
+\mbox{\hyperlink{classTKSMultiRibbons_a442ff40d993ed8527c427ae8dfecfd7a}{E\+Plot\+Types}} {\bfseries Get\+Plot\+Types} ()
+\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_a54f5435420ac878905b0213a9166be02}\label{classTKSMultiRibbons_a54f5435420ac878905b0213a9166be02}} 
+\mbox{\hyperlink{classTKSMultiRibbons_a442ff40d993ed8527c427ae8dfecfd7a}{E\+Plot\+Types}} {\bfseries Get\+Current\+Plot\+Type} ()
+\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_a1978ff8a9972833cf9fb9c6034fe0e4f}\label{classTKSMultiRibbons_a1978ff8a9972833cf9fb9c6034fe0e4f}} 
+T\+Obj\+Array $\ast$ {\bfseries Get\+File\+List} ()
+\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_a0c76779790d14828fe1a7c0abe3c1bf3}\label{classTKSMultiRibbons_a0c76779790d14828fe1a7c0abe3c1bf3}} 
+T\+String {\bfseries Get\+Out\+File\+Name} ()
+\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_a06310c321e8020b755227026a26f6cd0}\label{classTKSMultiRibbons_a06310c321e8020b755227026a26f6cd0}} 
+T\+File $\ast$ {\bfseries Get\+Out\+File} ()
+\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_ac1e373398e7dc0dc18f7e6c53dcc92d1}\label{classTKSMultiRibbons_ac1e373398e7dc0dc18f7e6c53dcc92d1}} 
+T\+Canvas $\ast$ {\bfseries Get\+Heatmap\+Canvas} ()
+\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_a2a8bd62b8e3fc875782bfcb31207dc35}\label{classTKSMultiRibbons_a2a8bd62b8e3fc875782bfcb31207dc35}} 
+T\+Canvas $\ast$ {\bfseries Get\+Ribbon\+Canvas} ()
+\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_ab3ff13e040a4c36b331556f6d8dda179}\label{classTKSMultiRibbons_ab3ff13e040a4c36b331556f6d8dda179}} 
+T\+List $\ast$ {\bfseries Get\+Ribbon\+List} ()
+\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_aa12c5bd309a4b13b2c57384d555a0b92}\label{classTKSMultiRibbons_aa12c5bd309a4b13b2c57384d555a0b92}} 
+T\+List $\ast$ {\bfseries Get\+Cut\+List} ()
+\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_a57cfcfb51e3815237b7cfcab949d2c38}\label{classTKSMultiRibbons_a57cfcfb51e3815237b7cfcab949d2c38}} 
+T\+MatrixD $\ast$ {\bfseries Get\+Deltas} ()
+\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_a7fe02ebcc0cce4a89fb9edad94701e90}\label{classTKSMultiRibbons_a7fe02ebcc0cce4a89fb9edad94701e90}} 
+void \mbox{\hyperlink{classTKSMultiRibbons_a7fe02ebcc0cce4a89fb9edad94701e90}{Init}} ()
+\begin{DoxyCompactList}\small\item\em Initialize. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_a10f28bf477b3c3c7f7718e3a6155718a}\label{classTKSMultiRibbons_a10f28bf477b3c3c7f7718e3a6155718a}} 
+void \mbox{\hyperlink{classTKSMultiRibbons_a10f28bf477b3c3c7f7718e3a6155718a}{Draw\+Plots}} ()
+\begin{DoxyCompactList}\small\item\em Draw specified plots. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_a73b703d8bcd24e4796981a9bf8e0793a}\label{classTKSMultiRibbons_a73b703d8bcd24e4796981a9bf8e0793a}} 
+void \mbox{\hyperlink{classTKSMultiRibbons_a73b703d8bcd24e4796981a9bf8e0793a}{Ribbons}} ()
+\begin{DoxyCompactList}\small\item\em Fit distributions for each angle and draw as ribbon plot. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_ad126f88167a2747cfc28f0ef1b4367a4}\label{classTKSMultiRibbons_ad126f88167a2747cfc28f0ef1b4367a4}} 
+void \mbox{\hyperlink{classTKSMultiRibbons_ad126f88167a2747cfc28f0ef1b4367a4}{Heatmap}} ()
+\begin{DoxyCompactList}\small\item\em Fit distributions for each angle and draw as heatmap. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_a4618c3248f1e9996e7c3978623452043}\label{classTKSMultiRibbons_a4618c3248f1e9996e7c3978623452043}} 
+void \mbox{\hyperlink{classTKSMultiRibbons_a4618c3248f1e9996e7c3978623452043}{Save}} ()
+\begin{DoxyCompactList}\small\item\em Save results. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_a906466883108ae2d4ca5a75c5fb049c0}\label{classTKSMultiRibbons_a906466883108ae2d4ca5a75c5fb049c0}} 
+void \mbox{\hyperlink{classTKSMultiRibbons_a906466883108ae2d4ca5a75c5fb049c0}{Run}} ()
+\begin{DoxyCompactList}\small\item\em Perform all selected analyses. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_acb4e3c8a9241739d48a0892ecec8ce92}\label{classTKSMultiRibbons_acb4e3c8a9241739d48a0892ecec8ce92}} 
+void \mbox{\hyperlink{classTKSMultiRibbons_acb4e3c8a9241739d48a0892ecec8ce92}{Print\+Enums}} ()
+\begin{DoxyCompactList}\small\item\em Display this class\textquotesingle{} enums. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_a7ee0b306776e9cf42282ad9472741cd6}\label{classTKSMultiRibbons_a7ee0b306776e9cf42282ad9472741cd6}} 
+void {\bfseries Set\+Init} (Bool\+\_\+t new\+Init)
+\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_a78a48bcbfd2ad2d59fffda947a8b15e8}\label{classTKSMultiRibbons_a78a48bcbfd2ad2d59fffda947a8b15e8}} 
+void \mbox{\hyperlink{classTKSMultiRibbons_a78a48bcbfd2ad2d59fffda947a8b15e8}{Fill\+File\+List}} ()
+\begin{DoxyCompactList}\small\item\em Scan for K\+S\+Summary files and store in f\+File\+List. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_ac2e68c1a3523893fe862f9b2c769c4ed}\label{classTKSMultiRibbons_ac2e68c1a3523893fe862f9b2c769c4ed}} 
+void {\bfseries Set\+N\+Files} (Int\+\_\+t new\+N\+Files)
+\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_a63318ba5f8659fb9727634cd6b0638fe}\label{classTKSMultiRibbons_a63318ba5f8659fb9727634cd6b0638fe}} 
+void {\bfseries Set\+N\+Angles} (Int\+\_\+t new\+N\+Angles)
+\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_a5c89ec0de5c773d2c696f933e4c99e13}\label{classTKSMultiRibbons_a5c89ec0de5c773d2c696f933e4c99e13}} 
+void \mbox{\hyperlink{classTKSMultiRibbons_a5c89ec0de5c773d2c696f933e4c99e13}{Set\+Deltas}} (T\+MatrixD $\ast$new\+Deltas)
+\begin{DoxyCompactList}\small\item\em Fill difference matrix. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_aad7e2b97ed4ccc3659b56c87fbed6052}\label{classTKSMultiRibbons_aad7e2b97ed4ccc3659b56c87fbed6052}} 
+T\+MatrixD \mbox{\hyperlink{classTKSMultiRibbons_aad7e2b97ed4ccc3659b56c87fbed6052}{Retrieve\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Fetch data from files. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_aca91f07833d31348e84211e0aad26351}\label{classTKSMultiRibbons_aca91f07833d31348e84211e0aad26351}} 
+void \mbox{\hyperlink{classTKSMultiRibbons_aca91f07833d31348e84211e0aad26351}{Fill\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Fill difference data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_a11df62cd75a56835dd64f4dd31e3a319}\label{classTKSMultiRibbons_a11df62cd75a56835dd64f4dd31e3a319}} 
+Bool\+\_\+t \mbox{\hyperlink{classTKSMultiRibbons_a11df62cd75a56835dd64f4dd31e3a319}{fk\+Init}}
+\begin{DoxyCompactList}\small\item\em Whether \mbox{\hyperlink{classTKSMultiRibbons_a7fe02ebcc0cce4a89fb9edad94701e90}{Init()}} has been run yet. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_ad6bf90a2c6eadf3356c59ea07cd2a480}\label{classTKSMultiRibbons_ad6bf90a2c6eadf3356c59ea07cd2a480}} 
+Int\+\_\+t \mbox{\hyperlink{classTKSMultiRibbons_ad6bf90a2c6eadf3356c59ea07cd2a480}{fk\+N\+Files}}
+\begin{DoxyCompactList}\small\item\em Number of \textquotesingle{}K\+S\+Summary.\+root\textquotesingle{} files found. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_abe58b314d579844fc19c3e8690a6f094}\label{classTKSMultiRibbons_abe58b314d579844fc19c3e8690a6f094}} 
+Int\+\_\+t \mbox{\hyperlink{classTKSMultiRibbons_abe58b314d579844fc19c3e8690a6f094}{fk\+N\+Angles}}
+\begin{DoxyCompactList}\small\item\em Number of angles in each file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_a8904daecd37c5d4920b6e54a8d9c9715}\label{classTKSMultiRibbons_a8904daecd37c5d4920b6e54a8d9c9715}} 
+\mbox{\hyperlink{classTKSMultiRibbons_a442ff40d993ed8527c427ae8dfecfd7a}{E\+Plot\+Types}} \mbox{\hyperlink{classTKSMultiRibbons_a8904daecd37c5d4920b6e54a8d9c9715}{f\+Plot\+Types}}
+\begin{DoxyCompactList}\small\item\em Which plots to make. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_abb5aa029845ab9c3c8a26e5fbfb96923}\label{classTKSMultiRibbons_abb5aa029845ab9c3c8a26e5fbfb96923}} 
+\mbox{\hyperlink{classTKSMultiRibbons_a442ff40d993ed8527c427ae8dfecfd7a}{E\+Plot\+Types}} \mbox{\hyperlink{classTKSMultiRibbons_abb5aa029845ab9c3c8a26e5fbfb96923}{f\+Current\+Plot\+Type}}
+\begin{DoxyCompactList}\small\item\em Currently-\/active plot type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_a4e021d94a7431096691d39bdc597fefd}\label{classTKSMultiRibbons_a4e021d94a7431096691d39bdc597fefd}} 
+T\+Obj\+Array $\ast$ \mbox{\hyperlink{classTKSMultiRibbons_a4e021d94a7431096691d39bdc597fefd}{f\+File\+List}}
+\begin{DoxyCompactList}\small\item\em List of K\+S\+Summary files to analyze. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_ae74ff4d7dd44de74fc2b43e01d2e906e}\label{classTKSMultiRibbons_ae74ff4d7dd44de74fc2b43e01d2e906e}} 
+T\+String \mbox{\hyperlink{classTKSMultiRibbons_ae74ff4d7dd44de74fc2b43e01d2e906e}{f\+Out\+File\+Name}}
+\begin{DoxyCompactList}\small\item\em Output filename. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_a92e963d86414e3a00f45c91d9d6e97db}\label{classTKSMultiRibbons_a92e963d86414e3a00f45c91d9d6e97db}} 
+T\+File $\ast$ \mbox{\hyperlink{classTKSMultiRibbons_a92e963d86414e3a00f45c91d9d6e97db}{f\+Out\+File}}
+\begin{DoxyCompactList}\small\item\em Output T\+File$\ast$. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_aea906fba03fcbf4c41e06bea24c44fc9}\label{classTKSMultiRibbons_aea906fba03fcbf4c41e06bea24c44fc9}} 
+T\+Canvas $\ast$ \mbox{\hyperlink{classTKSMultiRibbons_aea906fba03fcbf4c41e06bea24c44fc9}{f\+Heatmap\+Canvas}}
+\begin{DoxyCompactList}\small\item\em Canvas for heatmap plot. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_a01e0ad507ba70db152362aba4aa9882a}\label{classTKSMultiRibbons_a01e0ad507ba70db152362aba4aa9882a}} 
+T\+Canvas $\ast$ \mbox{\hyperlink{classTKSMultiRibbons_a01e0ad507ba70db152362aba4aa9882a}{f\+Ribbon\+Canvas}}
+\begin{DoxyCompactList}\small\item\em Canvas for ribbon plots. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_af133a3431274f5f894e11049cf300017}\label{classTKSMultiRibbons_af133a3431274f5f894e11049cf300017}} 
+T\+List $\ast$ \mbox{\hyperlink{classTKSMultiRibbons_af133a3431274f5f894e11049cf300017}{f\+Ribbon\+List}}
+\begin{DoxyCompactList}\small\item\em List of ribbon plots. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_ae2aa977bbabbaf135778f3869d97d66c}\label{classTKSMultiRibbons_ae2aa977bbabbaf135778f3869d97d66c}} 
+T\+List $\ast$ \mbox{\hyperlink{classTKSMultiRibbons_ae2aa977bbabbaf135778f3869d97d66c}{f\+Cut\+List}}
+\begin{DoxyCompactList}\small\item\em List of xy cuts for ribbon plots. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTKSMultiRibbons_a9f8a7825dc0c6e2f55d0101e01eabb33}\label{classTKSMultiRibbons_a9f8a7825dc0c6e2f55d0101e01eabb33}} 
+T\+MatrixD $\ast$ \mbox{\hyperlink{classTKSMultiRibbons_a9f8a7825dc0c6e2f55d0101e01eabb33}{f\+Deltas}}
+\begin{DoxyCompactList}\small\item\em Matrix containing (phi\+\_\+recon-\/phi\+\_\+true), dimensions $<$\+N\+\_\+files$>$x$<$\+N\+\_\+angles$>$ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for analyzing Delta\+Phi for each individual angle alongside \mbox{\hyperlink{classTKSMultiRes}{T\+K\+S\+Multi\+Res}}. 
+
+\mbox{\hyperlink{classTKSMultiRibbons}{T\+K\+S\+Multi\+Ribbons}}
+
+Class for making ribbon and heatmap plots, specifically from K\+S\+Summary data.
+
+To use\+:
+\begin{DoxyItemize}
+\item Call constructor
+\item Use Set\+Plot\+Types(0$\vert$1$\vert$2) to select desired plot(s) {\itshape \mbox{[}optional\mbox{]}}
+\item Call \mbox{\hyperlink{classTKSMultiRibbons_a906466883108ae2d4ca5a75c5fb049c0}{Run()}}
+\item Use Set\+Out\+File\+Name to change output filenames {\itshape \mbox{[}optional\mbox{]}}
+\item Call \mbox{\hyperlink{classTKSMultiRibbons_a4618c3248f1e9996e7c3978623452043}{Save()}} {\itshape \mbox{[}optional\mbox{]}}
+\item {\itshape Note\+: You can ajust the camera in the ribbon plot before saving if desired}
+\end{DoxyItemize}
+
+Plot-\/type enum options are\+:
+\begin{DoxyItemize}
+\item 0 = k\+Ribbons\+: ribbon plot only
+\item 1 = k\+Heatmap\+: heatmap plot only
+\item 2 = k\+Both\+: both plots {\itshape \mbox{[}default\mbox{]}}
+\end{DoxyItemize}
+
+Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classTKSMultiRibbons}{TKSMultiRibbons}} R;}
+\DoxyCodeLine{R.SetPlotTypes(\mbox{\hyperlink{classTKSMultiRibbons_a442ff40d993ed8527c427ae8dfecfd7aa6c5c586911176ae17074c928c0e7563d}{TKSMultiRibbons::kHeatmap}});}
+\DoxyCodeLine{R.\mbox{\hyperlink{classTKSMultiRibbons_a906466883108ae2d4ca5a75c5fb049c0}{Run}}();}
+\DoxyCodeLine{R.SetOutFileName(\textcolor{stringliteral}{"MultiRibbons.root"});}
+\DoxyCodeLine{R.\mbox{\hyperlink{classTKSMultiRibbons_a4618c3248f1e9996e7c3978623452043}{Save}}();}
+\end{DoxyCode}
+ 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classTKSMultiRibbons_a442ff40d993ed8527c427ae8dfecfd7a}\label{classTKSMultiRibbons_a442ff40d993ed8527c427ae8dfecfd7a}} 
+\index{TKSMultiRibbons@{TKSMultiRibbons}!EPlotTypes@{EPlotTypes}}
+\index{EPlotTypes@{EPlotTypes}!TKSMultiRibbons@{TKSMultiRibbons}}
+\doxysubsubsection{\texorpdfstring{EPlotTypes}{EPlotTypes}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classTKSMultiRibbons_a442ff40d993ed8527c427ae8dfecfd7a}{T\+K\+S\+Multi\+Ribbons\+::\+E\+Plot\+Types}}}
+
+
+
+Which plots to make\+: 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kRibbons@{kRibbons}!TKSMultiRibbons@{TKSMultiRibbons}}\index{TKSMultiRibbons@{TKSMultiRibbons}!kRibbons@{kRibbons}}}\mbox{\Hypertarget{classTKSMultiRibbons_a442ff40d993ed8527c427ae8dfecfd7aa0c088e6c843d89045cf5e9e9e0e06c26}\label{classTKSMultiRibbons_a442ff40d993ed8527c427ae8dfecfd7aa0c088e6c843d89045cf5e9e9e0e06c26}} 
+k\+Ribbons&Ribbon plot only. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kHeatmap@{kHeatmap}!TKSMultiRibbons@{TKSMultiRibbons}}\index{TKSMultiRibbons@{TKSMultiRibbons}!kHeatmap@{kHeatmap}}}\mbox{\Hypertarget{classTKSMultiRibbons_a442ff40d993ed8527c427ae8dfecfd7aa6c5c586911176ae17074c928c0e7563d}\label{classTKSMultiRibbons_a442ff40d993ed8527c427ae8dfecfd7aa6c5c586911176ae17074c928c0e7563d}} 
+k\+Heatmap&Heatmap plot only. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kBoth@{kBoth}!TKSMultiRibbons@{TKSMultiRibbons}}\index{TKSMultiRibbons@{TKSMultiRibbons}!kBoth@{kBoth}}}\mbox{\Hypertarget{classTKSMultiRibbons_a442ff40d993ed8527c427ae8dfecfd7aa32dfe91c507f11c1f684b0162dcc57b6}\label{classTKSMultiRibbons_a442ff40d993ed8527c427ae8dfecfd7aa32dfe91c507f11c1f684b0162dcc57b6}} 
+k\+Both&Both plots. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+T\+K\+S\+Multi\+Ribbons.\+h\item 
+T\+K\+S\+Multi\+Ribbons.\+cxx\end{DoxyCompactItemize}

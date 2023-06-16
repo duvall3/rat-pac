@@ -1,0 +1,99 @@
+#!/bin/bash
+# geantsrc -- simple script to view the source files for a given GEANT4 class
+# USAGE: geantsrc [-h|-p] <G4ClassName>
+# ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 06/2023 ~ #
+#
+
+##Copyright (C) 2021 Mark J. Duvall
+##
+##    This program is free software: you can redistribute it and/or modify
+##    it under the terms of the GNU General Public License as published by
+##    the Free Software Foundation, either version 3 of the License, or
+##    (at your option) any later version.
+##
+##    This program is distributed in the hope that it will be useful,
+##    but WITHOUT ANY WARRANTY; without even the implied warranty of
+##    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##    GNU General Public License for more details.
+##
+##    You should have received a copy of the GNU General Public License
+##    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+# help
+usage() {
+  echo -e "USAGE: geantsrc [-h|-p] <G4ClassName>"
+  echo -e "  -h\t\tShow this help message and exit"
+  echo -e "  -p\t\tprint filenames and exit"
+}
+
+# arg check
+if [[ ! $1 ]]; then
+  usage
+  exit 10
+fi
+
+# option(s)
+PRINT_ONLY=false
+while getopts ":hp" OPTIONS; do
+  case $OPTIONS in
+    h)
+      usage
+      exit 5
+      ;;
+    p)
+      PRINT_ONLY=true
+      ;;
+    *)
+      usage
+      exit 10
+      ;;
+  esac
+done
+shift $((OPTIND-1))
+
+# init
+ERR=/dev/stderr
+HFILE_NAME="$1".hh
+CFILE_NAME="$1".cc
+G4_SOURCE_DIR=${G4_SOURCE_DIR:-/home/mark/geant4.11/geant4-v11.0.3/source}
+
+# locate files
+HFILE=$(find $G4_SOURCE_DIR -name $HFILE_NAME | head -n 1)
+CFILE=$(find $G4_SOURCE_DIR -name $CFILE_NAME | head -n 1)
+if [[ $HFILE ]]; then
+  HFILE_TF=true
+else
+  HFILE_TF=false
+  echo "Warning: Header file $HFILE_NAME not found." > $ERR
+fi
+if [[ $CFILE ]]; then
+  CFILE_TF=true
+else
+  CFILE_TF=false
+  echo "Warning: Source file $CFILE_NAME not found." > $ERR
+fi
+if (! $HFILE_TF) && (! $CFILE_TF); then
+  echo "Error: No .hh or .cc files for class \"$1\" found under $G4_SOURCE_DIR. Searching for mentions..." > $ERR
+  GREPLIST=$(grep -iE -IRl $1 "$G4_SOURCE_DIR" 2> /dev/null)
+  if [[ $GREPLIST ]]; then
+    echo -e "\nMentions of \"$1\" found in the following files:\n"
+    echo $GREPLIST | sed s@$G4_SOURCE_DIR@'$G4_SOURCE_DIR'@g | tr ' ' '\n'
+    echo
+    exit 2
+  else
+    echo -e "No mentions of \"$1\" found under $G4_SOURCE_DIR. Exiting.\n"
+    exit 3
+  fi
+fi
+
+# main
+echo -e "$HFILE\n$CFILE"
+if $PRINT_ONLY; then
+  exit 0
+else
+  # open for reading only
+  vim -R -p $HFILE $CFILE
+fi
+
+# all pau!   )
+exit 0
