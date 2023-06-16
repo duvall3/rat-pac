@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 // TKSMultiRibbons -- Class for combining reference-comparison results from multiple runs
 //   See TKSMultiRes for more information
+=======
+// TKSMultiRibbons -- basic template for writing ROOT classes
+>>>>>>> f2017a597cec63025f3562a7bc78f09ef0e5058a
 
 #include "TKSMultiRibbons.h"
 
@@ -12,6 +16,7 @@
 // default ctor
 TKSMultiRibbons::TKSMultiRibbons()
 {
+<<<<<<< HEAD
   // set name and title
   SetName("TKSMultiRibbons");
   SetTitle("class for analyzing DeltaPhi for each individual angle alongside TKSMultiRes");
@@ -25,6 +30,25 @@ TKSMultiRibbons::TKSMultiRibbons()
   SetInit(kFALSE);
 }
 
+=======
+  // define here
+  fFileList = new TObjArray;
+  fOutFileName = "KS_Multi.root";
+}
+
+////______________________________________________________________________________
+//// normal ctor
+///**
+// * \param someArg1 -- e.g., a filename
+// * \param someArg2 -- e.g., a track ID
+// */
+//TKSMultiRibbons::TKSMultiRibbons( const char* someArg1, Double_t someArg2 )
+//{
+//  // define here
+//  fSomeData = 0.;
+//}
+
+>>>>>>> f2017a597cec63025f3562a7bc78f09ef0e5058a
 //______________________________________________________________________________
 // FillFileList
 void TKSMultiRibbons::FillFileList()
@@ -55,6 +79,7 @@ void TKSMultiRibbons::FillFileList()
 // Init
 void TKSMultiRibbons::Init()
 {
+<<<<<<< HEAD
   if (fFileList->GetEntries()==0) FillFileList();
   SetNFiles(fFileList->GetEntries());
   TFile *_f = TFile::Open(fFileList->At(0)->GetName());
@@ -64,10 +89,16 @@ void TKSMultiRibbons::Init()
   SetNAngles(nAngles);
   FillData();
   SetInit(kTRUE);
+=======
+  // define here
+  if (fFileList->GetEntries()==0) FillFileList();
+  if (! fOutFile) fOutFile = TFile::Open(fOutFileName.Data(), "recreate");
+>>>>>>> f2017a597cec63025f3562a7bc78f09ef0e5058a
   return;
 }
 
 //______________________________________________________________________________
+<<<<<<< HEAD
 // RetrieveData
 TMatrixD TKSMultiRibbons::RetrieveData()
 {
@@ -206,10 +237,48 @@ void TKSMultiRibbons::DrawPlots()
     /* cout << drawCmd.Data() << endl; //debug */
     g->Draw(drawCmd.Data());
   }
+=======
+// Ribbons
+void TKSMultiRibbons::Ribbons()
+{
+  //init
+  Int_t k(0), kFile(0), N = fFileList->GetEntries();
+  TIter i(fFileList);
+  TMatrixD deltas(30,N);
+  TArrayD deltArr(N);
+  Double_t delta(0.4);
+  Double_t angleLow(-1.), angleHigh(31.);
+  Double_t diffLim(20.);
+  TF2 *g = new TF2("g", "xygaus(0)", -diffLim, diffLim, angleLow, angleHigh);
+  /* TF1 *g = new TF1("g", "gaus(0)", -diffLim, diffLim); */
+  TCutG cut0("cut0", 5);
+  Double_t A_guess(1.), mu_guess(1.), sigma_guess(5.);
+  Double_t A, mu, sigma;
+  // retrieve data from files //TODO
+  deltas[0][0] = 2.; deltas[0][1] =0.; deltas[0][2] = -3.; deltas[0][3] = 0.5; //debug
+  // plot
+  fRibbonCanvas = new TCanvas("fRibbonCanvas", "Ribbon Plots");
+  fRibbonCanvas->SetGrid(1,1); //move me?
+  // loop over angles (matrix rows) //TODO
+  /* for (k=0; k<31; k++) { */
+    k = 0; //debug
+    // cut0->SetPoints...
+    TMatrixDRow R(deltas, k);
+    for (Int_t j=0; j<N; j++) deltArr[j] = R[j];
+    A = A_guess; //temp?
+    mu = TMath::Mean(N,deltArr.GetArray());
+    sigma = TMath::RMS(N,deltArr.GetArray());
+    g->SetParameters(A, mu, sigma, mu, sigma);
+    /* g->SetParameters(A, mu, sigma); */
+    // draw
+    g->Draw("surf1");
+  /* } */
+>>>>>>> f2017a597cec63025f3562a7bc78f09ef0e5058a
   return;
 }
 
 //______________________________________________________________________________
+<<<<<<< HEAD
 // Ribbons
 void TKSMultiRibbons::Ribbons()
 {
@@ -237,12 +306,15 @@ void TKSMultiRibbons::Heatmap()
 }
 
 //______________________________________________________________________________
+=======
+>>>>>>> f2017a597cec63025f3562a7bc78f09ef0e5058a
 // Save
 void TKSMultiRibbons::Save()
 {
   // save
   Bool_t kBatchOrig = gROOT->IsBatch();
   gROOT->SetBatch(kTRUE);
+<<<<<<< HEAD
   /* cout << GetOutFile() << endl; //debug */
   /* cout << GetOutFileName().Data() << endl; //debug */
   /* if ( GetOutFile() == 0x0 ) { */
@@ -279,6 +351,16 @@ void TKSMultiRibbons::Save()
   gROOT->SetBatch(kBatchOrig);
   if (fHeatmapCanvas) Heatmap();
   if (fRibbonCanvas) Ribbons();
+=======
+  TString outImageName(fOutFileName);
+  outImageName.ReplaceAll("\.root$", "_ribbons.png");
+  fHistoCanvas->Print(outImageName.Data());
+  fOutFile->cd();
+  fRibbonCanvas->Write();
+  fOutFile->Write();
+  /* fOutFile->Close(); */
+  gROOT->SetBatch(kBatchOrig);
+>>>>>>> f2017a597cec63025f3562a7bc78f09ef0e5058a
   return;
 }
 
@@ -287,6 +369,7 @@ void TKSMultiRibbons::Save()
 void TKSMultiRibbons::Run()
 {
   Init();
+<<<<<<< HEAD
   switch(GetPlotTypes()) {
   /* switch(fPlotTypes) { */
     case kRibbons:
@@ -342,6 +425,13 @@ void TKSMultiRibbons::PrintEnums()
   printf("  0:\tkRibbons\n  1:\tkHeatmap\n  2:\tkBoth\n");
 }
 
+=======
+  Ribbons();
+  Save();
+  return;
+}
+
+>>>>>>> f2017a597cec63025f3562a7bc78f09ef0e5058a
 ////______________________________________________________________________________
 //TKSMultiRibbons::
 //{

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // TKSMultiRes -- Class for combining reference-comparison results from multiple runs
+=======
+// TKSMultiRes -- basic template for writing ROOT classes
+>>>>>>> f2017a597cec63025f3562a7bc78f09ef0e5058a
 
 #include "TKSMultiRes.h"
 
@@ -11,6 +15,7 @@
 // default ctor
 TKSMultiRes::TKSMultiRes()
 {
+<<<<<<< HEAD
   // set name and title
   SetName("TKSMultiRes");
   SetTitle("class for combining angular-resolution results from multiple reference-matching test runs");
@@ -19,6 +24,11 @@ TKSMultiRes::TKSMultiRes()
   fRibbons = 0x0; // force null ptr until TKSMultiRibbons::Init()
   /* fkRibbon = kFALSE; */
   fkRibbon = kTRUE;
+=======
+  // define here
+  fFileList = new TObjArray;
+  kRibbon = kFALSE;
+>>>>>>> f2017a597cec63025f3562a7bc78f09ef0e5058a
   fOutFileName = "KS_Multi.root";
 }
 
@@ -65,8 +75,13 @@ void TKSMultiRes::FillFileList()
 void TKSMultiRes::Init()
 {
   // define here
+<<<<<<< HEAD
   /* cout << fRibbons << endl; //debug */
   FillFileList();
+=======
+  FillFileList();
+  fOutFile = TFile::Open(fOutFileName.Data(), "recreate");
+>>>>>>> f2017a597cec63025f3562a7bc78f09ef0e5058a
   return;
 }
 
@@ -103,7 +118,11 @@ void TKSMultiRes::Histos()
     fHistoSum->Add(hh);
     ff->Close();
   }
+<<<<<<< HEAD
   /* fOutFile->cd(); */
+=======
+  fOutFile->cd();
+>>>>>>> f2017a597cec63025f3562a7bc78f09ef0e5058a
   // plot and fit
   fHistoCanvas = new TCanvas("c", "KS_Multi");
   fHistoSum->Draw();
@@ -111,8 +130,13 @@ void TKSMultiRes::Histos()
   fHistoSumFit->SetLineColor(kGreen);
   fHistoSumFit->SetParNames("Constant", "Mean", "Sigma");
   fHistoSumFit->SetParameters(constantGuess, meanGuess, sigmaGuess);
+<<<<<<< HEAD
   fHistoSumFitResultPtr = fHistoSum->Fit(fHistoSumFit, "SR");
   fHistoSumFitResult = fHistoSumFitResultPtr.Get();
+=======
+  TFitResultPtr hFRP = fHistoSum->Fit(fHistoSumFit, "SR");
+  fHistoSumFitResult = hFRP.Get();
+>>>>>>> f2017a597cec63025f3562a7bc78f09ef0e5058a
   // tweak graph
   fHistoCanvas->SetGrid(1,1);
   Double_t h_max = fHistoSum->GetMaximum(), hf_max = fHistoSumFit->GetMaximum();
@@ -125,16 +149,21 @@ void TKSMultiRes::Histos()
 // Ribbons
 void TKSMultiRes::Ribbons()
 {
+<<<<<<< HEAD
   // init
   fRibbons = new TKSMultiRibbons;
   fRibbons->SetOutFile(GetOutFile());
   fRibbons->SetOutFileName(GetOutFileName().Data());
   fRibbons->Run();
+=======
+
+>>>>>>> f2017a597cec63025f3562a7bc78f09ef0e5058a
   return;
 }
 
 //______________________________________________________________________________
 // Save
+<<<<<<< HEAD
 /**
  * Calling Save() will :
  *
@@ -147,11 +176,14 @@ void TKSMultiRes::Ribbons()
  * - The fitted Gaussian function, as `TF1* gaussFit`
  * - The fit result, as `TFitResult* fitResult`
  */
+=======
+>>>>>>> f2017a597cec63025f3562a7bc78f09ef0e5058a
 void TKSMultiRes::Save()
 {
   // save
   Bool_t kBatchOrig = gROOT->IsBatch();
   gROOT->SetBatch(kTRUE);
+<<<<<<< HEAD
   fOutFile = TFile::Open(fOutFileName.Data(), "recreate");
   TString outImageName(fOutFileName);
   outImageName.ReplaceAll("\.root", ".png");
@@ -168,6 +200,18 @@ void TKSMultiRes::Save()
   }
   fOutFile->Write();
   fOutFile->Close();
+=======
+  TString outImageName(fOutFileName);
+  outImageName.ReplaceAll("\.root$", ".png");
+  fHistoCanvas->Print(outImageName.Data());
+  fOutFile->cd();
+  fHistoCanvas->Write();
+  fHistoSum->Write();
+  fHistoSumFit->Write();
+  /* fHistoSumFitResult->Write("fHistoSumFitResult"); //FIXME segfault */
+  fOutFile->Write();
+  /* fOutFile->Close(); */
+>>>>>>> f2017a597cec63025f3562a7bc78f09ef0e5058a
   gROOT->SetBatch(kBatchOrig);
   return;
 }
@@ -177,11 +221,17 @@ void TKSMultiRes::Save()
 void TKSMultiRes::Run()
 {
   Init();
+<<<<<<< HEAD
   cout << "Plotting summed histogram..." << endl; //debug
   Histos();
   cout << endl;
   if (fkRibbon) Ribbons();
   /* Save(); */
+=======
+  Histos();
+  if (kRibbon) Ribbons();
+  Save();
+>>>>>>> f2017a597cec63025f3562a7bc78f09ef0e5058a
   return;
 }
 
