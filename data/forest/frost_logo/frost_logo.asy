@@ -41,7 +41,7 @@ pen pmtpen = dfpen+magenta+opacity(0.75);
 pair O = (0,0);
 pair X = (1,0);
 pair Y = (0,1);
-// actual dimensions:
+// actual dimensions (cm):
 real RG = 2.54;				// glass-tube outer radius
 real RS = 2.20;				// scint-tube outer radius
 real  S = 4*RG;				// tube spacing, center-to-center
