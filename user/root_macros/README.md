@@ -23,9 +23,9 @@ _Note: These are written for *nix systems (Mac/Linux)_
 ### Usage
 
 Open ROOT and run `.x duvall3Include.cxx` to load the macros and classes.  
-For further information:
-1. If you're currently only viewing the file `README.md`, then start with the rest of this documentation, located at `doc` > `html` > [`index.html`](index.html); 
-2. For documentation on the reference-matching algorithm, see the [Reference-Matching User's Guide](md_ReferenceMatching.html).
+For further information:  
+1. If you're currently only viewing the file `README.md`, then start with the rest of this documentation, located at `doc` > `html` > [`index.html`](index.html);  
+2. For documentation on the reference-matching algorithm, see the [Reference-Matching User's Guide](md_ReferenceMatching.html).  
 3. If you don't find what you need, see the comments in the individual files; and finally,  
 4. If you still need assisstance after that, feel free to contact me at [duvall3 dot git at gmail dot com](mailto:duvall3.git@gmail.com).
 

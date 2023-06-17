@@ -43,7 +43,7 @@ p = loglog( En, phi, 'm' );		% curve fit
 set(p, 'linewidth', 2.5)
 set(a, 'color', 'w', 'xcolor', 'k', 'ycolor', 'k', 'gridcolor', 'k', 'minorgridcolor', 'k');
 grid on
-set(a, 'gridlinestyle', ':', 'gridalpha', 1., 'linewidth', 1.5)
+set(a, 'gridlinestyle', ':', 'gridalpha', 1.) %, 'linewidth', 1.5)
 xlim([1.e-1 1.e4]);
 ylim([1.e-7 1.e-2]);
 hold on
@@ -56,9 +56,9 @@ xla = xlabel('Neutron Energy (MeV)');
 yla = ylabel('Differential Flux (cm^{-2} s^{-1} MeV^{-1})');
 l = legend( [sc p], {'Data', 'Analytical Fit'} );
 set(l, 'color', 'w', 'location', 'northeast')
-set(T, 'fontsize', 26, 'fontweight', 'bold')
-set(a, 'fontsize', 22, 'fontweight', 'bold')
-set(l, 'fontsize', 22, 'fontweight', 'bold')
+set(T, 'fontsize', 34, 'fontweight', 'bold')
+set(a, 'fontsize', 30, 'fontweight', 'bold')
+set(l, 'fontsize', 30, 'fontweight', 'bold')
 
 
 %% all pau!   )
