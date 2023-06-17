@@ -33,7 +33,6 @@ settings.render = 2**4;
 
 // general init
 size(100,0);
-/* bbox(black,Fill); */
 pen dfpen = defaultpen;
 pen glasspen = dfpen+cyan+opacity(0.50);
 pen scintpen = dfpen+blue+opacity(0.25);
@@ -47,27 +46,9 @@ real RS = 2.20;				// scint-tube outer radius
 real  S = 4*RG;				// tube spacing, center-to-center
 
 
-//// GEO
+//// FUNCTIONS
 
-path tube(pair R = O) {
-  path[] rings;
-  rings[0] = circle(R,RG);
-  rings[1] = reverse(circle(R,.95*RS));
-  /* fill( rings[0] -- rings[1] -- cycle, magenta ); */
-  return rings[0] -- rings[1] -- cycle;
-}
-
-path spike(real theta) {
-  real L = 1.3*S;
-  pair r0 = RG/2 * ( cos(theta-pi/2), sin(theta-pi/2) );
-  pair r1 = L * ( cos(theta), sin(theta) );
-  pair r2 = RG/2 * ( cos(theta+pi/2), sin(theta+pi/2) );
-  path P = r0 -- r1 -- r2 -- cycle;
-  /* fill(P, cyan); */
-  return P;
-}
-
-// pathify an array of pairs
+// create a path from an array of pairs
 path pathify(pair[] R) {
   if (R.length<3) return R[0]--R[1]--cycle;
   path P = R[0] -- R[1];
@@ -75,6 +56,24 @@ path pathify(pair[] R) {
     P = P -- R[k];
   }
   P = P -- cycle;
+  return P;
+}
+
+// create "tube" (annular ring)
+path tube(pair R = O) {
+  path[] rings;
+  rings[0] = circle(R,RG);
+  rings[1] = reverse(circle(R,.95*RS));
+  return rings[0] -- rings[1] -- cycle;
+}
+
+// create spike
+path spike(real theta) {
+  real L = 1.3*S;
+  pair r0 = RG/2 * ( cos(theta-pi/2), sin(theta-pi/2) );
+  pair r1 = L * ( cos(theta), sin(theta) );
+  pair r2 = RG/2 * ( cos(theta+pi/2), sin(theta+pi/2) );
+  path P = r0 -- r1 -- r2 -- cycle;
   return P;
 }
 
@@ -113,6 +112,3 @@ for ( int k=0; k<6; ++k ) {
 
 
 // all pau!   )
-/* bbox(currentpicture, Fill, black); */
-/* bbox(currentpicture, heavyblue); */
-bbox(heavyblue, Fill);
