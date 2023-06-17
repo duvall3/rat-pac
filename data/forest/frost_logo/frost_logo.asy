@@ -98,8 +98,8 @@ for ( int k=0; k<6; ++k ) {
 }
 
 // draw tubes
-path crossbeam;
 axialshade( tube(), white, RG*(1,1), magenta, RG*(-1,-1) );
+path crossbeam;
 for ( int k=0; k<6; ++k ) {
   if (k<5) {
     crossbeam = scale(0.95)*(verts[k]--verts[k+1]) -- scale(1.05)*(verts[k+1]--verts[k]) -- cycle;
@@ -109,6 +109,8 @@ for ( int k=0; k<6; ++k ) {
   axialshade( crossbeam,  white, L*(1,1), deepcyan, L*(-1,-1) );
   axialshade( tube(verts[k]), white, verts[k]+RG*(X+Y), magenta, verts[k]-RG*(X+Y) );
 }
+// redraw first tube over final crossbeam
+axialshade( tube(verts[0]), white, verts[0]+RG*(X+Y), magenta, verts[0]-RG*(X+Y) );
 
 
 // all pau!   )
