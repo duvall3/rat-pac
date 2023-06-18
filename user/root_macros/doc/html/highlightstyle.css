@@ -20,7 +20,7 @@
   <style type="text/css">
     a.sourceLine { display: inline-block; line-height: 1.25; }
     a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-    a.sourceLine:empty { height: 0.2em; }
+    a.sourceLine:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode { white-space: pre; position: relative; }
     div.sourceCode { margin: 1em 0; }

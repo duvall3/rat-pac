@@ -26,7 +26,7 @@ These instructions will make the following assumptions\+:~\newline
  – {\ttfamily T\+E\+S\+T\+D\+A\+TA=\$\+R\+E\+F\+D\+A\+TA/\+T\+E\+ST}~\newline
  – {\itshape Note\+: Placing {\ttfamily \$\+T\+E\+S\+T\+D\+A\+TA} directly inside {\ttfamily \$\+R\+E\+F\+D\+A\+TA} is recommended}~\newline
 
-\item You are using a cluster or large server with at least 64 cores. If not, you will need to adjust the arguments of {\ttfamily angle\+\_\+multibatch.\+sh} (run it without arguments for details).
+\item You are using a cluster or large server with at least 64 cores. If not, you will need to adjust the arguments of {\ttfamily angle\+\_\+multibatch.\+sh} (run {\ttfamily angle\+\_\+multibatch -\/h} for details).
 \end{DoxyItemize}
 
 {\bfseries{Summary}}
@@ -114,7 +114,7 @@ angle\_multibatch.sh TestRun0 30 1000 50
 \label{_cb4-3}%
 mkdir TEST
 \label{_cb4-4}%
-mv -\/t TEST/ TestRun0*
+mv -\/t TEST/ TestRun0??*
 \label{_cb4-5}%
 mv -\/t REF/ TEST/
 \label{_cb4-6}%
@@ -144,16 +144,14 @@ for DIR in TestRun0*/; do
   eval \$ROOTCMD
 \label{_cb5-5}%
 done}\end{DoxyPre}
- \doxysubsection*{5\+: Generate Comparison Commands }
+ \doxysubsection*{5\+: Execute Comparisons }
 
 
 \begin{DoxyItemize}
-\item Navigate to {\ttfamily \$\+R\+E\+F\+D\+A\+TA} and run {\ttfamily ref\+\_\+compare.\+sh} on {\ttfamily \$\+T\+E\+S\+T\+D\+A\+TA}.~\newline
+\item {\bfseries{{\itshape This is where the magic happens!}}} 
+\item Navigate to {\ttfamily \$\+R\+E\+F\+D\+A\+TA} and run {\ttfamily ref\+\_\+compare.\+sh} on {\itshape the relative path to} {\ttfamily \$\+T\+E\+S\+T\+D\+A\+TA}.~\newline
  
-\item This will create a file called {\ttfamily ref\+\_\+compare.\+txt} in {\ttfamily \$\+T\+E\+S\+T\+D\+A\+TA}.~\newline
- 
-\item {\itshape Note\+: Use the {\bfseries{relative}} path for {\ttfamily \$\+T\+E\+S\+T\+D\+A\+TA} in the arguments to {\ttfamily ref\+\_\+compare.\+sh}.}~\newline
- 
+\item This will examine each of the extracted test distributions and find its best statistical match in the reference set. 
 \end{DoxyItemize}
 
 {\bfseries{{\itshape Example\+:}}}
@@ -162,22 +160,8 @@ done}\end{DoxyPre}
 \begin{DoxyPre}{\ttfamily \label{_cb6-1}%
 cd \$REFDATA
 \label{_cb6-2}%
-ref\_compare.sh TEST}\end{DoxyPre}
- \doxysubsection*{6\+: Execute Comparison Commands }
-
-
-\begin{DoxyItemize}
-\item {\itshape Note\+: This part of the procedure is a rough placeholder hack while an improved solution is under development.}~\newline
- 
-\item Open the file {\ttfamily \$\+T\+E\+S\+T\+D\+A\+TA/ref\+\_\+compare.txt} in a G\+UI text editor. {\itshape Note\+: This may require you to transfer the file to your local system (via, e.\+g., {\ttfamily scp}) if the remote server is not G\+U\+I-\/capable.}~\newline
- 
-\item Select all, then copy, then close the editor.~\newline
- 
-\item Navigate back to {\ttfamily \$\+R\+E\+F\+D\+A\+TA} if you are not still there.~\newline
- 
-\item Paste the copied text into the terminal.~\newline
- 
-\end{DoxyItemize}\doxysubsection*{7\+: Compile Summary }
+ref\_compare.sh TEST \# Note that this is just "TEST" and NOT "\$TESTDATA"}\end{DoxyPre}
+ \doxysubsection*{6\+: Compile Results Summary }
 
 
 \begin{DoxyItemize}
@@ -185,8 +169,9 @@ ref\_compare.sh TEST}\end{DoxyPre}
  
 \item Open {\ttfamily R\+O\+OT} and run the macro {\ttfamily K\+S\+Summary.\+cxx}; the default parameters should work, so you can run it without arguments.~\newline
  
-\item Copy the output files {\ttfamily K\+S\+Summary.\+root} and {\ttfamily K\+S\+Summary.\+png} to your system (via, {\itshape e.\+g.,} {\ttfamily scp}).~\newline
+\item {\itshape \mbox{[}Optional\mbox{]}} If you don’t have a graphical connection to the server or cluster, copy the output files {\ttfamily K\+S\+Summary.\+root} and {\ttfamily K\+S\+Summary.\+png} to your system (via, {\itshape e.\+g.,} {\ttfamily scp}).~\newline
  
+\item {\ttfamily K\+S\+Summary.\+cxx} prints a nicely-\/formatted view of the results matrix, with column labels included. For convenience, this formatted version is also saved as {\ttfamily K\+S\+Summary.\+txt}. 
 \item Open the results and get ready to publish!~\newline
  
 \end{DoxyItemize}
@@ -207,9 +192,9 @@ KSSummary();
 \begin{DoxyPre}{\ttfamily \label{_cb9-1}%
 \# on your local machine, in whatever output directory you like:
 \label{_cb9-2}%
-scp mtc-\/b:\$TESTDATA/KSSummary.root .
+REMOTE\_HOST="mtc-\/b" \# for example
 \label{_cb9-3}%
-scp mtc-\/b:\$TESTDATA/KSSummary.png .}\end{DoxyPre}
+scp \$REMOTE\_HOST:\$TESTDATA/KSSummary.\{root,png,txt\} .}\end{DoxyPre}
  \DoxyHorRuler{0}
  \doxysubsection*{All Pau! )}
 

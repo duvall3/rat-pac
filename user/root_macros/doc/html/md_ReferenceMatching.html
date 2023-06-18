@@ -91,7 +91,7 @@ $(function() {
  – <code>TESTDATA=$REFDATA/TEST</code><br  />
  – <em>Note: Placing <code>$TESTDATA</code> directly inside <code>$REFDATA</code> is recommended</em><br  />
 </li>
-<li>You are using a cluster or large server with at least 64 cores. If not, you will need to adjust the arguments of <code>angle_multibatch.sh</code> (run it without arguments for details).</li>
+<li>You are using a cluster or large server with at least 64 cores. If not, you will need to adjust the arguments of <code>angle_multibatch.sh</code> (run <code>angle_multibatch -h</code> for details).</li>
 </ul>
 <p><b>Summary</b></p>
 <ol type="1">
@@ -155,7 +155,7 @@ Create a directory for the test data, and move the output there.<br  />
 <div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="anchor" id="cb4-1"></a><span class="bu">cd</span> <span class="va">$DETECTOR</span>
 <a class="anchor" id="cb4-2"></a><span class="ex">angle_multibatch.sh</span> TestRun0 30 1000 50
 <a class="anchor" id="cb4-3"></a><span class="fu">mkdir</span> TEST
-<a class="anchor" id="cb4-4"></a><span class="fu">mv</span> -t TEST/ TestRun0*
+<a class="anchor" id="cb4-4"></a><span class="fu">mv</span> -t TEST/ TestRun0??*
 <a class="anchor" id="cb4-5"></a><span class="fu">mv</span> -t REF/ TEST/
 <a class="anchor" id="cb4-6"></a><span class="bu">cd</span> REF/TEST
 <a class="anchor" id="cb4-7"></a><span class="va">TESTDATA=$PWD</span></code></pre></div> <h2 id="extest">4: Extract Test Distributions </h2>
@@ -172,39 +172,19 @@ Loop the macro <code>extractTest.cxx</code> over the subdirectories.<br  />
 <a class="anchor" id="cb5-2"></a><span class="kw">for</span> <span class="ex">DIR</span> in TestRun0*/<span class="kw">;</span> <span class="kw">do</span>
 <a class="anchor" id="cb5-3"></a>  <span class="va">ROOTCMD=</span><span class="st">&quot;root -q -l -b &amp;#39;extractTest.cxx(</span><span class="dt">&amp;quot;</span><span class="va">$DIR</span><span class="dt">&amp;quot;</span><span class="st">, kTRUE)&amp;#39;&quot;</span>
 <a class="anchor" id="cb5-4"></a>  <span class="bu">eval</span> <span class="va">$ROOTCMD</span>
-<a class="anchor" id="cb5-5"></a><span class="kw">done</span></code></pre></div> <h2 id="gencomp">5: Generate Comparison Commands </h2>
+<a class="anchor" id="cb5-5"></a><span class="kw">done</span></code></pre></div> <h2 id="gencomp">5: Execute Comparisons </h2>
 <ul>
 <li>
-Navigate to <code>$REFDATA</code> and run <code>ref_compare.sh</code> on <code>$TESTDATA</code>.<br  />
+<b><em>This is where the magic happens!</em></b> </li>
+<li>
+Navigate to <code>$REFDATA</code> and run <code>ref_compare.sh</code> on <em>the relative path to</em> <code>$TESTDATA</code>.<br  />
  </li>
 <li>
-This will create a file called <code>ref_compare.txt</code> in <code>$TESTDATA</code>.<br  />
- </li>
-<li>
-<em>Note: Use the <b>relative</b> path for <code>$TESTDATA</code> in the arguments to <code>ref_compare.sh</code>.</em><br  />
- </li>
+This will examine each of the extracted test distributions and find its best statistical match in the reference set. </li>
 </ul>
 <p><b><em>Example:</em></b></p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="anchor" id="cb6-1"></a><span class="bu">cd</span> <span class="va">$REFDATA</span>
-<a class="anchor" id="cb6-2"></a><span class="ex">ref_compare.sh</span> TEST</code></pre></div> <h2 id="excomp">6: Execute Comparison Commands </h2>
-<ul>
-<li>
-<em>Note: This part of the procedure is a rough placeholder hack while an improved solution is under development.</em><br  />
- </li>
-<li>
-Open the file <code>$TESTDATA/ref_compare.txt</code> in a GUI text editor. <em>Note: This may require you to transfer the file to your local system (via, e.g., <code>scp</code>) if the remote server is not GUI-capable.</em><br  />
- </li>
-<li>
-Select all, then copy, then close the editor.<br  />
- </li>
-<li>
-Navigate back to <code>$REFDATA</code> if you are not still there.<br  />
- </li>
-<li>
-Paste the copied text into the terminal.<br  />
- </li>
-</ul>
-<h2 id="procres">7: Compile Summary </h2>
+<a class="anchor" id="cb6-2"></a><span class="ex">ref_compare.sh</span> TEST <span class="co"># Note that this is just &quot;TEST&quot; and NOT &quot;$TESTDATA&quot;</span></code></pre></div> <h2 id="procres">6: Compile Results Summary </h2>
 <ul>
 <li>
 Navigate to <code>$TESTDATA</code>.<br  />
@@ -213,8 +193,10 @@ Navigate to <code>$TESTDATA</code>.<br  />
 Open <code>ROOT</code> and run the macro <code>KSSummary.cxx</code>; the default parameters should work, so you can run it without arguments.<br  />
  </li>
 <li>
-Copy the output files <code>KSSummary.root</code> and <code>KSSummary.png</code> to your system (via, <em>e.g.,</em> <code>scp</code>).<br  />
+<em>[Optional]</em> If you don’t have a graphical connection to the server or cluster, copy the output files <code>KSSummary.root</code> and <code>KSSummary.png</code> to your system (via, <em>e.g.,</em> <code>scp</code>).<br  />
  </li>
+<li>
+<code>KSSummary.cxx</code> prints a nicely-formatted view of the results matrix, with column labels included. For convenience, this formatted version is also saved as <code>KSSummary.txt</code>. </li>
 <li>
 Open the results and get ready to publish!<br  />
  </li>
@@ -223,8 +205,8 @@ Open the results and get ready to publish!<br  />
 <div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="anchor" id="cb7-1"></a><span class="bu">cd</span> <span class="va">$TESTDATA</span>
 <a class="anchor" id="cb7-2"></a><span class="ex">root</span></code></pre></div> <div class="sourceCode" id="cb8"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="anchor" id="cb8-1"></a>KSSummary();
 <a class="anchor" id="cb8-2"></a>.q</code></pre></div> <div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="anchor" id="cb9-1"></a><span class="co"># on your local machine, in whatever output directory you like:</span>
-<a class="anchor" id="cb9-2"></a><span class="fu">scp</span> mtc-b:<span class="va">$TESTDATA</span>/KSSummary.root .
-<a class="anchor" id="cb9-3"></a><span class="fu">scp</span> mtc-b:<span class="va">$TESTDATA</span>/KSSummary.png .</code></pre></div> <hr  />
+<a class="anchor" id="cb9-2"></a><span class="va">REMOTE_HOST=</span><span class="st">&quot;mtc-b&quot;</span> <span class="co"># for example</span>
+<a class="anchor" id="cb9-3"></a><span class="fu">scp</span> <span class="va">$REMOTE_HOST</span>:<span class="va">$TESTDATA</span>/KSSummary.<span class="dt">{root,png,txt}</span> .</code></pre></div> <hr  />
  <h2 id="all-pau">All Pau! )</h2>
 <p><em>-~- Last Updated 05/20/2023 -~-</em></p>
 </div></div><!-- contents -->

@@ -111,8 +111,11 @@ for ( i=fileList->begin(); i!=fileList->end(); ++i ) {
   k++;
 }
 
-// print results
+// print results, both to stdout and to KSSummary.txt
 printKSResults(allResultsSummary);
+gSystem->RedirectOutput("KSSummary.txt");
+printKSResults(allResultsSummary);
+gSystem->RedirectOutput(0);
 
 // save results
 TFile *outFile = TFile::Open("KSSummary.root", "recreate");

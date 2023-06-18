@@ -24,7 +24,7 @@ These instructions will make the following assumptions:
   -- `REFDATA=$DETECTOR/REF`  
   -- `TESTDATA=$REFDATA/TEST`  
   -- *Note: Placing `$TESTDATA` directly inside `$REFDATA` is recommended*  
-- You are using a cluster or large server with at least 64 cores. If not, you will need to adjust the arguments of `angle_multibatch.sh` (run it without arguments for details).
+- You are using a cluster or large server with at least 64 cores. If not, you will need to adjust the arguments of `angle_multibatch.sh` (run `angle_multibatch -h` for details).
 
 **Summary**
 
@@ -76,7 +76,7 @@ extractRef("ReferenceRun0");
 cd $DETECTOR
 angle_multibatch.sh TestRun0 30 1000 50
 mkdir TEST
-mv -t TEST/ TestRun0*
+mv -t TEST/ TestRun0??*
 mv -t REF/ TEST/
 cd REF/TEST
 TESTDATA=$PWD
@@ -95,28 +95,22 @@ for DIR in TestRun0*/; do
 done
 ```
 
-<h2 id="gencomp">5: Generate Comparison Commands</h2>
-- Navigate to `$REFDATA` and run `ref_compare.sh` on `$TESTDATA`.<br>
-- This will create a file called `ref_compare.txt` in `$TESTDATA`.<br>
-- *Note: Use the **relative** path for `$TESTDATA` in the arguments to `ref_compare.sh`.*<br>
+<h2 id="gencomp">5: Execute Comparisons</h2>
+- ***This is where the magic happens!***
+- Navigate to `$REFDATA` and run `ref_compare.sh` on *the relative path to* `$TESTDATA`.<br>
+- This will examine each of the extracted test distributions and find its best statistical match in the reference set.
 
 ***Example:***
 ```sh
 cd $REFDATA
-ref_compare.sh TEST
+ref_compare.sh TEST	# Note that this is just "TEST" and NOT "$TESTDATA"
 ```
 
-<h2 id="excomp">6: Execute Comparison Commands</h2>
-- *Note: This part of the procedure is a rough placeholder hack while an improved solution is under development.*<br>
-- Open the file `$TESTDATA/ref_compare.txt` in a GUI text editor. *Note: This may require you to transfer the file to your local system (via, e.g., `scp`) if the remote server is not GUI-capable.*<br>
-- Select all, then copy, then close the editor.<br>
-- Navigate back to `$REFDATA` if you are not still there.<br>
-- Paste the copied text into the terminal.<br>
-
-<h2 id="procres">7: Compile Summary</h2>
+<h2 id="procres">6: Compile Results Summary</h2>
 - Navigate to `$TESTDATA`.<br>
 - Open `ROOT` and run the macro `KSSummary.cxx`; the default parameters should work, so you can run it without arguments.<br>
-- Copy the output files `KSSummary.root` and `KSSummary.png` to your system (via, *e.g.,* `scp`).<br>
+- *[Optional]* If you don't have a graphical connection to the server or cluster, copy the output files `KSSummary.root` and `KSSummary.png` to your system (via, *e.g.,* `scp`).<br>
+- `KSSummary.cxx` prints a nicely-formatted view of the results matrix, with column labels included. For convenience, this formatted version is also saved as `KSSummary.txt`.
 - Open the results and get ready to publish!<br>
 
 ***Example:***
@@ -130,8 +124,8 @@ KSSummary();
 ```
 ```sh
 # on your local machine, in whatever output directory you like:
-scp mtc-b:$TESTDATA/KSSummary.root .
-scp mtc-b:$TESTDATA/KSSummary.png .
+REMOTE_HOST="mtc-b"	# for example
+scp $REMOTE_HOST:$TESTDATA/KSSummary.{root,png,txt} .
 ```
 
 ---
