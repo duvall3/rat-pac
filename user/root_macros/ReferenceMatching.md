@@ -87,7 +87,7 @@ TESTDATA=$PWD
 ```
 
 ### 4: Extract Test Distributions {#extest}
-- Navigate to `$TESTDATA` and open `ROOT`.  
+- Navigate to `$TESTDATA`.  
 - Loop the macro `extractTest.cxx` over the subdirectories.  
 
 ***Example:***
@@ -102,7 +102,7 @@ done
 ### 5: Execute Comparisons {#algo}
 - ***This is where the magic happens!***
 - Navigate to `$REFDATA` and run `ref_compare.sh` on *the relative path to* `$TESTDATA`.  
-- This will examine each of the extracted test distributions and find its best statistical match in the reference set.
+- This will use TRefMatch to examine each of the extracted test distributions and find its best statistical match in the reference set.
 
 ***Example:***
 ```sh
