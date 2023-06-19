@@ -20,15 +20,17 @@
 //// INIT
 
 // output settings
-//bool kOutput = false;
-bool kOutput = true;
-if (kOutput) {
-settings.outformat = "png";
-/* settings.outformat="eps"; */
-settings.render = 2**4;
-/* settings.render = 2**3; */
-/* settings.render = 2**2; */
-/* settings.render=0; */
+bool kOutputPNG = false;
+//bool kOutputPNG = true;
+if (kOutputPNG) {
+  settings.outformat = "png";
+  settings.render = 2**4;
+  //settings.render = 2**3;
+  //settings.render = 2**2;
+} else {
+  //settings.outformat="eps";
+  settings.outformat="svg";
+  settings.render=0;
 }
 
 // general init
@@ -80,26 +82,26 @@ path spike(real theta) {
 
 //// MAIN
 
-// square bg
-real L = 1.35*S;
-axialshade( scale(L) * ( (-1,1)--(1,1)--(1,-1)--(-1,-1)--cycle ), heavyblue, (L,L), darkblue, -(L,L) );
-
 // define vertices
 pair[] verts;
 pair R;
 real theta;
-real theta_0 = 0;
-/* real theta_0 = 2*pi/12; */
+real theta_0 = 0;				// hexagon aligned horizontally
+real theta_0 = 2*pi/12;				// hexagon aligned vertically
 for ( int k=0; k<6; ++k ) {
   theta = k * 2*pi/6 + theta_0;
   R = S * ( cos(theta), sin(theta) );
   verts[k] = R;
-  /* axialshade( spike(theta), white, L*(1,1), deepcyan, L*(-1,-1) ); */
+  //axialshade( spike(theta), white, L*(1,1), deepcyan, L*(-1,-1) );
 }
 
-/* // hexagonal bg */
-/* real L = 1.35*S; */
-/* axialshade( scale(1.5) * pathify(verts), heavyblue, (L,L), darkblue, -(L,L) ); */
+// square bg
+real L = 1.35*S;
+axialshade( scale(L) * ( (-1,1)--(1,1)--(1,-1)--(-1,-1)--cycle ), heavyblue, (L,L), darkblue, -(L,L) );
+
+//// hexagonal bg
+//real L = 1.35*S;
+//axialshade( scale(1.5) * pathify(verts), heavyblue, (L,L), darkblue, -(L,L) );
 
 // draw spikes and tubes
 path crossbeam;
