@@ -1,71 +1,146 @@
-<!doctype html>
-<html>
-    <head>
-        <title>Geometry</title>
-        <meta charset='utf-8'/>
-        <link rel="stylesheet" type="text/css" href="./notes.html_files/github-markdown.css">
-        <style>
-            .markdown-body {
-                box-sizing: border-box;
-                min-width: 200px;
-                max-width: 980px;
-                margin: 0 auto;
-                padding: 45px;
-            }
-        </style>
-        <script>
-            window.onload = function() {
-                if (document.querySelector("script[type=\"math/tex; mode=display\"]") !== null) {
-                    var mathjax = document.createElement("script");
-                    mathjax.src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML";
-                    document.head.appendChild(mathjax);
-                }
-                if (document.getElementsByTagName("code").length !== 0) {
-                    var highlight = document.createElement("script");
-                    var highlightcss = document.createElement("link");
-                    highlight.src = "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js";
-                    highlightcss.rel = "stylesheet";
-                    highlightcss.href = "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/github.min.css";
-                    highlight.onload = function() {hljs.initHighlighting();};
-                    document.head.appendChild(highlight);
-                    document.head.appendChild(highlightcss);
-                }
-            }
-        </script>
-    </head>
-    <body>
-        <article class="markdown-body">
-            <h1 id="development-notes">Development Notes</h1>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- Modified by Mark J. Duvall ~ github.com/duvall3 -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>notes</title>
+  <style type="text/css">
+      body {
+	color: #d9e1e9;
+	background-color: #0d1117;
+	font-size: small;
+	box-sizing: border-box;
+	min-width: 200px;
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 45px;
+      }
+      a {
+	color: #44DDAA;
+      }
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+    a.sourceLine { display: inline-block; line-height: 1.25; }
+    a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+    a.sourceLine:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode { white-space: pre; position: relative; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    code.sourceCode { white-space: pre-wrap; }
+    a.sourceLine { text-indent: -1em; padding-left: 1em; }
+    }
+    pre.numberSource a.sourceLine
+      { position: relative; left: -4em; }
+    pre.numberSource a.sourceLine::before
+      { content: attr(title);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; pointer-events: all; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        background-color: #232629;
+        color: #7a7c7d;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #7a7c7d;  padding-left: 4px; }
+    div.sourceCode
+      { color: #ffffff; background-color: #1d2127; }
+    @media screen {
+    a.sourceLine::before { text-decoration: underline; }
+    }
+    code span. { color: #ffffff; } /* Normal */
+    code span.al { color: #95da4c; } /* Alert */
+    code span.an { color: #3f8058; } /* Annotation */
+    code span.at { color: #33dddd; } /* Attribute */
+    code span.bn { color: #79c0ff; } /* BaseN */
+    code span.bu { color: #33ee33; } /* BuiltIn */
+    code span.cf { color: #fdbc4b; } /* ControlFlow */
+    code span.ch { color: #a5d6ff; } /* Char */
+    code span.cn { color: #79c0ff; } /* Constant */
+    code span.co { color: #339999; font-style: italic; } /* Comment */
+    code span.cv { color: #339999; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #44ddaa; } /* Documentation */
+    code span.dt { color: #ff7b72; } /* DataType */
+    code span.dv { color: #79c0ff; } /* DecVal */
+    code span.er { color: #dd2222; font-weight: bold; } /* Error */
+    code span.ex { color: #33ee33; } /* Extension */
+    code span.fl { color: #79c0ff; } /* Float */
+    code span.fu { color: #33ee33; } /* Function */
+    code span.im { color: #c9d1d9; } /* Import */
+    code span.in { color: #c45b00; } /* Information */
+    code span.kw { color: #ff7b72; } /* Keyword */
+    code span.op { color: #eeee22; } /* Operator */
+    code span.ot { color: #27ae60; } /* Other */
+    code span.pp { color: #27ae60; } /* Preprocessor */
+    code span.re { color: #2980b9; } /* RegionMarker */
+    code span.sc { color: #a5d6ff; } /* SpecialChar */
+    code span.ss { color: #c53bcf; } /* SpecialString */
+    code span.st { color: #c53bcf; } /* String */
+    code span.va { color: #ffa657; } /* Variable */
+    code span.vs { color: #c53bcf; } /* VerbatimString */
+    code span.wa { color: #dddd33; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<style type="text/css">
+  mark {
+    color: white;
+    background-color: #1D2127;
+  }
+  mark.pad {
+    width: 60em;
+    white-space: pre-wrap;
+    padding-left: 2em;
+    display: inline-block;
+  }
+  mark.command {
+    color: #33EE33;
+  }
+  mark.var {
+    color: #ffa657;
+  }
+  mark.const {
+    color: #79c0ff;
+  }
+  mark.str {
+    color: #c53bcf;
+  }
+</style>
+<h1 id="development-notes-for-tratgeoconverter">Development Notes for TRATGeoConverter</h1>
 <p><code>~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 08/2022 ~</code></p>
 <h1 id="geometry">Geometry</h1>
 <h2 id="individual-volumes">Individual Volumes</h2>
-<p>Required Steps:</p>
-<ul>
-<li>Material</li><li>Position</li><li>Shape</li><li>Logical Volume</li><li>Placement</li></ul>
-<p>Example -- <code>Vol1</code> in mother <code>world</code></p>
-<ul>
-<li>Material = air</li><li>Position = origin</li><li>Shape = 100-cm cube</li><li>Logical Volume = logicVol1</li><li>Placement = plain / default</li></ul>
-<pre><code class="lang-cpp">// example volume &quot;Vol1&quot;:
-
-// material
-G4Material *Vol1_mat = nist-&gt;FindOrBuildMaterial(&quot;G4_AIR&quot;);
-
-// position
-G4ThreeVector pos1 = G4ThreeVector(0,0,0);
-
-// shape and size
-G4Double vol1_length = 100.0*cm;
-G4Box * solidVol1 = new G4Box( &quot;Vol1&quot;, vol1_length, vol1_length, vol1_length );
-
-// logical volume
-G4LogicalVolume *logicVol1 = new G4LogicalVolume( solidVol1, Vol1_mat, &quot;Vol1&quot; );
-
-// placement
-new G4PVPlacement( 0, pos1, logicVol1, &quot;Vol1&quot;, logicWorld, false, 0, checkOverlaps );
-
-// all pau!   )
-</code></pre>
-
-        </article>
-    </body>
+<p>Required Steps: - Material - Position - Shape - Logical Volume - Placement</p>
+<p>Example – <code>Vol1</code> in mother <code>world</code> - Material = air - Position = origin - Shape = 100-cm cube - Logical Volume = logicVol1 - Placement = plain / default</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb1-1" title="1"><span class="co">// example volume &quot;Vol1&quot;:</span></a>
+<a class="sourceLine" id="cb1-2" title="2"></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="co">// material</span></a>
+<a class="sourceLine" id="cb1-4" title="4">G4Material *Vol1_mat = nist-&gt;FindOrBuildMaterial(<span class="st">&quot;G4_AIR&quot;</span>);</a>
+<a class="sourceLine" id="cb1-5" title="5"></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="co">// position</span></a>
+<a class="sourceLine" id="cb1-7" title="7">G4ThreeVector pos1 = G4ThreeVector(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>);</a>
+<a class="sourceLine" id="cb1-8" title="8"></a>
+<a class="sourceLine" id="cb1-9" title="9"><span class="co">// shape and size</span></a>
+<a class="sourceLine" id="cb1-10" title="10">G4Double vol1_length = <span class="fl">100.0</span>*cm;</a>
+<a class="sourceLine" id="cb1-11" title="11">G4Box * solidVol1 = <span class="kw">new</span> G4Box( <span class="st">&quot;Vol1&quot;</span>, vol1_length, vol1_length, vol1_length );</a>
+<a class="sourceLine" id="cb1-12" title="12"></a>
+<a class="sourceLine" id="cb1-13" title="13"><span class="co">// logical volume</span></a>
+<a class="sourceLine" id="cb1-14" title="14">G4LogicalVolume *logicVol1 = <span class="kw">new</span> G4LogicalVolume( solidVol1, Vol1_mat, <span class="st">&quot;Vol1&quot;</span> );</a>
+<a class="sourceLine" id="cb1-15" title="15"></a>
+<a class="sourceLine" id="cb1-16" title="16"><span class="co">// placement</span></a>
+<a class="sourceLine" id="cb1-17" title="17"><span class="kw">new</span> G4PVPlacement( <span class="dv">0</span>, pos1, logicVol1, <span class="st">&quot;Vol1&quot;</span>, logicWorld, <span class="kw">false</span>, <span class="dv">0</span>, checkOverlaps );</a>
+<a class="sourceLine" id="cb1-18" title="18"></a>
+<a class="sourceLine" id="cb1-19" title="19"><span class="co">// all pau!   )</span></a></code></pre></div>
+</body>
 </html>

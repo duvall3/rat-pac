@@ -71,7 +71,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h1 id="reference-matching-users-guide">Reference-Matching User’s Guide</h1>
-<p><code>~ Mark J. Duvall ~ <a href="#" onclick="location.href='mai'+'lto:'+'mjd'+'uv'+'all'+'@h'+'awa'+'ii'+'.ed'+'u'; return false;">mjduv<span style="display: none;">.nosp@m.</span>all@<span style="display: none;">.nosp@m.</span>hawai<span style="display: none;">.nosp@m.</span>i.ed<span style="display: none;">.nosp@m.</span>u</a> ~ 05/2023 ~</code></p>
+<p>~ Mark J. Duvall ~ <a href="#" onclick="location.href='mai'+'lto:'+'mjd'+'uv'+'all'+'@h'+'awa'+'ii'+'.ed'+'u'; return false;">mjduvall at hawaii dot edu</a> ~ 05/2023 ~</p>
 <hr  />
  <h2 id="description">Description</h2>
 <p>This is a user’s guide for the set of software within <em>Tools for Reactor-Neutrino Studies in RAT-PAC</em> (<a href="github.com/duvall3/rat-pac">github.com/duvall3/rat-pac</a>) that implements our algorithm for matching experimental datasets to reference distributions. See <a href="index.html">user/root_macros/doc/html/index.html</a> in this repository for more information on the entire toolset.</p>
@@ -86,10 +86,11 @@ $(function() {
 </li>
 <li>Your <code>RAT-PAC</code> experiment is located in the directory <code>$DETECTOR</code> – for example, <code>DETECTOR=$RATDIR/some_experiment</code><br  />
 </li>
-<li>Your reference and test dataruns are located in the directories <code>$REFDATA</code> and <code>$TESTDATA</code>, respectively. For example:<br  />
+<li>Your reference set, collected test runs, and current test run are located in the directories <code>$REFDATA</code>, <code>$TESTDIR</code>, and <code>$TESTDATA</code>, respectively. For example:<br  />
  – <code>REFDATA=$DETECTOR/REF</code><br  />
- – <code>TESTDATA=$REFDATA/TEST</code><br  />
- – <em>Note: Placing <code>$TESTDATA</code> directly inside <code>$REFDATA</code> is recommended</em><br  />
+ – <code>TESTDIR=$REFDATA/TEST_RUNS</code><br  />
+ – <code>TESTDATA=$TESTDIR/TestRun0</code><br  />
+ – <em>Note: Placing <code>$TESTDATA</code> inside <code>$REFDATA</code> is recommended</em><br  />
 </li>
 <li>You are using a cluster or large server with at least 64 cores. If not, you will need to adjust the arguments of <code>angle_multibatch.sh</code> (run <code>angle_multibatch -h</code> for details).</li>
 </ul>
@@ -108,107 +109,132 @@ $(function() {
 <a href="#extest">Extract the test distributions</a> – <code>extractTest.cxx</code><br  />
   </li>
 <li>
-<a href="#gencomp">Generate the comparison commands</a> – <code>ref_compare.sh</code><br  />
-  </li>
+<a href="#algo">Run the reference-matching algorithm</a> – <code>compareRef.cxx</code> </li>
 <li>
-<a href="#excomp">Execute the comparison commands</a> – <b><em>shell</em></b><br  />
-  </li>
+<a href="#process">Process the results</a> – <code>KSSummary.cxx</code> </li>
 <li>
-<a href="#procres">Process the results</a> – <code>KSSummary.cxx</code> </li>
+<a href="#multi">Combine with other results</a> <em>[Optional]</em> – <code><a class="el" href="classTKSMultiRes.html" title="Class for combining reference-comparison results from multiple runs.">TKSMultiRes</a></code> </li>
 </ol>
 <hr  />
  <h2 id="details">Details</h2>
-<h2 id="runref">1: Run Reference Set </h2>
+<h3 id="runref">1: Run Reference Set</h3>
 <ul>
 <li>
 Run your reference simulation set in <code>$DETECTOR</code>.<br  />
- </li>
+  </li>
 <li>
-Create a directory for the reference data, and move the output there.<br  />
- </li>
+Create a directory for the reference data, and move the output there. </li>
 </ul>
 <p><b><em>Example:</em></b></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="anchor" id="cb1-1"></a><span class="bu">cd</span> <span class="va">$DETECTOR</span>
 <a class="anchor" id="cb1-2"></a><span class="ex">angle_multibatch.sh</span> ReferenceRun0 30 10000 50
 <a class="anchor" id="cb1-3"></a><span class="co"># wait for runs to finish</span>
-<a class="anchor" id="cb1-4"></a><span class="fu">mkdir</span> REF
+<a class="anchor" id="cb1-4"></a><span class="fu">mkdir</span> -p REF
 <a class="anchor" id="cb1-5"></a><span class="fu">mv</span> -t REF/ ReferenceRun0*
 <a class="anchor" id="cb1-6"></a><span class="bu">cd</span> REF
-<a class="anchor" id="cb1-7"></a><span class="va">REFDATA=$PWD</span></code></pre></div> <h2 id="exref">2: Extract Reference Distributions </h2>
+<a class="anchor" id="cb1-7"></a><span class="va">REFDATA=$PWD</span></code></pre></div> <h3 id="exref">2: Extract Reference Distributions</h3>
 <ul>
 <li>
-Navigate to <code>$REFDATA</code>, open <code>ROOT</code>, and execute the macro <code>extractRef.cxx</code><br  />
- </li>
+Navigate to <code>$REFDATA</code>, open <code>ROOT</code>, and execute the macro <code>extractRef.cxx</code> </li>
 </ul>
 <p><b><em>Example:</em></b></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="anchor" id="cb2-1"></a><span class="bu">cd</span> <span class="va">$REFDATA</span>
-<a class="anchor" id="cb2-2"></a><span class="ex">root</span></code></pre></div> <div class="sourceCode" id="cb3"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="anchor" id="cb3-1"></a>extractRef(<span class="st">&quot;ReferenceRun0&quot;</span>);</code></pre></div> <h2 id="runtest">3: Run Test Set </h2>
+<a class="anchor" id="cb2-2"></a><span class="ex">root</span></code></pre></div> <div class="sourceCode" id="cb3"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="anchor" id="cb3-1"></a>extractRef(<span class="st">&quot;ReferenceRun0&quot;</span>);</code></pre></div> <h3 id="runtest">3: Run Test Set</h3>
 <ul>
 <li>
 Run your test simulation set in <code>$DETECTOR</code>.<br  />
- </li>
+  </li>
 <li>
-Create a directory for the test data, and move the output there.<br  />
- </li>
+Create a directory for the test data, and move the output there. </li>
 </ul>
 <p><b><em>Example:</em></b></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="anchor" id="cb4-1"></a><span class="bu">cd</span> <span class="va">$DETECTOR</span>
 <a class="anchor" id="cb4-2"></a><span class="ex">angle_multibatch.sh</span> TestRun0 30 1000 50
-<a class="anchor" id="cb4-3"></a><span class="fu">mkdir</span> TEST
-<a class="anchor" id="cb4-4"></a><span class="fu">mv</span> -t TEST/ TestRun0??*
-<a class="anchor" id="cb4-5"></a><span class="fu">mv</span> -t REF/ TEST/
-<a class="anchor" id="cb4-6"></a><span class="bu">cd</span> REF/TEST
-<a class="anchor" id="cb4-7"></a><span class="va">TESTDATA=$PWD</span></code></pre></div> <h2 id="extest">4: Extract Test Distributions </h2>
+<a class="anchor" id="cb4-3"></a><span class="fu">mkdir</span> -p REF/TEST_RUNS
+<a class="anchor" id="cb4-4"></a><span class="fu">mkdir</span> TestRun0
+<a class="anchor" id="cb4-5"></a><span class="fu">mv</span> -t TestRun0/ TestRun0??*
+<a class="anchor" id="cb4-6"></a><span class="fu">mv</span> -t REF/TEST_RUNS/ TestRun0/
+<a class="anchor" id="cb4-7"></a><span class="bu">cd</span> REF/TEST_RUNS
+<a class="anchor" id="cb4-8"></a><span class="va">TESTDIR=$PWD</span>
+<a class="anchor" id="cb4-9"></a><span class="bu">cd</span> TestRun0
+<a class="anchor" id="cb4-10"></a><span class="va">TESTDATA=$PWD</span></code></pre></div> <h3 id="extest">4: Extract Test Distributions</h3>
 <ul>
 <li>
 Navigate to <code>$TESTDATA</code> and open <code>ROOT</code>.<br  />
- </li>
+  </li>
 <li>
-Loop the macro <code>extractTest.cxx</code> over the subdirectories.<br  />
- </li>
+Loop the macro <code>extractTest.cxx</code> over the subdirectories. </li>
 </ul>
 <p><b><em>Example:</em></b></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="anchor" id="cb5-1"></a><span class="bu">cd</span> <span class="va">$TESTDATA</span>
 <a class="anchor" id="cb5-2"></a><span class="kw">for</span> <span class="ex">DIR</span> in TestRun0*/<span class="kw">;</span> <span class="kw">do</span>
 <a class="anchor" id="cb5-3"></a>  <span class="va">ROOTCMD=</span><span class="st">&quot;root -q -l -b &amp;#39;extractTest.cxx(</span><span class="dt">&amp;quot;</span><span class="va">$DIR</span><span class="dt">&amp;quot;</span><span class="st">, kTRUE)&amp;#39;&quot;</span>
 <a class="anchor" id="cb5-4"></a>  <span class="bu">eval</span> <span class="va">$ROOTCMD</span>
-<a class="anchor" id="cb5-5"></a><span class="kw">done</span></code></pre></div> <h2 id="gencomp">5: Execute Comparisons </h2>
+<a class="anchor" id="cb5-5"></a><span class="kw">done</span></code></pre></div> <h3 id="algo">5: Execute Comparisons</h3>
 <ul>
 <li>
 <b><em>This is where the magic happens!</em></b> </li>
 <li>
 Navigate to <code>$REFDATA</code> and run <code>ref_compare.sh</code> on <em>the relative path to</em> <code>$TESTDATA</code>.<br  />
- </li>
+  </li>
 <li>
 This will examine each of the extracted test distributions and find its best statistical match in the reference set. </li>
 </ul>
 <p><b><em>Example:</em></b></p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="anchor" id="cb6-1"></a><span class="bu">cd</span> <span class="va">$REFDATA</span>
-<a class="anchor" id="cb6-2"></a><span class="ex">ref_compare.sh</span> TEST <span class="co"># Note that this is just &quot;TEST&quot; and NOT &quot;$TESTDATA&quot;</span></code></pre></div> <h2 id="procres">6: Compile Results Summary </h2>
+<a class="anchor" id="cb6-2"></a><span class="ex">ref_compare.sh</span> TEST_RUNS/TestRun0</code></pre></div> <h3 id="process">6: Compile Results Summary</h3>
 <ul>
 <li>
 Navigate to <code>$TESTDATA</code>.<br  />
- </li>
+  </li>
 <li>
-Open <code>ROOT</code> and run the macro <code>KSSummary.cxx</code>; the default parameters should work, so you can run it without arguments.<br  />
- </li>
+Open <code>ROOT</code> and run the macro <code>KSSummary.cxx</code>; the default parameters should work, so you can run it without arguments. This macro creates the following output files: <ul>
 <li>
-<em>[Optional]</em> If you don’t have a graphical connection to the server or cluster, copy the output files <code>KSSummary.root</code> and <code>KSSummary.png</code> to your system (via, <em>e.g.,</em> <code>scp</code>).<br  />
- </li>
+<code>KSSummary.root</code>: a <em>ROOT</em> file containing the full results matrix and related plots;<br  />
+  </li>
 <li>
-<code>KSSummary.cxx</code> prints a nicely-formatted view of the results matrix, with column labels included. For convenience, this formatted version is also saved as <code>KSSummary.txt</code>. </li>
+<code>KSSummary.png</code>: an exported <em>PNG</em> of the plots from the <em>ROOT</em> file;<br  />
+  </li>
 <li>
-Open the results and get ready to publish!<br  />
- </li>
+<code>KSSummary.txt</code>: a nicely-formatted <em>ASCII</em> view of the results matrix, with column labels included.<br  />
+  </li>
+</ul>
+</li>
+<li>
+<em>[Optional]</em> If you don’t have a graphical connection to the server or cluster, copy the <code>KSSummary</code> output files <em>(.root, .png,</em> and <em>.txt)</em> to your system (via, <em>e.g.,</em> <code>scp</code>).<br  />
+  </li>
+<li>
+Open the results and get ready to publish! </li>
 </ul>
 <p><b><em>Example:</em></b></p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="anchor" id="cb7-1"></a><span class="bu">cd</span> <span class="va">$TESTDATA</span>
 <a class="anchor" id="cb7-2"></a><span class="ex">root</span></code></pre></div> <div class="sourceCode" id="cb8"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="anchor" id="cb8-1"></a>KSSummary();
 <a class="anchor" id="cb8-2"></a>.q</code></pre></div> <div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="anchor" id="cb9-1"></a><span class="co"># on your local machine, in whatever output directory you like:</span>
 <a class="anchor" id="cb9-2"></a><span class="va">REMOTE_HOST=</span><span class="st">&quot;mtc-b&quot;</span> <span class="co"># for example</span>
-<a class="anchor" id="cb9-3"></a><span class="fu">scp</span> <span class="va">$REMOTE_HOST</span>:<span class="va">$TESTDATA</span>/KSSummary.<span class="dt">{root,png,txt}</span> .</code></pre></div> <hr  />
- <h2 id="all-pau">All Pau! )</h2>
-<p><em>-~- Last Updated 05/20/2023 -~-</em></p>
+<a class="anchor" id="cb9-3"></a><span class="fu">scp</span> <span class="va">$REMOTE_HOST</span>:<span class="va">$TESTDATA</span>/KSSummary.<span class="dt">{root,png,txt}</span> .</code></pre></div> <h3 id="multi">7. Combine Results with Other Test Runs <em>[Optional]</em></h3>
+<p>If you have completed multiple test runs, you can combine their results to analyze the detector’s performance over the aggregate dataset using <code><a class="el" href="classTKSMultiRes.html" title="Class for combining reference-comparison results from multiple runs.">TKSMultiRes</a></code> as follows:<br  />
+</p><ul>
+<li>Navigate to <code>$TESTDIR</code>.<br  />
+</li>
+<li>Open <code>ROOT</code>.<br  />
+</li>
+<li>Create a <a class="el" href="classTKSMultiRes.html" title="Class for combining reference-comparison results from multiple runs.">TKSMultiRes</a> object.<br  />
+</li>
+<li>If desired, adjust settings (most commonly using the <code>SetRibbon()</code> method to turn the ribbon plot on [default] or off).<br  />
+</li>
+<li>Call the <code>Run()</code> method.<br  />
+</li>
+<li>If desired, save output using the <code>Save()</code> method.</li>
+</ul>
+<p><b><em>Example:</em></b></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="anchor" id="cb10-1"></a><span class="bu">cd</span> <span class="va">$TESTDIR</span>
+<a class="anchor" id="cb10-2"></a><span class="ex">root</span></code></pre></div> <div class="sourceCode" id="cb11"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="anchor" id="cb11-1"></a><a class="el" href="classTKSMultiRes.html" title="Class for combining reference-comparison results from multiple runs.">TKSMultiRes</a> M;
+<a class="anchor" id="cb11-2"></a><span class="co">//M.SetRibbon(kFALSE); // deactivate ribbon plot if desired</span>
+<a class="anchor" id="cb11-3"></a>M.Run();
+<a class="anchor" id="cb11-4"></a>M.Save();</code></pre></div> <hr  />
+ <h2 id="all-pau">All Pau!</h2>
+<h3 id="thats-it-feel-free-to-contact-me-using-the-address-at-the-top-of-this-page.-enjoy">That’s it! Feel free to contact me using the address at the top of this page. Enjoy!</h3>
+<p><em>-~- Last Updated 06/19/2023 -~-</em></p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
