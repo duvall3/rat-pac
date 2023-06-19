@@ -3,6 +3,6 @@ asy frost_logo.asy
 EXIT_STATUS=$?
 convert -resize '256x256' frost_logo.png frost_logo_256x256.png
 convert -resize '100x100' frost_logo.png frost_logo_100x100.png
-/usr/bin/cp frost_logo_256x256.png frost_logo.ico
-eog frost_logo*.png
+convert -resize '64x64' frost_logo.png frost_logo_64x64.png
+eog frost_logo*.png &
 exit $EXIT_STATUS
