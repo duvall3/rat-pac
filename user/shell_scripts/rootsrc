@@ -21,16 +21,9 @@
 
 # help
 usage() {
-<<<<<<< HEAD
   echo -e "USAGE: rootsrc [-h|-p] <ROOTClassName>"
   echo -e "  -h\t\tShow this help message and exit"
   echo -e "  -p\t\tprint filenames and exit"
-=======
-  echo -e "\nUSAGE: rootsrc [-h|-d] <ROOTclass>"
-  echo -e "  -h\t\tShow this help message and exit"
-  echo -e "  -d\t\tprint filenames and exit"
-  echo
->>>>>>> f2017a597cec63025f3562a7bc78f09ef0e5058a
 }
 
 # arg check
@@ -93,10 +86,6 @@ if (! $HFILE_TF) && (! $CFILE_TF); then
 fi
 
 # main
-<<<<<<< HEAD
-=======
-# echo -e "<$1> Files:\n$HFILE\n$CFILE"
->>>>>>> f2017a597cec63025f3562a7bc78f09ef0e5058a
 echo -e "$HFILE\n$CFILE"
 if $PRINT_ONLY; then
   exit 0
