@@ -1,10 +1,6 @@
 // TKSMultiRibbons
-<<<<<<< HEAD
 /// Class for analyzing DeltaPhi for each individual angle alongside TKSMultiRes
 //    See TKSMultiRes for more information
-=======
-/// Class for combining reference-comparison results from multiple runs
->>>>>>> f2017a597cec63025f3562a7bc78f09ef0e5058a
 // -- Note: For CINT, load using gROOT->LoadMacro("TKSMultiRibbons.cxx");
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 08/2022 ~ //
 
@@ -26,7 +22,6 @@
 #ifndef TKSMultiRibbons
 #define TKSMultiRibbons
 
-<<<<<<< HEAD
 /** TKSMultiRibbons
  *
  * Class for making ribbon and heatmap plots, specifically from KSSummary data.
@@ -90,38 +85,18 @@ private:
   void			SetDeltas(TMatrixD *newDeltas);					///< Fill difference matrix
   TMatrixD		RetrieveData();							///< Fetch data from files
   void			FillData();							///< Fill difference data
-=======
-class TKSMultiRibbons : public TClass {
-
-private:
-  // members
-  TObjArray*		fFileList;							///< List of KSSummary files to analyze
-  TString		fOutFileName;							///< Output filename
-  TFile*		fOutFile;							///< Output TFile*
-  TCanvas*		fRibbonCanvas;							///< Canvas for ribbon plots
-
-private:
-  // internal methods
-  void			FillFileList();							///< Scan for KSSummary files and store in fFileList
->>>>>>> f2017a597cec63025f3562a7bc78f09ef0e5058a
 
 public:
   // public methods
   TKSMultiRibbons();									///< Default ctor
-<<<<<<< HEAD
   Bool_t		IsInit() { return fkInit; }					///< Whether Init() has been run yet
   // setters and getters
   void			SetPlotTypes(EPlotTypes plotSelection) { fPlotTypes=plotSelection; }
   void			SetCurrentPlotType(EPlotTypes plotSelection) { fCurrentPlotType=plotSelection; }
-=======
-  /* TKSMultiRibbons( const char* someArg1, Double_t someArg2 );				///< Normal ctor */
-  // setters and getters
->>>>>>> f2017a597cec63025f3562a7bc78f09ef0e5058a
   void			SetFileList(TObjArray* newFileList) { fFileList=newFileList; }
   void			SetOutFileName(TString fileName) { fOutFileName=fileName; }
   void			SetOutFileName(const char* filename) { fOutFileName=TString(filename); }
   void			SetOutFile(TFile *fNew) { fOutFile=fNew; }
-<<<<<<< HEAD
   Int_t			GetNFiles() { return fkNFiles; }
   Int_t			GetNAngles() { return fkNAngles; }
   EPlotTypes		GetPlotTypes() { return fPlotTypes; }
@@ -142,16 +117,6 @@ public:
   void			Save();								///< Save results
   void			Run();								///< Perform all selected analyses
   void			PrintEnums();							///< Display this class' enums
-=======
-  TString		GetOutFileName() { return fOutFileName; }
-  TFile*		GetOutFile() { return fOutFile; }
-  TCanvas*		GetRibbonCanvas() { return fRibbonCanvas; }
-  // general
-  void			Init();								///< Initialize
-  TH2D*			Ribbons();							///< Fit distributions for each angle and draw as ribbon plot
-  void			Save();								///< Save results
-  void			Run();								///< Perform and save all selected analyses
->>>>>>> f2017a597cec63025f3562a7bc78f09ef0e5058a
 
 // Integrating the TKSMultiRibbons class into ROOT
 ClassDef(TKSMultiRibbons,1) ///< with class version number

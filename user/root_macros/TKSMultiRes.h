@@ -28,19 +28,12 @@ class TKSMultiRes : public TClass {
 private:
   // members
   TObjArray*		fFileList;							///< List of KSSummary files to analyze
-<<<<<<< HEAD
   Bool_t		fkRibbon;							///< Whether to generate ribbon plots
-=======
-  Bool_t		kRibbon;							///< Whether to generate ribbon plots
->>>>>>> f2017a597cec63025f3562a7bc78f09ef0e5058a
   TString		fOutFileName;							///< Output filename
   TFile*		fOutFile;							///< Output TFile*
   TH1D*			fHistoSum;							///< Summed histogram
   TF1*			fHistoSumFit;							///< Gaussian fitted to fHistoSum
-<<<<<<< HEAD
   TFitResultPtr		fHistoSumFitResultPtr;						///< Pointer-class to fit result
-=======
->>>>>>> f2017a597cec63025f3562a7bc78f09ef0e5058a
   TFitResult*		fHistoSumFitResult;						///< Fit result for the summed histogram
   TCanvas*		fHistoCanvas;							///< Canvas for histo sum
   TCanvas*		fRibbonCanvas;							///< Canvas for ribbon plots
@@ -55,27 +48,16 @@ public:
   TKSMultiRes();									///< Default ctor
   /* TKSMultiRes( const char* someArg1, Double_t someArg2 );				///< Normal ctor */
   // setters and getters
-<<<<<<< HEAD
   void			SetRibbon(Bool_t newRibbon) { fkRibbon=newRibbon; }
   void			SetOutFileName(TString fileName) { fOutFileName=fileName; }
   void			SetOutFileName(const char* filename) { fOutFileName=TString(filename); }
   TObjArray*		GetFileList() { return fFileList; }
   Bool_t		IsRibbon() { return fkRibbon; }
-=======
-  void			SetRibbon(Bool_t newRibbon) { kRibbon=newRibbon; }
-  void			SetOutFileName(TString fileName) { fOutFileName=fileName; }
-  void			SetOutFileName(const char* filename) { fOutFileName=TString(filename); }
-  TObjArray*		GetFileList() { return fFileList; }
-  Bool_t		IsRibbon() { return kRibbon; }
->>>>>>> f2017a597cec63025f3562a7bc78f09ef0e5058a
   TString		GetOutFileName() { return fOutFileName; }
   TFile*		GetOutFile() { return fOutFile; }
   TH1D*			GetHistoSum() { return fHistoSum; }
   TF1*			GetHistoSumFit() { return fHistoSumFit; }
-<<<<<<< HEAD
   TFitResultPtr		GetHistoSumFitResultPtr() { return fHistoSumFitResultPtr; }
-=======
->>>>>>> f2017a597cec63025f3562a7bc78f09ef0e5058a
   TFitResult*		GetHistoSumFitResult() { return fHistoSumFitResult; }
   TCanvas*		GetHistoCanvas() { return fHistoCanvas; }
   TCanvas*		GetRibbonCanvas() { return fRibbonCanvas; }
