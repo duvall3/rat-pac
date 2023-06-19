@@ -87,7 +87,7 @@ pair[] verts;
 pair R;
 real theta;
 real theta_0 = 0;				// hexagon aligned horizontally
-real theta_0 = 2*pi/12;				// hexagon aligned vertically
+//real theta_0 = 2*pi/12;			// hexagon aligned vertically
 for ( int k=0; k<6; ++k ) {
   theta = k * 2*pi/6 + theta_0;
   R = S * ( cos(theta), sin(theta) );
