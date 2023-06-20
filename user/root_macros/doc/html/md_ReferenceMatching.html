@@ -168,7 +168,7 @@ Loop the macro <code>extractTest.cxx</code> over the subdirectories. </li>
 <p><b><em>Example:</em></b></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="anchor" id="cb5-1"></a><span class="bu">cd</span> <span class="va">$TESTDATA</span>
 <a class="anchor" id="cb5-2"></a><span class="kw">for</span> <span class="ex">DIR</span> in TestRun0*/<span class="kw">;</span> <span class="kw">do</span>
-<a class="anchor" id="cb5-3"></a>  <span class="va">ROOTCMD=</span><span class="st">&quot;root -q -l -b &amp;#39;extractTest.cxx(</span><span class="dt">&amp;quot;</span><span class="va">$DIR</span><span class="dt">&amp;quot;</span><span class="st">, kTRUE)&amp;#39;&quot;</span>
+<a class="anchor" id="cb5-3"></a>  <span class="va">ROOTCMD=</span><span class="st">&quot;root -q -l -b 'extractTest.cxx(</span><span class="dt">\"</span><span class="va">$DIR</span><span class="dt">\"</span><span class="st">, kTRUE)'&quot;</span>
 <a class="anchor" id="cb5-4"></a>  <span class="bu">eval</span> <span class="va">$ROOTCMD</span>
 <a class="anchor" id="cb5-5"></a><span class="kw">done</span></code></pre></div> <h3 id="algo">5: Execute Comparisons</h3>
 <ul>
