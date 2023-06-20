@@ -97,9 +97,10 @@ if [[ $ROUTINE = "r" ]]; then
 elif [[ $ROUTINE = "t" ]]; then
   $ECHO "Extracting test data..."
   for DIR in $DIRECTORY??*/; do
+    DIR=${DIR%/}
     ROOTCMD="root -q -l -b 'extractTest(\"$DIR\",kTRUE)'"
-    echo $ROOTCMD #debug
-    # eval $ROOTCMD
+    # echo $ROOTCMD #debug
+    eval $ROOTCMD
   done
   EXIT_STATUS=$?
 elif [[ $ROUTINE = "TBD" ]]; then
