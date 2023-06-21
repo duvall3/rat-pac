@@ -84,6 +84,7 @@ gROOT->LoadMacro("KSComparisonSingleAngle.cxx");
 gROOT->LoadMacro("refMatchDemo.cxx");
 gROOT->LoadMacro("extractRef.cxx");
 gROOT->LoadMacro("extractTest.cxx");
+gROOT->LoadMacro("extractTestSingle.cxx");
 gROOT->LoadMacro("compareRef.cxx");
 gROOT->LoadMacro("runRefComp.cxx");
 gROOT->LoadMacro("systematicScatterPlot.cxx");
