@@ -1,34 +1,33 @@
-// extractTest -- wrapper macro to avoid segfaults
-//   from repeated instantiations of TTestMatch objects
-// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 09/2022 ~ //
+// extractTest -- simple macro to loop extractTestSingle.cxx over subdirectories
+// ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 06/2023 ~ //
 
-void extractTest(const char* name, Bool_t kIsDirectory = kFALSE) {
+//Copyright (C) 2023 Mark J. Duvall / T. Rocks Science
+//
+//    This program is free software: you can redistribute it and/or modify
+//    it under the terms of the GNU General Public License as published by
+//    the Free Software Foundation, either version 3 of the License, or
+//    (at your option) any later version.
+//
+//    This program is distributed in the hope that it will be useful,
+//    but WITHOUT ANY WARRANTY; without even the implied warranty of
+//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//    GNU General Public License for more details.
+//
+//    You should have received a copy of the GNU General Public License
+//    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-// file or directory
-if (kIsDirectory) { // is directory name
+void extractTest(const char* batchname, Int_t maxAngle = 30) {
 
   // init
-  TString filename(name);
-  filename.ReplaceAll("/","");
-  filename.Append("_ncap_res.root");
-  TString fullname = name + filename;
+  Int_t phi(0);
+  TString dirName;
 
-  // main
-  TRefMatch *r = new TRefMatch();
-  r->ExtractTest(fullname.Data(), "T_ncap");
+  // main loop
+  for ( phi=0; phi<maxAngle; phi++ ) {
+    dirName.Form("%s_%02dDEG/", batchname, phi);
+    extractTestSingle(dirName.Data(), kTRUE);
+  }
 
-} else { // is just filename
-
-  // init
-  TString fullname(name);
-
-  // main
-  TRefMatch *r = new TRefMatch();
-  r->ExtractTest(fullname.Data(), "T_ncap");
-
+  // all pau!   )
+  return;
 }
-
-// all pau!   )
-return;
-}
-

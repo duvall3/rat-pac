@@ -97,7 +97,7 @@ if [[ $ROUTINE = "r" ]]; then
 elif [[ $ROUTINE = "t" ]]; then
   $ECHO "Extracting test data..."
   for DIR in $DIRECTORY??*/; do
-    DIR=${DIR%/}
+    # DIR=${DIR%/}
     ROOTCMD="root -q -l -b 'extractTest(\"$DIR\",kTRUE)'"
     # echo $ROOTCMD #debug
     eval $ROOTCMD
@@ -108,7 +108,6 @@ elif [[ $ROUTINE = "TBD" ]]; then
   exit 9
 else
   $ECHO "Error: Unrecognized routine \"$ROUTINE\". Exiting..." > $ERR	# shouldn't be possible, but just in case
-  # EXIT_STATUS=3
   exit 3
 fi
 
