@@ -78,7 +78,9 @@ REFDATA=\$PWD}\end{DoxyPre}
 
 
 \begin{DoxyItemize}
-\item Navigate to {\ttfamily \$\+R\+E\+F\+D\+A\+TA}, open {\ttfamily R\+O\+OT}, and execute the macro {\ttfamily extract\+Ref.\+cxx} 
+\item Navigate to {\ttfamily \$\+R\+E\+F\+D\+A\+TA} and open {\ttfamily R\+O\+OT}.~\newline
+  
+\item Execute the macro {\ttfamily extract\+Ref.\+cxx} on the batch run’s name prefix. 
 \end{DoxyItemize}
 
 {\bfseries{{\itshape Example\+:}}}
@@ -127,9 +129,9 @@ TESTDATA=\$PWD}\end{DoxyPre}
 
 
 \begin{DoxyItemize}
-\item Navigate to {\ttfamily \$\+T\+E\+S\+T\+D\+A\+TA}.~\newline
+\item Navigate to {\ttfamily \$\+T\+E\+S\+T\+D\+A\+TA} and open {\ttfamily R\+O\+OT}.~\newline
   
-\item Loop the macro {\ttfamily extract\+Test.\+cxx} over the subdirectories. 
+\item Execute the macro {\ttfamily extract\+Test.\+cxx} on the batch run’s name prefix. 
 \end{DoxyItemize}
 
 {\bfseries{{\itshape Example\+:}}}
@@ -138,13 +140,10 @@ TESTDATA=\$PWD}\end{DoxyPre}
 \begin{DoxyPre}{\ttfamily \label{_cb5-1}%
 cd \$TESTDATA
 \label{_cb5-2}%
-for DIR in TestRun0*/; do
-\label{_cb5-3}%
-  ROOTCMD="root -\/q -\/l -\/b \&\#39;extractTest.cxx(\&quot;\$DIR\&quot;, kTRUE)\&\#39;"
-\label{_cb5-4}%
-  eval \$ROOTCMD
-\label{_cb5-5}%
-done}\end{DoxyPre}
+root}\end{DoxyPre}
+ 
+\begin{DoxyPre}{\ttfamily \label{_cb6-1}%
+extractTest("TestRun0");}\end{DoxyPre}
  \doxysubsubsection*{5\+: Execute Comparisons}
 
 
@@ -158,9 +157,9 @@ done}\end{DoxyPre}
 {\bfseries{{\itshape Example\+:}}}
 
 
-\begin{DoxyPre}{\ttfamily \label{_cb6-1}%
+\begin{DoxyPre}{\ttfamily \label{_cb7-1}%
 cd \$REFDATA
-\label{_cb6-2}%
+\label{_cb7-2}%
 ref\_compare.sh TEST\_RUNS/TestRun0}\end{DoxyPre}
  \doxysubsubsection*{6\+: Compile Results Summary}
 
@@ -185,21 +184,21 @@ ref\_compare.sh TEST\_RUNS/TestRun0}\end{DoxyPre}
 {\bfseries{{\itshape Example\+:}}}
 
 
-\begin{DoxyPre}{\ttfamily \label{_cb7-1}%
+\begin{DoxyPre}{\ttfamily \label{_cb8-1}%
 cd \$TESTDATA
-\label{_cb7-2}%
+\label{_cb8-2}%
 root}\end{DoxyPre}
  
-\begin{DoxyPre}{\ttfamily \label{_cb8-1}%
+\begin{DoxyPre}{\ttfamily \label{_cb9-1}%
 KSSummary();
-\label{_cb8-2}%
+\label{_cb9-2}%
 .q}\end{DoxyPre}
  
-\begin{DoxyPre}{\ttfamily \label{_cb9-1}%
+\begin{DoxyPre}{\ttfamily \label{_cb10-1}%
 \# on your local machine, in whatever output directory you like:
-\label{_cb9-2}%
+\label{_cb10-2}%
 REMOTE\_HOST="mtc-\/b" \# for example
-\label{_cb9-3}%
+\label{_cb10-3}%
 scp \$REMOTE\_HOST:\$TESTDATA/KSSummary.\{root,png,txt\} .}\end{DoxyPre}
  \doxysubsubsection*{7. Combine Results with Other Test Runs {\itshape \mbox{[}Optional\mbox{]}}}
 
@@ -222,18 +221,18 @@ If you have completed multiple test runs, you can combine their results to analy
 {\bfseries{{\itshape Example\+:}}}
 
 
-\begin{DoxyPre}{\ttfamily \label{_cb10-1}%
+\begin{DoxyPre}{\ttfamily \label{_cb11-1}%
 cd \$TESTDIR
-\label{_cb10-2}%
+\label{_cb11-2}%
 root}\end{DoxyPre}
  
-\begin{DoxyPre}{\ttfamily \label{_cb11-1}%
+\begin{DoxyPre}{\ttfamily \label{_cb12-1}%
 \mbox{\hyperlink{classTKSMultiRes}{TKSMultiRes}} M;
-\label{_cb11-2}%
+\label{_cb12-2}%
 //M.SetRibbon(kFALSE); // deactivate ribbon plot if desired
-\label{_cb11-3}%
+\label{_cb12-3}%
 M.Run();
-\label{_cb11-4}%
+\label{_cb12-4}%
 M.Save();}\end{DoxyPre}
  \DoxyHorRuler{0}
  \doxysubsection*{All Pau!}

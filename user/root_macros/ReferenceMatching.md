@@ -57,7 +57,8 @@ REFDATA=$PWD
 ```
 
 ### 2: Extract Reference Distributions {#exref}
-- Navigate to `$REFDATA`, open `ROOT`, and execute the macro `extractRef.cxx`  
+- Navigate to `$REFDATA` and open `ROOT`.  
+- Execute the macro `extractRef.cxx` on the batch run's name prefix.  
 
 ***Example:***
 ```sh
@@ -87,16 +88,16 @@ TESTDATA=$PWD
 ```
 
 ### 4: Extract Test Distributions {#extest}
-- Navigate to `$TESTDATA`.  
-- Loop the macro `extractTest.cxx` over the subdirectories.  
+- Navigate to `$TESTDATA` and open `ROOT`.  
+- Execute the macro `extractTest.cxx` on the batch run's name prefix.  
 
 ***Example:***
 ```sh
 cd $TESTDATA
-for DIR in TestRun0*/; do
-  ROOTCMD="root -q -l -b 'extractTest.cxx(\"$DIR\", kTRUE)'"
-  eval $ROOTCMD
-done
+root
+```
+```cpp
+extractTest("TestRun0");
 ```
 
 ### 5: Execute Comparisons {#algo}

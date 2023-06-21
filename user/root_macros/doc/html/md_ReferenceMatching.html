@@ -135,7 +135,10 @@ Create a directory for the reference data, and move the output there. </li>
 <a class="anchor" id="cb1-7"></a><span class="va">REFDATA=$PWD</span></code></pre></div> <h3 id="exref">2: Extract Reference Distributions</h3>
 <ul>
 <li>
-Navigate to <code>$REFDATA</code>, open <code>ROOT</code>, and execute the macro <code>extractRef.cxx</code> </li>
+Navigate to <code>$REFDATA</code> and open <code>ROOT</code>.<br  />
+  </li>
+<li>
+Execute the macro <code>extractRef.cxx</code> on the batch run’s name prefix. </li>
 </ul>
 <p><b><em>Example:</em></b></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="anchor" id="cb2-1"></a><span class="bu">cd</span> <span class="va">$REFDATA</span>
@@ -160,17 +163,14 @@ Create a directory for the test data, and move the output there. </li>
 <a class="anchor" id="cb4-10"></a><span class="va">TESTDATA=$PWD</span></code></pre></div> <h3 id="extest">4: Extract Test Distributions</h3>
 <ul>
 <li>
-Navigate to <code>$TESTDATA</code>.<br  />
+Navigate to <code>$TESTDATA</code> and open <code>ROOT</code>.<br  />
   </li>
 <li>
-Loop the macro <code>extractTest.cxx</code> over the subdirectories. </li>
+Execute the macro <code>extractTest.cxx</code> on the batch run’s name prefix. </li>
 </ul>
 <p><b><em>Example:</em></b></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="anchor" id="cb5-1"></a><span class="bu">cd</span> <span class="va">$TESTDATA</span>
-<a class="anchor" id="cb5-2"></a><span class="kw">for</span> <span class="ex">DIR</span> in TestRun0*/<span class="kw">;</span> <span class="kw">do</span>
-<a class="anchor" id="cb5-3"></a>  <span class="va">ROOTCMD=</span><span class="st">&quot;root -q -l -b 'extractTest.cxx(</span><span class="dt">\"</span><span class="va">$DIR</span><span class="dt">\"</span><span class="st">, kTRUE)'&quot;</span>
-<a class="anchor" id="cb5-4"></a>  <span class="bu">eval</span> <span class="va">$ROOTCMD</span>
-<a class="anchor" id="cb5-5"></a><span class="kw">done</span></code></pre></div> <h3 id="algo">5: Execute Comparisons</h3>
+<a class="anchor" id="cb5-2"></a><span class="ex">root</span></code></pre></div> <div class="sourceCode" id="cb6"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="anchor" id="cb6-1"></a>extractTest(<span class="st">&quot;TestRun0&quot;</span>);</code></pre></div> <h3 id="algo">5: Execute Comparisons</h3>
 <ul>
 <li>
 <b><em>This is where the magic happens!</em></b> </li>
@@ -181,8 +181,8 @@ Navigate to <code>$REFDATA</code> and run <code>ref_compare.sh</code> on <em>the
 This will use <a class="el" href="classTRefMatch.html" title="Class implementing KS/AD-test reference-matching algorithm.">TRefMatch</a> to examine each of the extracted test distributions and find its best statistical match in the reference set. </li>
 </ul>
 <p><b><em>Example:</em></b></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="anchor" id="cb6-1"></a><span class="bu">cd</span> <span class="va">$REFDATA</span>
-<a class="anchor" id="cb6-2"></a><span class="ex">ref_compare.sh</span> TEST_RUNS/TestRun0</code></pre></div> <h3 id="process">6: Compile Results Summary</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="anchor" id="cb7-1"></a><span class="bu">cd</span> <span class="va">$REFDATA</span>
+<a class="anchor" id="cb7-2"></a><span class="ex">ref_compare.sh</span> TEST_RUNS/TestRun0</code></pre></div> <h3 id="process">6: Compile Results Summary</h3>
 <ul>
 <li>
 Navigate to <code>$TESTDATA</code>.<br  />
@@ -207,11 +207,11 @@ Open <code>ROOT</code> and run the macro <code>KSSummary.cxx</code>; the default
 Open the results and get ready to publish! </li>
 </ul>
 <p><b><em>Example:</em></b></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="anchor" id="cb7-1"></a><span class="bu">cd</span> <span class="va">$TESTDATA</span>
-<a class="anchor" id="cb7-2"></a><span class="ex">root</span></code></pre></div> <div class="sourceCode" id="cb8"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="anchor" id="cb8-1"></a>KSSummary();
-<a class="anchor" id="cb8-2"></a>.q</code></pre></div> <div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="anchor" id="cb9-1"></a><span class="co"># on your local machine, in whatever output directory you like:</span>
-<a class="anchor" id="cb9-2"></a><span class="va">REMOTE_HOST=</span><span class="st">&quot;mtc-b&quot;</span> <span class="co"># for example</span>
-<a class="anchor" id="cb9-3"></a><span class="fu">scp</span> <span class="va">$REMOTE_HOST</span>:<span class="va">$TESTDATA</span>/KSSummary.<span class="dt">{root,png,txt}</span> .</code></pre></div> <h3 id="multi">7. Combine Results with Other Test Runs <em>[Optional]</em></h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="anchor" id="cb8-1"></a><span class="bu">cd</span> <span class="va">$TESTDATA</span>
+<a class="anchor" id="cb8-2"></a><span class="ex">root</span></code></pre></div> <div class="sourceCode" id="cb9"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="anchor" id="cb9-1"></a>KSSummary();
+<a class="anchor" id="cb9-2"></a>.q</code></pre></div> <div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="anchor" id="cb10-1"></a><span class="co"># on your local machine, in whatever output directory you like:</span>
+<a class="anchor" id="cb10-2"></a><span class="va">REMOTE_HOST=</span><span class="st">&quot;mtc-b&quot;</span> <span class="co"># for example</span>
+<a class="anchor" id="cb10-3"></a><span class="fu">scp</span> <span class="va">$REMOTE_HOST</span>:<span class="va">$TESTDATA</span>/KSSummary.<span class="dt">{root,png,txt}</span> .</code></pre></div> <h3 id="multi">7. Combine Results with Other Test Runs <em>[Optional]</em></h3>
 <p>If you have completed multiple test runs, you can combine their results to analyze the detector’s performance over the aggregate dataset using <code><a class="el" href="classTKSMultiRes.html" title="Class for combining reference-comparison results from multiple runs.">TKSMultiRes</a></code> as follows:<br  />
 </p><ul>
 <li>Navigate to <code>$TESTDIR</code>.<br  />
@@ -227,11 +227,11 @@ Open the results and get ready to publish! </li>
 <li>If desired, save output using the <code>Save()</code> method.</li>
 </ul>
 <p><b><em>Example:</em></b></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="anchor" id="cb10-1"></a><span class="bu">cd</span> <span class="va">$TESTDIR</span>
-<a class="anchor" id="cb10-2"></a><span class="ex">root</span></code></pre></div> <div class="sourceCode" id="cb11"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="anchor" id="cb11-1"></a><a class="el" href="classTKSMultiRes.html" title="Class for combining reference-comparison results from multiple runs.">TKSMultiRes</a> M;
-<a class="anchor" id="cb11-2"></a><span class="co">//M.SetRibbon(kFALSE); // deactivate ribbon plot if desired</span>
-<a class="anchor" id="cb11-3"></a>M.Run();
-<a class="anchor" id="cb11-4"></a>M.Save();</code></pre></div> <hr  />
+<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="anchor" id="cb11-1"></a><span class="bu">cd</span> <span class="va">$TESTDIR</span>
+<a class="anchor" id="cb11-2"></a><span class="ex">root</span></code></pre></div> <div class="sourceCode" id="cb12"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="anchor" id="cb12-1"></a><a class="el" href="classTKSMultiRes.html" title="Class for combining reference-comparison results from multiple runs.">TKSMultiRes</a> M;
+<a class="anchor" id="cb12-2"></a><span class="co">//M.SetRibbon(kFALSE); // deactivate ribbon plot if desired</span>
+<a class="anchor" id="cb12-3"></a>M.Run();
+<a class="anchor" id="cb12-4"></a>M.Save();</code></pre></div> <hr  />
  <h2 id="all-pau">All Pau!</h2>
 <h3 id="thats-it-feel-free-to-contact-me-using-the-address-at-the-top-of-this-page.-enjoy">That’s it! Feel free to contact me using the address at the top of this page. Enjoy!</h3>
 <p><em>-~- Last Updated 06/19/2023 -~-</em></p>
