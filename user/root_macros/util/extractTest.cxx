@@ -23,7 +23,7 @@ void extractTest(const char* batchname, Int_t maxAngle = 30) {
   TString dirName;
 
   // main loop
-  for ( phi=0; phi<maxAngle; phi++ ) {
+  for ( phi=0; phi<=maxAngle; phi++ ) {
     dirName.Form("%s_%02dDEG/", batchname, phi);
     extractTestSingle(dirName.Data(), kTRUE);
   }
