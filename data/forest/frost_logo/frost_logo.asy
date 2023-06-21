@@ -20,8 +20,8 @@
 //// INIT
 
 // output settings
-bool kOutputPNG = false;
-//bool kOutputPNG = true;
+//bool kOutputPNG = false;
+bool kOutputPNG = true;
 if (kOutputPNG) {
   settings.outformat = "png";
   settings.render = 2**4;
@@ -63,9 +63,10 @@ path pathify(pair[] R) {
 
 // create "tube" (annular ring)
 path tube(pair R = O) {
+  real thickness = 0.3;
   path[] rings;
   rings[0] = circle(R,RG);
-  rings[1] = reverse(circle(R,.95*RS));
+  rings[1] = reverse(circle(R,(1-thickness)*RS));
   return rings[0] -- rings[1] -- cycle;
 }
 
@@ -105,6 +106,7 @@ axialshade( scale(L) * ( (-1,1)--(1,1)--(1,-1)--(-1,-1)--cycle ), heavyblue, (L,
 
 // draw spikes and tubes
 path crossbeam;
+// outer tubes
 for ( int k=0; k<6; ++k ) {
   theta = k * 2*pi/6 + theta_0;
   axialshade( spike(theta), white, L*(1,1), deepcyan, L*(-1,-1) );
@@ -116,7 +118,9 @@ for ( int k=0; k<6; ++k ) {
   axialshade( crossbeam,  white, L*(1,1), deepcyan, L*(-1,-1) );
   axialshade( tube(verts[k]), white, verts[k]+RG*(X+Y), magenta, verts[k]-RG*(X+Y) );
 }
-axialshade( tube(), white, RG*(1,1), magenta, RG*(-1,-1) );
+// central tube
+/* axialshade( tube(), white, RG*(1,1), magenta, RG*(-1,-1) ); */
+axialshade( circle(O,RG), white, RG*(1,1), magenta, RG*(-1,-1) );
 // redraw first tube over final crossbeam
 axialshade( tube(verts[0]), white, verts[0]+RG*(X+Y), magenta, verts[0]-RG*(X+Y) );
 
