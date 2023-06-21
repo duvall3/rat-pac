@@ -141,16 +141,21 @@ void TKSMultiRibbons::DrawPlots()
   TCutG *cut0;
   Double_t A_guess(1.), mu_guess(1.), sigma_guess(5.);
   Double_t A, mu, sigma;
+  Int_t nDims;
+  Double_t meanMarkerX[2];
+  Double_t meanMarkerY[2];
+  Double_t meanMarkerZ[2] = {1., 1.};
+  TPolyLine *l2;
+  TPolyLine3D *l3;
+  Int_t meanMarkerCount(0);
   switch (GetCurrentPlotType()) {
     case kRibbons:
       TString rhOption("surf2");
-      /* cout << "Current Plot Type: kRibbons" << endl; //debug */
-      /* cout << "rhOption: " << rhOption.Data() << endl; //debug */
+      nDims = 3;
       break;
     case kHeatmap:
       TString rhOption("colz");
-      /* cout << "Current Plot Type: kHeatmap" << endl; //debug */
-      /* cout << "rhOption: " << rhOption.Data() << endl; //debug */
+      nDims = 2;
       break;
     default:
       this->Error("TKSMultiRibbons", "PlotTypes selection not recognized.\n");
@@ -178,8 +183,12 @@ void TKSMultiRibbons::DrawPlots()
     A = 1.; // each angle has the same number of entries, so they're effectively already normalized (relative to one another)
     mu = TMath::Mean(Nphi,deltArr.GetArray());
     sigma = TMath::RMS(Nphi,deltArr.GetArray());
-    ribbonName.Form("g_%02dDEG", k);
+    meanMarkerX[0] = mu;
+    meanMarkerX[1] = mu;
+    meanMarkerY[0] = k;
+    meanMarkerY[1] = k+1;
     // create and adjust ribbon plot
+    ribbonName.Form("g_%02dDEG", k);
     gSystem->RedirectOutput("/dev/null"); // discard the error about number of parameters when creating the next 'new TF2'
     g = new TF2(ribbonName.Data(), "gaus(0)", -diffLim, diffLim, angleLow, angleHigh);
     gSystem->RedirectOutput(0); // reset stderr,stdout
@@ -200,14 +209,26 @@ void TKSMultiRibbons::DrawPlots()
       drawCmd.Form("%s [%s]", rhOption.Data(), cutName.Data());
     } else {
       drawCmd.Form("same %s [%s]", rhOption.Data(), cutName.Data()); // default
-    }
+    } // end if -- first iteration
     // draw
     /* cout << "finished k = " << k << endl << endl; //debug */
     /* cout << drawCmd.Data() << endl; //debug */
     g->Draw(drawCmd.Data());
-  }
+    // add mean markers
+    if ( nDims == 2 ) {
+      l2 = new TPolyLine(2, meanMarkerX, meanMarkerY);
+      l2->SetLineColor(kRed);
+      l2->SetLineWidth(5.);
+      l2->Draw("same");
+    } else if ( nDims == 3 ) {
+      l3 = new TPolyLine3D(2, meanMarkerX, meanMarkerY, meanMarkerZ);
+      l3->SetLineColor(kRed);
+      l3->SetLineWidth(5.);
+      l3->Draw("same");
+    } // end if -- nDims
+  } // end angle loop
   return;
-}
+} // end function
 
 //______________________________________________________________________________
 // Ribbons
