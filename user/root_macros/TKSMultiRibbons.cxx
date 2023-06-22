@@ -148,15 +148,18 @@ void TKSMultiRibbons::DrawPlots()
   TPolyLine *l2;
   TPolyLine3D *l3;
   Int_t meanMarkerCount(0);
+  Double_t titleOffset;
   switch (GetCurrentPlotType()) {
     case kRibbons:
       TString rhOption("surf2");
       nDims = 3;
+      titleOffset = 2.0;
       break;
     case kHeatmap:
       /* TString rhOption("colz"); */
       TString rhOption("col");
       nDims = 2;
+      titleOffset = 1.05;
       break;
     default:
       this->Error("TKSMultiRibbons", "PlotTypes selection not recognized.\n");
@@ -203,10 +206,10 @@ void TKSMultiRibbons::DrawPlots()
     // set annotations (first iteration only)
     if (k==0) {
       g->SetTitle("#Delta#varphi Distributions at Individual Angles");
-      g->GetXaxis()->SetTitle("#varphi_{Recon} - #varphi_{True} (^{o})");
+      g->GetXaxis()->SetTitle("#varphi_{Best} - #varphi_{True} (^{o})");
       g->GetYaxis()->SetTitle("#varphi_{True} (^{o})");
-      g->GetXaxis()->SetTitleOffset(2.0);
-      g->GetYaxis()->SetTitleOffset(2.0);
+      g->GetXaxis()->SetTitleOffset(titleOffset);
+      g->GetYaxis()->SetTitleOffset(titleOffset);
       drawCmd.Form("%s [%s]", rhOption.Data(), cutName.Data());
     } else {
       drawCmd.Form("same %s [%s]", rhOption.Data(), cutName.Data()); // default
