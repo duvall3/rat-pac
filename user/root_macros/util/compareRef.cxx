@@ -16,11 +16,27 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-void compareRef(const char* filename, Bool_t kAndersonDarling = kFALSE) {
+void compareRef(const char* inputname, Bool_t kAndersonDarling = kFALSE) {
 
-  TRefMatch *r = new TRefMatch(filename);
-  r->SetAnderson(kAndersonDarling);
-  r->Run();
+  // init
+  TSystemFile F(inputname, gSystem->WorkingDirectory());
+
+  // MAIN
+  if (! F.IsDirectory()) {	// for individual file
+    TRefMatch *r = new TRefMatch(inputname);
+    r->SetAnderson(kAndersonDarling);
+    r->Run();
+  } else {			// for run directory
+    Int_t phi, phiMin = 0, phiMax = 30;		//HC// hard-coded for now: variable is phi and runs from 0 to 30
+    TString filename;
+    for ( phi = phiMin; phi <= phiMax; phi++ ) {
+      filename.Form("%02dDEG_phi.root", phi);
+      TRefMatch *r = new TRefMatch(filename.Data());
+      r->SetAnderson(kAndersonDarling);
+      r->Run();
+      delete r;
+    }
+  }
 
   // all pau!   )
   return;
