@@ -154,7 +154,8 @@ void TKSMultiRibbons::DrawPlots()
       nDims = 3;
       break;
     case kHeatmap:
-      TString rhOption("colz");
+      /* TString rhOption("colz"); */
+      TString rhOption("col");
       nDims = 2;
       break;
     default:

@@ -1,6 +1,6 @@
 #!/bin/bash
 # ref_compare.sh -- workaround for ROOT crashes
-# Usage: user@host:$RATROOT/data/<experiment>/.../REFDATA$ ref_compare.sh <DIRECTORY> [ANDERSON_TF=false] [VARNAME=phi]
+# Usage: user@host:$RATROOT/data/<experiment>/.../REFDATA$ ref_compare.sh <FILE|DIRECTORY> [ANDERSON_TF=false] [VARNAME=phi]
 # ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 10/2022 ~ #
 
 #Copyright (C) 2022 Mark J. Duvall / T. Rocks Science
@@ -20,7 +20,7 @@
 
 # arg / help check
 if [[ ($# -lt 1) || ($1 =~ -h) ]]; then
-  echo "Usage: user@host:$RATROOT/data/<experiment>/.../REFDATA$ ref_compare.sh <DIRECTORY> [ANDERSON_TF=false] [VARNAME=phi]"
+  echo "Usage: user@host:$RATROOT/data/<experiment>/.../REFDATA$ ref_compare.sh <FILE|DIRECTORY> [ANDERSON_TF=false] [VARNAME=phi]"
   exit 10
 fi
 
@@ -31,12 +31,24 @@ TESTDIR=${1%/}
 ANDERSON_TF=${2:-kFALSE}
 VARNAME=${3:-phi}
 
+## ORIG VERSION
+# # main
+# for FILE in $TESTDIR/*_$VARNAME.root; do
+#   ROOTCMD="root -q -l -b 'compareRef.cxx(\"$FILE\",$ANDERSON_TF)'"
+#   # echo $ROOTCMD #ebug
+#   eval $ROOTCMD
+# done
+
+## NEW VERSION
 # main
+TMPFILE="./compareRefTmp.cxx"
 for FILE in $TESTDIR/*_$VARNAME.root; do
-  ROOTCMD="root -q -l -b 'compareRef.cxx(\"$FILE\",$ANDERSON_TF)'"
-  # echo $ROOTCMD #ebug
-  eval $ROOTCMD
+  echo -e "{\nTRefMatch *r = new TRefMatch(\"$FILE\");\nr->SetAnderson($ANDERSON_TF);\nr->Run();\n}" > $TMPFILE
+  # cat $TMPFILE #debug
+  root -q -l -b $TMPFILE
 done
+EXIT_STATUS=$?
+if [ -f $TMPFILE ]; then rm $TMPFILE; fi
 
 # all pau!   )
-exit 0
+exit $EXIT_STATUS

@@ -152,6 +152,8 @@ extractTest("TestRun0");}\end{DoxyPre}
 \item Navigate to {\ttfamily \$\+R\+E\+F\+D\+A\+TA} and run {\ttfamily ref\+\_\+compare.\+sh} on {\itshape the relative path to} {\ttfamily \$\+T\+E\+S\+T\+D\+A\+TA}.~\newline
   
 \item This will use \mbox{\hyperlink{classTRefMatch}{T\+Ref\+Match}} to examine each of the extracted test distributions and find its best statistical match in the reference set. 
+\item The {\ttfamily ref\+\_\+compare.\+sh} script can also accept arguments to run on an individual file, to use the Anderson-\/\+Darling test instead of Kolmogorov-\/\+Smirnov, and to look for a variable other than “phi”; its full parameters and default values are as follows\+:~\newline
+ {\ttfamily ref\+\_\+compare.\+sh $<$F\+I\+L\+E$\vert$\+D\+I\+R\+E\+C\+T\+O\+RY$>$ \mbox{[}A\+N\+D\+E\+R\+S\+O\+N\+\_\+\+TF=false\mbox{]} \mbox{[}V\+A\+R\+N\+A\+ME=phi\mbox{]}} 
 \end{DoxyItemize}
 
 {\bfseries{{\itshape Example\+:}}}

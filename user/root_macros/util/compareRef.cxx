@@ -28,13 +28,16 @@ void compareRef(const char* inputname, Bool_t kAndersonDarling = kFALSE) {
     r->Run();
   } else {			// for run directory
     Int_t phi, phiMin = 0, phiMax = 30;		//HC// hard-coded for now: variable is phi and runs from 0 to 30
-    TString filename;
+    /* Int_t phi, phiMin = 0, phiMax = 3; //debug */
+    TString fullName, fileName, dirName(inputname);
+    if ( dirName(dirName.Length()-1) != '/' ) dirName.Append('/');
     for ( phi = phiMin; phi <= phiMax; phi++ ) {
-      filename.Form("%02dDEG_phi.root", phi);
-      TRefMatch *r = new TRefMatch(filename.Data());
+      fileName.Form("%02dDEG_phi.root", phi);
+      fullName = dirName + fileName;
+      TRefMatch *r = new TRefMatch(fullName.Data());
       r->SetAnderson(kAndersonDarling);
       r->Run();
-      delete r;
+      /* delete r; */
     }
   }
 

@@ -104,6 +104,8 @@ extractTest("TestRun0");
 - ***This is where the magic happens!***
 - Navigate to `$REFDATA` and run `ref_compare.sh` on *the relative path to* `$TESTDATA`.  
 - This will use TRefMatch to examine each of the extracted test distributions and find its best statistical match in the reference set.
+- The `ref_compare.sh` script can also accept arguments to run on an individual file, to use the Anderson-Darling test instead of Kolmogorov-Smirnov, and to look for a variable other than "phi"; its full parameters and default values are as follows:  
+  `ref_compare.sh <FILE|DIRECTORY> [ANDERSON_TF=false] [VARNAME=phi]`
 
 ***Example:***
 ```sh

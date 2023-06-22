@@ -179,6 +179,9 @@ Navigate to <code>$REFDATA</code> and run <code>ref_compare.sh</code> on <em>the
   </li>
 <li>
 This will use <a class="el" href="classTRefMatch.html" title="Class implementing KS/AD-test reference-matching algorithm.">TRefMatch</a> to examine each of the extracted test distributions and find its best statistical match in the reference set. </li>
+<li>
+The <code>ref_compare.sh</code> script can also accept arguments to run on an individual file, to use the Anderson-Darling test instead of Kolmogorov-Smirnov, and to look for a variable other than “phi”; its full parameters and default values are as follows:<br  />
+ <code>ref_compare.sh &lt;FILE|DIRECTORY&gt; [ANDERSON_TF=false] [VARNAME=phi]</code> </li>
 </ul>
 <p><b><em>Example:</em></b></p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="anchor" id="cb7-1"></a><span class="bu">cd</span> <span class="va">$REFDATA</span>
