@@ -34,13 +34,17 @@ if (kOutputPNG) {
 }
 
 // general init
+import graph;
 size(500,0);
+// pens
 pen dfpen = defaultpen;
 pen glasspen = dfpen+cyan+opacity(0.50);
 pen scintpen = dfpen+blue+opacity(0.25);
 pen pmtpen = dfpen+magenta+opacity(0.75);
 pen dimpen = dfpen+linewidth(1.25);
 pen dashpen = dfpen+linewidth(1.00)+dashed;
+pen gridpen = gray(0.25)+opacity(1.00)+dotted;
+// pairs
 pair O = (0,0);
 pair X = (1,0);
 pair Y = (0,1);
@@ -99,13 +103,23 @@ for ( int k=0; k<6; ++k ) {
 // rectangular bg
 real L = 1.35*S;
 // background vertices, clockwise ("UL" = "upper left," etc.)
-pair bgUL = (-L,1.25*L);
+pair bgUL = (-1.10*L,1.25*L);
 pair bgUR = (2.10*L,1.25*L);
-pair bgLR = (2.10*L,-0.50*L);
-pair bgLL = (-L,-0.50*L);
+pair bgLR = (2.10*L,-0.60*L);
+pair bgLL = (-1.10*L,-0.60*L);
 pair[] bgpairs = {bgUL, bgUR, bgLR, bgLL};
 path bgbox = pathify( bgpairs );
 fill( bgbox, white );
+/* draw(bgbox); */
+
+// bg grid
+/* write(L); //debug */
+xaxis(Label(""), Top(extend=true), gridpen, RightTicks(OmitFormat(""),extend=true), None, true);
+xaxis(Label("$x$", Relative(0.9)), YEquals(-5.0,extend=true), gridpen, LeftTicks(OmitFormat(""),extend=true), EndArrow, true);
+/* xaxis(Label("$x$ (cm)", Relative(0.9)), YEquals(-5.0,extend=true), gridpen, LeftTicks(extend=true), EndArrow, true); */
+yaxis(Label(""), Right(extend=true), gridpen, LeftTicks(OmitFormat(""),extend=true), None, true);
+yaxis(Label("$y$", Relative(0.9)), XEquals(-10.0,extend=true), gridpen, RightTicks(OmitFormat(""),extend=true), EndArrow, true);
+draw( Label("\textsf{Grid Scale: 5 cm}", (5.0, -6.5), gridpen), box );
 
 // draw tubes
 // outer tubes
@@ -120,13 +134,13 @@ fill( tube(O), cyan );
 
 // annotations
 // title
-label( "$FROST\ Dimensions$", shift(1.25*S*X+3.0*RS*Y)*verts[1], dfpen+fontsize(16) );
-label( "$Full\ Array: 16\times16$", shift(1.25*S*X+2.25*RS*Y)*verts[1], dfpen+fontsize(16) );
+label( "\textbf{FROST\ Dimensions}", shift(1.25*S*X+3.0*RS*Y)*verts[1], dfpen+fontsize(16), Fill(white) );
+label( "Full\ Array: $16\times16$", shift(1.25*S*X+2.25*RS*Y)*verts[1], dfpen+fontsize(16), Fill(white) );
 // dimensions for entire array
 string fullArrayWidth = format("$\hookrightarrow\ \approx %.2f$ m\ $\times\ $", 16*S/100);
 string fullArrayHeight = format("%.2f\ \mathrm{m}", 16*sin(60*pi/180)*S/100);
 string fullArrayDims = insert(fullArrayWidth, length(fullArrayWidth)-1, fullArrayHeight);
-label( fullArrayDims, shift(1.50*S*X+1.50*RS*Y)*verts[1], dfpen+fontsize(16) );
+label( fullArrayDims, shift(1.50*S*X+1.50*RS*Y)*verts[1], dfpen+fontsize(16), Fill(white) );
 // define transforms
 transform dimTdown = shift(-1.5*RG*Y);
 transform dimTup = shift(+1.5*RG*Y);
@@ -142,10 +156,10 @@ draw( verts[0] -- dimTdown*verts[0], dashpen );
 draw( sepPath0, dimpen, Bars );
 draw( sepPath1, dimpen, Bars );
 draw( sepPath2, dimpen, Bars );
-label( sepText, labelT*sepPath0, dimpen );
-label( "$S$", sepPath0, dimpen );
-label( "$S$", sepPath1, dimpen );
-label( "$S$", sepPath2, dimpen );
+label( sepText, labelT*sepPath0, dimpen, Fill(white) );
+label( "$S$", sepPath0, dimpen, Fill(white) );
+label( "$S$", sepPath1, dimpen, Fill(white) );
+label( "$S$", sepPath2, dimpen, Fill(white) );
 // tube inner radius
 string innerText = format("%.2f cm", RS);
 innerText = sig3(innerText);	//TODO: HC
@@ -155,7 +169,7 @@ string innerText = format("$r_{inner} = %f$ cm", RS);
 pair[] innerLabels = { dimTdown*verts[2], shift(RS*X)*dimTdown*verts[2] };
 draw( verts[2] -- innerLabels[0], dashpen );
 draw( shift(RS*X)*verts[2] -- innerLabels[1], dashpen );
-label( innerText, innerLabels[0] -- innerLabels[1], dimpen );
+label( innerText, innerLabels[0] -- innerLabels[1], dimpen, Fill(white) );
 // tube outer radius
 string outerText = format("$r_{outer} = %f$ cm", RG);
 outerText = sig3(outerText);	//TODO: HC
@@ -164,11 +178,11 @@ draw( outerPath, dimpen, Bars );
 pair[] outerLabels = { dimTup*verts[2], shift(-RG*X)*dimTup*verts[2] };
 draw( verts[2] -- outerLabels[0], dashpen );
 draw( shift(-RG*X)*verts[2] -- outerLabels[1], dashpen );
-label( outerText, outerLabels[0] -- outerLabels[1], dimpen );
+label( outerText, outerLabels[0] -- outerLabels[1], dimpen, Fill(white) );
 // hex angle
 path hexArc = arc(O, 4.0, 0., 60.);
 draw( hexArc );
-label( "$60^{o}$", hexArc );
+label( "$60^{o}$", hexArc, Fill(white) );
 // perpendicular separation
 string perpText = format("$S_{\perp} \equiv S \cdot \sin (60^{o}) \approx %.2f$ cm", S*sin(60*pi/180));
 perpText = sig3(perpText);	//TODO: HC
@@ -178,6 +192,6 @@ path perpPath = perpVerts[0] -- perpVerts[1];
 draw( verts[1] -- perpVerts[1], dashpen );
 draw( verts[0] -- perpVerts[0], dashpen );
 draw( perpPath, Arrows);
-label( perpText, perpPath );
+label( perpText, perpPath, Fill(white) );
 
 // all pau!   )
