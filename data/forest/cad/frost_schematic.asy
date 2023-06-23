@@ -122,6 +122,11 @@ fill( tube(O), cyan );
 // title
 label( "$FROST\ Dimensions$", shift(1.25*S*X+3.0*RS*Y)*verts[1], dfpen+fontsize(16) );
 label( "$Full\ Array: 16\times16$", shift(1.25*S*X+2.25*RS*Y)*verts[1], dfpen+fontsize(16) );
+// dimensions for entire array
+string fullArrayWidth = format("$\hookrightarrow\ \approx %.2f$ m\ $\times\ $", 16*S/100);
+string fullArrayHeight = format("%.2f\ \mathrm{m}", 16*sin(60*pi/180)*S/100);
+string fullArrayDims = insert(fullArrayWidth, length(fullArrayWidth)-1, fullArrayHeight);
+label( fullArrayDims, shift(1.50*S*X+1.50*RS*Y)*verts[1], dfpen+fontsize(16) );
 // define transforms
 transform dimTdown = shift(-1.5*RG*Y);
 transform dimTup = shift(+1.5*RG*Y);
@@ -174,6 +179,5 @@ draw( verts[1] -- perpVerts[1], dashpen );
 draw( verts[0] -- perpVerts[0], dashpen );
 draw( perpPath, Arrows);
 label( perpText, perpPath );
-// dimensions for entire array
 
 // all pau!   )
