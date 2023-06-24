@@ -103,7 +103,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a87fe2f8028da1318876d6c427745adea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return an array of logarithmically-spaced values.  <a href="namespaceTDuvallUtils.html#a87fe2f8028da1318876d6c427745adea">More...</a><br /></td></tr>
 <tr class="separator:a87fe2f8028da1318876d6c427745adea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02319b2f5f0477b46e4211d70d6c85c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTDuvallUtils.html#a02319b2f5f0477b46e4211d70d6c85c5">PrintBranches</a> (TObject *obj)</td></tr>
-<tr class="memdesc:a02319b2f5f0477b46e4211d70d6c85c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print nicely-formatted summary of object's TBranches.  <a href="namespaceTDuvallUtils.html#a02319b2f5f0477b46e4211d70d6c85c5">More...</a><br /></td></tr>
+<tr class="memdesc:a02319b2f5f0477b46e4211d70d6c85c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print nicely-formatted summary of <em>obj</em>'s TBranches.  <a href="namespaceTDuvallUtils.html#a02319b2f5f0477b46e4211d70d6c85c5">More...</a><br /></td></tr>
 <tr class="separator:a02319b2f5f0477b46e4211d70d6c85c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebfbb014b8f13cb1df197138169164fa"><td class="memItemLeft" align="right" valign="top">Double_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTDuvallUtils.html#aebfbb014b8f13cb1df197138169164fa">Prob2Sig</a> (Double_t prob)</td></tr>
 <tr class="memdesc:aebfbb014b8f13cb1df197138169164fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert probability to significance.  <a href="namespaceTDuvallUtils.html#aebfbb014b8f13cb1df197138169164fa">More...</a><br /></td></tr>
@@ -143,7 +143,7 @@ Functions</h2></td></tr>
 <li><a class="el" href="namespaceTDuvallUtils.html#a913fd86508e84b86af27086a8d89fde3" title="Scan a TCollection for an object whose name matches a regex.">FindMatchingObjects()</a></li>
 <li><a class="el" href="namespaceTDuvallUtils.html#a0a6780f1deaf21b2caab327bf93926b3" title="List global variables matching a specified type.">FindVarsOfType()</a></li>
 <li><a class="el" href="namespaceTDuvallUtils.html#a0397718fcd2627a314522a9c65269536" title="Return a list of files matching a pattern.">ListFiles()</a></li>
-<li><a class="el" href="namespaceTDuvallUtils.html#a02319b2f5f0477b46e4211d70d6c85c5" title="Print nicely-formatted summary of object&#39;s TBranches.">PrintBranches()</a></li>
+<li><a class="el" href="namespaceTDuvallUtils.html#a02319b2f5f0477b46e4211d70d6c85c5" title="Print nicely-formatted summary of obj&#39;s TBranches.">PrintBranches()</a></li>
 </ul>
 <p><b>File Operations</b>:</p><ul>
 <li><a class="el" href="namespaceTDuvallUtils.html#af647925c9820067541e19861a6f30bd4" title="Shortcut for printing all canvases in a file.">ExportPlots()</a></li>
@@ -169,7 +169,7 @@ Functions</h2></td></tr>
 
 <p>Dump histogram to terminal. </p>
 <p>Dump histogram data as (x,y) pairs to stdout, along with a rough ASCII representation of the graph. <br  />
- &ndash; Primarily for use in non-graphical sessions <br  />
+ &ndash; Primarily for use in non-graphical sessions (over <code>ssh</code>, for example) <br  />
  &ndash; Note: Developed for use with <em>TH1D*</em> and <em>TH1F*</em> only <br  />
  &ndash; Example: <br  />
  </p><div class="fragment"><div class="line">TH1D* h = <span class="keyword">new</span> TH1D(<span class="stringliteral">&quot;h&quot;</span>, <span class="stringliteral">&quot;h&quot;</span>, 24, -3.5, 3.5);  </div>
@@ -206,7 +206,9 @@ Functions</h2></td></tr>
 
 <p>Shortcut for creating TEntryLists. </p>
 <p>Shortcut for creating a TEntryList from a TTree and a selection string. <br  />
- </p><dl class="params"><dt>Parameters</dt><dd>
+ Example: </p><div class="fragment"><div class="line"><span class="comment">// for some TTree* T containing a TBranch named &quot;x&quot;:</span></div>
+<div class="line">TEntryList *eL = <a class="code" href="namespaceTDuvallUtils.html#a3f0fd37a1b28c9cf5c02cbefa1f48711">TDuvallUtils::EntryList</a>(<span class="stringliteral">&quot;x&gt;10.5&quot;</span>,T);</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">selection</td><td>&ndash; same as for TTree:Draw() </td></tr>
     <tr><td class="paramname">T</td><td>&ndash; pointer to the desired <em>TTree</em> </td></tr>
@@ -289,12 +291,12 @@ Functions</h2></td></tr>
 <p>Scan a TCollection for an object whose name matches a regex. </p>
 <p>Scan a TCollection (<em>TList, *TObjArray, etc.</em>) for an object whose name matches a regex. <br  />
  ROOT's builtins can't search by PATTERN. <br  />
- <em>Note: It's hard to believe this isn't already a builtin function for all classes inheriting from TCollection; but if it exists, I haven't found it.</em> </p><div class="fragment"><div class="line">TObject* <a class="code" href="namespaceTDuvallUtils.html#a913fd86508e84b86af27086a8d89fde3">FindMatchingObjects</a>( TCollection *clxn, TRegexp regex, Bool_t caseSensitive=KFALSE )         <span class="comment">// or</span></div>
-<div class="line">TObject* <a class="code" href="namespaceTDuvallUtils.html#a913fd86508e84b86af27086a8d89fde3">FindMatchingObjects</a>( TCollection *clxn, <span class="keyword">const</span> <span class="keywordtype">char</span>* patter, Bool_t caseSensitive=KFALSEn )  </div>
+ <em>Note: It's hard to believe this isn't already a builtin function for all classes inheriting from TCollection; but if it exists, I haven't found it.</em> </p><div class="fragment"><div class="line">TObject* <a class="code" href="namespaceTDuvallUtils.html#a913fd86508e84b86af27086a8d89fde3">FindMatchingObjects</a>( TCollection *colxn, TRegexp regex, Bool_t caseSensitive=KFALSE )         <span class="comment">// or</span></div>
+<div class="line">TObject* <a class="code" href="namespaceTDuvallUtils.html#a913fd86508e84b86af27086a8d89fde3">FindMatchingObjects</a>( TCollection *colxn, <span class="keyword">const</span> <span class="keywordtype">char</span>* patter, Bool_t caseSensitive=KFALSEn )  </div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">colxn</td><td>&ndash; pointer to the desired <em>TCollection</em> object </td></tr>
-    <tr><td class="paramname">pattern(RE)</td><td>&ndash; <em>char*</em> or <em>TRegexp</em> describing search pattern </td></tr>
+    <tr><td class="paramname">patternRE</td><td>&ndash; <em>char*</em> or <em>TRegexp</em> describing search pattern </td></tr>
     <tr><td class="paramname">caseSensitive</td><td>&ndash; <em>Bool_t</em> indicating whether the search should be case-sensitive </td></tr>
   </table>
   </dd>
@@ -337,8 +339,8 @@ Functions</h2></td></tr>
 <p>List global variables matching a specified type. </p>
 <p>List global variables whose type matches a specified pattern. <br  />
  ROOT's builtins can't search by PATTERN. <br  />
- Examples: </p><div class="fragment"><div class="line"><a class="code" href="namespaceTDuvallUtils.html#a0a6780f1deaf21b2caab327bf93926b3">FindVarsOfType</a>(<span class="stringliteral">&quot;canvas&quot;</span>);           <span class="comment">// or</span></div>
-<div class="line">TList *objarrList = <a class="code" href="namespaceTDuvallUtils.html#a0a6780f1deaf21b2caab327bf93926b3">FindVarsOfType</a>(<span class="stringliteral">&quot;TObjArray&quot;</span>);</div>
+ Examples: </p><div class="fragment"><div class="line"><a class="code" href="namespaceTDuvallUtils.html#a0a6780f1deaf21b2caab327bf93926b3">TDuvallUtils::FindVarsOfType</a>(<span class="stringliteral">&quot;canvas&quot;</span>);           <span class="comment">// or</span></div>
+<div class="line">TList *objarrList = <a class="code" href="namespaceTDuvallUtils.html#a0a6780f1deaf21b2caab327bf93926b3">TDuvallUtils::FindVarsOfType</a>(<span class="stringliteral">&quot;TObjArray&quot;</span>);</div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">varType</td><td>&ndash; search string <br  />
@@ -374,7 +376,21 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Return a list of files matching a pattern. </p>
-<p>Return a TList of TSystemFiles in the current (system) directory whose names match a pattern. </p>
+<p>Return a TList of TSystemFiles in the current (system) directory whose names match a pattern. <br  />
+ Example: Return a list of all files in <code>./Dataruns</code> named <code>Datarun0*.root</code>: </p><div class="fragment"><div class="line">TList *fileList = <a class="code" href="namespaceTDuvallUtils.html#a0397718fcd2627a314522a9c65269536">TDuvallUtils::ListFiles</a>(<span class="stringliteral">&quot;Dataruns/Datarun0.*\.root&quot;</span>);</div>
+<div class="line">fileList-&gt;ls();</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern</td><td>&ndash; filename pattern to search, in <em>TRegexp</em> format </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">fL</td><td>&ndash; TList* of matching <em>TSystemFile</em> objects </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -396,7 +412,7 @@ Functions</h2></td></tr>
 <p>Shortcut to load all keys from the current file into memory <em>! USE WITH CAUTION !</em> </p>
 <p>Load all keys in current directory into memory <br  />
  <b>!!! USE WITH CAUTION !!!</b> <br  />
- <b>Large files will overload memory and crash</b> </p>
+ <b>Large files can overload memory and crash</b> </p>
 
 </div>
 </div>
@@ -429,7 +445,7 @@ Functions</h2></td></tr>
 <p>Return an array of logarithmically-spaced values. </p>
 <p>Wonderful shortcut for setting up log-binned histograms. <br  />
  Lightly adapted from code graciously provided by Marc F. Bergevin. <br  />
- Example: </p><div class="fragment"><div class="line">Double_t *xBins = <a class="code" href="namespaceTDuvallUtils.html#a87fe2f8028da1318876d6c427745adea">LogBins</a>(1.e-1, 1.e5);</div>
+ Example: </p><div class="fragment"><div class="line">Double_t *xBins = <a class="code" href="namespaceTDuvallUtils.html#a87fe2f8028da1318876d6c427745adea">TDuvallUtils::LogBins</a>(1.e-1, 1.e5);</div>
 <div class="line">TH1D *h = <span class="keyword">new</span> TH1D(<span class="stringliteral">&quot;h&quot;</span>, <span class="stringliteral">&quot;h&quot;</span>, xBins);</div>
 <div class="line">h-&gt;FillRandom(<span class="stringliteral">&quot;landau&quot;</span>);</div>
 <div class="line">h-&gt;Draw();</div>
@@ -453,13 +469,28 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Print nicely-formatted summary of object's TBranches. </p>
-<p>Print a TTree's branches in a format that is easier to scan visually than TTree::GetListOfBranches()-&gt;ls(). </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Print nicely-formatted summary of <em>obj</em>'s TBranches. </p>
+<p>Print a TTree's branches in a format that is easier to scan visually than TTree::GetListOfBranches()-&gt;ls(). <br  />
+ For a full explanation of the data-type codes, see the main <em>TTree</em> documentation or the comments in <code>TTree.cxx</code> under your your $ROOTSYS directory. <br  />
+ Common data types: <br  />
+</p><ul>
+<li>F : 32-bit float (Float_t) <br  />
+</li>
+<li>D : 64-bit float (Double_t) <br  />
+</li>
+<li>C : null-terminated character string (char array, TString) <br  />
+</li>
+<li>O : boolean (Bool_t) <br  />
+</li>
+<li>&ndash; : compound data type (e.g., <em>TVector3</em>, <em>TMatrixD</em>, etc.) <br  />
+ <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">obj</td><td>&ndash; <em>TTree*</em> or <em>TBranch*</em> </td></tr>
   </table>
   </dd>
 </dl>
+</li>
+</ul>
 
 </div>
 </div>
@@ -540,7 +571,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">h_out</td><td>&ndash; new "radar" plot (*TH2D*) </td></tr>
+    <tr><td class="paramname">h_out</td><td>&ndash; new radar plot (TH2D) </td></tr>
   </table>
   </dd>
 </dl>
@@ -699,10 +730,12 @@ Functions</h2></td></tr>
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="anamespaceTDuvallUtils_html_a0a6780f1deaf21b2caab327bf93926b3"><div class="ttname"><a href="namespaceTDuvallUtils.html#a0a6780f1deaf21b2caab327bf93926b3">TDuvallUtils::FindVarsOfType</a></div><div class="ttdeci">TList * FindVarsOfType(const char *varType=&quot;&quot;, Bool_t kCaseSensitive=kFALSE)</div><div class="ttdoc">List global variables matching a specified type.</div><div class="ttdef"><b>Definition:</b> TDuvallUtils.cxx:211</div></div>
-<div class="ttc" id="anamespaceTDuvallUtils_html_a87fe2f8028da1318876d6c427745adea"><div class="ttname"><a href="namespaceTDuvallUtils.html#a87fe2f8028da1318876d6c427745adea">TDuvallUtils::LogBins</a></div><div class="ttdeci">Double_t * LogBins(Double_t xmin=1.e-1, Double_t xmax=1.e2)</div><div class="ttdoc">Return an array of logarithmically-spaced values.</div><div class="ttdef"><b>Definition:</b> TDuvallUtils.cxx:311</div></div>
-<div class="ttc" id="anamespaceTDuvallUtils_html_a913fd86508e84b86af27086a8d89fde3"><div class="ttname"><a href="namespaceTDuvallUtils.html#a913fd86508e84b86af27086a8d89fde3">TDuvallUtils::FindMatchingObjects</a></div><div class="ttdeci">TList * FindMatchingObjects(TCollection *colxn, TRegexp patternRE)</div><div class="ttdoc">Scan a TCollection for an object whose name matches a regex.</div><div class="ttdef"><b>Definition:</b> TDuvallUtils.cxx:161</div></div>
+<div class="ttc" id="anamespaceTDuvallUtils_html_a3f0fd37a1b28c9cf5c02cbefa1f48711"><div class="ttname"><a href="namespaceTDuvallUtils.html#a3f0fd37a1b28c9cf5c02cbefa1f48711">TDuvallUtils::EntryList</a></div><div class="ttdeci">TEntryList * EntryList(const char *selection, TTree *T=0)</div><div class="ttdoc">Shortcut for creating TEntryLists.</div><div class="ttdef"><b>Definition:</b> TDuvallUtils.cxx:69</div></div>
+<div class="ttc" id="anamespaceTDuvallUtils_html_a0a6780f1deaf21b2caab327bf93926b3"><div class="ttname"><a href="namespaceTDuvallUtils.html#a0a6780f1deaf21b2caab327bf93926b3">TDuvallUtils::FindVarsOfType</a></div><div class="ttdeci">TList * FindVarsOfType(const char *varType=&quot;&quot;, Bool_t kCaseSensitive=kFALSE)</div><div class="ttdoc">List global variables matching a specified type.</div><div class="ttdef"><b>Definition:</b> TDuvallUtils.cxx:216</div></div>
+<div class="ttc" id="anamespaceTDuvallUtils_html_a87fe2f8028da1318876d6c427745adea"><div class="ttname"><a href="namespaceTDuvallUtils.html#a87fe2f8028da1318876d6c427745adea">TDuvallUtils::LogBins</a></div><div class="ttdeci">Double_t * LogBins(Double_t xmin=1.e-1, Double_t xmax=1.e2)</div><div class="ttdoc">Return an array of logarithmically-spaced values.</div><div class="ttdef"><b>Definition:</b> TDuvallUtils.cxx:323</div></div>
+<div class="ttc" id="anamespaceTDuvallUtils_html_a913fd86508e84b86af27086a8d89fde3"><div class="ttname"><a href="namespaceTDuvallUtils.html#a913fd86508e84b86af27086a8d89fde3">TDuvallUtils::FindMatchingObjects</a></div><div class="ttdeci">TList * FindMatchingObjects(TCollection *colxn, TRegexp patternRE)</div><div class="ttdoc">Scan a TCollection for an object whose name matches a regex.</div><div class="ttdef"><b>Definition:</b> TDuvallUtils.cxx:166</div></div>
 <div class="ttc" id="anamespaceTDuvallUtils_html_a14741cba93d7e366d04b44f141612df1"><div class="ttname"><a href="namespaceTDuvallUtils.html#a14741cba93d7e366d04b44f141612df1">TDuvallUtils::DumpHist</a></div><div class="ttdeci">void DumpHist(TH1 *h)</div><div class="ttdoc">Dump histogram to terminal.</div><div class="ttdef"><b>Definition:</b> TDuvallUtils.cxx:35</div></div>
+<div class="ttc" id="anamespaceTDuvallUtils_html_a0397718fcd2627a314522a9c65269536"><div class="ttname"><a href="namespaceTDuvallUtils.html#a0397718fcd2627a314522a9c65269536">TDuvallUtils::ListFiles</a></div><div class="ttdeci">TList * ListFiles(const char *pattern=&quot;.*\.root&quot;)</div><div class="ttdoc">Return a list of files matching a pattern.</div><div class="ttdef"><b>Definition:</b> TDuvallUtils.cxx:269</div></div>
 <!-- start footer part -->
 		<script src="custom.js"></script>
 	</body>

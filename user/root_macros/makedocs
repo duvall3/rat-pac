@@ -25,19 +25,23 @@
 # general
 NULL=/dev/null
 ERR=/dev/stderr
+LOGFILE=makedocs.log
 
 # control for aliases
 ECHO="$(which echo) -e"
+DOXYGEN=$(which doxygen)
+TEE=$(which tee)
+VIM=$(which vim)
 
 # define usage
 usage() {
-  $ECHO "Usage: makedocs [-h|-u] "
-  $ECHO "compile and (optionally) update documentation for 'Tools for Reactor-Antineutrino Studies in RAT-PAC'"
-  $ECHO
-  $ECHO "Options:"
-  $ECHO "  -h\tShow this help message and exit"
-  $ECHO "  -u\tUpdate doc files on uhunix"
-  $ECHO
+  $$ECHO "Usage: makedocs [-h|-u] "
+  $$ECHO "compile and (optionally) update documentation for 'Tools for Reactor-Antineutrino Studies in RAT-PAC'"
+  $$ECHO
+  $$ECHO "Options:"
+  $$ECHO "  -h\tShow this help message and exit"
+  $$ECHO "  -u\tUpdate doc files on uhunix"
+  $$ECHO
 }
 
 # process options
@@ -52,7 +56,7 @@ while getopts "hu" OPTIONS; do
       SEND_UPDATE=true
       ;;
     *)
-      $ECHO
+      $$ECHO
       usage
       exit 11
       ;;
@@ -64,21 +68,21 @@ done
 ## MAIN
 
 # run doxygen
-doxygen Doxyfile
+$DOXYGEN Doxyfile | $TEE $LOGFILE
 
 # un-convert certain html sequences in doxygen's output
 FILE_LIST=( doc/html/{md_README,md_ReferenceMatching}.html )
 for FILE in ${FILE_LIST[*]}; do
-  vim $FILE -c ":call FixDoxyChars()" -c ":wq"
+  $VIM $FILE -c ":call FixDoxyChars()" -c ":wq"
 done
 
 # update if indicated
 UHU_DIR=$HOME/uhunix/public_html
 if $SEND_UPDATE; then
-  echo "Updating doc files on Web server..."
+  $ECHO "Updating doc files on Web server..."
   cd $UHU_DIR
   ./update_rattools_doc.sh
-  if [ $? -eq 0 ]; then echo "Done."; fi
+  if [ $? -eq 0 ]; then $ECHO "Done."; fi
   cd - > $NULL
 fi
 
@@ -88,9 +92,9 @@ fi
 # all pau!   )
 EXIT_STATUS=${EXIT_STATUS:-0}
 if [ $EXIT_STATUS -eq 0 ]; then
-  echo -e "\nSuccess!"
+  $ECHO -e "\nSuccess!"
 else
-  echo -e "\nExiting with error(s)."
+  $ECHO -e "\nExiting with error(s)."
 fi
 exit $EXIT_STATUS
 

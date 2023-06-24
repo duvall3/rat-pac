@@ -58,7 +58,7 @@ namespace TDuvallUtils {
   void			LoadAllKeys();							///< Shortcut to load all keys from the current file into memory *! USE WITH CAUTION !*
   Double_t*		LogBins(Double_t xmin=1.e-1, Double_t xmax=1.e2); 		///< Return an array of logarithmically-spaced values
   /* void		PrintArrayT(Int_t N, type T x);					///< Coming once I get the hang of templated functions */
-  void			PrintBranches(TObject *obj);					///< Print nicely-formatted summary of object's TBranches
+  void			PrintBranches(TObject *obj);					///< Print nicely-formatted summary of *obj*'s TBranches
   Double_t		Prob2Sig(Double_t prob);					///< Convert probability to significance
   TH2D*			RadarPlot(TH1D *h_in, Option_t *ho="cyllego", const Bool_t kNewCanvas=kTRUE);	///< Convert TH1D* to radar plot
   TH2D*			RadarPlot(TH1F *h_in,Option_t *ho="cyllego", const Bool_t kNewCanvas=kTRUE ) { return radarPlot((TH1D*)h_in,ho); }	///< Overload RadarPlot for TH1F

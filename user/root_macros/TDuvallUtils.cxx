@@ -23,7 +23,7 @@
 // DumpHist
 /**
  * Dump histogram data as (x,y) pairs to stdout, along with a rough ASCII representation of the graph.  
- *  -- Primarily for use in non-graphical sessions  
+ *  -- Primarily for use in non-graphical sessions (over `ssh`, for example)  
  *  -- Note: Developed for use with *TH1D\** and *TH1F\** only  
  *  -- Example:  
  *  ```cpp
@@ -57,6 +57,11 @@ void TDuvallUtils::DumpHist( TH1* h )
 // EntryList
 /** 
  * Shortcut for creating a TEntryList from a TTree and a selection string.  
+ * Example:
+ * ```cpp
+ * // for some TTree* T containing a TBranch named "x":
+ * TEntryList *eL = TDuvallUtils::EntryList("x>10.5",T);
+ * ```
  * \param selection -- same as for TTree:Draw()
  * \param T -- pointer to the desired *TTree*
  * \retval eList -- the resulting *TEntryList\**
@@ -148,11 +153,11 @@ void TDuvallUtils::ExportPlots( const char* filename, const TString kGraphicsSav
  *      for all classes inheriting from TCollection;
  *      but if it exists, I haven't found it.*
  * ```cpp
- * TObject* FindMatchingObjects( TCollection *clxn, TRegexp regex, Bool_t caseSensitive=KFALSE )         // or
- * TObject* FindMatchingObjects( TCollection *clxn, const char* patter, Bool_t caseSensitive=KFALSEn )  
+ * TObject* FindMatchingObjects( TCollection *colxn, TRegexp regex, Bool_t caseSensitive=KFALSE )         // or
+ * TObject* FindMatchingObjects( TCollection *colxn, const char* patter, Bool_t caseSensitive=KFALSEn )  
  * ```
  * \param colxn -- pointer to the desired *TCollection* object
- * \param pattern(RE) -- *char\** or *TRegexp* describing search pattern 
+ * \param patternRE -- *char\** or *TRegexp* describing search pattern 
  * \param caseSensitive -- *Bool_t* indicating whether the search should be case-sensitive
  * \retval matchingObjs -- *TList\** of matching objects 
  */
@@ -201,8 +206,8 @@ TList* TDuvallUtils::FindMatchingObjects( TCollection* colxn, TRegexp patternRE 
  * ROOT's builtins can't search by PATTERN.  
  * Examples:
  * ```cpp
- * FindVarsOfType("canvas");           // or
- * TList *objarrList = FindVarsOfType("TObjArray");
+ * TDuvallUtils::FindVarsOfType("canvas");           // or
+ * TList *objarrList = TDuvallUtils::FindVarsOfType("TObjArray");
  * ```
  * \param varType -- search string  
  * \param kCaseSensitive -- whether search is case-sensitive
@@ -252,7 +257,14 @@ TList* TDuvallUtils::FindVarsOfType( const char* varType, Bool_t kCaseSensitive 
 /**
  * Return a TList of TSystemFiles
  *   in the current (system) directory whose names
- *   match a pattern.
+ *   match a pattern.  
+ * Example:  Return a list of all files in `./Dataruns` named `Datarun0*.root`:
+ * ```cpp
+ * TList *fileList = TDuvallUtils::ListFiles("Dataruns/Datarun0.*\.root");
+ * fileList->ls();
+ * ```
+ * \param pattern -- filename pattern to search, in *TRegexp* format
+ * \retval fL -- TList* of matching *TSystemFile* objects
  */
 TList* TDuvallUtils::ListFiles( const char* pattern )
 {
@@ -279,7 +291,7 @@ TList* TDuvallUtils::ListFiles( const char* pattern )
 /**
  * Load all keys in current directory into memory  
  * **!!! USE WITH CAUTION !!!**  
- * **Large files will overload memory and crash**
+ * **Large files can overload memory and crash**
  */
 void TDuvallUtils::LoadAllKeys()
 {
@@ -301,7 +313,7 @@ void TDuvallUtils::LoadAllKeys()
  * Lightly adapted from code graciously provided by Marc F. Bergevin.  
  * Example:
  * ```cpp
- * Double_t *xBins = LogBins(1.e-1, 1.e5);
+ * Double_t *xBins = TDuvallUtils::LogBins(1.e-1, 1.e5);
  * TH1D *h = new TH1D("h", "h", xBins);
  * h->FillRandom("landau");
  * h->Draw();
@@ -336,7 +348,15 @@ Double_t* TDuvallUtils::LogBins( Double_t xmin, Double_t xmax )
 // PrintBranches
 /**
  * Print a TTree's branches in a format that is
- *   easier to scan visually than TTree::GetListOfBranches()->ls().
+ *   easier to scan visually than TTree::GetListOfBranches()->ls().  
+ * For a full explanation of the data-type codes, see the main *TTree* documentation
+ *   or the comments in `TTree.cxx` under your your $ROOTSYS directory.  
+ * Common data types:  
+ * - F : 32-bit float (Float_t)  
+ * - D : 64-bit float (Double_t)  
+ * - C : null-terminated character string (char array, TString)  
+ * - O : boolean (Bool_t)  
+ * - -- : compound data type (e.g., *TVector3*, *TMatrixD*, etc.)  
  * \param obj -- *TTree\** or *TBranch\** 
  */
 void TDuvallUtils::PrintBranches(TObject *obj)
@@ -406,7 +426,7 @@ Double_t TDuvallUtils::Prob2Sig( Double_t prob )
  * \param ho -- drawing option(s)
  * \param kNewCanvas -- when *kTRUE*, creates a new *TCanvas* rather than
  *   drawing over the current graphics pad
- * \retval h_out -- new "radar" plot (*TH2D\*)
+ * \retval h_out -- new radar plot (TH2D)
  */
 TH2D* TDuvallUtils::RadarPlot( TH1D *h_in, Option_t *ho, const Bool_t kNewCanvas )
 {

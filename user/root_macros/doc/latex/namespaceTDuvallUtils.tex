@@ -25,7 +25,7 @@ void \mbox{\hyperlink{namespaceTDuvallUtils_abd641659d7dfb06fe87f0cc66edbe47e}{L
 Double\+\_\+t $\ast$ \mbox{\hyperlink{namespaceTDuvallUtils_a87fe2f8028da1318876d6c427745adea}{Log\+Bins}} (Double\+\_\+t xmin=1.e-\/1, Double\+\_\+t xmax=1.e2)
 \begin{DoxyCompactList}\small\item\em Return an array of logarithmically-\/spaced values. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{namespaceTDuvallUtils_a02319b2f5f0477b46e4211d70d6c85c5}{Print\+Branches}} (T\+Object $\ast$obj)
-\begin{DoxyCompactList}\small\item\em Print nicely-\/formatted summary of object\textquotesingle{}s T\+Branches. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Print nicely-\/formatted summary of {\itshape obj}\textquotesingle{}s T\+Branches. \end{DoxyCompactList}\item 
 Double\+\_\+t \mbox{\hyperlink{namespaceTDuvallUtils_aebfbb014b8f13cb1df197138169164fa}{Prob2\+Sig}} (Double\+\_\+t prob)
 \begin{DoxyCompactList}\small\item\em Convert probability to significance. \end{DoxyCompactList}\item 
 T\+H2D $\ast$ \mbox{\hyperlink{namespaceTDuvallUtils_af7d9728a4345831814789bd42e272c1e}{Radar\+Plot}} (T\+H1D $\ast$h\+\_\+in, Option\+\_\+t $\ast$ho=\char`\"{}cyllego\char`\"{}, const Bool\+\_\+t k\+New\+Canvas=k\+T\+R\+UE)
@@ -87,7 +87,7 @@ Library of useful general-\/purpose functions for working with R\+O\+OT / R\+A\+
 Dump histogram to terminal. 
 
 Dump histogram data as (x,y) pairs to stdout, along with a rough A\+S\+C\+II representation of the graph. ~\newline
- -- Primarily for use in non-\/graphical sessions ~\newline
+ -- Primarily for use in non-\/graphical sessions (over {\ttfamily ssh}, for example) ~\newline
  -- Note\+: Developed for use with {\itshape T\+H1\+D$\ast$} and {\itshape T\+H1\+F$\ast$} only ~\newline
  -- Example\+: ~\newline
  
@@ -107,7 +107,14 @@ Dump histogram data as (x,y) pairs to stdout, along with a rough A\+S\+C\+II rep
 Shortcut for creating T\+Entry\+Lists. 
 
 Shortcut for creating a T\+Entry\+List from a T\+Tree and a selection string. ~\newline
- 
+ Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// for some TTree* T containing a TBranch named "x":}}
+\DoxyCodeLine{TEntryList *eL = \mbox{\hyperlink{namespaceTDuvallUtils_a3f0fd37a1b28c9cf5c02cbefa1f48711}{TDuvallUtils::EntryList}}(\textcolor{stringliteral}{"x>10.5"},T);}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}{Parameters}
 {\em selection} & -- same as for T\+Tree\+:Draw() \\
 \hline
@@ -151,8 +158,8 @@ Scan a T\+Collection ({\itshape T\+List, $\ast$\+T\+Obj\+Array, etc.}) for an ob
  R\+O\+OT\textquotesingle{}s builtins can\textquotesingle{}t search by P\+A\+T\+T\+E\+RN. ~\newline
  {\itshape Note\+: It\textquotesingle{}s hard to believe this isn\textquotesingle{}t already a builtin function for all classes inheriting from T\+Collection; but if it exists, I haven\textquotesingle{}t found it.} 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{TObject* \mbox{\hyperlink{namespaceTDuvallUtils_a913fd86508e84b86af27086a8d89fde3}{FindMatchingObjects}}( TCollection *clxn, TRegexp regex, Bool\_t caseSensitive=KFALSE )         \textcolor{comment}{// or}}
-\DoxyCodeLine{TObject* \mbox{\hyperlink{namespaceTDuvallUtils_a913fd86508e84b86af27086a8d89fde3}{FindMatchingObjects}}( TCollection *clxn, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* patter, Bool\_t caseSensitive=KFALSEn )  }
+\DoxyCodeLine{TObject* \mbox{\hyperlink{namespaceTDuvallUtils_a913fd86508e84b86af27086a8d89fde3}{FindMatchingObjects}}( TCollection *colxn, TRegexp regex, Bool\_t caseSensitive=KFALSE )         \textcolor{comment}{// or}}
+\DoxyCodeLine{TObject* \mbox{\hyperlink{namespaceTDuvallUtils_a913fd86508e84b86af27086a8d89fde3}{FindMatchingObjects}}( TCollection *colxn, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* patter, Bool\_t caseSensitive=KFALSEn )  }
 \end{DoxyCode}
 
 
@@ -160,7 +167,7 @@ Scan a T\+Collection ({\itshape T\+List, $\ast$\+T\+Obj\+Array, etc.}) for an ob
 \begin{DoxyParams}{Parameters}
 {\em colxn} & -- pointer to the desired {\itshape T\+Collection} object \\
 \hline
-{\em pattern(\+R\+E)} & -- {\itshape char$\ast$} or {\itshape T\+Regexp} describing search pattern \\
+{\em pattern\+RE} & -- {\itshape char$\ast$} or {\itshape T\+Regexp} describing search pattern \\
 \hline
 {\em case\+Sensitive} & -- {\itshape Bool\+\_\+t} indicating whether the search should be case-\/sensitive \\
 \hline
@@ -184,8 +191,8 @@ List global variables whose type matches a specified pattern. ~\newline
  R\+O\+OT\textquotesingle{}s builtins can\textquotesingle{}t search by P\+A\+T\+T\+E\+RN. ~\newline
  Examples\+: 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{namespaceTDuvallUtils_a0a6780f1deaf21b2caab327bf93926b3}{FindVarsOfType}}(\textcolor{stringliteral}{"canvas"});           \textcolor{comment}{// or}}
-\DoxyCodeLine{TList *objarrList = \mbox{\hyperlink{namespaceTDuvallUtils_a0a6780f1deaf21b2caab327bf93926b3}{FindVarsOfType}}(\textcolor{stringliteral}{"TObjArray"});}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceTDuvallUtils_a0a6780f1deaf21b2caab327bf93926b3}{TDuvallUtils::FindVarsOfType}}(\textcolor{stringliteral}{"canvas"});           \textcolor{comment}{// or}}
+\DoxyCodeLine{TList *objarrList = \mbox{\hyperlink{namespaceTDuvallUtils_a0a6780f1deaf21b2caab327bf93926b3}{TDuvallUtils::FindVarsOfType}}(\textcolor{stringliteral}{"TObjArray"});}
 \end{DoxyCode}
 
 
@@ -213,7 +220,25 @@ List global variables whose type matches a specified pattern. ~\newline
 
 Return a list of files matching a pattern. 
 
-Return a T\+List of T\+System\+Files in the current (system) directory whose names match a pattern. \mbox{\Hypertarget{namespaceTDuvallUtils_abd641659d7dfb06fe87f0cc66edbe47e}\label{namespaceTDuvallUtils_abd641659d7dfb06fe87f0cc66edbe47e}} 
+Return a T\+List of T\+System\+Files in the current (system) directory whose names match a pattern. ~\newline
+ Example\+: Return a list of all files in {\ttfamily ./\+Dataruns} named {\ttfamily Datarun0$\ast$.root}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{TList *fileList = \mbox{\hyperlink{namespaceTDuvallUtils_a0397718fcd2627a314522a9c65269536}{TDuvallUtils::ListFiles}}(\textcolor{stringliteral}{"Dataruns/Datarun0.*\(\backslash\).root"});}
+\DoxyCodeLine{fileList-\/>ls();}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em pattern} & -- filename pattern to search, in {\itshape T\+Regexp} format \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em fL} & -- T\+List$\ast$ of matching {\itshape T\+System\+File} objects \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{namespaceTDuvallUtils_abd641659d7dfb06fe87f0cc66edbe47e}\label{namespaceTDuvallUtils_abd641659d7dfb06fe87f0cc66edbe47e}} 
 \index{TDuvallUtils@{TDuvallUtils}!LoadAllKeys@{LoadAllKeys}}
 \index{LoadAllKeys@{LoadAllKeys}!TDuvallUtils@{TDuvallUtils}}
 \doxysubsubsection{\texorpdfstring{LoadAllKeys()}{LoadAllKeys()}}
@@ -225,7 +250,7 @@ Shortcut to load all keys from the current file into memory {\itshape ! U\+SE W\
 
 Load all keys in current directory into memory ~\newline
  {\bfseries{!!! U\+SE W\+I\+TH C\+A\+U\+T\+I\+ON !!!}} ~\newline
- {\bfseries{Large files will overload memory and crash}} \mbox{\Hypertarget{namespaceTDuvallUtils_a87fe2f8028da1318876d6c427745adea}\label{namespaceTDuvallUtils_a87fe2f8028da1318876d6c427745adea}} 
+ {\bfseries{Large files can overload memory and crash}} \mbox{\Hypertarget{namespaceTDuvallUtils_a87fe2f8028da1318876d6c427745adea}\label{namespaceTDuvallUtils_a87fe2f8028da1318876d6c427745adea}} 
 \index{TDuvallUtils@{TDuvallUtils}!LogBins@{LogBins}}
 \index{LogBins@{LogBins}!TDuvallUtils@{TDuvallUtils}}
 \doxysubsubsection{\texorpdfstring{LogBins()}{LogBins()}}
@@ -239,7 +264,7 @@ Wonderful shortcut for setting up log-\/binned histograms. ~\newline
  Lightly adapted from code graciously provided by Marc F. Bergevin. ~\newline
  Example\+: 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Double\_t *xBins = \mbox{\hyperlink{namespaceTDuvallUtils_a87fe2f8028da1318876d6c427745adea}{LogBins}}(1.e-\/1, 1.e5);}
+\DoxyCodeLine{Double\_t *xBins = \mbox{\hyperlink{namespaceTDuvallUtils_a87fe2f8028da1318876d6c427745adea}{TDuvallUtils::LogBins}}(1.e-\/1, 1.e5);}
 \DoxyCodeLine{TH1D *h = \textcolor{keyword}{new} TH1D(\textcolor{stringliteral}{"h"}, \textcolor{stringliteral}{"h"}, xBins);}
 \DoxyCodeLine{h-\/>FillRandom(\textcolor{stringliteral}{"landau"});}
 \DoxyCodeLine{h-\/>Draw();}
@@ -253,14 +278,29 @@ Wonderful shortcut for setting up log-\/binned histograms. ~\newline
 
 
 
-Print nicely-\/formatted summary of object\textquotesingle{}s T\+Branches. 
+Print nicely-\/formatted summary of {\itshape obj}\textquotesingle{}s T\+Branches. 
 
-Print a T\+Tree\textquotesingle{}s branches in a format that is easier to scan visually than T\+Tree\+::\+Get\+List\+Of\+Branches()-\/$>$ls(). 
+Print a T\+Tree\textquotesingle{}s branches in a format that is easier to scan visually than T\+Tree\+::\+Get\+List\+Of\+Branches()-\/$>$ls(). ~\newline
+ For a full explanation of the data-\/type codes, see the main {\itshape T\+Tree} documentation or the comments in {\ttfamily T\+Tree.\+cxx} under your your \$\+R\+O\+O\+T\+S\+YS directory. ~\newline
+ Common data types\+: ~\newline
+
+\begin{DoxyItemize}
+\item F \+: 32-\/bit float (Float\+\_\+t) ~\newline
+
+\item D \+: 64-\/bit float (Double\+\_\+t) ~\newline
+
+\item C \+: null-\/terminated character string (char array, T\+String) ~\newline
+
+\item O \+: boolean (Bool\+\_\+t) ~\newline
+
+\item -- \+: compound data type (e.\+g., {\itshape T\+Vector3}, {\itshape T\+MatrixD}, etc.) ~\newline
+ 
 \begin{DoxyParams}{Parameters}
 {\em obj} & -- {\itshape T\+Tree$\ast$} or {\itshape T\+Branch$\ast$} \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{namespaceTDuvallUtils_aebfbb014b8f13cb1df197138169164fa}\label{namespaceTDuvallUtils_aebfbb014b8f13cb1df197138169164fa}} 
+
+\end{DoxyItemize}\mbox{\Hypertarget{namespaceTDuvallUtils_aebfbb014b8f13cb1df197138169164fa}\label{namespaceTDuvallUtils_aebfbb014b8f13cb1df197138169164fa}} 
 \index{TDuvallUtils@{TDuvallUtils}!Prob2Sig@{Prob2Sig}}
 \index{Prob2Sig@{Prob2Sig}!TDuvallUtils@{TDuvallUtils}}
 \doxysubsubsection{\texorpdfstring{Prob2Sig()}{Prob2Sig()}}
@@ -303,7 +343,7 @@ Simple macro to redraw any 1-\/D histogram as a radar plot. ~\newline
 \end{DoxyParams}
 
 \begin{DoxyRetVals}{Return values}
-{\em h\+\_\+out} & -- new \char`\"{}radar\char`\"{} plot ($\ast$\+T\+H2\+D$\ast$) \\
+{\em h\+\_\+out} & -- new radar plot (T\+H2D) \\
 \hline
 \end{DoxyRetVals}
 \mbox{\Hypertarget{namespaceTDuvallUtils_ad204b00910652611f7a0086da34a7e62}\label{namespaceTDuvallUtils_ad204b00910652611f7a0086da34a7e62}} 
