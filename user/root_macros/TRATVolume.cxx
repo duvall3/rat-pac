@@ -1,9 +1,4 @@
-// TRATVolume -- class for analyzing geometry from RAT-PAC ROOT file
-// -- NOTE: To be set properly, TRATVolume::FindAbsolutePosition() *MUST* be run
-//         after an object is created
-//    -- Example: TRATVolume v("water_shield"); v.FindAbsolutePosition();
-//    -- This does *not* need to be done manually if TRATVolume objects
-//         are created by TRATGeo::Build()
+// TRATVolume -- class for analyzing geometry volumes from RAT-PAC ROOT file
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 8/2021 ~ //
 // Updated 07/2022
 
@@ -31,6 +26,9 @@
 
 //______________________________________________________________________________
 // default ctor
+/**
+ * Empty ctor.
+ */
 TRATVolume::TRATVolume()
 {
   SetName(defaultName);
@@ -55,6 +53,11 @@ TRATVolume::TRATVolume()
 
 //______________________________________________________________________________
 // primary ctor
+/**
+ * Regular ctor.
+ * \param name -- input filename
+ * \param db -- pointer to RATDB in input file
+ */
 TRATVolume::TRATVolume( const char* name, const TMap *db )
 {
   // init DB and check for existence
@@ -106,6 +109,9 @@ TRATVolume::TRATVolume( const char* name, const TMap *db )
 
 //______________________________________________________________________________
 // SetVolume
+/**
+ * \param newNameChr -- name of new volume to fetch
+ */
 void TRATVolume::SetVolume(const char* newNameChr)
 {
   TString errLoc = TString::Format("%s::TRATVolume(const char* name)", defaultName.Data());
@@ -126,6 +132,16 @@ void TRATVolume::SetVolume(const char* newNameChr)
 
 //______________________________________________________________________________
 // FindAll
+/**
+ * Find the following volume parameters:
+ * - Experiment
+ * - VolumeType
+ * - Material
+ * - Density
+ * - Mother
+ * - Size
+ * - RelativePosition
+ */
 void TRATVolume::FindAll()
 {
   FindExperiment();
@@ -140,6 +156,9 @@ void TRATVolume::FindAll()
 
 //______________________________________________________________________________
 // FindExperiment
+/**
+ * Fetch the name of the RAT-PAC experiment.
+ */
 void TRATVolume::FindExperiment()
 {
   if ( fDB == 0x0 ) {
@@ -162,6 +181,9 @@ void TRATVolume::FindExperiment()
 
 //______________________________________________________________________________
 // FindMaterial
+/**
+ * Fetch the name of the RAT-PAC material.
+ */
 void TRATVolume::FindMaterial()
 {
   keyStrVol.Form("GEO[%s].material", fVolNameChr);
@@ -174,6 +196,9 @@ void TRATVolume::FindMaterial()
 
 //______________________________________________________________________________
 // FindDensity
+/**
+ * Fetch the densityvalue of the RAT-PAC material.
+ */
 void TRATVolume::FindDensity()
 {
   TString keyStr = TString::Format("MATERIAL[%s].density", fMaterial.Data());
@@ -187,6 +212,9 @@ void TRATVolume::FindDensity()
 
 //______________________________________________________________________________
 // FindVolumeType
+/**
+ * Fetch the name of the RAT-PAC volume type.
+ */
 void TRATVolume::FindVolumeType()
 {
   keyStrVol.Form("GEO[%s].type", fVolNameChr);
@@ -199,6 +227,9 @@ void TRATVolume::FindVolumeType()
 
 //______________________________________________________________________________
 // FindMother
+/**
+ * Fetch the mother RAT-PAC volume.
+ */
 void TRATVolume::FindMother()
 {
   keyStrVol.Form("GEO[%s].mother", fVolNameChr);
@@ -211,6 +242,9 @@ void TRATVolume::FindMother()
 
 //______________________________________________________________________________
 // FindSize
+/**
+ * Fetch the size vector of the RAT-PAC volume.
+ */
 void TRATVolume::FindSize()
 {
   TString valStrRelative;
@@ -254,6 +288,9 @@ void TRATVolume::FindSize()
 
 //______________________________________________________________________________
 // FindRelativePosition
+/**
+ * Fetch the relative-position vector of the RAT-PAC volume.
+ */
 void TRATVolume::FindRelativePosition()
 {
   TString valStrRelative;
@@ -280,6 +317,9 @@ void TRATVolume::FindRelativePosition()
 
 //______________________________________________________________________________
 // FindAbsolutePosition
+/**
+ * Fetch the absolute-position vector of the RAT-PAC volume.
+ */
 void TRATVolume::FindAbsolutePosition()
 {
   TRATVolume *motherVol;
@@ -313,6 +353,10 @@ void TRATVolume::FindAbsolutePosition()
 
 //______________________________________________________________________________
 // Area	// m^2	// currently box- and tube-type only
+/**
+ * Return the cross-sectional surface area of the volume in m^2.
+ * \retval A -- volume's cross-sectional surface area (m^2)
+ */
 Double_t TRATVolume::Area()
 {
   Double_t A;
@@ -332,6 +376,10 @@ Double_t TRATVolume::Area()
 
 //______________________________________________________________________________
 // Volume // m^3  // currently box- and tube-type only
+/**
+ * Return the volume of the volume in m^3.
+ * \retval A -- volume's volume (m^3)
+ */
 Double_t TRATVolume::Volume()
 {
   Double_t V;
@@ -351,6 +399,18 @@ Double_t TRATVolume::Volume()
 
 //______________________________________________________________________________
 // NuFlux
+/**
+ * Determine the *absolute electron-antineutrino flux per cm^2* for a given standoff (baseline)
+ *   from the reacor core(s) and a given reactor total antineutrino flux.  
+ * See ... for equivalent calculation using the reactor's thermal power instead.  
+ * *Note:* Assumes that the size of the reactor core(s) is/are very small
+ *   compared to the standoff, so that the incoming electron-antineutrinos
+ *   can be appropriately approximated by a  plane wave (i.e., incident nu_ebar
+ *   have uniform momentum direction).
+ * \param standoff -- distance from center of detector to center of reactor core(s) (cm)
+ * \param reactorNuRate -- reactor's total electron-antineutrino flux (nu_e_bar/s)
+ * \retval nuFlux -- electron-antineutrino flux (nu_e_bar/cm^2/s)
+ */
 Double_t TRATVolume::NuFlux( Double_t standoff, Double_t reactorNuRate )
 {
   Double_t nuFlux = reactorNuRate / ( 4 * TMath::Pi() * standoff**2 );
@@ -359,6 +419,20 @@ Double_t TRATVolume::NuFlux( Double_t standoff, Double_t reactorNuRate )
 
 //______________________________________________________________________________
 // IBDVolRate
+/**
+ * Determine the *predicted IBD rate per cm^3* for a given standoff (baseline)
+ *   from the reacor core(s), a given reactor total antineutrino flux,
+ *   and a given volumetric number density of H-1 nuclei in the target material.  
+ * See ... for equivalent calculation using the reactor's thermal power instead.  
+ * *Note:* Assumes that the size of the reactor core(s) is/are very small
+ *   compared to the standoff, so that the incoming electron-antineutrinos
+ *   can be appropriately approximated by a  plane wave (i.e., incident nu_ebar
+ *   have uniform momentum direction).
+ * \param standoff -- distance from center of detector to center of reactor core(s) (cm)
+ * \param reactorNuRate -- reactor's total electron-antineutrino flux (nu_e_bar/s)
+ * \param nH -- target material's density of H-1 nuclei (#/cm^3)
+ * \retval volRate -- predicted volumetric rate of IBD reactions (#/cm^3/s)
+ */
 // some typical values: standoff = 500 cm, reactorNuRate = 4e18 nu_e_bar/s, nH = 5.16e22 hydrogens/cm^3
 Double_t TRATVolume::IBDVolRate( Double_t standoff, Double_t reactorNuRate, Double_t nH )
 {
@@ -369,6 +443,7 @@ Double_t TRATVolume::IBDVolRate( Double_t standoff, Double_t reactorNuRate, Doub
 
 //______________________________________________________________________________
 // override Print
+/// Print base quantities.
 void TRATVolume::Print()
 {
   printf("\n");
@@ -395,6 +470,7 @@ void TRATVolume::Print()
 
 //______________________________________________________________________________
 // PrintDerived
+/// Print derived quantities.
 void TRATVolume::PrintDerived()
 {
   printf("\n");

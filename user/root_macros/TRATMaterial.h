@@ -1,5 +1,4 @@
 // TRATMaterial
-/// Class for calculating certain properties of materials
 // Primarily intended for:
 // -- use with RAT-PAC
 // -- calculating the MFP for neutron elastic scattering
@@ -31,29 +30,30 @@
 
 class TRATElement;
 
-class TRATMaterial : public TClass {
+class TRATMaterial : public TClass {							//< Class for calculating certain properties of materials
+/// Class for calculating certain properties of materials
 
 private:
   // members
-  TString		fMatName;							///< name of material
-  TObject*		fParent;							///< pointer to parent material
-  Bool_t		fkEval;								///< whether Evaluate() has been called on this object
-  Bool_t		fkComplete;							///< whether values needed to calculate MFP are all present
-  Int_t			fNComp;								///< number of component materials
-  TList*		fCompList;							///< list of component materials
-  /* Double_t		fDensityCGS;							///< material density in g/cm^3 */
-  /* Double_t		fDensityMKS;							///< material density in kg/m^3 */
-  Double_t		fDensity;							///< material density in g/cm^3
-  Double_t		fAMU;								///< molecular mass
-  /* TMatrixD		fComposition;							///< matrix describing %wt of component materials */
-  Double_t		fPctWt;								///< this material's %wt in parent material
-  TString		fTarget;							///< name of scattering target
-  /* Double_t		fTargetDensityCGS;						///< number density of scattering targets in #/cm^3 */
-  /* Double_t		fTargetDensityMKS;						///< number density of scattering targets in #/m^3 */
-  Double_t		fTargetDensity;							///< number density of scattering targets in #/cm^3
-  Double_t		fES_XS_B;							///< neutron elastic-scattering cross-section in barns
-  Double_t		fES_XS_C;							///< neutron elastic-scattering cross-section in cm^-2
-  Double_t		fMFP;								///< mean free path in cm
+  TString		fMatName;							//< name of material
+  TObject*		fParent;							//< pointer to parent material
+  Bool_t		fkEval;								//< whether Evaluate() has been called on this object
+  Bool_t		fkComplete;							//< whether values needed to calculate MFP are all present
+  Int_t			fNComp;								//< number of component materials
+  TList*		fCompList;							//< list of component materials
+  /* Double_t		fDensityCGS;							//< material density in g/cm^3 */
+  /* Double_t		fDensityMKS;							//< material density in kg/m^3 */
+  Double_t		fDensity;							//< material density in g/cm^3
+  Double_t		fAMU;								//< molecular mass
+  /* TMatrixD		fComposition;							//< matrix describing %wt of component materials */
+  Double_t		fPctWt;								//< this material's %wt in parent material
+  TString		fTarget;							//< name of scattering target
+  /* Double_t		fTargetDensityCGS;						//< number density of scattering targets in #/cm^3 */
+  /* Double_t		fTargetDensityMKS;						//< number density of scattering targets in #/m^3 */
+  Double_t		fTargetDensity;							//< number density of scattering targets in #/cm^3
+  Double_t		fES_XS_B;							//< neutron elastic-scattering cross-section in barns
+  Double_t		fES_XS_C;							//< neutron elastic-scattering cross-section in cm^-2
+  Double_t		fMFP;								//< mean free path in cm
 
 private:
   // internal methods
@@ -64,8 +64,8 @@ private:
   /* Bool_t		CheckComplete(); */
 public:
   // public methods
-  TRATMaterial();									///< Default ctor
-  TRATMaterial(const char* matName, Double_t targetDensity=0., Double_t ES_XS_B=0.);	///< Normal ctor
+  TRATMaterial();									//< Default ctor
+  TRATMaterial(const char* matName, Double_t targetDensity=0., Double_t ES_XS_B=0.);	//< Normal ctor
   // setters and getters
   void			SetMatName(TString newMatName) {fMatName=newMatName; SetName(TString::Format("TRATMaterial for %s",newMatName.Data()));}
   void			SetParent(TObject* newParent) {fParent=newParent;}
@@ -95,12 +95,12 @@ public:
   Double_t		GetMFP() {return fMFP;}
 
   // general
-  Double_t		CalculateTargetDensity();					///< calculate volumetric number-density of scattering targets
-  Bool_t		CheckComplete();						///< check if ready to run MFP calculation
-  Double_t		Evaluate();							///< calculate MFP
+  Double_t		CalculateTargetDensity();					//< calculate volumetric number-density of scattering targets
+  Bool_t		CheckComplete();						//< check if ready to run MFP calculation
+  Double_t		Evaluate();							//< calculate MFP
 
 // Integrating the TRATMaterial class into ROOT
-ClassDef(TRATMaterial,1) ///< with class version number
+ClassDef(TRATMaterial,1) //< with class version number
 
 }; //end class
 
@@ -111,17 +111,18 @@ ClassDef(TRATMaterial,1) ///< with class version number
 #ifndef TRATElement
 #define TRATElement
 
-class TRATElement : public TRATMaterial {
+class TRATElement : public TRATMaterial {						//< Class for calculating certain properties of elements
+/// Class for calculating certain properties of elements
 
 private:
   // members
-  TString		fElName;							///< name of element
-  Int_t			fAtomicNumber;							///< atomic number
-  Double_t		fAtomicMass;							///< atomic mass in AMU
-  Int_t			fTargetIsotope;							///< e.g., "252" for Cf-252
-  Double_t		fTargetAbundance;						///< isotopic abundance of target isotope
-  TVectorD		fIsoMasses;							///< vector of isotopic masses
-  TVectorD		fIsoAbundances;							///< vector of isotopic abundances
+  TString		fElName;							//< name of element
+  Int_t			fAtomicNumber;							//< atomic number
+  Double_t		fAtomicMass;							//< atomic mass in AMU
+  Int_t			fTargetIsotope;							//< e.g., "252" for Cf-252
+  Double_t		fTargetAbundance;						//< isotopic abundance of target isotope
+  TVectorD		fIsoMasses;							//< vector of isotopic masses
+  TVectorD		fIsoAbundances;							//< vector of isotopic abundances
 
 private:
   // internal methods
@@ -130,8 +131,8 @@ private:
 
 public:
   // public methods
-  TRATElement();									///< Default ctor
-  TRATElement(const char* elName);							///< Normal ctor
+  TRATElement();									//< Default ctor
+  TRATElement(const char* elName);							//< Normal ctor
   // setters and getters
   void			SetElName(TString newElName) {fElName=newElName;}
   void			SetAtomicNumber(Int_t newAtomicNumber) {fAtomicNumber=newAtomicNumber;}
@@ -150,11 +151,11 @@ public:
   void			SetIsoAbundances(TVectorD newIsoAbundances) {fIsoAbundances = newIsoAbundances;}
 
   // general
-  /* void			FillFromRATDB(TString elName=fElName);			///< fill data from RATDB */
-  void			FillFromRATDB(TString elName);					///< fill data from RATDB
+  /* void			FillFromRATDB(TString elName=fElName);			//< fill data from RATDB */
+  void			FillFromRATDB(TString elName);					//< fill data from RATDB
 
 // Integrating the TRATElement class into ROOT
-ClassDef(TRATElement,1) ///< with class version number
+ClassDef(TRATElement,1) //< with class version number
 
 }; //end class
 

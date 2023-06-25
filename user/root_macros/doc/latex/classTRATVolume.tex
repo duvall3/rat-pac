@@ -2,7 +2,7 @@
 \label{classTRATVolume}\index{TRATVolume@{TRATVolume}}
 
 
-Class for analyzing geometry from R\+A\+T-\/\+P\+AC R\+O\+OT file.  
+Class for analyzing geometry volumes from R\+A\+T-\/\+P\+AC R\+O\+OT file //\+D\+O\+C//...//.  
 
 
 
@@ -11,7 +11,8 @@ Class for analyzing geometry from R\+A\+T-\/\+P\+AC R\+O\+OT file.
 
 
 
-Inheritance diagram for T\+R\+A\+T\+Volume\+:\nopagebreak
+Inheritance diagram for T\+R\+A\+T\+Volume\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,7 +21,8 @@ Inheritance diagram for T\+R\+A\+T\+Volume\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for T\+R\+A\+T\+Volume\+:\nopagebreak
+Collaboration diagram for T\+R\+A\+T\+Volume\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -30,15 +32,14 @@ Collaboration diagram for T\+R\+A\+T\+Volume\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classTRATVolume_a9c083601be0e64cdd92a2a976796b2c2}\label{classTRATVolume_a9c083601be0e64cdd92a2a976796b2c2}} 
-{\bfseries T\+R\+A\+T\+Volume} (const char $\ast$vol\+Name\+Chr, const T\+Map $\ast$db)
+\mbox{\hyperlink{classTRATVolume_a08073d9d32d4b1c3aa489a88d748e8e1}{T\+R\+A\+T\+Volume}} ()
 \item 
-\mbox{\Hypertarget{classTRATVolume_a237261fbd8b3276bb7f1a7ad23684c81}\label{classTRATVolume_a237261fbd8b3276bb7f1a7ad23684c81}} 
-void {\bfseries Set\+Volume} (const char $\ast$new\+Name\+Chr)
+\mbox{\hyperlink{classTRATVolume_a9c083601be0e64cdd92a2a976796b2c2}{T\+R\+A\+T\+Volume}} (const char $\ast$vol\+Name\+Chr, const T\+Map $\ast$db)
 \item 
-\mbox{\Hypertarget{classTRATVolume_afa5b832d7dc34b260fa192e71ee30d95}\label{classTRATVolume_afa5b832d7dc34b260fa192e71ee30d95}} 
-void {\bfseries Find\+Absolute\+Position} ()
-\item 
+void \mbox{\hyperlink{classTRATVolume_a237261fbd8b3276bb7f1a7ad23684c81}{Set\+Volume}} (const char $\ast$new\+Name\+Chr)
+\begin{DoxyCompactList}\small\item\em Switch to a different volume and re-\/fill parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTRATVolume_afa5b832d7dc34b260fa192e71ee30d95}{Find\+Absolute\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Set volume absolute position. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classTRATVolume_a5888cd02e219a0592220eb7d92a118b2}\label{classTRATVolume_a5888cd02e219a0592220eb7d92a118b2}} 
 virtual const char $\ast$ {\bfseries Get\+Vol\+Name\+Chr} () const
 \item 
@@ -72,36 +73,22 @@ Double\+\_\+t {\bfseries Get\+Density} () const
 \mbox{\Hypertarget{classTRATVolume_ac3e11e958e7d5abff3507ce20cfb0e01}\label{classTRATVolume_ac3e11e958e7d5abff3507ce20cfb0e01}} 
 T\+String {\bfseries Get\+Mother} () const
 \item 
-\mbox{\Hypertarget{classTRATVolume_a44090e19b79da62ee713eefee15741e5}\label{classTRATVolume_a44090e19b79da62ee713eefee15741e5}} 
-T\+Vector3 $\ast$ {\bfseries Get\+Size} () const
-\item 
-\mbox{\Hypertarget{classTRATVolume_aa0ead96847aa23ef2355ecd93ccf5d56}\label{classTRATVolume_aa0ead96847aa23ef2355ecd93ccf5d56}} 
-Double\+\_\+t {\bfseries Get\+R\+Min} () const
-\item 
-\mbox{\Hypertarget{classTRATVolume_a3238d910e9937ba5713a430e90fe4ef6}\label{classTRATVolume_a3238d910e9937ba5713a430e90fe4ef6}} 
-Double\+\_\+t {\bfseries Get\+R\+Max} () const
-\item 
-\mbox{\Hypertarget{classTRATVolume_a800caf19d269caacabf0944d64ee9458}\label{classTRATVolume_a800caf19d269caacabf0944d64ee9458}} 
-Double\+\_\+t {\bfseries Get\+SizeZ} () const
-\item 
 \mbox{\Hypertarget{classTRATVolume_abaae43f4ec089f56aea25826f4d252ed}\label{classTRATVolume_abaae43f4ec089f56aea25826f4d252ed}} 
 T\+Vector3 $\ast$ {\bfseries Get\+Relative\+Position} () const
 \item 
 \mbox{\Hypertarget{classTRATVolume_a6b1295580749b116cfefafe35efe22cb}\label{classTRATVolume_a6b1295580749b116cfefafe35efe22cb}} 
 T\+Vector3 $\ast$ {\bfseries Get\+Absolute\+Position} () const
 \item 
-\mbox{\Hypertarget{classTRATVolume_a8e83f8f9ac9c85c426039cd3a79cc333}\label{classTRATVolume_a8e83f8f9ac9c85c426039cd3a79cc333}} 
-Double\+\_\+t {\bfseries Area} ()
-\item 
+Double\+\_\+t \mbox{\hyperlink{classTRATVolume_a8e83f8f9ac9c85c426039cd3a79cc333}{Area}} ()
+\begin{DoxyCompactList}\small\item\em m$^\wedge$2 // currently box-\/type only \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classTRATVolume_ad12c6e539eec18af73b2bce8e815fce4}\label{classTRATVolume_ad12c6e539eec18af73b2bce8e815fce4}} 
 Double\+\_\+t {\bfseries Area\+CM} ()
 \item 
 \mbox{\Hypertarget{classTRATVolume_a36157cd580692f4fcf0761863475604f}\label{classTRATVolume_a36157cd580692f4fcf0761863475604f}} 
 Double\+\_\+t {\bfseries Area\+MM} ()
 \item 
-\mbox{\Hypertarget{classTRATVolume_acd8ff7366741a87145f25352bbcf8686}\label{classTRATVolume_acd8ff7366741a87145f25352bbcf8686}} 
-Double\+\_\+t {\bfseries Volume} ()
-\item 
+Double\+\_\+t \mbox{\hyperlink{classTRATVolume_acd8ff7366741a87145f25352bbcf8686}{Volume}} ()
+\begin{DoxyCompactList}\small\item\em m$^\wedge$3; // currently box-\/type only \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classTRATVolume_ac43065953ad2897a135e350fe91bd08f}\label{classTRATVolume_ac43065953ad2897a135e350fe91bd08f}} 
 Double\+\_\+t {\bfseries Volume\+CM} ()
 \item 
@@ -111,54 +98,37 @@ Double\+\_\+t {\bfseries Volume\+MM} ()
 \mbox{\Hypertarget{classTRATVolume_a283f7aef14f6a7aee094601e34a0df09}\label{classTRATVolume_a283f7aef14f6a7aee094601e34a0df09}} 
 Double\+\_\+t {\bfseries VolumeL} ()
 \item 
-\mbox{\Hypertarget{classTRATVolume_a5789e5a99705a6c685b4f87ccb505605}\label{classTRATVolume_a5789e5a99705a6c685b4f87ccb505605}} 
-Double\+\_\+t {\bfseries Mass} ()
-\item 
 \mbox{\Hypertarget{classTRATVolume_a99e04ed7a10661d7f14578c56fab8442}\label{classTRATVolume_a99e04ed7a10661d7f14578c56fab8442}} 
 Double\+\_\+t {\bfseries MassG} ()
 \item 
 \mbox{\Hypertarget{classTRATVolume_a39621de7d7c12dcca68d1ce3c6064191}\label{classTRATVolume_a39621de7d7c12dcca68d1ce3c6064191}} 
 Double\+\_\+t {\bfseries Mass\+Tons} ()
 \item 
-\mbox{\Hypertarget{classTRATVolume_af722df5ca4a50c83fb6e1b01c13ec960}\label{classTRATVolume_af722df5ca4a50c83fb6e1b01c13ec960}} 
-Double\+\_\+t {\bfseries Nu\+Flux} (Double\+\_\+t standoff, Double\+\_\+t reactor\+Nu\+Rate)
-\item 
-\mbox{\Hypertarget{classTRATVolume_ae1ea0cce4378f87e23a8d26e4c461709}\label{classTRATVolume_ae1ea0cce4378f87e23a8d26e4c461709}} 
-Double\+\_\+t {\bfseries I\+B\+D\+Vol\+Rate} (Double\+\_\+t standoff, Double\+\_\+t reactor\+Nu\+Rate, Double\+\_\+t nH)
-\item 
-\mbox{\Hypertarget{classTRATVolume_aa6d5893680c1b0ff86c499df12c1628b}\label{classTRATVolume_aa6d5893680c1b0ff86c499df12c1628b}} 
-Double\+\_\+t {\bfseries I\+B\+D\+Rate} (Double\+\_\+t standoff, Double\+\_\+t reactor\+Nu\+Rate, Double\+\_\+t nH)
-\item 
-\mbox{\Hypertarget{classTRATVolume_a5ab8485abb0d0191b4a950a58170f91e}\label{classTRATVolume_a5ab8485abb0d0191b4a950a58170f91e}} 
-void {\bfseries Print\+Derived} ()
-\end{DoxyCompactItemize}
+Double\+\_\+t \mbox{\hyperlink{classTRATVolume_af722df5ca4a50c83fb6e1b01c13ec960}{Nu\+Flux}} (Double\+\_\+t standoff, Double\+\_\+t reactor\+Nu\+Rate)
+\begin{DoxyCompactList}\small\item\em Nu\+\_\+e\+\_\+bar flux (nu\+\_\+e\+\_\+bar/cm$^\wedge$2/s) at detector location. \end{DoxyCompactList}\item 
+Double\+\_\+t \mbox{\hyperlink{classTRATVolume_ae1ea0cce4378f87e23a8d26e4c461709}{I\+B\+D\+Vol\+Rate}} (Double\+\_\+t standoff, Double\+\_\+t reactor\+Nu\+Rate, Double\+\_\+t nH)
+\begin{DoxyCompactList}\small\item\em Volumetric I\+BD rate (I\+B\+D/cm$^\wedge$3/s) for this volume. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTRATVolume_a5ab8485abb0d0191b4a950a58170f91e}{Print\+Derived}} ()
+\begin{DoxyCompactList}\small\item\em Print area, volume, mass in all units. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classTRATVolume_a3a29fe9fc14973e0955bccb0377d2f7a}\label{classTRATVolume_a3a29fe9fc14973e0955bccb0377d2f7a}} 
-void {\bfseries Find\+Experiment} ()
-\item 
-\mbox{\Hypertarget{classTRATVolume_a4d2de971aaa5320a48ffb698da1b8103}\label{classTRATVolume_a4d2de971aaa5320a48ffb698da1b8103}} 
-void {\bfseries Find\+Volume\+Type} ()
-\item 
-\mbox{\Hypertarget{classTRATVolume_a989db89a659365199964a0916192c6f8}\label{classTRATVolume_a989db89a659365199964a0916192c6f8}} 
-void {\bfseries Find\+Material} ()
-\item 
-\mbox{\Hypertarget{classTRATVolume_af6d52c8cf165e4be9a229f11f10892d6}\label{classTRATVolume_af6d52c8cf165e4be9a229f11f10892d6}} 
-void {\bfseries Find\+Density} ()
-\item 
-\mbox{\Hypertarget{classTRATVolume_ae113a23d57a7a2b9a9f51c70cd9d0d56}\label{classTRATVolume_ae113a23d57a7a2b9a9f51c70cd9d0d56}} 
-void {\bfseries Find\+Mother} ()
-\item 
-\mbox{\Hypertarget{classTRATVolume_a810d5b47e827ffd43f0f986c388dc5d2}\label{classTRATVolume_a810d5b47e827ffd43f0f986c388dc5d2}} 
-void {\bfseries Find\+Relative\+Position} ()
-\item 
-\mbox{\Hypertarget{classTRATVolume_aef0011b569bf5f6528f0a5d044b38582}\label{classTRATVolume_aef0011b569bf5f6528f0a5d044b38582}} 
-void {\bfseries Find\+Size} ()
-\item 
-\mbox{\Hypertarget{classTRATVolume_aeec72923a29d7b29bef0605d10a60cd2}\label{classTRATVolume_aeec72923a29d7b29bef0605d10a60cd2}} 
-void {\bfseries Find\+All} ()
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classTRATVolume_a3a29fe9fc14973e0955bccb0377d2f7a}{Find\+Experiment}} ()
+\begin{DoxyCompactList}\small\item\em Set experiment name, path, etc. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTRATVolume_a4d2de971aaa5320a48ffb698da1b8103}{Find\+Volume\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Set volume type (i.\+e., shape) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTRATVolume_a989db89a659365199964a0916192c6f8}{Find\+Material}} ()
+\begin{DoxyCompactList}\small\item\em Set volume material. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTRATVolume_af6d52c8cf165e4be9a229f11f10892d6}{Find\+Density}} ()
+\begin{DoxyCompactList}\small\item\em Set volume density. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTRATVolume_ae113a23d57a7a2b9a9f51c70cd9d0d56}{Find\+Mother}} ()
+\begin{DoxyCompactList}\small\item\em Set mother volume name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTRATVolume_a810d5b47e827ffd43f0f986c388dc5d2}{Find\+Relative\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Set volume relative position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTRATVolume_aef0011b569bf5f6528f0a5d044b38582}{Find\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Set dimensions ({\itshape box-\/type only}) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTRATVolume_aeec72923a29d7b29bef0605d10a60cd2}{Find\+All}} ()
+\begin{DoxyCompactList}\small\item\em Set all members not individually set in ctor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -178,60 +148,306 @@ const T\+String {\bfseries default\+Vol\+Name} = T\+String(\char`\"{}volume\+\_\
 T\+String {\bfseries key\+Str\+Vol}
 \item 
 \mbox{\Hypertarget{classTRATVolume_a5f3517f56c4b130c201234d573a6d91c}\label{classTRATVolume_a5f3517f56c4b130c201234d573a6d91c}} 
-const char $\ast$ {\bfseries f\+Vol\+Name\+Chr}
-\item 
+const char $\ast$ \mbox{\hyperlink{classTRATVolume_a5f3517f56c4b130c201234d573a6d91c}{f\+Vol\+Name\+Chr}}
+\begin{DoxyCompactList}\small\item\em Volume name. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classTRATVolume_af0046e0884cbb618cec5bbef3a538cc7}\label{classTRATVolume_af0046e0884cbb618cec5bbef3a538cc7}} 
-T\+String {\bfseries f\+Vol\+Name}
-\item 
+T\+String \mbox{\hyperlink{classTRATVolume_af0046e0884cbb618cec5bbef3a538cc7}{f\+Vol\+Name}}
+\begin{DoxyCompactList}\small\item\em Volume name (T\+String) \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classTRATVolume_a0df8d0de3963ada979035e8f5ae2ef75}\label{classTRATVolume_a0df8d0de3963ada979035e8f5ae2ef75}} 
-T\+File $\ast$ {\bfseries f\+File}
-\item 
+T\+File $\ast$ \mbox{\hyperlink{classTRATVolume_a0df8d0de3963ada979035e8f5ae2ef75}{f\+File}}
+\begin{DoxyCompactList}\small\item\em Current R\+O\+OT datafile. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classTRATVolume_a27cd1205fdea0c1e53650aecddd219a7}\label{classTRATVolume_a27cd1205fdea0c1e53650aecddd219a7}} 
-const char $\ast$ {\bfseries f\+File\+Name}
-\item 
+const char $\ast$ \mbox{\hyperlink{classTRATVolume_a27cd1205fdea0c1e53650aecddd219a7}{f\+File\+Name}}
+\begin{DoxyCompactList}\small\item\em Name of current R\+O\+OT datafile. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classTRATVolume_a15b4a4e666f7c154d7a145b51f5ebe31}\label{classTRATVolume_a15b4a4e666f7c154d7a145b51f5ebe31}} 
-T\+String {\bfseries f\+Experiment}
-\item 
+T\+String \mbox{\hyperlink{classTRATVolume_a15b4a4e666f7c154d7a145b51f5ebe31}{f\+Experiment}}
+\begin{DoxyCompactList}\small\item\em Name of R\+A\+T-\/\+P\+AC experiment. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classTRATVolume_a085e52c17e77f313f07a886e73f831d7}\label{classTRATVolume_a085e52c17e77f313f07a886e73f831d7}} 
-T\+String {\bfseries f\+Experiment\+Path}
-\item 
+T\+String \mbox{\hyperlink{classTRATVolume_a085e52c17e77f313f07a886e73f831d7}{f\+Experiment\+Path}}
+\begin{DoxyCompactList}\small\item\em Path to directory defining f\+Experiment, usually either absolute or relative to \$\+R\+A\+T\+R\+O\+OT/data. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classTRATVolume_aa489dcb9211bb4203965a3d0b7c5ed4c}\label{classTRATVolume_aa489dcb9211bb4203965a3d0b7c5ed4c}} 
-const T\+Map $\ast$ {\bfseries f\+DB}
-\item 
+const T\+Map $\ast$ \mbox{\hyperlink{classTRATVolume_aa489dcb9211bb4203965a3d0b7c5ed4c}{f\+DB}}
+\begin{DoxyCompactList}\small\item\em R\+A\+T-\/\+P\+AC database T\+Map. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classTRATVolume_a138257fc9e5d96bfce485609b3e6c1b3}\label{classTRATVolume_a138257fc9e5d96bfce485609b3e6c1b3}} 
-T\+String {\bfseries f\+Volume\+Type}
-\item 
+T\+String \mbox{\hyperlink{classTRATVolume_a138257fc9e5d96bfce485609b3e6c1b3}{f\+Volume\+Type}}
+\begin{DoxyCompactList}\small\item\em Name of volume type (i.\+e., shape) \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classTRATVolume_a73cd35504fdaa500f573651aafaf69ae}\label{classTRATVolume_a73cd35504fdaa500f573651aafaf69ae}} 
-T\+String {\bfseries f\+Material}
-\item 
+T\+String \mbox{\hyperlink{classTRATVolume_a73cd35504fdaa500f573651aafaf69ae}{f\+Material}}
+\begin{DoxyCompactList}\small\item\em Volume material. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classTRATVolume_a36c7e85ca5d6c7043cef8c62cb5b2456}\label{classTRATVolume_a36c7e85ca5d6c7043cef8c62cb5b2456}} 
-Double\+\_\+t {\bfseries f\+Density}
-\item 
+Double\+\_\+t \mbox{\hyperlink{classTRATVolume_a36c7e85ca5d6c7043cef8c62cb5b2456}{f\+Density}}
+\begin{DoxyCompactList}\small\item\em Volume density. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classTRATVolume_a3c4c45270aa83efd2eae0f4a727e073a}\label{classTRATVolume_a3c4c45270aa83efd2eae0f4a727e073a}} 
-T\+String {\bfseries f\+Mother}
-\item 
+T\+String \mbox{\hyperlink{classTRATVolume_a3c4c45270aa83efd2eae0f4a727e073a}{f\+Mother}}
+\begin{DoxyCompactList}\small\item\em Name of mother volume. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classTRATVolume_a11de218517d54ad1ea7be7062ce14dd9}\label{classTRATVolume_a11de218517d54ad1ea7be7062ce14dd9}} 
-T\+Vector3 {\bfseries f\+Size}
-\item 
+T\+Vector3 \mbox{\hyperlink{classTRATVolume_a11de218517d54ad1ea7be7062ce14dd9}{f\+Size}}
+\begin{DoxyCompactList}\small\item\em Half-\/lengths in \{x,y,z\} ({\itshape box-\/type only}) \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classTRATVolume_ab17669e81e0583a07d97c5ff1c19d487}\label{classTRATVolume_ab17669e81e0583a07d97c5ff1c19d487}} 
-Double\+\_\+t {\bfseries f\+R\+Min}
-\item 
+Double\+\_\+t \mbox{\hyperlink{classTRATVolume_ab17669e81e0583a07d97c5ff1c19d487}{f\+R\+Min}}
+\begin{DoxyCompactList}\small\item\em Tube minimum radius. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classTRATVolume_a1b67f45cc7bb58ac3103be97ed1b9f3e}\label{classTRATVolume_a1b67f45cc7bb58ac3103be97ed1b9f3e}} 
-Double\+\_\+t {\bfseries f\+R\+Max}
-\item 
+Double\+\_\+t \mbox{\hyperlink{classTRATVolume_a1b67f45cc7bb58ac3103be97ed1b9f3e}{f\+R\+Max}}
+\begin{DoxyCompactList}\small\item\em Tube maximum radius. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classTRATVolume_a03104db4e864f53942b61277373a45c1}\label{classTRATVolume_a03104db4e864f53942b61277373a45c1}} 
-Double\+\_\+t {\bfseries f\+SizeZ}
-\item 
+Double\+\_\+t \mbox{\hyperlink{classTRATVolume_a03104db4e864f53942b61277373a45c1}{f\+SizeZ}}
+\begin{DoxyCompactList}\small\item\em Tube half-\/height. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classTRATVolume_ae87217245de7a481b907dd155fdee489}\label{classTRATVolume_ae87217245de7a481b907dd155fdee489}} 
-T\+Vector3 {\bfseries f\+Relative\+Position}
-\item 
+T\+Vector3 \mbox{\hyperlink{classTRATVolume_ae87217245de7a481b907dd155fdee489}{f\+Relative\+Position}}
+\begin{DoxyCompactList}\small\item\em Volume position, {\itshape relative to mother volume} \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classTRATVolume_ad1b5b4c03681d0e7fd21e81b38201379}\label{classTRATVolume_ad1b5b4c03681d0e7fd21e81b38201379}} 
-T\+Vector3 {\bfseries f\+Absolute\+Position}
-\end{DoxyCompactItemize}
+T\+Vector3 \mbox{\hyperlink{classTRATVolume_ad1b5b4c03681d0e7fd21e81b38201379}{f\+Absolute\+Position}}
+\begin{DoxyCompactList}\small\item\em Volume position, {\itshape relative to overall coordinate system} \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Class for analyzing geometry from R\+A\+T-\/\+P\+AC R\+O\+OT file. 
+Class for analyzing geometry volumes from R\+A\+T-\/\+P\+AC R\+O\+OT file //\+D\+O\+C//...//. 
+
+This class applies to individual R\+A\+T-\/\+P\+AC volumes. It has two primary uses\+: ~\newline
+
+\begin{DoxyEnumerate}
+\item Quickly examining a single volume stored in a R\+A\+T-\/\+P\+AC \char`\"{}.\+root\char`\"{} file; and
+\item Building a complete detector geometry when called by \mbox{\hyperlink{classTRATGeo}{T\+R\+A\+T\+Geo}}.
+\end{DoxyEnumerate}
+
+{\itshape Note\+:} To be set properly, \mbox{\hyperlink{classTRATVolume_afa5b832d7dc34b260fa192e71ee30d95}{Find\+Absolute\+Position()}} must be run after an object is created ~\newline
+ -- This does not need to be done manually if \mbox{\hyperlink{classTRATVolume}{T\+R\+A\+T\+Volume}} objects are created by T\+R\+A\+T\+Geo\+::\+Build(). ~\newline
+ Example\+: ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classTRATVolume}{TRATVolume}} V(\textcolor{stringliteral}{"water\_shield"});}
+\DoxyCodeLine{V.FindAbsolutePosition();}
+\end{DoxyCode}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTRATVolume_a08073d9d32d4b1c3aa489a88d748e8e1}\label{classTRATVolume_a08073d9d32d4b1c3aa489a88d748e8e1}} 
+\index{TRATVolume@{TRATVolume}!TRATVolume@{TRATVolume}}
+\index{TRATVolume@{TRATVolume}!TRATVolume@{TRATVolume}}
+\doxysubsubsection{\texorpdfstring{TRATVolume()}{TRATVolume()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily T\+R\+A\+T\+Volume\+::\+T\+R\+A\+T\+Volume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Empty ctor. \mbox{\Hypertarget{classTRATVolume_a9c083601be0e64cdd92a2a976796b2c2}\label{classTRATVolume_a9c083601be0e64cdd92a2a976796b2c2}} 
+\index{TRATVolume@{TRATVolume}!TRATVolume@{TRATVolume}}
+\index{TRATVolume@{TRATVolume}!TRATVolume@{TRATVolume}}
+\doxysubsubsection{\texorpdfstring{TRATVolume()}{TRATVolume()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily T\+R\+A\+T\+Volume\+::\+T\+R\+A\+T\+Volume (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const T\+Map $\ast$}]{db }\end{DoxyParamCaption})}
+
+Regular ctor. 
+\begin{DoxyParams}{Parameters}
+{\em name} & -- input filename \\
+\hline
+{\em db} & -- pointer to R\+A\+T\+DB in input file \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTRATVolume_a8e83f8f9ac9c85c426039cd3a79cc333}\label{classTRATVolume_a8e83f8f9ac9c85c426039cd3a79cc333}} 
+\index{TRATVolume@{TRATVolume}!Area@{Area}}
+\index{Area@{Area}!TRATVolume@{TRATVolume}}
+\doxysubsubsection{\texorpdfstring{Area()}{Area()}}
+{\footnotesize\ttfamily Double\+\_\+t T\+R\+A\+T\+Volume\+::\+Area (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+m$^\wedge$2 // currently box-\/type only 
+
+Return the cross-\/sectional surface area of the volume in m$^\wedge$2. 
+\begin{DoxyRetVals}{Return values}
+{\em A} & -- volume\textquotesingle{}s cross-\/sectional surface area (m$^\wedge$2) \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{classTRATVolume_afa5b832d7dc34b260fa192e71ee30d95}\label{classTRATVolume_afa5b832d7dc34b260fa192e71ee30d95}} 
+\index{TRATVolume@{TRATVolume}!FindAbsolutePosition@{FindAbsolutePosition}}
+\index{FindAbsolutePosition@{FindAbsolutePosition}!TRATVolume@{TRATVolume}}
+\doxysubsubsection{\texorpdfstring{FindAbsolutePosition()}{FindAbsolutePosition()}}
+{\footnotesize\ttfamily void T\+R\+A\+T\+Volume\+::\+Find\+Absolute\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Set volume absolute position. 
+
+Fetch the absolute-\/position vector of the R\+A\+T-\/\+P\+AC volume. \mbox{\Hypertarget{classTRATVolume_aeec72923a29d7b29bef0605d10a60cd2}\label{classTRATVolume_aeec72923a29d7b29bef0605d10a60cd2}} 
+\index{TRATVolume@{TRATVolume}!FindAll@{FindAll}}
+\index{FindAll@{FindAll}!TRATVolume@{TRATVolume}}
+\doxysubsubsection{\texorpdfstring{FindAll()}{FindAll()}}
+{\footnotesize\ttfamily void T\+R\+A\+T\+Volume\+::\+Find\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Set all members not individually set in ctor. 
+
+Find the following volume parameters\+:
+\begin{DoxyItemize}
+\item Experiment
+\item Volume\+Type
+\item Material
+\item Density
+\item Mother
+\item Size
+\item Relative\+Position 
+\end{DoxyItemize}\mbox{\Hypertarget{classTRATVolume_af6d52c8cf165e4be9a229f11f10892d6}\label{classTRATVolume_af6d52c8cf165e4be9a229f11f10892d6}} 
+\index{TRATVolume@{TRATVolume}!FindDensity@{FindDensity}}
+\index{FindDensity@{FindDensity}!TRATVolume@{TRATVolume}}
+\doxysubsubsection{\texorpdfstring{FindDensity()}{FindDensity()}}
+{\footnotesize\ttfamily void T\+R\+A\+T\+Volume\+::\+Find\+Density (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Set volume density. 
+
+Fetch the densityvalue of the R\+A\+T-\/\+P\+AC material. \mbox{\Hypertarget{classTRATVolume_a3a29fe9fc14973e0955bccb0377d2f7a}\label{classTRATVolume_a3a29fe9fc14973e0955bccb0377d2f7a}} 
+\index{TRATVolume@{TRATVolume}!FindExperiment@{FindExperiment}}
+\index{FindExperiment@{FindExperiment}!TRATVolume@{TRATVolume}}
+\doxysubsubsection{\texorpdfstring{FindExperiment()}{FindExperiment()}}
+{\footnotesize\ttfamily void T\+R\+A\+T\+Volume\+::\+Find\+Experiment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Set experiment name, path, etc. 
+
+Fetch the name of the R\+A\+T-\/\+P\+AC experiment. \mbox{\Hypertarget{classTRATVolume_a989db89a659365199964a0916192c6f8}\label{classTRATVolume_a989db89a659365199964a0916192c6f8}} 
+\index{TRATVolume@{TRATVolume}!FindMaterial@{FindMaterial}}
+\index{FindMaterial@{FindMaterial}!TRATVolume@{TRATVolume}}
+\doxysubsubsection{\texorpdfstring{FindMaterial()}{FindMaterial()}}
+{\footnotesize\ttfamily void T\+R\+A\+T\+Volume\+::\+Find\+Material (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Set volume material. 
+
+Fetch the name of the R\+A\+T-\/\+P\+AC material. \mbox{\Hypertarget{classTRATVolume_ae113a23d57a7a2b9a9f51c70cd9d0d56}\label{classTRATVolume_ae113a23d57a7a2b9a9f51c70cd9d0d56}} 
+\index{TRATVolume@{TRATVolume}!FindMother@{FindMother}}
+\index{FindMother@{FindMother}!TRATVolume@{TRATVolume}}
+\doxysubsubsection{\texorpdfstring{FindMother()}{FindMother()}}
+{\footnotesize\ttfamily void T\+R\+A\+T\+Volume\+::\+Find\+Mother (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Set mother volume name. 
+
+Fetch the mother R\+A\+T-\/\+P\+AC volume. \mbox{\Hypertarget{classTRATVolume_a810d5b47e827ffd43f0f986c388dc5d2}\label{classTRATVolume_a810d5b47e827ffd43f0f986c388dc5d2}} 
+\index{TRATVolume@{TRATVolume}!FindRelativePosition@{FindRelativePosition}}
+\index{FindRelativePosition@{FindRelativePosition}!TRATVolume@{TRATVolume}}
+\doxysubsubsection{\texorpdfstring{FindRelativePosition()}{FindRelativePosition()}}
+{\footnotesize\ttfamily void T\+R\+A\+T\+Volume\+::\+Find\+Relative\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Set volume relative position. 
+
+Fetch the relative-\/position vector of the R\+A\+T-\/\+P\+AC volume. \mbox{\Hypertarget{classTRATVolume_aef0011b569bf5f6528f0a5d044b38582}\label{classTRATVolume_aef0011b569bf5f6528f0a5d044b38582}} 
+\index{TRATVolume@{TRATVolume}!FindSize@{FindSize}}
+\index{FindSize@{FindSize}!TRATVolume@{TRATVolume}}
+\doxysubsubsection{\texorpdfstring{FindSize()}{FindSize()}}
+{\footnotesize\ttfamily void T\+R\+A\+T\+Volume\+::\+Find\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Set dimensions ({\itshape box-\/type only}) 
+
+Fetch the size vector of the R\+A\+T-\/\+P\+AC volume. \mbox{\Hypertarget{classTRATVolume_a4d2de971aaa5320a48ffb698da1b8103}\label{classTRATVolume_a4d2de971aaa5320a48ffb698da1b8103}} 
+\index{TRATVolume@{TRATVolume}!FindVolumeType@{FindVolumeType}}
+\index{FindVolumeType@{FindVolumeType}!TRATVolume@{TRATVolume}}
+\doxysubsubsection{\texorpdfstring{FindVolumeType()}{FindVolumeType()}}
+{\footnotesize\ttfamily void T\+R\+A\+T\+Volume\+::\+Find\+Volume\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Set volume type (i.\+e., shape) 
+
+Fetch the name of the R\+A\+T-\/\+P\+AC volume type. \mbox{\Hypertarget{classTRATVolume_ae1ea0cce4378f87e23a8d26e4c461709}\label{classTRATVolume_ae1ea0cce4378f87e23a8d26e4c461709}} 
+\index{TRATVolume@{TRATVolume}!IBDVolRate@{IBDVolRate}}
+\index{IBDVolRate@{IBDVolRate}!TRATVolume@{TRATVolume}}
+\doxysubsubsection{\texorpdfstring{IBDVolRate()}{IBDVolRate()}}
+{\footnotesize\ttfamily Double\+\_\+t T\+R\+A\+T\+Volume\+::\+I\+B\+D\+Vol\+Rate (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{standoff,  }\item[{Double\+\_\+t}]{reactor\+Nu\+Rate,  }\item[{Double\+\_\+t}]{nH }\end{DoxyParamCaption})}
+
+
+
+Volumetric I\+BD rate (I\+B\+D/cm$^\wedge$3/s) for this volume. 
+
+Determine the {\itshape predicted I\+BD rate per cm$^\wedge$3} for a given standoff (baseline) from the reacor core(s), a given reactor total antineutrino flux, and a given volumetric number density of H-\/1 nuclei in the target material. ~\newline
+ See ... for equivalent calculation using the reactor\textquotesingle{}s thermal power instead. ~\newline
+ {\itshape Note\+:} Assumes that the size of the reactor core(s) is/are very small compared to the standoff, so that the incoming electron-\/antineutrinos can be appropriately approximated by a plane wave (i.\+e., incident nu\+\_\+ebar have uniform momentum direction). 
+\begin{DoxyParams}{Parameters}
+{\em standoff} & -- distance from center of detector to center of reactor core(s) (cm) \\
+\hline
+{\em reactor\+Nu\+Rate} & -- reactor\textquotesingle{}s total electron-\/antineutrino flux (nu\+\_\+e\+\_\+bar/s) \\
+\hline
+{\em nH} & -- target material\textquotesingle{}s density of H-\/1 nuclei (\#/cm$^\wedge$3) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em vol\+Rate} & -- predicted volumetric rate of I\+BD reactions (\#/cm$^\wedge$3/s) \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{classTRATVolume_af722df5ca4a50c83fb6e1b01c13ec960}\label{classTRATVolume_af722df5ca4a50c83fb6e1b01c13ec960}} 
+\index{TRATVolume@{TRATVolume}!NuFlux@{NuFlux}}
+\index{NuFlux@{NuFlux}!TRATVolume@{TRATVolume}}
+\doxysubsubsection{\texorpdfstring{NuFlux()}{NuFlux()}}
+{\footnotesize\ttfamily Double\+\_\+t T\+R\+A\+T\+Volume\+::\+Nu\+Flux (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{standoff,  }\item[{Double\+\_\+t}]{reactor\+Nu\+Rate }\end{DoxyParamCaption})}
+
+
+
+Nu\+\_\+e\+\_\+bar flux (nu\+\_\+e\+\_\+bar/cm$^\wedge$2/s) at detector location. 
+
+Determine the {\itshape absolute electron-\/antineutrino flux per cm$^\wedge$2} for a given standoff (baseline) from the reacor core(s) and a given reactor total antineutrino flux. ~\newline
+ See ... for equivalent calculation using the reactor\textquotesingle{}s thermal power instead. ~\newline
+ {\itshape Note\+:} Assumes that the size of the reactor core(s) is/are very small compared to the standoff, so that the incoming electron-\/antineutrinos can be appropriately approximated by a plane wave (i.\+e., incident nu\+\_\+ebar have uniform momentum direction). 
+\begin{DoxyParams}{Parameters}
+{\em standoff} & -- distance from center of detector to center of reactor core(s) (cm) \\
+\hline
+{\em reactor\+Nu\+Rate} & -- reactor\textquotesingle{}s total electron-\/antineutrino flux (nu\+\_\+e\+\_\+bar/s) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em nu\+Flux} & -- electron-\/antineutrino flux (nu\+\_\+e\+\_\+bar/cm$^\wedge$2/s) \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{classTRATVolume_a5ab8485abb0d0191b4a950a58170f91e}\label{classTRATVolume_a5ab8485abb0d0191b4a950a58170f91e}} 
+\index{TRATVolume@{TRATVolume}!PrintDerived@{PrintDerived}}
+\index{PrintDerived@{PrintDerived}!TRATVolume@{TRATVolume}}
+\doxysubsubsection{\texorpdfstring{PrintDerived()}{PrintDerived()}}
+{\footnotesize\ttfamily void T\+R\+A\+T\+Volume\+::\+Print\+Derived (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Print area, volume, mass in all units. 
+
+Print derived quantities. \mbox{\Hypertarget{classTRATVolume_a237261fbd8b3276bb7f1a7ad23684c81}\label{classTRATVolume_a237261fbd8b3276bb7f1a7ad23684c81}} 
+\index{TRATVolume@{TRATVolume}!SetVolume@{SetVolume}}
+\index{SetVolume@{SetVolume}!TRATVolume@{TRATVolume}}
+\doxysubsubsection{\texorpdfstring{SetVolume()}{SetVolume()}}
+{\footnotesize\ttfamily void T\+R\+A\+T\+Volume\+::\+Set\+Volume (\begin{DoxyParamCaption}\item[{const char $\ast$}]{new\+Name\+Chr }\end{DoxyParamCaption})}
+
+
+
+Switch to a different volume and re-\/fill parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Name\+Chr} & -- name of new volume to fetch \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTRATVolume_acd8ff7366741a87145f25352bbcf8686}\label{classTRATVolume_acd8ff7366741a87145f25352bbcf8686}} 
+\index{TRATVolume@{TRATVolume}!Volume@{Volume}}
+\index{Volume@{Volume}!TRATVolume@{TRATVolume}}
+\doxysubsubsection{\texorpdfstring{Volume()}{Volume()}}
+{\footnotesize\ttfamily Double\+\_\+t T\+R\+A\+T\+Volume\+::\+Volume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+m$^\wedge$3; // currently box-\/type only 
+
+Return the volume of the volume in m$^\wedge$3. 
+\begin{DoxyRetVals}{Return values}
+{\em A} & -- volume\textquotesingle{}s volume (m$^\wedge$3) \\
+\hline
+\end{DoxyRetVals}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
