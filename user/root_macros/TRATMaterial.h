@@ -1,5 +1,5 @@
 // TRATMaterial
-// Class for calculating certain properties of materials
+/// Class for calculating certain properties of materials
 // Primarily intended for:
 // -- use with RAT-PAC
 // -- calculating the MFP for neutron elastic scattering

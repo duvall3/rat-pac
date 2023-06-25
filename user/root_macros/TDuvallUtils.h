@@ -1,5 +1,5 @@
 // TDuvallUtils
-/// Library of useful general-purpose functions for working with ROOT / RAT-PAC.
+/// Library of useful general-purpose functions for working with ROOT / RAT-PAC. //DOC//
 /** **Math:**
  *  - EntryList()
  *  - LogBins()

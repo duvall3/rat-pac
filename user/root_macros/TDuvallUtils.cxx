@@ -350,8 +350,11 @@ Double_t* TDuvallUtils::LogBins( Double_t xmin, Double_t xmax )
  * Print a TTree's branches in a format that is
  *   easier to scan visually than TTree::GetListOfBranches()->ls().  
  * For a full explanation of the data-type codes, see the main *TTree* documentation
- *   or the comments in `TTree.cxx` under your your $ROOTSYS directory.  
+ *   or the comments in `TTree.cxx` under your your $ROOTSYS directory.
+ *   (On _*nix_ systems, try `find $ROOTSYS -name TTree.cxx` to locate the file).  
  * Common data types:  
+ * - I : 32-bit signed integer (Int_t)
+ * - L : 64-bit signed integer (Long64_t)
  * - F : 32-bit float (Float_t)  
  * - D : 64-bit float (Double_t)  
  * - C : null-terminated character string (char array, TString)  

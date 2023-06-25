@@ -76,7 +76,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Class for viewing RAT-PAC detector geometries.  
+<p>Class for viewing RAT-PAC detector geometries and MC events in ROOT //DOC//.  
  <a href="classTRATPACEventViewer.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="TRATPACEventViewer_8h_source.html">TRATPACEventViewer.h</a>&gt;</code></p>
@@ -85,7 +85,7 @@ Inheritance diagram for TRATPACEventViewer:</div>
 <div class="dyncontent">
 <div class="center"><img src="classTRATPACEventViewer__inherit__graph.png" border="0" usemap="#TRATPACEventViewer_inherit__map" alt="Inheritance graph"/></div>
 <map name="TRATPACEventViewer_inherit__map" id="TRATPACEventViewer_inherit__map">
-<area shape="rect" title="Class for viewing RAT&#45;PAC detector geometries." alt="" coords="5,80,168,107"/>
+<area shape="rect" title="Class for viewing RAT&#45;PAC detector geometries and MC events in ROOT //DOC//." alt="" coords="5,80,168,107"/>
 <area shape="rect" title=" " alt="" coords="55,5,119,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -94,7 +94,7 @@ Collaboration diagram for TRATPACEventViewer:</div>
 <div class="dyncontent">
 <div class="center"><img src="classTRATPACEventViewer__coll__graph.png" border="0" usemap="#TRATPACEventViewer_coll__map" alt="Collaboration graph"/></div>
 <map name="TRATPACEventViewer_coll__map" id="TRATPACEventViewer_coll__map">
-<area shape="rect" title="Class for viewing RAT&#45;PAC detector geometries." alt="" coords="5,171,168,197"/>
+<area shape="rect" title="Class for viewing RAT&#45;PAC detector geometries and MC events in ROOT //DOC//." alt="" coords="5,171,168,197"/>
 <area shape="rect" title=" " alt="" coords="49,5,113,32"/>
 <area shape="rect" href="classTRATGeo.html" title="class for assembling geometry in a RAT&#45;PAC ROOT file" alt="" coords="103,81,185,108"/>
 </map>
@@ -102,11 +102,14 @@ Collaboration diagram for TRATPACEventViewer:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a50ded392c3376a4fd6a836a6eb0d1b85"><td class="memItemLeft" align="right" valign="top"><a id="a50ded392c3376a4fd6a836a6eb0d1b85"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TRATPACEventViewer</b> (const char *fileName, const char *volumePattern=&quot;.*&quot;)</td></tr>
+<tr class="memitem:a4c3db64c664f51d589df8593bc680b3f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTRATPACEventViewer.html#a4c3db64c664f51d589df8593bc680b3f">TRATPACEventViewer</a> ()</td></tr>
+<tr class="memdesc:a4c3db64c664f51d589df8593bc680b3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default ctor.  <a href="classTRATPACEventViewer.html#a4c3db64c664f51d589df8593bc680b3f">More...</a><br /></td></tr>
+<tr class="separator:a4c3db64c664f51d589df8593bc680b3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50ded392c3376a4fd6a836a6eb0d1b85"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTRATPACEventViewer.html#a50ded392c3376a4fd6a836a6eb0d1b85">TRATPACEventViewer</a> (const char *fileName, const char *volumePattern=&quot;.*&quot;)</td></tr>
+<tr class="memdesc:a50ded392c3376a4fd6a836a6eb0d1b85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Regular ctor.  <a href="classTRATPACEventViewer.html#a50ded392c3376a4fd6a836a6eb0d1b85">More...</a><br /></td></tr>
 <tr class="separator:a50ded392c3376a4fd6a836a6eb0d1b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abce2ba70242a4c9ecb485d821274a524"><td class="memItemLeft" align="right" valign="top"><a id="abce2ba70242a4c9ecb485d821274a524"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Init</b> (const char *fileName, const char *volumePattern=&quot;.*&quot;)</td></tr>
+<tr class="memitem:abce2ba70242a4c9ecb485d821274a524"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTRATPACEventViewer.html#abce2ba70242a4c9ecb485d821274a524">Init</a> (const char *fileName, const char *volumePattern=&quot;.*&quot;)</td></tr>
+<tr class="memdesc:abce2ba70242a4c9ecb485d821274a524"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize.  <a href="classTRATPACEventViewer.html#abce2ba70242a4c9ecb485d821274a524">More...</a><br /></td></tr>
 <tr class="separator:abce2ba70242a4c9ecb485d821274a524"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e3b1034fcc51dbf1121136c4d2ac22f"><td class="memItemLeft" align="right" valign="top"><a id="a5e3b1034fcc51dbf1121136c4d2ac22f"></a>
 TString&#160;</td><td class="memItemRight" valign="bottom"><b>GetFileName</b> ()</td></tr>
@@ -145,76 +148,324 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SetVolumePattern</b> 
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SetHighlightMode</b> (Bool_t bValue=kTRUE)</td></tr>
 <tr class="separator:a47463f5b65d9c6e871876b391ba561ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64ea4bb14741b3c8e5778f1ca4993e27"><td class="memItemLeft" align="right" valign="top"><a id="a64ea4bb14741b3c8e5778f1ca4993e27"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawGeometry</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTRATPACEventViewer.html#a64ea4bb14741b3c8e5778f1ca4993e27">DrawGeometry</a> ()</td></tr>
+<tr class="memdesc:a64ea4bb14741b3c8e5778f1ca4993e27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build and draw detector geometry. <br /></td></tr>
 <tr class="separator:a64ea4bb14741b3c8e5778f1ca4993e27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7ed0bc0a9f8861e21ad31999bf450b0"><td class="memItemLeft" align="right" valign="top"><a id="aa7ed0bc0a9f8861e21ad31999bf450b0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawTracks</b> (Long64_t event=0)</td></tr>
+<tr class="memitem:aa7ed0bc0a9f8861e21ad31999bf450b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTRATPACEventViewer.html#aa7ed0bc0a9f8861e21ad31999bf450b0">DrawTracks</a> (Long64_t event=0)</td></tr>
+<tr class="memdesc:aa7ed0bc0a9f8861e21ad31999bf450b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw particle tracks for a given event.  <a href="classTRATPACEventViewer.html#aa7ed0bc0a9f8861e21ad31999bf450b0">More...</a><br /></td></tr>
 <tr class="separator:aa7ed0bc0a9f8861e21ad31999bf450b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a220eb5589484e59b59a903cf96486300"><td class="memItemLeft" align="right" valign="top"><a id="a220eb5589484e59b59a903cf96486300"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawNextEvent</b> ()</td></tr>
+<tr class="memitem:a220eb5589484e59b59a903cf96486300"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTRATPACEventViewer.html#a220eb5589484e59b59a903cf96486300">DrawNextEvent</a> ()</td></tr>
 <tr class="separator:a220eb5589484e59b59a903cf96486300"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bcdae7b7f340f5469c9b20c54c938e8"><td class="memItemLeft" align="right" valign="top"><a id="a2bcdae7b7f340f5469c9b20c54c938e8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawPrevEvent</b> ()</td></tr>
+<tr class="memitem:a2bcdae7b7f340f5469c9b20c54c938e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTRATPACEventViewer.html#a2bcdae7b7f340f5469c9b20c54c938e8">DrawPrevEvent</a> ()</td></tr>
 <tr class="separator:a2bcdae7b7f340f5469c9b20c54c938e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42bc6f7ea0792b7a0c124bcd435a11c1"><td class="memItemLeft" align="right" valign="top"><a id="a42bc6f7ea0792b7a0c124bcd435a11c1"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>RedrawCurrentEvent</b> ()</td></tr>
 <tr class="separator:a42bc6f7ea0792b7a0c124bcd435a11c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3386c1543eafad37d10e9a583e003453"><td class="memItemLeft" align="right" valign="top"><a id="a3386c1543eafad37d10e9a583e003453"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Zoom</b> (Double_t zoomFactor=2)</td></tr>
+<tr class="memitem:a3386c1543eafad37d10e9a583e003453"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTRATPACEventViewer.html#a3386c1543eafad37d10e9a583e003453">Zoom</a> (Double_t zoomFactor=2)</td></tr>
+<tr class="memdesc:a3386c1543eafad37d10e9a583e003453"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple shortcut for adjusting zoom when running interactively.  <a href="classTRATPACEventViewer.html#a3386c1543eafad37d10e9a583e003453">More...</a><br /></td></tr>
 <tr class="separator:a3386c1543eafad37d10e9a583e003453"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa01866faf1e616f093739df18a7f9415"><td class="memItemLeft" align="right" valign="top"><a id="aa01866faf1e616f093739df18a7f9415"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ToggleInertVis</b> ()</td></tr>
-<tr class="separator:aa01866faf1e616f093739df18a7f9415"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a8eb099cf9201fca758a22ca41a1105d5"><td class="memItemLeft" align="right" valign="top"><a id="a8eb099cf9201fca758a22ca41a1105d5"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetCurrentEvent</b> (Long64_t eventID=0)</td></tr>
-<tr class="separator:a8eb099cf9201fca758a22ca41a1105d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98d2bc9ebfdf22db81de70bc8d890180"><td class="memItemLeft" align="right" valign="top"><a id="a98d2bc9ebfdf22db81de70bc8d890180"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>HighlightCells</b> ()</td></tr>
+<tr class="memitem:a98d2bc9ebfdf22db81de70bc8d890180"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTRATPACEventViewer.html#a98d2bc9ebfdf22db81de70bc8d890180">HighlightCells</a> ()</td></tr>
+<tr class="memdesc:a98d2bc9ebfdf22db81de70bc8d890180"><td class="mdescLeft">&#160;</td><td class="mdescRight">Highlight cells containing IBD vertex, e+ annihilation, and n-capture (for IBD)  <a href="classTRATPACEventViewer.html#a98d2bc9ebfdf22db81de70bc8d890180">More...</a><br /></td></tr>
 <tr class="separator:a98d2bc9ebfdf22db81de70bc8d890180"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a7c14d4c66dd58bdc0a33bf2b2a669190"><td class="memItemLeft" align="right" valign="top"><a id="a7c14d4c66dd58bdc0a33bf2b2a669190"></a>
-TString&#160;</td><td class="memItemRight" valign="bottom"><b>fFileName</b></td></tr>
+TString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTRATPACEventViewer.html#a7c14d4c66dd58bdc0a33bf2b2a669190">fFileName</a></td></tr>
+<tr class="memdesc:a7c14d4c66dd58bdc0a33bf2b2a669190"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of input RAT-PAC/ROOT file containing at least 1 MC event. <br /></td></tr>
 <tr class="separator:a7c14d4c66dd58bdc0a33bf2b2a669190"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3d84f9ec0bfafc100dbfeaed988b910"><td class="memItemLeft" align="right" valign="top"><a id="af3d84f9ec0bfafc100dbfeaed988b910"></a>
-TFile *&#160;</td><td class="memItemRight" valign="bottom"><b>fDataFile</b></td></tr>
+TFile *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTRATPACEventViewer.html#af3d84f9ec0bfafc100dbfeaed988b910">fDataFile</a></td></tr>
+<tr class="memdesc:af3d84f9ec0bfafc100dbfeaed988b910"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input <em>TFile</em> <br /></td></tr>
 <tr class="separator:af3d84f9ec0bfafc100dbfeaed988b910"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59f644ee558583218beff5b89c90eac3"><td class="memItemLeft" align="right" valign="top"><a id="a59f644ee558583218beff5b89c90eac3"></a>
-TTree *&#160;</td><td class="memItemRight" valign="bottom"><b>fTree</b></td></tr>
+TTree *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTRATPACEventViewer.html#a59f644ee558583218beff5b89c90eac3">fTree</a></td></tr>
+<tr class="memdesc:a59f644ee558583218beff5b89c90eac3"><td class="mdescLeft">&#160;</td><td class="mdescRight">RAT-PAC output tree. <br /></td></tr>
 <tr class="separator:a59f644ee558583218beff5b89c90eac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a339894d8cc9781d964bd8f698ecc62f4"><td class="memItemLeft" align="right" valign="top"><a id="a339894d8cc9781d964bd8f698ecc62f4"></a>
-TString&#160;</td><td class="memItemRight" valign="bottom"><b>fVolumePattern</b></td></tr>
+TString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTRATPACEventViewer.html#a339894d8cc9781d964bd8f698ecc62f4">fVolumePattern</a></td></tr>
+<tr class="memdesc:a339894d8cc9781d964bd8f698ecc62f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">String used to create <em>TRegexp</em> pattern for selecting volumes. <br /></td></tr>
 <tr class="separator:a339894d8cc9781d964bd8f698ecc62f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd75be75236cc5aa8b351686b6876e1c"><td class="memItemLeft" align="right" valign="top"><a id="afd75be75236cc5aa8b351686b6876e1c"></a>
-<a class="el" href="classTRATGeo.html">TRATGeo</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>fRATGeo</b></td></tr>
+<a class="el" href="classTRATGeo.html">TRATGeo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTRATPACEventViewer.html#afd75be75236cc5aa8b351686b6876e1c">fRATGeo</a></td></tr>
+<tr class="memdesc:afd75be75236cc5aa8b351686b6876e1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manager for RAT-PAC volume info. <br /></td></tr>
 <tr class="separator:afd75be75236cc5aa8b351686b6876e1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13d26ae84c3683d1e8ad2abcb4a8a480"><td class="memItemLeft" align="right" valign="top"><a id="a13d26ae84c3683d1e8ad2abcb4a8a480"></a>
-TGeoManager *&#160;</td><td class="memItemRight" valign="bottom"><b>fGeoManager</b></td></tr>
+TGeoManager *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTRATPACEventViewer.html#a13d26ae84c3683d1e8ad2abcb4a8a480">fGeoManager</a></td></tr>
+<tr class="memdesc:a13d26ae84c3683d1e8ad2abcb4a8a480"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manager for ROOT volumes. <br /></td></tr>
 <tr class="separator:a13d26ae84c3683d1e8ad2abcb4a8a480"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09585f4fe16b1b3154a021890ad129df"><td class="memItemLeft" align="right" valign="top"><a id="a09585f4fe16b1b3154a021890ad129df"></a>
-Bool_t&#160;</td><td class="memItemRight" valign="bottom"><b>fkHighlight</b></td></tr>
+Bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTRATPACEventViewer.html#a09585f4fe16b1b3154a021890ad129df">fkHighlight</a></td></tr>
+<tr class="memdesc:a09585f4fe16b1b3154a021890ad129df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cell-highlight mode on/off. <br /></td></tr>
 <tr class="separator:a09585f4fe16b1b3154a021890ad129df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a94b0df784603bae81ddb9f06632553"><td class="memItemLeft" align="right" valign="top"><a id="a0a94b0df784603bae81ddb9f06632553"></a>
-TCanvas *&#160;</td><td class="memItemRight" valign="bottom"><b>fCanvas</b></td></tr>
+TCanvas *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTRATPACEventViewer.html#a0a94b0df784603bae81ddb9f06632553">fCanvas</a></td></tr>
+<tr class="memdesc:a0a94b0df784603bae81ddb9f06632553"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main canvas. <br /></td></tr>
 <tr class="separator:a0a94b0df784603bae81ddb9f06632553"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8269d87a4346e8c251f41b7e7bdc8433"><td class="memItemLeft" align="right" valign="top"><a id="a8269d87a4346e8c251f41b7e7bdc8433"></a>
-Long64_t&#160;</td><td class="memItemRight" valign="bottom"><b>fTotalEvents</b></td></tr>
+Long64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTRATPACEventViewer.html#a8269d87a4346e8c251f41b7e7bdc8433">fTotalEvents</a></td></tr>
+<tr class="memdesc:a8269d87a4346e8c251f41b7e7bdc8433"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total top-level MC events in input file. <br /></td></tr>
 <tr class="separator:a8269d87a4346e8c251f41b7e7bdc8433"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27709d825fd21bec3c9448375a319d00"><td class="memItemLeft" align="right" valign="top"><a id="a27709d825fd21bec3c9448375a319d00"></a>
-Long64_t&#160;</td><td class="memItemRight" valign="bottom"><b>fCurrentEvent</b></td></tr>
+Long64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTRATPACEventViewer.html#a27709d825fd21bec3c9448375a319d00">fCurrentEvent</a></td></tr>
+<tr class="memdesc:a27709d825fd21bec3c9448375a319d00"><td class="mdescLeft">&#160;</td><td class="mdescRight">The currently-active MC event. <br /></td></tr>
 <tr class="separator:a27709d825fd21bec3c9448375a319d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class for viewing RAT-PAC detector geometries. </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+<div class="textblock"><p>Class for viewing RAT-PAC detector geometries and MC events in ROOT //DOC//. </p>
+<p>This class imports detector geometries and MC-event data from RAT-PAC ".root" output files and displays them using ROOT's <em>TGeoManager</em> system. <br  />
+ <b>Note: This class requires ROOT to be integrated with a working installation of RAT-PAC.</b> See the <a href="https://rat.readthedocs.io/en/latest">RAT-PAC documentation</a> for instructions. <br  />
+ Typical Usage: <br  />
+</p><ol type="1">
+<li>Create a <a class="el" href="classTRATPACEventViewer.html" title="Class for viewing RAT-PAC detector geometries and MC events in ROOT //DOC//.">TRATPACEventViewer</a> object using one of the following: <br  />
+<ul>
+<li>Call the ctor with the filename and [optionally] a regex for volume selection; or <br  />
+</li>
+<li>Call the ctor without arguments, then call the <a class="el" href="classTRATPACEventViewer.html#abce2ba70242a4c9ecb485d821274a524" title="Initialize.">Init()</a> method with the filename and [optionally] a regex for volume selection. <br  />
+</li>
+</ul>
+</li>
+<li>Call <a class="el" href="classTRATPACEventViewer.html#a64ea4bb14741b3c8e5778f1ca4993e27" title="Build and draw detector geometry.">DrawGeometry()</a>. <br  />
+</li>
+<li>Adjust the camera using <a class="el" href="classTRATPACEventViewer.html#a3386c1543eafad37d10e9a583e003453" title="Simple shortcut for adjusting zoom when running interactively.">Zoom()</a> and the mouse if desired. <br  />
+</li>
+<li>View at least one event using <a class="el" href="classTRATPACEventViewer.html#aa7ed0bc0a9f8861e21ad31999bf450b0" title="Draw particle tracks for a given event.">DrawTracks()</a>. <br  />
+</li>
+<li>View additional events using any of <a class="el" href="classTRATPACEventViewer.html#aa7ed0bc0a9f8861e21ad31999bf450b0" title="Draw particle tracks for a given event.">DrawTracks()</a>, <a class="el" href="classTRATPACEventViewer.html#a220eb5589484e59b59a903cf96486300">DrawNextEvent()</a>, and <a class="el" href="classTRATPACEventViewer.html#a2bcdae7b7f340f5469c9b20c54c938e8">DrawPrevEvent()</a>. <br  />
+</li>
+</ol>
+<p>Example, assuming a RAT-PAC output file named <code>Datarun0.root</code>: <br  />
+ </p><div class="fragment"><div class="line"><a class="code" href="classTRATPACEventViewer.html">TRATPACEventViewer</a> R(<span class="stringliteral">&quot;Datarun0.root&quot;</span>);</div>
+<div class="line">R.DrawGeometry();</div>
+<div class="line">R.Zoom(5.0);</div>
+<div class="line">R.DrawTracks(0);</div>
+<div class="line">R.DrawNextEvent();</div>
+<div class="line">R.DrawNextEvent();</div>
+<div class="line"><span class="comment">// etc.</span></div>
+</div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a4c3db64c664f51d589df8593bc680b3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c3db64c664f51d589df8593bc680b3f">&#9670;&nbsp;</a></span>TRATPACEventViewer() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TRATPACEventViewer::TRATPACEventViewer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default ctor. </p>
+<p>Requires calling <a class="el" href="classTRATPACEventViewer.html#abce2ba70242a4c9ecb485d821274a524" title="Initialize.">Init()</a> afterwards, with at least the <em>fileName</em> argument. </p>
+
+</div>
+</div>
+<a id="a50ded392c3376a4fd6a836a6eb0d1b85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50ded392c3376a4fd6a836a6eb0d1b85">&#9670;&nbsp;</a></span>TRATPACEventViewer() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TRATPACEventViewer::TRATPACEventViewer </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>volumePattern</em> = <code>&quot;.*&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Regular ctor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileName</td><td>&ndash; name of RAT-PAC ".root" file to read </td></tr>
+    <tr><td class="paramname">volumePattern</td><td>&ndash; regex string determining which volumes to draw; defaults to <code>".*"</code>, which draws all volumes. <br  />
+ To draw, for example, only volumes named "activeSegment00", "activeSegment01", etc., use the following: <br  />
+ <code>"activeSegment[0-9]"</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a220eb5589484e59b59a903cf96486300"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a220eb5589484e59b59a903cf96486300">&#9670;&nbsp;</a></span>DrawNextEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TRATPACEventViewer::DrawNextEvent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Draw the next event as defined by RAT::DSReader::GetEvent(). </p>
+
+</div>
+</div>
+<a id="a2bcdae7b7f340f5469c9b20c54c938e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bcdae7b7f340f5469c9b20c54c938e8">&#9670;&nbsp;</a></span>DrawPrevEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TRATPACEventViewer::DrawPrevEvent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Draw the previous event as defined by RAT::DSReader::GetEvent(). </p>
+
+</div>
+</div>
+<a id="aa7ed0bc0a9f8861e21ad31999bf450b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7ed0bc0a9f8861e21ad31999bf450b0">&#9670;&nbsp;</a></span>DrawTracks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TRATPACEventViewer::DrawTracks </td>
+          <td>(</td>
+          <td class="paramtype">Long64_t&#160;</td>
+          <td class="paramname"><em>event</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Draw particle tracks for a given event. </p>
+<p>Draw the particle tracks stored in the specified event. Tailored for IBD events, but should (probably) work for others as well. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>&ndash; event number, as defined by RAT::DSReader::GetEvent() </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a98d2bc9ebfdf22db81de70bc8d890180"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98d2bc9ebfdf22db81de70bc8d890180">&#9670;&nbsp;</a></span>HighlightCells()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TRATPACEventViewer::HighlightCells </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Highlight cells containing IBD vertex, e+ annihilation, and n-capture (for IBD) </p>
+<p>Execute cell highlighting for IBD events. </p>
+
+</div>
+</div>
+<a id="abce2ba70242a4c9ecb485d821274a524"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abce2ba70242a4c9ecb485d821274a524">&#9670;&nbsp;</a></span>Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TRATPACEventViewer::Init </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>volumePattern</em> = <code>&quot;.*&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize. </p>
+<p>Initialize an instance that has been created using the default ctor, <a class="el" href="classTRATPACEventViewer.html#a4c3db64c664f51d589df8593bc680b3f" title="Default ctor.">TRATPACEventViewer()</a>. <br  />
+ Arguments are the same as for the normal ctor, <a class="el" href="classTRATPACEventViewer.html#a50ded392c3376a4fd6a836a6eb0d1b85" title="Regular ctor.">TRATPACEventViewer(const char* fileName, const char* volumePattern)</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileName</td><td>&ndash; name of RAT-PAC ".root" file to read </td></tr>
+    <tr><td class="paramname">volumePattern</td><td>&ndash; regex string determining which volumes to draw (see normal ctor for more details) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3386c1543eafad37d10e9a583e003453"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3386c1543eafad37d10e9a583e003453">&#9670;&nbsp;</a></span>Zoom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TRATPACEventViewer::Zoom </td>
+          <td>(</td>
+          <td class="paramtype">Double_t&#160;</td>
+          <td class="paramname"><em>zoomFactor</em> = <code>2</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Simple shortcut for adjusting zoom when running interactively. </p>
+<p>Easier than typing <code>TView3D *view = gPad-&gt;GetView(); view-&gt;ZoomView(gPad, zoomFactor)</code>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">zoomFactor</td><td>&ndash; factor by which to multiply ROOT's current zoom (default = 2) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="TRATPACEventViewer_8h_source.html">TRATPACEventViewer.h</a></li>
 <li>TRATPACEventViewer.cxx</li>
 </ul>
 </div><!-- contents -->
+<div class="ttc" id="aclassTRATPACEventViewer_html"><div class="ttname"><a href="classTRATPACEventViewer.html">TRATPACEventViewer</a></div><div class="ttdoc">Class for viewing RAT-PAC detector geometries and MC events in ROOT //DOC//.</div><div class="ttdef"><b>Definition:</b> TRATPACEventViewer.h:53</div></div>
 <!-- start footer part -->
 		<script src="custom.js"></script>
 	</body>

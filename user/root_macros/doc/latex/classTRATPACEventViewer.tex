@@ -2,7 +2,7 @@
 \label{classTRATPACEventViewer}\index{TRATPACEventViewer@{TRATPACEventViewer}}
 
 
-Class for viewing R\+A\+T-\/\+P\+AC detector geometries.  
+Class for viewing R\+A\+T-\/\+P\+AC detector geometries and MC events in R\+O\+OT //\+D\+O\+C//.  
 
 
 
@@ -11,7 +11,8 @@ Class for viewing R\+A\+T-\/\+P\+AC detector geometries.
 
 
 
-Inheritance diagram for T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+:\nopagebreak
+Inheritance diagram for T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,7 +21,8 @@ Inheritance diagram for T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+:\nopagebreak
+Collaboration diagram for T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -30,12 +32,12 @@ Collaboration diagram for T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classTRATPACEventViewer_a50ded392c3376a4fd6a836a6eb0d1b85}\label{classTRATPACEventViewer_a50ded392c3376a4fd6a836a6eb0d1b85}} 
-{\bfseries T\+R\+A\+T\+P\+A\+C\+Event\+Viewer} (const char $\ast$file\+Name, const char $\ast$volume\+Pattern=\char`\"{}.$\ast$\char`\"{})
-\item 
-\mbox{\Hypertarget{classTRATPACEventViewer_abce2ba70242a4c9ecb485d821274a524}\label{classTRATPACEventViewer_abce2ba70242a4c9ecb485d821274a524}} 
-{\bfseries Init} (const char $\ast$file\+Name, const char $\ast$volume\+Pattern=\char`\"{}.$\ast$\char`\"{})
-\item 
+\mbox{\hyperlink{classTRATPACEventViewer_a4c3db64c664f51d589df8593bc680b3f}{T\+R\+A\+T\+P\+A\+C\+Event\+Viewer}} ()
+\begin{DoxyCompactList}\small\item\em Default ctor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTRATPACEventViewer_a50ded392c3376a4fd6a836a6eb0d1b85}{T\+R\+A\+T\+P\+A\+C\+Event\+Viewer}} (const char $\ast$file\+Name, const char $\ast$volume\+Pattern=\char`\"{}.$\ast$\char`\"{})
+\begin{DoxyCompactList}\small\item\em Regular ctor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTRATPACEventViewer_abce2ba70242a4c9ecb485d821274a524}{Init}} (const char $\ast$file\+Name, const char $\ast$volume\+Pattern=\char`\"{}.$\ast$\char`\"{})
+\begin{DoxyCompactList}\small\item\em Initialize. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classTRATPACEventViewer_a5e3b1034fcc51dbf1121136c4d2ac22f}\label{classTRATPACEventViewer_a5e3b1034fcc51dbf1121136c4d2ac22f}} 
 T\+String {\bfseries Get\+File\+Name} ()
 \item 
@@ -73,72 +75,202 @@ void {\bfseries Set\+Volume\+Pattern} (const char $\ast$pattern)
 void {\bfseries Set\+Highlight\+Mode} (Bool\+\_\+t b\+Value=k\+T\+R\+UE)
 \item 
 \mbox{\Hypertarget{classTRATPACEventViewer_a64ea4bb14741b3c8e5778f1ca4993e27}\label{classTRATPACEventViewer_a64ea4bb14741b3c8e5778f1ca4993e27}} 
-void {\bfseries Draw\+Geometry} ()
+void \mbox{\hyperlink{classTRATPACEventViewer_a64ea4bb14741b3c8e5778f1ca4993e27}{Draw\+Geometry}} ()
+\begin{DoxyCompactList}\small\item\em Build and draw detector geometry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTRATPACEventViewer_aa7ed0bc0a9f8861e21ad31999bf450b0}{Draw\+Tracks}} (Long64\+\_\+t event=0)
+\begin{DoxyCompactList}\small\item\em Draw particle tracks for a given event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTRATPACEventViewer_a220eb5589484e59b59a903cf96486300}{Draw\+Next\+Event}} ()
 \item 
-\mbox{\Hypertarget{classTRATPACEventViewer_aa7ed0bc0a9f8861e21ad31999bf450b0}\label{classTRATPACEventViewer_aa7ed0bc0a9f8861e21ad31999bf450b0}} 
-void {\bfseries Draw\+Tracks} (Long64\+\_\+t event=0)
-\item 
-\mbox{\Hypertarget{classTRATPACEventViewer_a220eb5589484e59b59a903cf96486300}\label{classTRATPACEventViewer_a220eb5589484e59b59a903cf96486300}} 
-void {\bfseries Draw\+Next\+Event} ()
-\item 
-\mbox{\Hypertarget{classTRATPACEventViewer_a2bcdae7b7f340f5469c9b20c54c938e8}\label{classTRATPACEventViewer_a2bcdae7b7f340f5469c9b20c54c938e8}} 
-void {\bfseries Draw\+Prev\+Event} ()
+void \mbox{\hyperlink{classTRATPACEventViewer_a2bcdae7b7f340f5469c9b20c54c938e8}{Draw\+Prev\+Event}} ()
 \item 
 \mbox{\Hypertarget{classTRATPACEventViewer_a42bc6f7ea0792b7a0c124bcd435a11c1}\label{classTRATPACEventViewer_a42bc6f7ea0792b7a0c124bcd435a11c1}} 
 void {\bfseries Redraw\+Current\+Event} ()
 \item 
-\mbox{\Hypertarget{classTRATPACEventViewer_a3386c1543eafad37d10e9a583e003453}\label{classTRATPACEventViewer_a3386c1543eafad37d10e9a583e003453}} 
-void {\bfseries Zoom} (Double\+\_\+t zoom\+Factor=2)
-\item 
-\mbox{\Hypertarget{classTRATPACEventViewer_aa01866faf1e616f093739df18a7f9415}\label{classTRATPACEventViewer_aa01866faf1e616f093739df18a7f9415}} 
-void {\bfseries Toggle\+Inert\+Vis} ()
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classTRATPACEventViewer_a3386c1543eafad37d10e9a583e003453}{Zoom}} (Double\+\_\+t zoom\+Factor=2)
+\begin{DoxyCompactList}\small\item\em Simple shortcut for adjusting zoom when running interactively. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classTRATPACEventViewer_a8eb099cf9201fca758a22ca41a1105d5}\label{classTRATPACEventViewer_a8eb099cf9201fca758a22ca41a1105d5}} 
-void {\bfseries Set\+Current\+Event} (Long64\+\_\+t event\+ID=0)
-\item 
-\mbox{\Hypertarget{classTRATPACEventViewer_a98d2bc9ebfdf22db81de70bc8d890180}\label{classTRATPACEventViewer_a98d2bc9ebfdf22db81de70bc8d890180}} 
-void {\bfseries Highlight\+Cells} ()
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classTRATPACEventViewer_a98d2bc9ebfdf22db81de70bc8d890180}{Highlight\+Cells}} ()
+\begin{DoxyCompactList}\small\item\em Highlight cells containing I\+BD vertex, e+ annihilation, and n-\/capture (for I\+BD) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classTRATPACEventViewer_a7c14d4c66dd58bdc0a33bf2b2a669190}\label{classTRATPACEventViewer_a7c14d4c66dd58bdc0a33bf2b2a669190}} 
-T\+String {\bfseries f\+File\+Name}
-\item 
+T\+String \mbox{\hyperlink{classTRATPACEventViewer_a7c14d4c66dd58bdc0a33bf2b2a669190}{f\+File\+Name}}
+\begin{DoxyCompactList}\small\item\em Name of input R\+A\+T-\/\+P\+A\+C/\+R\+O\+OT file containing at least 1 MC event. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classTRATPACEventViewer_af3d84f9ec0bfafc100dbfeaed988b910}\label{classTRATPACEventViewer_af3d84f9ec0bfafc100dbfeaed988b910}} 
-T\+File $\ast$ {\bfseries f\+Data\+File}
-\item 
+T\+File $\ast$ \mbox{\hyperlink{classTRATPACEventViewer_af3d84f9ec0bfafc100dbfeaed988b910}{f\+Data\+File}}
+\begin{DoxyCompactList}\small\item\em Input {\itshape T\+File} \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classTRATPACEventViewer_a59f644ee558583218beff5b89c90eac3}\label{classTRATPACEventViewer_a59f644ee558583218beff5b89c90eac3}} 
-T\+Tree $\ast$ {\bfseries f\+Tree}
-\item 
+T\+Tree $\ast$ \mbox{\hyperlink{classTRATPACEventViewer_a59f644ee558583218beff5b89c90eac3}{f\+Tree}}
+\begin{DoxyCompactList}\small\item\em R\+A\+T-\/\+P\+AC output tree. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classTRATPACEventViewer_a339894d8cc9781d964bd8f698ecc62f4}\label{classTRATPACEventViewer_a339894d8cc9781d964bd8f698ecc62f4}} 
-T\+String {\bfseries f\+Volume\+Pattern}
-\item 
+T\+String \mbox{\hyperlink{classTRATPACEventViewer_a339894d8cc9781d964bd8f698ecc62f4}{f\+Volume\+Pattern}}
+\begin{DoxyCompactList}\small\item\em String used to create {\itshape T\+Regexp} pattern for selecting volumes. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classTRATPACEventViewer_afd75be75236cc5aa8b351686b6876e1c}\label{classTRATPACEventViewer_afd75be75236cc5aa8b351686b6876e1c}} 
-\mbox{\hyperlink{classTRATGeo}{T\+R\+A\+T\+Geo}} $\ast$ {\bfseries f\+R\+A\+T\+Geo}
-\item 
+\mbox{\hyperlink{classTRATGeo}{T\+R\+A\+T\+Geo}} $\ast$ \mbox{\hyperlink{classTRATPACEventViewer_afd75be75236cc5aa8b351686b6876e1c}{f\+R\+A\+T\+Geo}}
+\begin{DoxyCompactList}\small\item\em Manager for R\+A\+T-\/\+P\+AC volume info. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classTRATPACEventViewer_a13d26ae84c3683d1e8ad2abcb4a8a480}\label{classTRATPACEventViewer_a13d26ae84c3683d1e8ad2abcb4a8a480}} 
-T\+Geo\+Manager $\ast$ {\bfseries f\+Geo\+Manager}
-\item 
+T\+Geo\+Manager $\ast$ \mbox{\hyperlink{classTRATPACEventViewer_a13d26ae84c3683d1e8ad2abcb4a8a480}{f\+Geo\+Manager}}
+\begin{DoxyCompactList}\small\item\em Manager for R\+O\+OT volumes. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classTRATPACEventViewer_a09585f4fe16b1b3154a021890ad129df}\label{classTRATPACEventViewer_a09585f4fe16b1b3154a021890ad129df}} 
-Bool\+\_\+t {\bfseries fk\+Highlight}
-\item 
+Bool\+\_\+t \mbox{\hyperlink{classTRATPACEventViewer_a09585f4fe16b1b3154a021890ad129df}{fk\+Highlight}}
+\begin{DoxyCompactList}\small\item\em Cell-\/highlight mode on/off. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classTRATPACEventViewer_a0a94b0df784603bae81ddb9f06632553}\label{classTRATPACEventViewer_a0a94b0df784603bae81ddb9f06632553}} 
-T\+Canvas $\ast$ {\bfseries f\+Canvas}
-\item 
+T\+Canvas $\ast$ \mbox{\hyperlink{classTRATPACEventViewer_a0a94b0df784603bae81ddb9f06632553}{f\+Canvas}}
+\begin{DoxyCompactList}\small\item\em Main canvas. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classTRATPACEventViewer_a8269d87a4346e8c251f41b7e7bdc8433}\label{classTRATPACEventViewer_a8269d87a4346e8c251f41b7e7bdc8433}} 
-Long64\+\_\+t {\bfseries f\+Total\+Events}
-\item 
+Long64\+\_\+t \mbox{\hyperlink{classTRATPACEventViewer_a8269d87a4346e8c251f41b7e7bdc8433}{f\+Total\+Events}}
+\begin{DoxyCompactList}\small\item\em Total top-\/level MC events in input file. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classTRATPACEventViewer_a27709d825fd21bec3c9448375a319d00}\label{classTRATPACEventViewer_a27709d825fd21bec3c9448375a319d00}} 
-Long64\+\_\+t {\bfseries f\+Current\+Event}
-\end{DoxyCompactItemize}
+Long64\+\_\+t \mbox{\hyperlink{classTRATPACEventViewer_a27709d825fd21bec3c9448375a319d00}{f\+Current\+Event}}
+\begin{DoxyCompactList}\small\item\em The currently-\/active MC event. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Class for viewing R\+A\+T-\/\+P\+AC detector geometries. 
+Class for viewing R\+A\+T-\/\+P\+AC detector geometries and MC events in R\+O\+OT //\+D\+O\+C//. 
+
+This class imports detector geometries and M\+C-\/event data from R\+A\+T-\/\+P\+AC \char`\"{}.\+root\char`\"{} output files and displays them using R\+O\+OT\textquotesingle{}s {\itshape T\+Geo\+Manager} system. ~\newline
+ {\bfseries{Note\+: This class requires R\+O\+OT to be integrated with a working installation of R\+A\+T-\/\+P\+AC.}} See the \href{https://rat.readthedocs.io/en/latest}{\texttt{ R\+A\+T-\/\+P\+AC documentation}} for instructions. ~\newline
+ Typical Usage\+: ~\newline
+
+\begin{DoxyEnumerate}
+\item Create a \mbox{\hyperlink{classTRATPACEventViewer}{T\+R\+A\+T\+P\+A\+C\+Event\+Viewer}} object using one of the following\+: ~\newline
+
+\begin{DoxyItemize}
+\item Call the ctor with the filename and \mbox{[}optionally\mbox{]} a regex for volume selection; or ~\newline
+
+\item Call the ctor without arguments, then call the \mbox{\hyperlink{classTRATPACEventViewer_abce2ba70242a4c9ecb485d821274a524}{Init()}} method with the filename and \mbox{[}optionally\mbox{]} a regex for volume selection. ~\newline
+
+\end{DoxyItemize}
+\item Call \mbox{\hyperlink{classTRATPACEventViewer_a64ea4bb14741b3c8e5778f1ca4993e27}{Draw\+Geometry()}}. ~\newline
+
+\item Adjust the camera using \mbox{\hyperlink{classTRATPACEventViewer_a3386c1543eafad37d10e9a583e003453}{Zoom()}} and the mouse if desired. ~\newline
+
+\item View at least one event using \mbox{\hyperlink{classTRATPACEventViewer_aa7ed0bc0a9f8861e21ad31999bf450b0}{Draw\+Tracks()}}. ~\newline
+
+\item View additional events using any of \mbox{\hyperlink{classTRATPACEventViewer_aa7ed0bc0a9f8861e21ad31999bf450b0}{Draw\+Tracks()}}, \mbox{\hyperlink{classTRATPACEventViewer_a220eb5589484e59b59a903cf96486300}{Draw\+Next\+Event()}}, and \mbox{\hyperlink{classTRATPACEventViewer_a2bcdae7b7f340f5469c9b20c54c938e8}{Draw\+Prev\+Event()}}. ~\newline
+
+\end{DoxyEnumerate}
+
+Example, assuming a R\+A\+T-\/\+P\+AC output file named {\ttfamily Datarun0.\+root}\+: ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classTRATPACEventViewer}{TRATPACEventViewer}} R(\textcolor{stringliteral}{"Datarun0.root"});}
+\DoxyCodeLine{R.DrawGeometry();}
+\DoxyCodeLine{R.Zoom(5.0);}
+\DoxyCodeLine{R.DrawTracks(0);}
+\DoxyCodeLine{R.DrawNextEvent();}
+\DoxyCodeLine{R.DrawNextEvent();}
+\DoxyCodeLine{\textcolor{comment}{// etc.}}
+\end{DoxyCode}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTRATPACEventViewer_a4c3db64c664f51d589df8593bc680b3f}\label{classTRATPACEventViewer_a4c3db64c664f51d589df8593bc680b3f}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!TRATPACEventViewer@{TRATPACEventViewer}}
+\index{TRATPACEventViewer@{TRATPACEventViewer}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{TRATPACEventViewer()}{TRATPACEventViewer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+T\+R\+A\+T\+P\+A\+C\+Event\+Viewer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default ctor. 
+
+Requires calling \mbox{\hyperlink{classTRATPACEventViewer_abce2ba70242a4c9ecb485d821274a524}{Init()}} afterwards, with at least the {\itshape file\+Name} argument. \mbox{\Hypertarget{classTRATPACEventViewer_a50ded392c3376a4fd6a836a6eb0d1b85}\label{classTRATPACEventViewer_a50ded392c3376a4fd6a836a6eb0d1b85}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!TRATPACEventViewer@{TRATPACEventViewer}}
+\index{TRATPACEventViewer@{TRATPACEventViewer}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{TRATPACEventViewer()}{TRATPACEventViewer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+T\+R\+A\+T\+P\+A\+C\+Event\+Viewer (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name,  }\item[{const char $\ast$}]{volume\+Pattern = {\ttfamily \char`\"{}.$\ast$\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Regular ctor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & -- name of R\+A\+T-\/\+P\+AC \char`\"{}.\+root\char`\"{} file to read \\
+\hline
+{\em volume\+Pattern} & -- regex string determining which volumes to draw; defaults to {\ttfamily \char`\"{}.$\ast$\char`\"{}}, which draws all volumes. ~\newline
+ To draw, for example, only volumes named \char`\"{}active\+Segment00\char`\"{}, \char`\"{}active\+Segment01\char`\"{}, etc., use the following\+: ~\newline
+ {\ttfamily \char`\"{}active\+Segment\mbox{[}0-\/9\mbox{]}\char`\"{}} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTRATPACEventViewer_a220eb5589484e59b59a903cf96486300}\label{classTRATPACEventViewer_a220eb5589484e59b59a903cf96486300}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!DrawNextEvent@{DrawNextEvent}}
+\index{DrawNextEvent@{DrawNextEvent}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{DrawNextEvent()}{DrawNextEvent()}}
+{\footnotesize\ttfamily void T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+Draw\+Next\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Draw the next event as defined by R\+A\+T\+::\+D\+S\+Reader\+::\+Get\+Event(). \mbox{\Hypertarget{classTRATPACEventViewer_a2bcdae7b7f340f5469c9b20c54c938e8}\label{classTRATPACEventViewer_a2bcdae7b7f340f5469c9b20c54c938e8}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!DrawPrevEvent@{DrawPrevEvent}}
+\index{DrawPrevEvent@{DrawPrevEvent}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{DrawPrevEvent()}{DrawPrevEvent()}}
+{\footnotesize\ttfamily void T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+Draw\+Prev\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Draw the previous event as defined by R\+A\+T\+::\+D\+S\+Reader\+::\+Get\+Event(). \mbox{\Hypertarget{classTRATPACEventViewer_aa7ed0bc0a9f8861e21ad31999bf450b0}\label{classTRATPACEventViewer_aa7ed0bc0a9f8861e21ad31999bf450b0}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!DrawTracks@{DrawTracks}}
+\index{DrawTracks@{DrawTracks}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{DrawTracks()}{DrawTracks()}}
+{\footnotesize\ttfamily void T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+Draw\+Tracks (\begin{DoxyParamCaption}\item[{Long64\+\_\+t}]{event = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Draw particle tracks for a given event. 
+
+Draw the particle tracks stored in the specified event. Tailored for I\+BD events, but should (probably) work for others as well. 
+\begin{DoxyParams}{Parameters}
+{\em event} & -- event number, as defined by R\+A\+T\+::\+D\+S\+Reader\+::\+Get\+Event() \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTRATPACEventViewer_a98d2bc9ebfdf22db81de70bc8d890180}\label{classTRATPACEventViewer_a98d2bc9ebfdf22db81de70bc8d890180}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!HighlightCells@{HighlightCells}}
+\index{HighlightCells@{HighlightCells}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{HighlightCells()}{HighlightCells()}}
+{\footnotesize\ttfamily void T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+Highlight\+Cells (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Highlight cells containing I\+BD vertex, e+ annihilation, and n-\/capture (for I\+BD) 
+
+Execute cell highlighting for I\+BD events. \mbox{\Hypertarget{classTRATPACEventViewer_abce2ba70242a4c9ecb485d821274a524}\label{classTRATPACEventViewer_abce2ba70242a4c9ecb485d821274a524}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!Init@{Init}}
+\index{Init@{Init}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+Init (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name,  }\item[{const char $\ast$}]{volume\+Pattern = {\ttfamily \char`\"{}.$\ast$\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Initialize. 
+
+Initialize an instance that has been created using the default ctor, \mbox{\hyperlink{classTRATPACEventViewer_a4c3db64c664f51d589df8593bc680b3f}{T\+R\+A\+T\+P\+A\+C\+Event\+Viewer()}}. ~\newline
+ Arguments are the same as for the normal ctor, \mbox{\hyperlink{classTRATPACEventViewer_a50ded392c3376a4fd6a836a6eb0d1b85}{T\+R\+A\+T\+P\+A\+C\+Event\+Viewer(const char$\ast$ file\+Name, const char$\ast$ volume\+Pattern)}}. 
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & -- name of R\+A\+T-\/\+P\+AC \char`\"{}.\+root\char`\"{} file to read \\
+\hline
+{\em volume\+Pattern} & -- regex string determining which volumes to draw (see normal ctor for more details) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTRATPACEventViewer_a3386c1543eafad37d10e9a583e003453}\label{classTRATPACEventViewer_a3386c1543eafad37d10e9a583e003453}} 
+\index{TRATPACEventViewer@{TRATPACEventViewer}!Zoom@{Zoom}}
+\index{Zoom@{Zoom}!TRATPACEventViewer@{TRATPACEventViewer}}
+\doxysubsubsection{\texorpdfstring{Zoom()}{Zoom()}}
+{\footnotesize\ttfamily void T\+R\+A\+T\+P\+A\+C\+Event\+Viewer\+::\+Zoom (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{zoom\+Factor = {\ttfamily 2} }\end{DoxyParamCaption})}
+
+
+
+Simple shortcut for adjusting zoom when running interactively. 
+
+Easier than typing {\ttfamily T\+View3D $\ast$view = g\+Pad-\/$>$Get\+View(); view-\/$>$Zoom\+View(g\+Pad, zoom\+Factor)}. 
+\begin{DoxyParams}{Parameters}
+{\em zoom\+Factor} & -- factor by which to multiply R\+O\+OT\textquotesingle{}s current zoom (default = 2) \\
+\hline
+\end{DoxyParams}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

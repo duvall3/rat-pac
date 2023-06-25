@@ -1,5 +1,5 @@
-// TRATPACEventViewer -- class for viewing RAT-PAC detector geometries
-//   and particle tracks in ROOT
+// TRATPACEventViewer
+// Class for viewing RAT-PAC detector geometries and MC events in ROOT
 // -- Note: For CINT, load using gROOT->LoadMacro("TRATPACEventViewer.cxx");
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 09/2022 ~ //
 
@@ -28,10 +28,13 @@
 
 //______________________________________________________________________________
 // default ctor
+/**
+ * Requires calling Init() afterwards, with at least the *fileName* argument.
+ */
 TRATPACEventViewer::TRATPACEventViewer()
 {
   SetName("RATPACEventViewer");
-  SetTitle("Class for visualizing detector geometries events");
+  SetTitle("Class for visualizing detector geometries and events");
   fVolumePattern = ".*";
   /* fTopChildID = 1; */
   fkHighlight = kTRUE;
@@ -39,6 +42,14 @@ TRATPACEventViewer::TRATPACEventViewer()
 
 //______________________________________________________________________________
 // normal ctor
+/**
+ * \param fileName -- name of RAT-PAC ".root" file to read
+ * \param volumePattern -- regex string determining which volumes to draw;
+ *   defaults to `".*"`, which draws all volumes.  
+ *   To draw, for example, only volumes named "activeSegment00", "activeSegment01", etc.,
+ *   use the following:  
+ *   `"activeSegment[0-9]"`
+ */
 TRATPACEventViewer::TRATPACEventViewer( const char* fileName, const char* volumePattern )
 {
   SetName("RATPACEventViewer");
@@ -67,6 +78,12 @@ TRATPACEventViewer::TRATPACEventViewer( const char* fileName, const char* volume
 //______________________________________________________________________________
 // Init
 void TRATPACEventViewer::Init( const char* fileName, const char* volumePattern )
+/**
+ * Initialize an instance that has been created using the default ctor, TRATPACEventViewer().  
+ * Arguments are the same as for the normal ctor, TRATPACEventViewer(const char* fileName, const char* volumePattern).
+ * \param fileName -- name of RAT-PAC ".root" file to read
+ * \param volumePattern -- regex string determining which volumes to draw (see normal ctor for more details)
+ */
 {
   fFileName = fileName;
   fDataFile->cd();
@@ -81,7 +98,11 @@ void TRATPACEventViewer::Init( const char* fileName, const char* volumePattern )
 }
 
 //______________________________________________________________________________
- //DrawGeometry
+// DrawGeometry
+/*
+ * This method interperets, assembles, and draws the geometry defined in the input file's *RATDB* object (typically a *TMap* named `db`).  
+ * Currently, it supports the "box" and "tube" volume types.
+ */
 TRATPACEventViewer::DrawGeometry()
 {
 
@@ -249,6 +270,11 @@ TRATPACEventViewer::DrawGeometry()
 
 //______________________________________________________________________________
 // DrawTracks
+/**
+ * Draw the particle tracks stored in the specified event.
+ * Tailored for IBD events, but should (probably) work for others as well.
+ * \param event -- event number, as defined by RAT::DSReader::GetEvent()
+ */
 void TRATPACEventViewer::DrawTracks( Long64_t event )
 {
 
@@ -421,6 +447,9 @@ void TRATPACEventViewer::DrawTracks( Long64_t event )
 
 //______________________________________________________________________________
 // DrawNextEvent
+/**
+ * Draw the next event as defined by RAT::DSReader::GetEvent().
+ */
 void TRATPACEventViewer::DrawNextEvent()
 {
   // event check
@@ -435,6 +464,9 @@ void TRATPACEventViewer::DrawNextEvent()
 
 //______________________________________________________________________________
 // DrawPrevEvent
+/**
+ * Draw the previous event as defined by RAT::DSReader::GetEvent().
+ */
 void TRATPACEventViewer::DrawPrevEvent()
 {
   // event check
@@ -449,6 +481,9 @@ void TRATPACEventViewer::DrawPrevEvent()
 
 //______________________________________________________________________________
 // HighlightCells
+/**
+ * Execute cell highlighting for IBD events.
+ */
 void TRATPACEventViewer::HighlightCells()
 {
 
@@ -465,7 +500,7 @@ void TRATPACEventViewer::HighlightCells()
   for (( vi = vol_list->begin(); vi != vol_list->end(); ++vi )) {
     TGeoVolume* vol_vi = (TGeoVolume*)*vi;
     TString vol_vi_name = vol_vi->GetName();
-    /* if ( vol_vi_name.Contains(tcr) && vol_vi->GetLineColor() != kBlack ) { */
+    /* if ( vol_vi_name.Contains(tcr) && vol_vi->GetLineColor() != kBlack ) */
     if ( vol_vi_name.Contains(tcr) ) vol_colors->Add(vol_vi);
   }
 
@@ -545,7 +580,11 @@ void TRATPACEventViewer::HighlightCells()
 //}
 
 //______________________________________________________________________________
-// Zoom -- simple shortcut for adjusting zoom when running interactively
+// Zoom
+/**
+ * Easier than typing `TView3D *view = gPad->GetView(); view->ZoomView(gPad, zoomFactor)`.
+ * \param zoomFactor -- factor by which to multiply ROOT's current zoom (default = 2)
+ */
 void TRATPACEventViewer::Zoom( Double_t zoomFactor )
 {
   if (gPad==0x0) {

@@ -1,7 +1,33 @@
 // TRATPACEventViewer
-/// Class for viewing RAT-PAC detector geometries
-//   and particle tracks in ROOT
+/// Class for viewing RAT-PAC detector geometries and MC events in ROOT //DOC//
 // -- Note: For CINT, load using gROOT->LoadMacro("TRATPACEventViewer.cxx");
+/**
+ * This class imports detector geometries and MC-event data
+ *   from RAT-PAC ".root" output files and displays them
+ *   using ROOT's *TGeoManager* system.  
+ * **Note: This class requires ROOT to be integrated with 
+ *   a working installation of RAT-PAC.** See the [RAT-PAC documentation](https://rat.readthedocs.io/en/latest)
+ *   for instructions.  
+ * Typical Usage:  
+ * 1. Create a TRATPACEventViewer object using one of the following:  
+ *    - Call the ctor with the filename and [optionally] a regex for volume selection; or  
+ *    - Call the ctor without arguments, then call the Init() method with the filename and [optionally] a regex for volume selection.  
+ * 2. Call DrawGeometry().  
+ * 3. Adjust the camera using Zoom() and the mouse if desired.  
+ * 4. View at least one event using DrawTracks().  
+ * 5. View additional events using any of DrawTracks(), DrawNextEvent(), and DrawPrevEvent().  
+ *
+ * Example, assuming a RAT-PAC output file named `Datarun0.root`:  
+ * ```cpp
+ * TRATPACEventViewer R("Datarun0.root");
+ * R.DrawGeometry();
+ * R.Zoom(5.0);
+ * R.DrawTracks(0);
+ * R.DrawNextEvent();
+ * R.DrawNextEvent();
+ * // etc.
+ * ```
+ */
 // ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 09/2022 ~ //
 
 //Copyright (C) 2022 Mark J. Duvall / T. Rocks Science
@@ -28,31 +54,31 @@ class TRATPACEventViewer : public TClass {
 
 private:
   // members
-  TString		fFileName;							// name of fDataFile
-  TFile*		fDataFile;							// file containing RAT-PAC output
-  /* RAT::DSReader		fDSReader;							// RAT-PAC data-structure reader */
-  TTree*		fTree;								// RAT-PAC output tree
-  TString		fVolumePattern;							// string used to create fVolumePatternRE
-  TRATGeo*		fRATGeo;							// manager for RAT-PAC volume info
-  TGeoManager*		fGeoManager;							// manager for ROOT volumes
-  /* Int_t			fTopChildID;							// top-level child index (see SetTopChildID in source file) */
-  Bool_t		fkHighlight;							// cell-highlight mode on/off
-  TCanvas*		fCanvas;							// main canvas
-  Long64_t		fTotalEvents;							// total top-level MC events in fDataFile
-  Long64_t		fCurrentEvent;							// the currently-active MC event
+  TString		fFileName;							///< Name of input RAT-PAC/ROOT file containing at least 1 MC event
+  TFile*		fDataFile;							///< Input *TFile*
+  /* RAT::DSReader		fDSReader;							///< RAT-PAC data-structure reader */
+  TTree*		fTree;								///< RAT-PAC output tree
+  TString		fVolumePattern;							///< String used to create *TRegexp* pattern for selecting volumes
+  TRATGeo*		fRATGeo;							///< Manager for RAT-PAC volume info
+  TGeoManager*		fGeoManager;							///< Manager for ROOT volumes
+  /* Int_t			fTopChildID;							///< top-level child index (see SetTopChildID in source file) */
+  Bool_t		fkHighlight;							///< Cell-highlight mode on/off
+  TCanvas*		fCanvas;							///< Main canvas
+  Long64_t		fTotalEvents;							///< Total top-level MC events in input file
+  Long64_t		fCurrentEvent;							///< The currently-active MC event
 
 private:
   // internal methods
-  /* void			Init();								// initialize */
-  void			SetCurrentEvent(Long64_t eventID=0) { fCurrentEvent = eventID; }
-  void			HighlightCells();							// highlight cells containing IBD vertex, e+ annihilation, and n-capture (for IBD)
+  /* void			Init();								///< Initialize */
+  void			SetCurrentEvent(Long64_t eventID=0) { fCurrentEvent = eventID; }	///< Set the currently-active MC event
+  void			HighlightCells();							///< Highlight cells containing IBD vertex, e+ annihilation, and n-capture (for IBD)
 
 public:
   // public methods
-  TRATPACEventViewer();									// default ctor
-  TRATPACEventViewer(const char* fileName, const char* volumePattern = ".*");		// regular ctor
+  TRATPACEventViewer();									///< Default ctor
+  TRATPACEventViewer(const char* fileName, const char* volumePattern = ".*");		///< Regular ctor
   // init
-  Init(const char* fileName, const char* volumePattern = ".*");				// initialize
+  Init(const char* fileName, const char* volumePattern = ".*");				///< Initialize
   // getters
   TString		GetFileName() { return fFileName; }
   TFile*		GetDataFile() { return fDataFile; }
@@ -71,13 +97,13 @@ public:
   /* void			SetTopChildID(Int_t index=1) { fTopChildID = index; } */
   void			SetHighlightMode(Bool_t bValue=kTRUE) { fkHighlight = bValue; }
   // MAIN
-  void			DrawGeometry();							// build and draw detector geometry
-  void			DrawTracks(Long64_t event=0);					// draw particle tracks for a given event
+  void			DrawGeometry();							///< Build and draw detector geometry
+  void			DrawTracks(Long64_t event=0);					///< Draw particle tracks for a given event
   void			DrawNextEvent();
   void			DrawPrevEvent();
   void			RedrawCurrentEvent() { DrawTracks(GetCurrentEvent()); }
-  void			Zoom(Double_t zoomFactor=2);
-  void			ToggleInertVis();						// toggle inert cells on/off (checkerboards only)
+  void			Zoom(Double_t zoomFactor=2);					///< Simple shortcut for adjusting zoom when running interactively
+  /* void			ToggleInertVis();						///< Toggle inert cells on/off (checkerboards only) // NOT YET IMPLEMENTED */
 
 // Integrating the TRATPACEventViewer class into ROOT
 ClassDef(TRATPACEventViewer,1) // with class version number

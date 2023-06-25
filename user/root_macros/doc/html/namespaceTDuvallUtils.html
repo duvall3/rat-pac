@@ -73,7 +73,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Library of useful general-purpose functions for working with ROOT / RAT-PAC.  
+<p>Library of useful general-purpose functions for working with ROOT / RAT-PAC. //DOC//.  
 <a href="namespaceTDuvallUtils.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -125,7 +125,7 @@ Functions</h2></td></tr>
 <tr class="separator:abfb15cb3873984530a294ebb085a9054"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Library of useful general-purpose functions for working with ROOT / RAT-PAC. </p>
+<div class="textblock"><p>Library of useful general-purpose functions for working with ROOT / RAT-PAC. //DOC//. </p>
 <p><b>Math:</b></p><ul>
 <li><a class="el" href="namespaceTDuvallUtils.html#a3f0fd37a1b28c9cf5c02cbefa1f48711" title="Shortcut for creating TEntryLists.">EntryList()</a></li>
 <li><a class="el" href="namespaceTDuvallUtils.html#a87fe2f8028da1318876d6c427745adea" title="Return an array of logarithmically-spaced values.">LogBins()</a></li>
@@ -471,9 +471,11 @@ Functions</h2></td></tr>
 
 <p>Print nicely-formatted summary of <em>obj</em>'s TBranches. </p>
 <p>Print a TTree's branches in a format that is easier to scan visually than TTree::GetListOfBranches()-&gt;ls(). <br  />
- For a full explanation of the data-type codes, see the main <em>TTree</em> documentation or the comments in <code>TTree.cxx</code> under your your $ROOTSYS directory. <br  />
+ For a full explanation of the data-type codes, see the main <em>TTree</em> documentation or the comments in <code>TTree.cxx</code> under your your $ROOTSYS directory. (On <em>*nix</em> systems, try <code>find $ROOTSYS -name TTree.cxx</code> to locate the file). <br  />
  Common data types: <br  />
 </p><ul>
+<li>I : 32-bit signed integer (Int_t)</li>
+<li>L : 64-bit signed integer (Long64_t)</li>
 <li>F : 32-bit float (Float_t) <br  />
 </li>
 <li>D : 64-bit float (Double_t) <br  />

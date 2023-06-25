@@ -1,5 +1,5 @@
 // TRefMatch
-/// Class implementing KS/AD-test reference-matching algorithm.
+/// Class implementing KS/AD-test reference-matching algorithm. //DOC//
 /** Standard Usage ( [R] = always required ):
  *  1. Instantiate (NOTE: must construct with "new") [R]
  *  2. Call Init ("setter version") if used default ctor
