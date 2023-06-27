@@ -1,8 +1,8 @@
 #!/bin/bash
 # exportRATmodel -- Export a 3D model of the current RAT-PAC experiment's geometry to VRML2
 #   and (optionally) convert to X3D. Along with "view3dscene" (see below), this provides
-#   a way to easily view RAT-PAC detector definitions on any common system without needing
-#   a full RAT-PAC installation, making them easily shareable.
+#   a way to easily view RAT-PAC detector geometries on machines without 
+#   RAT-PAC, making them easily shareable.
 # Notes:
 # -- Run this script in the experiment directory (typically $GLG4DATA/<EXPERIMENT_NAME>; for example, "~/rat-pac/data/miniTimeCube/").
 # -- Like RAT-PAC, this script assumes that the current directory contains either a macro or a symlink
@@ -14,7 +14,7 @@
 #      On Ubuntu/Debian systems, you should be able to get this program by running 'sudo apt install view3dscene'.
 # -- Your installation of RAT-PAC must have VRML2 support; check your version's output for the line "VRML2FILE (VRML2FILE)" under
 #      the line "Current available graphics systems are:".
-# USAGE: exportRATmodel [-h|-x] 
+# USAGE: exportRATmodel [-h|-c] 
 # ~ Mark J. Duvall ~ duvall3.git@gmail.com ~ 06/2023 ~ #
 
 # Copyright (C) 2023 Mark J. Duvall / T. Rocks Science
@@ -45,35 +45,40 @@ INITIAL_LATEST_WRL=${INITIAL_LATEST_WRL:-"none"}
 
 # prog check and control for aliases
 HAS_VIEW3DSCENE=false
+HAS_TOVRMLX3D=false
 ECHO="$(which echo) -e"
 CAT=$(which cat)
 RAT="$(which rat 2> $NULL) -l $NULL"
 VIEW3DSCENE=$(which view3dscene 2> $NULL)
 if [ $VIEW3DSCENE ]; then
   HAS_VIEW3DSCENE=true
+fi
+TOVRMLX3D=$(which tovrmlx3d 2> $NULL)
+if [ $TOVRMLX3D ]; then
+  HAS_TOVRMLX3D=true
   CONVERTER=$(which tovrmlx3d)
 fi
 
 # define usage
 usage() {
-  $ECHO "Usage: exportRATmodel [-h|-x] "
+  $ECHO "Usage: exportRATmodel [-h|-c] "
   $ECHO "Export a 3D model of the current RAT-PAC experiment's geometry to VRML2 and (optionally) convert to X3D"
   $ECHO
   $ECHO "Options:"
   $ECHO "  -h\tShow this help message and exit"
-  $ECHO "  -x\tConvert VRML output file to X3D format"
+  $ECHO "  -c\tConvert VRML2 output file (.wrl) to X3D format (.x3d)"
   $ECHO
 }
 
 # process options
 DO_X3D=false
-while getopts "hx" OPTIONS; do
+while getopts "hc" OPTIONS; do
   case $OPTIONS in
     h)
       usage
       exit 10
       ;;
-    x)
+    c)
       DO_X3D=true
       ;;
     *)
@@ -113,8 +118,8 @@ fi
 
 # convert if desired
 if $DO_X3D; then
-  if ! $HAS_VIEW3DSCENE; then
-    $ECHO "Conversion error: Program \"view3dscene\" missing. See comments in this script. Try 'sudo apt install view3dscene' if on Ubuntu/Debian, or contact your system administrator." > $ERR
+  if ! $HAS_TOVRMLX3D; then
+    $ECHO "Conversion error: Program \"tovrmlx3d\" is required. See comments in this script. Try 'sudo apt install view3dscene' if on Ubuntu/Debian, or contact your system administrator." > $ERR
     EXIT_STATUS=3
   else
     # perform conversion
