@@ -37,15 +37,15 @@
 NULL=/dev/null
 ERR=/dev/stderr
 VRML_MACRO="exportVRML.mac"
-INITIAL_LATEST_WRL=$('ls' -tr1 *.wrl | 'tail' -n 1)
+INITIAL_LATEST_WRL=$('ls' -tr1 *.wrl 2> $NULL | 'tail' -n 1)
 INITIAL_LATEST_WRL=${INITIAL_LATEST_WRL:-"none"}
 
 # prog check and control for aliases
 HAS_VIEW3DSCENE=false
 ECHO="$(which echo) -e"
 CAT=$(which cat)
-RAT="$(which rat) -l $NULL"
-VIEW3DSCENE=$(which view3dscene)
+RAT="$(which rat 2> $NULL) -l $NULL"
+VIEW3DSCENE=$(which view3dscene 2> $NULL)
 if [ $VIEW3DSCENE ]; then
   HAS_VIEW3DSCENE=true
   CONVERTER=$(which tovrmlx3d)
