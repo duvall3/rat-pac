@@ -1,14 +1,17 @@
 #!/bin/bash
-# exportRATmodel -- Export a 3D model of the current RAT-PAC experiment's geometry to VRML2 and (optionally) convert to X3D
+# exportRATmodel -- Export a 3D model of the current RAT-PAC experiment's geometry to VRML2
+#   and (optionally) convert to X3D. Along with "view3dscene" (see below), this provides
+#   a way to easily view RAT-PAC detector definitions on any common system without needing
+#   a full RAT-PAC installation, making them easily shareable.
 # Notes:
 # -- Run this script in the experiment directory (typically $GLG4DATA/<EXPERIMENT_NAME>; for example, "~/rat-pac/data/miniTimeCube/").
-# ## -- Like RAT-PAC, this script assumes that the current directory contains either a macro or a symlink
-# ##      located at "./prerun.mac", containing (or calling another macro containing) the /rat/db/set commands for "DETECTOR experiment"
-# ##      and "DETECTOR geo_file". If such a "prerun.mac" is not present in your experiment's directory, use the "-p" option
-# ##      to supply the location of such a macro.
+# -- Like RAT-PAC, this script assumes that the current directory contains either a macro or a symlink
+#      located at "prerun.mac", containing (or calling another macro containing) the /rat/db/set commands for "DETECTOR experiment"
+#      and "DETECTOR geo_file".
 # -- The X3D conversion is performed by the (open-source, multi-platform) program
 #      "view3dscene" (https://castle-engine.sourceforge.io/view3dscene.php),
 #      so this program is required if the conversion flag is set.
+#      On Ubuntu/Debian systems, you should be able to get this program by running 'sudo apt install view3dscene'.
 # -- Your installation of RAT-PAC must have VRML2 support; check your version's output for the line "VRML2FILE (VRML2FILE)" under
 #      the line "Current available graphics systems are:".
 # USAGE: exportRATmodel [-h|-x] 
