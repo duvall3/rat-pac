@@ -14,7 +14,7 @@
 #      On Ubuntu/Debian systems, you should be able to get this program by running 'sudo apt install view3dscene'.
 # -- Your installation of RAT-PAC must have VRML2 support; check your version's output for the line "VRML2FILE (VRML2FILE)" under
 #      the line "Current available graphics systems are:".
-# USAGE: exportRATmodel [-h|-c] 
+# USAGE: exportRATmodel [-h|-c] [EXPERIMENT_NAME|DIRECTORY]
 # ~ Mark J. Duvall ~ duvall3.git@gmail.com ~ 06/2023 ~ #
 
 # Copyright (C) 2023 Mark J. Duvall / T. Rocks Science
@@ -42,11 +42,13 @@ ERR=/dev/stderr
 VRML_MACRO="exportVRML.mac"
 INITIAL_LATEST_WRL=$('ls' -tr1 *.wrl 2> $NULL | 'tail' -n 1)
 INITIAL_LATEST_WRL=${INITIAL_LATEST_WRL:-"none"}
+EXPERIMENT_DIR=$(pwd)
 
-# prog check and control for aliases
+# program check and control for aliases
 HAS_VIEW3DSCENE=false
 HAS_TOVRMLX3D=false
 ECHO="$(which echo) -e"
+FIND=$(which find)
 CAT=$(which cat)
 RAT="$(which rat 2> $NULL) -l $NULL"
 VIEW3DSCENE=$(which view3dscene 2> $NULL)
@@ -61,8 +63,9 @@ fi
 
 # define usage
 usage() {
-  $ECHO "Usage: exportRATmodel [-h|-c] "
-  $ECHO "Export a 3D model of the current RAT-PAC experiment's geometry to VRML2 and (optionally) convert to X3D"
+  $ECHO "Usage: exportRATmodel [-h|-c] [EXPERIMENT_NAME|DIRECTORY]"
+  $ECHO "Export a 3D model of the specified RAT-PAC experiment's geometry (default: current directory)"
+  $ECHO "   to VRML2 and (optionally) convert to X3D"
   $ECHO
   $ECHO "Options:"
   $ECHO "  -h\tShow this help message and exit"
@@ -88,10 +91,31 @@ while getopts "hc" OPTIONS; do
       ;;
   esac
 done
-# shift $((OPTIND-1)) # uncomment for options with args
+shift $((OPTIND-1)) # uncomment if arg(s) present
 
+# process args
+if [ $1 ]; then
+  if [ -d $1 ]; then			# user supplied a directory
+    EXPERIMENT_DIR=$1
+  else					# user (hopefully) supplied an experiment name
+    if [ -d $GLG4DATA/$1 ]; then
+      EXPERIMENT_DIR=$GLG4DATA/$1
+    else
+      $ECHO "Error: Could not find experiment directory \"$1\" in current directory or in $GLG4DATA." > $ERR
+      exit 3
+    fi
+  fi
+fi
+if [[ $EXPERIMENT_DIR = "." ]]; then
+  $ECHO "Using experiment directory \"$(pwd)\"."
+else
+  $ECHO "Using experiment directory \"$EXPERIMENT_DIR\"."
+fi
 
 ## MAIN
+
+# enter experiment directory
+cd $EXPERIMENT_DIR
 
 # create vrml macro
 declare MACRO_STR
@@ -112,7 +136,7 @@ if [ $INITIAL_LATEST_WRL = $FINAL_LATEST_WRL ]; then
   $ECHO "Warning: No new .wrl file detected." > $ERR
   EXIT_STATUS=5
 else
-  $ECHO "Exported geometry written to $FINAL_LATEST_WRL"
+  $ECHO "Exported geometry written to $EXPERIMENT_DIR/$FINAL_LATEST_WRL"
   IS_NEW_WRL=true
 fi
 
@@ -127,11 +151,13 @@ if $DO_X3D; then
       OUTFILE_X3D=${FINAL_LATEST_WRL%wrl}x3d
       $CONVERTER --encoding=xml $FINAL_LATEST_WRL > $OUTFILE_X3D
       EXIT_STATUS=$?
-      if [ $EXIT_STATUS -eq 0 ]; then $ECHO "Exported geometry converted to $OUTFILE_X3D"; fi
+      if [ $EXIT_STATUS -eq 0 ]; then $ECHO "Exported geometry converted to $EXPERIMENT_DIR/$OUTFILE_X3D"; fi
     fi
   fi
 fi
 
+# return to original directory
+cd - > $NULL
 
 ## EXIT
 
