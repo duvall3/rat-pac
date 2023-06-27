@@ -18,6 +18,26 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+/** TKSMultiRes
+ *
+ * Class for combining reference-comparison results from multiple runs, specifically from KSSummary data.
+ *
+ *   To use:
+ *    - Call constructor
+ *    - Call Run()
+ *    - Use SetOutFileName to change output filenames *[optional]*
+ *    - Call Save() *[optional]*
+ *    - *Note: You can ajust the camera in the ribbon plot before saving if desired*
+ *
+ * Example:
+ * ```cpp
+ *   TKSMultiRes M;
+ *   M.Run();
+ *   M.SetOutFileName("MultiRes.root");
+ *   M.Save();
+ * ```
+ */
+
 #ifndef TKSMultiRes
 #define TKSMultiRes
 
@@ -42,11 +62,13 @@ private:
 private:
   // internal methods
   void			FillFileList();							///< Scan for KSSummary files and store in fFileList
+  /* TMacro*		GenerateRibbonMacro();						///< Generate a TMacro for recreating the ribbon plots */
 
 public:
   // public methods
   TKSMultiRes();									///< Default ctor
   /* TKSMultiRes( const char* someArg1, Double_t someArg2 );				///< Normal ctor */
+  TMacro*		GenerateRibbonMacro();						///< Generate a TMacro for recreating the ribbon plots
   // setters and getters
   void			SetRibbon(Bool_t newRibbon) { fkRibbon=newRibbon; }
   void			SetOutFileName(TString fileName) { fOutFileName=fileName; }

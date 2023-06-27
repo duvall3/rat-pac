@@ -19,9 +19,6 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#ifndef TKSMultiRibbons
-#define TKSMultiRibbons
-
 /** TKSMultiRibbons
  *
  * Class for making ribbon and heatmap plots, specifically from KSSummary data.
@@ -49,6 +46,11 @@
  * ```
  */
 
+#ifndef TKSMultiRibbons
+#define TKSMultiRibbons
+
+//#include "TKSMultiRes.cxx"
+
 class TKSMultiRibbons : public TClass {
 
 public:
@@ -62,6 +64,7 @@ public:
 
 private:
   // members
+  /* TKSMultiRes*		fkMultiRes;							///< Invoking TKSMultiRes object (if any) */
   Bool_t		fkInit;								///< Whether Init() has been run yet
   Int_t			fkNFiles;							///< Number of 'KSSummary.root' files found
   Int_t			fkNAngles;							///< Number of angles in each file
@@ -78,6 +81,7 @@ private:
 
 private:
   // internal methods
+  /* void			SetMultiRes(TKSMultiRes* newMultiRes) { fkMultiRes=newMultiRes; } */
   void			SetInit(Bool_t newInit) { fkInit=newInit; }
   void			FillFileList();							///< Scan for KSSummary files and store in fFileList
   void			SetNFiles(Int_t newNFiles) { fkNFiles=newNFiles; }
@@ -97,6 +101,7 @@ public:
   void			SetOutFileName(TString fileName) { fOutFileName=fileName; }
   void			SetOutFileName(const char* filename) { fOutFileName=TString(filename); }
   void			SetOutFile(TFile *fNew) { fOutFile=fNew; }
+  /* TKSMultiRes*		GetMultiRes() { return fkMultiRes; } */
   Int_t			GetNFiles() { return fkNFiles; }
   Int_t			GetNAngles() { return fkNAngles; }
   EPlotTypes		GetPlotTypes() { return fPlotTypes; }
@@ -119,7 +124,7 @@ public:
   void			PrintEnums();							///< Display this class' enums
 
 // Integrating the TKSMultiRibbons class into ROOT
-ClassDef(TKSMultiRibbons,1) ///< with class version number
+ClassDef(TKSMultiRibbons,2) ///< with class version number
 
 }; //end class
 

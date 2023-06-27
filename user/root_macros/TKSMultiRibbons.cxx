@@ -281,6 +281,15 @@ void TKSMultiRibbons::Save()
   /* GetOutFile()->cd(); */
   /* cout << "Current file: " << gFile << endl; //debug */
   /* if (! GetOutFile()->IsOpen()) SetOutFile( TFile::Open(fOutFileName.Data(), "update") ); */
+  /* if (GetOutFile()==0x0) { */
+  /*   // create outFile */
+  /*   SetOutFile( TFile::Open(fOutFileName.Data(), "update") ); */
+  /* } else { */
+  /*   // open outFile */
+  /*   if (! fOutFile->IsOpen() ) { */
+  /*     fOutFile->Open(fOutFileName.Data(), "update"); */
+  /*   } */
+  /* } */
   if (fRibbonCanvas) {
     TString outRibbonName(fOutFileName);
     outRibbonName.ReplaceAll("\.root", "_Ribbons.png");
@@ -301,6 +310,8 @@ void TKSMultiRibbons::Save()
   /* this->Write("MultiRibbons", TObject::kSingleKey); */
   /* GetOutFile()->Write(); */
   /* GetOutFile()->Close(); */
+  /* fDeltas->Write("deltas"); */
+  /* fOutFile->Close(); */
   gROOT->SetBatch(kBatchOrig);
   if (fHeatmapCanvas) Heatmap();
   if (fRibbonCanvas) Ribbons();

@@ -30,8 +30,6 @@ TKSMultiRes::TKSMultiRes()
 // */
 //TKSMultiRes::TKSMultiRes( const char* someArg1, Double_t someArg2 )
 //{
-//  // define here
-//  fSomeData = 0.;
 //}
 
 //______________________________________________________________________________
@@ -61,11 +59,114 @@ void TKSMultiRes::FillFileList()
 }
 
 //______________________________________________________________________________
+// GenerateRibbonMacro
+/**
+ * This function is called by Save() if a ribbon plot exists.
+ * Because TCanvas::Write() does not seem to record the "cut" options,
+ * simply writing the ribbon canvas to a TFile and then attempting to draw
+ * the ribbon canvas from the file does not display the ribbon plots correctly.  
+ * **This feature enables a user to properly open the ribbon plot interactively
+ * without needing to access the source datafiles and TKSMultiRes/TKSMultiRibbons classes.**  
+ * *Note: This was written with ROOTv5.34/30 and may not work with other versions.*  
+ * \retval mac -- macro for redrawing ribbon plots from output file
+ */
+TMacro* TKSMultiRes::GenerateRibbonMacro()
+{
+  // init
+  TMacro *mac = new TMacro("ribbonMac", "ROOTv5.34/30 macro for recreating ribbon plot");
+  mac->AddLine("{");
+
+  // generate macro line-by-line
+  mac->AddLine("// init");
+  mac->AddLine("TMatrixD *deltasPtr = (TMatrixD*)gDirectory->Get(\"deltas\");");
+  mac->AddLine("TMatrixD deltas = *deltasPtr;");
+  mac->AddLine("TCanvas *c_rib = new TCanvas(\"c_rib\", \"Ribbon Plot\");");
+  mac->AddLine("Int_t k(0), kFile(0);");
+  mac->AddLine("Int_t N = deltas->GetNrows();");
+  mac->AddLine("Int_t Nphi = deltas->GetNcols();");
+  mac->AddLine("TArrayD deltArr(Nphi);");
+  mac->AddLine("Double_t delta(1.0);");
+  mac->AddLine("Double_t angleLow(0.), angleHigh(31.);");
+  mac->AddLine("Double_t diffLim(20.);");
+  mac->AddLine("TF2 *g;");
+  mac->AddLine("TString ribbonName, cutName;");
+  mac->AddLine("gStyle->SetPalette(54,0);");
+  mac->AddLine("TCutG *cut0;");
+  mac->AddLine("Double_t A_guess(1.), mu_guess(1.), sigma_guess(5.);");
+  mac->AddLine("Double_t A, mu, sigma;");
+  mac->AddLine("Int_t nDims;");
+  mac->AddLine("Double_t meanMarkerX[2];");
+  mac->AddLine("Double_t meanMarkerY[2];");
+  mac->AddLine("Double_t meanMarkerZ[2] = {1., 1.};");
+  mac->AddLine("TPolyLine *l2;");
+  mac->AddLine("TPolyLine3D *l3;");
+  mac->AddLine("Int_t meanMarkerCount(0);");
+  mac->AddLine("Double_t titleOffset;");
+  mac->AddLine("TString rhOption(\"surf2\");");
+  mac->AddLine("nDims = 3;");
+  mac->AddLine("titleOffset = 2.0;");
+  mac->AddLine("TString drawCmd, drawCmd2;");
+  mac->AddLine("// plot");
+  mac->AddLine("// loop over angles (matrix rows)");
+  mac->AddLine("for (k=0; k<N; k++) {");
+  mac->AddLine("  // set up cut");
+  mac->AddLine("  cutName.Form(\"cut_%02dDEG\", k);");
+  mac->AddLine("  cut0 = new TCutG(cutName.Data(), 5);");
+  mac->AddLine("  cut0->SetVarX(\"x\");");
+  mac->AddLine("  cut0->SetVarY(\"y\");");
+  mac->AddLine("  cut0->SetPoint(0, -diffLim, k);");
+  mac->AddLine("  cut0->SetPoint(1, -diffLim, k+delta);");
+  mac->AddLine("  cut0->SetPoint(2,  diffLim, k+delta);");
+  mac->AddLine("  cut0->SetPoint(3,  diffLim, k);");
+  mac->AddLine("  cut0->SetPoint(4, -diffLim, k);");
+  mac->AddLine("  // calculate parameters");
+  mac->AddLine("  TMatrixDRow deltaRow(deltas, k);");
+  mac->AddLine("  for (Int_t j=0; j<Nphi; j++) deltArr[j] = deltaRow[j];");
+  mac->AddLine("  A = 1.; // each angle has the same number of entries, so they're effectively already normalized (relative to one another)");
+  mac->AddLine("  mu = TMath::Mean(Nphi,deltArr.GetArray());");
+  mac->AddLine("  sigma = TMath::RMS(Nphi,deltArr.GetArray());");
+  mac->AddLine("  meanMarkerX[0] = mu;");
+  mac->AddLine("  meanMarkerX[1] = mu;");
+  mac->AddLine("  meanMarkerY[0] = k;");
+  mac->AddLine("  meanMarkerY[1] = k+1;");
+  mac->AddLine("  // create and adjust ribbon plot");
+  mac->AddLine("  ribbonName.Form(\"g_%02dDEG\", k);");
+  mac->AddLine("  gSystem->RedirectOutput(\"/dev/null\"); // discard the error about number of parameters when creating the next 'new TF2'");
+  mac->AddLine("  g = new TF2(ribbonName.Data(), \"gaus(0)\", -diffLim, diffLim, angleLow, angleHigh);");
+  mac->AddLine("  gSystem->RedirectOutput(0); // reset stderr,stdout");
+  mac->AddLine("  g->SetLineWidth(1);");
+  mac->AddLine("  g->SetLineColor(kCyan);");
+  mac->AddLine("  g->SetNpx(90);");
+  mac->AddLine("  g->SetParameters(A, mu, sigma);");
+  mac->AddLine("  // set annotations (first iteration only)");
+  mac->AddLine("  if (k==0) {");
+  mac->AddLine("    g->SetTitle(\"#Delta#varphi Distributions at Individual Angles\");");
+  mac->AddLine("    g->GetXaxis()->SetTitle(\"#varphi_{Best} - #varphi_{True} (^{o})\");");
+  mac->AddLine("    g->GetYaxis()->SetTitle(\"#varphi_{True} (^{o})\");");
+  mac->AddLine("    g->GetXaxis()->SetTitleOffset(titleOffset);");
+  mac->AddLine("    g->GetYaxis()->SetTitleOffset(titleOffset);");
+  mac->AddLine("    drawCmd.Form(\"%s [%s]\", rhOption.Data(), cutName.Data());");
+  mac->AddLine("  } else {");
+  mac->AddLine("    drawCmd.Form(\"same %s [%s]\", rhOption.Data(), cutName.Data()); // default");
+  mac->AddLine("  } // end if -- first iteration");
+  mac->AddLine("  // draw");
+  mac->AddLine("  g->Draw(drawCmd.Data());");
+  mac->AddLine("  // add mean markers");
+  mac->AddLine("  l3 = new TPolyLine3D(2, meanMarkerX, meanMarkerY, meanMarkerZ);");
+  mac->AddLine("  l3->SetLineColor(kRed);");
+  mac->AddLine("  l3->SetLineWidth(5.);");
+  mac->AddLine("  l3->Draw(\"same\");");
+  mac->AddLine("} // end angle loop");
+
+  // finish up
+  mac->AddLine("}");
+  return mac;
+}
+
+//______________________________________________________________________________
 // Init
 void TKSMultiRes::Init()
 {
-  // define here
-  /* cout << fRibbons << endl; //debug */
   FillFileList();
   return;
 }
@@ -127,6 +228,7 @@ void TKSMultiRes::Ribbons()
 {
   // init
   fRibbons = new TKSMultiRibbons;
+  /* fRibbons->SetMultiRes(this); */
   fRibbons->SetOutFile(GetOutFile());
   fRibbons->SetOutFileName(GetOutFileName().Data());
   fRibbons->Run();
@@ -146,6 +248,7 @@ void TKSMultiRes::Ribbons()
  * - The histogram itself, as `TH1D* histo`
  * - The fitted Gaussian function, as `TF1* gaussFit`
  * - The fit result, as `TFitResult* fitResult`
+ * - A macro for properly opening the saved ribbon plot, if one was created
  */
 void TKSMultiRes::Save()
 {
@@ -161,10 +264,13 @@ void TKSMultiRes::Save()
   fHistoCanvas->Close();
   fHistoSum->Write("histo");
   fHistoSumFit->Write("gausFit");
-  GetHistoSumFitResult()->Write("fitResult");
+  fHistoSumFitResult->Write("fitResult");
   if (fRibbons) {
-    fRibbons->Write("ribbons");
+  /*   fRibbons->Write("ribbons"); */
     fRibbons->Save();
+    fRibbons->GetDeltas()->Write("deltas");
+    GenerateRibbonMacro()->Write("ribbonMac");
+    /* GenerateRibbonMacro(); //debug */
   }
   fOutFile->Write();
   fOutFile->Close();

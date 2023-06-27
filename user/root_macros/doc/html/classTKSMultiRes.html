@@ -106,6 +106,9 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTKSMultiRes.html#af89a0a3f431bd85378bd63b484efce93">TKSMultiRes</a> ()</td></tr>
 <tr class="memdesc:af89a0a3f431bd85378bd63b484efce93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default ctor. <br /></td></tr>
 <tr class="separator:af89a0a3f431bd85378bd63b484efce93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f258001a878cbfdf123e9a6c84a82fe"><td class="memItemLeft" align="right" valign="top">TMacro *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTKSMultiRes.html#a1f258001a878cbfdf123e9a6c84a82fe">GenerateRibbonMacro</a> ()</td></tr>
+<tr class="memdesc:a1f258001a878cbfdf123e9a6c84a82fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a TMacro for recreating the ribbon plots.  <a href="classTKSMultiRes.html#a1f258001a878cbfdf123e9a6c84a82fe">More...</a><br /></td></tr>
+<tr class="separator:a1f258001a878cbfdf123e9a6c84a82fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf6ef5d1e407e8d0766c91365f346d17"><td class="memItemLeft" align="right" valign="top"><a id="adf6ef5d1e407e8d0766c91365f346d17"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SetRibbon</b> (Bool_t newRibbon)</td></tr>
 <tr class="separator:adf6ef5d1e407e8d0766c91365f346d17"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -223,7 +226,20 @@ TCanvas *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class for combining reference-comparison results from multiple runs. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+<p><a class="el" href="classTKSMultiRes.html" title="Class for combining reference-comparison results from multiple runs.">TKSMultiRes</a></p>
+<p>Class for combining reference-comparison results from multiple runs, specifically from KSSummary data.</p>
+<p>To use:</p><ul>
+<li>Call constructor</li>
+<li>Call <a class="el" href="classTKSMultiRes.html#ae43e4a85359436539fe486a923b433ae" title="Perform and save all selected analyses.">Run()</a></li>
+<li>Use SetOutFileName to change output filenames <em>[optional]</em></li>
+<li>Call <a class="el" href="classTKSMultiRes.html#a525ce223bfa99b01c59a3a1f9d5781c6" title="Save results.">Save()</a> <em>[optional]</em></li>
+<li><em>Note: You can ajust the camera in the ribbon plot before saving if desired</em></li>
+</ul>
+<p>Example: </p><div class="fragment"><div class="line"><a class="code" href="classTKSMultiRes.html">TKSMultiRes</a> M;</div>
+<div class="line">M.<a class="code" href="classTKSMultiRes.html#ae43e4a85359436539fe486a923b433ae">Run</a>();</div>
+<div class="line">M.SetOutFileName(<span class="stringliteral">&quot;MultiRes.root&quot;</span>);</div>
+<div class="line">M.<a class="code" href="classTKSMultiRes.html#a525ce223bfa99b01c59a3a1f9d5781c6">Save</a>();</div>
+</div><!-- fragment --> </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a93481bfce0b853ef74d2cc8991e05d11"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a93481bfce0b853ef74d2cc8991e05d11">&#9670;&nbsp;</a></span>FillFileList()</h2>
 
@@ -252,6 +268,34 @@ TCanvas *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 
 </div>
 </div>
+<a id="a1f258001a878cbfdf123e9a6c84a82fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f258001a878cbfdf123e9a6c84a82fe">&#9670;&nbsp;</a></span>GenerateRibbonMacro()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TMacro * TKSMultiRes::GenerateRibbonMacro </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generate a TMacro for recreating the ribbon plots. </p>
+<p>This function is called by <a class="el" href="classTKSMultiRes.html#a525ce223bfa99b01c59a3a1f9d5781c6" title="Save results.">Save()</a> if a ribbon plot exists. Because TCanvas::Write() does not seem to record the "cut" options, simply writing the ribbon canvas to a TFile and then attempting to draw the ribbon canvas from the file does not display the ribbon plots correctly. <br  />
+ <b>This feature enables a user to properly open the ribbon plot interactively without needing to access the source datafiles and TKSMultiRes/TKSMultiRibbons classes.</b> <br  />
+ <em>Note: This was written with ROOTv5.34/30 and may not work with other versions.</em> <br  />
+ </p><dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">mac</td><td>&ndash; macro for redrawing ribbon plots from output file </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a525ce223bfa99b01c59a3a1f9d5781c6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a525ce223bfa99b01c59a3a1f9d5781c6">&#9670;&nbsp;</a></span>Save()</h2>
 
@@ -275,7 +319,8 @@ TCanvas *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <li>The histogram canvas, as <code>TCanvas* c_histo</code></li>
 <li>The histogram itself, as <code>TH1D* histo</code></li>
 <li>The fitted Gaussian function, as <code>TF1* gaussFit</code></li>
-<li>The fit result, as <code>TFitResult* fitResult</code> </li>
+<li>The fit result, as <code>TFitResult* fitResult</code></li>
+<li>A macro for properly opening the saved ribbon plot, if one was created </li>
 </ul>
 
 </div>
@@ -285,6 +330,9 @@ TCanvas *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <li>TKSMultiRes.cxx</li>
 </ul>
 </div><!-- contents -->
+<div class="ttc" id="aclassTKSMultiRes_html"><div class="ttname"><a href="classTKSMultiRes.html">TKSMultiRes</a></div><div class="ttdoc">Class for combining reference-comparison results from multiple runs.</div><div class="ttdef"><b>Definition:</b> TKSMultiRes.h:46</div></div>
+<div class="ttc" id="aclassTKSMultiRes_html_a525ce223bfa99b01c59a3a1f9d5781c6"><div class="ttname"><a href="classTKSMultiRes.html#a525ce223bfa99b01c59a3a1f9d5781c6">TKSMultiRes::Save</a></div><div class="ttdeci">void Save()</div><div class="ttdoc">Save results.</div><div class="ttdef"><b>Definition:</b> TKSMultiRes.cxx:253</div></div>
+<div class="ttc" id="aclassTKSMultiRes_html_ae43e4a85359436539fe486a923b433ae"><div class="ttname"><a href="classTKSMultiRes.html#ae43e4a85359436539fe486a923b433ae">TKSMultiRes::Run</a></div><div class="ttdeci">void Run()</div><div class="ttdoc">Perform and save all selected analyses.</div><div class="ttdef"><b>Definition:</b> TKSMultiRes.cxx:283</div></div>
 <!-- start footer part -->
 		<script src="custom.js"></script>
 	</body>

@@ -33,6 +33,8 @@ Collaboration diagram for T\+K\+S\+Multi\+Res\+:\nopagebreak
 \mbox{\Hypertarget{classTKSMultiRes_af89a0a3f431bd85378bd63b484efce93}\label{classTKSMultiRes_af89a0a3f431bd85378bd63b484efce93}} 
 \mbox{\hyperlink{classTKSMultiRes_af89a0a3f431bd85378bd63b484efce93}{T\+K\+S\+Multi\+Res}} ()
 \begin{DoxyCompactList}\small\item\em Default ctor. \end{DoxyCompactList}\item 
+T\+Macro $\ast$ \mbox{\hyperlink{classTKSMultiRes_a1f258001a878cbfdf123e9a6c84a82fe}{Generate\+Ribbon\+Macro}} ()
+\begin{DoxyCompactList}\small\item\em Generate a T\+Macro for recreating the ribbon plots. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classTKSMultiRes_adf6ef5d1e407e8d0766c91365f346d17}\label{classTKSMultiRes_adf6ef5d1e407e8d0766c91365f346d17}} 
 void {\bfseries Set\+Ribbon} (Bool\+\_\+t new\+Ribbon)
 \item 
@@ -135,6 +137,28 @@ T\+Canvas $\ast$ \mbox{\hyperlink{classTKSMultiRes_a671d95a9b6667caef8eacd49e9dd
 \doxysubsection{Detailed Description}
 Class for combining reference-\/comparison results from multiple runs. 
 
+\mbox{\hyperlink{classTKSMultiRes}{T\+K\+S\+Multi\+Res}}
+
+Class for combining reference-\/comparison results from multiple runs, specifically from K\+S\+Summary data.
+
+To use\+:
+\begin{DoxyItemize}
+\item Call constructor
+\item Call \mbox{\hyperlink{classTKSMultiRes_ae43e4a85359436539fe486a923b433ae}{Run()}}
+\item Use Set\+Out\+File\+Name to change output filenames {\itshape \mbox{[}optional\mbox{]}}
+\item Call \mbox{\hyperlink{classTKSMultiRes_a525ce223bfa99b01c59a3a1f9d5781c6}{Save()}} {\itshape \mbox{[}optional\mbox{]}}
+\item {\itshape Note\+: You can ajust the camera in the ribbon plot before saving if desired}
+\end{DoxyItemize}
+
+Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classTKSMultiRes}{TKSMultiRes}} M;}
+\DoxyCodeLine{M.\mbox{\hyperlink{classTKSMultiRes_ae43e4a85359436539fe486a923b433ae}{Run}}();}
+\DoxyCodeLine{M.SetOutFileName(\textcolor{stringliteral}{"MultiRes.root"});}
+\DoxyCodeLine{M.\mbox{\hyperlink{classTKSMultiRes_a525ce223bfa99b01c59a3a1f9d5781c6}{Save}}();}
+\end{DoxyCode}
+ 
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classTKSMultiRes_a93481bfce0b853ef74d2cc8991e05d11}\label{classTKSMultiRes_a93481bfce0b853ef74d2cc8991e05d11}} 
 \index{TKSMultiRes@{TKSMultiRes}!FillFileList@{FillFileList}}
@@ -146,7 +170,25 @@ Class for combining reference-\/comparison results from multiple runs.
 
 Scan for K\+S\+Summary files and store in f\+File\+List. 
 
-normal ctor $\ast$$\ast$ \mbox{\Hypertarget{classTKSMultiRes_a525ce223bfa99b01c59a3a1f9d5781c6}\label{classTKSMultiRes_a525ce223bfa99b01c59a3a1f9d5781c6}} 
+normal ctor $\ast$$\ast$ \mbox{\Hypertarget{classTKSMultiRes_a1f258001a878cbfdf123e9a6c84a82fe}\label{classTKSMultiRes_a1f258001a878cbfdf123e9a6c84a82fe}} 
+\index{TKSMultiRes@{TKSMultiRes}!GenerateRibbonMacro@{GenerateRibbonMacro}}
+\index{GenerateRibbonMacro@{GenerateRibbonMacro}!TKSMultiRes@{TKSMultiRes}}
+\doxysubsubsection{\texorpdfstring{GenerateRibbonMacro()}{GenerateRibbonMacro()}}
+{\footnotesize\ttfamily T\+Macro $\ast$ T\+K\+S\+Multi\+Res\+::\+Generate\+Ribbon\+Macro (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Generate a T\+Macro for recreating the ribbon plots. 
+
+This function is called by \mbox{\hyperlink{classTKSMultiRes_a525ce223bfa99b01c59a3a1f9d5781c6}{Save()}} if a ribbon plot exists. Because T\+Canvas\+::\+Write() does not seem to record the \char`\"{}cut\char`\"{} options, simply writing the ribbon canvas to a T\+File and then attempting to draw the ribbon canvas from the file does not display the ribbon plots correctly. ~\newline
+ {\bfseries{This feature enables a user to properly open the ribbon plot interactively without needing to access the source datafiles and T\+K\+S\+Multi\+Res/\+T\+K\+S\+Multi\+Ribbons classes.}} ~\newline
+ {\itshape Note\+: This was written with R\+O\+O\+Tv5.\+34/30 and may not work with other versions.} ~\newline
+ 
+\begin{DoxyRetVals}{Return values}
+{\em mac} & -- macro for redrawing ribbon plots from output file \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{classTKSMultiRes_a525ce223bfa99b01c59a3a1f9d5781c6}\label{classTKSMultiRes_a525ce223bfa99b01c59a3a1f9d5781c6}} 
 \index{TKSMultiRes@{TKSMultiRes}!Save@{Save}}
 \index{Save@{Save}!TKSMultiRes@{TKSMultiRes}}
 \doxysubsubsection{\texorpdfstring{Save()}{Save()}}
@@ -167,7 +209,8 @@ Calling \mbox{\hyperlink{classTKSMultiRes_a525ce223bfa99b01c59a3a1f9d5781c6}{Sav
 \item The histogram canvas, as {\ttfamily T\+Canvas$\ast$ c\+\_\+histo}
 \item The histogram itself, as {\ttfamily T\+H1\+D$\ast$ histo}
 \item The fitted Gaussian function, as {\ttfamily T\+F1$\ast$ gauss\+Fit}
-\item The fit result, as {\ttfamily T\+Fit\+Result$\ast$ fit\+Result} 
+\item The fit result, as {\ttfamily T\+Fit\+Result$\ast$ fit\+Result}
+\item A macro for properly opening the saved ribbon plot, if one was created 
 \end{DoxyItemize}
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
