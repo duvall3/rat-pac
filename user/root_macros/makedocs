@@ -35,13 +35,13 @@ VIM=$(which vim)
 
 # define usage
 usage() {
-  $$ECHO "Usage: makedocs [-h|-u] "
-  $$ECHO "compile and (optionally) update documentation for 'Tools for Reactor-Antineutrino Studies in RAT-PAC'"
-  $$ECHO
-  $$ECHO "Options:"
-  $$ECHO "  -h\tShow this help message and exit"
-  $$ECHO "  -u\tUpdate doc files on uhunix"
-  $$ECHO
+  $ECHO "Usage: makedocs [-h|-u] "
+  $ECHO "compile and (optionally) update documentation for 'Tools for Reactor-Antineutrino Studies in RAT-PAC'"
+  $ECHO
+  $ECHO "Options:"
+  $ECHO "  -h\tShow this help message and exit"
+  $ECHO "  -u\tUpdate doc files on uhunix"
+  $ECHO
 }
 
 # process options
