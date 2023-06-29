@@ -96,13 +96,17 @@ for ( int k=0; k<6; ++k ) {
   //axialshade( spike(theta), white, L*(1,1), deepcyan, L*(-1,-1) );
 }
 
-// square bg
-real L = 1.35*S;
-axialshade( scale(L) * ( (-1,1)--(1,1)--(1,-1)--(-1,-1)--cycle ), heavyblue, (L,L), darkblue, -(L,L) );
+/* // square bg */
+/* real L = 1.35*S; */
+/* axialshade( scale(L) * ( (-1,1)--(1,1)--(1,-1)--(-1,-1)--cycle ), heavyblue, (L,L), darkblue, -(L,L) ); */
 
 //// hexagonal bg
 //real L = 1.35*S;
 //axialshade( scale(1.5) * pathify(verts), heavyblue, (L,L), darkblue, -(L,L) );
+
+// circular bg
+real L = 1.35*S;
+axialshade( scale(1.15*L) * unitcircle, heavyblue, (L,L), darkblue, -(L,L) );
 
 // draw spikes and tubes
 path crossbeam;
@@ -119,8 +123,8 @@ for ( int k=0; k<6; ++k ) {
   axialshade( tube(verts[k]), white, verts[k]+RG*(X+Y), magenta, verts[k]-RG*(X+Y) );
 }
 // central tube
-/* axialshade( tube(), white, RG*(1,1), magenta, RG*(-1,-1) ); */
-axialshade( circle(O,RG), white, RG*(1,1), magenta, RG*(-1,-1) );
+axialshade( tube(), white, RG*(1,1), magenta, RG*(-1,-1) );
+/* axialshade( circle(O,RG), white, RG*(1,1), magenta, RG*(-1,-1) ); */
 // redraw first tube over final crossbeam
 axialshade( tube(verts[0]), white, verts[0]+RG*(X+Y), magenta, verts[0]-RG*(X+Y) );
 
