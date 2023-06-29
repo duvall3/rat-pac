@@ -1,6 +1,6 @@
 #!/bin/bash
 # exportRATmodel -- Export a 3D model of the current RAT-PAC experiment's geometry to VRML2
-#   and (optionally) convert to X3D. Along with "view3dscene" (see below), this provides
+#   and convert to X3D. Along with "view3dscene" (see below), this provides
 #   a way to easily view RAT-PAC detector geometries on machines without 
 #   RAT-PAC, making them easily shareable.
 # Notes:
@@ -14,7 +14,7 @@
 #      On Ubuntu/Debian systems, you should be able to get this program by running 'sudo apt install view3dscene'.
 # -- Your installation of RAT-PAC must have VRML2 support; check your version's output for the line "VRML2FILE (VRML2FILE)" under
 #      the line "Current available graphics systems are:".
-# USAGE: exportRATmodel [-h|-c] [EXPERIMENT_NAME|DIRECTORY]
+# USAGE: exportRATmodel [-h|-n] [EXPERIMENT_NAME|DIRECTORY]
 # ~ Mark J. Duvall ~ duvall3.git@gmail.com ~ 06/2023 ~ #
 
 # Copyright (C) 2023 Mark J. Duvall / T. Rocks Science
@@ -63,26 +63,26 @@ fi
 
 # define usage
 usage() {
-  $ECHO "Usage: exportRATmodel [-h|-c] [EXPERIMENT_NAME|DIRECTORY]"
+  $ECHO "Usage: exportRATmodel [-h|-n] [EXPERIMENT_NAME|DIRECTORY]"
   $ECHO "Export a 3D model of the specified RAT-PAC experiment's geometry (default: current directory)"
-  $ECHO "   to VRML2 and (optionally) convert to X3D"
+  $ECHO "   to VRML2 and convert to X3D"
   $ECHO
   $ECHO "Options:"
-  $ECHO "  -h\tShow this help message and exit"
-  $ECHO "  -c\tConvert VRML2 output file (.wrl) to X3D format (.x3d)"
+  $ECHO "  -h\tHelp: Show this help message and exit"
+  $ECHO "  -n\tNo-convert: Skip conversion of VRML2 output file (.wrl) to X3D format (.x3d)"
   $ECHO
 }
 
 # process options
-DO_X3D=false
-while getopts "hc" OPTIONS; do
+DO_X3D=true
+while getopts "hn" OPTIONS; do
   case $OPTIONS in
     h)
       usage
       exit 10
       ;;
-    c)
-      DO_X3D=true
+    n)
+      DO_X3D=false
       ;;
     *)
       $ECHO
