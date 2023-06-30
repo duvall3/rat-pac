@@ -88,7 +88,7 @@ gROOT->LoadMacro("extractTestSingle.cxx");
 gROOT->LoadMacro("compareRef.cxx");
 gROOT->LoadMacro("runRefComp.cxx");
 gROOT->LoadMacro("systematicScatterPlot.cxx");
-gROOT->LoadMacro("KSMultiRes.cxx");
+/* gROOT->LoadMacro("TKSMultiRes.cxx"); */
 
 }
 

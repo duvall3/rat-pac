@@ -19,7 +19,7 @@ See [user/root_macros/doc/html/index.html](index.html) in this repository for mo
 These instructions will make the following assumptions:  
 - You have already completed the *Installation* instructions given on [the main page](index.html).  
 - This repository is located in the directory `$RATDIR` -- often simply `$HOME/rat-pac`, for example.  
-- Your `RAT-PAC` experiment is located in the directory `$DETECTOR` -- for example, `DETECTOR=$RATDIR/some_experiment`  
+- Your `RAT-PAC` experiment is located in the directory `$DETECTOR` -- for example, `DETECTOR=$RATDIR/data/some_experiment`  
 - Your reference set, collected test runs, and current test run are located in the directories `$REFDATA`, `$TESTDIR`, and `$TESTDATA`, respectively. For example:  
   -- `REFDATA=$DETECTOR/REF`  
   -- `TESTDIR=$REFDATA/TEST_RUNS`  
@@ -164,4 +164,4 @@ M.Save();
 
 ### That's it! Feel free to contact me using the address at the top of this page. Enjoy!
 
-*-~- Last Updated 06/19/2023 -~-*
+*-~- Last Updated 06/29/2023 -~-*

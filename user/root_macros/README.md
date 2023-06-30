@@ -8,12 +8,12 @@ Instructions for using the (most useful) macros and classes in
 
 ### Installation
 
-_Note: These are written for *nix systems (Mac/Linux)_
+_Note: These are written for \*nix systems (Mac/Linux)_
 
 1. After git-cloning this repository (or downloading the individual files),
-  run the `macro_paths.sh` script located in this directory
+  run the [macro_paths.sh](../../macro_paths.sh) script located in this directory
   and follow the instructions it provides.
-2. If you are using the `rootlogon.C` provided in this directory,
+2. If you are using the [rootlogon.C](../../rootlogon.C) provided in this directory,
   then everything should now be ready.
   If you are using your own `rootlogon.C` elsewhere, simply append the contents
   of this directory's version to yours. 
