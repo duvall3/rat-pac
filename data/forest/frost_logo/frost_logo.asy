@@ -34,6 +34,8 @@ if (kOutputPNG) {
 }
 
 // general init
+import feynman;
+fmdefaults();
 size(100,0);
 pen dfpen = defaultpen;
 pen glasspen = dfpen+cyan+opacity(0.50);
@@ -108,18 +110,22 @@ for ( int k=0; k<6; ++k ) {
 real L = 1.35*S;
 axialshade( scale(1.15*L) * unitcircle, heavyblue, (L,L), darkblue, -(L,L) );
 
-// draw spikes and tubes
+// draw
 path crossbeam;
-// outer tubes
 for ( int k=0; k<6; ++k ) {
   theta = k * 2*pi/6 + theta_0;
-  axialshade( spike(theta), white, L*(1,1), deepcyan, L*(-1,-1) );
-  if (k<5) {
-    crossbeam = scale(0.95)*(verts[k]--verts[k+1]) -- scale(1.05)*(verts[k+1]--verts[k]) -- cycle;
-  } else {
-    crossbeam = scale(0.95)*(verts[k]--verts[0]) -- scale(1.05)*(verts[0]--verts[k]) -- cycle;
-  }
-  axialshade( crossbeam,  white, L*(1,1), deepcyan, L*(-1,-1) );
+  // spikes
+  /* axialshade( spike(theta), white, L*(1,1), deepcyan, L*(-1,-1) ); */
+  /* // crossbeams */
+  /* if (k<5) { */
+  /*   /1* crossbeam = scale(0.95)*(verts[k]--verts[k+1]) -- scale(1.05)*(verts[k+1]--verts[k]) -- cycle; *1/ */
+  /*   crossbeam = scale(0.97)*(verts[k]--verts[k+1]) -- scale(1.03)*(verts[k+1]--verts[k]) -- cycle; */
+  /* } else { */
+  /*   /1* crossbeam = scale(0.95)*(verts[k]--verts[0]) -- scale(1.05)*(verts[0]--verts[k]) -- cycle; *1/ */
+  /*   crossbeam = scale(0.97)*(verts[k]--verts[0]) -- scale(1.03)*(verts[0]--verts[k]) -- cycle; */
+  /* } */
+  /* axialshade( crossbeam,  white, L*(1,1), deepcyan, L*(-1,-1) ); */
+  // outer tubes
   axialshade( tube(verts[k]), white, verts[k]+RG*(X+Y), magenta, verts[k]-RG*(X+Y) );
 }
 // central tube
@@ -127,6 +133,27 @@ axialshade( tube(), white, RG*(1,1), magenta, RG*(-1,-1) );
 /* axialshade( circle(O,RG), white, RG*(1,1), magenta, RG*(-1,-1) ); */
 // redraw first tube over final crossbeam
 axialshade( tube(verts[0]), white, verts[0]+RG*(X+Y), magenta, verts[0]-RG*(X+Y) );
+
+// add Feynman vertex
+transform T = scale(S);
+real fermionArrowSize = 15.0;
+/* transform T = scale(S)*rotate(degrees(2*pi/3),O); */
+/* draw(T*unitcircle, cyan+linewidth(3.0)); */
+/* draw(T*unitcircle, cyan); */
+/* currentpen = dfpen+linewidth(3.0)+cyan; */
+/* draw(T*unitcircle, cyan+linewidth(3.0)); */
+/* currentpen = dfpen+heavygreen+linewidth(5.0)+opacity(0.5); */
+currentpen = dfpen+cyan+linewidth(5.0);
+/* drawFermion(T*(-X-Y -- O)); */
+/* drawFermion(T*(O -- X-Y)); */
+/* drawPhoton(T*(O -- sqrt(2)*Y)); */
+/* axialshade( drawFermion(T*(-X+Y -- O)), white, L*(1,1), deepcyan, L*(-1,-1) ); */
+drawFermion(T*(-X+Y -- O), MidArrow(fermionArrowSize), false);
+drawFermion(T*(O -- -X-Y), MidArrow(fermionArrowSize), false);
+drawPhoton(T*(O -- sqrt(2)*X), width=7, false);
+/* drawPhoton(T*(O -- sqrt(2)*X), false); */
+/* axialshade( (scale(0.5)*unitcircle), white, L*(1,1), deepcyan, L*(-1,-1) ); */
+fill(scale(1.2)*unitcircle);
 
 
 // all pau!   )

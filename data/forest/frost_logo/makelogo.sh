@@ -1,5 +1,6 @@
 #!/bin/bash
 # makelogo.sh -- EWISotT
+if [[ $1 =~ -h ]]; then echo "USAGE: makelogo.sh" && exit 10; fi
 ASYFILE=frost_logo.asy
 asy $ASYFILE
 EXIT_STATUS=$?
