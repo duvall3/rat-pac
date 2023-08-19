@@ -65,42 +65,55 @@ shift $((OPTIND-1)) # uncomment for options with args
 
 ## MAIN
 
+# # dir check
+# if [[ $(pwd) =~ [Pp](ublic|rivate) ]]; then
+#   FIND_PATH=".."
+# else
+#   FIND_PATH="."
+# fi
+
 # dir check
-if [[ $(pwd) =~ [Pp](ublic|rivate) ]]; then
-  FIND_PATH=".."
-else
-  FIND_PATH="."
-fi
+HEADER_PATH="."
+SOURCE_PATH="."
+ORIG_DIR=$(pwd)
+if [[ $ORIG_DIR =~ [Pp](ublic|rivate) ]]; then cd ..; fi
+HEADER_PATH+=" $(find -maxdepth 1 -iname public)"
+SOURCE_PATH+=" $(find -maxdepth 1 -iname private)"
 
 # locate header and source files
 CLASS=$(basename ${1%.*})
-HEADER=$(find $FIND_PATH -name "$CLASS.h*")
-SOURCE=$(find $FIND_PATH -name "$CLASS.c*")
-# echo -e "Class:\t$CLASS\nHeader:\t$HEADER\nSource:\t$SOURCE" #debug
+# HEADER=$(find $FIND_PATH -name "$CLASS.h*")
+# SOURCE=$(find $FIND_PATH -name "$CLASS.c*")
+HEADER=( $(find $HEADER_PATH -maxdepth 1 -regextype egrep -iregex ".*$CLASS\.h(h|pp)?") )
+SOURCE=( $(find $SOURCE_PATH -maxdepth 1 -regextype egrep -iregex ".*$CLASS\.c(c|pp|xx)?") )
+# echo -e "Class:\t$CLASS\nHeader:\t${HEADER[*]}\nSource:\t${SOURCE[*]}" #debug
 
 # confirm
-HEADER_MISSING=false
-SOURCE_MISSING=false
-if [[ ! -e $HEADER ]]; then
-  HEADER_MISSING=true
-  echo "Warning: Header for $1 not found."
+N_HEADERS=${#HEADER[*]}
+# check header(s)
+if [ $N_HEADERS -eq 0 ]; then
+  echo "Warning: No header files for \"$1\" found." > $ERR
+elif [ $N_HEADERS -gt 1 ]; then
+  echo "Warning: Multiple header files for \"$1\" found: ${HEADER[*]}; using first item." > $ERR
+  HEADER=${HEADER[0]}
 fi
-if [[ ! -e $SOURCE ]]; then
-  SOURCE_MISSING=true
-  echo "Warning: Source for $1 not found."
+# check source(s)
+N_SOURCES=${#SOURCE[*]}
+if [ $N_SOURCES -eq 0 ]; then
+  echo "Warning: No source files for \"$1\" found." > $ERR
+elif [ $N_SOURCES -gt 1 ]; then
+  echo "Warning: Multiple source files for \"$1\" found: ${SOURCE[*]}; using first item." > $ERR
+  SOURCE=${SOURCE[0]}
 fi
-if ( $HEADER_MISSING && $SOURCE_MISSING ); then
-  echo "Error in cvim: No files for $1 found. Exiting."
-  exit 1
+# exit if nothing found
+if [ $N_HEADERS -eq 0 ] && [ $N_SOURCES -eq 0 ]; then
+  echo "ERROR: No header or source files for \"$1\" found. Exitig." > $ERR
+  exit 5
 fi
 
 # open file(s)
 # echo -e "Class:\t$CLASS\nHeader:\t$HEADER\nSource:\t$SOURCE" #debug
 vim -p $VIMOPTS $HEADER $VIMOPTS $SOURCE
-
-# all pau!   )
-exit $?
-
 
 
 ## EXIT
