@@ -34,13 +34,15 @@ if (kOutputPNG) {
 }
 
 // general init
+//real bgOpacityFactor = 0.10;
+real bgOpacityFactor = 1.0;
 import feynman;
 fmdefaults();
 size(100,0);
 pen dfpen = defaultpen;
-pen glasspen = dfpen+cyan+opacity(0.50);
-pen scintpen = dfpen+blue+opacity(0.25);
-pen pmtpen = dfpen+magenta+opacity(0.75);
+pen glasspen = dfpen+cyan+opacity(0.50*bgOpacityFactor);
+pen scintpen = dfpen+blue+opacity(0.25*bgOpacityFactor);
+pen pmtpen = dfpen+magenta+opacity(0.75*bgOpacityFactor);
 pair O = (0,0);
 pair X = (1,0);
 pair Y = (0,1);
@@ -108,8 +110,11 @@ for ( int k=0; k<6; ++k ) {
 
 // circular bg
 real L = 1.35*S;
+/* fill( scale(1.20*L) * unitcircle, white ); */
 fill( scale(1.10*L) * unitcircle, cyan );
-axialshade( scale(1.00*L) * unitcircle, heavyblue, (L,L), darkblue, -(L,L) );
+/* axialshade( scale(1.15*L) * unitcircle, heavyblue, (L,L), darkblue, -(L,L) ); */
+axialshade( scale(1.05*L) * unitcircle, heavyblue, (L,L), darkblue, -(L,L) );
+/* axialshade( scale(1.15*L) * unitcircle, heavyblue+opacity(bgOpacityFactor), (L,L), darkblue+opacity(bgOpacityFactor), -(L,L) ); */
 
 // draw
 path crossbeam;
