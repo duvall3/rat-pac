@@ -1,0 +1,124 @@
+\documentclass[table]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[]{xcolor}
+% \usepackage{graphicx, hyperref} \hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue}
+\usepackage{graphicx}
+\usepackage{overpic}
+\usepackage{amsmath}
+\usepackage{asymptote}
+\usepackage{textpos}
+% \usepackage{tabularx}
+\usepackage{pdfpages}
+\usepackage{mathtools}
+
+% set style & color themes
+\usetheme{Madrid}
+\usefonttheme[]{serif}
+\colorlet{beamer@blendedblue}{green!35!black}
+\definecolor{darkgreen}{RGB}{0,175,0}
+\definecolor{deepgreen}{RGB}{0,100,0}
+\definecolor{navy}{RGB}{0,0,150}
+
+% logo in upper-right corner
+\addtobeamertemplate{frametitle}{}{
+ \begin{textblock*}{100mm}(0.942\textwidth,-1cm)
+   \includegraphics[width=0.098\linewidth]{frost_logo_256x256.png}
+ \end{textblock*}}
+
+% equation-label format
+\newtagform{noparen}{}{}
+\usetagform{noparen}
+
+% title info
+\title{Common Neutron-Capture Reactions}
+\author{Dr.~Mark~J.~Duvall}%\inst{1}}
+\institute{University of Hawai`i at M\={a}noa}
+\date{\today}
+% \titlegraphic{
+%  \includegraphics[width=0.3\linewidth]{frost_logo.eps}
+%  }
+\logo{\includegraphics[scale=0.15]{seal.jpg}}
+
+
+
+\begin{document}
+
+% acrynyms
+\newcommand{\ibd}{inverse beta decay (IBD)\renewcommand{\ibd}{IBD}}
+% color-code particles
+\newcommand{\nb}{\textcolor{darkgreen}{$\bar{\nu_e}$}}
+
+% other user commands
+\newcommand{\dash}{\textbf{---}\ }				% em dash that is actually visible
+\newcommand{\bs}{\boldsymbol}					% alias for bold math symbols
+\newcommand{\nucl}[2]{{}^{#1}\mbox{#2}}				% isotope-number notation
+\newcommand{\barns}{~\mathrm{barns}}				% cross-section unit
+
+%% disable footer and make title slide
+%%\rmfamily
+%{
+% \setbeamertemplate{footline}{}
+% \begin{frame}
+%  \titlepage
+% \end{frame}
+%}
+%%\normalfont
+%%\rmfamily
+
+% shorten title info for footers
+% \title{\textit{Capture Rxns.}}
+\title{FROST~Group}
+\author{M.~J.~Duvall}
+\institute{UH}
+%\setbeamertemplate{footline}{\sffamily}
+%\setbeamertemplate{footline}[frame number]{}
+
+% set TOC depth
+% \setcounter{tocdepth}{1}
+
+
+%% MAIN
+
+\setbeamertemplate{page number in head/foot}{} 	% suppress slide number
+% \small
+\scriptsize
+
+% H and Li
+\begin{frame}
+  \frametitle{Common Neutron-Capture Reactions}
+
+  % n capture on H
+  \textbf{Hydrogen:}
+  \begin{equation}
+    n + \nucl{1}{H} \to \nucl{2}{H} + \gamma [ 2220~\mathrm{keV} ] \tag{0.3~barns} % \\
+  \end{equation}
+
+  % n capture on Li
+  \textbf{Lithium:}
+  \begin{equation}
+    n + \nucl{6}{Li} \to \nucl{3}{H} [2730~\mathrm{keV}] + \nucl{4}{He} [2050~\mathrm{keV}] \tag{940~barns}
+  \end{equation}
+
+  % n capture on B
+  \textbf{Boron:}
+  \begin{equation}
+    \begin{split}
+      n + \nucl{10}{B} \to & \nucl{7}{Li} [1015~\mathrm{keV}] + \nucl{4}{He} [1775~\mathrm{keV}], \quad \sim 6 \% \\%6.4 \% \\
+	\to & \nucl{7}{Li}^* + \nucl{4}{He} [1471~\mathrm{keV}], \qquad \qquad \quad \sim 94 \% \\
+  	    & \; \hookrightarrow \nucl{7}{Li}^* \to \nucl{7}{Li} [839~\mathrm{keV}] + \gamma [478~\mathrm{keV}]
+    \end{split} \tag{3835~barns}
+  \end{equation}
+
+  % n capture on Gd
+  \textbf{Gadolinium:}
+  \begin{align*}
+    n + \nucl{155}{Gd} \to \nucl{156}{Gd} + \gamma\mathrm{'s} [8500~\mathrm{keV~total}] \tag{61~100~barns} \\
+    n + \nucl{157}{Gd} \to \nucl{158}{Gd} + \gamma\mathrm{'s} [7900~\mathrm{keV~total}] \tag{259~000~barns}
+  \end{align*}
+
+\end{frame}
+
+
+% all pau!   )
+\end{document}
