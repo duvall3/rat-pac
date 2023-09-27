@@ -17,6 +17,8 @@
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <TRATGeo.h>
+#include "TDuvallUtils.cxx"
+#include "TIBDParams.cxx"
 
 // Call the ClassImp() macro to give the TRATGeo class RTTI and full I/O capabilities.
 #if !defined(__CLING__)
@@ -40,6 +42,7 @@ TRATGeo::TRATGeo()
   fVolumeList = new TList;
   fActiveCells = new TList;
   fInertCells = new TList;
+  fSensitiveVolumes = new TList;
 }
 
 //______________________________________________________________________________
@@ -172,6 +175,14 @@ void TRATGeo::FindCheckerboardInert( const Int_t kDims ) // = 3
 }
 
 //______________________________________________________________________________
+// FindSensitiveVolumes( const char* svRegexp = "target_cell_[0-9]+.*" )
+void TRATGeo::FindSensitiveVolumes( const char* svRegexp )
+{
+  fSensitiveVolumes = TDuvallUtils::FindMatchingObjects( GetListOfVolumes(), svRegexp );
+  return;
+}
+
+//______________________________________________________________________________
 // Build(const char* tcRegexp)
 void TRATGeo::Build(const char* tcRegexp)
 {
@@ -208,6 +219,8 @@ void TRATGeo::Build(const char* tcRegexp)
       fVolumeList->Add(v);
     } // end if -- relevant entry
   } // end db entry loop
+  // fill sensitive list
+  FindSensitiveVolumes();
   infoMsg.Form("Done.\n");
   this->Info(infoLoc.Data(), infoMsg.Data());
   return;
@@ -235,6 +248,73 @@ TRATVolume* TRATGeo::GetVolume(const char* volumeName)
   }
   return v;
 }
+
+//______________________________________________________________________________
+// TotalTargetVolume
+Double_t TRATGeo::TotalTargetVolume( Bool_t kIdenticalVolumes )
+{
+  Double_t totalTV(0.);
+  if (fSensitiveVolumes->GetEntries()==0) FindSensitiveVolumes;
+  TRATVolume *v = (TRATVolume*)fSensitiveVolumes->At(0);
+  if (kIdenticalVolumes) {
+    totalTV = v->VolumeL() * GetSensitiveVolumeCount();
+  } else {
+    TList *svList = GetSensitiveVolumes();
+    TIter i(svList);
+    for ( i=svList->begin(); i!=svList->end(); ++i ) {
+      v = (TRATVolume*)*i;
+      totalTV += v->VolumeL();
+    }
+  }
+  return totalTV;
+}
+
+//______________________________________________________________________________
+// TotalTargetMass
+Double_t TRATGeo::TotalTargetMass( Bool_t kIdenticalVolumes )
+{
+  Double_t totalTM(0.);
+  if (fSensitiveVolumes->GetEntries()==0) FindSensitiveVolumes;
+  TRATVolume *v = (TRATVolume*)fSensitiveVolumes->At(0);
+  if (kIdenticalVolumes) {
+    totalTM = GetSensitiveVolumeCount() * v->Mass();
+  } else {
+    TList *svList = GetSensitiveVolumes();
+    TIter i(svList);
+    for ( i=svList->begin(); i!=svList->end(); ++i ) {
+      v = (TRATVolume*)*i;
+      totalTM += v->Mass();
+    }
+  }
+  return totalTM;
+}
+
+//______________________________________________________________________________
+// TotalIBDRate
+Double_t TRATGeo::TotalIBDRate( Bool_t kIdenticalVolumes )
+{
+  Double_t totalIBDR(0.);
+  if (fSensitiveVolumes->GetEntries()==0) FindSensitiveVolumes;
+  TRATVolume *v = (TRATVolume*)fSensitiveVolumes->At(0);
+  TIBDParams P(v);
+  if (kIdenticalVolumes) {
+    totalIBDR = P.IBDRate() * GetSensitiveVolumeCount();
+  } else {
+    TList *svList = GetSensitiveVolumes();
+    TIter i(svList);
+    for ( i=svList->begin(); i!=svList->end(); ++i ) {
+      v = (TRATVolume*)*i;
+      P.SetVolume(v);
+      totalIBDR += P.IBDRate();
+    }
+  }
+  return totalIBDR;
+}
+
+////______________________________________________________________________________
+//TRATGeo::
+//{
+//}
 
 //______________________________________________________________________________
 // FindVolumesContaining (TVector3)

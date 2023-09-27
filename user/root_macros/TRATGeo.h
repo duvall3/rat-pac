@@ -33,12 +33,14 @@ private:
   TList*		fVolumeList;		// list of TRATVolume objects
   TList*		fActiveCells;		// list of active cells for checkerboard detectors
   TList*		fInertCells;		// list of inert cells for checkerboard detectors
+  TList* 		fSensitiveVolumes; 	// list of sensitive detector volumes
 
 private:
   void			Init();			// initialize
   void			FindExperiment();	// fill experiment name, path, etc.
   void			FindCheckerboardActive( Int_t kDims ); // fill list of active checkerboard cells
   void			FindCheckerboardInert( Int_t kDims ); // fill list of inert checkerboard cells
+  void 			FindSensitiveVolumes( const char* svRegexp = "target_cell_[0-9]+.*" ); // fill list of sensitive detector volumes
 
 public:
   TRATGeo();
@@ -55,6 +57,11 @@ public:
   Int_t			GetEntries() const { return fVolumeList->GetEntries(); }
   TList*		GetCheckerboardActive() const { return fActiveCells; }
   TList*		GetCheckerboardInert() const { return fInertCells; }
+  TList* 		GetSensitiveVolumes() const { return fSensitiveVolumes; }
+  Int_t 		GetSensitiveVolumeCount() const { return fSensitiveVolumes->GetEntries(); }
+  Double_t 		TotalTargetVolume( Bool_t kIdenticalVolumes = kTRUE );
+  Double_t 		TotalTargetMass( Bool_t kIdenticalVolumes = kTRUE );
+  Double_t 		TotalIBDRate( Bool_t kIdenticalVolumes = kTRUE );
   TList*		FindVolumesContaining( TVector3 location, Bool_t kPrint = kFALSE );
   TList*		FindVolumesContaining( Double_t x, Double_t y, Double_t z, Bool_t kPrint = kFALSE );
   TRATVolume*		FindLowestVolumeContaining( TVector3 location, Bool_t kPrint = kFALSE );
@@ -69,7 +76,7 @@ public:
   void			Positions();		// print absolute positions
 
 //Integrating the TRATGeo class to ROOT.
-ClassDef(TRATGeo,5)
+ClassDef(TRATGeo,6)
 
 }; //endclass
 

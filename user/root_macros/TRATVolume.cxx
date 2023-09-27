@@ -267,7 +267,16 @@ void TRATVolume::FindSize()
     }
   } else if ( fVolumeType.Contains("tube") ) {
     TObjString *valTOS;
-    TString r_maxStr, size_zStr;
+    TString r_minStr, r_maxStr, size_zStr;
+    keyStrVol.Form("GEO[%s].r_max", fVolNameChr);
+    if (fDB->GetValue(keyStrVol.Data())) {
+      valTOS = (TObjString*)fDB->GetValue(keyStrVol.Data());
+      r_maxStr = valTOS->GetString();
+      r_maxStr.ReplaceAll("d","");
+      fRMin = r_minStr.Atof();
+    } else {
+      fRMin = 0.;
+    }
     keyStrVol.Form("GEO[%s].r_max", fVolNameChr);
     if (fDB->GetValue(keyStrVol.Data())) {
       valTOS = (TObjString*)fDB->GetValue(keyStrVol.Data());
