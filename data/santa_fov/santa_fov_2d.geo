@@ -40,42 +40,45 @@ type: "box",
 size: [2500.0, 2500.0, 10.0], // mm
 material: "air",
 color: [0.8, 0.8, 0.8],
-//invisible: 0,
-invisible: 1,
+invisible: 0,
 position: [0.0, 0.0, -1001.0 ] // mm
 }
 
 
 // DETECTOR ELEMENTS
 
-// -------- GEO[target_plane]
+// -------- GEO[capture_tube]
 {
 name: "GEO",
-index: "target_plane",
+index: "capture_tube",
 valid_begin: [0, 0],
 valid_end: [0, 0],
-//mother: "capture_plane",
 mother: "cave",
-type: "box",
-size: [30.0, 1000.0, 1000.0], // mm
-material: "ej254_undoped",
+type: "tube",
+r_min: 1900.0, // mm
+r_max: 2000.0, // mm
+size_z: 1000.0, // mm
+material: "ej254_1b",
 color: [0.3, 0.3, 1.0],
 invisible: 0,
-position: [-500.0, 0.0, 0.0]
+//position: [] -- center of "world"
 }
 
-// -------- GEO[capture_plane]
+// -------- GEO[target_tube]
 {
 name: "GEO",
-index: "capture_plane",
+index: "target_tube",
 valid_begin: [0, 0],
 valid_end: [0, 0],
+//mother: "capture_tube",
 mother: "cave",
-type: "box",
-size: [2.5, 1000.0, 1000.0], // mm
-material: "ej254_1b",
+type: "tube",
+r_min:  975.0, // mm
+r_max: 1000.0, // mm
+size_z: 1000.0, // mm
+material: "ej254_undoped",
 color: [1.0, 0.3, 0.3],
 invisible: 0,
-position: [500.0, 0.0, 0.0]
+//position: [] -- center of "world"
 }
 
