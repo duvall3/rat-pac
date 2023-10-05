@@ -1,0 +1,94 @@
+# Macro file for the visualization setting in the initialization phase 
+# of the B1 example when running in interactive mode
+#
+
+# Use these open statements to open selected visualization
+#
+# Use this open statement to create an OpenGL view:
+/vis/open OGLIQt 1000x1000-0+0
+#
+# Disable auto refresh and quieten vis messages whilst scene and
+# trajectories are established:
+/vis/viewer/set/autoRefresh false
+/vis/verbose errors
+#
+# Draw geometry:
+/vis/drawVolume
+
+# Set upward direction to z-axis:
+/vis/viewer/set/upVector 0 0 1
+#
+# Specify view angle:
+#/vis/viewer/set/viewpointVector .5 .1 .3
+#/vis/viewer/set/viewpointVector 0.3 0.3 0.7
+#/vis/viewer/set/viewpointVector 0.0 1.0 0.8
+/vis/viewer/set/viewpointThetaPhi 15.0 90.0
+/vis/viewer/set/lightsVector .4 .9 .6
+#
+# Specify style (surface, wireframe, auxiliary edges,...)
+/vis/viewer/set/style s
+/vis/viewer/set/auxiliaryEdge true
+/vis/viewer/set/hiddenEdge true
+/vis/viewer/set/lineSegmentsPerCircle 100
+
+# Axes, scale, etc.
+/vis/set/textSize 18.0
+/vis/set/textColour 0.0 0.0 0.0
+/vis/viewer/set/defaultTextColour black
+#/vis/scene/add/axes/g 0 -9.45 -2 1 m grey false # Simple axes: x=red, y=green, z=blue.
+#/vis/scene/add/date    # Date stamp
+#/vis/scene/add/scale   L mm x R. G. B. manual X.  Y.  Z. mm
+#/vis/scene/add/scale 152 mm x 0. 0. 0. manual 0. 85. 85. mm
+#/vis/scene/add/scale 152 mm y 0. 0. 0. manual -85. 0. 85. mm
+#/vis/scene/add/scale 152 mm z 0. 0. 0. manual 85. 85. 0. mm
+/vis/scene/add/scale 2000 mm x 0. 0. 0. manual     0. 0. 0. mm
+/vis/scene/add/scale 1000 mm x 0. 0. 0. manual -1500. 0. 0. mm
+/vis/set/textColour 1.0 0.3 0.3
+/vis/scene/add/text2D -0.9 0.9 24. 0. 0. Target Wall
+/vis/set/textColour 0.3 0.3 1.0
+/vis/scene/add/text2D -0.9 0.8 24. 0. 0. Capture Wall
+
+# To get nice view
+#/vis/geometry/set/visibility world 0 false
+/vis/viewer/set/background white
+/vis/viewer/zoom 1.5
+#/vis/viewer/pan 0 -9 m
+
+# set or correct volume properties:
+#/vis/geometry/set/colour world 0 .6 .2 .1 .1
+# /vis/geometry/set/visibility world 1 1
+# /vis/geometry/set/visibility world 1 0
+# /vis/geometry/set/visibility cave 1 0
+# /vis/geometry/set/visibility capture_sphere 1 1
+# /vis/geometry/set/visibility _array 1 1
+#/vis/geometry/set/colour cave 0 0 0 0 .2
+#/vis/geometry/set/colour cave_floor 0 .6 .2 .1 .3
+#/vis/geometry/set/colour cave_ceiling 0 .6 .2 .1 .3
+#/vis/geometry/set/colour cave_back 0 .6 .2 .1 .3
+#/vis/geometry/set/colour cave_lwall 0 .6 .2 .1 .3
+#/vis/geometry/set/colour cave_rwall 0 .6 .2 .1 .3
+#/vis/geometry/set/colour _array 1 .2 0 1
+# /vis/geometry/set/colour _array 1 grey
+
+/vis/viewer/set/hiddenMarker true
+#/vis/viewer/set/targetPoint 0 -9 0 m
+
+## Draw smooth trajectories at end of event, showing trajectory points
+## as markers 2 pixels wide:
+#/vis/scene/add/trajectories smooth
+## Draw by charge:
+#/vis/modeling/trajectories/create/drawByCharge
+#/vis/modeling/trajectories/drawByCharge-0/default/setDrawStepPts true
+#/vis/modeling/trajectories/drawByCharge-0/default/setStepPtsSize 2
+## Or, draw by particle ID:
+##/vis/modeling/trajectories/create/drawByParticleID
+##/vis/modeling/trajectories/drawByParcticleID-0/default/setDrawStepPts true
+##/vis/modeling/trajectories/drawByParcticleID-0/default/setStepPtsSize 2
+##
+## (if too many tracks cause core dump => /tracking/storeTrajectory 0)
+##
+## Draw hits at end of event:
+##/vis/scene/add/hits
+
+# accumulate event:
+/vis/scene/endOfEventAction accumulate
