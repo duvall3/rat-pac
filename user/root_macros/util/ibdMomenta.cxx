@@ -35,12 +35,15 @@ Int_t k = 0, N = r.GetTotal();
 TVector3 pe, pn;
 TH2D* h = new TH2D("h", "Transverse Momenta", 100, -1., 1., 100, -1., 1.);
 TCanvas* can = new TCanvas("can", "IBD Generator pT Test");
+TCanvas* can2 = new TCanvas("can2", "IBD Generator #vert p_{n,0}");
 TH1D* hx = new TH1D("hx", "Parallel Momenta", 100, -10., 10.);
+TH1D* hcp = new TH1D("hcp", "IBD p_{n,0}", 10, -1., 1.);
+TVector3 xhat = TVector3(-1.,0.,0.);
 
 // MAIN
 for ( k=0; k<N-1; k++ ) {
   pe = TVector3(0,0,0);
-  pe = TVector3(0,0,0);
+  pn = TVector3(0,0,0);
   ds = r.GetEvent(k);
   RAT::TrackNav nav(ds);
   c = nav.Cursor(0);
@@ -51,6 +54,7 @@ for ( k=0; k<N-1; k++ ) {
   pn = n->GetMomentum();
   hx->Fill(pe.X()+pn.X());
   h->Fill(pe.Y()+pn.Y(), pe.Z()+pn.Z());
+  hcp->Fill( xhat.Dot(pn.Unit()) );
   nav.Clear();
 }
 
@@ -63,6 +67,10 @@ h->GetYaxis()->SetTitle("Z Momenta (MeV)");
 can->cd(2);
 hx->Draw();
 hx->GetXaxis()->SetTitle("X Momenta (MeV)");
+can2->cd();
+hcp->SetLineWidth(5.);
+hcp->Draw();
+hcp->GetXaxis()->SetTitle("cos #psi");
 
 // save if desired
 if (save_tf == true) can->SaveAs(savename);

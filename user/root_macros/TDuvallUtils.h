@@ -14,6 +14,7 @@
  *  - Zoom()
  *
  *  **Finding Things:**
+ *  - //IsGlobal()
  *  - FindMatchingObjects()
  *  - FindVarsOfType()
  *  - ListFiles()
@@ -47,6 +48,7 @@ namespace TDuvallUtils {
   void			DumpHist(TH1* h);						///< Dump histogram to terminal
   TEntryList*		EntryList(const char* selection, TTree* T=0);			///< Shortcut for creating TEntryLists
   void			ExportPlots(const char* filename, const TString kGraphicsSaveFormat=".png"); ///< Shortcut for printing all canvases in a file
+  /* Bool_t		IsGlobal(const char* name);					///< Determine whether a global variable exists */
   /* TObject*		FindMatchingObject(TCollection* colxn, TRegexp patternRE);	///< Builtins can't search by PATTERN */
   /* TObject*		FindMatchingObject(TCollection* colxn, const char* pattern) { return FindMatchingObject(colxn, TRegexp(pattern)); } // overload FindMatchingObject for char* input */
   /* TList*		FindMatchingObjects(TCollection* colxn, TRegexp patternRE, Bool_t caseSensitive=kTRUE);	///< Scan a TCollection for an object whose name matches a regex */
@@ -60,9 +62,9 @@ namespace TDuvallUtils {
   /* void		PrintArrayT(Int_t N, type T x);					///< Coming once I get the hang of templated functions */
   void			PrintBranches(TObject *obj);					///< Print nicely-formatted summary of *obj*'s TBranches
   Double_t		Prob2Sig(Double_t prob);					///< Convert probability to significance
-  TH2D*			RadarPlot(TH1D *h_in, Option_t *ho="cyllego", const Bool_t kNewCanvas=kTRUE);	///< Convert TH1D* to radar plot
-  TH2D*			RadarPlot(TH1F *h_in,Option_t *ho="cyllego", const Bool_t kNewCanvas=kTRUE ) { return radarPlot((TH1D*)h_in,ho); }	///< Overload RadarPlot for TH1F
-  TH2D*			RadarPlot(TH1I *h_in, Option_t *ho="cyllego", const Bool_t kNewCanvas=kTRUE) { return radarPlot((TH1D*)h_in,ho); }	///< Overload RadarPlot for TH1I
+  TCanvas*		RadarPlot(TH1D *h_in, Option_t *ho="cyllego", const Bool_t kClean=kFALSE, const Bool_t kNewCanvas=kTRUE);	///< Convert TH1D* to radar plot
+  TCanvas*		RadarPlot(TH1F *h_in,Option_t *ho="cyllego", const Bool_t kClean=kFALSE, const Bool_t kNewCanvas=kTRUE ) { return radarPlot((TH1D*)h_in,ho,kClean,kNewCanvas); }	///< Overload RadarPlot for TH1F
+  TCanvas*		RadarPlot(TH1I *h_in, Option_t *ho="cyllego", const Bool_t kClean=kFALSE, const Bool_t kNewCanvas=kTRUE) { return radarPlot((TH1D*)h_in,ho,kClean,kNewCanvas); }	///< Overload RadarPlot for TH1I
   void			ShiftStats(TVirtualPad* p=gPad, Double_t deltaX=-.1, Double_t deltaY=0.);	///< Move the &@#$ing stats box out of the way
   Double_t		Sig2Prob(Double_t sig);						///< Convert significance to probability
   Double_t		UnbinnedKSTest(TTree *T1, TTree *T2, const char* branchName1, const char* branchName2 = "");	///< Apply unbinned KS test to a pair of TBranches

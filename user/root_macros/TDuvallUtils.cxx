@@ -144,6 +144,33 @@ void TDuvallUtils::ExportPlots( const char* filename, const TString kGraphicsSav
   f->Close();
 }
 
+////______________________________________________________________________________
+//// IsGlobal
+///**
+// * Determine whether an identifier corresponds
+// *   to an existing global variable.
+// * Example: Check whether there is already a (global) variable named "pi":
+// * ```cpp
+// * TDuvallUtils::IsGlobal("pi")
+// * ```
+// * \param name -- variable name to check
+// * \retval doesExist -- whether the variable exists
+// */
+//Bool_t TDuvallUtils::IsGlobal( const char* name )
+//{
+//  // init
+//  Bool_t doesExist(kFALSE);
+//  // MAIN
+//  TList *list = gROOT->GetListOfGlobals();
+//  if (list->FindObject(name) != 0x0) {
+//    doesExist = kTRUE;
+//    cerr << "Yes." << endl;
+//  } else {
+//    cerr << "No." << endl;
+//  }
+//  return doesExist;
+//}
+
 //______________________________________________________________________________
 // FindMatchingObjects
 /**
@@ -427,11 +454,12 @@ Double_t TDuvallUtils::Prob2Sig( Double_t prob )
  * Simple macro to redraw any 1-D histogram as a radar plot.  
  * \param h_in -- input histogram (*TH1D\**)
  * \param ho -- drawing option(s)
+ * \param kClean -- when *kTRUE*, disables all annotations
  * \param kNewCanvas -- when *kTRUE*, creates a new *TCanvas* rather than
  *   drawing over the current graphics pad
- * \retval h_out -- new radar plot (TH2D)
+ * \retval can_r -- canvas containing radar plot
  */
-TH2D* TDuvallUtils::RadarPlot( TH1D *h_in, Option_t *ho, const Bool_t kNewCanvas )
+TCanvas* TDuvallUtils::RadarPlot( TH1D *h_in, Option_t *ho, const Bool_t kClean, const Bool_t kNewCanvas )
 {
   // force proportional scaling
   gStyle->SetHistMinimumZero(kTRUE);
@@ -486,30 +514,42 @@ TH2D* TDuvallUtils::RadarPlot( TH1D *h_in, Option_t *ho, const Bool_t kNewCanvas
   gPad->SetLogx(kFALSE);
   gPad->SetLogy(kFALSE);
   h_in->Draw("A");
+  if (kClean) {
+    h_in->SetTitle("");
+    h_in->SetStats(0);
+    gPad->SetFrameLineColor(gPad->GetFillColor());
+  }
   TView3D *view = new TView3D;
   view->RotateView(.001, .001);
   h_scale->Draw("samecyllego");
   h_out->Draw(hopt);
   // annotations
-  // radial legend
-  TLegend *l_radial = new TLegend(.05, .01, .65, .1);
-  l_radial->SetName("leg_radial");
-  l_radial->SetNColumns(2);
-  l_radial->SetTextSize(.024);
-  TString gridRings, gridMax;
-  gridRings.Form( "Grid Scale = %d entries / ring     Grid Maximum = %d entries", scaleStep, scaleMax );
-  l_radial->AddEntry( h_scale, gridRings.Data() );
-  l_radial->Draw();
-  // angular legend
-  TLegend *l_angular = new TLegend(.65, .01, .95, .1);
-  l_angular->SetName("leg_angular");
-  l_angular->SetNColumns(2);
-  TString angMark0("0^{o}"), angMark90("+90^{o}"), angMark180("#pm180^{o}"), angMark270("-90^{o}");
-  l_angular->AddEntry(p0, angMark0.Data(), "P");
-  l_angular->AddEntry(p90, angMark90.Data(), "P");
-  l_angular->AddEntry(p180, angMark180.Data(), "P");
-  l_angular->AddEntry(p270, angMark270.Data(), "P");
-  l_angular->Draw();
+  if (!kClean) {
+    // radial legend
+    TLegend *l_radial = new TLegend(.05, .01, .65, .1);
+    l_radial->SetName("leg_radial");
+    l_radial->SetNColumns(2);
+    l_radial->SetTextSize(.024);
+    TString gridRings, gridMax;
+    gridRings.Form( "Grid Scale = %d entries / ring     Grid Maximum = %d entries", scaleStep, scaleMax );
+    l_radial->AddEntry( h_scale, gridRings.Data() );
+    l_radial->Draw();
+    // angular legend
+    TLegend *l_angular = new TLegend(.65, .01, .95, .1);
+    l_angular->SetName("leg_angular");
+    l_angular->SetNColumns(2);
+    TString angMark0("0^{o}"), angMark90("+90^{o}"), angMark180("#pm180^{o}"), angMark270("-90^{o}");
+    l_angular->AddEntry(p0, angMark0.Data(), "P");
+    l_angular->AddEntry(p90, angMark90.Data(), "P");
+    l_angular->AddEntry(p180, angMark180.Data(), "P");
+    l_angular->AddEntry(p270, angMark270.Data(), "P");
+    l_angular->Draw();
+    // draw angular markers
+    p0->Draw();
+    p90->Draw();
+    p180->Draw();
+    p270->Draw();
+  }
   // paint over the weird extra lines ROOT keeps wanting to draw
   TPave *boxL = new TPave(0., 0.49, 0.099, 0.51, 0., "blNDC");
   TPave *boxR = new TPave(0.901, 0.49, 1., 0.51, 0., "blNDC");
@@ -517,13 +557,9 @@ TH2D* TDuvallUtils::RadarPlot( TH1D *h_in, Option_t *ho, const Bool_t kNewCanvas
   boxR->SetFillColor(0);
   boxL->Draw();
   boxR->Draw();
-  // draw angular markers
-  p0->Draw();
-  p90->Draw();
-  p180->Draw();
-  p270->Draw();
   // all pau!   )
-  return h_out;
+  TCanvas *can_r = gPad->GetCanvas();
+  return can_r;
 }
 
 //______________________________________________________________________________
