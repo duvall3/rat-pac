@@ -280,6 +280,35 @@ TList* TDuvallUtils::FindVarsOfType( const char* varType, Bool_t kCaseSensitive 
 }
 
 //______________________________________________________________________________
+// HistData
+/**
+ * Dump histogram data as [binLowEdge binWidth binContent] to stdout
+ *  -- Primarily for use in exporting data for use in other programs
+ *  -- Note: Developed for use with *TH1D\** and *TH1F\** only  
+ *  -- Example:  
+ *  ```cpp
+ *  	TH1D* h = new TH1D("h", "h", 24, -3.5, 3.5);  
+ *  	h->FillRandom("gaus");  
+ *  	TDuvallUtils::HistData(h);
+ *  ```
+ */
+void TDuvallUtils::HistData( TH1* h )
+{
+  Int_t k = 0, nBins = h->GetNbinsX();
+  /* Double_t hMax = h->GetMaximum(); */
+  Double_t binLow, binWidth;
+  Long64_t binCont;
+  /* printf("%16s%16s%16s\n", "binLowEdge", "binWidth", "binContent"); */
+  printf("binLowEdge\tbinWidth\tbinContent\n");
+  for ( k=0; k<nBins; k++ ) {
+    binLow = h->GetBinLowEdge(k);
+    binWidth = h->GetBinWidth(k);
+    binCont = (Long64_t)h->GetBinContent(k);
+    printf("%e\t%e\t%d\n", binLow, binWidth, binCont);
+  }
+}
+
+//______________________________________________________________________________
 // ListFiles
 /**
  * Return a TList of TSystemFiles

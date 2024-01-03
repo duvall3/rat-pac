@@ -9,6 +9,7 @@
  *
  *  **Plotting:** 
  *  - DumpHist()
+ *  - HistData()
  *  - RadarPlot()
  *  - ShiftStats()
  *  - Zoom()
@@ -56,6 +57,7 @@ namespace TDuvallUtils {
   TList*		FindMatchingObjects(TCollection* colxn, TRegexp patternRE);	///< Scan a TCollection for an object whose name matches a regex
   TList*		FindMatchingObjects(TCollection* colxn, const char* pattern) { return FindMatchingObjects(colxn, TRegexp(pattern)); } ///< Overload FindMatchingObjects for char* input
   TList*		FindVarsOfType(const char* varType="", Bool_t kCaseSensitive=kFALSE);	///< List global variables matching a specified type
+  void			HistData(TH1* h=0x0);						///< Print data needed to reconstruct a histogram (TH1)
   TList*		ListFiles(const char* pattern=".*\.root");			///< Return a list of files matching a pattern
   void			LoadAllKeys();							///< Shortcut to load all keys from the current file into memory *! USE WITH CAUTION !*
   Double_t*		LogBins(Double_t xmin=1.e-1, Double_t xmax=1.e2); 		///< Return an array of logarithmically-spaced values
