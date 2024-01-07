@@ -62,7 +62,11 @@ for ( k=0; k<N; k++ ) {
   ds = r.GetEvent(k);
   RAT::TrackNav nav(ds);
   c = nav.Cursor(0);
-  c.GoChild(0);
+  n = c.GoChild(0);				// neutron-only run
+  if ( n->GetPDGCode() != 2112 ) {		// IBD run
+    c.GoParent();
+    n = c.GoChild(1);
+  }
   n = c.GoStep(1);
   firstStepLength = sqrt( (n->GetEndpoint().X())**2 + (n->GetEndpoint().Y())**2 + (n->GetEndpoint().Z())**2 );
   T4->Fill();
