@@ -28,12 +28,12 @@ if (filename=="") {
     printf("\nEnter filename:\n");
     cin >> filename;
 }
-const char* wd = gSystem->WorkingDirectory();
-TSystemDirectory sd( gSystem->BaseName(wd), gSystem->DirName(wd) );
-  while (! sd.GetListOfFiles()->FindObject(filename)) {
-  printf("File \"%s\" not found. Please enter another filename:\n", filename);
-  cin >> filename;
-}
+/* const char* wd = gSystem->WorkingDirectory(); */
+/* TSystemDirectory sd( gSystem->BaseName(wd), gSystem->DirName(wd) ); */
+/*   while (! sd.GetListOfFiles()->FindObject(filename)) { */
+/*   printf("File \"%s\" not found. Please enter another filename:\n", filename); */
+/*   cin >> filename; */
+/* } */
 if (kSave) {
   if (savename=="") {
     TString saveName(filename);
@@ -59,7 +59,6 @@ Int_t currentStep, totalSteps, currentScatter, totalScatters;
 Double_t cos_psi; 		// p_nu_hat = {-1,0,0}  -->  cos[psi] = -R.Unit().X()
 
 // TTree init
-/* TTree *T_sp = new TTree("T_sp", "Neutron data by number of scatters"); */
 TTree *Tk;
 TString treeName, treeTitle;
 Int_t nScat;
@@ -162,14 +161,12 @@ if (kSave) {
 
   // save if desired
   if (kSave) {
-    /* treeList->Write("treeList", TObject::kSingleKey); */
-    treeList->Write();
+    treeList->Write("treeList");
     T_summary->Write("T_summary");
     f->Close();
   }
 }
 
 // all pau!   )
-//return T_sp;
 return treeList;
 }

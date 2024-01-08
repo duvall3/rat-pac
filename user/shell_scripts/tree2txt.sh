@@ -70,7 +70,7 @@ eval $VIMCMD
 # echo $EXIT_STATUS
 
 # all pau!   )
-SUCCESS_MSG="\n\nTree-to-text conversion complete!\nOutput written to file \"$OUTFILENAME\".\nIf desired, you may now open Octave/MATLAB and use 'run import_labeled_data' to import the data."
+SUCCESS_MSG="\nTree-to-text conversion complete!\nOutput written to file \"$OUTFILENAME\".\nIf desired, you may now open Octave/MATLAB and use 'run import_labeled_data' to import the data."
 if [ $EXIT_STATUS -eq 0 ]; then
   echo -e $SUCCESS_MSG
   exit 0
