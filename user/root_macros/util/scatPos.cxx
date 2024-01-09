@@ -161,7 +161,7 @@ if (kSave) {
 
   // save if desired
   if (kSave) {
-    treeList->Write("treeList");
+    treeList->Write();
     T_summary->Write("T_summary");
     f->Close();
   }
