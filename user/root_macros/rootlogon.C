@@ -17,14 +17,13 @@
 {
 
   /* #include "TRATMaterial.cxx" */
-  #include "TIBDParams.cxx"
+  /* #include "TIBDParams.cxx" */
   /* #include "TRATVolume.cxx" */
   /* #include "TRATGeo.cxx" */
   /* #include "TMath.h" */
 
   // make pi, e
   const Double_t pi = TMath::Pi();
-  const Double_t e = TMath::E();
 
   // define decent legend coordinates
   Double_t legxy[4] = {.01, .83, .12, .93};
