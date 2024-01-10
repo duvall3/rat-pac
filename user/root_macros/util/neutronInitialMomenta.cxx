@@ -56,13 +56,15 @@ RAT::TrackNode* n = c.Here();
 // general init
 Int_t k, N = r.GetTotal();
 Double_t lattd, longtd;
-TVector3 p;
+TVector3 p, *p0;
 const Double_t pi = TMath::Pi();
+TH1D *hcp = new TH1D("hcp", "Cos #psi", 20, -1., 1.);
 
 // prepare new TTree
 TTree* T_p0 = new TTree("T_p0", "Initial Neutron Momenta");
 T_p0->Branch("lattd", &lattd);
 T_p0->Branch("longtd", &longtd);
+T_p0->Branch("p0", &p0);
 
 // MAIN
 for ( k=0; k<N-1; k++ ) {
@@ -72,6 +74,8 @@ for ( k=0; k<N-1; k++ ) {
   n = c.GoChild(1);
   p = n->GetMomentum();
   p = -p; // for a nicer view if neutrinos had momenta parallel to {-1,0,0}
+  p0 = &p; // for saving to TTree
+  hcp->Fill(p.X());
   longtd = p.Phi()*180/pi;
   lattd = 90 - (p.Theta()*180/pi);
   T_p0->Fill();
@@ -89,6 +93,12 @@ hmap->GetYaxis()->SetLimits(-90., 90);
 hmap->GetXaxis()->SetTitle("Longitude (^{o})");
 hmap->GetYaxis()->SetTitle("Lattitude (^{o})");
 can->Draw();
+
+// draw cos-psi distrib.
+TCanvas *ccp = new TCanvas("ccp", filename, 820, 120, 800, 700);
+hcp->GetXaxis()->SetTitle("cos #psi");
+hcp->GetYaxis()->SetTitle("Entries");
+hcp->Draw();
 
 // all pau!   )
 return T_p0;

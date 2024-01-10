@@ -20,6 +20,7 @@ void dispTree(const char* filename) {
 
 // init
 TFile *f = TFile::Open(filename, "update");
+TTree *T2 = (TTree*)gFile->Get("T2");
 Long64_t k = 0, N = T2->GetEntries();
 // T2
 Double_t xp, xd, yp, yd, zp, zd;
