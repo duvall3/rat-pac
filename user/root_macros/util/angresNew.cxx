@@ -16,13 +16,11 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-void angresNew( const char* filename, Bool_t kSave = kFALSE, Bool_t kMono = kFALSE ) {
-//void angresNew( const char* filename, Bool_t kSave = kTRUE, Bool_t kMono = kFALSE ) {
-//{
+TList* angresNew( const char* filename, Bool_t kSave = kFALSE, Bool_t kMono = kFALSE ) {
 
 // init
-//TFile *f = TFile::Open(filename, "update");			//TODO
-TFile *f = TFile::Open(filename);
+TFile *f = TFile::Open(filename, "update");
+//TFile *f = TFile::Open(filename);
 TObjString *experiment = (TObjString*)gDirectory->Get("experiment");
 TString exper = experiment->GetString();
 exper.ReplaceAll("\"","");
@@ -165,14 +163,23 @@ printf( "%s\n", deltaPhiReportStr.Data() );
 TObjString *deltaPhiReport = new TObjString(deltaPhiReportStr);
 // save if desired
 if (kSave) {
-  //deltaPhi.Write("deltaPhi");				//TODO
-  //deltaPhiReport->Write("deltaPhiReport");		//TODO
+  deltaPhi.Write("deltaPhi");
+  deltaPhiReport->Write("deltaPhiReport");
   cx->Print( TString::Format("%s_%s.png", exper.Data(), "cx") );
   cy->Print( TString::Format("%s_%s.png", exper.Data(), "cy") );
   cz->Print( TString::Format("%s_%s.png", exper.Data(), "cz") );
 }
+// return value(s), mainly for interactive use
+TList *parList = new TList;
+//parList->Add(&mu);
+//parList->Add(&sigma);
+parList->Add(new TParameter<double>("P", P));
+parList->Add(new TParameter<double>("l", l));
+parList->Add(new TParameter<double>("phi", phi));
+parList->Add(new TParameter<double>("deltaPhi", dp));
 f->Close();
 
 // all pau!   )
-return;
+//return;
+return parList;
 }
