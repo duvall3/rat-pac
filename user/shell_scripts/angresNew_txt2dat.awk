@@ -17,10 +17,12 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-BEGIN {print "Detector N Phi(°) DeltaPhi(°)"}
+BEGIN {print "Detector N P(mm) L(mm) Phi(°) DeltaPhi(°)"}
 
 $1 ~ /Exper/ {exper=$3}
 $1 ~ /N/ {n=$3}
+$1 ~ /^P$/ {p=$3}
+$1 ~ /^l$/ {l=$3}
 $1 ~ /^Phi$/ {phi=$3}
-$1 ~ /DeltaPhi/ {dphi=$3; print exper" "n" "phi" "dphi}
+$1 ~ /DeltaPhi/ {dphi=$3; printf("%s %d %03.2f %03.2f %02.2f %02.2f\n",exper,n,p,l,phi,dphi)}
 
