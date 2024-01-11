@@ -19,8 +19,11 @@
 TList* angresNew( const char* filename, Bool_t kSave = kFALSE, Bool_t kMono = kFALSE ) {
 
 // init
-TFile *f = TFile::Open(filename, "update");
-//TFile *f = TFile::Open(filename);
+if (kSave) {
+  TFile *f = TFile::Open(filename, "update");
+} else {
+  TFile *f = TFile::Open(filename);
+}
 TObjString *experiment = (TObjString*)gDirectory->Get("experiment");
 TString exper = experiment->GetString();
 exper.ReplaceAll("\"","");
@@ -47,7 +50,7 @@ if (fileName.Contains("_results.root")) {
 Long64_t N = T_r->GetEntries(cuts);
 Double_t l, dp, P = TMath::QuietNaN();
 TVector3 mu;
-TCanvas *c_angresNew = new TCanvas("c_angresNew", "c_angresNew");
+//TCanvas *c_angresNew = new TCanvas("c_angresNew", "c_angresNew");
 
 /* // detector-specific position resolutions (mm) */
 /* // -- yes, this should be a 'switch/case' statement; no, I don't currently care (TString switches are weird) */
@@ -67,17 +70,28 @@ TCanvas *c_angresNew = new TCanvas("c_angresNew", "c_angresNew");
 
 // main
 
+// plot init
+TCanvas *cr = new TCanvas("cr", "cr");
+cr->Divide(1,3);
+TVirtualPad *p1 = cr->GetPad(1), *p2 = cr->GetPad(2), *p3 = cr->GetPad(3);
+
 // find l = sqrt( lx**2 + ly**2 + lz**2 )
 if ( exper.Contains("chooz") ) { // Double CHOOZ
+  p1->cd();
   T_r->Draw("r.fX>>hx", "abs(r.fX)<500."); // DC ONLY
+  p2->cd();
   T_r->Draw("r.fY>>hy", "abs(r.fY)<500."); // DC ONLY
+  p3->cd();
   T_r->Draw("r.fZ>>hz", "abs(r.fZ)<500."); // DC ONLY
 } else {
+  p1->cd();
   T_r->Draw(dispVectorName+".fX>>hx", cuts);
+  p2->cd();
   T_r->Draw(dispVectorName+".fY>>hy", cuts);
+  p3->cd();
   T_r->Draw(dispVectorName+".fZ>>hz", cuts);
 }
-c_angresNew->Close();
+//c_angresNew->Close();
 mu.SetXYZ(hx->GetMean(), hy->GetMean(), hz->GetMean());
 l = mu.Mag();
 
@@ -100,7 +114,7 @@ hz->SetLineColor(kBlue);
 Double_t phi;
 if (kMono) { // monolithic (single-volume) detector
   // x coord
-  TCanvas *cx = new TCanvas("cx", "cx");
+  p1->cd();
   TF1 *fhx = new TF1("fhx", "[0]+[1]*TMath::Gaus(x,[2],[3])", -axLim.X(), axLim.X());
   fhx->SetLineColor(kRed);
   fhx->SetParNames("Constant", "Normalization", "Mu", "Sigma");
@@ -111,7 +125,7 @@ if (kMono) { // monolithic (single-volume) detector
   mu.SetX(fhx->GetParameter("Mu"));
   printf("\n");
   // y coord
-  TCanvas *cy = new TCanvas("cy", "cy");
+  p2->cd();
   TF1 *fhy = new TF1("fhy", "[0]+[1]*TMath::Gaus(x,[2],[3])", -axLim.Y(), axLim.Y());
   fhy->SetLineColor(kRed);
   fhy->SetParNames("Constant", "Normalization", "Mu", "Sigma");
@@ -122,7 +136,7 @@ if (kMono) { // monolithic (single-volume) detector
   mu.SetY(fhy->GetParameter("Mu"));
   printf("\n");
   // z coord
-  TCanvas *cz = new TCanvas("cz", "cz");
+  p3->cd();
   TF1 *fhz = new TF1("fhz", "[0]+[1]*TMath::Gaus(x,[2],[3])", -axLim.Z(), axLim.Z());
   fhz->SetLineColor(kRed);
   fhz->SetParNames("Constant", "Normalization", "Mu", "Sigma");
@@ -132,7 +146,8 @@ if (kMono) { // monolithic (single-volume) detector
   TFitResult *hzFR = hzFRP.Get();
   mu.SetZ(fhz->GetParameter("Mu"));
   printf("\n");
-//} else { // all other detectors
+} else { // all other detectors
+  mu.SetXYZ( hx->GetMean(), hy->GetMean(), hz->GetMean() );
 } // endif -- kMono
 phi = TMath::ATan2(mu.Y(), mu.X())*TMath::RadToDeg();
 
@@ -143,7 +158,8 @@ if ( (kMono) || (exper.Contains("chooz")) ) { // monolithic (single-volume) dete
   sigma.SetX( fhx->GetParameter("Sigma") );
   sigma.SetY( fhy->GetParameter("Sigma") );
   sigma.SetZ( fhz->GetParameter("Sigma") );
-//} else { // all other detectors
+} else { // all other detectors
+  sigma.SetXYZ( hx->GetRMS(), hy->GetRMS(), hz->GetRMS() );
 }
 P = ( sigma.X() + sigma.Y() + sigma.Z() ) / 3.;
 /* P = 150.; //debug */
@@ -165,9 +181,14 @@ TObjString *deltaPhiReport = new TObjString(deltaPhiReportStr);
 if (kSave) {
   deltaPhi.Write("deltaPhi");
   deltaPhiReport->Write("deltaPhiReport");
-  cx->Print( TString::Format("%s_%s.png", exper.Data(), "cx") );
-  cy->Print( TString::Format("%s_%s.png", exper.Data(), "cy") );
-  cz->Print( TString::Format("%s_%s.png", exper.Data(), "cz") );
+  TString crSaveName;
+  crSaveName.Form("%s_%s.png", exper.Data(), "displacement");
+  //const char* wd = gSystem->WorkingDirectory();
+  //TSystemDirectory sd( wd, gSystem->BaseName(wd) );
+  //if ( sd.Find...("png")) {
+    crSaveName.Prepend("png/");
+  //}
+  cr->Print( crSaveName.Data() );
 }
 // return value(s), mainly for interactive use
 TList *parList = new TList;
@@ -180,6 +201,6 @@ parList->Add(new TParameter<double>("deltaPhi", dp));
 f->Close();
 
 // all pau!   )
-//return;
+delete cr;
 return parList;
 }
