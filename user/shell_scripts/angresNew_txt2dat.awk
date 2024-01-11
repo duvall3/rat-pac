@@ -17,6 +17,8 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+BEGIN {print "Detector N Phi(°) DeltaPhi(°)"}
+
 $1 ~ /Exper/ {exper=$3}
 $1 ~ /N/ {n=$3}
 $1 ~ /^Phi$/ {phi=$3}
