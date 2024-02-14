@@ -32,8 +32,10 @@
  *  	TDuvallUtils::DumpHist(h);
  *  ```
  */
-void TDuvallUtils::DumpHist( TH1* h )
+void TDuvallUtils::DumpHist( TH1* h, Int_t ngroup )
 {
+  TH1 *h = (TH1*)h->Clone();
+  h->Rebin(ngroup);
   Int_t asciiGradations = 20;
   Int_t k = 0, j = 0, nBins = h->GetNbinsX();
   Double_t hMax = h->GetMaximum();
@@ -277,6 +279,52 @@ TList* TDuvallUtils::FindVarsOfType( const char* varType, Bool_t kCaseSensitive 
     printf("Found %d global variables matching TypeName.Contains(\"%s\").\n", varCount, varType);
   }
   return oList;
+}
+
+//______________________________________________________________________________
+// GaussGeneral
+/**
+ * Return a 4-parameter TF1* according to the following:
+ * f(x) = [Constant] + [Normalization]*Gauss(x, [Mu], [Sigma])
+ * \param name -- name of TF1 object
+ * \param xMin, xMax -- domain of function
+ * \retval gaussGen -- function ready for fitting
+ */
+TF1* TDuvallUtils::GaussGeneral( const char* name, Double_t xMin, Double_t xMax )
+{
+  // init and set starting values (guesses) for parameters to help fitter
+  TF1 *gaussGen = new TF1( name, "[0] + [1]*TMath::Gaus(x,[2],[3])", xMin, xMax );
+  gaussGen->SetParNames("Constant", "Normalization", "Mu", "Sigma");
+  gaussGen->SetParameters(0., 1000., 0., 100.);
+  return gaussGen;
+}
+
+//______________________________________________________________________________
+// GaussGeneralFit
+/**
+ * Fit the given histogram with a 4-parameter TF1* according to the following:
+ * f(x) = [Constant] + [Normalization]*Gauss(x, [Mu], [Sigma])
+ * \param h -- 1-D histogram to fit
+ * \param name -- name of TF1 object
+ * \param kRange -- if kTRUE, restrict fitting to range of TF1
+ * \retval gaussFRP -- 'pointer' object; use `gaussFRP.Get()` 
+ *    to retrieve the actual TFitResult*
+ */
+TFitResultPtr TDuvallUtils::GaussGeneralFit( TH1 *h, const char* name, Bool_t kRange )
+{
+  // get limits and create function
+  Int_t N = h->GetNbinsX() - 1;
+  Double_t xMin = h->GetBinLowEdge(0);
+  Double_t xMax = h->GetBinLowEdge(N) + h->GetBinWidth(N);
+  TF1 *gauss = GaussGeneral(name, xMin, xMax);
+  gauss->SetLineColor(kRed);		// personal preference
+  // perform fit
+  if (kRange) {
+    TFitResultPtr gaussFRP = h->Fit(gauss, "SR");
+  } else {
+    TFitResultPtr gaussFRP = h->Fit(gauss, "S");
+  }
+  return gaussFRP;
 }
 
 //______________________________________________________________________________

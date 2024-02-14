@@ -1,17 +1,17 @@
-\hypertarget{classTRATGeo}{}\doxysection{T\+R\+A\+T\+Geo Class Reference}
+\hypertarget{classTRATGeo}{}\doxysection{TRATGeo Class Reference}
 \label{classTRATGeo}\index{TRATGeo@{TRATGeo}}
 
 
-class for assembling geometry in a R\+A\+T-\/\+P\+AC R\+O\+OT file  
+class for assembling geometry in a RAT-\/\+PAC ROOT file  
 
 
 
 
-{\ttfamily \#include $<$T\+R\+A\+T\+Geo.\+h$>$}
+{\ttfamily \#include $<$TRATGeo.\+h$>$}
 
 
 
-Inheritance diagram for T\+R\+A\+T\+Geo\+:\nopagebreak
+Inheritance diagram for TRATGeo\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,7 +20,7 @@ Inheritance diagram for T\+R\+A\+T\+Geo\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for T\+R\+A\+T\+Geo\+:\nopagebreak
+Collaboration diagram for TRATGeo\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -40,46 +40,61 @@ void {\bfseries Build} ()
 void {\bfseries Build\+Checkerboard} (const Int\+\_\+t k\+Dims=3)
 \item 
 \mbox{\Hypertarget{classTRATGeo_a1de704fc2d4296829cf28441b10b18c0}\label{classTRATGeo_a1de704fc2d4296829cf28441b10b18c0}} 
-T\+File $\ast$ {\bfseries Get\+File} () const
+TFile $\ast$ {\bfseries Get\+File} () const
 \item 
 \mbox{\Hypertarget{classTRATGeo_a508a30f4a4b76fbb03a31a9d980e90ae}\label{classTRATGeo_a508a30f4a4b76fbb03a31a9d980e90ae}} 
 virtual const char $\ast$ {\bfseries Get\+File\+Name} () const
 \item 
 \mbox{\Hypertarget{classTRATGeo_adb3ed733c9e26dee9ad487544de910f3}\label{classTRATGeo_adb3ed733c9e26dee9ad487544de910f3}} 
-T\+String {\bfseries Get\+Experiment} () const
+TString {\bfseries Get\+Experiment} () const
 \item 
 \mbox{\Hypertarget{classTRATGeo_a3fc4b3d82f2c164b86bc759b0276672c}\label{classTRATGeo_a3fc4b3d82f2c164b86bc759b0276672c}} 
-T\+String {\bfseries Get\+Experiment\+Path} () const
+TString {\bfseries Get\+Experiment\+Path} () const
 \item 
 \mbox{\Hypertarget{classTRATGeo_aed084b0004ecc6321c6e1f3fdbf38347}\label{classTRATGeo_aed084b0004ecc6321c6e1f3fdbf38347}} 
-T\+Map $\ast$ {\bfseries Get\+DB} () const
+TMap $\ast$ {\bfseries Get\+DB} () const
 \item 
 \mbox{\Hypertarget{classTRATGeo_ad2792a1a0896a20fc74c9cd4d08ee4ad}\label{classTRATGeo_ad2792a1a0896a20fc74c9cd4d08ee4ad}} 
-T\+List $\ast$ {\bfseries Get\+List\+Of\+Volumes} () const
+TList $\ast$ {\bfseries Get\+List\+Of\+Volumes} () const
 \item 
 \mbox{\Hypertarget{classTRATGeo_ae9e379d576228bda394dd62d1cec9cae}\label{classTRATGeo_ae9e379d576228bda394dd62d1cec9cae}} 
-\mbox{\hyperlink{classTRATVolume}{T\+R\+A\+T\+Volume}} $\ast$ {\bfseries Get\+Volume} (const char $\ast$volume\+Name)
+\mbox{\hyperlink{classTRATVolume}{TRATVolume}} $\ast$ {\bfseries Get\+Volume} (const char $\ast$volume\+Name)
 \item 
 \mbox{\Hypertarget{classTRATGeo_aa41f430e7df0e8f01c76dc2a4a79aba9}\label{classTRATGeo_aa41f430e7df0e8f01c76dc2a4a79aba9}} 
 Int\+\_\+t {\bfseries Get\+Entries} () const
 \item 
 \mbox{\Hypertarget{classTRATGeo_a095aa4901087400cdc7d0ce57b646cc7}\label{classTRATGeo_a095aa4901087400cdc7d0ce57b646cc7}} 
-T\+List $\ast$ {\bfseries Get\+Checkerboard\+Active} () const
+TList $\ast$ {\bfseries Get\+Checkerboard\+Active} () const
 \item 
 \mbox{\Hypertarget{classTRATGeo_ad82dd4549547c1a7cbfc99b161e9a576}\label{classTRATGeo_ad82dd4549547c1a7cbfc99b161e9a576}} 
-T\+List $\ast$ {\bfseries Get\+Checkerboard\+Inert} () const
+TList $\ast$ {\bfseries Get\+Checkerboard\+Inert} () const
+\item 
+\mbox{\Hypertarget{classTRATGeo_a60def77ed9290b553ae4acfa2e5635a6}\label{classTRATGeo_a60def77ed9290b553ae4acfa2e5635a6}} 
+TList $\ast$ {\bfseries Get\+Sensitive\+Volumes} () const
+\item 
+\mbox{\Hypertarget{classTRATGeo_ade3f722a6b508ea97d77e2ed8af082c0}\label{classTRATGeo_ade3f722a6b508ea97d77e2ed8af082c0}} 
+Int\+\_\+t {\bfseries Get\+Sensitive\+Volume\+Count} () const
+\item 
+\mbox{\Hypertarget{classTRATGeo_a7974a04d313c28dad55282b11063e3e5}\label{classTRATGeo_a7974a04d313c28dad55282b11063e3e5}} 
+Double\+\_\+t {\bfseries Total\+Target\+Volume} (Bool\+\_\+t k\+Identical\+Volumes=k\+TRUE)
+\item 
+\mbox{\Hypertarget{classTRATGeo_a663eef433317c301cca3754b863600f8}\label{classTRATGeo_a663eef433317c301cca3754b863600f8}} 
+Double\+\_\+t {\bfseries Total\+Target\+Mass} (Bool\+\_\+t k\+Identical\+Volumes=k\+TRUE)
+\item 
+\mbox{\Hypertarget{classTRATGeo_a75008e9b87c1ee996b00a2ab64a1568a}\label{classTRATGeo_a75008e9b87c1ee996b00a2ab64a1568a}} 
+Double\+\_\+t {\bfseries Total\+IBDRate} (Bool\+\_\+t k\+Identical\+Volumes=k\+TRUE)
 \item 
 \mbox{\Hypertarget{classTRATGeo_adceeb7542b3ff603f11dc38b9e685015}\label{classTRATGeo_adceeb7542b3ff603f11dc38b9e685015}} 
-T\+List $\ast$ {\bfseries Find\+Volumes\+Containing} (T\+Vector3 location, Bool\+\_\+t k\+Print=k\+F\+A\+L\+SE)
+TList $\ast$ {\bfseries Find\+Volumes\+Containing} (TVector3 location, Bool\+\_\+t k\+Print=k\+FALSE)
 \item 
 \mbox{\Hypertarget{classTRATGeo_a63697d48af85f356845d33fbde6c65ee}\label{classTRATGeo_a63697d48af85f356845d33fbde6c65ee}} 
-T\+List $\ast$ {\bfseries Find\+Volumes\+Containing} (Double\+\_\+t x, Double\+\_\+t y, Double\+\_\+t z, Bool\+\_\+t k\+Print=k\+F\+A\+L\+SE)
+TList $\ast$ {\bfseries Find\+Volumes\+Containing} (Double\+\_\+t x, Double\+\_\+t y, Double\+\_\+t z, Bool\+\_\+t k\+Print=k\+FALSE)
 \item 
 \mbox{\Hypertarget{classTRATGeo_a44d41e7b30535f7aad6b228f1c529c76}\label{classTRATGeo_a44d41e7b30535f7aad6b228f1c529c76}} 
-\mbox{\hyperlink{classTRATVolume}{T\+R\+A\+T\+Volume}} $\ast$ {\bfseries Find\+Lowest\+Volume\+Containing} (T\+Vector3 location, Bool\+\_\+t k\+Print=k\+F\+A\+L\+SE)
+\mbox{\hyperlink{classTRATVolume}{TRATVolume}} $\ast$ {\bfseries Find\+Lowest\+Volume\+Containing} (TVector3 location, Bool\+\_\+t k\+Print=k\+FALSE)
 \item 
 \mbox{\Hypertarget{classTRATGeo_a452b59dd65a272d42f419a5c2232a457}\label{classTRATGeo_a452b59dd65a272d42f419a5c2232a457}} 
-\mbox{\hyperlink{classTRATVolume}{T\+R\+A\+T\+Volume}} $\ast$ {\bfseries Find\+Lowest\+Volume\+Containing} (Double\+\_\+t x, Double\+\_\+t y, Double\+\_\+t z, Bool\+\_\+t k\+Print=k\+F\+A\+L\+SE)
+\mbox{\hyperlink{classTRATVolume}{TRATVolume}} $\ast$ {\bfseries Find\+Lowest\+Volume\+Containing} (Double\+\_\+t x, Double\+\_\+t y, Double\+\_\+t z, Bool\+\_\+t k\+Print=k\+FALSE)
 \item 
 \mbox{\Hypertarget{classTRATGeo_af3d13d69de54fea1aa61402b6c6978c8}\label{classTRATGeo_af3d13d69de54fea1aa61402b6c6978c8}} 
 void {\bfseries Show\+Volume} (const char $\ast$volume\+Name)
@@ -119,40 +134,46 @@ void {\bfseries Find\+Checkerboard\+Active} (Int\+\_\+t k\+Dims)
 \item 
 \mbox{\Hypertarget{classTRATGeo_a4acdb9f2aa3c000554413b7e651393ba}\label{classTRATGeo_a4acdb9f2aa3c000554413b7e651393ba}} 
 void {\bfseries Find\+Checkerboard\+Inert} (Int\+\_\+t k\+Dims)
+\item 
+\mbox{\Hypertarget{classTRATGeo_a0a8166a4d30ced5e229a1a3e9ad36911}\label{classTRATGeo_a0a8166a4d30ced5e229a1a3e9ad36911}} 
+void {\bfseries Find\+Sensitive\+Volumes} (const char $\ast$sv\+Regexp=\char`\"{}target\+\_\+cell\+\_\+\mbox{[}0-\/9\mbox{]}+.$\ast$\char`\"{})
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classTRATGeo_a7930b3a3ed665cbe8b3bc6632a5f0815}\label{classTRATGeo_a7930b3a3ed665cbe8b3bc6632a5f0815}} 
-T\+File $\ast$ {\bfseries f\+File}
+TFile $\ast$ {\bfseries f\+File}
 \item 
 \mbox{\Hypertarget{classTRATGeo_a883afd00fd92e69b556cd758885e58be}\label{classTRATGeo_a883afd00fd92e69b556cd758885e58be}} 
 const char $\ast$ {\bfseries f\+File\+Name}
 \item 
 \mbox{\Hypertarget{classTRATGeo_afd4b83721329e7406482e537a5e6b149}\label{classTRATGeo_afd4b83721329e7406482e537a5e6b149}} 
-T\+String {\bfseries f\+Experiment}
+TString {\bfseries f\+Experiment}
 \item 
 \mbox{\Hypertarget{classTRATGeo_a1da5d8ebf6b5b29c37b40c4d632e6477}\label{classTRATGeo_a1da5d8ebf6b5b29c37b40c4d632e6477}} 
-T\+String {\bfseries f\+Experiment\+Path}
+TString {\bfseries f\+Experiment\+Path}
 \item 
 \mbox{\Hypertarget{classTRATGeo_a63b669b4dd85a6ac331d5b472ed2e76d}\label{classTRATGeo_a63b669b4dd85a6ac331d5b472ed2e76d}} 
-const T\+Map $\ast$ {\bfseries f\+DB}
+const TMap $\ast$ {\bfseries f\+DB}
 \item 
 \mbox{\Hypertarget{classTRATGeo_a7935c0d41501aea2bd28ea8098e87152}\label{classTRATGeo_a7935c0d41501aea2bd28ea8098e87152}} 
-T\+List $\ast$ {\bfseries f\+Volume\+List}
+TList $\ast$ {\bfseries f\+Volume\+List}
 \item 
 \mbox{\Hypertarget{classTRATGeo_aafdf930be41e529edd3d781b22f3ec40}\label{classTRATGeo_aafdf930be41e529edd3d781b22f3ec40}} 
-T\+List $\ast$ {\bfseries f\+Active\+Cells}
+TList $\ast$ {\bfseries f\+Active\+Cells}
 \item 
 \mbox{\Hypertarget{classTRATGeo_a4d747cb533f19b721f28c1a9c4570030}\label{classTRATGeo_a4d747cb533f19b721f28c1a9c4570030}} 
-T\+List $\ast$ {\bfseries f\+Inert\+Cells}
+TList $\ast$ {\bfseries f\+Inert\+Cells}
+\item 
+\mbox{\Hypertarget{classTRATGeo_a24fd3e2b2eb6a0326b9619e074d800e2}\label{classTRATGeo_a24fd3e2b2eb6a0326b9619e074d800e2}} 
+TList $\ast$ {\bfseries f\+Sensitive\+Volumes}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-class for assembling geometry in a R\+A\+T-\/\+P\+AC R\+O\+OT file 
+class for assembling geometry in a RAT-\/\+PAC ROOT file 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-T\+R\+A\+T\+Geo.\+h\item 
-T\+R\+A\+T\+Geo.\+cxx\end{DoxyCompactItemize}
+TRATGeo.\+h\item 
+TRATGeo.\+cxx\end{DoxyCompactItemize}

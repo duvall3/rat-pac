@@ -1,6 +1,12 @@
 #!/bin/bash
-# makedocs -- compile and (optionally) update documentation for 'Tools for Reactor-Antineutrino Studies in RAT-PAC'
+# makedocs -- compile and (optionally) update documentation for
+#   'Tools for Reactor-Antineutrino Studies in RAT-PAC'
 # USAGE: makedocs [-h|-u] 
+# Exit status: 0 for success; the following values are added
+#   for errors in the respective sections:
+#   doxygen:	EXIT_STATUS += 5
+#   fixchars:	EXIT_STATUS += 6
+#   update:	EXIT_STATUS += 7
 # ~ Mark J. Duvall ~ duvall3.git@gmail.com ~ 06/2023 ~ #
 
 # Copyright (C) 2023 Mark J. Duvall / T. Rocks Science
@@ -20,7 +26,7 @@
 # 
 
 
-## INIT
+# ## INIT
 
 # general
 NULL=/dev/null
@@ -69,12 +75,14 @@ done
 
 # run doxygen
 $DOXYGEN Doxyfile | $TEE $LOGFILE
+DOXY_EXIT=$?
 
 # un-convert certain html sequences in doxygen's output
 FILE_LIST=( doc/html/{md_README,md_ReferenceMatching}.html )
 for FILE in ${FILE_LIST[*]}; do
   $VIM $FILE -c ":call FixDoxyChars()" -c ":wq"
 done
+FIXCHARS_EXIT=$?
 
 # update if indicated
 UHU_DIR=$HOME/uhunix/public_html
@@ -82,12 +90,22 @@ if $SEND_UPDATE; then
   $ECHO "Updating doc files on Web server..."
   cd $UHU_DIR
   ./update_rattools_doc.sh
+  UPDATE_EXIT=$?
   if [ $? -eq 0 ]; then $ECHO "Done."; fi
   cd - > $NULL
 fi
 
 
 ## EXIT
+
+# check for errors
+EXIT_STATUS=0
+EXIT_SUM=$((DOXY_EXIT + FIXCHARS_EXIT + UPDATE_EXIT))
+if [ $EXIT_SUM -gt 0 ]; then
+  if [ $DOXY_EXIT -gt 0 ]; then EXIT_STATUS=$((EXIT_STATUS+5)); fi
+  if [ $FIXCHARS_EXIT -gt 0 ]; then EXIT_STATUS=$((EXIT_STATUS+6)); fi
+  if [ $UPDATE_EXIT -gt 0 ]; then EXIT_STATUS=$((EXIT_STATUS+7)); fi
+fi
 
 # all pau!   )
 EXIT_STATUS=${EXIT_STATUS:-0}

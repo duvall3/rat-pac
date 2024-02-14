@@ -1,0 +1,94 @@
+#!/bin/bash
+# octsrc -- simple script to view the source files for a given OCT-PAC class
+# USAGE: octsrc [-h|-p] <OCTFunctionName>
+# NOTE: Modify the OCTAVESRC directory below for your system as needed
+# ~ Mark J. Duvall ~ duvall3@github.com ~ 7/2021 ~ #
+#
+
+##Copyright (C) 2021 Mark J. Duvall
+##
+##    This program is free software: you can redistribute it and/or modify
+##    it under the terms of the GNU General Public License as published by
+##    the Free Software Foundation, either version 3 of the License, or
+##    (at your option) any later version.
+##
+##    This program is distributed in the hope that it will be useful,
+##    but WITHOUT ANY WARRANTY; without even the implied warranty of
+##    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##    GNU General Public License for more details.
+##
+##    You should have received a copy of the GNU General Public License
+##    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+## octave source directory -- MODIFY IF NEEDED ##
+OCTAVESRC=/usr/share/octave/6.2.0/m
+
+# help
+usage() {
+  echo -e "USAGE: octsrc [-h|-p] <OCTFunctionName>"
+  echo -e "NOTE: Modify the OCTAVESRC directory in this script"
+  echo -e "  for your system as needed"
+  echo
+  echo -e "  -h\t\tShow this help message and exit"
+  echo -e "  -p\t\tprint filenames and exit"
+}
+
+# arg check
+if [[ ! $1 ]]; then
+  usage
+  exit 10
+fi
+
+# option(s)
+PRINT_ONLY=false
+while getopts ":hp" OPTIONS; do
+  case $OPTIONS in
+    h)
+      usage
+      exit 5
+      ;;
+    p)
+      PRINT_ONLY=true
+      ;;
+    *)
+      usage
+      exit 10
+      ;;
+  esac
+done
+shift $((OPTIND-1))
+
+# init
+ERR=/dev/stderr
+FILE_NAME="$1".m
+
+# locate files
+FILE=$(find $OCTAVESRC -name $FILE_NAME | head -n 1)
+if [[ $FILE ]]; then
+  FILE_TF=true
+else
+  FILE_TF=false
+  echo "Warning: Source file $FILE_NAME not found." > $ERR
+  GREPLIST=$(grep -iE -IRl $1 "$OCTAVESRC" 2> /dev/null)
+  if [[ $GREPLIST ]]; then
+    echo -e "\nMentions of \"$1\" found in the following files:\n"
+    echo $GREPLIST | sed s@$OCTAVESRC@'$OCTAVESRC'@g | tr ' ' '\n'
+    echo
+    exit 2
+  else
+    echo -e "No mentions of \"$1\" found under $OCTAVESRC. Exiting.\n"
+    exit 3
+  fi
+fi
+
+# main
+echo -e "$FILE"
+if $PRINT_ONLY; then
+  exit 0
+else
+  # open for reading only
+  vim -R $FILE
+fi
+
+# all pau!   )
+exit 0

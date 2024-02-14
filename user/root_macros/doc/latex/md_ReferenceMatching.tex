@@ -5,7 +5,7 @@ $\sim$ Mark J. Duvall $\sim$ \href{mailto:mjduvall@hawaii.edu}{\texttt{ mjduvall
 \DoxyHorRuler{0}
  \doxysubsection*{Description}
 
-This is a user’s guide for the set of software within {\itshape Tools for Reactor-\/\+Neutrino Studies in R\+A\+T-\/\+P\+AC} (\href{github.com/duvall3/rat-pac}{\texttt{ github.\+com/duvall3/rat-\/pac}}) that implements our algorithm for matching experimental datasets to reference distributions. See \href{index.html}{\texttt{ user/root\+\_\+macros/doc/html/index.\+html}} in this repository for more information on the entire toolset.
+This is a user’s guide for the set of software within {\itshape Tools for Reactor-\/\+Neutrino Studies in RAT-\/\+PAC} (\href{github.com/duvall3/rat-pac}{\texttt{ github.\+com/duvall3/rat-\/pac}}) that implements our algorithm for matching experimental datasets to reference distributions. See \href{index.html}{\texttt{ user/root\+\_\+macros/doc/html/index.\+html}} in this repository for more information on the entire toolset.
 
 \DoxyHorRuler{0}
  \doxysubsection*{Procedure}
@@ -17,15 +17,15 @@ These instructions will make the following assumptions\+:~\newline
 \begin{DoxyItemize}
 \item You have already completed the {\itshape Installation} instructions given on \href{index.html}{\texttt{ the main page}}.~\newline
 
-\item This repository is located in the directory {\ttfamily \$\+R\+A\+T\+D\+IR} – often simply {\ttfamily \$\+H\+O\+ME/rat-\/pac}, for example.~\newline
+\item This repository is located in the directory {\ttfamily \$\+RATDIR} – often simply {\ttfamily \$\+HOME/rat-\/pac}, for example.~\newline
 
-\item Your {\ttfamily R\+A\+T-\/\+P\+AC} experiment is located in the directory {\ttfamily \$\+D\+E\+T\+E\+C\+T\+OR} – for example, {\ttfamily D\+E\+T\+E\+C\+T\+OR=\$\+R\+A\+T\+D\+IR/data/some\+\_\+experiment}~\newline
+\item Your {\ttfamily RAT-\/\+PAC} experiment is located in the directory {\ttfamily \$\+DETECTOR} – for example, {\ttfamily DETECTOR=\$\+RATDIR/data/some\+\_\+experiment}~\newline
 
-\item Your reference set, collected test runs, and current test run are located in the directories {\ttfamily \$\+R\+E\+F\+D\+A\+TA}, {\ttfamily \$\+T\+E\+S\+T\+D\+IR}, and {\ttfamily \$\+T\+E\+S\+T\+D\+A\+TA}, respectively. For example\+:~\newline
- – {\ttfamily R\+E\+F\+D\+A\+TA=\$\+D\+E\+T\+E\+C\+T\+OR/\+R\+EF}~\newline
- – {\ttfamily T\+E\+S\+T\+D\+IR=\$\+R\+E\+F\+D\+A\+TA/\+T\+E\+S\+T\+\_\+\+R\+U\+NS}~\newline
- – {\ttfamily T\+E\+S\+T\+D\+A\+TA=\$\+T\+E\+S\+T\+D\+IR/\+Test\+Run0}~\newline
- – {\itshape Note\+: Placing {\ttfamily \$\+T\+E\+S\+T\+D\+A\+TA} inside {\ttfamily \$\+R\+E\+F\+D\+A\+TA} is recommended}~\newline
+\item Your reference set, collected test runs, and current test run are located in the directories {\ttfamily \$\+REFDATA}, {\ttfamily \$\+TESTDIR}, and {\ttfamily \$\+TESTDATA}, respectively. For example\+:~\newline
+ – {\ttfamily REFDATA=\$\+DETECTOR/\+REF}~\newline
+ – {\ttfamily TESTDIR=\$\+REFDATA/\+TEST\+\_\+\+RUNS}~\newline
+ – {\ttfamily TESTDATA=\$\+TESTDIR/\+Test\+Run0}~\newline
+ – {\itshape Note\+: Placing {\ttfamily \$\+TESTDATA} inside {\ttfamily \$\+REFDATA} is recommended}~\newline
 
 \item You are using a cluster or large server with at least 64 cores. If not, you will need to adjust the arguments of {\ttfamily angle\+\_\+multibatch.\+sh} (run {\ttfamily angle\+\_\+multibatch -\/h} for details).
 \end{DoxyItemize}
@@ -43,8 +43,8 @@ These instructions will make the following assumptions\+:~\newline
 \item \href{\#extest}{\texttt{ Extract the test distributions}} – {\ttfamily extract\+Test.\+cxx}~\newline
   
 \item \href{\#algo}{\texttt{ Run the reference-\/matching algorithm}} – {\ttfamily compare\+Ref.\+cxx} 
-\item \href{\#process}{\texttt{ Process the results}} – {\ttfamily K\+S\+Summary.\+cxx} 
-\item \href{\#multi}{\texttt{ Combine with other results}} {\itshape \mbox{[}Optional\mbox{]}} – {\ttfamily \mbox{\hyperlink{classTKSMultiRes}{T\+K\+S\+Multi\+Res}}} 
+\item \href{\#process}{\texttt{ Process the results}} – {\ttfamily KSSummary.\+cxx} 
+\item \href{\#multi}{\texttt{ Combine with other results}} {\itshape \mbox{[}Optional\mbox{]}} – {\ttfamily \mbox{\hyperlink{classTKSMultiRes}{TKSMulti\+Res}}} 
 \end{DoxyEnumerate}\DoxyHorRuler{0}
  \doxysubsection*{Details}
 
@@ -52,7 +52,7 @@ These instructions will make the following assumptions\+:~\newline
 
 
 \begin{DoxyItemize}
-\item Run your reference simulation set in {\ttfamily \$\+D\+E\+T\+E\+C\+T\+OR}.~\newline
+\item Run your reference simulation set in {\ttfamily \$\+DETECTOR}.~\newline
   
 \item Create a directory for the reference data, and move the output there. 
 \end{DoxyItemize}
@@ -60,25 +60,18 @@ These instructions will make the following assumptions\+:~\newline
 {\bfseries{{\itshape Example\+:}}}
 
 
-\begin{DoxyPre}{\ttfamily \label{_cb1-1}%
-cd \$DETECTOR
-\label{_cb1-2}%
-angle\_multibatch.sh ReferenceRun0 30 10000 50
-\label{_cb1-3}%
-\# wait for runs to finish
-\label{_cb1-4}%
-mkdir -\/p REF
-\label{_cb1-5}%
-mv -\/t REF/ ReferenceRun0*
-\label{_cb1-6}%
-cd REF
-\label{_cb1-7}%
-REFDATA=\$PWD}\end{DoxyPre}
+\begin{DoxyPre}{\ttfamily \href{\#cb1-1}{\texttt{ }}cd \$DETECTOR
+\href{\#cb1-2}{\texttt{ }}angle\_multibatch.sh ReferenceRun0 30 10000 50
+\href{\#cb1-3}{\texttt{ }}\# wait for runs to finish
+\href{\#cb1-4}{\texttt{ }}mkdir -\/p REF
+\href{\#cb1-5}{\texttt{ }}mv -\/t REF/ ReferenceRun0*
+\href{\#cb1-6}{\texttt{ }}cd REF
+\href{\#cb1-7}{\texttt{ }}REFDATA=\$PWD}\end{DoxyPre}
  \doxysubsubsection*{2\+: Extract Reference Distributions}
 
 
 \begin{DoxyItemize}
-\item Navigate to {\ttfamily \$\+R\+E\+F\+D\+A\+TA} and open {\ttfamily R\+O\+OT}.~\newline
+\item Navigate to {\ttfamily \$\+REFDATA} and open {\ttfamily ROOT}.~\newline
   
 \item Execute the macro {\ttfamily extract\+Ref.\+cxx} on the batch run’s name prefix. 
 \end{DoxyItemize}
@@ -86,18 +79,15 @@ REFDATA=\$PWD}\end{DoxyPre}
 {\bfseries{{\itshape Example\+:}}}
 
 
-\begin{DoxyPre}{\ttfamily \label{_cb2-1}%
-cd \$REFDATA
-\label{_cb2-2}%
-root}\end{DoxyPre}
+\begin{DoxyPre}{\ttfamily \href{\#cb2-1}{\texttt{ }}cd \$REFDATA
+\href{\#cb2-2}{\texttt{ }}root}\end{DoxyPre}
  
-\begin{DoxyPre}{\ttfamily \label{_cb3-1}%
-extractRef("ReferenceRun0");}\end{DoxyPre}
+\begin{DoxyPre}{\ttfamily \href{\#cb3-1}{\texttt{ }}extractRef("{}ReferenceRun0"{});}\end{DoxyPre}
  \doxysubsubsection*{3\+: Run Test Set}
 
 
 \begin{DoxyItemize}
-\item Run your test simulation set in {\ttfamily \$\+D\+E\+T\+E\+C\+T\+OR}.~\newline
+\item Run your test simulation set in {\ttfamily \$\+DETECTOR}.~\newline
   
 \item Create a directory for the test data, and move the output there. 
 \end{DoxyItemize}
@@ -105,31 +95,21 @@ extractRef("ReferenceRun0");}\end{DoxyPre}
 {\bfseries{{\itshape Example\+:}}}
 
 
-\begin{DoxyPre}{\ttfamily \label{_cb4-1}%
-cd \$DETECTOR
-\label{_cb4-2}%
-angle\_multibatch.sh TestRun0 30 1000 50
-\label{_cb4-3}%
-mkdir -\/p REF/TEST\_RUNS
-\label{_cb4-4}%
-mkdir TestRun0
-\label{_cb4-5}%
-mv -\/t TestRun0/ TestRun0??*
-\label{_cb4-6}%
-mv -\/t REF/TEST\_RUNS/ TestRun0/
-\label{_cb4-7}%
-cd REF/TEST\_RUNS
-\label{_cb4-8}%
-TESTDIR=\$PWD
-\label{_cb4-9}%
-cd TestRun0
-\label{_cb4-10}%
-TESTDATA=\$PWD}\end{DoxyPre}
+\begin{DoxyPre}{\ttfamily \href{\#cb4-1}{\texttt{ }}cd \$DETECTOR
+\href{\#cb4-2}{\texttt{ }}angle\_multibatch.sh TestRun0 30 1000 50
+\href{\#cb4-3}{\texttt{ }}mkdir -\/p REF/TEST\_RUNS
+\href{\#cb4-4}{\texttt{ }}mkdir TestRun0
+\href{\#cb4-5}{\texttt{ }}mv -\/t TestRun0/ TestRun0??*
+\href{\#cb4-6}{\texttt{ }}mv -\/t REF/TEST\_RUNS/ TestRun0/
+\href{\#cb4-7}{\texttt{ }}cd REF/TEST\_RUNS
+\href{\#cb4-8}{\texttt{ }}TESTDIR=\$PWD
+\href{\#cb4-9}{\texttt{ }}cd TestRun0
+\href{\#cb4-10}{\texttt{ }}TESTDATA=\$PWD}\end{DoxyPre}
  \doxysubsubsection*{4\+: Extract Test Distributions}
 
 
 \begin{DoxyItemize}
-\item Navigate to {\ttfamily \$\+T\+E\+S\+T\+D\+A\+TA} and open {\ttfamily R\+O\+OT}.~\newline
+\item Navigate to {\ttfamily \$\+TESTDATA} and open {\ttfamily ROOT}.~\newline
   
 \item Execute the macro {\ttfamily extract\+Test.\+cxx} on the batch run’s name prefix. 
 \end{DoxyItemize}
@@ -137,48 +117,43 @@ TESTDATA=\$PWD}\end{DoxyPre}
 {\bfseries{{\itshape Example\+:}}}
 
 
-\begin{DoxyPre}{\ttfamily \label{_cb5-1}%
-cd \$TESTDATA
-\label{_cb5-2}%
-root}\end{DoxyPre}
+\begin{DoxyPre}{\ttfamily \href{\#cb5-1}{\texttt{ }}cd \$TESTDATA
+\href{\#cb5-2}{\texttt{ }}root}\end{DoxyPre}
  
-\begin{DoxyPre}{\ttfamily \label{_cb6-1}%
-extractTest("TestRun0");}\end{DoxyPre}
+\begin{DoxyPre}{\ttfamily \href{\#cb6-1}{\texttt{ }}extractTest("{}TestRun0"{});}\end{DoxyPre}
  \doxysubsubsection*{5\+: Execute Comparisons}
 
 
 \begin{DoxyItemize}
 \item {\bfseries{{\itshape This is where the magic happens!}}} 
-\item Navigate to {\ttfamily \$\+R\+E\+F\+D\+A\+TA} and run {\ttfamily ref\+\_\+compare.\+sh} on {\itshape the relative path to} {\ttfamily \$\+T\+E\+S\+T\+D\+A\+TA}.~\newline
+\item Navigate to {\ttfamily \$\+REFDATA} and run {\ttfamily ref\+\_\+compare.\+sh} on {\itshape the relative path to} {\ttfamily \$\+TESTDATA}.~\newline
   
-\item This will use \mbox{\hyperlink{classTRefMatch}{T\+Ref\+Match}} to examine each of the extracted test distributions and find its best statistical match in the reference set. 
+\item This will use \mbox{\hyperlink{classTRefMatch}{TRef\+Match}} to examine each of the extracted test distributions and find its best statistical match in the reference set. 
 \item The {\ttfamily ref\+\_\+compare.\+sh} script can also accept arguments to run on an individual file, to use the Anderson-\/\+Darling test instead of Kolmogorov-\/\+Smirnov, and to look for a variable other than “phi”; its full parameters and default values are as follows\+:~\newline
- {\ttfamily ref\+\_\+compare.\+sh $<$F\+I\+L\+E$\vert$\+D\+I\+R\+E\+C\+T\+O\+RY$>$ \mbox{[}A\+N\+D\+E\+R\+S\+O\+N\+\_\+\+TF=false\mbox{]} \mbox{[}V\+A\+R\+N\+A\+ME=phi\mbox{]}} 
+ {\ttfamily ref\+\_\+compare.\+sh $<$FILE$\vert$\+DIRECTORY$>$ \mbox{[}ANDERSON\+\_\+\+TF=false\mbox{]} \mbox{[}VARNAME=phi\mbox{]}} 
 \end{DoxyItemize}
 
 {\bfseries{{\itshape Example\+:}}}
 
 
-\begin{DoxyPre}{\ttfamily \label{_cb7-1}%
-cd \$REFDATA
-\label{_cb7-2}%
-ref\_compare.sh TEST\_RUNS/TestRun0}\end{DoxyPre}
+\begin{DoxyPre}{\ttfamily \href{\#cb7-1}{\texttt{ }}cd \$REFDATA
+\href{\#cb7-2}{\texttt{ }}ref\_compare.sh TEST\_RUNS/TestRun0}\end{DoxyPre}
  \doxysubsubsection*{6\+: Compile Results Summary}
 
 
 \begin{DoxyItemize}
-\item Navigate to {\ttfamily \$\+T\+E\+S\+T\+D\+A\+TA}.~\newline
+\item Navigate to {\ttfamily \$\+TESTDATA}.~\newline
   
-\item Open {\ttfamily R\+O\+OT} and run the macro {\ttfamily K\+S\+Summary.\+cxx}; the default parameters should work, so you can run it without arguments. This macro creates the following output files\+: 
+\item Open {\ttfamily ROOT} and run the macro {\ttfamily KSSummary.\+cxx}; the default parameters should work, so you can run it without arguments. This macro creates the following output files\+: 
 \begin{DoxyItemize}
-\item {\ttfamily K\+S\+Summary.\+root}\+: a {\itshape R\+O\+OT} file containing the full results matrix and related plots;~\newline
+\item {\ttfamily KSSummary.\+root}\+: a {\itshape ROOT} file containing the full results matrix and related plots;~\newline
   
-\item {\ttfamily K\+S\+Summary.\+png}\+: an exported {\itshape P\+NG} of the plots from the {\itshape R\+O\+OT} file;~\newline
+\item {\ttfamily KSSummary.\+png}\+: an exported {\itshape PNG} of the plots from the {\itshape ROOT} file;~\newline
   
-\item {\ttfamily K\+S\+Summary.\+txt}\+: a nicely-\/formatted {\itshape A\+S\+C\+II} view of the results matrix, with column labels included.~\newline
+\item {\ttfamily KSSummary.\+txt}\+: a nicely-\/formatted {\itshape ASCII} view of the results matrix, with column labels included.~\newline
   
 \end{DoxyItemize}
-\item {\itshape \mbox{[}Optional\mbox{]}} If you don’t have a graphical connection to the server or cluster, copy the {\ttfamily K\+S\+Summary} output files {\itshape (.root, .png,} and {\itshape .txt)} to your system (via, {\itshape e.\+g.,} {\ttfamily scp}).~\newline
+\item {\itshape \mbox{[}Optional\mbox{]}} If you don’t have a graphical connection to the server or cluster, copy the {\ttfamily KSSummary} output files {\itshape (.root, .png,} and {\itshape .txt)} to your system (via, {\itshape e.\+g.,} {\ttfamily scp}).~\newline
   
 \item Open the results and get ready to publish! 
 \end{DoxyItemize}
@@ -186,32 +161,25 @@ ref\_compare.sh TEST\_RUNS/TestRun0}\end{DoxyPre}
 {\bfseries{{\itshape Example\+:}}}
 
 
-\begin{DoxyPre}{\ttfamily \label{_cb8-1}%
-cd \$TESTDATA
-\label{_cb8-2}%
-root}\end{DoxyPre}
+\begin{DoxyPre}{\ttfamily \href{\#cb8-1}{\texttt{ }}cd \$TESTDATA
+\href{\#cb8-2}{\texttt{ }}root}\end{DoxyPre}
  
-\begin{DoxyPre}{\ttfamily \label{_cb9-1}%
-KSSummary();
-\label{_cb9-2}%
-.q}\end{DoxyPre}
+\begin{DoxyPre}{\ttfamily \href{\#cb9-1}{\texttt{ }}KSSummary();
+\href{\#cb9-2}{\texttt{ }}.q}\end{DoxyPre}
  
-\begin{DoxyPre}{\ttfamily \label{_cb10-1}%
-\# on your local machine, in whatever output directory you like:
-\label{_cb10-2}%
-REMOTE\_HOST="mtc-\/b" \# for example
-\label{_cb10-3}%
-scp \$REMOTE\_HOST:\$TESTDATA/KSSummary.\{root,png,txt\} .}\end{DoxyPre}
+\begin{DoxyPre}{\ttfamily \href{\#cb10-1}{\texttt{ }}\# on your local machine, in whatever output directory you like:
+\href{\#cb10-2}{\texttt{ }}REMOTE\_HOST="{}mtc-\/b"{} \# for example
+\href{\#cb10-3}{\texttt{ }}scp \$REMOTE\_HOST:\$TESTDATA/KSSummary.\{root,png,txt\} .}\end{DoxyPre}
  \doxysubsubsection*{7. Combine Results with Other Test Runs {\itshape \mbox{[}Optional\mbox{]}}}
 
-If you have completed multiple test runs, you can combine their results to analyze the detector’s performance over the aggregate dataset using {\ttfamily \mbox{\hyperlink{classTKSMultiRes}{T\+K\+S\+Multi\+Res}}} as follows\+:~\newline
+If you have completed multiple test runs, you can combine their results to analyze the detector’s performance over the aggregate dataset using {\ttfamily \mbox{\hyperlink{classTKSMultiRes}{TKSMulti\+Res}}} as follows\+:~\newline
 
 \begin{DoxyItemize}
-\item Navigate to {\ttfamily \$\+T\+E\+S\+T\+D\+IR}.~\newline
+\item Navigate to {\ttfamily \$\+TESTDIR}.~\newline
 
-\item Open {\ttfamily R\+O\+OT}.~\newline
+\item Open {\ttfamily ROOT}.~\newline
 
-\item Create a \mbox{\hyperlink{classTKSMultiRes}{T\+K\+S\+Multi\+Res}} object.~\newline
+\item Create a \mbox{\hyperlink{classTKSMultiRes}{TKSMulti\+Res}} object.~\newline
 
 \item If desired, adjust settings (most commonly using the {\ttfamily Set\+Ribbon()} method to turn the ribbon plot on \mbox{[}default\mbox{]} or off).~\newline
 
@@ -223,19 +191,13 @@ If you have completed multiple test runs, you can combine their results to analy
 {\bfseries{{\itshape Example\+:}}}
 
 
-\begin{DoxyPre}{\ttfamily \label{_cb11-1}%
-cd \$TESTDIR
-\label{_cb11-2}%
-root}\end{DoxyPre}
+\begin{DoxyPre}{\ttfamily \href{\#cb11-1}{\texttt{ }}cd \$TESTDIR
+\href{\#cb11-2}{\texttt{ }}root}\end{DoxyPre}
  
-\begin{DoxyPre}{\ttfamily \label{_cb12-1}%
-\mbox{\hyperlink{classTKSMultiRes}{TKSMultiRes}} M;
-\label{_cb12-2}%
-//M.SetRibbon(kFALSE); // deactivate ribbon plot if desired
-\label{_cb12-3}%
-M.Run();
-\label{_cb12-4}%
-M.Save();}\end{DoxyPre}
+\begin{DoxyPre}{\ttfamily \href{\#cb12-1}{\texttt{ }}\mbox{\hyperlink{classTKSMultiRes}{TKSMultiRes}} M;
+\href{\#cb12-2}{\texttt{ }}//M.SetRibbon(kFALSE); // deactivate ribbon plot if desired
+\href{\#cb12-3}{\texttt{ }}M.Run();
+\href{\#cb12-4}{\texttt{ }}M.Save();}\end{DoxyPre}
  \DoxyHorRuler{0}
  \doxysubsection*{All Pau!}
 

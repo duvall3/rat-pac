@@ -1,0 +1,199 @@
+\hypertarget{classTRATTrackAnalyzer}{}\doxysection{TRATTrack\+Analyzer Class Reference}
+\label{classTRATTrackAnalyzer}\index{TRATTrackAnalyzer@{TRATTrackAnalyzer}}
+
+
+Class for processing data from RAT-\/\+PAC particle tracks.  
+
+
+
+
+{\ttfamily \#include $<$TRATTrack\+Analyzer.\+h$>$}
+
+
+
+Inheritance diagram for TRATTrack\+Analyzer\+:
+% FIG 0
+
+
+Collaboration diagram for TRATTrack\+Analyzer\+:
+% FIG 1
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classTRATTrackAnalyzer_afca52b77217b63090cd40bfd1a6d6910}{EParticle\+Selection}} \{ \mbox{\hyperlink{classTRATTrackAnalyzer_afca52b77217b63090cd40bfd1a6d6910a5b7d244f91c4593bc3fb2882ea8f30f8}{k\+IBDPositrons}}
+, \mbox{\hyperlink{classTRATTrackAnalyzer_afca52b77217b63090cd40bfd1a6d6910a10049ac5ca9d619640bc261b9cd0e578}{k\+IBDNeutrons}}
+, \mbox{\hyperlink{classTRATTrackAnalyzer_afca52b77217b63090cd40bfd1a6d6910a48e272ace695a6d90ee7a929a717dc60}{k\+Particle\+Search}}
+ \}
+\begin{DoxyCompactList}\small\item\em $<$ How to select particles \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{classTRATTrackAnalyzer_ac5bc1462fd20897c2b8233aba4f513d4}{EStep\+Selection}} \{ \mbox{\hyperlink{classTRATTrackAnalyzer_ac5bc1462fd20897c2b8233aba4f513d4a29c0a425d0f454b0bc5937e310f0dff8}{k\+Start\+End}}
+, \mbox{\hyperlink{classTRATTrackAnalyzer_ac5bc1462fd20897c2b8233aba4f513d4a7a6ab423c6b2bcb7a87042e180c0b16e}{k\+All\+Steps}}
+ \}
+\begin{DoxyCompactList}\small\item\em $<$ How to select track steps \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTRATTrackAnalyzer_a140db440046b478e6d6d50e6734ae816}{TRATTrack\+Analyzer}} (const char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em Normal ctor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTRATTrackAnalyzer_ae9c615fe7cef06d76de624209e130d01}\label{classTRATTrackAnalyzer_ae9c615fe7cef06d76de624209e130d01}} 
+\mbox{\hyperlink{classTRATTrackAnalyzer_afca52b77217b63090cd40bfd1a6d6910}{EParticle\+Selection}} {\bfseries Get\+Particle\+Selection\+Mode} ()
+\item 
+\mbox{\Hypertarget{classTRATTrackAnalyzer_ade609e471421c5c184bc64fa07c5c4b7}\label{classTRATTrackAnalyzer_ade609e471421c5c184bc64fa07c5c4b7}} 
+\mbox{\hyperlink{classTRATTrackAnalyzer_ac5bc1462fd20897c2b8233aba4f513d4}{EStep\+Selection}} {\bfseries Get\+Step\+Selection\+Mode} ()
+\item 
+\mbox{\Hypertarget{classTRATTrackAnalyzer_a2f8d5d887084e34dab43ca468ddebc22}\label{classTRATTrackAnalyzer_a2f8d5d887084e34dab43ca468ddebc22}} 
+TString {\bfseries Get\+File\+Name} ()
+\item 
+\mbox{\Hypertarget{classTRATTrackAnalyzer_a9eea5f863d28689379391b02e7c94786}\label{classTRATTrackAnalyzer_a9eea5f863d28689379391b02e7c94786}} 
+Bool\+\_\+t {\bfseries Is\+Verbose} ()
+\item 
+\mbox{\Hypertarget{classTRATTrackAnalyzer_a1bb44c5bbef62700255c301f05d0184a}\label{classTRATTrackAnalyzer_a1bb44c5bbef62700255c301f05d0184a}} 
+RAT\+::\+DSReader $\ast$ {\bfseries Get\+DSReader} ()
+\item 
+\mbox{\Hypertarget{classTRATTrackAnalyzer_a6640ac691753ac31f3861931dcf7d30a}\label{classTRATTrackAnalyzer_a6640ac691753ac31f3861931dcf7d30a}} 
+Long64\+\_\+t {\bfseries Get\+Total\+Events} ()
+\item 
+\mbox{\Hypertarget{classTRATTrackAnalyzer_a4cafc42b557fd5f1128658180076ceb0}\label{classTRATTrackAnalyzer_a4cafc42b557fd5f1128658180076ceb0}} 
+TString {\bfseries Get\+Particle\+Name} ()
+\item 
+\mbox{\Hypertarget{classTRATTrackAnalyzer_ae887788d7f7c052d25bf1c17774fee70}\label{classTRATTrackAnalyzer_ae887788d7f7c052d25bf1c17774fee70}} 
+TTree $\ast$ {\bfseries Get\+Tree} ()
+\item 
+\mbox{\Hypertarget{classTRATTrackAnalyzer_a06b670d54b2a1d7478edd937950c33cd}\label{classTRATTrackAnalyzer_a06b670d54b2a1d7478edd937950c33cd}} 
+TH1D $\ast$ {\bfseries Get\+Hist} ()
+\item 
+\mbox{\Hypertarget{classTRATTrackAnalyzer_a9c551de1db47fad33e986e0b976ff241}\label{classTRATTrackAnalyzer_a9c551de1db47fad33e986e0b976ff241}} 
+void {\bfseries Set\+Particle\+Selection\+Mode} (\mbox{\hyperlink{classTRATTrackAnalyzer_afca52b77217b63090cd40bfd1a6d6910}{EParticle\+Selection}} new\+PSMode)
+\item 
+\mbox{\Hypertarget{classTRATTrackAnalyzer_ace8dcd89059a52f0b4243efe9314c85b}\label{classTRATTrackAnalyzer_ace8dcd89059a52f0b4243efe9314c85b}} 
+void {\bfseries Set\+Step\+Selection\+Mode} (\mbox{\hyperlink{classTRATTrackAnalyzer_ac5bc1462fd20897c2b8233aba4f513d4}{EStep\+Selection}} new\+SSMode)
+\item 
+\mbox{\Hypertarget{classTRATTrackAnalyzer_afcc3629d08261e9aca39eb3905b5be83}\label{classTRATTrackAnalyzer_afcc3629d08261e9aca39eb3905b5be83}} 
+void {\bfseries Set\+Verbose} (Bool\+\_\+t new\+Verbose)
+\item 
+\mbox{\Hypertarget{classTRATTrackAnalyzer_aed1f1cbf6449759fa11658ecbabfb578}\label{classTRATTrackAnalyzer_aed1f1cbf6449759fa11658ecbabfb578}} 
+void {\bfseries Set\+Particle\+Name} (TString new\+Name)
+\item 
+\mbox{\Hypertarget{classTRATTrackAnalyzer_aacac1bd4974618886f2dded2571eab15}\label{classTRATTrackAnalyzer_aacac1bd4974618886f2dded2571eab15}} 
+void {\bfseries Set\+Particle\+Name} (const char $\ast$new\+Name)
+\item 
+\mbox{\Hypertarget{classTRATTrackAnalyzer_a0c4bac5dddc6fab3f5a41e02b59946ff}\label{classTRATTrackAnalyzer_a0c4bac5dddc6fab3f5a41e02b59946ff}} 
+void \mbox{\hyperlink{classTRATTrackAnalyzer_a0c4bac5dddc6fab3f5a41e02b59946ff}{Analyze}} ()
+\begin{DoxyCompactList}\small\item\em Run selected analysis. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTRATTrackAnalyzer_a7d73ad362ed0aa7edb39b5ff89e6a42f}\label{classTRATTrackAnalyzer_a7d73ad362ed0aa7edb39b5ff89e6a42f}} 
+void \mbox{\hyperlink{classTRATTrackAnalyzer_a7d73ad362ed0aa7edb39b5ff89e6a42f}{Save}} ()
+\begin{DoxyCompactList}\small\item\em Save results. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTRATTrackAnalyzer_abf3194954adbcbd79c1414af7f856a0b}\label{classTRATTrackAnalyzer_abf3194954adbcbd79c1414af7f856a0b}} 
+void \mbox{\hyperlink{classTRATTrackAnalyzer_abf3194954adbcbd79c1414af7f856a0b}{Run}} ()
+\begin{DoxyCompactList}\small\item\em Perform analysis and save results. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTRATTrackAnalyzer_af08037378bf0ad51f80953ebba8f66b3}\label{classTRATTrackAnalyzer_af08037378bf0ad51f80953ebba8f66b3}} 
+void {\bfseries Set\+Total\+Events} (Long64\+\_\+t new\+Total)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTRATTrackAnalyzer_a222642e30e082042b053d5e7d5e5fa54}\label{classTRATTrackAnalyzer_a222642e30e082042b053d5e7d5e5fa54}} 
+\mbox{\hyperlink{classTRATTrackAnalyzer_afca52b77217b63090cd40bfd1a6d6910}{EParticle\+Selection}} \mbox{\hyperlink{classTRATTrackAnalyzer_a222642e30e082042b053d5e7d5e5fa54}{f\+Particle\+Selection\+Mode}}
+\begin{DoxyCompactList}\small\item\em Particle selection mode (see enum) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTRATTrackAnalyzer_a71f204ea0b137e0f865b8b163dd55892}\label{classTRATTrackAnalyzer_a71f204ea0b137e0f865b8b163dd55892}} 
+\mbox{\hyperlink{classTRATTrackAnalyzer_ac5bc1462fd20897c2b8233aba4f513d4}{EStep\+Selection}} \mbox{\hyperlink{classTRATTrackAnalyzer_a71f204ea0b137e0f865b8b163dd55892}{f\+Step\+Selection\+Mode}}
+\begin{DoxyCompactList}\small\item\em Step selection mode (see enum) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTRATTrackAnalyzer_a6f358117bb3476483f01130839bebd8b}\label{classTRATTrackAnalyzer_a6f358117bb3476483f01130839bebd8b}} 
+TString \mbox{\hyperlink{classTRATTrackAnalyzer_a6f358117bb3476483f01130839bebd8b}{f\+File\+Name}}
+\begin{DoxyCompactList}\small\item\em Name of RAT file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTRATTrackAnalyzer_a185f3a927614543c2fa61318d157f874}\label{classTRATTrackAnalyzer_a185f3a927614543c2fa61318d157f874}} 
+Bool\+\_\+t \mbox{\hyperlink{classTRATTrackAnalyzer_a185f3a927614543c2fa61318d157f874}{fk\+Verbose}}
+\begin{DoxyCompactList}\small\item\em Whether to print track at each cursor movement. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTRATTrackAnalyzer_ac5b5a1be4ae2c78301a362ab6a454561}\label{classTRATTrackAnalyzer_ac5b5a1be4ae2c78301a362ab6a454561}} 
+TObject $\ast$ \mbox{\hyperlink{classTRATTrackAnalyzer_ac5b5a1be4ae2c78301a362ab6a454561}{f\+DSReader\+Object}}
+\begin{DoxyCompactList}\small\item\em Reference to the DSReader. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTRATTrackAnalyzer_a95af982a2f66c8d35cbb4561c8adb8a3}\label{classTRATTrackAnalyzer_a95af982a2f66c8d35cbb4561c8adb8a3}} 
+Long64\+\_\+t \mbox{\hyperlink{classTRATTrackAnalyzer_a95af982a2f66c8d35cbb4561c8adb8a3}{f\+Total\+Events}}
+\begin{DoxyCompactList}\small\item\em Number of top-\/level RAT events. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTRATTrackAnalyzer_a01ce6d02e1a08086f7230310bf3a4320}\label{classTRATTrackAnalyzer_a01ce6d02e1a08086f7230310bf3a4320}} 
+TString \mbox{\hyperlink{classTRATTrackAnalyzer_a01ce6d02e1a08086f7230310bf3a4320}{f\+Particle\+Name}}
+\begin{DoxyCompactList}\small\item\em Name of particle to seek. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTRATTrackAnalyzer_a5d447f2eb33178d6d7032f20652ad7c3}\label{classTRATTrackAnalyzer_a5d447f2eb33178d6d7032f20652ad7c3}} 
+TTree $\ast$ \mbox{\hyperlink{classTRATTrackAnalyzer_a5d447f2eb33178d6d7032f20652ad7c3}{f\+Tree}}
+\begin{DoxyCompactList}\small\item\em Results tree. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTRATTrackAnalyzer_a865f5c23e18b2561dcc4aa5c368f03e0}\label{classTRATTrackAnalyzer_a865f5c23e18b2561dcc4aa5c368f03e0}} 
+TH1D $\ast$ \mbox{\hyperlink{classTRATTrackAnalyzer_a865f5c23e18b2561dcc4aa5c368f03e0}{f\+Hist}}
+\begin{DoxyCompactList}\small\item\em Results histogram. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for processing data from RAT-\/\+PAC particle tracks. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classTRATTrackAnalyzer_afca52b77217b63090cd40bfd1a6d6910}\label{classTRATTrackAnalyzer_afca52b77217b63090cd40bfd1a6d6910}} 
+\index{TRATTrackAnalyzer@{TRATTrackAnalyzer}!EParticleSelection@{EParticleSelection}}
+\index{EParticleSelection@{EParticleSelection}!TRATTrackAnalyzer@{TRATTrackAnalyzer}}
+\doxysubsubsection{\texorpdfstring{EParticleSelection}{EParticleSelection}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classTRATTrackAnalyzer_afca52b77217b63090cd40bfd1a6d6910}{TRATTrack\+Analyzer\+::\+EParticle\+Selection}}}
+
+
+
+$<$ How to select particles 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kIBDPositrons@{kIBDPositrons}!TRATTrackAnalyzer@{TRATTrackAnalyzer}}\index{TRATTrackAnalyzer@{TRATTrackAnalyzer}!kIBDPositrons@{kIBDPositrons}}}\mbox{\Hypertarget{classTRATTrackAnalyzer_afca52b77217b63090cd40bfd1a6d6910a5b7d244f91c4593bc3fb2882ea8f30f8}\label{classTRATTrackAnalyzer_afca52b77217b63090cd40bfd1a6d6910a5b7d244f91c4593bc3fb2882ea8f30f8}} 
+k\+IBDPositrons&Positrons in an IBD run, top-\/level only. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kIBDNeutrons@{kIBDNeutrons}!TRATTrackAnalyzer@{TRATTrackAnalyzer}}\index{TRATTrackAnalyzer@{TRATTrackAnalyzer}!kIBDNeutrons@{kIBDNeutrons}}}\mbox{\Hypertarget{classTRATTrackAnalyzer_afca52b77217b63090cd40bfd1a6d6910a10049ac5ca9d619640bc261b9cd0e578}\label{classTRATTrackAnalyzer_afca52b77217b63090cd40bfd1a6d6910a10049ac5ca9d619640bc261b9cd0e578}} 
+k\+IBDNeutrons&Neutrons in an IBD run, top-\/level only. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kParticleSearch@{kParticleSearch}!TRATTrackAnalyzer@{TRATTrackAnalyzer}}\index{TRATTrackAnalyzer@{TRATTrackAnalyzer}!kParticleSearch@{kParticleSearch}}}\mbox{\Hypertarget{classTRATTrackAnalyzer_afca52b77217b63090cd40bfd1a6d6910a48e272ace695a6d90ee7a929a717dc60}\label{classTRATTrackAnalyzer_afca52b77217b63090cd40bfd1a6d6910a48e272ace695a6d90ee7a929a717dc60}} 
+k\+Particle\+Search&Search all levels for a given particle. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classTRATTrackAnalyzer_ac5bc1462fd20897c2b8233aba4f513d4}\label{classTRATTrackAnalyzer_ac5bc1462fd20897c2b8233aba4f513d4}} 
+\index{TRATTrackAnalyzer@{TRATTrackAnalyzer}!EStepSelection@{EStepSelection}}
+\index{EStepSelection@{EStepSelection}!TRATTrackAnalyzer@{TRATTrackAnalyzer}}
+\doxysubsubsection{\texorpdfstring{EStepSelection}{EStepSelection}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classTRATTrackAnalyzer_ac5bc1462fd20897c2b8233aba4f513d4}{TRATTrack\+Analyzer\+::\+EStep\+Selection}}}
+
+
+
+$<$ How to select track steps 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kStartEnd@{kStartEnd}!TRATTrackAnalyzer@{TRATTrackAnalyzer}}\index{TRATTrackAnalyzer@{TRATTrackAnalyzer}!kStartEnd@{kStartEnd}}}\mbox{\Hypertarget{classTRATTrackAnalyzer_ac5bc1462fd20897c2b8233aba4f513d4a29c0a425d0f454b0bc5937e310f0dff8}\label{classTRATTrackAnalyzer_ac5bc1462fd20897c2b8233aba4f513d4a29c0a425d0f454b0bc5937e310f0dff8}} 
+k\+Start\+End&Only examine the first and last steps of selected tracks. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAllSteps@{kAllSteps}!TRATTrackAnalyzer@{TRATTrackAnalyzer}}\index{TRATTrackAnalyzer@{TRATTrackAnalyzer}!kAllSteps@{kAllSteps}}}\mbox{\Hypertarget{classTRATTrackAnalyzer_ac5bc1462fd20897c2b8233aba4f513d4a7a6ab423c6b2bcb7a87042e180c0b16e}\label{classTRATTrackAnalyzer_ac5bc1462fd20897c2b8233aba4f513d4a7a6ab423c6b2bcb7a87042e180c0b16e}} 
+k\+All\+Steps&Iterate over all steps of selected tracks. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTRATTrackAnalyzer_a140db440046b478e6d6d50e6734ae816}\label{classTRATTrackAnalyzer_a140db440046b478e6d6d50e6734ae816}} 
+\index{TRATTrackAnalyzer@{TRATTrackAnalyzer}!TRATTrackAnalyzer@{TRATTrackAnalyzer}}
+\index{TRATTrackAnalyzer@{TRATTrackAnalyzer}!TRATTrackAnalyzer@{TRATTrackAnalyzer}}
+\doxysubsubsection{\texorpdfstring{TRATTrackAnalyzer()}{TRATTrackAnalyzer()}}
+{\footnotesize\ttfamily TRATTrack\+Analyzer\+::\+TRATTrack\+Analyzer (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+
+
+Normal ctor. 
+
+$\ast$$\ast$
+
+Create object and initialize items needed for parsing the track records 
+\begin{DoxyParams}{Parameters}
+{\em filename} & -- name of RAT file \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+TRATTrack\+Analyzer.\+h\item 
+TRATTrack\+Analyzer.\+cxx\end{DoxyCompactItemize}

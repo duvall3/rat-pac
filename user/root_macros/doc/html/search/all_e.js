@@ -1,16 +1,15 @@
 var searchData=
 [
-  ['tclasstemplate_139',['TClassTemplate',['../classTClassTemplate.html',1,'TClassTemplate'],['../classTClassTemplate.html#aac100cbf991c7d28ee891f1c192c3a4b',1,'TClassTemplate::TClassTemplate()'],['../classTClassTemplate.html#a46391e9761e6468ba3fdc866cd360735',1,'TClassTemplate::TClassTemplate(const char *someArg1, Double_t someArg2)']]],
-  ['tduvallutils_140',['TDuvallUtils',['../namespaceTDuvallUtils.html',1,'']]],
-  ['tibdparams_141',['TIBDParams',['../classTIBDParams.html',1,'']]],
-  ['tksmultires_142',['TKSMultiRes',['../classTKSMultiRes.html',1,'TKSMultiRes'],['../classTKSMultiRes.html#af89a0a3f431bd85378bd63b484efce93',1,'TKSMultiRes::TKSMultiRes()']]],
-  ['tksmultiribbons_143',['TKSMultiRibbons',['../classTKSMultiRibbons.html',1,'TKSMultiRibbons'],['../classTKSMultiRibbons.html#a61be38a5d58d7274d9e2dbcb8103cd4f',1,'TKSMultiRibbons::TKSMultiRibbons()']]],
-  ['tratelement_144',['TRATElement',['../classTRATElement.html',1,'']]],
-  ['tratgeo_145',['TRATGeo',['../classTRATGeo.html',1,'']]],
-  ['tratgeoconverter_146',['TRATGeoConverter',['../classTRATGeoConverter.html',1,'']]],
-  ['tratmaterial_147',['TRATMaterial',['../classTRATMaterial.html',1,'']]],
-  ['tratneutrongen_148',['TRATNeutronGen',['../classTRATNeutronGen.html',1,'']]],
-  ['tratpaceventviewer_149',['TRATPACEventViewer',['../classTRATPACEventViewer.html',1,'TRATPACEventViewer'],['../classTRATPACEventViewer.html#a4c3db64c664f51d589df8593bc680b3f',1,'TRATPACEventViewer::TRATPACEventViewer()'],['../classTRATPACEventViewer.html#a50ded392c3376a4fd6a836a6eb0d1b85',1,'TRATPACEventViewer::TRATPACEventViewer(const char *fileName, const char *volumePattern=&quot;.*&quot;)']]],
-  ['tratvolume_150',['TRATVolume',['../classTRATVolume.html',1,'TRATVolume'],['../classTRATVolume.html#a08073d9d32d4b1c3aa489a88d748e8e1',1,'TRATVolume::TRATVolume()'],['../classTRATVolume.html#a9c083601be0e64cdd92a2a976796b2c2',1,'TRATVolume::TRATVolume(const char *volNameChr, const TMap *db)']]],
-  ['trefmatch_151',['TRefMatch',['../classTRefMatch.html',1,'TRefMatch'],['../classTRefMatch.html#a48bb5176ba5833611236b76a1b07b7f7',1,'TRefMatch::TRefMatch()'],['../classTRefMatch.html#abb18f918fb9326bf8f7435bff4045d04',1,'TRefMatch::TRefMatch(const char *fileName, const char *treeName=&quot;T&quot;, const char *branchVarName=&quot;phi&quot;)']]]
+  ['save_154',['Save',['../classTKSMultiRibbons.html#a4618c3248f1e9996e7c3978623452043',1,'TKSMultiRibbons::Save()'],['../classTRATTrackAnalyzer.html#a7d73ad362ed0aa7edb39b5ff89e6a42f',1,'TRATTrackAnalyzer::Save()'],['../classTKSMultiRes.html#a525ce223bfa99b01c59a3a1f9d5781c6',1,'TKSMultiRes::Save()']]],
+  ['saveresults_155',['SaveResults',['../classTRefMatch.html#a11e9fb7feef284e0579b464503c751c0',1,'TRefMatch']]],
+  ['setcurrentevent_156',['SetCurrentEvent',['../classTRATPACEventViewer.html#a8eb099cf9201fca758a22ca41a1105d5',1,'TRATPACEventViewer']]],
+  ['setdata_157',['SetData',['../classTClassTemplate.html#a2786cf9d617009b10b9c74be5d6eb532',1,'TClassTemplate']]],
+  ['setdeltas_158',['SetDeltas',['../classTKSMultiRibbons.html#a5c89ec0de5c773d2c696f933e4c99e13',1,'TKSMultiRibbons']]],
+  ['setreferencefiledir_159',['SetReferenceFileDir',['../classTRefMatch.html#a1dab3a16947e44e705dc2b2383c175b3',1,'TRefMatch::SetReferenceFileDir(const char *refFileDirName)'],['../classTRefMatch.html#a6cdc403d1c18f99736eb07dcd3327a02',1,'TRefMatch::SetReferenceFileDir(TSystemDirectory *refFileDir)']]],
+  ['setreferencefilepattern_160',['SetReferenceFilePattern',['../classTRefMatch.html#a098164ff64fecd9edefe8a1481898be6',1,'TRefMatch::SetReferenceFilePattern(TRegexp patternRE)'],['../classTRefMatch.html#adf950852ae62a3c829a73c2a7be14f1e',1,'TRefMatch::SetReferenceFilePattern(const char *pattern)']]],
+  ['setvolume_161',['SetVolume',['../classTRATVolume.html#a237261fbd8b3276bb7f1a7ad23684c81',1,'TRATVolume']]],
+  ['shiftstats_162',['ShiftStats',['../namespaceTDuvallUtils.html#ad204b00910652611f7a0086da34a7e62',1,'TDuvallUtils']]],
+  ['sig2prob_163',['Sig2Prob',['../classTRefMatch.html#a04bc51ebc6a2fca75f402eeb82a99a53',1,'TRefMatch::Sig2Prob()'],['../namespaceTDuvallUtils.html#a433a3b0d780050b888ea91384c26bf70',1,'TDuvallUtils::Sig2Prob()']]],
+  ['somecalculation_164',['SomeCalculation',['../classTClassTemplate.html#a236d8ef733223b10b8ef9ed4e70d3c65',1,'TClassTemplate']]],
+  ['someprivatemethod_165',['SomePrivateMethod',['../classTClassTemplate.html#a7f0c5a24d32083408ba319c73f512120',1,'TClassTemplate']]]
 ];

@@ -2,6 +2,8 @@
 /// Library of useful general-purpose functions for working with ROOT / RAT-PAC. //DOC//
 /** **Math:**
  *  - EntryList()
+ *  - GaussGeneral()
+ *  - GaussGeneralFit()
  *  - LogBins()
  *  - Prob2Sig()
  *  - Sig2Prob()
@@ -46,7 +48,7 @@
 
 namespace TDuvallUtils {
 
-  void			DumpHist(TH1* h);						///< Dump histogram to terminal
+  void			DumpHist(TH1* h, Int_t ngroup=1);						///< Dump histogram to terminal
   TEntryList*		EntryList(const char* selection, TTree* T=0);			///< Shortcut for creating TEntryLists
   void			ExportPlots(const char* filename, const TString kGraphicsSaveFormat=".png"); ///< Shortcut for printing all canvases in a file
   /* Bool_t		IsGlobal(const char* name);					///< Determine whether a global variable exists */
@@ -57,6 +59,8 @@ namespace TDuvallUtils {
   TList*		FindMatchingObjects(TCollection* colxn, TRegexp patternRE);	///< Scan a TCollection for an object whose name matches a regex
   TList*		FindMatchingObjects(TCollection* colxn, const char* pattern) { return FindMatchingObjects(colxn, TRegexp(pattern)); } ///< Overload FindMatchingObjects for char* input
   TList*		FindVarsOfType(const char* varType="", Bool_t kCaseSensitive=kFALSE);	///< List global variables matching a specified type
+  TF1*			GaussGeneral(const char* name="gaus", Double_t xMin=-2.5, Double_t xMax=2.5);	///< Create a general Gaussian TF1* for fitting (4 parameters)
+  TFitResult*		GaussGeneralFit(TH1 *h, const char* name="gaus", Bool_t kRange=kTRUE); 		///< Fit a ::GaussGeneral TF1* to a histogram (TH1)
   void			HistData(TH1* h=0x0);						///< Print data needed to reconstruct a histogram (TH1)
   TList*		ListFiles(const char* pattern=".*\.root");			///< Return a list of files matching a pattern
   void			LoadAllKeys();							///< Shortcut to load all keys from the current file into memory *! USE WITH CAUTION !*

@@ -1,4 +1,4 @@
-\doxysection*{Development Notes for \mbox{\hyperlink{classTRATGeoConverter}{T\+R\+A\+T\+Geo\+Converter}}}
+\doxysection*{Development Notes for \mbox{\hyperlink{classTRATGeoConverter}{TRATGeo\+Converter}}}
 
 {\ttfamily $\sim$ Mark J. Duvall $\sim$ \href{mailto:mjduvall@hawaii.edu}{\texttt{ mjduvall@hawaii.\+edu}} $\sim$ 08/2022 $\sim$}
 
@@ -11,42 +11,23 @@ Required Steps\+: -\/ Material -\/ Position -\/ Shape -\/ Logical Volume -\/ Pla
 Example – {\ttfamily Vol1} in mother {\ttfamily world} -\/ Material = air -\/ Position = origin -\/ Shape = 100-\/cm cube -\/ Logical Volume = logic\+Vol1 -\/ Placement = plain / default
 
 
-\begin{DoxyPre}{\ttfamily \label{_cb1-1}%
-// example volume "Vol1":
-\label{_cb1-2}%
-
-\label{_cb1-3}%
-// material
-\label{_cb1-4}%
-G4Material *Vol1\_mat = nist-\/>FindOrBuildMaterial("G4\_AIR");
-\label{_cb1-5}%
-
-\label{_cb1-6}%
-// position
-\label{_cb1-7}%
-G4ThreeVector pos1 = G4ThreeVector(0,0,0);
-\label{_cb1-8}%
-
-\label{_cb1-9}%
-// shape and size
-\label{_cb1-10}%
-G4Double vol1\_length = 100.0*cm;
-\label{_cb1-11}%
-G4Box * solidVol1 = new G4Box( "Vol1", vol1\_length, vol1\_length, vol1\_length );
-\label{_cb1-12}%
-
-\label{_cb1-13}%
-// logical volume
-\label{_cb1-14}%
-G4LogicalVolume *logicVol1 = new G4LogicalVolume( solidVol1, Vol1\_mat, "Vol1" );
-\label{_cb1-15}%
-
-\label{_cb1-16}%
-// placement
-\label{_cb1-17}%
-new G4PVPlacement( 0, pos1, logicVol1, "Vol1", logicWorld, false, 0, checkOverlaps );
-\label{_cb1-18}%
-
-\label{_cb1-19}%
-// all pau!   )}\end{DoxyPre}
+\begin{DoxyPre}{\ttfamily \href{\#cb1-1}{\texttt{ }}// example volume "{}Vol1"{}:
+\href{\#cb1-2}{\texttt{ }}
+\href{\#cb1-3}{\texttt{ }}// material
+\href{\#cb1-4}{\texttt{ }}G4Material *Vol1\_mat = nist-\/>FindOrBuildMaterial("{}G4\_AIR"{});
+\href{\#cb1-5}{\texttt{ }}
+\href{\#cb1-6}{\texttt{ }}// position
+\href{\#cb1-7}{\texttt{ }}G4ThreeVector pos1 = G4ThreeVector(0,0,0);
+\href{\#cb1-8}{\texttt{ }}
+\href{\#cb1-9}{\texttt{ }}// shape and size
+\href{\#cb1-10}{\texttt{ }}G4Double vol1\_length = 100.0*cm;
+\href{\#cb1-11}{\texttt{ }}G4Box * solidVol1 = new G4Box( "{}Vol1"{}, vol1\_length, vol1\_length, vol1\_length );
+\href{\#cb1-12}{\texttt{ }}
+\href{\#cb1-13}{\texttt{ }}// logical volume
+\href{\#cb1-14}{\texttt{ }}G4LogicalVolume *logicVol1 = new G4LogicalVolume( solidVol1, Vol1\_mat, "{}Vol1"{} );
+\href{\#cb1-15}{\texttt{ }}
+\href{\#cb1-16}{\texttt{ }}// placement
+\href{\#cb1-17}{\texttt{ }}new G4PVPlacement( 0, pos1, logicVol1, "{}Vol1"{}, logicWorld, false, 0, checkOverlaps );
+\href{\#cb1-18}{\texttt{ }}
+\href{\#cb1-19}{\texttt{ }}// all pau!   )}\end{DoxyPre}
  

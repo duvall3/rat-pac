@@ -1,17 +1,17 @@
-\hypertarget{classTClassTemplate}{}\doxysection{T\+Class\+Template Class Reference}
+\hypertarget{classTClassTemplate}{}\doxysection{TClass\+Template Class Reference}
 \label{classTClassTemplate}\index{TClassTemplate@{TClassTemplate}}
 
 
-Basic template for writing R\+O\+OT classes //\+D\+O\+C//.  
+Basic template for writing ROOT classes //\+DOC//.  
 
 
 
 
-{\ttfamily \#include $<$T\+Class\+Template.\+h$>$}
+{\ttfamily \#include $<$TClass\+Template.\+h$>$}
 
 
 
-Inheritance diagram for T\+Class\+Template\+:\nopagebreak
+Inheritance diagram for TClass\+Template\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,7 +20,7 @@ Inheritance diagram for T\+Class\+Template\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for T\+Class\+Template\+:\nopagebreak
+Collaboration diagram for TClass\+Template\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -30,10 +30,16 @@ Collaboration diagram for T\+Class\+Template\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classTClassTemplate_aac100cbf991c7d28ee891f1c192c3a4b}{T\+Class\+Template}} ()
+\mbox{\hyperlink{classTClassTemplate_aac100cbf991c7d28ee891f1c192c3a4b}{TClass\+Template}} ()
 \begin{DoxyCompactList}\small\item\em Default ctor. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTClassTemplate_a46391e9761e6468ba3fdc866cd360735}{T\+Class\+Template}} (const char $\ast$some\+Arg1, Double\+\_\+t some\+Arg2)
+\mbox{\hyperlink{classTClassTemplate_a46391e9761e6468ba3fdc866cd360735}{TClass\+Template}} (const char $\ast$some\+Arg1, Double\+\_\+t some\+Arg2)
 \begin{DoxyCompactList}\small\item\em Normal ctor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTClassTemplate_a2786cf9d617009b10b9c74be5d6eb532}\label{classTClassTemplate_a2786cf9d617009b10b9c74be5d6eb532}} 
+void \mbox{\hyperlink{classTClassTemplate_a2786cf9d617009b10b9c74be5d6eb532}{Set\+Data}} (Double\+\_\+t some\+Arg)
+\begin{DoxyCompactList}\small\item\em Setter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTClassTemplate_a73f568bdf9f9593f0b7d8d0bbfeb74ed}\label{classTClassTemplate_a73f568bdf9f9593f0b7d8d0bbfeb74ed}} 
+Double\+\_\+t \mbox{\hyperlink{classTClassTemplate_a73f568bdf9f9593f0b7d8d0bbfeb74ed}{Get\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Getter. \end{DoxyCompactList}\item 
 Double\+\_\+t \mbox{\hyperlink{classTClassTemplate_a236d8ef733223b10b8ef9ed4e70d3c65}{Some\+Calculation}} (Int\+\_\+t some\+Arg1=0)
 \begin{DoxyCompactList}\small\item\em Regular function with default argument. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
@@ -50,14 +56,14 @@ Double\+\_\+t \mbox{\hyperlink{classTClassTemplate_a97676f3096283f54d4faf7d3242e
 
 
 \doxysubsection{Detailed Description}
-Basic template for writing R\+O\+OT classes //\+D\+O\+C//. 
+Basic template for writing ROOT classes //\+DOC//. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classTClassTemplate_aac100cbf991c7d28ee891f1c192c3a4b}\label{classTClassTemplate_aac100cbf991c7d28ee891f1c192c3a4b}} 
 \index{TClassTemplate@{TClassTemplate}!TClassTemplate@{TClassTemplate}}
 \index{TClassTemplate@{TClassTemplate}!TClassTemplate@{TClassTemplate}}
 \doxysubsubsection{\texorpdfstring{TClassTemplate()}{TClassTemplate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily T\+Class\+Template\+::\+T\+Class\+Template (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily TClass\+Template\+::\+TClass\+Template (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -67,7 +73,7 @@ Universal initial assignments / settings.\mbox{\Hypertarget{classTClassTemplate_
 \index{TClassTemplate@{TClassTemplate}!TClassTemplate@{TClassTemplate}}
 \index{TClassTemplate@{TClassTemplate}!TClassTemplate@{TClassTemplate}}
 \doxysubsubsection{\texorpdfstring{TClassTemplate()}{TClassTemplate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily T\+Class\+Template\+::\+T\+Class\+Template (\begin{DoxyParamCaption}\item[{const char $\ast$}]{some\+Arg1,  }\item[{Double\+\_\+t}]{some\+Arg2 }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily TClass\+Template\+::\+TClass\+Template (\begin{DoxyParamCaption}\item[{const char $\ast$}]{some\+Arg1,  }\item[{Double\+\_\+t}]{some\+Arg2 }\end{DoxyParamCaption})}
 
 
 
@@ -87,7 +93,7 @@ Initial assignments / settings with some parameters specified.
 \index{TClassTemplate@{TClassTemplate}!SomeCalculation@{SomeCalculation}}
 \index{SomeCalculation@{SomeCalculation}!TClassTemplate@{TClassTemplate}}
 \doxysubsubsection{\texorpdfstring{SomeCalculation()}{SomeCalculation()}}
-{\footnotesize\ttfamily Double\+\_\+t T\+Class\+Template\+::\+Some\+Calculation (\begin{DoxyParamCaption}\item[{Int\+\_\+t}]{some\+Arg1 = {\ttfamily 0} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Double\+\_\+t TClass\+Template\+::\+Some\+Calculation (\begin{DoxyParamCaption}\item[{Int\+\_\+t}]{some\+Arg1 = {\ttfamily 0} }\end{DoxyParamCaption})}
 
 
 
@@ -107,7 +113,7 @@ For example, a function that performs some calculation on the member data, with 
 \index{TClassTemplate@{TClassTemplate}!SomePrivateMethod@{SomePrivateMethod}}
 \index{SomePrivateMethod@{SomePrivateMethod}!TClassTemplate@{TClassTemplate}}
 \doxysubsubsection{\texorpdfstring{SomePrivateMethod()}{SomePrivateMethod()}}
-{\footnotesize\ttfamily void T\+Class\+Template\+::\+Some\+Private\+Method (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily void TClass\+Template\+::\+Some\+Private\+Method (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -117,5 +123,5 @@ For example, an Init() method that is called by some public method(s) but never 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-T\+Class\+Template.\+h\item 
-T\+Class\+Template.\+cxx\end{DoxyCompactItemize}
+TClass\+Template.\+h\item 
+TClass\+Template.\+cxx\end{DoxyCompactItemize}
