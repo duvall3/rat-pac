@@ -1,28 +1,11 @@
-<style>
-  mark {
-    color: white;
-    background-color: #1D2127;
-  }
-  mark.command {
-    color: #33EE33;
-    background-color: #1D2127;
-  }
-  mark.pad {
-    width: 60em;
-    white-space: pre-wrap;
-    padding-left: 2em;
-    display: inline-block;
-  }
-</style>
-
 # tree2txt
 
 Instructions for using the `tree2txt` utility from [duvall3's fork of RAT-PAC on GitHub](https://github.com/duvall3/rat-pac/).
 
-This utility includes the following code files:
-- [`tree2txt.sh`](https://github.com/duvall3/rat-pac/raw/collab/user/shell_scripts/tree2txt.sh) -- master shell script
-- [`tree2txt.cxx`](https://github.com/duvall3/rat-pac/raw/collab/user/root_macros/util/tree2txt.cxx) -- ROOT macro
-- [`import_labeled_data.m`](https://github.com/duvall3/rat-pac/raw/collab/user/m_files/import_labeled_data.m) -- Octave/MATLAB script
+This utility includes the following code files:<br>
+- [`tree2txt.sh`](https://github.com/duvall3/rat-pac/raw/collab/user/shell_scripts/tree2txt.sh) -- master shell script<br>
+- [`tree2txt.cxx`](https://github.com/duvall3/rat-pac/raw/collab/user/root_macros/util/tree2txt.cxx) -- ROOT macro<br>
+- [`import_labeled_data.m`](https://github.com/duvall3/rat-pac/raw/collab/user/m_files/import_labeled_data.m) -- Octave/MATLAB script<br>
 
 ---
 
@@ -47,7 +30,7 @@ Copyright (C) 2022 Mark J. Duvall
 
 ## Installation
 
-_Note: These are written for *nix systems (Mac/Linux)_
+*Note: These are written for \*nix systems (Mac/Linux)*
 
 ### Automatic
 
