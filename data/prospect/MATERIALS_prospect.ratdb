@@ -152,7 +152,7 @@ nelements: 0,
 nmaterials: 2,
 materials: ["pvt", "lithium"],
 //matprop: [0.80237, 0.19763], // so that (lithium fraction) * (Li-6 abundance) = 0.015
-matprop: [0.01054, 0.98946], // so that (lithium fraction) * (Li-6 abundance) = 0.0008
+matprop: [0.98946, 0.01054], // so that (lithium fraction) * (Li-6 abundance) = 0.0008
 }
 
 
