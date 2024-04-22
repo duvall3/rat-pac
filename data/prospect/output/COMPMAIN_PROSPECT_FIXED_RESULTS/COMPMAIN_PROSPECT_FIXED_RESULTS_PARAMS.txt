@@ -1,0 +1,8 @@
+Experiment = prospect
+Filename = COMPMAIN_PROSPECT_FIXED_ncap_res.root
+N = 3726
+P = 1.500000e+02 # mm
+l = 3.682376e+01 # mm
+DeltaPhi_{1sigma} = 3.8179 deg,
+         from DeltaPhi_{1sigma} = arctan( (P/l) / sqrt(N) )
+
