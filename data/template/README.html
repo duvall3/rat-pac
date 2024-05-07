@@ -125,19 +125,32 @@
 </blockquote>
 <p>This is a very simple set of recommendations for using the experiment template in <a href="https://github.com/duvall3/rat-pac">my RAT-PAC repository</a> (specifically, in branch <code>collab</code> under <code>data/template/</code>).</p>
 <hr />
-<h2 id="essentials">Essentials</h2>
-<h3 id="directory-and-file-operations">Directory and File Operations</h3>
-<p>First, in order to preserve the template, you’ll want to copy it into a new directory named for your new experiment. Since I’m assuming your experiment’s name is some clever, overly-elaborate acronym, let’s use the name “ACRO” as an example.</p>
+<h2 id="essen">
+Essentials
+</h2>
+<h3 id="parti">
+I. Directory and File Operations
+</h3>
+<p>First, in order to preserve the template, you’ll want to copy it into a new directory named for your new experiment. Since I’m assuming your experiment’s name is some clever, overly-elaborate acronym, let’s use the name “CLEVER” as an example.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="bu">cd</span> <span class="va">$RATROOT</span>/data/</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="fu">cp</span> -r template/ acro</span></code></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="fu">cp</span> -r template/ clever</span></code></pre></div>
 <p>Next, you’ll want to change the filenames in the new directory to reflect your experiment’s name. If the <code>rename</code> tool is available, use it as follows; otherwise, simply change each name manually using <code>mv</code>.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="ex">rename</span> <span class="st">&#39;s/template/acro/g&#39;</span> ./*</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="ex">rename</span> <span class="st">&#39;s/template/clever/g&#39;</span> ./*</span></code></pre></div>
 <p>Finally, you’ll need to update the two lines in <code>init.mac</code> that tell RAT-PAC where to look for the experiment’s files. Using your favorite text editor, open <code>init.mac</code>, find the lines containing <code>rat/db/set DETECTOR</code>, and change them to the following:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="ex">/rat/db/set</span> DETECTOR experiment <span class="st">&quot;acro&quot;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="ex">/rat/db/set</span> DETECTOR geo_file <span class="st">&quot;acro/acro.geo&quot;</span></span></code></pre></div>
-<h3 id="experiment-definition">Experiment Definition</h3>
-<p>At this moment, your experiment will only have the <code>world</code> and <code>cave</code> volumes defined. Using your favorite (or least favorite, I’m not your boss) text editor, open <code>acro.geo</code>. Using the existing volumes as a template, define a new volume at the center of <code>cave</code> – i.e., with mother volume <code>"cave"</code> and position either omitted or set to <code>[0.0, 0.0, 0.0]</code>. For the material, use a scintillator; I recommend either <code>"gd_scintillator"</code> or <code>"ej254_015li6"</code>, since these can be used without any additional setup.</p>
-<h3 id="datarun-setup">Datarun Setup</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="ex">/rat/db/set</span> DETECTOR experiment <span class="st">&quot;clever&quot;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="ex">/rat/db/set</span> DETECTOR geo_file <span class="st">&quot;clever/clever.geo&quot;</span></span></code></pre></div>
+<h3 id="partii">
+<ol start="2" type="I">
+<li>Experiment Definition
+</h3></li>
+</ol>
+<p><em>Note: For an automated alternative, see <a href="#usage">Usage</a> below under <a href="#autogen">Automated Geometry Generation</a>.</em></p>
+<p>At this moment, your experiment will only have the <code>world</code> and <code>cave</code> volumes defined. Using your favorite (or least favorite, I’m not your boss) text editor, open <code>clever.geo</code>. Using the existing volumes as a template, define a new volume at the center of <code>cave</code> – i.e., with mother volume <code>"cave"</code> and position either omitted or set to <code>[0.0, 0.0, 0.0]</code>. For the material, use a scintillator; I recommend either <code>"gd_scintillator"</code> or <code>"ej254_015li6"</code>, since these can be used without any additional setup.</p>
+<h3 id="partiii">
+<ol start="3" type="I">
+<li>Datarun Setup
+</h3></li>
+</ol>
 <p>Next, we need to set parameters for the datarun – namely, 1) the name of the output file, 2) which event generator(s) to use, and 3) how many events to run. Let’s call this run <code>test0</code> and run 16 events using the generator defined in <code>gen/erica.mac</code>. Edit <code>setup.mac</code> and <code>run.mac</code> so that they contain the following lines:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="co"># in setup.mac:</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a><span class="ex">/control/execute</span> gen/erica.mac</span>
@@ -146,11 +159,51 @@
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a><span class="ex">/rat/procset</span> file <span class="st">&quot;test0.root&quot;</span></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a><span class="co"># ...</span></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a><span class="ex">/run/beamOn</span> 16</span></code></pre></div>
-<h3 id="basic-run">Basic Run</h3>
+<h3 id="partiv">
+<ol start="4" type="I">
+<li>Basic Run
+</h3></li>
+</ol>
 <p>Okay, everything should be ready now! Run RAT-PAC using the following command:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="ex">rat</span> -l test0.log run.mac</span></code></pre></div>
 <p>If it runs successfully, you should be able to view the RAT-PAC log using <code>less test0.log</code> and the actual results using <code>root test0.root</code>.</p>
 <p>Enjoy!</p>
+<hr />
+<h2 id="autogen">
+Automated Geometry Generation
+</h2>
+<h3 id="over">
+Overview
+</h3>
+<p>If you’d like to simulate a more sophisticated geometry without typing out every volume entry by hand, I know of two readily-available options:</p>
+<ol type="1">
+<li>The various <code>Factory</code> classes located in <code>$RATROOT/src/geo/</code>. I will freely admit that I do not know how to use these, but you can find some information by searching the RAT documentation for <code>pmtarray</code>, and I believe there are some examples in the experiments defined in the official RAT repository (e.g., WATCHMAN).</li>
+<li>The handful of BASH <code>geogen</code> scripts located in <code>$RATROOT/user/shell_scripts/</code> in this repository. I wrote these, so I can help with them.</li>
+</ol>
+<p>Of the latter, the most generally-useful option is <code>geogen_general-segmented.sh</code>, so that is the one I will discuss here. The others are slightly less user-friendly; but they all work essentially the same way, so try them out if you’re feeling adventurous. And as always, this repo is open-source, so you’re invited to modify and adapt them yourself.</p>
+<p>The general function of all the <code>geogen</code> scripts is as follows:</p>
+<ol type="1">
+<li>Confirm the existence of a “base” geometry file (named, e.g., <code>clever_base.geo</code>), which is assumed to contain entries for the <code>world</code> and <code>cave</code> volumes.</li>
+<li>Prompt the user for the parameters for an array of detector volumes and generate the array accordingly. (This gets written to, e.g., <code>clever_cell-array.geo</code>).</li>
+<li>Combine the “base” and “cell-array” files into a final experiment-definition file (e.g., <code>clever.geo</code>).</li>
+</ol>
+<p>In short: <code>base_file + generated_array_file --&gt; experiment_geo_file</code>.</p>
+<h3 id="usage">
+Usage: Experiment Definition – Alternate
+</h3>
+<p>This will replace <a href="#partii">Part II</a> of the procedure under <a href="#essen">Essentials</a> above. For simplicity, I’ll continue to use the name “CLEVER” for our example experiment, but you’re welcome to create a new one for this if you prefer.</p>
+<p>We should be in our experiment directory:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="bu">cd</span> <span class="va">$RATROOT</span>/data/clever</span></code></pre></div>
+<p>First, we actually need to clear the current experiment definition, because the script will (or at least should) refuse to overwrite an existing geometry. It never hurts to back things up before deleting, so do the following if you’ve put any work into the current version:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="fu">mkdir</span> geo_bak</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a><span class="fu">cp</span> -t geo_bak/ *.geo</span></code></pre></div>
+<p>Then we can use the script’s <code>reset</code> command to get a clean slate:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="ex">geogen_general-segmented.sh</span> reset</span></code></pre></div>
+<p>Finally, simply run the script:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="ex">geogen_general-segmented.sh</span></span></code></pre></div>
+<p>Follow the prompts (hit <code>&lt;Enter&gt;</code> or <code>&lt;Return&gt;</code> to accept default values), and the script should take care of the rest!</p>
+<p>If everything works properly, you should now be able to resume the “Essentials” procedure at <a href="#partiii">Part III</a> above.</p>
+<p>Contact me if you have any questions, and may your simulations always be plausible!</p>
 <hr />
 <p>All pau! )</p>
 <p><code>~</code> MJD</p>
