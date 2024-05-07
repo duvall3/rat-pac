@@ -106,22 +106,22 @@ printf "\n\n"
 ## configure geometry
 
 # determine configuration
-echo "Enter number of rows: " && read ROWS
-echo "Enter number of columns: " && read COLS
-echo "Enter number of layers: " && read LYRS
+echo "Enter number of rows: [default: 1]" && read ROWS
+echo "Enter number of columns: [default: 1]" && read COLS
+echo "Enter number of layers: [default: 1]" && read LYRS
 echo
 
 # determine cell dimensions
-echo "Enter cell half-length (mm): " && read L
-echo "Enter cell half-width (mm): " && read W
-echo "Enter cell half-height (mm): " && read H
-echo "Enter cell half-spacing (mm): " && read S
+echo "Enter cell half-length (mm): [default: 50]" && read L
+echo "Enter cell half-width (mm): [default: 50]" && read W
+echo "Enter cell half-height (mm): [default: 50]" && read H
+echo "Enter cell half-spacing (mm): [default: 0.5]" && read S
 echo
 
 # prompt for materials
-echo "Enter material for target cells (default: ej254_015li6 -- PVT @ 1.5%wt. Li-6): " && read TARGET_CELL_MATERIAL
+echo "Enter material for target cells [default: ej254_015li6 -- PVT @ 1.5%wt. Li-6]: " && read TARGET_CELL_MATERIAL
 echo
-echo "Enter material for array / matrix (default: air): " && read ARRAY_MATERIAL
+echo "Enter material for array / matrix [default: air]: " && read ARRAY_MATERIAL
 
 # defaults
 ROWS=${ROWS:-1}
