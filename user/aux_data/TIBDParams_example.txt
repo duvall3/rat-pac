@@ -1,0 +1,19 @@
+TIBDParams for "target_cube_0_0_0" at: 0x2d2e8e0
+CONSTANTS:
+  IBD_XS                5.000000e-43    cm^2
+  IBD_XSBarns           5.000000e-19    barns
+  IBD_Threshold         1.850000e+00    MeV
+  MuNeutron_Flux        6.483120e-03    n0 / cm^2 / s
+DERIVED QUANTITES, GENERAL:
+  ReactorPower          2.000000e+01    MW_Th
+  ReactorNuRate         4.000000e+18    nu_e_bar / s
+  Standoff              5.000000e+02    cm
+  NuFlux                1.273240e+12    nu_e_bar / cm^2 / s
+DERIVED QUANTITES, VOLUME-SPECIFIC:
+  IBD Rate = 4.106198e-06 Hz
+
+P.IBDVolRate()
+3.28495802541672026e-08 //    IBD / cm^3 / s
+
+P.IBDVolRate() * v->VolumeCM()
+4.10619753177090100e-06 //    IBD / s
