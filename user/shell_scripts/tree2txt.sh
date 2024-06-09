@@ -78,7 +78,7 @@ if $CSV; then
   VIMCMD2="'vim' $OUTFILENAME -Es \
     -c '%s_\s\+_,_g' \
     -c '%s_^,__' \
-    -c '%s_,$__' \
+    -c '%s_,\$__' \
     -c wq"
   eval $VIMCMD2
 fi
