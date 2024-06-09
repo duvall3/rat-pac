@@ -58,33 +58,29 @@ OUTFILENAME=${3:-${INFILENAME%.root}_$TREENAME.$EXT}
 
 # init
 ROOTCMD="root -q -l -b 'tree2txt.cxx(\"$INFILENAME\", \"$TREENAME\", \"$OUTFILENAME\")'"
-if $CSV; then
-  VIMCMD="'vim' $OUTFILENAME -Es \
-    -c 1d \
-    -c 2d \
-    -c %s_\*__g \
-    -c \"%s_Row\ \ _\ \ Row_\" \
-    -c %s_\s\+_,_g \
-    -c %s_^,__g \
-    -c wq"
-else
-  VIMCMD="'vim' $OUTFILENAME -Es \
+VIMCMD="'vim' $OUTFILENAME -Es \
     -c 1d \
     -c 2d \
     -c %s_\*__g \
     -c \"%s_Row\ \ _\ \ Row_\"
     -c wq"
-fi
 
 # debug
 # echo $ROOTCMD
-echo $VIMCMD
+# echo $VIMCMD
 # echo
 
 # MAIN
 eval $ROOTCMD
 EXIT_STATUS=$?
 eval $VIMCMD
+if $CSV; then
+  VIMCMD2="'vim' $OUTFILENAME -Es \
+    -c %s_\s\+__g \
+    -c %s_^,__
+    -c wq"
+  eval $VIMCMD2
+fi
 
 # debug
 # echo $EXIT_STATUS
