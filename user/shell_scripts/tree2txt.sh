@@ -76,8 +76,8 @@ EXIT_STATUS=$?
 eval $VIMCMD
 if $CSV; then
   VIMCMD2="'vim' $OUTFILENAME -Es \
-    -c %s_\s\+__g \
-    -c %s_^,__
+    -c '%s_\s\+__g' \
+    -c '%s_^,__' \
     -c wq"
   eval $VIMCMD2
 fi
