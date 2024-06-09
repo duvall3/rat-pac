@@ -63,8 +63,8 @@ if $CSV; then
     -c 1d \
     -c 2d \
     -c %s_\*__g \
-    -c \"%s_Row\ \ _\ \ Row_\"
-    -c %s_\s\+_,_g
+    -c \"%s_Row\ \ _\ \ Row_\" \
+    -c %s_\s\+_,_g \
     -c %s_^,__g
     -c wq"
 else
