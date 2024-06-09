@@ -65,6 +65,7 @@ if $CSV; then
     -c %s_\*__g \
     -c \"%s_Row\ \ _\ \ Row_\"
     -c %s_\s\+_,_g
+    -c %s_^,__g
     -c wq"
 else
   VIMCMD="'vim' $OUTFILENAME -Es \
@@ -77,7 +78,7 @@ fi
 
 # debug
 # echo $ROOTCMD
-# echo $VIMCMD
+echo $VIMCMD
 # echo
 
 # MAIN
