@@ -1,6 +1,6 @@
 #!/bin/bash
 # tree2txt -- convert a ROOT tree to a labeled ASCII table
-# -- USAGE: tree2txt.sh <INFILENAME> [TREENAME] [OUTFILENAME]
+# -- USAGE: tree2txt.sh [-h|-c] <INFILENAME> [TREENAME] [OUTFILENAME]
 # -- Defaults: TREENAME = "T", OUTFILENAME = INFILENAME - ".root" + "_TREENAME.txt"
 # ~ Mark J. Duvall ~ mjduvall@hawaii.edu ~ 06/2022 ~ #
 
@@ -20,7 +20,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # help check
-USAGE="USAGE: tree2txt.sh <INFILENAME> [TREENAME] [OUTFILENAME]\n--Defaults: TREENAME = \"T\", OUTFILENAME = INFILENAME - \".root\" + \"_TREENAME.txt\""
+USAGE="USAGE: tree2txt.sh <INFILENAME> [-h|-c] [TREENAME] [OUTFILENAME]\n  -h\tShow this help message and exit\n  -c\tSet output to CSV rather than ASCII table\n--Defaults: TREENAME = \"T\", OUTFILENAME = INFILENAME - \".root\" + \"_TREENAME.txt\""
 if [[ $1 =~ "-h" ]]; then
   echo -e $USAGE
   exit 10
@@ -43,18 +43,36 @@ else
 fi
 
 # process args
+CSV=false
+EXT=txt
+for ARG in $@; do
+  if [[ $ARG =~ -c ]]; then
+    CSV=true
+    EXT=csv
+  fi
+done
 INFILENAME=$1
 TREENAME=${2:-T}
-OUTFILENAME=${3:-${INFILENAME%.root}_$TREENAME.txt}
+OUTFILENAME=${3:-${INFILENAME%.root}_$TREENAME.$EXT}
 
 # init
 ROOTCMD="root -q -l -b 'tree2txt.cxx(\"$INFILENAME\", \"$TREENAME\", \"$OUTFILENAME\")'"
-VIMCMD="'vim' $OUTFILENAME -Es \
-  -c 1d \
-  -c 2d \
-  -c %s_\*__g \
-  -c \"%s_Row\ \ _\ \ Row_\"
-  -c wq"
+if $CSV; then
+  VIMCMD="'vim' $OUTFILENAME -Es \
+    -c 1d \
+    -c 2d \
+    -c %s_\*__g \
+    -c \"%s_Row\ \ _\ \ Row_\"
+    -c %s_\s\+_,_g
+    -c wq"
+else
+  VIMCMD="'vim' $OUTFILENAME -Es \
+    -c 1d \
+    -c 2d \
+    -c %s_\*__g \
+    -c \"%s_Row\ \ _\ \ Row_\"
+    -c wq"
+fi
 
 # debug
 # echo $ROOTCMD
