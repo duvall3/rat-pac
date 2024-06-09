@@ -49,6 +49,7 @@ for ARG in $@; do
   if [[ $ARG =~ -c ]]; then
     CSV=true
     EXT=csv
+    shift
   fi
 done
 INFILENAME=$1
