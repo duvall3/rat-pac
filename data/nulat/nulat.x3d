@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D profile="Interchange" version="3.0"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
+     xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.0.xsd">
+<head>
+	<meta name="generator" content="tovrmlx3d, http://castle-engine.sourceforge.net/view3dscene.php#section_converting" />
+	<meta name="source" content="nulat.wrl" />
+</head>
+<Scene>
+	<Viewpoint
+		position="0 0 1129.30004882813" />
+	<Shape>
+		<Appearance>
+			<Material
+				diffuseColor="0 0.300000011920929 1"
+				transparency="0.699999988079071" />
+		</Appearance>
+		<IndexedFaceSet
+			coordIndex="0 3 2 1 -1 4 7 3 0 -1 7 6 2 3 -1 6 5 1 2 -1 5 4 0 1 -1 4 5 6 7 -1"
+			solid="false">
+			<Coordinate
+				point="-326 -326 -326 326 -326 -326 326 326 -326 -326 326 -326 -326 -326 326 326 -326 326 326 326 326 -326 326 326" />
+		</IndexedFaceSet>
+	</Shape>
+	<Shape>
+		<Appearance>
+			<Material
+				diffuseColor="0 1 1"
+				transparency="0.699999988079071" />
+		</Appearance>
+		<IndexedFaceSet
+			coordIndex="0 3 2 1 -1 4 7 3 0 -1 7 6 2 3 -1 6 5 1 2 -1 5 4 0 1 -1 4 5 6 7 -1"
+			solid="false">
+			<Coordinate
+				point="-80 -80 -80 80 -80 -80 80 80 -80 -80 80 -80 -80 -80 80 80 -80 80 80 80 80 -80 80 80" />
+		</IndexedFaceSet>
+	</Shape>
+	<Shape>
+		<Appearance>
+			<Material
+				diffuseColor="1 1 1"
+				transparency="0.699999988079071" />
+		</Appearance>
+		<IndexedFaceSet
+			coordIndex="0 3 2 1 -1 4 7 3 0 -1 7 6 2 3 -1 6 5 1 2 -1 5 4 0 1 -1 4 5 6 7 -1"
+			solid="false">
+			<Coordinate
+				point="-76 -76 -76 -26 -76 -76 -26 -26 -76 -76 -26 -76 -76 -76 -26 -26 -76 -26 -26 -26 -26 -76 -26 -26" />
+		</IndexedFaceSet>
+	</Shape>
+	<Shape>
+		<Appearance>
+			<Material
+				diffuseColor="1 1 1"
+				transparency="0.699999988079071" />
+		</Appearance>
+		<IndexedFaceSet
+			coordIndex="0 3 2 1 -1 4 7 3 0 -1 7 6 2 3 -1 6 5 1 2 -1 5 4 0 1 -1 4 5 6 7 -1"
+			solid="false">
+			<Coordinate
+				point="-76 -76 26 -26 -76 26 -26 -26 26 -76 -26 26 -76 -76 76 -26 -76 76 -26 -26 76 -76 -26 76" />
+		</IndexedFaceSet>
+	</Shape>
+	<Shape>
+		<Appearance>
+			<Material
+				diffuseColor="1 1 1"
+				transparency="0.699999988079071" />
+		</Appearance>
+		<IndexedFaceSet
+			coordIndex="0 3 2 1 -1 4 7 3 0 -1 7 6 2 3 -1 6 5 1 2 -1 5 4 0 1 -1 4 5 6 7 -1"
+			solid="false">
+			<Coordinate
+				point="-76 -76 -25 -26 -76 -25 -26 -26 -25 -76 -26 -25 -76 -76 25 -26 -76 25 -26 -26 25 -76 -26 25" />
+		</IndexedFaceSet>
+	</Shape>
+	<Shape>
+		<Appearance>
+			<Material
+				diffuseColor="1 1 1"
+				transparency="0.699999988079071" />
+		</Appearance>
+		<IndexedFaceSet
+			coordIndex="0 3 2 1 -1 4 7 3 0 -1 7 6 2 3 -1 6 5 1 2 -1 5 4 0 1 -1 4 5 6 7 -1"
+			solid="false">
+			<Coordinate
+				point="-76 -25 -76 -26 -25 -76 -26 25 -76 -76 25 -76 -76 -25 -26 -26 -25 -26 -26 25 -26 -76 25 -26" />
+		</IndexedFaceSet>
+	</Shape>
+	<Shape>
+		<Appearance>
+			<Material
+				diffuseColor="1 1 1"
+				transparency="0.699999988079071" />
+		</Appearance>
+		<IndexedFaceSet
+			coordIndex="0 3 2 1 -1 4 7 3 0 -1 7 6 2 3 -1 6 5 1 2 -1 5 4 0 1 -1 4 5 6 7 -1"
+			solid="false">
+			<Coordinate
+				point="-76 -25 26 -26 -25 26 -26 25 26 -76 25 26 -76 -25 76 -26 -25 76 -26 25 76 -76 25 76" />
+		</IndexedFaceSet>
+	</Shape>
+	<Shape>
+		<Appearance>
+			<Material
+				diffuseColor="1 1 1"
+				transparency="0.699999988079071" />
+		</Appearance>
+		<IndexedFaceSet
+			coordIndex="0 3 2 1 -1 4 7 3 0 -1 7 6 2 3 -1 6 5 1 2 -1 5 4 0 1 -1 4 5 6 7 -1"
+			solid="false">
+			<Coordinate
+				point="-76 -25 -25 -26 -25 -25 -26 25 -25 -76 25 -25 -76 -25 25 -26 -25 25 -26 25 25 -76 25 25" />
+		</IndexedFaceSet>
+	</Shape>
+	<Shape>
+		<Appearance>
+			<Material
+				diffuseColor="1 1 1"
+				transparency="0.699999988079071" />
+		</Appearance>
+		<IndexedFaceSet
+			coordIndex="0 3 2 1 -1 4 7 3 0 -1 7 6 2 3 -1 6 5 1 2 -1 5 4 0 1 -1 4 5 6 7 -1"
+			solid="false">
+			<Coordinate
+				point="-76 26 -76 -26 26 -76 -26 76 -76 -76 76 -76 -76 26 -26 -26 26 -26 -26 76 -26 -76 76 -26" />
+		</IndexedFaceSet>
+	</Shape>
+	<Shape>
+		<Appearance>
+			<Material
+				diffuseColor="1 1 1"
+				transparency="0.699999988079071" />
+		</Appearance>
+		<IndexedFaceSet
+			coordIndex="0 3 2 1 -1 4 7 3 0 -1 7 6 2 3 -1 6 5 1 2 -1 5 4 0 1 -1 4 5 6 7 -1"
+			solid="false">
+			<Coordinate
+				point="-76 26 26 -26 26 26 -26 76 26 -76 76 26 -76 26 76 -26 26 76 -26 76 76 -76 76 76" />
+		</IndexedFaceSet>
+	</Shape>
+	<Shape>
+		<Appearance>
+			<Material
+				diffuseColor="1 1 1"
+				transparency="0.699999988079071" />
+		</Appearance>
+		<IndexedFaceSet
+			coordIndex="0 3 2 1 -1 4 7 3 0 -1 7 6 2 3 -1 6 5 1 2 -1 5 4 0 1 -1 4 5 6 7 -1"
+			solid="false">
+			<Coordinate
+				point="-76 26 -25 -26 26 -25 -26 76 -25 -76 76 -25 -76 26 25 -26 26 25 -26 76 25 -76 76 25" />
+		</IndexedFaceSet>
+	</Shape>
+	<Shape>
+		<Appearance>
+			<Material
+				diffuseColor="1 1 1"
+				transparency="0.699999988079071" />
+		</Appearance>
+		<IndexedFaceSet
+			coordIndex="0 3 2 1 -1 4 7 3 0 -1 7 6 2 3 -1 6 5 1 2 -1 5 4 0 1 -1 4 5 6 7 -1"
+			solid="false">
+			<Coordinate
+				point="-25 -76 -76 25 -76 -76 25 -26 -76 -25 -26 -76 -25 -76 -26 25 -76 -26 25 -26 -26 -25 -26 -26" />
+		</IndexedFaceSet>
+	</Shape>
+	<Shape>
+		<Appearance>
+			<Material
+				diffuseColor="1 1 1"
+				transparency="0.699999988079071" />
+		</Appearance>
+		<IndexedFaceSet
+			coordIndex="0 3 2 1 -1 4 7 3 0 -1 7 6 2 3 -1 6 5 1 2 -1 5 4 0 1 -1 4 5 6 7 -1"
+			solid="false">
+			<Coordinate
+				point="-25 -76 26 25 -76 26 25 -26 26 -25 -26 26 -25 -76 76 25 -76 76 25 -26 76 -25 -26 76" />
+		</IndexedFaceSet>
+	</Shape>
+	<Shape>
+		<Appearance>
+			<Material
+				diffuseColor="1 1 1"
+				transparency="0.699999988079071" />
+		</Appearance>
+		<IndexedFaceSet
+			coordIndex="0 3 2 1 -1 4 7 3 0 -1 7 6 2 3 -1 6 5 1 2 -1 5 4 0 1 -1 4 5 6 7 -1"
+			solid="false">
+			<Coordinate
+				point="-25 -76 -25 25 -76 -25 25 -26 -25 -25 -26 -25 -25 -76 25 25 -76 25 25 -26 25 -25 -26 25" />
+		</IndexedFaceSet>
+	</Shape>
+	<Shape>
+		<Appearance>
+			<Material
+				diffuseColor="1 1 1"
+				transparency="0.699999988079071" />
+		</Appearance>
+		<IndexedFaceSet
+			coordIndex="0 3 2 1 -1 4 7 3 0 -1 7 6 2 3 -1 6 5 1 2 -1 5 4 0 1 -1 4 5 6 7 -1"
+			solid="false">
+			<Coordinate
+				point="-25 -25 -76 25 -25 -76 25 25 -76 -25 25 -76 -25 -25 -26 25 -25 -26 25 25 -26 -25 25 -26" />
+		</IndexedFaceSet>
+	</Shape>
+	<Shape>
+		<Appearance>
+			<Material
+				diffuseColor="1 1 1"
+				transparency="0.699999988079071" />
+		</Appearance>
+		<IndexedFaceSet
+			coordIndex="0 3 2 1 -1 4 7 3 0 -1 7 6 2 3 -1 6 5 1 2 -1 5 4 0 1 -1 4 5 6 7 -1"
+			solid="false">
+			<Coordinate
+				point="-25 -25 26 25 -25 26 25 25 26 -25 25 26 -25 -25 76 25 -25 76 25 25 76 -25 25 76" />
+		</IndexedFaceSet>
+	</Shape>
+	<Shape>
+		<Appearance>
+			<Material
+				diffuseColor="1 1 1"
+				transparency="0.699999988079071" />
+		</Appearance>
+		<IndexedFaceSet
+			coordIndex="0 3 2 1 -1 4 7 3 0 -1 7 6 2 3 -1 6 5 1 2 -1 5 4 0 1 -1 4 5 6 7 -1"
+			solid="false">
+			<Coordinate
+				point="-25 -25 -25 25 -25 -25 25 25 -25 -25 25 -25 -25 -25 25 25 -25 25 25 25 25 -25 25 25" />
+		</IndexedFaceSet>
+	</Shape>
+	<Shape>
+		<Appearance>
+			<Material
+				diffuseColor="1 1 1"
+				transparency="0.699999988079071" />
+		</Appearance>
+		<IndexedFaceSet
+			coordIndex="0 3 2 1 -1 4 7 3 0 -1 7 6 2 3 -1 6 5 1 2 -1 5 4 0 1 -1 4 5 6 7 -1"
+			solid="false">
+			<Coordinate
+				point="-25 26 -76 25 26 -76 25 76 -76 -25 76 -76 -25 26 -26 25 26 -26 25 76 -26 -25 76 -26" />
+		</IndexedFaceSet>
+	</Shape>
+	<Shape>
+		<Appearance>
+			<Material
+				diffuseColor="1 1 1"
+				transparency="0.699999988079071" />
+		</Appearance>
+		<IndexedFaceSet
+			coordIndex="0 3 2 1 -1 4 7 3 0 -1 7 6 2 3 -1 6 5 1 2 -1 5 4 0 1 -1 4 5 6 7 -1"
+			solid="false">
+			<Coordinate
+				point="-25 26 26 25 26 26 25 76 26 -25 76 26 -25 26 76 25 26 76 25 76 76 -25 76 76" />
+		</IndexedFaceSet>
+	</Shape>
+	<Shape>
+		<Appearance>
+			<Material
+				diffuseColor="1 1 1"
+				transparency="0.699999988079071" />
+		</Appearance>
+		<IndexedFaceSet
+			coordIndex="0 3 2 1 -1 4 7 3 0 -1 7 6 2 3 -1 6 5 1 2 -1 5 4 0 1 -1 4 5 6 7 -1"
+			solid="false">
+			<Coordinate
+				point="-25 26 -25 25 26 -25 25 76 -25 -25 76 -25 -25 26 25 25 26 25 25 76 25 -25 76 25" />
+		</IndexedFaceSet>
+	</Shape>
+	<Shape>
+		<Appearance>
+			<Material
+				diffuseColor="1 1 1"
+				transparency="0.699999988079071" />
+		</Appearance>
+		<IndexedFaceSet
+			coordIndex="0 3 2 1 -1 4 7 3 0 -1 7 6 2 3 -1 6 5 1 2 -1 5 4 0 1 -1 4 5 6 7 -1"
+			solid="false">
+			<Coordinate
+				point="26 -76 -76 76 -76 -76 76 -26 -76 26 -26 -76 26 -76 -26 76 -76 -26 76 -26 -26 26 -26 -26" />
+		</IndexedFaceSet>
+	</Shape>
+	<Shape>
+		<Appearance>
+			<Material
+				diffuseColor="1 1 1"
+				transparency="0.699999988079071" />
+		</Appearance>
+		<IndexedFaceSet
+			coordIndex="0 3 2 1 -1 4 7 3 0 -1 7 6 2 3 -1 6 5 1 2 -1 5 4 0 1 -1 4 5 6 7 -1"
+			solid="false">
+			<Coordinate
+				point="26 -76 26 76 -76 26 76 -26 26 26 -26 26 26 -76 76 76 -76 76 76 -26 76 26 -26 76" />
+		</IndexedFaceSet>
+	</Shape>
+	<Shape>
+		<Appearance>
+			<Material
+				diffuseColor="1 1 1"
+				transparency="0.699999988079071" />
+		</Appearance>
+		<IndexedFaceSet
+			coordIndex="0 3 2 1 -1 4 7 3 0 -1 7 6 2 3 -1 6 5 1 2 -1 5 4 0 1 -1 4 5 6 7 -1"
+			solid="false">
+			<Coordinate
+				point="26 -76 -25 76 -76 -25 76 -26 -25 26 -26 -25 26 -76 25 76 -76 25 76 -26 25 26 -26 25" />
+		</IndexedFaceSet>
+	</Shape>
+	<Shape>
+		<Appearance>
+			<Material
+				diffuseColor="1 1 1"
+				transparency="0.699999988079071" />
+		</Appearance>
+		<IndexedFaceSet
+			coordIndex="0 3 2 1 -1 4 7 3 0 -1 7 6 2 3 -1 6 5 1 2 -1 5 4 0 1 -1 4 5 6 7 -1"
+			solid="false">
+			<Coordinate
+				point="26 -25 -76 76 -25 -76 76 25 -76 26 25 -76 26 -25 -26 76 -25 -26 76 25 -26 26 25 -26" />
+		</IndexedFaceSet>
+	</Shape>
+	<Shape>
+		<Appearance>
+			<Material
+				diffuseColor="1 1 1"
+				transparency="0.699999988079071" />
+		</Appearance>
+		<IndexedFaceSet
+			coordIndex="0 3 2 1 -1 4 7 3 0 -1 7 6 2 3 -1 6 5 1 2 -1 5 4 0 1 -1 4 5 6 7 -1"
+			solid="false">
+			<Coordinate
+				point="26 -25 26 76 -25 26 76 25 26 26 25 26 26 -25 76 76 -25 76 76 25 76 26 25 76" />
+		</IndexedFaceSet>
+	</Shape>
+	<Shape>
+		<Appearance>
+			<Material
+				diffuseColor="1 1 1"
+				transparency="0.699999988079071" />
+		</Appearance>
+		<IndexedFaceSet
+			coordIndex="0 3 2 1 -1 4 7 3 0 -1 7 6 2 3 -1 6 5 1 2 -1 5 4 0 1 -1 4 5 6 7 -1"
+			solid="false">
+			<Coordinate
+				point="26 -25 -25 76 -25 -25 76 25 -25 26 25 -25 26 -25 25 76 -25 25 76 25 25 26 25 25" />
+		</IndexedFaceSet>
+	</Shape>
+	<Shape>
+		<Appearance>
+			<Material
+				diffuseColor="1 1 1"
+				transparency="0.699999988079071" />
+		</Appearance>
+		<IndexedFaceSet
+			coordIndex="0 3 2 1 -1 4 7 3 0 -1 7 6 2 3 -1 6 5 1 2 -1 5 4 0 1 -1 4 5 6 7 -1"
+			solid="false">
+			<Coordinate
+				point="26 26 -76 76 26 -76 76 76 -76 26 76 -76 26 26 -26 76 26 -26 76 76 -26 26 76 -26" />
+		</IndexedFaceSet>
+	</Shape>
+	<Shape>
+		<Appearance>
+			<Material
+				diffuseColor="1 1 1"
+				transparency="0.699999988079071" />
+		</Appearance>
+		<IndexedFaceSet
+			coordIndex="0 3 2 1 -1 4 7 3 0 -1 7 6 2 3 -1 6 5 1 2 -1 5 4 0 1 -1 4 5 6 7 -1"
+			solid="false">
+			<Coordinate
+				point="26 26 26 76 26 26 76 76 26 26 76 26 26 26 76 76 26 76 76 76 76 26 76 76" />
+		</IndexedFaceSet>
+	</Shape>
+	<Shape>
+		<Appearance>
+			<Material
+				diffuseColor="1 1 1"
+				transparency="0.699999988079071" />
+		</Appearance>
+		<IndexedFaceSet
+			coordIndex="0 3 2 1 -1 4 7 3 0 -1 7 6 2 3 -1 6 5 1 2 -1 5 4 0 1 -1 4 5 6 7 -1"
+			solid="false">
+			<Coordinate
+				point="26 26 -25 76 26 -25 76 76 -25 26 76 -25 26 26 25 76 26 25 76 76 25 26 76 25" />
+		</IndexedFaceSet>
+	</Shape>
+</Scene>
+</X3D>
