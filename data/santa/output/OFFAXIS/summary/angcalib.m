@@ -40,7 +40,7 @@ l = legend([s p], {'Data  ', 'Linear Fit  '}, 'location', 'northwest');
 % fitstr = sprintf("y = %1.2f x + %1.2f  ", P(1), P(2));
 % l = legend([s p], {'Data  ', fitstr}, 'location', 'northwest');
 
-print basic fit info:
+% print basic fit info:
 % % to stdout
 % printf('\nLinear Fit Results:\n')
 % printf('Model\t\tY = m*X + B\n')
