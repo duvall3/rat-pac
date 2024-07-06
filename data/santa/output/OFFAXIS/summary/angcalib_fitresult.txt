@@ -1,0 +1,5 @@
+Linear Fit Results:
+Model		Y = m*X + B
+m		3.07904
+b		2.08594
+R^2		0.990061
